@@ -11,21 +11,15 @@ import {
     updateUserSettingsSchema,
 } from "@/lib/validations/profile";
 
-// Define a type for field-specific errors
 type FieldErrors<T extends z.ZodTypeAny> = {
     [K in keyof z.infer<T>]?: string[];
 };
 
-// Define a discriminated union for action responses to clearly distinguish success from error
 type ActionResponse<T extends z.ZodTypeAny> =
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
     | { success: true; message: string; user?: any }
     | { error: FieldErrors<T> | { general: string } };
 
-/**
- * Updates the general information for the currently authenticated user.
- * @param values - Data for name and username.
- */
 export async function updateGeneralInformation(
     values: z.infer<typeof updateGeneralInfoSchema>,
 ): Promise<ActionResponse<typeof updateGeneralInfoSchema>> {
@@ -47,7 +41,6 @@ export async function updateGeneralInformation(
     const userId = session.user.id;
 
     try {
-        // If username is provided, check for uniqueness (excluding current user)
         if (username) {
             const existingUserWithUsername = await prisma.user.findUnique({
                 where: { username },
@@ -64,7 +57,7 @@ export async function updateGeneralInformation(
             where: { id: userId },
             data: {
                 name,
-                username, // Will update only if provided in values
+                username,
             },
             select: {
                 id: true,
@@ -76,9 +69,6 @@ export async function updateGeneralInformation(
                 emailVerified: true,
             },
         });
-
-        // The session might need to be refreshed on the client if username/name is part of the JWT/Session object
-        // This can be done client-side using `useSession().update()`
 
         return {
             success: true,
@@ -93,11 +83,6 @@ export async function updateGeneralInformation(
     }
 }
 
-/**
- * Allows the currently authenticated user to change their password.
- * Requires verification of the current password.
- * @param values - Data for current password, new password, and confirmation.
- */
 export async function changeUserPassword(
     values: z.infer<typeof changePasswordSchema>,
 ): Promise<ActionResponse<typeof changePasswordSchema>> {
@@ -125,7 +110,6 @@ export async function changeUserPassword(
             return { error: { general: "User not found or no password set." } };
         }
 
-        // Verify current password
         const passwordsMatch = await bcrypt.compare(
             currentPassword,
             user.password,
@@ -136,7 +120,6 @@ export async function changeUserPassword(
             };
         }
 
-        // Hash new password
         const hashedNewPassword = await bcrypt.hash(newPassword, 10);
 
         await prisma.user.update({
@@ -153,24 +136,6 @@ export async function changeUserPassword(
     }
 }
 
-// You can add more profile-related actions here, e.g., for subscriptions, billing, etc.
-// Example for future:
-/*
-export async function updateSubscription(userId: string, subscriptionId: string): Promise<ActionResponse<z.ZodObject<any>>> {
-    // ... logic to update subscription status or plan
-    return { success: true, message: "Subscription updated." };
-}
-
-export async function addPaymentMethod(userId: string, cardDetails: any): Promise<ActionResponse<z.ZodObject<any>>> {
-    // ... logic to securely add payment method (integrate with payment gateway)
-    return { success: true, message: "Payment method added." };
-}
-*/
-
-/**
- * Updates various user settings like theme, notifications, language, and timezone.
- * @param values - Data for user settings.
- */
 export async function updateUserSettings(
     values: z.infer<typeof updateUserSettingsSchema>,
 ): Promise<ActionResponse<typeof updateUserSettingsSchema>> {
@@ -201,7 +166,6 @@ export async function updateUserSettings(
                 preferredTimezone: values.timezone,
             },
             select: {
-                // Select updated fields to return for session refresh
                 id: true,
                 preferredTheme: true,
                 emailNotifications: true,
@@ -221,5 +185,77 @@ export async function updateUserSettings(
         return {
             error: { general: "Failed to update settings. Please try again." },
         };
+    }
+}
+
+export async function getCurrentUserProfile() {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return null;
+    }
+    const user = await prisma.user.findUnique({
+        where: { id: session.user.id },
+        select: {
+            id: true,
+            name: true,
+            username: true,
+            email: true,
+            image: true,
+            emailVerified: true,
+        },
+    });
+    return user;
+}
+
+export async function getUserFavourites() {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return null;
+    }
+    const user = await prisma.user.findUnique({
+        where: { id: session.user.id },
+        select: { favourites: true },
+    });
+    return user?.favourites || [];
+}
+
+export async function updateUserFavourites(values: { favourites: string[] }) {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return { error: { general: "Unauthorized. Please sign in." } };
+    }
+
+    try {
+        const updatedUser = await prisma.user.update({
+            where: { id: session.user.id },
+            data: { favourites: values.favourites },
+            select: { favourites: true },
+        });
+        return { success: true, favourites: updatedUser.favourites };
+    } catch (error) {
+        console.error("Error updating favourites:", error);
+        return {
+            error: {
+                general: "Failed to update favourites. Please try again.",
+            },
+        };
+    }
+}
+
+export async function updateProfileImage(imageUrl: string) {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        throw new Error("Unauthorized");
+    }
+
+    try {
+        const updatedUser = await prisma.user.update({
+            where: { id: session.user.id },
+            data: { image: imageUrl },
+        });
+        return updatedUser;
+    } catch (error) {
+        console.error("Error updating profile image:", error);
+        throw new Error("Failed to update profile image");
     }
 }

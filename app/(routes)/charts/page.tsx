@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { BASE_URL, charts } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import Cta from "@/components/routes/home/cta";
 
 const page = () => {
     return (

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { components } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import Cta from "@/components/routes/home/cta";
 import { BASE_URL } from "@/config/docs";
 
 const page = () => {

@@ -7,37 +7,23 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-// model User {
-//     id            String       @id @default(auto()) @map("_id") @db.ObjectId
-//     name          String?
-//     username      String?      @unique
-//     email         String?      @unique
-//     image         String?
-//     password      String?
-//     provider      String?
-//     termsAccepted Boolean      @default(false)
-//     emailVerified DateTime?
-//     createdAt     DateTime     @default(now())
-//     updatedAt     DateTime     @updatedAt
-//     resetTokens   ResetToken[]
-// }
-
 model User {
-    id                 String         @id @default(auto()) @map("_id") @db.ObjectId
+    id                 String       @id @default(auto()) @map("_id") @db.ObjectId
     name               String?
-    username           String?        @unique
-    email              String?        @unique
+    username           String?      @unique
+    email              String?      @unique
     emailVerified      DateTime?
     image              String?
     password           String?
     provider           String?
-    termsAccepted      Boolean        @default(false)
-    preferredTheme     String?        @default("system")
-    emailNotifications Boolean?       @default(true)
-    inAppNotifications Boolean?       @default(false)
-    preferredLanguage  String?        @default("en")
-    preferredTimezone  String?        @default("UTC")
+    termsAccepted      Boolean      @default(false)
+    preferredTheme     String?      @default("system")
+    emailNotifications Boolean?     @default(true)
+    inAppNotifications Boolean?     @default(false)
+    preferredLanguage  String?      @default("en")
+    preferredTimezone  String?      @default("UTC")
     ResetToken         ResetToken[]
+    favourites         String[]
 }
 
 model Newsletter {
