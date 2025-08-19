@@ -1,6 +1,5 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -20,10 +19,11 @@ import { toast } from "sonner";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
-export default function GeneralInformationPage() {
-    const { data: session, status, update } = useSession();
-    const [isPending, setIsPending] = useState(false);
+import { useSessionCache } from "@/hooks/use-session-cache";
 
+export default function GeneralInformationPage() {
+    const { data: session, status, update } = useSessionCache();
+    const [isPending, setIsPending] = useState(false);
     const form = useForm<z.infer<typeof updateGeneralInfoSchema>>({
         resolver: zodResolver(updateGeneralInfoSchema),
         defaultValues: {
@@ -32,7 +32,6 @@ export default function GeneralInformationPage() {
         },
     });
 
-    // Populate form with session data on load
     useEffect(() => {
         if (status === "authenticated" && session?.user) {
             form.reset({
@@ -44,42 +43,68 @@ export default function GeneralInformationPage() {
 
     async function onSubmit(values: z.infer<typeof updateGeneralInfoSchema>) {
         setIsPending(true);
-        const result = await updateGeneralInformation(values);
-        setIsPending(false);
-
-        if (result && "error" in result) {
-            if ("general" in result.error) {
-                toast.error(result.error.general);
+        try {
+            const result = await updateGeneralInformation(values);
+            if ('success' in result && result.success) {
+                toast.success("Profile updated successfully!");
+                // Update the session with new data
+                await update({
+                    name: values.name,
+                    username: values.username,
+                });
             } else {
-                if (result.error.name && result.error.name[0]) {
-                    form.setError("name", { type: "manual", message: result.error.name[0] });
+                if ('error' in result) {
+                    if ('general' in result.error) {
+                        toast.error(result.error.general);
+                    } else {
+                        // Handle field-specific errors
+                        const fieldErrors = Object.values(result.error).flat();
+                        toast.error(fieldErrors[0] || "Failed to update profile");
+                    }
+                } else {
+                    toast.error("Failed to update profile");
                 }
-                if (result.error.username && result.error.username[0]) {
-                    form.setError("username", { type: "manual", message: result.error.username[0] });
-                }
-                toast.error("Please correct the errors in the form.");
             }
-        } else {
-            toast.success(result?.message || "Profile updated!");
-            // Update the client-side session if the data changed
-            if (result?.user) {
-                await update({ user: { name: result.user.name, username: result.user.username } });
-            }
+        } catch (error) {
+            toast.error("An unexpected error occurred");
+            console.error("Profile update error:", error);
+        } finally {
+            setIsPending(false);
         }
     }
 
     if (status === "loading") {
-        return <div className="flex justify-center items-center h-full">Loading profile...</div>;
+        return (
+            <div className="flex min-h-[400px] items-center justify-center">
+                <div className="flex items-center gap-2">
+                    <Loader2 className="h-6 w-6 animate-spin" />
+                    <span>Loading profile...</span>
+                </div>
+            </div>
+        );
     }
 
-    if (!session?.user) {
-        return <div className="flex justify-center items-center h-full text-red-500">Please sign in to view your profile.</div>;
+    if (status === "unauthenticated") {
+        return (
+            <div className="flex min-h-[400px] flex-col items-center justify-center gap-4">
+                <h2 className="text-2xl font-semibold">Access Denied</h2>
+                <p className="text-muted-foreground">
+                    You must be logged in to view this page.
+                </p>
+            </div>
+        );
     }
 
     return (
-        <div>
-            <h1 className="text-2xl font-bold mb-4">General Information</h1>
-            <p className="text-gray-600 mb-6">Manage your basic account details.</p>
+        <div className="mx-auto max-w-2xl space-y-8">
+            <div>
+                <h2 className="text-2xl font-bold tracking-tight">
+                    General Information
+                </h2>
+                <p className="text-muted-foreground">
+                    Update your account information and settings.
+                </p>
+            </div>
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -90,12 +115,16 @@ export default function GeneralInformationPage() {
                             <FormItem>
                                 <FormLabel>Full Name</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your Full Name" {...field} />
+                                    <Input
+                                        placeholder="Enter your full name"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
+
                     <FormField
                         control={form.control}
                         name="username"
@@ -103,30 +132,32 @@ export default function GeneralInformationPage() {
                             <FormItem>
                                 <FormLabel>Username</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your Username" {...field} />
+                                    <Input
+                                        placeholder="Enter your username"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                            <Input value={session.user.email || ""} disabled className="bg-gray-100 dark:bg-gray-800 cursor-not-allowed" />
-                        </FormControl>
-                        <FormMessage />
-                        <p className="text-sm text-gray-500 mt-1">Email cannot be changed here.</p>
-                    </FormItem>
-                    <Button type="submit" disabled={isPending}>
-                        {isPending ? (
-                            <>
-                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                Saving...
-                            </>
-                        ) : (
-                            "Save Changes"
-                        )}
-                    </Button>
+
+                    <div className="flex items-center gap-4">
+                        <Button
+                            type="submit"
+                            disabled={isPending}
+                            className="min-w-[120px]"
+                        >
+                            {isPending ? (
+                                <>
+                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                    Updating...
+                                </>
+                            ) : (
+                                "Update Profile"
+                            )}
+                        </Button>
+                    </div>
                 </form>
             </Form>
         </div>

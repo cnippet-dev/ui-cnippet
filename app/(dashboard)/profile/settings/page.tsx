@@ -20,11 +20,12 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Loader2 } from "lucide-react";
-import { useSession } from "next-auth/react";
 import { updateUserSettings } from "@/lib/actions/profile.actions";
 
+import { useSessionCache } from "@/hooks/use-session-cache";
+
 export default function SettingsPage() {
-    const { data: session, status, update } = useSession();
+    const { data: session, status, update } = useSessionCache();
     const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
     const [emailNotifications, setEmailNotifications] = useState(true);
     const [inAppNotifications, setInAppNotifications] = useState(false);
@@ -36,7 +37,7 @@ export default function SettingsPage() {
         if (status === "authenticated" && session?.user) {
             setTheme(
                 (session.user.preferredTheme as "light" | "dark" | "system") ||
-                "system",
+                    "system",
             );
             setEmailNotifications(session.user.emailNotifications ?? true);
             setInAppNotifications(session.user.inAppNotifications ?? false);
@@ -47,86 +48,114 @@ export default function SettingsPage() {
 
     const handleSaveSettings = async () => {
         setIsSaving(true);
-        const settingsData = {
-            theme,
-            emailNotifications,
-            inAppNotifications,
-            language,
-            timezone,
-        };
+        try {
+            const result = await updateUserSettings({
+                theme,
+                emailNotifications,
+                inAppNotifications,
+                language,
+                timezone,
+            });
 
-        const result = await updateUserSettings(settingsData);
-        setIsSaving(false);
-
-        if (result && "error" in result) {
-            if ("general" in result.error) {
-                toast.error(result.error.general);
-            } else {
-                toast.error(
-                    "Failed to save settings. Please check your inputs.",
-                );
-            }
-        } else {
-            toast.success(result?.message || "Settings saved successfully!");
-            if (result?.user) {
+            if ('success' in result && result.success) {
+                toast.success("Settings saved successfully!");
+                // Update the session with new settings
                 await update({
-                    user: {
-                        preferredTheme: result.user.preferredTheme,
-                        emailNotifications: result.user.emailNotifications,
-                        inAppNotifications: result.user.inAppNotifications,
-                        preferredLanguage: result.user.preferredLanguage,
-                        preferredTimezone: result.user.preferredTimezone,
-                    },
+                    preferredTheme: theme,
+                    emailNotifications,
+                    inAppNotifications,
+                    preferredLanguage: language,
+                    preferredTimezone: timezone,
                 });
+            } else {
+                if ('error' in result) {
+                    if ('general' in result.error) {
+                        toast.error(result.error.general);
+                    } else {
+                        // Handle field-specific errors
+                        const fieldErrors = Object.values(result.error).flat();
+                        toast.error(fieldErrors[0] || "Failed to save settings");
+                    }
+                } else {
+                    toast.error("Failed to save settings");
+                }
             }
+        } catch (error) {
+            toast.error("An unexpected error occurred");
+            console.error("Settings save error:", error);
+        } finally {
+            setIsSaving(false);
         }
     };
 
+    if (status === "loading") {
+        return (
+            <div className="flex min-h-[400px] items-center justify-center">
+                <div className="flex items-center gap-2">
+                    <Loader2 className="h-6 w-6 animate-spin" />
+                    <span>Loading settings...</span>
+                </div>
+            </div>
+        );
+    }
+
+    if (status === "unauthenticated") {
+        return (
+            <div className="flex min-h-[400px] flex-col items-center justify-center gap-4">
+                <h2 className="text-2xl font-semibold">Access Denied</h2>
+                <p className="text-muted-foreground">
+                    You must be logged in to view this page.
+                </p>
+            </div>
+        );
+    }
+
     return (
-        <div>
-            <h1 className="mb-4 text-2xl font-bold">Settings</h1>
-            <p className="mb-6 text-gray-600">
-                Configure your application preferences.
-            </p>
+        <div className="mx-auto max-w-4xl space-y-8">
+            <div>
+                <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
+                <p className="text-muted-foreground">
+                    Manage your account preferences and settings.
+                </p>
+            </div>
 
-            <Card className="shadow-none">
-                <CardHeader>
-                    <CardTitle>Application Preferences</CardTitle>
-                    <CardDescription>
-                        Customize how the application looks and behaves for you.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                    {/* Theme Selection */}
-                    <div className="space-y-2">
-                        <Label htmlFor="theme">Theme</Label>
-                        <Select
-                            value={theme}
-                            onValueChange={(
-                                value: "light" | "dark" | "system",
-                            ) => setTheme(value)}
-                        >
-                            <SelectTrigger className="w-[180px]">
-                                <SelectValue placeholder="Select theme" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="light">Light</SelectItem>
-                                <SelectItem value="dark">Dark</SelectItem>
-                                <SelectItem value="system">System</SelectItem>
-                            </SelectContent>
-                        </Select>
-                        <p className="text-sm text-gray-500">
-                            Choose your preferred application theme.
-                        </p>
-                    </div>
-
-                    {/* Notification Preferences */}
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-semibold">Notifications</h3>
+            <div className="grid gap-6">
+                {/* Theme Settings */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Appearance</CardTitle>
+                        <CardDescription>
+                            Customize how the app looks and feels.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <Label htmlFor="email-notifications">
-                                Email Notifications
-                            </Label>
+                            <Label htmlFor="theme">Theme</Label>
+                            <Select value={theme} onValueChange={(value: "light" | "dark" | "system") => setTheme(value)}>
+                                <SelectTrigger className="w-32">
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="light">Light</SelectItem>
+                                    <SelectItem value="dark">Dark</SelectItem>
+                                    <SelectItem value="system">System</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                {/* Notification Settings */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Notifications</CardTitle>
+                        <CardDescription>
+                            Choose how you want to receive notifications.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="flex items-center justify-between">
+                            <Label htmlFor="email-notifications">Email Notifications</Label>
                             <Switch
                                 id="email-notifications"
                                 checked={emailNotifications}
@@ -134,77 +163,69 @@ export default function SettingsPage() {
                             />
                         </div>
                         <div className="flex items-center justify-between">
-                            <Label htmlFor="in-app-notifications">
-                                In-App Notifications
-                            </Label>
+                            <Label htmlFor="in-app-notifications">In-App Notifications</Label>
                             <Switch
                                 id="in-app-notifications"
                                 checked={inAppNotifications}
                                 onCheckedChange={setInAppNotifications}
                             />
                         </div>
-                        <p className="text-sm text-gray-500">
-                            Control how you receive alerts and updates.
-                        </p>
-                    </div>
+                    </CardContent>
+                </Card>
 
-                    {/* Language Settings */}
-                    <div className="space-y-2">
-                        <Label htmlFor="language">Language</Label>
-                        <Select value={language} onValueChange={setLanguage}>
-                            <SelectTrigger className="w-[180px]">
-                                <SelectValue placeholder="Select language" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="en">English</SelectItem>
-                                <SelectItem value="es">Spanish</SelectItem>
-                                <SelectItem value="fr">French</SelectItem>
-                            </SelectContent>
-                        </Select>
-                        <p className="text-sm text-gray-500">
-                            Choose your preferred language for the application.
-                        </p>
-                    </div>
+                {/* Language & Timezone Settings */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Localization</CardTitle>
+                        <CardDescription>
+                            Set your preferred language and timezone.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="flex items-center justify-between">
+                            <Label htmlFor="language">Language</Label>
+                            <Select value={language} onValueChange={setLanguage}>
+                                <SelectTrigger className="w-32">
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="en">English</SelectItem>
+                                    <SelectItem value="es">Spanish</SelectItem>
+                                    <SelectItem value="fr">French</SelectItem>
+                                    <SelectItem value="de">German</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                        <div className="flex items-center justify-between">
+                            <Label htmlFor="timezone">Timezone</Label>
+                            <Select value={timezone} onValueChange={setTimezone}>
+                                <SelectTrigger className="w-32">
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="UTC">UTC</SelectItem>
+                                    <SelectItem value="EST">EST</SelectItem>
+                                    <SelectItem value="PST">PST</SelectItem>
+                                    <SelectItem value="GMT">GMT</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
 
-                    {/* Timezone Settings */}
-                    <div className="space-y-2">
-                        <Label htmlFor="timezone">Timezone</Label>
-                        <Select value={timezone} onValueChange={setTimezone}>
-                            <SelectTrigger className="w-[250px]">
-                                <SelectValue placeholder="Select timezone" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="UTC">
-                                    UTC (Coordinated Universal Time)
-                                </SelectItem>
-                                <SelectItem value="EST">
-                                    EST (Eastern Standard Time)
-                                </SelectItem>
-                                <SelectItem value="PST">
-                                    PST (Pacific Standard Time)
-                                </SelectItem>
-                                <SelectItem value="IST">
-                                    IST (Indian Standard Time)
-                                </SelectItem>
-                            </SelectContent>
-                        </Select>
-                        <p className="text-sm text-gray-500">
-                            Set your local timezone for time displays.
-                        </p>
-                    </div>
-
-                    <Button onClick={handleSaveSettings} disabled={isSaving}>
-                        {isSaving ? (
-                            <>
-                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                Saving...
-                            </>
-                        ) : (
-                            "Save Settings"
-                        )}
-                    </Button>
-                </CardContent>
-            </Card>
+            <div className="flex justify-end">
+                <Button onClick={handleSaveSettings} disabled={isSaving}>
+                    {isSaving ? (
+                        <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Saving...
+                        </>
+                    ) : (
+                        "Save Settings"
+                    )}
+                </Button>
+            </div>
         </div>
     );
 }

@@ -29,8 +29,9 @@ export const changePasswordSchema = z
 
 export const updateUserSettingsSchema = z.object({
     theme: z
-        .enum(["light", "dark", "system"], {
-            errorMap: () => ({ message: "Invalid theme selected." }),
+        .enum(["light", "dark", "system"])
+        .refine((val) => ["light", "dark", "system"].includes(val), {
+            message: "Invalid theme selected.",
         })
         .optional(),
     emailNotifications: z.boolean().optional(),

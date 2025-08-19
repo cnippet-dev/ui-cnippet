@@ -6,7 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { charts, components, motions } from "@/config/docs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Nav1 from "@/components/shared/navbar/nav-1";
+import Navbar from "@/components/shared/navbar";
 
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();
@@ -119,7 +119,7 @@ export default function ComponentLayout({
         <>
             <div className="bg-background relative flex min-h-svh flex-col">
                 <div className="border-grid flex flex-1 flex-col">
-                    <Nav1 />
+                    <Navbar />
                     <main className="flex flex-1 flex-col dark:bg-black px-4 md:px-10 xl:px-20 2xl:px-30">
                         <div className="container-wrapper">
                             <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-6">

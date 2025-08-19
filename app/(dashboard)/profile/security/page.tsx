@@ -1,4 +1,3 @@
-// app/profile/security/page.tsx
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -19,12 +18,14 @@ import {
 import { toast } from "sonner";
 import { useState } from "react";
 import { Loader2, Eye, EyeOff } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 export default function SecurityPage() {
     const [isPending, setIsPending] = useState(false);
     const [showCurrentPassword, setShowCurrentPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
+    const { update } = useSession();
 
     const form = useForm<z.infer<typeof changePasswordSchema>>({
         resolver: zodResolver(changePasswordSchema),
@@ -37,7 +38,7 @@ export default function SecurityPage() {
 
     async function onSubmit(values: z.infer<typeof changePasswordSchema>) {
         setIsPending(true);
-        form.clearErrors(); // Clear previous errors
+        form.clearErrors();
 
         const result = await changeUserPassword(values);
         setIsPending(false);
@@ -74,7 +75,8 @@ export default function SecurityPage() {
             }
         } else {
             toast.success(result?.message || "Password changed successfully!");
-            form.reset(); // Clear form on success
+            form.reset();
+            if (update) await update();
         }
     }
 
