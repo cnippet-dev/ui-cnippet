@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "@/components/shared/footer";
-import Nav1 from "@/components/shared/navbar/nav-1";
+import Navbar from "@/components/shared/navbar";
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
     return (
         <>
-            <Nav1 />
+            <Navbar />
             {children}
             <Footer />
         </>
