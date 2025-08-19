@@ -32,11 +32,9 @@ const userSignInValidation = z.object({
 });
 
 const AuthDialog = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [loading, setLoading] = useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [loading1, setLoading1] = useState(false);
-    const [loading2, setLoading2] = useState(false);
+    const [isLoading, setIsLoading] = useState<
+        "signin" | "google" | "github" | null
+    >(null);
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
@@ -52,33 +50,19 @@ const AuthDialog = () => {
     });
 
     const loginWithGoogle = async () => {
-        const result = await signIn("google", {
-            callbackUrl: "/about_you",
-            redirect: false,
-        });
-
-        if (result?.error) {
-            setError(result.error);
-        } else if (result?.url) {
-            router.push(result.url);
-        }
+        setIsLoading("google");
+        await signIn("google", { redirect: false });
+        setIsLoading(null);
     };
 
     const loginWithGit = async () => {
-        const result = await signIn("github", {
-            callbackUrl: "/about_you",
-            redirect: false,
-        });
-
-        if (result?.error) {
-            setError(result.error);
-        } else if (result?.url) {
-            router.push(result.url);
-        }
+        setIsLoading("github");
+        await signIn("github", { redirect: false });
+        setIsLoading(null);
     };
 
     async function onSubmit(values: z.infer<typeof userSignInValidation>) {
-        setLoading2(true);
+        setIsLoading("signin");
 
         try {
             const result = await signIn("credentials", {
@@ -96,23 +80,24 @@ const AuthDialog = () => {
             toast.success("Successfully signed in!");
             router.push("/");
         } catch (error) {
+            setError(error as string);
             toast.error(
                 `An unexpected error occurred. Please try again. ${error}`,
             );
         } finally {
-            setLoading2(false);
+            setIsLoading(null);
         }
     }
 
     return (
-        <DialogContent className="w-full rounded-none bg-white p-0 md:max-w-md dark:bg-black">
+        <DialogContent className="w-full rounded-3xl bg-white p-0 md:max-w-md dark:bg-black">
             <DialogTitle className="sr-only">Sign In form</DialogTitle>
             <div className="isolate w-full max-w-full px-6 py-10 text-center">
                 <div className="mb-6 text-center">
                     <Link className="flex items-center justify-center" href="/">
                         {theme === "dark" ? (
                             <Image
-                                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1746006954/logo-dark.png"
+                                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948226/logo-dark.png"
                                 alt=""
                                 className="size-14 rounded-full"
                                 width={1080}
@@ -120,7 +105,7 @@ const AuthDialog = () => {
                             />
                         ) : (
                             <Image
-                                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1746006954/logo-light.png"
+                                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948225/logo-light.png"
                                 alt=""
                                 className="size-14 rounded-full"
                                 width={1080}
@@ -209,9 +194,9 @@ const AuthDialog = () => {
                         <Button
                             type="submit"
                             className="group relative flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-none bg-blue-700 text-white shadow-none hover:bg-blue-800"
-                            disabled={loading2}
+                            disabled={isLoading === "signin"}
                         >
-                            {loading2 ? (
+                            {isLoading === "signin" ? (
                                 <>
                                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                                     Signing in...
@@ -254,7 +239,7 @@ const AuthDialog = () => {
                         className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
                     >
                         <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                        {loading1 ? (
+                        {isLoading === "github" ? (
                             <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
                         ) : (
                             <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
@@ -268,7 +253,7 @@ const AuthDialog = () => {
                         className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
                     >
                         <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                        {loading ? (
+                        {isLoading === "google" ? (
                             <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
                         ) : (
                             <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />

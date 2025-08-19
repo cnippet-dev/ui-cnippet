@@ -10,11 +10,29 @@ import { BASE_URL } from "@/config/docs";
 const page = () => {
     return (
         <>
-            <section className="dark:bg-black">
-                <div className="mx-auto w-full max-w-6xl px-4 md:px-10">
-                    <div className="relative grid h-full w-full grid-cols-12 border-b py-0 dark:border-neutral-900">
-                        <div className="col-span-12 bg-white text-center dark:bg-black">
-                            <div className="relative border border-t-0 dark:border-neutral-900">
+            <section className="relative">
+                <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                    <div
+                        className="absolute top-0 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
+                        data-framer-name="Vertical lines"
+                    >
+                        <div
+                            className="absolute top-0 right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                            data-border="true"
+                            data-framer-name="Right line"
+                        ></div>
+                        <div
+                            className="absolute bottom-0 left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                            data-border="true"
+                            data-framer-name="Left line"
+                        ></div>
+                    </div>
+                </div>
+
+                <div className="mx-auto w-full max-w-7xl px-0.5">
+                    <div className="relative grid h-full w-full grid-cols-12 py-0">
+                        <div className="col-span-12 text-center">
+                            <div className="relative">
                                 <h2 className="mb-2 pt-16 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
                                     Components
                                 </h2>
@@ -23,34 +41,28 @@ const page = () => {
                                     application. They are used to create
                                     reusable UI elements.
                                 </p>
-                                <div className="absolute -right-2.5 -bottom-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-x divide-y divide-neutral-500">
-                                    <div className="" />
-                                    <div className="border-r-0" />
-                                    <div className="border-b-0" />
-                                    <div className="" />
-                                </div>
                             </div>
 
-                            <div className="border-r border-b border-l dark:border-neutral-900">
+                            <div className="border-t border-dashed pb-20 dark:border-neutral-700">
                                 <ul role="list" className="grid grid-cols-4">
                                     {components.map((nav, index) => {
                                         return (
                                             <li
                                                 key={`${nav.name}-${index}`}
-                                                className={`border-b px-6 py-4 dark:border-neutral-900 ${
+                                                className={`border-b border-dashed px-6 py-4 dark:border-neutral-700 ${
                                                     index === 3 ||
                                                     index === 7 ||
                                                     index === 11
                                                         ? "border-r-0"
                                                         : "border-r"
-                                                } ${index === components.length - 2 ? "border-b-0" : ""} ${
+                                                } ${index === components.length - 2 ? "border-b" : ""} ${
                                                     index ===
                                                     components.length - 1
-                                                        ? "border-r border-b-0"
+                                                        ? "border-r border-b"
                                                         : ""
                                                 }`}
                                             >
-                                                <div className="relative z-10 bg-white pb-4 text-left text-base/6 font-medium text-zinc-950 dark:bg-black dark:text-white">
+                                                <div className="relative z-10 pb-4 text-left text-base/6 font-medium text-zinc-950 dark:text-white">
                                                     {nav.name}
                                                 </div>
                                                 <ul
@@ -113,7 +125,6 @@ const page = () => {
                     </div>
                 </div>
             </section>
-            <Cta />
         </>
     );
 };

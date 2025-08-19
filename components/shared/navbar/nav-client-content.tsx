@@ -1,17 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react"; // Note: I changed 'motion/react' to 'framer-motion' which is more common
-import { Button } from "@/components/ui/button";
-import { RiArrowRightUpLine } from "@remixicon/react";
+import { motion } from "motion/react";
 import NavUser from "./nav-user";
+import { CommandMenu } from "@/components/ui/command-menu";
 
 export default function NavClientContent() {
     return (
         <>
-            {/* Animated Navigation Links */}
             <div className="hidden items-center space-x-8 text-sm font-medium md:flex">
-                {["Components", "Motion", "Charts", "Blocks", "Docs"].map(
+                {["Components", "Motions", "Charts", "Blocks", "Docs"].map(
                     (item, index) => (
                         <motion.div
                             key={item}
@@ -34,21 +32,13 @@ export default function NavClientContent() {
                 )}
             </div>
 
-            {/* Animated User Actions */}
             <motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
-                className="flex items-center space-x-4"
+                className="flex items-center space-x-2"
             >
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    className="hidden items-center space-x-2 sm:flex"
-                >
-                    <RiArrowRightUpLine className="h-4 w-4" />
-                    <span>Preview</span>
-                </Button>
+                <CommandMenu />
                 <NavUser />
             </motion.div>
         </>
