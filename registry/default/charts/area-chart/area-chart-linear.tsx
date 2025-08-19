@@ -244,7 +244,7 @@ export default function Component() {
                                 <ChartTooltipContent
                                     labelFormatter={(value) => {
                                         return new Date(
-                                            value,
+                                            value as string,
                                         ).toLocaleDateString("en-US", {
                                             month: "short",
                                             day: "numeric",
