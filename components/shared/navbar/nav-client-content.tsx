@@ -21,7 +21,17 @@ export default function NavClientContent() {
                             }}
                         >
                             <Link
-                                href={`${item === "Blocks" ? "https://blocks-cnippet.vercel.app/sections" : `/${item.toLowerCase()}`}`}
+                                href={`${
+                                    item === "Blocks" 
+                                        ? "https://blocks-cnippet.vercel.app/sections" 
+                                        : item === "Components" 
+                                            ? "/components/button"
+                                            : item === "Motions" 
+                                                ? "/motions/accordion"
+                                                : item === "Charts" 
+                                                    ? "/charts/area-chart"
+                                                    : `/${item.toLowerCase()}`
+                                }`}
                                 target={`${item === "Blocks" ? "_blank" : ""}`}
                                 className="text-gray-600 transition-colors duration-200 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                             >

@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-const SignUpForm = dynamic(() => import("@/components/shared/form/sign-up"));
+const Main = dynamic(() => import("./_c/main"));
 
 export const metadata: Metadata = {
-    title: "Sign In",
+    title: "Sign Up",
     description: "",
 };
 
 export default function SignUp() {
-    return (
-        <>
-            <SignUpForm />
-        </>
-    );
+    return <Main />;
 }

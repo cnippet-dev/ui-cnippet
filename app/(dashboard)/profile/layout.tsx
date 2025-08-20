@@ -67,7 +67,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
     console.log(profile);
 
     const navItems = [
-        { name: "General", href: "/profile", icon: User },
+        { name: "General", href: "/profile/general-information", icon: User },
         { name: "Favourites", href: "/profile/favourites", icon: Heart },
         { name: "Settings", href: "/profile/settings", icon: Settings },
         { name: "Security", href: "/profile/security", icon: Shield },
@@ -184,7 +184,8 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                                     key={item.href}
                                     href={item.href}
                                     className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-700 hover:text-white ${
-                                        pathname === item.href
+                                        pathname === item.href || 
+                                        (item.href === "/profile/general-information" && pathname === "/profile")
                                             ? "bg-blue-600 text-white"
                                             : ""
                                     }`}

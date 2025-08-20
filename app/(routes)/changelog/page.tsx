@@ -1,9 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-const Footer = dynamic(() => import("@/components/shared/footer"));
 
 const Page = () => {
     return (
@@ -189,8 +187,6 @@ const Page = () => {
                     </div>
                 </div>
             </section>
-
-            <Footer />
         </>
     );
 };

@@ -134,7 +134,7 @@ export default function CompleteSignupForm() {
                                             href="/terms"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-purple-500 hover:underline"
+                                            className="text-blue-500 hover:underline"
                                         >
                                             Terms and Conditions
                                         </a>

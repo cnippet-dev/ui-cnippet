@@ -1,10 +1,21 @@
 import React from "react";
 import { Metadata } from "next";
-import { Mdx } from "@/mdx-components";
 import { allCharts } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
-import { getTableOfContents } from "@/lib/toc";
-import { TableOfContents } from "@/components/mdx/toc";
+import dynamic from "next/dynamic";
+
+const MdxRenderer = dynamic(
+    () =>
+        import("../../_c/mdx-renderer").then((mod) => ({
+            default: mod.MdxRenderer,
+        })),
+    {
+        ssr: true,
+        loading: () => (
+            <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-900" />
+        ),
+    },
+);
 
 type Params = Promise<{ slug: string }>;
 
@@ -26,17 +37,15 @@ export default async function ComponentPage({ params }: { params: Params }) {
         );
     }
 
-    const toc = await getTableOfContents(doc.body.raw);
-
     return (
-        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_240px]">
-            <div className="mx-auto w-full min-w-0 max-w-4xl px-4 sm:px-6 lg:px-8">
+        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_260px]">
+            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
                 <div className="space-y-2 pb-6">
-                    <h1 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+                    <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
                     </h1>
                     {doc.description && (
-                        <p className="text-sm text-muted-foreground md:text-base">
+                        <p className="text-muted-foreground text-sm md:text-base">
                             {doc.description}
                         </p>
                     )}
@@ -44,7 +53,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
 
                 <div className="pb-12 md:pt-6">
                     <article className="prose prose-gray dark:prose-invert max-w-none">
-                        {doc.body.code && <Mdx code={doc.body.code} />}
+                        <MdxRenderer code={doc.body.code} />
                     </article>
                 </div>
             </div>
@@ -52,9 +61,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
             {doc?.toc && (
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
-                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pb-6 pl-4 pr-2">
-                            <TableOfContents toc={toc} />
-                        </div>
+                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4"></div>
                     </div>
                 </div>
             )}
