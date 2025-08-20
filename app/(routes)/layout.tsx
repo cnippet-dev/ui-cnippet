@@ -1,6 +1,15 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import Footer from "@/components/shared/footer";
-import Navbar from "@/components/shared/navbar";
+
+const Navbar = dynamic(() => import("@/components/shared/navbar"), {
+    ssr: true,
+    loading: () => <div className="h-20 bg-white dark:bg-black" />,
+});
+
+const Footer = dynamic(() => import("@/components/shared/navbar"), {
+    ssr: true,
+    loading: () => <div className="h-20 bg-white dark:bg-black" />,
+});
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
     return (
