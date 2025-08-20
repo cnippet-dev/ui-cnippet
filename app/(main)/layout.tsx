@@ -6,7 +6,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { charts, components, motions } from "@/config/docs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Navbar from "@/components/shared/navbar";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("@/components/shared/navbar"), {
+    ssr: true,
+    loading: () => <div className="h-20 bg-white dark:bg-black" />,
+});
 
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();
@@ -69,7 +74,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                                                             </span>
                                                         )}
                                                         {item?.isNew && (
-                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800 ">
+                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800">
                                                                 New
                                                             </span>
                                                         )}
@@ -118,11 +123,29 @@ export default function ComponentLayout({
     return (
         <>
             <div className="bg-background relative flex min-h-svh flex-col">
-                <div className="border-grid flex flex-1 flex-col">
+                <div className="flex flex-1 flex-col">
                     <Navbar />
-                    <main className="flex flex-1 flex-col dark:bg-black px-4 md:px-10 xl:px-20 2xl:px-30">
-                        <div className="container-wrapper">
-                            <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-6">
+                    <main className="flex flex-1 flex-col px-4 md:px-10 xl:px-20 2xl:px-30 dark:bg-black">
+                        <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                            <div
+                                className="absolute top-0 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
+                                data-framer-name="Vertical lines"
+                            >
+                                <div
+                                    className="absolute top-0 right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                                    data-border="true"
+                                    data-framer-name="Right line"
+                                ></div>
+                                <div
+                                    className="absolute bottom-0 left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                                    data-border="true"
+                                    data-framer-name="Left line"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div className="">
+                            <div className="flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-6">
                                 <NavigationDesktop
                                     navigation={currentNavigation}
                                 />

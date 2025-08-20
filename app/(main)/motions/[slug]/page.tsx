@@ -3,8 +3,20 @@ import { Metadata } from "next";
 import { Mdx } from "@/mdx-components";
 import { allMotions } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
-import { getTableOfContents } from "@/lib/toc";
-import { TableOfContents } from "@/components/mdx/toc";
+import dynamic from "next/dynamic";
+
+const MdxRenderer = dynamic(
+    () =>
+        import("../../_c/mdx-renderer").then((mod) => ({
+            default: mod.MdxRenderer,
+        })),
+    {
+        ssr: true,
+        loading: () => (
+            <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-900" />
+        ),
+    },
+);
 
 export const revalidate = 60;
 
@@ -38,10 +50,8 @@ export default async function MotionPage({
         );
     }
 
-    const toc = await getTableOfContents(doc.body.raw);
-
     return (
-        <main className="relative lg:gap-4 xl:grid xl:grid-cols-[1fr_280px]">
+        <main className="relative lg:gap-4 xl:grid xl:grid-cols-[1fr_260px]">
             <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-6">
                 <div className="space-y-2 pb-6">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
@@ -56,7 +66,7 @@ export default async function MotionPage({
 
                 <div className="pb-12 md:pt-6">
                     <article className="prose prose-gray dark:prose-invert max-w-none">
-                        {doc.body.code && <Mdx code={doc.body.code} />}
+                        <MdxRenderer code={doc.body.code} />
                     </article>
                 </div>
             </div>
@@ -65,8 +75,6 @@ export default async function MotionPage({
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
                         <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
-                            <TableOfContents toc={toc} />
-
                             <div className="relative mt-8 origin-center -translate-x-3 p-6 duration-500">
                                 <div className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
                                 <div className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>

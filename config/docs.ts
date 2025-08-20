@@ -4,15 +4,6 @@ export const BASE_URL = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
 export const motions: ComponentGroup[] = [
     {
-        name: "Getting Started",
-        items: [
-            {
-                name: "Installation",
-                href: "/motions/installation",
-            },
-        ],
-    },
-    {
         name: "Core Components",
         items: [
             {
@@ -324,19 +315,6 @@ export const motions: ComponentGroup[] = [
 
 export const charts: ComponentGroup[] = [
     {
-        name: "Getting Started",
-        items: [
-            {
-                name: "Introduction",
-                href: "#",
-            },
-            {
-                name: "Installation",
-                href: "/motions/installation",
-            },
-        ],
-    },
-    {
         name: "Charts",
         items: [
             {
@@ -372,15 +350,6 @@ export const charts: ComponentGroup[] = [
 ];
 
 export const components: ComponentGroup[] = [
-    {
-        name: "Getting Started",
-        items: [
-            {
-                name: "Installation",
-                href: "/components/installation",
-            },
-        ],
-    },
     {
         name: "Buttons",
         items: [

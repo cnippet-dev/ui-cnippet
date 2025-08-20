@@ -1,24 +1,32 @@
 import React from "react";
 import { Metadata } from "next";
 
-import { Mdx } from "@/mdx-components";
 import { allComponents } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
-import { getTableOfContents } from "@/lib/toc";
-import { TableOfContents } from "@/components/mdx/toc";
+import { getComponentsData } from "@/lib/elements-data";
+import dynamic from "next/dynamic";
 
-// Next.js will invalidate the cache when a
-// request comes in, at most once every 60 seconds.
+const MdxRenderer = dynamic(
+    () =>
+        import("../../_c/mdx-renderer").then((mod) => ({
+            default: mod.MdxRenderer,
+        })),
+    {
+        ssr: true,
+        loading: () => (
+            <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-900" />
+        ),
+    },
+);
+
 export const revalidate = 60;
 
-// We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
-// Next.js will server-render the page on-demand.
 export const dynamicParams = true;
 
-// Generate static params for all components at build time
 export async function generateStaticParams() {
-    return allComponents.map((component) => ({
+    const allComponents = await getComponentsData();
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return allComponents.map((component: any) => ({
         slug: component.slugAsParams,
     }));
 }
@@ -45,10 +53,9 @@ export default async function ComponentPage({
         );
     }
 
-    const toc = await getTableOfContents(doc.body.raw);
-
     return (
-        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_280px]">
+        <main className="relative lg:gap-0 xl:grid xl:grid-cols-[1fr_260px]">
+            
             <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
                 <div className="space-y-2 pb-6">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
@@ -63,7 +70,7 @@ export default async function ComponentPage({
 
                 <div className="pb-12 md:pt-6">
                     <article className="prose prose-gray dark:prose-invert max-w-none">
-                        {doc.body.code && <Mdx code={doc.body.code} />}
+                        <MdxRenderer code={doc.body.code} />
                     </article>
                 </div>
             </div>
@@ -71,7 +78,6 @@ export default async function ComponentPage({
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
                         <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
-                            <TableOfContents toc={toc} />
 
                             <div className="relative mt-8 origin-center -translate-x-3 p-6 duration-500">
                                 <div className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
