@@ -214,7 +214,7 @@ export async function sendResetEmail(email: string) {
             );
 
             await resend.emails.send({
-                from: "Cnippet <auth@ui.cnippet.site>",
+                from: "Cnippet <system@cnippet.dev>",
                 to: email,
                 subject: "Password Reset Request",
                 html: emailHtml,

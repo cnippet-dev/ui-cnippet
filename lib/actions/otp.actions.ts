@@ -46,9 +46,9 @@ export async function sendOTP(email: string) {
 
         const emailHtml = render(OTPEmail({ userEmail: email, otp }));
         const { error } = await resend.emails.send({
-            from: "OTP@ui.cnippet.site",
+            from: "Cnippet <system@cnippet.dev>",
             to: email,
-            subject: "Your Verification OTP",
+            subject: `${otp} - Cnippet Sign-in Verification`,
             html: await emailHtml,
         });
 

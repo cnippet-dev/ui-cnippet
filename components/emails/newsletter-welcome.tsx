@@ -20,9 +20,9 @@ interface NewsletterWelcomeEmailProps {
     userEmail?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://ui.cnippet.site";
+const baseUrl = process.env.NEXT_PUBLIC_URL
+    ? `${process.env.NEXT_PUBLIC_URL}`
+    : "http://localhost:3000";
 
 export const NewsletterWelcomeEmail = ({
     userEmail = "there",

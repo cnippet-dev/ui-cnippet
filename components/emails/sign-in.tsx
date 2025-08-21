@@ -17,7 +17,6 @@ import {
 interface SignInAlertEmailProps {
     username?: string;
     userEmail?: string;
-    // location?: string;
     time?: string;
     browser?: string;
     ip?: string;
@@ -27,14 +26,13 @@ interface SignInAlertEmailProps {
     manageNotificationsUrl?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://ui.cnippet.site";
+const baseUrl = process.env.NEXT_PUBLIC_URL
+    ? `${process.env.NEXT_PUBLIC_URL}`
+    : "http://localhost:3000";
 
 export const SignInEmail = ({
     username = "there",
     userEmail = "user@example.com",
-    // location = "",
     time = "",
     browser = "",
     ip = "",
@@ -64,10 +62,19 @@ export const SignInEmail = ({
                         {/* Greeting and intro */}
                         <Section className="mb-4">
                             <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
-                                Hi <span className="font-semibold">{username}</span>,
+                                Hi{" "}
+                                <span className="font-semibold">
+                                    {username}
+                                </span>
+                                ,
                             </Text>
                             <Text className="text-[14px] leading-[22px] text-[#202124]">
-                                Your <strong>Cnippet</strong> account <span className="font-semibold">{userEmail}</span> was recently signed-in from a new location, device or browser.
+                                Your <strong>Cnippet</strong> account{" "}
+                                <span className="font-semibold">
+                                    {userEmail}
+                                </span>{" "}
+                                was recently signed-in from a new location,
+                                device or browser.
                             </Text>
                         </Section>
 
@@ -83,34 +90,50 @@ export const SignInEmail = ({
                             </Row> */}
                             <Row>
                                 <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">Time</Text>
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        Time
+                                    </Text>
                                 </Column>
                                 <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124]">{time}</Text>
+                                    <Text className="m-0 text-[13px] text-[#202124]">
+                                        {time}
+                                    </Text>
                                 </Column>
                             </Row>
                             <Row>
                                 <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">Browser</Text>
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        Browser
+                                    </Text>
                                 </Column>
                                 <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124]">{browser}</Text>
+                                    <Text className="m-0 text-[13px] text-[#202124]">
+                                        {browser}
+                                    </Text>
                                 </Column>
                             </Row>
                             <Row>
                                 <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">IP</Text>
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        IP
+                                    </Text>
                                 </Column>
                                 <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124]">{ip}</Text>
+                                    <Text className="m-0 text-[13px] text-[#202124]">
+                                        {ip}
+                                    </Text>
                                 </Column>
                             </Row>
                             <Row>
                                 <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">User agent</Text>
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        User agent
+                                    </Text>
                                 </Column>
                                 <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124] whitespace-pre-line">{userAgent}</Text>
+                                    <Text className="m-0 text-[13px] whitespace-pre-line text-[#202124]">
+                                        {userAgent}
+                                    </Text>
                                 </Column>
                             </Row>
                         </Section>
@@ -121,11 +144,30 @@ export const SignInEmail = ({
                                 Don&apos;t recognize this activity?
                             </Text>
                             <Text className="text-[14px] leading-[22px] text-[#202124]">
-                                Review your <Link href={recentActivityUrl} className="text-[#0066ff] no-underline">recent activity</Link> and <Link href={accessTokensUrl} className="text-[#0066ff] no-underline">access tokens</Link> now.
+                                Review your{" "}
+                                <Link
+                                    href={recentActivityUrl}
+                                    className="text-[#0066ff] no-underline"
+                                >
+                                    recent activity
+                                </Link>{" "}
+                                and{" "}
+                                <Link
+                                    href={accessTokensUrl}
+                                    className="text-[#0066ff] no-underline"
+                                >
+                                    access tokens
+                                </Link>{" "}
+                                now.
                             </Text>
                         </Section>
                         <Text className="text-[13px] leading-[22px] text-[#5f6368]">
-                            We are sending you this email because we were unable to determine if you have signed-in from this location or browser before. This may be because you are traveling, using a VPN or Private Relay, a new or updated browser, or another person is using your account.
+                            We are sending you this email because we were unable
+                            to determine if you have signed-in from this
+                            location or browser before. This may be because you
+                            are traveling, using a VPN or Private Relay, a new
+                            or updated browser, or another person is using your
+                            account.
                         </Text>
 
                         <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
@@ -133,12 +175,29 @@ export const SignInEmail = ({
                         {/* Footer */}
                         <Section className="text-left">
                             <Text className="mb-2 text-[13px] text-[#5f6368]">
-                                If you&apos;ve got questions, ask us in the <Link href="https://cnippet.dev/community" className="text-[#0066ff] no-underline">Cnippet Community</Link>.
+                                If you&apos;ve got questions, ask us in the{" "}
+                                <Link
+                                    href="https://cnippet.dev/community"
+                                    className="text-[#0066ff] no-underline"
+                                >
+                                    Cnippet Community
+                                </Link>
+                                .
                             </Text>
-                            <Text className="m-0 text-[12px] text-[#5f6368]">Copyright © {new Date().getFullYear()} Vercel Inc. All rights reserved.</Text>
-                            <Text className="m-0 text-[12px] text-[#5f6368]">440 N Barranca Ave #4133 Covina, CA 91723</Text>
+                            <Text className="m-0 text-[12px] text-[#5f6368]">
+                                Copyright © {new Date().getFullYear()} Vercel
+                                Inc. All rights reserved.
+                            </Text>
+                            <Text className="m-0 text-[12px] text-[#5f6368]">
+                                440 N Barranca Ave #4133 Covina, CA 91723
+                            </Text>
                             <Text className="mt-2 text-[12px]">
-                                <Link href={manageNotificationsUrl} className="text-[#0066ff] no-underline">Manage your notification settings</Link>
+                                <Link
+                                    href={manageNotificationsUrl}
+                                    className="text-[#0066ff] no-underline"
+                                >
+                                    Manage your notification settings
+                                </Link>
                             </Text>
                         </Section>
                     </Container>
