@@ -27,7 +27,7 @@ const Navbar = () => {
                         data-framer-name="Right line"
                     >
                         <div
-                            className="cnippet-dot"
+                            className="dot-top"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>
@@ -38,7 +38,7 @@ const Navbar = () => {
                         data-framer-name="Left line"
                     >
                         <div
-                            className="cnippet-dot"
+                            className="dot-top"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>
