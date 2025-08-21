@@ -8,6 +8,7 @@ import NavClientContent from "./nav-client-content";
 
 const Navbar = () => {
     const theme = useTheme();
+
     return (
         <>
             <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex h-full w-full overflow-visible">
