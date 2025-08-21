@@ -6,6 +6,7 @@ import {
     getUserByEmail,
     signInWithCredentials,
     signInWithOauth,
+    sendSignInAlertEmail,
 } from "./actions/auth.actions";
 
 // Extend the built-in session types
@@ -100,6 +101,12 @@ export const nextauthOptions: NextAuthOptions = {
                     // Credentials failed - stay on sign-in page
                     return false;
                 }
+                // Fire-and-forget sign-in alert email with request metadata
+                // We intentionally do not block sign-in if email fails
+                sendSignInAlertEmail({
+                    email: user.email || "",
+                    username: user.name,
+                });
                 return true;
             }
 
@@ -111,6 +118,13 @@ export const nextauthOptions: NextAuthOptions = {
                     // Attach needsCompletion to user for jwt callback
                     //eslint-disable-next-line @typescript-eslint/no-explicit-any
                     (user as any).needsCompletion = !result.data.username;
+                }
+                // Send sign-in alert on successful OAuth sign-in
+                if (result.success && result.data?.email) {
+                    sendSignInAlertEmail({
+                        email: result.data.email,
+                        username: result.data.name,
+                    });
                 }
                 return !!result.success; // Always return boolean
             }

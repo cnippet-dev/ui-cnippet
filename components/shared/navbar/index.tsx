@@ -8,6 +8,7 @@ import NavClientContent from "./nav-client-content";
 
 const Navbar = () => {
     const theme = useTheme();
+
     return (
         <>
             <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex h-full w-full overflow-visible">
@@ -27,7 +28,7 @@ const Navbar = () => {
                         data-framer-name="Right line"
                     >
                         <div
-                            className="cnippet-dot"
+                            className="dot-top"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>
@@ -38,7 +39,7 @@ const Navbar = () => {
                         data-framer-name="Left line"
                     >
                         <div
-                            className="cnippet-dot"
+                            className="dot-top"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>

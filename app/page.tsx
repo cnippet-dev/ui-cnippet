@@ -9,6 +9,7 @@ import { PlusIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { RiArrowRightLine } from "@remixicon/react";
 
+
 const Navbar = dynamic(() => import("@/components/shared/navbar/index"));
 const Hero = dynamic(() => import("@/components/routes/home/hero"));
 const Components = dynamic(() => import("@/components/routes/home/components"));

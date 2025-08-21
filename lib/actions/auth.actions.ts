@@ -9,6 +9,8 @@ import { Resend } from "resend";
 import { generateResetToken } from "@/lib/utils";
 import { ResetPasswordEmail } from "@/components/emails/reset-password";
 import { render } from "@react-email/components";
+import { SignInEmail } from "@/components/emails/sign-in";
+import { headers } from "next/headers";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -212,7 +214,7 @@ export async function sendResetEmail(email: string) {
             );
 
             await resend.emails.send({
-                from: "Cnippet <auth@ui.cnippet.site>",
+                from: "Cnippet <system@cnippet.dev>",
                 to: email,
                 subject: "Password Reset Request",
                 html: emailHtml,
@@ -226,6 +228,93 @@ export async function sendResetEmail(email: string) {
         console.error("Reset email error:", error);
         return { error: "Reset email failed" };
     }
+}
+
+export async function sendSignInAlertEmail({
+    email,
+    username,
+}: {
+    email: string;
+    username?: string | null;
+}) {
+    try {
+        const meta = await getRequestMeta();
+
+        const timeFormatter = new Intl.DateTimeFormat("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+            timeZone: "UTC",
+        });
+        const time = `${timeFormatter.format(new Date())} UTC`;
+
+        const emailHtml = await render(
+            SignInEmail({
+                username: username || email.split("@")[0],
+                userEmail: email,
+                // location: meta.location || "Unknown",
+                time,
+                browser: meta.browser || meta.userAgent || "Unknown",
+                ip: meta.ip || "Unknown",
+                userAgent: meta.userAgent || "Unknown",
+            }),
+        );
+
+        await resend.emails.send({
+            from: "Cnippet <notifications@cnippet.dev>",
+            to: email,
+            subject: "New sign-in detected on your Cnippet account",
+            html: emailHtml,
+        });
+        return { success: true };
+    } catch (error) {
+        console.error("Sign-in email error:", error);
+        return { success: false };
+    }
+}
+
+
+async function getRequestMeta() {
+    try {
+        const headersList = await headers();
+        const userAgent = headersList.get("user-agent") || "";
+        const xff = headersList.get("x-forwarded-for") || "";
+        console.log(xff);
+
+        const ip = (xff.split(",")[0] || headersList.get("x-real-ip") || "").trim();
+
+        const parsed = userAgent ? parseUserAgent(userAgent) : null;
+        const browser = parsed
+            ? `${parsed.browser.name}${parsed.browser.version ? " " + parsed.browser.version : ""}`
+            : "";
+
+        return { ip, userAgent, browser };
+    } catch (error) {
+        return { ip: "", userAgent: "", browser: "" };
+    }
+}
+
+
+
+function parseUserAgent(userAgent: string) {
+    // Simple parsing - consider using a library like ua-parser-js
+    const browserMatch = userAgent.match(/(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/);
+    const osMatch = userAgent.match(/(Windows NT|Mac OS X|Linux) ([0-9._]+)/);
+
+    return {
+        browser: {
+            name: browserMatch ? browserMatch[1] : "Unknown",
+            version: browserMatch ? browserMatch[2] : ""
+        },
+        os: {
+            name: osMatch ? osMatch[1] : "Unknown",
+            version: osMatch ? osMatch[2] : ""
+        }
+    };
 }
 
 export async function checkUsernameAvailability(

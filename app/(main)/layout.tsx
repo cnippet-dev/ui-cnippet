@@ -37,7 +37,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
                         {navigation.map((nav, index) => {
                             return (
                                 <li key={`${nav.name}-${index}`}>
-                                    <div className="relative z-10 w-11/12 bg-white pb-4 text-sm/6 font-medium text-zinc-950 dark:bg-black dark:text-white">
+                                    <div className="relative z-10 w-11/12 pb-4 text-sm/6 font-medium text-zinc-950 dark:text-white">
                                         {nav.name}
                                     </div>
                                     <ul
@@ -125,7 +125,7 @@ export default function ComponentLayout({
             <div className="bg-background relative flex min-h-svh flex-col">
                 <div className="flex flex-1 flex-col">
                     <Navbar />
-                    <main className="flex flex-1 flex-col px-4 md:px-10 xl:px-20 2xl:px-30 dark:bg-black">
+                    <main className="mx-auto flex max-w-7xl flex-1 flex-col">
                         <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
                             <div
                                 className="absolute top-0 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"

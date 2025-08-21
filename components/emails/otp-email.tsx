@@ -11,71 +11,105 @@ import {
     Row,
     Column,
     Tailwind,
+    Hr,
+    Link,
 } from "@react-email/components";
 import * as React from "react";
 
 interface OTPEmailProps {
     userEmail?: string;
     otp?: string;
+    location?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://ui.cnippet.site";
+const baseUrl = process.env.NEXT_PUBLIC_URL
+    ? `${process.env.NEXT_PUBLIC_URL}`
+    : "http://localhost:3000";
 
 export const OTPEmail = ({
-    otp,
+    userEmail = "user@example.com",
+    otp = "123456",
 }: OTPEmailProps) => {
     return (
         <Html>
             <Head />
             <Tailwind>
-                <Preview>Your Cnippet OTP Code</Preview>
+                <Preview>Verify your email to sign in to Cnippet</Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
-                        {/* Header Section */}
-                        <Section className="mb-4 text-center">
+                        {/* Header */}
+                        <Section className="mb-2 text-center">
                             <Img
                                 src={`${baseUrl}/images/logo-light.png`}
-                                width="80"
-                                height="auto"
-                                alt="Cnippet Logo"
+                                width="50"
+                                height="50"
+                                alt="Logo"
                                 className="mx-auto"
                             />
                         </Section>
 
-                        {/* Main Content */}
-                        <Section className="mx-auto mb-4 text-center">
-                            <Row>
-                                <Column>
-                                    <Heading className="mb-4 text-center text-[24px] font-normal text-[#202124]">
-                                        Your Cnippet OTP Code
-                                    </Heading>
-                                    <Text className="mx-4 mb-4 text-left text-[15px] leading-6 text-[#202124]">
-                                        Hello,
-                                        <br />
-                                        Your One-Time Password (OTP) for Cnippet is:
-                                    </Text>
-                                    
-                                    <Text className="mx-4 mb-8 text-center text-[32px] font-bold text-[#0066ff]">
-                                        {otp}
-                                    </Text>
-
-                                    <Text className="mx-4 mb-4 text-left text-[15px] leading-6 text-[#202124]">
-                                        This OTP is valid for 10 minutes. Please do not share this code with anyone.
-                                    </Text>
-                                </Column>
-                            </Row>
+                        {/* Main Heading */}
+                        <Section className="mb-4 text-center">
+                            <Heading className="m-0 text-[24px] font-medium text-[#202124]">
+                                Verify your email to sign in to Cnippet
+                            </Heading>
                         </Section>
 
-                        <hr className="my-6 border-t border-[#e8eaed]" />
-                        {/* Footer */}
-                        <Section className="mt-2 text-center">
-                            <Text className="my-1 text-[12px] text-[#5f6368]">
-                                © {new Date().getFullYear()} Cnippet LLC · All rights reserved
+                        {/* Greeting and intro */}
+                        <Section className="mb-4">
+                            <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
+                                Hello{" "}
+                                <span className="font-medium">{userEmail}</span>
+                                ,
                             </Text>
-                            <Text className="my-1 text-[12px] text-[#5f6368]">
-                                If you didn&apos;t request this OTP, please ignore this email.
+                            <Text className="text-[14px] leading-[22px] text-[#202124]">
+                                To complete the sign-in process, enter the
+                                6-digit code in the original window, or enter it
+                                in a new one by going to the link below:
+                            </Text>
+                        </Section>
+
+                        {/* OTP Code Section */}
+                        <Section className="mb-4 rounded-lg bg-[#f8f9fa] p-4 text-center">
+                            <Text className="m-0 font-mono text-[20px] font-medium tracking-widest text-[#202124]">
+                                {otp}
+                            </Text>
+                        </Section>
+
+                        {/* Instructions */}
+                        <Section className="mb-4">
+                            <Text className="text-[12px] leading-[22px] text-[#5f6368]">
+                                If you didn&apos;t attempt to sign in but
+                                received this email, please ignore this email.
+                                Don&apos;t share or forward the 6-digit code
+                                with anyone. Our customer service will never ask
+                                for it. Do not read this code out loud. Be
+                                cautious of phishing attempts and always verify
+                                the sender and domain (cnippet.dev) before
+                                acting.
+                            </Text>
+                        </Section>
+
+                        <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
+
+                        {/* Footer */}
+                        <Section className="text-left">
+                            <Text className="mb-2 text-[13px] text-[#5f6368]">
+                                If you&apos;ve got questions, ask us in the{" "}
+                                <Link
+                                    href="https://cnippet.dev/community"
+                                    className="text-[#0066ff] no-underline"
+                                >
+                                    Cnippet Community
+                                </Link>
+                                .
+                            </Text>
+                            <Text className="m-0 text-[12px] text-[#5f6368]">
+                                Copyright © {new Date().getFullYear()} Cnippet
+                                LLC. All rights reserved.
+                            </Text>
+                            <Text className="m-0 text-[12px] text-[#5f6368]">
+                                440 N Barranca Ave #4133 Covina, CA 91723
                             </Text>
                         </Section>
                     </Container>
@@ -85,4 +119,10 @@ export const OTPEmail = ({
     );
 };
 
-export default OTPEmail; 
+OTPEmail.PreviewProps = {
+    userEmail: "cnippetdev-6152",
+    otp: "348277",
+    location: "Meerut, India",
+} as OTPEmailProps;
+
+export default OTPEmail;

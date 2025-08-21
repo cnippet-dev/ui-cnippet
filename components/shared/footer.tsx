@@ -385,7 +385,7 @@ export default function Component() {
                         data-framer-name="Right line"
                     >
                         <div
-                            className="cnippet-dot2"
+                            className="dot-top2"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>
@@ -396,7 +396,7 @@ export default function Component() {
                         data-framer-name="Left line"
                     >
                         <div
-                            className="cnippet-dot2"
+                            className="dot-top2"
                             data-border="true"
                             data-framer-name="Ellipsis"
                         ></div>

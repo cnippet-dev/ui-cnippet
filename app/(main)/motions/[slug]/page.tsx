@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import { Mdx } from "@/mdx-components";
 import { allMotions } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
 import dynamic from "next/dynamic";

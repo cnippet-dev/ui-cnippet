@@ -9,7 +9,6 @@ import {
     User,
     Settings,
     Shield,
-    CreditCard,
     Calendar,
     Edit3,
     X,

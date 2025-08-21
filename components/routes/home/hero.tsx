@@ -120,11 +120,11 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
 
                     <motion.div
                         {...fadeIn({ delay: 0.8, duration: 0.6 })}
-                        className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-dashed border-t border-b border-dashed md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800"
+                        className="mx-auto grid max-w-7xl grid-cols-2 dark:pl-0.5 divide-x divide-dashed border-t border-b border-dashed md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800"
                     >
                         <motion.div
                             {...fadeUp({ delay: 0.9, duration: 0.4 })}
-                            className="group dark:bg-background col-span-2 flex items-start justify-start gap-2 bg-indigo-50/80 px-4 py-10"
+                            className="group col-span-2 flex items-start justify-start gap-2 bg-indigo-50/80 px-4 py-10 dark:bg-black"
                         >
                             <svg
                                 className="w-20 shrink-0 text-indigo-700 *:data-lift:transition-transform *:data-lift:duration-300 group-hover:*:data-lift:-translate-y-0.5 group-data-selected:*:data-lift:translate-y-0 sm:w-30"
