@@ -48,6 +48,7 @@ export default function SignUpForm() {
     const [otpResendTimer, setOtpResendTimer] = useState(0);
     const [otpAttempts, setOtpAttempts] = useState(0);
     const [isResendingOtp, setIsResendingOtp] = useState(false);
+    const [otpSentFromStep2, setOtpSentFromStep2] = useState(false);
     const toastIdRef = useRef<string | number | null>(null);
     const resendTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -69,7 +70,20 @@ export default function SignUpForm() {
         };
     }, []);
 
-    const handleBack = () => setCurrentStep((prev) => prev - 1);
+    const handleBack = () => {
+        const newStep = currentStep - 1;
+        setCurrentStep(newStep);
+        
+        // Reset OTP sent state if going back to step 1 (user might change email)
+        if (newStep === 1) {
+            setOtpSentFromStep2(false);
+            setOtpResendTimer(0);
+            if (resendTimerRef.current) {
+                clearInterval(resendTimerRef.current);
+                resendTimerRef.current = null;
+            }
+        }
+    };
 
     const handleNext = async () => {
         setIsChecking(true);
@@ -106,7 +120,8 @@ export default function SignUpForm() {
                 isValid = await form.trigger(["password"]);
                 if (isValid) {
                     // Start OTP resend timer
-                    setOtpResendTimer(60);
+                    setOtpResendTimer(20);
+                    setOtpSentFromStep2(true);
                     if (resendTimerRef.current)
                         clearInterval(resendTimerRef.current);
                     resendTimerRef.current = setInterval(() => {
@@ -142,7 +157,13 @@ export default function SignUpForm() {
         if (otpResendTimer > 0) return;
 
         setIsResendingOtp(true);
-        setOtpResendTimer(60);
+        setOtpResendTimer(20);
+
+        // Reset the timer interval
+        if (resendTimerRef.current) clearInterval(resendTimerRef.current);
+        resendTimerRef.current = setInterval(() => {
+            setOtpResendTimer((prev) => (prev > 0 ? prev - 1 : 0));
+        }, 1000);
 
         try {
             toastIdRef.current = toast.loading("Resending OTP...");
@@ -407,6 +428,40 @@ export default function SignUpForm() {
                     </FormItem>
                 )}
             />
+            {otpSentFromStep2 && (
+                <div className="mt-2 text-center">
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                        ✓ OTP sent to {form.getValues("email")}
+                    </p>
+                </div>
+            )}
+            {/* {otpSentFromStep2 && (
+                <div className="mt-4 text-center">
+                    <button
+                        type="button"
+                        onClick={handleResendOtp}
+                        disabled={otpResendTimer > 0 || isResendingOtp}
+                        className="inline-flex items-center gap-2 rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                    >
+                        {isResendingOtp ? (
+                            <>
+                                <RotateCw className="h-4 w-4 animate-spin" />
+                                Sending...
+                            </>
+                        ) : otpResendTimer > 0 ? (
+                            <>
+                                <RotateCw className="h-4 w-4" />
+                                Resend in {otpResendTimer}s
+                            </>
+                        ) : (
+                            <>
+                                <RotateCw className="h-4 w-4" />
+                                Resend OTPppp
+                            </>
+                        )}
+                    </button>
+                </div>
+            )} */}
             <div className="flex flex-col gap-2 pt-2">
                 <Button
                     type="button"
@@ -495,7 +550,7 @@ export default function SignUpForm() {
                     type="button"
                     onClick={handleResendOtp}
                     disabled={otpResendTimer > 0 || isResendingOtp}
-                    className="text-sm text-blue-600 hover:underline disabled:cursor-not-allowed disabled:opacity-50"
+                    className="text-sm text-blue-600 hover:underline cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     {isResendingOtp ? (
                         <>
