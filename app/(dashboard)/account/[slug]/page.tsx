@@ -3,28 +3,12 @@ import dynamic from "next/dynamic";
 
 // Define the available profile sections
 const PROFILE_SECTIONS = {
-    "general-information": "General Information",
-    "settings": "Settings", 
-    "security": "Security",
-    "favourites": "Favourites"
+    settings: "Settings",
+    authentication: "Authentication",
+    favourites: "Favourites",
 } as const;
 
 type ProfileSection = keyof typeof PROFILE_SECTIONS;
-
-// Dynamic imports for each component
-const GeneralInformation = dynamic(
-    () => import("./_c/general-information").then((mod) => ({ default: mod.default })),
-    {
-        loading: () => (
-            <div className="flex min-h-[400px] items-center justify-center">
-                <div className="flex items-center gap-2">
-                    <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600"></div>
-                    <span>Loading...</span>
-                </div>
-            </div>
-        ),
-    }
-);
 
 const Settings = dynamic(
     () => import("./_c/settings").then((mod) => ({ default: mod.default })),
@@ -37,11 +21,12 @@ const Settings = dynamic(
                 </div>
             </div>
         ),
-    }
+    },
 );
 
-const Security = dynamic(
-    () => import("./_c/security").then((mod) => ({ default: mod.default })),
+const Authentication = dynamic(
+    () =>
+        import("./_c/authentication").then((mod) => ({ default: mod.default })),
     {
         loading: () => (
             <div className="flex min-h-[400px] items-center justify-center">
@@ -51,7 +36,7 @@ const Security = dynamic(
                 </div>
             </div>
         ),
-    }
+    },
 );
 
 const Favourites = dynamic(
@@ -65,15 +50,14 @@ const Favourites = dynamic(
                 </div>
             </div>
         ),
-    }
+    },
 );
 
 // Component mapping
 const COMPONENT_MAP = {
-    "general-information": GeneralInformation,
-    "settings": Settings,
-    "security": Security,
-    "favourites": Favourites,
+    settings: Settings,
+    authentication: Authentication,
+    favourites: Favourites,
 } as const;
 
 export const dynamicParams = true;
@@ -90,7 +74,7 @@ export default async function ProfileSlugPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    
+
     // Check if the slug is valid
     if (!(slug in PROFILE_SECTIONS)) {
         notFound();
