@@ -203,7 +203,7 @@ export default function GeneralInformationPage() {
                     </h2>
                     <p className="mb-4 text-sm text-gray-600">
                         Your default team will be used when you make a request
-                        through the API or CLI where you don't specify a
+                        through the API or CLI where you don&apos;t specify a
                         particular team. It will also be the team selected when
                         you first navigate to the dashboard.
                     </p>

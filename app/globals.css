@@ -191,23 +191,6 @@
     box-shadow: oklch(0.145 0 0) 0px 0px 0px 4px;
 }
 
-/* .framer-F0Cuz[data-border="true"]::after,
-.framer-F0Cuz [data-border="true"]::after {
-    content: "";
-    border-width: var(--border-top-width, 0) var(--border-right-width, 0)
-        var(--border-bottom-width, 0) var(--border-left-width, 0);
-    border-color: var(--border-color, none);
-    border-style: var(--border-style, none);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    box-sizing: border-box;
-    left: 0px;
-    top: 0px;
-    border-radius: inherit;
-    pointer-events: none;
-} */
-
 @layer components {
     .steps > h3 {
         @apply mt-6 mb-4;
