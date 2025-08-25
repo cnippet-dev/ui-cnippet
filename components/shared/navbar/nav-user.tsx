@@ -86,9 +86,9 @@ const NavUser = () => {
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
                                     <DropdownMenuItem asChild>
-                                        <Link href="/profile">
+                                        <Link href="/account/settings">
                                             <RiUserFill className="mr-1 h-4 w-4" />
-                                            <span>Profile</span>
+                                            <span>Account</span>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
