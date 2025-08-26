@@ -4,7 +4,11 @@ import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
     title: "Reset Password",
-    description: "",
+    description: "Enter the email associated with your account to reset your password",
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 const ResetPassword = dynamic(() => import("./_components/main"));

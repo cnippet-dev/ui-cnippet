@@ -20,10 +20,6 @@ interface ResetPasswordEmailProps {
     resetLink?: string;
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_URL
-    ? `${process.env.NEXT_PUBLIC_URL}`
-    : "http://localhost:3000";
-
 export const ResetPasswordEmail = ({
     userEmail = "user@example.com",
     resetLink = "https://ui.cnippet.site/reset-password",
@@ -35,10 +31,9 @@ export const ResetPasswordEmail = ({
                 <Preview>Reset your password</Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
-                        {/* Header */}
                         <Section className="mb-2 text-center">
                             <Img
-                                src={`${baseUrl}/images/logo-light.png`}
+                                src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948225/logo-light.png`}
                                 width="50"
                                 height="50"
                                 alt="Logo"
@@ -46,14 +41,12 @@ export const ResetPasswordEmail = ({
                             />
                         </Section>
 
-                        {/* Main Heading */}
                         <Section className="mb-4 text-center">
                             <Heading className="m-0 text-[24px] font-medium text-[#202124]">
                                 Reset your password
                             </Heading>
                         </Section>
 
-                        {/* Greeting and intro */}
                         <Section className="mb-4">
                             <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
                                 Hello{" "}
@@ -68,7 +61,6 @@ export const ResetPasswordEmail = ({
                             </Text>
                         </Section>
 
-                        {/* Reset Button Section */}
                         <Section className="mb-4 text-center">
                             <Button
                                 className="inline-block rounded-lg border-none bg-[#0066ff] px-6 py-3 text-center text-[16px] font-medium text-white no-underline"
@@ -78,7 +70,6 @@ export const ResetPasswordEmail = ({
                             </Button>
                         </Section>
 
-                        {/* Instructions */}
                         <Section className="mb-4">
                             <Text className="text-[12px] leading-[22px] text-[#5f6368]">
                                 If you didn&apos;t request a password reset,
@@ -91,7 +82,6 @@ export const ResetPasswordEmail = ({
 
                         <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
 
-                        {/* Footer */}
                         <Section className="text-left">
                             <Text className="mb-2 text-[13px] text-[#5f6368]">
                                 If you&apos;ve got questions, ask us in the{" "}

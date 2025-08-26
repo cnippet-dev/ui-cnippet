@@ -36,13 +36,11 @@ export async function getUserSession() {
 }
 
 export async function signUpWithCredentials({
-    username,
     name,
     email,
     password,
     termsAccepted,
 }: {
-    username: string;
     name: string;
     email: string;
     password: string;
@@ -53,6 +51,16 @@ export async function signUpWithCredentials({
         if (existingUser) return { error: "User already exists" };
 
         const hashedPassword = await bcrypt.hash(password, 10);
+        const baseUsername = email.split("@")[0].replace(/[^a-zA-Z0-9]/g, "");
+        let username = baseUsername;
+        let counter = 1;
+
+        // Ensure username is unique
+        while (await prisma.user.findUnique({ where: { username } })) {
+            username = `${baseUsername}${counter}`;
+            counter++;
+        }
+
         const user = await prisma.user.create({
             data: {
                 username,
@@ -277,7 +285,6 @@ export async function sendSignInAlertEmail({
     }
 }
 
-
 async function getRequestMeta() {
     try {
         const headersList = await headers();
@@ -285,7 +292,11 @@ async function getRequestMeta() {
         const xff = headersList.get("x-forwarded-for") || "";
         console.log(xff);
 
-        const ip = (xff.split(",")[0] || headersList.get("x-real-ip") || "").trim();
+        const ip = (
+            xff.split(",")[0] ||
+            headersList.get("x-real-ip") ||
+            ""
+        ).trim();
 
         const parsed = userAgent ? parseUserAgent(userAgent) : null;
         const browser = parsed
@@ -298,22 +309,22 @@ async function getRequestMeta() {
     }
 }
 
-
-
 function parseUserAgent(userAgent: string) {
     // Simple parsing - consider using a library like ua-parser-js
-    const browserMatch = userAgent.match(/(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/);
+    const browserMatch = userAgent.match(
+        /(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/,
+    );
     const osMatch = userAgent.match(/(Windows NT|Mac OS X|Linux) ([0-9._]+)/);
 
     return {
         browser: {
             name: browserMatch ? browserMatch[1] : "Unknown",
-            version: browserMatch ? browserMatch[2] : ""
+            version: browserMatch ? browserMatch[2] : "",
         },
         os: {
             name: osMatch ? osMatch[1] : "Unknown",
-            version: osMatch ? osMatch[2] : ""
-        }
+            version: osMatch ? osMatch[2] : "",
+        },
     };
 }
 
@@ -352,11 +363,9 @@ export async function checkUsernameAvailability(
 
 export async function completeSocialSignup({
     userId,
-    username,
     termsAccepted,
 }: {
     userId: string;
-    username: string;
     termsAccepted: boolean;
 }): Promise<AuthResult> {
     try {
@@ -364,14 +373,25 @@ export async function completeSocialSignup({
             return { error: "You must accept the terms and conditions" };
         }
 
-        const usernameCheck = await checkUsernameAvailability(username);
-        if (!usernameCheck.available) {
-            return {
-                error: usernameCheck.error || "Username is not available",
-            };
+        // Auto-generate username if needed
+        const user = await prisma.user.findUnique({ where: { id: userId } });
+        if (!user) return { error: "User not found" };
+
+        let username = user.username;
+
+        if (!username) {
+            const baseUsername =
+                user.email?.split("@")[0].replace(/[^a-zA-Z0-9]/g, "") || "";
+            username = baseUsername;
+            let counter = 1;
+
+            while (await prisma.user.findUnique({ where: { username } })) {
+                username = `${baseUsername}${counter}`;
+                counter++;
+            }
         }
 
-        const user = await prisma.user.update({
+        const updatedUser = await prisma.user.update({
             where: { id: userId },
             data: {
                 username,
@@ -381,7 +401,7 @@ export async function completeSocialSignup({
 
         return {
             success: true,
-            data: { id: user.id, username: user.username },
+            data: { id: updatedUser.id, username: updatedUser.username },
         };
     } catch (error) {
         console.error("Complete social signup error:", error);

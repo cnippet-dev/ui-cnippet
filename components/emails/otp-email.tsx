@@ -8,8 +8,6 @@ import {
     Preview,
     Section,
     Text,
-    Row,
-    Column,
     Tailwind,
     Hr,
     Link,
@@ -22,10 +20,6 @@ interface OTPEmailProps {
     location?: string;
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_URL
-    ? `${process.env.NEXT_PUBLIC_URL}`
-    : "http://localhost:3000";
-
 export const OTPEmail = ({
     userEmail = "user@example.com",
     otp = "123456",
@@ -37,10 +31,9 @@ export const OTPEmail = ({
                 <Preview>Verify your email to sign in to Cnippet</Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
-                        {/* Header */}
                         <Section className="mb-2 text-center">
                             <Img
-                                src={`${baseUrl}/images/logo-light.png`}
+                                src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948225/logo-light.png`}
                                 width="50"
                                 height="50"
                                 alt="Logo"
@@ -48,14 +41,12 @@ export const OTPEmail = ({
                             />
                         </Section>
 
-                        {/* Main Heading */}
                         <Section className="mb-4 text-center">
                             <Heading className="m-0 text-[24px] font-medium text-[#202124]">
                                 Verify your email to sign in to Cnippet
                             </Heading>
                         </Section>
 
-                        {/* Greeting and intro */}
                         <Section className="mb-4">
                             <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
                                 Hello{" "}
@@ -69,14 +60,12 @@ export const OTPEmail = ({
                             </Text>
                         </Section>
 
-                        {/* OTP Code Section */}
                         <Section className="mb-4 rounded-lg bg-[#f8f9fa] p-4 text-center">
                             <Text className="m-0 font-mono text-[20px] font-medium tracking-widest text-[#202124]">
                                 {otp}
                             </Text>
                         </Section>
 
-                        {/* Instructions */}
                         <Section className="mb-4">
                             <Text className="text-[12px] leading-[22px] text-[#5f6368]">
                                 If you didn&apos;t attempt to sign in but
@@ -92,7 +81,6 @@ export const OTPEmail = ({
 
                         <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
 
-                        {/* Footer */}
                         <Section className="text-left">
                             <Text className="mb-2 text-[13px] text-[#5f6368]">
                                 If you&apos;ve got questions, ask us in the{" "}

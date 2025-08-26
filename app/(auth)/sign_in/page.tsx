@@ -5,7 +5,7 @@ const Main = dynamic(() => import("./_c/main"));
 
 export const metadata: Metadata = {
     title: "Sign In",
-    description: "",
+    description: "Welcome back. Please sign in to your account.",
 };
 
 const page = () => {

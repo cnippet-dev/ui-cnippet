@@ -22,13 +22,6 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const usernameSchema = z.object({
-    username: z
-        .string()
-        .min(3, "Username must be at least 3 characters")
-        .regex(
-            /^[a-zA-Z0-9_]+$/,
-            "Username can only contain letters, numbers, and underscores",
-        ),
     termsAccepted: z
         .boolean()
         .refine(
@@ -47,7 +40,6 @@ export default function CompleteSignupForm() {
     const form = useForm<z.infer<typeof usernameSchema>>({
         resolver: zodResolver(usernameSchema),
         defaultValues: {
-            username: "",
             termsAccepted: false,
         },
     });
@@ -63,7 +55,6 @@ export default function CompleteSignupForm() {
         try {
             const result = await completeSocialSignup({
                 userId: session.user.id,
-                username: values.username,
                 termsAccepted: values.termsAccepted,
             });
 
@@ -95,25 +86,17 @@ export default function CompleteSignupForm() {
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-6 text-left"
                 >
-                    <FormField
-                        control={form.control}
-                        name="username"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="font-medium text-black dark:text-white">
-                                    Username
-                                </FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder="Choose a username"
-                                        className="mt-1 w-full rounded-none border-t-0 border-r-0 border-b border-l-0 border-neutral-300 bg-transparent px-0 py-2 font-light shadow-none placeholder:text-base placeholder:text-neutral-500 focus:border-purple-500 focus:outline-none focus-visible:ring-0 dark:border-neutral-700"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                    <div className="mb-6">
+                        <h3 className="text-lg font-medium">
+                            Verify Your Information
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                            Name: {session?.user?.name}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                            Email: {session?.user?.email}
+                        </p>
+                    </div>
 
                     <FormField
                         control={form.control}

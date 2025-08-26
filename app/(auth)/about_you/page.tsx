@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
     title: "Complete Signup",
-    description: "",
+    description: "Complete your signup with a few more details.",
 };
 
 const CompleteSignupPage = dynamic(() => import("./_components/main"));

@@ -26,10 +26,6 @@ interface SignInAlertEmailProps {
     manageNotificationsUrl?: string;
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_URL
-    ? `${process.env.NEXT_PUBLIC_URL}`
-    : "http://localhost:3000";
-
 export const SignInEmail = ({
     username = "there",
     userEmail = "user@example.com",
@@ -48,10 +44,9 @@ export const SignInEmail = ({
                 <Preview>New sign-in to your account</Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
-                        {/* Header */}
                         <Section className="mb-2 text-center">
                             <Img
-                                src={`${baseUrl}/images/logo-light.png`}
+                                src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948225/logo-light.png`}
                                 width="50"
                                 height="50"
                                 alt="Logo"
@@ -59,7 +54,6 @@ export const SignInEmail = ({
                             />
                         </Section>
 
-                        {/* Greeting and intro */}
                         <Section className="mb-4">
                             <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
                                 Hi{" "}
@@ -78,16 +72,7 @@ export const SignInEmail = ({
                             </Text>
                         </Section>
 
-                        {/* Details */}
                         <Section className="mb-4 rounded-lg bg-[#f8f9fa] p-4">
-                            {/* <Row>
-                                <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">Location</Text>
-                                </Column>
-                                <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124]">{location}</Text>
-                                </Column>
-                            </Row> */}
                             <Row>
                                 <Column width="120">
                                     <Text className="m-0 text-[13px] text-[#5f6368]">
@@ -138,7 +123,6 @@ export const SignInEmail = ({
                             </Row>
                         </Section>
 
-                        {/* Help / CTA */}
                         <Section className="mb-2">
                             <Text className="mb-2 text-[14px] font-medium text-[#202124]">
                                 Don&apos;t recognize this activity?
@@ -172,7 +156,6 @@ export const SignInEmail = ({
 
                         <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
 
-                        {/* Footer */}
                         <Section className="text-left">
                             <Text className="mb-2 text-[13px] text-[#5f6368]">
                                 If you&apos;ve got questions, ask us in the{" "}

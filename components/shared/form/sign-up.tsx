@@ -14,7 +14,6 @@ import { signIn } from "next-auth/react";
 
 import {
     checkEmail,
-    checkUsername,
     signUpWithCredentials,
 } from "@/lib/actions/auth.actions";
 import { sendOTP, verifyOTP } from "@/lib/actions/otp.actions";
@@ -55,7 +54,6 @@ export default function SignUpForm() {
     const form = useForm<FormData>({
         resolver: zodResolver(SignUpSchema),
         defaultValues: {
-            username: "",
             name: "",
             email: "",
             password: "",
@@ -92,21 +90,12 @@ export default function SignUpForm() {
         try {
             if (currentStep === 1) {
                 isValid = await form.trigger([
-                    "username",
                     "name",
                     "email",
                     "termsAccepted",
                 ]);
                 if (isValid) {
                     const values = form.getValues();
-
-                    const usernameCheck = await checkUsername(values.username);
-                    if (usernameCheck.exists) {
-                        form.setError("username", {
-                            message: "Username already taken",
-                        });
-                        isValid = false;
-                    }
 
                     const emailCheck = await checkEmail(values.email);
                     if (emailCheck.exists) {
@@ -271,27 +260,6 @@ export default function SignUpForm() {
         <div
             className={`space-y-5 transition-all duration-300 ${currentStep === 1 ? "transform-none opacity-100" : "absolute -translate-x-full opacity-0"}`}
         >
-            <motion.div {...fadeUp({ delay: 0.4, duration: 0.6, y: 20 })}>
-                <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="font-medium text-black dark:text-white">
-                                Username
-                            </FormLabel>
-                            <FormControl>
-                                <Input
-                                    placeholder="Choose a username"
-                                    className="mt-1 w-full rounded-none border-t-0 border-r-0 border-b border-l-0 border-neutral-300 bg-transparent px-0 py-2 font-light shadow-none placeholder:text-base placeholder:text-neutral-500 focus:border-purple-500 focus:outline-none focus-visible:ring-0 dark:border-neutral-700"
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            </motion.div>
             <motion.div {...fadeUp({ delay: 0.5, duration: 0.6, y: 20 })}>
                 <FormField
                     control={form.control}
