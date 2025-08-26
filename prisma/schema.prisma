@@ -24,6 +24,10 @@ model User {
     preferredTimezone  String?      @default("UTC")
     ResetToken         ResetToken[]
     favourites         String[]
+    // Account deletion lifecycle
+    deletionRequestedAt DateTime?
+    deletionScheduledAt DateTime?
+    deletedAt           DateTime?
 }
 
 model Newsletter {

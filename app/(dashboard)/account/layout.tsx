@@ -3,13 +3,9 @@
 import {
     Search,
     MessageSquare,
-    Copy,
-    Plus,
-    MoreHorizontal,
     ChevronDown,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -21,18 +17,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 import {
     User,
     Settings,
-    Shield,
-    Calendar,
-    Edit3,
-    X,
     Heart,
-    Loader2,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -41,14 +31,12 @@ import {
     updateProfileImage,
 } from "@/lib/actions/profile.actions";
 import { toast } from "sonner";
-import { AvatarUpload } from "@/components/file-upload";
 
 interface ProfileLayoutProps {
     children: React.ReactNode;
 }
 
 export default function ProfilePage({ children }: ProfileLayoutProps) {
-    const [isEditing, setIsEditing] = useState(false);
     const pathname = usePathname();
     //eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [profile, setProfile] = useState<any>(null);
@@ -84,15 +72,6 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
             </div>
         );
     }
-    if (!profile) {
-        return (
-            <div className="flex h-full items-center justify-center text-red-500">
-                Profile not found.
-            </div>
-        );
-    }
-
-    console.log(profile);
 
     const navItems = [
         { name: "General", href: "/account/settings", icon: User },

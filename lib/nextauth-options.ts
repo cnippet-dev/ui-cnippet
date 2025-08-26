@@ -156,6 +156,16 @@ export const nextauthOptions: NextAuthOptions = {
                     token.preferredLanguage = userData.preferredLanguage;
                     token.preferredTimezone = userData.preferredTimezone;
                     token.needsCompletion = !userData.username;
+                    // Block sign-in if user is deleted or scheduled for deletion passed
+                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    const anyUser = userData as any;
+                    const deletedAt = anyUser.deletedAt ? new Date(anyUser.deletedAt) : null;
+                    const deletionScheduledAt = anyUser.deletionScheduledAt
+                        ? new Date(anyUser.deletionScheduledAt)
+                        : null;
+                    if (deletedAt || (deletionScheduledAt && deletionScheduledAt <= new Date())) {
+                        throw new Error("Account is deleted");
+                    }
                 }
             }
             //eslint-disable-next-line @typescript-eslint/no-explicit-any

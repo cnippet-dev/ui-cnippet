@@ -21,6 +21,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { AvatarUpload } from "@/components/file-upload";
+import { scheduleAccountDeletion, cancelAccountDeletion, deleteAccountImmediately } from "@/lib/actions/profile.actions";
 
 export default function GeneralInformationPage() {
     const { data: session, status, update } = useSessionCache();
@@ -41,11 +42,15 @@ export default function GeneralInformationPage() {
     });
     useEffect(() => {
         async function fetchProfile() {
-            const data = await getCurrentUserProfile();
-            setProfile(data);
-            // setTimeout(() => {
-            //     setLoading(false);
-            // }, 2500);
+            try {
+                setLoading(true);
+                const data = await getCurrentUserProfile();
+                setProfile(data);
+            } catch (error) {
+                console.error("Failed to fetch profile:", error);
+            } finally {
+                setLoading(false);
+            }
         }
         fetchProfile();
     }, []);
@@ -84,6 +89,13 @@ export default function GeneralInformationPage() {
             const result = await updateGeneralInformation(values);
             if ("success" in result && result.success) {
                 toast.success("Profile updated successfully!");
+
+                // Update local profile state
+                setProfile((prev: any) => ({
+                    ...prev,
+                    ...values,
+                }));
+
                 // Update the session with new data
                 await update({
                     name: values.name,
@@ -112,21 +124,13 @@ export default function GeneralInformationPage() {
         }
     }
 
-    if (status === "loading") {
+    if (status === "loading" || loading) {
         return (
             <div className="flex min-h-[400px] items-center justify-center">
                 <div className="flex items-center gap-2">
-                    <Loader2 className="h-6 w-6 animate-spin" />
-                    <span>Loading profile...</span>
+                    <div className="loader"></div>
+                    <span>Retrieving data</span>
                 </div>
-            </div>
-        );
-    }
-
-    if (!profile) {
-        return (
-            <div className="flex h-full items-center justify-center text-red-500">
-                Profile not found.
             </div>
         );
     }
@@ -138,6 +142,14 @@ export default function GeneralInformationPage() {
                 <p className="text-muted-foreground">
                     You must be logged in to view this page.
                 </p>
+            </div>
+        );
+    }
+
+    if (!loading && !profile) {
+        return (
+            <div className="flex h-full items-center justify-center text-red-500">
+                Profile not found.
             </div>
         );
     }
@@ -172,12 +184,12 @@ export default function GeneralInformationPage() {
                     <div className="relative">
                         <Avatar className="h-32 w-32 border-4 border-white shadow-2xl">
                             <AvatarImage
-                                src={profile.image ?? undefined}
+                                src={profile?.image ?? undefined}
                                 alt="Profile"
                             />
                             <AvatarFallback className="bg-gradient-to-br from-violet-500 to-purple-600 text-2xl font-bold text-white">
                                 {profile.name
-                                    ? profile.name.slice(0, 2).toUpperCase()
+                                    ? profile?.name.slice(0, 2).toUpperCase()
                                     : "DK"}
                             </AvatarFallback>
                         </Avatar>
@@ -448,7 +460,8 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Delete Account Section */}
+                {/* Delete Account Section */
+                }
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Delete Account
@@ -458,12 +471,57 @@ export default function GeneralInformationPage() {
                         contents from the Vercel platform. This action is not
                         reversible, so please continue with caution.
                     </p>
-                    <Button
-                        variant="destructive"
-                        className="bg-red-600 hover:bg-red-700"
-                    >
-                        Delete Personal Account
-                    </Button>
+                    <div className="flex flex-wrap gap-3">
+                        <Button
+                            variant="destructive"
+                            className="bg-red-600 hover:bg-red-700"
+                            onClick={async () => {
+                                const res = await scheduleAccountDeletion({ graceDays: 7 });
+                                if ("success" in res && res.success) {
+                                    toast.success("Deletion scheduled in 7 days. You can cancel before then.");
+                                } else {
+                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to schedule deletion";
+                                    toast.error(msg);
+                                }
+                            }}
+                        >
+                            Schedule deletion (7 days)
+                        </Button>
+
+                        <Button
+                            variant="outline"
+                            onClick={async () => {
+                                const res = await cancelAccountDeletion();
+                                if ("success" in res && res.success) {
+                                    toast.success("Deletion cancelled");
+                                } else {
+                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to cancel";
+                                    toast.error(msg);
+                                }
+                            }}
+                        >
+                            Cancel scheduled deletion
+                        </Button>
+
+                        <Button
+                            variant="destructive"
+                            className="bg-red-700 hover:bg-red-800"
+                            onClick={async () => {
+                                const confirmed = window.confirm("This will permanently delete your account immediately. Are you sure?");
+                                if (!confirmed) return;
+                                const res = await deleteAccountImmediately();
+                                if ("success" in res && res.success) {
+                                    toast.success("Account deleted");
+                                    window.location.href = "/";
+                                } else {
+                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to delete account";
+                                    toast.error(msg);
+                                }
+                            }}
+                        >
+                            Delete now
+                        </Button>
+                    </div>
                 </div>
             </div>
         </>

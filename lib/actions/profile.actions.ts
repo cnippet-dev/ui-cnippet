@@ -4,6 +4,7 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 
 import prisma from "@/lib/prisma";
+import type { Prisma } from "@prisma/client";
 import { getUserSession } from "./auth.actions";
 import {
     updateGeneralInfoSchema,
@@ -257,5 +258,68 @@ export async function updateProfileImage(imageUrl: string) {
     } catch (error) {
         console.error("Error updating profile image:", error);
         throw new Error("Failed to update profile image");
+    }
+}
+
+// Account deletion actions
+export async function scheduleAccountDeletion({
+    graceDays = 7,
+}: {
+    graceDays?: number;
+}) {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return { error: { general: "Unauthorized. Please sign in." } } as const;
+    }
+    const userId = session.user.id;
+    const now = new Date();
+    const scheduledAt = new Date(now.getTime() + graceDays * 24 * 60 * 60 * 1000);
+    try {
+        const data = {
+            deletionRequestedAt: now,
+            deletionScheduledAt: scheduledAt,
+        } as unknown as Prisma.UserUpdateInput;
+        await prisma.user.update({ where: { id: userId }, data });
+        return { success: true, message: "Account deletion scheduled." } as const;
+    } catch (error) {
+        console.error("Error scheduling account deletion:", error);
+        return { error: { general: "Failed to schedule deletion." } } as const;
+    }
+}
+
+export async function cancelAccountDeletion() {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return { error: { general: "Unauthorized. Please sign in." } } as const;
+    }
+    try {
+        const data = {
+            deletionRequestedAt: null,
+            deletionScheduledAt: null,
+        } as unknown as Prisma.UserUpdateInput;
+        await prisma.user.update({ where: { id: session.user.id }, data });
+        return { success: true, message: "Account deletion cancelled." } as const;
+    } catch (error) {
+        console.error("Error cancelling account deletion:", error);
+        return { error: { general: "Failed to cancel deletion." } } as const;
+    }
+}
+
+export async function deleteAccountImmediately() {
+    const session = await getUserSession();
+    if (!session || !session.user || !session.user.id) {
+        return { error: { general: "Unauthorized. Please sign in." } } as const;
+    }
+    const userId = session.user.id;
+    try {
+        // Delete dependent records if any (ResetToken and Otp cascade or manual)
+        await prisma.$transaction([
+            prisma.resetToken.deleteMany({ where: { userId } }),
+            prisma.user.delete({ where: { id: userId } }),
+        ]);
+        return { success: true, message: "Account deleted permanently." } as const;
+    } catch (error) {
+        console.error("Error deleting account:", error);
+        return { error: { general: "Failed to delete account." } } as const;
     }
 }
