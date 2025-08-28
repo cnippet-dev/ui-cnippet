@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useTheme } from "next-themes";
 import { RiGithubFill, RiGoogleFill } from "@remixicon/react";
-
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 
 import { DialogContent, DialogTitle } from "@/components/ui/dialog-cn";
@@ -23,7 +22,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { toast } from "sonner";
 
 const userSignInValidation = z.object({
@@ -78,7 +76,7 @@ const AuthDialog = () => {
             }
 
             toast.success("Successfully signed in!");
-            router.push("/");
+            router.refresh();
         } catch (error) {
             setError(error as string);
             toast.error(
@@ -92,7 +90,7 @@ const AuthDialog = () => {
     return (
         <DialogContent className="w-full rounded-3xl bg-white p-0 md:max-w-md dark:bg-black">
             <DialogTitle className="sr-only">Sign In form</DialogTitle>
-            <div className="isolate w-full max-w-full px-6 py-10 text-center">
+            <div className="isolate w-full max-w-full px-6 py-8 text-center">
                 <div className="mb-6 text-center">
                     <Link className="flex items-center justify-center" href="/">
                         {theme === "dark" ? (
@@ -113,13 +111,54 @@ const AuthDialog = () => {
                             />
                         )}
                     </Link>
-                    <h1 className="font-buch mb-2 text-3xl font-medium tracking-tight md:text-3xl">
+                    <h1 className="mb-2 text-2xl font-semibold tracking-tight md:text-3xl">
                         Log in to your account
                     </h1>
                     <p className="text-gray-500">
                         Welcome back! Please enter your details.
                     </p>
                 </div>
+
+                {/* Social Login Buttons */}
+                <div className="mb-6 grid grid-cols-2 gap-4">
+                    <Button
+                        onClick={loginWithGit}
+                        className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                        disabled={isLoading !== null}
+                    >
+                        <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                        {isLoading === "github" ? (
+                            <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                        ) : (
+                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                        )}
+                        <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                            GitHub
+                        </span>
+                    </Button>
+                    <Button
+                        onClick={loginWithGoogle}
+                        className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                        disabled={isLoading !== null}
+                    >
+                        <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                        {isLoading === "google" ? (
+                            <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                        ) : (
+                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                        )}
+                        <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                            Google
+                        </span>
+                    </Button>
+                </div>
+
+                <div className="mb-6 flex items-center">
+                    <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                    <span className="px-4 text-sm text-gray-500">OR</span>
+                    <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                </div>
+
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
@@ -226,45 +265,9 @@ const AuthDialog = () => {
                         )}
                     </form>
                 </Form>
-                <div className="my-6 flex items-center">
-                    <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                    <span className="px-4 text-sm text-gray-500">
-                        OR CONTINUE WITH
-                    </span>
-                    <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <Button
-                        onClick={loginWithGit}
-                        className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                    >
-                        <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                        {isLoading === "github" ? (
-                            <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                        ) : (
-                            <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                        )}
-                        <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                            GitHub
-                        </span>
-                    </Button>
-                    <Button
-                        onClick={loginWithGoogle}
-                        className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                    >
-                        <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                        {isLoading === "google" ? (
-                            <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                        ) : (
-                            <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                        )}
-                        <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                            Google
-                        </span>
-                    </Button>
-                </div>
+
                 <p className="mt-6 text-sm text-gray-500">
-                    Don&apos;t have an account?{" "}
+                    Don't have an account?{" "}
                     <Link
                         href="/sign_up"
                         className="underline hover:text-purple-500"

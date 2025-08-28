@@ -156,50 +156,6 @@ export async function signInWithCredentials({
     }
 }
 
-export async function signInWithOauth({
-    account,
-    profile,
-}: {
-    account: Account;
-    profile: Profile & { picture?: string };
-}) {
-    try {
-        const user = await prisma.user.findUnique({
-            where: { email: profile.email },
-        });
-
-        if (user) {
-            return {
-                success: true,
-                data: {
-                    id: user.id,
-                    name: user.name,
-                    email: user.email,
-                    username: user.username,
-                },
-            };
-        }
-
-        const newUser = await prisma.user.create({
-            data: {
-                name: profile.name || "",
-                username: "",
-                email: profile.email || "",
-                image: profile.picture,
-                provider: account.provider,
-                emailVerified: new Date(),
-            },
-        });
-
-        return {
-            success: true,
-            data: { id: newUser.id, name: newUser.name, email: newUser.email },
-        };
-    } catch (error) {
-        return { success: false, error: `OAuth signin failed ${error}` };
-    }
-}
-
 export async function resetPassword({
     token,
     newPassword,
@@ -436,5 +392,255 @@ async function getRequestMeta() {
         return { ip, userAgent, browser, location };
     } catch (error) {
         return { ip: "", userAgent: "", browser: "", location: "Unknown" };
+    }
+}
+
+// Add these new functions to handle linked accounts
+
+export async function linkOAuthAccount({
+    userId,
+    provider,
+    providerAccountId,
+}: {
+    userId: string;
+    provider: string;
+    providerAccountId: string;
+}): Promise<AuthResult> {
+    try {
+        // Check if this provider account is already linked to any user
+        const existingLink = await prisma.linkedAccount.findUnique({
+            where: {
+                provider_providerAccountId: {
+                    provider,
+                    providerAccountId,
+                },
+            },
+        });
+
+        if (existingLink) {
+            return { error: "This account is already linked to another user" };
+        }
+
+        // Check if user already has this provider linked
+        const userExistingLink = await prisma.linkedAccount.findUnique({
+            where: {
+                userId_provider: {
+                    userId,
+                    provider,
+                },
+            },
+        });
+
+        if (userExistingLink) {
+            return { error: "This provider is already linked to your account" };
+        }
+
+        // Create the link
+        await prisma.linkedAccount.create({
+            data: {
+                userId,
+                provider,
+                providerAccountId,
+            },
+        });
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error linking account:", error);
+        return { error: "Failed to link account" };
+    }
+}
+
+export async function unlinkOAuthAccount({
+    userId,
+    provider,
+}: {
+    userId: string;
+    provider: string;
+}): Promise<AuthResult> {
+    try {
+        // Check if user has at least one other login method
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            include: { linkedAccounts: true },
+        });
+
+        if (!user) {
+            return { error: "User not found" };
+        }
+
+        // Can't unlink if it's the only login method and no password set
+        if (
+            user.provider === provider &&
+            !user.password &&
+            user.linkedAccounts.length <= 1
+        ) {
+            return {
+                error: "Cannot unlink your only login method. Please set a password first.",
+            };
+        }
+
+        await prisma.linkedAccount.delete({
+            where: {
+                userId_provider: {
+                    userId,
+                    provider,
+                },
+            },
+        });
+
+        // If this was the main provider, update the main provider field
+        if (user.provider === provider) {
+            const remainingAccounts = user.linkedAccounts.filter(
+                (acc) => acc.provider !== provider,
+            );
+
+            if (remainingAccounts.length > 0) {
+                // Set the first remaining account as the main provider
+                await prisma.user.update({
+                    where: { id: userId },
+                    data: { provider: remainingAccounts[0].provider },
+                });
+            } else if (user.password) {
+                // Fall back to credentials
+                await prisma.user.update({
+                    where: { id: userId },
+                    data: { provider: "credentials" },
+                });
+            } else {
+                // This shouldn't happen due to our check above
+                return { error: "Cannot remove the only login method" };
+            }
+        }
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error unlinking account:", error);
+        return { error: "Failed to unlink account" };
+    }
+}
+
+export async function getUserLinkedAccounts(userId: string) {
+    try {
+        const accounts = await prisma.linkedAccount.findMany({
+            where: { userId },
+            select: {
+                id: true,
+                provider: true,
+                providerAccountId: true,
+                // createdAt: true,
+            },
+        });
+
+        return accounts;
+    } catch (error) {
+        console.error("Error fetching linked accounts:", error);
+        return [];
+    }
+}
+
+// Update the signInWithOauth function to handle account linking
+export async function signInWithOauth({
+    account,
+    profile,
+}: {
+    account: Account;
+    profile: Profile & { picture?: string };
+}) {
+    try {
+        // First, try to find user by the OAuth account
+        const linkedAccount = await prisma.linkedAccount.findUnique({
+            where: {
+                provider_providerAccountId: {
+                    provider: account.provider,
+                    providerAccountId: account.providerAccountId,
+                },
+            },
+            include: { user: true },
+        });
+
+        if (linkedAccount) {
+            return {
+                success: true,
+                data: {
+                    id: linkedAccount.user.id,
+                    name: linkedAccount.user.name,
+                    email: linkedAccount.user.email,
+                    username: linkedAccount.user.username,
+                },
+            };
+        }
+
+        // If no linked account found, try to find by email
+        if (profile.email) {
+            const user = await prisma.user.findUnique({
+                where: { email: profile.email },
+                include: { linkedAccounts: true },
+            });
+
+            if (user) {
+                // Link this OAuth account to the existing user
+                await prisma.linkedAccount.create({
+                    data: {
+                        userId: user.id,
+                        provider: account.provider,
+                        providerAccountId: account.providerAccountId,
+                    },
+                });
+
+                // Update provider if this is the first OAuth account
+                if (
+                    user.provider === "credentials" &&
+                    user.linkedAccounts.length === 0
+                ) {
+                    await prisma.user.update({
+                        where: { id: user.id },
+                        data: { provider: account.provider },
+                    });
+                }
+
+                return {
+                    success: true,
+                    data: {
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        username: user.username,
+                    },
+                };
+            }
+        }
+
+        // Create new user if no existing user found
+        const newUser = await prisma.user.create({
+            data: {
+                name: profile.name || "",
+                username: "",
+                email: profile.email || "",
+                image: profile.picture,
+                provider: account.provider,
+                emailVerified: new Date(),
+            },
+        });
+
+        // Create linked account record
+        await prisma.linkedAccount.create({
+            data: {
+                userId: newUser.id,
+                provider: account.provider,
+                providerAccountId: account.providerAccountId,
+            },
+        });
+
+        return {
+            success: true,
+            data: {
+                id: newUser.id,
+                name: newUser.name,
+                email: newUser.email,
+            },
+        };
+    } catch (error) {
+        return { success: false, error: `OAuth signin failed ${error}` };
     }
 }

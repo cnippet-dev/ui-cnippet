@@ -77,6 +77,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
         { name: "General", href: "/account/settings", icon: User },
         { name: "Authentication", href: "/account/authentication", icon: Heart },
         { name: "Favourites", href: "/account/favourites", icon: Settings },
+        { name: "Linked Accounts", href: "/account/linked", icon: Settings },
     ];
 
     const handleImageUpload = async (url: string) => {

@@ -6,6 +6,7 @@ import {
     signInWithCredentials,
     signInWithOauth,
     sendSignInAlertEmail,
+    getUserLinkedAccounts,
 } from "./actions/auth.actions";
 import prisma from "./prisma";
 
@@ -24,6 +25,7 @@ declare module "next-auth" {
             preferredLanguage?: string | null;
             preferredTimezone?: string | null;
         };
+        linkedAccounts?: { id: string; provider: string; providerAccountId: string; }[] | null;
     }
 }
 
@@ -40,6 +42,7 @@ declare module "next-auth/jwt" {
         inAppNotifications?: boolean | null;
         preferredLanguage?: string | null;
         preferredTimezone?: string | null;
+        linkedAccounts?: { id: string; provider: string; providerAccountId: string; }[] | null;
     }
 }
 
@@ -113,14 +116,15 @@ export const nextauthOptions: NextAuthOptions = {
 
                 // If user exists but has no username, mark as needs completion
                 if (result.success && result.data) {
-                    // For new OAuth users, redirect to signup page to complete profile
-                    if (!result.data.username) {
-                        // Store user ID in token for later completion
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        (user as any).needsCompletion = true;
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        (user as any).isNewOAuthUser = true;
-                    }
+                    // Attach needsCompletion to user for jwt callback
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (user as any).needsCompletion = !result.data.username;
+
+                    // Store provider info for account linking
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (user as any).oauthProvider = account.provider;
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (user as any).oauthAccountId = account.providerAccountId;
                 }
 
                 // Send sign-in alert on successful OAuth sign-in
@@ -131,19 +135,24 @@ export const nextauthOptions: NextAuthOptions = {
                     });
                 }
 
-                // Redirect new OAuth users to signup page
-                if (result.success && result.data && !result.data.username) {
-                    return `/sign_up?social=true&email=${encodeURIComponent(result.data.email || "")}`;
-                }
-
                 return !!result.success;
             }
             return true;
         },
+
         async jwt({ token, trigger, session, account, user }) {
             // Add provider information to token
             if (account?.provider) {
                 token.provider = account.provider;
+            }
+
+            // Store OAuth info for account linking
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            if (user && (user as any).oauthProvider) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                token.oauthProvider = (user as any).oauthProvider;
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                token.oauthAccountId = (user as any).oauthAccountId;
             }
 
             if (trigger === "update" && session) {
@@ -155,7 +164,6 @@ export const nextauthOptions: NextAuthOptions = {
                 const userData = await prisma.user.findUnique({
                     where: { email: token.email },
                 });
-
                 if (userData) {
                     token.id = userData.id;
                     token.name = userData.name;
@@ -169,8 +177,14 @@ export const nextauthOptions: NextAuthOptions = {
                     token.preferredLanguage = userData.preferredLanguage;
                     token.preferredTimezone = userData.preferredTimezone;
                     token.needsCompletion = !userData.username;
+
+                    // Get linked accounts
+                    token.linkedAccounts = await getUserLinkedAccounts(
+                        userData.id,
+                    );
+
                     // Block sign-in if user is deleted or scheduled for deletion passed
-                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     const anyUser = userData as any;
                     const deletedAt = anyUser.deletedAt
                         ? new Date(anyUser.deletedAt)
@@ -187,13 +201,17 @@ export const nextauthOptions: NextAuthOptions = {
                     }
                 }
             }
-            //eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             if (user && (user as any).needsCompletion !== undefined) {
-                //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 token.needsCompletion = (user as any).needsCompletion;
             }
+
             return token;
         },
+
+        // Update the session callback to include linked accounts
         async session({ token, session }) {
             if (session.user) {
                 session.user.id = token.id as string;
@@ -220,6 +238,7 @@ export const nextauthOptions: NextAuthOptions = {
                 session.needsCompletion = token.needsCompletion as
                     | boolean
                     | undefined;
+                session.linkedAccounts = token.linkedAccounts as any;
             }
             return session;
         },
