@@ -36,8 +36,8 @@ const NavUser = () => {
     return (
         <>
             {isLoading ? (
-                <div className="-mt-[22px] mr-3 ml-2 w-fit">
-                    <div className="loader"></div>
+                <div className="-mt-[22px] mr-3 ml-2 flex w-fit items-center justify-center">
+                    <div className="loader my-auto"></div>
                 </div>
             ) : (
                 <>

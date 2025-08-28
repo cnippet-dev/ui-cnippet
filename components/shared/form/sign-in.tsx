@@ -22,10 +22,10 @@ import { signIn } from "next-auth/react";
 import { RiGithubFill, RiGoogleFill } from "@remixicon/react";
 import { useSessionCache } from "@/hooks/use-session-cache";
 import { motion } from "motion/react";
-import { fadeUp, fadeUpBlur, zoomIn } from "@/lib/motion";
+import { fadeUpBlur, fadeUp, zoomIn } from "@/lib/motion";
 
 const formSchema = z.object({
-    email: z.email({
+    email: z.string().email({
         message: "Please enter a valid email address.",
     }),
     password: z.string().min(6, {
@@ -175,6 +175,49 @@ export default function SignInForm() {
                         </motion.p>
                     </div>
 
+                    <motion.div
+                        {...fadeUp({ delay: 0.4, duration: 0.6, y: 20 })}
+                        className="mb-6 grid grid-cols-2 gap-4"
+                    >
+                        <Button
+                            onClick={loginWithGit}
+                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                        >
+                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                            {isLoading === "github" ? (
+                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                            ) : (
+                                <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                            )}
+                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                GitHub
+                            </span>
+                        </Button>
+                        <Button
+                            onClick={loginWithGoogle}
+                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
+                        >
+                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
+                            {isLoading === "google" ? (
+                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                            ) : (
+                                <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
+                            )}
+                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
+                                Google
+                            </span>
+                        </Button>
+                    </motion.div>
+
+                    <motion.div
+                        {...fadeUp({ delay: 0.5, duration: 0.6, y: 20 })}
+                        className="my-6 flex items-center"
+                    >
+                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                        <span className="px-4 text-sm text-gray-500">OR</span>
+                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
+                    </motion.div>
+
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
@@ -182,7 +225,7 @@ export default function SignInForm() {
                         >
                             <motion.div
                                 {...fadeUp({
-                                    delay: 0.4,
+                                    delay: 0.6,
                                     duration: 0.6,
                                     y: 20,
                                 })}
@@ -210,7 +253,7 @@ export default function SignInForm() {
 
                             <motion.div
                                 {...fadeUp({
-                                    delay: 0.6,
+                                    delay: 0.7,
                                     duration: 0.6,
                                     y: 20,
                                 })}
@@ -260,7 +303,7 @@ export default function SignInForm() {
 
                             <motion.div
                                 {...fadeUp({
-                                    delay: 0.7,
+                                    delay: 0.8,
                                     duration: 0.6,
                                     y: 10,
                                 })}
@@ -276,7 +319,7 @@ export default function SignInForm() {
 
                             <motion.div
                                 {...zoomIn({
-                                    delay: 0.8,
+                                    delay: 0.9,
                                     duration: 0.5,
                                     scroll: true,
                                 })}
@@ -296,92 +339,14 @@ export default function SignInForm() {
                                     )}
                                 </Button>
                             </motion.div>
-
-                            {/* As we handling errors using toast we don't this part */}
-                            {/* {error && (
-                                <div className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-500">
-                                    <div className="flex">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="mr-2 h-5 w-5 text-red-400"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                                                clipRule="evenodd"
-                                            />
-                                        </svg>
-                                        {error}
-                                    </div>
-                                </div>
-                            )} */}
                         </form>
                     </Form>
 
-                    <motion.div
-                        {...fadeUp({
-                            delay: 1,
-                            duration: 0.6,
-                            y: 20,
-                        })}
-                        className="my-8 flex items-center"
-                    >
-                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                        <span className="px-4 text-sm text-gray-500">
-                            OR CONTINUE WITH
-                        </span>
-                        <div className="h-px flex-1 bg-neutral-300 dark:bg-neutral-700" />
-                    </motion.div>
-
-                    <motion.div
-                        {...zoomIn({
-                            delay: 1,
-                            duration: 0.5,
-                            scroll: true,
-                        })}
-                        className="grid grid-cols-2 gap-4"
-                    >
-                        <Button
-                            onClick={loginWithGit}
-                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                        >
-                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                            {isLoading === "github" ? (
-                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                            ) : (
-                                <RiGithubFill className="relative z-10 size-6 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                            )}
-                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                                GitHub
-                            </span>
-                        </Button>
-                        <Button
-                            onClick={loginWithGoogle}
-                            className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-neutral-900 bg-white shadow-none dark:bg-black"
-                        >
-                            <div className="absolute inset-0 w-full -translate-x-[100%] bg-black transition-transform duration-300 group-hover:translate-x-[0%] dark:bg-white" />
-                            {isLoading === "google" ? (
-                                <Loader2 className="relative z-10 size-6 animate-spin text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                            ) : (
-                                <RiGoogleFill className="relative z-10 size-5 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black" />
-                            )}
-                            <span className="relative z-10 text-slate-950 duration-300 group-hover:text-white dark:text-white dark:group-hover:text-black">
-                                Google
-                            </span>
-                        </Button>
-                    </motion.div>
-
                     <motion.p
-                        {...fadeUp({
-                            delay: 1.2,
-                            duration: 0.6,
-                            y: 20,
-                        })}
+                        {...fadeUp({ delay: 1.0, duration: 0.6, y: 20 })}
                         className="mt-12 text-center text-sm text-gray-500"
                     >
-                        Don&apos;t have an account?{" "}
+                        Don't have an account?{" "}
                         <Link
                             href="/sign_up"
                             className="underline hover:text-purple-500"

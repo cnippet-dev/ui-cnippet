@@ -3,13 +3,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import {
-    getUserByEmail,
     signInWithCredentials,
     signInWithOauth,
     sendSignInAlertEmail,
 } from "./actions/auth.actions";
+import prisma from "./prisma";
 
-// Extend the built-in session types
 declare module "next-auth" {
     interface Session {
         user: {
@@ -153,9 +152,12 @@ export const nextauthOptions: NextAuthOptions = {
             }
 
             if (token.email) {
-                const userData = await getUserByEmail(token.email);
+                const userData = await prisma.user.findUnique({
+                    where: { email: token.email },
+                });
+
                 if (userData) {
-                    token.id = userData._id;
+                    token.id = userData.id;
                     token.name = userData.name;
                     token.email = userData.email;
                     token.provider = token.provider || userData.provider;

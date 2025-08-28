@@ -21,8 +21,8 @@ interface ResetPasswordEmailProps {
 }
 
 export const ResetPasswordEmail = ({
-    userEmail = "user@example.com",
-    resetLink = "https://ui.cnippet.site/reset-password",
+    userEmail,
+    resetLink,
 }: ResetPasswordEmailProps) => {
     return (
         <Html>

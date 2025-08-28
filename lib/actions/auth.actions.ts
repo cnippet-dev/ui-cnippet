@@ -35,7 +35,6 @@ export async function getUserSession() {
     return await getServerSession(nextauthOptions);
 }
 
-// Add this function to handle social signup completion
 export async function completeSocialSignup({
     email,
     username,
@@ -54,7 +53,6 @@ export async function completeSocialSignup({
             return { error: "You must accept the terms and conditions" };
         }
 
-        // Check if username is available
         const usernameCheck = await checkUsername(username);
         if (usernameCheck.exists) {
             return { error: "Username already taken" };
@@ -64,7 +62,6 @@ export async function completeSocialSignup({
         if (!existing) {
             return { error: "No OAuth user found for this email" };
         }
-        // Prevent converting credentials account via this path
         if (existing.provider === "credentials") {
             return { error: "This email is already registered with password" };
         }
@@ -89,7 +86,6 @@ export async function completeSocialSignup({
     }
 }
 
-// Update signUpWithCredentials to include country
 export async function signUpWithCredentials({
     name,
     email,
@@ -98,7 +94,6 @@ export async function signUpWithCredentials({
     country,
     termsAccepted,
     emailPreferences,
-    emailVerified,
 }: {
     name: string;
     email: string;
@@ -107,7 +102,6 @@ export async function signUpWithCredentials({
     country: string;
     termsAccepted: boolean;
     emailPreferences: boolean;
-    emailVerified?: Date;
 }): Promise<AuthResult> {
     try {
         const existingUser = await prisma.user.findUnique({ where: { email } });
@@ -122,7 +116,7 @@ export async function signUpWithCredentials({
                 email,
                 password: hashedPassword,
                 country,
-                emailVerified: emailVerified || null,
+                emailVerified: new Date(), // Set to current timestamp since user verified via OTP
                 termsAccepted,
                 emailNotifications: emailPreferences,
                 provider: "credentials",
@@ -199,21 +193,11 @@ export async function signInWithOauth({
 
         return {
             success: true,
-            data: {
-                id: newUser.id,
-                name: newUser.name,
-                email: newUser.email,
-            },
+            data: { id: newUser.id, name: newUser.name, email: newUser.email },
         };
     } catch (error) {
         return { success: false, error: `OAuth signin failed ${error}` };
     }
-}
-
-export async function getUserByEmail(email: string) {
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) throw new Error("User not found");
-    return { ...user, _id: user.id };
 }
 
 export async function resetPassword({
@@ -271,10 +255,7 @@ export async function sendResetEmail(email: string) {
 
         try {
             const emailHtml = await render(
-                ResetPasswordEmail({
-                    userEmail: user.email!,
-                    resetLink,
-                }),
+                ResetPasswordEmail({ userEmail: user.email!, resetLink }),
             );
 
             await resend.emails.send({
@@ -320,7 +301,6 @@ export async function sendSignInAlertEmail({
             SignInEmail({
                 username: username || email.split("@")[0],
                 userEmail: email,
-                // location: meta.location || "Unknown",
                 time,
                 browser: meta.browser || meta.userAgent || "Unknown",
                 ip: meta.ip || "Unknown",
@@ -346,7 +326,6 @@ async function getRequestMeta() {
         const headersList = await headers();
         const userAgent = headersList.get("user-agent") || "";
         const xff = headersList.get("x-forwarded-for") || "";
-        console.log(xff);
 
         const ip = (
             xff.split(",")[0] ||
@@ -366,7 +345,6 @@ async function getRequestMeta() {
 }
 
 function parseUserAgent(userAgent: string) {
-    // Simple parsing - consider using a library like ua-parser-js
     const browserMatch = userAgent.match(
         /(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/,
     );
@@ -395,7 +373,6 @@ export async function checkUsernameAvailability(
             };
         }
 
-        // Check if username matches allowed pattern (alphanumeric and underscores only)
         if (!/^[a-zA-Z0-9_]+$/.test(username)) {
             return {
                 available: false,
@@ -406,7 +383,6 @@ export async function checkUsernameAvailability(
         const existingUser = await prisma.user.findUnique({
             where: { username },
         });
-
         return { available: !existingUser };
     } catch (error) {
         console.error("Username check error:", error);
@@ -422,29 +398,19 @@ export async function checkUsername(username: string) {
         const existingUser = await prisma.user.findFirst({
             where: { username },
         });
-        return {
-            exists: !!existingUser,
-        };
+        return { exists: !!existingUser };
     } catch (error) {
         console.error("Error checking username:", error);
-        return {
-            exists: false,
-            error: "Error checking username",
-        };
+        return { exists: false, error: "Error checking username" };
     }
 }
 
 export async function checkEmail(email: string) {
     try {
         const existingUser = await prisma.user.findFirst({ where: { email } });
-        return {
-            exists: !!existingUser,
-        };
+        return { exists: !!existingUser };
     } catch (error) {
         console.error("Error checking email:", error);
-        return {
-            exists: false,
-            error: "Error checking email",
-        };
+        return { exists: false, error: "Error checking email" };
     }
 }

@@ -717,7 +717,7 @@ export default function SignUpForm() {
 
                     <motion.p
                         {...fadeUp({ delay: 1.2, duration: 0.6, y: 20 })}
-                        className="relative z-[100] mt-6 text-center text-sm text-gray-500"
+                        className="relative mt-6 text-center text-sm text-gray-500"
                     >
                         Already have an account?{" "}
                         <Link
