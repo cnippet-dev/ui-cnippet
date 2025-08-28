@@ -447,7 +447,7 @@ export default function SignUpForm() {
                             </Select>
                             <FormMessage />
                             <p className="mt-1 text-xs text-gray-500">
-                                For compliance reasons, we're required to
+                                For compliance reasons, we&apos;re required to
                                 collect country information.
                             </p>
                         </FormItem>
@@ -544,7 +544,7 @@ export default function SignUpForm() {
         >
             <div className="mt-10 mb-4 text-center">
                 <p className="mt-1 text-sm text-gray-500">
-                    We've sent a 6-digit code to {form.getValues("email")}
+                    We&apos;ve sent a 6-digit code to {form.getValues("email")}
                 </p>
             </div>
 

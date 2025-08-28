@@ -273,14 +273,19 @@ export async function scheduleAccountDeletion({
     }
     const userId = session.user.id;
     const now = new Date();
-    const scheduledAt = new Date(now.getTime() + graceDays * 24 * 60 * 60 * 1000);
+    const scheduledAt = new Date(
+        now.getTime() + graceDays * 24 * 60 * 60 * 1000,
+    );
     try {
         const data = {
             deletionRequestedAt: now,
             deletionScheduledAt: scheduledAt,
         } as unknown as Prisma.UserUpdateInput;
         await prisma.user.update({ where: { id: userId }, data });
-        return { success: true, message: "Account deletion scheduled." } as const;
+        return {
+            success: true,
+            message: "Account deletion scheduled.",
+        } as const;
     } catch (error) {
         console.error("Error scheduling account deletion:", error);
         return { error: { general: "Failed to schedule deletion." } } as const;
@@ -298,7 +303,10 @@ export async function cancelAccountDeletion() {
             deletionScheduledAt: null,
         } as unknown as Prisma.UserUpdateInput;
         await prisma.user.update({ where: { id: session.user.id }, data });
-        return { success: true, message: "Account deletion cancelled." } as const;
+        return {
+            success: true,
+            message: "Account deletion cancelled.",
+        } as const;
     } catch (error) {
         console.error("Error cancelling account deletion:", error);
         return { error: { general: "Failed to cancel deletion." } } as const;
@@ -317,7 +325,10 @@ export async function deleteAccountImmediately() {
             prisma.resetToken.deleteMany({ where: { userId } }),
             prisma.user.delete({ where: { id: userId } }),
         ]);
-        return { success: true, message: "Account deleted permanently." } as const;
+        return {
+            success: true,
+            message: "Account deleted permanently.",
+        } as const;
     } catch (error) {
         console.error("Error deleting account:", error);
         return { error: { general: "Failed to delete account." } } as const;
@@ -358,13 +369,16 @@ export async function requestAccountDeletion({
                 deletionToken: deletionToken,
                 deletionTokenExpires: expiresAt,
                 deletionReason: reason,
-            } as any, // Type assertion for new fields not yet in schema
+                //eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } as any,
         });
 
         // Send confirmation email
         const { Resend } = await import("resend");
         const { render } = await import("@react-email/render");
-        const { AccountDeletionEmail } = await import("@/components/emails/account-deletion");
+        const { AccountDeletionEmail } = await import(
+            "@/components/emails/account-deletion"
+        );
 
         const resend = new Resend(process.env.RESEND_API_KEY);
         const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
@@ -376,7 +390,7 @@ export async function requestAccountDeletion({
                 userEmail: email,
                 deletionLink,
                 reason,
-            })
+            }),
         );
 
         const { error: emailError } = await resend.emails.send({
@@ -388,13 +402,20 @@ export async function requestAccountDeletion({
 
         if (emailError) {
             console.error("Failed to send deletion email:", emailError);
-            return { error: { general: "Failed to send confirmation email." } } as const;
+            return {
+                error: { general: "Failed to send confirmation email." },
+            } as const;
         }
 
-        return { success: true, message: "Deletion confirmation email sent." } as const;
+        return {
+            success: true,
+            message: "Deletion confirmation email sent.",
+        } as const;
     } catch (error) {
         console.error("Error requesting account deletion:", error);
-        return { error: { general: "Failed to process deletion request." } } as const;
+        return {
+            error: { general: "Failed to process deletion request." },
+        } as const;
     }
 }
 
@@ -410,7 +431,9 @@ export async function confirmAccountDeletion(token: string) {
         });
 
         if (!user) {
-            return { error: { general: "Invalid or expired deletion token." } } as const;
+            return {
+                error: { general: "Invalid or expired deletion token." },
+            } as const;
         }
 
         // Delete the account
@@ -419,9 +442,12 @@ export async function confirmAccountDeletion(token: string) {
             prisma.user.delete({ where: { id: user.id } }),
         ]);
 
-        return { success: true, message: "Account deleted successfully." } as const;
+        return {
+            success: true,
+            message: "Account deleted successfully.",
+        } as const;
     } catch (error) {
         console.error("Error confirming account deletion:", error);
         return { error: { general: "Failed to delete account." } } as const;
     }
-}   
+}

@@ -304,6 +304,7 @@ export async function sendSignInAlertEmail({
                 time,
                 browser: meta.browser || meta.userAgent || "Unknown",
                 ip: meta.ip || "Unknown",
+                location: meta.location || "Unknown",
                 userAgent: meta.userAgent || "Unknown",
             }),
         );
@@ -318,29 +319,6 @@ export async function sendSignInAlertEmail({
     } catch (error) {
         console.error("Sign-in email error:", error);
         return { success: false };
-    }
-}
-
-async function getRequestMeta() {
-    try {
-        const headersList = await headers();
-        const userAgent = headersList.get("user-agent") || "";
-        const xff = headersList.get("x-forwarded-for") || "";
-
-        const ip = (
-            xff.split(",")[0] ||
-            headersList.get("x-real-ip") ||
-            ""
-        ).trim();
-
-        const parsed = userAgent ? parseUserAgent(userAgent) : null;
-        const browser = parsed
-            ? `${parsed.browser.name}${parsed.browser.version ? " " + parsed.browser.version : ""}`
-            : "";
-
-        return { ip, userAgent, browser };
-    } catch (error) {
-        return { ip: "", userAgent: "", browser: "" };
     }
 }
 
@@ -412,5 +390,51 @@ export async function checkEmail(email: string) {
     } catch (error) {
         console.error("Error checking email:", error);
         return { exists: false, error: "Error checking email" };
+    }
+}
+
+async function getRequestMeta() {
+    try {
+        const headersList = await headers();
+        const userAgent = headersList.get("user-agent") || "";
+        const xff = headersList.get("x-forwarded-for") || "";
+
+        const ip = (
+            xff.split(",")[0] ||
+            headersList.get("x-real-ip") ||
+            ""
+        ).trim();
+
+        let location = "Unknown";
+
+        // Fetch location information from IP
+        if (ip && ip !== "::1" && ip !== "127.0.0.1") {
+            try {
+                // Using ipapi.co API (free tier available)
+                const response = await fetch(`https://ipapi.co/${ip}/json/`);
+                const data = await response.json();
+
+                if (data && !data.error) {
+                    location = `${data.city || ""}${data.city && data.region ? ", " : ""}${data.region || ""}${(data.city || data.region) && data.country_name ? ", " : ""}${data.country_name || ""}`;
+
+                    if (!location.trim()) {
+                        location = "Unknown";
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching location from IP:", error);
+            }
+        } else if (ip === "::1" || ip === "127.0.0.1") {
+            location = "Localhost";
+        }
+
+        const parsed = userAgent ? parseUserAgent(userAgent) : null;
+        const browser = parsed
+            ? `${parsed.browser.name}${parsed.browser.version ? " " + parsed.browser.version : ""}`
+            : "";
+
+        return { ip, userAgent, browser, location };
+    } catch (error) {
+        return { ip: "", userAgent: "", browser: "", location: "Unknown" };
     }
 }

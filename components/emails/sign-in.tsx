@@ -20,6 +20,7 @@ interface SignInAlertEmailProps {
     time?: string;
     browser?: string;
     ip?: string;
+    location?: string;
     userAgent?: string;
     recentActivityUrl?: string;
     accessTokensUrl?: string;
@@ -32,6 +33,7 @@ export const SignInEmail = ({
     time = "",
     browser = "",
     ip = "",
+    location = "Unknown",
     userAgent = "",
     recentActivityUrl = "https://cnippet.dev/account/security",
     accessTokensUrl = "https://cnippet.dev/account/tokens",
@@ -112,6 +114,18 @@ export const SignInEmail = ({
                             <Row>
                                 <Column width="120">
                                     <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        Location
+                                    </Text>
+                                </Column>
+                                <Column>
+                                    <Text className="m-0 text-[13px] text-[#202124]">
+                                        {location}
+                                    </Text>
+                                </Column>
+                            </Row>
+                            <Row>
+                                <Column width="120">
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
                                         User agent
                                     </Text>
                                 </Column>
@@ -168,8 +182,8 @@ export const SignInEmail = ({
                                 .
                             </Text>
                             <Text className="m-0 text-[12px] text-[#5f6368]">
-                                Copyright © {new Date().getFullYear()} Vercel
-                                Inc. All rights reserved.
+                                Copyright © {new Date().getFullYear()} Cnippet
+                                LLC. All rights reserved.
                             </Text>
                             <Text className="m-0 text-[12px] text-[#5f6368]">
                                 440 N Barranca Ave #4133 Covina, CA 91723
@@ -193,10 +207,10 @@ export const SignInEmail = ({
 SignInEmail.PreviewProps = {
     username: "cnippetdev-6152",
     userEmail: "cnippet.dev@gmail.com",
-    location: "Ghaziabad, Uttar Pradesh, India",
     time: "Tuesday, August 5, 2025 at 6:02 PM UTC",
     browser: "Chrome 138.0.0.0 on Windows 10",
     ip: "157.49.180.104",
+    location: "Ghaziabad, Uttar Pradesh, India",
     userAgent:
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64)\nAppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     recentActivityUrl: "https://cnippet.dev/account/security",

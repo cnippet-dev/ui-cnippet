@@ -346,7 +346,7 @@ export default function SignInForm() {
                         {...fadeUp({ delay: 1.0, duration: 0.6, y: 20 })}
                         className="mt-12 text-center text-sm text-gray-500"
                     >
-                        Don't have an account?{" "}
+                        Don&apos;t have an account?{" "}
                         <Link
                             href="/sign_up"
                             className="underline hover:text-purple-500"

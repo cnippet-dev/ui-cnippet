@@ -185,7 +185,7 @@ export function AccountDeletionDialog({
                                     <div className="text-sm text-blue-800">
                                         <p className="font-medium mb-1">Next steps:</p>
                                         <ol className="list-decimal list-inside space-y-1 text-xs">
-                                            <li>We'll send a confirmation email to <strong>{email}</strong></li>
+                                            <li>We&apos;ll send a confirmation email to <strong>{email}</strong></li>
                                             <li>Click the confirmation link in the email</li>
                                             <li>Your account will be permanently deleted</li>
                                         </ol>
