@@ -22,6 +22,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { AvatarUpload } from "@/components/file-upload";
 import { scheduleAccountDeletion, cancelAccountDeletion, deleteAccountImmediately } from "@/lib/actions/profile.actions";
+import { AccountDeletionDialog } from "@/components/shared/auth/account-deletion-dialog";
 
 export default function GeneralInformationPage() {
     const { data: session, status, update } = useSessionCache();
@@ -90,7 +91,7 @@ export default function GeneralInformationPage() {
             if ("success" in result && result.success) {
                 toast.success("Profile updated successfully!");
 
-                // Update local profile state
+                //eslint-disable-next-line @typescript-eslint/no-explicit-any
                 setProfile((prev: any) => ({
                     ...prev,
                     ...values,
@@ -460,33 +461,29 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Delete Account Section */
-                }
+                {/* Delete Account Section */}
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Delete Account
                     </h2>
                     <p className="mb-6 text-sm text-gray-600">
                         Permanently remove your Personal Account and all of its
-                        contents from the Vercel platform. This action is not
+                        contents from the Cnippet platform. This action is not
                         reversible, so please continue with caution.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                        <Button
-                            variant="destructive"
-                            className="bg-red-600 hover:bg-red-700"
-                            onClick={async () => {
-                                const res = await scheduleAccountDeletion({ graceDays: 7 });
-                                if ("success" in res && res.success) {
-                                    toast.success("Deletion scheduled in 7 days. You can cancel before then.");
-                                } else {
-                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to schedule deletion";
-                                    toast.error(msg);
-                                }
-                            }}
-                        >
-                            Schedule deletion (7 days)
-                        </Button>
+                        <AccountDeletionDialog
+                            username={profile?.username || ""}
+                            email={profile?.email || ""}
+                            trigger={
+                                <Button
+                                    variant="destructive"
+                                    className="bg-red-600 hover:bg-red-700"
+                                >
+                                    Delete Account
+                                </Button>
+                            }
+                        />
 
                         <Button
                             variant="outline"
@@ -495,31 +492,13 @@ export default function GeneralInformationPage() {
                                 if ("success" in res && res.success) {
                                     toast.success("Deletion cancelled");
                                 } else {
+                                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
                                     const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to cancel";
                                     toast.error(msg);
                                 }
                             }}
                         >
                             Cancel scheduled deletion
-                        </Button>
-
-                        <Button
-                            variant="destructive"
-                            className="bg-red-700 hover:bg-red-800"
-                            onClick={async () => {
-                                const confirmed = window.confirm("This will permanently delete your account immediately. Are you sure?");
-                                if (!confirmed) return;
-                                const res = await deleteAccountImmediately();
-                                if ("success" in res && res.success) {
-                                    toast.success("Account deleted");
-                                    window.location.href = "/";
-                                } else {
-                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to delete account";
-                                    toast.error(msg);
-                                }
-                            }}
-                        >
-                            Delete now
                         </Button>
                     </div>
                 </div>

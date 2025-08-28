@@ -323,3 +323,105 @@ export async function deleteAccountImmediately() {
         return { error: { general: "Failed to delete account." } } as const;
     }
 }
+
+// New account deletion flow actions
+export async function requestAccountDeletion({
+    email,
+    username,
+    reason,
+}: {
+    email: string;
+    username?: string;
+    reason?: string;
+}) {
+    try {
+        // Find user by email
+        const user = await prisma.user.findUnique({
+            where: { email },
+            select: { id: true, name: true, username: true },
+        });
+
+        if (!user) {
+            return { error: { general: "User not found." } } as const;
+        }
+
+        // Generate deletion token
+        const { randomBytes } = await import("crypto");
+        const deletionToken = randomBytes(32).toString("hex");
+        const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
+
+        // Store deletion request
+        await prisma.user.update({
+            where: { id: user.id },
+            data: {
+                deletionRequestedAt: new Date(),
+                deletionToken: deletionToken,
+                deletionTokenExpires: expiresAt,
+                deletionReason: reason,
+            } as any, // Type assertion for new fields not yet in schema
+        });
+
+        // Send confirmation email
+        const { Resend } = await import("resend");
+        const { render } = await import("@react-email/render");
+        const { AccountDeletionEmail } = await import("@/components/emails/account-deletion");
+
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
+        const deletionLink = `${baseUrl}/confirm-deletion?token=${deletionToken}`;
+
+        const emailHtml = await render(
+            AccountDeletionEmail({
+                username: username || user.username || user.name || "User",
+                userEmail: email,
+                deletionLink,
+                reason,
+            })
+        );
+
+        const { error: emailError } = await resend.emails.send({
+            from: "Cnippet <system@cnippet.dev>",
+            to: email,
+            subject: "Confirm Your Account Deletion Request",
+            html: emailHtml,
+        });
+
+        if (emailError) {
+            console.error("Failed to send deletion email:", emailError);
+            return { error: { general: "Failed to send confirmation email." } } as const;
+        }
+
+        return { success: true, message: "Deletion confirmation email sent." } as const;
+    } catch (error) {
+        console.error("Error requesting account deletion:", error);
+        return { error: { general: "Failed to process deletion request." } } as const;
+    }
+}
+
+export async function confirmAccountDeletion(token: string) {
+    try {
+        // Find user by deletion token
+        const user = await prisma.user.findFirst({
+            where: {
+                deletionToken: token,
+                deletionTokenExpires: { gt: new Date() },
+            },
+            select: { id: true },
+        });
+
+        if (!user) {
+            return { error: { general: "Invalid or expired deletion token." } } as const;
+        }
+
+        // Delete the account
+        await prisma.$transaction([
+            prisma.resetToken.deleteMany({ where: { userId: user.id } }),
+            prisma.user.delete({ where: { id: user.id } }),
+        ]);
+
+        return { success: true, message: "Account deleted successfully." } as const;
+    } catch (error) {
+        console.error("Error confirming account deletion:", error);
+        return { error: { general: "Failed to delete account." } } as const;
+    }
+}   

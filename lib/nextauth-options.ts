@@ -94,15 +94,13 @@ export const nextauthOptions: NextAuthOptions = {
     ],
 
     callbacks: {
+        // Update the signIn callback to redirect social signups
         async signIn({ user, account, profile }) {
             // Handle credentials login
             if (account?.provider === "credentials") {
                 if (!user) {
-                    // Credentials failed - stay on sign-in page
                     return false;
                 }
-                // Fire-and-forget sign-in alert email with request metadata
-                // We intentionally do not block sign-in if email fails
                 sendSignInAlertEmail({
                     email: user.email || "",
                     username: user.name,
@@ -113,12 +111,19 @@ export const nextauthOptions: NextAuthOptions = {
             // Handle OAuth login
             if (account?.type === "oauth" && profile) {
                 const result = await signInWithOauth({ account, profile });
+
                 // If user exists but has no username, mark as needs completion
                 if (result.success && result.data) {
-                    // Attach needsCompletion to user for jwt callback
-                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    (user as any).needsCompletion = !result.data.username;
+                    // For new OAuth users, redirect to signup page to complete profile
+                    if (!result.data.username) {
+                        // Store user ID in token for later completion
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (user as any).needsCompletion = true;
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (user as any).isNewOAuthUser = true;
+                    }
                 }
+
                 // Send sign-in alert on successful OAuth sign-in
                 if (result.success && result.data?.email) {
                     sendSignInAlertEmail({
@@ -126,7 +131,13 @@ export const nextauthOptions: NextAuthOptions = {
                         username: result.data.name,
                     });
                 }
-                return !!result.success; // Always return boolean
+
+                // Redirect new OAuth users to signup page
+                if (result.success && result.data && !result.data.username) {
+                    return `/sign_up?social=true&email=${encodeURIComponent(result.data.email || "")}`;
+                }
+
+                return !!result.success;
             }
             return true;
         },
@@ -159,11 +170,17 @@ export const nextauthOptions: NextAuthOptions = {
                     // Block sign-in if user is deleted or scheduled for deletion passed
                     //eslint-disable-next-line @typescript-eslint/no-explicit-any
                     const anyUser = userData as any;
-                    const deletedAt = anyUser.deletedAt ? new Date(anyUser.deletedAt) : null;
+                    const deletedAt = anyUser.deletedAt
+                        ? new Date(anyUser.deletedAt)
+                        : null;
                     const deletionScheduledAt = anyUser.deletionScheduledAt
                         ? new Date(anyUser.deletionScheduledAt)
                         : null;
-                    if (deletedAt || (deletionScheduledAt && deletionScheduledAt <= new Date())) {
+                    if (
+                        deletedAt ||
+                        (deletionScheduledAt &&
+                            deletionScheduledAt <= new Date())
+                    ) {
                         throw new Error("Account is deleted");
                     }
                 }

@@ -5,7 +5,6 @@ export async function GET() {
     try {
         const now = new Date();
         const dueUsers = await prisma.user.findMany({
-            // @ts-ignore - new fields present after prisma generate
             where: { deletionScheduledAt: { lte: now } },
             select: { id: true },
         });

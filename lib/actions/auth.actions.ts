@@ -35,31 +35,85 @@ export async function getUserSession() {
     return await getServerSession(nextauthOptions);
 }
 
+// Add this function to handle social signup completion
+export async function completeSocialSignup({
+    email,
+    username,
+    country,
+    emailPreferences,
+    termsAccepted,
+}: {
+    email: string;
+    username: string;
+    country: string;
+    emailPreferences: boolean;
+    termsAccepted: boolean;
+}): Promise<AuthResult> {
+    try {
+        if (!termsAccepted) {
+            return { error: "You must accept the terms and conditions" };
+        }
+
+        // Check if username is available
+        const usernameCheck = await checkUsername(username);
+        if (usernameCheck.exists) {
+            return { error: "Username already taken" };
+        }
+
+        const existing = await prisma.user.findUnique({ where: { email } });
+        if (!existing) {
+            return { error: "No OAuth user found for this email" };
+        }
+        // Prevent converting credentials account via this path
+        if (existing.provider === "credentials") {
+            return { error: "This email is already registered with password" };
+        }
+
+        const updatedUser = await prisma.user.update({
+            where: { id: existing.id },
+            data: {
+                username,
+                country,
+                emailNotifications: emailPreferences,
+                termsAccepted,
+            },
+        });
+
+        return {
+            success: true,
+            data: { id: updatedUser.id, username: updatedUser.username },
+        };
+    } catch (error) {
+        console.error("Complete social signup error:", error);
+        return { error: "Failed to complete signup" };
+    }
+}
+
+// Update signUpWithCredentials to include country
 export async function signUpWithCredentials({
     name,
     email,
     password,
+    username,
+    country,
     termsAccepted,
+    emailPreferences,
+    emailVerified,
 }: {
     name: string;
     email: string;
     password: string;
+    username: string;
+    country: string;
     termsAccepted: boolean;
+    emailPreferences: boolean;
+    emailVerified?: Date;
 }): Promise<AuthResult> {
     try {
         const existingUser = await prisma.user.findUnique({ where: { email } });
         if (existingUser) return { error: "User already exists" };
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const baseUsername = email.split("@")[0].replace(/[^a-zA-Z0-9]/g, "");
-        let username = baseUsername;
-        let counter = 1;
-
-        // Ensure username is unique
-        while (await prisma.user.findUnique({ where: { username } })) {
-            username = `${baseUsername}${counter}`;
-            counter++;
-        }
 
         const user = await prisma.user.create({
             data: {
@@ -67,8 +121,10 @@ export async function signUpWithCredentials({
                 name,
                 email,
                 password: hashedPassword,
-                emailVerified: new Date(),
+                country,
+                emailVerified: emailVerified || null,
                 termsAccepted,
+                emailNotifications: emailPreferences,
                 provider: "credentials",
             },
         });
@@ -358,54 +414,6 @@ export async function checkUsernameAvailability(
             available: false,
             error: "Failed to check username availability",
         };
-    }
-}
-
-export async function completeSocialSignup({
-    userId,
-    termsAccepted,
-}: {
-    userId: string;
-    termsAccepted: boolean;
-}): Promise<AuthResult> {
-    try {
-        if (!termsAccepted) {
-            return { error: "You must accept the terms and conditions" };
-        }
-
-        // Auto-generate username if needed
-        const user = await prisma.user.findUnique({ where: { id: userId } });
-        if (!user) return { error: "User not found" };
-
-        let username = user.username;
-
-        if (!username) {
-            const baseUsername =
-                user.email?.split("@")[0].replace(/[^a-zA-Z0-9]/g, "") || "";
-            username = baseUsername;
-            let counter = 1;
-
-            while (await prisma.user.findUnique({ where: { username } })) {
-                username = `${baseUsername}${counter}`;
-                counter++;
-            }
-        }
-
-        const updatedUser = await prisma.user.update({
-            where: { id: userId },
-            data: {
-                username,
-                termsAccepted,
-            },
-        });
-
-        return {
-            success: true,
-            data: { id: updatedUser.id, username: updatedUser.username },
-        };
-    } catch (error) {
-        console.error("Complete social signup error:", error);
-        return { error: "Failed to complete signup" };
     }
 }
 

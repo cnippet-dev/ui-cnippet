@@ -7,27 +7,31 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+// Add country field to User model
 model User {
-    id                 String       @id @default(auto()) @map("_id") @db.ObjectId
-    name               String?
-    username           String?      @unique
-    email              String?      @unique
-    emailVerified      DateTime?
-    image              String?
-    password           String?
-    provider           String?
-    termsAccepted      Boolean      @default(false)
-    preferredTheme     String?      @default("system")
-    emailNotifications Boolean?     @default(true)
-    inAppNotifications Boolean?     @default(false)
-    preferredLanguage  String?      @default("en")
-    preferredTimezone  String?      @default("UTC")
-    ResetToken         ResetToken[]
-    favourites         String[]
-    // Account deletion lifecycle
-    deletionRequestedAt DateTime?
-    deletionScheduledAt DateTime?
-    deletedAt           DateTime?
+    id                   String       @id @default(auto()) @map("_id") @db.ObjectId
+    name                 String?
+    username             String?      @unique
+    email                String?      @unique
+    emailVerified        DateTime?
+    image                String?
+    password             String?
+    provider             String?
+    termsAccepted        Boolean      @default(false)
+    preferredTheme       String?      @default("system")
+    emailNotifications   Boolean?     @default(true)
+    inAppNotifications   Boolean?     @default(false)
+    preferredLanguage    String?      @default("en")
+    preferredTimezone    String?      @default("UTC")
+    country              String? // New field
+    ResetToken           ResetToken[]
+    favourites           String[]
+    deletionRequestedAt  DateTime?
+    deletionScheduledAt  DateTime?
+    deletedAt            DateTime?
+    deletionToken        String?      @unique
+    deletionTokenExpires DateTime?
+    deletionReason       String?
 }
 
 model Newsletter {
