@@ -20,15 +20,12 @@ interface SignInAlertEmailProps {
     time?: string;
     browser?: string;
     ip?: string;
+    location?: string;
     userAgent?: string;
     recentActivityUrl?: string;
     accessTokensUrl?: string;
     manageNotificationsUrl?: string;
 }
-
-const baseUrl = process.env.NEXT_PUBLIC_URL
-    ? `${process.env.NEXT_PUBLIC_URL}`
-    : "http://localhost:3000";
 
 export const SignInEmail = ({
     username = "there",
@@ -36,6 +33,7 @@ export const SignInEmail = ({
     time = "",
     browser = "",
     ip = "",
+    location = "Unknown",
     userAgent = "",
     recentActivityUrl = "https://cnippet.dev/account/security",
     accessTokensUrl = "https://cnippet.dev/account/tokens",
@@ -48,10 +46,9 @@ export const SignInEmail = ({
                 <Preview>New sign-in to your account</Preview>
                 <Body className="font-['Google Sans',Roboto,Arial,sans-serif] mx-auto my-auto bg-[#f8f9fa] px-2 py-6">
                     <Container className="mx-auto max-w-[520px] rounded-2xl bg-white p-6">
-                        {/* Header */}
                         <Section className="mb-2 text-center">
                             <Img
-                                src={`${baseUrl}/images/logo-light.png`}
+                                src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1753948225/logo-light.png`}
                                 width="50"
                                 height="50"
                                 alt="Logo"
@@ -59,7 +56,6 @@ export const SignInEmail = ({
                             />
                         </Section>
 
-                        {/* Greeting and intro */}
                         <Section className="mb-4">
                             <Text className="mb-2 text-[14px] leading-[22px] text-[#202124]">
                                 Hi{" "}
@@ -78,16 +74,7 @@ export const SignInEmail = ({
                             </Text>
                         </Section>
 
-                        {/* Details */}
                         <Section className="mb-4 rounded-lg bg-[#f8f9fa] p-4">
-                            {/* <Row>
-                                <Column width="120">
-                                    <Text className="m-0 text-[13px] text-[#5f6368]">Location</Text>
-                                </Column>
-                                <Column>
-                                    <Text className="m-0 text-[13px] text-[#202124]">{location}</Text>
-                                </Column>
-                            </Row> */}
                             <Row>
                                 <Column width="120">
                                     <Text className="m-0 text-[13px] text-[#5f6368]">
@@ -127,6 +114,18 @@ export const SignInEmail = ({
                             <Row>
                                 <Column width="120">
                                     <Text className="m-0 text-[13px] text-[#5f6368]">
+                                        Location
+                                    </Text>
+                                </Column>
+                                <Column>
+                                    <Text className="m-0 text-[13px] text-[#202124]">
+                                        {location}
+                                    </Text>
+                                </Column>
+                            </Row>
+                            <Row>
+                                <Column width="120">
+                                    <Text className="m-0 text-[13px] text-[#5f6368]">
                                         User agent
                                     </Text>
                                 </Column>
@@ -138,7 +137,6 @@ export const SignInEmail = ({
                             </Row>
                         </Section>
 
-                        {/* Help / CTA */}
                         <Section className="mb-2">
                             <Text className="mb-2 text-[14px] font-medium text-[#202124]">
                                 Don&apos;t recognize this activity?
@@ -172,7 +170,6 @@ export const SignInEmail = ({
 
                         <Hr className="my-6 w-full border border-solid border-[#eaeaea]" />
 
-                        {/* Footer */}
                         <Section className="text-left">
                             <Text className="mb-2 text-[13px] text-[#5f6368]">
                                 If you&apos;ve got questions, ask us in the{" "}
@@ -185,8 +182,8 @@ export const SignInEmail = ({
                                 .
                             </Text>
                             <Text className="m-0 text-[12px] text-[#5f6368]">
-                                Copyright © {new Date().getFullYear()} Vercel
-                                Inc. All rights reserved.
+                                Copyright © {new Date().getFullYear()} Cnippet
+                                LLC. All rights reserved.
                             </Text>
                             <Text className="m-0 text-[12px] text-[#5f6368]">
                                 440 N Barranca Ave #4133 Covina, CA 91723
@@ -210,10 +207,10 @@ export const SignInEmail = ({
 SignInEmail.PreviewProps = {
     username: "cnippetdev-6152",
     userEmail: "cnippet.dev@gmail.com",
-    location: "Ghaziabad, Uttar Pradesh, India",
     time: "Tuesday, August 5, 2025 at 6:02 PM UTC",
     browser: "Chrome 138.0.0.0 on Windows 10",
     ip: "157.49.180.104",
+    location: "Ghaziabad, Uttar Pradesh, India",
     userAgent:
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64)\nAppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     recentActivityUrl: "https://cnippet.dev/account/security",

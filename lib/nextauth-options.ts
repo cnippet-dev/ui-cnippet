@@ -3,13 +3,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import {
-    getUserByEmail,
     signInWithCredentials,
     signInWithOauth,
     sendSignInAlertEmail,
 } from "./actions/auth.actions";
+import prisma from "./prisma";
 
-// Extend the built-in session types
 declare module "next-auth" {
     interface Session {
         user: {
@@ -94,15 +93,13 @@ export const nextauthOptions: NextAuthOptions = {
     ],
 
     callbacks: {
+        // Update the signIn callback to redirect social signups
         async signIn({ user, account, profile }) {
             // Handle credentials login
             if (account?.provider === "credentials") {
                 if (!user) {
-                    // Credentials failed - stay on sign-in page
                     return false;
                 }
-                // Fire-and-forget sign-in alert email with request metadata
-                // We intentionally do not block sign-in if email fails
                 sendSignInAlertEmail({
                     email: user.email || "",
                     username: user.name,
@@ -113,12 +110,19 @@ export const nextauthOptions: NextAuthOptions = {
             // Handle OAuth login
             if (account?.type === "oauth" && profile) {
                 const result = await signInWithOauth({ account, profile });
+
                 // If user exists but has no username, mark as needs completion
                 if (result.success && result.data) {
-                    // Attach needsCompletion to user for jwt callback
-                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    (user as any).needsCompletion = !result.data.username;
+                    // For new OAuth users, redirect to signup page to complete profile
+                    if (!result.data.username) {
+                        // Store user ID in token for later completion
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (user as any).needsCompletion = true;
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (user as any).isNewOAuthUser = true;
+                    }
                 }
+
                 // Send sign-in alert on successful OAuth sign-in
                 if (result.success && result.data?.email) {
                     sendSignInAlertEmail({
@@ -126,7 +130,13 @@ export const nextauthOptions: NextAuthOptions = {
                         username: result.data.name,
                     });
                 }
-                return !!result.success; // Always return boolean
+
+                // Redirect new OAuth users to signup page
+                if (result.success && result.data && !result.data.username) {
+                    return `/sign_up?social=true&email=${encodeURIComponent(result.data.email || "")}`;
+                }
+
+                return !!result.success;
             }
             return true;
         },
@@ -142,9 +152,12 @@ export const nextauthOptions: NextAuthOptions = {
             }
 
             if (token.email) {
-                const userData = await getUserByEmail(token.email);
+                const userData = await prisma.user.findUnique({
+                    where: { email: token.email },
+                });
+
                 if (userData) {
-                    token.id = userData._id;
+                    token.id = userData.id;
                     token.name = userData.name;
                     token.email = userData.email;
                     token.provider = token.provider || userData.provider;
@@ -156,6 +169,22 @@ export const nextauthOptions: NextAuthOptions = {
                     token.preferredLanguage = userData.preferredLanguage;
                     token.preferredTimezone = userData.preferredTimezone;
                     token.needsCompletion = !userData.username;
+                    // Block sign-in if user is deleted or scheduled for deletion passed
+                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    const anyUser = userData as any;
+                    const deletedAt = anyUser.deletedAt
+                        ? new Date(anyUser.deletedAt)
+                        : null;
+                    const deletionScheduledAt = anyUser.deletionScheduledAt
+                        ? new Date(anyUser.deletionScheduledAt)
+                        : null;
+                    if (
+                        deletedAt ||
+                        (deletionScheduledAt &&
+                            deletionScheduledAt <= new Date())
+                    ) {
+                        throw new Error("Account is deleted");
+                    }
                 }
             }
             //eslint-disable-next-line @typescript-eslint/no-explicit-any

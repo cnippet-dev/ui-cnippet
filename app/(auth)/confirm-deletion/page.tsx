@@ -3,20 +3,20 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-    title: "Reset Password",
-    description: "Enter the email associated with your account to reset your password",
+    title: "Confirm Account Deletion",
+    description: "Confirm your account deletion request",
     robots: {
         index: false,
         follow: false,
     },
 };
 
-const ResetPassword = dynamic(() => import("./_components/main"));
+const ConfirmDeletion = dynamic(() => import("./_components/main"));
 
-export default function ResetPasswordPage() {
+export default function ConfirmDeletionPage() {
     return (
         <Suspense>
-            <ResetPassword />
+            <ConfirmDeletion />
         </Suspense>
     );
 }

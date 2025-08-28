@@ -35,32 +35,90 @@ export async function getUserSession() {
     return await getServerSession(nextauthOptions);
 }
 
-export async function signUpWithCredentials({
+export async function completeSocialSignup({
+    email,
     username,
+    country,
+    emailPreferences,
+    termsAccepted,
+}: {
+    email: string;
+    username: string;
+    country: string;
+    emailPreferences: boolean;
+    termsAccepted: boolean;
+}): Promise<AuthResult> {
+    try {
+        if (!termsAccepted) {
+            return { error: "You must accept the terms and conditions" };
+        }
+
+        const usernameCheck = await checkUsername(username);
+        if (usernameCheck.exists) {
+            return { error: "Username already taken" };
+        }
+
+        const existing = await prisma.user.findUnique({ where: { email } });
+        if (!existing) {
+            return { error: "No OAuth user found for this email" };
+        }
+        if (existing.provider === "credentials") {
+            return { error: "This email is already registered with password" };
+        }
+
+        const updatedUser = await prisma.user.update({
+            where: { id: existing.id },
+            data: {
+                username,
+                country,
+                emailNotifications: emailPreferences,
+                termsAccepted,
+            },
+        });
+
+        return {
+            success: true,
+            data: { id: updatedUser.id, username: updatedUser.username },
+        };
+    } catch (error) {
+        console.error("Complete social signup error:", error);
+        return { error: "Failed to complete signup" };
+    }
+}
+
+export async function signUpWithCredentials({
     name,
     email,
     password,
+    username,
+    country,
     termsAccepted,
+    emailPreferences,
 }: {
-    username: string;
     name: string;
     email: string;
     password: string;
+    username: string;
+    country: string;
     termsAccepted: boolean;
+    emailPreferences: boolean;
 }): Promise<AuthResult> {
     try {
         const existingUser = await prisma.user.findUnique({ where: { email } });
         if (existingUser) return { error: "User already exists" };
 
         const hashedPassword = await bcrypt.hash(password, 10);
+
         const user = await prisma.user.create({
             data: {
                 username,
                 name,
                 email,
                 password: hashedPassword,
-                emailVerified: new Date(),
+                country,
+                emailVerified: new Date(), // Set to current timestamp since user verified via OTP
                 termsAccepted,
+                emailNotifications: emailPreferences,
                 provider: "credentials",
             },
         });
@@ -135,21 +193,11 @@ export async function signInWithOauth({
 
         return {
             success: true,
-            data: {
-                id: newUser.id,
-                name: newUser.name,
-                email: newUser.email,
-            },
+            data: { id: newUser.id, name: newUser.name, email: newUser.email },
         };
     } catch (error) {
         return { success: false, error: `OAuth signin failed ${error}` };
     }
-}
-
-export async function getUserByEmail(email: string) {
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) throw new Error("User not found");
-    return { ...user, _id: user.id };
 }
 
 export async function resetPassword({
@@ -207,10 +255,7 @@ export async function sendResetEmail(email: string) {
 
         try {
             const emailHtml = await render(
-                ResetPasswordEmail({
-                    userEmail: user.email!,
-                    resetLink,
-                }),
+                ResetPasswordEmail({ userEmail: user.email!, resetLink }),
             );
 
             await resend.emails.send({
@@ -256,10 +301,10 @@ export async function sendSignInAlertEmail({
             SignInEmail({
                 username: username || email.split("@")[0],
                 userEmail: email,
-                // location: meta.location || "Unknown",
                 time,
                 browser: meta.browser || meta.userAgent || "Unknown",
                 ip: meta.ip || "Unknown",
+                location: meta.location || "Unknown",
                 userAgent: meta.userAgent || "Unknown",
             }),
         );
@@ -277,43 +322,21 @@ export async function sendSignInAlertEmail({
     }
 }
 
-
-async function getRequestMeta() {
-    try {
-        const headersList = await headers();
-        const userAgent = headersList.get("user-agent") || "";
-        const xff = headersList.get("x-forwarded-for") || "";
-        console.log(xff);
-
-        const ip = (xff.split(",")[0] || headersList.get("x-real-ip") || "").trim();
-
-        const parsed = userAgent ? parseUserAgent(userAgent) : null;
-        const browser = parsed
-            ? `${parsed.browser.name}${parsed.browser.version ? " " + parsed.browser.version : ""}`
-            : "";
-
-        return { ip, userAgent, browser };
-    } catch (error) {
-        return { ip: "", userAgent: "", browser: "" };
-    }
-}
-
-
-
 function parseUserAgent(userAgent: string) {
-    // Simple parsing - consider using a library like ua-parser-js
-    const browserMatch = userAgent.match(/(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/);
+    const browserMatch = userAgent.match(
+        /(Chrome|Firefox|Safari|Edge)\/([0-9.]+)/,
+    );
     const osMatch = userAgent.match(/(Windows NT|Mac OS X|Linux) ([0-9._]+)/);
 
     return {
         browser: {
             name: browserMatch ? browserMatch[1] : "Unknown",
-            version: browserMatch ? browserMatch[2] : ""
+            version: browserMatch ? browserMatch[2] : "",
         },
         os: {
             name: osMatch ? osMatch[1] : "Unknown",
-            version: osMatch ? osMatch[2] : ""
-        }
+            version: osMatch ? osMatch[2] : "",
+        },
     };
 }
 
@@ -328,7 +351,6 @@ export async function checkUsernameAvailability(
             };
         }
 
-        // Check if username matches allowed pattern (alphanumeric and underscores only)
         if (!/^[a-zA-Z0-9_]+$/.test(username)) {
             return {
                 available: false,
@@ -339,7 +361,6 @@ export async function checkUsernameAvailability(
         const existingUser = await prisma.user.findUnique({
             where: { username },
         });
-
         return { available: !existingUser };
     } catch (error) {
         console.error("Username check error:", error);
@@ -350,73 +371,70 @@ export async function checkUsernameAvailability(
     }
 }
 
-export async function completeSocialSignup({
-    userId,
-    username,
-    termsAccepted,
-}: {
-    userId: string;
-    username: string;
-    termsAccepted: boolean;
-}): Promise<AuthResult> {
-    try {
-        if (!termsAccepted) {
-            return { error: "You must accept the terms and conditions" };
-        }
-
-        const usernameCheck = await checkUsernameAvailability(username);
-        if (!usernameCheck.available) {
-            return {
-                error: usernameCheck.error || "Username is not available",
-            };
-        }
-
-        const user = await prisma.user.update({
-            where: { id: userId },
-            data: {
-                username,
-                termsAccepted,
-            },
-        });
-
-        return {
-            success: true,
-            data: { id: user.id, username: user.username },
-        };
-    } catch (error) {
-        console.error("Complete social signup error:", error);
-        return { error: "Failed to complete signup" };
-    }
-}
-
 export async function checkUsername(username: string) {
     try {
         const existingUser = await prisma.user.findFirst({
             where: { username },
         });
-        return {
-            exists: !!existingUser,
-        };
+        return { exists: !!existingUser };
     } catch (error) {
         console.error("Error checking username:", error);
-        return {
-            exists: false,
-            error: "Error checking username",
-        };
+        return { exists: false, error: "Error checking username" };
     }
 }
 
 export async function checkEmail(email: string) {
     try {
         const existingUser = await prisma.user.findFirst({ where: { email } });
-        return {
-            exists: !!existingUser,
-        };
+        return { exists: !!existingUser };
     } catch (error) {
         console.error("Error checking email:", error);
-        return {
-            exists: false,
-            error: "Error checking email",
-        };
+        return { exists: false, error: "Error checking email" };
+    }
+}
+
+async function getRequestMeta() {
+    try {
+        const headersList = await headers();
+        const userAgent = headersList.get("user-agent") || "";
+        const xff = headersList.get("x-forwarded-for") || "";
+
+        const ip = (
+            xff.split(",")[0] ||
+            headersList.get("x-real-ip") ||
+            ""
+        ).trim();
+
+        let location = "Unknown";
+
+        // Fetch location information from IP
+        if (ip && ip !== "::1" && ip !== "127.0.0.1") {
+            try {
+                // Using ipapi.co API (free tier available)
+                const response = await fetch(`https://ipapi.co/${ip}/json/`);
+                const data = await response.json();
+
+                if (data && !data.error) {
+                    location = `${data.city || ""}${data.city && data.region ? ", " : ""}${data.region || ""}${(data.city || data.region) && data.country_name ? ", " : ""}${data.country_name || ""}`;
+
+                    if (!location.trim()) {
+                        location = "Unknown";
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching location from IP:", error);
+            }
+        } else if (ip === "::1" || ip === "127.0.0.1") {
+            location = "Localhost";
+        }
+
+        const parsed = userAgent ? parseUserAgent(userAgent) : null;
+        const browser = parsed
+            ? `${parsed.browser.name}${parsed.browser.version ? " " + parsed.browser.version : ""}`
+            : "";
+
+        return { ip, userAgent, browser, location };
+    } catch (error) {
+        return { ip: "", userAgent: "", browser: "", location: "Unknown" };
     }
 }

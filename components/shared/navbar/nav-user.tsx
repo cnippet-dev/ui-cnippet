@@ -36,8 +36,8 @@ const NavUser = () => {
     return (
         <>
             {isLoading ? (
-                <div className="-mt-[22px] mr-3 ml-2 w-fit">
-                    <div className="loader"></div>
+                <div className="-mt-[22px] mr-3 ml-2 flex w-fit items-center justify-center">
+                    <div className="loader my-auto"></div>
                 </div>
             ) : (
                 <>
@@ -92,19 +92,13 @@ const NavUser = () => {
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <Link href="/profile/billing">
-                                            <RiBankCardFill className="mr-1 h-4 w-4" />
-                                            <span>Billing</span>
-                                        </Link>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem asChild>
-                                        <Link href="/profile/settings">
+                                        <Link href="/account/authentication">
                                             <RiSettings2Fill className="mr-1 h-4 w-4" />
-                                            <span>Settings</span>
+                                            <span>Authentication</span>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <Link href="/profile/favourites">
+                                        <Link href="/account/favourites">
                                             <RiHeart2Fill className="mr-1 h-4 w-4" />
                                             <span>Favourites</span>
                                         </Link>

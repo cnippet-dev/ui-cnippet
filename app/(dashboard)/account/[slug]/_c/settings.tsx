@@ -4,35 +4,36 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { updateGeneralInfoSchema } from "@/lib/validations/profile";
-import { updateGeneralInformation } from "@/lib/actions/profile.actions";
+import {
+    updateProfileImage,
+    getCurrentUserProfile,
+    updateGeneralInformation,
+} from "@/lib/actions/profile.actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
-import { Copy, Loader2, MoreHorizontal, Plus, X } from "lucide-react";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
+import { Copy, Loader2, MoreHorizontal } from "lucide-react";
+
 import { useSessionCache } from "@/hooks/use-session-cache";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { AvatarUpload } from "@/components/file-upload";
+import { scheduleAccountDeletion, cancelAccountDeletion, deleteAccountImmediately } from "@/lib/actions/profile.actions";
+import { AccountDeletionDialog } from "@/components/shared/auth/account-deletion-dialog";
 
 export default function GeneralInformationPage() {
     const { data: session, status, update } = useSessionCache();
-    const [isPending, setIsPending] = useState(false);
+    const [isPending, setIsPending] = useState<"name" | "username" | null>(
+        null,
+    );
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const [profile, setProfile] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+    const [isUploading, setIsUploading] = useState(false);
+
     const form = useForm<z.infer<typeof updateGeneralInfoSchema>>({
         resolver: zodResolver(updateGeneralInfoSchema),
         defaultValues: {
@@ -40,6 +41,20 @@ export default function GeneralInformationPage() {
             username: "",
         },
     });
+    useEffect(() => {
+        async function fetchProfile() {
+            try {
+                setLoading(true);
+                const data = await getCurrentUserProfile();
+                setProfile(data);
+            } catch (error) {
+                console.error("Failed to fetch profile:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchProfile();
+    }, []);
 
     useEffect(() => {
         if (status === "authenticated" && session?.user) {
@@ -50,12 +65,38 @@ export default function GeneralInformationPage() {
         }
     }, [session, status, form]);
 
-    async function onSubmit(values: z.infer<typeof updateGeneralInfoSchema>) {
-        setIsPending(true);
+    const handleImageUpload = async (url: string) => {
+        try {
+            setIsUploading(true);
+            await updateProfileImage(url);
+
+            //eslint-disable-next-line @typescript-eslint/no-explicit-any
+            setProfile((prev: any) => ({ ...prev, image: url }));
+            toast.success("Profile image updated successfully!");
+        } catch (error) {
+            console.error("Profile image update failed:", error);
+            toast.error("Failed to update profile image");
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    async function onSubmit(
+        values: z.infer<typeof updateGeneralInfoSchema>,
+        isName: boolean,
+    ) {
+        setIsPending(isName ? "name" : "username");
         try {
             const result = await updateGeneralInformation(values);
             if ("success" in result && result.success) {
                 toast.success("Profile updated successfully!");
+
+                //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                setProfile((prev: any) => ({
+                    ...prev,
+                    ...values,
+                }));
+
                 // Update the session with new data
                 await update({
                     name: values.name,
@@ -80,16 +121,16 @@ export default function GeneralInformationPage() {
             toast.error("An unexpected error occurred");
             console.error("Profile update error:", error);
         } finally {
-            setIsPending(false);
+            setIsPending(null);
         }
     }
 
-    if (status === "loading") {
+    if (status === "loading" || loading) {
         return (
             <div className="flex min-h-[400px] items-center justify-center">
                 <div className="flex items-center gap-2">
-                    <Loader2 className="h-6 w-6 animate-spin" />
-                    <span>Loading profile...</span>
+                    <div className="loader"></div>
+                    <span>Retrieving data</span>
                 </div>
             </div>
         );
@@ -102,6 +143,14 @@ export default function GeneralInformationPage() {
                 <p className="text-muted-foreground">
                     You must be logged in to view this page.
                 </p>
+            </div>
+        );
+    }
+
+    if (!loading && !profile) {
+        return (
+            <div className="flex h-full items-center justify-center text-red-500">
+                Profile not found.
             </div>
         );
     }
@@ -132,6 +181,33 @@ export default function GeneralInformationPage() {
                             M
                         </AvatarFallback>
                     </Avatar>
+
+                    <div className="relative">
+                        <Avatar className="h-32 w-32 border-4 border-white shadow-2xl">
+                            <AvatarImage
+                                src={profile?.image ?? undefined}
+                                alt="Profile"
+                            />
+                            <AvatarFallback className="bg-gradient-to-br from-violet-500 to-purple-600 text-2xl font-bold text-white">
+                                {profile.name
+                                    ? profile?.name.slice(0, 2).toUpperCase()
+                                    : "DK"}
+                            </AvatarFallback>
+                        </Avatar>
+                        <div className="absolute -right-2 -bottom-2">
+                            {isUploading ? (
+                                <Button
+                                    size="icon"
+                                    className="h-10 w-10 rounded-full bg-white"
+                                    disabled
+                                >
+                                    <Loader2 className="h-4 w-4 animate-spin text-gray-700" />
+                                </Button>
+                            ) : (
+                                <AvatarUpload onSuccess={handleImageUpload} />
+                            )}
+                        </div>
+                    </div>
                 </div>
 
                 <Separator />
@@ -139,23 +215,51 @@ export default function GeneralInformationPage() {
                 {/* Display Name Section */}
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
-                        Display Name
+                        Name
                     </h2>
                     <p className="mb-4 text-sm text-gray-600">
                         Please enter your full name, or a display name you are
                         comfortable with.
                     </p>
-                    <div className="flex items-center space-x-4">
-                        <Input
-                            // value={displayName}
-                            // onChange={(e) => setDisplayName(e.target.value)}
-                            className="flex-1"
-                            placeholder="Enter display name"
-                        />
-                        <Button variant="outline" size="sm">
-                            Save
-                        </Button>
-                    </div>
+                    <Form {...form}>
+                        <form
+                            onSubmit={form.handleSubmit((values) =>
+                                onSubmit(values, true),
+                            )}
+                            className="flex items-center gap-2"
+                        >
+                            <FormField
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem className="flex-1">
+                                        <FormControl>
+                                            <Input
+                                                placeholder="Enter display name"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <Button
+                                type="submit"
+                                size="sm"
+                                disabled={isPending === "name"}
+                                className="min-w-[120px]"
+                            >
+                                {isPending === "name" ? (
+                                    <>
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        Updating...
+                                    </>
+                                ) : (
+                                    "Save"
+                                )}
+                            </Button>
+                        </form>
+                    </Form>
+
                     <p className="mt-2 text-xs text-gray-500">
                         Please use 32 characters at maximum.
                     </p>
@@ -169,26 +273,47 @@ export default function GeneralInformationPage() {
                         Username
                     </h2>
                     <p className="mb-4 text-sm text-gray-600">
-                        This is your URL namespace within Vercel.
+                        This is your username.
                     </p>
-                    <div className="flex items-center space-x-4">
-                        <div className="flex flex-1 items-center">
-                            <span className="rounded-l-md border border-r-0 border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-500">
-                                vercel.com/
-                            </span>
-                            <Input
-                                // value={username}
-                                // onChange={(e) => setUsername(e.target.value)}
-                                className="rounded-l-none border-l-0"
-                            />
-                        </div>
-                        <Button
-                            size="sm"
-                            className="bg-black text-white hover:bg-gray-800"
+                    <Form {...form}>
+                        <form
+                            onSubmit={form.handleSubmit((values) =>
+                                onSubmit(values, false),
+                            )}
+                            className="flex items-center gap-2"
                         >
-                            Save
-                        </Button>
-                    </div>
+                            <FormField
+                                control={form.control}
+                                name="username"
+                                render={({ field }) => (
+                                    <FormItem className="flex-1">
+                                        <FormControl>
+                                            <Input
+                                                placeholder="Enter username"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <Button
+                                type="submit"
+                                size="sm"
+                                disabled={isPending === "username"}
+                                className="min-w-[120px]"
+                            >
+                                {isPending === "username" ? (
+                                    <>
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        Updating...
+                                    </>
+                                ) : (
+                                    "Save"
+                                )}
+                            </Button>
+                        </form>
+                    </Form>
+
                     <p className="mt-2 text-xs text-gray-500">
                         Please use 48 characters at maximum.
                     </p>
@@ -196,8 +321,48 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Default Team Section */}
+                {/* Email Section */}
                 <div>
+                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                        Email
+                    </h2>
+                    <p className="mb-4 text-sm text-gray-600">
+                        Enter the email addresses you want to use to log in with
+                        Vercel. Your primary email will be used for
+                        account-related notifications.
+                    </p>
+                    <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
+                        <div className="flex items-center space-x-3">
+                            <span className="text-sm">{profile.email}</span>
+                            {profile.emailVerified && (
+                                <Badge
+                                    variant="secondary"
+                                    className="bg-green-100 text-xs text-green-700"
+                                >
+                                    Verified
+                                </Badge>
+                            )}
+                            <Badge
+                                variant="secondary"
+                                className="bg-blue-100 text-xs text-blue-700"
+                            >
+                                Primary
+                            </Badge>
+                        </div>
+                        <Button variant="ghost" size="sm">
+                            <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                    </div>
+                    <p className="text-xs text-gray-500">
+                        Email must be verified to be able to login with it or be
+                        used as primary email.
+                    </p>
+                </div>
+
+                {/* <Separator /> */}
+
+                {/* Default Team Section */}
+                {/* <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Default Team
                     </h2>
@@ -230,60 +395,12 @@ export default function GeneralInformationPage() {
                             Save
                         </Button>
                     </div>
-                </div>
+                </div> */}
 
-                <Separator />
-
-                {/* Email Section */}
-                <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
-                        Email
-                    </h2>
-                    <p className="mb-4 text-sm text-gray-600">
-                        Enter the email addresses you want to use to log in with
-                        Vercel. Your primary email will be used for
-                        account-related notifications.
-                    </p>
-                    <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
-                        <div className="flex items-center space-x-3">
-                            <span className="text-sm">
-                                cnippet.dev@gmail.com
-                            </span>
-                            <Badge
-                                variant="secondary"
-                                className="bg-green-100 text-xs text-green-700"
-                            >
-                                Verified
-                            </Badge>
-                            <Badge
-                                variant="secondary"
-                                className="bg-blue-100 text-xs text-blue-700"
-                            >
-                                Primary
-                            </Badge>
-                        </div>
-                        <Button variant="ghost" size="sm">
-                            <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                    </div>
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        className="mb-4 bg-transparent"
-                    >
-                        <Plus className="mr-2 h-4 w-4" />
-                        Add Another
-                    </Button>
-                    <p className="text-xs text-gray-500">
-                        Emails must be verified to be able to login with them or
-                        be used as primary email.
-                    </p>
-                </div>
-
-                <Separator />
+                {/* <Separator /> */}
 
                 {/* Phone Number Section */}
-                <div>
+                {/* <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Your Phone Number
                     </h2>
@@ -315,7 +432,7 @@ export default function GeneralInformationPage() {
                     <p className="text-xs text-gray-500">
                         A code will be sent to verify
                     </p>
-                </div>
+                </div> */}
 
                 <Separator />
 
@@ -325,11 +442,11 @@ export default function GeneralInformationPage() {
                         User ID
                     </h2>
                     <p className="mb-4 text-sm text-gray-600">
-                        This is your user ID within Vercel.
+                        This is your user ID within Cnippet.
                     </p>
                     <div className="mb-4 flex items-center space-x-4">
                         <Input
-                            value="8FE2NtexC8nc88RTqpKe6Gp"
+                            value={profile.id}
                             readOnly
                             className="flex-1 bg-gray-50"
                         />
@@ -338,7 +455,7 @@ export default function GeneralInformationPage() {
                         </Button>
                     </div>
                     <p className="text-xs text-gray-500">
-                        Used when interacting with the Vercel API.
+                        Used when interacting with the Cnippet API.
                     </p>
                 </div>
 
@@ -351,84 +468,40 @@ export default function GeneralInformationPage() {
                     </h2>
                     <p className="mb-6 text-sm text-gray-600">
                         Permanently remove your Personal Account and all of its
-                        contents from the Vercel platform. This action is not
+                        contents from the Cnippet platform. This action is not
                         reversible, so please continue with caution.
                     </p>
-                    <Button
-                        variant="destructive"
-                        className="bg-red-600 hover:bg-red-700"
-                    >
-                        Delete Personal Account
-                    </Button>
-                </div>
-            </div>
-            <div className="mx-auto max-w-2xl space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold tracking-tight">
-                        General Information
-                    </h2>
-                    <p className="text-muted-foreground">
-                        Update your account information and settings.
-                    </p>
-                </div>
-
-                <Form {...form}>
-                    <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-6"
-                    >
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Full Name</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="Enter your full name"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                    <div className="flex flex-wrap gap-3">
+                        <AccountDeletionDialog
+                            username={profile?.username || ""}
+                            email={profile?.email || ""}
+                            trigger={
+                                <Button
+                                    variant="destructive"
+                                    className="bg-red-600 hover:bg-red-700"
+                                >
+                                    Delete Account
+                                </Button>
+                            }
                         />
 
-                        <FormField
-                            control={form.control}
-                            name="username"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Username</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="Enter your username"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-
-                        <div className="flex items-center gap-4">
-                            <Button
-                                type="submit"
-                                disabled={isPending}
-                                className="min-w-[120px]"
-                            >
-                                {isPending ? (
-                                    <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Updating...
-                                    </>
-                                ) : (
-                                    "Update Profile"
-                                )}
-                            </Button>
-                        </div>
-                    </form>
-                </Form>
+                        <Button
+                            variant="outline"
+                            onClick={async () => {
+                                const res = await cancelAccountDeletion();
+                                if ("success" in res && res.success) {
+                                    toast.success("Deletion cancelled");
+                                } else {
+                                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to cancel";
+                                    toast.error(msg);
+                                }
+                            }}
+                        >
+                            Cancel scheduled deletion
+                        </Button>
+                    </div>
+                </div>
             </div>
         </>
     );
