@@ -10,6 +10,10 @@ declare module "next-auth" {
             provider?: string | null;
         };
         needsCompletion?: boolean | undefined;
+        linkedAccounts?: Array<{
+            provider: string;
+            providerAccountId: string;
+        }>;
     }
 
     interface User {

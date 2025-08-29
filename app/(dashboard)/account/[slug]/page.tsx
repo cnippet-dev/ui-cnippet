@@ -6,6 +6,7 @@ const PROFILE_SECTIONS = {
     settings: "Settings",
     authentication: "Authentication",
     favourites: "Favourites",
+    linked: "Linked Accounts"
 } as const;
 
 type ProfileSection = keyof typeof PROFILE_SECTIONS;
@@ -53,11 +54,26 @@ const Favourites = dynamic(
     },
 );
 
+const Linked = dynamic(
+    () => import("./_c/linked-account").then((mod) => ({ default: mod.default })),
+    {
+        loading: () => (
+            <div className="flex min-h-[400px] items-center justify-center">
+                <div className="flex items-center gap-2">
+                    <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600"></div>
+                    <span>Loading...</span>
+                </div>
+            </div>
+        ),
+    },
+);
+
 // Component mapping
 const COMPONENT_MAP = {
     settings: Settings,
     authentication: Authentication,
     favourites: Favourites,
+    linked: Linked
 } as const;
 
 export const dynamicParams = true;

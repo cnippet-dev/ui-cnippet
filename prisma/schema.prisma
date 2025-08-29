@@ -7,48 +7,44 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-// Add country field to User model
 model User {
-    id                   String       @id @default(auto()) @map("_id") @db.ObjectId
+    id                   String          @id @default(auto()) @map("_id") @db.ObjectId
     name                 String?
-    username             String?      @unique
-    email                String?      @unique
+    username             String?         @unique
+    email                String?         @unique
     emailVerified        DateTime?
     image                String?
     password             String?
-    provider             String?
-    termsAccepted        Boolean      @default(false)
-    preferredTheme       String?      @default("system")
-    emailNotifications   Boolean?     @default(true)
-    inAppNotifications   Boolean?     @default(false)
-    preferredLanguage    String?      @default("en")
-    preferredTimezone    String?      @default("UTC")
-    country              String? // New field
+    provider             String? // Main provider (credentials, google, github)
+    termsAccepted        Boolean         @default(false)
+    preferredTheme       String?         @default("system")
+    emailNotifications   Boolean?        @default(true)
+    inAppNotifications   Boolean?        @default(false)
+    preferredLanguage    String?         @default("en")
+    preferredTimezone    String?         @default("UTC")
+    country              String?
     ResetToken           ResetToken[]
     favourites           String[]
+    // Account deletion fields
     deletionRequestedAt  DateTime?
     deletionScheduledAt  DateTime?
     deletedAt            DateTime?
-    deletionToken        String?      @unique
+    deletionToken        String?         @unique
     deletionTokenExpires DateTime?
     deletionReason       String?
+    // Linked accounts
+    linkedAccounts       LinkedAccount[]
 }
 
-model Newsletter {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    email     String   @unique
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-}
+model LinkedAccount {
+    id                String @id @default(auto()) @map("_id") @db.ObjectId
+    userId            String @db.ObjectId
+    provider          String // google, github
+    providerAccountId String
+    user              User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-model Contact {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    name      String
-    email     String
-    subject   String
-    message   String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    @@unique([provider, providerAccountId])
+    @@unique([userId, provider])
 }
 
 model ResetToken {
@@ -67,6 +63,23 @@ model Otp {
     code      String
     expiresAt DateTime
     attempts  Int      @default(0)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Newsletter {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    email     String   @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Contact {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    name      String
+    email     String
+    subject   String
+    message   String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
