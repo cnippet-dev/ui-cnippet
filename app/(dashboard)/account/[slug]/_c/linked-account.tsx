@@ -64,9 +64,11 @@ export default function AccountLinkingManager() {
 
     const linkedAccounts = session?.linkedAccounts || [];
     const isGoogleLinked = linkedAccounts.some(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (acc: any) => acc.provider === "google",
     );
     const isGithubLinked = linkedAccounts.some(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (acc: any) => acc.provider === "github",
     );
 
@@ -158,7 +160,7 @@ export default function AccountLinkingManager() {
 
             <p className="text-sm text-gray-500">
                 Linking accounts allows you to sign in with multiple methods.
-                You'll always need at least one linked account to access your
+                You&apos;ll always need at least one linked account to access your
                 profile.
             </p>
         </div>

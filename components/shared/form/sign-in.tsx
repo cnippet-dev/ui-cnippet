@@ -91,7 +91,8 @@ export default function SignInForm() {
 
     const loginWithGoogle = async () => {
         setIsLoading("google");
-        await signIn("google", { redirect: false });
+        await signIn("google");
+        toast.success("Successfully signed in!");
         setIsLoading(null);
     };
 
