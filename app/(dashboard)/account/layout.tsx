@@ -1,10 +1,6 @@
 "use client";
 
-import {
-    Search,
-    MessageSquare,
-    ChevronDown,
-} from "lucide-react";
+import { Search, MessageSquare, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
     DropdownMenu,
@@ -19,11 +15,7 @@ import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 
-import {
-    User,
-    Settings,
-    Heart,
-} from "lucide-react";
+import { User, Settings, Heart } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -41,17 +33,6 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
     //eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [profile, setProfile] = useState<any>(null);
     const [loading, setLoading] = useState(true);
-    const [isUploading, setIsUploading] = useState(false);
-
-    const sidebarItems = [
-        { id: "general", label: "General" },
-        { id: "authentication", label: "Authentication" },
-        { id: "signin", label: "Sign in with Vercel" },
-        { id: "billing-info", label: "Billing Information" },
-        { id: "billing-items", label: "Billing Items" },
-        { id: "invoices", label: "Invoices" },
-        { id: "tokens", label: "Tokens" },
-    ];
 
     useEffect(() => {
         async function fetchProfile() {
@@ -75,26 +56,14 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
 
     const navItems = [
         { name: "General", href: "/account/settings", icon: User },
-        { name: "Authentication", href: "/account/authentication", icon: Heart },
+        {
+            name: "Authentication",
+            href: "/account/authentication",
+            icon: Heart,
+        },
         { name: "Favourites", href: "/account/favourites", icon: Settings },
         { name: "Linked Accounts", href: "/account/linked", icon: Settings },
     ];
-
-    const handleImageUpload = async (url: string) => {
-        try {
-            setIsUploading(true);
-            await updateProfileImage(url);
-
-            //eslint-disable-next-line @typescript-eslint/no-explicit-any
-            setProfile((prev: any) => ({ ...prev, image: url }));
-            toast.success("Profile image updated successfully!");
-        } catch (error) {
-            console.error("Profile image update failed:", error);
-            toast.error("Failed to update profile image");
-        } finally {
-            setIsUploading(false);
-        }
-    };
 
     return (
         <>

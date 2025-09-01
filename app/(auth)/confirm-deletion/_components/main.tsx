@@ -3,14 +3,16 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Loader2, AlertTriangle, CheckCircle, XCircle } from "lucide-react";
+import { Loader2, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { confirmAccountDeletion } from "@/lib/actions/profile.actions";
 import { toast } from "sonner";
 
 const ConfirmDeletion = () => {
     const [loading, setLoading] = useState(false);
-    const [status, setStatus] = useState<"pending" | "success" | "error">("pending");
+    const [status, setStatus] = useState<"pending" | "success" | "error">(
+        "pending",
+    );
     const [errorMessage, setErrorMessage] = useState("");
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -19,7 +21,9 @@ const ConfirmDeletion = () => {
     useEffect(() => {
         if (!token) {
             setStatus("error");
-            setErrorMessage("Missing deletion token. Please request a new deletion email.");
+            setErrorMessage(
+                "Missing deletion token. Please request a new deletion email.",
+            );
             return;
         }
 
@@ -33,7 +37,7 @@ const ConfirmDeletion = () => {
         setLoading(true);
         try {
             const result = await confirmAccountDeletion(token);
-            
+
             if ("success" in result && result.success) {
                 setStatus("success");
                 toast.success("Account deleted successfully!");
@@ -42,9 +46,10 @@ const ConfirmDeletion = () => {
                     router.push("/");
                 }, 3000);
             } else {
-                const errorMsg = "error" in result && "general" in result.error 
-                    ? result.error.general 
-                    : "Failed to delete account";
+                const errorMsg =
+                    "error" in result && "general" in result.error
+                        ? result.error.general
+                        : "Failed to delete account";
                 setStatus("error");
                 setErrorMessage(errorMsg);
                 toast.error(errorMsg);
@@ -52,7 +57,9 @@ const ConfirmDeletion = () => {
         } catch (error) {
             console.error("Account deletion error:", error);
             setStatus("error");
-            setErrorMessage("An unexpected error occurred while deleting your account.");
+            setErrorMessage(
+                "An unexpected error occurred while deleting your account.",
+            );
             toast.error("An unexpected error occurred");
         } finally {
             setLoading(false);
@@ -71,7 +78,8 @@ const ConfirmDeletion = () => {
                             Account Deleted
                         </h1>
                         <p className="mb-6 text-gray-600">
-                            Your account has been successfully deleted. You will be redirected to the home page shortly.
+                            Your account has been successfully deleted. You will
+                            be redirected to the home page shortly.
                         </p>
                         <div className="space-y-4">
                             <Button
@@ -96,9 +104,7 @@ const ConfirmDeletion = () => {
                         <h1 className="mb-4 text-3xl font-semibold text-red-600 md:text-4xl">
                             Deletion Failed
                         </h1>
-                        <p className="mb-6 text-gray-600">
-                            {errorMessage}
-                        </p>
+                        <p className="mb-6 text-gray-600">{errorMessage}</p>
                         <div className="space-y-4">
                             <Button
                                 onClick={() => router.push("/account/settings")}
@@ -107,7 +113,8 @@ const ConfirmDeletion = () => {
                                 Back to Account Settings
                             </Button>
                             <p className="text-sm text-gray-500">
-                                You can try requesting a new deletion email from your account settings.
+                                You can try requesting a new deletion email from
+                                your account settings.
                             </p>
                         </div>
                     </div>
@@ -123,7 +130,8 @@ const ConfirmDeletion = () => {
                             Processing Deletion
                         </h1>
                         <p className="mb-6 text-gray-600">
-                            Please wait while we process your account deletion request...
+                            Please wait while we process your account deletion
+                            request...
                         </p>
                         <div className="space-y-4">
                             <Button
@@ -153,7 +161,7 @@ const ConfirmDeletion = () => {
                     <div className="col-span-10 flex w-full flex-col items-center justify-center bg-white p-8 text-center md:p-16 dark:bg-black">
                         <div className="w-full max-w-md">
                             {renderContent()}
-                            
+
                             <div className="mt-8 text-center text-sm tracking-tight">
                                 <span className="text-gray-500">
                                     Need help?{" "}

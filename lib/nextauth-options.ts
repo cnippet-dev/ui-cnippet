@@ -24,6 +24,11 @@ declare module "next-auth" {
             preferredLanguage?: string | null;
             preferredTimezone?: string | null;
         };
+        linkedAccounts?: Array<{
+            id: string;
+            provider: string;
+            providerAccountId: string;
+        }>;
     }
 }
 
@@ -40,6 +45,11 @@ declare module "next-auth/jwt" {
         inAppNotifications?: boolean | null;
         preferredLanguage?: string | null;
         preferredTimezone?: string | null;
+        linkedAccounts?: Array<{
+            id: string;
+            provider: string;
+            providerAccountId: string;
+        }>;
     }
 }
 
@@ -154,6 +164,7 @@ export const nextauthOptions: NextAuthOptions = {
             if (token.email) {
                 const userData = await prisma.user.findUnique({
                     where: { email: token.email },
+                    include: { linkedAccounts: true },
                 });
 
                 if (userData) {
@@ -169,6 +180,7 @@ export const nextauthOptions: NextAuthOptions = {
                     token.preferredLanguage = userData.preferredLanguage;
                     token.preferredTimezone = userData.preferredTimezone;
                     token.needsCompletion = !userData.username;
+                    token.linkedAccounts = userData.linkedAccounts;
                     // Block sign-in if user is deleted or scheduled for deletion passed
                     //eslint-disable-next-line @typescript-eslint/no-explicit-any
                     const anyUser = userData as any;
@@ -220,6 +232,11 @@ export const nextauthOptions: NextAuthOptions = {
                 session.needsCompletion = token.needsCompletion as
                     | boolean
                     | undefined;
+                session.linkedAccounts = token.linkedAccounts as Array<{
+                    id: string;
+                    provider: string;
+                    providerAccountId: string;
+                }> | undefined;
             }
             return session;
         },

@@ -1,27 +1,28 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { updateGeneralInfoSchema } from "@/lib/validations/profile";
+import { toast } from "sonner";
+import { Copy, Loader2, MoreHorizontal } from "lucide-react";
+
+import { useSessionCache } from "@/hooks/use-session-cache";
 import {
     updateProfileImage,
     getCurrentUserProfile,
     updateGeneralInformation,
 } from "@/lib/actions/profile.actions";
+import { cancelAccountDeletion } from "@/lib/actions/profile.actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { toast } from "sonner";
-import { useEffect, useState } from "react";
-import { Copy, Loader2, MoreHorizontal } from "lucide-react";
-
-import { useSessionCache } from "@/hooks/use-session-cache";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { AvatarUpload } from "@/components/file-upload";
-import { scheduleAccountDeletion, cancelAccountDeletion, deleteAccountImmediately } from "@/lib/actions/profile.actions";
+
 import { AccountDeletionDialog } from "@/components/shared/auth/account-deletion-dialog";
 
 export default function GeneralInformationPage() {
@@ -158,7 +159,6 @@ export default function GeneralInformationPage() {
     return (
         <>
             <div className="max-w-2xl space-y-8">
-                {/* Avatar Section */}
                 <div className="flex items-start justify-between">
                     <div className="flex-1">
                         <h2 className="mb-2 text-lg font-medium text-gray-900">
@@ -175,12 +175,6 @@ export default function GeneralInformationPage() {
                             An avatar is optional but strongly recommended.
                         </p>
                     </div>
-                    <Avatar className="ml-8 h-16 w-16">
-                        <AvatarImage src="/placeholder.svg?height=64&width=64" />
-                        <AvatarFallback className="bg-gradient-to-br from-purple-500 to-pink-500 text-xl text-white">
-                            M
-                        </AvatarFallback>
-                    </Avatar>
 
                     <div className="relative">
                         <Avatar className="h-32 w-32 border-4 border-white shadow-2xl">
@@ -212,7 +206,6 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Display Name Section */}
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Name
@@ -267,7 +260,6 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Username Section */}
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Username
@@ -321,7 +313,6 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Email Section */}
                 <div>
                     <h2 className="mb-2 text-lg font-medium text-gray-900">
                         Email
@@ -492,8 +483,13 @@ export default function GeneralInformationPage() {
                                 if ("success" in res && res.success) {
                                     toast.success("Deletion cancelled");
                                 } else {
-                                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to cancel";
+                                    const msg =
+                                        "error" in res &&
+                                        //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                        "general" in (res as any).error
+                                            ? //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                              (res as any).error.general
+                                            : "Failed to cancel";
                                     toast.error(msg);
                                 }
                             }}

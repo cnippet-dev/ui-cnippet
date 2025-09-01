@@ -11,6 +11,7 @@ declare module "next-auth" {
         };
         needsCompletion?: boolean | undefined;
         linkedAccounts?: Array<{
+            id: string;
             provider: string;
             providerAccountId: string;
         }>;
