@@ -7,7 +7,10 @@ const AuthD = () => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="ghost" className="text-sm cursor-pointer hover:bg-white dark:hover:bg-black">
+                <Button
+                    variant="ghost"
+                    className="cursor-pointer text-sm hover:bg-white dark:hover:bg-black"
+                >
                     Login to view code
                 </Button>
             </DialogTrigger>
