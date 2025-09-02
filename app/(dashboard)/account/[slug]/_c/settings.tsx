@@ -1,27 +1,28 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { updateGeneralInfoSchema } from "@/lib/validations/profile";
+import { toast } from "sonner";
+import { Copy, Loader2, MoreHorizontal } from "lucide-react";
+
+import { useSessionCache } from "@/hooks/use-session-cache";
 import {
     updateProfileImage,
     getCurrentUserProfile,
     updateGeneralInformation,
 } from "@/lib/actions/profile.actions";
+import { cancelAccountDeletion } from "@/lib/actions/profile.actions";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { toast } from "sonner";
-import { useEffect, useState } from "react";
-import { Copy, Loader2, MoreHorizontal } from "lucide-react";
-
-import { useSessionCache } from "@/hooks/use-session-cache";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { AvatarUpload } from "@/components/file-upload";
-import { scheduleAccountDeletion, cancelAccountDeletion, deleteAccountImmediately } from "@/lib/actions/profile.actions";
 import { AccountDeletionDialog } from "@/components/shared/auth/account-deletion-dialog";
 
 export default function GeneralInformationPage() {
@@ -158,32 +159,25 @@ export default function GeneralInformationPage() {
     return (
         <>
             <div className="max-w-2xl space-y-8">
-                {/* Avatar Section */}
                 <div className="flex items-start justify-between">
                     <div className="flex-1">
-                        <h2 className="mb-2 text-lg font-medium text-gray-900">
+                        <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                             Avatar
                         </h2>
-                        <p className="mb-2 text-sm text-gray-600">
+                        <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">
                             This is your avatar.
                         </p>
-                        <p className="mb-4 text-sm text-gray-600">
+                        <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                             Click on the avatar to upload a custom one from your
                             files.
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 dark:text-gray-500">
                             An avatar is optional but strongly recommended.
                         </p>
                     </div>
-                    <Avatar className="ml-8 h-16 w-16">
-                        <AvatarImage src="/placeholder.svg?height=64&width=64" />
-                        <AvatarFallback className="bg-gradient-to-br from-purple-500 to-pink-500 text-xl text-white">
-                            M
-                        </AvatarFallback>
-                    </Avatar>
 
                     <div className="relative">
-                        <Avatar className="h-32 w-32 border-4 border-white shadow-2xl">
+                        <Avatar className="h-32 w-32 border-4 border-white shadow-2xl dark:border-neutral-800">
                             <AvatarImage
                                 src={profile?.image ?? undefined}
                                 alt="Profile"
@@ -198,10 +192,10 @@ export default function GeneralInformationPage() {
                             {isUploading ? (
                                 <Button
                                     size="icon"
-                                    className="h-10 w-10 rounded-full bg-white"
+                                    className="h-10 w-10 rounded-full bg-white dark:bg-neutral-900"
                                     disabled
                                 >
-                                    <Loader2 className="h-4 w-4 animate-spin text-gray-700" />
+                                    <Loader2 className="h-4 w-4 animate-spin text-gray-700 dark:text-gray-300" />
                                 </Button>
                             ) : (
                                 <AvatarUpload onSuccess={handleImageUpload} />
@@ -212,12 +206,11 @@ export default function GeneralInformationPage() {
 
                 <Separator />
 
-                {/* Display Name Section */}
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Name
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Please enter your full name, or a display name you are
                         comfortable with.
                     </p>
@@ -236,6 +229,7 @@ export default function GeneralInformationPage() {
                                         <FormControl>
                                             <Input
                                                 placeholder="Enter display name"
+                                                className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -260,19 +254,18 @@ export default function GeneralInformationPage() {
                         </form>
                     </Form>
 
-                    <p className="mt-2 text-xs text-gray-500">
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-500">
                         Please use 32 characters at maximum.
                     </p>
                 </div>
 
                 <Separator />
 
-                {/* Username Section */}
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Username
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         This is your username.
                     </p>
                     <Form {...form}>
@@ -290,6 +283,7 @@ export default function GeneralInformationPage() {
                                         <FormControl>
                                             <Input
                                                 placeholder="Enter username"
+                                                className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -314,37 +308,38 @@ export default function GeneralInformationPage() {
                         </form>
                     </Form>
 
-                    <p className="mt-2 text-xs text-gray-500">
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-500">
                         Please use 48 characters at maximum.
                     </p>
                 </div>
 
                 <Separator />
 
-                {/* Email Section */}
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Email
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Enter the email addresses you want to use to log in with
                         Vercel. Your primary email will be used for
                         account-related notifications.
                     </p>
-                    <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3">
+                    <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
                         <div className="flex items-center space-x-3">
-                            <span className="text-sm">{profile.email}</span>
+                            <span className="text-sm dark:text-gray-300">
+                                {profile.email}
+                            </span>
                             {profile.emailVerified && (
                                 <Badge
                                     variant="secondary"
-                                    className="bg-green-100 text-xs text-green-700"
+                                    className="bg-green-100 text-xs text-green-700 dark:bg-green-900/30 dark:text-green-400"
                                 >
                                     Verified
                                 </Badge>
                             )}
                             <Badge
                                 variant="secondary"
-                                className="bg-blue-100 text-xs text-blue-700"
+                                className="bg-blue-100 text-xs text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
                             >
                                 Primary
                             </Badge>
@@ -353,7 +348,7 @@ export default function GeneralInformationPage() {
                             <MoreHorizontal className="h-4 w-4" />
                         </Button>
                     </div>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 dark:text-gray-500">
                         Email must be verified to be able to login with it or be
                         used as primary email.
                     </p>
@@ -438,23 +433,23 @@ export default function GeneralInformationPage() {
 
                 {/* User ID Section */}
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         User ID
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         This is your user ID within Cnippet.
                     </p>
                     <div className="mb-4 flex items-center space-x-4">
                         <Input
                             value={profile.id}
                             readOnly
-                            className="flex-1 bg-gray-50"
+                            className="flex-1 bg-gray-50 dark:border-neutral-800 dark:bg-neutral-950"
                         />
                         <Button variant="outline" size="sm">
                             <Copy className="h-4 w-4" />
                         </Button>
                     </div>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 dark:text-gray-500">
                         Used when interacting with the Cnippet API.
                     </p>
                 </div>
@@ -463,10 +458,10 @@ export default function GeneralInformationPage() {
 
                 {/* Delete Account Section */}
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Delete Account
                     </h2>
-                    <p className="mb-6 text-sm text-gray-600">
+                    <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
                         Permanently remove your Personal Account and all of its
                         contents from the Cnippet platform. This action is not
                         reversible, so please continue with caution.
@@ -492,8 +487,13 @@ export default function GeneralInformationPage() {
                                 if ("success" in res && res.success) {
                                     toast.success("Deletion cancelled");
                                 } else {
-                                    //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                    const msg = "error" in res && "general" in (res as any).error ? (res as any).error.general : "Failed to cancel";
+                                    const msg =
+                                        "error" in res &&
+                                        //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                        "general" in (res as any).error
+                                            ? //eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                              (res as any).error.general
+                                            : "Failed to cancel";
                                     toast.error(msg);
                                 }
                             }}

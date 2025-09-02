@@ -4,16 +4,16 @@ import React from "react";
 import ImageMouseTrail from "@/components/motion/image-mousetrail";
 
 const images = [
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h5.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h6.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h7.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h8.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h9.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h10.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h1.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h3.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h5.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h6.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h7.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h8.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h9.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h10.jpg",
 ];
 export default function index() {
     return (

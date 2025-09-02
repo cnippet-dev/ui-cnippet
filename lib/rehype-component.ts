@@ -56,7 +56,7 @@ export function rehypeComponent() {
                         );
                         // source = source.replaceAll("export default", "export");
                         source = source.replaceAll(
-                            "https://res.cloudinary.com/dphulm0s9/",
+                            "https://res.cloudinary.com/dcxm3ccir/",
                             "/",
                         );
                         // Add code as children so that rehype can take over at build time.
@@ -129,7 +129,7 @@ export function rehypeComponent() {
                         );
                         // source = source.replaceAll("export default", "export");
                         source = source.replaceAll(
-                            "https://res.cloudinary.com/dphulm0s9/",
+                            "https://res.cloudinary.com/dcxm3ccir/",
                             "/",
                         );
                         // Add code as children so that rehype can take over at build time.

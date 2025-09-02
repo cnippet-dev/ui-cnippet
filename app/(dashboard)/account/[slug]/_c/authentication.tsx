@@ -1,12 +1,14 @@
 "use client";
-
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSession } from "next-auth/react";
 import { z } from "zod";
+import { toast } from "sonner";
+import { Loader2, Eye, EyeOff } from "lucide-react";
+
 import { changePasswordSchema } from "@/lib/validations/profile";
 import { changeUserPassword } from "@/lib/actions/profile.actions";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
     Form,
     FormControl,
@@ -15,11 +17,9 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-import { toast } from "sonner";
-import { useState } from "react";
-import { Loader2, Eye, EyeOff } from "lucide-react";
-import { useSession } from "next-auth/react";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function SecurityPage() {
     const [isPending, setIsPending] = useState(false);
@@ -85,8 +85,10 @@ export default function SecurityPage() {
         <>
             <div className="max-w-2xl space-y-8">
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">Security</h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
+                        Security
+                    </h2>
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Manage your account security settings.
                     </p>
                 </div>
@@ -94,12 +96,17 @@ export default function SecurityPage() {
                 <Separator />
 
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">Change Password</h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
+                        Change Password
+                    </h2>
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Update your password to keep your account secure.
                     </p>
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            className="space-y-6"
+                        >
                             <FormField
                                 control={form.control}
                                 name="currentPassword"
@@ -109,19 +116,28 @@ export default function SecurityPage() {
                                         <FormControl>
                                             <div className="relative">
                                                 <Input
-                                                    type={showCurrentPassword ? "text" : "password"}
+                                                    type={
+                                                        showCurrentPassword
+                                                            ? "text"
+                                                            : "password"
+                                                    }
                                                     placeholder="Enter your current password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
                                                     type="button"
-                                                    onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                                                    onClick={() =>
+                                                        setShowCurrentPassword(
+                                                            !showCurrentPassword,
+                                                        )
+                                                    }
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showCurrentPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -140,19 +156,28 @@ export default function SecurityPage() {
                                         <FormControl>
                                             <div className="relative">
                                                 <Input
-                                                    type={showNewPassword ? "text" : "password"}
+                                                    type={
+                                                        showNewPassword
+                                                            ? "text"
+                                                            : "password"
+                                                    }
                                                     placeholder="Enter your new password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
                                                     type="button"
-                                                    onClick={() => setShowNewPassword(!showNewPassword)}
+                                                    onClick={() =>
+                                                        setShowNewPassword(
+                                                            !showNewPassword,
+                                                        )
+                                                    }
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -167,23 +192,34 @@ export default function SecurityPage() {
                                 name="confirmNewPassword"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Confirm New Password</FormLabel>
+                                        <FormLabel>
+                                            Confirm New Password
+                                        </FormLabel>
                                         <FormControl>
                                             <div className="relative">
                                                 <Input
-                                                    type={showConfirmNewPassword ? "text" : "password"}
+                                                    type={
+                                                        showConfirmNewPassword
+                                                            ? "text"
+                                                            : "password"
+                                                    }
                                                     placeholder="Confirm your new password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
                                                     type="button"
-                                                    onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
+                                                    onClick={() =>
+                                                        setShowConfirmNewPassword(
+                                                            !showConfirmNewPassword,
+                                                        )
+                                                    }
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showConfirmNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -193,7 +229,11 @@ export default function SecurityPage() {
                                 )}
                             />
 
-                            <Button type="submit" disabled={isPending} className="min-w-[140px]">
+                            <Button
+                                type="submit"
+                                disabled={isPending}
+                                className="min-w-[140px]"
+                            >
                                 {isPending ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />

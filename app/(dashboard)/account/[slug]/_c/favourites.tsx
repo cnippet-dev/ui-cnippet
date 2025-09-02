@@ -2,15 +2,16 @@
 
 import * as React from "react";
 import { useState, useTransition } from "react";
+import { RiAddFill, RiHeart3Fill, RiLinkM } from "@remixicon/react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 import {
     getUserFavourites,
     updateUserFavourites,
 } from "@/lib/actions/profile.actions";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { RiAddFill, RiHeart3Fill, RiLinkM } from "@remixicon/react";
 
 export default function FavouritesPage() {
     const [favourites, setFavourites] = useState<string[]>([]);
@@ -94,7 +95,6 @@ export default function FavouritesPage() {
                         ))}
                     </div>
 
-                    {/* Explore more components section */}
                     <div className="rounded-lg border border-dashed border-gray-300 bg-gray-50 p-6 text-center dark:border-gray-700 dark:bg-gray-900/50">
                         <RiAddFill className="mx-auto mb-3 h-8 w-8 text-gray-400" />
                         <h3 className="mb-2 text-base font-medium text-gray-900 dark:text-gray-100">

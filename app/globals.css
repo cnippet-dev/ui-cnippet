@@ -229,6 +229,9 @@
     background: #000;
     animation: l1 1.5s infinite;
 }
+.dark .loader {
+    background: #fff;
+}
 
 @keyframes l1 {
     0% {

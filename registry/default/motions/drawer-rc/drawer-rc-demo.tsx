@@ -13,7 +13,7 @@ export default function index() {
                 <figure className="relative h-96 w-96">
                     <Image
                         src={
-                            "https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a4.jpg"
+                            "https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a4.jpg"
                         }
                         width={600}
                         height={600}

@@ -44,7 +44,7 @@ export default function index(): JSX.Element {
                         <div className="grid gap-2">
                             <figure className="grid -skew-x-12 place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -53,7 +53,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="grid skew-x-12 place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h3.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -62,7 +62,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="grid -skew-x-12 place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -71,7 +71,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="grid skew-x-12 place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h5.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h5.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -86,7 +86,7 @@ export default function index(): JSX.Element {
                         <div className="grid gap-2">
                             <figure className="sticky top-0 grid h-screen place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h6.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h6.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -95,7 +95,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h7.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h7.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -104,7 +104,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h8.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h8.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}
@@ -113,7 +113,7 @@ export default function index(): JSX.Element {
                             </figure>
                             <figure className="sticky top-0 grid h-screen place-content-center">
                                 <CldImage
-                                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h9.jpg"
+                                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h9.jpg"
                                     alt=""
                                     width={1000}
                                     height={1000}

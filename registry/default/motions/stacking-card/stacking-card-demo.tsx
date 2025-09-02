@@ -11,7 +11,7 @@ const projects = [
         description:
             "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
         src: "rock.jpg",
-        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg",
+        link: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h1.jpg",
         color: "#5196fd",
     },
     {
@@ -19,7 +19,7 @@ const projects = [
         description:
             "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément.",
         src: "tree.jpg",
-        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
+        link: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg",
         color: "#8f89ff",
     },
     {
@@ -27,7 +27,7 @@ const projects = [
         description:
             "Though he views photography as a medium for storytelling, Zissou's images don't insist on a narrative. Both crisp and ethereal.",
         src: "water.jpg",
-        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
+        link: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg",
         color: "#13006c",
     },
     {
@@ -35,7 +35,7 @@ const projects = [
         description:
             "The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.",
         src: "house.jpg",
-        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg",
+        link: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h3.jpg",
         color: "#ed649e",
     },
     {
@@ -43,7 +43,7 @@ const projects = [
         description:
             "Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, 'all over again'—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.",
         src: "cactus.jpg",
-        link: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg",
+        link: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg",
         color: "#fd521a",
     },
 ];

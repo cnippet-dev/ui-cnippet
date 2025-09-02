@@ -1,57 +1,51 @@
 "use client";
 
-import {
-    Search,
-    MessageSquare,
-    ChevronDown,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Search, MessageSquare, ChevronDown } from "lucide-react";
+import { User, Settings, Heart } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { signOut } from "next-auth/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import {
+    RiHeart2Fill,
+    RiLogoutBoxRFill,
+    RiSettings2Fill,
+    RiUserFill,
+} from "@remixicon/react";
+
+import { getCurrentUserProfile } from "@/lib/actions/profile.actions";
+
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
+    DropdownMenuGroup,
     DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-
-import {
-    User,
-    Settings,
-    Heart,
-} from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {
-    getCurrentUserProfile,
-    updateProfileImage,
-} from "@/lib/actions/profile.actions";
-import { toast } from "sonner";
 
 interface ProfileLayoutProps {
     children: React.ReactNode;
 }
 
+interface UserProfile {
+    id: string;
+    name: string | null;
+    username: string | null;
+    email: string | null;
+    image: string | null;
+    emailVerified: Date | null;
+}
+
 export default function ProfilePage({ children }: ProfileLayoutProps) {
     const pathname = usePathname();
-    //eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const [profile, setProfile] = useState<any>(null);
+    const [profile, setProfile] = useState<UserProfile | null>(null);
     const [loading, setLoading] = useState(true);
-    const [isUploading, setIsUploading] = useState(false);
-
-    const sidebarItems = [
-        { id: "general", label: "General" },
-        { id: "authentication", label: "Authentication" },
-        { id: "signin", label: "Sign in with Vercel" },
-        { id: "billing-info", label: "Billing Information" },
-        { id: "billing-items", label: "Billing Items" },
-        { id: "invoices", label: "Invoices" },
-        { id: "tokens", label: "Tokens" },
-    ];
 
     useEffect(() => {
         async function fetchProfile() {
@@ -75,38 +69,29 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
 
     const navItems = [
         { name: "General", href: "/account/settings", icon: User },
-        { name: "Authentication", href: "/account/authentication", icon: Heart },
+        {
+            name: "Authentication",
+            href: "/account/authentication",
+            icon: Heart,
+        },
         { name: "Favourites", href: "/account/favourites", icon: Settings },
         { name: "Linked Accounts", href: "/account/linked", icon: Settings },
     ];
 
-    const handleImageUpload = async (url: string) => {
-        try {
-            setIsUploading(true);
-            await updateProfileImage(url);
-
-            //eslint-disable-next-line @typescript-eslint/no-explicit-any
-            setProfile((prev: any) => ({ ...prev, image: url }));
-            toast.success("Profile image updated successfully!");
-        } catch (error) {
-            console.error("Profile image update failed:", error);
-            toast.error("Failed to update profile image");
-        } finally {
-            setIsUploading(false);
-        }
-    };
-
     return (
         <>
-            <div className="min-h-screen bg-white">
-                {/* Header */}
-                <header className="border-b border-gray-200 bg-white">
+            <div className="min-h-screen">
+                <header className="border-b border-gray-200 dark:border-neutral-800">
                     <div className="flex h-16 items-center justify-between px-6">
                         <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-2">
-                                <div className="flex h-6 w-6 items-center justify-center rounded-sm bg-black">
-                                    <div className="h-3 w-3 rotate-45 transform rounded-sm bg-white"></div>
-                                </div>
+                                <Image
+                                    src={"/logo-light.png"}
+                                    alt=""
+                                    className="size-8 rounded-full bg-white"
+                                    width={1080}
+                                    height={1080}
+                                />
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
                                         <Button
@@ -128,10 +113,10 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
 
                         <div className="flex items-center space-x-4">
                             <div className="relative">
-                                <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                                <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
                                 <Input
                                     placeholder="Find..."
-                                    className="w-64 border-gray-200 bg-gray-50 pl-10"
+                                    className="w-64 border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                 />
                             </div>
                             <Button
@@ -142,49 +127,130 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                                 <MessageSquare className="mr-2 h-4 w-4" />
                                 Feedback
                             </Button>
-                            <Avatar className="h-8 w-8">
-                                <AvatarImage src="/placeholder.svg?height=32&width=32" />
-                                <AvatarFallback className="bg-gradient-to-br from-purple-500 to-pink-500 text-sm text-white">
-                                    M
-                                </AvatarFallback>
-                            </Avatar>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <div className="">
+                                        <div className="mt-0 flex w-full cursor-pointer items-center justify-center gap-2">
+                                            {profile?.image ? (
+                                                <Avatar className="size-10 rounded-full">
+                                                    <AvatarImage
+                                                        src={profile.image}
+                                                        alt="user profile"
+                                                        width={1080}
+                                                        height={680}
+                                                    />
+                                                </Avatar>
+                                            ) : (
+                                                <Avatar className="size-10 rounded-full">
+                                                    <AvatarImage
+                                                        src={"/images/user.svg"}
+                                                        alt="user profile"
+                                                        width={1080}
+                                                        height={680}
+                                                    />
+                                                </Avatar>
+                                            )}
+                                        </div>
+                                    </div>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent
+                                    className="w-60 dark:border-neutral-800"
+                                    align="end"
+                                    forceMount
+                                >
+                                    <DropdownMenuLabel className="font-normal">
+                                        <div className="flex flex-col space-y-1 py-2">
+                                            <p className="text-sm leading-none font-medium text-black dark:text-white">
+                                                {profile?.username}
+                                            </p>
+                                            <p className="text-muted-foreground pt-1 text-sm leading-none">
+                                                {profile?.email}
+                                            </p>
+                                        </div>
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuGroup>
+                                        <DropdownMenuItem
+                                            asChild
+                                            className="cursor-pointer py-2"
+                                        >
+                                            <Link href="/account/settings">
+                                                <RiUserFill className="mr-1 h-4 w-4" />
+                                                <span>Account</span>
+                                            </Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            asChild
+                                            className="cursor-pointer py-2"
+                                        >
+                                            <Link href="/account/authentication">
+                                                <RiSettings2Fill className="mr-1 h-4 w-4" />
+                                                <span>Authentication</span>
+                                            </Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            asChild
+                                            className="cursor-pointer py-2"
+                                        >
+                                            <Link href="/account/favourites">
+                                                <RiHeart2Fill className="mr-1 h-4 w-4" />
+                                                <span>Favourites</span>
+                                            </Link>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuGroup>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem
+                                        className="cursor-pointer py-2 text-red-600 focus:text-red-600 dark:text-red-400 dark:focus:text-red-400"
+                                        onClick={() => signOut()}
+                                    >
+                                        <RiLogoutBoxRFill className="mr-2 h-4 w-4" />
+                                        <span>Log out</span>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </header>
 
-                {/* Tab Navigation */}
-                <Tabs defaultValue="settings">
-                    <div className="border-b border-gray-200 bg-white">
+                {/* <Tabs defaultValue="settings"> */}
+                    {/* <div className="border-b border-gray-200 dark:border-neutral-800">
                         <div className="px-6">
                             <TabsList className="h-auto bg-transparent p-0">
                                 <TabsTrigger
                                     value="overview"
-                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900"
+                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 dark:data-[state=active]:border-white dark:data-[state=active]:text-gray-100"
                                 >
                                     Overview
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="activity"
-                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900"
+                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 dark:data-[state=active]:border-white dark:data-[state=active]:text-gray-100"
                                 >
                                     Activity
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="settings"
-                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900"
+                                    className="mr-8 rounded-none border-b-2 border-transparent px-0 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 data-[state=active]:border-black data-[state=active]:bg-transparent data-[state=active]:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 dark:data-[state=active]:border-white dark:data-[state=active]:text-gray-100"
                                 >
                                     Settings
                                 </TabsTrigger>
                             </TabsList>
                         </div>
+                    </div> */}
+                    <div className="border-b py-6 dark:border-neutral-800">
+                        <div className="mx-auto max-w-7xl">
+                            <h1 className="text-2xl font-semibold text-gray-900 capitalize dark:text-gray-100">
+                                {pathname.split("/").pop() === "settings" ? "Account Settings" : pathname.split("/").pop() === "authentication" ? "Authentication" : pathname.split("/").pop() === "favourites" ? "Favourites" : pathname.split("/").pop() === "linked" ? "Linked Accounts" : pathname.split("/").pop()}
+                            </h1>
+                        </div>
                     </div>
 
-                    <TabsContent value="overview" className="mt-0">
+                    {/* <TabsContent value="overview" className="mt-0">
                         <div className="p-8">
-                            <h1 className="text-2xl font-semibold text-gray-900">
+                            <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                                 Overview
                             </h1>
-                            <p className="mt-4 text-gray-600">
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
                                 Account overview content goes here.
                             </p>
                         </div>
@@ -192,49 +258,28 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
 
                     <TabsContent value="activity" className="mt-0">
                         <div className="p-8">
-                            <h1 className="text-2xl font-semibold text-gray-900">
+                            <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                                 Activity
                             </h1>
-                            <p className="mt-4 text-gray-600">
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">
                                 Account activity content goes here.
                             </p>
                         </div>
-                    </TabsContent>
+                    </TabsContent> */}
 
-                    <TabsContent value="settings" className="mt-0">
+                    {/* <TabsContent value="settings" className="mt-0"> */}
                         <div className="mx-auto flex max-w-7xl">
-                            {/* Sidebar */}
-                            <aside className="min-h-screen w-72 border-r border-gray-200 bg-white">
+                            <aside className="min-h-screen w-72 border-r border-gray-200 dark:border-neutral-800">
                                 <div className="p-6">
                                     <div className="relative mb-6">
-                                        <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                                        <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
                                         <Input
                                             placeholder="Search..."
-                                            className="border-gray-200 bg-gray-50 pl-10"
+                                            className="border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                         />
                                     </div>
 
                                     <nav className="space-y-1">
-                                        {/* {sidebarItems.map((item) => (
-                                            <button
-                                                key={item.id}
-                                                onClick={() =>
-                                                    setActiveSettingsTab(
-                                                        item.id,
-                                                    )
-                                                }
-                                                className={`w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
-                                                    activeSettingsTab ===
-                                                    item.id
-                                                        ? "bg-gray-100 font-medium text-gray-900"
-                                                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                                                }`}
-                                            >
-                                                {item.label}
-                                            </button>
-                                        ))}
-                                         */}
-
                                         {navItems.map((item) => (
                                             <Link
                                                 key={item.href}
@@ -256,17 +301,10 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                                 </div>
                             </aside>
 
-                            {/* Main Content */}
-                            <main className="flex-1 p-8">
-                                <h1 className="mb-8 text-2xl font-semibold text-gray-900">
-                                    Account Settings
-                                </h1>
-
-                                {children}
-                            </main>
+                            <main className="flex-1 p-8">{children}</main>
                         </div>
-                    </TabsContent>
-                </Tabs>
+                    {/* </TabsContent> */}
+                {/* </Tabs> */}
             </div>
         </>
     );

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import NavUser from "./nav-user";
-import { CommandMenu } from "@/components/ui/command-menu";
+import { CommandMenu } from "@/components/command-menu";
 
 export default function NavClientContent() {
     return (

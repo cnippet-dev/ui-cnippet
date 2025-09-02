@@ -78,7 +78,7 @@ const Page = () => {
                                                 CVE-2025-29927
                                             </h2>
                                             <Image
-                                                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h6.jpg"
+                                                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h6.jpg"
                                                 alt="image"
                                                 width={1920}
                                                 height={1080}

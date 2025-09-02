@@ -10,25 +10,25 @@ import CldImageComponent from "@/components/cld-image";
 
 const items = [
     {
-        img: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg",
+        img: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h1.jpg",
         title: "Bridge",
         desc: "A breathtaking view of a city illuminated by countless lights, showcasing the vibrant and bustling nightlife.",
         sliderName: "bridge",
     },
     {
-        img: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg",
+        img: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg",
         title: "Mountains View",
         desc: "A serene lake reflecting the surrounding mountains and trees, creating a mirror-like surface.",
         sliderName: "mountains",
     },
     {
-        img: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg",
+        img: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h3.jpg",
         title: "Autumn",
         desc: "A picturesque path winding through a dense forest adorned with vibrant autumn foliage.",
         sliderName: "autumn",
     },
     {
-        img: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg",
+        img: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg",
         title: "Foggy",
         sliderName: "foggy",
         desc: "A stunning foggy view over the foresh, with the sun casting a golden glow across the forest. ",

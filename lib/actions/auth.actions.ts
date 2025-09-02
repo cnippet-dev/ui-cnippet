@@ -363,22 +363,28 @@ async function getRequestMeta() {
 
         let location = "Unknown";
 
-        // Fetch location information from IP
+        // Fetch location information from IP using IP2Location
         if (ip && ip !== "::1" && ip !== "127.0.0.1") {
             try {
-                // Using ipapi.co API (free tier available)
-                const response = await fetch(`https://ipapi.co/${ip}/json/`);
+                const response = await fetch(
+                    `https://api.ip2location.io/?ip=${ip}&key=${process.env.IP2LOCATION_API_KEY}`,
+                );
                 const data = await response.json();
 
                 if (data && !data.error) {
-                    location = `${data.city || ""}${data.city && data.region ? ", " : ""}${data.region || ""}${(data.city || data.region) && data.country_name ? ", " : ""}${data.country_name || ""}`;
+                    const locationParts = [
+                        data.city_name,
+                        data.region_name,
+                        data.country_name,
+                    ].filter(Boolean);
 
-                    if (!location.trim()) {
-                        location = "Unknown";
-                    }
+                    location = locationParts.join(", ") || "Unknown";
                 }
             } catch (error) {
-                console.error("Error fetching location from IP:", error);
+                console.error(
+                    "Error fetching location from IP2Location:",
+                    error,
+                );
             }
         } else if (ip === "::1" || ip === "127.0.0.1") {
             location = "Localhost";
@@ -394,8 +400,6 @@ async function getRequestMeta() {
         return { ip: "", userAgent: "", browser: "", location: "Unknown" };
     }
 }
-
-// Add these new functions to handle linked accounts
 
 export async function linkOAuthAccount({
     userId,

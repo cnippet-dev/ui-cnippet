@@ -8,19 +8,19 @@ export default function ImageRevealGallery() {
                 <ClippedFigure
                     aspectRatio="1/1"
                     variant="squiggle"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg"
                     alt="Squiggle shaped image"
                 />
 
                 <ClippedFigure
                     variant="rectangle"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg"
                     alt="Rectangle shaped video"
                 />
 
                 <ClippedFigure
                     variant="abstract"
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h5.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h5.jpg"
                     alt="Abstract shaped image"
                     className="custom-class"
                     hoverScale={false}

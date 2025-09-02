@@ -3,27 +3,27 @@ import React from "react";
 
 const cards = [
     {
-        url: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
+        url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h1.jpg",
         title: "Artwork 1",
         id: 1,
     },
     {
-        url: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h5.jpg",
+        url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h5.jpg",
         title: "Artwork 2",
         id: 2,
     },
     {
-        url: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h3.jpg",
+        url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h3.jpg",
         title: "Artwork 3",
         id: 3,
     },
     {
-        url: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h4.jpg",
+        url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h4.jpg",
         title: "Artwork 4",
         id: 4,
     },
     {
-        url: "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h2.jpg",
+        url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h2.jpg",
         title: "Artwork 5",
         id: 5,
     },

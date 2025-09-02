@@ -4,7 +4,7 @@ export default function AvatarDemo() {
     return (
         <Avatar>
             <AvatarImage
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
+                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a1.jpg"
                 alt="@shadcn"
             />
             <AvatarFallback>CN</AvatarFallback>
