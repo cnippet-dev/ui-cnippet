@@ -6,7 +6,7 @@ const Navbar = dynamic(() => import("@/components/shared/navbar"), {
     loading: () => <div className="h-20 bg-white dark:bg-black" />,
 });
 
-const Footer = dynamic(() => import("@/components/shared/navbar"), {
+const Footer = dynamic(() => import("@/components/shared/footer"), {
     ssr: true,
     loading: () => <div className="h-20 bg-white dark:bg-black" />,
 });

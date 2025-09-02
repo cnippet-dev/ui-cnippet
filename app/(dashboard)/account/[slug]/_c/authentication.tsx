@@ -85,10 +85,10 @@ export default function SecurityPage() {
         <>
             <div className="max-w-2xl space-y-8">
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Security
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Manage your account security settings.
                     </p>
                 </div>
@@ -96,10 +96,10 @@ export default function SecurityPage() {
                 <Separator />
 
                 <div>
-                    <h2 className="mb-2 text-lg font-medium text-gray-900">
+                    <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                         Change Password
                     </h2>
-                    <p className="mb-4 text-sm text-gray-600">
+                    <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                         Update your password to keep your account secure.
                     </p>
                     <Form {...form}>
@@ -122,6 +122,7 @@ export default function SecurityPage() {
                                                             : "password"
                                                     }
                                                     placeholder="Enter your current password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
@@ -134,9 +135,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showCurrentPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -161,6 +162,7 @@ export default function SecurityPage() {
                                                             : "password"
                                                     }
                                                     placeholder="Enter your new password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
@@ -173,9 +175,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -202,6 +204,7 @@ export default function SecurityPage() {
                                                             : "password"
                                                     }
                                                     placeholder="Confirm your new password"
+                                                    className="dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                                     {...field}
                                                 />
                                                 <button
@@ -214,9 +217,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showConfirmNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500" />
+                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500" />
+                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
