@@ -37,7 +37,7 @@ function Tab() {
                     <div className="w-full">
                         <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h1.jpg"
+                                "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h1.jpg"
                             }
                             width={1000}
                             height={1000}
@@ -50,7 +50,7 @@ function Tab() {
                     <div className="w-full">
                         <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg"
+                                "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg"
                             }
                             width={1000}
                             height={1000}
@@ -63,7 +63,7 @@ function Tab() {
                     <div className="w-full">
                         <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h3.jpg"
+                                "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h3.jpg"
                             }
                             width={1000}
                             height={1000}
@@ -76,7 +76,7 @@ function Tab() {
                     <div className="w-full">
                         <CldImage
                             src={
-                                "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
+                                "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg"
                             }
                             width={1000}
                             height={1000}

@@ -7,21 +7,21 @@ export default function AnimatedGroupPreset() {
             preset="zoom"
         >
             <CldImage
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h4.jpg"
+                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h4.jpg"
                 alt="impressionist painting, uploaded to Cosmos"
                 width={1080}
                 height={680}
                 className="h-80 w-full rounded-xl object-cover"
             />
             <CldImage
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h5.jpg"
+                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h5.jpg"
                 alt="impressionist painting, uploaded to Cosmos"
                 width={1080}
                 height={680}
                 className="h-80 w-full rounded-xl object-cover"
             />
             <CldImage
-                src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986669/h2.jpg"
+                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986669/h2.jpg"
                 alt="impressionist painting, uploaded to Cosmos"
                 width={1080}
                 height={680}

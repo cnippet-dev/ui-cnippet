@@ -11,7 +11,7 @@ export default function TiltCard1() {
                 className="flex max-w-[270px] flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
             >
                 <Image
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h14.jpg"
                     alt="Ghost in the shell - Kôkaku kidôtai"
                     width={1920}
                     height={1080}

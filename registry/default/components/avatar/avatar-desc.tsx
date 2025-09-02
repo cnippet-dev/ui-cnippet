@@ -6,28 +6,28 @@ export default function Component() {
             <div className="flex -space-x-2">
                 <Avatar>
                     <AvatarImage
-                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
+                        src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a1.jpg"
                         alt="@shadcn"
                     />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <Avatar>
                     <AvatarImage
-                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a2.jpg"
+                        src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a2.jpg"
                         alt="@shadcn"
                     />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <Avatar>
                     <AvatarImage
-                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a3.jpg"
+                        src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a3.jpg"
                         alt="@shadcn"
                     />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <Avatar>
                     <AvatarImage
-                        src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a4.jpg"
+                        src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a4.jpg"
                         alt="@shadcn"
                     />
                     <AvatarFallback>CN</AvatarFallback>

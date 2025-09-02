@@ -64,7 +64,7 @@ export default function Cursor1() {
             </Cursor>
             <div ref={targetRef}>
                 <CldImage
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h1.jpg"
                     alt="Olympic logo Paris 2024"
                     width={1080}
                     height={680}

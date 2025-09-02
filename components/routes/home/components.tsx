@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
@@ -23,15 +23,18 @@ import { fadeUp } from "@/lib/motion";
 import { motion } from "motion/react";
 
 const images = [
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h1.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h3.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h7.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h8.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h9.jpg",
-    "https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h10.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h1.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h3.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h7.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h8.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h9.jpg",
+    "https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h10.jpg",
 ];
 
-const Components = () => {
+const Components = forwardRef<
+    HTMLDivElement,
+    React.HTMLAttributes<HTMLDivElement>
+>((props, ref) => {
     return (
         <>
             <section className="relative h-full">
@@ -80,7 +83,9 @@ const Components = () => {
                                 visualization, and interactive UI elements.
                             </motion.p>
                         </div>
-                        <div className="grid divide-y divide-dashed border-t border-dashed px-0.5 md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800">
+                        <div 
+                        ref={ref}
+                        className="grid divide-y divide-dashed border-t border-dashed px-0.5 md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800">
                             <Link
                                 href="/motions/infinite-slider"
                                 className="overflow-hidden border-r px-5 pb-10 md:col-span-4"
@@ -129,11 +134,11 @@ const Components = () => {
                                 <Grid>
                                     <Block className="col-span-12 row-span-2 md:col-span-6 dark:border-neutral-900 dark:bg-neutral-950">
                                         <Image
-                                            src="/images/avatar.svg"
+                                            src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/a1.jpg"
                                             alt="avatar"
                                             width={1920}
                                             height={1080}
-                                            className="mb-4 size-14 rounded-full"
+                                            className="mb-4 size-14 rounded-full object-cover"
                                         />
                                         <h1 className="mb-6 text-2xl leading-tight font-medium md:mb-12 md:text-3xl">
                                             Hi there.{" "}
@@ -217,7 +222,7 @@ const Components = () => {
                             </Link>
                         </div>
 
-                        <div className="grid h-12 grid-cols-6 divide-x border-t-0 dark:divide-neutral-800 divide-dashed border-dashed dark:border-neutral-800">
+                        <div className="grid h-12 grid-cols-6 divide-x divide-dashed border-t-0 border-dashed dark:divide-neutral-800 dark:border-neutral-800">
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 hidden md:block"></div>
@@ -240,7 +245,7 @@ const Components = () => {
                             </div>
                         </div>
 
-                        <div className="grid h-32 grid-cols-4 divide-x border-t border-b md:h-52 divide-dashed border-dashed md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800">
+                        <div className="grid h-32 grid-cols-4 divide-x divide-dashed border-t border-b border-dashed md:h-52 md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800">
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1"></div>
@@ -254,6 +259,8 @@ const Components = () => {
             </section>
         </>
     );
-};
+});
+
+Components.displayName = "Components";
 
 export default Components;

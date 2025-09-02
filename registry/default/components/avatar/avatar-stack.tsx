@@ -6,21 +6,21 @@ export default function Component() {
         <div className="flex -space-x-3">
             <Avatar className="size-10">
                 <AvatarImage
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a1.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a1.jpg"
                     alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar className="size-10">
                 <AvatarImage
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a2.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a2.jpg"
                     alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar className="size-10">
                 <AvatarImage
-                    src="https://res.cloudinary.com/dphulm0s9/image/upload/v1739106437/a3.jpg"
+                    src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1739106437/a3.jpg"
                     alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>

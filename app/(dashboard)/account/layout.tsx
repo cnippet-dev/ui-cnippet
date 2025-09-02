@@ -15,10 +15,8 @@ import {
     RiUserFill,
 } from "@remixicon/react";
 
-import { useSessionCache } from "@/hooks/use-session-cache";
 import { getCurrentUserProfile } from "@/lib/actions/profile.actions";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {

@@ -19,7 +19,7 @@ export default function Component() {
                     <div className="space-y-2">
                         <img
                             className="w-full rounded"
-                            src="https://res.cloudinary.com/dphulm0s9/image/upload/v1737986668/h6.jpg"
+                            src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h6.jpg"
                             width={382}
                             height={216}
                             alt="Content image"

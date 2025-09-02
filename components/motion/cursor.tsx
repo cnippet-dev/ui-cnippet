@@ -47,11 +47,7 @@ export function Cursor({
     }, [cursorX, cursorY]);
 
     useEffect(() => {
-        if (!attachToParent) {
-            document.body.style.cursor = "none";
-        } else {
-            document.body.style.cursor = "auto";
-        }
+        document.body.style.cursor = "auto";
 
         const updatePosition = (e: MouseEvent) => {
             cursorX.set(e.clientX);
@@ -78,7 +74,7 @@ export function Cursor({
             const parent = cursorRef.current.parentElement;
             if (parent) {
                 const handleMouseEnter = () => {
-                    parent.style.cursor = "none";
+                    parent.style.cursor = "auto";
                     handleVisibilityChange(true);
                 };
                 const handleMouseLeave = () => {
@@ -100,10 +96,7 @@ export function Cursor({
     return (
         <motion.div
             ref={cursorRef}
-            className={cn(
-                "pointer-events-none fixed left-0 top-0 z-50",
-                className,
-            )}
+            className={cn("fixed top-0 left-0 z-50", className)}
             style={{
                 x: cursorXSpring,
                 y: cursorYSpring,
