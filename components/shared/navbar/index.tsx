@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex h-full w-full overflow-visible">
+            {/* <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex h-full w-full overflow-visible">
                 <div
                     className="absolute top-20 left-0 z-0 h-[1px] w-full flex-auto overflow-hidden border-t border-dashed border-gray-200 dark:border-neutral-700"
                     data-border="true"
@@ -23,7 +23,7 @@ const Navbar = () => {
                     data-framer-name="Vertical lines"
                 >
                     <div
-                        className="absolute right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                        className="absolute right-2 md:right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
                         data-border="true"
                         data-framer-name="Right line"
                     >
@@ -34,7 +34,7 @@ const Navbar = () => {
                         ></div>
                     </div>
                     <div
-                        className="absolute bottom-0 left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                        className="absolute bottom-0 left-2 md:left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
                         data-border="true"
                         data-framer-name="Left line"
                     >
@@ -45,10 +45,28 @@ const Navbar = () => {
                         ></div>
                     </div>
                 </div>
+            </div> */}
+
+            <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                <div
+                    className="absolute top-0 left-1/2 z-0 h-20 w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
+                    data-framer-name="Vertical lines"
+                >
+                    <div
+                        className="absolute right-2 md:right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                        data-border="true"
+                        data-framer-name="Right line"
+                    ></div>
+                    <div
+                        className="absolute bottom-0 left-2 md:left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                        data-border="true"
+                        data-framer-name="Left line"
+                    ></div>
+                </div>
             </div>
 
             <div className="sticky top-0 z-50">
-                <div className="sticky top-4 z-50 pt-3 pb-6">
+                <div className="sticky top-4 z-50 px-4 pt-3 md:px-0">
                     <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-full bg-gray-200/60 px-2 py-2 backdrop-blur-md dark:bg-neutral-800/50">
                         <Link href="/" className="flex items-center">
                             <Image

@@ -1,18 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Search, MessageSquare, ChevronDown } from "lucide-react";
-import { User, Settings, Heart } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import {
+    RiArrowDownSLine,
+    RiChatAiLine,
     RiHeart2Fill,
+    RiKeyLine,
+    RiLinksFill,
     RiLogoutBoxRFill,
+    RiSearchLine,
     RiSettings2Fill,
+    RiSettings2Line,
     RiUserFill,
+    RiUserLine,
 } from "@remixicon/react";
 
 import { getCurrentUserProfile } from "@/lib/actions/profile.actions";
@@ -28,6 +32,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 
 interface ProfileLayoutProps {
     children: React.ReactNode;
@@ -68,14 +73,14 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
     }
 
     const navItems = [
-        { name: "General", href: "/account/settings", icon: User },
+        { name: "General", href: "/account/settings", icon: RiUserLine },
         {
             name: "Authentication",
             href: "/account/authentication",
-            icon: Heart,
+            icon: RiKeyLine,
         },
-        { name: "Favourites", href: "/account/favourites", icon: Settings },
-        { name: "Linked Accounts", href: "/account/linked", icon: Settings },
+        { name: "Favourites", href: "/account/favourites", icon: RiSettings2Line },
+        { name: "Linked Accounts", href: "/account/linked", icon: RiLinksFill },
     ];
 
     return (
@@ -99,7 +104,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                                             className="flex items-center space-x-2 text-sm font-medium"
                                         >
                                             <span>My Account</span>
-                                            <ChevronDown className="h-4 w-4" />
+                                            <RiArrowDownSLine className="h-4 w-4" />
                                         </Button>
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent>
@@ -113,7 +118,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
 
                         <div className="flex items-center space-x-4">
                             <div className="relative">
-                                <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
+                                <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
                                 <Input
                                     placeholder="Find..."
                                     className="w-64 border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
@@ -124,7 +129,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                                 size="sm"
                                 className="text-sm"
                             >
-                                <MessageSquare className="mr-2 h-4 w-4" />
+                                <RiChatAiLine className="mr-2 h-4 w-4" />
                                 Feedback
                             </Button>
                             <DropdownMenu>
@@ -272,7 +277,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                             <aside className="min-h-screen w-72 border-r border-gray-200 dark:border-neutral-800">
                                 <div className="p-6">
                                     <div className="relative mb-6">
-                                        <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
+                                        <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
                                         <Input
                                             placeholder="Search..."
                                             className="border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"

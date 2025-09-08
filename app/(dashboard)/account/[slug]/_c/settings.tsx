@@ -6,7 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { updateGeneralInfoSchema } from "@/lib/validations/profile";
 import { toast } from "sonner";
-import { Copy, Loader2, MoreHorizontal } from "lucide-react";
+import { Copy } from "lucide-react";
+import { RiLoader3Line, RiMoreLine } from "@remixicon/react";
 
 import { useSessionCache } from "@/hooks/use-session-cache";
 import {
@@ -195,7 +196,7 @@ export default function GeneralInformationPage() {
                                     className="h-10 w-10 rounded-full bg-white dark:bg-neutral-900"
                                     disabled
                                 >
-                                    <Loader2 className="h-4 w-4 animate-spin text-gray-700 dark:text-gray-300" />
+                                    <RiLoader3Line className="h-4 w-4 animate-spin text-gray-700 dark:text-gray-300" />
                                 </Button>
                             ) : (
                                 <AvatarUpload onSuccess={handleImageUpload} />
@@ -244,7 +245,7 @@ export default function GeneralInformationPage() {
                             >
                                 {isPending === "name" ? (
                                     <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        <RiLoader3Line className="mr-2 h-4 w-4 animate-spin" />
                                         Updating...
                                     </>
                                 ) : (
@@ -298,7 +299,7 @@ export default function GeneralInformationPage() {
                             >
                                 {isPending === "username" ? (
                                     <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        <RiLoader3Line className="mr-2 h-4 w-4 animate-spin" />
                                         Updating...
                                     </>
                                 ) : (
@@ -345,7 +346,7 @@ export default function GeneralInformationPage() {
                             </Badge>
                         </div>
                         <Button variant="ghost" size="sm">
-                            <MoreHorizontal className="h-4 w-4" />
+                            <RiMoreLine className="h-4 w-4" />
                         </Button>
                     </div>
                     <p className="text-xs text-gray-500 dark:text-gray-500">
