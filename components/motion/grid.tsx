@@ -10,17 +10,15 @@ interface GridProps {
 
 export const Grid = ({ children, className }: GridProps) => {
     return (
-        <div
-            className={twMerge(
-                "dark:bg-black bg-white px-4 py-12 text-neutral-50",
-                className,
-            )}
-        >
+        <div className={twMerge("px-4 py-12")}>
             <motion.div
                 initial="initial"
                 animate="animate"
                 transition={{ staggerChildren: 0.05 }}
-                className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
+                className={twMerge(
+                    "mx-auto grid grid-flow-dense grid-cols-12 gap-4",
+                    className,
+                )}
             >
                 {children}
             </motion.div>
@@ -42,10 +40,7 @@ export const Block = ({ className, ...rest }: any) => {
                 stiffness: 400,
                 damping: 50,
             }}
-            className={twMerge(
-                "col-span-4 rounded-lg border border-zinc-700 bg-zinc-800 p-6",
-                className,
-            )}
+            className={twMerge("col-span-4 p-6", className)}
             {...rest}
         />
     );

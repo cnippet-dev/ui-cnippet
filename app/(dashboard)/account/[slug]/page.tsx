@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 
-// Define the available profile sections
 const PROFILE_SECTIONS = {
     settings: "Settings",
     authentication: "Authentication",
     favourites: "Favourites",
-    linked: "Linked Accounts"
+    linked: "Linked Accounts",
 } as const;
 
 type ProfileSection = keyof typeof PROFILE_SECTIONS;
@@ -22,6 +21,7 @@ const Settings = dynamic(
                 </div>
             </div>
         ),
+        ssr: true,
     },
 );
 
@@ -37,6 +37,7 @@ const Authentication = dynamic(
                 </div>
             </div>
         ),
+        ssr: true,
     },
 );
 
@@ -51,11 +52,13 @@ const Favourites = dynamic(
                 </div>
             </div>
         ),
+        ssr: true,
     },
 );
 
 const Linked = dynamic(
-    () => import("./_c/linked-account").then((mod) => ({ default: mod.default })),
+    () =>
+        import("./_c/linked-account").then((mod) => ({ default: mod.default })),
     {
         loading: () => (
             <div className="flex min-h-[400px] items-center justify-center">
@@ -65,15 +68,15 @@ const Linked = dynamic(
                 </div>
             </div>
         ),
+        ssr: true,
     },
 );
 
-// Component mapping
 const COMPONENT_MAP = {
     settings: Settings,
     authentication: Authentication,
     favourites: Favourites,
-    linked: Linked
+    linked: Linked,
 } as const;
 
 export const dynamicParams = true;
@@ -91,7 +94,6 @@ export default async function ProfileSlugPage({
 }) {
     const { slug } = await params;
 
-    // Check if the slug is valid
     if (!(slug in PROFILE_SECTIONS)) {
         notFound();
     }

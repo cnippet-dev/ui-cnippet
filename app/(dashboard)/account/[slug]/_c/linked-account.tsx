@@ -3,22 +3,30 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { Mail, KeyRound, MoreHorizontal, Link2, Unlink } from "lucide-react";
+import { toast } from "sonner";
+import {
+    RiGoogleFill,
+    RiGithubFill,
+    RiMailCheckLine,
+    RiKey2Fill,
+    RiMoreLine,
+    RiLinkUnlinkM,
+    RiLinkM,
+} from "@remixicon/react";
 
-import { Button } from "@/components/ui/button";
 import {
     linkOAuthAccount,
     unlinkOAuthAccount,
 } from "@/lib/actions/auth.actions";
+
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { toast } from "sonner";
-import { RiGoogleFill, RiGithubFill } from "@remixicon/react";
 
 export default function AccountLinkingManager() {
     const { data: session, update } = useSession();
@@ -104,7 +112,7 @@ export default function AccountLinkingManager() {
                 <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
                     <div className="flex items-center space-x-3">
                         <div className="bg-background text-foreground/80 grid h-8 w-8 place-items-center rounded-md border dark:border-neutral-800">
-                            <Mail
+                            <RiMailCheckLine
                                 className="h-4 w-4 dark:text-gray-300"
                                 aria-hidden="true"
                             />
@@ -144,8 +152,8 @@ export default function AccountLinkingManager() {
                 <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
                     <div className="flex items-center space-x-3">
                         <div className="bg-background text-foreground/80 grid h-8 w-8 place-items-center rounded-md border dark:border-neutral-800">
-                            <KeyRound
-                                className="h-4 w-4 dark:text-gray-300"
+                            <RiKey2Fill
+                                className="size-5 dark:text-gray-300"
                                 aria-hidden="true"
                             />
                         </div>
@@ -206,7 +214,7 @@ export default function AccountLinkingManager() {
                                     className="h-8 w-8 bg-transparent"
                                     aria-label="More actions"
                                 >
-                                    <MoreHorizontal className="h-4 w-4" />
+                                    <RiMoreLine className="h-4 w-4" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent
@@ -219,7 +227,7 @@ export default function AccountLinkingManager() {
                                     }
                                     disabled={linkingState.isGoogleUnlinking}
                                 >
-                                    <Unlink className="mr-2 h-4 w-4 dark:text-gray-300" />
+                                    <RiLinkUnlinkM className="mr-2 h-4 w-4 dark:text-gray-300" />
                                     {linkingState.isGoogleUnlinking
                                         ? "Unlinking..."
                                         : "Unlink"}
@@ -232,7 +240,7 @@ export default function AccountLinkingManager() {
                             onClick={() => handleLinkAccount("google")}
                             disabled={linkingState.isGoogleLinking}
                         >
-                            <Link2 className="mr-2 h-4 w-4" />
+                            <RiLinkM className="mr-2 h-4 w-4" />
                             {linkingState.isGoogleLinking
                                 ? "Linking..."
                                 : "Connect"}
@@ -283,7 +291,7 @@ export default function AccountLinkingManager() {
                                     className="h-8 w-8 bg-transparent"
                                     aria-label="More actions"
                                 >
-                                    <MoreHorizontal className="h-4 w-4" />
+                                    <RiMoreLine className="h-4 w-4" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent
@@ -296,7 +304,7 @@ export default function AccountLinkingManager() {
                                     }
                                     disabled={linkingState.isGithubUnlinking}
                                 >
-                                    <Unlink className="mr-2 h-4 w-4 dark:text-gray-300" />
+                                    <RiLinkUnlinkM className="mr-2 h-4 w-4 dark:text-gray-300" />
                                     {linkingState.isGithubUnlinking
                                         ? "Unlinking..."
                                         : "Unlink"}
@@ -309,7 +317,7 @@ export default function AccountLinkingManager() {
                             onClick={() => handleLinkAccount("github")}
                             disabled={linkingState.isGithubLinking}
                         >
-                            <Link2 className="mr-2 h-4 w-4" />
+                            <RiLinkM className="mr-2 h-4 w-4" />
                             {linkingState.isGithubLinking
                                 ? "Linking..."
                                 : "Connect"}

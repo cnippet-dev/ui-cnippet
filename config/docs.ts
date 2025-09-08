@@ -361,6 +361,39 @@ export const components: ComponentGroup[] = [
                 name: "File Trigger",
                 href: "/components/file-trigger",
             },
+            {
+                name: "Toggle Group",
+                href: "#",
+            },
+            {
+                name: "Toggle",
+                href: "#",
+            },
+        ],
+    },
+    {
+        name: "Collections",
+        items: [
+            {
+                name: "Dropdown",
+                href: "#",
+            },
+            {
+                name: "Menu",
+                href: "#",
+            },
+            {
+                name: "Table",
+                href: "#",
+            },
+            {
+                name: "Data Table",
+                href: "#",
+            },
+            {
+                name: "Tree",
+                href: "#",
+            },
         ],
     },
     {
@@ -394,6 +427,10 @@ export const components: ComponentGroup[] = [
             {
                 name: "Date Field",
                 href: "/components/date-picker",
+            },
+            {
+                name: "Time Field",
+                href: "#",
             },
         ],
     },
@@ -443,6 +480,10 @@ export const components: ComponentGroup[] = [
         name: "Layouts",
         items: [
             {
+                name: "Navigation Menu",
+                href: "#",
+            },
+            {
                 name: "Sidebar",
                 href: "#",
             },
@@ -465,6 +506,10 @@ export const components: ComponentGroup[] = [
         name: "Navigation",
         items: [
             {
+                name: "Accordion",
+                href: "/components/accordion",
+            },
+            {
                 name: "Breadcrumb",
                 href: "/components/breadcrumb",
             },
@@ -473,12 +518,13 @@ export const components: ComponentGroup[] = [
                 href: "/components/collapsible",
             },
             {
-                name: "Accordion",
-                href: "/components/accordion",
-            },
-            {
                 name: "Pagination",
                 href: "/components/pagination",
+            },
+            {
+                name: "Stepper",
+                href: "/components/stepper",
+                isNew: true,
             },
             {
                 name: "Tabs",
@@ -528,11 +574,6 @@ export const components: ComponentGroup[] = [
                 href: "/components/select",
                 isNew: true,
             },
-            {
-                name: "Stepper",
-                href: "/components/stepper",
-                isNew: true,
-            },
         ],
     },
     {
@@ -557,6 +598,14 @@ export const components: ComponentGroup[] = [
                 name: "Badge",
                 href: "/components/badge",
                 isNew: true,
+            },
+            {
+                name: "Loader",
+                href: "#",
+            },
+            {
+                name: "Progress Circle",
+                href: "#",
             },
             {
                 name: "Skeleton",

@@ -18,7 +18,7 @@ const CursorPointer = dynamic(() => import("@/components/cursor-pointer"));
 
 export default function Home() {
     const heroRef = useRef<HTMLDivElement>(null);
-    const componentsRef = useRef<HTMLDivElement>(null);
+    // const componentsRef = useRef<HTMLDivElement>(null);
 
     return (
         <>
@@ -27,14 +27,14 @@ export default function Home() {
                     <CursorPointer
                         targets={[
                             { id: "hero", ref: heroRef },
-                            { id: "components", ref: componentsRef },
+                            // { id: "components", ref: componentsRef },
                         ]}
                     />
 
                     <Navbar />
                     <main className="dark:bg-background">
                         <Hero ref={heroRef} />
-                        <Components ref={componentsRef} />
+                        <Components />
                         {/* <Sections ref={targetRef} count={15} /> */}
                         {/* <Features /> */}
 

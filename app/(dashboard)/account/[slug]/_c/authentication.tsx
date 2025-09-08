@@ -5,10 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Loader2, Eye, EyeOff } from "lucide-react";
+import {
+    RiEyeLine,
+    RiEyeOffLine,
+    RiLoader3Line,
+} from "@remixicon/react";
 
 import { changePasswordSchema } from "@/lib/validations/profile";
 import { changeUserPassword } from "@/lib/actions/profile.actions";
+
 import {
     Form,
     FormControl,
@@ -135,9 +140,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showCurrentPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeOffLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -175,9 +180,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeOffLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -217,9 +222,9 @@ export default function SecurityPage() {
                                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5"
                                                 >
                                                     {showConfirmNewPassword ? (
-                                                        <EyeOff className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeOffLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     ) : (
-                                                        <Eye className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                                                        <RiEyeLine className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                                                     )}
                                                 </button>
                                             </div>
@@ -236,7 +241,7 @@ export default function SecurityPage() {
                             >
                                 {isPending ? (
                                     <>
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        <RiLoader3Line className="mr-2 h-4 w-4 animate-spin" />
                                         Changing Password...
                                     </>
                                 ) : (

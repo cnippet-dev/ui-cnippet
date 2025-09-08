@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { RiArrowRightUpLine, RiSparkling2Fill } from "@remixicon/react";
 import { motion } from "motion/react";
 
-import { fadeIn, fadeUp, fadeUpBlur, zoomIn } from "@/lib/motion";
+import { fadeUp, fadeUpBlur, zoomIn } from "@/lib/motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -10,25 +10,61 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
     (props, ref) => {
         return (
             <section className="relative h-full">
-                <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                {/* <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
                     <div
                         className="absolute top-0 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
                         data-framer-name="Vertical lines"
                     >
                         <div
-                            className="absolute top-0 right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                            className="absolute top-0 right-2 md:right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
                             data-border="true"
                             data-framer-name="Right line"
                         ></div>
                         <div
-                            className="absolute bottom-0 left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                            className="absolute bottom-0 left-2 md:left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
                             data-border="true"
                             data-framer-name="Left line"
                         ></div>
                     </div>
+                </div> */}
+
+                <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                    <div
+                        className="absolute top-4 left-0 z-0 h-[1px] w-full flex-auto overflow-hidden border-t border-dashed border-gray-200 dark:border-neutral-700"
+                        data-border="true"
+                        data-framer-name="Top divider"
+                    ></div>
+
+                    <div
+                        className="absolute top-2.5 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
+                        data-framer-name="Vertical lines"
+                    >
+                        <div
+                            className="absolute right-2 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 md:right-0 dark:border-neutral-700"
+                            data-border="true"
+                            data-framer-name="Right line"
+                        >
+                            <div
+                                className="dot-top"
+                                data-border="true"
+                                data-framer-name="Ellipsis"
+                            ></div>
+                        </div>
+                        <div
+                            className="absolute bottom-0 left-2 z-0 h-full w-[1px] border-r border-dashed border-gray-200 md:left-0 dark:border-neutral-700"
+                            data-border="true"
+                            data-framer-name="Left line"
+                        >
+                            <div
+                                className="dot-top"
+                                data-border="true"
+                                data-framer-name="Ellipsis"
+                            ></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="relative z-10 pt-4">
+                <div className="relative z-10">
                     <div className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-20 text-center">
                         <motion.div
                             {...zoomIn({
@@ -118,9 +154,9 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                         </motion.p>
                     </div>
 
-                    <motion.div
+                    {/* <motion.div
                         {...fadeIn({ delay: 0.8, duration: 0.6 })}
-                        className="mx-auto grid max-w-7xl grid-cols-2 dark:pl-0.5 divide-x divide-dashed border-t border-b border-dashed md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800"
+                        className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-dashed border-t border-b border-dashed md:grid-cols-6 dark:divide-neutral-800 dark:border-neutral-800 dark:pl-0.5"
                     >
                         <motion.div
                             {...fadeUp({ delay: 0.9, duration: 0.4 })}
@@ -430,7 +466,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                                 </p>
                             </div>
                         </motion.div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </section>
         );
