@@ -355,11 +355,11 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Toggle Group",
-                href: "#",
+                href: "/components/toggle-group",
             },
             {
                 name: "Toggle",
-                href: "#",
+                href: "/components/toggle",
             },
         ],
     },
@@ -368,7 +368,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Dropdown",
-                href: "#",
+                href: "/components/dropdown-menu",
             },
             {
                 name: "Menu",
@@ -376,15 +376,15 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Table",
-                href: "#",
+                href: "/components/table",
             },
             {
                 name: "Data Table",
-                href: "#",
+                href: "/components/data-table",
             },
             {
                 name: "Tree",
-                href: "#",
+                href: "/components/tree",
             },
         ],
     },
@@ -473,11 +473,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Navigation Menu",
-                href: "#",
+                href: "/components/navigation-menu",
             },
             {
                 name: "Sidebar",
-                href: "#",
+                href: "/components/sidebar",
             },
         ],
     },
@@ -593,7 +593,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Loader",
-                href: "#",
+                href: "/components/loader",
             },
             {
                 name: "Progress Circle",

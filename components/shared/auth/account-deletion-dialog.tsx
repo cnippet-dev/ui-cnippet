@@ -118,7 +118,7 @@ export function AccountDeletionDialog({
                                 <p className="mb-1 font-medium">Next steps:</p>
                                 <ol className="list-inside list-decimal space-y-1 text-xs">
                                     <li>
-                                        We'll send a confirmation email to{" "}
+                                        We&apos;ll send a confirmation email to{" "}
                                         <strong>{email}</strong>
                                     </li>
                                     <li>

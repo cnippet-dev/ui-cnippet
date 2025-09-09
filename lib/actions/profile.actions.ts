@@ -331,6 +331,7 @@ export async function requestAccountDeletion(userId: string) {
                 deletionRequestedAt: new Date(),
                 deletionToken: deletionToken,
                 deletionTokenExpires: expiresAt,
+                //eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any,
         });
 

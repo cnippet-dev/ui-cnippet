@@ -59,6 +59,8 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "context-menu-demo", number: "1" },
 
+    { name: "data-table-demo", number: "1" },
+
     { name: "date-picker-demo", number: "2" },
     { name: "date-picker-range" },
 
@@ -66,6 +68,9 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "drop-zone-demo", number: "2" },
     { name: "drop-zone-message" },
+
+    { name: "dropdown-menu-demo", number: "1" },
+    { name: "dropdown-menu-checkboxes" },
 
     { name: "file-trigger-demo", number: "1" },
 
@@ -83,8 +88,12 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "label-demo", number: "1" },
 
+    { name: "loader-demo", number: "1" },
+
     { name: "multiselect-demo", number: "2" },
     { name: "multiselect-clear" },
+
+    { name: "navigation-menu-demo", number: "1" },
 
     { name: "pagination-demo", number: "4" },
     { name: "pagination-numbers" },
@@ -132,6 +141,8 @@ export const componentExamples: Registry = generateExamples([
     { name: "switch-square" },
     { name: "switch-text" },
 
+    { name: "table-demo", number: "1" },
+
     { name: "tabs-demo", number: "1" },
 
     { name: "tag-field-demo", number: "1" },
@@ -146,11 +157,19 @@ export const componentExamples: Registry = generateExamples([
     { name: "toast-custom" },
     { name: "toast-direction" },
 
+    { name: "toggle-demo", number: "1" },
+    { name: "toggle-text" },
+
+    { name: "toggle-group-demo", number: "1" },
+    { name: "toggle-group-single" },
+
     { name: "tooltip-demo", number: "5" },
     { name: "tooltip-arrow" },
     { name: "tooltip-dark" },
     { name: "tooltip-direction" },
     { name: "tooltip-image" },
-    
 
+    { name: "tree-demo", number: "1" },
+    { name: "tree-icons" },
+    { name: "tree-track" },
 ]);
