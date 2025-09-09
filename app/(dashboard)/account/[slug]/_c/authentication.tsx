@@ -5,11 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { z } from "zod";
 import { toast } from "sonner";
-import {
-    RiEyeLine,
-    RiEyeOffLine,
-    RiLoader3Line,
-} from "@remixicon/react";
+import { RiEyeLine, RiEyeOffLine, RiLoader3Line } from "@remixicon/react";
 
 import { changePasswordSchema } from "@/lib/validations/profile";
 import { changeUserPassword } from "@/lib/actions/profile.actions";
@@ -237,7 +233,7 @@ export default function SecurityPage() {
                             <Button
                                 type="submit"
                                 disabled={isPending}
-                                className="min-w-[140px]"
+                                className="w-full sm:w-auto sm:min-w-[140px]"
                             >
                                 {isPending ? (
                                     <>

@@ -14,10 +14,10 @@ export const motions: ComponentGroup[] = [
                 name: "Animated Group",
                 href: "/motions/animated-group",
             },
-            // {z
-            //     name: "Border Trail",
-            //     href: "#",
-            // },
+            {
+                name: "Border Trail",
+                href: "#",
+            },
             // {
             //     name: "Carousel",
             //     href: "/motions/carousel",
@@ -72,16 +72,16 @@ export const motions: ComponentGroup[] = [
         name: "Dialog/Drawer",
         items: [
             {
-                name: "Dialog",
-                href: "/motions/dialog",
-            },
-            {
                 name: "Morphing Dialog",
                 href: "/motions/morphing-dialog",
             },
             {
-                name: "Drawer",
-                href: "/motions/drawer",
+                name: "Morphing Popover",
+                href: "#",
+            },
+            {
+                name: "Magnetic",
+                href: "#",
             },
         ],
     },
@@ -272,39 +272,31 @@ export const motions: ComponentGroup[] = [
                 href: "/motions/spotlight-card",
             },
             {
+                name: "Spinning Text",
+                href: "#",
+            },
+            {
                 name: "Tilt",
                 href: "/motions/tilt",
             },
         ],
     },
-    // {
-    //     name: "Toolbars",
-    //     items: [
-    //         {
-    //             name: "Toolbar Dynamic",
-    //             href: "#",
-    //         },
-    //         {
-    //             name: "Toolbar Expandable",
-    //             href: "#",
-    //         },
-    //     ],
-    // },
+    {
+        name: "Toolbars",
+        items: [
+            {
+                name: "Toolbar Dynamic",
+                href: "#",
+            },
+            {
+                name: "Toolbar Expandable",
+                href: "#",
+            },
+        ],
+    },
     {
         name: "Advanced Effects",
         items: [
-            {
-                name: "Magnetic",
-                href: "#",
-            },
-            {
-                name: "Morphing Dialog",
-                href: "#",
-            },
-            {
-                name: "Morphing Popover",
-                href: "#",
-            },
             {
                 name: "Progressive Blur",
                 href: "#",
@@ -363,11 +355,11 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Toggle Group",
-                href: "#",
+                href: "/components/toggle-group",
             },
             {
                 name: "Toggle",
-                href: "#",
+                href: "/components/toggle",
             },
         ],
     },
@@ -376,7 +368,7 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Dropdown",
-                href: "#",
+                href: "/components/dropdown-menu",
             },
             {
                 name: "Menu",
@@ -384,15 +376,15 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Table",
-                href: "#",
+                href: "/components/table",
             },
             {
                 name: "Data Table",
-                href: "#",
+                href: "/components/data-table",
             },
             {
                 name: "Tree",
-                href: "#",
+                href: "/components/tree",
             },
         ],
     },
@@ -481,11 +473,11 @@ export const components: ComponentGroup[] = [
         items: [
             {
                 name: "Navigation Menu",
-                href: "#",
+                href: "/components/navigation-menu",
             },
             {
                 name: "Sidebar",
-                href: "#",
+                href: "/components/sidebar",
             },
         ],
     },
@@ -601,7 +593,7 @@ export const components: ComponentGroup[] = [
             },
             {
                 name: "Loader",
-                href: "#",
+                href: "/components/loader",
             },
             {
                 name: "Progress Circle",

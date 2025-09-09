@@ -313,49 +313,12 @@ export async function cancelAccountDeletion() {
     }
 }
 
-export async function deleteAccountImmediately() {
-    const session = await getUserSession();
-    if (!session || !session.user || !session.user.id) {
-        return { error: { general: "Unauthorized. Please sign in." } } as const;
-    }
-    const userId = session.user.id;
+// ... previous imports and code ...
+
+// Remove the old deletion functions and replace with these:
+
+export async function requestAccountDeletion(userId: string) {
     try {
-        // Delete dependent records if any (ResetToken and Otp cascade or manual)
-        await prisma.$transaction([
-            prisma.resetToken.deleteMany({ where: { userId } }),
-            prisma.user.delete({ where: { id: userId } }),
-        ]);
-        return {
-            success: true,
-            message: "Account deleted permanently.",
-        } as const;
-    } catch (error) {
-        console.error("Error deleting account:", error);
-        return { error: { general: "Failed to delete account." } } as const;
-    }
-}
-
-// New account deletion flow actions
-export async function requestAccountDeletion({
-    email,
-    username,
-    reason,
-}: {
-    email: string;
-    username?: string;
-    reason?: string;
-}) {
-    try {
-        // Find user by email
-        const user = await prisma.user.findUnique({
-            where: { email },
-            select: { id: true, name: true, username: true },
-        });
-
-        if (!user) {
-            return { error: { general: "User not found." } } as const;
-        }
-
         // Generate deletion token
         const { randomBytes } = await import("crypto");
         const deletionToken = randomBytes(32).toString("hex");
@@ -363,12 +326,11 @@ export async function requestAccountDeletion({
 
         // Store deletion request
         await prisma.user.update({
-            where: { id: user.id },
+            where: { id: userId },
             data: {
                 deletionRequestedAt: new Date(),
                 deletionToken: deletionToken,
                 deletionTokenExpires: expiresAt,
-                deletionReason: reason,
                 //eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any,
         });
@@ -384,18 +346,26 @@ export async function requestAccountDeletion({
         const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
         const deletionLink = `${baseUrl}/confirm-deletion?token=${deletionToken}`;
 
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            select: { email: true, username: true, name: true },
+        });
+
+        if (!user) {
+            return { error: { general: "User not found." } } as const;
+        }
+
         const emailHtml = await render(
             AccountDeletionEmail({
-                username: username || user.username || user.name || "User",
-                userEmail: email,
+                username: user.username || user.name || "User",
+                userEmail: user.email || "",
                 deletionLink,
-                reason,
             }),
         );
 
         const { error: emailError } = await resend.emails.send({
             from: "Cnippet <system@cnippet.dev>",
-            to: email,
+            to: user.email || "",
             subject: "Confirm Your Account Deletion Request",
             html: emailHtml,
         });
@@ -427,7 +397,6 @@ export async function confirmAccountDeletion(token: string) {
                 deletionToken: token,
                 deletionTokenExpires: { gt: new Date() },
             },
-            select: { id: true },
         });
 
         if (!user) {
@@ -436,9 +405,11 @@ export async function confirmAccountDeletion(token: string) {
             } as const;
         }
 
-        // Delete the account
+        // Delete the account and all related data
         await prisma.$transaction([
             prisma.resetToken.deleteMany({ where: { userId: user.id } }),
+            prisma.otp.deleteMany({ where: { email: user.email || "" } }),
+            prisma.linkedAccount.deleteMany({ where: { userId: user.id } }),
             prisma.user.delete({ where: { id: user.id } }),
         ]);
 
