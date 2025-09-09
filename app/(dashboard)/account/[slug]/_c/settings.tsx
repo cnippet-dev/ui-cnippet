@@ -15,7 +15,6 @@ import {
     getCurrentUserProfile,
     updateGeneralInformation,
 } from "@/lib/actions/profile.actions";
-import { cancelAccountDeletion } from "@/lib/actions/profile.actions";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,6 +81,8 @@ export default function GeneralInformationPage() {
             setIsUploading(false);
         }
     };
+
+    console.log(profile);
 
     async function onSubmit(
         values: z.infer<typeof updateGeneralInfoSchema>,
@@ -160,7 +161,7 @@ export default function GeneralInformationPage() {
     return (
         <>
             <div className="max-w-2xl space-y-8">
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col items-start justify-between gap-6 sm:flex-row">
                     <div className="flex-1">
                         <h2 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
                             Avatar
@@ -177,8 +178,8 @@ export default function GeneralInformationPage() {
                         </p>
                     </div>
 
-                    <div className="relative">
-                        <Avatar className="h-32 w-32 border-4 border-white shadow-2xl dark:border-neutral-800">
+                    <div className="relative sm:self-start">
+                        <Avatar className="h-28 w-28 border-4 border-white shadow-2xl sm:h-32 sm:w-32 dark:border-neutral-800">
                             <AvatarImage
                                 src={profile?.image ?? undefined}
                                 alt="Profile"
@@ -186,7 +187,7 @@ export default function GeneralInformationPage() {
                             <AvatarFallback className="bg-gradient-to-br from-violet-500 to-purple-600 text-2xl font-bold text-white">
                                 {profile.name
                                     ? profile?.name.slice(0, 2).toUpperCase()
-                                    : "DK"}
+                                    : profile?.email?.slice(0, 2).toUpperCase()}
                             </AvatarFallback>
                         </Avatar>
                         <div className="absolute -right-2 -bottom-2">
@@ -220,7 +221,7 @@ export default function GeneralInformationPage() {
                             onSubmit={form.handleSubmit((values) =>
                                 onSubmit(values, true),
                             )}
-                            className="flex items-center gap-2"
+                            className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center"
                         >
                             <FormField
                                 control={form.control}
@@ -274,7 +275,7 @@ export default function GeneralInformationPage() {
                             onSubmit={form.handleSubmit((values) =>
                                 onSubmit(values, false),
                             )}
-                            className="flex items-center gap-2"
+                            className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center"
                         >
                             <FormField
                                 control={form.control}
@@ -325,7 +326,7 @@ export default function GeneralInformationPage() {
                         Vercel. Your primary email will be used for
                         account-related notifications.
                     </p>
-                    <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
+                    <div className="mb-4 flex flex-col items-start justify-between gap-3 rounded-md border border-gray-200 p-3 sm:flex-row sm:items-center dark:border-neutral-800 dark:bg-neutral-950">
                         <div className="flex items-center space-x-3">
                             <span className="text-sm dark:text-gray-300">
                                 {profile.email}

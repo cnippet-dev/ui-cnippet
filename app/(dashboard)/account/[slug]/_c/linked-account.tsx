@@ -109,7 +109,7 @@ export default function AccountLinkingManager() {
                     Your primary email address for account notifications and
                     sign-in.
                 </p>
-                <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
+                <div className="mb-4 flex flex-col items-start justify-between gap-3 rounded-md border border-gray-200 p-3 sm:flex-row sm:items-center dark:border-neutral-800 dark:bg-neutral-950">
                     <div className="flex items-center space-x-3">
                         <div className="bg-background text-foreground/80 grid h-8 w-8 place-items-center rounded-md border dark:border-neutral-800">
                             <RiMailCheckLine
@@ -149,7 +149,7 @@ export default function AccountLinkingManager() {
                 <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                     Set up passkeys for secure, passwordless authentication.
                 </p>
-                <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
+                <div className="mb-4 flex flex-col items-start justify-between gap-3 rounded-md border border-gray-200 p-3 sm:flex-row sm:items-center dark:border-neutral-800 dark:bg-neutral-950">
                     <div className="flex items-center space-x-3">
                         <div className="bg-background text-foreground/80 grid h-8 w-8 place-items-center rounded-md border dark:border-neutral-800">
                             <RiKey2Fill
@@ -185,7 +185,7 @@ export default function AccountLinkingManager() {
                     Link your Google account for easy sign-in and profile
                     access.
                 </p>
-                <div className="mb-4 flex items-center justify-between rounded-md border border-gray-200 p-3 dark:border-neutral-800 dark:bg-neutral-950">
+                <div className="mb-4 flex flex-col items-start justify-between gap-3 rounded-md border border-gray-200 p-3 sm:flex-row sm:items-center dark:border-neutral-800 dark:bg-neutral-950">
                     <div className="flex items-center space-x-3">
                         <div className="bg-background text-foreground/80 grid h-8 w-8 place-items-center rounded-md border dark:border-neutral-800">
                             <RiGoogleFill

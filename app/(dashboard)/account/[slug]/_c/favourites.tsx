@@ -54,7 +54,7 @@ export default function FavouritesPage() {
 
             {favourites && favourites.length > 0 ? (
                 <div className="space-y-6">
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         {favourites.map((fav: string) => (
                             <div
                                 key={fav}

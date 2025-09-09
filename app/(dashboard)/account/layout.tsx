@@ -13,10 +13,12 @@ import {
     RiLinksFill,
     RiLogoutBoxRFill,
     RiSearchLine,
+    RiMenuLine,
     RiSettings2Fill,
     RiSettings2Line,
     RiUserFill,
     RiUserLine,
+    RiMenu4Line,
 } from "@remixicon/react";
 
 import { getCurrentUserProfile } from "@/lib/actions/profile.actions";
@@ -51,6 +53,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
     const pathname = usePathname();
     const [profile, setProfile] = useState<UserProfile | null>(null);
     const [loading, setLoading] = useState(true);
+    const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
     useEffect(() => {
         async function fetchProfile() {
@@ -79,7 +82,11 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
             href: "/account/authentication",
             icon: RiKeyLine,
         },
-        { name: "Favourites", href: "/account/favourites", icon: RiSettings2Line },
+        {
+            name: "Favourites",
+            href: "/account/favourites",
+            icon: RiSettings2Line,
+        },
         { name: "Linked Accounts", href: "/account/linked", icon: RiLinksFill },
     ];
 
@@ -87,8 +94,17 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
         <>
             <div className="min-h-screen">
                 <header className="border-b border-gray-200 dark:border-neutral-800">
-                    <div className="flex h-16 items-center justify-between px-6">
-                        <div className="flex items-center space-x-4">
+                    <div className="flex h-auto items-center justify-between gap-3 px-4 py-3 md:h-16 md:px-6">
+                        <div className="flex items-center gap-3 md:gap-4">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="md:hidden"
+                                onClick={() => setMobileNavOpen(true)}
+                                aria-label="Open navigation"
+                            >
+                                <RiMenu4Line className="h-5 w-5" />
+                            </Button>
                             <div className="flex items-center space-x-2">
                                 <Image
                                     src={"/logo-light.png"}
@@ -116,18 +132,18 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                             </div>
                         </div>
 
-                        <div className="flex items-center space-x-4">
-                            <div className="relative">
+                        <div className="flex items-center gap-3 md:gap-4">
+                            <div className="relative hidden md:block">
                                 <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
                                 <Input
                                     placeholder="Find..."
-                                    className="w-64 border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
+                                    className="w-full border-gray-200 bg-gray-50 pl-10 md:w-64 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
                                 />
                             </div>
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="text-sm"
+                                className="hidden text-sm md:inline-flex"
                             >
                                 <RiChatAiLine className="mr-2 h-4 w-4" />
                                 Feedback
@@ -218,7 +234,7 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                 </header>
 
                 {/* <Tabs defaultValue="settings"> */}
-                    {/* <div className="border-b border-gray-200 dark:border-neutral-800">
+                {/* <div className="border-b border-gray-200 dark:border-neutral-800">
                         <div className="px-6">
                             <TabsList className="h-auto bg-transparent p-0">
                                 <TabsTrigger
@@ -242,15 +258,23 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                             </TabsList>
                         </div>
                     </div> */}
-                    <div className="border-b py-6 dark:border-neutral-800">
-                        <div className="mx-auto max-w-7xl">
-                            <h1 className="text-2xl font-semibold text-gray-900 capitalize dark:text-gray-100">
-                                {pathname.split("/").pop() === "settings" ? "Account Settings" : pathname.split("/").pop() === "authentication" ? "Authentication" : pathname.split("/").pop() === "favourites" ? "Favourites" : pathname.split("/").pop() === "linked" ? "Linked Accounts" : pathname.split("/").pop()}
-                            </h1>
-                        </div>
+                <div className="border-b py-6 dark:border-neutral-800">
+                    <div className="mx-auto max-w-7xl px-4 md:px-6">
+                        <h1 className="text-2xl font-semibold text-gray-900 capitalize dark:text-gray-100">
+                            {pathname.split("/").pop() === "settings"
+                                ? "Account Settings"
+                                : pathname.split("/").pop() === "authentication"
+                                  ? "Authentication"
+                                  : pathname.split("/").pop() === "favourites"
+                                    ? "Favourites"
+                                    : pathname.split("/").pop() === "linked"
+                                      ? "Linked Accounts"
+                                      : pathname.split("/").pop()}
+                        </h1>
                     </div>
+                </div>
 
-                    {/* <TabsContent value="overview" className="mt-0">
+                {/* <TabsContent value="overview" className="mt-0">
                         <div className="p-8">
                             <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                                 Overview
@@ -272,45 +296,82 @@ export default function ProfilePage({ children }: ProfileLayoutProps) {
                         </div>
                     </TabsContent> */}
 
-                    {/* <TabsContent value="settings" className="mt-0"> */}
-                        <div className="mx-auto flex max-w-7xl">
-                            <aside className="min-h-screen w-72 border-r border-gray-200 dark:border-neutral-800">
-                                <div className="p-6">
-                                    <div className="relative mb-6">
-                                        <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
-                                        <Input
-                                            placeholder="Search..."
-                                            className="border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
-                                        />
-                                    </div>
+                {/* <TabsContent value="settings" className="mt-0"> */}
+                <div className="mx-auto flex max-w-7xl flex-col md:flex-row">
+                    <aside className="hidden min-h-screen w-72 border-r border-gray-200 md:block dark:border-neutral-800">
+                        <div className="p-6">
+                            <div className="relative mb-6">
+                                <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
+                                <Input
+                                    placeholder="Search..."
+                                    className="border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
+                                />
+                            </div>
 
-                                    <nav className="space-y-1">
-                                        {navItems.map((item) => (
-                                            <Link
-                                                key={item.href}
-                                                href={item.href}
-                                                className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-700 hover:text-white ${
-                                                    pathname === item.href ||
-                                                    (item.href ===
-                                                        "/profile/general-information" &&
-                                                        pathname === "/profile")
-                                                        ? "bg-blue-600 text-white"
-                                                        : ""
-                                                }`}
-                                            >
-                                                <item.icon className="h-4 w-4" />
-                                                {item.name}
-                                            </Link>
-                                        ))}
-                                    </nav>
-                                </div>
-                            </aside>
-
-                            <main className="flex-1 p-8">{children}</main>
+                            <nav className="space-y-1">
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-700 hover:text-white ${
+                                            pathname === item.href ||
+                                            (item.href ===
+                                                "/profile/general-information" &&
+                                                pathname === "/profile")
+                                                ? "bg-blue-600 text-white"
+                                                : ""
+                                        }`}
+                                    >
+                                        <item.icon className="h-4 w-4" />
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </nav>
                         </div>
-                    {/* </TabsContent> */}
+                    </aside>
+
+                    <main className="flex-1 p-4 md:p-8">{children}</main>
+                </div>
+                {/* </TabsContent> */}
                 {/* </Tabs> */}
             </div>
+
+            {mobileNavOpen && (
+                <div className="fixed inset-0 z-50 md:hidden">
+                    <div
+                        className="absolute inset-0 bg-black/50"
+                        onClick={() => setMobileNavOpen(false)}
+                    />
+                    <div className="absolute inset-y-0 left-0 w-72 overflow-y-auto border-r border-gray-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+                        <div className="p-6">
+                            <div className="relative mb-6">
+                                <RiSearchLine className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400 dark:text-neutral-500" />
+                                <Input
+                                    placeholder="Search..."
+                                    className="border-gray-200 bg-gray-50 pl-10 dark:border-neutral-800 dark:bg-neutral-950 dark:placeholder:text-neutral-500"
+                                />
+                            </div>
+                            <nav className="space-y-1">
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        onClick={() => setMobileNavOpen(false)}
+                                        className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-700 hover:text-white ${
+                                            pathname === item.href
+                                                ? "bg-blue-600 text-white"
+                                                : ""
+                                        }`}
+                                    >
+                                        <item.icon className="h-4 w-4" />
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
