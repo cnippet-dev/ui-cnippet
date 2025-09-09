@@ -467,41 +467,18 @@ export default function GeneralInformationPage() {
                         contents from the Cnippet platform. This action is not
                         reversible, so please continue with caution.
                     </p>
-                    <div className="flex flex-wrap gap-3">
-                        <AccountDeletionDialog
-                            username={profile?.username || ""}
-                            email={profile?.email || ""}
-                            trigger={
-                                <Button
-                                    variant="destructive"
-                                    className="bg-red-600 hover:bg-red-700"
-                                >
-                                    Delete Account
-                                </Button>
-                            }
-                        />
-
-                        <Button
-                            variant="outline"
-                            onClick={async () => {
-                                const res = await cancelAccountDeletion();
-                                if ("success" in res && res.success) {
-                                    toast.success("Deletion cancelled");
-                                } else {
-                                    const msg =
-                                        "error" in res &&
-                                        //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                        "general" in (res as any).error
-                                            ? //eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                              (res as any).error.general
-                                            : "Failed to cancel";
-                                    toast.error(msg);
-                                }
-                            }}
-                        >
-                            Cancel scheduled deletion
-                        </Button>
-                    </div>
+                    <AccountDeletionDialog
+                        username={profile?.username || ""}
+                        email={profile?.email || ""}
+                        trigger={
+                            <Button
+                                variant="destructive"
+                                className="bg-red-600 hover:bg-red-700"
+                            >
+                                Delete Account
+                            </Button>
+                        }
+                    />
                 </div>
             </div>
         </>

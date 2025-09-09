@@ -58,13 +58,15 @@ model ResetToken {
 }
 
 model Otp {
-    id        String   @id @default(cuid()) @map("_id")
-    email     String   @unique
-    code      String
-    expiresAt DateTime
-    attempts  Int      @default(0)
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    id         String   @id @default(cuid()) @map("_id")
+    email      String   @unique
+    code       String
+    expiresAt  DateTime
+    attempts   Int      @default(0)
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+    sentCount  Int      @default(0) // Add this field
+    lastSentAt DateTime // Add this field
 }
 
 model Newsletter {
