@@ -62,6 +62,9 @@ const components = {
     li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <li className={cn("mt-2", className)} {...props} />
     ),
+    a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+        <a className={cn("text-neutral-500 hover:underline underline-offset-2", className)} {...props} />
+    ),
 
     table: ({
         className,

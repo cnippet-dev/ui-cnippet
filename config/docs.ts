@@ -576,11 +576,6 @@ export const components: ComponentGroup[] = [
                 href: "/components/sonner",
                 isUpdated: true,
             },
-            {
-                name: "Toast",
-                href: "/components/toast",
-                isUpdated: true,
-            },
         ],
     },
     {
@@ -924,10 +919,6 @@ export const searchDocs: ComponentGroup[] = [
             },
             {
                 name: "Skeleton",
-                href: "#",
-            },
-            {
-                name: "Toast",
                 href: "#",
             },
             {

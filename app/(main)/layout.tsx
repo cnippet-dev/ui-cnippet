@@ -13,10 +13,10 @@ const Navbar = dynamic(() => import("@/components/shared/navbar"), {
     loading: () => <div className="h-20 bg-white dark:bg-black" />,
 });
 
-const Footer = dynamic(() => import("@/components/shared/footer"), {
-    ssr: true,
-    loading: () => <div className="h-20 bg-white dark:bg-black" />,
-});
+// const Footer = dynamic(() => import("@/components/shared/footer"), {
+//     ssr: true,
+//     loading: () => <div className="h-20 bg-white dark:bg-black" />,
+// });
 
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();
@@ -171,7 +171,7 @@ export default function ComponentLayout({
                         <div className="col-span-9 w-full pt-8">{children}</div>
                     </div>
                 </main>
-                <Footer />
+                {/* <Footer /> */}
             </>
         </>
     );
