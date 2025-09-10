@@ -54,10 +54,10 @@ export default async function ComponentPage({
     }
 
     return (
-        <main className="relative lg:gap-0 xl:grid xl:grid-cols-[1fr_260px]">
+        <main className="relative">
             
-            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
-                <div className="space-y-2 pb-6">
+            <div className="mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-12">
+                <div className="space-y-2 pb-3 pt-10">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
                     </h1>
@@ -68,13 +68,13 @@ export default async function ComponentPage({
                     )}
                 </div>
 
-                <div className="pb-12 md:pt-6">
+                <div className="pb-12">
                     <article className="prose prose-gray dark:prose-invert max-w-none">
                         <MdxRenderer code={doc.body.code} />
                     </article>
                 </div>
             </div>
-            {doc?.toc && (
+            {/* {doc?.toc && (
                 <div className="hidden xl:block">
                     <div className="sticky top-16 -mt-10 pt-6">
                         <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
@@ -113,7 +113,7 @@ export default async function ComponentPage({
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
         </main>
     );
 }

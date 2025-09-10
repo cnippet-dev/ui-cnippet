@@ -19,10 +19,6 @@ const prettyCodeOptions: Options = {
 const sharedSchema = z.object({
     title: z.string(),
     description: z.string(),
-    thumbnail: z.object({
-        src: z.string(),
-        alt: z.string(),
-    }),
     link: z.string(),
     toc: z.boolean().optional().default(true),
 });

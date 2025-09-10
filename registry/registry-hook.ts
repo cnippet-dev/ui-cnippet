@@ -23,5 +23,5 @@ export const hooks: Registry = generateComponents([
     { name: "use-image-upload" },
     { name: "use-pagination", files: [`${BASE_PATH}use-pagination.ts`] },
     { name: "use-prevent-scroll" },
-    { name: "use-toast", files: [`${BASE_PATH}use-toast.ts`] },
+    // { name: "use-toast", files: [`${BASE_PATH}use-toast.ts`] },
 ]);

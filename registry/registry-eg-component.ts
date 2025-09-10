@@ -153,9 +153,9 @@ export const componentExamples: Registry = generateExamples([
     { name: "textarea-limit" },
     { name: "textarea-text" },
 
-    { name: "toast-demo", number: "3" },
-    { name: "toast-custom" },
-    { name: "toast-direction" },
+    // { name: "toast-demo", number: "3" },
+    // { name: "toast-custom" },
+    // { name: "toast-direction" },
 
     { name: "toggle-demo", number: "1" },
     { name: "toggle-text" },
