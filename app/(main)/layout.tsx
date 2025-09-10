@@ -13,6 +13,11 @@ const Navbar = dynamic(() => import("@/components/shared/navbar"), {
     loading: () => <div className="h-20 bg-white dark:bg-black" />,
 });
 
+const Footer = dynamic(() => import("@/components/shared/footer"), {
+    ssr: true,
+    loading: () => <div className="h-20 bg-white dark:bg-black" />,
+});
+
 function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     const pathname = usePathname();
     const activeRef = useRef<HTMLLIElement | null>(null);
@@ -27,7 +32,7 @@ function NavigationDesktop({ navigation }: { navigation: typeof components }) {
     }, [pathname]);
 
     return (
-        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed pl-5 md:sticky md:block dark:border-neutral-800">
+        <aside className="fixed top-14 z-30 col-span-3 mt-6 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed pl-5 md:sticky md:block dark:border-neutral-800">
             <ScrollArea className="h-full w-full">
                 <nav className="pt-8">
                     <ul
@@ -122,39 +127,52 @@ export default function ComponentLayout({
 
     return (
         <>
-            <div className="bg-background relative flex min-h-svh flex-col">
-                <div className="flex flex-1 flex-col">
-                    <Navbar />
-                    <main className="mx-auto flex max-w-7xl flex-1 flex-col">
-                        <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+            <>
+                <Navbar />
+                <main className="relative">
+                    <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-0 flex w-full overflow-visible">
+                        <div
+                            className="absolute top-4 left-0 z-0 h-[1px] w-full flex-auto overflow-hidden border-t border-dashed border-gray-200 dark:border-neutral-700"
+                            data-border="true"
+                            data-framer-name="Top divider"
+                        ></div>
+
+                        <div
+                            className="absolute top-2.5 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
+                            data-framer-name="Vertical lines"
+                        >
                             <div
-                                className="absolute top-0 left-1/2 z-0 h-full w-full max-w-7xl flex-auto -translate-x-1/2 overflow-visible"
-                                data-framer-name="Vertical lines"
+                                className="absolute right-2 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 md:right-0 dark:border-neutral-700"
+                                data-border="true"
+                                data-framer-name="Right line"
                             >
                                 <div
-                                    className="absolute top-0 right-0 bottom-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                                    className="dot-top"
                                     data-border="true"
-                                    data-framer-name="Right line"
+                                    data-framer-name="Ellipsis"
                                 ></div>
+                            </div>
+                            <div
+                                className="absolute bottom-0 left-2 z-0 h-full w-[1px] border-r border-dashed border-gray-200 md:left-0 dark:border-neutral-700"
+                                data-border="true"
+                                data-framer-name="Left line"
+                            >
                                 <div
-                                    className="absolute bottom-0 left-0 z-0 h-full w-[1px] border-r border-dashed border-gray-200 dark:border-neutral-700"
+                                    className="dot-top"
                                     data-border="true"
-                                    data-framer-name="Left line"
+                                    data-framer-name="Ellipsis"
                                 ></div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="">
-                            <div className="flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[270px_minmax(0,1fr)] lg:gap-6">
-                                <NavigationDesktop
-                                    navigation={currentNavigation}
-                                />
-                                <div className="w-full pt-8">{children}</div>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-            </div>
+                    <div className="mx-auto grid max-w-7xl grid-cols-12">
+                        <NavigationDesktop navigation={currentNavigation} />
+                        <div className="col-span-9 w-full pt-8">{children}</div>
+                    </div>
+                </main>
+                <Footer />
+            </>
         </>
     );
 }
