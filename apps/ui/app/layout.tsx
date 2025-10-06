@@ -3,7 +3,6 @@ import "./globals.css";
 import ThemeProvider from "@/providers/theme-provider";
 import { BASE_URL } from "@/config/docs";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import AuthProvider from "@/providers/auth-provider";
 import { Funnel_Display } from "next/font/google";
 
 const funnel = Funnel_Display({
@@ -79,12 +78,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            {/* <GoogleTagManager gtmId="GTM-MZVF5K5T" /> */}
             <body
                 className={`antialiased dark:bg-neutral-950 ${funnel.className}`}
                 suppressHydrationWarning
             >
-                <AuthProvider>
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="light"
@@ -92,12 +89,9 @@ export default function RootLayout({
                         disableTransitionOnChange
                     >
                         {children}
-                        {/* <Toaster /> */}
                         <Sonner richColors expand={true} position="top-right" />
                     </ThemeProvider>
-                </AuthProvider>
             </body>
-            {/* <GoogleAnalytics gaId="G-78T110L7RD" /> */}
         </html>
     );
 }
