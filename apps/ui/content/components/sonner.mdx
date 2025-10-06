@@ -1,0 +1,65 @@
+---
+title: "Sonner"
+description: "A toast component displays a message to the user."
+link: "/charts/sonner"
+---
+
+<ComponentPreview name="sonner-demo" />
+
+## Installation
+
+Follow these simple steps to add the Sonner component to your project:
+
+<Steps>
+
+<Step>
+Install Dependencies
+</Step>
+
+```bash
+npm install sonner
+```
+
+<Step>
+    Create a new file: `components/ui/sonner.tsx` and copy the code below:
+</Step>
+
+<CollapsibleSource name="sonner" />
+
+<Step>
+Add the Sonner component to your project.
+</Step>
+
+`app/layout.tsx`
+
+```tsx
+import { Toaster as Sonner } from "@/components/ui/sonner";
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="en">
+            <head />
+            <body>
+                <main>{children}</main>
+                <Sonner />
+            </body>
+        </html>
+    );
+}
+```
+
+<Step>
+    Adjust the import paths in both files according to your project's structure.
+</Step>
+
+</Steps>
+
+## Examples
+
+### w/ direction
+
+<ComponentPreview name="sonner-direction" />
+
+### Custom sonner
+
+<ComponentPreview name="sonner-custom" />

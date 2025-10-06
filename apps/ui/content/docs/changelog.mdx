@@ -1,0 +1,60 @@
+---
+title: "Changelog"
+description: "Release notes and notable updates for Cnippet UI."
+link: "/docs/changelog"
+toc: true
+---
+
+This changelog documents user‑visible changes to Cnippet UI: new components, motion utilities, fixes, and docs updates.
+
+## Upgrade steps
+
+<Steps>
+
+<Step>Update dependencies</Step>
+
+Run your package manager to install any newly referenced libraries (see each release note for specifics).
+
+```bash
+npm install
+```
+
+<Step>Sync copied snippets</Step>
+
+If you copied components/motion utilities, open the relevant docs pages and re-copy the Collapsible Source into your local files. Adjust import paths as needed.
+
+<Step>Verify in dev</Step>
+
+Start the dev server and test affected pages and interactions.
+
+```bash
+npm run dev
+```
+
+</Steps>
+
+## 2025-09-23
+
+- Added this changelog page to `content/docs`.
+- Refined docs structure to ensure MDX pages share consistent frontmatter (`title`, `description`, `link`, `toc`).
+
+## 2025-09-15
+
+- Motion: Improved carousel inertia and accessibility labels.
+- Components: Polished `Button`, `Dialog`, and `Tabs` examples for Tailwind CSS 4 tokens.
+
+## 2025-09-01
+
+- Charts: Added example pages for `recharts` with responsive containers.
+- Docs: Expanded installation guide with theme tokens and CSS variables.
+
+## 2025-08-20
+
+- Components: Introduced `SpotlightCard` and `Ripple` interactions.
+- Infra: Standardized MDX compilation via content collections with unified rehype/remark pipeline.
+
+---
+
+Looking for older changes? See the repository history on GitHub.
+
+
