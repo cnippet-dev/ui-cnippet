@@ -55,9 +55,8 @@ export default async function ComponentPage({
 
     return (
         <main className="relative">
-            
             <div className="mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-12">
-                <div className="space-y-2 pb-3 pt-10">
+                <div className="space-y-2 pt-10 pb-3">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
                     </h1>
@@ -74,46 +73,6 @@ export default async function ComponentPage({
                     </article>
                 </div>
             </div>
-            {/* {doc?.toc && (
-                <div className="hidden xl:block">
-                    <div className="sticky top-16 -mt-10 pt-6">
-                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4">
-
-                            <div className="relative mt-8 origin-center -translate-x-3 p-6 duration-500">
-                                <div className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
-                                <div className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
-
-                                <div className="flex flex-col space-y-3 px-1 py-8">
-                                    <div className="space-y-1">
-                                        <p className="text-xs font-medium text-blue-500 uppercase">
-                                            From Cnippet UI
-                                        </p>
-                                        <h3 className="text-lg font-medium">
-                                            Make your components look awesome,
-                                        </h3>
-                                        <p className="text-sm text-neutral-500">
-                                            Access all components, motion
-                                            effects, and charts with full source
-                                            code from our GitHub repository.
-                                        </p>
-                                    </div>
-                                    <a
-                                        href="https://github.com/cnippet-site/all-elements/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center rounded-full bg-blue-500 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none"
-                                    >
-                                        Get Access on GitHub
-                                    </a>
-                                </div>
-
-                                <div className="absolute top-0 right-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
-                                <div className="absolute bottom-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_var(--gradient-bg)_9.27%,_var(--gradient-bg)_90.7%,_transparent_100%)] [--gradient-bg:var(--color-black)]/15 dark:[--gradient-bg:var(--color-white)]/20"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )} */}
         </main>
     );
 }

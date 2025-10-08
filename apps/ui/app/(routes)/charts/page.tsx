@@ -8,104 +8,96 @@ import { DashedBorderWithTopDots } from "@/components/dashed-layout";
 
 const page = () => {
     return (
-        <>
-            <section className="relative">
-                <DashedBorderWithTopDots />
+        <section className="relative">
+            <DashedBorderWithTopDots />
 
-                <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
-                    <div className="relative grid h-full w-full grid-cols-12 py-0">
-                        <div className="col-span-12 text-center">
-                            <div className="relative">
-                                <h2 className="mb-2 pt-16 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
-                                    Charts
-                                </h2>
-                                <p className="mb-8 px-5 text-sm text-gray-500 md:mb-16 md:text-base">
-                                    Charts are the building blocks of your
-                                    application. They are used to create
-                                    reusable UI elements.
-                                </p>
-                            </div>
+            <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
+                <div className="relative grid h-full w-full grid-cols-12 py-0">
+                    <div className="col-span-12 text-center">
+                        <div className="relative">
+                            <h2 className="mb-2 pt-16 text-2xl leading-tight font-semibold tracking-tight md:text-5xl">
+                                Charts
+                            </h2>
+                            <p className="mb-8 px-5 text-sm text-gray-500 md:mb-16 md:text-base">
+                                Charts are the building blocks of your
+                                application. They are used to create reusable UI
+                                elements.
+                            </p>
+                        </div>
 
-                            <div className="border-t border-dashed pb-20 dark:border-neutral-700">
-                                <ul role="list" className="grid md:grid-cols-4">
-                                    {charts.map((nav, index) => {
-                                        return (
-                                            <li
-                                                key={`${nav.name}-${index}`}
-                                                className={`border-b border-dashed px-6 py-4 dark:border-neutral-700 ${
-                                                    index === 3 ||
-                                                    index === 7 ||
-                                                    index === 11
-                                                        ? "border-r-0"
-                                                        : "md:border-r"
-                                                } ${index === charts.length - 2 ? "border-b" : ""} ${
-                                                    index === charts.length - 1
-                                                        ? "border-r border-b"
-                                                        : ""
-                                                }`}
+                        <div className="border-t border-dashed pb-20 dark:border-neutral-700">
+                            <ul role="list" className="grid md:grid-cols-4">
+                                {charts.map((nav, index) => {
+                                    return (
+                                        <li
+                                            key={`${nav.name}-${index}`}
+                                            className={`border-b border-dashed px-6 py-4 dark:border-neutral-700 ${
+                                                index === 3 ||
+                                                index === 7 ||
+                                                index === 11
+                                                    ? "border-r-0"
+                                                    : "md:border-r"
+                                            } ${index === charts.length - 2 ? "border-b" : ""} ${
+                                                index === charts.length - 1
+                                                    ? "border-r border-b"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div className="relative z-10 pb-4 text-left text-base/6 font-medium text-zinc-950 dark:text-white">
+                                                {nav.name}
+                                            </div>
+                                            <ul
+                                                role="list"
+                                                className="space-y-3.5 border-zinc-200 dark:border-zinc-800"
                                             >
-                                                <div className="relative z-10 pb-4 text-left text-base/6 font-medium text-zinc-950 dark:text-white">
-                                                    {nav.name}
-                                                </div>
-                                                <ul
-                                                    role="list"
-                                                    className="space-y-3.5 border-zinc-200 dark:border-zinc-800"
-                                                >
-                                                    {nav.items.map(
-                                                        (item, j) => {
-                                                            return (
-                                                                <li
-                                                                    key={`${item.name}-${j}`}
-                                                                >
-                                                                    <Link
-                                                                        className={cn(
-                                                                            "relative inline-flex w-full items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
-                                                                            item.href ===
-                                                                                "#" &&
-                                                                                "cursor-default text-gray-400 hover:text-gray-400",
-                                                                        )}
-                                                                        href={
-                                                                            item.href
-                                                                        }
-                                                                    >
-                                                                        <span>
-                                                                            {
-                                                                                item.name
-                                                                            }
-                                                                        </span>
-                                                                        {item.href ===
-                                                                            "#" && (
-                                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800">
-                                                                                Coming
-                                                                                soon
-                                                                            </span>
-                                                                        )}
-                                                                        {item?.isNew && (
-                                                                            <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800">
-                                                                                New
-                                                                            </span>
-                                                                        )}
-                                                                        {item?.isUpdated && (
-                                                                            <span className="ml-2 rounded-lg bg-amber-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-amber-800">
-                                                                                Updated
-                                                                            </span>
-                                                                        )}
-                                                                    </Link>
-                                                                </li>
-                                                            );
-                                                        },
-                                                    )}
-                                                </ul>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
+                                                {nav.items.map((item, j) => {
+                                                    return (
+                                                        <li
+                                                            key={`${item.name}-${j}`}
+                                                        >
+                                                            <Link
+                                                                className={cn(
+                                                                    "relative inline-flex w-full items-center pl-1 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
+                                                                    item.href ===
+                                                                        "#" &&
+                                                                        "cursor-default text-gray-400 hover:text-gray-400",
+                                                                )}
+                                                                href={item.href}
+                                                            >
+                                                                <span>
+                                                                    {item.name}
+                                                                </span>
+                                                                {item.href ===
+                                                                    "#" && (
+                                                                    <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800">
+                                                                        Coming
+                                                                        soon
+                                                                    </span>
+                                                                )}
+                                                                {item?.isNew && (
+                                                                    <span className="ml-2 rounded-lg bg-blue-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-blue-800">
+                                                                        New
+                                                                    </span>
+                                                                )}
+                                                                {item?.isUpdated && (
+                                                                    <span className="ml-2 rounded-lg bg-amber-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-amber-800">
+                                                                        Updated
+                                                                    </span>
+                                                                )}
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 };
 

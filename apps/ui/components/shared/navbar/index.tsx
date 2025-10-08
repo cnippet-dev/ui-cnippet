@@ -43,8 +43,8 @@ const Navbar = () => {
                                 <Image
                                     src={
                                         theme.theme === "dark"
-                                            ? "/logo-dark.png"
-                                            : "/logo-light.png"
+                                            ? "/images/logo-dark.png"
+                                            : "/images/logo-light.png"
                                     }
                                     alt="CNIPPET Logo"
                                     className="size-9 md:size-10"

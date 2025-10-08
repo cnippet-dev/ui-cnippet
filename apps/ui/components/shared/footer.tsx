@@ -93,8 +93,8 @@ const Footer = forwardRef<
                                         <Image
                                             src={
                                                 theme === "dark"
-                                                    ? "/logo-dark.png"
-                                                    : "/logo-light.png"
+                                                    ? "/images/logo-dark.png"
+                                                    : "/images/logo-light.png"
                                             }
                                             alt=""
                                             className="size-10"
