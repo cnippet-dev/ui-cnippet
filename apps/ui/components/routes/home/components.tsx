@@ -7,6 +7,8 @@ import { Bar, BarChart, ResponsiveContainer } from "recharts";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import type { DateValue } from "react-aria-components";
 import { RiArrowRightUpLine } from "@remixicon/react";
+import { fadeUp } from "cnippet-aos";
+
 import {
     ChevronDownIcon,
     ChevronLeftIcon,
@@ -114,6 +116,7 @@ import AppleStyleDock from "@/registry/default/motions/dock/dock-demo";
 import TiltCard1 from "@/registry/default/motions/tilt/tilt-demo";
 import ImageComparisonHover from "@/registry/default/motions/image-comparison/image-comparison-demo";
 import { DashedBorder } from "@/components/dashed-layout";
+import { motion } from "motion/react";
 
 const initialNotifications = [
     {
@@ -273,21 +276,33 @@ const GridComponents = () => {
 
                 <div className="mx-auto max-w-7xl px-5 md:px-10">
                     <div>
-                        <h2 className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                        <motion.h2
+                            {...fadeUp({
+                                delay: 0.1,
+                                duration: 0.8,
+                                scroll: true,
+                                once: true,
+                            })}
+                            className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
+                        >
                             Core components
-                        </h2>
-                        <p className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400">
+                        </motion.h2>
+                        <motion.p
+                            {...fadeUp({ delay: 0.3, duration: 0.8, y: 10 })}
+                            className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
+                        >
                             Components built on top of Shadcn/UI, perfect for
                             building modern web applications.
-                        </p>
-                        <Link
+                        </motion.p>
+                        <motion.a
+                            {...fadeUp({ delay: 0.4, duration: 0.8, y: 10 })}
                             href="/components"
                             target="_blank"
                             className="flex items-center pt-2"
                         >
                             Explore Components
                             <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
-                        </Link>
+                        </motion.a>
                     </div>
                     <Grid className="max-w-7xl gap-0">
                         <Block className="relative col-span-12 row-span-2 border-b border-dashed p-2 md:col-span-5 md:border-r dark:border-neutral-700">
@@ -1096,22 +1111,48 @@ const GridComponents = () => {
                     </Grid>
 
                     <div>
-                        <h2 className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                        <motion.h2
+                            {...fadeUp({
+                                delay: 0.4,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })}
+                            className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
+                        >
                             Motion components
-                        </h2>
-                        <p className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400">
+                        </motion.h2>
+                        <motion.p
+                            {...fadeUp({
+                                delay: 0.4,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })}
+                            className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
+                        >
                             Components built on top of framer motion, perfect
                             for building modern web applications.
-                        </p>
-                        <Link
+                        </motion.p>
+                        <motion.a
+                            {...fadeUp({
+                                delay: 0.5,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })}
                             href="/motions"
                             target="_blank"
                             className="flex items-center"
                         >
                             Explore Components
                             <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
-                        </Link>
+                        </motion.a>
                     </div>
+
                     <Grid className="max-w-7xl gap-0">
                         <Block className="relative col-span-12 row-span-2 border-b border-dashed p-2 md:col-span-6 md:border-r dark:border-neutral-700">
                             <Card className="space-y-5 border-none shadow-none">
@@ -1192,21 +1233,44 @@ const GridComponents = () => {
                     </Grid>
 
                     <div>
-                        <h2 className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400">
+                        <motion.h2
+                            {...fadeUp({
+                                delay: 0.4,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })}
+                            className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
+                        >
                             Chart components
-                        </h2>
-                        <p className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400">
+                        </motion.h2>
+                        <motion.p
+                            {...fadeUp({
+                                delay: 0.4,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })} className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400">
                             Components built on top of Shadcn/UI, perfect for
                             building modern web applications.
-                        </p>
-                        <Link
+                        </motion.p>
+                        <motion.a
+                            {...fadeUp({
+                                delay: 0.5,
+                                duration: 0.8,
+                                y: 10,
+                                scroll: true,
+                                once: true,
+                            })}
                             href="/charts"
                             target="_blank"
                             className="flex items-center pt-2"
                         >
                             Explore Components
                             <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
-                        </Link>
+                        </motion.a>
                     </div>
                     <Grid className="max-w-7xl gap-0">
                         <Block className="relative col-span-12 row-span-2 border-b border-dashed p-2 md:col-span-4 md:border-r dark:border-neutral-700">

@@ -28,7 +28,10 @@ const page = () => {
                             </div>
 
                             <div className="border-t border-dashed pb-20 dark:border-neutral-700">
-                                <ul role="list" className="grid grid-cols-4">
+                                <ul
+                                    role="list"
+                                    className="grid grid-cols-1 md:grid-cols-4"
+                                >
                                     {components.map((nav, index) => {
                                         return (
                                             <li
@@ -37,8 +40,8 @@ const page = () => {
                                                     index === 3 ||
                                                     index === 7 ||
                                                     index === 11
-                                                        ? "border-r-0"
-                                                        : "border-r"
+                                                        ? "md:border-r-0"
+                                                        : "md:border-r"
                                                 } ${index === components.length - 2 ? "border-b" : ""} ${
                                                     index ===
                                                     components.length - 1
@@ -79,7 +82,7 @@ const page = () => {
                                                                         </span>
                                                                         {item.href ===
                                                                             "#" && (
-                                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold whitespace-nowrap text-emerald-800">
+                                                                            <span className="mr-4 ml-auto rounded-lg bg-emerald-100 px-2 py-0.5 text-[8px] font-semibold whitespace-nowrap text-emerald-800 md:text-[10px]">
                                                                                 Coming
                                                                                 soon
                                                                             </span>

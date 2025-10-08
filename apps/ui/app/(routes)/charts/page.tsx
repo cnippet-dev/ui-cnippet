@@ -27,7 +27,7 @@ const page = () => {
                             </div>
 
                             <div className="border-t border-dashed pb-20 dark:border-neutral-700">
-                                <ul role="list" className="grid grid-cols-4">
+                                <ul role="list" className="grid md:grid-cols-4">
                                     {charts.map((nav, index) => {
                                         return (
                                             <li
@@ -37,7 +37,7 @@ const page = () => {
                                                     index === 7 ||
                                                     index === 11
                                                         ? "border-r-0"
-                                                        : "border-r"
+                                                        : "md:border-r"
                                                 } ${index === charts.length - 2 ? "border-b" : ""} ${
                                                     index === charts.length - 1
                                                         ? "border-r border-b"
