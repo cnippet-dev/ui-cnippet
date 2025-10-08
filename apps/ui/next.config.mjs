@@ -1,5 +1,4 @@
 import { withContentCollections } from "@content-collections/next";
-import withBundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -28,8 +27,4 @@ const nextConfig = {
     },
 };
 
-const withBundleAnalyzerConfig = withBundleAnalyzer({
-    enabled: process.env.ANALYZE === 'true',
-});
-
-export default withContentCollections(withBundleAnalyzerConfig(nextConfig));
+export default withContentCollections(nextConfig);

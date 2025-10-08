@@ -41,34 +41,36 @@ const Footer = forwardRef<
                             <div className="space-y-4 px-4 py-5 md:px-0">
                                 <div className="space-y-2">
                                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                                        Become an Affiliate
+                                        Become a Contributor
                                     </p>
                                     <h1 className="text-4xl leading-tight font-semibold text-gray-900 md:text-5xl lg:text-2xl dark:text-gray-100">
-                                        Join our Affiliate Program
+                                        Join our Contribution Program
                                     </h1>
                                 </div>
 
                                 <div className="space-y-4">
                                     <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                                        Earn up to{" "}
-                                        <span className="font-semibold text-gray-900 dark:text-white">
-                                            $200
-                                        </span>{" "}
-                                        with our generous{" "}
-                                        <span className="font-semibold text-gray-900 dark:text-white">
-                                            40%
-                                        </span>{" "}
-                                        commission for every sale you drive with
-                                        your referral link.
+                                        Contribute components, improvements, or
+                                        documentation to help make Cnippet UI
+                                        better. Open issues, submit pull
+                                        requests, and help the community grow.
                                     </p>
                                 </div>
 
                                 <Button
+                                    ref={ref}
+                                    asChild
                                     size="lg"
                                     className="mt-3 cursor-pointer rounded-full bg-black px-8 py-5.5 text-sm text-white shadow-none hover:bg-gray-800 dark:bg-white dark:text-black"
                                 >
-                                    Become an affiliate
-                                    <RiArrowRightUpLine />
+                                    <Link
+                                        href="https://github.com/cnippet-dev/ui-cnippet-turbo"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        Become a contributor
+                                        <RiArrowRightUpLine />
+                                    </Link>
                                 </Button>
                             </div>
 
@@ -91,8 +93,8 @@ const Footer = forwardRef<
                                         <Image
                                             src={
                                                 theme === "dark"
-                                                    ? "/logo-dark.png"
-                                                    : "/logo-light.png"
+                                                    ? "/images/logo-dark.png"
+                                                    : "/images/logo-light.png"
                                             }
                                             alt=""
                                             className="size-10"

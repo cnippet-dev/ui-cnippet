@@ -2,12 +2,9 @@
 
 import { forwardRef } from "react";
 import { motion } from "motion/react";
-import {
-    RiArrowRightUpLine,
-    RiGithubFill,
-} from "@remixicon/react";
+import { RiArrowRightUpLine, RiGithubFill } from "@remixicon/react";
 
-import { fadeUp, fadeUpBlur, zoomIn } from 'cnippet-aos';
+import { fadeUp, fadeUpBlur, zoomIn } from "cnippet-aos";
 
 import { Button } from "@/components/ui/button";
 import { DashedBorder } from "@/components/dashed-layout";
@@ -20,9 +17,9 @@ const steps = [
     {
         number: "01",
         icon: <LoginIcon className={`${className}`} />,
-        title: "Login",
+        title: "Sign in",
         description:
-            "Sign up or login to your Cnippet account to access the complete component library.",
+            "Create an account or sign in to access the full Cnippet UI library.",
         action: "Get Started",
         href: "/sign_in",
     },
@@ -32,7 +29,7 @@ const steps = [
 
         title: "Clone the GitHub repo",
         description:
-            "Clone our repository to get the latest components and start building your application.",
+            "Clone the repository to get the latest components and start building.",
         action: "View on GitHub",
         href: "https://github.com/cnippet-dev/all-elements",
     },
@@ -40,9 +37,9 @@ const steps = [
         number: "03",
         icon: <DocumentIcon className={`${className}`} />,
 
-        title: "Follow the instructions",
+        title: "Follow the docs",
         description:
-            "Check out our comprehensive documentation for detailed setup instructions and best practices.",
+            "Read the documentation for setup steps, examples, and best practices.",
         action: "Read Docs",
         href: "/docs",
     },
@@ -52,9 +49,9 @@ const steps = [
             <ClipboardIcon className="size-5 stroke-black text-white dark:stroke-white" />
         ),
 
-        title: "Copy & paste components",
+        title: "Copy and paste components",
         description:
-            "Browse the library and directly copy the code you need. It's that simple.",
+            "Browse the library and copy the code you need — it’s that simple.",
         action: "Browse Components",
         href: "/components",
     },
@@ -79,7 +76,7 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        Integrate cnippet-ui components
+                        Integrate Cnippet UI components
                     </motion.h2>
                     <motion.h2
                         className="mb-6 text-3xl font-normal tracking-tight text-gray-900 md:text-4xl dark:text-gray-400"
@@ -90,7 +87,7 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        In 4 simple steps
+                        In four simple steps
                     </motion.h2>
                     <motion.p
                         className="max-w-md text-sm text-gray-600 dark:text-gray-400"
@@ -101,8 +98,8 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        We’ve made it easy for you to integrate our components
-                        into your React.js/Next.js project.
+                        It’s easy to integrate our components into your React or
+                        Next.js project.
                     </motion.p>
                 </motion.div>
 
@@ -112,9 +109,11 @@ const HowToUse = forwardRef<
                             <motion.div
                                 key={step.number}
                                 {...fadeUp({
-                                    delay: 0.3 + index * 0.1,
+                                    delay: 0.4 + index * 0.1,
                                     duration: 0.6,
-                                    y: 20,
+                                    y: 30,
+                                    scroll: true,
+                                    once: true,
                                 })}
                                 className="group relative h-full"
                             >

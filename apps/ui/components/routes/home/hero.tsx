@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import { RiArrowRightUpLine, RiSparkling2Fill } from "@remixicon/react";
 import { motion } from "motion/react";
-
 import { fadeUp, fadeUpBlur, zoomIn } from "cnippet-aos";
+
 import { Button } from "@/components/ui/button";
 import { DashedBorderWithTopDots } from "@/components/dashed-layout";
 import { TextLoop } from "@/components/motion/text-loop";
@@ -20,7 +20,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                             {...fadeUpBlur({ delay: 0.1, duration: 0.8 })}
                             className="font-funnel mb-6 max-w-7xl text-4xl leading-tight font-normal tracking-tight text-gray-900 md:text-6xl lg:text-6xl dark:text-gray-100"
                         >
-                            Core, Motion & Chart components Ui library with{" "}
+                            Core, motion, and chart components for React/Next.js with{" "}
                             <motion.span
                                 {...zoomIn({ delay: 0.1, duration: 0.5 })}
                                 className="-pt-5 relative inline-flex items-center border border-dashed px-4"
@@ -46,7 +46,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                                     data-framer-name="Ellipsis"
                                 ></div>
                                 <RiSparkling2Fill className="size-10 text-indigo-600" />
-                                Cnippet Ui
+                                Cnippet UI
                             </motion.span>{" "}
                         </motion.h1>
 
@@ -58,9 +58,8 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                             })}
                             className="mb-8 max-w-2xl text-center text-lg leading-relaxed tracking-tight break-words text-gray-700 dark:text-gray-400"
                         >
-                            Access premium UI components, pre-built blocks, and
-                            comprehensive guides to <br />
-                            accelerate your development workflow for{" "}
+                            Access premium UI components, pre‑built blocks, and comprehensive guides to
+                            accelerate your workflow for{" "}
                             <motion.span
                                 {...zoomIn({ delay: 0.3, duration: 0.5 })}
                                 className="inline-block w-20 text-left font-semibold text-gray-900 dark:text-gray-100"
@@ -79,21 +78,21 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                             {...zoomIn({
                                 delay: 0.6,
                                 duration: 0.5,
-                                scroll: true,
                             })}
                             className="mb-4 flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
                         >
                             <Button
                                 size="lg"
-                                className="cursor-pointer rounded-full bg-indigo-700/90 px-8 py-5.5 text-sm text-white shadow-none hover:bg-indigo-700"
+                                className="group cursor-pointer rounded-full bg-indigo-700/90 px-8 py-5.5 text-sm text-white shadow-none hover:bg-indigo-700"
                             >
                                 <Link
                                     href="/components"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="flex items-center gap-2"
                                 >
-                                    Browse Components
-                                    <RiArrowRightUpLine />
+                                    Browse components
+                                    <RiArrowRightUpLine className="group-hover:rotate-45 transition-all duration-500" />
                                 </Link>
                             </Button>
 
@@ -107,14 +106,14 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Browse Docs
+                                    Read the docs
                                 </Link>
                             </Button>
                         </motion.div>
 
                         <motion.p
                             {...fadeUp({ delay: 0.8, duration: 0.4 })}
-                            className="text-xs text-gray-700"
+                            className="text-xs text-gray-700 dark:text-gray-400"
                         >
                             Free and open-source forever.
                         </motion.p>

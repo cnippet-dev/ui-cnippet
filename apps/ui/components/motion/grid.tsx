@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
+import { fadeUp } from "cnippet-aos";
 
 interface GridProps {
     children: React.ReactNode;
@@ -30,16 +31,12 @@ export const Grid = ({ children, className }: GridProps) => {
 export const Block = ({ className, ...rest }: any) => {
     return (
         <motion.div
-            variants={{
-                initial: { scale: 0.5, y: 50, opacity: 0 },
-                animate: { scale: 1, y: 0, opacity: 1 },
-            }}
-            transition={{
-                type: "spring",
-                mass: 3,
-                stiffness: 400,
-                damping: 50,
-            }}
+            {...fadeUp({
+                delay: 0.4,
+                duration: 0.8,
+                scroll: true,
+                once: true,
+            })}
             className={twMerge("col-span-4 p-6", className)}
             {...rest}
         />

@@ -37,9 +37,9 @@ export default async function ComponentPage({ params }: { params: Params }) {
     }
 
     return (
-        <main className="relative lg:gap-10 xl:grid xl:grid-cols-[1fr_260px]">
-            <div className="mx-auto w-full max-w-4xl min-w-0 px-4 sm:px-6 lg:px-8">
-                <div className="space-y-2 pb-6">
+        <main className="relative">
+            <div className="mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-12">
+                <div className="space-y-2 pt-10 pb-3">
                     <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
                         {doc.title}
                     </h1>
@@ -56,14 +56,6 @@ export default async function ComponentPage({ params }: { params: Params }) {
                     </article>
                 </div>
             </div>
-
-            {doc?.toc && (
-                <div className="hidden xl:block">
-                    <div className="sticky top-16 -mt-10 pt-6">
-                        <div className="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-2 pb-6 pl-4"></div>
-                    </div>
-                </div>
-            )}
         </main>
     );
 }
