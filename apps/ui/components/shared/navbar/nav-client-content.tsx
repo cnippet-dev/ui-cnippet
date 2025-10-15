@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { CommandMenu } from "@/components/command-menu";
 import { MobileNav } from "./mobile-nav";
+import { RiGithubFill } from "@remixicon/react";
 
 export default function NavClientContent() {
     return (
@@ -52,6 +53,9 @@ export default function NavClientContent() {
             >
                 <CommandMenu />
                 <MobileNav />
+                <Link href="https://github.com/cnippet-dev/all-elements" target="_blank">
+                    <RiGithubFill className="text-gray-600 transition-colors duration-200 hover:text-black" />
+                </Link>
             </motion.div>
         </>
     );
