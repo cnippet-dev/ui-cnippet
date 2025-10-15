@@ -4,6 +4,9 @@ import { allMotions } from "@/.content-collections/generated";
 import { BASE_URL } from "@/config/docs";
 import dynamic from "next/dynamic";
 import Loading from "../../_c/loading";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { RiGithubFill } from "@remixicon/react";
 
 const MdxRenderer = dynamic(
     () =>
@@ -66,6 +69,47 @@ export default async function MotionPage({
                     <article className="prose prose-gray dark:prose-invert max-w-none">
                         <MdxRenderer code={doc.body.code} />
                     </article>
+                </div>
+
+                <div className="mx-auto max-w-4xl pb-12 font-sans">
+                    <section className="relative overflow-hidden rounded-3xl bg-black p-5 text-white md:px-10 dark:bg-black">
+                        <div className="relative z-10">
+                            <h3 className="font-funnel mb-3 text-2xl font-normal tracking-tight">
+                                Access all UI elements on GitHub
+                            </h3>
+                            <p className="max-w-2xl text-sm leading-relaxed text-gray-300">
+                                Browse the full collection of core, motion, and
+                                chart components, examples, and docs.
+                            </p>
+
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                                <Button
+                                    size="sm"
+                                    className="group w-full cursor-pointer rounded-full bg-white px-4 py-2 text-sm text-black shadow-none hover:bg-gray-200 sm:w-auto dark:bg-white dark:text-black"
+                                    asChild
+                                >
+                                    <Link
+                                        href="https://github.com/cnippet-dev/all-elements"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-sm"
+                                    >
+                                        <RiGithubFill />
+                                        Visit GitHub
+                                    </Link>
+                                </Button>
+
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="w-full rounded-full border-white/30 bg-transparent text-white shadow-none hover:bg-white/10 hover:text-white sm:w-auto"
+                                    asChild
+                                >
+                                    <Link href="/motions">Browse motions</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>

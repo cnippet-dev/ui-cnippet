@@ -1272,6 +1272,7 @@ const GridComponents = () => {
                             <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
                         </motion.a>
                     </div>
+                    
                     <Grid className="max-w-7xl gap-0">
                         <Block className="relative col-span-12 row-span-2 border-b border-dashed p-2 md:col-span-4 md:border-r dark:border-neutral-700">
                             <Card className="space-y-5 border-none shadow-none">
