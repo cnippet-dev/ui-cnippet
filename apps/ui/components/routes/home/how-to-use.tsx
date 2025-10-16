@@ -1,3 +1,4 @@
+// how-to-use.tsx - IMPROVED VERSION
 "use client";
 
 import { forwardRef } from "react";
@@ -16,43 +17,36 @@ const className = "h-6 w-6 fill-black dark:fill-white";
 const steps = [
     {
         number: "01",
-        icon: <LoginIcon className={`${className}`} />,
-        title: "Sign in",
-        description:
-            "Create an account or sign in to access the full Cnippet UI library.",
-        action: "Get Started",
-        href: "/sign_in",
-    },
-    {
-        number: "02",
         icon: <RiGithubFill className={`${className}`} />,
-
-        title: "Clone the GitHub repo",
-        description:
-            "Clone the repository to get the latest components and start building.",
-        action: "View on GitHub",
+        title: "Get the code",
+        description: "Clone or download from GitHub to start using components immediately.",
+        action: "View GitHub",
         href: "https://github.com/cnippet-dev/all-elements",
     },
     {
-        number: "03",
+        number: "02",
         icon: <DocumentIcon className={`${className}`} />,
-
-        title: "Follow the docs",
-        description:
-            "Read the documentation for setup steps, examples, and best practices.",
-        action: "Read Docs",
+        title: "Read documentation",
+        description: "Follow our setup guide and explore component APIs and examples.",
+        action: "View Docs",
         href: "/docs",
     },
     {
-        number: "04",
+        number: "03",
         icon: (
             <ClipboardIcon className="size-5 stroke-black text-white dark:stroke-white" />
         ),
-
-        title: "Copy and paste components",
-        description:
-            "Browse the library and copy the code you need — it’s that simple.",
-        action: "Browse Components",
+        title: "Copy components",
+        description: "Browse the library and copy the components you need directly into your project.",
+        action: "Browse Library",
+        href: "/components",
+    },
+    {
+        number: "04",
+        icon: <LoginIcon className={`${className}`} />,
+        title: "Customize & deploy",
+        description: "Customize to match your design system and deploy to production.",
+        action: "Get Started",
         href: "/components",
     },
 ];
@@ -76,7 +70,7 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        Integrate Cnippet UI components
+                        Start building in minutes
                     </motion.h2>
                     <motion.h2
                         className="mb-6 text-3xl font-normal tracking-tight text-gray-900 md:text-4xl dark:text-gray-400"
@@ -87,7 +81,7 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        In four simple steps
+                        Simple integration
                     </motion.h2>
                     <motion.p
                         className="max-w-md text-sm text-gray-600 dark:text-gray-400"
@@ -98,8 +92,7 @@ const HowToUse = forwardRef<
                             once: true,
                         })}
                     >
-                        It’s easy to integrate our components into your React or
-                        Next.js project.
+                        Get started quickly with our straightforward setup process.
                     </motion.p>
                 </motion.div>
 

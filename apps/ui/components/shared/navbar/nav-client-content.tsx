@@ -53,8 +53,11 @@ export default function NavClientContent() {
             >
                 <CommandMenu />
                 <MobileNav />
-                <Link href="https://github.com/cnippet-dev/all-elements" target="_blank">
-                    <RiGithubFill className="text-gray-600 transition-colors duration-200 hover:text-black" />
+                <Link
+                    href="https://github.com/cnippet-dev/all-elements"
+                    target="_blank"
+                >
+                    <RiGithubFill className="text-gray-600 transition-colors duration-200 hover:text-black dark:text-gray-400 dark:hover:text-white" />
                 </Link>
             </motion.div>
         </>

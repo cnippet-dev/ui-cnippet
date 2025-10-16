@@ -67,7 +67,7 @@ export default async function ComponentPage({
                 </div>
 
                 <div className="pb-12">
-                    <article className="prose prose-gray dark:prose-invert max-w-none">
+                    <article className="prose prose-gray dark:prose-invert max-w-none doc">
                         <MdxRenderer code={doc.body.code} />
                     </article>
                 </div>

@@ -285,14 +285,14 @@ const GridComponents = () => {
                             })}
                             className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
                         >
-                            Core components
+                            Essential UI components
                         </motion.h2>
                         <motion.p
                             {...fadeUp({ delay: 0.3, duration: 0.8, y: 10 })}
                             className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
                         >
-                            Components built on top of Shadcn/UI, perfect for
-                            building modern web applications.
+                            Foundation components built for performance and
+                            accessibility.
                         </motion.p>
                         <motion.a
                             {...fadeUp({ delay: 0.4, duration: 0.8, y: 10 })}
@@ -1121,7 +1121,7 @@ const GridComponents = () => {
                             })}
                             className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
                         >
-                            Motion components
+                            Animated interactions
                         </motion.h2>
                         <motion.p
                             {...fadeUp({
@@ -1133,8 +1133,8 @@ const GridComponents = () => {
                             })}
                             className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
                         >
-                            Components built on top of framer motion, perfect
-                            for building modern web applications.
+                            Smooth animations and micro-interactions to enhance
+                            user experience.
                         </motion.p>
                         <motion.a
                             {...fadeUp({
@@ -1243,7 +1243,7 @@ const GridComponents = () => {
                             })}
                             className="font-funnel mb-2 text-3xl font-normal tracking-tight text-gray-900 dark:text-gray-400"
                         >
-                            Chart components
+                            Data visualization
                         </motion.h2>
                         <motion.p
                             {...fadeUp({
@@ -1252,9 +1252,11 @@ const GridComponents = () => {
                                 y: 10,
                                 scroll: true,
                                 once: true,
-                            })} className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400">
-                            Components built on top of Shadcn/UI, perfect for
-                            building modern web applications.
+                            })}
+                            className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
+                        >
+                            Beautiful, responsive charts for data-driven
+                            applications.
                         </motion.p>
                         <motion.a
                             {...fadeUp({
@@ -1272,7 +1274,7 @@ const GridComponents = () => {
                             <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
                         </motion.a>
                     </div>
-                    
+
                     <Grid className="max-w-7xl gap-0">
                         <Block className="relative col-span-12 row-span-2 border-b border-dashed p-2 md:col-span-4 md:border-r dark:border-neutral-700">
                             <Card className="space-y-5 border-none shadow-none">
