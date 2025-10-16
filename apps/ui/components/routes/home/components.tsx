@@ -111,7 +111,7 @@ import {
 } from "@/components/ui/context-menu";
 import { Calendar as Cal } from "@/components/ui/calendar";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
-import CldImage from "@/components/ui/cld-image";
+import { CldImage } from "next-cloudinary";
 import AppleStyleDock from "@/registry/default/motions/dock/dock-demo";
 import TiltCard1 from "@/registry/default/motions/tilt/tilt-demo";
 import ImageComparisonHover from "@/registry/default/motions/image-comparison/image-comparison-demo";

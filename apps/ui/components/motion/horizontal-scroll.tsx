@@ -2,7 +2,7 @@
 import { motion, useTransform, useScroll } from "motion/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import CldImageComponent from "../cld-image";
+import { CldImage } from "next-cloudinary";
 
 interface HorizontalScrollProps {
     cards: {
@@ -51,7 +51,7 @@ export const HorizontalScroll = ({
 const Card = ({ card }: CardProps) => {
     return (
         <div className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200">
-            <CldImageComponent
+            <CldImage
                 src={card.url}
                 alt={card.title}
                 width={1920}

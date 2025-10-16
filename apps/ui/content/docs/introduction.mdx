@@ -1,329 +1,140 @@
 ---
-title: "Installation Guide"
-description: "Get started with Cnippet UI in your Next.js project."
+title: "Introduction"
+description: "Overview of Cnippet UI and how to use the Components and Motion libraries."
 link: "/docs/introduction"
 toc: true
 ---
 
-Get started with Cnippet UI in your Next.js project. Follow these simple steps to add beautiful, production-ready components to your app.
+## Build Beautiful Interfaces Faster with Cnippet UI
 
-## Quick Start
+Welcome to Cnippet UI - your new favorite toolkit for building modern web applications with React and Next.js.
+
+## What is Cnippet UI?
+
+Cnippet UI is a comprehensive collection of production-ready components, smooth animations, and beautiful charts that help you ship professional interfaces faster.
+
+## Why Choose Cnippet UI?
+
+- 🚀 **Save Development Time**: Copy-paste components instead of building from scratch
+- 🎨 **Consistent & Accessible**: Every component follows accessibility standards and design best practices
+- ⚡ **Performance Optimized**: Built with modern React patterns and optimized for speed
+- 🔧 **Fully Customizable**: Easy to adapt to your brand and design system
+
+## What's Included
+
+### 🎯 Core UI Components
+Essential building blocks for any application:
+
+- **Buttons, Inputs, Forms** - Interactive elements
+- **Navigation** - Menus, tabs, breadcrumbs
+- **Overlays** - Dialogs, modals, tooltips
+- **Data Display** - Cards, tables, lists
+- **Feedback** - Loaders, toasts, alerts
+
+### ✨ Motion Components
+Bring your interfaces to life:
+
+- **Page Transitions** - Smooth navigation between pages
+- **Micro-interactions** - Hover effects, loading states
+- **Animations** - Fade, slide, scale effects
+- **Interactive Elements** - Tilt cards, image comparisons
+
+### 📊 Chart Components
+Beautiful data visualization:
+
+- **Bar Charts, Line Charts** - For trends and comparisons
+- **Pie Charts, Radar Charts** - For proportions and distributions
+- **Interactive Charts** - Hover effects and animations
+
+## Get Started in 4 Simple Steps
 
 <Steps>
-<Step>Clone the repository</Step>
-<Step>Install dependencies</Step>
-<Step>Set up styling</Step>
-<Step>Start using components</Step>
-</Steps>
-
-## Prerequisites
-
-Before you begin, make sure you have:
-
-- Next.js 15+ and React 19+
-- Tailwind CSS configured in your project
-- Basic knowledge of React and TypeScript
-
-## Method 1: Full Setup (Recommended)
-
-Get all components at once by cloning our starter repository.
-
-### Step 1: Get the Code
+<Step>
+### Get the Code
+Start by cloning our repository to get all components at once.
 
 ```bash
-# Clone the repository
 git clone https://github.com/cnippet-dev/all-elements
 ```
 
-### Step 2: Copy Essential Folders
+This gives you access to everything in one place.
+</Step>
 
-Copy these folders into your Next.js project:
-
-- `components/` - All UI components
-- `hooks/` - Custom React hooks
-- `lib/` - Utility functions
-
-### Step 3: Install Dependencies
+<Step>
+### Set Up Your Project
+Copy the components into your Next.js app and install dependencies.
 
 ```bash
-npm install @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toggle @radix-ui/react-toggle-group @radix-ui/react-tooltip @radix-ui/react-toast @internationalized/date @remixicon/react @motionone/utils @hookform/resolvers vaul class-variance-authority cnippet-aos react-dropzone cmdk react-aria-components tw-animate-css react-hook-form clsx tailwind-merge lucide-react recharts sonner motion zod react-phone-number-input input-otp next-themes embla-carousel embla-carousel-autoplay embla-carousel-react embla-carousel-class-names react-use-measure next-cloudinary
+# Copy these folders
+components/
+hooks/
+lib/
+
+# Install dependencies (see full list in Installation)
+npm install @radix-ui/react-* motion recharts
 ```
 
-### Step 4: Set Up Theme Provider
+[View full installation guide →](/docs/installation)
+</Step>
 
-To enable theme functionality throughout your application, wrap your app with the ThemeProvider component from `next-themes`.
+<Step>
+### Explore Components
+Browse our component library to find what you need.
 
-First, create a new file `providers/theme-provider.tsx` and add the following code:
+- **UI Components** - [/components](https://ui.cnippet.dev/components)
+- **Animations** - [/motions](https://ui.cnippet.dev/motions)
+- **Charts** - [/charts](https://ui.cnippet.dev/charts)
 
-```tsx
-"use client";
+Each component includes live demos and copy-paste code.
+</Step>
 
-import * as React from "react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { type ThemeProviderProps } from "next-themes/dist/types";
-
-export default function ThemeProvider({
-    children,
-    ...props
-}: ThemeProviderProps) {
-    return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
-}
-```
-
-Next, update your `app/layout.tsx` file to integrate the ThemeProvider:
-
-```tsx
-import { ThemeProvider } from "@/providers/theme-provider";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
-```
-
-### Step 5: Add CSS Styles
-
-Add this to your `app/globals.css`:
-
-```css
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: 221.2 83.2% 53.3%;
-  --chart-2: 212 95% 68%;
-  --chart-3: 216 92% 60%;
-  --chart-4: 210 98% 78%;
-  --chart-5: 212 97% 87%;
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.556 0 0);
-  --chart-1: 221.2 83.2% 53.3%;
-  --chart-2: 212 95% 68%;
-  --chart-3: 216 92% 60%;
-  --chart-4: 210 98% 78%;
-  --chart-5: 212 97% 87%;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-}
-
-@layer base {
-  html {
-    height: -webkit-stretch;
-  }
-  body {
-    height: -webkit-stretch;
-  }
-  * {
-    @apply border-border outline-ring/50;
-  }
-}
-```
-
-## Method 2: Add Components One by One
-
-If you only need specific components, you can copy them individually.
-
-### Step 1: Create Component File
-
-Create a file for your component, for example:
-
-```bash
-mkdir -p components/ui
-touch components/ui/button.tsx
-```
-
-### Step 2: Copy Component Code
-
-Visit the component page on our documentation and click "Copy Code" to get the source.
-
-### Step 3: Install Required Dependencies
-
-Each component page shows which dependencies you need. For a button, you might need:
-
-```bash
-npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge
-```
-
-### Step 4: Use the Component
+<Step>
+### Build & Customize
+Copy components directly into your project and customize them to match your brand.
 
 ```tsx
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  return (
-    <div>
-      <Button>Click me</Button>
-    </div>
-  );
+  return <Button>Get Started</Button>;
 }
 ```
+</Step>
+</Steps>
 
-## Using Motion Components
+## Perfect For Every Project
 
-Motion components add smooth animations to your app.
+### 🏢 Enterprise Teams
+- Consistent design across your entire organization
+- TypeScript for better developer experience
+- Accessibility built into every component
 
-### Step 1: Install Motion
+### 🚀 Startups & Agencies
+- Ship MVPs faster with pre-built components
+- Customizable to match client branding
+- Reduce development costs
 
-```bash
-npm install motion
-```
+### 👨‍💻 Individual Developers
+- Stop reinventing the wheel
+- Focus on unique features, not common UI patterns
+- Professional results without a design team
 
-### Step 2: Copy Motion Component
+## Ready to Start Building?
 
-Create a motion component file and copy the code from our documentation.
+- **Browse Components →** See everything available in our library at ["/components"]((https://ui.cnippet.dev/components))
+- **Read Documentation →** Learn how to customize and extend at ["/docs"](https://ui.cnippet.dev/motions)
+- **Join Community →** Get help and share feedback
 
-### Step 3: Use in Your App
+## Open Source & Free Forever
 
-```tsx
-import { FadeIn } from "@/components/motion/fade-in";
+Cnippet UI is completely free and open-source. We believe beautiful, accessible UI should be available to everyone.
 
-export default function Home() {
-  return (
-    <FadeIn>
-      <h1>Animated content</h1>
-    </FadeIn>
-  );
-}
-```
-
-## Verify Your Setup
-
-Start your development server to test everything:
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` and try using a component:
-
-```tsx
-import { Button } from "@/components/ui/button";
-
-export default function TestPage() {
-  return (
-    <div className="p-8">
-      <Button>Test Button</Button>
-    </div>
-  );
-}
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**Components not rendering?**
-
-- Check that all dependencies are installed
-- Verify your Tailwind CSS is properly configured
-- Ensure the component file paths are correct
-
-**Styles look wrong?**
-
-- Make sure the CSS is added to your `globals.css`
-- Check that the `ThemeProvider` is set up in your layout
-
-**TypeScript errors?**
-
-- Ensure you're using TypeScript in your project
-- Check that all `@radix-ui` types are installed
-
-## Next Steps
-
-Now that you're set up, explore our:
-
-- Component Library - Browse all available components
-- Motion Components - Add animations and interactions
-- Documentation - Learn how to customize and extend components
+Star us on GitHub → [https://github.com/cnippet-dev/all-elements](https://github.com/cnippet-dev/all-elements)
 
 ## Need Help?
 
-If you run into any issues:
+- **Documentation** - Detailed guides and API references at `/docs`
+- **GitHub Issues** - Report bugs and request features at `https://github.com/cnippet-dev/all-elements/issues`
+- **Community Discord** - Get help from other developers
 
-- Check our [GitHub issues](https://github.com/cnippet-dev/all-elements/issues)
-- Join our Discord community
-- Contact our support team
-
-Happy building! 🚀
+Start building something amazing today! 🎉

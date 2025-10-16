@@ -1,6 +1,5 @@
 import React from "react";
 
-import Image from "next/image";
 import { TabsBtn, TabsContent, TabsProvider } from "@/components/motion/tabs-cn";
 import { CldImage } from "next-cloudinary";
 

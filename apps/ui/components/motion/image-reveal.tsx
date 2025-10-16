@@ -9,7 +9,7 @@ import React, {
     createContext,
     useContext,
 } from "react";
-import CldImageComponent from "../cld-image";
+import { CldImage } from "next-cloudinary";
 
 interface ImageItem {
     img: string;
@@ -86,7 +86,7 @@ export const ImageReveal = ({
                     }}
                 >
                     {currentImage && (
-                        <CldImageComponent
+                        <CldImage
                             src={currentImage.img}
                             alt={currentImage.label}
                             ref={imageRef as React.RefObject<HTMLImageElement>}
