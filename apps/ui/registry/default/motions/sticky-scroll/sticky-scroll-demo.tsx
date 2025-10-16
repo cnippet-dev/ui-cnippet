@@ -12,7 +12,7 @@ export default function index(): JSX.Element {
                         <div className="absolute top-0 right-0 bottom-0 left-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
                         <h1 className="px-8 text-center text-6xl leading-[120%] font-semibold tracking-tight 2xl:text-5xl">
-                            I Know What Exactly you're <br /> Looking For!
+                            I Know What Exactly you&apos;re <br /> Looking For!
                             Scroll Please 👇
                         </h1>
                     </section>
@@ -20,14 +20,14 @@ export default function index(): JSX.Element {
                     <section className="sticky top-0 grid h-screen place-content-center overflow-hidden rounded-tl-2xl rounded-tr-2xl bg-gray-300 text-black">
                         <div className="absolute top-0 right-0 bottom-0 left-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
                         <h1 className="px-8 text-center text-4xl leading-[120%] font-semibold tracking-tight 2xl:text-5xl">
-                            If you don't like this Smooth Scroll then I'm sorry,{" "}
+                            If you don&apos;t like this Smooth Scroll then I&apos;m sorry,{" "}
                             <br /> create your own and make it open source 💼
                         </h1>
                     </section>
                     <section className="sticky top-0 grid h-screen w-full place-content-center bg-slate-950 text-white">
                         <div className="absolute top-0 right-0 bottom-0 left-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
                         <h1 className="px-8 text-center text-5xl leading-[120%] font-semibold tracking-tight 2xl:text-5xl">
-                            Don't Forget To Share <br /> This Sticky CSS
+                            Don&apos;t Forget To Share <br /> This Sticky CSS
                             Tricks.😎
                         </h1>
                     </section>

@@ -232,6 +232,10 @@
 }
 
 @layer components {
+    .doc li > code,
+    p > code {
+        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:!bg-neutral-800;
+    }
     .steps > h3 {
         @apply mt-6 mb-4;
     }

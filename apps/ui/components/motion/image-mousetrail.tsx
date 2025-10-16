@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { ReactNode, useRef } from "react";
-import CldImageComponent from "../cld-image";
+import { CldImage } from "next-cloudinary";
 
 /*eslint-disable @typescript-eslint/no-explicit-any*/
 interface ImageMouseTrailProps {
@@ -88,7 +88,7 @@ export default function ImageMouseTrail({
             )}
         >
             {items.map((item, index) => (
-                <CldImageComponent
+                <CldImage
                     key={index}
                     className={cn(
                         "opacity:0 data-[status='active']:ease-out-expo absolute -translate-x-[50%] -translate-y-[50%] scale-0 object-cover transition-transform duration-300 data-[status='active']:scale-100 data-[status='active']:opacity-100 data-[status='active']:duration-500",

@@ -54,12 +54,22 @@ export function rehypeComponent() {
                             `@/registry/${style.name}/`,
                             "@/components/",
                         );
-                        // source = source.replaceAll("export default", "export");
+
+                        source = source.replaceAll(
+                            `import { CldImage } from "next-cloudinary";`,
+                            `import Image from "next/image`,
+                        );
+
+                        source = source.replaceAll(
+                            `CldImage`,
+                            `Image`,
+                        );
+
                         source = source.replaceAll(
                             "https://res.cloudinary.com/dcxm3ccir/",
                             "/",
                         );
-                        // Add code as children so that rehype can take over at build time.
+
                         node.children?.push(
                             u("element", {
                                 tagName: "pre",

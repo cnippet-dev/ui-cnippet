@@ -1,34 +1,123 @@
 ---
-title: "Installation"
-description: "Install dependencies and integrate Cnippet UI components and motion utilities into your Next.js app."
-link: "/docs/installation"
+title: "Installation Guide"
+description: "Get started with Cnippet UI in your Next.js project."
+link: "/docs/introduction"
 toc: true
 ---
 
-This guide helps you add Cnippet UI pieces to an existing Next.js app. You can copy code directly from the docs pages or clone the full repository for faster exploration.
+Get started with Cnippet UI in your Next.js project. Follow these simple steps to add beautiful, production-ready components to your app.
+
+## Quick Start
+
+<Steps>
+<Step>Clone the repository</Step>
+<Step>Install dependencies</Step>
+<Step>Set up styling</Step>
+<Step>Start using components</Step>
+</Steps>
 
 ## Prerequisites
 
+Before you begin, make sure you have:
+
 - Next.js 15+ and React 19+
-- Tailwind CSS 4 (or your styling setup)
+- Tailwind CSS configured in your project
+- Basic knowledge of React and TypeScript
 
-## Install core dependencies
+## Method 1: Full Setup (Recommended)
 
-Install frequently used libraries across components:
+Get all components at once by cloning our starter repository.
 
-```bash
-npm install clsx class-variance-authority @radix-ui/react-slot
-```
-
-Common Radix primitives (install as needed by the components you copy):
+### Step 1: Get the Code
 
 ```bash
-npm install @radix-ui/react-slot @radix-ui/react-collapsible @radix-ui/react-dropdown-menu @radix-ui/react-scroll-area @radix-ui/react-avatar @radix-ui/react-slot @radix-ui/react-tabs  @radix-ui/react-select @radix-ui/react-dialog @radix-ui/react-slot @radix-ui/react-checkbox motion @radix-ui/react-radio-group @radix-ui/react-toast  @radix-ui/react-popover @radix-ui/react-dialog @radix-ui/react-tooltip @radix-ui/react-context-menu @radix-ui/react-slider @radix-ui/react-switch @radix-ui/react-separator @internationalized/date @remixicon/react vaul class-variance-authority react-dropzone cmdk react-aria-components react-dropzone tw-animate-css react-hook-form clsx tailwind-merge lucide-react recharts sonner motion zod @hookform/resolvers react-phone-number-input input-otp next-themes embla-carousel embla-carousel-autoplay embla-carousel-react embla-carousel-class-names react-use-measure @motionone/utils @radix-ui/react-progress next-cloudinary
+# Clone the repository
+git clone https://github.com/cnippet-dev/all-elements
 ```
-    
-## Tailwind setup
 
-Ensure Tailwind is configured and `globals.css` is imported in your root layout. If you use the Button or other UI snippets, keep utility classes as provided and adjust to your design tokens.
+### Step 2: Copy Essential Folders
+
+Copy these folders into your Next.js project:
+
+- `components/` - All UI components
+- `hooks/` - Custom React hooks
+- `lib/` - Utility functions
+
+### Step 3: Install Dependencies
+
+```bash
+npm install @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toggle @radix-ui/react-toggle-group @radix-ui/react-tooltip @radix-ui/react-toast @internationalized/date @remixicon/react @motionone/utils @hookform/resolvers @headless-tree/core vaul class-variance-authority cnippet-aos react-dropzone cmdk react-aria-components tw-animate-css react-hook-form clsx tailwind-merge lucide-react recharts sonner motion zod react-phone-number-input input-otp next-themes embla-carousel embla-carousel-autoplay embla-carousel-react embla-carousel-class-names react-use-measure next-cloudinary
+```
+
+### Step 4: Set Up Theme Provider
+
+To enable theme functionality throughout your application, wrap your app with the ThemeProvider component from `next-themes`.
+
+First, create a new file `providers/theme-provider.tsx` and add the following code:
+
+```tsx
+"use client";
+
+import * as React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
+
+export default function ThemeProvider({
+    children,
+    ...props
+}: ThemeProviderProps) {
+    return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}
+```
+
+Next, update your `app/layout.tsx` file to integrate the ThemeProvider:
+
+```tsx
+import { ThemeProvider } from "@/providers/theme-provider";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+### Step 5: Configure Next Cloudinary
+
+Set up Cloudinary to enable media uploads and optimized delivery in your app.
+
+Install the package (if you didn't install it in Step 3):
+
+```bash
+npm install next-cloudinary
+```
+
+Add your Cloudinary cloud name to your environment variables in `.env.local` (or `.env`):
+
+```bash
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="<Your Cloud Name>"
+```
+
+Don't have a Cloudinary account? Sign up for free at `[https://cloudinary.com](https://cloudinary.com)`.
+
+### Step 6: Add CSS Styles
+
+Add this to your `app/globals.css`:
 
 ```css
 @import "tailwindcss";
@@ -37,143 +126,222 @@ Ensure Tailwind is configured and `globals.css` is imported in your root layout.
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: 221.2 83.2% 53.3%;
-    --chart-2: 212 95% 68%;
-    --chart-3: 216 92% 60%;
-    --chart-4: 210 98% 78%;
-    --chart-5: 212 97% 87%;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: 221.2 83.2% 53.3%;
+  --chart-2: 212 95% 68%;
+  --chart-3: 216 92% 60%;
+  --chart-4: 210 98% 78%;
+  --chart-5: 212 97% 87%;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.145 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.145 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.396 0.141 25.723);
-    --destructive-foreground: oklch(0.637 0.237 25.331);
-    --border: oklch(0.269 0 0);
-    --input: oklch(0.269 0 0);
-    --ring: oklch(0.556 0 0);
-    --chart-1: 221.2 83.2% 53.3%;
-    --chart-2: 212 95% 68%;
-    --chart-3: 216 92% 60%;
-    --chart-4: 210 98% 78%;
-    --chart-5: 212 97% 87%;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.556 0 0);
+  --chart-1: 221.2 83.2% 53.3%;
+  --chart-2: 212 95% 68%;
+  --chart-3: 216 92% 60%;
+  --chart-4: 210 98% 78%;
+  --chart-5: 212 97% 87%;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 }
 
 @layer base {
-    html {
-        height: -webkit-stretch;
-    }
-    body {
-        height: -webkit-stretch;
-    }
-    * {
-        @apply border-border outline-ring/50;
-    }
+  html {
+    height: -webkit-stretch;
+  }
+  body {
+    height: -webkit-stretch;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
 }
 ```
 
-## Add a component
+## Method 2: Add Components One by One
 
-<Steps>
+If you only need specific components, you can copy them individually.
 
-<Step>Create file</Step>
+### Step 1: Create Component File
 
-Create a file like `components/ui/button.tsx`.
+Create a file for your component, for example:
 
-<Step>Copy source</Step>
+```bash
+mkdir -p components/ui
+touch components/ui/button.tsx
+```
 
-On the component page (e.g., Button), use the Collapsible Source to copy code into your file.
+### Step 2: Copy Component Code
 
-<Step>Fix imports</Step>
+Visit the component page on our documentation and click "Copy Code" to get the source.
 
-Adjust import paths based on your project structure.
+### Step 3: Install Required Dependencies
 
-</Steps>
+Each component page shows which dependencies you need. For a button, you might need:
 
-## Add a motion utility
+```bash
+npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge
+```
 
-<Steps>
+### Step 4: Use the Component
 
-<Step>Create file</Step>
+```tsx
+import { Button } from "@/components/ui/button";
 
-Create `components/motion/accordion.tsx` (or similar).
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
 
-<Step>Copy source</Step>
+## Using Motion Components
 
-Open the motion page and copy the Collapsible Source.
+Motion components add smooth animations to your app.
 
-<Step>Install motion</Step>
+### Step 1: Install Motion
 
 ```bash
 npm install motion
 ```
 
-</Steps>
+### Step 2: Copy Motion Component
 
-## Verify
+Create a motion component file and copy the code from our documentation.
 
-Run your dev server and open the relevant route.
+### Step 3: Use in Your App
+
+```tsx
+import { FadeIn } from "@/components/motion/fade-in";
+
+export default function Home() {
+  return (
+    <FadeIn>
+      <h1>Animated content</h1>
+    </FadeIn>
+  );
+}
+```
+
+## Verify Your Setup
+
+Start your development server to test everything:
 
 ```bash
 npm run dev
 ```
 
-You should see the component or motion behavior working. If not, double‑check import paths and installed dependencies referenced on the specific component/motion page.
+Visit `http://localhost:3000` and try using a component:
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export default function TestPage() {
+  return (
+    <div className="p-8">
+      <Button>Test Button</Button>
+    </div>
+  );
+}
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Components not rendering?**
+
+- Check that all dependencies are installed
+- Verify your Tailwind CSS is properly configured
+- Ensure the component file paths are correct
+
+**Styles look wrong?**
+
+- Make sure the CSS is added to your `globals.css`
+- Check that the `ThemeProvider` is set up in your layout
+
+**TypeScript errors?**
+
+- Ensure you're using TypeScript in your project
+- Check that all `@radix-ui` types are installed
+
+## Next Steps
+
+Now that you're set up, explore our:
+
+- [Component Library](https://ui.cnippet.dev/components) - Browse all available components
+- [Motion Components](https://ui.cnippet.dev/motions) - Add animations and interactions
+- [Documentation](https://ui.cnippet.dev/docs/introduction) - Learn how to customize and extend components
+
+## Need Help?
+
+If you run into any issues:
+
+- Check our [GitHub issues](https://github.com/cnippet-dev/all-elements/issues)
+- Join our Discord community
+- Contact our support team
+
+Happy building! 🚀
