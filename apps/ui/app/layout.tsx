@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
     title: {
         default: "Cnippet UI",
-        template: `%s | Cnippet UI`,
+        template: `%s - Cnippet UI`,
     },
     description:
         "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
@@ -31,10 +31,9 @@ export const metadata: Metadata = {
         title: "Cnippet UI",
         description:
             "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
-        url: BASE_URL,
         images: [
             {
-                url: `${BASE_URL}/images/site.png`,
+                url: `${BASE_URL}/images/og-image.png`,
                 width: 1200,
                 height: 630,
                 alt: "Cnippet UI Component Library",
@@ -49,13 +48,9 @@ export const metadata: Metadata = {
         title: "Cnippet UI",
         description:
             "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
-        images: [`${BASE_URL}/images/site.png`],
+        images: [`${BASE_URL}/images/og-image.png`],
         site: "@cnippet_ui",
         creator: "@cnippet_ui",
-    },
-
-    alternates: {
-        canonical: BASE_URL,
     },
 
     robots: {
@@ -68,6 +63,20 @@ export const metadata: Metadata = {
             "max-snippet": -1,
             "max-video-preview": -1,
         },
+    },
+
+    icons: {
+        icon: [
+            { url: "/favicon.ico" },
+            { url: "/icon.png", type: "image/png" },
+        ],
+        apple: [{ url: "/apple-icon.png" }],
+        // other: [
+        //     {
+        //         rel: "apple-touch-icon-precomposed",
+        //         url: "/apple-touch-icon.png",
+        //     },
+        // ],
     },
 };
 
@@ -82,15 +91,15 @@ export default function RootLayout({
                 className={`antialiased dark:bg-neutral-950 ${funnel.className}`}
                 suppressHydrationWarning
             >
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="light"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        {children}
-                        <Sonner richColors expand={true} position="top-right" />
-                    </ThemeProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                    <Sonner richColors expand={true} position="top-right" />
+                </ThemeProvider>
             </body>
         </html>
     );

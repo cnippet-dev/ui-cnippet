@@ -46,7 +46,7 @@ Copy these folders into your Next.js project:
 ### Step 3: Install Dependencies
 
 ```bash
-npm install @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toggle @radix-ui/react-toggle-group @radix-ui/react-tooltip @radix-ui/react-toast @internationalized/date @remixicon/react @motionone/utils @hookform/resolvers @headless-tree/core vaul class-variance-authority cnippet-aos react-dropzone cmdk react-aria-components tw-animate-css react-hook-form clsx tailwind-merge lucide-react recharts sonner motion zod react-phone-number-input input-otp next-themes embla-carousel embla-carousel-autoplay embla-carousel-react embla-carousel-class-names react-use-measure next-cloudinary
+npm install @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toggle @radix-ui/react-toggle-group @radix-ui/react-tooltip @radix-ui/react-toast @internationalized/date @tanstack/react-table @remixicon/react @motionone/utils @hookform/resolvers @headless-tree/core @headless-tree/react vaul class-variance-authority cnippet-aos react-dropzone cmdk react-aria-components tw-animate-css react-hook-form clsx tailwind-merge lucide-react recharts sonner motion zod react-phone-number-input input-otp next-themes embla-carousel embla-carousel-autoplay embla-carousel-react embla-carousel-class-names react-use-measure next-cloudinary
 ```
 
 ### Step 4: Set Up Theme Provider
@@ -73,7 +73,7 @@ export default function ThemeProvider({
 Next, update your `app/layout.tsx` file to integrate the ThemeProvider:
 
 ```tsx
-import { ThemeProvider } from "@/providers/theme-provider";
+import ThemeProvider from "@/providers/theme-provider";
 
 export default function RootLayout({
   children,
@@ -150,6 +150,14 @@ Add this to your `app/globals.css`:
   --chart-3: 216 92% 60%;
   --chart-4: 210 98% 78%;
   --chart-5: 212 97% 87%;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
@@ -177,6 +185,14 @@ Add this to your `app/globals.css`:
   --chart-3: 216 92% 60%;
   --chart-4: 210 98% 78%;
   --chart-5: 212 97% 87%;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
@@ -204,6 +220,14 @@ Add this to your `app/globals.css`:
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {

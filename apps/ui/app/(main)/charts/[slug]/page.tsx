@@ -107,7 +107,7 @@ export default async function ComponentPage({ params }: { params: Params }) {
 export async function generateMetadata({
     params,
 }: {
-    params: Params;
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const slug = await params;
     const doc = getComponentDoc(slug);
@@ -116,50 +116,103 @@ export async function generateMetadata({
         return {
             title: "Component Not Found",
             description: "The requested component does not exist.",
+            robots: "noindex, nofollow",
         };
     }
 
+    const pageUrl = `${BASE_URL}/charts/${doc.slugAsParams}`;
+
     const metadata: Metadata = {
+        // Essential metadata
         metadataBase: new URL(BASE_URL),
         title: doc.title,
         description: doc.description,
+
+        // SEO and indexing
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
+
+        // Canonical and alternate URLs
+        alternates: {
+            canonical: pageUrl,
+            languages: {
+                "en-US": pageUrl,
+            },
+        },
+
+        // Authors and generator
+        authors: [{ name: "Cnippet Team", url: "https://cnippet.com" }],
+        generator: "Next.js",
+
+        // Keywords for SEO
+        // add doc.keywords
+        keywords: [
+            "UI components",
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            doc.title,
+        ],
+
+        // Referrer policy
+        referrer: "origin-when-cross-origin",
+
+        // Creator and publisher
+        creator: "Cnippet Team",
+        publisher: "Cnippet",
+
+        icons: {
+            icon: [
+                { url: "/favicon.ico" },
+                { url: "/icon.png", type: "image/png" },
+            ],
+            apple: [{ url: "/apple-icon.png" }],
+            other: [
+                {
+                    rel: "apple-touch-icon-precomposed",
+                    url: "/apple-touch-icon.png",
+                },
+            ],
+        },
 
         openGraph: {
             type: "article",
             title: doc.title,
             description: doc.description,
-            url: `${BASE_URL}/charts/${doc.slugAsParams}`,
+            url: pageUrl,
+            siteName: "Cnippet UI",
+            locale: "en_US",
+            // publishedTime: doc.publishedAt,
+            // modifiedTime: doc.updatedAt,
+            authors: ["Cnippet Team"],
             images: [
                 {
-                    url: `${BASE_URL}/images/site.png`,
+                    url: `${BASE_URL}/images/og-image.png`,
                     width: 1200,
                     height: 630,
                     alt: "Cnippet UI Component Library",
+                    type: "image/png",
                 },
             ],
-            siteName: "Cnippet UI",
         },
         twitter: {
             card: "summary_large_image",
             title: doc.title,
             description: doc.description,
-            images: [`${BASE_URL}/images/site.png`],
-            site: "@cnippet_ui",
             creator: "@cnippet_ui",
+            site: "@cnippet_ui",
+            images: [`${BASE_URL}/images/og-image.png`],
         },
     };
-
-    // if (doc.thumbnail) {
-    //     const image = {
-    //         url: `${BASE_URL}${doc.thumbnail.src}`,
-    //         width: 1200,
-    //         height: 630,
-    //         alt: doc.thumbnail.alt || `${doc.title} component preview`,
-    //     };
-
-    //     metadata.openGraph!.images = [image];
-    //     metadata.twitter!.images = [image];
-    // }
 
     return metadata;
 }
