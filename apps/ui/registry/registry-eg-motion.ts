@@ -24,9 +24,9 @@ const generateExamples = (
 };
 
 export const motionExamples: Registry = generateExamples([
-    { name: "accordion-demo", number: "3" },
-    { name: "accordion-icon" },
-    { name: "accordion-sign" },
+    { name: "accordion-cn-demo", number: "3" },
+    { name: "accordion-cn-icon" },
+    { name: "accordion-cn-sign" },
 
     { name: "animated-group-demo", number: "1" },
 

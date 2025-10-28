@@ -90,7 +90,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <th
             className={cn(
-                "font-ins border px-4 py-2 text-left font-medium dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "font-ins border px-4 py-2 text-left font-medium dark:border-neutral-600 [[align=center]]:text-center [[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -102,7 +102,7 @@ const components = {
     }: React.HTMLAttributes<HTMLTableCellElement>) => (
         <td
             className={cn(
-                "border px-4 py-2 text-left dark:border-neutral-600 [&[align=center]]:text-center [&[align=right]]:text-right",
+                "border px-4 py-2 text-left dark:border-neutral-600 [[align=center]]:text-center [[align=right]]:text-right",
                 className,
             )}
             {...props}
@@ -189,7 +189,7 @@ const components = {
         return (
             <div className="">
                 <pre
-                    className={`overflow-x-auto rounded-b-lg !bg-zinc-950 text-wrap dark:border-neutral-800 ${className}`}
+                    className={`overflow-x-auto rounded-b-lg bg-zinc-950! text-wrap dark:border-neutral-800 ${className}`}
                     {...props}
                 />
                 {__rawString__ && <CopyButton value={__rawString__} />}
@@ -210,7 +210,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "step font-geist text-base font-medium tracking-tight [&>p]:font-medium text-neutral-800 dark:text-white",
+                "step font-geist text-base font-medium tracking-tight text-neutral-800 dark:text-white [&>p]:font-medium",
                 className,
             )}
             {...props}

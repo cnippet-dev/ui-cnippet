@@ -24,6 +24,10 @@ const generateExamples = (
 };
 
 export const componentExamples: Registry = generateExamples([
+    { name: "accordion-demo", number: "3" },
+    { name: "accordion-icon" },
+    { name: "accordion-multi" },
+
     { name: "avatar-demo", number: "3" },
     { name: "avatar-desc" },
     { name: "avatar-stack" },
@@ -78,17 +82,17 @@ export const componentExamples: Registry = generateExamples([
 
     { name: "input-demo", number: "9" },
     { name: "input-addon" },
-    { name: "input-double" },
     { name: "input-helper" },
     { name: "input-icon" },
     { name: "input-labelfloat" },
-    { name: "input-otp" },
     { name: "input-phone" },
-    { name: "input-spaced" },
+
+    { name: "otp-demo", number: "9" },
+    { name: "otp-double" },
+    { name: "otp-input" },
+    { name: "otp-spaced" },
 
     { name: "label-demo", number: "1" },
-
-    { name: "loader-demo", number: "1" },
 
     { name: "multiselect-demo", number: "2" },
     { name: "multiselect-clear" },
@@ -106,6 +110,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "radio-group-desc" },
     { name: "radio-group-review" },
     { name: "radio-group-theme" },
+
+    { name: "resizable-demo", number: "3" },
+    { name: "resizable-handle" },
+    { name: "resizable-vertical" },
 
     { name: "select-demo", number: "2" },
     { name: "select-icon" },
@@ -129,6 +137,10 @@ export const componentExamples: Registry = generateExamples([
     { name: "sonner-demo", number: "3" },
     { name: "sonner-direction" },
     { name: "sonner-custom" },
+
+    { name: "spinner-demo", number: "3" },
+    { name: "spinner-custom" },
+    { name: "spinner-button" },
 
     { name: "stepper-demo", number: "3" },
     { name: "stepper-step" },

@@ -357,6 +357,11 @@ export const components: ComponentGroup[] = [
         name: "Collections",
         items: [
             {
+                name: "Accordion",
+                href: "/components/accordion",
+                isNew: true,
+            },
+            {
                 name: "Dropdown",
                 href: "/components/dropdown-menu",
             },
@@ -441,6 +446,11 @@ export const components: ComponentGroup[] = [
                 href: "/components/input",
             },
             {
+                name: "Input OTP",
+                href: "/components/input-otp",
+                isNew: true,
+            },
+            {
                 name: "Label",
                 href: "/components/label",
             },
@@ -487,10 +497,6 @@ export const components: ComponentGroup[] = [
     {
         name: "Navigation",
         items: [
-            {
-                name: "Accordion",
-                href: "/components/accordion",
-            },
             {
                 name: "Breadcrumb",
                 href: "/components/breadcrumb",
@@ -574,11 +580,11 @@ export const components: ComponentGroup[] = [
             {
                 name: "Badge",
                 href: "/components/badge",
-                isNew: true,
             },
             {
-                name: "Loader",
-                href: "/components/loader",
+                name: "Spinner",
+                href: "/components/spinner",
+                isNew: true,
             },
             {
                 name: "Progress Circle",
@@ -596,11 +602,14 @@ export const components: ComponentGroup[] = [
             {
                 name: "Card",
                 href: "/components/card",
-                isNew: true,
             },
             {
                 name: "Separator",
                 href: "/components/separator",
+            },
+            {
+                name: "Resizable",
+                href: "/components/resizable",
                 isNew: true,
             },
         ],

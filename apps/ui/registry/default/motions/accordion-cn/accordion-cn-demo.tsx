@@ -3,7 +3,7 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-} from "@/components/motion/accordion";
+} from "@/components/motion/cn-accordion";
 
 export default function AccordionBasic() {
     return (

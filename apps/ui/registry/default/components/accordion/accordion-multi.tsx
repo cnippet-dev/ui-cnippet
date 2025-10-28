@@ -1,15 +1,4 @@
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/motion/cn-accordion";
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleTrigger,
-} from "@/components/motion/collapsible-cn";
-import {
     AtSignIcon,
     ChevronDownIcon,
     CircleDashedIcon,
@@ -20,10 +9,22 @@ import {
     ZapIcon,
 } from "lucide-react";
 
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+
 const items = [
     {
         id: "1",
-        title: "What makes Origin UI different?",
+        title: "What makes coss ui different?",
         icon: CommandIcon,
         collapsibles: [
             {
@@ -61,7 +62,7 @@ const items = [
     },
     {
         id: "3",
-        title: "Is Origin UI optimized for performance?",
+        title: "Is coss ui optimized for performance?",
         icon: ZapIcon,
         collapsibles: [
             {
@@ -105,16 +106,16 @@ export default function Component() {
         <div className="space-y-4">
             <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
             <Accordion
-                // type="single"
-                // collapsible
+                type="single"
+                collapsible
                 className="w-full"
-                // defaultValue="3"
+                defaultValue="3"
             >
                 {items.map((item) => (
                     <AccordionItem
                         value={item.id}
                         key={item.id}
-                        className="has-focus-visible:border-ring has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px] outline-none"
+                        className="has-focus-visible:border-ring has-focus-visible:ring-ring/50 outline-none has-focus-visible:ring-[3px]"
                     >
                         <AccordionTrigger className="justify-start gap-3 rounded-md text-[15px] leading-6 outline-none hover:no-underline focus-visible:ring-0 [&>svg]:-order-1">
                             <span className="flex items-center gap-3">
@@ -156,8 +157,8 @@ function CollapsibleDemo({
     icon: LucideIcon;
 }) {
     return (
-        <Collapsible className="border-t py-3 pe-4 ps-6">
-            <CollapsibleTrigger className="flex gap-2 text-[15px] font-semibold leading-6 [&[data-state=open]>svg]:rotate-180">
+        <Collapsible className="border-t py-3 ps-6 pe-4" defaultOpen={open}>
+            <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
                 <ChevronDownIcon
                     size={16}
                     className="mt-1 shrink-0 opacity-60 transition-transform duration-200"
@@ -172,7 +173,7 @@ function CollapsibleDemo({
                     <span>{title}</span>
                 </span>
             </CollapsibleTrigger>
-            <CollapsibleContent className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down mt-1 overflow-hidden ps-6 text-sm text-muted-foreground transition-all">
+            <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down mt-1 overflow-hidden ps-6 text-sm transition-all">
                 {content}
             </CollapsibleContent>
         </Collapsible>
