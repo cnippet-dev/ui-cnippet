@@ -1,111 +1,92 @@
-"use client";
 import * as React from "react";
-import { HTMLMotionProps, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
-const _Card = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-    ({ className, ...props }, ref) => (
-        <motion.div
-            ref={ref}
-            initial={{
-                opacity: 0,
-                y: -20,
-            }}
-            animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.3,
-                },
-            }}
-            className={cn(
-                "rounded-xl border dark:border-neutral-800 bg-card text-card-foreground shadow",
-                className,
-            )}
-            {...props}
-        />
-    ),
-);
-
-_Card.displayName = "Card";
-
-const _CardHeader = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-    ({ className, ...props }, ref) => (
-        <motion.div
-            ref={ref}
-            className={cn("flex flex-col space-y-1.5 p-6", className)}
-            {...props}
-        />
-    ),
-);
-
-_CardHeader.displayName = "CardHeader";
-
-const _CardTitle = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-    ({ className, ...props }, ref) => (
-        <motion.div
-            ref={ref}
-            className={cn(
-                "font-ins font-semibold leading-none tracking-tight",
-                className,
-            )}
-            {...props}
-        />
-    ),
-);
-
-_CardTitle.displayName = "CardTitle";
-
-const _CardDescription = React.forwardRef<
-    HTMLDivElement,
-    HTMLMotionProps<"div">
->(({ className, ...props }, ref) => (
-    <motion.div
-        ref={ref}
-        className={cn("text-sm text-muted-foreground", className)}
-        {...props}
+function Card({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card"
+      className={cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className,
+      )}
+      {...props}
     />
-));
+  );
+}
 
-_CardDescription.displayName = "CardDescription";
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
 
-const _CardContent = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-    ({ className, ...props }, ref) => (
-        <motion.div
-            ref={ref}
-            className={cn("p-6 pt-0", className)}
-            {...props}
-        />
-    ),
-);
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props}
+    />
+  );
+}
 
-_CardContent.displayName = "CardContent";
+function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  );
+}
 
-const _CardFooter = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-    ({ className, ...props }, ref) => (
-        <motion.div
-            ref={ref}
-            className={cn("flex items-center p-6 pt-0", className)}
-            {...props}
-        />
-    ),
-);
+function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
 
-_CardFooter.displayName = "CardFooter";
+function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-6", className)}
+      {...props}
+    />
+  );
+}
 
-const Card = motion.create(_Card);
-const CardHeader = motion.create(_CardHeader);
-const CardTitle = motion.create(_CardTitle);
-const CardDescription = motion.create(_CardDescription);
-const CardContent = motion.create(_CardContent);
-const CardFooter = motion.create(_CardFooter);
+function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  );
+}
 
 export {
-    Card,
-    CardHeader,
-    CardFooter,
-    CardTitle,
-    CardDescription,
-    CardContent,
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
 };
