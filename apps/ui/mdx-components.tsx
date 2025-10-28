@@ -61,7 +61,13 @@ const components = {
         <li className={cn("mt-2", className)} {...props} />
     ),
     a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-        <a className={cn("text-blue-600 hover:underline underline-offset-2", className)} {...props} />
+        <a
+            className={cn(
+                "text-blue-600 underline-offset-2 hover:underline",
+                className,
+            )}
+            {...props}
+        />
     ),
 
     table: ({
@@ -181,9 +187,9 @@ const components = {
         }
 
         return (
-            <div className="relative">
+            <div className="">
                 <pre
-                    className={`overflow-x-auto rounded-lg border !bg-neutral-950 text-wrap dark:border-neutral-800 dark:!bg-zinc-900 ${className}`}
+                    className={`overflow-x-auto rounded-b-lg !bg-zinc-950 text-wrap dark:border-neutral-800 ${className}`}
                     {...props}
                 />
                 {__rawString__ && <CopyButton value={__rawString__} />}
@@ -204,7 +210,7 @@ const components = {
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
         <h3
             className={cn(
-                "step font-sans text-base font-medium text-black dark:text-white [&>p]:font-medium",
+                "step font-geist text-base font-medium tracking-tight [&>p]:font-medium text-neutral-800 dark:text-white",
                 className,
             )}
             {...props}

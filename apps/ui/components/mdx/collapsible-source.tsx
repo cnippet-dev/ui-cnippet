@@ -12,13 +12,17 @@ import {
     CollapsibleContent,
     CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { CopyButton } from "./copy-button";
+import { FileIcon } from "../icons";
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
+    path: string;
     expandButtonTitle?: string;
 }
 
 export function CollapsibleSource({
     name,
+    path,
     children,
     expandButtonTitle = "View Code",
     className,
@@ -44,10 +48,14 @@ export function CollapsibleSource({
                     <CollapsibleContent
                         forceMount
                         className={cn(
-                            "overflow-hidden rounded-lg",
+                            "relative overflow-hidden rounded-lg bg-zinc-900",
                             !isOpened && "max-h-72",
                         )}
                     >
+                        <div className="font-geist-mono flex items-center gap-2 border-b border-zinc-800 px-4 py-2.5 text-[13px] font-light text-white">
+                            <FileIcon className="size-4 text-white" />
+                            {path}
+                        </div>
                         <div
                             className={cn(
                                 "[&_pre]:my-0 [&_pre]:max-h-[650px] [&_pre]:pb-[80px]",
@@ -61,14 +69,14 @@ export function CollapsibleSource({
                     </CollapsibleContent>
                     <div
                         className={cn(
-                            "absolute mx-auto flex w-full items-center justify-center rounded-lg bg-gradient-to-t p-2",
-                            isOpened ? "bottom-0" : "bottom-0 from-black",
+                            "absolute mx-auto flex w-full items-center justify-center rounded-md bg-linear-to-t p-2",
+                            isOpened ? "bottom-0" : "from-background bottom-0",
                         )}
                     >
                         <CollapsibleTrigger asChild>
                             <Button
                                 variant="secondary"
-                                className="mb-8 h-8 bg-white text-xs text-black"
+                                className="mb-8 h-8 bg-white text-xs text-black hover:text-white"
                             >
                                 {isOpened ? "Collapse" : expandButtonTitle}
                             </Button>

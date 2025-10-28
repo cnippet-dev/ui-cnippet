@@ -1,15 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+
 @theme inline {
     --breakpoint-3xl: 1600px;
     --breakpoint-4xl: 2000px;
     --font-sans: var(--font-sans);
-    --font-mono: var(--font-mono);
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -96,7 +98,9 @@
 }
 
 @theme {
-    --font-sans: "DM Sans", sans-serif;
+    --font-rale: "Raleway", sans-serif;
+    --font-geist: "Geist", sans-serif;
+    --font-geist-mono: "Geist Mono", monospace;
 }
 
 @layer base {
@@ -234,19 +238,19 @@
 @layer components {
     .doc li > code,
     p > code {
-        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:!bg-neutral-800;
+        @apply h-fit rounded-md bg-gray-200! px-2! py-0.5! dark:bg-neutral-800!;
     }
     .steps > h3 {
         @apply mt-6 mb-4;
     }
     .steps > p {
-        @apply text-sm text-neutral-800 md:text-base dark:text-neutral-200;
+        @apply text-sm text-neutral-100 md:text-base dark:text-neutral-200;
     }
     .step > p > code {
-        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:!bg-neutral-800;
+        @apply h-fit rounded-md bg-gray-200! px-2! py-0.5! dark:bg-neutral-800!;
     }
     .steps > p > code {
-        @apply h-fit rounded-md !bg-gray-200 !px-2 !py-0.5 dark:!bg-neutral-800;
+        @apply h-fit rounded-md bg-gray-200! px-2! py-0.5! dark:bg-neutral-800!;
     }
     .steps > p > a {
         @apply rounded-md bg-gray-200 px-2 py-0.5 text-sm text-black dark:bg-gray-700 dark:text-white;
