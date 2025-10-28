@@ -7,7 +7,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/motion/accordion";
+} from "@/components/motion/cn-accordion";
 
 const items = [
     {
@@ -57,7 +57,7 @@ const items = [
 const Faq = () => {
     return (
         <>
-            <section className="relative mx-auto w-full max-w-[1536px] border-t-0 border-b dark:border-neutral-800 px-4 md:px-10 xl:px-20 2xl:px-30">
+            <section className="relative mx-auto w-full max-w-[1536px] border-t-0 border-b px-4 md:px-10 xl:px-20 2xl:px-30 dark:border-neutral-800">
                 <div className="relative">
                     {/* <div className="absolute -top-2.5 -left-2.5 z-50 mx-auto grid size-5 grid-cols-2 grid-rows-2 divide-y divide-neutral-500">
             <div className=" border-r" />
@@ -78,7 +78,7 @@ const Faq = () => {
                             </div>
                         </div>
                         <div className="col-span-4 md:col-span-3">
-                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-b dark:divide-neutral-900 dark:border-neutral-900">
+                            <div className="grid size-32 w-full max-w-full grid-cols-2 divide-x border-b dark:divide-neutral-900 dark:border-neutral-900">
                                 <div />
                                 <div />
                             </div>
@@ -111,7 +111,7 @@ const Faq = () => {
                                     ))}
                                 </Accordion>
                             </div>
-                            <div className="grid size-[8rem] w-full max-w-full grid-cols-2 divide-x border-t dark:divide-neutral-900 dark:border-neutral-900">
+                            <div className="grid size-32 w-full max-w-full grid-cols-2 divide-x border-t dark:divide-neutral-900 dark:border-neutral-900">
                                 <div />
                                 <div />
                             </div>

@@ -357,6 +357,11 @@ export const components: ComponentGroup[] = [
         name: "Collections",
         items: [
             {
+                name: "Accordion",
+                href: "/components/accordion",
+                isNew: true,
+            },
+            {
                 name: "Dropdown",
                 href: "/components/dropdown-menu",
             },
@@ -441,6 +446,11 @@ export const components: ComponentGroup[] = [
                 href: "/components/input",
             },
             {
+                name: "Input OTP",
+                href: "/components/input-otp",
+                isNew: true,
+            },
+            {
                 name: "Label",
                 href: "/components/label",
             },
@@ -487,10 +497,6 @@ export const components: ComponentGroup[] = [
     {
         name: "Navigation",
         items: [
-            {
-                name: "Accordion",
-                href: "/components/accordion",
-            },
             {
                 name: "Breadcrumb",
                 href: "/components/breadcrumb",
@@ -574,11 +580,11 @@ export const components: ComponentGroup[] = [
             {
                 name: "Badge",
                 href: "/components/badge",
-                isNew: true,
             },
             {
-                name: "Loader",
-                href: "/components/loader",
+                name: "Spinner",
+                href: "/components/spinner",
+                isNew: true,
             },
             {
                 name: "Progress Circle",
@@ -596,11 +602,14 @@ export const components: ComponentGroup[] = [
             {
                 name: "Card",
                 href: "/components/card",
-                isNew: true,
             },
             {
                 name: "Separator",
                 href: "/components/separator",
+            },
+            {
+                name: "Resizable",
+                href: "/components/resizable",
                 isNew: true,
             },
         ],
@@ -627,330 +636,26 @@ export const docs: ComponentGroup[] = [
     },
 ];
 
+const flattenMotionItems = (): ComponentGroup[] => {
+    const allItems = motions.flatMap((group) => group.items);
+    return [
+        {
+            name: "Motion components",
+            items: allItems,
+        },
+    ];
+};
+
+const flattenComponentsItems = (): ComponentGroup[] => {
+    const allItems = components.flatMap((group) => group.items);
+    return [
+        {
+            name: "Core components",
+            items: allItems,
+        },
+    ];
+};
 export const searchDocs: ComponentGroup[] = [
-    {
-        name: "Motion components",
-        items: [
-            {
-                name: "Accordion",
-                href: "/motions/accordion",
-            },
-            {
-                name: "Animated Group",
-                href: "/motions/animated-group",
-            },
-            {
-                name: "Border Trail",
-                href: "#",
-            },
-            {
-                name: "Carousel",
-                href: "/motions/carousel",
-                isUpdated: true,
-            },
-            {
-                name: "Cursor",
-                href: "/motions/cursor",
-            },
-            {
-                name: "Dialog",
-                href: "/motions/dialog",
-            },
-            {
-                name: "Collapsible",
-                href: "/motions/collapsible",
-                isNew: true,
-            },
-            {
-                name: "In View",
-                href: "#",
-            },
-            {
-                name: "Infinite Slider",
-                href: "/motions/infinite-slider",
-            },
-            {
-                name: "Transition Panel",
-                href: "/motions/transition-panel",
-            },
-            {
-                name: "Board",
-                href: "/motions/board",
-            },
-            {
-                name: "Grid",
-                href: "/motions/grid",
-            },
-            {
-                name: "Text Effect",
-                href: "/motions/text-effect",
-            },
-            {
-                name: "Text Loop",
-                href: "/motions/text-loop",
-            },
-            {
-                name: "Text Morph",
-                href: "/motions/text-morph",
-            },
-            {
-                name: "Text Roll",
-                href: "/motions/text-roll",
-            },
-            {
-                name: "Text Scramble",
-                href: "/motions/text-scramble",
-            },
-            {
-                name: "Text Shimmer",
-                href: "/motions/text-shimmer",
-            },
-            {
-                name: "Text Wave",
-                href: "/motions/text-wave",
-            },
-            {
-                name: "Horizontal Scroll",
-                href: "/motions/horizontal-scroll",
-            },
-            {
-                name: "Animated Number",
-                href: "/motions/animated-number",
-            },
-            {
-                name: "Sliding Number",
-                href: "#",
-            },
-
-            {
-                name: "Dock",
-                href: "#",
-            },
-            {
-                name: "Glow Effect",
-                href: "#",
-            },
-            {
-                name: "Image Comparison",
-                href: "#",
-            },
-            {
-                name: "Scroll Progress",
-                href: "#",
-            },
-            {
-                name: "Spotlight",
-                href: "#",
-            },
-            {
-                name: "Spinning Text",
-                href: "#",
-            },
-            {
-                name: "Tilt",
-                href: "#",
-            },
-
-            {
-                name: "Toolbar Dynamic",
-                href: "#",
-            },
-            {
-                name: "Toolbar Expandable",
-                href: "#",
-            },
-            {
-                name: "Magnetic",
-                href: "#",
-            },
-            {
-                name: "Morphing Dialog",
-                href: "#",
-            },
-            {
-                name: "Morphing Popover",
-                href: "#",
-            },
-            {
-                name: "Progressive Blur",
-                href: "#",
-            },
-        ],
-    },
-
-    {
-        name: "Core Components",
-        items: [
-            {
-                name: "Button",
-                href: "/components/button",
-            },
-            {
-                name: "File Trigger",
-                href: "/components/file-trigger",
-            },
-            {
-                name: "Command Menu",
-                href: "/components/command-menu",
-            },
-            {
-                name: "Context Menu",
-                href: "/components/context-menu",
-            },
-            {
-                name: "Slider",
-                href: "/components/slider",
-            },
-            {
-                name: "Switch",
-                href: "/components/switch",
-            },
-
-            {
-                name: "Calendar",
-                href: "/components/calendar",
-            },
-            {
-                name: "Date Field",
-                href: "/components/date-picker",
-            },
-
-            {
-                name: "Drop Zone",
-                href: "/components/drop-zone",
-            },
-
-            {
-                name: "Checkbox",
-                href: "/components/checkbox",
-            },
-            {
-                name: "Input",
-                href: "/components/input",
-            },
-            {
-                name: "Label",
-                href: "/components/label",
-            },
-            {
-                name: "Radio Group",
-                href: "/components/radio-group",
-            },
-            {
-                name: "Tag Field",
-                href: "/components/tag-field",
-            },
-            {
-                name: "Textarea",
-                href: "/components/textarea",
-            },
-
-            {
-                name: "Sidebar",
-                href: "#",
-            },
-            {
-                name: "Avatar",
-                href: "/components/avatar",
-            },
-            {
-                name: "Carousel",
-                href: "/components/carousel",
-            },
-            {
-                name: "Breadcrumb",
-                href: "/components/breadcrumb",
-            },
-            {
-                name: "Collapsible",
-                href: "/components/collapsible",
-            },
-            {
-                name: "Accordion",
-                href: "/components/accordion",
-            },
-            {
-                name: "Pagination",
-                href: "/components/pagination",
-            },
-            {
-                name: "Tabs",
-                href: "/components/tabs",
-            },
-            {
-                name: "Dialog",
-                href: "/components/dialog",
-            },
-            {
-                name: "Drawer",
-                href: "/components/drawer",
-            },
-            {
-                name: "Modal",
-                href: "/components/modal",
-            },
-            {
-                name: "Popover",
-                href: "/components/popover",
-            },
-            {
-                name: "Sheet",
-                href: "/components/sheet",
-            },
-            {
-                name: "Tooltip",
-                href: "/components/tooltip",
-            },
-
-            {
-                name: "Combobox",
-                href: "/components/combobox",
-            },
-            {
-                name: "Select",
-                href: "/components/select",
-            },
-
-            {
-                name: "Badge",
-                href: "#",
-            },
-            {
-                name: "Loader",
-                href: "#",
-            },
-            {
-                name: "Progress bar",
-                href: "#",
-            },
-            {
-                name: "Progress circle",
-                href: "#",
-            },
-            {
-                name: "Skeleton",
-                href: "#",
-            },
-            {
-                name: "Card",
-                href: "#",
-            },
-            {
-                name: "Description list",
-                href: "#",
-            },
-            {
-                name: "Grid",
-                href: "#",
-            },
-            {
-                name: "Heading",
-                href: "#",
-            },
-            {
-                name: "Separator",
-                href: "#",
-            },
-        ],
-    },
+    ...flattenMotionItems(),
+    ...flattenComponentsItems(),
 ];

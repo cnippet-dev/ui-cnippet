@@ -83,7 +83,7 @@ export default function NavigationMenuDemo() {
                                 href="/docs/installation"
                                 title="Installation"
                             >
-                                How to install dependencies and structure your
+                                How to Install the following dependencies: and structure your
                                 app.
                             </ListItem>
                             <ListItem

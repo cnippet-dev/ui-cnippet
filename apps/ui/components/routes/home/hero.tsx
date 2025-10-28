@@ -58,7 +58,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                                 duration: 0.6,
                                 y: 20,
                             })}
-                            className="mb-8 max-w-2xl text-center text-lg leading-relaxed tracking-tight break-words text-gray-700 dark:text-gray-400"
+                            className="mb-8 max-w-2xl text-center text-lg leading-relaxed tracking-tight wrap-break-word text-gray-700 dark:text-gray-400"
                         >
                             Production-ready React components, animations, and charts 
                             to ship your next project faster. Perfect for{" "}

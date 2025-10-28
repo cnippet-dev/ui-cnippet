@@ -12,7 +12,7 @@ const generateComponents = (componentsConfig: { name: string }[]): Registry => {
 };
 
 export const motions: Registry = generateComponents([
-    { name: "accordion" },
+    { name: "cn-accordion" },
     { name: "animated-group" },
     { name: "animated-number" },
     { name: "blocks" },

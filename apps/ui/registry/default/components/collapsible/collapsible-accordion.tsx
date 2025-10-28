@@ -3,7 +3,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/motion/accordion";
+} from "@/components/motion/cn-accordion";
 import {
     Collapsible,
     CollapsibleContent,
