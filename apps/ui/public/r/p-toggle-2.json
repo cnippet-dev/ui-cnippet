@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-toggle-2",
+  "type": "registry:block",
+  "description": "Toggle with outline",
+  "registryDependencies": [
+    "@coss/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-toggle-2.tsx",
+      "content": "import { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function Particle() {\n  return <Toggle variant=\"outline\">Outline Toggle</Toggle>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "toggle"
+  ]
+}

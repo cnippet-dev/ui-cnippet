@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-group-2",
+  "type": "registry:block",
+  "description": "Input group with end icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@coss/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-group-2.tsx",
+      "content": "import { MailIcon } from \"lucide-react\";\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <MailIcon />\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "input group"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-group-6",
+  "type": "registry:block",
+  "description": "Group with default button",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/group",
+    "@coss/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-group-6.tsx",
+      "content": "import {\n  ArchiveIcon,\n  EditIcon,\n  EllipsisIcon,\n  FilesIcon,\n  FilmIcon,\n  ShareIcon,\n  TrashIcon,\n} from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"File actions\">\n      <Button>\n        <FilesIcon />\n        Files\n      </Button>\n      <GroupSeparator className=\"bg-primary/72\" />\n      <Button>\n        <FilmIcon />\n        Media\n      </Button>\n      <GroupSeparator className=\"bg-primary/72\" />\n      <Menu>\n        <MenuTrigger render={<Button aria-label=\"Menu\" size=\"icon\" />}>\n          <EllipsisIcon className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <EditIcon />\n            Edit\n          </MenuItem>\n          <MenuItem>\n            <ArchiveIcon />\n            Archive\n          </MenuItem>\n          <MenuItem>\n            <ShareIcon />\n            Share\n          </MenuItem>\n          <MenuItem variant=\"destructive\">\n            <TrashIcon />\n            Delete\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "button",
+    "group"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-button-3",
+  "type": "registry:block",
+  "description": "Secondary button",
+  "registryDependencies": [
+    "@coss/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-button-3.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  return <Button variant=\"secondary\">Secondary</Button>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "button"
+  ]
+}

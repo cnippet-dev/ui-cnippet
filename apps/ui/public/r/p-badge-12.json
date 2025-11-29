@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-badge-12",
+  "type": "registry:block",
+  "description": "Badge with link",
+  "registryDependencies": [
+    "@coss/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-badge-12.tsx",
+      "content": "import Link from \"next/link\";\n\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "badge"
+  ]
+}

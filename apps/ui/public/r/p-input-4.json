@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-4",
+  "type": "registry:block",
+  "description": "Disabled input",
+  "registryDependencies": [
+    "@coss/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-4.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Input aria-label=\"Disabled\" disabled placeholder=\"Disabled\" type=\"text\" />\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "input"
+  ]
+}

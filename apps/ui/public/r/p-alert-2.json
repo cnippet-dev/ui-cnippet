@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-alert-2",
+  "type": "registry:block",
+  "description": "Alert with icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@coss/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-alert-2.tsx",
+      "content": "import { InfoIcon } from \"lucide-react\";\n\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\n\nexport default function Particle() {\n  return (\n    <Alert>\n      <InfoIcon />\n      <AlertTitle>Heads up!</AlertTitle>\n      <AlertDescription>\n        Describe what can be done about it here.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full"
+  },
+  "categories": [
+    "alert"
+  ]
+}

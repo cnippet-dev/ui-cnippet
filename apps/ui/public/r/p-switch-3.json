@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-switch-3",
+  "type": "registry:block",
+  "description": "Switch with description",
+  "registryDependencies": [
+    "@coss/label",
+    "@coss/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-switch-3.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  const id = React.useId();\n\n  return (\n    <div className=\"flex items-start gap-2\">\n      <Switch defaultChecked id={id} />\n      <div className=\"flex flex-col gap-1\">\n        <Label htmlFor={id}>Marketing emails</Label>\n        <p className=\"text-muted-foreground text-xs\">\n          By enabling marketing emails, you agree to receive emails.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "switch"
+  ]
+}

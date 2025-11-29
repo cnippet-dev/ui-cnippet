@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-group-7",
+  "type": "registry:block",
+  "description": "Group with start text",
+  "registryDependencies": [
+    "@coss/group",
+    "@coss/input",
+    "@coss/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-group-7.tsx",
+      "content": "import { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Domain input\">\n      <GroupText render={<Label aria-label=\"Domain\" htmlFor=\"domain\" />}>\n        https://\n      </GroupText>\n      <GroupSeparator />\n      <Input\n        aria-label=\"Domain\"\n        defaultValue=\"coss.com\"\n        id=\"domain\"\n        type=\"text\"\n      />\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "group"
+  ]
+}

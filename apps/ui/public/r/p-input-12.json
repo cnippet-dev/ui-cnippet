@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-12",
+  "type": "registry:block",
+  "description": "Input group with start loading spinner",
+  "registryDependencies": [
+    "@coss/input-group",
+    "@coss/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-12.tsx",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\n      <InputGroupAddon>\n        <Spinner />\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "input",
+    "input group",
+    "spinner",
+    "loading"
+  ]
+}

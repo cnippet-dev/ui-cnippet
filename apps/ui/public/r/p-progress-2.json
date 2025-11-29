@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-progress-2",
+  "type": "registry:block",
+  "description": "Progress with label and value",
+  "registryDependencies": [
+    "@coss/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-progress-2.tsx",
+      "content": "import {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from \"@/registry/default/ui/progress\";\n\nexport default function Particle() {\n  return (\n    <Progress value={60}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <ProgressLabel>Export data</ProgressLabel>\n        <ProgressValue />\n      </div>\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </Progress>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "progress"
+  ]
+}

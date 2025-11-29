@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-7",
+  "type": "registry:block",
+  "description": "Input with button",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-7.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex gap-2\">\n      <Input aria-label=\"Email\" placeholder=\"you@example.com\" type=\"email\" />\n      <Button variant=\"outline\">Send</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "button",
+    "input"
+  ]
+}

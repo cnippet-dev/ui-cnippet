@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-menu-4",
+  "type": "registry:block",
+  "description": "Menu with radio group",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-menu-4.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuPopup,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "menu"
+  ]
+}

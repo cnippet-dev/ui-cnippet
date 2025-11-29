@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-slider-5",
+  "type": "registry:block",
+  "description": "Slider in form",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/field",
+    "@coss/form",
+    "@coss/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-slider-5.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState<boolean>(false);\n  const [value, setValue] = React.useState<number | readonly number[]>([\n    25, 75,\n  ]);\n\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    const volumes = formData.getAll(\"volume\");\n    alert(`Volume: ${volumes.join(\", \")}`);\n  };\n\n  return (\n    <Form onSubmit={onSubmit}>\n      <Field className=\"items-stretch gap-3\" name=\"volume\">\n        <Slider disabled={loading} onValueChange={setValue} value={value}>\n          <div className=\"mb-2 flex items-center justify-between gap-1\">\n            <FieldLabel>Volume</FieldLabel>\n            <SliderValue />\n          </div>\n        </Slider>\n        <FieldDescription>Choose a value between 0 and 100</FieldDescription>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "slider"
+  ]
+}

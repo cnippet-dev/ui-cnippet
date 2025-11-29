@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-tooltip-4",
+  "type": "registry:block",
+  "description": "Vertical group with animated tooltip",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/group",
+    "@coss/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-tooltip-4.tsx",
+      "content": "\"use client\";\n\nimport { LinkIcon, MailIcon, Share2Icon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport {\n  Tooltip,\n  TooltipCreateHandle,\n  TooltipPopup,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nconst tooltipHandle = TooltipCreateHandle<React.ComponentType>();\n\nconst ShareLinkContent = () => {\n  return <span>Copy shareable link</span>;\n};\n\nconst ShareEmailContent = () => {\n  return <span>Share via email</span>;\n};\n\nconst ShareSocialContent = () => {\n  return <span>Share to social media</span>;\n};\n\nexport default function Particle() {\n  return (\n    <TooltipProvider>\n      <Group aria-label=\"Share options\" orientation=\"vertical\">\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload={ShareLinkContent}\n          render={\n            <Button aria-label=\"Copy link\" size=\"icon\" variant=\"outline\" />\n          }\n        >\n          <LinkIcon />\n        </TooltipTrigger>\n        <GroupSeparator orientation=\"horizontal\" />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload={ShareEmailContent}\n          render={\n            <Button\n              aria-label=\"Share via email\"\n              size=\"icon\"\n              variant=\"outline\"\n            />\n          }\n        >\n          <MailIcon />\n        </TooltipTrigger>\n        <GroupSeparator orientation=\"horizontal\" />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload={ShareSocialContent}\n          render={\n            <Button\n              aria-label=\"Share to social\"\n              size=\"icon\"\n              variant=\"outline\"\n            />\n          }\n        >\n          <Share2Icon />\n        </TooltipTrigger>\n      </Group>\n      <Tooltip handle={tooltipHandle}>\n        {({ payload: Payload }) => (\n          <TooltipPopup className=\"max-w-40\" side=\"right\">\n            {Payload !== undefined && <Payload />}\n          </TooltipPopup>\n        )}\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "tooltip"
+  ]
+}

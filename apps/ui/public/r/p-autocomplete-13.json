@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-autocomplete-13",
+  "type": "registry:block",
+  "description": "Autocomplete form",
+  "registryDependencies": [
+    "@coss/autocomplete",
+    "@coss/button",
+    "@coss/field",
+    "@coss/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-autocomplete-13.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport {\n  Autocomplete,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompletePopup,\n} from \"@/registry/default/ui/autocomplete\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\n\nconst items = [\n  { label: \"Apple\", value: \"apple\" },\n  { label: \"Banana\", value: \"banana\" },\n  { label: \"Orange\", value: \"orange\" },\n  { label: \"Grape\", value: \"grape\" },\n  { label: \"Strawberry\", value: \"strawberry\" },\n  { label: \"Mango\", value: \"mango\" },\n  { label: \"Pineapple\", value: \"pineapple\" },\n  { label: \"Kiwi\", value: \"kiwi\" },\n  { label: \"Peach\", value: \"peach\" },\n  { label: \"Pear\", value: \"pear\" },\n];\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    const selectedItem = formData.get(\"item\");\n    // Base UI extracts the 'label' property from objects, so we need to find the corresponding value\n    const itemValue =\n      items.find((item) => item.label === selectedItem)?.value || selectedItem;\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    alert(`Favorite item: ${itemValue || \"\"}`);\n  };\n\n  return (\n    <Form className=\"max-w-64\" onSubmit={onSubmit}>\n      <Field>\n        <FieldLabel>Favorite item</FieldLabel>\n        <Autocomplete disabled={loading} items={items} name=\"item\" required>\n          <AutocompleteInput placeholder=\"Search items…\" />\n          <AutocompletePopup>\n            <AutocompleteEmpty>No items found.</AutocompleteEmpty>\n            <AutocompleteList>\n              {(item) => (\n                <AutocompleteItem key={item.value} value={item}>\n                  {item.label}\n                </AutocompleteItem>\n              )}\n            </AutocompleteList>\n          </AutocompletePopup>\n        </Autocomplete>\n        <FieldError>Please select a item.</FieldError>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "autocomplete",
+    "form",
+    "input"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-spinner-1",
+  "type": "registry:block",
+  "description": "Basic spinner",
+  "registryDependencies": [
+    "@coss/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-spinner-1.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "spinner"
+  ]
+}
