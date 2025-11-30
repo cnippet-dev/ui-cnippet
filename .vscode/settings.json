@@ -1,8 +1,0 @@
-{
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "postman.settings.dotenv-detection-notification-visibility": false
-}
