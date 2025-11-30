@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "card",
+    "frame",
+    "group",
+    "preview-card",
+    "scroll-area",
+    "separator"
+  ],
+  "title": "Layout"
+}

@@ -19,6 +19,7 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json",
+    "@coss": "https://coss.com/ui/r/{name}.json"
   }
 }

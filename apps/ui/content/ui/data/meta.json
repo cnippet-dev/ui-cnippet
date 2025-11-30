@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "accordion",
+    "collapsible",
+    "empty",
+    "table"
+  ],
+  "title": "Data Display"
+}

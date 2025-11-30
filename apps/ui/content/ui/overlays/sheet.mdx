@@ -1,0 +1,195 @@
+---
+title: Sheet
+description: A flyout that opens from the side of the screen, based on the dialog component.
+
+links:
+  doc: https://base-ui.com/react/components/dialog#api-reference
+---
+
+<ComponentPreview name="p-sheet-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/sheet
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui-components/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sheet" title="components/ui/sheet.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetPanel,
+  SheetPopup,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetPopup>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+    <SheetPanel>Content</SheetPanel>
+    <SheetFooter>
+      <SheetClose>Close</SheetClose>
+    </SheetFooter>
+  </SheetPopup>
+</Sheet>
+```
+
+**SheetPanel Scrolling**
+
+The `SheetPanel` component automatically wraps its content in a `ScrollArea` component. This means that if the content exceeds the sheet's maximum height, it will become scrollable automatically. The scrollbar will appear when needed, providing a smooth scrolling experience.
+
+```tsx
+<SheetPanel>
+  {/* Long content that will scroll if it exceeds the sheet height */}
+  <div>...</div>
+</SheetPanel>
+```
+
+**SheetPopup Props**
+
+The `SheetPopup` component supports the following props:
+
+- `side`: Controls which side of the screen the sheet opens from. Options: `"top"`, `"bottom"`, `"left"`, `"right"` (default: `"right"`)
+- `inset`: When `true`, adds spacing around the sheet on desktop screens (default: `false`)
+
+```tsx
+// Right side sheet (default)
+<SheetPopup side="right">
+  ...
+</SheetPopup>
+
+// Left side sheet
+<SheetPopup side="left">
+  ...
+</SheetPopup>
+
+// Top sheet
+<SheetPopup side="top">
+  ...
+</SheetPopup>
+
+// Bottom sheet
+<SheetPopup side="bottom">
+  ...
+</SheetPopup>
+
+// Sheet with inset spacing
+<SheetPopup side="right" inset>
+  ...
+</SheetPopup>
+```
+
+## Examples
+
+### Sheet with Inset
+
+<ComponentPreview name="p-sheet-2" />
+
+### Side sheets
+
+<ComponentPreview name="p-sheet-3" />
+
+## Comparing with Radix / shadcn
+
+If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
+
+### Quick Checklist
+
+- Replace `asChild` → `render` on `SheetTrigger` and closing buttons
+- Prefer `SheetPopup`; `SheetContent` remains for legacy
+- Use `SheetPanel` to wrap main content between `SheetHeader` and `SheetFooter`
+- If you used `asChild` on any other parts, switch to the `render` prop
+- `SheetPopup` supports `side` and `inset` props for positioning and spacing
+
+### Comparison Example
+
+<span data-lib="radix-ui">
+```tsx title="shadcn/ui"
+// [!code word:asChild]
+<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">Show Sheet</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Sheet Title</SheetTitle>
+      <SheetDescription>Sheet Description</SheetDescription>
+    </SheetHeader>
+    <SheetFooter>
+      <SheetClose asChild>
+        <Button variant="ghost">Cancel</Button>
+      </SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+</span>
+
+<span data-lib="base-ui">
+```tsx title="coss ui"
+// [!code word:render]
+// [!code word:<SheetPanel>Content</SheetPanel>]
+<Sheet>
+  <SheetTrigger render={<Button variant="outline" />}>
+    Show Sheet
+  </SheetTrigger>
+  <SheetPopup>
+    <SheetHeader>
+      <SheetTitle>Sheet Title</SheetTitle>
+      <SheetDescription>Sheet Description</SheetDescription>
+    </SheetHeader>
+    <SheetPanel>Content</SheetPanel>
+    <SheetFooter>
+      <SheetClose render={<Button variant="ghost" />}>Cancel</SheetClose>
+    </SheetFooter>
+  </SheetPopup>
+</Sheet>
+```
+</span>

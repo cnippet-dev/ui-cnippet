@@ -1,10 +1,65 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "homepage": "https://ui.cnippet.dev",
   "items": [
     {
-      "dependencies": ["@base-ui-components/react"],
+      "name": "ui",
+      "registryDependencies": [
+        "@coss/accordion",
+        "@coss/alert",
+        "@coss/alert-dialog",
+        "@coss/autocomplete",
+        "@coss/avatar",
+        "@coss/badge",
+        "@coss/breadcrumb",
+        "@coss/button",
+        "@coss/card",
+        "@coss/checkbox",
+        "@coss/checkbox-group",
+        "@coss/collapsible",
+        "@coss/combobox",
+        "@coss/dialog",
+        "@coss/empty",
+        "@coss/field",
+        "@coss/fieldset",
+        "@coss/form",
+        "@coss/frame",
+        "@coss/group",
+        "@coss/input",
+        "@coss/input-group",
+        "@coss/kbd",
+        "@coss/label",
+        "@coss/menu",
+        "@coss/meter",
+        "@coss/number-field",
+        "@coss/pagination",
+        "@coss/popover",
+        "@coss/preview-card",
+        "@coss/progress",
+        "@coss/radio-group",
+        "@coss/scroll-area",
+        "@coss/select",
+        "@coss/separator",
+        "@coss/sheet",
+        "@coss/sidebar",
+        "@coss/skeleton",
+        "@coss/slider",
+        "@coss/spinner",
+        "@coss/switch",
+        "@coss/table",
+        "@coss/tabs",
+        "@coss/textarea",
+        "@coss/toast",
+        "@coss/toggle",
+        "@coss/toggle-group",
+        "@coss/toolbar",
+        "@coss/tooltip"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/accordion.tsx",
@@ -12,17 +67,6 @@
         }
       ],
       "name": "accordion",
-      "type": "registry:ui"
-    },
-    {
-      "dependencies": ["@base-ui-components/react"],
-      "files": [
-        {
-          "path": "registry/default/ui/alert-dialog.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "name": "alert-dialog",
       "type": "registry:ui"
     },
     {
@@ -55,9 +99,23 @@
       "name": "alert",
       "type": "registry:ui"
     },
-
     {
-      "dependencies": ["@base-ui-components/react"],
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "alert-dialog",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/autocomplete.tsx",
@@ -65,11 +123,16 @@
         }
       ],
       "name": "autocomplete",
-      "registryDependencies": ["@coss/input", "@coss/scroll-area"],
+      "registryDependencies": [
+        "@coss/input",
+        "@coss/scroll-area"
+      ],
       "type": "registry:ui"
     },
     {
-      "dependencies": ["@base-ui-components/react"],
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/avatar.tsx",
@@ -100,7 +163,9 @@
           "warning-foreground": "var(--color-amber-700)"
         }
       },
-      "dependencies": ["@base-ui-components/react"],
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/badge.tsx",
@@ -111,7 +176,9 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": ["@base-ui-components/react"],
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/breadcrumb.tsx",
@@ -130,7 +197,9 @@
           "destructive-foreground": "var(--color-red-700)"
         }
       },
-      "dependencies": ["@base-ui-components/react"],
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
       "files": [
         {
           "path": "registry/default/ui/button.tsx",
@@ -139,6 +208,670 @@
       ],
       "name": "button",
       "type": "registry:ui"
+    },
+    {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/default/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "card",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "checkbox",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "checkbox-group",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "collapsible",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "combobox",
+      "registryDependencies": [
+        "@coss/input",
+        "@coss/scroll-area"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "dialog",
+      "registryDependencies": [
+        "@coss/scroll-area"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "empty",
+      "type": "registry:ui"
+    },
+    {
+      "cssVars": {
+        "dark": {
+          "destructive-foreground": "var(--color-red-400)"
+        },
+        "light": {
+          "destructive-foreground": "var(--color-red-700)"
+        }
+      },
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "field",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/fieldset.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "fieldset",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "form",
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/frame.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "frame",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "group",
+      "registryDependencies": [
+        "@coss/separator"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "input",
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "input-group",
+      "registryDependencies": [
+        "@coss/input",
+        "@coss/textarea"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "kbd",
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "label",
+      "type": "registry:ui"
+    },
+    {
+      "cssVars": {
+        "dark": {
+          "destructive-foreground": "var(--color-red-400)"
+        },
+        "light": {
+          "destructive-foreground": "var(--color-red-700)"
+        }
+      },
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "menu",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/meter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "meter",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/number-field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "number-field",
+      "registryDependencies": [
+        "@coss/label"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "pagination",
+      "registryDependencies": [
+        "@coss/button"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "popover",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/preview-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "preview-card",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "progress",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "radio-group",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-area",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "select",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "separator",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sheet",
+      "registryDependencies": [
+        "@coss/scroll-area"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sidebar",
+      "registryDependencies": [
+        "@coss/button",
+        "@coss/input",
+        "@coss/separator",
+        "@coss/sheet",
+        "@coss/skeleton",
+        "@coss/tooltip",
+        "@coss/use-mobile",
+        "@coss/utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "css": {
+        "@keyframes skeleton": {
+          "to": {
+            "background-position": "-200% 0"
+          }
+        }
+      },
+      "cssVars": {
+        "theme": {
+          "--animate-skeleton": "skeleton 2s -1s infinite linear"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/default/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "skeleton",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "slider",
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "spinner",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "switch",
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "table",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "tabs",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "textarea",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "toast",
+      "registryDependencies": [
+        "@coss/button"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "toggle",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "toggle-group",
+      "registryDependencies": [
+        "@coss/separator",
+        "@coss/toggle"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "toolbar",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "tooltip",
+      "type": "registry:ui"
+    },
+    {
+      "cssVars": {
+        "dark": {
+          "accent": "--alpha(var(--color-white) / 8%)",
+          "accent-foreground": "var(--color-zinc-100)",
+          "background": "var(--color-zinc-950)",
+          "border": "--alpha(var(--color-white) / 12%)",
+          "card": "color-mix(in srgb, var(--color-zinc-900) 80%, var(--color-zinc-950))",
+          "card-foreground": "var(--color-zinc-100)",
+          "destructive": "var(--color-red-500)",
+          "destructive-foreground": "var(--color-red-400)",
+          "foreground": "var(--color-zinc-100)",
+          "info": "var(--color-blue-500)",
+          "info-foreground": "var(--color-blue-400)",
+          "input": "--alpha(var(--color-white) / 12%)",
+          "muted": "--alpha(var(--color-white) / 8%)",
+          "muted-foreground": "var(--color-zinc-400)",
+          "popover": "var(--color-zinc-900)",
+          "popover-foreground": "var(--color-zinc-100)",
+          "primary": "var(--color-zinc-100)",
+          "primary-foreground": "var(--color-zinc-900)",
+          "ring": "var(--color-zinc-500)",
+          "secondary": "--alpha(var(--color-white) / 8%)",
+          "secondary-foreground": "var(--color-zinc-100)",
+          "success": "var(--color-emerald-500)",
+          "success-foreground": "var(--color-emerald-400)",
+          "warning": "var(--color-amber-500)",
+          "warning-foreground": "var(--color-amber-400)"
+        },
+        "light": {
+          "accent": "--alpha(var(--color-black) / 4%)",
+          "accent-foreground": "var(--color-zinc-900)",
+          "background": "var(--color-white)",
+          "border": "--alpha(var(--color-black) / 10%)",
+          "card": "var(--color-white)",
+          "card-foreground": "var(--color-zinc-900)",
+          "destructive": "var(--color-red-500)",
+          "destructive-foreground": "var(--color-red-700)",
+          "foreground": "var(--color-zinc-900)",
+          "info": "var(--color-blue-500)",
+          "info-foreground": "var(--color-blue-700)",
+          "input": "--alpha(var(--color-black) / 10%)",
+          "muted": "--alpha(var(--color-black) / 4%)",
+          "muted-foreground": "var(--color-zinc-600)",
+          "popover": "var(--color-white)",
+          "popover-foreground": "var(--color-zinc-900)",
+          "primary": "var(--color-zinc-800)",
+          "primary-foreground": "var(--color-zinc-50)",
+          "ring": "var(--color-zinc-400)",
+          "secondary": "--alpha(var(--color-black) / 4%)",
+          "secondary-foreground": "var(--color-zinc-900)",
+          "success": "var(--color-emerald-500)",
+          "success-foreground": "var(--color-emerald-700)",
+          "warning": "var(--color-amber-500)",
+          "warning-foreground": "var(--color-amber-700)"
+        }
+      },
+      "name": "colors-zinc",
+      "type": "registry:style"
+    },
+    {
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "name": "utils",
+      "type": "registry:lib"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "name": "use-mobile",
+      "type": "registry:hook"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/hooks/use-copy-to-clipboard.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "name": "use-copy-to-clipboard",
+      "type": "registry:hook"
     }
-  ]
+  ],
+  "name": "cnippet/ui"
 }
