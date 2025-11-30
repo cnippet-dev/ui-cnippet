@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "exclude": ["node_modules", "dist"],
-  "extends": "@coss/typescript-config/react-library.json",
-  "include": ["src", "turbo"]
-}
