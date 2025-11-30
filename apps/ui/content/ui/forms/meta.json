@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "checkbox-group",
+    "checkbox",
+    "field",
+    "fieldset",
+    "form",
+    "input-group",
+    "input",
+    "label",
+    "meter",
+    "number-field",
+    "radio-group",
+    "slider",
+    "textarea"
+  ],
+  "title": "Forms"
+}

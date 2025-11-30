@@ -1,0 +1,80 @@
+---
+title: Textarea
+description: A native textarea element.
+---
+
+<ComponentPreview name="v-textarea-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/textarea
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui-components/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="textarea" title="components/ui/textarea.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+```
+
+```tsx
+<Textarea />
+```
+
+## Examples
+
+### Small Size
+
+<ComponentPreview name="v-textarea-2" />
+
+### Large Size
+
+<ComponentPreview name="v-textarea-3" />
+
+### Disabled
+
+<ComponentPreview name="v-textarea-4" />
+
+### With Label
+
+<ComponentPreview name="v-textarea-5" />
+
+### Form Integration
+
+<ComponentPreview name="v-textarea-6" />
+
+## Comparing with shadcn
+
+Compared to shadcn/ui, our `Textarea` component includes size variants (`sm`, `default`, `lg`) for better density control. For visual consistency, if you're using `size="lg"` on other form elements like inputs, you should add the same size to textareas as well.

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-kbd-1",
+  "type": "registry:block",
+  "description": "Basic kbd",
+  "registryDependencies": [
+    "@cnippet/kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-kbd-1.tsx",
+      "content": "import { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div>\n        <p className=\"mb-2 text-muted-foreground text-sm\">Single keys:</p>\n        <div className=\"flex gap-2\">\n          <Kbd>K</Kbd>\n          <Kbd>⌘</Kbd>\n          <Kbd>⌃</Kbd>\n          <Kbd>⇧</Kbd>\n        </div>\n      </div>\n      <div>\n        <p className=\"mb-2 text-muted-foreground text-sm\">Key combinations:</p>\n        <div className=\"flex gap-2\">\n          <KbdGroup>\n            <Kbd>⌘</Kbd>\n            <Kbd>K</Kbd>\n          </KbdGroup>\n          <KbdGroup>\n            <Kbd>⌘</Kbd>\n            <Kbd>Shift</Kbd>\n            <Kbd>P</Kbd>\n          </KbdGroup>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <Kbd>Alt</Kbd>\n            <Kbd>Delete</Kbd>\n          </KbdGroup>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "kbd"
+  ]
+}
