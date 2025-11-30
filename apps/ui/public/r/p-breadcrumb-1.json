@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-breadcrumb-1",
+  "type": "registry:block",
+  "description": "Breadcrumb with menu example",
+  "registryDependencies": [
+    "@coss/breadcrumb",
+    "@coss/button",
+    "@coss/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-breadcrumb-1.tsx",
+      "content": "import Link from \"next/link\";\n\nimport {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/\" />}>Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <Menu>\n            <MenuTrigger\n              render={\n                <Button className=\"-m-1.5\" size=\"icon-sm\" variant=\"ghost\" />\n              }\n            >\n              <BreadcrumbEllipsis />\n            </MenuTrigger>\n            <MenuPopup align=\"start\">\n              <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\n              <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\n            </MenuPopup>\n          </Menu>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/docs/components\" />}>\n            Components\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "menu"
+  ]
+}

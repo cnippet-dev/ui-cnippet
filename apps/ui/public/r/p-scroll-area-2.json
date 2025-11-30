@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-scroll-area-2",
+  "type": "registry:block",
+  "description": "Horizontal scroll area",
+  "registryDependencies": [
+    "@coss/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-scroll-area-2.tsx",
+      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"max-w-96 rounded-md border\" orientation=\"horizontal\">\n      <div className=\"flex w-max gap-4 p-4\">\n        {Array.from({ length: 20 }).map((_, i) => (\n          <div\n            className=\"flex h-20 w-32 shrink-0 items-center justify-center rounded-md bg-muted\"\n            key={String(i)}\n          >\n            <span className=\"font-medium text-sm\">Item {i + 1}</span>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "scroll area"
+  ]
+}

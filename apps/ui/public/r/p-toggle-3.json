@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-toggle-3",
+  "type": "registry:block",
+  "description": "Toggle with icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@coss/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-toggle-3.tsx",
+      "content": "import { BoldIcon } from \"lucide-react\";\n\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport default function Particle() {\n  return (\n    <Toggle aria-label=\"Toggle bold\" variant=\"outline\">\n      <BoldIcon />\n    </Toggle>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "toggle"
+  ]
+}

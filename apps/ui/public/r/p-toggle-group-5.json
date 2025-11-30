@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-toggle-group-5",
+  "type": "registry:block",
+  "description": "Vertical toggle group with outline",
+  "registryDependencies": [
+    "@coss/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-toggle-group-5.tsx",
+      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\n\nimport {\n  Toggle,\n  ToggleGroup,\n  ToggleGroupSeparator,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup\n      defaultValue={[\"bold\"]}\n      orientation=\"vertical\"\n      variant=\"outline\"\n    >\n      <Toggle aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </Toggle>\n      <ToggleGroupSeparator orientation=\"horizontal\" />\n      <Toggle aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </Toggle>\n      <ToggleGroupSeparator orientation=\"horizontal\" />\n      <Toggle aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </Toggle>\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle group"
+  ]
+}

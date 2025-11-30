@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-button-12",
+  "type": "registry:block",
+  "description": "Disabled button",
+  "registryDependencies": [
+    "@coss/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-button-12.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  return <Button disabled>Button</Button>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "button",
+    "disabled"
+  ]
+}

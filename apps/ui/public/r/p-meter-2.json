@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-meter-2",
+  "type": "registry:block",
+  "description": "Simple meter",
+  "registryDependencies": [
+    "@coss/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-meter-2.tsx",
+      "content": "import { Meter } from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return <Meter value={50} />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "meter"
+  ]
+}

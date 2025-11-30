@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-group-10",
+  "type": "registry:block",
+  "description": "Input group with badge",
+  "registryDependencies": [
+    "@coss/badge",
+    "@coss/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-group-10.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Badge</Badge>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "badge",
+    "input group"
+  ]
+}

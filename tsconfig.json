@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "paths": {
+      "@cnippet/*": ["packages/ui/src/*"]
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext"
+  },
+  "display": "coss",
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "packages/ui" }]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-checkbox-group-3",
+  "type": "registry:block",
+  "description": "Checkbox group with parent checkbox",
+  "registryDependencies": [
+    "@coss/checkbox",
+    "@coss/checkbox-group",
+    "@coss/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-checkbox-group-3.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst frameworks = [\n  { id: \"next\", name: \"Next.js\" },\n  { id: \"vite\", name: \"Vite\" },\n  { id: \"astro\", name: \"Astro\" },\n];\n\nexport default function Particle() {\n  const [value, setValue] = React.useState<string[]>([]);\n\n  return (\n    <CheckboxGroup\n      allValues={frameworks.map((framework) => framework.id)}\n      aria-labelledby=\"frameworks-caption\"\n      onValueChange={setValue}\n      value={value}\n    >\n      <Label id=\"frameworks-caption\">\n        <Checkbox name=\"frameworks\" parent />\n        Frameworks\n      </Label>\n\n      {frameworks.map((framework) => (\n        <Label className=\"ms-4\" key={framework.id}>\n          <Checkbox value={framework.id} />\n          {framework.name}\n        </Label>\n      ))}\n    </CheckboxGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group"
+  ]
+}

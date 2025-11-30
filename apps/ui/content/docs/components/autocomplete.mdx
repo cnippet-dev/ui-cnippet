@@ -1,0 +1,144 @@
+---
+title: Autocomplete
+description: An input that suggests options as you type.
+
+links:
+  doc: https://base-ui.com/react/components/autocomplete#api-reference
+---
+
+<ComponentPreview name="p-autocomplete-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @coss/autocomplete
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui-components/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="autocomplete" title="components/ui/autocomplete.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Autocomplete,
+  AutocompleteEmpty,
+  AutocompleteInput,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopup,
+} from "@/components/ui/autocomplete"
+```
+
+```tsx
+const items = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+  { value: "grape", label: "Grape" },
+]
+
+<Autocomplete items={items}>
+  <AutocompleteInput placeholder="Search..." />
+  <AutocompletePopup>
+    <AutocompleteEmpty>No results found.</AutocompleteEmpty>
+    <AutocompleteList>
+      {(item) => <AutocompleteItem key={item.value} value={item}>{item.label}</AutocompleteItem>}
+    </AutocompleteList>
+  </AutocompletePopup>
+</Autocomplete>
+```
+
+## API Reference
+
+The `AutocompleteInput` component extends the original Base UI component with a few extra props:
+
+| Prop          | Type                        | Default     | Description                                                                                      |
+| ------------- | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------ |
+| `size`        | `"sm" \| "default" \| "lg"` | `"default"` | The size variant of the input field.                                                             |
+| `showTrigger` | `boolean`                   | `false`     | Whether to display a trigger button (chevron icon) on the right side of the input.               |
+| `showClear`   | `boolean`                   | `false`     | Whether to display a clear button (X icon) on the right side of the input when there is a value. |
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="p-autocomplete-2" />
+
+### Small Size
+
+<ComponentPreview name="p-autocomplete-3" />
+
+### Large Size
+
+<ComponentPreview name="p-autocomplete-4" />
+
+### With Label
+
+<ComponentPreview name="p-autocomplete-5" />
+
+### Inline Autocomplete
+
+Autofill the input with the highlighted item while navigating with arrow keys.
+
+<ComponentPreview name="p-autocomplete-6" />
+
+### Auto Highlight
+
+Automatically highlight the first matching option.
+
+<ComponentPreview name="p-autocomplete-7" />
+
+### With Clear Button
+
+<ComponentPreview name="p-autocomplete-8" />
+
+### With Trigger and Clear Buttons
+
+<ComponentPreview name="p-autocomplete-9" />
+
+### With Groups
+
+<ComponentPreview name="p-autocomplete-10" />
+
+### With Limit Results
+
+<ComponentPreview name="p-autocomplete-11" />
+
+### Async Search
+
+<ComponentPreview name="p-autocomplete-12" />
+
+### Form Integration
+
+<ComponentPreview name="p-autocomplete-13" />

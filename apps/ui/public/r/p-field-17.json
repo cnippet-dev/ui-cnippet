@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-17",
+  "type": "registry:block",
+  "description": "Field with number field",
+  "registryDependencies": [
+    "@coss/field",
+    "@coss/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-field-17.tsx",
+      "content": "import { Field, FieldDescription } from \"@/registry/default/ui/field\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <NumberField defaultValue={1} max={100} min={1}>\n        <NumberFieldScrubArea label=\"Quantity\" />\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n      <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "field",
+    "input",
+    "label",
+    "number field"
+  ]
+}

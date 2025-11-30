@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-select-8",
+  "type": "registry:block",
+  "description": "Select with icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@coss/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-select-8.tsx",
+      "content": "import { ClockIcon } from \"lucide-react\";\n\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst items = [\n  { label: \"Select framework\", value: null },\n  { label: \"Next.js\", value: \"next\" },\n  { label: \"Vite\", value: \"vite\" },\n  { label: \"Astro\", value: \"astro\" },\n];\n\nexport default function Particle() {\n  return (\n    <Select\n      aria-label=\"Select framework with icon\"\n      defaultValue=\"next\"\n      items={items}\n    >\n      <SelectTrigger>\n        <ClockIcon />\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup alignItemWithTrigger={false}>\n        {items.map(({ label, value }) => (\n          <SelectItem key={value} value={value}>\n            {label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "select"
+  ]
+}

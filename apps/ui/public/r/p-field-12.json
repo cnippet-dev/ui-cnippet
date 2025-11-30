@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-field-12",
+  "type": "registry:block",
+  "description": "Field with checkbox",
+  "registryDependencies": [
+    "@coss/checkbox",
+    "@coss/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-field-12.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        <Checkbox />\n        Accept terms and conditions\n      </FieldLabel>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "checkbox",
+    "field",
+    "label"
+  ]
+}

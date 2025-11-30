@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-input-1",
+  "type": "registry:block",
+  "description": "Basic input",
+  "registryDependencies": [
+    "@coss/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-input-1.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return <Input aria-label=\"Enter text\" placeholder=\"Enter text\" type=\"text\" />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full **:data-[slot=preview]:max-w-64"
+  },
+  "categories": [
+    "input"
+  ]
+}

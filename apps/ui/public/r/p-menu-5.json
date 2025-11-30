@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "p-menu-5",
+  "type": "registry:block",
+  "description": "Menu with link",
+  "registryDependencies": [
+    "@coss/button",
+    "@coss/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/particles/p-menu-5.tsx",
+      "content": "import Link from \"next/link\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\n        <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "menu"
+  ]
+}
