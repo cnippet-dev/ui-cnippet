@@ -889,6 +889,654 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "v-accordion-1": {
+    name: "v-accordion-1",
+    description: "Basic accordion",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/accordion"],
+    files: [{
+      path: "registry/default/variants/v-accordion-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-accordion-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["accordion"],
+    meta: {"className":""},
+  },
+  "v-alert-1": {
+    name: "v-alert-1",
+    description: "Basic alert",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/alert"],
+    files: [{
+      path: "registry/default/variants/v-alert-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-alert-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["alert"],
+    meta: {"className":""},
+  },
+  "v-alert-dialog-1": {
+    name: "v-alert-dialog-1",
+    description: "Basic alert dialog",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/alert-dialog"],
+    files: [{
+      path: "registry/default/variants/v-alert-dialog-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-alert-dialog-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["alert dialog"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-1": {
+    name: "v-autocomplete-1",
+    description: "Basic autocomplete",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-avatar-1": {
+    name: "v-avatar-1",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-badge-1": {
+    name: "v-badge-1",
+    description: "Basic badge",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/badge"],
+    files: [{
+      path: "registry/default/variants/v-badge-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-badge-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["badge"],
+    meta: {"className":""},
+  },
+  "v-button-1": {
+    name: "v-button-1",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-checkbox-1": {
+    name: "v-checkbox-1",
+    description: "Basic checkbox",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/checkbox"],
+    files: [{
+      path: "registry/default/variants/v-checkbox-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-checkbox-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["checkbox"],
+    meta: {"className":""},
+  },
+  "v-checkbox-group-1": {
+    name: "v-checkbox-group-1",
+    description: "Basic checkbox group",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/checkbox-group"],
+    files: [{
+      path: "registry/default/variants/v-checkbox-group-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-checkbox-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["checkbox group"],
+    meta: {"className":""},
+  },
+  "v-collapsible-1": {
+    name: "v-collapsible-1",
+    description: "Basic collapsible",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/collapsible"],
+    files: [{
+      path: "registry/default/variants/v-collapsible-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-collapsible-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["collapsible"],
+    meta: {"className":""},
+  },
+  "v-dialog-1": {
+    name: "v-dialog-1",
+    description: "Basic dialog",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/dialog"],
+    files: [{
+      path: "registry/default/variants/v-dialog-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-dialog-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["dialog"],
+    meta: {"className":""},
+  },
+  "v-empty-1": {
+    name: "v-empty-1",
+    description: "Basic empty state",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/empty"],
+    files: [{
+      path: "registry/default/variants/v-empty-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-empty-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["empty state"],
+    meta: {"className":""},
+  },
+  "v-field-1": {
+    name: "v-field-1",
+    description: "Basic field",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/field"],
+    files: [{
+      path: "registry/default/variants/v-field-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-field-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["field"],
+    meta: {"className":""},
+  },
+  "v-fieldset-1": {
+    name: "v-fieldset-1",
+    description: "Basic fieldset",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/fieldset"],
+    files: [{
+      path: "registry/default/variants/v-fieldset-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-fieldset-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["fieldset"],
+    meta: {"className":""},
+  },
+  "v-form-1": {
+    name: "v-form-1",
+    description: "Basic form",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/form"],
+    files: [{
+      path: "registry/default/variants/v-form-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-form-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["form"],
+    meta: {"className":""},
+  },
+  "v-frame-1": {
+    name: "v-frame-1",
+    description: "Basic frame",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/frame"],
+    files: [{
+      path: "registry/default/variants/v-frame-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-frame-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["frame"],
+    meta: {"className":""},
+  },
+  "v-group-1": {
+    name: "v-group-1",
+    description: "Basic group",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/group"],
+    files: [{
+      path: "registry/default/variants/v-group-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["group"],
+    meta: {"className":""},
+  },
+  "v-input-1": {
+    name: "v-input-1",
+    description: "Basic input",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/input"],
+    files: [{
+      path: "registry/default/variants/v-input-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input"],
+    meta: {"className":""},
+  },
+  "v-input-group-1": {
+    name: "v-input-group-1",
+    description: "Basic input group",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-kbd-1": {
+    name: "v-kbd-1",
+    description: "Basic kbd",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/kbd"],
+    files: [{
+      path: "registry/default/variants/v-kbd-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-kbd-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["kbd"],
+    meta: {"className":""},
+  },
+  "v-menu-1": {
+    name: "v-menu-1",
+    description: "Basic menu",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/menu"],
+    files: [{
+      path: "registry/default/variants/v-menu-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-menu-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["menu"],
+    meta: {"className":""},
+  },
+  "v-meter-1": {
+    name: "v-meter-1",
+    description: "Basic meter",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/meter"],
+    files: [{
+      path: "registry/default/variants/v-meter-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-meter-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["meter"],
+    meta: {"className":""},
+  },
+  "v-number-field-1": {
+    name: "v-number-field-1",
+    description: "Basic number field",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/number-field"],
+    files: [{
+      path: "registry/default/variants/v-number-field-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-number-field-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["number field"],
+    meta: {"className":""},
+  },
+  "v-pagination-1": {
+    name: "v-pagination-1",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-popover-1": {
+    name: "v-popover-1",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-radio-group-1": {
+    name: "v-radio-group-1",
+    description: "Basic radio group",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/radio-group"],
+    files: [{
+      path: "registry/default/variants/v-radio-group-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-radio-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["radio group"],
+    meta: {"className":""},
+  },
+  "v-scroll-area-1": {
+    name: "v-scroll-area-1",
+    description: "Basic scroll area",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scroll-area"],
+    files: [{
+      path: "registry/default/variants/v-scroll-area-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-scroll-area-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll area"],
+    meta: {"className":""},
+  },
+  "v-select-1": {
+    name: "v-select-1",
+    description: "Basic select",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/select"],
+    files: [{
+      path: "registry/default/variants/v-select-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-select-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["select"],
+    meta: {"className":""},
+  },
+  "v-slider-1": {
+    name: "v-slider-1",
+    description: "Basic slider",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/slider"],
+    files: [{
+      path: "registry/default/variants/v-slider-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-slider-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["slider"],
+    meta: {"className":""},
+  },
+  "v-switch-1": {
+    name: "v-switch-1",
+    description: "Basic switch",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/switch"],
+    files: [{
+      path: "registry/default/variants/v-switch-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-switch-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["switch"],
+    meta: {"className":""},
+  },
+  "v-tabs-1": {
+    name: "v-tabs-1",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-textarea-1": {
+    name: "v-textarea-1",
+    description: "Basic textarea",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/textarea"],
+    files: [{
+      path: "registry/default/variants/v-textarea-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-textarea-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["textarea"],
+    meta: {"className":""},
+  },
+  "v-toast-1": {
+    name: "v-toast-1",
+    description: "Basic toast",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
+  "v-toggle-1": {
+    name: "v-toggle-1",
+    description: "Basic toggle",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
+  "v-toggle-group-1": {
+    name: "v-toggle-group-1",
+    description: "Basic toggle group",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
+  "v-toolbar-1": {
+    name: "v-toolbar-1",
+    description: "Basic toolbar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toolbar"],
+    files: [{
+      path: "registry/default/variants/v-toolbar-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toolbar-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toolbar"],
+    meta: {"className":""},
+  },
   "utils": {
     name: "utils",
     description: "",

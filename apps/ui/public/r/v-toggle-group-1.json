@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-1",
+  "type": "registry:block",
+  "description": "Basic toggle group",
+  "registryDependencies": [
+    "@cnippet/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-1.tsx",
+      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\n\nimport { Toggle, ToggleGroup } from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={[\"bold\"]}>\n      <Toggle aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </Toggle>\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ]
+}
