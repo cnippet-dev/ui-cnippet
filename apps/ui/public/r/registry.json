@@ -779,6 +779,19 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/motion/horizontal-scroll.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "horizontal-scroll",
+      "type": "registry:ui"
+    },
+    {
       "cssVars": {
         "dark": {
           "accent": "--alpha(var(--color-white) / 8%)",
@@ -837,6 +850,26 @@
       },
       "name": "colors-zinc",
       "type": "registry:style"
+    },
+    {
+      "categories": [
+        "motion"
+      ],
+      "description": "Basic horizontal scroll",
+      "files": [
+        {
+          "path": "registry/default/variants/m-horizontal-scroll-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-horizontal-scroll-1",
+      "registryDependencies": [
+        "@cnippet/horizontal-scroll"
+      ],
+      "type": "registry:block"
     },
     {
       "categories": [

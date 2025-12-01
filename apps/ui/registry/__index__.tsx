@@ -889,6 +889,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "horizontal-scroll": {
+    name: "horizontal-scroll",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/horizontal-scroll.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/horizontal-scroll.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "m-horizontal-scroll-1": {
+    name: "m-horizontal-scroll-1",
+    description: "Basic horizontal scroll",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/horizontal-scroll"],
+    files: [{
+      path: "registry/default/variants/m-horizontal-scroll-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/m-horizontal-scroll-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["motion"],
+    meta: {"className":""},
+  },
   "v-accordion-1": {
     name: "v-accordion-1",
     description: "Basic accordion",

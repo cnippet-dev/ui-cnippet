@@ -1,5 +1,5 @@
 import { DocsSidebar } from "@/components/docs-sidebar";
-import { source } from "@/lib/source";
+import { motionSource as source } from "@/lib/source";
 import { SidebarProvider } from "@/registry/default/ui/sidebar";
 
 export default function DocsLayout({

@@ -57,6 +57,7 @@ export const componentCategories = [
   "toggle group",
   "toolbar",
   "tooltip",
+  "motion",
 ] as const;
 
 // Tag categories (features, states, modifiers)

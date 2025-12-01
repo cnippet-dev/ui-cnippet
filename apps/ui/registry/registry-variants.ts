@@ -14,6 +14,17 @@ function categories<T extends RegistryCategory[]>(...categories: T): T {
 
 export const variants: ParticleItem[] = [
   {
+    categories: categories("motion"),
+    description: "Basic horizontal scroll",
+    files: [{ path: "variants/m-horizontal-scroll-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "m-horizontal-scroll-1",
+    registryDependencies: ["@cnippet/horizontal-scroll"],
+    type: "registry:block",
+  },
+  {
     categories: categories("accordion"),
     description: "Basic accordion",
     files: [{ path: "variants/v-accordion-1.tsx", type: "registry:block" }],

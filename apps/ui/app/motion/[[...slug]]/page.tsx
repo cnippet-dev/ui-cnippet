@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
 import { SiteFooter } from "@/components/site-footer";
-import { source } from "@/lib/source";
+import { motionSource as source } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
 import { Button } from "@/registry/default/ui/button";
 
