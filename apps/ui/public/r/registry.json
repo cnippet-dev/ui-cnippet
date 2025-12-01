@@ -960,6 +960,26 @@
     },
     {
       "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-1",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "button"
       ],
       "description": "Basic button",
@@ -975,6 +995,26 @@
       "name": "v-button-1",
       "registryDependencies": [
         "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-1",
+      "registryDependencies": [
+        "@cnippet/card"
       ],
       "type": "registry:block"
     },
@@ -1035,6 +1075,26 @@
       "name": "v-collapsible-1",
       "registryDependencies": [
         "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Basic combobox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-1",
+      "registryDependencies": [
+        "@cnippet/combobox"
       ],
       "type": "registry:block"
     },
@@ -1200,6 +1260,26 @@
     },
     {
       "categories": [
+        "input"
+      ],
+      "description": "Input with label",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-6",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "input group"
       ],
       "description": "Basic input group",
@@ -1340,6 +1420,46 @@
     },
     {
       "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-1",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "Basic progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-1",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "radio group"
       ],
       "description": "Basic radio group",
@@ -1400,6 +1520,66 @@
     },
     {
       "categories": [
+        "separator"
+      ],
+      "description": "Basic separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-1",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "Basic sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-1",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "Basic skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-1",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "slider"
       ],
       "description": "Basic slider",
@@ -1420,6 +1600,26 @@
     },
     {
       "categories": [
+        "spinner"
+      ],
+      "description": "Basic spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-1",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "switch"
       ],
       "description": "Basic switch",
@@ -1435,6 +1635,26 @@
       "name": "v-switch-1",
       "registryDependencies": [
         "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Basic table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-1",
+      "registryDependencies": [
+        "@cnippet/table"
       ],
       "type": "registry:block"
     },
@@ -1555,6 +1775,26 @@
       "name": "v-toolbar-1",
       "registryDependencies": [
         "@cnippet/toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Basic tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-1",
+      "registryDependencies": [
+        "@cnippet/tooltip"
       ],
       "type": "registry:block"
     },

@@ -80,6 +80,17 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("breadcrumb"),
+    description: "Basic breadcrumb",
+    files: [{ path: "variants/v-breadcrumb-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-breadcrumb-1",
+    registryDependencies: ["@cnippet/breadcrumb"],
+    type: "registry:block",
+  },
+  {
     categories: categories("button"),
     description: "Basic button",
     files: [{ path: "variants/v-button-1.tsx", type: "registry:block" }],
@@ -88,6 +99,17 @@ export const variants: ParticleItem[] = [
     },
     name: "v-button-1",
     registryDependencies: ["@cnippet/button"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("card"),
+    description: "Basic card",
+    files: [{ path: "variants/v-card-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-card-1",
+    registryDependencies: ["@cnippet/card"],
     type: "registry:block",
   },
   {
@@ -104,7 +126,9 @@ export const variants: ParticleItem[] = [
   {
     categories: categories("checkbox group"),
     description: "Basic checkbox group",
-    files: [{ path: "variants/v-checkbox-group-1.tsx", type: "registry:block" }],
+    files: [
+      { path: "variants/v-checkbox-group-1.tsx", type: "registry:block" },
+    ],
     meta: {
       className: "",
     },
@@ -121,6 +145,17 @@ export const variants: ParticleItem[] = [
     },
     name: "v-collapsible-1",
     registryDependencies: ["@cnippet/collapsible"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("combobox"),
+    description: "Basic combobox",
+    files: [{ path: "variants/v-combobox-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-combobox-1",
+    registryDependencies: ["@cnippet/combobox"],
     type: "registry:block",
   },
   {
@@ -212,6 +247,17 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("input"),
+    description: "Input with label",
+    files: [{ path: "variants/v-input-6.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-input-6",
+    registryDependencies: ["@cnippet/input"],
+    type: "registry:block",
+  },
+  {
     categories: categories("input group"),
     description: "Basic input group",
     files: [{ path: "variants/v-input-group-1.tsx", type: "registry:block" }],
@@ -289,6 +335,28 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("preview card"),
+    description: "Basic preview card",
+    files: [{ path: "variants/v-preview-card-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-preview-card-1",
+    registryDependencies: ["@cnippet/preview-card"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("progress"),
+    description: "Basic progress",
+    files: [{ path: "variants/v-progress-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-progress-1",
+    registryDependencies: ["@cnippet/progress"],
+    type: "registry:block",
+  },
+  {
     categories: categories("radio group"),
     description: "Basic radio group",
     files: [{ path: "variants/v-radio-group-1.tsx", type: "registry:block" }],
@@ -322,6 +390,39 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("separator"),
+    description: "Basic separator",
+    files: [{ path: "variants/v-separator-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-separator-1",
+    registryDependencies: ["@cnippet/separator"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("sheet"),
+    description: "Basic sheet",
+    files: [{ path: "variants/v-sheet-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-sheet-1",
+    registryDependencies: ["@cnippet/sheet"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("skeleton"),
+    description: "Basic skeleton",
+    files: [{ path: "variants/v-skeleton-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-skeleton-1",
+    registryDependencies: ["@cnippet/skeleton"],
+    type: "registry:block",
+  },
+  {
     categories: categories("slider"),
     description: "Basic slider",
     files: [{ path: "variants/v-slider-1.tsx", type: "registry:block" }],
@@ -333,6 +434,17 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("spinner"),
+    description: "Basic spinner",
+    files: [{ path: "variants/v-spinner-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-spinner-1",
+    registryDependencies: ["@cnippet/spinner"],
+    type: "registry:block",
+  },
+  {
     categories: categories("switch"),
     description: "Basic switch",
     files: [{ path: "variants/v-switch-1.tsx", type: "registry:block" }],
@@ -341,6 +453,17 @@ export const variants: ParticleItem[] = [
     },
     name: "v-switch-1",
     registryDependencies: ["@cnippet/switch"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("table"),
+    description: "Basic table",
+    files: [{ path: "variants/v-table-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-table-1",
+    registryDependencies: ["@cnippet/table"],
     type: "registry:block",
   },
   {
@@ -407,6 +530,17 @@ export const variants: ParticleItem[] = [
     },
     name: "v-toolbar-1",
     registryDependencies: ["@cnippet/toolbar"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("tooltip"),
+    description: "Basic tooltip",
+    files: [{ path: "variants/v-tooltip-1.tsx", type: "registry:block" }],
+      meta: {
+      className: "",
+    },
+    name: "v-tooltip-1",
+    registryDependencies: ["@cnippet/tooltip"],
     type: "registry:block",
   },
 ];
