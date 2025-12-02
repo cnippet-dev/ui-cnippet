@@ -889,36 +889,72 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "horizontal-scroll": {
-    name: "horizontal-scroll",
+  "animated-number": {
+    name: "animated-number",
     description: "",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
-      path: "registry/default/motion/horizontal-scroll.tsx",
+      path: "registry/default/motion/animated-number.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/motion/horizontal-scroll.tsx")
+      const mod = await import("@/registry/default/motion/animated-number.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "m-horizontal-scroll-1": {
-    name: "m-horizontal-scroll-1",
-    description: "Basic horizontal scroll",
-    type: "registry:block",
-    registryDependencies: ["@cnippet/horizontal-scroll"],
+  "sliding-number": {
+    name: "sliding-number",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
     files: [{
-      path: "registry/default/variants/m-horizontal-scroll-1.tsx",
+      path: "registry/default/motion/sliding-number.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/sliding-number.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "m-animated-number-1": {
+    name: "m-animated-number-1",
+    description: "Basic Animated Number",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/animated-number"],
+    files: [{
+      path: "registry/default/variants/m-animated-number-1.tsx",
       type: "registry:block",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/variants/m-horizontal-scroll-1.tsx")
+      const mod = await import("@/registry/default/variants/m-animated-number-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["motion"],
+    meta: {"className":""},
+  },
+  "m-sliding-number-1": {
+    name: "m-sliding-number-1",
+    description: "Basic Sliding Number",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/sliding-number"],
+    files: [{
+      path: "registry/default/variants/m-sliding-number-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/m-sliding-number-1.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

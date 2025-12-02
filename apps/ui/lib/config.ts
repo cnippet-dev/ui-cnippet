@@ -4,6 +4,10 @@ export const appConfig = {
   name: "cnippet ui",
   navItems: [
     {
+      href: "/docs/introduction",
+      label: "Docs",
+    },
+    {
       href: "/ui/actions/button",
       label: "Core",
     },

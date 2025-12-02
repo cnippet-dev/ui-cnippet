@@ -15,13 +15,28 @@ function categories<T extends RegistryCategory[]>(...categories: T): T {
 export const variants: ParticleItem[] = [
   {
     categories: categories("motion"),
-    description: "Basic horizontal scroll",
-    files: [{ path: "variants/m-horizontal-scroll-1.tsx", type: "registry:block" }],
+    description: "Basic Animated Number",
+    files: [
+      { path: "variants/m-animated-number-1.tsx", type: "registry:block" },
+    ],
     meta: {
       className: "",
     },
-    name: "m-horizontal-scroll-1",
-    registryDependencies: ["@cnippet/horizontal-scroll"],
+    name: "m-animated-number-1",
+    registryDependencies: ["@cnippet/animated-number"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("motion"),
+    description: "Basic Sliding Number",
+    files: [
+      { path: "variants/m-sliding-number-1.tsx", type: "registry:block" },
+    ],
+    meta: {
+      className: "",
+    },
+    name: "m-sliding-number-1",
+    registryDependencies: ["@cnippet/sliding-number"],
     type: "registry:block",
   },
   {
@@ -547,7 +562,7 @@ export const variants: ParticleItem[] = [
     categories: categories("tooltip"),
     description: "Basic tooltip",
     files: [{ path: "variants/v-tooltip-1.tsx", type: "registry:block" }],
-      meta: {
+    meta: {
       className: "",
     },
     name: "v-tooltip-1",

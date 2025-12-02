@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "text-effect",
+    "text-loop",
+    "text-marquee",
+    "text-morph",
+    "text-roll",
+    "text-scramble",
+    "text-shimmer-wave",
+    "text-shimmer"
+  ],
+  "title": "Text"
+}
+

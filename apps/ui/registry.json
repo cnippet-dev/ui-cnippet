@@ -784,11 +784,25 @@
       ],
       "files": [
         {
-          "path": "registry/default/motion/horizontal-scroll.tsx",
+          "path": "registry/default/motion/animated-number.tsx",
           "type": "registry:ui"
         }
       ],
-      "name": "horizontal-scroll",
+      "name": "animated-number",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "motion",
+        "react-use-measure"
+      ],
+      "files": [
+        {
+          "path": "registry/default/motion/sliding-number.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sliding-number",
       "type": "registry:ui"
     },
     {
@@ -855,19 +869,39 @@
       "categories": [
         "motion"
       ],
-      "description": "Basic horizontal scroll",
+      "description": "Basic Animated Number",
       "files": [
         {
-          "path": "registry/default/variants/m-horizontal-scroll-1.tsx",
+          "path": "registry/default/variants/m-animated-number-1.tsx",
           "type": "registry:block"
         }
       ],
       "meta": {
         "className": ""
       },
-      "name": "m-horizontal-scroll-1",
+      "name": "m-animated-number-1",
       "registryDependencies": [
-        "@cnippet/horizontal-scroll"
+        "@cnippet/animated-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "motion"
+      ],
+      "description": "Basic Sliding Number",
+      "files": [
+        {
+          "path": "registry/default/variants/m-sliding-number-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sliding-number-1",
+      "registryDependencies": [
+        "@cnippet/sliding-number"
       ],
       "type": "registry:block"
     },
