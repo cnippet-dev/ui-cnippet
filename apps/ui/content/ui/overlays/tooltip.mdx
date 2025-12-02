@@ -67,7 +67,7 @@ import {
 </Tooltip>
 ```
 
-## Examples
+{/* ## Examples
 
 ### Grouped Tooltips
 
@@ -86,40 +86,4 @@ To create detached triggers:
 3. Each trigger provides a `payload` prop containing the content component
 4. Use a single `Tooltip` component with the handle to render the popup
 
-<ComponentPreview name="v-tooltip-3" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Quick Checklist
-
-- Replace `asChild` → `render` on `TooltipTrigger`
-- Prefer `TooltipPopup`; `TooltipContent` remains for legacy
-- If you used `asChild` on parts, switch to the `render` prop
-
-### Comparison Example
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:asChild]
-<Tooltip>
-  <TooltipTrigger asChild>
-    <Button variant="outline">Hover me</Button>
-  </TooltipTrigger>
-  <TooltipContent>Helpful hint</TooltipContent>
-</Tooltip>
-```
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:render]
-<Tooltip>
-  <TooltipTrigger render={<Button variant="outline" />}>
-    Hover me
-  </TooltipTrigger>
-  <TooltipPopup>Helpful hint</TooltipPopup>
-</Tooltip>
-```
-</span>
+<ComponentPreview name="v-tooltip-3" /> */}

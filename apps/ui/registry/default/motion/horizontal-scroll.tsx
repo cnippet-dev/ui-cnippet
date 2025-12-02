@@ -50,7 +50,7 @@ export const HorizontalScroll = ({
 
 const Card = ({ card }: CardProps) => {
     return (
-        <div className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200">
+        <div className="group relative h-[400px] w-[400px] overflow-hidden bg-neutral-200">
             <Image
                 src={card.url}
                 alt={card.title}

@@ -40,7 +40,7 @@ export async function generateMetadata(props: {
 
   return {
     description: doc.description,
-    title: `${doc.title} - coss ui`,
+    title: `${doc.title} - cnippet ui`,
   };
 }
 
@@ -65,7 +65,7 @@ export default async function Page(props: {
       className="flex items-stretch border-l sm:text-[.9375rem] xl:w-full"
       data-slot="docs"
     >
-      <div className="">
+      <div className=" w-full pr-8">
         <div className="-m-px border bg-background px-4 py-6 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] sm:px-6 lg:p-8 dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
           <div className="mx-auto w-full max-w-3xl">
             <div className="flex min-w-0 flex-1 flex-col gap-8">
@@ -135,7 +135,7 @@ export default async function Page(props: {
           <SiteFooter />
         </div>
       </div>
-      <div className="sticky top-(--header-height) z-30 ms-auto hidden h-[calc(100svh-var(--header-height))] w-72 flex-col overflow-hidden overscroll-none xl:flex">
+      <div className="sticky top-(--header-height) z-30 ms-auto hidden h-[calc(100svh-var(--header-height))] w-92 flex-col overflow-hidden overscroll-none xl:flex">
         <div className="no-scrollbar flex min-h-0 flex-col gap-2 overflow-y-auto py-2">
           <div className="h-(--top-spacing) shrink-0" />
           {doc.toc?.length ? <DocsTableOfContents toc={doc.toc} /> : null}

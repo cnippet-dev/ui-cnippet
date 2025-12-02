@@ -1,23 +1,24 @@
 export const appConfig = {
   description:
     "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.",
-  name: "coss ui",
+  name: "cnippet ui",
   navItems: [
     {
-      href: "/docs",
-      label: "Docs",
+      href: "/ui/actions/button",
+      label: "Core",
     },
     {
-      href: "/particles",
-      label: "Particles",
-    },
+      href: "/motion/horizontal-scroll",
+      label: "Motion",
+    }
+    
   ],
   ogImage: "https://coss.com/og.jpg",
   url: "https://coss.com/ui",
 };
 
 export const siteConfig = {
-  description: "coss.com - the everything but AI company.",
+  description: "cnippet.dev- the everything but AI company.",
   links: {
     github: "https://github.com/cosscom/coss",
     twitter: "https://x.com/coss_com",

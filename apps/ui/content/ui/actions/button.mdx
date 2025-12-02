@@ -83,7 +83,7 @@ export function LinkAsButton() {
 }
 ```
 
-## Examples
+{/* ## Examples
 
 ### Default
 
@@ -155,59 +155,4 @@ export function LinkAsButton() {
 
 ### Loading
 
-<ComponentPreview name="v-button-18" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Quick Checklist
-
-- Replace `asChild` → `render` on `Button`
-
-### Additional Notes
-
-**Size Comparison**
-
-**coss ui** button sizes are more compact compared to shadcn/ui, making them better suited for
-dense applications. We also introduce new sizes (`xs`, `xl`, `icon-sm`, `icon-lg`) for more granular control:
-
-| Size      | Height (shadcn/ui) | Height (coss ui) |
-| --------- | ------------------ | ---------------- |
-| `xs`      | -                  | 24px             |
-| `sm`      | 32px               | 28px             |
-| `default` | 36px               | 32px             |
-| `lg`      | 40px               | 36px             |
-| `xl`      | -                  | 40px             |
-| `icon`    | 36px               | 32px             |
-| `icon-sm` | -                  | 28px             |
-| `icon-lg` | -                  | 36px             |
-
-So, for example, if you were using the `default` size in shadcn/ui and you want to preserve the original height, you should use the `lg` size in coss ui.
-
-**New Variants**
-
-We've added a new `destructive-outline` variant for better UX patterns:
-
-- **Primary actions**: Use `destructive` (solid red) for the main destructive action
-- **Secondary triggers**: Use `destructive-outline` (outline red) to avoid alarming red buttons in the main interface
-
-### Comparison Example
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:asChild]
-<Button asChild>
-  <Link href="/login">Login</Link>
-</Button>
-```
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:render]
-<Button render={<Link href="/login" />}>Login</Button>
-```
-</span
-
->
+<ComponentPreview name="v-button-18" /> */}
