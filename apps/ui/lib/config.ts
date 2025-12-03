@@ -11,11 +11,6 @@ export const appConfig = {
       href: "/ui/actions/button",
       label: "Core",
     },
-    {
-      href: "/motion/horizontal-scroll",
-      label: "Motion",
-    }
-    
   ],
   ogImage: "https://coss.com/og.jpg",
   url: "https://coss.com/ui",

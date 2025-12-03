@@ -14,32 +14,6 @@ function categories<T extends RegistryCategory[]>(...categories: T): T {
 
 export const variants: ParticleItem[] = [
   {
-    categories: categories("motion"),
-    description: "Basic Animated Number",
-    files: [
-      { path: "variants/m-animated-number-1.tsx", type: "registry:block" },
-    ],
-    meta: {
-      className: "",
-    },
-    name: "m-animated-number-1",
-    registryDependencies: ["@cnippet/animated-number"],
-    type: "registry:block",
-  },
-  {
-    categories: categories("motion"),
-    description: "Basic Sliding Number",
-    files: [
-      { path: "variants/m-sliding-number-1.tsx", type: "registry:block" },
-    ],
-    meta: {
-      className: "",
-    },
-    name: "m-sliding-number-1",
-    registryDependencies: ["@cnippet/sliding-number"],
-    type: "registry:block",
-  },
-  {
     categories: categories("accordion"),
     description: "Basic accordion",
     files: [{ path: "variants/v-accordion-1.tsx", type: "registry:block" }],

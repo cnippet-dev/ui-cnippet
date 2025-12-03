@@ -779,33 +779,6 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "registry/default/motion/animated-number.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "name": "animated-number",
-      "type": "registry:ui"
-    },
-    {
-      "dependencies": [
-        "motion",
-        "react-use-measure"
-      ],
-      "files": [
-        {
-          "path": "registry/default/motion/sliding-number.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "name": "sliding-number",
-      "type": "registry:ui"
-    },
-    {
       "cssVars": {
         "dark": {
           "accent": "--alpha(var(--color-white) / 8%)",
@@ -864,46 +837,6 @@
       },
       "name": "colors-zinc",
       "type": "registry:style"
-    },
-    {
-      "categories": [
-        "motion"
-      ],
-      "description": "Basic Animated Number",
-      "files": [
-        {
-          "path": "registry/default/variants/m-animated-number-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "className": ""
-      },
-      "name": "m-animated-number-1",
-      "registryDependencies": [
-        "@cnippet/animated-number"
-      ],
-      "type": "registry:block"
-    },
-    {
-      "categories": [
-        "motion"
-      ],
-      "description": "Basic Sliding Number",
-      "files": [
-        {
-          "path": "registry/default/variants/m-sliding-number-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "className": ""
-      },
-      "name": "m-sliding-number-1",
-      "registryDependencies": [
-        "@cnippet/sliding-number"
-      ],
-      "type": "registry:block"
     },
     {
       "categories": [
