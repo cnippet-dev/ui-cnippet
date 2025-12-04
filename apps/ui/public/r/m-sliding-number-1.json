@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sliding-number-1",
+  "type": "registry:block",
+  "description": "Basic Sliding Number",
+  "registryDependencies": [
+    "@cnippet/sliding-number"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/m-sliding-number-1.tsx",
+      "content": "\"use client\";\r\nimport { SlidingNumber } from \"@/registry/default/motion/sliding-number\";\r\nimport { useEffect, useState } from \"react\";\r\n\r\nexport function Clock() {\r\n  const [hours, setHours] = useState(new Date().getHours());\r\n  const [minutes, setMinutes] = useState(new Date().getMinutes());\r\n  const [seconds, setSeconds] = useState(new Date().getSeconds());\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setHours(new Date().getHours());\r\n      setMinutes(new Date().getMinutes());\r\n      setSeconds(new Date().getSeconds());\r\n    }, 1000);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-0.5 font-mono\">\r\n      <SlidingNumber value={hours} padStart={true} />\r\n      <span className=\"text-zinc-500\">:</span>\r\n      <SlidingNumber value={minutes} padStart={true} />\r\n      <span className=\"text-zinc-500\">:</span>\r\n      <SlidingNumber value={seconds} padStart={true} />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "motion"
+  ]
+}

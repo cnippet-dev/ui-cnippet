@@ -104,7 +104,7 @@ export function LinkAsBadge() {
 }
 ```
 
-## Examples
+{/* ## Examples
 
 ### Outline
 
@@ -152,81 +152,4 @@ export function LinkAsBadge() {
 
 ### With Count
 
-<ComponentPreview name="v-badge-13" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Prop Mapping
-
-| Component | Radix UI Prop | Base UI Prop |
-| --------- | ------------- | ------------ |
-| `Badge`   | `asChild`     | `render`     |
-
-### Quick Checklist
-
-- Replace `asChild` → `render` on `Badge`
-
-### Additional Notes
-
-**Size Comparison**
-
-Compared to shadcn/ui, our `Badge` component includes size variants for better density control. shadcn/ui badges have a fixed size, while our component offers flexible sizing with `sm`, `default`, and `lg` options.
-
-So, if you want to preserve the original shadcn/ui badge size, you should use the `lg` size in coss ui.
-
-**New Variants**
-
-We've added new colored variants to the existing ones (`default`, `destructive`, `outline`, `secondary`) for better semantic meaning and visual communication:
-
-We've added new colored variants for better semantic meaning:
-
-| Variant   | Description                    |
-| --------- | ------------------------------ |
-| `info`    | Blue badge for information     |
-| `success` | Green badge for success states |
-| `warning` | Yellow badge for warnings      |
-| `error`   | Red badge for errors           |
-
-Ensure you have the following variables imported in your CSS file:
-
-- `--destructive-foreground`
-- `--info`
-- `--info-foreground`
-- `--success`
-- `--success-foreground`
-- `--warning`
-- `--warning-foreground`
-
-### Comparison Example
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:asChild]
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-
-export function LinkAsButton() {
-  return (
-    <Badge asChild>
-      <Link href="/login">Login</Link>
-    </Badge>
-  )
-}
-```
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:render]
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-
-export function LinkAsButton() {
-  return (
-    <Badge render={<Link href="/login" />}>Login</Badge>
-  )
-}
-```
-</span>
+<ComponentPreview name="v-badge-13" /> */}

@@ -126,7 +126,7 @@ The `SheetPopup` component supports the following props:
 </SheetPopup>
 ```
 
-## Examples
+{/* ## Examples
 
 ### Sheet with Inset
 
@@ -134,62 +134,4 @@ The `SheetPopup` component supports the following props:
 
 ### Side sheets
 
-<ComponentPreview name="v-sheet-3" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Quick Checklist
-
-- Replace `asChild` → `render` on `SheetTrigger` and closing buttons
-- Prefer `SheetPopup`; `SheetContent` remains for legacy
-- Use `SheetPanel` to wrap main content between `SheetHeader` and `SheetFooter`
-- If you used `asChild` on any other parts, switch to the `render` prop
-- `SheetPopup` supports `side` and `inset` props for positioning and spacing
-
-### Comparison Example
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:asChild]
-<Sheet>
-  <SheetTrigger asChild>
-    <Button variant="outline">Show Sheet</Button>
-  </SheetTrigger>
-  <SheetContent>
-    <SheetHeader>
-      <SheetTitle>Sheet Title</SheetTitle>
-      <SheetDescription>Sheet Description</SheetDescription>
-    </SheetHeader>
-    <SheetFooter>
-      <SheetClose asChild>
-        <Button variant="ghost">Cancel</Button>
-      </SheetClose>
-    </SheetFooter>
-  </SheetContent>
-</Sheet>
-```
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:render]
-// [!code word:<SheetPanel>Content</SheetPanel>]
-<Sheet>
-  <SheetTrigger render={<Button variant="outline" />}>
-    Show Sheet
-  </SheetTrigger>
-  <SheetPopup>
-    <SheetHeader>
-      <SheetTitle>Sheet Title</SheetTitle>
-      <SheetDescription>Sheet Description</SheetDescription>
-    </SheetHeader>
-    <SheetPanel>Content</SheetPanel>
-    <SheetFooter>
-      <SheetClose render={<Button variant="ghost" />}>Cancel</SheetClose>
-    </SheetFooter>
-  </SheetPopup>
-</Sheet>
-```
-</span>
+<ComponentPreview name="v-sheet-3" /> */}

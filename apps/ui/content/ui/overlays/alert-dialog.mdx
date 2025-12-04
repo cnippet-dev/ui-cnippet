@@ -104,7 +104,7 @@ The `AlertDialogFooter` component supports a `variant` prop to control its styli
 </AlertDialogFooter>
 ```
 
-## Examples
+{/* ## Examples
 
 ### Alert Dialog with Bare Footer
 
@@ -112,73 +112,4 @@ The `AlertDialogFooter` component supports a `variant` prop to control its styli
 
 ### Close Confirmation
 
-<ComponentPreview name="v-dialog-4" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Quick Checklist
-
-- Replace `asChild` → `render` on `AlertDialogTrigger` and closing buttons
-- Replace `AlertDialogAction` and `AlertDialogCancel` → `AlertDialogClose`
-- Prefer `AlertDialogPopup`; `AlertDialogContent` remains for legacy
-- Use `AlertDialogPanel` to wrap main content between `AlertDialogHeader` and `AlertDialogFooter`
-- If you used `asChild` on any other parts, switch to the `render` prop
-
-### Comparison Example
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:asChild]
-// [!code word:AlertDialogCancel]
-// [!code word:AlertDialogAction]
-<AlertDialog>
-  <AlertDialogTrigger asChild>
-    <Button variant="outline">Show Dialog</Button>
-  </AlertDialogTrigger>
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-      <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your
-        account and remove your data from our servers.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Cancel</AlertDialogCancel>
-      <AlertDialogAction>Continue</AlertDialogAction>
-    </AlertDialogFooter>
-  </AlertDialogContent>
-``` 
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:render]
-// [!code word:AlertDialogClose]
-// [!code word:<AlertDialogPanel>Content</AlertDialogPanel>]
-<AlertDialog>
-  <AlertDialogTrigger render={<Button variant="outline" />}>
-    Show Dialog
-  </AlertDialogTrigger>
-  <AlertDialogPopup>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-      <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your
-        account and remove your data from our servers.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogPanel>Content</AlertDialogPanel>
-    <AlertDialogFooter>
-      <AlertDialogClose render={<Button variant="ghost" />}>
-        Cancel
-      </AlertDialogClose>
-      <AlertDialogClose render={<Button variant="destructive" />}>
-        Continue
-      </AlertDialogClose>
-    </AlertDialogFooter>
-  </AlertDialogPopup>
-```
-</span>
+<ComponentPreview name="v-dialog-4" /> */}

@@ -124,7 +124,7 @@ import {
 </Menu>
 ```
 
-## Examples
+{/* ## Examples
 
 ### Open on Hover
 
@@ -156,66 +156,4 @@ import {
 
 ### Open a Dialog
 
-<ComponentPreview name="dialog-from-menu" />
-
-## Comparing with Radix / shadcn
-
-If you’re already familiar with Radix UI and shadcn/ui, this guide highlights the small differences and similarities so you can get started with **coss ui** quickly.
-
-### Prop Mapping
-
-| Component  | Radix UI Prop | Base UI Prop |
-| ---------- | ------------- | ------------ |
-| `MenuItem` | `onSelect`    | `onClick`    |
-
-### Quick Checklist
-
-- If you used `asChild` on parts, switch to the `render` prop
-- Replace `onSelect` → `onClick` on menu items
-- Update import path from `@/components/ui/dropdown-menu` → `@/components/ui/menu`
-- Prefer `Menu*` component names; `DropdownMenu*` remain for legacy
-- Prefer `MenuGroupLabel` instead of `DropdownMenuLabel`
-- Prefer `MenuPopup` instead of `DropdownMenuContent`
-- Prefer `MenuSubPopup` instead of `DropdownMenuSubContent`
-
-### Comparison Examples
-
-<span data-lib="radix-ui">
-```tsx title="shadcn/ui"
-// [!code word:onSelect]
-<DropdownMenu>
-  <DropdownMenuTrigger>Open menu</DropdownMenuTrigger>
-  <DropdownMenuContent>
-    <DropdownMenuItem
-      onSelect={() => {
-        console.log("Dashboard")
-      }}
-    >
-      Dashboard
-    </DropdownMenuItem>
-    <DropdownMenuItem>Settings</DropdownMenuItem>
-    <DropdownMenuItem>Sign out</DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
-```
-</span>
-
-<span data-lib="base-ui">
-```tsx title="coss ui"
-// [!code word:onClick]
-<Menu>
-  <MenuTrigger>Open menu</MenuTrigger>
-  <MenuPopup>
-    <MenuItem
-      onClick={() => {
-        console.log("Dashboard")
-      }}
-    >
-      Dashboard
-    </MenuItem>
-    <MenuItem>Settings</MenuItem>
-    <MenuItem>Sign out</MenuItem>
-  </MenuPopup>
-</Menu>
-```
-</span>
+<ComponentPreview name="dialog-from-menu" /> */}

@@ -536,7 +536,7 @@ export const variants: ParticleItem[] = [
     categories: categories("tooltip"),
     description: "Basic tooltip",
     files: [{ path: "variants/v-tooltip-1.tsx", type: "registry:block" }],
-      meta: {
+    meta: {
       className: "",
     },
     name: "v-tooltip-1",
