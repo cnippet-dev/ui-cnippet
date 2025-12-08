@@ -51,7 +51,7 @@ const Components = () => {
   return (
     <>
       <section className=" relative px-10 w-full   pb-20">
-        <div className="bg-linear-to-b from-[#121212]">
+        <div className="">
           <div className="max-w-6xl mx-auto">
             <motion.h2
               {...fadeUp({
@@ -68,9 +68,10 @@ const Components = () => {
               {...fadeUp({ delay: 0.3, duration: 0.8, y: 10 })}
               className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
             >
-              Foundation components built for performance and accessibility.
+              Foundation components built for performance and accessibility. Each component is carefully crafted with
+              animations and interactions to elevate your user experience.
             </motion.p>
-            <motion.a
+            {/* <motion.a
               {...fadeUp({ delay: 0.4, duration: 0.8, y: 10 })}
               href="/components"
               target="_blank"
@@ -78,7 +79,7 @@ const Components = () => {
             >
               Explore Components
               <RiArrowRightUpLine className="ml-1 size-4 transition-transform duration-300 group-hover:rotate-45" />
-            </motion.a>
+            </motion.a> */}
           </div>
           <div className="max-w-6xl mx-auto pt-10 grid grid-cols-4 gap-5">
             {items.map((item, index) => (
@@ -89,7 +90,7 @@ const Components = () => {
                     href={item.url}
                   >
                     <Image
-                      src={`/images/${item.title}.png`}
+                      src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1765176526/${item.title}.png`}
                       alt=""
                       width={1920}
                       height={1080}

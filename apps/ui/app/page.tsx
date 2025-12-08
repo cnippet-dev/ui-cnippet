@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { ReactLenis } from "lenis/react";
 
 const Hero = dynamic(() => import("@/components/routes/home/hero"));
+const Components = dynamic(() => import("@/components/routes/home/components"));
 
 export default function Home() {
   return (
@@ -12,11 +13,10 @@ export default function Home() {
         <div className="">
           <main className="">
             <Hero />
-            {/* <Components /> */}
+            <Components />
           </main>
         </div>
       </ReactLenis>
     </>
   );
 }
-
