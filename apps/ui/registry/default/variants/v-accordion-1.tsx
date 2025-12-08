@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/registry/default/ui/accordion";
 
-export default function Particle() {
+export default function Component() {
   const items = [
     {
       content:
