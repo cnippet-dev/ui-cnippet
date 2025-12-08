@@ -1,303 +1,205 @@
-// import { forwardRef } from "react";
-// import Link from "next/link";
-// import { motion } from "motion/react";
-// import { RiArrowRightUpLine, RiSparkling2Fill } from "@remixicon/react";
-// import { fadeUp, fadeUpBlur, zoomIn } from "cnippet-aos";
-// import Spline from "@splinetool/react-spline";
+"use client";
 
-// import { Button } from "@/components/ui/button";
-// import { TextLoop } from "@/components/motion/text-loop";
-// import "./home.css";
+import TextRotate from "@/components/motion/text-rotate";
 
-// const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-//   (props, ref) => {
-//     return (
-//       <>
-//         <div
-//           style={{
-//             position: "relative",
-//             height: "100vh",
-//             zIndex: 0,
-//           }}
-//           className=" w-full max-w-full px-10 isolate
-//         "
-//         >
-//           <Spline scene="https://prod.spline.design/BNaurVSeS57NeyWI/scene.splinecode" />
-//         </div>
+import { useEffect } from "react";
+import { motion, stagger, LayoutGroup, useAnimate } from "motion/react";
 
-//         <div className="hero-header w-full">
-//           <section className="relative flex items-center justify-center h-full ">
-//             <div className="relative z-10">
-//               <div className="mx-auto flex max-w-5xl flex-col items-center justify-center px-6 py-32 text-center">
-//                 <motion.h1
-//                   {...fadeUpBlur({ delay: 0.1, duration: 0.8 })}
-//                   className="font-normal mb-6 max-w-full text-4xl tracking-tight leading-tight text-gray-900 md:text-6xl lg:text-5xl dark:text-gray-100"
-//                 >
-//                   Build faster with production-ready{" "}
-//                   <motion.span
-//                     {...zoomIn({ delay: 0.1, duration: 0.5 })}
-//                     className="relative mt-2 rounded-lg inline-flex items-center border border-dashed px-4"
-//                   >
-//                     <RiSparkling2Fill className="size-10 text-indigo-600" />
-//                     Cnippet UI
-//                   </motion.span>{" "}
-//                   components
-//                 </motion.h1>
+import Floating, {
+  FloatingElement,
+} from "@/components/motion/parallax-floating";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
+import { TextShimmerWave } from "@/components/motion/text-wave";
+import BoxCarouselDemo from "@/components/routes/home/_c/box-carousel-demo";
+import VerticalCutReveal from "@/components/routes/home/_c/vertical-cut-reveal-demo";
+import Link from "next/link";
+import { RiArrowRightUpLine } from "@remixicon/react";
+import { zoomIn } from "cnippet-aos";
+import BreathingText from "@/components/motion/breathing-text";
+import MarqueeAlongSvgPathDemo from "./_c/marquee-along-svg-path-demo";
+import Typewriter from "@/components/motion/typewriter";
+import CirclingElementsDemo from "./_c/circling-elements-demo";
+import TextCursorProximityDemo from "@/components/routes/home/_c/text-cursor-proximity-demo";
 
-//                 <motion.div
-//                   {...fadeUp({
-//                     delay: 0.3,
-//                     duration: 0.6,
-//                     y: 20,
-//                   })}
-//                   className="mb-8 max-w-2xl text-center text-lg leading-relaxed tracking-tight wrap-break-word text-gray-700 dark:text-gray-400"
-//                 >
-//                   Production-ready React components, animations, and charts to
-//                   ship your next project faster. Perfect for{" "}
-//                   <motion.span
-//                     {...zoomIn({ delay: 0.3, duration: 0.5 })}
-//                     className="inline-block w-24 text-left font-semibold text-gray-900 dark:text-gray-100"
-//                   >
-//                     <TextLoop
-//                       interval={5}
-//                       className="font-mono text-lg font-normal"
-//                     >
-//                       <span>Startups</span>
-//                       <span>Developers</span>
-//                       <span>Agencies</span>
-//                       <span>Teams</span>
-//                     </TextLoop>
-//                   </motion.span>
-//                 </motion.div>
-
-//                 <motion.div
-//                   ref={ref}
-//                   {...zoomIn({
-//                     delay: 0.6,
-//                     duration: 0.5,
-//                   })}
-//                   className="mb-4 flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-//                 >
-//                   <Button
-//                     size="lg"
-//                     className="group cursor-pointer rounded-full bg-indigo-700/90 px-8 py-1 border-none text-sm text-white shadow-none hover:bg-indigo-700"
-//                   >
-//                     <Link
-//                       href="/components"
-//                       className="flex items-center gap-2"
-//                     >
-//                       Get Started
-//                       <RiArrowRightUpLine className="group-hover:rotate-45 transition-all duration-500" />
-//                     </Link>
-//                   </Button>
-
-//                   <Button
-//                     variant="secondary"
-//                     size="lg"
-//                     className="flex items-center space-x-2 shadow-none rounded-full text-sm"
-//                   >
-//                     <Link href="/docs">View Components</Link>
-//                   </Button>
-//                 </motion.div>
-
-//                 <motion.p
-//                   {...fadeUp({ delay: 0.8, duration: 0.4 })}
-//                   className="text-xs text-gray-700 dark:text-gray-400"
-//                 >
-//                   Open-source • TypeScript • Fully customizable
-//                 </motion.p>
-//               </div>
-//             </div>
-//           </section>
-//         </div>
-//       </>
-//     );
-//   }
-// );
-
-// Hero.displayName = "Hero";
-
-// export default Hero;
-
-
-"use client"
-
-import * as React from "react"
-import { type VariantProps, cva } from "class-variance-authority"
-import { type HTMLMotionProps, type MotionValue, motion, useScroll, useTransform } from "motion/react"
-
-import { cn } from "@/lib/utils"
-import { FloatingElement } from "@/components/motion/parallax-floating"
-
-const bentoGridVariants = cva(
-  "relative grid gap-4 [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
+const exampleImages = [
   {
-    variants: {
-      variant: {
-        default: `
-          grid-cols-8 grid-rows-[1fr_0.5fr_0.5fr_1fr]
-          [&>*:first-child]:col-span-8 md:[&>*:first-child]:col-span-6 [&>*:first-child]:row-span-3
-          [&>*:nth-child(2)]:col-span-2 md:[&>*:nth-child(2)]:row-span-2 [&>*:nth-child(2)]:hidden md:[&>*:nth-child(2)]:block
-          [&>*:nth-child(3)]:col-span-2 md:[&>*:nth-child(3)]:row-span-2 [&>*:nth-child(3)]:hidden md:[&>*:nth-child(3)]:block
-          [&>*:nth-child(4)]:col-span-4 md:[&>*:nth-child(4)]:col-span-3
-          [&>*:nth-child(5)]:col-span-4 md:[&>*:nth-child(5)]:col-span-3
-        `,
-        threeCells: `
-          grid-cols-2 grid-rows-2
-          [&>*:first-child]:col-span-2
-      `,
-        fourCells: `
-        grid-cols-3 grid-rows-2
-        [&>*:first-child]:col-span-1
-        [&>*:nth-child(2)]:col-span-2
-        [&>*:nth-child(3)]:col-span-2
-      `,
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h7.jpg",
   },
-)
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h2.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h3.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h4.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h5.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h6.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h7.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/dcxm3ccir/image/upload/v1762330718/h8.jpg",
+  },
+];
 
-interface ContainerScrollContextValue {
-  scrollYProgress: MotionValue<number>
-}
-const ContainerScrollContext = React.createContext<ContainerScrollContextValue | undefined>(undefined)
-function useContainerScrollContext() {
-  const context = React.useContext(ContainerScrollContext)
-  if (!context) {
-    throw new Error("useContainerScrollContext must be used within a ContainerScroll Component")
-  }
-  return context
-}
-const ContainerScroll = ({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-  })
-  return (
-    <ContainerScrollContext.Provider value={{ scrollYProgress }}>
-      <div ref={scrollRef} className={cn("relative min-h-screen w-full", className)} {...props}>
-        {children}
-      </div>
-    </ContainerScrollContext.Provider>
-  )
-}
+const Hero = () => {
+  const [scope, animate] = useAnimate();
 
-const BentoGrid = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof bentoGridVariants>
->(({ variant, className, ...props }, ref) => {
-  return <div ref={ref} className={cn(bentoGridVariants({ variant }), className)} {...props} />
-})
-BentoGrid.displayName = "BentoGrid"
-
-const BentoCell = React.forwardRef<
-  HTMLDivElement,
-  HTMLMotionProps<"div"> & {
-    depth?: number
-    useFloating?: boolean
-  }
->(({ className, style, children, depth = 1, useFloating = false, ...props }, ref) => {
-  const { scrollYProgress } = useContainerScrollContext()
-  const cellRef = React.useRef<HTMLDivElement>(null)
-  React.useImperativeHandle(ref, () => cellRef.current as HTMLDivElement)
-
-  // When scroll is 0-10%, floating element handles the animation
-  // When scroll > 10%, scroll transforms take over
-  const finalTranslate = useTransform(scrollYProgress, (value) => {
-    // Only apply scroll animation when scroll > 10% (0.1)
-    if (value > 0.1) {
-      // Normalize scroll progress from 0.1-0.9 to 0-1 range
-      const progress = (value - 0.1) / 0.8
-      // Animate from -35% to 0%
-      return `${-35 + progress * 35}%`
-    }
-    // During floating phase (0-10%), no translate
-    return "0%"
-  })
-
-  const finalScale = useTransform(scrollYProgress, (value) => {
-    // Only apply scroll animation when scroll > 10% (0.1)
-    if (value > 0.1) {
-      // Normalize scroll progress from 0.1-0.9 to 0-1 range
-      const progress = (value - 0.1) / 0.8
-      // Animate from 0.5 to 1
-      return 0.5 + progress * 0.5
-    }
-    // During floating phase (0-10%), no scale transform
-    return 1
-  })
-
-  // Track whether floating should be disabled (when scroll > 10%)
-  const [floatingDisabled, setFloatingDisabled] = React.useState(false)
-
-  React.useEffect(() => {
-    if (!useFloating) return
-
-    const unsubscribe = scrollYProgress.on("change", (value) => {
-      // Disable floating when scroll passes 10% threshold
-      setFloatingDisabled(value > 0.1)
-    })
-    return unsubscribe
-  }, [scrollYProgress, useFloating])
-
-  // When useFloating is true, wrap with FloatingElement for 0-10% animation
-  // Scroll transforms activate after 10%
-  if (useFloating) {
-    return (
-      <div ref={cellRef} className={cn("relative", className)} {...(props as React.HTMLAttributes<HTMLDivElement>)}>
-        <FloatingElement depth={depth} className="w-full h-full" disabled={floatingDisabled}>
-          <motion.div
-            className="w-full h-full"
-            style={{
-              translate: finalTranslate,
-              scale: finalScale,
-            }}
-          >
-            {children}
-          </motion.div>
-        </FloatingElement>
-      </div>
-    )
-  }
+  // useEffect(() => {
+  //   animate(
+  //     "img",
+  //     { opacity: [0, 1] },
+  //     { duration: 0.5, delay: stagger(0.15) }
+  //   );
+  // }, []);
 
   return (
-    <motion.div
-      ref={cellRef}
-      className={className}
-      style={{ translate: finalTranslate, scale: finalScale, ...style }}
-      {...props}
+    <div
+      className="flex w-dvw h-dvh justify-center items-center grain bg-black overflow-hidden"
+      ref={scope}
     >
-      {children}
-    </motion.div>
-  )
-})
-BentoCell.displayName = "BentoCell"
+      {/* <motion.div
+        className="z-50 text-center space-y-4 items-center max-w-xl flex flex-col"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.88, delay: 1.5 }}
+      >
+        <p className="text-5xl md:text-7xl z-50 text-white font-calendas italic">
+          Build faster with production-ready Cnippet UI components
+        </p>
+        <p className="text-xs z-50 hover:scale-110 transition-transform bg-white text-black rounded-full py-2 w-20 cursor-pointer">
+          Download
+        </p>
+      </motion.div> */}
+      <div className="w-dvw h-dvh text-2xl sm:text-3xl md:text-6xl flex flex-col gap-2 items-center justify-center dark:text-muted text-white font-light overflow-hidden p-12 sm:p-20 md:p-24">
+        <LayoutGroup>
+          <motion.div className="flex relative z-100 whitespace-pre" layout>
+            <motion.span
+              className="pt-0.5 sm:pt-1 md:pt-2"
+              layout
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            >
+              Ship{" "}
+            </motion.span>
+            <TextRotate
+              texts={[
+                "stunning-interfaces",
+                "pixel-perfect ✨",
+                "production-ready",
+                "bulletproof",
+                "premium",
+                "dev-candy 🍬",
+                "code-bliss",
+                "slick-UI",
+                "crisp-designs",
+                "fire-components 🔥",
+              ]}
+              mainClassName="text-white px-2 sm:px-2 md:px-3 bg-violet-700 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-xl"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={4000}
+            />
+            <motion.span
+              className="pt-0.5 sm:pt-1 md:pt-2"
+              layout
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            >
+              {" "}
+              faster
+            </motion.span>
+          </motion.div>
+        </LayoutGroup>
 
-const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-  ({ className, style, ...props }, ref) => {
-    const { scrollYProgress } = useContainerScrollContext()
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+        <motion.p>with Cnippet UI.</motion.p>
 
-    const position = useTransform(scrollYProgress, (pos) => (pos >= 0.6 ? "absolute" : "fixed"))
-    return (
-      <motion.div
-        ref={ref}
-        className={cn("left-1/2 top-1/2  size-fit", className)}
-        style={{
-          translate: "-50% -50%",
-          scale,
-          position,
-          opacity,
-          ...style,
-        }}
-        {...props}
-      />
-    )
-  },
-)
-ContainerScale.displayName = "ContainerScale"
-export { ContainerScroll, BentoGrid, BentoCell, ContainerScale }
+        <motion.p className=" pt-10 text-base max-w-xl text-center">
+          Production-ready React components, smart animations & insightful
+          charts. Perfect for startups, developers, agencies and driven teams.
+        </motion.p>
+
+        <motion.div
+          {...zoomIn({
+            delay: 0.6,
+            duration: 0.5,
+          })}
+          className="mt-4 flex flex-col relative z-100 items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+        >
+          <Button
+            size="lg"
+            render={<Link href="/ui/actions/button" />}
+            className="group cursor-pointer rounded-full bg-indigo-700/90 px-8 py-1 border-none text-sm text-white shadow-none hover:bg-indigo-700"
+          >
+            Get Started
+            <RiArrowRightUpLine className="group-hover:rotate-45 transition-all duration-500" />
+          </Button>
+        </motion.div>
+      </div>
+
+      <Floating sensitivity={-1} className="overflow-hidden z-90">
+        <FloatingElement depth={0.5} className="top-[40%] left-[1%] ">
+          <BoxCarouselDemo />
+        </FloatingElement>
+
+        <FloatingElement depth={0.5} className="top-[10%] left-[25%] ">
+          <div className="text-3xl sm:text-4xl md:text-5xl flex flex-row gap-12 items-center justify-center font-overused-grotesk">
+            <div className="flex flex-col items-center justify-center text-white">
+              <BreathingText
+                staggerDuration={0.08}
+                fromFontVariationSettings="'wght' 100, 'slnt' 0"
+                toFontVariationSettings="'wght' 800, 'slnt' -10"
+              >
+                Breathing Text
+              </BreathingText>
+            </div>
+          </div>
+        </FloatingElement>
+
+        <FloatingElement depth={2} className="top-[5%] left-[2%] ">
+          <div className="md:text-3xl lg:text-4xl sm:text-2xl text-xl flex flex-row items-start justify-start text-white font-normal overflow-hidden p-16 pt-48">
+            <p className="whitespace-pre-wrap">
+              <span> </span>
+              <Typewriter
+                text={[
+                  "This",
+                  "is",
+                  "what a ",
+                  "typewritter",
+                  "effect looks like 😊",
+                ]}
+                speed={70}
+                className="text-yellow-500 text-pretty"
+                waitTime={1500}
+                deleteSpeed={40}
+                cursorChar={"_"}
+              />
+            </p>
+          </div>
+        </FloatingElement>
+
+        <FloatingElement depth={2} className="top-[0%] right-0">
+          <div className=" -z-10 overflow-hidden">
+            <MarqueeAlongSvgPathDemo />
+          </div>
+        </FloatingElement>
+
+        <FloatingElement depth={3} className="top-[80%] left-[70%]">
+            <TextCursorProximityDemo />
+        </FloatingElement>
+      </Floating>
+    </div>
+  );
+};
+
+export default Hero;
