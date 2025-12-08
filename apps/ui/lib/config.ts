@@ -27,11 +27,11 @@ export const siteConfig = {
   products: [
     {
       href: "/",
-      label: "ui",
+      label: "blocks",
     },
     {
-      href: "/calendar",
-      label: "calendar",
+      href: "/",
+      label: "next",
       upcoming: true,
     },
     {

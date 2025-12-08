@@ -6,38 +6,34 @@ import { RiArrowRightUpLine, RiSparkling2Fill } from "@remixicon/react";
 import { fadeUp, zoomIn } from "cnippet-aos";
 
 import { Button } from "@/components/ui/button";
-import { TextLoop } from "@/components/motion/text-loop";
 import Typewriter from "@/components/motion/typewriter";
 
 const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   (props, ref) => {
     return (
       <div className="h-full">
-        <section className="relative flex items-center justify-center h-full overflow-hidden">
+        <section className="relative flex items-center justify-center h-full overflow-hidden px-4 sm:px-6">
           <div className="absolute inset-0 opacity-50 pointer-events-none">
             <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
           </div>
 
-          <div className="relative z-10">
-            <div className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-40 text-center">
+          <div className="relative">
+            <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-28 sm:py-36 md:py-40 text-center">
               <motion.div
                 {...fadeUp({ delay: 0.1, duration: 0.8 })}
                 className="mb-4 space-y-3"
               >
-                <p className="text-sm font-medium tracking-widest text-primary/70 uppercase">
+                <p className="text-xs sm:text-sm font-medium tracking-widest text-primary/70 uppercase">
                   Build Faster Than Ever
                 </p>
 
-                <h1 className="text-6xl md:text-6xl font-medium tracking-tight leading-tight text-balance">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight text-balance">
                   Ship stunning interfaces faster with Cnippet UI.
-                  {/* <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                  UI Components
-                </span> */}
                 </h1>
               </motion.div>
 
-              <motion.p
+              <motion.div
                 {...fadeUp({
                   delay: 0.3,
                   duration: 0.6,
@@ -63,7 +59,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                   deleteSpeed={40}
                   cursorChar={"_"}
                 />
-              </motion.p>
+              </motion.div>
 
               <motion.div
                 ref={ref}
@@ -75,7 +71,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
               >
                 <Button
                   size="lg"
-                  className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+                  className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
                 >
                   <Link href="/components" className="flex items-center gap-2">
                     Get Started
@@ -86,7 +82,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-full bg-transparent"
+                  className="rounded-full bg-transparent w-full sm:w-auto"
                 >
                   <Link href="/docs">View Components</Link>
                 </Button>
