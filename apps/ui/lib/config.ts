@@ -19,56 +19,31 @@ export const appConfig = {
 export const siteConfig = {
   description: "cnippet.dev- the everything but AI company.",
   links: {
-    github: "https://github.com/cosscom/coss",
-    twitter: "https://x.com/coss_com",
+    github: "https://github.com/cnippet-dev/ui-cnippet",
+    twitter: "",
   },
   name: "coss.com",
   ogImage: "https://coss.com/og.jpg",
   products: [
     {
       href: "/",
+      label: "ui",
+    },
+    {
+      href: "https://blocks.cnippet.dev/",
       label: "blocks",
     },
     {
-      href: "/",
+      href: "https://next.cnippet.dev/",
       label: "next",
-      upcoming: true,
+      // upcoming: true,
     },
     {
-      href: "/scheduling",
-      label: "scheduling",
-      upcoming: true,
+      href: "https://aos.cnippet.dev/",
+      label: "aos",
+      // upcoming: true,
     },
-    {
-      href: "/auth",
-      label: "auth",
-      upcoming: true,
-    },
-    {
-      href: "/email",
-      label: "email",
-      upcoming: true,
-    },
-    {
-      href: "/video",
-      label: "video",
-      upcoming: true,
-    },
-    {
-      href: "/payments",
-      label: "payments",
-      upcoming: true,
-    },
-    {
-      href: "/sms",
-      label: "sms",
-      upcoming: true,
-    },
-    {
-      href: "/notifications",
-      label: "notifications",
-      upcoming: true,
-    },
+    
   ],
   url: "https://coss.com",
 };

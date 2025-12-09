@@ -9,13 +9,16 @@ import * as React from "react";
 export function GitHubLink() {
   return (
     <Button
-      className="relative h-8 shadow-none max-sm:w-8"
+      className="relative hidden h-8 shadow-none max-sm:w-8 md:flex"
       render={
         <Link href={siteConfig.links.github} rel="noreferrer" target="_blank">
           <HugeiconsIcon className="size-4" icon={GithubIcon} strokeWidth={2} />
           <span className="max-sm:sr-only">
             <React.Suspense fallback={<Skeleton className="h-4 w-[25.5px]" />}>
               <StarsCount />
+              <span className="text-muted-foreground w-8 text-xs tabular-nums">
+                .1k
+              </span>
             </React.Suspense>
           </span>
         </Link>
@@ -28,9 +31,12 @@ export function GitHubLink() {
 
 export async function StarsCount() {
   try {
-    const data = await fetch("https://api.github.com/repos/cnippet-dev/ui-cnippet", {
-      next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
-    });
+    const data = await fetch(
+      "https://api.github.com/repos/cnippet-dev/ui-cnippet",
+      {
+        next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
+      },
+    );
 
     if (!data.ok) {
       throw new Error(`GitHub API error: ${data.status}`);
@@ -44,7 +50,7 @@ export async function StarsCount() {
     }
 
     return (
-      <span className="w-8 text-muted-foreground text-xs tabular-nums">
+      <span className="text-muted-foreground w-8 text-xs tabular-nums">
         {starsCount >= 1000
           ? `${(starsCount / 1000).toFixed(1)}k`
           : starsCount.toLocaleString()}

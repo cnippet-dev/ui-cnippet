@@ -36,6 +36,8 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "rehype-pretty-code": "^0.14.1",
     "rimraf": "^6.1.2",
     "shiki": "^3.19.0",

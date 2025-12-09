@@ -1,4 +1,4 @@
 {
-  "pages": ["(root)", "core-components", "motion-components"],
+  "pages": ["(root)", "core-components"],
   "root": true
 }

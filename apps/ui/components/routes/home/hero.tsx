@@ -12,23 +12,23 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   (props, ref) => {
     return (
       <div className="h-full">
-        <section className="relative flex items-center justify-center h-full overflow-hidden px-4 sm:px-6">
-          <div className="absolute inset-0 opacity-50 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+        <section className="relative flex h-full items-center justify-center overflow-hidden px-4 sm:px-6">
+          <div className="pointer-events-none absolute inset-0 opacity-50">
+            <div className="animate-blob absolute top-0 left-1/4 h-96 w-96 rounded-full opacity-20 mix-blend-multiply blur-3xl filter" />
+            <div className="animate-blob animation-delay-2000 absolute right-1/4 bottom-0 h-96 w-96 rounded-full opacity-20 mix-blend-multiply blur-3xl filter" />
           </div>
 
           <div className="relative">
-            <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-28 sm:py-36 md:py-40 text-center">
+            <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 py-28 text-center sm:px-6 sm:py-36 md:px-8 md:py-40">
               <motion.div
                 {...fadeUp({ delay: 0.1, duration: 0.8 })}
                 className="mb-4 space-y-3"
               >
-                <p className="text-xs sm:text-sm font-medium tracking-widest text-primary/70 uppercase">
+                <p className="text-primary/70 text-xs font-medium tracking-widest uppercase sm:text-sm">
                   Build Faster Than Ever
                 </p>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight text-balance">
+                <h1 className="text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl md:text-6xl">
                   Ship stunning interfaces faster with Cnippet UI.
                 </h1>
               </motion.div>
@@ -39,7 +39,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                   duration: 0.6,
                   y: 20,
                 })}
-                className="mb-6 max-w-xl  text-muted-foreground"
+                className="text-muted-foreground mb-6 max-w-xl"
               >
                 <span>
                   {
@@ -47,14 +47,9 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                   }
                 </span>
                 <Typewriter
-                  text={[
-                    "Startups",
-                    "Developers",
-                    "Agencies",
-                    "Teams",
-                  ]}
+                  text={["Startups", "Developers", "Agencies", "Teams"]}
                   speed={70}
-                  className="text-blue-600 text-pretty"
+                  className="text-pretty text-blue-600"
                   waitTime={1500}
                   deleteSpeed={40}
                   cursorChar={"_"}
@@ -71,9 +66,9 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
               >
                 <Button
                   size="lg"
-                  className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-full shadow-lg transition-all hover:shadow-xl sm:w-auto"
                 >
-                  <Link href="/components" className="flex items-center gap-2">
+                  <Link href="/docs/introduction" className="flex items-center gap-2">
                     Get Started
                     <RiArrowRightUpLine className="size-4" />
                   </Link>
@@ -82,9 +77,9 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-full bg-transparent w-full sm:w-auto"
+                  className="w-full rounded-full bg-transparent sm:w-auto"
                 >
-                  <Link href="/docs">View Components</Link>
+                  <Link href="/ui/actions/button">View Components</Link>
                 </Button>
               </motion.div>
 
@@ -96,12 +91,12 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                   (feature) => (
                     <div
                       key={feature}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent-foreground border border-accent/20"
+                      className="bg-accent/10 text-accent-foreground border-accent/20 inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium"
                     >
                       <RiSparkling2Fill className="size-3" />
                       {feature}
                     </div>
-                  )
+                  ),
                 )}
               </motion.div>
             </div>
@@ -109,7 +104,7 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
         </section>
       </div>
     );
-  }
+  },
 );
 
 Hero.displayName = "Hero";
