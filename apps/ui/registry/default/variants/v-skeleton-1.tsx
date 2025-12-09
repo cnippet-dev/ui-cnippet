@@ -30,15 +30,15 @@ const users = [
     name: "Mark Bennett Andersson",
     role: "Product Designer",
   },
-  {
-    delay: 3400,
-    fallback: "AR",
-    followers: "12k",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&dpr=2&q=80",
-    name: "Alex Rivera",
-    role: "UI/UX Designer",
-  },
+  // {
+  //   delay: 3400,
+  //   fallback: "AR",
+  //   followers: "12k",
+  //   image:
+  //     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&dpr=2&q=80",
+  //   name: "Alex Rivera",
+  //   role: "UI/UX Designer",
+  // },
 ];
 
 function UserCard({ delay, user }: { delay: number; user: (typeof users)[0] }) {

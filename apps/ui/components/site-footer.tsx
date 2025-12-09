@@ -9,17 +9,15 @@ export function SiteFooter() {
         </Link>
       </p>
       <p className="text-muted-foreground text-sm">
-        Built by and for the team of{" "}
+        Built with 💙 by{" "}
         <a
           className="font-medium underline-offset-4 hover:underline"
-          href="https://cal.com"
+          href="https://deepak.cnippet.dev"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Cal.com
+          Deepak
         </a>
-        , Inc. — the leading commercial open source company
-        (&ldquo;coss&rdquo;).
       </p>
     </footer>
   );

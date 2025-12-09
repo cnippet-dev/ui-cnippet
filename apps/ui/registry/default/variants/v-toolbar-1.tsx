@@ -37,7 +37,7 @@ const items = [
 export default function Particle() {
   return (
     <TooltipProvider>
-      <Toolbar>
+      <Toolbar className="flex flex-wrap">
         <ToggleGroup className="border-none p-0" defaultValue={["left"]}>
           <Tooltip>
             <TooltipTrigger

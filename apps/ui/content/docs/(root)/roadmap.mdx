@@ -1,26 +1,20 @@
 ---
 title: Roadmap
-description: Current state of coss ui and where we’re headed next.
+description: Current state of cnippet ui and where we’re headed next..
 ---
 
-**coss ui** is the evolution of **Origin UI**, an open-source collection of React and Tailwind components created by Pasquale Vitiello and Davide Pacilio. It was recently **acquired by Cal.com** and grown into a broader, more ambitious ecosystem, with Pasquale contributing directly to the development of the new UI.
-
-Our goal is to **bring together the best parts of Origin UI** with a stronger foundation—Base UI primitives—so developers get not just components, but a layered system of **primitives**, **particles**, and **atoms**.
-
-## Origin UI
-
-Origin UI offered a large collection of 600+ ready-to-use UI components. With the **transition to coss ui**:
-
-- The existing **Origin UI components** will evolve into **particles**—higher-level UI patterns composed of Base UI primitives.
-- The original Origin UI collection remains available on [this page](/origin), so developers can continue to access it during the transition.
+**cnippet** brings components, blocks, and implementation guides together so teams can move from idea to production quickly. Here's how each surface is evolving.
 
 ## Current Status
 
-- **40+ UI primitives** already available, with more on the way.
-- A **growing set of particles**, progressively expanding to match and surpass the current Origin UI collection.
+- **ui.cnippet.site (alpha is live, beta in progress):** 40+ core primitives, growing motion components (text effects, marquee, scroll progress, carousel), and early chart components (area, bar, line). Built on Base UI with Tailwind V4 tokens.
+- **block.cnippet.site (live):** Sections (hero, features, team, pricing), full pages (landing, about, contact), and complete templates that reuse the same cnippet ui primitives for consistency.
+- **next.cnippet.site (alpha in progress):** Practical guides for production tasks—authentication, payment gateways, deployment, observability, and more.
 
 ## What’s Next
 
-- Expand the **primitives set**, ensuring full coverage of common UI needs.
-- Add more **particles**, aligning with and eventually replacing the original Origin UI collection.
-- Introduce **atoms**, API-enhanced components that bring external integrations out of the box.
+- **More primitives:** Close gaps across forms, navigation, data display, and overlays.
+- **Motion + charts beta:** Expand motion catalog and ship opinionated chart presets with theme-aware defaults.
+- **Blocks & templates:** Broaden sections and full templates; keep parity with component updates.
+- **Guides library:** Publish deep-dives for auth (NextAuth, custom providers), payments (Stripe and others), file storage, email, and real-time patterns.
+- **Atoms:** API-enhanced components that bundle UI with integrations (auth flows, checkout, scheduling) for drop-in usage.

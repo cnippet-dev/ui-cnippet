@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { ReactLenis } from "lenis/react";
+import { Footer } from "@/components/shared/footer";
 
 const Hero = dynamic(() => import("@/components/routes/home/hero"));
 const Components = dynamic(() => import("@/components/routes/home/components"));
@@ -17,6 +18,7 @@ export default function Home() {
           </main>
         </div>
       </ReactLenis>
+      <Footer />
     </>
   );
 }
