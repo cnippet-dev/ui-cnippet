@@ -65,7 +65,7 @@ export const Index: Record<string, any> = {
     name: "autocomplete",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/input","@coss/scroll-area"],
+    registryDependencies: ["input","scroll-area"],
     files: [{
       path: "registry/default/ui/autocomplete.tsx",
       type: "registry:ui",
@@ -227,7 +227,7 @@ export const Index: Record<string, any> = {
     name: "combobox",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/input","@coss/scroll-area"],
+    registryDependencies: ["input","scroll-area"],
     files: [{
       path: "registry/default/ui/combobox.tsx",
       type: "registry:ui",
@@ -245,7 +245,7 @@ export const Index: Record<string, any> = {
     name: "dialog",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/scroll-area"],
+    registryDependencies: ["scroll-area"],
     files: [{
       path: "registry/default/ui/dialog.tsx",
       type: "registry:ui",
@@ -353,7 +353,7 @@ export const Index: Record<string, any> = {
     name: "group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/separator"],
+    registryDependencies: ["separator"],
     files: [{
       path: "registry/default/ui/group.tsx",
       type: "registry:ui",
@@ -389,7 +389,7 @@ export const Index: Record<string, any> = {
     name: "input-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/input","@coss/textarea"],
+    registryDependencies: ["input","textarea"],
     files: [{
       path: "registry/default/ui/input-group.tsx",
       type: "registry:ui",
@@ -479,7 +479,7 @@ export const Index: Record<string, any> = {
     name: "number-field",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/label"],
+    registryDependencies: ["label"],
     files: [{
       path: "registry/default/ui/number-field.tsx",
       type: "registry:ui",
@@ -497,7 +497,7 @@ export const Index: Record<string, any> = {
     name: "pagination",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/button"],
+    registryDependencies: ["button"],
     files: [{
       path: "registry/default/ui/pagination.tsx",
       type: "registry:ui",
@@ -641,7 +641,7 @@ export const Index: Record<string, any> = {
     name: "sheet",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/scroll-area"],
+    registryDependencies: ["scroll-area"],
     files: [{
       path: "registry/default/ui/sheet.tsx",
       type: "registry:ui",
@@ -659,7 +659,7 @@ export const Index: Record<string, any> = {
     name: "sidebar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/button","@coss/input","@coss/separator","@coss/sheet","@coss/skeleton","@coss/tooltip","@coss/use-mobile","@coss/utils"],
+    registryDependencies: ["button","input","separator","sheet","skeleton","tooltip","use-mobile","utils"],
     files: [{
       path: "registry/default/ui/sidebar.tsx",
       type: "registry:ui",
@@ -803,7 +803,7 @@ export const Index: Record<string, any> = {
     name: "toast",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/button"],
+    registryDependencies: ["button"],
     files: [{
       path: "registry/default/ui/toast.tsx",
       type: "registry:ui",
@@ -839,7 +839,7 @@ export const Index: Record<string, any> = {
     name: "toggle-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/separator","@coss/toggle"],
+    registryDependencies: ["separator","toggle"],
     files: [{
       path: "registry/default/ui/toggle-group.tsx",
       type: "registry:ui",
