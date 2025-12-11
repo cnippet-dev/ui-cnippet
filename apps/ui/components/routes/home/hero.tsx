@@ -33,19 +33,26 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                 </h1>
               </motion.div>
 
-              <motion.div
+              <motion.p
                 {...fadeUp({
                   delay: 0.3,
                   duration: 0.6,
                   y: 20,
                 })}
+                className="text-muted-foreground max-w-xl"
+              >
+                Production-ready React components, smart animations & insightful
+                charts.
+              </motion.p>
+              <motion.div
+                {...fadeUp({
+                  delay: 0.4,
+                  duration: 0.6,
+                  y: 20,
+                })}
                 className="text-muted-foreground mb-6 max-w-xl"
               >
-                <span>
-                  {
-                    "Production-ready React components, smart animations & insightful charts. Perfect for "
-                  }
-                </span>
+                <span>{" Perfect for "}</span>
                 <Typewriter
                   text={["Startups", "Developers", "Agencies", "Teams"]}
                   speed={70}
@@ -68,7 +75,10 @@ const Hero = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-full shadow-lg transition-all hover:shadow-xl sm:w-auto"
                 >
-                  <Link href="/docs/introduction" className="flex items-center gap-2">
+                  <Link
+                    href="/docs/introduction"
+                    className="flex items-center gap-2"
+                  >
                     Get Started
                     <RiArrowRightUpLine className="size-4" />
                   </Link>

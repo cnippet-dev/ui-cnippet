@@ -210,6 +210,23 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "react-day-picker",
+        "date-fns"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "calendar",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:ui"
+    },
+    {
       "dependencies": [],
       "files": [
         {
@@ -218,6 +235,34 @@
         }
       ],
       "name": "card",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "embla-carousel-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "carousel",
+      "registryDependencies": [],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "chart",
+      "registryDependencies": [],
       "type": "registry:ui"
     },
     {
@@ -274,6 +319,20 @@
         "input",
         "scroll-area"
       ],
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@base-ui-components/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "context-menu",
+      "registryDependencies": [],
       "type": "registry:ui"
     },
     {
@@ -1000,6 +1059,86 @@
     },
     {
       "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-1",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-2",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-3",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-4",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "card"
       ],
       "description": "Basic card",
@@ -1016,6 +1155,78 @@
       "registryDependencies": [
         "@cnippet/card"
       ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-1",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-1",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -1096,6 +1307,24 @@
       "registryDependencies": [
         "@cnippet/combobox"
       ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic combobox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-1",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {

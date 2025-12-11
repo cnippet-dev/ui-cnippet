@@ -193,6 +193,18 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: ["react-day-picker", "date-fns"],
+    files: [
+      {
+        path: "ui/calendar.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "calendar",
+    registryDependencies: ["button"],
+    type: "registry:ui",
+  },
+  {
     dependencies: [],
     files: [
       {
@@ -201,6 +213,30 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "card",
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["embla-carousel-react"],
+    files: [
+      {
+        path: "ui/carousel.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "carousel",
+    registryDependencies: [],
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["recharts"],
+    files: [
+      {
+        path: "ui/chart.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "chart",
+    registryDependencies: [],
     type: "registry:ui",
   },
   {
@@ -246,6 +282,18 @@ export const ui: Registry["items"] = [
     ],
     name: "combobox",
     registryDependencies: ["input", "scroll-area"],
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["@base-ui-components/react"],
+    files: [
+      {
+        path: "ui/context-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "context-menu",
+    registryDependencies: [],
     type: "registry:ui",
   },
   {

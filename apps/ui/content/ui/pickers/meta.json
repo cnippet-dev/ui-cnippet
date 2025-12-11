@@ -1,6 +1,7 @@
 {
   "pages": [
     "autocomplete",
+    "calendar",
     "combobox",
     "select"
   ],

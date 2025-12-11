@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-4",
+  "type": "registry:block",
+  "description": "Basic calendar",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { ChevronDownIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Popover, PopoverTrigger, PopoverPopup } from \"@/components/ui/popover\";\r\n\r\nexport default function Variant() {\r\n  const [open, setOpen] = React.useState(false);\r\n  const [date, setDate] = React.useState<Date | undefined>(undefined);\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <Label htmlFor=\"date\" className=\"px-1\">\r\n        Date of birth\r\n      </Label>\r\n      <Popover open={open} onOpenChange={setOpen}>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              variant=\"outline\"\r\n              id=\"date\"\r\n              className=\"w-48 justify-between font-normal\"\r\n            />\r\n          }\r\n        >\r\n          {date ? date.toLocaleDateString() : \"Select date\"}\r\n          <ChevronDownIcon />\r\n        </PopoverTrigger>\r\n        <PopoverPopup className=\"w-auto overflow-hidden p-0\" align=\"start\">\r\n          <Calendar\r\n            mode=\"single\"\r\n            selected={date}\r\n            captionLayout=\"dropdown\"\r\n            onSelect={(date) => {\r\n              setDate(date);\r\n              setOpen(false);\r\n            }}\r\n          />\r\n        </PopoverPopup>\r\n      </Popover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ]
+}

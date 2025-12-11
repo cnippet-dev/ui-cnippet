@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-context-menu-1",
+  "type": "registry:block",
+  "description": "Basic combobox",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-context-menu-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  ContextMenu,\r\n  ContextMenuTrigger,\r\n  ContextMenuContent,\r\n  ContextMenuItem,\r\n  ContextMenuSeparator,\r\n  ContextMenuLabel,\r\n  ContextMenuShortcut,\r\n} from \"@/registry/default/ui/context-menu\";\r\n\r\nexport default function Variant() {\r\n  return (\r\n    <ContextMenu>\r\n      <ContextMenuTrigger className=\"flex items-center justify-center w-60 h-48 border border-gray-300 text-gray-900 rounded-md user-select-none\">\r\n        Right click here\r\n      </ContextMenuTrigger>\r\n      <ContextMenuContent>\r\n        <ContextMenuLabel>Music</ContextMenuLabel>\r\n        <ContextMenuItem>\r\n          Add to Library\r\n          <ContextMenuShortcut>⌘L</ContextMenuShortcut>\r\n        </ContextMenuItem>\r\n        <ContextMenuItem>\r\n          Add to Playlist\r\n          <ContextMenuShortcut>⌘P</ContextMenuShortcut>\r\n        </ContextMenuItem>\r\n        <ContextMenuSeparator />\r\n        <ContextMenuItem>Play Next</ContextMenuItem>\r\n        <ContextMenuItem>Play Last</ContextMenuItem>\r\n        <ContextMenuSeparator />\r\n        <ContextMenuItem>Favorite</ContextMenuItem>\r\n        <ContextMenuItem>Share</ContextMenuItem>\r\n      </ContextMenuContent>\r\n    </ContextMenu>\r\n  );\r\n}",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "context-menu"
+  ]
+}

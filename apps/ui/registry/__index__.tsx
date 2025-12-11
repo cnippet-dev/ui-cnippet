@@ -151,6 +151,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "calendar": {
+    name: "calendar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/default/ui/calendar.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/calendar.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "card": {
     name: "card",
     description: "",
@@ -163,6 +181,42 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/ui/card.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "carousel": {
+    name: "carousel",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/ui/carousel.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/carousel.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "chart": {
+    name: "chart",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/ui/chart.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/chart.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -235,6 +289,24 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/ui/combobox.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "context-menu": {
+    name: "context-menu",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/ui/context-menu.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/context-menu.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -1033,6 +1105,78 @@ export const Index: Record<string, any> = {
     categories: ["button"],
     meta: {"className":""},
   },
+  "v-calendar-1": {
+    name: "v-calendar-1",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/default/variants/v-calendar-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-2": {
+    name: "v-calendar-2",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/default/variants/v-calendar-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-3": {
+    name: "v-calendar-3",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/default/variants/v-calendar-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-4": {
+    name: "v-calendar-4",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/default/variants/v-calendar-4.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
   "v-card-1": {
     name: "v-card-1",
     description: "Basic card",
@@ -1049,6 +1193,78 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-carousel-1": {
+    name: "v-carousel-1",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/variants/v-carousel-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-carousel-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["carousel"],
+    meta: {"className":""},
+  },
+  "v-carousel-2": {
+    name: "v-carousel-2",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/variants/v-carousel-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-carousel-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["carousel"],
+    meta: {"className":""},
+  },
+  "v-carousel-3": {
+    name: "v-carousel-3",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/variants/v-carousel-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-carousel-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["carousel"],
+    meta: {"className":""},
+  },
+  "v-chart-1": {
+    name: "v-chart-1",
+    description: "Basic chart",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/variants/v-chart-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-chart-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart"],
     meta: {"className":""},
   },
   "v-checkbox-1": {
@@ -1121,6 +1337,24 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-context-menu-1": {
+    name: "v-context-menu-1",
+    description: "Basic combobox",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [{
+      path: "registry/default/variants/v-context-menu-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-context-menu-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["context-menu"],
     meta: {"className":""},
   },
   "v-dialog-1": {

@@ -1,6 +1,4 @@
 {
-  "pages": [
-    "avatar"
-  ],
+  "pages": ["avatar", "carousel"],
   "title": "Media"
 }

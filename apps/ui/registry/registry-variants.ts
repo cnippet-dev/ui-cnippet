@@ -102,6 +102,50 @@ export const variants: ParticleItem[] = [
     type: "registry:block",
   },
   {
+    categories: categories("calendar"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-calendar-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-calendar-1",
+    registryDependencies: ["button"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("calendar"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-calendar-2.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-calendar-2",
+    registryDependencies: ["button"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("calendar"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-calendar-3.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-calendar-3",
+    registryDependencies: ["button"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("calendar"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-calendar-4.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-calendar-4",
+    registryDependencies: ["button"],
+    type: "registry:block",
+  },
+  {
     categories: categories("card"),
     description: "Basic card",
     files: [{ path: "variants/v-card-1.tsx", type: "registry:block" }],
@@ -110,6 +154,50 @@ export const variants: ParticleItem[] = [
     },
     name: "v-card-1",
     registryDependencies: ["@cnippet/card"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("carousel"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-carousel-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-carousel-1",
+    registryDependencies: [],
+    type: "registry:block",
+  },
+  {
+    categories: categories("carousel"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-carousel-2.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-carousel-2",
+    registryDependencies: [],
+    type: "registry:block",
+  },
+  {
+    categories: categories("carousel"),
+    description: "Basic calendar",
+    files: [{ path: "variants/v-carousel-3.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-carousel-3",
+    registryDependencies: [],
+    type: "registry:block",
+  },
+  {
+    categories: categories("chart"),
+    description: "Basic chart",
+    files: [{ path: "variants/v-chart-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-chart-1",
+    registryDependencies: [],
     type: "registry:block",
   },
   {
@@ -156,6 +244,17 @@ export const variants: ParticleItem[] = [
     },
     name: "v-combobox-1",
     registryDependencies: ["@cnippet/combobox"],
+    type: "registry:block",
+  },
+  {
+    categories: categories("context-menu"),
+    description: "Basic combobox",
+    files: [{ path: "variants/v-context-menu-1.tsx", type: "registry:block" }],
+    meta: {
+      className: "",
+    },
+    name: "v-context-menu-1",
+    registryDependencies: [],
     type: "registry:block",
   },
   {

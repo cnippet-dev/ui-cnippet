@@ -1,0 +1,68 @@
+---
+title: Calendar
+description: A date field component that allows users to enter and edit date.
+---
+
+<ComponentPreview name="v-calendar-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add calendar
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-day-picker date-fns
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar" title="components/ui/calendar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+{/* ## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="/avatars/01.png" alt="User avatar" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>
+``` */}
+
+## Examples
+
+### Fallback Only
+
+<ComponentPreview name="v-calendar-2" />
+
+### Different Sizes
+
+<ComponentPreview name="v-calendar-3" />

@@ -1,0 +1,68 @@
+---
+title: Carousel
+description: A carousel with motion and swipe built using Embla.
+---
+
+<ComponentPreview name="v-carousel-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add carousel
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install embla-carousel-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="carousel" title="components/ui/carousel.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+{/* ## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="/avatars/01.png" alt="User avatar" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>
+``` */}
+
+## Examples
+
+### Fallback Only
+
+<ComponentPreview name="v-carousel-2" />
+
+### Different Sizes
+
+<ComponentPreview name="v-carousel-3" />

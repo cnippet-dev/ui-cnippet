@@ -1,74 +1,71 @@
 ---
-title: Introduction
-description: A new, modern UI component library built on top of Base UI. Built for developers and AI.
+title: Components
+description: A quick guide to adding your first component.
 ---
 
-**coss ui** is a collection of beautifully designed, accessible, and composable components for your React apps. Built on top of [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/), it's designed for you to copy, paste, and own.
+Browse all core components available in **cnippet ui**. Each link takes you to the component overview and usage details.
 
-We think Base UI is the best foundation for modern web applications. We've taken its powerful, unstyled primitives and given them a design system that's ready to go, right out of the box.
+## Buttons
+- [Button](/ui/docs/core-components/button)
+- [Switch](/ui/docs/core-components/switch)
+- [Toggle](/ui/docs/core-components/toggle)
+- [Toggle Group](/ui/docs/core-components/toggle-group)
+- [Toolbar](/ui/docs/core-components/toolbar)
 
-This is the component library we'll be progressively adopting for [cal.com](https://cal.com). We're building it in the open for anyone who wants to create beautiful, reliable user interfaces.
+## Data Display
+- [Accordion](/ui/docs/core-components/accordion)
+- [Collapsible](/ui/docs/core-components/collapsible)
+- [Empty](/ui/docs/core-components/empty)
+- [Table](/ui/docs/core-components/table)
 
-<Alert className="bg-muted/24">
-  <InfoIcon />
-  <AlertTitle>Early Access</AlertTitle>
-  <AlertDescription>
-    coss ui is currently in early development. We're building this library in
-    the open and actively working on new components and features. Base UI itself
-    is also in beta, so you may encounter breaking changes as both projects
-    evolve. We recommend using this in projects where you're comfortable
-    adapting to changes.
-  </AlertDescription>
-</Alert>
+## Feedback
+- [Alert](/ui/docs/core-components/alert)
+- [Badge](/ui/docs/core-components/badge)
+- [Kbd](/ui/docs/core-components/kbd)
+- [Progress](/ui/docs/core-components/progress)
+- [Skeleton](/ui/docs/core-components/skeleton)
+- [Spinner](/ui/docs/core-components/spinner)
+- [Toast](/ui/docs/core-components/toast)
 
-## How It Works
+## Forms
+- [Checkbox Group](/ui/docs/core-components/checkbox-group)
+- [Checkbox](/ui/docs/core-components/checkbox)
+- [Field](/ui/docs/core-components/field)
+- [Fieldset](/ui/docs/core-components/fieldset)
+- [Form](/ui/docs/core-components/form)
+- [Input Group](/ui/docs/core-components/input-group)
+- [Input](/ui/docs/core-components/input)
+- [Label](/ui/docs/core-components/label)
+- [Meter](/ui/docs/core-components/meter)
+- [Number Field](/ui/docs/core-components/number-field)
+- [Radio Group](/ui/docs/core-components/radio-group)
+- [Slider](/ui/docs/core-components/slider)
+- [Textarea](/ui/docs/core-components/textarea)
 
-Our approach is simple: you should own your code. We're inspired by the copy-paste ethos of **shadcn/ui**.
+## Layout
+- [Card](/ui/docs/core-components/card)
+- [Frame](/ui/docs/core-components/frame)
+- [Group](/ui/docs/core-components/group)
+- [Preview Card](/ui/docs/core-components/preview-card)
+- [Scroll Area](/ui/docs/core-components/scroll-area)
+- [Separator](/ui/docs/core-components/separator)
+- [Media](/ui/docs/core-components/media)
+- [Avatar](/ui/docs/core-components/avatar)
 
-Instead of installing a package, you get the source code. This means:
+## Navigation
+- [Breadcrumb](/ui/docs/core-components/breadcrumb)
+- [Menu](/ui/docs/core-components/menu)
+- [Pagination](/ui/docs/core-components/pagination)
+- [Tabs](/ui/docs/core-components/tabs)
 
-- **No abstractions:** You have full control over how components look and behave.
-- **Endless customization:** Need to change something? Just edit the file.
-- **Learn by doing:** See how components are built and adapt them to your needs.
+## Overlays
+- [Alert Dialog](/ui/docs/core-components/alert-dialog)
+- [Dialog](/ui/docs/core-components/dialog)
+- [Popover](/ui/docs/core-components/popover)
+- [Sheet](/ui/docs/core-components/sheet)
+- [Tooltip](/ui/docs/core-components/tooltip)
 
-## Like shadcn/ui, but with Base UI
-
-If you've used shadcn/ui, you'll feel right at home. The main difference is the foundation: **shadcn/ui uses Radix UI**, while **coss ui uses Base UI**.
-
-We chose Base UI for its robust, accessible, and unopinionated primitives. It handles the hard parts—like accessibility, keyboard navigation, and focus management—without imposing any styles. This gives us the freedom to create a design system that is both beautiful and flexible, and it gives you a solid foundation to build upon.
-
-If you're considering a move from a Radix-based library, we provide a clear migration path. Each of our components comes with detailed comparing with Radix / shadcn to make the transition as smooth as possible.
-
-## Primitives, Particles and Atoms
-
-At the core of coss ui are the **UI primitives**—unstyled, accessible building blocks powered by Base UI. These are the foundation: low-level components that handle accessibility, focus management, and keyboard interactions, without dictating design.
-
-On top of these primitives, we introduce [particles](/ui/particles). Particles are **pre-assembled components**—like authentication forms, tables, or date pickers—that combine multiple primitives into ready-to-use solutions. They’re a bit more opinionated in design, but still easy to customize, extend, or break apart when needed.
-
-Finally, we go a step further with [atoms](https://cal.com/atoms). Atoms are **API-enhanced Particles**: components that don’t just manage UI state locally, but also integrate with external data and services. Think of them as smart components that connect UI to APIs, providing out-of-the-box behaviors for common patterns (authentication flows, scheduling, etc.).
-
-Together, primitives, particles, and atoms give you a full spectrum:
-
-- **Primitives** → the foundation
-- **Particles** → the patterns
-- **Atoms** → the integrations
-
-This layered approach lets you choose the right level of abstraction for your project—whether you need a barebone primitive, a polished UI pattern, or a complete API-ready solution.
-
-## Built for Humans and AI
-
-We're building an infrastructure for both humans and AI. Our components are written to be clear, readable, and predictable, so that language models can understand, reason about, and modify them.
-
-## Open Source, Made Sustainable
-
-This project is open source, and not just in name—it’s part of the **COSS** (Commercial Open Source Software) philosophy. We build in public, maintain transparency, and believe that open source works best when it's sustainable.
-
-As part of [coss.com’s mission](https://coss.com), we support open source projects so they can grow, maintain long-term viability, and provide value not just for users, but contributors. We offer tools, docs, infrastructure, and community so your work doesn’t just survive—it thrives.
-
-We’re excited to see what you build with it, and always welcome contributions, feedback, or improvements.
-
-## Get Involved
-
-We're always looking for contributors. Whether it's a bug report, a new feature, or a documentation update, we appreciate your help.
-
-To get started, check out our contribution guidelines on GitHub. You can find open issues and submit pull requests in our repository.
+## Pickers
+- [Autocomplete](/ui/docs/core-components/autocomplete)
+- [Combobox](/ui/docs/core-components/combobox)
+- [Select](/ui/docs/core-components/select)
