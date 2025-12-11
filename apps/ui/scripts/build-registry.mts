@@ -21,6 +21,8 @@ type RegistryItem = {
   meta?: Record<string, unknown>;
 };
 
+const REGISTRY_PATH = path.join(process.cwd(), "public/r")
+
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -116,12 +118,39 @@ async function buildRegistryJsonFile() {
     path.join(process.cwd(), "public/r/registry.json"),
     { recursive: true },
   );
+
+  // 3. Copy the registry.json to the public/r directory.
+  const items = registry.items
+    .filter((item) => ["registry:ui"].includes(item.type))
+    .map((item) => {
+      return {
+        ...item,
+        files: item.files?.map((_file) => {
+          const file =
+            typeof _file === "string"
+              ? {
+                  path: _file,
+                  type: item.type,
+                }
+              : _file;
+
+          return file;
+        }),
+      };
+    });
+  const registryJson = JSON.stringify(items, null, 2);
+  rimraf.sync(path.join(REGISTRY_PATH, "index.json"));
+  await fs.writeFile(
+    path.join(REGISTRY_PATH, "index.json"),
+    registryJson,
+    "utf8",
+  );
 }
 
 async function buildRegistry() {
   return new Promise((resolve, reject) => {
     const process = exec(
-      "bunx --bun shadcn build registry.json --output public/r",
+      "bunx --bun shadcn build registry.json --output public/r/styles/new-york-v4",
     );
 
     process.on("exit", (code) => {
