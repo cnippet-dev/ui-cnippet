@@ -11,7 +11,7 @@ const Components = dynamic(() => import("@/components/routes/home/components"));
 export default function Home() {
   return (
     <>
-      {/* <ReactLenis root>
+      <ReactLenis root>
         <div className="">
           <main className="">
             <Hero />
@@ -19,8 +19,8 @@ export default function Home() {
           </main>
         </div>
       </ReactLenis>
-      <Footer /> */}
-      <CalendarDemo/>
+      <Footer />
+      {/* <CalendarDemo/> */}
     </>
   );
 }
