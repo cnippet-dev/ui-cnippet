@@ -913,7 +913,27 @@
       },
       "name": "v-accordion-1",
       "registryDependencies": [
-        "@cnippet/accordion"
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-2",
+      "registryDependencies": [
+        "accordion"
       ],
       "type": "registry:block"
     },
@@ -933,7 +953,87 @@
       },
       "name": "v-alert-1",
       "registryDependencies": [
-        "@cnippet/alert"
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-2",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-3",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-4",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-5",
+      "registryDependencies": [
+        "alert"
       ],
       "type": "registry:block"
     },
@@ -941,7 +1041,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "basic alert dialog",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-1.tsx",
@@ -953,7 +1053,27 @@
       },
       "name": "v-alert-dialog-1",
       "registryDependencies": [
-        "@cnippet/alert-dialog"
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-2",
+      "registryDependencies": [
+        "alert-dialog"
       ],
       "type": "registry:block"
     },
@@ -973,7 +1093,107 @@
       },
       "name": "v-autocomplete-1",
       "registryDependencies": [
-        "@cnippet/autocomplete"
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-2",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-3",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-4",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-5",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-6",
+      "registryDependencies": [
+        "autocomplete"
       ],
       "type": "registry:block"
     },
@@ -993,7 +1213,67 @@
       },
       "name": "v-avatar-1",
       "registryDependencies": [
-        "@cnippet/avatar"
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-2",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-3",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-4",
+      "registryDependencies": [
+        "avatar"
       ],
       "type": "registry:block"
     },
@@ -1161,7 +1441,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic calendar",
+      "description": "Basic carousel",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-1.tsx",
@@ -1179,7 +1459,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic calendar",
+      "description": "Basic carousel",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-2.tsx",
@@ -1197,7 +1477,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic calendar",
+      "description": "Basic carousel",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-3.tsx",
@@ -1313,7 +1593,7 @@
       "categories": [
         "context-menu"
       ],
-      "description": "Basic combobox",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-1.tsx",

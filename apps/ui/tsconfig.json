@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "registry/index.js"  ],
+, "registry/index.js", "next.config.mjs"  ],
   "exclude": ["node_modules"]
 }

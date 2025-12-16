@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-carousel-3",
   "type": "registry:block",
-  "description": "Basic calendar",
+  "description": "Basic carousel",
   "registryDependencies": [],
   "files": [
     {

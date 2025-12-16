@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-1",
   "type": "registry:block",
-  "description": "Basic alert dialog",
+  "description": "basic alert dialog",
   "registryDependencies": [
-    "@cnippet/alert-dialog"
+    "alert-dialog"
   ],
   "files": [
     {

@@ -27,7 +27,7 @@ export default function Component() {
   ];
 
   return (
-    <Accordion className="w-full" defaultValue={["3"]}>
+    <Accordion className="w-lg" defaultValue={["3"]}>
       {items.map((item) => (
         <AccordionItem key={item.id} value={item.id}>
           <AccordionTrigger>{item.title}</AccordionTrigger>

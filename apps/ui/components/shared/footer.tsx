@@ -67,12 +67,12 @@ export function Footer() {
                 scroll: true,
                 once: true,
               })}
-              className="space-y-2"
+              className="flex items-start gap-5"
             >
-              <span className="mb-2 block text-xs tracking-[0.35em] text-neutral-500 uppercase">
+              <span className="block text-xs tracking-[0.35em] text-neutral-500 uppercase">
                 ↳ Pages
               </span>
-              <ul className="space-y-2">
+              <ul className="space-y-2 -mt-1">
                 {pages.map((item) => (
                   <li key={item}>
                     <Link
@@ -108,12 +108,12 @@ export function Footer() {
                 scroll: true,
                 once: true,
               })}
-              className="space-y-2"
+              className="flex items-start gap-5"
             >
               <span className="mb-2 block text-xs tracking-[0.35em] text-neutral-500 uppercase">
                 ↳ Social
               </span>
-              <ul className="space-y-2">
+              <ul className="space-y-2 -mt-1">
                 {socials.map((item) => (
                   <li key={item}>
                     <Link
