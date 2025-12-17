@@ -4,7 +4,7 @@
   "type": "registry:block",
   "description": "Basic field",
   "registryDependencies": [
-    "@cnippet/field"
+    "field"
   ],
   "files": [
     {

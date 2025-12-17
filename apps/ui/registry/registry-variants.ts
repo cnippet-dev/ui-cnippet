@@ -864,12 +864,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/collapsible"],
   }),
 
-  createVariant({
-    category: "combobox",
-    name: "v-combobox-1",
-    description: "Basic combobox",
-    dependencies: ["@cnippet/combobox"],
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "combobox",
+      name: `v-combobox-${i + 1}`,
+      description: "Basic combobox",
+      dependencies: ["combobox"],
+    }),
+  ),
 
   createVariant({
     category: "context-menu",
@@ -878,12 +880,14 @@ export const variants: ParticleItem[] = [
     dependencies: [],
   }),
 
-  createVariant({
-    category: "dialog",
-    name: "v-dialog-1",
-    description: "Basic dialog",
-    dependencies: ["@cnippet/dialog"],
-  }),
+  ...Array.from({ length: 5 }, (_, i) =>
+    createVariant({
+      category: "dialog",
+      name: `v-dialog-${i + 1}`,
+      description: "Basic dialog",
+      dependencies: ["dialog"],
+    }),
+  ),
 
   createVariant({
     category: "empty state",
@@ -892,12 +896,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/empty"],
   }),
 
-  createVariant({
-    category: "field",
-    name: "v-field-1",
-    description: "Basic field",
-    dependencies: ["@cnippet/field"],
-  }),
+  ...Array.from({ length: 17 }, (_, i) =>
+    createVariant({
+      category: "field",
+      name: `v-field-${i + 1}`,
+      description: "Basic field",
+      dependencies: ["field"],
+    }),
+  ),
 
   createVariant({
     category: "fieldset",
@@ -906,19 +912,23 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/fieldset"],
   }),
 
-  createVariant({
-    category: "form",
-    name: "v-form-1",
-    description: "Basic form",
-    dependencies: ["@cnippet/form"],
-  }),
+  ...Array.from({ length: 2 }, (_, i) =>
+    createVariant({
+      category: "form",
+      name: `v-form-${i + 1}`,
+      description: "form",
+      dependencies: ["form"],
+    }),
+  ),
 
-  createVariant({
-    category: "frame",
-    name: "v-frame-1",
-    description: "Basic frame",
-    dependencies: ["@cnippet/frame"],
-  }),
+  ...Array.from({ length: 3 }, (_, i) =>
+    createVariant({
+      category: "frame",
+      name: `v-frame-${i + 1}`,
+      description: "frame",
+      dependencies: ["frame"],
+    }),
+  ),
 
   createVariant({
     category: "group",
@@ -927,7 +937,6 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/group"],
   }),
 
-  // Input variants - notice v-input-2 through v-input-5 are missing in original
   createVariant({
     category: "input",
     name: "v-input-1",

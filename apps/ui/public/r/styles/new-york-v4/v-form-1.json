@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-form-1",
   "type": "registry:block",
-  "description": "Basic form",
+  "description": "form",
   "registryDependencies": [
-    "@cnippet/form"
+    "form"
   ],
   "files": [
     {

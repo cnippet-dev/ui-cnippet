@@ -7,14 +7,17 @@ export default function Particle() {
   const id = React.useId();
 
   return (
-    <div className="flex items-start gap-2">
-      <Switch defaultChecked id={id} />
+    <Label
+      className="flex items-center gap-6 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50"
+      htmlFor={id}
+    >
       <div className="flex flex-col gap-1">
-        <Label htmlFor={id}>Marketing emails</Label>
+        <p>Enable notifications</p>
         <p className="text-muted-foreground text-xs">
-          By enabling marketing emails, you agree to receive emails.
+          You can enable or disable notifications at any time.
         </p>
       </div>
-    </div>
+      <Switch defaultChecked id={id} />
+    </Label>
   );
 }

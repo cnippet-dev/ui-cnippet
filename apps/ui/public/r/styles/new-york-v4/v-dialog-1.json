@@ -4,7 +4,7 @@
   "type": "registry:block",
   "description": "Basic dialog",
   "registryDependencies": [
-    "@cnippet/dialog"
+    "dialog"
   ],
   "files": [
     {

@@ -2,10 +2,10 @@
 
 import * as React from "react";
 
-import { Button } from "@/registry/default/ui/button";
-import { Field, FieldLabel } from "@/registry/default/ui/field";
-import { Form } from "@/registry/default/ui/form";
-import { Switch } from "@/registry/default/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Field, FieldLabel } from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { Switch } from "@/components/ui/switch";
 
 export default function Particle() {
   const [loading, setLoading] = React.useState(false);

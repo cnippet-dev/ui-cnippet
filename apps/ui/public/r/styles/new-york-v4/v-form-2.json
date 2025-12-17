@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-2",
+  "type": "registry:block",
+  "description": "form",
+  "registryDependencies": [
+    "form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-2.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { z } from \"zod\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nconst schema = z.object({\n  age: z.coerce\n    .number({ message: \"Please enter a number.\" })\n    .positive({ message: \"Number must be positive.\" }),\n  name: z.string().min(1, { message: \"Please enter a name.\" }),\n});\n\ntype Errors = Record<string, string | string[]>;\n\nasync function submitForm(event: React.FormEvent<HTMLFormElement>) {\n  event.preventDefault();\n\n  const formData = new FormData(event.currentTarget);\n  const result = schema.safeParse(Object.fromEntries(formData));\n\n  if (!result.success) {\n    const { fieldErrors } = z.flattenError(result.error);\n    return { errors: fieldErrors as Errors };\n  }\n\n  return {\n    errors: {} as Errors,\n  };\n}\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n  const [errors, setErrors] = React.useState<Errors>({});\n\n  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget);\n    setLoading(true);\n    const response = await submitForm(event);\n    await new Promise((r) => setTimeout(r, 800));\n    setErrors(response.errors);\n    setLoading(false);\n    if (Object.keys(response.errors).length === 0) {\n      alert(\n        `Name: ${String(formData.get(\"name\") || \"\")}\\nAge: ${String(\n          formData.get(\"age\") || \"\",\n        )}`,\n      );\n    }\n  };\n\n  return (\n    <Form className=\"max-w-64\" errors={errors} onSubmit={onSubmit}>\n      <Field name=\"name\">\n        <FieldLabel>Name</FieldLabel>\n        <Input disabled={loading} placeholder=\"Enter name\" />\n        <FieldError />\n      </Field>\n      <Field name=\"age\">\n        <FieldLabel>Age</FieldLabel>\n        <Input disabled={loading} placeholder=\"Enter age\" />\n        <FieldError />\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ]
+}

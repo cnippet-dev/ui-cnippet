@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-1",
   "type": "registry:block",
-  "description": "Basic frame",
+  "description": "frame",
   "registryDependencies": [
-    "@cnippet/frame"
+    "frame"
   ],
   "files": [
     {

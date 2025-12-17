@@ -1,23 +1,38 @@
+"use client";
+
 import * as React from "react";
 
-import { Label } from "@/registry/default/ui/label";
+import { Button } from "@/registry/default/ui/button";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
+import { Form } from "@/registry/default/ui/form";
 import { Switch } from "@/registry/default/ui/switch";
 
 export default function Particle() {
-  const id = React.useId();
+  const [loading, setLoading] = React.useState(false);
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    setLoading(true);
+    await new Promise((r) => setTimeout(r, 800));
+    setLoading(false);
+    console.log(formData.get("marketing"));
+
+    const enabled = formData.get("marketing");
+    alert(`Marketing emails: ${enabled}`);
+  };
 
   return (
-    <Label
-      className="flex items-center gap-6 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50"
-      htmlFor={id}
-    >
-      <div className="flex flex-col gap-1">
-        <p>Enable notifications</p>
-        <p className="text-muted-foreground text-xs">
-          You can enable or disable notifications at any time.
-        </p>
-      </div>
-      <Switch defaultChecked id={id} />
-    </Label>
+    <Form className="w-auto" onSubmit={onSubmit}>
+      <Field name="marketing">
+        <FieldLabel>
+          <Switch defaultChecked disabled={loading} name="marketing" />
+          Enable marketing emails
+        </FieldLabel>
+      </Field>
+      <Button disabled={loading} type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 }
