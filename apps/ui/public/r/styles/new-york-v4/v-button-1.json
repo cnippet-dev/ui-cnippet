@@ -4,7 +4,7 @@
   "type": "registry:block",
   "description": "Basic button",
   "registryDependencies": [
-    "@cnippet/button"
+    "button"
   ],
   "files": [
     {

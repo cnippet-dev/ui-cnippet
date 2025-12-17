@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-group-1",
   "type": "registry:block",
-  "description": "Basic checkbox group",
+  "description": "Basic checkbox-group",
   "registryDependencies": [
-    "@cnippet/checkbox-group"
+    "checkbox-group"
   ],
   "files": [
     {

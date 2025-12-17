@@ -24,11 +24,10 @@ const items = [
 
 export default function Particle() {
   return (
-    <Autocomplete items={items}>
+    <Autocomplete items={items} mode="both">
       <AutocompleteInput
         aria-label="Search items"
         placeholder="Search items…"
-        showClear
       />
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>

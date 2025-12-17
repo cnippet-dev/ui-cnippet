@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-3",
+  "type": "registry:block",
+  "description": "Basic button",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-3.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\nimport Link from \"next/link\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Extra small</p>\r\n        <Button size=\"xs\">Button</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Small</p>\r\n        <Button size=\"sm\">Button</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Large</p>\r\n        <Button size=\"lg\">Button</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Extra Large</p>\r\n        <Button size=\"xl\">Button</Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ]
+}

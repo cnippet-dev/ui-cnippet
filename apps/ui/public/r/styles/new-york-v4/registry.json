@@ -1293,7 +1293,47 @@
       },
       "name": "v-badge-1",
       "registryDependencies": [
-        "@cnippet/badge"
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-2",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-3",
+      "registryDependencies": [
+        "badge"
       ],
       "type": "registry:block"
     },
@@ -1313,7 +1353,27 @@
       },
       "name": "v-breadcrumb-1",
       "registryDependencies": [
-        "@cnippet/breadcrumb"
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-2",
+      "registryDependencies": [
+        "breadcrumb"
       ],
       "type": "registry:block"
     },
@@ -1333,7 +1393,47 @@
       },
       "name": "v-button-1",
       "registryDependencies": [
-        "@cnippet/button"
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-2",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-3",
+      "registryDependencies": [
+        "button"
       ],
       "type": "registry:block"
     },
@@ -1525,7 +1625,67 @@
       },
       "name": "v-checkbox-1",
       "registryDependencies": [
-        "@cnippet/checkbox"
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-2",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-3",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-4",
+      "registryDependencies": [
+        "checkbox"
       ],
       "type": "registry:block"
     },
@@ -1533,7 +1693,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Basic checkbox-group",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-1.tsx",
@@ -1545,7 +1705,67 @@
       },
       "name": "v-checkbox-group-1",
       "registryDependencies": [
-        "@cnippet/checkbox-group"
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-2",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-3",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-4",
+      "registryDependencies": [
+        "checkbox-group"
       ],
       "type": "registry:block"
     },
@@ -2143,7 +2363,67 @@
       },
       "name": "v-switch-1",
       "registryDependencies": [
-        "@cnippet/switch"
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-2",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-3",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-4",
+      "registryDependencies": [
+        "switch"
       ],
       "type": "registry:block"
     },

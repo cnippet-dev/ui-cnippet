@@ -780,28 +780,33 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "badge",
-    name: "v-badge-1",
-    description: "Basic badge",
-    dependencies: ["@cnippet/badge"],
-  }),
+  ...Array.from({ length: 3 }, (_, i) =>
+    createVariant({
+      category: "badge",
+      name: `v-badge-${i + 1}`,
+      description: "Basic badge",
+      dependencies: ["badge"],
+    }),
+  ),
 
-  createVariant({
-    category: "breadcrumb",
-    name: "v-breadcrumb-1",
-    description: "Basic breadcrumb",
-    dependencies: ["@cnippet/breadcrumb"],
-  }),
+  ...Array.from({ length: 2 }, (_, i) =>
+    createVariant({
+      category: "breadcrumb",
+      name: `v-breadcrumb-${i + 1}`,
+      description: "Basic breadcrumb",
+      dependencies: ["breadcrumb"],
+    }),
+  ),
 
-  createVariant({
-    category: "button",
-    name: "v-button-1",
-    description: "Basic button",
-    dependencies: ["@cnippet/button"],
-  }),
+  ...Array.from({ length: 3 }, (_, i) =>
+    createVariant({
+      category: "button",
+      name: `v-button-${i + 1}`,
+      description: "Basic button",
+      dependencies: ["button"],
+    }),
+  ),
 
-  // Calendar variants
   ...Array.from({ length: 4 }, (_, i) =>
     createVariant({
       category: "calendar",
@@ -818,7 +823,6 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/card"],
   }),
 
-  // Carousel variants
   ...Array.from({ length: 3 }, (_, i) =>
     createVariant({
       category: "carousel",
@@ -835,19 +839,23 @@ export const variants: ParticleItem[] = [
     dependencies: [],
   }),
 
-  createVariant({
-    category: "checkbox",
-    name: "v-checkbox-1",
-    description: "Basic checkbox",
-    dependencies: ["@cnippet/checkbox"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "checkbox",
+      name: `v-checkbox-${i + 1}`,
+      description: "Basic checkbox",
+      dependencies: ["checkbox"],
+    }),
+  ),
 
-  createVariant({
-    category: "checkbox group",
-    name: "v-checkbox-group-1",
-    description: "Basic checkbox group",
-    dependencies: ["@cnippet/checkbox-group"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "checkbox group",
+      name: `v-checkbox-group-${i + 1}`,
+      description: "Basic checkbox-group",
+      dependencies: ["checkbox-group"],
+    }),
+  ),
 
   createVariant({
     category: "collapsible",
@@ -1053,12 +1061,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/spinner"],
   }),
 
-  createVariant({
-    category: "switch",
-    name: "v-switch-1",
-    description: "Basic switch",
-    dependencies: ["@cnippet/switch"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "switch",
+      name: `v-switch-${i + 1}`,
+      description: "Basic switch",
+      dependencies: ["switch"],
+    }),
+  ),
 
   createVariant({
     category: "table",

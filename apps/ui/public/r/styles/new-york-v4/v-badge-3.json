@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-3",
+  "type": "registry:block",
+  "description": "Basic badge",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-3.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Small</p>\r\n        <Badge size=\"sm\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Large</p>\r\n        <Badge size=\"lg\">Badge</Badge>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ]
+}

@@ -24,7 +24,7 @@ const items = [
 
 export default function Particle() {
   return (
-    <>
+    <div className=" space-y-4">
       <Autocomplete items={items}>
         <AutocompleteInput
           aria-label="Search items"
@@ -59,6 +59,6 @@ export default function Particle() {
           </AutocompleteList>
         </AutocompletePopup>
       </Autocomplete>
-    </>
+    </div>
   );
 }

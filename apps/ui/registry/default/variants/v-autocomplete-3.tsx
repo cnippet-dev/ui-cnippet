@@ -1,5 +1,7 @@
 "use client";
 
+import { useId } from "react";
+
 import {
   Autocomplete,
   AutocompleteEmpty,
@@ -8,6 +10,7 @@ import {
   AutocompleteList,
   AutocompletePopup,
 } from "@/components/ui/autocomplete";
+import { Label } from "@/components/ui/label";
 
 const items = [
   { label: "Apple", value: "apple" },
@@ -23,12 +26,17 @@ const items = [
 ];
 
 export default function Particle() {
+  const id = useId();
   return (
-    <Autocomplete autoHighlight items={items}>
-      <AutocompleteInput
-        aria-label="Search items"
-        placeholder="Search items…"
-      />
+    <Autocomplete items={items}>
+      <div className="flex flex-col items-start gap-2">
+        <Label htmlFor={id}>Fruits</Label>
+        <AutocompleteInput
+          aria-label="Search items"
+          id={id}
+          placeholder="Search items…"
+        />
+      </div>
       <AutocompletePopup>
         <AutocompleteEmpty>No items found.</AutocompleteEmpty>
         <AutocompleteList>

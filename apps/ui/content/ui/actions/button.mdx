@@ -62,7 +62,7 @@ npm install @base-ui-components/react
 ## Usage
 
 ```tsx
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 ```
 
 ```tsx
@@ -74,25 +74,23 @@ import { Button } from "@/components/ui/button"
 You can use the [`render`](https://base-ui.com/react/utils/use-render#migrating-from-radix-ui) prop to make another component look like a button. Here's an example of a link that looks like a button.
 
 ```tsx
-import Link from "next/link"
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function LinkAsButton() {
-  return <Button render={<Link href="/login" />}>Login</Button>
+  return <Button render={<Link href="/login" />}>Login</Button>;
 }
 ```
 
-{/* ## Examples
-
-### Default
-
-<ComponentPreview name="v-button-1" />
-
-### Outline
+### Variants
 
 <ComponentPreview name="v-button-2" />
 
+### Sizes
+
+<ComponentPreview name="v-button-3" />
+{/* ## Examples
 ### Secondary
 
 <ComponentPreview name="v-button-3" />
