@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "registry/index.js", "next.config.mjs"  ],
+, "registry/index.js", "next.config.mjs", "registry/default/variants/v-radio-group-4.tsx"  ],
   "exclude": ["node_modules"]
 }

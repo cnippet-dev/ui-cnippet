@@ -962,12 +962,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/kbd"],
   }),
 
-  createVariant({
-    category: "menu",
-    name: "v-menu-1",
-    description: "Basic menu",
-    dependencies: ["@cnippet/menu"],
-  }),
+  ...Array.from({ length: 6 }, (_, i) =>
+    createVariant({
+      category: "menu",
+      name: `v-menu-${i + 1}`,
+      description: "menu",
+      dependencies: ["menu"],
+    }),
+  ),
 
   createVariant({
     category: "meter",
@@ -976,12 +978,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/meter"],
   }),
 
-  createVariant({
-    category: "number field",
-    name: "v-number-field-1",
-    description: "Basic number field",
-    dependencies: ["@cnippet/number-field"],
-  }),
+  ...Array.from({ length: 6 }, (_, i) =>
+    createVariant({
+      category: "number field",
+      name: `v-number-field-${i + 1}`,
+      description: "number-field",
+      dependencies: ["number-field"],
+    }),
+  ),
 
   createVariant({
     category: "pagination",
@@ -990,12 +994,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/pagination"],
   }),
 
-  createVariant({
-    category: "popover",
-    name: "v-popover-1",
-    description: "Basic popover",
-    dependencies: ["@cnippet/popover"],
-  }),
+  ...Array.from({ length: 3 }, (_, i) =>
+    createVariant({
+      category: "popover",
+      name: `v-popover-${i + 1}`,
+      description: "popover",
+      dependencies: ["popover"],
+    }),
+  ),
 
   createVariant({
     category: "preview card",
@@ -1011,12 +1017,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/progress"],
   }),
 
-  createVariant({
-    category: "radio group",
-    name: "v-radio-group-1",
-    description: "Basic radio group",
-    dependencies: ["@cnippet/radio-group"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "radio group",
+      name: `v-radio-group-${i + 1}`,
+      description: "radio-group",
+      dependencies: ["radio-group"],
+    }),
+  ),
 
   createVariant({
     category: "scroll area",
@@ -1025,12 +1033,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/scroll-area"],
   }),
 
-  createVariant({
-    category: "select",
-    name: "v-select-1",
-    description: "Basic select",
-    dependencies: ["@cnippet/select"],
-  }),
+  ...Array.from({ length: 7 }, (_, i) =>
+    createVariant({
+      category: "select",
+      name: `v-select-${i + 1}`,
+      description: "select",
+      dependencies: ["select"],
+    }),
+  ),
 
   createVariant({
     category: "separator",
@@ -1039,12 +1049,14 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/separator"],
   }),
 
-  createVariant({
-    category: "sheet",
-    name: "v-sheet-1",
-    description: "Basic sheet",
-    dependencies: ["@cnippet/sheet"],
-  }),
+  ...Array.from({ length: 3 }, (_, i) =>
+    createVariant({
+      category: "sheet",
+      name: `v-sheet-${i + 1}`,
+      description: "sheet",
+      dependencies: ["sheet"],
+    }),
+  ),
 
   createVariant({
     category: "skeleton",
@@ -1083,26 +1095,32 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/table"],
   }),
 
-  createVariant({
-    category: "tabs",
-    name: "v-tabs-1",
-    description: "Basic tabs",
-    dependencies: ["@cnippet/tabs"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "tabs",
+      name: `v-tabs-${i + 1}`,
+      description: "tabs",
+      dependencies: ["tabs"],
+    }),
+  ),
 
-  createVariant({
-    category: "textarea",
-    name: "v-textarea-1",
-    description: "Basic textarea",
-    dependencies: ["@cnippet/textarea"],
-  }),
+  ...Array.from({ length: 4 }, (_, i) =>
+    createVariant({
+      category: "textarea",
+      name: `v-textarea-${i + 1}`,
+      description: "textarea",
+      dependencies: ["textarea"],
+    }),
+  ),
 
-  createVariant({
-    category: "toast",
-    name: "v-toast-1",
-    description: "Basic toast",
-    dependencies: ["@cnippet/toast"],
-  }),
+  ...Array.from({ length: 8 }, (_, i) =>
+    createVariant({
+      category: "toast",
+      name: `v-toast-${i + 1}`,
+      description: "toast",
+      dependencies: ["toast"],
+    }),
+  ),
 
   createVariant({
     category: "toggle",

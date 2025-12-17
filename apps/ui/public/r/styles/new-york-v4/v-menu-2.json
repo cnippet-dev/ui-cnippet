@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-2",
+  "type": "registry:block",
+  "description": "menu",
+  "registryDependencies": [
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-2.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/components/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger openOnHover render={<Button variant=\"outline\" />}>\n        Hover me\n      </MenuTrigger>\n      <MenuPopup>\n        <MenuItem>Item one</MenuItem>\n        <MenuItem>Item two</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ]
+}

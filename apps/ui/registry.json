@@ -2991,7 +2991,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "menu",
       "files": [
         {
           "path": "registry/default/variants/v-menu-1.tsx",
@@ -3003,7 +3003,107 @@
       },
       "name": "v-menu-1",
       "registryDependencies": [
-        "@cnippet/menu"
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-2",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-3",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-4",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-5",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-6",
+      "registryDependencies": [
+        "menu"
       ],
       "type": "registry:block"
     },
@@ -3031,7 +3131,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "number-field",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-1.tsx",
@@ -3043,7 +3143,107 @@
       },
       "name": "v-number-field-1",
       "registryDependencies": [
-        "@cnippet/number-field"
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-2",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-3",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-4",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-5",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-6",
+      "registryDependencies": [
+        "number-field"
       ],
       "type": "registry:block"
     },
@@ -3071,7 +3271,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "popover",
       "files": [
         {
           "path": "registry/default/variants/v-popover-1.tsx",
@@ -3083,7 +3283,47 @@
       },
       "name": "v-popover-1",
       "registryDependencies": [
-        "@cnippet/popover"
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-2",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-3",
+      "registryDependencies": [
+        "popover"
       ],
       "type": "registry:block"
     },
@@ -3131,7 +3371,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "radio-group",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-1.tsx",
@@ -3143,7 +3383,67 @@
       },
       "name": "v-radio-group-1",
       "registryDependencies": [
-        "@cnippet/radio-group"
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-2",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-3",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-4",
+      "registryDependencies": [
+        "radio-group"
       ],
       "type": "registry:block"
     },
@@ -3171,7 +3471,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "select",
       "files": [
         {
           "path": "registry/default/variants/v-select-1.tsx",
@@ -3183,7 +3483,127 @@
       },
       "name": "v-select-1",
       "registryDependencies": [
-        "@cnippet/select"
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-2",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-3",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-4",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-5",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-6",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-7",
+      "registryDependencies": [
+        "select"
       ],
       "type": "registry:block"
     },
@@ -3211,7 +3631,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "sheet",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-1.tsx",
@@ -3223,7 +3643,47 @@
       },
       "name": "v-sheet-1",
       "registryDependencies": [
-        "@cnippet/sheet"
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-2",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-3",
+      "registryDependencies": [
+        "sheet"
       ],
       "type": "registry:block"
     },
@@ -3391,7 +3851,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "tabs",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-1.tsx",
@@ -3403,7 +3863,67 @@
       },
       "name": "v-tabs-1",
       "registryDependencies": [
-        "@cnippet/tabs"
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-2",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-3",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-4",
+      "registryDependencies": [
+        "tabs"
       ],
       "type": "registry:block"
     },
@@ -3411,7 +3931,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "textarea",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-1.tsx",
@@ -3423,7 +3943,67 @@
       },
       "name": "v-textarea-1",
       "registryDependencies": [
-        "@cnippet/textarea"
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-2",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-3",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-4",
+      "registryDependencies": [
+        "textarea"
       ],
       "type": "registry:block"
     },
@@ -3431,7 +4011,7 @@
       "categories": [
         "toast"
       ],
-      "description": "Basic toast",
+      "description": "toast",
       "files": [
         {
           "path": "registry/default/variants/v-toast-1.tsx",
@@ -3443,7 +4023,147 @@
       },
       "name": "v-toast-1",
       "registryDependencies": [
-        "@cnippet/toast"
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-2",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-3",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-4",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-5",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-6",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-7",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-8",
+      "registryDependencies": [
+        "toast"
       ],
       "type": "registry:block"
     },

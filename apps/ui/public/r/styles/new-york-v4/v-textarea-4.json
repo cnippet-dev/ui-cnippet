@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-textarea-4",
+  "type": "registry:block",
+  "description": "textarea",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-4.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    alert(`Message: ${formData.get(\"message\") || \"\"}`);\n  };\n\n  return (\n    <Form className=\"max-w-64\" onSubmit={onSubmit}>\n      <Field>\n        <FieldLabel>Message</FieldLabel>\n        <Textarea\n          disabled={loading}\n          name=\"message\"\n          placeholder=\"Type your message here\"\n          required\n        />\n        <FieldError>This field is required.</FieldError>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ]
+}

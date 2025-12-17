@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-2",
+  "type": "registry:block",
+  "description": "number-field",
+  "registryDependencies": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-2.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"space-y-4 [&_p]:text-xs\">\n        <p>Small</p>\n        <NumberField defaultValue={0} size=\"sm\">\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </div>\n      <div className=\"space-y-4 [&_p]:text-xs\">\n        <p>Large</p>\n        <NumberField defaultValue={0} size=\"lg\">\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "number field"
+  ]
+}

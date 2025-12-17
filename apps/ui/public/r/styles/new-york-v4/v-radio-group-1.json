@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-radio-group-1",
   "type": "registry:block",
-  "description": "Basic radio group",
+  "description": "radio-group",
   "registryDependencies": [
-    "@cnippet/radio-group"
+    "radio-group"
   ],
   "files": [
     {

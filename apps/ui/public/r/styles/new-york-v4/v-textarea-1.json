@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-1",
   "type": "registry:block",
-  "description": "Basic textarea",
+  "description": "textarea",
   "registryDependencies": [
-    "@cnippet/textarea"
+    "textarea"
   ],
   "files": [
     {

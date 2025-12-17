@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-menu-1",
   "type": "registry:block",
-  "description": "Basic menu",
+  "description": "menu",
   "registryDependencies": [
-    "@cnippet/menu"
+    "menu"
   ],
   "files": [
     {

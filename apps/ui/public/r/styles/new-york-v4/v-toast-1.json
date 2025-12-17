@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toast-1",
   "type": "registry:block",
-  "description": "Basic toast",
+  "description": "toast",
   "registryDependencies": [
-    "@cnippet/toast"
+    "toast"
   ],
   "files": [
     {

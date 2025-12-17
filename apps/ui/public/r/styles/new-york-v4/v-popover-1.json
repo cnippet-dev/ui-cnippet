@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-popover-1",
   "type": "registry:block",
-  "description": "Basic popover",
+  "description": "popover",
   "registryDependencies": [
-    "@cnippet/popover"
+    "popover"
   ],
   "files": [
     {

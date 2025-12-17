@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-number-field-1",
   "type": "registry:block",
-  "description": "Basic number field",
+  "description": "number-field",
   "registryDependencies": [
-    "@cnippet/number-field"
+    "number-field"
   ],
   "files": [
     {

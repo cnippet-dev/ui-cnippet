@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-select-1",
   "type": "registry:block",
-  "description": "Basic select",
+  "description": "select",
   "registryDependencies": [
-    "@cnippet/select"
+    "select"
   ],
   "files": [
     {

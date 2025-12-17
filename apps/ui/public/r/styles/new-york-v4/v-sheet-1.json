@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-sheet-1",
   "type": "registry:block",
-  "description": "Basic sheet",
+  "description": "sheet",
   "registryDependencies": [
-    "@cnippet/sheet"
+    "sheet"
   ],
   "files": [
     {

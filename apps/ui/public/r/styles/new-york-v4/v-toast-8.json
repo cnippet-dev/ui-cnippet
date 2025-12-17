@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-8",
+  "type": "registry:block",
+  "description": "toast",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-8.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\nimport { anchoredToastManager } from \"@/registry/default/ui/toast\";\n\nexport default function Particle() {\n  const submitRef = React.useRef<HTMLButtonElement>(null);\n  const [isSubmitting, setIsSubmitting] = React.useState(false);\n  const toastIdRef = React.useRef<string | null>(null);\n\n  function handleSubmit() {\n    if (!submitRef.current || isSubmitting) return;\n\n    if (toastIdRef.current) {\n      anchoredToastManager.close(toastIdRef.current);\n      toastIdRef.current = null;\n    }\n\n    setIsSubmitting(true);\n\n    new Promise<void>((_, reject) => {\n      setTimeout(() => {\n        setIsSubmitting(false);\n        reject(\n          new Error(\"The server is not responding. Please try again later.\"),\n        );\n      }, 2000);\n    }).catch((error: Error) => {\n      toastIdRef.current = anchoredToastManager.add({\n        description: error.message,\n        positionerProps: {\n          anchor: submitRef.current,\n          sideOffset: 4,\n        },\n        title: \"Error submitting form\",\n        type: \"error\",\n      });\n    });\n  }\n\n  return (\n    <Button\n      disabled={isSubmitting}\n      onClick={handleSubmit}\n      ref={submitRef}\n      variant=\"outline\"\n    >\n      {isSubmitting ? (\n        <>\n          <Spinner />\n          Submitting…\n        </>\n      ) : (\n        \"Submit\"\n      )}\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ]
+}

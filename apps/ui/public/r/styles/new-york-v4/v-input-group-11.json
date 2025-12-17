@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-11.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Button size=\"xs\" variant=\"secondary\">\n          Search\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput disabled placeholder=\"Searching…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Spinner />\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

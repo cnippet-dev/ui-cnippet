@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-3",
+  "type": "registry:block",
+  "description": "toast",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-3.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { toastManager } from \"@/registry/default/ui/toast\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Button\n        onClick={() => {\n          toastManager.add({\n            description: \"Your changes have been saved.\",\n            title: \"Success!\",\n            type: \"success\",\n          });\n        }}\n        variant=\"outline\"\n      >\n        Success Toast\n      </Button>\n      <Button\n        onClick={() => {\n          toastManager.add({\n            description: \"There was a problem with your request.\",\n            title: \"Uh oh! Something went wrong.\",\n            type: \"error\",\n          });\n        }}\n        variant=\"outline\"\n      >\n        Error Toast\n      </Button>\n      <Button\n        onClick={() => {\n          toastManager.add({\n            description: \"You can add components to your app using the cli.\",\n            title: \"Heads up!\",\n            type: \"info\",\n          });\n        }}\n        variant=\"outline\"\n      >\n        Info Toast\n      </Button>\n      <Button\n        onClick={() => {\n          toastManager.add({\n            description: \"Your session is about to expire.\",\n            title: \"Warning!\",\n            type: \"warning\",\n          });\n        }}\n        variant=\"outline\"\n      >\n        Warning Toast\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ]
+}

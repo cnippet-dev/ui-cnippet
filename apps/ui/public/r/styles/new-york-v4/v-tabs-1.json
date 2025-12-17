@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-tabs-1",
   "type": "registry:block",
-  "description": "Basic tabs",
+  "description": "tabs",
   "registryDependencies": [
-    "@cnippet/tabs"
+    "tabs"
   ],
   "files": [
     {

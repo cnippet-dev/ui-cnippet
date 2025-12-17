@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-10.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Button size=\"xs\" variant=\"secondary\">\n          Search\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import { SearchIcon } from \"lucide-react\";\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Small</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Search\"\n            placeholder=\"Search\"\n            size=\"sm\"\n            type=\"search\"\n          />\n          <InputGroupAddon>\n            <SearchIcon />\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Large</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Search\"\n            placeholder=\"Search\"\n            size=\"lg\"\n            type=\"search\"\n          />\n          <InputGroupAddon>\n            <SearchIcon />\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
