@@ -10,7 +10,7 @@ import { Frame, FrameHeader, FramePanel } from "@/registry/default/ui/frame";
 
 export default function Particle() {
   return (
-    <Frame className="w-full">
+    <Frame className=" w-xl">
       <Collapsible>
         <FrameHeader className="flex-row items-center justify-between px-2 py-2">
           <CollapsibleTrigger

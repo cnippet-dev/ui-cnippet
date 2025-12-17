@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-5",
+  "type": "registry:block",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-5.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\nimport { useRef } from \"react\";\n\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\nimport {\n  Tooltip,\n  TooltipPopup,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nexport default function Particle() {\n  const { copyToClipboard, isCopied } = useCopyToClipboard();\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Url\"\n        defaultValue=\"https://ui.cnippet.dev\"\n        ref={inputRef}\n        type=\"text\"\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <Tooltip>\n          <TooltipTrigger\n            render={\n              <Button\n                aria-label=\"Copy\"\n                onClick={() => {\n                  if (inputRef.current) {\n                    copyToClipboard(inputRef.current.value);\n                  }\n                }}\n                size=\"icon-xs\"\n                variant=\"ghost\"\n              />\n            }\n          >\n            {isCopied ? <CheckIcon /> : <CopyIcon />}\n          </TooltipTrigger>\n          <TooltipPopup>\n            <p>Copy to clipboard</p>\n          </TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ]
+}

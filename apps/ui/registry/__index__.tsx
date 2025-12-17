@@ -2491,6 +2491,24 @@ export const Index: Record<string, any> = {
     categories: ["frame"],
     meta: {"className":""},
   },
+  "v-frame-4": {
+    name: "v-frame-4",
+    description: "frame",
+    type: "registry:block",
+    registryDependencies: ["frame"],
+    files: [{
+      path: "registry/default/variants/v-frame-4.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-frame-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["frame"],
+    meta: {"className":""},
+  },
   "v-group-1": {
     name: "v-group-1",
     description: "Basic group",
@@ -2511,9 +2529,9 @@ export const Index: Record<string, any> = {
   },
   "v-input-1": {
     name: "v-input-1",
-    description: "Basic input",
+    description: "input",
     type: "registry:block",
-    registryDependencies: ["@cnippet/input"],
+    registryDependencies: ["input"],
     files: [{
       path: "registry/default/variants/v-input-1.tsx",
       type: "registry:block",
@@ -2527,18 +2545,72 @@ export const Index: Record<string, any> = {
     categories: ["input"],
     meta: {"className":""},
   },
-  "v-input-6": {
-    name: "v-input-6",
-    description: "Input with label",
+  "v-input-2": {
+    name: "v-input-2",
+    description: "input",
     type: "registry:block",
-    registryDependencies: ["@cnippet/input"],
+    registryDependencies: ["input"],
     files: [{
-      path: "registry/default/variants/v-input-6.tsx",
+      path: "registry/default/variants/v-input-2.tsx",
       type: "registry:block",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/variants/v-input-6.tsx")
+      const mod = await import("@/registry/default/variants/v-input-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input"],
+    meta: {"className":""},
+  },
+  "v-input-3": {
+    name: "v-input-3",
+    description: "input",
+    type: "registry:block",
+    registryDependencies: ["input"],
+    files: [{
+      path: "registry/default/variants/v-input-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input"],
+    meta: {"className":""},
+  },
+  "v-input-4": {
+    name: "v-input-4",
+    description: "input",
+    type: "registry:block",
+    registryDependencies: ["input"],
+    files: [{
+      path: "registry/default/variants/v-input-4.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input"],
+    meta: {"className":""},
+  },
+  "v-input-5": {
+    name: "v-input-5",
+    description: "input",
+    type: "registry:block",
+    registryDependencies: ["input"],
+    files: [{
+      path: "registry/default/variants/v-input-5.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-5.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -2547,9 +2619,9 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-1": {
     name: "v-input-group-1",
-    description: "Basic input group",
+    description: "input-group",
     type: "registry:block",
-    registryDependencies: ["@cnippet/input-group"],
+    registryDependencies: ["input-group"],
     files: [{
       path: "registry/default/variants/v-input-group-1.tsx",
       type: "registry:block",
@@ -2557,6 +2629,204 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-input-group-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-2": {
+    name: "v-input-group-2",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-3": {
+    name: "v-input-group-3",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-4": {
+    name: "v-input-group-4",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-4.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-5": {
+    name: "v-input-group-5",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-5.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-5.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-6": {
+    name: "v-input-group-6",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-6.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-6.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-7": {
+    name: "v-input-group-7",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-7.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-7.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-8": {
+    name: "v-input-group-8",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-8.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-8.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-9": {
+    name: "v-input-group-9",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-9.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-9.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-10": {
+    name: "v-input-group-10",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-10.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-11": {
+    name: "v-input-group-11",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["input group"],
+    meta: {"className":""},
+  },
+  "v-input-group-12": {
+    name: "v-input-group-12",
+    description: "input-group",
+    type: "registry:block",
+    registryDependencies: ["input-group"],
+    files: [{
+      path: "registry/default/variants/v-input-group-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-input-group-12.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

@@ -8,17 +8,17 @@ import {
 
 export default function Particle() {
   return (
-    <Frame className="w-full">
+    <Frame className="w-xl">
       <FrameHeader>
         <FrameTitle>Section header</FrameTitle>
         <FrameDescription>Brief description about the section</FrameDescription>
       </FrameHeader>
       <FramePanel>
-        <h2 className="font-semibold text-sm">Separated panel</h2>
+        <h2 className="text-sm font-semibold">Separated panel</h2>
         <p className="text-muted-foreground text-sm">Section description</p>
       </FramePanel>
       <FramePanel>
-        <h2 className="font-semibold text-sm">Separated panel</h2>
+        <h2 className="text-sm font-semibold">Separated panel</h2>
         <p className="text-muted-foreground text-sm">Section description</p>
       </FramePanel>
     </Frame>

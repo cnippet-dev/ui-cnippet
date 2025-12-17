@@ -921,7 +921,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 4 }, (_, i) =>
     createVariant({
       category: "frame",
       name: `v-frame-${i + 1}`,
@@ -937,26 +937,23 @@ export const variants: ParticleItem[] = [
     dependencies: ["@cnippet/group"],
   }),
 
-  createVariant({
-    category: "input",
-    name: "v-input-1",
-    description: "Basic input",
-    dependencies: ["@cnippet/input"],
-  }),
+  ...Array.from({ length: 5 }, (_, i) =>
+    createVariant({
+      category: "input",
+      name: `v-input-${i + 1}`,
+      description: "input",
+      dependencies: ["input"],
+    }),
+  ),
 
-  createVariant({
-    category: "input",
-    name: "v-input-6",
-    description: "Input with label",
-    dependencies: ["@cnippet/input"],
-  }),
-
-  createVariant({
-    category: "input group",
-    name: "v-input-group-1",
-    description: "Basic input group",
-    dependencies: ["@cnippet/input-group"],
-  }),
+  ...Array.from({ length: 12 }, (_, i) =>
+    createVariant({
+      category: "input group",
+      name: `v-input-group-${i + 1}`,
+      description: "input-group",
+      dependencies: ["input-group"],
+    }),
+  ),
 
   createVariant({
     category: "kbd",

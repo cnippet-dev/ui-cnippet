@@ -2589,6 +2589,26 @@
     },
     {
       "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-4",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "group"
       ],
       "description": "Basic group",
@@ -2611,7 +2631,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "input",
       "files": [
         {
           "path": "registry/default/variants/v-input-1.tsx",
@@ -2623,7 +2643,7 @@
       },
       "name": "v-input-1",
       "registryDependencies": [
-        "@cnippet/input"
+        "input"
       ],
       "type": "registry:block"
     },
@@ -2631,19 +2651,79 @@
       "categories": [
         "input"
       ],
-      "description": "Input with label",
+      "description": "input",
       "files": [
         {
-          "path": "registry/default/variants/v-input-6.tsx",
+          "path": "registry/default/variants/v-input-2.tsx",
           "type": "registry:block"
         }
       ],
       "meta": {
         "className": ""
       },
-      "name": "v-input-6",
+      "name": "v-input-2",
       "registryDependencies": [
-        "@cnippet/input"
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-3",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-4",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-5",
+      "registryDependencies": [
+        "input"
       ],
       "type": "registry:block"
     },
@@ -2651,7 +2731,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "input-group",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-1.tsx",
@@ -2663,7 +2743,227 @@
       },
       "name": "v-input-group-1",
       "registryDependencies": [
-        "@cnippet/input-group"
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-2",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-3",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-4",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-5",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-6",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-7",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-8",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-9",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-10",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-11",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "input-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-12",
+      "registryDependencies": [
+        "input-group"
       ],
       "type": "registry:block"
     },
