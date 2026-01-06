@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-badge-2",
+  "type": "registry:block",
+  "description": "Basic badge",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-2.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Outline</p>\r\n        <Badge variant=\"outline\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Secondary</p>\r\n        <Badge variant=\"secondary\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Desctructive</p>\r\n        <Badge variant=\"destructive\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Info</p>\r\n        <Badge variant=\"info\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Success</p>\r\n        <Badge variant=\"success\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Warning</p>\r\n        <Badge variant=\"warning\">Badge</Badge>\r\n      </div>\r\n      <div className=\"flex justify-between gap-10\">\r\n        <p className=\"text-xs\">Error</p>\r\n        <Badge variant=\"error\">Badge</Badge>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ]
+}

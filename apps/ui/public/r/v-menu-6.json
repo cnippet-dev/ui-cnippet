@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-menu-6",
+  "type": "registry:block",
+  "description": "menu",
+  "registryDependencies": [
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-6.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuTrigger,\r\n} from \"@/components/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\r\n      <MenuPopup>\r\n        <MenuItem closeOnClick>Profile</MenuItem>\r\n        <MenuItem closeOnClick>Settings</MenuItem>\r\n        <MenuItem closeOnClick>Log out</MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ]
+}

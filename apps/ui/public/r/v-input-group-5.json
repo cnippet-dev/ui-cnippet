@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-input-group-5",
+  "type": "registry:block",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-5.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\r\nimport { useRef } from \"react\";\r\n\r\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/components/ui/input-group\";\r\nimport {\r\n  Tooltip,\r\n  TooltipPopup,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nexport default function Particle() {\r\n  const { copyToClipboard, isCopied } = useCopyToClipboard();\r\n  const inputRef = useRef<HTMLInputElement>(null);\r\n\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Url\"\r\n        defaultValue=\"https://ui.cnippet.dev\"\r\n        ref={inputRef}\r\n        type=\"text\"\r\n      />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <Tooltip>\r\n          <TooltipTrigger\r\n            render={\r\n              <Button\r\n                aria-label=\"Copy\"\r\n                onClick={() => {\r\n                  if (inputRef.current) {\r\n                    copyToClipboard(inputRef.current.value);\r\n                  }\r\n                }}\r\n                size=\"icon-xs\"\r\n                variant=\"ghost\"\r\n              />\r\n            }\r\n          >\r\n            {isCopied ? <CheckIcon /> : <CopyIcon />}\r\n          </TooltipTrigger>\r\n          <TooltipPopup>\r\n            <p>Copy to clipboard</p>\r\n          </TooltipPopup>\r\n        </Tooltip>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ]
+}

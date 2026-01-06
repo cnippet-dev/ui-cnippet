@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-textarea-1",
+  "type": "registry:block",
+  "description": "textarea",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-1.tsx",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport default function Particle() {\r\n  return <Textarea placeholder=\"Type your message here\" />;\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ]
+}

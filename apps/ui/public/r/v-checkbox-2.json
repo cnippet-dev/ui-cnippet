@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-checkbox-2",
+  "type": "registry:block",
+  "description": "Basic checkbox",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-2.tsx",
+      "content": "import * as React from \"react\";\r\n\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  const id = React.useId();\r\n\r\n  return (\r\n    <div className=\"flex items-start gap-2\">\r\n      <Checkbox defaultChecked id={id} />\r\n      <div className=\"flex flex-col gap-1\">\r\n        <Label htmlFor={id}>Accept terms and conditions</Label>\r\n        <p className=\"text-muted-foreground text-xs\">\r\n          By clicking this checkbox, you agree to the terms and conditions.\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox"
+  ]
+}

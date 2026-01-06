@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-4.tsx",
-      "content": "import { useId } from \"react\";\n\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  const id = useId();\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input\n        aria-label=\"Email\"\n        id={id}\n        placeholder=\"you@example.com\"\n        type=\"email\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  const id = useId();\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-2\">\r\n      <Label htmlFor={id}>Email</Label>\r\n      <Input\r\n        aria-label=\"Email\"\r\n        id={id}\r\n        placeholder=\"you@example.com\"\r\n        type=\"email\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

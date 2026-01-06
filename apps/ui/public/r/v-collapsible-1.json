@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-collapsible-1",
+  "type": "registry:block",
+  "description": "Basic collapsible",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-1.tsx",
+      "content": "import { ChevronDownIcon } from \"lucide-react\";\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsiblePanel,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/default/ui/collapsible\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Collapsible>\r\n      <CollapsibleTrigger className=\"inline-flex items-center gap-2 font-medium text-sm data-panel-open:[&_svg]:rotate-180\">\r\n        Show recovery keys\r\n        <ChevronDownIcon className=\"size-4\" />\r\n      </CollapsibleTrigger>\r\n      <CollapsiblePanel>\r\n        <ul className=\"flex flex-col gap-1 py-2 text-muted-foreground text-sm\">\r\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">\r\n            4829-1735-6621\r\n          </li>\r\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">\r\n            9182-6407-5532\r\n          </li>\r\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">\r\n            3051-7924-9018\r\n          </li>\r\n        </ul>\r\n      </CollapsiblePanel>\r\n    </Collapsible>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ]
+}

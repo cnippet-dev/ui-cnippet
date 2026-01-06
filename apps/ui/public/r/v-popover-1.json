@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-popover-1",
+  "type": "registry:block",
+  "description": "popover",
+  "registryDependencies": [
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field } from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport {\r\n  Popover,\r\n  PopoverDescription,\r\n  PopoverPopup,\r\n  PopoverTitle,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger render={<Button variant=\"outline\" />}>\r\n        Open Popover\r\n      </PopoverTrigger>\r\n      <PopoverPopup className=\"w-80\">\r\n        <div className=\"mb-4\">\r\n          <PopoverTitle className=\"text-base\">Send us feedback</PopoverTitle>\r\n          <PopoverDescription>\r\n            Let us know how we can improve.\r\n          </PopoverDescription>\r\n        </div>\r\n        <Form>\r\n          <Field>\r\n            <Textarea\r\n              aria-label=\"Send feedback\"\r\n              id=\"feedback\"\r\n              placeholder=\"How can we improve?\"\r\n            />\r\n          </Field>\r\n          <Button type=\"submit\">Send feedback</Button>\r\n        </Form>\r\n      </PopoverPopup>\r\n    </Popover>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ]
+}

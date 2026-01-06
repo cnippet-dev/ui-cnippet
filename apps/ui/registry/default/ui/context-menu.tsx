@@ -1,6 +1,6 @@
 "use client";
 
-import { ContextMenu as ContextMenuPrimitive } from "@base-ui-components/react/context-menu";
+import { ContextMenu as ContextMenuPrimitive } from "@base-ui/react/context-menu";
 import { cn } from "@/lib/utils";
 
 const ContextMenu = ContextMenuPrimitive.Root;

@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import type { RegistryItem } from "shadcn/schema";
+import type { RegistryItem } from "cnippet/schema";
 import { Project, ScriptKind } from "ts-morph";
 
 import { Index } from "@/registry/__index__";

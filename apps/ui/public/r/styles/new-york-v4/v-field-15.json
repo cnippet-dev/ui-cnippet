@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-15.tsx",
-      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field className=\"items-stretch gap-3\">\n      <FieldLabel>Country</FieldLabel>\n      <Slider defaultValue={50} />\n      <FieldDescription>This is an optional field</FieldDescription>\n    </Field>\n  );\n}\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Slider } from \"@/registry/default/ui/slider\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field className=\"items-stretch gap-3\">\r\n      <FieldLabel>Country</FieldLabel>\r\n      <Slider defaultValue={50} />\r\n      <FieldDescription>This is an optional field</FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-textarea-2.tsx",
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" size=\"lg\" />;\n}\n",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport default function Particle() {\r\n  return <Textarea placeholder=\"Type your message here\" size=\"lg\" />;\r\n}\r\n",
       "type": "registry:block"
     }
   ],

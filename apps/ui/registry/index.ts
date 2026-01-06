@@ -1,4 +1,4 @@
-import type { Registry } from "shadcn/schema";
+import type { Registry } from "cnippet/schema";
 
 import { hooks } from "@/registry/registry-hooks";
 import { lib } from "@/registry/registry-lib";

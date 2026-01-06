@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-tooltip-1",
+  "type": "registry:block",
+  "description": "Basic tooltip",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-1.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipPopup,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger render={<Button variant=\"outline\" />}>\r\n        Hover me\r\n      </TooltipTrigger>\r\n      <TooltipPopup>Helpful hint</TooltipPopup>\r\n    </Tooltip>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ]
+}

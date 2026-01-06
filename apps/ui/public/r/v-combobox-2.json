@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-combobox-2",
+  "type": "registry:block",
+  "description": "Basic combobox",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Combobox,\r\n  ComboboxEmpty,\r\n  ComboboxInput,\r\n  ComboboxItem,\r\n  ComboboxList,\r\n  ComboboxPopup,\r\n} from \"@/registry/default/ui/combobox\";\r\n\r\nconst items = [\r\n  { label: \"Apple\", value: \"apple\" },\r\n  { label: \"Banana\", value: \"banana\" },\r\n  { label: \"Orange\", value: \"orange\" },\r\n  { label: \"Grape\", value: \"grape\" },\r\n  { label: \"Strawberry\", value: \"strawberry\" },\r\n  { label: \"Mango\", value: \"mango\" },\r\n  { label: \"Pineapple\", value: \"pineapple\" },\r\n  { label: \"Kiwi\", value: \"kiwi\" },\r\n  { label: \"Peach\", value: \"peach\" },\r\n  { label: \"Pear\", value: \"pear\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Small</p>\r\n        <Combobox items={items}>\r\n          <ComboboxInput\r\n            aria-label=\"Select an item\"\r\n            placeholder=\"Select an item...\"\r\n            size=\"sm\"\r\n          />\r\n          <ComboboxPopup>\r\n            <ComboboxEmpty>No results found.</ComboboxEmpty>\r\n            <ComboboxList>\r\n              {(item) => (\r\n                <ComboboxItem key={item.value} value={item}>\r\n                  {item.label}\r\n                </ComboboxItem>\r\n              )}\r\n            </ComboboxList>\r\n          </ComboboxPopup>\r\n        </Combobox>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Large</p>\r\n        <Combobox items={items}>\r\n          <ComboboxInput\r\n            aria-label=\"Select an item\"\r\n            placeholder=\"Select an item...\"\r\n            size=\"lg\"\r\n          />\r\n          <ComboboxPopup>\r\n            <ComboboxEmpty>No results found.</ComboboxEmpty>\r\n            <ComboboxList>\r\n              {(item) => (\r\n                <ComboboxItem key={item.value} value={item}>\r\n                  {item.label}\r\n                </ComboboxItem>\r\n              )}\r\n            </ComboboxList>\r\n          </ComboboxPopup>\r\n        </Combobox>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ]
+}

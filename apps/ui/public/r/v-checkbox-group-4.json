@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-checkbox-group-4",
+  "type": "registry:block",
+  "description": "Basic checkbox-group",
+  "registryDependencies": [
+    "checkbox-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-group-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  const [loading, setLoading] = React.useState(false);\r\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    const formData = new FormData(e.currentTarget);\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 800));\r\n    setLoading(false);\r\n    const frameworks = formData.getAll(\"frameworks\") as string[];\r\n    alert(`Selected: ${frameworks.join(\", \") || \"none\"}`);\r\n  };\r\n\r\n  return (\r\n    <Form className=\"max-w-[160px]\" onSubmit={onSubmit}>\r\n      <Field\r\n        className=\"gap-4\"\r\n        name=\"frameworks\"\r\n        render={(props) => <Fieldset {...props} />}\r\n      >\r\n        <Label className=\"font-normal\" render={<FieldsetLegend />}>\r\n          Frameworks\r\n        </Label>\r\n        <CheckboxGroup defaultValue={[\"next\"]} disabled={loading}>\r\n          <FieldLabel>\r\n            <Checkbox value=\"next\" />\r\n            Next.js\r\n          </FieldLabel>\r\n          <FieldLabel>\r\n            <Checkbox value=\"vite\" />\r\n            Vite\r\n          </FieldLabel>\r\n          <FieldLabel>\r\n            <Checkbox value=\"astro\" />\r\n            Astro\r\n          </FieldLabel>\r\n        </CheckboxGroup>\r\n      </Field>\r\n      <Button disabled={loading} type=\"submit\">\r\n        Submit\r\n      </Button>\r\n    </Form>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox group"
+  ]
+}

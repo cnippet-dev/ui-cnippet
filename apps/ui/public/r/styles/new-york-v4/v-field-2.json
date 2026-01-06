@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-2.tsx",
-      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        Password <span className=\"text-destructive-foreground\">*</span>\n      </FieldLabel>\n      <Input placeholder=\"Enter password\" required type=\"password\" />\n      <FieldError>Please fill out this field.</FieldError>\n    </Field>\n  );\n}\n",
+      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <FieldLabel>\r\n        Password <span className=\"text-destructive-foreground\">*</span>\r\n      </FieldLabel>\r\n      <Input placeholder=\"Enter password\" required type=\"password\" />\r\n      <FieldError>Please fill out this field.</FieldError>\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

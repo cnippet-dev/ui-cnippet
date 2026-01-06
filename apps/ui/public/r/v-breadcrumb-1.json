@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-breadcrumb-1",
+  "type": "registry:block",
+  "description": "Basic breadcrumb",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-breadcrumb-1.tsx",
+      "content": "import Link from \"next/link\";\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbEllipsis,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from \"@/registry/default/ui/breadcrumb\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink render={<Link href=\"/\" />}>Home</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <Menu>\r\n            <MenuTrigger\r\n              render={\r\n                <Button className=\"-m-1.5\" size=\"icon-sm\" variant=\"ghost\" />\r\n              }\r\n            >\r\n              <BreadcrumbEllipsis />\r\n            </MenuTrigger>\r\n            <MenuPopup align=\"start\">\r\n              <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\r\n              <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\r\n            </MenuPopup>\r\n          </Menu>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink render={<Link href=\"/docs/components\" />}>\r\n            Components\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "breadcrumb"
+  ]
+}

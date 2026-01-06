@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-3.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n} from \"@/components/ui/input-group\";\nimport { NumberField, NumberFieldInput } from \"@/components/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <NumberField aria-label=\"Enter the amount\" defaultValue={100}>\n        <NumberFieldInput className=\"text-left\" />\n      </NumberField>\n      <InputGroupAddon>\n        <InputGroupText>₹</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>INR</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupText,\r\n} from \"@/components/ui/input-group\";\r\nimport { NumberField, NumberFieldInput } from \"@/components/ui/number-field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <NumberField aria-label=\"Enter the amount\" defaultValue={100}>\r\n        <NumberFieldInput className=\"text-left\" />\r\n      </NumberField>\r\n      <InputGroupAddon>\r\n        <InputGroupText>₹</InputGroupText>\r\n      </InputGroupAddon>\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <InputGroupText>INR</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

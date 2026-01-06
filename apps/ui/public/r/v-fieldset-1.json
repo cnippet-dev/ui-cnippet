@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-fieldset-1",
+  "type": "registry:block",
+  "description": "Basic fieldset",
+  "registryDependencies": [
+    "@cnippet/fieldset"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-fieldset-1.tsx",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset>\r\n      <FieldsetLegend>Billing Details</FieldsetLegend>\r\n      <Field>\r\n        <FieldLabel>Company</FieldLabel>\r\n        <Input placeholder=\"Enter company name\" type=\"text\" />\r\n        <FieldDescription>\r\n          The name that will appear on invoices.\r\n        </FieldDescription>\r\n      </Field>\r\n\r\n      <Field>\r\n        <FieldLabel>Tax ID</FieldLabel>\r\n        <Input placeholder=\"Enter tax identification number\" type=\"text\" />\r\n        <FieldDescription>\r\n          Your business tax identification number.\r\n        </FieldDescription>\r\n      </Field>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "fieldset"
+  ]
+}

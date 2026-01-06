@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-toast-2",
+  "type": "registry:block",
+  "description": "toast",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { toastManager } from \"@/components/ui/toast\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      <Button\r\n        onClick={() => {\r\n          toastManager.add({\r\n            description: \"Your changes have been saved.\",\r\n            title: \"Success!\",\r\n            type: \"success\",\r\n          });\r\n        }}\r\n        variant=\"outline\"\r\n      >\r\n        Success Toast\r\n      </Button>\r\n      <Button\r\n        onClick={() => {\r\n          toastManager.add({\r\n            description: \"There was a problem with your request.\",\r\n            title: \"Uh oh! Something went wrong.\",\r\n            type: \"error\",\r\n          });\r\n        }}\r\n        variant=\"outline\"\r\n      >\r\n        Error Toast\r\n      </Button>\r\n      <Button\r\n        onClick={() => {\r\n          toastManager.add({\r\n            description: \"You can add components to your app using the cli.\",\r\n            title: \"Heads up!\",\r\n            type: \"info\",\r\n          });\r\n        }}\r\n        variant=\"outline\"\r\n      >\r\n        Info Toast\r\n      </Button>\r\n      <Button\r\n        onClick={() => {\r\n          toastManager.add({\r\n            description: \"Your session is about to expire.\",\r\n            title: \"Warning!\",\r\n            type: \"warning\",\r\n          });\r\n        }}\r\n        variant=\"outline\"\r\n      >\r\n        Warning Toast\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ]
+}

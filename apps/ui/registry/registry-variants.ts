@@ -1,4 +1,4 @@
-// import type { Registry } from "shadcn/schema";
+// import type { Registry } from "cnippet/schema";
 
 // import type { RegistryCategory } from "./registry-categories";
 
@@ -699,7 +699,7 @@
 //   },
 // ];
 
-import type { Registry } from "shadcn/schema";
+import type { Registry } from "cnippet/schema";
 import type { RegistryCategory } from "./registry-categories";
 
 // Type helper to enforce RegistryCategory[] for categories field

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-textarea-3",
+  "type": "registry:block",
+  "description": "textarea",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-3.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/registry/default/ui/label\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport default function Particle() {\r\n  const id = useId();\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-2\">\r\n      <Label htmlFor={id}>Message</Label>\r\n      <Textarea id={id} placeholder=\"Type your message here\" />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ]
+}

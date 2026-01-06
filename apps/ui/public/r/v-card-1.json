@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-card-1",
+  "type": "registry:block",
+  "description": "Basic card",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-1.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Card,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardPanel,\r\n  CardTitle,\r\n} from \"@/registry/default/ui/card\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nconst frameworkOptions = [\r\n  { label: \"Next.js\", value: \"next\" },\r\n  { label: \"Vite\", value: \"vite\" },\r\n  { label: \"Remix\", value: \"remix\" },\r\n  { label: \"Astro\", value: \"astro\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Card className=\"w-full max-w-xs\">\r\n      <CardHeader>\r\n        <CardTitle>Create project</CardTitle>\r\n        <CardDescription>Deploy your new project in one-click.</CardDescription>\r\n      </CardHeader>\r\n      <Form>\r\n        <CardPanel>\r\n          <div className=\"flex flex-col gap-4\">\r\n            <Field>\r\n              <FieldLabel>Name</FieldLabel>\r\n              <Input placeholder=\"Name of your project\" type=\"text\" />\r\n            </Field>\r\n            <Field>\r\n              <FieldLabel>Framework</FieldLabel>\r\n              <Select defaultValue=\"next\" items={frameworkOptions}>\r\n                <SelectTrigger>\r\n                  <SelectValue />\r\n                </SelectTrigger>\r\n                <SelectPopup>\r\n                  {frameworkOptions.map(({ label, value }) => (\r\n                    <SelectItem key={value} value={value}>\r\n                      {label}\r\n                    </SelectItem>\r\n                  ))}\r\n                </SelectPopup>\r\n              </Select>\r\n            </Field>\r\n          </div>\r\n        </CardPanel>\r\n        <CardFooter>\r\n          <Button className=\"w-full\" type=\"submit\">\r\n            Deploy\r\n          </Button>\r\n        </CardFooter>\r\n      </Form>\r\n    </Card>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ]
+}
