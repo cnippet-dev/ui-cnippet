@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-alert-dialog-1",
+  "type": "registry:block",
+  "description": "basic alert dialog",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-1.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogClose,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogPopup,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/registry/default/ui/alert-dialog\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger render={<Button variant=\"destructive-outline\" />}>\r\n        Delete Account\r\n      </AlertDialogTrigger>\r\n      <AlertDialogPopup>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\r\n          <AlertDialogDescription>\r\n            This action cannot be undone. This will permanently delete your\r\n            account and remove your data from our servers.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>\r\n            Cancel\r\n          </AlertDialogClose>\r\n          <AlertDialogClose render={<Button variant=\"destructive\" />}>\r\n            Delete Account\r\n          </AlertDialogClose>\r\n        </AlertDialogFooter>\r\n      </AlertDialogPopup>\r\n    </AlertDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ]
+}

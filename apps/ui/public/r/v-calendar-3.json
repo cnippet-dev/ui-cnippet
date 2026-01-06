@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-calendar-3",
+  "type": "registry:block",
+  "description": "Basic calendar",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-3.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { type DateRange } from \"react-day-picker\"\r\n\r\nimport { Calendar } from \"@/registry/default/ui/calendar\"\r\n\r\nexport default function Variant() {\r\n  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(2025, 5, 12),\r\n    to: new Date(2025, 6, 15),\r\n  })\r\n\r\n  return (\r\n    <Calendar\r\n      mode=\"range\"\r\n      defaultMonth={dateRange?.from}\r\n      selected={dateRange}\r\n      onSelect={setDateRange}\r\n      numberOfMonths={2}\r\n      className=\"rounded-lg border shadow-sm\"\r\n    />\r\n  )\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ]
+}

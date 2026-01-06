@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-8.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\nimport { Kbd } from \"@/components/ui/kbd\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Kbd>⌘K</Kbd>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/components/ui/input-group\";\r\nimport { Kbd } from \"@/components/ui/kbd\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput placeholder=\"Search…\" type=\"search\" />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <Kbd>⌘K</Kbd>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

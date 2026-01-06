@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-11.tsx",
-      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        <Checkbox />\n        Accept terms and conditions\n      </FieldLabel>\n    </Field>\n  );\n}\n",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <FieldLabel>\r\n        <Checkbox />\r\n        Accept terms and conditions\r\n      </FieldLabel>\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

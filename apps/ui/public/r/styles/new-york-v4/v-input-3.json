@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-3.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return <Input aria-label=\"File\" type=\"file\" />;\n}\n",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return <Input aria-label=\"File\" type=\"file\" />;\r\n}\r\n",
       "type": "registry:block"
     }
   ],

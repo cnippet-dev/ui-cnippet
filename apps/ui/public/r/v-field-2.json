@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-field-2",
+  "type": "registry:block",
+  "description": "Basic field",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-2.tsx",
+      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <FieldLabel>\r\n        Password <span className=\"text-destructive-foreground\">*</span>\r\n      </FieldLabel>\r\n      <Input placeholder=\"Enter password\" required type=\"password\" />\r\n      <FieldError>Please fill out this field.</FieldError>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ]
+}

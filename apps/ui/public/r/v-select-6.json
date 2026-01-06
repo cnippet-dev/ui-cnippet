@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-select-6",
+  "type": "registry:block",
+  "description": "select",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-6.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst items = [\r\n  { description: \"npx create-next-app\", label: \"Next.js\", value: \"next\" },\r\n  { description: \"npm create vite@latest\", label: \"Vite\", value: \"vite\" },\r\n  { description: \"npm create astro@latest\", label: \"Astro\", value: \"astro\" },\r\n  { description: \"npx create-remix\", label: \"Remix\", value: \"remix\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select\r\n      aria-label=\"Select framework with command\"\r\n      defaultValue={items[0]}\r\n      itemToStringValue={(item) => item.value}\r\n    >\r\n      <SelectTrigger className=\"py-1 w-md\">\r\n        <SelectValue>\r\n          {(item) => (\r\n            <span className=\"flex flex-col\">\r\n              <span className=\"truncate\">{item.label}</span>\r\n              <span className=\"text-muted-foreground truncate text-xs\">\r\n                {item.description}\r\n              </span>\r\n            </span>\r\n          )}\r\n        </SelectValue>\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {items.map((item) => (\r\n          <SelectItem key={item.value} value={item}>\r\n            <span className=\"flex flex-col\">\r\n              <span className=\"truncate\">{item.label}</span>\r\n              <span className=\"text-muted-foreground truncate text-xs\">\r\n                {item.description}\r\n              </span>\r\n            </span>\r\n          </SelectItem>\r\n        ))}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ]
+}

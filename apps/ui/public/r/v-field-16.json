@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-field-16",
+  "type": "registry:block",
+  "description": "Basic field",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-16.tsx",
+      "content": "import { Field, FieldDescription } from \"@/registry/default/ui/field\";\r\nimport {\r\n  NumberField,\r\n  NumberFieldDecrement,\r\n  NumberFieldGroup,\r\n  NumberFieldIncrement,\r\n  NumberFieldInput,\r\n  NumberFieldScrubArea,\r\n} from \"@/registry/default/ui/number-field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <NumberField defaultValue={1} max={100} min={1}>\r\n        <NumberFieldScrubArea label=\"Quantity\" />\r\n        <NumberFieldGroup>\r\n          <NumberFieldDecrement />\r\n          <NumberFieldInput />\r\n          <NumberFieldIncrement />\r\n        </NumberFieldGroup>\r\n      </NumberField>\r\n      <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ]
+}

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-alert-5.tsx",
-      "content": "import { CircleAlertIcon } from \"lucide-react\";\n\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\n\nexport default function Particle() {\n  return (\n    <Alert variant=\"error\">\n      <CircleAlertIcon />\n      <AlertTitle>Heads up!</AlertTitle>\n      <AlertDescription>\n        Describe what can be done about it here.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "content": "import { CircleAlertIcon } from \"lucide-react\";\r\n\r\nimport {\r\n  Alert,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/default/ui/alert\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Alert variant=\"error\">\r\n      <CircleAlertIcon />\r\n      <AlertTitle>Heads up!</AlertTitle>\r\n      <AlertDescription>\r\n        Describe what can be done about it here.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

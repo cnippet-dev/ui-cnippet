@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-7.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Badge</Badge>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/components/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <Badge variant=\"info\">Badge</Badge>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

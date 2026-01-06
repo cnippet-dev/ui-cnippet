@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-radio-group-4",
+  "type": "registry:block",
+  "description": "radio-group",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\r\n\r\nexport default function Particle() {\r\n  const [loading, setLoading] = React.useState(false);\r\n\r\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    const formData = new FormData(e.currentTarget);\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 800));\r\n    setLoading(false);\r\n    alert(`Selected: ${formData.get(\"frameworks\")}`);\r\n  };\r\n\r\n  return (\r\n    <Form className=\"max-w-[160px]\" onSubmit={onSubmit}>\r\n      <Field\r\n        className=\"gap-4\"\r\n        name=\"frameworks\"\r\n        render={(props) => <Fieldset {...props} />}\r\n      >\r\n        <FieldsetLegend className=\"font-medium text-sm\">\r\n          Frameworks\r\n        </FieldsetLegend>\r\n        <RadioGroup defaultValue=\"next\">\r\n          <FieldLabel>\r\n            <Radio disabled={loading} value=\"next\" /> Next.js\r\n          </FieldLabel>\r\n          <FieldLabel>\r\n            <Radio disabled={loading} value=\"vite\" /> Vite\r\n          </FieldLabel>\r\n          <FieldLabel>\r\n            <Radio disabled={loading} value=\"astro\" /> Astro\r\n          </FieldLabel>\r\n        </RadioGroup>\r\n      </Field>\r\n      <Button disabled={loading} type=\"submit\">\r\n        Submit\r\n      </Button>\r\n    </Form>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ]
+}

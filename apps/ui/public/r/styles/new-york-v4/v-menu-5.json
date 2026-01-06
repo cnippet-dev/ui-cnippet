@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-menu-5.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuSub,\n  MenuSubPopup,\n  MenuSubTrigger,\n  MenuTrigger,\n} from \"@/components/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem>Item one</MenuItem>\n        <MenuSub>\n          <MenuSubTrigger>More</MenuSubTrigger>\n          <MenuSubPopup>\n            <MenuItem>Sub item A</MenuItem>\n            <MenuItem>Sub item B</MenuItem>\n          </MenuSubPopup>\n        </MenuSub>\n        <MenuItem>Item two</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuSub,\r\n  MenuSubPopup,\r\n  MenuSubTrigger,\r\n  MenuTrigger,\r\n} from \"@/components/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\r\n      <MenuPopup>\r\n        <MenuItem>Item one</MenuItem>\r\n        <MenuSub>\r\n          <MenuSubTrigger>More</MenuSubTrigger>\r\n          <MenuSubPopup>\r\n            <MenuItem>Sub item A</MenuItem>\r\n            <MenuItem>Sub item B</MenuItem>\r\n          </MenuSubPopup>\r\n        </MenuSub>\r\n        <MenuItem>Item two</MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

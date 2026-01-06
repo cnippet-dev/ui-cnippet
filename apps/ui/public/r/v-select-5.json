@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-select-5",
+  "type": "registry:block",
+  "description": "select",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-5.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Code2Icon, GlobeIcon, LayersIcon, ZapIcon } from \"lucide-react\";\r\n\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst items = [\r\n  { icon: LayersIcon, label: \"Components\", value: \"components\" },\r\n  { icon: ZapIcon, label: \"Performance\", value: \"performance\" },\r\n  { icon: GlobeIcon, label: \"Network\", value: \"network\" },\r\n  { icon: Code2Icon, label: \"Development\", value: \"development\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select\r\n      aria-label=\"Select category\"\r\n      defaultValue={items[0]}\r\n      itemToStringValue={(item) => item.value}\r\n    >\r\n      <SelectTrigger>\r\n        <SelectValue>\r\n          {(item) => (\r\n            <span className=\"flex items-center gap-2\">\r\n              <item.icon />\r\n              <span className=\"truncate\">{item.label}</span>\r\n            </span>\r\n          )}\r\n        </SelectValue>\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {items.map((item) => (\r\n          <SelectItem key={item.value} value={item}>\r\n            <span className=\"flex items-center gap-2\">\r\n              <item.icon />\r\n              <span className=\"truncate\">{item.label}</span>\r\n            </span>\r\n          </SelectItem>\r\n        ))}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ]
+}

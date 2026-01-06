@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-input-group-3",
+  "type": "registry:block",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-3.tsx",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupText,\r\n} from \"@/components/ui/input-group\";\r\nimport { NumberField, NumberFieldInput } from \"@/components/ui/number-field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <NumberField aria-label=\"Enter the amount\" defaultValue={100}>\r\n        <NumberFieldInput className=\"text-left\" />\r\n      </NumberField>\r\n      <InputGroupAddon>\r\n        <InputGroupText>₹</InputGroupText>\r\n      </InputGroupAddon>\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <InputGroupText>INR</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ]
+}

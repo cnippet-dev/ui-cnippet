@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-field-12",
+  "type": "registry:block",
+  "description": "Basic field",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"gap-4\">\r\n      <FieldsetLegend className=\"font-medium text-sm\">\r\n        Frameworks\r\n      </FieldsetLegend>\r\n      <CheckboxGroup defaultValue={[\"react\"]}>\r\n        <Field name=\"frameworks\">\r\n          <FieldLabel>\r\n            <Checkbox value=\"react\" /> React\r\n          </FieldLabel>\r\n        </Field>\r\n        <Field name=\"frameworks\">\r\n          <FieldLabel>\r\n            <Checkbox value=\"vue\" /> Vue\r\n          </FieldLabel>\r\n        </Field>\r\n        <Field name=\"frameworks\">\r\n          <FieldLabel>\r\n            <Checkbox value=\"svelte\" /> Svelte\r\n          </FieldLabel>\r\n        </Field>\r\n      </CheckboxGroup>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ]
+}

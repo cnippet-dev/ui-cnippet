@@ -3,12 +3,12 @@
   "name": "form",
   "type": "registry:ui",
   "dependencies": [
-    "@base-ui-components/react"
+    "@base-ui/react"
   ],
   "files": [
     {
       "path": "registry/default/ui/form.tsx",
-      "content": "\"use client\";\r\n\r\nimport { Form as FormPrimitive } from \"@base-ui-components/react/form\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nfunction Form({ className, ...props }: FormPrimitive.Props) {\r\n  return (\r\n    <FormPrimitive\r\n      className={cn(\"flex w-full flex-col gap-4\", className)}\r\n      data-slot=\"form\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport { Form };\r\n",
+      "content": "\"use client\";\r\n\r\nimport { Form as FormPrimitive } from \"@base-ui/react/form\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nfunction Form({ className, ...props }: FormPrimitive.Props) {\r\n  return (\r\n    <FormPrimitive\r\n      className={cn(\"flex w-full flex-col gap-4\", className)}\r\n      data-slot=\"form\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport { Form };\r\n",
       "type": "registry:ui"
     }
   ]

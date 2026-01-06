@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-number-field-4.tsx",
-      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/components/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField\n      defaultValue={0}\n      format={{ currency: \"USD\", style: \"currency\" }}\n    >\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
+      "content": "import {\r\n  NumberField,\r\n  NumberFieldDecrement,\r\n  NumberFieldGroup,\r\n  NumberFieldIncrement,\r\n  NumberFieldInput,\r\n} from \"@/components/ui/number-field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <NumberField\r\n      defaultValue={0}\r\n      format={{ currency: \"USD\", style: \"currency\" }}\r\n    >\r\n      <NumberFieldGroup>\r\n        <NumberFieldDecrement />\r\n        <NumberFieldInput />\r\n        <NumberFieldIncrement />\r\n      </NumberFieldGroup>\r\n    </NumberField>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],
