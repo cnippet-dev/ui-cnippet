@@ -52,42 +52,42 @@ const selectItems = [
 const items = [
   {
     title: "accordion",
-    number: "10",
+    number: "2  ",
     url: "/ui/data/accordion",
   },
   {
     title: "alert",
-    number: "10",
+    number: "5",
     url: "/ui/feedback/alert",
   },
   {
     title: "avatar",
-    number: "10",
+    number: "4",
     url: "/ui/media/avatar",
   },
   {
     title: "badge",
-    number: "10",
+    number: "3",
     url: "/ui/feedback/badge",
   },
   {
     title: "breadcrumb",
-    number: "10",
+    number: "2",
     url: "/ui/navigation/breadcrumb",
   },
   {
     title: "button",
-    number: "10",
+    number: "3",
     url: "/ui/actions/button",
   },
   {
     title: "checkbox",
-    number: "10",
+    number: "4",
     url: "/ui/forms/checkbox",
   },
   {
     title: "dialog",
-    number: "10",
+    number: "5",
     url: "/ui/overlays/dialog",
   },
 ];
@@ -153,7 +153,7 @@ const Components = () => {
                       </a>
                     </h2>
                     <p className="text-muted-foreground text-[13px]">
-                      20 Components
+                      {item.number} Components
                     </p>
                   </div>
                 </div>
@@ -341,7 +341,7 @@ const Components = () => {
                       <Particle />
 
                       <Particle2 />
-                      <Particle1 />
+                      {/* <Particle1 /> */}
                     </div>
                   </CardPanel>
                 </Card>
