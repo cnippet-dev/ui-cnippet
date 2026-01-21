@@ -15,10 +15,10 @@ export function GitHubLink() {
           <HugeiconsIcon className="size-4" icon={GithubIcon} strokeWidth={2} />
           <span className="max-sm:sr-only">
             <React.Suspense fallback={<Skeleton className="h-4 w-[25.5px]" />}>
-              <StarsCount />
-              <span className="text-muted-foreground w-8 text-xs tabular-nums">
+              {/* <StarsCount /> */}
+              {/* <span className="text-muted-foreground w-8 text-xs tabular-nums">
                 .1k
-              </span>
+              </span> */}
             </React.Suspense>
           </span>
         </Link>

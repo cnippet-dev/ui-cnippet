@@ -1,11 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { toastManager } from "@/components/ui/toast";
+import { Button } from "@/registry/default/ui/button";
+import { toastManager } from "@/registry/default/ui/toast";
 
 export default function Particle() {
   return (
-    <div className="flex flex-wrap gap-2">
+    <>
+      
       <Button
         onClick={() => {
           toastManager.add({
@@ -54,6 +55,6 @@ export default function Particle() {
       >
         Warning Toast
       </Button>
-    </div>
+    </>
   );
 }
