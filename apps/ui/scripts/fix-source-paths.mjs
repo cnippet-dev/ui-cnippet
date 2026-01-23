@@ -3,47 +3,47 @@
  * This ensures cross-platform compatibility by converting backslashes to forward slashes
  */
 
-import { readFileSync, writeFileSync, watchFile } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync, watchFile, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 function fixSourcePaths() {
-  const serverTsPath = join(__dirname, '..', '.source', 'server.ts');
-  
+  const serverTsPath = join(__dirname, "..", ".source", "server.ts");
+
   function fixPaths() {
     try {
-      let content = readFileSync(serverTsPath, 'utf-8');
+      let content = readFileSync(serverTsPath, "utf-8");
       const originalContent = content;
-      
+
       // Replace backslashes in path strings with forward slashes
       content = content.replace(/"content\\/g, '"content/');
-      
+
       if (content !== originalContent) {
-        writeFileSync(serverTsPath, content, 'utf-8');
-        console.log('✓ Fixed path separators in .source/server.ts');
+        writeFileSync(serverTsPath, content, "utf-8");
+        console.log("✓ Fixed path separators in .source/server.ts");
       }
     } catch (error) {
-      if (error.code !== 'ENOENT') {
-        console.error('Error fixing paths:', error.message);
+      if (error.code !== "ENOENT") {
+        console.error("Error fixing paths:", error.message);
       }
     }
   }
-  
+
   // Fix immediately
   fixPaths();
-  
+
   // Watch for changes (useful during dev)
   try {
     watchFile(serverTsPath, { interval: 1000 }, () => {
       fixPaths();
     });
-  } catch (error) {
+  } catch (_error) {
     // File doesn't exist yet, that's okay
   }
-  
+
   return (nextConfig) => {
     return {
       ...nextConfig,
@@ -57,7 +57,7 @@ function fixSourcePaths() {
             return entries;
           };
         }
-        
+
         // Call original webpack config if it exists
         if (nextConfig.webpack) {
           return nextConfig.webpack(config, options);
@@ -69,4 +69,3 @@ function fixSourcePaths() {
 }
 
 export default fixSourcePaths;
-

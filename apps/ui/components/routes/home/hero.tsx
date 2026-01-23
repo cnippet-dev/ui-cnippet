@@ -121,11 +121,10 @@
 
 // export default Hero;
 
-
 "use client";
 
+import { useEffect, useRef } from "react";
 import Typewriter from "@/components/motion/typewriter";
-import React, { useEffect, useRef } from "react";
 
 const colors = {
   50: "#f8f7f5",
@@ -147,7 +146,7 @@ export default function Hero() {
     // Animate words
     const words = document.querySelectorAll<HTMLElement>(".word");
     words.forEach((word) => {
-      const delay = parseInt(word.getAttribute("data-delay") || "0", 10);
+      const delay = Number.parseInt(word.getAttribute("data-delay") || "0", 10);
       setTimeout(() => {
         word.style.animation = "word-appear 0.8s ease-out forwards";
       }, delay);
@@ -157,8 +156,8 @@ export default function Hero() {
     const gradient = gradientRef.current;
     function onMouseMove(e: MouseEvent) {
       if (gradient) {
-        gradient.style.left = e.clientX - 192 + "px";
-        gradient.style.top = e.clientY - 192 + "px";
+        gradient.style.left = `${e.clientX - 192}px`;
+        gradient.style.top = `${e.clientY - 192}px`;
         gradient.style.opacity = "1";
       }
     }
@@ -182,8 +181,8 @@ export default function Hero() {
     function onClick(e: MouseEvent) {
       const ripple = document.createElement("div");
       ripple.style.position = "fixed";
-      ripple.style.left = e.clientX + "px";
-      ripple.style.top = e.clientY + "px";
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
       ripple.style.width = "4px";
       ripple.style.height = "4px";
       ripple.style.background = "rgba(200, 180, 160, 0.6)";
@@ -201,11 +200,13 @@ export default function Hero() {
     function onScroll() {
       if (!scrolled) {
         scrolled = true;
-        document.querySelectorAll<HTMLElement>(".floating-element").forEach((el, index) => {
-          setTimeout(() => {
-            el.style.animationPlayState = "running";
-          }, index * 200);
-        });
+        document
+          .querySelectorAll<HTMLElement>(".floating-element")
+          .forEach((el, index) => {
+            setTimeout(() => {
+              el.style.animationPlayState = "running";
+            }, index * 200);
+          });
       }
     }
     window.addEventListener("scroll", onScroll);
@@ -219,11 +220,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <div
-    >
-      <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <div>
+      <svg
+        className="absolute inset-0 h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
-          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <pattern
+            height="60"
+            id="grid"
+            patternUnits="userSpaceOnUse"
+            width="60"
+          >
             <path
               d="M 60 0 L 0 0 0 60"
               fill="none"
@@ -232,107 +240,159 @@ export default function Hero() {
             />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-        <line x1="0" y1="20%" x2="100%" y2="20%" className="grid-line" style={{ animationDelay: "0.5s" }} />
-        <line x1="0" y1="80%" x2="100%" y2="80%" className="grid-line" style={{ animationDelay: "1s" }} />
-        <line x1="20%" y1="0" x2="20%" y2="100%" className="grid-line" style={{ animationDelay: "1.5s" }} />
-        <line x1="80%" y1="0" x2="80%" y2="100%" className="grid-line" style={{ animationDelay: "2s" }} />
+        <rect fill="url(#grid)" height="100%" width="100%" />
         <line
-          x1="50%"
+          className="grid-line"
+          style={{ animationDelay: "0.5s" }}
+          x1="0"
+          x2="100%"
+          y1="20%"
+          y2="20%"
+        />
+        <line
+          className="grid-line"
+          style={{ animationDelay: "1s" }}
+          x1="0"
+          x2="100%"
+          y1="80%"
+          y2="80%"
+        />
+        <line
+          className="grid-line"
+          style={{ animationDelay: "1.5s" }}
+          x1="20%"
+          x2="20%"
           y1="0"
-          x2="50%"
           y2="100%"
+        />
+        <line
+          className="grid-line"
+          style={{ animationDelay: "2s" }}
+          x1="80%"
+          x2="80%"
+          y1="0"
+          y2="100%"
+        />
+        <line
           className="grid-line"
           style={{ animationDelay: "2.5s", opacity: 0.05 }}
+          x1="50%"
+          x2="50%"
+          y1="0"
+          y2="100%"
         />
         <line
-          x1="0"
-          y1="50%"
-          x2="100%"
-          y2="50%"
           className="grid-line"
           style={{ animationDelay: "3s", opacity: 0.05 }}
+          x1="0"
+          x2="100%"
+          y1="50%"
+          y2="50%"
         />
-        <circle cx="20%" cy="20%" r="2" className="detail-dot" style={{ animationDelay: "3s" }} />
-        <circle cx="80%" cy="20%" r="2" className="detail-dot" style={{ animationDelay: "3.2s" }} />
-        <circle cx="20%" cy="80%" r="2" className="detail-dot" style={{ animationDelay: "3.4s" }} />
-        <circle cx="80%" cy="80%" r="2" className="detail-dot" style={{ animationDelay: "3.6s" }} />
-        <circle cx="50%" cy="50%" r="1.5" className="detail-dot" style={{ animationDelay: "4s" }} />
+        <circle
+          className="detail-dot"
+          cx="20%"
+          cy="20%"
+          r="2"
+          style={{ animationDelay: "3s" }}
+        />
+        <circle
+          className="detail-dot"
+          cx="80%"
+          cy="20%"
+          r="2"
+          style={{ animationDelay: "3.2s" }}
+        />
+        <circle
+          className="detail-dot"
+          cx="20%"
+          cy="80%"
+          r="2"
+          style={{ animationDelay: "3.4s" }}
+        />
+        <circle
+          className="detail-dot"
+          cx="80%"
+          cy="80%"
+          r="2"
+          style={{ animationDelay: "3.6s" }}
+        />
+        <circle
+          className="detail-dot"
+          cx="50%"
+          cy="50%"
+          r="1.5"
+          style={{ animationDelay: "4s" }}
+        />
       </svg>
 
-
-
-
-      <div className="relative min-h-screen flex flex-col justify-between items-center px-8 py-12 md:px-6 md:py-20">
+      <div className="relative flex min-h-screen flex-col items-center justify-between px-8 py-12 md:px-6 md:py-20">
         {/* Top tagline */}
         <div className="text-center">
           <h2
-            className="text-xs md:text-sm font-mono font-light uppercase tracking-[0.2em] opacity-80"
+            className="font-light font-mono text-xs uppercase tracking-[0.2em] opacity-80 md:text-sm"
             style={{ color: colors[200] }}
           >
             Build Faster Than Ever
           </h2>
           <div
-            className="mt-4 w-16 h-px opacity-30"
+            className="mt-4 h-px w-16 opacity-30"
             style={{
               background: `linear-gradient(to right, transparent, ${colors[200]}, transparent)`,
             }}
-          ></div>
+          />
         </div>
 
         {/* Main headline */}
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl text-center">
           <h1
-            className="text-3xl md:text-5xl lg:text-6xl font-extralight leading-tight tracking-tight text-decoration"
+            className="font-extralight text-3xl text-decoration leading-tight tracking-tight md:text-5xl lg:text-6xl"
             style={{ color: colors[50] }}
           >
             <div className="mb-4 md:mb-6">
               Ship stunning interfaces faster with Cnippet UI.
             </div>
             <div
-              className="text-2xl md:text-3xl lg:text-3xl font-thin leading-relaxed max-w-3xl mx-auto"
+              className="mx-auto max-w-3xl font-thin text-2xl leading-relaxed md:text-3xl lg:text-3xl"
               style={{ color: colors[200] }}
             >
-              Production-ready React components, smart animations & insightful charts.
-              Perfect for {" "}
+              Production-ready React components, smart animations & insightful
+              charts. Perfect for{" "}
               <Typewriter
-                text={["Startups", "Developers", "Agencies", "Teams"]}
-                speed={150}
                 className="text-pretty"
-                waitTime={1500}
-                deleteSpeed={80}
                 cursorChar={"_"}
+                deleteSpeed={80}
+                speed={150}
+                text={["Startups", "Developers", "Agencies", "Teams"]}
+                waitTime={1500}
               />
             </div>
           </h1>
           <div
-            className="absolute -left-8 top-1/2 w-4 h-px opacity-20"
+            className="absolute top-1/2 -left-8 h-px w-4 opacity-20"
             style={{
-              background: colors[200],
               animation: "word-appear 1s ease-out forwards",
               animationDelay: "3.5s",
-            }}
-          ></div>
-          <div
-            className="absolute -right-8 top-1/2 w-4 h-px opacity-20"
-            style={{
               background: colors[200],
+            }}
+          />
+          <div
+            className="absolute top-1/2 -right-8 h-px w-4 opacity-20"
+            style={{
               animation: "word-appear 1s ease-out forwards",
               animationDelay: "3.7s",
+              background: colors[200],
             }}
-          ></div>
+          />
         </div>
 
         {/* Bottom tagline */}
         <div className="text-center">
           <h2
-            className="text-xs md:text-sm font-mono font-light uppercase tracking-[0.2em] opacity-80"
+            className="font-light font-mono text-xs uppercase tracking-[0.2em] opacity-80 md:text-sm"
             style={{ color: colors[200] }}
           >
-            100+ Components 🔷
-            Open Source 🔶
-            TypeScript
-
+            100+ Components 🔷 Open Source 🔶 TypeScript
           </h2>
           <div
             className="mt-6 flex justify-center space-x-4 opacity-0"
@@ -342,29 +402,29 @@ export default function Hero() {
             }}
           >
             <div
-              className="w-1 h-1 rounded-full opacity-40"
+              className="h-1 w-1 rounded-full opacity-40"
               style={{ background: colors[200] }}
-            ></div>
+            />
             <div
-              className="w-1 h-1 rounded-full opacity-60"
+              className="h-1 w-1 rounded-full opacity-60"
               style={{ background: colors[200] }}
-            ></div>
+            />
             <div
-              className="w-1 h-1 rounded-full opacity-40"
+              className="h-1 w-1 rounded-full opacity-40"
               style={{ background: colors[200] }}
-            ></div>
+            />
           </div>
         </div>
       </div>
 
       <div
+        className="pointer-events-none fixed h-96 w-96 rounded-full opacity-0 blur-3xl transition-all duration-500 ease-out"
         id="mouse-gradient"
         ref={gradientRef}
-        className="fixed pointer-events-none w-96 h-96 rounded-full blur-3xl transition-all duration-500 ease-out opacity-0"
         style={{
           background: `radial-gradient(circle, ${colors[500]}0D 0%, transparent 100%)`,
         }}
-      ></div>
+      />
     </div>
   );
 }

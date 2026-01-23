@@ -1,21 +1,82 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
   "properties": {
+    "aliases": {
+      "properties": {
+        "components": {
+          "type": "string"
+        },
+        "hooks": {
+          "type": "string"
+        },
+        "lib": {
+          "type": "string"
+        },
+        "ui": {
+          "type": "string"
+        },
+        "utils": {
+          "type": "string"
+        }
+      },
+      "required": ["utils", "components"],
+      "type": "object"
+    },
+    "iconLibrary": {
+      "type": "string"
+    },
+    "registries": {
+      "additionalProperties": false,
+      "patternProperties": {
+        "^@": {
+          "oneOf": [
+            {
+              "pattern": "\\{name\\}",
+              "type": "string"
+            },
+            {
+              "properties": {
+                "headers": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "params": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "url": {
+                  "pattern": "\\{name\\}",
+                  "type": "string"
+                }
+              },
+              "required": ["url"],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "rsc": {
+      "type": "boolean"
+    },
     "style": {
-      "type": "string",
-      "enum": ["default", "new-york"]
+      "enum": ["default", "new-york"],
+      "type": "string"
     },
     "tailwind": {
-      "type": "object",
       "properties": {
+        "baseColor": {
+          "type": "string"
+        },
         "config": {
           "type": "string"
         },
         "css": {
-          "type": "string"
-        },
-        "baseColor": {
           "type": "string"
         },
         "cssVariables": {
@@ -25,74 +86,13 @@
           "type": "string"
         }
       },
-      "required": ["config", "css", "baseColor", "cssVariables"]
-    },
-    "rsc": {
-      "type": "boolean"
+      "required": ["config", "css", "baseColor", "cssVariables"],
+      "type": "object"
     },
     "tsx": {
       "type": "boolean"
-    },
-    "iconLibrary": {
-      "type": "string"
-    },
-    "aliases": {
-      "type": "object",
-      "properties": {
-        "utils": {
-          "type": "string"
-        },
-        "components": {
-          "type": "string"
-        },
-        "ui": {
-          "type": "string"
-        },
-        "lib": {
-          "type": "string"
-        },
-        "hooks": {
-          "type": "string"
-        }
-      },
-      "required": ["utils", "components"]
-    },
-    "registries": {
-      "type": "object",
-      "patternProperties": {
-        "^@": {
-          "oneOf": [
-            {
-              "type": "string",
-              "pattern": "\\{name\\}"
-            },
-            {
-              "type": "object",
-              "properties": {
-                "url": {
-                  "type": "string",
-                  "pattern": "\\{name\\}"
-                },
-                "params": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
-                },
-                "headers": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": ["url"]
-            }
-          ]
-        }
-      },
-      "additionalProperties": false
     }
   },
-  "required": ["style", "tailwind", "rsc", "aliases"]
+  "required": ["style", "tailwind", "rsc", "aliases"],
+  "type": "object"
 }

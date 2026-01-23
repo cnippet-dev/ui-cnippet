@@ -29,7 +29,7 @@ export function MobileNav({
       <SheetTrigger
         render={
           <Button
-            className={cn("-ms-1.5 relative size-8", className)}
+            className={cn("relative -ms-1.5 size-8", className)}
             size="icon"
             variant="ghost"
           >

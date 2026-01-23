@@ -1,4 +1,3 @@
-
 import { hooks } from "@/registry/registry-hooks";
 import { lib } from "@/registry/registry-lib";
 import { styles } from "@/registry/registry-styles";

@@ -1,10 +1,15 @@
 "use client";
 
-import { Badge } from "@/registry/default/ui/badge";
-import { Button } from "@/registry/default/ui/button";
-import { Menu, MenuItem, MenuPopup, MenuTrigger } from "@/registry/default/ui/menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
+import {
+  Menu,
+  MenuItem,
+  MenuPopup,
+  MenuTrigger,
+} from "@/registry/default/ui/menu";
 
 interface ProductsDropdownProps {
   items: { href: string; label: string; upcoming?: boolean }[];

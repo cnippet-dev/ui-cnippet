@@ -56,9 +56,11 @@
   "scripts": {
     "build": "next build",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf .source",
-    "dev": "next dev --port 4000",
-    "lint": "eslint",
     "cnippet:build": "cnippet build",
+    "dev": "next dev --port 4000",
+    "format": "biome format --write .",
+    "format:all": "biome check --write --unsafe --no-errors-on-unmatched",
+    "lint": "biome lint .",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
     "start": "next start --port 4000",
     "typecheck": "tsc --noEmit"

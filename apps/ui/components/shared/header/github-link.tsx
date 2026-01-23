@@ -1,10 +1,10 @@
-import { siteConfig } from "@/lib/config";
-import { Button } from "@/registry/default/ui/button";
-import { Skeleton } from "@/registry/default/ui/skeleton";
 import { GithubIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import * as React from "react";
+import { siteConfig } from "@/lib/config";
+import { Button } from "@/registry/default/ui/button";
+import { Skeleton } from "@/registry/default/ui/skeleton";
 
 export function GitHubLink() {
   return (
@@ -50,7 +50,7 @@ export async function StarsCount() {
     }
 
     return (
-      <span className="text-muted-foreground w-8 text-xs tabular-nums">
+      <span className="w-8 text-muted-foreground text-xs tabular-nums">
         {starsCount >= 1000
           ? `${(starsCount / 1000).toFixed(1)}k`
           : starsCount.toLocaleString()}

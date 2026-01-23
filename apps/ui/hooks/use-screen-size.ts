@@ -8,12 +8,12 @@ export type ScreenSize = (typeof SCREEN_SIZES)[number];
 
 // Type-safe size order mapping
 const sizeOrder: Record<ScreenSize, number> = {
-  xs: 0,
-  sm: 1,
-  md: 2,
-  lg: 3,
-  xl: 4,
   "2xl": 5,
+  lg: 3,
+  md: 2,
+  sm: 1,
+  xl: 4,
+  xs: 0,
 } as const;
 
 class ComparableScreenSize {

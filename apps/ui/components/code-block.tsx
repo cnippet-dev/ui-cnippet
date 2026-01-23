@@ -2,7 +2,7 @@ import { CopyButton } from "@/components/copy-button";
 import { getIconForLanguageExtension } from "@/components/icons";
 import { highlightCode } from "@/lib/highlight-code";
 
-export async function   CodeBlock({
+export async function CodeBlock({
   code,
   language,
   title,

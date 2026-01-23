@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "motion/react";
 import { Folder, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface DatabaseWithRestApiProps {
@@ -34,22 +33,22 @@ const DatabaseWithRestApi = ({
     <div
       className={cn(
         "relative flex h-[350px] w-full max-w-[500px] flex-col items-center",
-        className
+        className,
       )}
     >
       {/* SVG Paths  */}
       <svg
-        className="h-full sm:w-full text-muted"
-        width="100%"
+        className="h-full text-muted sm:w-full"
         height="100%"
         viewBox="0 0 200 100"
+        width="100%"
       >
         <g
-          stroke="currentColor"
           fill="none"
-          strokeWidth="0.4"
-          strokeDasharray="100 100"
           pathLength="100"
+          stroke="currentColor"
+          strokeDasharray="100 100"
+          strokeWidth="0.4"
         >
           <path d="M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 10" />
           <path d="M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 10" />
@@ -58,13 +57,13 @@ const DatabaseWithRestApi = ({
           {/* Animation For Path Starting */}
           <animate
             attributeName="stroke-dashoffset"
-            from="100"
-            to="0"
+            calcMode="spline"
             dur="1s"
             fill="freeze"
-            calcMode="spline"
+            from="100"
             keySplines="0.25,0.1,0.5,1"
             keyTimes="0; 1"
+            to="0"
           />
         </g>
         {/* Blue Lights */}
@@ -73,8 +72,8 @@ const DatabaseWithRestApi = ({
             className="database db-light-1"
             cx="0"
             cy="0"
-            r="12"
             fill="url(#db-blue-grad)"
+            r="12"
           />
         </g>
         <g mask="url(#db-mask-2)">
@@ -82,8 +81,8 @@ const DatabaseWithRestApi = ({
             className="database db-light-2"
             cx="0"
             cy="0"
-            r="12"
             fill="url(#db-blue-grad)"
+            r="12"
           />
         </g>
         <g mask="url(#db-mask-3)">
@@ -91,8 +90,8 @@ const DatabaseWithRestApi = ({
             className="database db-light-3"
             cx="0"
             cy="0"
-            r="12"
             fill="url(#db-blue-grad)"
+            r="12"
           />
         </g>
         <g mask="url(#db-mask-4)">
@@ -100,96 +99,68 @@ const DatabaseWithRestApi = ({
             className="database db-light-4"
             cx="0"
             cy="0"
-            r="12"
             fill="url(#db-blue-grad)"
+            r="12"
           />
         </g>
         {/* Buttons */}
-        <g stroke="currentColor" fill="none" strokeWidth="0.4">
+        <g fill="none" stroke="currentColor" strokeWidth="0.4">
           {/* First Button */}
           <g>
-            <rect
-              fill="#18181B"
-              x="14"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="18" y="7.5"></DatabaseIcon>
+            <rect fill="#18181B" height="10" rx="5" width="34" x="14" y="5" />
+            <DatabaseIcon x="18" y="7.5" />
             <text
-              x="28"
-              y="12"
               fill="white"
-              stroke="none"
               fontSize="5"
               fontWeight="500"
+              stroke="none"
+              x="28"
+              y="12"
             >
               {badgeTexts?.first || "GET"}
             </text>
           </g>
           {/* Second Button */}
           <g>
-            <rect
-              fill="#18181B"
-              x="60"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="64" y="7.5"></DatabaseIcon>
+            <rect fill="#18181B" height="10" rx="5" width="34" x="60" y="5" />
+            <DatabaseIcon x="64" y="7.5" />
             <text
-              x="74"
-              y="12"
               fill="white"
-              stroke="none"
               fontSize="5"
               fontWeight="500"
+              stroke="none"
+              x="74"
+              y="12"
             >
               {badgeTexts?.second || "POST"}
             </text>
           </g>
           {/* Third Button */}
           <g>
-            <rect
-              fill="#18181B"
-              x="108"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="112" y="7.5"></DatabaseIcon>
+            <rect fill="#18181B" height="10" rx="5" width="34" x="108" y="5" />
+            <DatabaseIcon x="112" y="7.5" />
             <text
-              x="122"
-              y="12"
               fill="white"
-              stroke="none"
               fontSize="5"
               fontWeight="500"
+              stroke="none"
+              x="122"
+              y="12"
             >
               {badgeTexts?.third || "PUT"}
             </text>
           </g>
           {/* Fourth Button */}
           <g>
-            <rect
-              fill="#18181B"
-              x="150"
-              y="5"
-              width="40"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="154" y="7.5"></DatabaseIcon>
+            <rect fill="#18181B" height="10" rx="5" width="40" x="150" y="5" />
+            <DatabaseIcon x="154" y="7.5" />
             <text
-              x="165"
-              y="12"
               fill="white"
-              stroke="none"
               fontSize="5"
               fontWeight="500"
+              stroke="none"
+              x="165"
+              y="12"
             >
               {badgeTexts?.fourth || "DELETE"}
             </text>
@@ -200,36 +171,36 @@ const DatabaseWithRestApi = ({
           <mask id="db-mask-1">
             <path
               d="M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 10"
-              strokeWidth="0.5"
               stroke="white"
+              strokeWidth="0.5"
             />
           </mask>
           {/* 2 - task list */}
           <mask id="db-mask-2">
             <path
               d="M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 10"
-              strokeWidth="0.5"
               stroke="white"
+              strokeWidth="0.5"
             />
           </mask>
           {/* 3 - backlogs */}
           <mask id="db-mask-3">
             <path
               d="M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 10"
-              strokeWidth="0.5"
               stroke="white"
+              strokeWidth="0.5"
             />
           </mask>
           {/* 4 - misc */}
           <mask id="db-mask-4">
             <path
               d="M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 10"
-              strokeWidth="0.5"
               stroke="white"
+              strokeWidth="0.5"
             />
           </mask>
           {/* Blue Grad */}
-          <radialGradient id="db-blue-grad" fx="1">
+          <radialGradient fx="1" id="db-blue-grad">
             <stop offset="0%" stopColor={lightColor || "#00A6F5"} />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
@@ -253,42 +224,42 @@ const DatabaseWithRestApi = ({
         {/* box content */}
         <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
           {/* Badges */}
-          <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
+          <div className="absolute bottom-8 left-12 z-10 flex h-7 items-center gap-2 rounded-full border bg-[#101112] px-3 text-xs">
             <HeartHandshakeIcon className="size-4" />
             <span>{buttonTexts?.first || "LegionDev"}</span>
           </div>
-          <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
+          <div className="absolute right-16 z-10 hidden h-7 items-center gap-2 rounded-full border bg-[#101112] px-3 text-xs sm:flex">
             <Folder className="size-4" />
             <span>{buttonTexts?.second || "v2_updates"}</span>
           </div>
           {/* Circles */}
           <motion.div
-            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [0.98, 1.02, 0.98, 1, 1, 1, 1, 1, 1],
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5"
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           />
           <motion.div
-            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 0.98, 1.02, 0.98, 1, 1, 1],
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t bg-accent/5"
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           />
           <motion.div
-            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1, 1],
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t bg-accent/5"
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           />
           <motion.div
-            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1],
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t bg-accent/5"
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           />
         </div>
       </div>
@@ -301,17 +272,17 @@ export default DatabaseWithRestApi;
 const DatabaseIcon = ({ x = "0", y = "0" }: { x: string; y: string }) => {
   return (
     <svg
-      x={x}
-      y={y}
-      xmlns="http://www.w3.org/2000/svg"
-      width="5"
-      height="5"
-      viewBox="0 0 24 24"
       fill="none"
+      height="5"
       stroke="white"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="5"
+      x={x}
+      xmlns="http://www.w3.org/2000/svg"
+      y={y}
     >
       <ellipse cx="12" cy="5" rx="9" ry="3" />
       <path d="M3 5V19A9 3 0 0 0 21 19V5" />

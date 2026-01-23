@@ -1,97 +1,98 @@
-import React, { useState, useCallback } from "react";
-import { Cursor } from "./motion/cursor";
 import { AnimatePresence, motion } from "motion/react";
+import type React from "react";
+import { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Cursor } from "./motion/cursor";
 
 interface TrackedElement {
-    id: string;
-    ref: React.RefObject<HTMLButtonElement | HTMLDivElement | null>;
-    isHovering: boolean;
+  id: string;
+  ref: React.RefObject<HTMLButtonElement | HTMLDivElement | null>;
+  isHovering: boolean;
 }
 
 interface CursorPointerProps {
-    targets: Array<{
-        id: string;
-        ref: React.RefObject<HTMLButtonElement | HTMLDivElement | null>;
-    }>;
+  targets: Array<{
+    id: string;
+    ref: React.RefObject<HTMLButtonElement | HTMLDivElement | null>;
+  }>;
 }
 
 const CursorPointer = ({ targets }: CursorPointerProps) => {
-    const [hoverStates, setHoverStates] = useState<Record<string, boolean>>({});
+  const [hoverStates, setHoverStates] = useState<Record<string, boolean>>({});
 
-    const trackedElements: TrackedElement[] = targets.map(({ id, ref }) => ({
-        id,
-        ref,
-        isHovering: hoverStates[id] || false,
-    }));
+  const trackedElements: TrackedElement[] = targets.map(({ id, ref }) => ({
+    id,
+    isHovering: hoverStates[id] || false,
+    ref,
+  }));
 
-    const handlePositionChange = useCallback(
-        (x: number, y: number) => {
-            const newHoverStates: Record<string, boolean> = {};
+  const handlePositionChange = useCallback(
+    (x: number, y: number) => {
+      const newHoverStates: Record<string, boolean> = {};
 
-            trackedElements.forEach(({ id, ref }) => {
-                if (ref.current) {
-                    const rect = ref.current.getBoundingClientRect();
-                    const isInside =
-                        x >= rect.left &&
-                        x <= rect.right &&
-                        y >= rect.top &&
-                        y <= rect.bottom;
-                    newHoverStates[id] = isInside;
-                } else {
-                    newHoverStates[id] = false;
-                }
-            });
+      trackedElements.forEach(({ id, ref }) => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          const isInside =
+            x >= rect.left &&
+            x <= rect.right &&
+            y >= rect.top &&
+            y <= rect.bottom;
+          newHoverStates[id] = isInside;
+        } else {
+          newHoverStates[id] = false;
+        }
+      });
 
-            setHoverStates(newHoverStates);
-        },
-        [trackedElements],
-    );
+      setHoverStates(newHoverStates);
+    },
+    [trackedElements],
+  );
 
-    const isAnyHovering = Object.values(hoverStates).some(Boolean);
+  const isAnyHovering = Object.values(hoverStates).some(Boolean);
 
-    return (
-        <Cursor
-            attachToParent
-            variants={{
-                initial: { scale: 0.3, opacity: 0 },
-                animate: { scale: 0.5, opacity: 1 },
-                exit: { scale: 0.3, opacity: 0 },
-            }}
-            springConfig={{
-                bounce: 0.001,
-            }}
-            transition={{
-                ease: "easeInOut",
-                duration: 0.15,
-            }}
-            onPositionChange={handlePositionChange}
-        >
+  return (
+    <Cursor
+      attachToParent
+      onPositionChange={handlePositionChange}
+      springConfig={{
+        bounce: 0.001,
+      }}
+      transition={{
+        duration: 0.15,
+        ease: "easeInOut",
+      }}
+      variants={{
+        animate: { opacity: 1, scale: 0.5 },
+        exit: { opacity: 0, scale: 0.3 },
+        initial: { opacity: 0, scale: 0.3 },
+      }}
+    >
+      <motion.div
+        animate={{
+          height: isAnyHovering ? 80 : 16,
+          width: isAnyHovering ? 80 : 16,
+        }}
+        className={cn(
+          "absolute -top-5 left-0 flex w-fit cursor-default items-center justify-center overflow-hidden rounded-full",
+          isAnyHovering ? "bg-indigo-300/50" : "bg-indigo-500",
+        )}
+      >
+        <AnimatePresence>
+          {isAnyHovering ? (
             <motion.div
-                animate={{
-                    width: isAnyHovering ? 80 : 16,
-                    height: isAnyHovering ? 80 : 16,
-                }}
-                className={cn(
-                    "absolute -top-5 left-0 flex w-fit cursor-default items-center justify-center overflow-hidden rounded-full",
-                    isAnyHovering ? "bg-indigo-300/50" : "bg-indigo-500",
-                )}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-flex w-full items-center justify-center"
+              exit={{ opacity: 0, scale: 0.6 }}
+              initial={{ opacity: 0, scale: 0.6 }}
             >
-                <AnimatePresence>
-                    {isAnyHovering ? (
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.6 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.6 }}
-                            className="inline-flex w-full items-center justify-center"
-                        >
-                            <div className="inline-flex h-5 items-center rounded-full text-xs text-white dark:text-black"></div>
-                        </motion.div>
-                    ) : null}
-                </AnimatePresence>
+              <div className="inline-flex h-5 items-center rounded-full text-white text-xs dark:text-black" />
             </motion.div>
-        </Cursor>
-    );
+          ) : null}
+        </AnimatePresence>
+      </motion.div>
+    </Cursor>
+  );
 };
 
 export default CursorPointer;

@@ -153,7 +153,7 @@ export function CommandMenu({
             </CommandEmpty>
             {navItems && navItems.length > 0 && (
               <CommandGroup
-                className="p-0! **:[[cmdk-group-heading]]:px-2! **:[[cmdk-group-heading]]:pt-4! **:[[cmdk-group-heading]]:pb-1.5! **:[[cmdk-group-heading]]:scroll-mt-16"
+                className="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:px-2! **:[[cmdk-group-heading]]:pt-4! **:[[cmdk-group-heading]]:pb-1.5!"
                 heading="Pages"
               >
                 {navItems.map((item) => (
@@ -181,7 +181,7 @@ export function CommandMenu({
             )}
             {tree.children.map((group) => (
               <CommandGroup
-                className="p-0! **:[cmdk-group-heading]]:!px-2 **:[cmdk-group-heading]]:!pt-4 **:[cmdk-group-heading]]:!pb-1.5 **:[cmdk-group-heading]]:scroll-mt-16"
+                className="**:[cmdk-group-heading]]:!px-2 **:[cmdk-group-heading]]:!pt-4 **:[cmdk-group-heading]]:!pb-1.5 **:[cmdk-group-heading]]:scroll-mt-16 p-0!"
                 heading={group.name}
                 key={group.$id}
               >

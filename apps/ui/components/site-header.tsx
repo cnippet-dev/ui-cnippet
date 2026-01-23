@@ -1,11 +1,10 @@
-import { SiteHeader as WorkspaceSiteHeader } from "@/components/shared/header/header";
-import { Separator } from "@/registry/default/ui/separator";
-
 import { CommandMenu } from "@/components/command-menu";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
+import { SiteHeader as WorkspaceSiteHeader } from "@/components/shared/header/header";
 import { appConfig } from "@/lib/config";
 import { source } from "@/lib/source";
+import { Separator } from "@/registry/default/ui/separator";
 
 export function SiteHeader() {
   const pageTree = source.pageTree;

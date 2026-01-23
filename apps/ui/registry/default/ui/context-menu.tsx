@@ -33,9 +33,9 @@ function ContextMenuPopup({
   return (
     <ContextMenuPrimitive.Popup
       className={cn(
-        "bg-popover text-popover-foreground transform-origin-[var(--transform-origin)] box-border rounded-md transition-[transform,opacity] duration-150 data-ending-style:opacity-0",
-        "light:outline light:outline-1 light:outline-gray-200 light:shadow-[0_10px_15px_-3px_var(--color-gray-200),0_4px_6px_-4px_var(--color-gray-200)]",
-        "dark:outline-1 dark:-outline-offset-1 dark:outline-gray-300",
+        "transform-origin-[var(--transform-origin)] box-border rounded-md bg-popover text-popover-foreground transition-[transform,opacity] duration-150 data-ending-style:opacity-0",
+        "light:shadow-[0_10px_15px_-3px_var(--color-gray-200),0_4px_6px_-4px_var(--color-gray-200)] light:outline light:outline-1 light:outline-gray-200",
+        "dark:outline-1 dark:outline-gray-300 dark:-outline-offset-1",
         "py-1",
         className,
       )}
@@ -96,7 +96,7 @@ function ContextMenuLabel({
   return (
     <div
       className={cn(
-        "text-muted-foreground px-4 py-2 text-sm font-medium",
+        "px-4 py-2 font-medium text-muted-foreground text-sm",
         className,
       )}
       data-slot="context-menu-label"
@@ -112,7 +112,7 @@ function ContextMenuShortcut({
   return (
     <span
       className={cn(
-        "text-muted-foreground ml-auto text-xs tracking-widest",
+        "ml-auto text-muted-foreground text-xs tracking-widest",
         className,
       )}
       data-slot="context-menu-shortcut"

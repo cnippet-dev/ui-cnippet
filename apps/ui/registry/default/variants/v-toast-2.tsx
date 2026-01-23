@@ -6,7 +6,6 @@ import { toastManager } from "@/registry/default/ui/toast";
 export default function Particle() {
   return (
     <>
-      
       <Button
         onClick={() => {
           toastManager.add({

@@ -73,10 +73,10 @@ export function DocsTableOfContents({
       )}
     >
       <p className="flex h-7 items-center font-medium text-xs">On This Page</p>
-      <div className="before:-left-3.25 relative ms-3.5 flex flex-col gap-0.5 before:absolute before:inset-y-0 before:w-px before:bg-border">
+      <div className="relative ms-3.5 flex flex-col gap-0.5 before:absolute before:inset-y-0 before:-left-3.25 before:w-px before:bg-border">
         {toc.map((item) => (
           <a
-            className="before:-left-3.25 relative py-1 text-[0.8rem] text-muted-foreground no-underline transition-colors before:absolute before:inset-y-px before:w-px before:rounded-full hover:bg-transparent hover:text-foreground data-[active=true]:bg-transparent data-[depth=3]:ps-3.5 data-[depth=4]:ps-5.5 data-[active=true]:text-foreground data-[active=true]:before:w-0.5 data-[active=true]:before:bg-primary"
+            className="relative py-1 text-[0.8rem] text-muted-foreground no-underline transition-colors before:absolute before:inset-y-px before:-left-3.25 before:w-px before:rounded-full hover:bg-transparent hover:text-foreground data-[active=true]:bg-transparent data-[depth=3]:ps-3.5 data-[depth=4]:ps-5.5 data-[active=true]:text-foreground data-[active=true]:before:w-0.5 data-[active=true]:before:bg-primary"
             data-active={item.url === `#${activeHeading}`}
             data-depth={item.depth}
             href={item.url}

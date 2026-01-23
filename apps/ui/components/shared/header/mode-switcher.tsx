@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/registry/default/ui/button";
 import { LayerMask01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTheme } from "next-themes";
 import * as React from "react";
+import { Button } from "@/registry/default/ui/button";
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -22,7 +22,7 @@ export function ModeSwitcher() {
       variant="ghost"
     >
       <HugeiconsIcon
-        className="-rotate-45 size-4"
+        className="size-4 -rotate-45"
         icon={LayerMask01Icon}
         strokeWidth={2}
       />

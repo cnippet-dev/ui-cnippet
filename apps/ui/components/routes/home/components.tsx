@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "motion/react";
 import { fadeUp } from "cnippet-aos";
 import {
   ChevronDownIcon,
@@ -13,7 +10,13 @@ import {
   Loader2,
   MailOpen,
 } from "lucide-react";
-
+import { motion } from "motion/react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardPanel, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectItem,
@@ -21,26 +24,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardPanel, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipPopup, TooltipTrigger } from "@/components/ui/tooltip";
-
-import Particle from "@/registry/default/variants/v-dialog-1";
-import Particle1 from "@/registry/default/variants/v-alert-dialog-1";
-import Particle2 from "@/registry/default/variants/v-sheet-1";
-import Particle3 from "@/registry/default/variants/v-toast-1";
-import Particle4 from "@/registry/default/variants/v-switch-1";
-import Particle5 from "@/registry/default/variants/v-toolbar-1";
-import Particle7 from "@/registry/default/variants/v-toggle-group-1";
-import Particle8 from "@/registry/default/variants/v-toast-2";
 import Particle9 from "@/registry/default/variants/v-checkbox-1";
-import Particle10 from "@/registry/default/variants/v-field-1";
 import Particle12 from "@/registry/default/variants/v-combobox-1";
+import Particle from "@/registry/default/variants/v-dialog-1";
+import Particle10 from "@/registry/default/variants/v-field-1";
 import Particle13 from "@/registry/default/variants/v-meter-1";
 import Particle14 from "@/registry/default/variants/v-number-field-1";
+import Particle2 from "@/registry/default/variants/v-sheet-1";
 import Particle15 from "@/registry/default/variants/v-skeleton-1";
+import Particle4 from "@/registry/default/variants/v-switch-1";
+import Particle3 from "@/registry/default/variants/v-toast-1";
+import Particle8 from "@/registry/default/variants/v-toast-2";
+import Particle7 from "@/registry/default/variants/v-toggle-group-1";
+import Particle5 from "@/registry/default/variants/v-toolbar-1";
 
 const selectItems = [
   // { label: "Select framework", value: null },
@@ -51,43 +48,43 @@ const selectItems = [
 
 const items = [
   {
-    title: "accordion",
     number: "2  ",
+    title: "accordion",
     url: "/ui/data/accordion",
   },
   {
-    title: "alert",
     number: "5",
+    title: "alert",
     url: "/ui/feedback/alert",
   },
   {
-    title: "avatar",
     number: "4",
+    title: "avatar",
     url: "/ui/media/avatar",
   },
   {
-    title: "badge",
     number: "3",
+    title: "badge",
     url: "/ui/feedback/badge",
   },
   {
-    title: "breadcrumb",
     number: "2",
+    title: "breadcrumb",
     url: "/ui/navigation/breadcrumb",
   },
   {
-    title: "button",
     number: "3",
+    title: "button",
     url: "/ui/actions/button",
   },
   {
-    title: "checkbox",
     number: "4",
+    title: "checkbox",
     url: "/ui/forms/checkbox",
   },
   {
-    title: "dialog",
     number: "5",
+    title: "dialog",
     url: "/ui/overlays/dialog",
   },
 ];
@@ -102,16 +99,16 @@ const Components = () => {
               {...fadeUp({
                 delay: 0.1,
                 duration: 0.8,
-                scroll: true,
                 once: true,
+                scroll: true,
               })}
-              className="font-funnel mb-2 text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-200"
+              className="mb-2 font-funnel font-medium text-4xl text-gray-900 tracking-tight dark:text-gray-200"
             >
               Essential UI components
             </motion.h2>
             <motion.p
               {...fadeUp({ delay: 0.3, duration: 0.8, y: 10 })}
-              className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
+              className="max-w-2xl text-gray-700 text-sm leading-relaxed tracking-tight dark:text-gray-400"
             >
               Foundation components built for performance and accessibility.
               Each component is carefully crafted with animations and
@@ -125,8 +122,8 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.5 + index * 0.1,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
                 <div className="space-y-3 text-center">
@@ -135,24 +132,24 @@ const Components = () => {
                     href={item.url}
                   >
                     <Image
-                      src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1765176526/${item.title}.png`}
                       alt=""
-                      width={1920}
-                      height={1080}
                       className="h-52 w-full object-cover"
+                      height={1080}
+                      src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1765176526/${item.title}.png`}
+                      width={1920}
                     />
                   </Link>
 
                   <div className="[&amp;_a]:peer-hover:underline">
                     <h2>
                       <a
-                        className="text-sm font-medium capitalize hover:underline"
+                        className="font-medium text-sm capitalize hover:underline"
                         href={item.url}
                       >
                         {item.title}
                       </a>
                     </h2>
-                    <p className="text-muted-foreground text-[13px]">
+                    <p className="text-[13px] text-muted-foreground">
                       {item.number} Components
                     </p>
                   </div>
@@ -170,16 +167,16 @@ const Components = () => {
               {...fadeUp({
                 delay: 0.1,
                 duration: 0.8,
-                scroll: true,
                 once: true,
+                scroll: true,
               })}
-              className="font-funnel mb-2 text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-200"
+              className="mb-2 font-funnel font-medium text-4xl text-gray-900 tracking-tight dark:text-gray-200"
             >
               Components at a glance
             </motion.h2>
             <motion.p
               {...fadeUp({ delay: 0.3, duration: 0.8, y: 10 })}
-              className="max-w-2xl text-sm leading-relaxed tracking-tight text-gray-700 dark:text-gray-400"
+              className="max-w-2xl text-gray-700 text-sm leading-relaxed tracking-tight dark:text-gray-400"
             >
               Foundation components built for performance and accessibility.
               Each component is carefully crafted with animations and
@@ -192,11 +189,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.5,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Buttons</CardTitle>
                   </CardHeader>
@@ -211,7 +208,7 @@ const Components = () => {
                       <Button variant="link">
                         <Link href="/">Link</Link>
                       </Button>
-                      <Button variant="outline" size="icon" aria-label="Next">
+                      <Button aria-label="Next" size="icon" variant="outline">
                         <ChevronRight />
                       </Button>
                       <Button>
@@ -245,11 +242,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.6,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Pickers</CardTitle>
                   </CardHeader>
@@ -268,11 +265,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.7,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle> Inputs</CardTitle>
                   </CardHeader>
@@ -284,12 +281,12 @@ const Components = () => {
                         </Label>
                         <div className="relative">
                           <Input
-                            size="lg"
                             id="input-12"
                             placeholder="cnippet"
+                            size="lg"
                             type="text"
                           />
-                          <span className="text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-sm peer-disabled:opacity-50">
+                          <span className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground text-sm peer-disabled:opacity-50">
                             .dev
                           </span>
                         </div>
@@ -297,12 +294,12 @@ const Components = () => {
 
                       <div className="space-y-2">
                         <Label htmlFor="input-18">Input with end select</Label>
-                        <div className="flex rounded-lg shadow-sm shadow-black/5">
+                        <div className="flex rounded-lg shadow-black/5 shadow-sm">
                           <Input
-                            size="lg"
-                            id="input-18"
                             className="-me-px rounded-e-none shadow-none focus-visible:z-10 dark:not-has-disabled:not-has-focus-visible:not-has-aria-invalid:before:shadow-none"
+                            id="input-18"
                             placeholder="google"
+                            size="lg"
                             type="text"
                           />
                           <Select defaultValue="gmail" items={selectItems}>
@@ -328,11 +325,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.8,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Overlays</CardTitle>
                   </CardHeader>
@@ -351,11 +348,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 0.9,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Feedback</CardTitle>
                   </CardHeader>
@@ -380,11 +377,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 1.0,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Tooltips</CardTitle>
                   </CardHeader>
@@ -393,7 +390,7 @@ const Components = () => {
                       <Tooltip>
                         <TooltipTrigger
                           render={
-                            <Button variant="outline" className="w-fit" />
+                            <Button className="w-fit" variant="outline" />
                           }
                         >
                           Hover me
@@ -401,11 +398,11 @@ const Components = () => {
                         <TooltipPopup className="w-60">
                           <div className="w-full space-y-1">
                             <GlobeIcon
+                              aria-hidden="true"
                               className="mt-0.5 shrink-0 opacity-60"
                               size={16}
-                              aria-hidden="true"
                             />
-                            <p className="text-[13px] font-medium text-white">
+                            <p className="font-medium text-[13px] text-white">
                               Tooltip with title and icon
                             </p>
                             <p className="text-muted-foreground text-xs">
@@ -419,7 +416,7 @@ const Components = () => {
                       <Tooltip>
                         <TooltipTrigger
                           render={
-                            <Button variant="outline" className="w-fit" />
+                            <Button className="w-fit" variant="outline" />
                           }
                         >
                           W/ image
@@ -428,13 +425,13 @@ const Components = () => {
                           <div className="w-full space-y-1">
                             <div className="space-y-1">
                               <Image
-                                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h1.jpg"
-                                className="w-full rounded"
-                                width={382}
-                                height={216}
                                 alt="Content image"
+                                className="w-full rounded"
+                                height={216}
+                                src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1737986668/h1.jpg"
+                                width={382}
                               />
-                              <p className="text-[13px] font-medium">
+                              <p className="font-medium text-[13px]">
                                 Tooltip with title and icon
                               </p>
                               <p className="text-muted-foreground text-xs">
@@ -453,7 +450,7 @@ const Components = () => {
                             className="col-start-2"
                             render={<Button variant="outline" />}
                           >
-                            <ChevronUpIcon size={16} aria-hidden="true" />
+                            <ChevronUpIcon aria-hidden="true" size={16} />
                           </TooltipTrigger>
                           <TooltipPopup>Pan top</TooltipPopup>
                         </Tooltip>
@@ -462,7 +459,7 @@ const Components = () => {
                             className="col-start-1"
                             render={<Button variant="outline" />}
                           >
-                            <ChevronLeftIcon size={16} aria-hidden="true" />
+                            <ChevronLeftIcon aria-hidden="true" size={16} />
                           </TooltipTrigger>
                           <TooltipPopup side="left">Pan left</TooltipPopup>
                         </Tooltip>
@@ -474,7 +471,7 @@ const Components = () => {
                             className=""
                             render={<Button variant="outline" />}
                           >
-                            <ChevronRightIcon size={16} aria-hidden="true" />
+                            <ChevronRightIcon aria-hidden="true" size={16} />
                           </TooltipTrigger>
                           <TooltipPopup side="right">Pan right</TooltipPopup>
                         </Tooltip>
@@ -483,7 +480,7 @@ const Components = () => {
                             className="col-start-2"
                             render={<Button variant="outline" />}
                           >
-                            <ChevronDownIcon size={16} aria-hidden="true" />
+                            <ChevronDownIcon aria-hidden="true" size={16} />
                           </TooltipTrigger>
                           <TooltipPopup side="bottom">Pan down</TooltipPopup>
                         </Tooltip>
@@ -497,11 +494,11 @@ const Components = () => {
                 {...fadeUp({
                   delay: 1.1,
                   duration: 0.8,
-                  scroll: true,
                   once: true,
+                  scroll: true,
                 })}
               >
-                <Card className="dark:bg-card bg-sidebar w-full rounded-xl border-none p-5">
+                <Card className="w-full rounded-xl border-none bg-sidebar p-5 dark:bg-card">
                   <CardHeader className="p-0">
                     <CardTitle>Form</CardTitle>
                   </CardHeader>

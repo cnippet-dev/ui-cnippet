@@ -1,9 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { ReactLenis } from "lenis/react";
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/shared/footer";
-import CalendarDemo from "@/registry/default/variants/v-context-menu-1";
 
 const Hero = dynamic(() => import("@/components/routes/home/hero"));
 const Components = dynamic(() => import("@/components/routes/home/components"));

@@ -1,11 +1,14 @@
 "use client";
+import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { cva, VariantProps } from "class-variance-authority";
 
 export const bentoGridVariants = cva(
   "relative grid gap-4 [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
   {
+    defaultVariants: {
+      variant: "default",
+    },
     variants: {
       variant: {
         default: `
@@ -16,10 +19,6 @@ export const bentoGridVariants = cva(
             [&>*:nth-child(4)]:col-span-4 md:[&>*:nth-child(4)]:col-span-3
             [&>*:nth-child(5)]:col-span-4 md:[&>*:nth-child(5)]:col-span-3
           `,
-        threeCells: `
-            grid-cols-2 grid-rows-2 [&>*:nth-child(4)]:hidden [&>*:nth-child(5)]:hidden
-            [&>*:first-child]:col-span-2
-        `,
         fourCells: `
           grid-cols-3 grid-rows-2
           [&>*:first-child]:col-span-1 
@@ -27,12 +26,13 @@ export const bentoGridVariants = cva(
           [&>*:nth-child(3)]:col-span-2
           [&>*:nth-child(5)]:hidden
         `,
+        threeCells: `
+            grid-cols-2 grid-rows-2 [&>*:nth-child(4)]:hidden [&>*:nth-child(5)]:hidden
+            [&>*:first-child]:col-span-2
+        `,
       },
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
+  },
 );
 
 export const GridBento = React.forwardRef<
@@ -41,8 +41,8 @@ export const GridBento = React.forwardRef<
 >(({ variant, className, ...props }, ref) => {
   return (
     <div
-      ref={ref}
       className={cn(bentoGridVariants({ variant }), className)}
+      ref={ref}
       {...props}
     />
   );

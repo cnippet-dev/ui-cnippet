@@ -43,7 +43,6 @@ export const siteConfig = {
       label: "aos",
       // upcoming: true,
     },
-    
   ],
   url: "https://coss.com",
 };

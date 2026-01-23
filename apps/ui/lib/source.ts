@@ -1,6 +1,5 @@
 import { loader } from "fumadocs-core/source";
-import { ui } from "@/.source/server";
-import { doc } from "@/.source/server";
+import { doc, ui } from "@/.source/server";
 
 export const source = loader({
   baseUrl: "/ui",

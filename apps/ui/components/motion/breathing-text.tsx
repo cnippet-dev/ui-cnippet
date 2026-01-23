@@ -1,54 +1,54 @@
-"use client"
+"use client";
 
-import { ElementType } from "react"
-import { motion, Transition, Variants } from "motion/react"
+import { motion, type Transition, type Variants } from "motion/react";
+import type { ElementType } from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface TextProps extends React.HTMLAttributes<HTMLElement> {
   /**
    * The content to be displayed and animated
    */
-  children: React.ReactNode
+  children: React.ReactNode;
 
   /**
    * HTML Tag to render the component as
    */
-  as?: ElementType
+  as?: ElementType;
 
   /**
    * Initial font variation settings
    */
-  fromFontVariationSettings: string
+  fromFontVariationSettings: string;
 
   /**
    * Target font variation settings to animate to
    */
-  toFontVariationSettings: string
+  toFontVariationSettings: string;
 
   /**
    * Animation transition configuration
    * @default { duration: 1.5, ease: "easeInOut" }
    */
-  transition?: Transition
+  transition?: Transition;
 
   /**
    * Duration of stagger delay between elements in seconds
    * @default 0.1
    */
-  staggerDuration?: number
+  staggerDuration?: number;
 
   /**
    * Direction to stagger animations from
    * @default "first"
    */
-  staggerFrom?: "first" | "last" | "center" | number
+  staggerFrom?: "first" | "last" | "center" | number;
 
   /**
    * Delay between animation repeats in seconds
    * @default 0.1
    */
-  repeatDelay?: number
+  repeatDelay?: number;
 }
 
 const BreathingText = ({
@@ -67,63 +67,62 @@ const BreathingText = ({
   ...props
 }: TextProps) => {
   const letterVariants: Variants = {
-    initial: { fontVariationSettings: fromFontVariationSettings },
     animate: (i) => ({
       fontVariationSettings: toFontVariationSettings,
       transition: {
         ...transition,
-        repeat: Infinity,
-        repeatType: "mirror",
         delay: i * staggerDuration,
+        repeat: Number.POSITIVE_INFINITY,
         repeatDelay: repeatDelay,
+        repeatType: "mirror",
       },
     }),
-  }
+    initial: { fontVariationSettings: fromFontVariationSettings },
+  };
 
   const getCustomIndex = (index: number, total: number) => {
     if (typeof staggerFrom === "number") {
-      return Math.abs(index - staggerFrom)
+      return Math.abs(index - staggerFrom);
     }
     switch (staggerFrom) {
       case "first":
-        return index
+        return index;
       case "last":
-        return total - 1 - index
-      case "center":
+        return total - 1 - index;
       default:
-        return Math.abs(index - Math.floor(total / 2))
+        return Math.abs(index - Math.floor(total / 2));
     }
-  }
+  };
 
-  const letters = String(children).split("")
-  const ElementTag = as
+  const letters = String(children).split("");
+  const ElementTag = as;
 
   return (
     <ElementTag
       className={cn(
         className,
         // an after pseudo element is used to create a container large enough to hold the text with full weight. Helps avoid layout shifts
-        "relative after:absolute after:content-[attr(data-text)] after:font-black after:pointer-none after:overflow-hidden after:select-none after:invisible after:h-0"
+        "after:pointer-none relative after:invisible after:absolute after:h-0 after:select-none after:overflow-hidden after:font-black after:content-[attr(data-text)]",
       )}
       {...props}
       data-text={children}
     >
       {letters.map((letter: string, i: number) => (
         <motion.span
-          key={i}
-          className="inline-block whitespace-pre"
-          aria-hidden="true"
-          variants={letterVariants}
-          initial="initial"
           animate="animate"
+          aria-hidden="true"
+          className="inline-block whitespace-pre"
           custom={getCustomIndex(i, letters.length)}
+          initial="initial"
+          key={i}
+          variants={letterVariants}
         >
           {letter}
         </motion.span>
       ))}
       <span className="sr-only">{children}</span>
     </ElementTag>
-  )
-}
+  );
+};
 
-export default BreathingText
+export default BreathingText;
