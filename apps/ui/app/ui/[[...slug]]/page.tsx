@@ -1,9 +1,4 @@
-import {
-  ArrowLeft02Icon,
-  ArrowRight02Icon,
-  LinkSquare02Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { RiArrowLeftLine, RiArrowRightLine, RiLinkM } from "@remixicon/react";
 import { findNeighbour } from "fumadocs-core/page-tree";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -65,8 +60,8 @@ export default async function Page(props: {
       className="flex items-stretch border-l sm:text-[.9375rem] xl:w-full"
       data-slot="docs"
     >
-      <div className="w-full pr-8">
-        <div className="-m-px border bg-background px-4 py-6 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] sm:px-6 lg:p-8 dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
+      <div className="w-full">
+        <div className="-m-px border bg-background before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
           <div className="mx-auto w-full max-w-3xl">
             <div className="flex min-w-0 flex-1 flex-col gap-8">
               <div className="flex flex-col gap-2">
@@ -85,10 +80,7 @@ export default async function Page(props: {
                     <Button
                       render={
                         <Link href={links.doc} rel="noreferrer" target="_blank">
-                          <HugeiconsIcon
-                            icon={LinkSquare02Icon}
-                            strokeWidth={2.5}
-                          />
+                          <RiLinkM />
                           API Reference
                         </Link>
                       }
@@ -109,8 +101,7 @@ export default async function Page(props: {
                   className="shadow-none"
                   render={
                     <Link href={neighbours.previous.url}>
-                      <HugeiconsIcon icon={ArrowLeft02Icon} strokeWidth={2} />{" "}
-                      {neighbours.previous.name}
+                      <RiArrowLeftLine /> {neighbours.previous.name}
                     </Link>
                   }
                   variant="outline"
@@ -121,8 +112,7 @@ export default async function Page(props: {
                   className="ms-auto shadow-none"
                   render={
                     <Link href={neighbours.next.url}>
-                      {neighbours.next.name}{" "}
-                      <HugeiconsIcon icon={ArrowRight02Icon} strokeWidth={2} />
+                      {neighbours.next.name} <RiArrowRightLine />
                     </Link>
                   }
                   variant="outline"

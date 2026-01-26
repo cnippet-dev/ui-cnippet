@@ -8,6 +8,8 @@ import {
 } from "@/registry/default/ui/carousel";
 
 export function CarouselSize() {
+  const items = [1, 2, 3, 4, 5];
+
   return (
     <Carousel
       className="w-full max-w-sm"
@@ -16,8 +18,11 @@ export function CarouselSize() {
       }}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index}>
+        {items.map((index) => (
+          <CarouselItem
+            className="md:basis-1/2 lg:basis-1/3"
+            key={`caroc-${index}`}
+          >
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">

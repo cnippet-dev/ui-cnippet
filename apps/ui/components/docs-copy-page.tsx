@@ -1,9 +1,7 @@
 "use client";
 
-import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { RiFileCopy2Fill, RiTicket2Line } from "@remixicon/react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-
 import { Button } from "@/registry/default/ui/button";
 
 export function DocsCopyPage({ page }: { page: string }) {
@@ -11,11 +9,7 @@ export function DocsCopyPage({ page }: { page: string }) {
 
   return (
     <Button onClick={() => copyToClipboard(page)} size="xs" variant="outline">
-      {isCopied ? (
-        <HugeiconsIcon icon={Tick02Icon} strokeWidth={2.5} />
-      ) : (
-        <HugeiconsIcon icon={Copy01Icon} strokeWidth={2.5} />
-      )}
+      {isCopied ? <RiFileCopy2Fill /> : <RiTicket2Line />}
       Copy Markdown
     </Button>
   );

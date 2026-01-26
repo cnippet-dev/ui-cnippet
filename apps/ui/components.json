@@ -1,17 +1,14 @@
 {
-  "$schema": "https://ui.shadcn.com/schema.json",
+  "$schema": "https://ui.cnippet.dev/schema.json",
   "aliases": {
     "components": "@/components",
     "hooks": "@/hooks",
     "lib": "@/lib",
-    "motion": "@/components/motion",
     "ui": "@/components/ui",
     "utils": "@/lib/utils"
   },
   "iconLibrary": "lucide",
-  "registries": {
-    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
-  },
+  "registries": {},
   "rsc": true,
   "style": "new-york",
   "tailwind": {

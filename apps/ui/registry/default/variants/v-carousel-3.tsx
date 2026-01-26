@@ -8,6 +8,8 @@ import {
 } from "@/registry/default/ui/carousel";
 
 export function CarouselOrientation() {
+  const items = [1, 2, 3, 4, 5];
+
   return (
     <Carousel
       className="w-full max-w-xs"
@@ -17,8 +19,8 @@ export function CarouselOrientation() {
       orientation="vertical"
     >
       <CarouselContent className="-mt-1 h-[200px]">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem className="pt-1 md:basis-1/2" key={index}>
+        {items.map((index) => (
+          <CarouselItem className="pt-1 md:basis-1/2" key={`carob-${index}`}>
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center p-6">

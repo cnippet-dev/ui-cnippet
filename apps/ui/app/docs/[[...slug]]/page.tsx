@@ -1,9 +1,4 @@
-import {
-  ArrowLeft02Icon,
-  ArrowRight02Icon,
-  LinkSquare02Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { RiArrowLeftLine, RiArrowRightLine, RiLinkM } from "@remixicon/react";
 import { findNeighbour } from "fumadocs-core/page-tree";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -85,10 +80,7 @@ export default async function Page(props: {
                     <Button
                       render={
                         <Link href={links.doc} rel="noreferrer" target="_blank">
-                          <HugeiconsIcon
-                            icon={LinkSquare02Icon}
-                            strokeWidth={2.5}
-                          />
+                          <RiLinkM />
                           API Reference
                         </Link>
                       }
@@ -109,8 +101,7 @@ export default async function Page(props: {
                   className="shadow-none"
                   render={
                     <Link href={neighbours.previous.url}>
-                      <HugeiconsIcon icon={ArrowLeft02Icon} strokeWidth={2} />{" "}
-                      {neighbours.previous.name}
+                      <RiArrowLeftLine /> {neighbours.previous.name}
                     </Link>
                   }
                   variant="outline"
@@ -121,8 +112,7 @@ export default async function Page(props: {
                   className="ms-auto shadow-none"
                   render={
                     <Link href={neighbours.next.url}>
-                      {neighbours.next.name}{" "}
-                      <HugeiconsIcon icon={ArrowRight02Icon} strokeWidth={2} />
+                      {neighbours.next.name} <RiArrowRightLine />
                     </Link>
                   }
                   variant="outline"

@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-
+import { Figtree, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AnchoredToastProvider, ToastProvider } from "@/components/ui/toast";
 
-import {
-  AnchoredToastProvider,
-  ToastProvider,
-} from "@/registry/default/ui/toast";
-
-const fontSans = FontSans({
+const _geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-geist-sans",
+});
+
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
+const _figtree = Figtree({
+  subsets: ["latin"],
+  variable: "--font-figtree",
 });
 
 export const metadata: Metadata = {
@@ -28,17 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${fontSans.variable} font-sans text-foreground antialiased`}
-      >
+      <body className={`text-foreground antialiased ${_figtree.variable}`}>
         <ThemeProvider>
           <ToastProvider>
             <AnchoredToastProvider>
               <div className="relative flex min-h-svh flex-col overflow-clip [--header-height:4rem] before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:bg-background">
-                <div className="absolute h-full w-2 border-x-(--pattern-fg) border-r bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 md:w-10 dark:[--pattern-fg:var(--color-white)]/10" />
-                <div className="absolute right-0 h-full w-2 border-x-(--pattern-fg) border-l bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 md:w-10 dark:[--pattern-fg:var(--color-white)]/10" />
-
-                <SiteHeader />
                 {children}
               </div>
             </AnchoredToastProvider>

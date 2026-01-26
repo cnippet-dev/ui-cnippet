@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.2"
+  },
+  "exports": {
+    "./*": "./src/*.tsx"
+  },
+  "name": "@repo/ui",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "generate:component": "turbo gen react-component",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "version": "0.0.0"
+}

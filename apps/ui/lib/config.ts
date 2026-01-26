@@ -11,6 +11,10 @@ export const appConfig = {
       href: "/ui/actions/button",
       label: "Core",
     },
+    {
+      href: "#",
+      label: "Changelog",
+    },
   ],
   ogImage: "https://coss.com/og.jpg",
   url: "https://coss.com/ui",

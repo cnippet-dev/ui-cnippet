@@ -1,11 +1,10 @@
 "use client";
 
 import {
-  ComputerTerminal02Icon,
-  Copy01Icon,
-  Tick02Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+  RiComputerFill,
+  RiFileCopy2Fill,
+  RiTicketLine,
+} from "@remixicon/react";
 import * as React from "react";
 import { useConfig } from "@/hooks/use-config";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
@@ -64,11 +63,7 @@ export function CodeBlockCommand({
         value={packageManager}
       >
         <div className="flex items-center gap-2 border-border/64 border-b px-4 py-1 font-mono">
-          <HugeiconsIcon
-            className="size-5 text-code-foreground sm:size-4"
-            icon={ComputerTerminal02Icon}
-            strokeWidth={2}
-          />
+          <RiComputerFill />
           <TabsList className="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-accent *:data-[slot=tab-indicator]:shadow-none">
             {Object.entries(tabs).map(([key]) => {
               return (
@@ -107,11 +102,7 @@ export function CodeBlockCommand({
               variant="ghost"
             >
               <span className="sr-only">Copy</span>
-              {isCopied ? (
-                <HugeiconsIcon icon={Tick02Icon} strokeWidth={2} />
-              ) : (
-                <HugeiconsIcon icon={Copy01Icon} strokeWidth={2} />
-              )}
+              {isCopied ? <RiFileCopy2Fill /> : <RiTicketLine />}
             </Button>
           }
         />

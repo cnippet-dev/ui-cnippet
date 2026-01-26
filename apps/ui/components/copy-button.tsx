@@ -1,7 +1,6 @@
 "use client";
 
-import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { RiFileCopy2Fill, RiTicket2Line } from "@remixicon/react";
 import type * as React from "react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { cn } from "@/lib/utils";
@@ -39,11 +38,7 @@ export function CopyButton({
             {...props}
           >
             <span className="sr-only">Copy</span>
-            {isCopied ? (
-              <HugeiconsIcon icon={Tick02Icon} strokeWidth={2} />
-            ) : (
-              <HugeiconsIcon icon={Copy01Icon} strokeWidth={2} />
-            )}
+            {isCopied ? <RiFileCopy2Fill /> : <RiTicket2Line />}
           </Button>
         }
       />

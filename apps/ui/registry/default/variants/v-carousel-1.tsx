@@ -8,11 +8,12 @@ import {
 } from "@/registry/default/ui/carousel";
 
 export function CarouselDemo() {
+  const items = [1, 2, 3, 4, 5];
   return (
     <Carousel className="w-full max-w-xs">
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+        {items.map((index) => (
+          <CarouselItem key={`caroa-${index}`}>
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
