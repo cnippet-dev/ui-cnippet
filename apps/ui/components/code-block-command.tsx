@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  RiComputerFill,
-  RiFileCopy2Fill,
-  RiTicketLine,
-} from "@remixicon/react";
+import { RiCheckLine } from "@remixicon/react";
 import * as React from "react";
 import { useConfig } from "@/hooks/use-config";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
@@ -15,6 +11,7 @@ import {
   TooltipPopup,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
+import { Icons } from "./icons";
 
 export function CodeBlockCommand({
   __npm__,
@@ -63,7 +60,7 @@ export function CodeBlockCommand({
         value={packageManager}
       >
         <div className="flex items-center gap-2 border-border/64 border-b px-4 py-1 font-mono">
-          <RiComputerFill />
+          <Icons.codeBlock className="size-4" />
           <TabsList className="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-accent *:data-[slot=tab-indicator]:shadow-none">
             {Object.entries(tabs).map(([key]) => {
               return (
@@ -102,7 +99,7 @@ export function CodeBlockCommand({
               variant="ghost"
             >
               <span className="sr-only">Copy</span>
-              {isCopied ? <RiFileCopy2Fill /> : <RiTicketLine />}
+              {isCopied ? <RiCheckLine className="size-4" /> : <Icons.copy />}
             </Button>
           }
         />
