@@ -1,24 +1,23 @@
-import * as React from "react"
-
-import { Card, CardContent } from "@/registry/default/ui/card"
+import { Card, CardContent } from "@/registry/default/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/registry/default/ui/carousel"
+} from "@/registry/default/ui/carousel";
 
 export function CarouselDemo() {
+  const items = [1, 2, 3, 4, 5];
   return (
     <Carousel className="w-full max-w-xs">
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+        {items.map((index) => (
+          <CarouselItem key={`caroa-${index}`}>
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <span className="font-semibold text-4xl">{index + 1}</span>
                 </CardContent>
               </Card>
             </div>
@@ -28,5 +27,5 @@ export function CarouselDemo() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }

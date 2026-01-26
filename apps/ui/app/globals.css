@@ -12,6 +12,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
+  --font-figtree: var(--font-figtree);
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -67,11 +68,11 @@
     }
   }
   @keyframes skeleton {
-  to {
-    background-position: -200% 0;
+    to {
+      background-position: -200% 0;
     }
   }
-    @keyframes circling {
+  @keyframes circling {
     0% {
       transform: rotate(
           calc(var(--circling-direction, 1) * (var(--circling-offset) * 1deg))
@@ -85,14 +86,14 @@
       transform: rotate(
           calc(
             var(--circling-direction, 1) *
-              (360deg + (var(--circling-offset) * 1deg))
+            (360deg + (var(--circling-offset) * 1deg))
           )
         )
         translate(calc(var(--circling-radius) * 1px), 0)
         rotate(
           calc(
             var(--circling-direction, 1) *
-              (-360deg + (var(--circling-offset) * -1deg))
+            (-360deg + (var(--circling-offset) * -1deg))
           )
         );
     }
@@ -195,6 +196,20 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
   }
 }
 
@@ -392,7 +407,6 @@
   }
 }
 
-
 @utility dot-bl {
   --border-bottom-width: 1px;
   --border-color: #1f62b4;
@@ -544,7 +558,6 @@
   }
 }
 
-
 .grain {
   background-color: "#ffffff";
 }
@@ -563,33 +576,33 @@
 @keyframes grain {
   0%,
   100% {
-      transform: translate(0, 0);
+    transform: translate(0, 0);
   }
   10% {
-      transform: translate(-5%, -10%);
+    transform: translate(-5%, -10%);
   }
   20% {
-      transform: translate(-15%, 5%);
+    transform: translate(-15%, 5%);
   }
   30% {
-      transform: translate(5%, -25%);
+    transform: translate(5%, -25%);
   }
   40% {
-      transform: translate(-5%, 25%);
+    transform: translate(-5%, 25%);
   }
   50% {
-      transform: translate(-15%, 10%);
+    transform: translate(-15%, 10%);
   }
   60% {
-      transform: translate(15%, 0%);
+    transform: translate(15%, 0%);
   }
   70% {
-      transform: translate(0%, 15%);
+    transform: translate(0%, 15%);
   }
   80% {
-      transform: translate(5%, 35%);
+    transform: translate(5%, 35%);
   }
   90% {
-      transform: translate(-10%, 10%);
+    transform: translate(-10%, 10%);
   }
 }

@@ -9,11 +9,11 @@ export default function Variant() {
 
   return (
     <Calendar
-      mode="single"
-      selected={date}
-      onSelect={setDate}
-      className="rounded-md border shadow-sm"
       captionLayout="label"
+      className="rounded-md border shadow-sm"
+      mode="single"
+      onSelect={setDate}
+      selected={date}
     />
   );
 }

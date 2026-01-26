@@ -1,16 +1,14 @@
 "use client";
 
 import {
-  ArrowTurnBackwardIcon,
-  Atom01Icon,
-  BookOpen02Icon,
-  Search01Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+  RiArrowRightLine,
+  RiAtomLine,
+  RiBook2Fill,
+  RiSearchLine,
+} from "@remixicon/react";
 import { useRouter } from "next/navigation";
 import type { ComponentProps } from "react";
 import * as React from "react";
-
 import {
   Command,
   CommandEmpty,
@@ -124,7 +122,8 @@ export function CommandMenu({
       <DialogTrigger
         render={
           <Button onClick={() => setOpen(true)} variant="outline" {...props}>
-            <HugeiconsIcon icon={Search01Icon} strokeWidth={2} />
+            {/* <HugeiconsIcon icon={Search01Icon} strokeWidth={2} /> */}
+            <RiSearchLine />
             <div className="gap-1 sm:flex">
               <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
               <CommandMenuKbd className="aspect-square">K</CommandMenuKbd>
@@ -153,7 +152,7 @@ export function CommandMenu({
             </CommandEmpty>
             {navItems && navItems.length > 0 && (
               <CommandGroup
-                className="p-0! **:[[cmdk-group-heading]]:px-2! **:[[cmdk-group-heading]]:pt-4! **:[[cmdk-group-heading]]:pb-1.5! **:[[cmdk-group-heading]]:scroll-mt-16"
+                className="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:px-2! **:[[cmdk-group-heading]]:pt-4! **:[[cmdk-group-heading]]:pb-1.5!"
                 heading="Pages"
               >
                 {navItems.map((item) => (
@@ -169,11 +168,12 @@ export function CommandMenu({
                     }}
                     value={`Navigation ${item.label}`}
                   >
-                    <HugeiconsIcon
+                    {/* <HugeiconsIcon
                       className="opacity-72"
                       icon={BookOpen02Icon}
                       strokeWidth={2}
-                    />
+                    /> */}
+                    <RiBook2Fill />
                     {item.label}
                   </CommandMenuItem>
                 ))}
@@ -181,7 +181,7 @@ export function CommandMenu({
             )}
             {tree.children.map((group) => (
               <CommandGroup
-                className="p-0! **:[cmdk-group-heading]]:!px-2 **:[cmdk-group-heading]]:!pt-4 **:[cmdk-group-heading]]:!pb-1.5 **:[cmdk-group-heading]]:scroll-mt-16"
+                className="**:[cmdk-group-heading]]:!px-2 **:[cmdk-group-heading]]:!pt-4 **:[cmdk-group-heading]]:!pb-1.5 **:[cmdk-group-heading]]:scroll-mt-16 p-0!"
                 heading={group.name}
                 key={group.$id}
               >
@@ -206,19 +206,7 @@ export function CommandMenu({
                               : ""
                           }
                         >
-                          {isComponent ? (
-                            <HugeiconsIcon
-                              className="opacity-72"
-                              icon={Atom01Icon}
-                              strokeWidth={2}
-                            />
-                          ) : (
-                            <HugeiconsIcon
-                              className="opacity-72"
-                              icon={BookOpen02Icon}
-                              strokeWidth={2}
-                            />
-                          )}
+                          {isComponent ? <RiAtomLine /> : <RiBook2Fill />}
                           {item.name}
                         </CommandMenuItem>
                       );
@@ -232,7 +220,7 @@ export function CommandMenu({
         <div className="absolute inset-x-0 bottom-0 z-20 flex items-center gap-2 rounded-b-xl border-t bg-muted px-4 py-3 text-muted-foreground text-xs">
           <div className="flex items-center gap-2 whitespace-nowrap">
             <CommandMenuKbd>
-              <HugeiconsIcon icon={ArrowTurnBackwardIcon} strokeWidth={2} />
+              <RiArrowRightLine />
             </CommandMenuKbd>{" "}
             {selectedType === "page" || selectedType === "component"
               ? "Go to Page"

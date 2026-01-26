@@ -1,12 +1,12 @@
 "use client";
 
-import * as React from "react";
 import { ChevronDownIcon } from "lucide-react";
+import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/registry/default/ui/calendar";
 import { Label } from "@/components/ui/label";
-import { Popover, PopoverTrigger, PopoverPopup } from "@/components/ui/popover";
+import { Popover, PopoverPopup, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar } from "@/registry/default/ui/calendar";
 
 export default function Variant() {
   const [open, setOpen] = React.useState(false);
@@ -14,31 +14,31 @@ export default function Variant() {
 
   return (
     <div className="flex flex-col gap-3">
-      <Label htmlFor="date" className="px-1">
+      <Label className="px-1" htmlFor="date">
         Date of birth
       </Label>
-      <Popover open={open} onOpenChange={setOpen}>
+      <Popover onOpenChange={setOpen} open={open}>
         <PopoverTrigger
           render={
             <Button
-              variant="outline"
-              id="date"
               className="w-48 justify-between font-normal"
+              id="date"
+              variant="outline"
             />
           }
         >
           {date ? date.toLocaleDateString() : "Select date"}
           <ChevronDownIcon />
         </PopoverTrigger>
-        <PopoverPopup className="w-auto overflow-hidden p-0" align="start">
+        <PopoverPopup align="start" className="w-auto overflow-hidden p-0">
           <Calendar
-            mode="single"
-            selected={date}
             captionLayout="dropdown"
+            mode="single"
             onSelect={(date) => {
               setDate(date);
               setOpen(false);
             }}
+            selected={date}
           />
         </PopoverPopup>
       </Popover>

@@ -21,7 +21,7 @@ type RegistryItem = {
   meta?: Record<string, unknown>;
 };
 
-const REGISTRY_PATH = path.join(process.cwd(), "public/r")
+const REGISTRY_PATH = path.join(process.cwd(), "public/r");
 
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */

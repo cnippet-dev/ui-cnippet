@@ -1,12 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import {
-  Menu,
-  MenuItem,
-  MenuPopup,
-  MenuTrigger,
-} from "@/components/ui/menu";
+import { Menu, MenuItem, MenuPopup, MenuTrigger } from "@/components/ui/menu";
 
 export default function Particle() {
   return (

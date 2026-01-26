@@ -1,10 +1,8 @@
 "use client";
 
-import { Search01Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { RiSearch2Line } from "@remixicon/react";
 import { Command as CommandPrimitive } from "cmdk";
 import type * as React from "react";
-
 import { cn } from "@/registry/default/lib/utils";
 import {
   Dialog,
@@ -72,7 +70,7 @@ function CommandInput({
         />
       </div>
       <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-[calc(--spacing(3)-1px)] text-muted-foreground">
-        <HugeiconsIcon className="size-4" icon={Search01Icon} strokeWidth={2} />
+        <RiSearch2Line />
       </div>
     </div>
   );
@@ -158,7 +156,7 @@ function CommandShortcut({
   return (
     <kbd
       className={cn(
-        "-me-1 ms-auto inline-flex h-5 max-h-full items-center rounded border bg-background px-1 font-[inherit] font-medium text-[0.625rem] text-muted-foreground/70",
+        "ms-auto -me-1 inline-flex h-5 max-h-full items-center rounded border bg-background px-1 font-[inherit] font-medium text-[0.625rem] text-muted-foreground/70",
         className,
       )}
       data-slot="command-shortcut"

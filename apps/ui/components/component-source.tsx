@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { CodeBlock } from "@/components/code-block";
 import type * as React from "react";
+import { CodeBlock } from "@/components/code-block";
 
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { getRegistryItem } from "@/lib/registry";

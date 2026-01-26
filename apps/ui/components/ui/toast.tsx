@@ -8,9 +8,8 @@ import {
   LoaderCircleIcon,
   TriangleAlertIcon,
 } from "lucide-react";
-
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/registry/default/ui/button";
 
 const toastManager = Toast.createToastManager();
 const anchoredToastManager = Toast.createToastManager();
@@ -63,7 +62,7 @@ function Toasts({ position = "bottom-right" }: { position: ToastPosition }) {
           // Horizontal positioning
           "data-[position*=left]:left-(--toast-inset)",
           "data-[position*=right]:right-(--toast-inset)",
-          "data-[position*=center]:-translate-x-1/2 data-[position*=center]:left-1/2",
+          "data-[position*=center]:left-1/2 data-[position*=center]:-translate-x-1/2",
         )}
         data-position={position}
         data-slot="toast-viewport"

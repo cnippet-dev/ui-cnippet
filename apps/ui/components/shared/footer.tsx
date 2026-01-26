@@ -1,149 +1,185 @@
-import * as React from "react";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import { motion } from "motion/react";
-import { fadeUp } from "cnippet-aos";
+"use client";
 
-const pages = [
-  "home",
-  "button",
-  "accordion",
-  "alert",
-  "form",
-  "card",
-  "breadcrumb",
+import { RiMoonClearFill, RiSunLine } from "@remixicon/react";
+import { Blocks, CodeXml, Handshake, Scale, Webhook } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import * as React from "react";
+import { Button } from "@/registry/default/ui/button";
+
+const columns = [
+  {
+    links: [
+      {
+        href: "/docs/components",
+        Icon: Blocks,
+        name: "Components",
+      },
+      {
+        href: "/docs",
+        Icon: CodeXml,
+        name: "Documentation",
+      },
+      {
+        href: "/docs/changelog",
+        Icon: Webhook,
+        name: "Changelog",
+      },
+      {
+        href: "https://github.com/cnippet-dev",
+        Icon: CodeXml,
+        name: "GitHub",
+      },
+    ],
+    title: "Product",
+  },
+  {
+    links: [
+      {
+        href: "/docs/installation",
+        Icon: Blocks,
+        name: "Get Started",
+      },
+      {
+        href: "/docs/templates",
+        Icon: CodeXml,
+        name: "Templates",
+      },
+      {
+        href: "/docs/examples",
+        Icon: Webhook,
+        name: "Examples",
+      },
+    ],
+    title: "Resources",
+  },
+  {
+    links: [
+      {
+        href: "/legal/privacy",
+        Icon: Scale,
+        name: "Privacy Policy",
+      },
+      {
+        href: "/legal/terms",
+        Icon: Handshake,
+        name: "Terms of Service",
+      },
+    ],
+    title: "Legal",
+  },
 ];
 
-const socials = ["Instagram", "X", "Linkedin"];
+const socialLinks = [
+  {
+    href: "https://x.com/cnippetui",
+    name: "Twitter",
+  },
+  {
+    href: "https://github.com/cnippet-dev",
+    name: "GitHub",
+  },
+  {
+    href: "https://discord.gg/cnippet",
+    name: "Discord",
+  },
+];
 
-const formatTime = () =>
-  new Date().toLocaleTimeString("en-US", {
-    hour12: false,
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
+export function FooterDemo() {
+  const { setTheme, resolvedTheme } = useTheme();
 
-export function Footer() {
-  const [currentTime, setCurrentTime] = React.useState(formatTime());
-
-  React.useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(formatTime()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+  const toggleTheme = React.useCallback(() => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  }, [resolvedTheme, setTheme]);
 
   return (
-    <footer className="text-primary px-6 pt-20 pb-10 md:px-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-16">
-        <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_auto]">
-          <motion.div
-            {...fadeUp({ delay: 0.1, duration: 0.8, scroll: true, once: true })}
-            className="flex flex-col justify-between gap-12"
-          >
-            <div className="max-w-xl space-y-6">
-              <p className="text-base font-light sm:text-lg">
-                Start your project today! Contact us to learn more and
-                let&apos;s work together to achieve your goals.
-              </p>
-              <button className="group flex cursor-pointer items-center justify-start gap-0">
-                <span className="bg-sidebar group-hover:bg-secondary group-hover:text-primary rounded-full px-6 py-3 text-black duration-500 ease-in-out group-hover:transition-colors">
-                  Start a Project
-                </span>
-                <div className="bg-sidebar group-hover:bg-secondary group-hover:text-primary relative flex h-fit cursor-pointer items-center overflow-hidden rounded-full p-5 text-black duration-500 ease-in-out group-hover:transition-colors">
-                  <ArrowUpRight className="absolute h-5 w-5 -translate-x-1/2 transition-all duration-500 ease-in-out group-hover:translate-x-10" />
-                  <ArrowUpRight className="absolute h-5 w-5 -translate-x-10 transition-all duration-500 ease-in-out group-hover:-translate-x-1/2" />
-                </div>
-              </button>
-            </div>
-          </motion.div>
-          <motion.div
-            {...fadeUp({ delay: 0.2, duration: 0.8, scroll: true, once: true })}
-            className="flex flex-wrap gap-12 text-base lg:items-start lg:gap-16"
-          >
-            <motion.div
-              {...fadeUp({
-                delay: 0.25,
-                duration: 0.8,
-                scroll: true,
-                once: true,
-              })}
-              className="flex items-start gap-5"
+    <div className="px-4 md:px-0">
+      <div className="mx-auto max-w-6xl border-x px-4 pt-20 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Link
+              aria-label="Home"
+              className="flex items-center gap-2 text-2xl"
+              href="/"
             >
-              <span className="block text-xs tracking-[0.35em] text-neutral-500 uppercase">
-                ↳ Pages
+              <Image
+                alt="Cnippet UI Logo"
+                className="size-10"
+                height={600}
+                src={
+                  resolvedTheme === "dark"
+                    ? "/images/logo-dark.png"
+                    : "/images/logo-light.png"
+                }
+                width={500}
+              />
+              cnippet{" "}
+              <span className="text-muted-foreground/72 hover:text-muted-foreground">
+                ui
               </span>
-              <ul className="space-y-2 -mt-1">
-                {pages.map((item) => (
-                  <li key={item}>
-                    <Link
-                      href={
-                        item === "home"
-                          ? "/"
-                          : item === "button"
-                            ? "ui/actions/button"
-                            : item === "button"
-                              ? "ui/data/accordion"
-                              : item === "alert"
-                                ? "ui/feedback/alert"
-                                : item === "form"
-                                  ? "ui/forms/form"
-                                  : item === "card"
-                                    ? "ui/layout/card"
-                                    : item === "breadcrumb"
-                                      ? "ui/navigation/breadcrumb"
-                                      : ""
-                      }
-                      className="text-sm capitalize transition hover:text-black dark:hover:text-white/80"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div
-              {...fadeUp({
-                delay: 0.35,
-                duration: 0.8,
-                scroll: true,
-                once: true,
-              })}
-              className="flex items-start gap-5"
-            >
-              <span className="mb-2 block text-xs tracking-[0.35em] text-neutral-500 uppercase">
-                ↳ Social
-              </span>
-              <ul className="space-y-2 -mt-1">
-                {socials.map((item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-sm transition hover:text-black dark:hover:text-white/80"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-        <motion.div
-          {...fadeUp({ delay: 0.3, duration: 0.8, scroll: true, once: true })}
-          className="flex flex-col justify-between gap-4 text-xs tracking-[0.35em] text-neutral-800 uppercase sm:flex-row md:items-end dark:text-neutral-600"
-        >
-          <div className="text-[2rem] leading-none font-medium uppercase sm:text-[6rem] md:text-[7rem] lg:text-[6rem]">
-            ©Cnippet
+            </Link>
+            <p className="text-foreground/60 text-sm">
+              Beautiful, accessible React components for modern landing pages.
+            </p>
+
+            <p className="mt-3.5 font-light text-foreground/55 text-sm">
+              {socialLinks.map((link, index) => (
+                <React.Fragment key={link.name}>
+                  <a
+                    className="hover:text-foreground/90"
+                    href={link.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {link.name}
+                  </a>
+                  {index < socialLinks.length - 1 && " • "}
+                </React.Fragment>
+              ))}
+            </p>
           </div>
 
-          <div className="flex flex-col space-x-5 font-mono">
-            <span>INDIA: {currentTime}</span>
-            <span className="text-[0.65rem] tracking-[0.4em] text-neutral-500">
-              ©2025 Cnippet All Rights Reserved
-            </span>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:col-span-8 lg:mt-0 lg:justify-items-end">
+            {columns.map(({ title, links }) => (
+              <div className="last:mt-12 md:last:mt-0" key={title}>
+                <h3 className="font-semibold text-sm">{title}</h3>
+                <ul className="mt-4 space-y-2.5">
+                  {links.map(({ name, Icon, href }) => (
+                    <li key={name}>
+                      <a
+                        className="group text-foreground/60 text-sm transition-all hover:text-foreground/90"
+                        href={href || "#"}
+                      >
+                        <Icon className="mr-1.5 inline h-4 stroke-2 stroke-foreground/60 transition-all group-hover:stroke-foreground/90" />
+                        {name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
+
+        <div className="mt-20 flex items-center justify-between border-t pt-6 pb-8">
+          <p className="text-foreground/55 text-xs">Cnippet UI © 2026</p>
+          <Button
+            className="relative size-8"
+            onClick={toggleTheme}
+            size="icon"
+            title="Toggle theme"
+            variant="ghost"
+          >
+            {resolvedTheme === "dark" ? (
+              <RiMoonClearFill className="size-4 text-muted-foreground" />
+            ) : (
+              <RiSunLine className="size-4 text-muted-foreground" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
       </div>
-    </footer>
+    </div>
   );
 }

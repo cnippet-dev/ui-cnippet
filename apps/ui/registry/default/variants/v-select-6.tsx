@@ -22,12 +22,12 @@ export default function Particle() {
       defaultValue={items[0]}
       itemToStringValue={(item) => item.value}
     >
-      <SelectTrigger className="py-1 w-md">
+      <SelectTrigger className="w-md py-1">
         <SelectValue>
           {(item) => (
             <span className="flex flex-col">
               <span className="truncate">{item.label}</span>
-              <span className="text-muted-foreground truncate text-xs">
+              <span className="truncate text-muted-foreground text-xs">
                 {item.description}
               </span>
             </span>
@@ -39,7 +39,7 @@ export default function Particle() {
           <SelectItem key={item.value} value={item}>
             <span className="flex flex-col">
               <span className="truncate">{item.label}</span>
-              <span className="text-muted-foreground truncate text-xs">
+              <span className="truncate text-muted-foreground text-xs">
                 {item.description}
               </span>
             </span>

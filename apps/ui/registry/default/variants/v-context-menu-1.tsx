@@ -2,18 +2,18 @@
 
 import {
   ContextMenu,
-  ContextMenuTrigger,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuSeparator,
   ContextMenuLabel,
+  ContextMenuSeparator,
   ContextMenuShortcut,
+  ContextMenuTrigger,
 } from "@/registry/default/ui/context-menu";
 
 export default function Variant() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="flex items-center justify-center w-60 h-48 border border-gray-300 text-gray-900 rounded-md user-select-none">
+      <ContextMenuTrigger className="user-select-none flex h-48 w-60 items-center justify-center rounded-md border border-gray-300 text-gray-900">
         Right click here
       </ContextMenuTrigger>
       <ContextMenuContent>

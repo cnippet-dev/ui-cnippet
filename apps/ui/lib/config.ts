@@ -11,6 +11,10 @@ export const appConfig = {
       href: "/ui/actions/button",
       label: "Core",
     },
+    {
+      href: "/docs/changelog",
+      label: "Changelog",
+    },
   ],
   ogImage: "https://coss.com/og.jpg",
   url: "https://coss.com/ui",
@@ -43,7 +47,6 @@ export const siteConfig = {
       label: "aos",
       // upcoming: true,
     },
-    
   ],
   url: "https://coss.com",
 };
