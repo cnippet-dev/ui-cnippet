@@ -12,7 +12,7 @@ export const appConfig = {
       label: "Core",
     },
     {
-      href: "#",
+      href: "/docs/changelog",
       label: "Changelog",
     },
   ],

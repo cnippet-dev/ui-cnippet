@@ -17,10 +17,10 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`border-b ${pathname.startsWith("/ui") ? "sticky top-0 z-20 bg-sidebar" : ""}`}
+      className={`border-b px-4 md:px-0 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-20 bg-sidebar" : ""}`}
     >
       <div
-        className={`mx-auto flex h-[72px] w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") ? "container bg-sidebar" : "max-w-6xl"}`}
+        className={`mx-auto flex h-[72px] w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container bg-sidebar" : "max-w-6xl"}`}
       >
         <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-heading text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">
