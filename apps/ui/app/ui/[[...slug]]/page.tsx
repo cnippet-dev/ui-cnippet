@@ -2,7 +2,6 @@ import { RiArrowLeftLine, RiArrowRightLine, RiLinkM } from "@remixicon/react";
 import { findNeighbour } from "fumadocs-core/page-tree";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
 import { SiteFooter } from "@/components/site-footer";
 import { source } from "@/lib/source";
@@ -49,7 +48,7 @@ export default async function Page(props: {
   }
 
   const doc = page.data;
-  const rawContent = await page.data.getText("raw");
+  const _rawContent = await page.data.getText("raw");
   const MDX = doc.body;
   const neighbours = await findNeighbour(source.pageTree, page.url);
 
@@ -63,7 +62,7 @@ export default async function Page(props: {
       <div className="w-full">
         <div className="-m-px border bg-background before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
           <div className="mx-auto w-full max-w-3xl">
-            <div className="flex min-w-0 flex-1 flex-col gap-8">
+            <div className="flex min-w-0 flex-1 flex-col gap-8 px-2 py-10 md:px-0">
               <div className="flex flex-col gap-2">
                 <div className="flex flex-col gap-2">
                   <h1 className="scroll-m-20 font-heading text-3xl xl:text-4xl">
@@ -88,14 +87,14 @@ export default async function Page(props: {
                       variant="outline"
                     />
                   )}
-                  <DocsCopyPage page={rawContent} />
+                  {/* <DocsCopyPage page={rawContent} /> */}
                 </div>
               </div>
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
                 <MDX components={mdxComponents} />
               </div>
             </div>
-            <div className="hidden items-center gap-2 pt-8 sm:flex">
+            <div className="mb-10 hidden items-center gap-2 pt-8 sm:flex">
               {neighbours.previous && (
                 <Button
                   className="shadow-none"

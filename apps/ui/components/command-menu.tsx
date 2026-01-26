@@ -122,9 +122,8 @@ export function CommandMenu({
       <DialogTrigger
         render={
           <Button onClick={() => setOpen(true)} variant="outline" {...props}>
-            {/* <HugeiconsIcon icon={Search01Icon} strokeWidth={2} /> */}
             <RiSearchLine />
-            <div className="gap-1 sm:flex">
+            <div className="flex gap-1">
               <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
               <CommandMenuKbd className="aspect-square">K</CommandMenuKbd>
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { RiFileCopy2Fill, RiTicket2Line } from "@remixicon/react";
+import { RiCheckLine } from "@remixicon/react";
 import type * as React from "react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ import {
   TooltipPopup,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
+import { Icons } from "./icons";
 
 export function CopyButton({
   value,
@@ -38,7 +39,7 @@ export function CopyButton({
             {...props}
           >
             <span className="sr-only">Copy</span>
-            {isCopied ? <RiFileCopy2Fill /> : <RiTicket2Line />}
+            {isCopied ? <RiCheckLine className="size-4" /> : <Icons.copy />}
           </Button>
         }
       />
