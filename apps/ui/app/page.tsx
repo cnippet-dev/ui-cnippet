@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SiteHeader } from "@/components/shared/header/site-header";
+import { Footer } from "@/components/shared/footer";
+import Image from "next/image";
 
 const _items = [
   {
@@ -50,12 +53,9 @@ const _items = [
 export default function Home() {
   return (
     <>
-      {/* <SiteHeader /> */}
+      <SiteHeader />
 
-      <section className="h-screen px-4 md:px-0">
-        <div className="h-20 border-b">
-          <div className="mx-auto h-full max-w-6xl border-x" />
-        </div>
+      <section className="border-b px-4 md:px-0">
         <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-20 sm:px-6 sm:py-28 md:py-40 lg:px-8">
           <div>
             <div className="">
@@ -91,12 +91,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-20 border-t">
-          <div className="mx-auto h-full max-w-6xl border-x" />
-        </div>
       </section>
 
-      {/* <section className="border-b px-4 md:px-0">
+      <section className="border-b px-4 md:px-0">
         <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8">
           <div className="mb-8 sm:mb-10">
             <h1 className="mb-3 font-figtree font-normal text-2xl sm:mb-4 sm:text-3xl md:text-4xl">
@@ -111,7 +108,7 @@ export default function Home() {
           <div>
             <div className="">
               <div className="grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-                {items.map((item, index) => (
+                {_items.map((item, index) => (
                   <div key={`${item.title}-${index}`}>
                     <div className="space-y-3 text-center">
                       <Link
@@ -150,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <FooterDemo /> */}
+      <Footer />
     </>
   );
 }

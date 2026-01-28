@@ -12,12 +12,12 @@ const columns = [
   {
     links: [
       {
-        href: "/docs/components",
+        href: "/ui/actions/button",
         Icon: Blocks,
         name: "Components",
       },
       {
-        href: "/docs",
+        href: "/docs/introduction",
         Icon: CodeXml,
         name: "Documentation",
       },
@@ -86,7 +86,7 @@ const socialLinks = [
   },
 ];
 
-export function FooterDemo() {
+export function Footer() {
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = React.useCallback(() => {
