@@ -1,13 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { FooterDemo } from "@/components/shared/footer";
-import { SiteHeader } from "@/components/shared/header/site-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const items = [
+const _items = [
   {
     number: "2  ",
     title: "accordion",
@@ -53,9 +50,12 @@ const items = [
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      {/* <SiteHeader /> */}
 
-      <section className="border-b px-4 md:px-0">
+      <section className="h-screen px-4 md:px-0">
+        <div className="h-20 border-b">
+          <div className="mx-auto h-full max-w-6xl border-x" />
+        </div>
         <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-20 sm:px-6 sm:py-28 md:py-40 lg:px-8">
           <div>
             <div className="">
@@ -91,9 +91,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="h-20 border-t">
+          <div className="mx-auto h-full max-w-6xl border-x" />
+        </div>
       </section>
 
-      <section className="border-b px-4 md:px-0">
+      {/* <section className="border-b px-4 md:px-0">
         <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8">
           <div className="mb-8 sm:mb-10">
             <h1 className="mb-3 font-figtree font-normal text-2xl sm:mb-4 sm:text-3xl md:text-4xl">
@@ -147,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <FooterDemo />
+      <FooterDemo /> */}
     </>
   );
 }
