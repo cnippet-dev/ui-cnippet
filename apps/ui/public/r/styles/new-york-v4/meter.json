@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meter",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/meter.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Meter as MeterPrimitive } from \"@base-ui/react/meter\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nfunction Meter({ className, children, ...props }: MeterPrimitive.Root.Props) {\r\n  return (\r\n    <MeterPrimitive.Root\r\n      className={cn(\"flex w-full flex-col gap-2\", className)}\r\n      {...props}\r\n    >\r\n      {children ? (\r\n        children\r\n      ) : (\r\n        <MeterTrack>\r\n          <MeterIndicator />\r\n        </MeterTrack>\r\n      )}\r\n    </MeterPrimitive.Root>\r\n  );\r\n}\r\n\r\nfunction MeterLabel({ className, ...props }: MeterPrimitive.Label.Props) {\r\n  return (\r\n    <MeterPrimitive.Label\r\n      className={cn(\"font-medium text-sm\", className)}\r\n      data-slot=\"meter-label\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nfunction MeterTrack({ className, ...props }: MeterPrimitive.Track.Props) {\r\n  return (\r\n    <MeterPrimitive.Track\r\n      className={cn(\"block h-2 w-full overflow-hidden bg-input\", className)}\r\n      data-slot=\"meter-track\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nfunction MeterIndicator({\r\n  className,\r\n  ...props\r\n}: MeterPrimitive.Indicator.Props) {\r\n  return (\r\n    <MeterPrimitive.Indicator\r\n      className={cn(\"bg-primary transition-all duration-500\", className)}\r\n      data-slot=\"meter-indicator\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nfunction MeterValue({ className, ...props }: MeterPrimitive.Value.Props) {\r\n  return (\r\n    <MeterPrimitive.Value\r\n      className={cn(\"text-sm tabular-nums\", className)}\r\n      data-slot=\"meter-value\"\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport { Meter, MeterLabel, MeterTrack, MeterIndicator, MeterValue };\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

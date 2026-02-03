@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-1",
+  "description": "Basic calendar",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Variant() {\r\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\r\n\r\n  return (\r\n    <Calendar\r\n      captionLayout=\"label\"\r\n      className=\"rounded-md border shadow-sm\"\r\n      mode=\"single\"\r\n      onSelect={setDate}\r\n      selected={date}\r\n    />\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

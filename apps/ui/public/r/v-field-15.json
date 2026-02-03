@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-field-15",
+  "type": "registry:block",
+  "description": "Basic field",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-15.tsx",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field className=\"items-stretch gap-3\">\n      <FieldLabel>Country</FieldLabel>\n      <Slider defaultValue={50} />\n      <FieldDescription>This is an optional field</FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ]
+}

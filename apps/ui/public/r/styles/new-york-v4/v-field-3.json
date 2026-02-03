@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-field-3",
+  "description": "Basic field",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-3.tsx",
+      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function FieldWithErrorDemo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" type=\"email\" />\n      <FieldError>Please enter a valid email address.</FieldError>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ],
+  "type": "registry:block"
+}

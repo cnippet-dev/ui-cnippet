@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-1",
+  "description": "Basic slider",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-1.tsx",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return <Slider defaultValue={50} />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

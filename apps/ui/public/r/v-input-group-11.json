@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-input-group-11",
+  "type": "registry:block",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-11.tsx",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput disabled placeholder=\"Searching…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Spinner />\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ]
+}

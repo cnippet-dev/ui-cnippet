@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "cssValue": {
+      "oneOf": [
+        {
+          "description": "CSS property value or direct CSS string",
+          "type": "string"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/definitions/cssValue"
+          },
+          "description": "Nested CSS properties, selectors, or at-rules. Empty objects are allowed for at-rules with no body.",
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "author": {
+      "description": "The author of the item. Recommended format: username <url>",
+      "type": "string"
+    },
+    "categories": {
+      "items": {
+        "description": "The categories of the registry item. This is an array of strings.",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "css": {
+      "additionalProperties": {
+        "$ref": "#/definitions/cssValue"
+      },
+      "description": "CSS definitions to be added to the project's CSS file. Supports at-rules, selectors, nested rules, utilities, layers, and more.",
+      "type": "object"
+    },
+    "cssVars": {
+      "description": "The css variables for the registry item. This will be merged with the project's css variables.",
+      "properties": {
+        "dark": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "CSS variables for the dark theme.",
+          "type": "object"
+        },
+        "light": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "CSS variables for the light theme.",
+          "type": "object"
+        },
+        "theme": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "CSS variables for the @theme directive. For Tailwind v4 projects only. Use tailwind for older projects.",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "dependencies": {
+      "description": "An array of NPM dependencies required by the registry item.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "description": {
+      "description": "The description of the item. This is used to provide a brief overview of the item.",
+      "type": "string"
+    },
+    "devDependencies": {
+      "description": "An array of NPM dev dependencies required by the registry item.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "docs": {
+      "description": "The documentation for the registry item. This is a markdown string.",
+      "type": "string"
+    },
+    "envVars": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Environment variables required by the registry item. Key-value pairs that will be added to the project's .env file.",
+      "type": "object"
+    },
+    "extends": {
+      "description": "The name of the registry item to extend. This is used to extend the base shadcn/ui style. Set to none to start fresh. This is available for registry:style items only.",
+      "type": "string"
+    },
+    "files": {
+      "description": "The main payload of the registry item. This is an array of files that are part of the registry item. Each file is an object with a path, content, type, and target.",
+      "items": {
+        "else": {
+          "required": ["path", "type"]
+        },
+        "if": {
+          "properties": {
+            "type": {
+              "enum": ["registry:file", "registry:page"]
+            }
+          }
+        },
+        "properties": {
+          "content": {
+            "description": "The content of the file.",
+            "type": "string"
+          },
+          "path": {
+            "description": "The path to the file relative to the registry root.",
+            "type": "string"
+          },
+          "target": {
+            "description": "The target path of the file. This is the path to the file in the project.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of the file. This is used to determine the type of the file when resolved for a project.",
+            "enum": [
+              "registry:lib",
+              "registry:block",
+              "registry:component",
+              "registry:ui",
+              "registry:hook",
+              "registry:theme",
+              "registry:page",
+              "registry:file",
+              "registry:style",
+              "registry:item"
+            ],
+            "type": "string"
+          }
+        },
+        "then": {
+          "required": ["path", "type", "target"]
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "meta": {
+      "additionalProperties": true,
+      "description": "Additional metadata for the registry item. This is an object with any key value pairs.",
+      "type": "object"
+    },
+    "name": {
+      "description": "The name of the item. This is used to identify the item in the registry. It should be unique for your registry.",
+      "type": "string"
+    },
+    "registryDependencies": {
+      "description": "An array of registry items that this item depends on. Use the name of the item to reference shadcn/ui components and urls to reference other registries.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "tailwind": {
+      "description": "The tailwind configuration for the registry item. This is an object with a config property. Use cssVars for Tailwind v4 projects.",
+      "properties": {
+        "config": {
+          "properties": {
+            "content": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "plugins": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "theme": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "title": {
+      "description": "The human-readable title for your registry item. Keep it short and descriptive.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of the item. This is used to determine the type and target path of the item when resolved for a project.",
+      "enum": [
+        "registry:lib",
+        "registry:block",
+        "registry:component",
+        "registry:ui",
+        "registry:hook",
+        "registry:theme",
+        "registry:page",
+        "registry:file",
+        "registry:style",
+        "registry:item"
+      ],
+      "type": "string"
+    }
+  },
+  "required": ["name", "type"],
+  "type": "object"
+}

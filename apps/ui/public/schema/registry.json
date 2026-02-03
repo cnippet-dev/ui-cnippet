@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "description": "A shadcn registry of components, hooks, pages, etc.",
+  "minItems": 1,
+  "properties": {
+    "homepage": {
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "https://ui.cnippet.dev/schema/registry-item.json"
+      },
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": ["name", "homepage", "items"],
+  "type": "object",
+  "uniqueItems": true
+}

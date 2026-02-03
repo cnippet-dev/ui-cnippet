@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-input-2",
+  "type": "registry:block",
+  "description": "input",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-2.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Small</p>\n        <Input\n          aria-label=\"Enter text\"\n          placeholder=\"Enter text\"\n          size=\"sm\"\n          type=\"text\"\n        />\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Default</p>\n        <Input aria-label=\"Enter text\" placeholder=\"Enter text\" type=\"text\" />\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Large</p>\n        <Input\n          aria-label=\"Enter text\"\n          placeholder=\"Enter text\"\n          size=\"lg\"\n          type=\"text\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ]
+}

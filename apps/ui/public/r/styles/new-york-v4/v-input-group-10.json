@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-10",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-10.tsx",
+      "content": "import { SearchIcon } from \"lucide-react\";\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Small</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Search\"\n            placeholder=\"Search\"\n            size=\"sm\"\n            type=\"search\"\n          />\n          <InputGroupAddon>\n            <SearchIcon />\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Large</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Search\"\n            placeholder=\"Search\"\n            size=\"lg\"\n            type=\"search\"\n          />\n          <InputGroupAddon>\n            <SearchIcon />\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

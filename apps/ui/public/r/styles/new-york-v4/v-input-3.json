@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-3",
+  "description": "input",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-3.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return <Input aria-label=\"File\" type=\"file\" />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

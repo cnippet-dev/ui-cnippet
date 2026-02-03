@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-4",
+  "description": "radio-group",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-4.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    alert(`Selected: ${formData.get(\"frameworks\")}`);\n  };\n\n  return (\n    <Form className=\"max-w-[160px]\" onSubmit={onSubmit}>\n      <Field\n        className=\"gap-4\"\n        name=\"frameworks\"\n        render={(props) => <Fieldset {...props} />}\n      >\n        <FieldsetLegend className=\"font-medium text-sm\">\n          Frameworks\n        </FieldsetLegend>\n        <RadioGroup defaultValue=\"next\">\n          <FieldLabel>\n            <Radio disabled={loading} value=\"next\" /> Next.js\n          </FieldLabel>\n          <FieldLabel>\n            <Radio disabled={loading} value=\"vite\" /> Vite\n          </FieldLabel>\n          <FieldLabel>\n            <Radio disabled={loading} value=\"astro\" /> Astro\n          </FieldLabel>\n        </RadioGroup>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

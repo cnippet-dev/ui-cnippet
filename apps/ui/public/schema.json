@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "aliases": {
+      "properties": {
+        "components": {
+          "type": "string"
+        },
+        "hooks": {
+          "type": "string"
+        },
+        "lib": {
+          "type": "string"
+        },
+        "ui": {
+          "type": "string"
+        },
+        "utils": {
+          "type": "string"
+        }
+      },
+      "required": ["utils", "components"],
+      "type": "object"
+    },
+    "iconLibrary": {
+      "type": "string"
+    },
+    "registries": {
+      "additionalProperties": false,
+      "patternProperties": {
+        "^@": {
+          "oneOf": [
+            {
+              "pattern": "\\{name\\}",
+              "type": "string"
+            },
+            {
+              "properties": {
+                "headers": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "params": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "url": {
+                  "pattern": "\\{name\\}",
+                  "type": "string"
+                }
+              },
+              "required": ["url"],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "rsc": {
+      "type": "boolean"
+    },
+    "style": {
+      "enum": ["default", "new-york"],
+      "type": "string"
+    },
+    "tailwind": {
+      "properties": {
+        "baseColor": {
+          "type": "string"
+        },
+        "config": {
+          "type": "string"
+        },
+        "css": {
+          "type": "string"
+        },
+        "cssVariables": {
+          "type": "boolean"
+        },
+        "prefix": {
+          "type": "string"
+        }
+      },
+      "required": ["config", "css", "baseColor", "cssVariables"],
+      "type": "object"
+    },
+    "tsx": {
+      "type": "boolean"
+    }
+  },
+  "required": ["style", "tailwind", "rsc", "aliases"],
+  "type": "object"
+}

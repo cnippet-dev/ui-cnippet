@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-form-1",
+  "type": "registry:block",
+  "description": "form",
+  "registryDependencies": [
+    "form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-1.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    alert(`Email: ${formData.get(\"email\") || \"\"}`);\n  };\n\n  return (\n    <Form className=\"max-w-64\" onSubmit={onSubmit}>\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input\n          disabled={loading}\n          name=\"email\"\n          placeholder=\"you@example.com\"\n          required\n          type=\"email\"\n        />\n        <FieldError>Please enter a valid email.</FieldError>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ]
+}

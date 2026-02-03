@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-toast-6",
+  "type": "registry:block",
+  "description": "toast",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-6.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { toastManager } from \"@/registry/default/ui/toast\";\n\nconst TEXTS = [\n  \"Short message.\",\n  \"A bit longer message that spans two lines.\",\n  \"This is a longer description that intentionally takes more vertical space to demonstrate stacking with varying heights.\",\n  \"An even longer description that should span multiple lines so we can verify the clamped collapsed height and smooth expansion animation when hovering or focusing the viewport.\",\n];\n\nexport default function Particle() {\n  const [count, setCount] = React.useState(0);\n\n  function createToast() {\n    setCount((prev) => prev + 1);\n    const description = TEXTS[Math.floor(Math.random() * TEXTS.length)];\n    toastManager.add({\n      description,\n      timeout: 2000,\n      title: `Toast ${count + 1} created`,\n    });\n  }\n\n  return (\n    <Button onClick={createToast} variant=\"outline\">\n      With Varying Heights\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ]
+}

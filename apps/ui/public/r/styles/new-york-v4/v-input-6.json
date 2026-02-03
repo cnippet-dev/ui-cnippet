@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-6",
+  "type": "registry:block",
+  "description": "Input with label",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-6.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  const id = useId();\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-2\">\r\n      <Label htmlFor={id}>Email</Label>\r\n      <Input\r\n        aria-label=\"Email\"\r\n        id={id}\r\n        placeholder=\"you@example.com\"\r\n        type=\"email\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ]
+}

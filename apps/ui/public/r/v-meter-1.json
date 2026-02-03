@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-meter-1",
+  "type": "registry:block",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-1.tsx",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter value={75}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <MeterLabel>Storage usage</MeterLabel>\n        <MeterValue />\n      </div>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ]
+}

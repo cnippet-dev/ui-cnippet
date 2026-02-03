@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-autocomplete-2",
+  "type": "registry:block",
+  "description": "Basic autocomplete",
+  "registryDependencies": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-autocomplete-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Autocomplete,\r\n  AutocompleteEmpty,\r\n  AutocompleteInput,\r\n  AutocompleteItem,\r\n  AutocompleteList,\r\n  AutocompletePopup,\r\n} from \"@/registry/default/ui/autocomplete\";\r\n\r\nconst items = [\r\n  { label: \"Apple\", value: \"apple\" },\r\n  { label: \"Banana\", value: \"banana\" },\r\n  { label: \"Orange\", value: \"orange\" },\r\n  { label: \"Grape\", value: \"grape\" },\r\n  { label: \"Strawberry\", value: \"strawberry\" },\r\n  { label: \"Mango\", value: \"mango\" },\r\n  { label: \"Pineapple\", value: \"pineapple\" },\r\n  { label: \"Kiwi\", value: \"kiwi\" },\r\n  { label: \"Peach\", value: \"peach\" },\r\n  { label: \"Pear\", value: \"pear\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <Autocomplete items={items}>\r\n        <AutocompleteInput\r\n          aria-label=\"Search items\"\r\n          placeholder=\"Search items…\"\r\n          size=\"sm\"\r\n        />\r\n        <AutocompletePopup>\r\n          <AutocompleteEmpty>No items found.</AutocompleteEmpty>\r\n          <AutocompleteList>\r\n            {(item) => (\r\n              <AutocompleteItem key={item.value} value={item}>\r\n                {item.label}\r\n              </AutocompleteItem>\r\n            )}\r\n          </AutocompleteList>\r\n        </AutocompletePopup>\r\n      </Autocomplete>\r\n      <Autocomplete items={items}>\r\n        <AutocompleteInput\r\n          aria-label=\"Search items\"\r\n          placeholder=\"Search items…\"\r\n          size=\"lg\"\r\n        />\r\n        <AutocompletePopup>\r\n          <AutocompleteEmpty>No items found.</AutocompleteEmpty>\r\n          <AutocompleteList>\r\n            {(item) => (\r\n              <AutocompleteItem key={item.value} value={item}>\r\n                {item.label}\r\n              </AutocompleteItem>\r\n            )}\r\n          </AutocompleteList>\r\n        </AutocompletePopup>\r\n      </Autocomplete>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "autocomplete"
+  ]
+}

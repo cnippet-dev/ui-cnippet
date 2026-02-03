@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-3",
+  "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-3.tsx",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n} from \"@/components/ui/input-group\";\nimport { NumberField, NumberFieldInput } from \"@/components/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <NumberField aria-label=\"Enter the amount\" defaultValue={100}>\n        <NumberFieldInput className=\"text-left\" />\n      </NumberField>\n      <InputGroupAddon>\n        <InputGroupText>₹</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>INR</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

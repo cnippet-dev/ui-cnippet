@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-group-1",
+  "description": "Basic checkbox-group",
+  "registryDependencies": [
+    "checkbox-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-group-1.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <CheckboxGroup aria-label=\"Select frameworks\" defaultValue={[\"next\"]}>\n      <Label>\n        <Checkbox value=\"next\" />\n        Next.js\n      </Label>\n      <Label>\n        <Checkbox value=\"vite\" />\n        Vite\n      </Label>\n      <Label>\n        <Checkbox value=\"astro\" />\n        Astro\n      </Label>\n    </CheckboxGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox group"
+  ],
+  "type": "registry:block"
+}

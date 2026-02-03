@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-spinner-1",
+  "type": "registry:block",
+  "description": "Basic spinner",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-1.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ]
+}
