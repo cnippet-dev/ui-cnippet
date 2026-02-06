@@ -13,6 +13,8 @@
         "breadcrumb",
         "button",
         "card",
+        "carousel",
+        "chart",
         "checkbox",
         "checkbox-group",
         "collapsible",

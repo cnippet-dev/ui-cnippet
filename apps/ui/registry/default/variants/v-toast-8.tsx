@@ -2,9 +2,9 @@
 
 import * as React from "react";
 
-import { Button } from "@/registry/default/ui/button";
 import { Spinner } from "@/registry/default/ui/spinner";
-import { anchoredToastManager } from "@/registry/default/ui/toast";
+import { Button } from "@/components/ui/button";
+import { anchoredToastManager } from "@/components/ui/toast";
 
 export default function Particle() {
   const submitRef = React.useRef<HTMLButtonElement>(null);

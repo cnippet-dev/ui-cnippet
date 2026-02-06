@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/registry/default/ui/button";
-import { toastManager } from "@/registry/default/ui/toast";
+import { Button } from "@/components/ui/button";
+import { toastManager } from "@/components/ui/toast";
 
 export default function Particle() {
   return (

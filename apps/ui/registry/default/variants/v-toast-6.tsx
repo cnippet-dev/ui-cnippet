@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
-import { Button } from "@/registry/default/ui/button";
-import { toastManager } from "@/registry/default/ui/toast";
+import { Button } from "@/components/ui/button";
+import { toastManager } from "@/components/ui/toast";
 
 const TEXTS = [
   "Short message.",

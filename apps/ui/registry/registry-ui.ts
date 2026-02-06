@@ -13,6 +13,8 @@ export const ui: Registry["items"] = [
       "breadcrumb",
       "button",
       "card",
+      "carousel",
+      "chart",
       "checkbox",
       "checkbox-group",
       "collapsible",
