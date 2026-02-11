@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/shared/header/site-header";
 import { Footer } from "@/components/shared/footer";
 import Image from "next/image";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const _items = [
   {
@@ -52,7 +53,13 @@ const _items = [
 
 export default function Home() {
   return (
-    <>
+    <> 
+    {/* <button
+        onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'xyz' })}
+      >
+        Send Event
+      </button> */}
+    
       <SiteHeader />
 
       <section className="border-b px-4 md:px-0">
