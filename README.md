@@ -1,135 +1,190 @@
-# Turborepo starter
+# Cnippet UI
 
-This Turborepo starter is maintained by the Turborepo core team.
+Accessible and composable React components built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/). Like shadcn/ui, but powered by Base UI — copy-paste friendly so you fully own the code.
 
-## Using this example
+> **Early Access** — cnippet ui is in active development. Base UI is also in beta, so expect breaking changes as both projects evolve.
 
-Run the following command:
+## Features
 
-```sh
-npx create-turbo@latest
+- **Accessible by Default** — WAI-ARIA / WCAG 2.1 AA compliant with keyboard navigation and screen reader support
+- **Fully Customizable** — Tailwind-first styling with sensible defaults, override any style to match your brand
+- **Blazing Performance** — Tree-shakeable components with minimal bundle size
+- **TypeScript Native** — Full type safety with comprehensive IntelliSense
+- **Next.js Optimized** — Works with App Router and Server Components
+- **Copy-Paste Friendly** — No black-box dependencies, you own every line of code
+- **AI Friendly** — Clear, readable, and predictable code that language models can reason about
+
+## Architecture
+
+cnippet ui uses a layered approach:
+
+- **Primitives** — Unstyled, accessible building blocks powered by Base UI (the foundation)
+- **Particles** — Pre-assembled components like auth forms, tables, and date pickers (the patterns)
+- **Atoms** — API-enhanced particles that integrate with external data and services (the integrations)
+
+## Getting Started
+
+### Prerequisites
+
+A React project with [Tailwind CSS v4](https://tailwindcss.com) installed.
+
+### Install all components
+
+```bash
+npx cnippet@latest add ui
 ```
 
-## What's inside?
+With optimized color tokens (recommended):
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```bash
+npx cnippet@latest add ui @cnippet/colors-zinc
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+This installs both the UI components and the default zinc-based color system, which provides crisp, contrasted borders and enhanced visual depth.
 
+### Add individual components
+
+Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI command, or you can manually copy the source code into your project (e.g., `components/ui/button.tsx`).
+
+### Manual installation
+
+1. Find a component on the docs site
+2. Copy the code from the **Code** tab
+3. Create a new file in your project and paste the code
+4. Install any dependencies listed on the component page
+5. Import and use the component
+
+## Components
+
+### Actions
+
+| Component | Description |
+|-----------|-------------|
+| Button | Primary action trigger with multiple variants |
+| Switch | Toggle between two states |
+| Toggle | Single pressable toggle button |
+| Toggle Group | Group of toggle buttons with single/multi selection |
+| Toolbar | Container for grouping action controls |
+
+### Data Display
+
+| Component | Description |
+|-----------|-------------|
+| Accordion | Expandable/collapsible content sections |
+| Chart | Data visualization (area, bar, line, and more) |
+| Collapsible | Show/hide content with a trigger |
+| Empty | Empty state placeholder |
+| Table | Structured data display |
+
+### Feedback
+
+| Component | Description |
+|-----------|-------------|
+| Alert | Contextual feedback messages |
+| Badge | Status indicators and labels |
+| Kbd | Keyboard shortcut display |
+| Progress | Progress indicator bar |
+| Skeleton | Loading placeholder |
+| Spinner | Loading spinner |
+| Toast | Temporary notification messages |
+
+### Forms
+
+| Component | Description |
+|-----------|-------------|
+| Checkbox | Single checkbox input |
+| Checkbox Group | Group of related checkboxes |
+| Field | Form field wrapper with label and error |
+| Fieldset | Grouping of related form fields |
+| Form | Form container with validation |
+| Input | Text input field |
+| Input Group | Input with prefix/suffix addons |
+| Label | Form label |
+| Meter | Scalar measurement display |
+| Number Field | Numeric input with increment/decrement |
+| Radio Group | Single-select radio options |
+| Slider | Range value selector |
+| Textarea | Multi-line text input |
+
+### Layout
+
+| Component | Description |
+|-----------|-------------|
+| Avatar | User profile image/initials |
+| Card | Contained content surface |
+| Frame | Media frame/container |
+| Group | Flex layout grouping |
+| Preview Card | Hover preview card |
+| Scroll Area | Custom scrollbar container |
+| Separator | Visual divider |
+
+### Media
+
+| Component | Description |
+|-----------|-------------|
+| Avatar | User profile image display |
+| Carousel | Scrollable content slider |
+
+### Navigation
+
+| Component | Description |
+|-----------|-------------|
+| Breadcrumb | Page hierarchy navigation |
+| Menu | Dropdown action menu |
+| Pagination | Page navigation controls |
+| Tabs | Tabbed content navigation |
+
+### Overlays
+
+| Component | Description |
+|-----------|-------------|
+| Alert Dialog | Confirmation dialog requiring user action |
+| Context Menu | Right-click context menu |
+| Dialog | Modal dialog window |
+| Popover | Floating content panel |
+| Sheet | Slide-in side panel |
+| Tooltip | Hover information display |
+
+### Pickers
+
+| Component | Description |
+|-----------|-------------|
+| Autocomplete | Input with suggestion dropdown |
+| Calendar | Date selection calendar |
+| Combobox | Searchable select input |
+| Select | Dropdown selection |
+
+## Styling
+
+Components use a design token system based on CSS variables, compatible with shadcn/ui tokens. Additional tokens are provided for granular control:
+
+- `--destructive-foreground` — Destructive action foreground
+- `--info` / `--info-foreground` — Info state colors
+- `--success` / `--success-foreground` — Success state colors
+- `--warning` / `--warning-foreground` — Warning state colors
+
+Install the optimized color system via CLI:
+
+```bash
+npx cnippet@latest add colors-zinc
 ```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+See the [Styling guide](https://ui.cnippet.dev/docs/styling) for full details.
+
+## Migrating from Radix UI / shadcn
+
+If you're migrating from **Radix UI** or **shadcn/ui**, cnippet ui provides a clear migration path. Each component includes comparison notes and examples for translating Radix equivalents to Base UI, preserving accessibility, behaviors, and API patterns.
+
+## Development
+
+This is a [Next.js](https://nextjs.org) app within a Turborepo monorepo, documented with [Fumadocs](https://fumadocs.vercel.app/).
+
+```bash
+pnpm dev
 ```
 
-### Develop
+Open [http://localhost:3000](http://localhost:3000) to view the documentation site.
 
-To develop all apps and packages, run the following command:
+## License
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+MIT
