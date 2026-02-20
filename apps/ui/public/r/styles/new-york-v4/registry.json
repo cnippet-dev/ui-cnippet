@@ -59,9 +59,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/accordion.tsx",
@@ -102,9 +100,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/alert-dialog.tsx",
@@ -115,9 +111,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/autocomplete.tsx",
@@ -125,16 +119,11 @@
         }
       ],
       "name": "autocomplete",
-      "registryDependencies": [
-        "input",
-        "scroll-area"
-      ],
+      "registryDependencies": ["input", "scroll-area"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/avatar.tsx",
@@ -165,9 +154,7 @@
           "warning-foreground": "var(--color-amber-700)"
         }
       },
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/badge.tsx",
@@ -178,9 +165,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/breadcrumb.tsx",
@@ -199,9 +184,7 @@
           "destructive-foreground": "var(--color-red-700)"
         }
       },
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/button.tsx",
@@ -212,10 +195,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "react-day-picker",
-        "date-fns"
-      ],
+      "dependencies": ["react-day-picker", "date-fns"],
       "files": [
         {
           "path": "registry/default/ui/calendar.tsx",
@@ -223,9 +203,7 @@
         }
       ],
       "name": "calendar",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:ui"
     },
     {
@@ -240,9 +218,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "embla-carousel-react"
-      ],
+      "dependencies": ["embla-carousel-react"],
       "files": [
         {
           "path": "registry/default/ui/carousel.tsx",
@@ -254,9 +230,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "files": [
         {
           "path": "registry/default/ui/chart.tsx",
@@ -268,9 +242,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/checkbox.tsx",
@@ -281,9 +253,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/checkbox-group.tsx",
@@ -294,9 +264,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/collapsible.tsx",
@@ -307,9 +275,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/combobox.tsx",
@@ -317,16 +283,11 @@
         }
       ],
       "name": "combobox",
-      "registryDependencies": [
-        "input",
-        "scroll-area"
-      ],
+      "registryDependencies": ["input", "scroll-area"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/context-menu.tsx",
@@ -338,9 +299,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/dialog.tsx",
@@ -348,9 +307,7 @@
         }
       ],
       "name": "dialog",
-      "registryDependencies": [
-        "scroll-area"
-      ],
+      "registryDependencies": ["scroll-area"],
       "type": "registry:ui"
     },
     {
@@ -372,9 +329,7 @@
           "destructive-foreground": "var(--color-red-700)"
         }
       },
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/field.tsx",
@@ -385,9 +340,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/fieldset.tsx",
@@ -398,9 +351,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/form.tsx",
@@ -421,9 +372,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/group.tsx",
@@ -431,15 +380,11 @@
         }
       ],
       "name": "group",
-      "registryDependencies": [
-        "separator"
-      ],
+      "registryDependencies": ["separator"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/input.tsx",
@@ -457,10 +402,7 @@
         }
       ],
       "name": "input-group",
-      "registryDependencies": [
-        "input",
-        "textarea"
-      ],
+      "registryDependencies": ["input", "textarea"],
       "type": "registry:ui"
     },
     {
@@ -492,9 +434,7 @@
           "destructive-foreground": "var(--color-red-700)"
         }
       },
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/menu.tsx",
@@ -505,9 +445,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/meter.tsx",
@@ -518,9 +456,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/number-field.tsx",
@@ -528,9 +464,7 @@
         }
       ],
       "name": "number-field",
-      "registryDependencies": [
-        "label"
-      ],
+      "registryDependencies": ["label"],
       "type": "registry:ui"
     },
     {
@@ -541,15 +475,11 @@
         }
       ],
       "name": "pagination",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/popover.tsx",
@@ -560,9 +490,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/preview-card.tsx",
@@ -573,9 +501,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/progress.tsx",
@@ -586,9 +512,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/radio-group.tsx",
@@ -599,9 +523,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/scroll-area.tsx",
@@ -612,9 +534,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/select.tsx",
@@ -625,9 +545,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/separator.tsx",
@@ -638,9 +556,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/sheet.tsx",
@@ -648,9 +564,7 @@
         }
       ],
       "name": "sheet",
-      "registryDependencies": [
-        "scroll-area"
-      ],
+      "registryDependencies": ["scroll-area"],
       "type": "registry:ui"
     },
     {
@@ -696,9 +610,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/slider.tsx",
@@ -719,9 +631,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/switch.tsx",
@@ -742,9 +652,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/tabs.tsx",
@@ -755,9 +663,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/textarea.tsx",
@@ -768,9 +674,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/toast.tsx",
@@ -778,15 +682,11 @@
         }
       ],
       "name": "toast",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/toggle.tsx",
@@ -797,9 +697,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/toggle-group.tsx",
@@ -807,16 +705,11 @@
         }
       ],
       "name": "toggle-group",
-      "registryDependencies": [
-        "separator",
-        "toggle"
-      ],
+      "registryDependencies": ["separator", "toggle"],
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/toolbar.tsx",
@@ -827,9 +720,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/default/ui/tooltip.tsx",
@@ -900,9 +791,7 @@
       "type": "registry:style"
     },
     {
-      "categories": [
-        "accordion"
-      ],
+      "categories": ["accordion"],
       "description": "Basic accordion",
       "files": [
         {
@@ -914,15 +803,11 @@
         "className": ""
       },
       "name": "v-accordion-1",
-      "registryDependencies": [
-        "accordion"
-      ],
+      "registryDependencies": ["accordion"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "accordion"
-      ],
+      "categories": ["accordion"],
       "description": "Multi level accordion",
       "files": [
         {
@@ -934,15 +819,11 @@
         "className": ""
       },
       "name": "v-accordion-2",
-      "registryDependencies": [
-        "accordion"
-      ],
+      "registryDependencies": ["accordion"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert"
-      ],
+      "categories": ["alert"],
       "description": "Basic alert",
       "files": [
         {
@@ -954,15 +835,11 @@
         "className": ""
       },
       "name": "v-alert-1",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert"
-      ],
+      "categories": ["alert"],
       "description": "Basic alert",
       "files": [
         {
@@ -974,15 +851,11 @@
         "className": ""
       },
       "name": "v-alert-2",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert"
-      ],
+      "categories": ["alert"],
       "description": "Basic alert",
       "files": [
         {
@@ -994,15 +867,11 @@
         "className": ""
       },
       "name": "v-alert-3",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert"
-      ],
+      "categories": ["alert"],
       "description": "Basic alert",
       "files": [
         {
@@ -1014,15 +883,11 @@
         "className": ""
       },
       "name": "v-alert-4",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert"
-      ],
+      "categories": ["alert"],
       "description": "Basic alert",
       "files": [
         {
@@ -1034,15 +899,11 @@
         "className": ""
       },
       "name": "v-alert-5",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert dialog"
-      ],
+      "categories": ["alert dialog"],
       "description": "basic alert dialog",
       "files": [
         {
@@ -1054,15 +915,11 @@
         "className": ""
       },
       "name": "v-alert-dialog-1",
-      "registryDependencies": [
-        "alert-dialog"
-      ],
+      "registryDependencies": ["alert-dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "alert dialog"
-      ],
+      "categories": ["alert dialog"],
       "description": "basic alert dialog",
       "files": [
         {
@@ -1074,15 +931,11 @@
         "className": ""
       },
       "name": "v-alert-dialog-2",
-      "registryDependencies": [
-        "alert-dialog"
-      ],
+      "registryDependencies": ["alert-dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1094,15 +947,11 @@
         "className": ""
       },
       "name": "v-autocomplete-1",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1114,15 +963,11 @@
         "className": ""
       },
       "name": "v-autocomplete-2",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1134,15 +979,11 @@
         "className": ""
       },
       "name": "v-autocomplete-3",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1154,15 +995,11 @@
         "className": ""
       },
       "name": "v-autocomplete-4",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1174,15 +1011,11 @@
         "className": ""
       },
       "name": "v-autocomplete-5",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "autocomplete"
-      ],
+      "categories": ["autocomplete"],
       "description": "Basic autocomplete",
       "files": [
         {
@@ -1194,15 +1027,11 @@
         "className": ""
       },
       "name": "v-autocomplete-6",
-      "registryDependencies": [
-        "autocomplete"
-      ],
+      "registryDependencies": ["autocomplete"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "avatar"
-      ],
+      "categories": ["avatar"],
       "description": "Basic avatar",
       "files": [
         {
@@ -1214,15 +1043,11 @@
         "className": ""
       },
       "name": "v-avatar-1",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "avatar"
-      ],
+      "categories": ["avatar"],
       "description": "Basic avatar",
       "files": [
         {
@@ -1234,15 +1059,11 @@
         "className": ""
       },
       "name": "v-avatar-2",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "avatar"
-      ],
+      "categories": ["avatar"],
       "description": "Basic avatar",
       "files": [
         {
@@ -1254,15 +1075,11 @@
         "className": ""
       },
       "name": "v-avatar-3",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "avatar"
-      ],
+      "categories": ["avatar"],
       "description": "Basic avatar",
       "files": [
         {
@@ -1274,15 +1091,11 @@
         "className": ""
       },
       "name": "v-avatar-4",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "badge"
-      ],
+      "categories": ["badge"],
       "description": "Basic badge",
       "files": [
         {
@@ -1294,15 +1107,11 @@
         "className": ""
       },
       "name": "v-badge-1",
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "badge"
-      ],
+      "categories": ["badge"],
       "description": "Basic badge",
       "files": [
         {
@@ -1314,15 +1123,11 @@
         "className": ""
       },
       "name": "v-badge-2",
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "badge"
-      ],
+      "categories": ["badge"],
       "description": "Basic badge",
       "files": [
         {
@@ -1334,15 +1139,11 @@
         "className": ""
       },
       "name": "v-badge-3",
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "breadcrumb"
-      ],
+      "categories": ["breadcrumb"],
       "description": "Basic breadcrumb",
       "files": [
         {
@@ -1354,15 +1155,11 @@
         "className": ""
       },
       "name": "v-breadcrumb-1",
-      "registryDependencies": [
-        "breadcrumb"
-      ],
+      "registryDependencies": ["breadcrumb"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "breadcrumb"
-      ],
+      "categories": ["breadcrumb"],
       "description": "Basic breadcrumb",
       "files": [
         {
@@ -1374,15 +1171,11 @@
         "className": ""
       },
       "name": "v-breadcrumb-2",
-      "registryDependencies": [
-        "breadcrumb"
-      ],
+      "registryDependencies": ["breadcrumb"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "button"
-      ],
+      "categories": ["button"],
       "description": "Basic button",
       "files": [
         {
@@ -1394,15 +1187,11 @@
         "className": ""
       },
       "name": "v-button-1",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "button"
-      ],
+      "categories": ["button"],
       "description": "Basic button",
       "files": [
         {
@@ -1414,15 +1203,11 @@
         "className": ""
       },
       "name": "v-button-2",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "button"
-      ],
+      "categories": ["button"],
       "description": "Basic button",
       "files": [
         {
@@ -1434,15 +1219,11 @@
         "className": ""
       },
       "name": "v-button-3",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "calendar"
-      ],
+      "categories": ["calendar"],
       "description": "Basic calendar",
       "files": [
         {
@@ -1454,15 +1235,11 @@
         "className": ""
       },
       "name": "v-calendar-1",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "calendar"
-      ],
+      "categories": ["calendar"],
       "description": "Basic calendar",
       "files": [
         {
@@ -1474,15 +1251,11 @@
         "className": ""
       },
       "name": "v-calendar-2",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "calendar"
-      ],
+      "categories": ["calendar"],
       "description": "Basic calendar",
       "files": [
         {
@@ -1494,15 +1267,11 @@
         "className": ""
       },
       "name": "v-calendar-3",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "calendar"
-      ],
+      "categories": ["calendar"],
       "description": "Basic calendar",
       "files": [
         {
@@ -1514,15 +1283,11 @@
         "className": ""
       },
       "name": "v-calendar-4",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "card"
-      ],
+      "categories": ["card"],
       "description": "Basic card",
       "files": [
         {
@@ -1534,15 +1299,11 @@
         "className": ""
       },
       "name": "v-card-1",
-      "registryDependencies": [
-        "@cnippet/card"
-      ],
+      "registryDependencies": ["@cnippet/card"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "carousel"
-      ],
+      "categories": ["carousel"],
       "description": "Basic carousel",
       "files": [
         {
@@ -1558,9 +1319,7 @@
       "type": "registry:block"
     },
     {
-      "categories": [
-        "carousel"
-      ],
+      "categories": ["carousel"],
       "description": "Basic carousel",
       "files": [
         {
@@ -1576,9 +1335,7 @@
       "type": "registry:block"
     },
     {
-      "categories": [
-        "carousel"
-      ],
+      "categories": ["carousel"],
       "description": "Basic carousel",
       "files": [
         {
@@ -1594,9 +1351,7 @@
       "type": "registry:block"
     },
     {
-      "categories": [
-        "chart"
-      ],
+      "categories": ["chart"],
       "description": "Basic chart",
       "files": [
         {
@@ -1612,9 +1367,7 @@
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox"
-      ],
+      "categories": ["checkbox"],
       "description": "Basic checkbox",
       "files": [
         {
@@ -1626,15 +1379,11 @@
         "className": ""
       },
       "name": "v-checkbox-1",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox"
-      ],
+      "categories": ["checkbox"],
       "description": "Basic checkbox",
       "files": [
         {
@@ -1646,15 +1395,11 @@
         "className": ""
       },
       "name": "v-checkbox-2",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox"
-      ],
+      "categories": ["checkbox"],
       "description": "Basic checkbox",
       "files": [
         {
@@ -1666,15 +1411,11 @@
         "className": ""
       },
       "name": "v-checkbox-3",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox"
-      ],
+      "categories": ["checkbox"],
       "description": "Basic checkbox",
       "files": [
         {
@@ -1686,15 +1427,11 @@
         "className": ""
       },
       "name": "v-checkbox-4",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox group"
-      ],
+      "categories": ["checkbox group"],
       "description": "Basic checkbox-group",
       "files": [
         {
@@ -1706,15 +1443,11 @@
         "className": ""
       },
       "name": "v-checkbox-group-1",
-      "registryDependencies": [
-        "checkbox-group"
-      ],
+      "registryDependencies": ["checkbox-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox group"
-      ],
+      "categories": ["checkbox group"],
       "description": "Basic checkbox-group",
       "files": [
         {
@@ -1726,15 +1459,11 @@
         "className": ""
       },
       "name": "v-checkbox-group-2",
-      "registryDependencies": [
-        "checkbox-group"
-      ],
+      "registryDependencies": ["checkbox-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox group"
-      ],
+      "categories": ["checkbox group"],
       "description": "Basic checkbox-group",
       "files": [
         {
@@ -1746,15 +1475,11 @@
         "className": ""
       },
       "name": "v-checkbox-group-3",
-      "registryDependencies": [
-        "checkbox-group"
-      ],
+      "registryDependencies": ["checkbox-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "checkbox group"
-      ],
+      "categories": ["checkbox group"],
       "description": "Basic checkbox-group",
       "files": [
         {
@@ -1766,15 +1491,11 @@
         "className": ""
       },
       "name": "v-checkbox-group-4",
-      "registryDependencies": [
-        "checkbox-group"
-      ],
+      "registryDependencies": ["checkbox-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "collapsible"
-      ],
+      "categories": ["collapsible"],
       "description": "Basic collapsible",
       "files": [
         {
@@ -1786,15 +1507,11 @@
         "className": ""
       },
       "name": "v-collapsible-1",
-      "registryDependencies": [
-        "@cnippet/collapsible"
-      ],
+      "registryDependencies": ["@cnippet/collapsible"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1806,15 +1523,11 @@
         "className": ""
       },
       "name": "v-combobox-1",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1826,15 +1539,11 @@
         "className": ""
       },
       "name": "v-combobox-2",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1846,15 +1555,11 @@
         "className": ""
       },
       "name": "v-combobox-3",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1866,15 +1571,11 @@
         "className": ""
       },
       "name": "v-combobox-4",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1886,15 +1587,11 @@
         "className": ""
       },
       "name": "v-combobox-5",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1906,15 +1603,11 @@
         "className": ""
       },
       "name": "v-combobox-6",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1926,15 +1619,11 @@
         "className": ""
       },
       "name": "v-combobox-7",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1946,15 +1635,11 @@
         "className": ""
       },
       "name": "v-combobox-8",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1966,15 +1651,11 @@
         "className": ""
       },
       "name": "v-combobox-9",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "combobox"
-      ],
+      "categories": ["combobox"],
       "description": "Basic combobox",
       "files": [
         {
@@ -1986,15 +1667,11 @@
         "className": ""
       },
       "name": "v-combobox-10",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "context-menu"
-      ],
+      "categories": ["context-menu"],
       "description": "Basic context menu",
       "files": [
         {
@@ -2010,9 +1687,7 @@
       "type": "registry:block"
     },
     {
-      "categories": [
-        "dialog"
-      ],
+      "categories": ["dialog"],
       "description": "Basic dialog",
       "files": [
         {
@@ -2024,15 +1699,11 @@
         "className": ""
       },
       "name": "v-dialog-1",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "dialog"
-      ],
+      "categories": ["dialog"],
       "description": "Basic dialog",
       "files": [
         {
@@ -2044,15 +1715,11 @@
         "className": ""
       },
       "name": "v-dialog-2",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "dialog"
-      ],
+      "categories": ["dialog"],
       "description": "Basic dialog",
       "files": [
         {
@@ -2064,15 +1731,11 @@
         "className": ""
       },
       "name": "v-dialog-3",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "dialog"
-      ],
+      "categories": ["dialog"],
       "description": "Basic dialog",
       "files": [
         {
@@ -2084,15 +1747,11 @@
         "className": ""
       },
       "name": "v-dialog-4",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "dialog"
-      ],
+      "categories": ["dialog"],
       "description": "Basic dialog",
       "files": [
         {
@@ -2104,15 +1763,11 @@
         "className": ""
       },
       "name": "v-dialog-5",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "empty state"
-      ],
+      "categories": ["empty state"],
       "description": "Basic empty state",
       "files": [
         {
@@ -2124,15 +1779,11 @@
         "className": ""
       },
       "name": "v-empty-1",
-      "registryDependencies": [
-        "@cnippet/empty"
-      ],
+      "registryDependencies": ["@cnippet/empty"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2144,15 +1795,11 @@
         "className": ""
       },
       "name": "v-field-1",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2164,15 +1811,11 @@
         "className": ""
       },
       "name": "v-field-2",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2184,15 +1827,11 @@
         "className": ""
       },
       "name": "v-field-3",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2204,15 +1843,11 @@
         "className": ""
       },
       "name": "v-field-4",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2224,15 +1859,11 @@
         "className": ""
       },
       "name": "v-field-5",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2244,15 +1875,11 @@
         "className": ""
       },
       "name": "v-field-6",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2264,15 +1891,11 @@
         "className": ""
       },
       "name": "v-field-7",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2284,15 +1907,11 @@
         "className": ""
       },
       "name": "v-field-8",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2304,15 +1923,11 @@
         "className": ""
       },
       "name": "v-field-9",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2324,15 +1939,11 @@
         "className": ""
       },
       "name": "v-field-10",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2344,15 +1955,11 @@
         "className": ""
       },
       "name": "v-field-11",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2364,15 +1971,11 @@
         "className": ""
       },
       "name": "v-field-12",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2384,15 +1987,11 @@
         "className": ""
       },
       "name": "v-field-13",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2404,15 +2003,11 @@
         "className": ""
       },
       "name": "v-field-14",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2424,15 +2019,11 @@
         "className": ""
       },
       "name": "v-field-15",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2444,15 +2035,11 @@
         "className": ""
       },
       "name": "v-field-16",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "field"
-      ],
+      "categories": ["field"],
       "description": "Basic field",
       "files": [
         {
@@ -2464,15 +2051,11 @@
         "className": ""
       },
       "name": "v-field-17",
-      "registryDependencies": [
-        "field"
-      ],
+      "registryDependencies": ["field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "fieldset"
-      ],
+      "categories": ["fieldset"],
       "description": "Basic fieldset",
       "files": [
         {
@@ -2484,15 +2067,11 @@
         "className": ""
       },
       "name": "v-fieldset-1",
-      "registryDependencies": [
-        "@cnippet/fieldset"
-      ],
+      "registryDependencies": ["@cnippet/fieldset"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "form"
-      ],
+      "categories": ["form"],
       "description": "form",
       "files": [
         {
@@ -2504,15 +2083,11 @@
         "className": ""
       },
       "name": "v-form-1",
-      "registryDependencies": [
-        "form"
-      ],
+      "registryDependencies": ["form"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "form"
-      ],
+      "categories": ["form"],
       "description": "form",
       "files": [
         {
@@ -2524,15 +2099,11 @@
         "className": ""
       },
       "name": "v-form-2",
-      "registryDependencies": [
-        "form"
-      ],
+      "registryDependencies": ["form"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "frame"
-      ],
+      "categories": ["frame"],
       "description": "frame",
       "files": [
         {
@@ -2544,15 +2115,11 @@
         "className": ""
       },
       "name": "v-frame-1",
-      "registryDependencies": [
-        "frame"
-      ],
+      "registryDependencies": ["frame"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "frame"
-      ],
+      "categories": ["frame"],
       "description": "frame",
       "files": [
         {
@@ -2564,15 +2131,11 @@
         "className": ""
       },
       "name": "v-frame-2",
-      "registryDependencies": [
-        "frame"
-      ],
+      "registryDependencies": ["frame"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "frame"
-      ],
+      "categories": ["frame"],
       "description": "frame",
       "files": [
         {
@@ -2584,15 +2147,11 @@
         "className": ""
       },
       "name": "v-frame-3",
-      "registryDependencies": [
-        "frame"
-      ],
+      "registryDependencies": ["frame"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "frame"
-      ],
+      "categories": ["frame"],
       "description": "frame",
       "files": [
         {
@@ -2604,15 +2163,11 @@
         "className": ""
       },
       "name": "v-frame-4",
-      "registryDependencies": [
-        "frame"
-      ],
+      "registryDependencies": ["frame"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "group"
-      ],
+      "categories": ["group"],
       "description": "Basic group",
       "files": [
         {
@@ -2624,15 +2179,11 @@
         "className": ""
       },
       "name": "v-group-1",
-      "registryDependencies": [
-        "@cnippet/group"
-      ],
+      "registryDependencies": ["@cnippet/group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input"
-      ],
+      "categories": ["input"],
       "description": "input",
       "files": [
         {
@@ -2644,15 +2195,11 @@
         "className": ""
       },
       "name": "v-input-1",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input"
-      ],
+      "categories": ["input"],
       "description": "input",
       "files": [
         {
@@ -2664,15 +2211,11 @@
         "className": ""
       },
       "name": "v-input-2",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input"
-      ],
+      "categories": ["input"],
       "description": "input",
       "files": [
         {
@@ -2684,15 +2227,11 @@
         "className": ""
       },
       "name": "v-input-3",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input"
-      ],
+      "categories": ["input"],
       "description": "input",
       "files": [
         {
@@ -2704,15 +2243,11 @@
         "className": ""
       },
       "name": "v-input-4",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input"
-      ],
+      "categories": ["input"],
       "description": "input",
       "files": [
         {
@@ -2724,15 +2259,11 @@
         "className": ""
       },
       "name": "v-input-5",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2744,15 +2275,11 @@
         "className": ""
       },
       "name": "v-input-group-1",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2764,15 +2291,11 @@
         "className": ""
       },
       "name": "v-input-group-2",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2784,15 +2307,11 @@
         "className": ""
       },
       "name": "v-input-group-3",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2804,15 +2323,11 @@
         "className": ""
       },
       "name": "v-input-group-4",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2824,15 +2339,11 @@
         "className": ""
       },
       "name": "v-input-group-5",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2844,15 +2355,11 @@
         "className": ""
       },
       "name": "v-input-group-6",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2864,15 +2371,11 @@
         "className": ""
       },
       "name": "v-input-group-7",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2884,15 +2387,11 @@
         "className": ""
       },
       "name": "v-input-group-8",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2904,15 +2403,11 @@
         "className": ""
       },
       "name": "v-input-group-9",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2924,15 +2419,11 @@
         "className": ""
       },
       "name": "v-input-group-10",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2944,15 +2435,11 @@
         "className": ""
       },
       "name": "v-input-group-11",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "input group"
-      ],
+      "categories": ["input group"],
       "description": "input-group",
       "files": [
         {
@@ -2964,15 +2451,11 @@
         "className": ""
       },
       "name": "v-input-group-12",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "kbd"
-      ],
+      "categories": ["kbd"],
       "description": "Basic kbd",
       "files": [
         {
@@ -2984,15 +2467,11 @@
         "className": ""
       },
       "name": "v-kbd-1",
-      "registryDependencies": [
-        "@cnippet/kbd"
-      ],
+      "registryDependencies": ["@cnippet/kbd"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3004,15 +2483,11 @@
         "className": ""
       },
       "name": "v-menu-1",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3024,15 +2499,11 @@
         "className": ""
       },
       "name": "v-menu-2",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3044,15 +2515,11 @@
         "className": ""
       },
       "name": "v-menu-3",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3064,15 +2531,11 @@
         "className": ""
       },
       "name": "v-menu-4",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3084,15 +2547,11 @@
         "className": ""
       },
       "name": "v-menu-5",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "menu"
-      ],
+      "categories": ["menu"],
       "description": "menu",
       "files": [
         {
@@ -3104,15 +2563,11 @@
         "className": ""
       },
       "name": "v-menu-6",
-      "registryDependencies": [
-        "menu"
-      ],
+      "registryDependencies": ["menu"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "meter"
-      ],
+      "categories": ["meter"],
       "description": "Basic meter",
       "files": [
         {
@@ -3124,15 +2579,11 @@
         "className": ""
       },
       "name": "v-meter-1",
-      "registryDependencies": [
-        "@cnippet/meter"
-      ],
+      "registryDependencies": ["@cnippet/meter"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3144,15 +2595,11 @@
         "className": ""
       },
       "name": "v-number-field-1",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3164,15 +2611,11 @@
         "className": ""
       },
       "name": "v-number-field-2",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3184,15 +2627,11 @@
         "className": ""
       },
       "name": "v-number-field-3",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3204,15 +2643,11 @@
         "className": ""
       },
       "name": "v-number-field-4",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3224,15 +2659,11 @@
         "className": ""
       },
       "name": "v-number-field-5",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "number field"
-      ],
+      "categories": ["number field"],
       "description": "number-field",
       "files": [
         {
@@ -3244,15 +2675,11 @@
         "className": ""
       },
       "name": "v-number-field-6",
-      "registryDependencies": [
-        "number-field"
-      ],
+      "registryDependencies": ["number-field"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "pagination"
-      ],
+      "categories": ["pagination"],
       "description": "Basic pagination",
       "files": [
         {
@@ -3264,15 +2691,11 @@
         "className": ""
       },
       "name": "v-pagination-1",
-      "registryDependencies": [
-        "@cnippet/pagination"
-      ],
+      "registryDependencies": ["@cnippet/pagination"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "popover"
-      ],
+      "categories": ["popover"],
       "description": "popover",
       "files": [
         {
@@ -3284,15 +2707,11 @@
         "className": ""
       },
       "name": "v-popover-1",
-      "registryDependencies": [
-        "popover"
-      ],
+      "registryDependencies": ["popover"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "popover"
-      ],
+      "categories": ["popover"],
       "description": "popover",
       "files": [
         {
@@ -3304,15 +2723,11 @@
         "className": ""
       },
       "name": "v-popover-2",
-      "registryDependencies": [
-        "popover"
-      ],
+      "registryDependencies": ["popover"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "popover"
-      ],
+      "categories": ["popover"],
       "description": "popover",
       "files": [
         {
@@ -3324,15 +2739,11 @@
         "className": ""
       },
       "name": "v-popover-3",
-      "registryDependencies": [
-        "popover"
-      ],
+      "registryDependencies": ["popover"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "preview card"
-      ],
+      "categories": ["preview card"],
       "description": "Basic preview card",
       "files": [
         {
@@ -3344,15 +2755,11 @@
         "className": ""
       },
       "name": "v-preview-card-1",
-      "registryDependencies": [
-        "@cnippet/preview-card"
-      ],
+      "registryDependencies": ["@cnippet/preview-card"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "progress"
-      ],
+      "categories": ["progress"],
       "description": "Basic progress",
       "files": [
         {
@@ -3364,15 +2771,11 @@
         "className": ""
       },
       "name": "v-progress-1",
-      "registryDependencies": [
-        "@cnippet/progress"
-      ],
+      "registryDependencies": ["@cnippet/progress"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "radio group"
-      ],
+      "categories": ["radio group"],
       "description": "radio-group",
       "files": [
         {
@@ -3384,15 +2787,11 @@
         "className": ""
       },
       "name": "v-radio-group-1",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "radio group"
-      ],
+      "categories": ["radio group"],
       "description": "radio-group",
       "files": [
         {
@@ -3404,15 +2803,11 @@
         "className": ""
       },
       "name": "v-radio-group-2",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "radio group"
-      ],
+      "categories": ["radio group"],
       "description": "radio-group",
       "files": [
         {
@@ -3424,15 +2819,11 @@
         "className": ""
       },
       "name": "v-radio-group-3",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "radio group"
-      ],
+      "categories": ["radio group"],
       "description": "radio-group",
       "files": [
         {
@@ -3444,15 +2835,11 @@
         "className": ""
       },
       "name": "v-radio-group-4",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "scroll area"
-      ],
+      "categories": ["scroll area"],
       "description": "Basic scroll area",
       "files": [
         {
@@ -3464,15 +2851,11 @@
         "className": ""
       },
       "name": "v-scroll-area-1",
-      "registryDependencies": [
-        "@cnippet/scroll-area"
-      ],
+      "registryDependencies": ["@cnippet/scroll-area"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3484,15 +2867,11 @@
         "className": ""
       },
       "name": "v-select-1",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3504,15 +2883,11 @@
         "className": ""
       },
       "name": "v-select-2",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3524,15 +2899,11 @@
         "className": ""
       },
       "name": "v-select-3",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3544,15 +2915,11 @@
         "className": ""
       },
       "name": "v-select-4",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3564,15 +2931,11 @@
         "className": ""
       },
       "name": "v-select-5",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3584,15 +2947,11 @@
         "className": ""
       },
       "name": "v-select-6",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "select"
-      ],
+      "categories": ["select"],
       "description": "select",
       "files": [
         {
@@ -3604,15 +2963,11 @@
         "className": ""
       },
       "name": "v-select-7",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "separator"
-      ],
+      "categories": ["separator"],
       "description": "Basic separator",
       "files": [
         {
@@ -3624,15 +2979,11 @@
         "className": ""
       },
       "name": "v-separator-1",
-      "registryDependencies": [
-        "@cnippet/separator"
-      ],
+      "registryDependencies": ["@cnippet/separator"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "sheet"
-      ],
+      "categories": ["sheet"],
       "description": "sheet",
       "files": [
         {
@@ -3644,15 +2995,11 @@
         "className": ""
       },
       "name": "v-sheet-1",
-      "registryDependencies": [
-        "sheet"
-      ],
+      "registryDependencies": ["sheet"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "sheet"
-      ],
+      "categories": ["sheet"],
       "description": "sheet",
       "files": [
         {
@@ -3664,15 +3011,11 @@
         "className": ""
       },
       "name": "v-sheet-2",
-      "registryDependencies": [
-        "sheet"
-      ],
+      "registryDependencies": ["sheet"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "sheet"
-      ],
+      "categories": ["sheet"],
       "description": "sheet",
       "files": [
         {
@@ -3684,15 +3027,11 @@
         "className": ""
       },
       "name": "v-sheet-3",
-      "registryDependencies": [
-        "sheet"
-      ],
+      "registryDependencies": ["sheet"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "skeleton"
-      ],
+      "categories": ["skeleton"],
       "description": "Basic skeleton",
       "files": [
         {
@@ -3704,15 +3043,11 @@
         "className": ""
       },
       "name": "v-skeleton-1",
-      "registryDependencies": [
-        "@cnippet/skeleton"
-      ],
+      "registryDependencies": ["@cnippet/skeleton"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "slider"
-      ],
+      "categories": ["slider"],
       "description": "Basic slider",
       "files": [
         {
@@ -3724,15 +3059,11 @@
         "className": ""
       },
       "name": "v-slider-1",
-      "registryDependencies": [
-        "@cnippet/slider"
-      ],
+      "registryDependencies": ["@cnippet/slider"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "spinner"
-      ],
+      "categories": ["spinner"],
       "description": "Basic spinner",
       "files": [
         {
@@ -3744,15 +3075,11 @@
         "className": ""
       },
       "name": "v-spinner-1",
-      "registryDependencies": [
-        "@cnippet/spinner"
-      ],
+      "registryDependencies": ["@cnippet/spinner"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "switch"
-      ],
+      "categories": ["switch"],
       "description": "Basic switch",
       "files": [
         {
@@ -3764,15 +3091,11 @@
         "className": ""
       },
       "name": "v-switch-1",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "switch"
-      ],
+      "categories": ["switch"],
       "description": "Basic switch",
       "files": [
         {
@@ -3784,15 +3107,11 @@
         "className": ""
       },
       "name": "v-switch-2",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "switch"
-      ],
+      "categories": ["switch"],
       "description": "Basic switch",
       "files": [
         {
@@ -3804,15 +3123,11 @@
         "className": ""
       },
       "name": "v-switch-3",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "switch"
-      ],
+      "categories": ["switch"],
       "description": "Basic switch",
       "files": [
         {
@@ -3824,15 +3139,11 @@
         "className": ""
       },
       "name": "v-switch-4",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "table"
-      ],
+      "categories": ["table"],
       "description": "Basic table",
       "files": [
         {
@@ -3844,15 +3155,11 @@
         "className": ""
       },
       "name": "v-table-1",
-      "registryDependencies": [
-        "@cnippet/table"
-      ],
+      "registryDependencies": ["@cnippet/table"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "tabs"
-      ],
+      "categories": ["tabs"],
       "description": "tabs",
       "files": [
         {
@@ -3864,15 +3171,11 @@
         "className": ""
       },
       "name": "v-tabs-1",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "tabs"
-      ],
+      "categories": ["tabs"],
       "description": "tabs",
       "files": [
         {
@@ -3884,15 +3187,11 @@
         "className": ""
       },
       "name": "v-tabs-2",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "tabs"
-      ],
+      "categories": ["tabs"],
       "description": "tabs",
       "files": [
         {
@@ -3904,15 +3203,11 @@
         "className": ""
       },
       "name": "v-tabs-3",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "tabs"
-      ],
+      "categories": ["tabs"],
       "description": "tabs",
       "files": [
         {
@@ -3924,15 +3219,11 @@
         "className": ""
       },
       "name": "v-tabs-4",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "textarea"
-      ],
+      "categories": ["textarea"],
       "description": "textarea",
       "files": [
         {
@@ -3944,15 +3235,11 @@
         "className": ""
       },
       "name": "v-textarea-1",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "textarea"
-      ],
+      "categories": ["textarea"],
       "description": "textarea",
       "files": [
         {
@@ -3964,15 +3251,11 @@
         "className": ""
       },
       "name": "v-textarea-2",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "textarea"
-      ],
+      "categories": ["textarea"],
       "description": "textarea",
       "files": [
         {
@@ -3984,15 +3267,11 @@
         "className": ""
       },
       "name": "v-textarea-3",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "textarea"
-      ],
+      "categories": ["textarea"],
       "description": "textarea",
       "files": [
         {
@@ -4004,15 +3283,11 @@
         "className": ""
       },
       "name": "v-textarea-4",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4024,15 +3299,11 @@
         "className": ""
       },
       "name": "v-toast-1",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4044,15 +3315,11 @@
         "className": ""
       },
       "name": "v-toast-2",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4064,15 +3331,11 @@
         "className": ""
       },
       "name": "v-toast-3",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4084,15 +3347,11 @@
         "className": ""
       },
       "name": "v-toast-4",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4104,15 +3363,11 @@
         "className": ""
       },
       "name": "v-toast-5",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4124,15 +3379,11 @@
         "className": ""
       },
       "name": "v-toast-6",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4144,15 +3395,11 @@
         "className": ""
       },
       "name": "v-toast-7",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toast"
-      ],
+      "categories": ["toast"],
       "description": "toast",
       "files": [
         {
@@ -4164,15 +3411,11 @@
         "className": ""
       },
       "name": "v-toast-8",
-      "registryDependencies": [
-        "toast"
-      ],
+      "registryDependencies": ["toast"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toggle"
-      ],
+      "categories": ["toggle"],
       "description": "Basic toggle",
       "files": [
         {
@@ -4184,15 +3427,11 @@
         "className": ""
       },
       "name": "v-toggle-1",
-      "registryDependencies": [
-        "@cnippet/toggle"
-      ],
+      "registryDependencies": ["@cnippet/toggle"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toggle group"
-      ],
+      "categories": ["toggle group"],
       "description": "Basic toggle group",
       "files": [
         {
@@ -4204,15 +3443,11 @@
         "className": ""
       },
       "name": "v-toggle-group-1",
-      "registryDependencies": [
-        "@cnippet/toggle-group"
-      ],
+      "registryDependencies": ["@cnippet/toggle-group"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "toolbar"
-      ],
+      "categories": ["toolbar"],
       "description": "Basic toolbar",
       "files": [
         {
@@ -4224,15 +3459,11 @@
         "className": ""
       },
       "name": "v-toolbar-1",
-      "registryDependencies": [
-        "@cnippet/toolbar"
-      ],
+      "registryDependencies": ["@cnippet/toolbar"],
       "type": "registry:block"
     },
     {
-      "categories": [
-        "tooltip"
-      ],
+      "categories": ["tooltip"],
       "description": "Basic tooltip",
       "files": [
         {
@@ -4244,16 +3475,11 @@
         "className": ""
       },
       "name": "v-tooltip-1",
-      "registryDependencies": [
-        "@cnippet/tooltip"
-      ],
+      "registryDependencies": ["@cnippet/tooltip"],
       "type": "registry:block"
     },
     {
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "registry/default/lib/utils.ts",

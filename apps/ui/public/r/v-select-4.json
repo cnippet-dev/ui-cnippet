@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-select-4",
-  "type": "registry:block",
+  "categories": ["select"],
   "description": "select",
-  "registryDependencies": [
-    "select"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-select-4.tsx",
       "content": "\"use client\";\n\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nconst languages = {\n  cpp: \"C++\",\n  csharp: \"C#\",\n  go: \"Go\",\n  java: \"Java\",\n  javascript: \"JavaScript\",\n  php: \"PHP\",\n  python: \"Python\",\n  rust: \"Rust\",\n  swift: \"Swift\",\n  typescript: \"TypeScript\",\n};\n\ntype Language = keyof typeof languages;\n\nconst values = Object.keys(languages) as Language[];\n\nfunction renderValue(value: Language[]) {\n  if (value.length === 0) {\n    return \"Select languages…\";\n  }\n\n  const firstLanguage = value[0] ? languages[value[0]] : \"\";\n  const additionalLanguages =\n    value.length > 1 ? ` (+${value.length - 1} more)` : \"\";\n  return firstLanguage + additionalLanguages;\n}\n\nexport default function Particle() {\n  return (\n    <Select\n      aria-label=\"Select languages\"\n      defaultValue={[\"javascript\", \"typescript\"]}\n      multiple\n    >\n      <SelectTrigger>\n        <SelectValue>{renderValue}</SelectValue>\n      </SelectTrigger>\n      <SelectPopup alignItemWithTrigger={false}>\n        {values.map((value) => (\n          <SelectItem key={value} value={value}>\n            {languages[value]}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "path": "registry/default/variants/v-select-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "select"
-  ]
+  "name": "v-select-4",
+  "registryDependencies": ["select"],
+  "type": "registry:block"
 }

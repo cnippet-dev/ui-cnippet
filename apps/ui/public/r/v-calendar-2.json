@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-calendar-2",
-  "type": "registry:block",
+  "categories": ["calendar"],
   "description": "Basic calendar",
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-calendar-2.tsx",
       "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Variant() {\r\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\r\n\r\n  return (\r\n    <Calendar\r\n      captionLayout=\"dropdown\"\r\n      className=\"rounded-md border shadow-sm\"\r\n      mode=\"single\"\r\n      onSelect={setDate}\r\n      selected={date}\r\n    />\r\n  );\r\n}\r\n",
+      "path": "registry/default/variants/v-calendar-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "calendar"
-  ]
+  "name": "v-calendar-2",
+  "registryDependencies": ["button"],
+  "type": "registry:block"
 }

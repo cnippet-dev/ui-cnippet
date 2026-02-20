@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-toast-4",
-  "type": "registry:block",
+  "categories": ["toast"],
   "description": "toast",
-  "registryDependencies": [
-    "toast"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-toast-4.tsx",
       "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { toastManager } from \"@/components/ui/toast\";\n\nexport default function Particle() {\n  return (\n    <Button\n      onClick={() => {\n        const id = toastManager.add({\n          actionProps: {\n            children: \"Undo\",\n            onClick: () => {\n              toastManager.close(id);\n              toastManager.add({\n                description: \"The action has been reverted.\",\n                title: \"Action undone\",\n                type: \"info\",\n              });\n            },\n          },\n          description: \"You can undo this action.\",\n          timeout: 1000000,\n          title: \"Action performed\",\n          type: \"success\",\n        });\n      }}\n      variant=\"outline\"\n    >\n      Perform Action\n    </Button>\n  );\n}\n",
+      "path": "registry/default/variants/v-toast-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "toast"
-  ]
+  "name": "v-toast-4",
+  "registryDependencies": ["toast"],
+  "type": "registry:block"
 }

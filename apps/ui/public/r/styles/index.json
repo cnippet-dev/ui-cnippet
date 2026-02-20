@@ -1,10 +1,10 @@
 [
   {
-    "name": "new-york",
-    "label": "New York"
+    "label": "New York",
+    "name": "new-york"
   },
   {
-    "name": "default",
-    "label": "Default"
+    "label": "Default",
+    "name": "default"
   }
 ]

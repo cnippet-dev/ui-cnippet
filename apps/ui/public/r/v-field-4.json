@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-field-4",
-  "type": "registry:block",
+  "categories": ["field"],
   "description": "Basic field",
-  "registryDependencies": [
-    "field"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-field-4.tsx",
       "content": "\"use client\";\n\nimport { Field, FieldLabel, FieldValidity } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function FieldWithValidityDemo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" required type=\"email\" />\n      <FieldValidity>\n        {(validity) => (\n          <div className=\"flex w-full flex-col gap-2\">\n            {validity.error && (\n              <p className=\"text-destructive-foreground text-xs\">\n                {validity.error}\n              </p>\n            )}\n            <div className=\"w-full rounded-md bg-muted p-2\">\n              <pre className=\"no-scrollbar max-h-60 overflow-y-auto font-mono text-xs\">\n                {JSON.stringify(validity, null, 2)}\n              </pre>\n            </div>\n          </div>\n        )}\n      </FieldValidity>\n    </Field>\n  );\n}\n",
+      "path": "registry/default/variants/v-field-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "field"
-  ]
+  "name": "v-field-4",
+  "registryDependencies": ["field"],
+  "type": "registry:block"
 }

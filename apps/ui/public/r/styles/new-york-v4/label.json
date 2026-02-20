@@ -1,12 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "label",
   "files": [
     {
-      "path": "registry/default/ui/label.tsx",
       "content": "import type * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Label({ className, ...props }: React.ComponentProps<\"label\">) {\n  return (\n    <label\n      className={cn(\"inline-flex items-center gap-2 text-sm/4\", className)}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "path": "registry/default/ui/label.tsx",
       "type": "registry:ui"
     }
   ],
+  "name": "label",
   "type": "registry:ui"
 }

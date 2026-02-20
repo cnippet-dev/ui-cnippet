@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-number-field-1",
-  "type": "registry:block",
+  "categories": ["number field"],
   "description": "number-field",
-  "registryDependencies": [
-    "number-field"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-number-field-1.tsx",
       "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
+      "path": "registry/default/variants/v-number-field-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "number field"
-  ]
+  "name": "v-number-field-1",
+  "registryDependencies": ["number-field"],
+  "type": "registry:block"
 }

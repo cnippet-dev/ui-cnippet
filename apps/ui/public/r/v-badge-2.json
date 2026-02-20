@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-badge-2",
-  "type": "registry:block",
+  "categories": ["badge"],
   "description": "Basic badge",
-  "registryDependencies": [
-    "badge"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-badge-2.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Outline</p>\n        <Badge variant=\"outline\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Secondary</p>\n        <Badge variant=\"secondary\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Desctructive</p>\n        <Badge variant=\"destructive\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Info</p>\n        <Badge variant=\"info\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Success</p>\n        <Badge variant=\"success\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Warning</p>\n        <Badge variant=\"warning\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Error</p>\n        <Badge variant=\"error\">Badge</Badge>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-badge-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "badge"
-  ]
+  "name": "v-badge-2",
+  "registryDependencies": ["badge"],
+  "type": "registry:block"
 }

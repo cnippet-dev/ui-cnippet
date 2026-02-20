@@ -1,15 +1,13 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "switch",
-  "type": "registry:ui",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "files": [
     {
-      "path": "registry/default/ui/switch.tsx",
       "content": "\"use client\";\r\n\r\nimport { Switch as SwitchPrimitive } from \"@base-ui/react/switch\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nfunction Switch({ className, ...props }: SwitchPrimitive.Root.Props) {\r\n  return (\r\n    <SwitchPrimitive.Root\r\n      className={cn(\r\n        \"group/switch inset-shadow-[0_1px_--theme(--color-black/4%)] inline-flex h-4.5 w-7.5 shrink-0 items-center rounded-full p-px outline-none transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-64 data-checked:bg-primary data-unchecked:bg-input\",\r\n        className,\r\n      )}\r\n      data-slot=\"switch\"\r\n      {...props}\r\n    >\r\n      <SwitchPrimitive.Thumb\r\n        className={cn(\r\n          \"pointer-events-none block size-4 rounded-full bg-background shadow-sm transition-[translate,width] group-active/switch:w-4.5 data-checked:translate-x-3 data-unchecked:translate-x-0 data-checked:group-active/switch:translate-x-2.5\",\r\n        )}\r\n        data-slot=\"switch-thumb\"\r\n      />\r\n    </SwitchPrimitive.Root>\r\n  );\r\n}\r\n\r\nexport { Switch };\r\n",
+      "path": "registry/default/ui/switch.tsx",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "name": "switch",
+  "type": "registry:ui"
 }

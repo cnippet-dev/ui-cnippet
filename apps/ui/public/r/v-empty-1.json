@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-empty-1",
-  "type": "registry:block",
+  "categories": ["empty state"],
   "description": "Basic empty state",
-  "registryDependencies": [
-    "@cnippet/empty"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-empty-1.tsx",
       "content": "import { BookIcon, RouteIcon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport default function Particle() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <RouteIcon />\n        </EmptyMedia>\n        <EmptyTitle>No upcoming meetings</EmptyTitle>\n        <EmptyDescription>Create a meeting to get started.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <div className=\"flex gap-2\">\n          <Button size=\"sm\">Create meeting</Button>\n          <Button size=\"sm\" variant=\"outline\">\n            <BookIcon className=\"opacity-72\" />\n            View docs\n          </Button>\n        </div>\n      </EmptyContent>\n    </Empty>\n  );\n}\n",
+      "path": "registry/default/variants/v-empty-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "empty state"
-  ]
+  "name": "v-empty-1",
+  "registryDependencies": ["@cnippet/empty"],
+  "type": "registry:block"
 }

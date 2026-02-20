@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-input-group-12",
+  "categories": ["input group"],
   "description": "input-group",
-  "registryDependencies": [
-    "input-group"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-input-group-12.tsx",
       "content": "\"use client\";\n\nimport { ArrowUpIcon, PlusIcon } from \"lucide-react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/components/ui/input-group\";\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from \"@/components/ui/menu\";\nimport { Tooltip, TooltipPopup, TooltipTrigger } from \"@/components/ui/tooltip\";\n\nexport default function Particle() {\n  return (\n    <InputGroup className=\"w-md\">\n      <InputGroupTextarea placeholder=\"Ask, Search or Chat…\" />\n      <InputGroupAddon align=\"block-end\">\n        <Menu>\n          <Tooltip>\n            <TooltipTrigger\n              render={\n                <MenuTrigger\n                  render={\n                    <Button\n                      aria-label=\"Add files\"\n                      className=\"rounded-full\"\n                      size=\"icon-sm\"\n                      variant=\"ghost\"\n                    />\n                  }\n                >\n                  <PlusIcon />\n                </MenuTrigger>\n              }\n            />\n            <TooltipPopup>Add files and more</TooltipPopup>\n          </Tooltip>\n          <MenuPopup align=\"start\">\n            <MenuItem>Add photos &amp; files</MenuItem>\n            <MenuItem>Create image</MenuItem>\n            <MenuItem>Thinking</MenuItem>\n            <MenuItem>Deep research</MenuItem>\n          </MenuPopup>\n        </Menu>\n        <InputGroupText className=\"ml-auto\">78% used</InputGroupText>\n        <Tooltip>\n          <TooltipTrigger\n            render={\n              <Button\n                aria-label=\"Send\"\n                className=\"rounded-full\"\n                size=\"icon-sm\"\n                variant=\"default\"\n              >\n                <ArrowUpIcon />\n              </Button>\n            }\n          />\n          <TooltipPopup>Send</TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "path": "registry/default/variants/v-input-group-12.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "input group"
-  ],
+  "name": "v-input-group-12",
+  "registryDependencies": ["input-group"],
   "type": "registry:block"
 }

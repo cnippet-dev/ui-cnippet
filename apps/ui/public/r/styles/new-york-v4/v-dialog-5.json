@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-dialog-5",
+  "categories": ["dialog"],
   "description": "Basic dialog",
-  "registryDependencies": [
-    "dialog"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-dialog-5.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { Field, FieldLabel } from \"@/components/ui/field\";\nimport { Input } from \"@/components/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>\n        Open parent\n      </DialogTrigger>\n      <DialogPopup showCloseButton={false}>\n        <DialogHeader>\n          <DialogTitle>Manage team member</DialogTitle>\n          <DialogDescription>\n            View and manage a user in your team.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogPanel className=\"grid gap-4\">\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Name</p>\n            <p className=\"font-medium text-sm\">Bora Baloglu</p>\n          </div>\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Email</p>\n            <p className=\"font-medium text-sm\">bora@example.com</p>\n          </div>\n        </DialogPanel>\n        <DialogFooter>\n          <Dialog>\n            <DialogTrigger render={<Button variant=\"outline\" />}>\n              Edit details\n            </DialogTrigger>\n            <DialogPopup showCloseButton={false}>\n              <DialogHeader>\n                <DialogTitle>Edit details</DialogTitle>\n                <DialogDescription>\n                  Make changes to the member&apos;s information.\n                </DialogDescription>\n              </DialogHeader>\n              <DialogPanel className=\"grid gap-4\">\n                <Field>\n                  <FieldLabel>Name</FieldLabel>\n                  <Input defaultValue=\"Bora Baloglu\" type=\"text\" />\n                </Field>\n                <Field>\n                  <FieldLabel>Email</FieldLabel>\n                  <Input defaultValue=\"bora@example.com\" type=\"text\" />\n                </Field>\n              </DialogPanel>\n              <DialogFooter>\n                <DialogClose render={<Button variant=\"ghost\" />}>\n                  Cancel\n                </DialogClose>\n                <Button type=\"submit\">Save changes</Button>\n              </DialogFooter>\n            </DialogPopup>\n          </Dialog>\n        </DialogFooter>\n      </DialogPopup>\n    </Dialog>\n  );\n}\n",
+      "path": "registry/default/variants/v-dialog-5.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "dialog"
-  ],
+  "name": "v-dialog-5",
+  "registryDependencies": ["dialog"],
   "type": "registry:block"
 }

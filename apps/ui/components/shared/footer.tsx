@@ -94,7 +94,7 @@ export function Footer() {
   }, [resolvedTheme, setTheme]);
 
   return (
-    <div className="px-4 md:px-0">
+    <div className="px-4 md:px-0 dark:bg-background">
       <div className="mx-auto max-w-6xl border-x px-4 pt-20 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -107,11 +107,7 @@ export function Footer() {
                 alt="Cnippet UI Logo"
                 className="size-10"
                 height={600}
-                src={
-                  resolvedTheme === "dark"
-                    ? "/images/logo-dark.png"
-                    : "/images/logo-light.png"
-                }
+                src={"/images/logo-bg-white.png"}
                 width={500}
               />
               cnippet{" "}

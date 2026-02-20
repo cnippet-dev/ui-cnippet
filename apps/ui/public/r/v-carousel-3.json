@@ -1,20 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-carousel-3",
-  "type": "registry:block",
+  "categories": ["carousel"],
   "description": "Basic carousel",
-  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/default/variants/v-carousel-3.tsx",
       "content": "import { Card, CardContent } from \"@/registry/default/ui/card\";\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/registry/default/ui/carousel\";\r\n\r\nexport function CarouselOrientation() {\r\n  const items = [1, 2, 3, 4, 5];\r\n\r\n  return (\r\n    <Carousel\r\n      className=\"w-full max-w-xs\"\r\n      opts={{\r\n        align: \"start\",\r\n      }}\r\n      orientation=\"vertical\"\r\n    >\r\n      <CarouselContent className=\"-mt-1 h-[200px]\">\r\n        {items.map((index) => (\r\n          <CarouselItem className=\"pt-1 md:basis-1/2\" key={`carob-${index}`}>\r\n            <div className=\"p-1\">\r\n              <Card>\r\n                <CardContent className=\"flex items-center justify-center p-6\">\r\n                  <span className=\"font-semibold text-3xl\">{index + 1}</span>\r\n                </CardContent>\r\n              </Card>\r\n            </div>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious />\r\n      <CarouselNext />\r\n    </Carousel>\r\n  );\r\n}\r\n",
+      "path": "registry/default/variants/v-carousel-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "carousel"
-  ]
+  "name": "v-carousel-3",
+  "registryDependencies": [],
+  "type": "registry:block"
 }

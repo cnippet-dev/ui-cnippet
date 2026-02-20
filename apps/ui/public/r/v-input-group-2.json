@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-input-group-2",
-  "type": "registry:block",
+  "categories": ["input group"],
   "description": "input-group",
-  "registryDependencies": [
-    "input-group"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-input-group-2.tsx",
       "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"space-y-2 [&_p]:text-xs\">\n        <p>With Start Text</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Set your URL\"\n            className=\"*:[input]:ps-0!\"\n            placeholder=\"cnippet\"\n            type=\"search\"\n          />\n          <InputGroupAddon>\n            <InputGroupText>i.cnippet.dev/</InputGroupText>\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n      <div className=\"space-y-2 [&_p]:text-xs\">\n        <p>With End Text</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Choose a username\"\n            placeholder=\"Choose a username\"\n            type=\"text\"\n          />\n          <InputGroupAddon align=\"inline-end\">\n            <InputGroupText>@cnipept.dev</InputGroupText>\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n      <div className=\"space-y-2 [&_p]:text-xs\">\n        <p>With Start and End Text</p>\n        <InputGroup>\n          <InputGroupInput\n            aria-label=\"Enter your domain\"\n            className=\"*:[input]:px-0!\"\n            placeholder=\"cnippet\"\n            type=\"text\"\n          />\n          <InputGroupAddon>\n            <InputGroupText>https://</InputGroupText>\n          </InputGroupAddon>\n          <InputGroupAddon align=\"inline-end\">\n            <InputGroupText>.dev</InputGroupText>\n          </InputGroupAddon>\n        </InputGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-input-group-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "input group"
-  ]
+  "name": "v-input-group-2",
+  "registryDependencies": ["input-group"],
+  "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-badge-1",
-  "type": "registry:block",
+  "categories": ["badge"],
   "description": "Basic badge",
-  "registryDependencies": [
-    "badge"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-badge-1.tsx",
       "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge>Badge</Badge>;\n}\n",
+      "path": "registry/default/variants/v-badge-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "badge"
-  ]
+  "name": "v-badge-1",
+  "registryDependencies": ["badge"],
+  "type": "registry:block"
 }

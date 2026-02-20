@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-input-1",
-  "type": "registry:block",
+  "categories": ["input"],
   "description": "input",
-  "registryDependencies": [
-    "input"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-input-1.tsx",
       "content": "import { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return <Input aria-label=\"Enter text\" placeholder=\"Enter text\" type=\"text\" />;\n}\n",
+      "path": "registry/default/variants/v-input-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "input"
-  ]
+  "name": "v-input-1",
+  "registryDependencies": ["input"],
+  "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-select-3",
+  "categories": ["select"],
   "description": "select",
-  "registryDependencies": [
-    "select"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-select-3.tsx",
       "content": "import {\n  Select,\n  SelectGroup,\n  SelectGroupLabel,\n  SelectItem,\n  SelectPopup,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nconst placeholder = [{ label: \"Select framework\", value: null }];\n\nconst frontend = [\n  { label: \"Next.js\", value: \"next\" },\n  { label: \"Vite\", value: \"vite\" },\n  { label: \"Astro\", value: \"astro\" },\n];\n\nconst backend = [\n  { label: \"Express\", value: \"express\" },\n  { label: \"NestJS\", value: \"nestjs\" },\n  { label: \"Fastify\", value: \"fastify\" },\n  { label: \"Django\", value: \"django\" },\n  { label: \"Flask\", value: \"flask\" },\n  { label: \"Rails\", value: \"rails\" },\n];\n\nexport default function Particle() {\n  return (\n    <Select\n      aria-label=\"Select framework\"\n      className\n      items={[...placeholder, ...frontend, ...backend]}\n    >\n      <SelectTrigger>\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        <SelectGroup>\n          <SelectGroupLabel>Frontend</SelectGroupLabel>\n          {frontend.map(({ label, value }) => (\n            <SelectItem key={value} value={value}>\n              {label}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n        <SelectSeparator />\n        <SelectGroup>\n          <SelectGroupLabel>Backend</SelectGroupLabel>\n          {backend.map(({ label, value }) => (\n            <SelectItem key={value} value={value}>\n              {label}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "path": "registry/default/variants/v-select-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "select"
-  ],
+  "name": "v-select-3",
+  "registryDependencies": ["select"],
   "type": "registry:block"
 }

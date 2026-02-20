@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-number-field-3",
-  "type": "registry:block",
+  "categories": ["number field"],
   "description": "number-field",
-  "registryDependencies": [
-    "number-field"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-number-field-3.tsx",
       "content": "import * as React from \"react\";\n\nimport { Label } from \"@/components/ui/label\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/components/ui/number-field\";\n\nexport default function Particle() {\n  const id = React.useId();\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Quantity</Label>\n      <NumberField defaultValue={0} id={id}>\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-number-field-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "number field"
-  ]
+  "name": "v-number-field-3",
+  "registryDependencies": ["number-field"],
+  "type": "registry:block"
 }

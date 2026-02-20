@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-menu-3",
+  "categories": ["menu"],
   "description": "menu",
-  "registryDependencies": [
-    "menu"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-menu-3.tsx",
       "content": "import Link from \"next/link\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from \"@/components/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\n        <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "path": "registry/default/variants/v-menu-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "menu"
-  ],
+  "name": "v-menu-3",
+  "registryDependencies": ["menu"],
   "type": "registry:block"
 }

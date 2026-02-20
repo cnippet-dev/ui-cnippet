@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-breadcrumb-2",
+  "categories": ["breadcrumb"],
   "description": "Basic breadcrumb",
-  "registryDependencies": [
-    "breadcrumb"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-breadcrumb-2.tsx",
       "content": "import Link from \"next/link\";\n\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\n\nexport default function Particle() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/\" />}>Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/docs/components\" />}>\n            Components\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "path": "registry/default/variants/v-breadcrumb-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "breadcrumb"
-  ],
+  "name": "v-breadcrumb-2",
+  "registryDependencies": ["breadcrumb"],
   "type": "registry:block"
 }

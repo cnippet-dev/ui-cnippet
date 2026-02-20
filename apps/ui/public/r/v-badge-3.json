@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-badge-3",
-  "type": "registry:block",
+  "categories": ["badge"],
   "description": "Basic badge",
-  "registryDependencies": [
-    "badge"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-badge-3.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Small</p>\n        <Badge size=\"sm\">Badge</Badge>\n      </div>\n      <div className=\"flex justify-between gap-10\">\n        <p className=\"text-xs\">Large</p>\n        <Badge size=\"lg\">Badge</Badge>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-badge-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "badge"
-  ]
+  "name": "v-badge-3",
+  "registryDependencies": ["badge"],
+  "type": "registry:block"
 }

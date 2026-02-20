@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-switch-4",
+  "categories": ["switch"],
   "description": "Basic switch",
-  "registryDependencies": [
-    "switch"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-switch-4.tsx",
       "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    console.log(formData.get(\"marketing\"));\n\n    const enabled = formData.get(\"marketing\");\n    alert(`Marketing emails: ${enabled}`);\n  };\n\n  return (\n    <Form className=\"w-auto\" onSubmit={onSubmit}>\n      <Field name=\"marketing\">\n        <FieldLabel>\n          <Switch defaultChecked disabled={loading} name=\"marketing\" />\n          Enable marketing emails\n        </FieldLabel>\n      </Field>\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "path": "registry/default/variants/v-switch-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "switch"
-  ],
+  "name": "v-switch-4",
+  "registryDependencies": ["switch"],
   "type": "registry:block"
 }

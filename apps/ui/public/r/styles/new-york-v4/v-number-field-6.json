@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-number-field-6",
+  "categories": ["number field"],
   "description": "number-field",
-  "registryDependencies": [
-    "number-field"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-number-field-6.tsx",
       "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { z } from \"zod\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Field } from \"@/components/ui/field\";\nimport { Form } from \"@/components/ui/form\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from \"@/components/ui/number-field\";\n\nconst schema = z.object({\n  quantity: z.coerce\n    .number({ message: \"Please enter a quantity.\" })\n    .min(1, { message: \"Quantity must be at least 1.\" })\n    .max(100, { message: \"Maximum quantity is 100.\" }),\n});\n\ntype Errors = Record<string, string | string[]>;\n\nasync function submitForm(event: React.FormEvent<HTMLFormElement>) {\n  event.preventDefault();\n\n  const formData = new FormData(event.currentTarget);\n  const result = schema.safeParse(Object.fromEntries(formData));\n\n  if (!result.success) {\n    const { fieldErrors } = z.flattenError(result.error);\n    return { errors: fieldErrors as Errors };\n  }\n\n  return {\n    data: result.data,\n    errors: {} as Errors,\n  };\n}\n\nexport default function Particle() {\n  const [loading, setLoading] = React.useState(false);\n\n  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {\n    setLoading(true);\n    const response = await submitForm(event);\n    await new Promise((r) => setTimeout(r, 800));\n    setLoading(false);\n    if (Object.keys(response.errors).length === 0) {\n      alert(`Quantity: ${response.data?.quantity}`);\n    }\n  };\n\n  return (\n    <Form className=\"max-w-64\" onSubmit={onSubmit}>\n      <Field name=\"quantity\">\n        <NumberField defaultValue={1} disabled={loading} max={100} min={1}>\n          <NumberFieldScrubArea label=\"Quantity\" />\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </Field>\n\n      <Button disabled={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  );\n}\n",
+      "path": "registry/default/variants/v-number-field-6.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "number field"
-  ],
+  "name": "v-number-field-6",
+  "registryDependencies": ["number-field"],
   "type": "registry:block"
 }

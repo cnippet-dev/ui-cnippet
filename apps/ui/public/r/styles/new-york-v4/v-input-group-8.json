@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-input-group-8",
+  "categories": ["input group"],
   "description": "input-group",
-  "registryDependencies": [
-    "input-group"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-input-group-8.tsx",
       "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\nimport { Kbd } from \"@/components/ui/kbd\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Kbd>⌘K</Kbd>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "path": "registry/default/variants/v-input-group-8.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "input group"
-  ],
+  "name": "v-input-group-8",
+  "registryDependencies": ["input-group"],
   "type": "registry:block"
 }

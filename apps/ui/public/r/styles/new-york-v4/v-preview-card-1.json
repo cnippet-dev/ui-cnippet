@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-preview-card-1",
+  "categories": ["preview card"],
   "description": "Basic preview card",
-  "registryDependencies": [
-    "@cnippet/preview-card"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-preview-card-1.tsx",
       "content": "import { CornerUpLeftIcon, StarIcon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  PreviewCard,\n  PreviewCardPopup,\n  PreviewCardTrigger,\n} from \"@/registry/default/ui/preview-card\";\n\nexport default function Particle() {\n  return (\n    <PreviewCard>\n      <PreviewCardTrigger render={<Button variant=\"ghost\" />}>\n        coss.com/ui\n      </PreviewCardTrigger>\n      <PreviewCardPopup>\n        <div className=\"flex flex-col gap-4\">\n          <div className=\"flex flex-col gap-1\">\n            <h4 className=\"font-medium text-sm\">coss.com/ui</h4>\n            <p className=\"text-muted-foreground text-sm\">\n              Beautifully designed components that you can copy and paste into\n              your apps.\n            </p>\n          </div>\n          <div className=\"flex items-center gap-4 text-muted-foreground text-xs\">\n            <div className=\"flex items-center gap-1\">\n              <span\n                aria-hidden=\"true\"\n                className=\"size-2 rounded-full bg-blue-500\"\n              />\n              <span>TypeScript</span>\n            </div>\n            <div className=\"flex items-center gap-1\">\n              <StarIcon className=\"size-3\" />\n              <span>58.2k</span>\n            </div>\n            <div className=\"flex items-center gap-1\">\n              <CornerUpLeftIcon className=\"size-3\" />\n              <span>5.1k</span>\n            </div>\n          </div>\n        </div>\n      </PreviewCardPopup>\n    </PreviewCard>\n  );\n}\n",
+      "path": "registry/default/variants/v-preview-card-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "preview card"
-  ],
+  "name": "v-preview-card-1",
+  "registryDependencies": ["@cnippet/preview-card"],
   "type": "registry:block"
 }

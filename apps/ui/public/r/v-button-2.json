@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-button-2",
-  "type": "registry:block",
+  "categories": ["button"],
   "description": "Basic button",
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-button-2.tsx",
       "content": "import Link from \"next/link\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Default</p>\r\n        <Button>Button</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Outline</p>\r\n        <Button variant=\"outline\">Outline</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Secondary</p>\r\n        <Button variant=\"secondary\">Secondary</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Destructive</p>\r\n        <Button variant=\"destructive\">Delete</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Destructive outline</p>\r\n        <Button variant=\"destructive-outline\">Delete</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>Ghost</p>\r\n        <Button variant=\"ghost\">Ghost</Button>\r\n      </div>\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>W/ Link</p>\r\n        <Button render={<Link href=\"/\" />}>Link</Button>\r\n      </div>\r\n\r\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\r\n        <p>W/ Loading</p>\r\n        <Button disabled>\r\n          <Spinner />\r\n          Loading...\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "path": "registry/default/variants/v-button-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "button"
-  ]
+  "name": "v-button-2",
+  "registryDependencies": ["button"],
+  "type": "registry:block"
 }

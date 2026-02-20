@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
   "name": "ui",
-  "type": "registry:ui",
   "registryDependencies": [
     "accordion",
     "alert",
@@ -54,5 +53,6 @@
     "toggle-group",
     "toolbar",
     "tooltip"
-  ]
+  ],
+  "type": "registry:ui"
 }

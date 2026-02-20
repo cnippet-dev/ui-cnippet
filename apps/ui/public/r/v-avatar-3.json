@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
-  "name": "v-avatar-3",
-  "type": "registry:block",
+  "categories": ["avatar"],
   "description": "Basic avatar",
-  "registryDependencies": [
-    "avatar"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-avatar-3.tsx",
       "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar className=\"rounded-md\">\n        <AvatarImage\n          alt=\"User\"\n          src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n        />\n        <AvatarFallback>AV</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-xl\">\n        <AvatarImage\n          alt=\"User\"\n          src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n        />\n        <AvatarFallback>AV</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-full\">\n        <AvatarImage\n          alt=\"User\"\n          src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80\"\n        />\n        <AvatarFallback>AV</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-avatar-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "avatar"
-  ]
+  "name": "v-avatar-3",
+  "registryDependencies": ["avatar"],
+  "type": "registry:block"
 }

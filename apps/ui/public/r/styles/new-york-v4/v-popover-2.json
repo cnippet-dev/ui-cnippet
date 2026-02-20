@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-popover-2",
+  "categories": ["popover"],
   "description": "popover",
-  "registryDependencies": [
-    "popover"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-popover-2.tsx",
       "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Popover,\n  PopoverClose,\n  PopoverDescription,\n  PopoverPopup,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\" />}>\n        Open Popover\n      </PopoverTrigger>\n      <PopoverPopup className=\"w-80\">\n        <PopoverClose\n          aria-label=\"Close\"\n          className=\"absolute end-2 top-2\"\n          render={<Button size=\"icon\" variant=\"ghost\" />}\n        >\n          <XIcon />\n        </PopoverClose>\n        <div className=\"mb-2\">\n          <PopoverTitle className=\"text-base\">Notifications</PopoverTitle>\n          <PopoverDescription>\n            You are all caught up. Good job!\n          </PopoverDescription>\n        </div>\n        <PopoverClose render={<Button variant=\"outline\" />}>Close</PopoverClose>\n      </PopoverPopup>\n    </Popover>\n  );\n}\n",
+      "path": "registry/default/variants/v-popover-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "popover"
-  ],
+  "name": "v-popover-2",
+  "registryDependencies": ["popover"],
   "type": "registry:block"
 }
