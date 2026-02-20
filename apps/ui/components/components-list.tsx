@@ -142,12 +142,12 @@ const Components = () => {
 
                   <div className="[&amp;_a]:peer-hover:underline">
                     <h2>
-                      <a
+                      <Link
                         className="font-medium text-sm capitalize hover:underline"
                         href={item.url}
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     </h2>
                     <p className="text-[13px] text-muted-foreground">
                       {item.number} Components

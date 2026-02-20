@@ -1,19 +1,20 @@
 ---
 title: Introduction
-description: A new, modern UI component library built on top of Base UI. Built for developers and AI.
-
-
+description: A modern UI component library built on Base UI. Designed for developers and AI.
 ---
 
-**cnippet** is a build-anything stack for the modern web. It ships three surfaces:
+**cnippet** is a developer ecosystem designed to accelerate web development. It provides an integrated suite of tools spanning UI components, pre-built page blocks, integration guides, and structured learning resources.
 
-- **ui.cnippet.dev** — core components (accordion, dialog, toast, etc.), motion components (text effects, marquee, scroll progress, carousel, etc.), and chart components (area, bar, line, and more).
-- **block.cnippet.dev** — sections, full pages, and complete templates to assemble production-ready experiences fast.
-- **next.cnippet.dev** — articles and guides for real-world integrations like authentication, payment gateways, and other workflows.
+The ecosystem is organized across four surfaces:
 
-At the heart of cnippet is **cnippet ui**: beautifully designed, accessible, and composable components for React. Built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/), everything is copy-paste friendly so you fully own the code.
+- **ui.cnippet.dev** — Open-source component library. Core components (accordion, dialog, toast, etc.), motion components (text effects, scroll animations, carousel, etc.), and chart components (area, bar, line, and more).
+- **blocks.cnippet.dev** — Sections, full pages, and complete templates to assemble production-ready experiences fast.
+- **next.cnippet.dev** — Step-by-step integration guides for authentication, payments, DevOps, and other production workflows.
+- **learn.cnippet.dev** — Structured learning paths for React, Next.js, TypeScript, and more.
 
-We think Base UI is the best foundation for modern applications. We've taken its powerful, unstyled primitives and given them a ready-to-ship design system. The same components are what power our blocks and templates—so what you use in production is what we use ourselves.
+At the heart of cnippet is **cnippet ui**: accessible and composable components for React. Built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/), everything is copy-paste friendly so you fully own the code.
+
+We chose Base UI for its robust, accessible, and unopinionated primitives. It handles the hard parts — accessibility, keyboard navigation, and focus management — without imposing any styles. This gives us the freedom to build a design system that is both beautiful and flexible.
 
 <Alert className="bg-muted/24">
   <InfoIcon />
@@ -29,11 +30,11 @@ We think Base UI is the best foundation for modern applications. We've taken its
 
 ## How It Works
 
-Our approach is simple: you should own your code. We're inspired by the copy-paste ethos of **shadcn/ui**.
+Our approach is simple: you should own your code. Inspired by the copy-paste ethos of **shadcn/ui**.
 
 Instead of installing a package, you get the source code. This means:
 
-- **No abstractions:** You have full control over how components look and behave.
+- **No abstractions:** Full control over how components look and behave.
 - **Endless customization:** Need to change something? Just edit the file.
 - **Learn by doing:** See how components are built and adapt them to your needs.
 
@@ -41,40 +42,22 @@ Instead of installing a package, you get the source code. This means:
 
 If you've used shadcn/ui, you'll feel right at home. The main difference is the foundation: **shadcn/ui uses Radix UI**, while **cnippet ui uses Base UI**.
 
-We chose Base UI for its robust, accessible, and unopinionated primitives. It handles the hard parts—like accessibility, keyboard navigation, and focus management—without imposing any styles. This gives us the freedom to create a design system that is both beautiful and flexible, and it gives you a solid foundation to build upon.
+Each of our components comes with detailed comparisons with Radix / shadcn to make migration as smooth as possible.
 
-If you're considering a move from a Radix-based library, we provide a clear migration path. Each of our components comes with detailed comparing with Radix / shadcn to make the transition as smooth as possible.
+## Design Principles
 
-## Primitives, Particles and Atoms
-
-At the core of cnippet ui are the **UI primitives**—unstyled, accessible building blocks powered by Base UI. These are the foundation: low-level components that handle accessibility, focus management, and keyboard interactions, without dictating design.
-
-On top of these primitives, we introduce [particles](/ui/particles). Particles are **pre-assembled components**—like authentication forms, tables, or date pickers—that combine multiple primitives into ready-to-use solutions. They’re a bit more opinionated in design, but still easy to customize, extend, or break apart when needed.
-
-Finally, we go a step further with [atoms](https://cal.com/atoms). Atoms are **API-enhanced Particles**: components that don’t just manage UI state locally, but also integrate with external data and services. Think of them as smart components that connect UI to APIs, providing out-of-the-box behaviors for common patterns (authentication flows, scheduling, etc.).
-
-Together, primitives, particles, and atoms give you a full spectrum:
-
-- **Primitives** → the foundation
-- **Particles** → the patterns
-- **Atoms** → the integrations
-
-This layered approach lets you choose the right level of abstraction for your project—whether you need a barebone primitive, a polished UI pattern, or a complete API-ready solution.
+- **Accessibility First:** All components meet WCAG 2.1 AA standards.
+- **Unstyled by Default:** Complete control over visual design via Tailwind CSS.
+- **Tree-Shakeable:** Only import what you use, keeping bundle sizes minimal.
+- **TypeScript Native:** Full type safety with comprehensive IntelliSense support.
+- **SSR Compatible:** All components work with Next.js App Router and Server Components.
 
 ## Built for Humans and AI
 
-We're building an infrastructure for both humans and AI. Our components are written to be clear, readable, and predictable, so that language models can understand, reason about, and modify them.
-
-{/* ## Open Source, Made Sustainable
-
-This project is open source, and not just in name—it’s part of the **COSS** (Commercial Open Source Software) philosophy. We build in public, maintain transparency, and believe that open source works best when it's sustainable.
-
-As part of [coss.com’s mission](https://coss.com), we support open source projects so they can grow, maintain long-term viability, and provide value not just for users, but contributors. We offer tools, docs, infrastructure, and community so your work doesn’t just survive—it thrives.
-
-We’re excited to see what you build with it, and always welcome contributions, feedback, or improvements. */}
+Our components are written to be clear, readable, and predictable, so that language models can understand, reason about, and modify them.
 
 ## Get Involved
 
 We're always looking for contributors. Whether it's a bug report, a new feature, or a documentation update, we appreciate your help.
 
-To get started, check out our contribution guidelines on GitHub. You can find open issues and submit pull requests in our repository.
+Check out our contribution guidelines on GitHub to get started.

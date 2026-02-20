@@ -8,16 +8,16 @@ export function SiteFooter() {
           cnippet.dev <span className="text-muted-foreground/64">ui</span>
         </Link>
       </p>
-      <p className="text-muted-foreground text-sm">
+      <p className="text-muted-foreground text-xs">
         Built with 💙 by{" "}
-        <a
+        <Link
           className="font-medium underline-offset-4 hover:underline"
           href="https://deepak.cnippet.dev"
           rel="noopener noreferrer"
           target="_blank"
         >
           Deepak
-        </a>
+        </Link>
       </p>
     </footer>
   );

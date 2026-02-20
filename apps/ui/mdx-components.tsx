@@ -160,12 +160,12 @@ export const mdxComponents = {
         )}
         id={id}
       >
-        <a
+        <Link
           className="no-underline underline-offset-4 hover:underline"
           href={`#${id}`}
         >
           {children}
-        </a>
+        </Link>
       </h2>
     );
   },
@@ -188,12 +188,12 @@ export const mdxComponents = {
         )}
         id={id}
       >
-        <a
+        <Link
           className="no-underline underline-offset-4 hover:underline"
           href={`#${id}`}
         >
           {children}
-        </a>
+        </Link>
       </h3>
     );
   },

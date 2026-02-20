@@ -1,20 +1,74 @@
 ---
 title: Roadmap
-description: Current state of cnippet ui and where we’re headed next..
+description: Where cnippet is today and where we're headed next.
 ---
 
-**cnippet** brings components, blocks, and implementation guides together so teams can move from idea to production quickly. Here's how each surface is evolving.
+**cnippet** brings components, blocks, implementation guides, and learning resources together so teams can move from idea to production quickly. Here's how each surface is evolving.
 
 ## Current Status
 
-- **ui.cnippet.site (alpha is live, beta in progress):** 40+ core primitives, growing motion components (text effects, marquee, scroll progress, carousel), and early chart components (area, bar, line). Built on Base UI with Tailwind V4 tokens.
-- **block.cnippet.site (live):** Sections (hero, features, team, pricing), full pages (landing, about, contact), and complete templates that reuse the same cnippet ui primitives for consistency.
-- **next.cnippet.site (alpha in progress):** Practical guides for production tasks—authentication, payment gateways, deployment, observability, and more.
+- **ui.cnippet.dev** (alpha live, beta in progress) — 40+ core primitives, growing motion components (text effects, marquee, scroll progress, carousel), and early chart components (area, bar, line). Built on Base UI with Tailwind v4 tokens.
+- **blocks.cnippet.dev** (planning / early development) — Sections, full pages, and complete templates that reuse cnippet ui primitives for consistency.
+- **next.cnippet.dev** (planning / content development) — Production-tested integration guides for auth, payments, DevOps, and more.
+- **learn.cnippet.dev** (content development) — Structured courses with roadmaps, projects, and assessments.
 
-## What’s Next
+## Phase 1: Foundation (Months 1–3)
+
+Complete the component library and establish ecosystem infrastructure.
+
+- Audit all core components for WCAG 2.1 AA accessibility
+- Add comprehensive TypeScript types and documentation
+- Build motion components: ScrollReveal, MagneticButton, TypewriterText, and more
+- Set up Turborepo monorepo with shared configs
+- Configure authentication (Better-Auth) and payment systems (Razorpay, Stripe)
+- Publish `@cnippet/ui` v1.0 and `@cnippet/motion` v0.1-beta to npm
+
+## Phase 2: Blocks & Content (Months 3–6)
+
+Build the blocks library and begin content creation.
+
+- Design and build sections: Hero, Features, Testimonials, Pricing, Team, CTA, FAQ, Footer (multiple variants each)
+- Assemble complete pages: Landing, About, Contact, Blog, Authentication
+- Write first integration guides: Better-Auth, Biome, Razorpay, Prisma ORM
+- Create companion GitHub repositories for each guide
+- Implement freemium payment flow
+
+## Phase 3: Templates & Learning (Months 6–9)
+
+Complete templates, launch the learning platform, and close the ecosystem loop.
+
+- Build templates: SaaS Starter, Agency Portfolio, Personal Portfolio
+- Create template CLI: `npx create-cnippet-app`
+- Launch learn.cnippet.dev with React, Next.js, and Prisma learning paths
+- Implement capstone project system using cnippet tools
+- Expand to 12+ integration guides on next.cnippet.dev
+
+## Phase 4: Growth & Polish (Months 9–12)
+
+Scale content, optimize conversion, and build community.
+
+- Launch Discord community and contributor program
+- Add search across all products
+- Build unified dashboard for purchases, bookmarks, and progress
+- Expand to 20+ guides and 5+ templates
+- Begin video content for premium learning paths
+- Target: 1,000+ GitHub stars, 500+ Discord members
+
+## Phase 5: Expansion (Months 12–18)
+
+Long-term sustainability and advanced features.
+
+- AI-powered component customizer
+- Visual page builder for blocks (drag-and-drop)
+- Theme marketplace for community-shared themes
+- VS Code extension for quick component insertion
+- Team workspaces and enterprise features
+- Explore React Native component library (`@cnippet/native`)
+
+## What's Next
 
 - **More primitives:** Close gaps across forms, navigation, data display, and overlays.
-- **Motion + charts beta:** Expand motion catalog and ship opinionated chart presets with theme-aware defaults.
-- **Blocks & templates:** Broaden sections and full templates; keep parity with component updates.
-- **Guides library:** Publish deep-dives for auth (NextAuth, custom providers), payments (Stripe and others), file storage, email, and real-time patterns.
-- **Atoms:** API-enhanced components that bundle UI with integrations (auth flows, checkout, scheduling) for drop-in usage.
+- **Motion + charts beta:** Expand the motion catalog and ship chart presets with theme-aware defaults.
+- **Blocks & templates:** Broaden sections and templates, keeping parity with component updates.
+- **Guides library:** Deep-dives for auth, payments, file storage, email, and real-time patterns.
+- **Atoms:** API-enhanced components that bundle UI with integrations for drop-in usage.
