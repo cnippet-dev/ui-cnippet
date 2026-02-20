@@ -2,10 +2,9 @@
 
 import { CheckIcon, CopyIcon } from "lucide-react";
 import * as React from "react";
-
-import { useCopyToClipboard } from "@/registry/default/hooks/use-copy-to-clipboard";
 import { Button } from "@/components/ui/button";
 import { anchoredToastManager } from "@/components/ui/toast";
+import { useCopyToClipboard } from "@/registry/default/hooks/use-copy-to-clipboard";
 import {
   Tooltip,
   TooltipPopup,

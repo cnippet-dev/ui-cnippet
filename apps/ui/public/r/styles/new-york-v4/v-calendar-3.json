@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-calendar-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport type { DateRange } from \"react-day-picker\";\r\n\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Variant() {\r\n  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(2025, 5, 12),\r\n    to: new Date(2025, 6, 15),\r\n  });\r\n\r\n  return (\r\n    <Calendar\r\n      className=\"rounded-lg border shadow-sm\"\r\n      defaultMonth={dateRange?.from}\r\n      mode=\"range\"\r\n      numberOfMonths={2}\r\n      onSelect={setDateRange}\r\n      selected={dateRange}\r\n    />\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Variant() {\n  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({\n    from: new Date(2025, 5, 12),\n    to: new Date(2025, 6, 15),\n  });\n\n  return (\n    <Calendar\n      className=\"rounded-lg border shadow-sm\"\n      defaultMonth={dateRange?.from}\n      mode=\"range\"\n      numberOfMonths={2}\n      onSelect={setDateRange}\n      selected={dateRange}\n    />\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
-
-import { Spinner } from "@/registry/default/ui/spinner";
 import { Button } from "@/components/ui/button";
 import { anchoredToastManager } from "@/components/ui/toast";
+import { Spinner } from "@/registry/default/ui/spinner";
 
 export default function Particle() {
   const submitRef = React.useRef<HTMLButtonElement>(null);

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -50,7 +50,7 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
       </body>
-       <GoogleAnalytics gaId="G-5BFT497ZZ2" />
+      <GoogleAnalytics gaId="G-5BFT497ZZ2" />
     </html>
   );
 }

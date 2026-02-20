@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-calendar-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Variant() {\r\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\r\n\r\n  return (\r\n    <Calendar\r\n      captionLayout=\"label\"\r\n      className=\"rounded-md border shadow-sm\"\r\n      mode=\"single\"\r\n      onSelect={setDate}\r\n      selected={date}\r\n    />\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Variant() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\n\n  return (\n    <Calendar\n      captionLayout=\"label\"\n      className=\"rounded-md border shadow-sm\"\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n    />\n  );\n}\n",
       "type": "registry:block"
     }
   ],
