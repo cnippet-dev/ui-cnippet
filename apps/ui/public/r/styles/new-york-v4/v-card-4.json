@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-4",
+  "description": "Basic Card",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-4.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-8",
+  "description": "empty state",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-8.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

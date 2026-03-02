@@ -34,7 +34,7 @@ function createVariant(options: {
 }
 
 export const variants: ParticleItem[] = [
-  ...Array.from({ length: 2 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "accordion",
       dependencies: ["accordion"],
@@ -43,7 +43,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 5 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "alert",
       dependencies: ["alert"],
@@ -52,7 +52,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 2 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "alert dialog",
       dependencies: ["alert-dialog"],
@@ -61,7 +61,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 6 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "autocomplete",
       dependencies: ["autocomplete"],
@@ -70,7 +70,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "avatar",
       dependencies: ["avatar"],
@@ -79,7 +79,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "badge",
       dependencies: ["badge"],
@@ -88,7 +88,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 2 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "breadcrumb",
       dependencies: ["breadcrumb"],
@@ -97,7 +97,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "button",
       dependencies: ["button"],
@@ -106,7 +106,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "calendar",
       dependencies: ["button"],
@@ -115,14 +115,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "card",
-    dependencies: ["@cnippet/card"],
-    description: "Basic card",
-    name: "v-card-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "card",
+      dependencies: [],
+      description: "Basic Card",
+      name: `v-card-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "carousel",
       dependencies: [],
@@ -131,14 +133,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "chart",
-    dependencies: [],
-    description: "Basic chart",
-    name: "v-chart-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "chart",
+      dependencies: ["chart"],
+      description: "Basic chart",
+      name: `v-chart-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "checkbox",
       dependencies: ["checkbox"],
@@ -147,7 +151,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "checkbox group",
       dependencies: ["checkbox-group"],
@@ -156,12 +160,14 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "collapsible",
-    dependencies: ["@cnippet/collapsible"],
-    description: "Basic collapsible",
-    name: "v-collapsible-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "collapsible",
+      dependencies: ["collapsible"],
+      description: "Basic collapsible",
+      name: `v-collapsible-${i + 1}`,
+    }),
+  ),
 
   ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
@@ -172,14 +178,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "context-menu",
-    dependencies: [],
-    description: "Basic context menu",
-    name: "v-context-menu-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "context-menu",
+      dependencies: ["context-menu"],
+      description: "Basic context menu",
+      name: `v-context-menu-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 5 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "dialog",
       dependencies: ["dialog"],
@@ -188,12 +196,14 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "empty state",
-    dependencies: ["@cnippet/empty"],
-    description: "Basic empty state",
-    name: "v-empty-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "empty state",
+      dependencies: [],
+      description: "empty state",
+      name: `v-empty-${i + 1}`,
+    }),
+  ),
 
   ...Array.from({ length: 17 }, (_, i) =>
     createVariant({
@@ -204,14 +214,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "fieldset",
-    dependencies: ["@cnippet/fieldset"],
-    description: "Basic fieldset",
-    name: "v-fieldset-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "fieldset",
+      dependencies: [],
+      description: "Basic fieldset",
+      name: `v-fieldset-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 2 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "form",
       dependencies: ["form"],
@@ -220,7 +232,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "frame",
       dependencies: ["frame"],
@@ -229,14 +241,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "group",
-    dependencies: ["@cnippet/group"],
-    description: "Basic group",
-    name: "v-group-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "group",
+      dependencies: [],
+      description: "group",
+      name: `v-group-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 5 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "input",
       dependencies: ["input"],
@@ -254,14 +268,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "kbd",
-    dependencies: ["@cnippet/kbd"],
-    description: "Basic kbd",
-    name: "v-kbd-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "kbd",
+      dependencies: [],
+      description: "kbd",
+      name: `v-kbd-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 6 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "menu",
       dependencies: ["menu"],
@@ -270,14 +286,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "meter",
-    dependencies: ["@cnippet/meter"],
-    description: "Basic meter",
-    name: "v-meter-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "meter",
+      dependencies: [],
+      description: "meter",
+      name: `v-meter-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 6 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "number field",
       dependencies: ["number-field"],
@@ -286,14 +304,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "pagination",
-    dependencies: ["@cnippet/pagination"],
-    description: "Basic pagination",
-    name: "v-pagination-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "pagination",
+      dependencies: ["pagination"],
+      description: "pagination",
+      name: `v-pagination-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "popover",
       dependencies: ["popover"],
@@ -302,21 +322,24 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "preview card",
-    dependencies: ["@cnippet/preview-card"],
-    description: "Basic preview card",
-    name: "v-preview-card-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "preview card",
+      dependencies: [],
+      description: "preview card",
+      name: `v-preview-card-${i + 1}`,
+    }),
+  ),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "progress",
+      dependencies: [],
+      description: "progress",
+      name: `v-progress-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "progress",
-    dependencies: ["@cnippet/progress"],
-    description: "Basic progress",
-    name: "v-progress-1",
-  }),
-
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "radio group",
       dependencies: ["radio-group"],
@@ -325,14 +348,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "scroll area",
-    dependencies: ["@cnippet/scroll-area"],
-    description: "Basic scroll area",
-    name: "v-scroll-area-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "scroll area",
+      dependencies: [],
+      description: "scroll area",
+      name: `v-scroll-area-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 7 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "select",
       dependencies: ["select"],
@@ -341,14 +366,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "separator",
-    dependencies: ["@cnippet/separator"],
-    description: "Basic separator",
-    name: "v-separator-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "separator",
+      dependencies: ["separator"],
+      description: "separator",
+      name: `v-separator-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "sheet",
       dependencies: ["sheet"],
@@ -357,28 +384,34 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "skeleton",
-    dependencies: ["@cnippet/skeleton"],
-    description: "Basic skeleton",
-    name: "v-skeleton-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "skeleton",
+      dependencies: ["skeleton"],
+      description: "skeleton",
+      name: `v-skeleton-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "slider",
-    dependencies: ["@cnippet/slider"],
-    description: "Basic slider",
-    name: "v-slider-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "slider",
+      dependencies: ["slider"],
+      description: "slider",
+      name: `v-slider-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "spinner",
-    dependencies: ["@cnippet/spinner"],
-    description: "Basic spinner",
-    name: "v-spinner-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "spinner",
+      dependencies: ["spinner"],
+      description: "spinner",
+      name: `v-spinner-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "switch",
       dependencies: ["switch"],
@@ -387,14 +420,16 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "table",
-    dependencies: ["@cnippet/table"],
-    description: "Basic table",
-    name: "v-table-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "table",
+      dependencies: ["table"],
+      description: "table",
+      name: `v-table-${i + 1}`,
+    }),
+  ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "tabs",
       dependencies: ["tabs"],
@@ -403,7 +438,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 4 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "textarea",
       dependencies: ["textarea"],
@@ -412,7 +447,7 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  ...Array.from({ length: 8 }, (_, i) =>
+  ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
       category: "toast",
       dependencies: ["toast"],
@@ -421,33 +456,41 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
-  createVariant({
-    category: "toggle",
-    dependencies: ["@cnippet/toggle"],
-    description: "Basic toggle",
-    name: "v-toggle-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "toggle",
+      dependencies: ["toggle"],
+      description: "toggle",
+      name: `v-toggle-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "toggle group",
-    dependencies: ["@cnippet/toggle-group"],
-    description: "Basic toggle group",
-    name: "v-toggle-group-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "toggle group",
+      dependencies: ["toggle group"],
+      description: "toggle group",
+      name: `v-toggle-group-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "toolbar",
-    dependencies: ["@cnippet/toolbar"],
-    description: "Basic toolbar",
-    name: "v-toolbar-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "toolbar",
+      dependencies: ["toolbar"],
+      description: "toolbar",
+      name: `v-toolbar-${i + 1}`,
+    }),
+  ),
 
-  createVariant({
-    category: "tooltip",
-    dependencies: ["@cnippet/tooltip"],
-    description: "Basic tooltip",
-    name: "v-tooltip-1",
-  }),
+  ...Array.from({ length: 10 }, (_, i) =>
+    createVariant({
+      category: "tooltip",
+      dependencies: ["tooltip"],
+      description: "tooltip",
+      name: `v-tooltip-${i + 1}`,
+    }),
+  ),
 ];
 
 // Alternative: If you want even more concise for components with multiple variants,

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-dialog-7",
+  "description": "Basic dialog",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-dialog-7.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:block"
+}

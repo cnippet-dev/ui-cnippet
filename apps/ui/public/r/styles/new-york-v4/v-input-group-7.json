@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["input group"],
+  "name": "v-input-group-7",
   "description": "input-group",
+  "registryDependencies": [
+    "input-group"
+  ],
   "files": [
     {
-      "content": "import { Badge } from \"@/components/ui/badge\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Badge</Badge>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "path": "registry/default/variants/v-input-group-7.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Badge</Badge>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-input-group-7",
-  "registryDependencies": ["input-group"],
+  "categories": [
+    "input group"
+  ],
   "type": "registry:block"
 }

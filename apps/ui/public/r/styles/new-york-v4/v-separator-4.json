@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-separator-4",
+  "description": "separator",
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-separator-4.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "separator"
+  ],
+  "type": "registry:block"
+}

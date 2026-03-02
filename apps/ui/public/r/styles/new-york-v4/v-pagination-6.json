@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-6",
+  "description": "pagination",
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-6.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

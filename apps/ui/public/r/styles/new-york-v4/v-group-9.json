@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-9",
+  "description": "group",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-9.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

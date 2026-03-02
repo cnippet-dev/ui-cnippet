@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-7",
+  "description": "Basic badge",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-7.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

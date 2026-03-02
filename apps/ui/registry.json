@@ -941,6 +941,166 @@
     },
     {
       "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-3",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-4",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-5",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-6",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-7",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-8",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-9",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Multi level accordion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-accordion-10",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "alert"
       ],
       "description": "Basic alert",
@@ -1041,6 +1201,106 @@
     },
     {
       "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-6",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-7",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-8",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-9",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Basic alert",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-10",
+      "registryDependencies": [
+        "alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "alert dialog"
       ],
       "description": "basic alert dialog",
@@ -1074,6 +1334,166 @@
         "className": ""
       },
       "name": "v-alert-dialog-2",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-3",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-4",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-5",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-6",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-7",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-8",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-9",
+      "registryDependencies": [
+        "alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "basic alert dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-10",
       "registryDependencies": [
         "alert-dialog"
       ],
@@ -1201,6 +1621,86 @@
     },
     {
       "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-7",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-8",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-9",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-10",
+      "registryDependencies": [
+        "autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "avatar"
       ],
       "description": "Basic avatar",
@@ -1281,6 +1781,126 @@
     },
     {
       "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-5",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-6",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-7",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-8",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-9",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-10",
+      "registryDependencies": [
+        "avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "badge"
       ],
       "description": "Basic badge",
@@ -1341,6 +1961,146 @@
     },
     {
       "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-4",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-5",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-6",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-7",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-8",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-9",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-10",
+      "registryDependencies": [
+        "badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "breadcrumb"
       ],
       "description": "Basic breadcrumb",
@@ -1374,6 +2134,166 @@
         "className": ""
       },
       "name": "v-breadcrumb-2",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-3",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-4",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-5",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-6",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-7",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-8",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-9",
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Basic breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-10",
       "registryDependencies": [
         "breadcrumb"
       ],
@@ -1434,6 +2354,146 @@
         "className": ""
       },
       "name": "v-button-3",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-4",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-5",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-6",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-7",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-8",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-9",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-10",
       "registryDependencies": [
         "button"
       ],
@@ -1521,9 +2581,129 @@
     },
     {
       "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-5",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-6",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-7",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-8",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-9",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-10",
+      "registryDependencies": [
+        "button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "Basic Card",
       "files": [
         {
           "path": "registry/default/variants/v-card-1.tsx",
@@ -1534,9 +2714,169 @@
         "className": ""
       },
       "name": "v-card-1",
-      "registryDependencies": [
-        "@cnippet/card"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
       ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Basic Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -1595,6 +2935,132 @@
     },
     {
       "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Basic carousel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-10",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "chart"
       ],
       "description": "Basic chart",
@@ -1608,7 +3074,189 @@
         "className": ""
       },
       "name": "v-chart-1",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-2",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-3",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-4",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-5",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-6",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-7",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-8",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-9",
+      "registryDependencies": [
+        "chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Basic chart",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-10",
+      "registryDependencies": [
+        "chart"
+      ],
       "type": "registry:block"
     },
     {
@@ -1686,6 +3334,126 @@
         "className": ""
       },
       "name": "v-checkbox-4",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-5",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-6",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-7",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-8",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-9",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Basic checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-10",
       "registryDependencies": [
         "checkbox"
       ],
@@ -1773,6 +3541,126 @@
     },
     {
       "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-5",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-6",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-7",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-8",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-9",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Basic checkbox-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-10",
+      "registryDependencies": [
+        "checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "collapsible"
       ],
       "description": "Basic collapsible",
@@ -1787,7 +3675,187 @@
       },
       "name": "v-collapsible-1",
       "registryDependencies": [
-        "@cnippet/collapsible"
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-2",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-3",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-4",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-5",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-6",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-7",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-8",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-9",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Basic collapsible",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-10",
+      "registryDependencies": [
+        "collapsible"
       ],
       "type": "registry:block"
     },
@@ -2006,7 +4074,189 @@
         "className": ""
       },
       "name": "v-context-menu-1",
-      "registryDependencies": [],
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-2",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-3",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-4",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-5",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-6",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-7",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-8",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-9",
+      "registryDependencies": [
+        "context-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context-menu"
+      ],
+      "description": "Basic context menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-10",
+      "registryDependencies": [
+        "context-menu"
+      ],
       "type": "registry:block"
     },
     {
@@ -2111,9 +4361,109 @@
     },
     {
       "categories": [
+        "dialog"
+      ],
+      "description": "Basic dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-6",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Basic dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-7",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Basic dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-8",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Basic dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-9",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Basic dialog",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-10",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-1.tsx",
@@ -2124,9 +4474,169 @@
         "className": ""
       },
       "name": "v-empty-1",
-      "registryDependencies": [
-        "@cnippet/empty"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
       ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -2484,9 +4994,169 @@
         "className": ""
       },
       "name": "v-fieldset-1",
-      "registryDependencies": [
-        "@cnippet/fieldset"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
       ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "fieldset"
+      ],
+      "description": "Basic fieldset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-fieldset-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-fieldset-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -2524,6 +5194,166 @@
         "className": ""
       },
       "name": "v-form-2",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-3",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-4",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-5",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-6",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-7",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-8",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-9",
+      "registryDependencies": [
+        "form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-10",
       "registryDependencies": [
         "form"
       ],
@@ -2611,9 +5441,129 @@
     },
     {
       "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-5",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-6",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-7",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-8",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-9",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "frame"
+      ],
+      "description": "frame",
+      "files": [
+        {
+          "path": "registry/default/variants/v-frame-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-frame-10",
+      "registryDependencies": [
+        "frame"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "group",
       "files": [
         {
           "path": "registry/default/variants/v-group-1.tsx",
@@ -2624,9 +5574,169 @@
         "className": ""
       },
       "name": "v-group-1",
-      "registryDependencies": [
-        "@cnippet/group"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
       ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -2724,6 +5834,106 @@
         "className": ""
       },
       "name": "v-input-5",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-6",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-7",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-8",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-9",
+      "registryDependencies": [
+        "input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-10",
       "registryDependencies": [
         "input"
       ],
@@ -2973,7 +6183,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "kbd",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-1.tsx",
@@ -2984,9 +6194,169 @@
         "className": ""
       },
       "name": "v-kbd-1",
-      "registryDependencies": [
-        "@cnippet/kbd"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
       ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "kbd",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -3111,9 +6481,89 @@
     },
     {
       "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-7",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-8",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-9",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-10",
+      "registryDependencies": [
+        "menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "meter",
       "files": [
         {
           "path": "registry/default/variants/v-meter-1.tsx",
@@ -3124,9 +6574,169 @@
         "className": ""
       },
       "name": "v-meter-1",
-      "registryDependencies": [
-        "@cnippet/meter"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
       ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -3251,9 +6861,89 @@
     },
     {
       "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-7",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-8",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-9",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "number-field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-10",
+      "registryDependencies": [
+        "number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "pagination",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-1.tsx",
@@ -3265,7 +6955,187 @@
       },
       "name": "v-pagination-1",
       "registryDependencies": [
-        "@cnippet/pagination"
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-2",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-3",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-4",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-5",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-6",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-7",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-8",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-9",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-10",
+      "registryDependencies": [
+        "pagination"
       ],
       "type": "registry:block"
     },
@@ -3331,9 +7201,149 @@
     },
     {
       "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-4",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-5",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-6",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-7",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-8",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-9",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-10",
+      "registryDependencies": [
+        "popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "preview card",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-1.tsx",
@@ -3344,16 +7354,176 @@
         "className": ""
       },
       "name": "v-preview-card-1",
-      "registryDependencies": [
-        "@cnippet/preview-card"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
       ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "progress",
       "files": [
         {
           "path": "registry/default/variants/v-progress-1.tsx",
@@ -3364,9 +7534,169 @@
         "className": ""
       },
       "name": "v-progress-1",
-      "registryDependencies": [
-        "@cnippet/progress"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
       ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -3451,9 +7781,129 @@
     },
     {
       "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-5",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-6",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-7",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-8",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-9",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "radio-group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-10",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "scroll area",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-1.tsx",
@@ -3464,9 +7914,169 @@
         "className": ""
       },
       "name": "v-scroll-area-1",
-      "registryDependencies": [
-        "@cnippet/scroll-area"
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
       ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-2",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-3",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-4",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-5",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-6",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-7",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-8",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-9",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "scroll area",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-10",
+      "registryDependencies": [],
       "type": "registry:block"
     },
     {
@@ -3611,9 +8221,69 @@
     },
     {
       "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-8",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-9",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-10",
+      "registryDependencies": [
+        "select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "separator",
       "files": [
         {
           "path": "registry/default/variants/v-separator-1.tsx",
@@ -3625,7 +8295,187 @@
       },
       "name": "v-separator-1",
       "registryDependencies": [
-        "@cnippet/separator"
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-2",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-3",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-4",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-5",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-6",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-7",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-8",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-9",
+      "registryDependencies": [
+        "separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-10",
+      "registryDependencies": [
+        "separator"
       ],
       "type": "registry:block"
     },
@@ -3691,9 +8541,149 @@
     },
     {
       "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-4",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-5",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-6",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-7",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-8",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-9",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "sheet",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-10",
+      "registryDependencies": [
+        "sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "skeleton",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-1.tsx",
@@ -3705,7 +8695,187 @@
       },
       "name": "v-skeleton-1",
       "registryDependencies": [
-        "@cnippet/skeleton"
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-2",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-3",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-4",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-5",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-6",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-7",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-8",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-9",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "skeleton",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-10",
+      "registryDependencies": [
+        "skeleton"
       ],
       "type": "registry:block"
     },
@@ -3713,7 +8883,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "slider",
       "files": [
         {
           "path": "registry/default/variants/v-slider-1.tsx",
@@ -3725,7 +8895,187 @@
       },
       "name": "v-slider-1",
       "registryDependencies": [
-        "@cnippet/slider"
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-2",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-3",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-4",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-5",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-6",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-7",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-8",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-9",
+      "registryDependencies": [
+        "slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "slider",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-10",
+      "registryDependencies": [
+        "slider"
       ],
       "type": "registry:block"
     },
@@ -3733,7 +9083,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "spinner",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-1.tsx",
@@ -3745,7 +9095,187 @@
       },
       "name": "v-spinner-1",
       "registryDependencies": [
-        "@cnippet/spinner"
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-2",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-3",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-4",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-5",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-6",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-7",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-8",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-9",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-10",
+      "registryDependencies": [
+        "spinner"
       ],
       "type": "registry:block"
     },
@@ -3831,9 +9361,129 @@
     },
     {
       "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-5",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-6",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-7",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-8",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-9",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Basic switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-10",
+      "registryDependencies": [
+        "switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "table",
       "files": [
         {
           "path": "registry/default/variants/v-table-1.tsx",
@@ -3845,7 +9495,187 @@
       },
       "name": "v-table-1",
       "registryDependencies": [
-        "@cnippet/table"
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-2",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-3",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-4",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-5",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-6",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-7",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-8",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-9",
+      "registryDependencies": [
+        "table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "table",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-10",
+      "registryDependencies": [
+        "table"
       ],
       "type": "registry:block"
     },
@@ -3931,6 +9761,126 @@
     },
     {
       "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-5",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-6",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-7",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-8",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-9",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-10",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "textarea"
       ],
       "description": "textarea",
@@ -4004,6 +9954,126 @@
         "className": ""
       },
       "name": "v-textarea-4",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-5",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-6",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-7",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-8",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-9",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "textarea",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-10",
       "registryDependencies": [
         "textarea"
       ],
@@ -4171,9 +10241,49 @@
     },
     {
       "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-9",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-10",
+      "registryDependencies": [
+        "toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "toggle",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-1.tsx",
@@ -4185,7 +10295,187 @@
       },
       "name": "v-toggle-1",
       "registryDependencies": [
-        "@cnippet/toggle"
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-2",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-3",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-4",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-5",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-6",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-7",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-8",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-9",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-10",
+      "registryDependencies": [
+        "toggle"
       ],
       "type": "registry:block"
     },
@@ -4193,7 +10483,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "toggle group",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-1.tsx",
@@ -4205,7 +10495,187 @@
       },
       "name": "v-toggle-group-1",
       "registryDependencies": [
-        "@cnippet/toggle-group"
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-2",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-3",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-4",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-5",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-6",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-7",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-8",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-9",
+      "registryDependencies": [
+        "toggle group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "toggle group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-10",
+      "registryDependencies": [
+        "toggle group"
       ],
       "type": "registry:block"
     },
@@ -4213,7 +10683,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-1.tsx",
@@ -4225,7 +10695,187 @@
       },
       "name": "v-toolbar-1",
       "registryDependencies": [
-        "@cnippet/toolbar"
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-2",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-3",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-4",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-5",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-6",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-7",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-8",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-9",
+      "registryDependencies": [
+        "toolbar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toolbar"
+      ],
+      "description": "toolbar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toolbar-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toolbar-10",
+      "registryDependencies": [
+        "toolbar"
       ],
       "type": "registry:block"
     },
@@ -4233,7 +10883,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "tooltip",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-1.tsx",
@@ -4245,7 +10895,187 @@
       },
       "name": "v-tooltip-1",
       "registryDependencies": [
-        "@cnippet/tooltip"
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-2",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-3",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-4",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-5",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-6",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-7",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-8",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-9",
+      "registryDependencies": [
+        "tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-10",
+      "registryDependencies": [
+        "tooltip"
       ],
       "type": "registry:block"
     },

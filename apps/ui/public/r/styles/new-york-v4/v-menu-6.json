@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["menu"],
+  "name": "v-menu-6",
   "description": "menu",
+  "registryDependencies": [
+    "menu"
+  ],
   "files": [
     {
-      "content": "import { Button } from \"@/components/ui/button\";\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from \"@/components/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem closeOnClick>Profile</MenuItem>\n        <MenuItem closeOnClick>Settings</MenuItem>\n        <MenuItem closeOnClick>Log out</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
       "path": "registry/default/variants/v-menu-6.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from \"@/components/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem closeOnClick>Profile</MenuItem>\n        <MenuItem closeOnClick>Settings</MenuItem>\n        <MenuItem closeOnClick>Log out</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-menu-6",
-  "registryDependencies": ["menu"],
+  "categories": [
+    "menu"
+  ],
   "type": "registry:block"
 }

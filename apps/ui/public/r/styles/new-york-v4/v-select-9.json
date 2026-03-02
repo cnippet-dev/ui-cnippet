@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-9",
+  "description": "select",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-9.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

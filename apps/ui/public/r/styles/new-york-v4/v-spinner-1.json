@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["spinner"],
-  "description": "Basic spinner",
+  "name": "v-spinner-1",
+  "description": "spinner",
+  "registryDependencies": [
+    "spinner"
+  ],
   "files": [
     {
-      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
       "path": "registry/default/variants/v-spinner-1.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-spinner-1",
-  "registryDependencies": ["@cnippet/spinner"],
+  "categories": [
+    "spinner"
+  ],
   "type": "registry:block"
 }

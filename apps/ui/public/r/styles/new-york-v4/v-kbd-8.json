@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-kbd-8",
+  "description": "kbd",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-kbd-8.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "kbd"
+  ],
+  "type": "registry:block"
+}

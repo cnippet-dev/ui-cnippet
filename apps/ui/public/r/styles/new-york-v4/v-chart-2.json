@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-chart-2",
+  "description": "Basic chart",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-chart-2.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart"
+  ],
+  "type": "registry:block"
+}

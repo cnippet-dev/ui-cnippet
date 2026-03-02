@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-4",
+  "description": "scroll area",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-4.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

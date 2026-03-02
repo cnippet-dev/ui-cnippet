@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-9",
+  "description": "toggle group",
+  "registryDependencies": [
+    "toggle group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-9.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ],
+  "type": "registry:block"
+}
