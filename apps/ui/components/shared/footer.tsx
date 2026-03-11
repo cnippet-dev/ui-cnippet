@@ -79,7 +79,7 @@ export function Footer() {
   }, [resolvedTheme, setTheme]);
 
   return (
-    <div className="px-4 md:px-0 dark:bg-background">
+    <div className="px-4 md:px-0 dark:bg-sidebar">
       <div className="mx-auto max-w-6xl border-x px-4 pt-20 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="space-y-4 lg:col-span-4">

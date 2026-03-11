@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { CommandMenu } from "@/components/command-menu";
+import { BorderBottomWithDots } from "@/components/grid-design";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { appConfig } from "@/lib/config";
@@ -17,10 +19,10 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`border-b px-4 md:px-0 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-20 bg-sidebar" : ""}`}
+      className={`relative px-4 md:px-0 dark:bg-sidebar ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-20 bg-sidebar" : ""}`}
     >
       <div
-        className={`mx-auto flex h-18 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container bg-sidebar" : "max-w-6xl"}`}
+        className={`mx-auto flex h-16 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container bg-sidebar" : "max-w-6xl"}`}
       >
         <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">
@@ -48,6 +50,8 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
+
+      <BorderBottomWithDots />
     </header>
   );
 }

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { CopyButton } from "@/components/copy-button";
 import { codeSnippets } from "@/components/home/code-snippets";
-import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs";
+import { BorderBottomWithDots } from "../grid-design";
 
 const langTabs = [
   {
@@ -63,6 +63,52 @@ const langTabs = [
   },
 ];
 
+function Badge({
+  badgeText,
+  badgeLink,
+  badgeLinkText,
+  position,
+}: {
+  badgeText: string;
+  badgeLink?: string;
+  badgeLinkText?: string;
+  position?: "center" | "left" | "right";
+}) {
+  return (
+    <div
+      className={`relative mr-auto w-fit bg-foreground/5 p-1 ${position === "center" ? "mx-auto" : position === "left" ? "mr-auto" : "ml-auto"} `}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute top-1 left-1 size-0.75 rounded-full bg-foreground/20"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute top-1 right-1 size-0.75 rounded-full bg-foreground/20"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-1 left-1 size-0.75 rounded-full bg-foreground/20"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute right-1 bottom-1 size-0.75 rounded-full bg-foreground/20"
+      />
+      <div className="relative flex h-fit items-center gap-2 px-3">
+        <span className="text-sm text-title">{badgeText}</span>
+        {badgeLink && (
+          <>
+            <span className="block h-3 w-px bg-foreground/5" />
+            <a className="text-primary text-sm" href={badgeLink}>
+              {badgeLinkText}
+            </a>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function ImplementationSection({
   highlightedSnippets,
 }: {
@@ -71,12 +117,11 @@ export function ImplementationSection({
   const [_activeTab, setActiveTab] = useState("cli");
 
   return (
-    <section className="border-b px-4 md:px-0">
+    <section className="relative px-4 md:px-0">
       <div className="relative mx-auto max-w-6xl overflow-hidden border-neutral-200 border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8 dark:border-neutral-800">
         <div className="mx-auto flex max-w-3xl flex-col items-center space-y-6 text-center">
-          <Badge className="rounded-full border-blue-500/30 bg-blue-600 px-2 py-0.5 text-white text-xs hover:bg-blue-600">
-            Get Started
-          </Badge>
+          <Badge badgeText="Get Started" position="center" />
+
           <h1 className="mb-3 font-figtree font-medium text-2xl text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
             Add components in seconds
           </h1>
@@ -123,6 +168,7 @@ export function ImplementationSection({
           </Tabs>
         </div>
       </div>
+      <BorderBottomWithDots />
     </section>
   );
 }
