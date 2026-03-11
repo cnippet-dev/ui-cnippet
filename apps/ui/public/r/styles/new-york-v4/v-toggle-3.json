@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-toggle-3",
+  "categories": ["toggle"],
   "description": "toggle",
-  "registryDependencies": [
-    "toggle"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-toggle-3.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-toggle-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "toggle"
-  ],
+  "name": "v-toggle-3",
+  "registryDependencies": ["toggle"],
   "type": "registry:block"
 }

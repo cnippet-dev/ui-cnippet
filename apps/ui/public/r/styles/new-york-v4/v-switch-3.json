@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-switch-3",
+  "categories": ["switch"],
   "description": "Basic switch",
-  "registryDependencies": [
-    "switch"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-switch-3.tsx",
       "content": "import * as React from \"react\";\n\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  const id = React.useId();\n\n  return (\n    <Label\n      className=\"flex items-center gap-6 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50\"\n      htmlFor={id}\n    >\n      <div className=\"flex flex-col gap-1\">\n        <p>Enable notifications</p>\n        <p className=\"text-muted-foreground text-xs\">\n          You can enable or disable notifications at any time.\n        </p>\n      </div>\n      <Switch defaultChecked id={id} />\n    </Label>\n  );\n}\n",
+      "path": "registry/default/variants/v-switch-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "switch"
-  ],
+  "name": "v-switch-3",
+  "registryDependencies": ["switch"],
   "type": "registry:block"
 }

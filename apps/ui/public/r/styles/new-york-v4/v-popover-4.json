@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-popover-4",
+  "categories": ["popover"],
   "description": "popover",
-  "registryDependencies": [
-    "popover"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-popover-4.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-popover-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "popover"
-  ],
+  "name": "v-popover-4",
+  "registryDependencies": ["popover"],
   "type": "registry:block"
 }

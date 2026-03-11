@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-alert-dialog-3",
+  "categories": ["alert dialog"],
   "description": "basic alert dialog",
-  "registryDependencies": [
-    "alert-dialog"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-alert-dialog-3.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-alert-dialog-3.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "alert dialog"
-  ],
+  "name": "v-alert-dialog-3",
+  "registryDependencies": ["alert-dialog"],
   "type": "registry:block"
 }

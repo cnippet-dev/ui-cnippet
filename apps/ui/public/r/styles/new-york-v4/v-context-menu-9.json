@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-context-menu-9",
+  "categories": ["context-menu"],
   "description": "Basic context menu",
-  "registryDependencies": [
-    "context-menu"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-context-menu-9.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-context-menu-9.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "context-menu"
-  ],
+  "name": "v-context-menu-9",
+  "registryDependencies": ["context-menu"],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-pagination-6",
+  "categories": ["pagination"],
   "description": "pagination",
-  "registryDependencies": [
-    "pagination"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-pagination-6.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-pagination-6.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "pagination"
-  ],
+  "name": "v-pagination-6",
+  "registryDependencies": ["pagination"],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-avatar-4",
+  "categories": ["avatar"],
   "description": "Basic avatar",
-  "registryDependencies": [
-    "avatar"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-avatar-4.tsx",
       "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex -space-x-[0.6rem]\">\n      <Avatar className=\"ring-2 ring-background\">\n        <AvatarImage\n          alt=\"U1\"\n          src=\"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\"\n        />\n        <AvatarFallback>U1</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"ring-2 ring-background\">\n        <AvatarImage\n          alt=\"U2\"\n          src=\"https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=96&h=96&dpr=2&q=80\"\n        />\n        <AvatarFallback>U2</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"ring-2 ring-background\">\n        <AvatarImage\n          alt=\"U3\"\n          src=\"https://images.unsplash.com/photo-1655874819398-c6dfbec68ac7?w=96&h=96&dpr=2&q=80\"\n        />\n        <AvatarFallback>U3</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-avatar-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "avatar"
-  ],
+  "name": "v-avatar-4",
+  "registryDependencies": ["avatar"],
   "type": "registry:block"
 }

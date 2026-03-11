@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-button-2",
+  "categories": ["button"],
   "description": "Basic button",
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-button-2.tsx",
       "content": "import Link from \"next/link\";\nimport { Button } from \"@/components/ui/button\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Default</p>\n        <Button>Button</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Outline</p>\n        <Button variant=\"outline\">Outline</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Secondary</p>\n        <Button variant=\"secondary\">Secondary</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Destructive</p>\n        <Button variant=\"destructive\">Delete</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Destructive outline</p>\n        <Button variant=\"destructive-outline\">Delete</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Ghost</p>\n        <Button variant=\"ghost\">Ghost</Button>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>W/ Link</p>\n        <Button render={<Link href=\"/\" />}>Link</Button>\n      </div>\n\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>W/ Loading</p>\n        <Button disabled>\n          <Spinner />\n          Loading...\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-button-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "button"
-  ],
+  "name": "v-button-2",
+  "registryDependencies": ["button"],
   "type": "registry:block"
 }

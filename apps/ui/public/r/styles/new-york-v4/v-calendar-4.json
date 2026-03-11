@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-calendar-4",
+  "categories": ["calendar"],
   "description": "Basic calendar",
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-calendar-4.tsx",
       "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Label } from \"@/components/ui/label\";\nimport { Popover, PopoverPopup, PopoverTrigger } from \"@/components/ui/popover\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Variant() {\n  const [open, setOpen] = React.useState(false);\n  const [date, setDate] = React.useState<Date | undefined>(undefined);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Label className=\"px-1\" htmlFor=\"date\">\n        Date of birth\n      </Label>\n      <Popover onOpenChange={setOpen} open={open}>\n        <PopoverTrigger\n          render={\n            <Button\n              className=\"w-48 justify-between font-normal\"\n              id=\"date\"\n              variant=\"outline\"\n            />\n          }\n        >\n          {date ? date.toLocaleDateString() : \"Select date\"}\n          <ChevronDownIcon />\n        </PopoverTrigger>\n        <PopoverPopup align=\"start\" className=\"w-auto overflow-hidden p-0\">\n          <Calendar\n            captionLayout=\"dropdown\"\n            mode=\"single\"\n            onSelect={(date) => {\n              setDate(date);\n              setOpen(false);\n            }}\n            selected={date}\n          />\n        </PopoverPopup>\n      </Popover>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-calendar-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "calendar"
-  ],
+  "name": "v-calendar-4",
+  "registryDependencies": ["button"],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-input-5",
+  "categories": ["input"],
   "description": "input",
-  "registryDependencies": [
-    "input"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-input-5.tsx",
       "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex gap-2\">\n      <Input aria-label=\"Email\" placeholder=\"you@example.com\" type=\"email\" />\n      <Button variant=\"outline\">Send</Button>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-input-5.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "input"
-  ],
+  "name": "v-input-5",
+  "registryDependencies": ["input"],
   "type": "registry:block"
 }

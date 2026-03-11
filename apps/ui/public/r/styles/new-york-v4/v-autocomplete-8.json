@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-autocomplete-8",
+  "categories": ["autocomplete"],
   "description": "Basic autocomplete",
-  "registryDependencies": [
-    "autocomplete"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-autocomplete-8.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-autocomplete-8.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "autocomplete"
-  ],
+  "name": "v-autocomplete-8",
+  "registryDependencies": ["autocomplete"],
   "type": "registry:block"
 }

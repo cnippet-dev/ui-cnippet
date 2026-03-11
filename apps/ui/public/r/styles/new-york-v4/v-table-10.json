@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-table-10",
+  "categories": ["table"],
   "description": "table",
-  "registryDependencies": [
-    "table"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-table-10.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-table-10.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "table"
-  ],
+  "name": "v-table-10",
+  "registryDependencies": ["table"],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-checkbox-8",
+  "categories": ["checkbox"],
   "description": "Basic checkbox",
-  "registryDependencies": [
-    "checkbox"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-checkbox-8.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-checkbox-8.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "checkbox"
-  ],
+  "name": "v-checkbox-8",
+  "registryDependencies": ["checkbox"],
   "type": "registry:block"
 }

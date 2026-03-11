@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-field-6",
+  "categories": ["field"],
   "description": "Basic field",
-  "registryDependencies": [
-    "field"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-field-6.tsx",
       "content": "\"use client\";\n\nimport {\n  Autocomplete,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompletePopup,\n} from \"@/registry/default/ui/autocomplete\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\n\nconst items = [\n  { label: \"Apple\", value: \"apple\" },\n  { label: \"Banana\", value: \"banana\" },\n  { label: \"Orange\", value: \"orange\" },\n  { label: \"Grape\", value: \"grape\" },\n  { label: \"Strawberry\", value: \"strawberry\" },\n  { label: \"Mango\", value: \"mango\" },\n  { label: \"Pineapple\", value: \"pineapple\" },\n  { label: \"Kiwi\", value: \"kiwi\" },\n  { label: \"Peach\", value: \"peach\" },\n  { label: \"Pear\", value: \"pear\" },\n];\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Fruits</FieldLabel>\n      <Autocomplete items={items}>\n        <AutocompleteInput\n          aria-label=\"Search items\"\n          placeholder=\"Search items…\"\n        />\n        <AutocompletePopup>\n          <AutocompleteEmpty>No items found.</AutocompleteEmpty>\n          <AutocompleteList>\n            {(item) => (\n              <AutocompleteItem key={item.value} value={item}>\n                {item.label}\n              </AutocompleteItem>\n            )}\n          </AutocompleteList>\n        </AutocompletePopup>\n      </Autocomplete>\n      <FieldDescription>Select a item.</FieldDescription>\n    </Field>\n  );\n}\n",
+      "path": "registry/default/variants/v-field-6.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "field"
-  ],
+  "name": "v-field-6",
+  "registryDependencies": ["field"],
   "type": "registry:block"
 }

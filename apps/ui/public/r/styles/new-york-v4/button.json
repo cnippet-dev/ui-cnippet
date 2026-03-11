@@ -1,23 +1,21 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "button",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "cssVars": {
+    "dark": {
+      "destructive-foreground": "var(--color-red-400)"
+    },
+    "light": {
+      "destructive-foreground": "var(--color-red-700)"
+    }
+  },
+  "dependencies": ["@base-ui/react"],
   "files": [
     {
-      "path": "registry/default/ui/button.tsx",
       "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport type * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst buttonVariants = cva(\n  \"relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border bg-clip-padding font-medium text-sm outline-none transition-shadow before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] pointer-coarse:after:absolute pointer-coarse:after:size-full pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-64 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default:\n          \"min-h-8 px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)]\",\n        icon: \"size-8\",\n        \"icon-lg\": \"size-9\",\n        \"icon-sm\": \"size-7\",\n        \"icon-xl\": \"size-10 [&_svg:not([class*='size-'])]:size-4.5\",\n        \"icon-xs\":\n          \"size-6 rounded-md before:rounded-[calc(var(--radius-md)-1px)]\",\n        lg: \"min-h-9 px-[calc(--spacing(3.5)-1px)] py-[calc(--spacing(2)-1px)]\",\n        sm: \"min-h-7 gap-1.5 px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)]\",\n        xl: \"min-h-10 px-[calc(--spacing(4)-1px)] py-[calc(--spacing(2)-1px)] text-base [&_svg:not([class*='size-'])]:size-4.5\",\n        xs: \"min-h-6 gap-1 rounded-md px-[calc(--spacing(2)-1px)] py-[calc(--spacing(1)-1px)] text-xs before:rounded-[calc(var(--radius-md)-1px)] [&_svg:not([class*='size-'])]:size-3\",\n      },\n      variant: {\n        default:\n          \"not-disabled:inset-shadow-[0_1px_--theme(--color-white/16%)] border-primary bg-primary text-primary-foreground shadow-primary/24 shadow-xs hover:bg-primary/90 [&:is(:active,[data-pressed])]:inset-shadow-[0_1px_--theme(--color-black/8%)] [&:is(:disabled,:active,[data-pressed])]:shadow-none\",\n        destructive:\n          \"not-disabled:inset-shadow-[0_1px_--theme(--color-white/16%)] border-destructive bg-destructive text-white shadow-destructive/24 shadow-xs hover:bg-destructive/90 [&:is(:active,[data-pressed])]:inset-shadow-[0_1px_--theme(--color-black/8%)] [&:is(:disabled,:active,[data-pressed])]:shadow-none\",\n        \"destructive-outline\":\n          \"border-border bg-transparent text-destructive-foreground shadow-xs not-disabled:not-active:not-data-pressed:before:shadow-[0_1px_--theme(--color-black/4%)] dark:bg-input/32 dark:not-in-data-[slot=group]:bg-clip-border dark:not-disabled:before:shadow-[0_-1px_--theme(--color-white/4%)] dark:not-disabled:not-active:not-data-pressed:before:shadow-[0_-1px_--theme(--color-white/8%)] [&:is(:disabled,:active,[data-pressed])]:shadow-none [&:is(:hover,[data-pressed])]:border-destructive/32 [&:is(:hover,[data-pressed])]:bg-destructive/4\",\n        ghost: \"border-transparent hover:bg-accent data-pressed:bg-accent\",\n        link: \"border-transparent underline-offset-4 hover:underline\",\n        outline:\n          \"border-border bg-background shadow-xs not-disabled:not-active:not-data-pressed:before:shadow-[0_1px_--theme(--color-black/4%)] dark:bg-input/32 dark:not-in-data-[slot=group]:bg-clip-border dark:not-disabled:before:shadow-[0_-1px_--theme(--color-white/4%)] dark:not-disabled:not-active:not-data-pressed:before:shadow-[0_-1px_--theme(--color-white/8%)] [&:is(:disabled,:active,[data-pressed])]:shadow-none [&:is(:hover,[data-pressed])]:bg-accent/50 dark:[&:is(:hover,[data-pressed])]:bg-input/64\",\n        secondary:\n          \"border-secondary bg-secondary text-secondary-foreground hover:bg-secondary/90 data-pressed:bg-secondary/90\",\n      },\n    },\n  },\n);\n\ninterface ButtonProps extends useRender.ComponentProps<\"button\"> {\n  variant?: VariantProps<typeof buttonVariants>[\"variant\"];\n  size?: VariantProps<typeof buttonVariants>[\"size\"];\n}\n\nfunction Button({ className, variant, size, render, ...props }: ButtonProps) {\n  const typeValue: React.ButtonHTMLAttributes<HTMLButtonElement>[\"type\"] =\n    render ? undefined : \"button\";\n\n  const defaultProps = {\n    className: cn(buttonVariants({ className, size, variant })),\n    \"data-slot\": \"button\",\n    type: typeValue,\n  };\n\n  return useRender({\n    defaultTagName: \"button\",\n    props: mergeProps<\"button\">(defaultProps, props),\n    render,\n  });\n}\n\nexport { Button, buttonVariants };\n",
+      "path": "registry/default/ui/button.tsx",
       "type": "registry:ui"
     }
   ],
-  "cssVars": {
-    "light": {
-      "destructive-foreground": "var(--color-red-700)"
-    },
-    "dark": {
-      "destructive-foreground": "var(--color-red-400)"
-    }
-  },
+  "name": "button",
   "type": "registry:ui"
 }

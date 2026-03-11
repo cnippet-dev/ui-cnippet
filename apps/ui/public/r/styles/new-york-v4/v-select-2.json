@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-select-2",
+  "categories": ["select"],
   "description": "select",
-  "registryDependencies": [
-    "select"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-select-2.tsx",
       "content": "import {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst items = [\n  { label: \"Select framework\", value: null },\n  { label: \"Next.js\", value: \"next\" },\n  { label: \"Vite\", value: \"vite\" },\n  { label: \"Astro\", value: \"astro\" },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Extra small</p>\n        <Select defaultValue=\"next\" items={items}>\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            {items.map(({ label, value }) => (\n              <SelectItem key={value} value={value}>\n                {label}\n              </SelectItem>\n            ))}\n          </SelectPopup>\n        </Select>\n      </div>\n      <div className=\"flex items-center justify-between gap-10 [&_p]:text-xs\">\n        <p>Small</p>\n        <Select defaultValue=\"next\" items={items}>\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            {items.map(({ label, value }) => (\n              <SelectItem key={value} value={value}>\n                {label}\n              </SelectItem>\n            ))}\n          </SelectPopup>\n        </Select>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/variants/v-select-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "select"
-  ],
+  "name": "v-select-2",
+  "registryDependencies": ["select"],
   "type": "registry:block"
 }

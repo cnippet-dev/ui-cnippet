@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-checkbox-1",
+  "categories": ["checkbox"],
   "description": "Basic checkbox",
-  "registryDependencies": [
-    "checkbox"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-checkbox-1.tsx",
       "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <Label>\n      <Checkbox />\n      Accept terms and conditions\n    </Label>\n  );\n}\n",
+      "path": "registry/default/variants/v-checkbox-1.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "checkbox"
-  ],
+  "name": "v-checkbox-1",
+  "registryDependencies": ["checkbox"],
   "type": "registry:block"
 }

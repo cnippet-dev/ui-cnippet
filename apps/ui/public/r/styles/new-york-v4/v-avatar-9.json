@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-avatar-9",
+  "categories": ["avatar"],
   "description": "Basic avatar",
-  "registryDependencies": [
-    "avatar"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-avatar-9.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-avatar-9.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "avatar"
-  ],
+  "name": "v-avatar-9",
+  "registryDependencies": ["avatar"],
   "type": "registry:block"
 }

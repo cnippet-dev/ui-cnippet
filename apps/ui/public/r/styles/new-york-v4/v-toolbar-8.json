@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-toolbar-8",
+  "categories": ["toolbar"],
   "description": "toolbar",
-  "registryDependencies": [
-    "toolbar"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-toolbar-8.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-toolbar-8.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "toolbar"
-  ],
+  "name": "v-toolbar-8",
+  "registryDependencies": ["toolbar"],
   "type": "registry:block"
 }

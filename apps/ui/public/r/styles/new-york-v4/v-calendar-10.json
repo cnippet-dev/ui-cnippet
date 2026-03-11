@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-calendar-10",
+  "categories": ["calendar"],
   "description": "Basic calendar",
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-calendar-10.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-calendar-10.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "calendar"
-  ],
+  "name": "v-calendar-10",
+  "registryDependencies": ["button"],
   "type": "registry:block"
 }

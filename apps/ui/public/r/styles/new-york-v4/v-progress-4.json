@@ -1,20 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-progress-4",
+  "categories": ["progress"],
   "description": "progress",
-  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/default/variants/v-progress-4.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-progress-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "progress"
-  ],
+  "name": "v-progress-4",
+  "registryDependencies": [],
   "type": "registry:block"
 }

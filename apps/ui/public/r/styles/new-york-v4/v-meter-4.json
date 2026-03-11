@@ -1,20 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-meter-4",
+  "categories": ["meter"],
   "description": "meter",
-  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/default/variants/v-meter-4.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-meter-4.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "meter"
-  ],
+  "name": "v-meter-4",
+  "registryDependencies": [],
   "type": "registry:block"
 }

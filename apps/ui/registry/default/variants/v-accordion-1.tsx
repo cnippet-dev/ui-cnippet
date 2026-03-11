@@ -9,9 +9,9 @@ export default function Component() {
   const items = [
     {
       content:
-        "Base UI is a library of high-quality unstyled React components for design systems and web apps.",
+        "Cnippet  UI is a library of high-quality unstyled React components for design systems and web apps.",
       id: "1",
-      title: "What is Base UI?",
+      title: "What is Cnippet  UI?",
     },
     {
       content:
@@ -20,7 +20,7 @@ export default function Component() {
       title: "How do I get started?",
     },
     {
-      content: "Of course! Base UI is free and open source.",
+      content: "Of course! Cnippet  UI is free and open source.",
       id: "3",
       title: "Can I use it for my project?",
     },

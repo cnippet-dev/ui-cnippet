@@ -1,20 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-fieldset-2",
+  "categories": ["fieldset"],
   "description": "Basic fieldset",
-  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/default/variants/v-fieldset-2.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-fieldset-2.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "fieldset"
-  ],
+  "name": "v-fieldset-2",
+  "registryDependencies": [],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-select-6",
+  "categories": ["select"],
   "description": "select",
-  "registryDependencies": [
-    "select"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-select-6.tsx",
       "content": "\"use client\";\n\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nconst items = [\n  { description: \"npx create-next-app\", label: \"Next.js\", value: \"next\" },\n  { description: \"npm create vite@latest\", label: \"Vite\", value: \"vite\" },\n  { description: \"npm create astro@latest\", label: \"Astro\", value: \"astro\" },\n  { description: \"npx create-remix\", label: \"Remix\", value: \"remix\" },\n];\n\nexport default function Particle() {\n  return (\n    <Select\n      aria-label=\"Select framework with command\"\n      defaultValue={items[0]}\n      itemToStringValue={(item) => item.value}\n    >\n      <SelectTrigger className=\"w-md py-1\">\n        <SelectValue>\n          {(item) => (\n            <span className=\"flex flex-col\">\n              <span className=\"truncate\">{item.label}</span>\n              <span className=\"truncate text-muted-foreground text-xs\">\n                {item.description}\n              </span>\n            </span>\n          )}\n        </SelectValue>\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            <span className=\"flex flex-col\">\n              <span className=\"truncate\">{item.label}</span>\n              <span className=\"truncate text-muted-foreground text-xs\">\n                {item.description}\n              </span>\n            </span>\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "path": "registry/default/variants/v-select-6.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "select"
-  ],
+  "name": "v-select-6",
+  "registryDependencies": ["select"],
   "type": "registry:block"
 }

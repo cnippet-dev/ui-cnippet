@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-tooltip-8",
+  "categories": ["tooltip"],
   "description": "tooltip",
-  "registryDependencies": [
-    "tooltip"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-tooltip-8.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-tooltip-8.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "tooltip"
-  ],
+  "name": "v-tooltip-8",
+  "registryDependencies": ["tooltip"],
   "type": "registry:block"
 }

@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-checkbox-group-7",
+  "categories": ["checkbox group"],
   "description": "Basic checkbox-group",
-  "registryDependencies": [
-    "checkbox-group"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-checkbox-group-7.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-checkbox-group-7.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "checkbox group"
-  ],
+  "name": "v-checkbox-group-7",
+  "registryDependencies": ["checkbox-group"],
   "type": "registry:block"
 }

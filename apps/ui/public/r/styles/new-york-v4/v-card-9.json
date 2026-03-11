@@ -1,20 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-card-9",
+  "categories": ["card"],
   "description": "Basic Card",
-  "registryDependencies": [],
   "files": [
     {
-      "path": "registry/default/variants/v-card-9.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-card-9.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "card"
-  ],
+  "name": "v-card-9",
+  "registryDependencies": [],
   "type": "registry:block"
 }

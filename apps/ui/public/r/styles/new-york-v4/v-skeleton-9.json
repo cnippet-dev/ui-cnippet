@@ -1,22 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-skeleton-9",
+  "categories": ["skeleton"],
   "description": "skeleton",
-  "registryDependencies": [
-    "skeleton"
-  ],
   "files": [
     {
-      "path": "registry/default/variants/v-skeleton-9.tsx",
       "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "path": "registry/default/variants/v-skeleton-9.tsx",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "categories": [
-    "skeleton"
-  ],
+  "name": "v-skeleton-9",
+  "registryDependencies": ["skeleton"],
   "type": "registry:block"
 }
