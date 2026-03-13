@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Particle() {
   return (
-    <Alert className="w-xl">
+    <Alert className="md:w-xl">
       <InfoIcon />
       <AlertTitle>Heads up!</AlertTitle>
       <AlertDescription>

@@ -13,16 +13,16 @@ import { GitHubLink } from "./github-link";
 import { MainNav } from "./main-nav";
 import { ModeSwitcher } from "./mode-switcher";
 
-export function SiteHeader() {
+export default function SiteHeader() {
   const pageTree = source.pageTree;
   const pathname = usePathname();
 
   return (
     <header
-      className={`relative px-4 md:px-0 dark:bg-sidebar ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-20 bg-sidebar" : ""}`}
+      className={`relative px-4 md:px-0 dark:bg-sidebar ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-999 bg-sidebar" : ""}`}
     >
       <div
-        className={`mx-auto flex h-16 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container bg-sidebar" : "max-w-6xl"}`}
+        className={`z-999 mx-auto flex h-20 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container" : "max-w-6xl"}`}
       >
         <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">

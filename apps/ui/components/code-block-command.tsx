@@ -77,7 +77,7 @@ export function CodeBlockCommand({
               <TabsPanel className="mt-0 px-4 py-3.5" key={key} value={key}>
                 <pre>
                   <code
-                    className="relative font-mono text-[.8125rem] leading-none"
+                    className="relative font-mono text-xs leading-none md:text-[.8125rem]"
                     data-language="bash"
                   >
                     {value}

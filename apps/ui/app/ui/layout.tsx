@@ -1,5 +1,5 @@
 import { DocsSidebar } from "@/components/docs-sidebar";
-import { SiteHeader } from "@/components/shared/header/site-header";
+import SiteHeader from "@/components/shared/header/site-header";
 import { source } from "@/lib/source";
 import { SidebarProvider } from "@/registry/default/ui/sidebar";
 

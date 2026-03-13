@@ -77,7 +77,7 @@ export async function highlightCode(
         },
         pre(node) {
           node.properties.class =
-            "no-scrollbar text-[.8125rem] min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-data-[highlighted-line]:px-0 has-data-[line-numbers]:px-0 has-data-[slot=tabs]:p-0 !bg-transparent";
+            "no-scrollbar text-xs md:text-[.8125rem] min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-data-[highlighted-line]:px-0 has-data-[line-numbers]:px-0 has-data-[slot=tabs]:p-0 !bg-transparent";
         },
       },
       transformerNotationWordHighlight(),

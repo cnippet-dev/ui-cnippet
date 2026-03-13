@@ -71,7 +71,7 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+export default function Footer() {
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = React.useCallback(() => {

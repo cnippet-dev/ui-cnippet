@@ -27,7 +27,7 @@ export default function Component() {
   ];
 
   return (
-    <Accordion className="w-lg space-y-4" defaultValue={["3"]}>
+    <Accordion className="space-y-4 md:w-lg" defaultValue={["3"]}>
       {items.map((item) => (
         <AccordionItem
           className="rounded-lg border px-4 last:border-b"
