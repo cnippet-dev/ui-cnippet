@@ -33,9 +33,26 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const pageUrl = `https://ui.cnippet.dev${page.url}`;
+
   return {
+    alternates: {
+      canonical: pageUrl,
+    },
     description: doc.description,
+    openGraph: {
+      description: doc.description,
+      siteName: "Cnippet UI",
+      title: `${doc.title} - Cnippet UI`,
+      type: "article",
+      url: pageUrl,
+    },
     title: `${doc.title} - cnippet ui`,
+    twitter: {
+      card: "summary" as const,
+      description: doc.description,
+      title: `${doc.title} - Cnippet UI`,
+    },
   };
 }
 

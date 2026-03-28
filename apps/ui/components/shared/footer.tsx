@@ -27,7 +27,7 @@ const columns = [
         name: "Alert",
       },
       {
-        href: "ui/forms/form",
+        href: "/ui/forms/form",
         Icon: CodeXml,
         name: "Form",
       },
@@ -42,7 +42,7 @@ const columns = [
         name: "Introduction",
       },
       {
-        href: "/docs/getting-started",
+        href: "/docs/get-started",
         Icon: CodeXml,
         name: "Getting Started",
       },

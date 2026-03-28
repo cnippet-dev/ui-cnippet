@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="mx-auto max-w-3xl py-32 text-center">
             <div className="mb-4">
               <Badge
-                badgeLink="#"
+                badgeLink="/docs/introduction"
                 badgeLinkText="Learn more"
                 badgeText="Now available for Enterprise"
               />
@@ -62,21 +62,21 @@ export default function Hero() {
               Ship stunning interfaces faster with Cnippet UI.
             </h1>
             <p className="mx-auto mt-4 mb-8 max-w-xl text-balance text-lg text-muted-foreground">
-              One platform for your entire team to plan, build, and iterate.
-              From ideation to deployment, Ruixen keeps everything in sync.
+              Build accessible, composable React components with Base UI and
+              Tailwind CSS. Copy, paste, and make it yours.
             </p>
             <div className="flex items-center justify-center gap-4">
               <a
                 className="inline-flex h-9 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none border-[0.5px] border-white/10 bg-primary px-4 py-2 font-medium text-primary-foreground text-sm shadow-black/15 shadow-md transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                href={"#"}
+                href={"/docs/get-started"}
               >
-                Get Started Free
+                Get Started
               </a>
               <a
                 className="inline-flex h-9 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none border border-transparent bg-card px-4 py-2 font-medium text-sm shadow-black/15 shadow-sm ring-1 ring-foreground/10 transition-colors duration-200 hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 dark:ring-foreground/15 dark:hover:bg-muted/50"
-                href={"#"}
+                href={"/ui/actions/button"}
               >
-                Request a Demo
+                Browse Components
               </a>
             </div>
           </div>

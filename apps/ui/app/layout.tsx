@@ -5,6 +5,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SiteJsonLd } from "@/components/json-ld";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AnchoredToastProvider, ToastProvider } from "@/components/ui/toast";
 
@@ -25,8 +26,41 @@ const _figtree = Figtree({
 
 export const metadata: Metadata = {
   description:
-    "Cnippet UI is a library of beautiful UI components for your next project.",
-  title: "Cnippet UI | Beautiful UI Components",
+    "Accessible, composable React components built on Base UI and styled with Tailwind CSS. Copy, paste, and make it yours. Open Source.",
+  keywords: [
+    "react components",
+    "ui library",
+    "base ui",
+    "tailwind css",
+    "next.js components",
+    "accessible components",
+    "shadcn alternative",
+    "react ui kit",
+    "typescript components",
+    "copy paste components",
+    "cnippet ui",
+  ],
+  metadataBase: new URL("https://ui.cnippet.dev"),
+  openGraph: {
+    description:
+      "Accessible, composable React components built on Base UI and styled with Tailwind CSS. Copy, paste, and make it yours.",
+    locale: "en_US",
+    siteName: "Cnippet UI",
+    title: "Cnippet UI | Beautiful UI Components",
+    type: "website",
+    url: "https://ui.cnippet.dev",
+  },
+  title: {
+    default: "Cnippet UI | Beautiful UI Components",
+    template: "%s - Cnippet UI",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@cnippetui",
+    description:
+      "Accessible, composable React components built on Base UI and styled with Tailwind CSS.",
+    title: "Cnippet UI | Beautiful UI Components",
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +72,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId="GTM-KHM7SVKH" />
       <body className={`text-foreground antialiased ${_figtree.variable}`}>
+        <SiteJsonLd />
         <ThemeProvider>
           <ToastProvider>
             <AnchoredToastProvider>

@@ -3,6 +3,7 @@ import { findNeighbour } from "fumadocs-core/page-tree";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DocsTableOfContents } from "@/components/docs-toc";
+import { ComponentJsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { source } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
@@ -32,9 +33,27 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const pageUrl = `https://ui.cnippet.dev${page.url}`;
+  const componentName = doc.title;
+
   return {
+    alternates: {
+      canonical: pageUrl,
+    },
     description: doc.description,
+    openGraph: {
+      description: doc.description,
+      siteName: "Cnippet UI",
+      title: `${componentName} - Cnippet UI`,
+      type: "article",
+      url: pageUrl,
+    },
     title: `${doc.title} - cnippet ui`,
+    twitter: {
+      card: "summary" as const,
+      description: doc.description,
+      title: `${componentName} - Cnippet UI`,
+    },
   };
 }
 
@@ -59,6 +78,11 @@ export default async function Page(props: {
       className="flex items-stretch sm:text-[.9375rem] xl:w-full"
       data-slot="docs"
     >
+      <ComponentJsonLd
+        description={doc.description ?? ""}
+        name={doc.title}
+        url={`https://ui.cnippet.dev${page.url}`}
+      />
       <div className="w-full pt-5">
         <div className="-m-px bg-neutral-900/50 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] md:rounded-lg md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
           <div className="mx-auto w-full max-w-3xl">

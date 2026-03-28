@@ -3,69 +3,26 @@ import Link from "next/link";
 import { BorderBottomWithDots } from "../grid-design";
 import { Button } from "../ui/button";
 
-const _items = [
-  {
-    number: "2",
-    title: "accordion",
-    url: "/ui/data/accordion",
-  },
-  {
-    number: "5",
-    title: "alert",
-    url: "/ui/feedback/alert",
-  },
-  {
-    number: "4",
-    title: "avatar",
-    url: "/ui/media/avatar",
-  },
-  {
-    number: "3",
-    title: "badge",
-    url: "/ui/feedback/badge",
-  },
-  {
-    number: "2",
-    title: "breadcrumb",
-    url: "/ui/navigation/breadcrumb",
-  },
-  {
-    number: "3",
-    title: "button",
-    url: "/ui/actions/button",
-  },
-  {
-    number: "4",
-    title: "checkbox",
-    url: "/ui/forms/checkbox",
-  },
-  {
-    number: "5",
-    title: "dialog",
-    url: "/ui/overlays/dialog",
-  },
-];
-
 const _blocks = [
   {
-    number: "5",
+    number: "6",
     title: "blog",
-    url: "/sections/blog",
+    url: "https://blocks.cnippet.dev/sections/blog",
   },
   {
-    number: "3",
+    number: "4",
     title: "contact",
-    url: "/sections/contact",
+    url: "https://blocks.cnippet.dev/sections/contact",
   },
   {
-    number: "3",
+    number: "5",
     title: "feature",
-    url: "/sections/feature",
+    url: "https://blocks.cnippet.dev/sections/feature",
   },
   {
-    number: "3",
+    number: "8",
     title: "hero",
-    url: "/sections/hero",
+    url: "https://blocks.cnippet.dev/sections/hero",
   },
 ];
 
@@ -165,6 +122,7 @@ export default function Hero() {
                             <Link
                               className="font-medium text-sm capitalize hover:underline sm:text-base"
                               href={item.url}
+                              target="_blank"
                             >
                               {item.title === "process"
                                 ? "How it works"

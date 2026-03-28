@@ -16,18 +16,18 @@ export const appConfig = {
       label: "Changelog",
     },
   ],
-  ogImage: "https://coss.com/og.jpg",
-  url: "https://coss.com/ui",
+  ogImage: "https://ui.cnippet.dev/og.jpg",
+  url: "https://ui.cnippet.dev",
 };
 
 export const siteConfig = {
-  description: "cnippet.dev- the everything but AI company.",
+  description: "Accessible, composable React components built on Base UI and styled with Tailwind CSS.",
   links: {
     github: "https://github.com/cnippet-dev/ui-cnippet",
-    twitter: "",
+    twitter: "https://x.com/cnippetui",
   },
-  name: "coss.com",
-  ogImage: "https://coss.com/og.jpg",
+  name: "cnippet.dev",
+  ogImage: "https://ui.cnippet.dev/og.jpg",
   products: [
     {
       href: "/",
@@ -48,5 +48,5 @@ export const siteConfig = {
       // upcoming: true,
     },
   ],
-  url: "https://coss.com",
+  url: "https://cnippet.dev",
 };
