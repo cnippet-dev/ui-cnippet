@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-carousel-5",
+  "type": "registry:block",
+  "description": "Basic carousel",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-5.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "carousel"
+  ]
+}

@@ -1,5 +1,7 @@
 "use client";
 
+import { fadeUpBlur } from "cnippet-aos";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,10 +23,14 @@ export default function SiteHeader() {
     <header
       className={`relative px-4 md:px-0 dark:bg-sidebar ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-999 bg-sidebar" : ""}`}
     >
-      <div
+      <motion.div
         className={`z-999 mx-auto flex h-20 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container" : "max-w-6xl"}`}
+        {...fadeUpBlur({ duration: 0.25, scroll: false, y: 10 })}
       >
-        <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
+        <motion.div
+          className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]"
+          {...fadeUpBlur({ delay: 0.1, duration: 0.5, scroll: false, y: 10 })}
+        >
           <Link aria-label="Home" href="/">
             cnippet{" "}
             <span className="text-muted-foreground/72 hover:text-muted-foreground">
@@ -35,9 +41,12 @@ export default function SiteHeader() {
           <Badge size="sm" variant="secondary">
             Alpha
           </Badge>
-        </div>
+        </motion.div>
 
-        <div className="flex items-center">
+        <motion.div
+          className="flex items-center"
+          {...fadeUpBlur({ delay: 0.2, duration: 0.5, scroll: false, y: 10 })}
+        >
           <div className="flex items-center gap-2">
             <MainNav className="hidden lg:flex" items={appConfig.navItems} />
             <CommandMenu navItems={appConfig.navItems} tree={pageTree} />
@@ -48,8 +57,8 @@ export default function SiteHeader() {
             <GitHubLink />
             <ModeSwitcher />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <BorderBottomWithDots />
     </header>

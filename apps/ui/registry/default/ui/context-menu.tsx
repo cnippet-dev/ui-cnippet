@@ -137,14 +137,14 @@ function ContextMenuContent({
 
 export {
   ContextMenu,
-  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuPopup,
   ContextMenuPortal,
   ContextMenuPositioner,
-  ContextMenuPopup,
-  ContextMenuContent,
-  ContextMenuItem,
   ContextMenuSeparator,
-  ContextMenuGroup,
-  ContextMenuLabel,
   ContextMenuShortcut,
+  ContextMenuTrigger,
 };

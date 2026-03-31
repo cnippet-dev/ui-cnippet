@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { source, docSource } from "@/lib/source";
+import { docSource, source } from "@/lib/source";
 
 const BASE_URL = "https://ui.cnippet.dev";
 
@@ -15,12 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Docs pages (from fumadocs docSource)
-  const docsRoutes: MetadataRoute.Sitemap = docSource.getPages().map((page) => ({
-    changeFrequency: "weekly" as const,
-    lastModified: new Date(),
-    priority: 0.7,
-    url: `${BASE_URL}${page.url}`,
-  }));
+  const docsRoutes: MetadataRoute.Sitemap = docSource
+    .getPages()
+    .map((page) => ({
+      changeFrequency: "weekly" as const,
+      lastModified: new Date(),
+      priority: 0.7,
+      url: `${BASE_URL}${page.url}`,
+    }));
 
   // UI component pages (from fumadocs source)
   const uiRoutes: MetadataRoute.Sitemap = source.getPages().map((page) => ({

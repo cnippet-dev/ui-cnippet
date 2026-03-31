@@ -526,7 +526,12 @@
 .dark .dot-center {
   border: solid 1px #8b8b8b;
   background-color: #4b4b4b;
-  box-shadow: oklch(0.145 0 0) 0px 0px 0px 4px;
+  box-shadow: color-mix(
+      in srgb,
+      var(--color-zinc-900) 32%,
+      var(--color-zinc-950)
+    )
+    0px 0px 0px 4px;
 }
 
 .database {

@@ -257,9 +257,9 @@ function AnchoredToasts() {
 }
 
 export {
-  ToastProvider,
-  type ToastPosition,
-  toastManager,
   AnchoredToastProvider,
   anchoredToastManager,
+  type ToastPosition,
+  ToastProvider,
+  toastManager,
 };

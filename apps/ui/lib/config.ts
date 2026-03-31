@@ -21,7 +21,8 @@ export const appConfig = {
 };
 
 export const siteConfig = {
-  description: "Accessible, composable React components built on Base UI and styled with Tailwind CSS.",
+  description:
+    "Accessible, composable React components built on Base UI and styled with Tailwind CSS.",
   links: {
     github: "https://github.com/cnippet-dev/ui-cnippet",
     twitter: "https://x.com/cnippetui",

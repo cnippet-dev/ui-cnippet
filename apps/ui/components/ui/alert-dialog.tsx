@@ -138,16 +138,16 @@ function AlertDialogClose(props: AlertDialogPrimitive.Close.Props) {
 
 export {
   AlertDialog,
-  AlertDialogPortal,
   AlertDialogBackdrop,
   AlertDialogBackdrop as AlertDialogOverlay,
-  AlertDialogTrigger,
+  AlertDialogClose,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
   AlertDialogPopup,
   AlertDialogPopup as AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
+  AlertDialogPortal,
   AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogClose,
+  AlertDialogTrigger,
   AlertDialogViewport,
 };

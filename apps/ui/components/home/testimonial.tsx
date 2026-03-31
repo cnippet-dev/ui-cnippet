@@ -1,75 +1,112 @@
-import { BorderBottomWithDots } from "../grid-design";
+"use client";
+import { fadeUpBlur } from "cnippet-aos";
+import { motion } from "motion/react";
+import {
+  BorderBottomWithDots,
+  BorderTopWithDots,
+} from "@/components/grid-design";
 
-export default function Hero() {
+const testimonials = [
+  {
+    avatar: "AK",
+    company: "Vercel",
+    name: "Alex Kim",
+    quote:
+      "Switching from Radix to Base UI felt daunting, but Cnippet UI made the migration seamless. The components are rock-solid and fully accessible out of the box.",
+    role: "Frontend Engineer",
+  },
+  {
+    avatar: "MR",
+    company: "Linear",
+    name: "Maria Rodriguez",
+    quote:
+      "The copy-paste approach is genius. We own every line of code, and the Tailwind-first styling fits perfectly into our existing design system.",
+    role: "Design Engineer",
+  },
+  {
+    avatar: "DP",
+    company: "Stripe",
+    name: "Daniel Park",
+    quote:
+      "The layered architecture — primitives, particles, and atoms — lets us pick exactly the right abstraction level for each use case.",
+    role: "Staff Engineer",
+  },
+  {
+    avatar: "SN",
+    company: "Supabase",
+    name: "Sophie Nguyen",
+    quote:
+      "We replaced our entire component library with Cnippet UI in a weekend. The CLI makes adding components as easy as running a single command.",
+    role: "Full-Stack Developer",
+  },
+  {
+    avatar: "JT",
+    company: "Resend",
+    name: "James Torres",
+    quote:
+      "Like shadcn/ui but built on Base UI — that's exactly what we needed. The accessibility and keyboard navigation work flawlessly.",
+    role: "Product Engineer",
+  },
+  {
+    avatar: "LW",
+    company: "Cal.com",
+    name: "Lisa Wang",
+    quote:
+      "The documentation is excellent and every component is AI-friendly. Our team can reason about and modify components with confidence.",
+    role: "Lead Developer",
+  },
+];
+
+export default function Testimonial() {
   return (
-    <section>
-      <div className="relative">
-        <section className="px-4 md:px-0">
-          <div className="relative mx-auto max-w-6xl overflow-hidden border-neutral-200 border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8 dark:border-neutral-800">
-            <div className="mb-10 text-center sm:mb-14">
-              <h1 className="mb-3 font-figtree font-medium text-2xl text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
-                Developers love building with Cnippet UI
-              </h1>
-              <p className="mx-auto max-w-xl text-muted-foreground text-sm sm:text-base">
-                Here&apos;s what developers say about our components
-              </p>
-            </div>
+    <section className="relative">
+      <div className="relative px-4 md:px-0">
+        <BorderTopWithDots />
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  avatar: "AK",
-                  company: "Vercel",
-                  name: "Alex Kim",
-                  quote:
-                    "Switching from Radix to Base UI felt daunting, but Cnippet UI made the migration seamless. The components are rock-solid and fully accessible out of the box.",
-                  role: "Frontend Engineer",
-                },
-                {
-                  avatar: "MR",
-                  company: "Linear",
-                  name: "Maria Rodriguez",
-                  quote:
-                    "The copy-paste approach is genius. We own every line of code, and the Tailwind-first styling fits perfectly into our existing design system.",
-                  role: "Design Engineer",
-                },
-                {
-                  avatar: "DP",
-                  company: "Stripe",
-                  name: "Daniel Park",
-                  quote:
-                    "The layered architecture — primitives, particles, and atoms — lets us pick exactly the right abstraction level for each use case.",
-                  role: "Staff Engineer",
-                },
-                {
-                  avatar: "SN",
-                  company: "Supabase",
-                  name: "Sophie Nguyen",
-                  quote:
-                    "We replaced our entire component library with Cnippet UI in a weekend. The CLI makes adding components as easy as running a single command.",
-                  role: "Full-Stack Developer",
-                },
-                {
-                  avatar: "JT",
-                  company: "Resend",
-                  name: "James Torres",
-                  quote:
-                    "Like shadcn/ui but built on Base UI — that's exactly what we needed. The accessibility and keyboard navigation work flawlessly.",
-                  role: "Product Engineer",
-                },
-                {
-                  avatar: "LW",
-                  company: "Cal.com",
-                  name: "Lisa Wang",
-                  quote:
-                    "The documentation is excellent and every component is AI-friendly. Our team can reason about and modify components with confidence.",
-                  role: "Lead Developer",
-                },
-              ].map((testimonial) => (
-                <div
-                  className="rounded-xl border border-neutral-200 bg-neutral-100 p-5 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900/60"
-                  key={testimonial.name}
-                >
+        <div className="mx-auto flex max-w-6xl items-center border-x px-4 pt-6 pb-4">
+          <div className="relative flex w-full flex-col justify-between gap-2 md:flex-row md:items-center">
+            <motion.h2
+              className="font-normal text-2xl uppercase sm:text-3xl md:text-6xl"
+              {...fadeUpBlur({
+                delay: 0.1,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
+              Testimonials
+            </motion.h2>
+            <motion.p
+              className="text-neutral-400 text-xs md:w-72 md:text-right"
+              {...fadeUpBlur({
+                delay: 0.2,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
+              Here&apos;s what developers say about our components
+            </motion.p>
+          </div>
+        </div>
+
+        <BorderBottomWithDots />
+      </div>
+
+      <div className="relative px-4 md:px-0">
+        <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                {...fadeUpBlur({
+                  delay: 0.1 + index * 0.08,
+                  duration: 0.5,
+                  scroll: true,
+                  y: 20,
+                })}
+              >
+                <div className="rounded-xl border border-neutral-200 bg-neutral-100 p-5 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900/60">
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-neutral-200 font-medium text-foreground text-sm dark:bg-neutral-700 dark:text-white">
                       {testimonial.avatar}
@@ -99,11 +136,10 @@ export default function Hero() {
                     ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
-        <BorderBottomWithDots />
+        </div>
       </div>
     </section>
   );

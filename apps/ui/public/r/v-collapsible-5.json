@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.cnippet.dev/schema/registry-item.json",
+  "name": "v-collapsible-5",
+  "type": "registry:block",
+  "description": "Basic collapsible",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-5.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ]
+}

@@ -30,6 +30,7 @@
       "!**/apps/ui/public/",
       "!**/apps/ui/registry/__index__.tsx",
       "!**/apps/ui/registry.json",
+      "!**/apps/ui/public/r",
       "!**/packages/ui/src/components",
       "!**/packages/ui/src/lib",
       "!**/packages/ui/src/hooks"

@@ -1,3 +1,9 @@
+"use client";
+
+import { fadeUpBlur } from "cnippet-aos";
+import { motion } from "motion/react";
+import Link from "next/link";
+
 function Badge({
   badgeText,
   badgeLink,
@@ -48,39 +54,75 @@ export default function Hero() {
   return (
     <section>
       <div className="relative px-4 pt-1.5 md:px-0">
-        <div className="mx-auto max-w-6xl border-x px-2 md:px-0">
+        <motion.div
+          className="mx-auto max-w-6xl border-x px-2 md:px-0"
+          {...fadeUpBlur({ duration: 0.25, scroll: false, y: 10 })}
+        >
           <div className="mx-auto max-w-3xl py-32 text-center">
-            <div className="mb-4">
+            <motion.div
+              className="mb-4"
+              {...fadeUpBlur({
+                delay: 0.1,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
               <Badge
                 badgeLink="/docs/introduction"
                 badgeLinkText="Learn more"
                 badgeText="Now available for Enterprise"
+                position="center"
               />
-            </div>
+            </motion.div>
 
-            <h1 className="text-balance font-medium text-4xl text-foreground sm:text-5xl lg:text-6xl">
+            <motion.h1
+              className="text-balance font-normal text-4xl text-foreground sm:text-5xl lg:text-6xl"
+              {...fadeUpBlur({
+                delay: 0.2,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
               Ship stunning interfaces faster with Cnippet UI.
-            </h1>
-            <p className="mx-auto mt-4 mb-8 max-w-xl text-balance text-lg text-muted-foreground">
+            </motion.h1>
+            <motion.p
+              className="mx-auto mt-4 mb-8 max-w-xl text-balance text-lg text-muted-foreground"
+              {...fadeUpBlur({
+                delay: 0.3,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
               Build accessible, composable React components with Base UI and
               Tailwind CSS. Copy, paste, and make it yours.
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <a
+            </motion.p>
+            <motion.div
+              className="flex items-center justify-center gap-4"
+              {...fadeUpBlur({
+                delay: 0.4,
+                duration: 0.5,
+                scroll: true,
+                y: 20,
+              })}
+            >
+              <Link
                 className="inline-flex h-9 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none border-[0.5px] border-white/10 bg-primary px-4 py-2 font-medium text-primary-foreground text-sm shadow-black/15 shadow-md transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                href={"/docs/get-started"}
+                href="/docs/get-started"
               >
                 Get Started
-              </a>
-              <a
+              </Link>
+              <Link
                 className="inline-flex h-9 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none border border-transparent bg-card px-4 py-2 font-medium text-sm shadow-black/15 shadow-sm ring-1 ring-foreground/10 transition-colors duration-200 hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 dark:ring-foreground/15 dark:hover:bg-muted/50"
-                href={"/ui/actions/button"}
+                href="/ui/actions/button"
               >
                 Browse Components
-              </a>
-            </div>
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
