@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["radio group"],
+  "name": "v-radio-group-5",
   "description": "radio-group",
+  "registryDependencies": [
+    "radio-group"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-radio-group-5.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-radio-group-5",
-  "registryDependencies": ["radio-group"],
+  "categories": [
+    "radio group"
+  ],
   "type": "registry:block"
 }

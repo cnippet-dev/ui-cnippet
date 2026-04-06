@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["number field"],
+  "name": "v-number-field-10",
   "description": "number-field",
+  "registryDependencies": [
+    "number-field"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-number-field-10.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-number-field-10",
-  "registryDependencies": ["number-field"],
+  "categories": [
+    "number field"
+  ],
   "type": "registry:block"
 }

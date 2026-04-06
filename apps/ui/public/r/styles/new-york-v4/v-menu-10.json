@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["menu"],
+  "name": "v-menu-10",
   "description": "menu",
+  "registryDependencies": [
+    "menu"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-menu-10.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-menu-10",
-  "registryDependencies": ["menu"],
+  "categories": [
+    "menu"
+  ],
   "type": "registry:block"
 }

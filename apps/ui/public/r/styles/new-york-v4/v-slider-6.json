@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["slider"],
+  "name": "v-slider-6",
   "description": "slider",
+  "registryDependencies": [
+    "slider"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-slider-6.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-slider-6",
-  "registryDependencies": ["slider"],
+  "categories": [
+    "slider"
+  ],
   "type": "registry:block"
 }

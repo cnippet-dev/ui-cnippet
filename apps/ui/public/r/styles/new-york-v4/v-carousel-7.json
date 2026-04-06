@@ -1,18 +1,20 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["carousel"],
+  "name": "v-carousel-7",
   "description": "Basic carousel",
+  "registryDependencies": [],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-carousel-7.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-carousel-7",
-  "registryDependencies": [],
+  "categories": [
+    "carousel"
+  ],
   "type": "registry:block"
 }

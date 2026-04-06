@@ -1,18 +1,20 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["preview card"],
+  "name": "v-preview-card-4",
   "description": "preview card",
+  "registryDependencies": [],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-preview-card-4.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-preview-card-4",
-  "registryDependencies": [],
+  "categories": [
+    "preview card"
+  ],
   "type": "registry:block"
 }

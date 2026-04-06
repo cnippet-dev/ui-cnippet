@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["breadcrumb"],
+  "name": "v-breadcrumb-5",
   "description": "Basic breadcrumb",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-breadcrumb-5.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-breadcrumb-5",
-  "registryDependencies": ["breadcrumb"],
+  "categories": [
+    "breadcrumb"
+  ],
   "type": "registry:block"
 }

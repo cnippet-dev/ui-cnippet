@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["form"],
+  "name": "v-form-7",
   "description": "form",
+  "registryDependencies": [
+    "form"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-form-7.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-form-7",
-  "registryDependencies": ["form"],
+  "categories": [
+    "form"
+  ],
   "type": "registry:block"
 }

@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["sheet"],
+  "name": "v-sheet-4",
   "description": "sheet",
+  "registryDependencies": [
+    "sheet"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-sheet-4.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-sheet-4",
-  "registryDependencies": ["sheet"],
+  "categories": [
+    "sheet"
+  ],
   "type": "registry:block"
 }

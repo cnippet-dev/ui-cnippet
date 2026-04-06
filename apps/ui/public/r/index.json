@@ -57,7 +57,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/accordion.tsx",
@@ -98,7 +100,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/alert-dialog.tsx",
@@ -109,7 +113,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/autocomplete.tsx",
@@ -117,11 +123,16 @@
       }
     ],
     "name": "autocomplete",
-    "registryDependencies": ["input", "scroll-area"],
+    "registryDependencies": [
+      "input",
+      "scroll-area"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/avatar.tsx",
@@ -152,7 +163,9 @@
         "warning-foreground": "var(--color-amber-700)"
       }
     },
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/badge.tsx",
@@ -163,7 +176,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/breadcrumb.tsx",
@@ -182,7 +197,9 @@
         "destructive-foreground": "var(--color-red-700)"
       }
     },
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/button.tsx",
@@ -193,7 +210,10 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["react-day-picker", "date-fns"],
+    "dependencies": [
+      "react-day-picker",
+      "date-fns"
+    ],
     "files": [
       {
         "path": "ui/calendar.tsx",
@@ -201,7 +221,9 @@
       }
     ],
     "name": "calendar",
-    "registryDependencies": ["button"],
+    "registryDependencies": [
+      "button"
+    ],
     "type": "registry:ui"
   },
   {
@@ -216,7 +238,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["embla-carousel-react"],
+    "dependencies": [
+      "embla-carousel-react"
+    ],
     "files": [
       {
         "path": "ui/carousel.tsx",
@@ -228,7 +252,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["recharts"],
+    "dependencies": [
+      "recharts"
+    ],
     "files": [
       {
         "path": "ui/chart.tsx",
@@ -240,7 +266,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/checkbox.tsx",
@@ -251,7 +279,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/checkbox-group.tsx",
@@ -262,7 +292,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/collapsible.tsx",
@@ -273,7 +305,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/combobox.tsx",
@@ -281,11 +315,16 @@
       }
     ],
     "name": "combobox",
-    "registryDependencies": ["input", "scroll-area"],
+    "registryDependencies": [
+      "input",
+      "scroll-area"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/context-menu.tsx",
@@ -297,7 +336,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/dialog.tsx",
@@ -305,7 +346,9 @@
       }
     ],
     "name": "dialog",
-    "registryDependencies": ["scroll-area"],
+    "registryDependencies": [
+      "scroll-area"
+    ],
     "type": "registry:ui"
   },
   {
@@ -327,7 +370,9 @@
         "destructive-foreground": "var(--color-red-700)"
       }
     },
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/field.tsx",
@@ -338,7 +383,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/fieldset.tsx",
@@ -349,7 +396,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/form.tsx",
@@ -370,7 +419,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/group.tsx",
@@ -378,11 +429,15 @@
       }
     ],
     "name": "group",
-    "registryDependencies": ["separator"],
+    "registryDependencies": [
+      "separator"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/input.tsx",
@@ -400,7 +455,10 @@
       }
     ],
     "name": "input-group",
-    "registryDependencies": ["input", "textarea"],
+    "registryDependencies": [
+      "input",
+      "textarea"
+    ],
     "type": "registry:ui"
   },
   {
@@ -432,7 +490,9 @@
         "destructive-foreground": "var(--color-red-700)"
       }
     },
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/menu.tsx",
@@ -443,7 +503,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/meter.tsx",
@@ -454,7 +516,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/number-field.tsx",
@@ -462,7 +526,9 @@
       }
     ],
     "name": "number-field",
-    "registryDependencies": ["label"],
+    "registryDependencies": [
+      "label"
+    ],
     "type": "registry:ui"
   },
   {
@@ -473,11 +539,15 @@
       }
     ],
     "name": "pagination",
-    "registryDependencies": ["button"],
+    "registryDependencies": [
+      "button"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/popover.tsx",
@@ -488,7 +558,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/preview-card.tsx",
@@ -499,7 +571,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/progress.tsx",
@@ -510,7 +584,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/radio-group.tsx",
@@ -521,7 +597,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/scroll-area.tsx",
@@ -532,7 +610,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/select.tsx",
@@ -543,7 +623,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/separator.tsx",
@@ -554,7 +636,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/sheet.tsx",
@@ -562,7 +646,9 @@
       }
     ],
     "name": "sheet",
-    "registryDependencies": ["scroll-area"],
+    "registryDependencies": [
+      "scroll-area"
+    ],
     "type": "registry:ui"
   },
   {
@@ -608,7 +694,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/slider.tsx",
@@ -629,7 +717,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/switch.tsx",
@@ -650,7 +740,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/tabs.tsx",
@@ -661,7 +753,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/textarea.tsx",
@@ -672,7 +766,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/toast.tsx",
@@ -680,11 +776,15 @@
       }
     ],
     "name": "toast",
-    "registryDependencies": ["button"],
+    "registryDependencies": [
+      "button"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/toggle.tsx",
@@ -695,7 +795,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/toggle-group.tsx",
@@ -703,11 +805,16 @@
       }
     ],
     "name": "toggle-group",
-    "registryDependencies": ["separator", "toggle"],
+    "registryDependencies": [
+      "separator",
+      "toggle"
+    ],
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/toolbar.tsx",
@@ -718,7 +825,9 @@
     "type": "registry:ui"
   },
   {
-    "dependencies": ["@base-ui/react"],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "files": [
       {
         "path": "ui/tooltip.tsx",

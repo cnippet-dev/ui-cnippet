@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["textarea"],
+  "name": "v-textarea-1",
   "description": "textarea",
+  "registryDependencies": [
+    "textarea"
+  ],
   "files": [
     {
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" />;\n}\n",
       "path": "registry/default/variants/v-textarea-1.tsx",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" />;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-textarea-1",
-  "registryDependencies": ["textarea"],
+  "categories": [
+    "textarea"
+  ],
   "type": "registry:block"
 }

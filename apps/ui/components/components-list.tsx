@@ -275,7 +275,7 @@ const Components = () => {
                             size="lg"
                             type="text"
                           />
-                          <span className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground text-sm peer-disabled:opacity-50">
+                          <span className="pointer-events-none absolute inset-e-0 inset-y-0 flex items-center justify-center pe-3 text-muted-foreground text-sm peer-disabled:opacity-50">
                             .dev
                           </span>
                         </div>

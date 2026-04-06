@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["switch"],
+  "name": "v-switch-8",
   "description": "Basic switch",
+  "registryDependencies": [
+    "switch"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-switch-8.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-switch-8",
-  "registryDependencies": ["switch"],
+  "categories": [
+    "switch"
+  ],
   "type": "registry:block"
 }

@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["number field"],
+  "name": "v-number-field-1",
   "description": "number-field",
+  "registryDependencies": [
+    "number-field"
+  ],
   "files": [
     {
-      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
       "path": "registry/default/variants/v-number-field-1.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-number-field-1",
-  "registryDependencies": ["number-field"],
+  "categories": [
+    "number field"
+  ],
   "type": "registry:block"
 }

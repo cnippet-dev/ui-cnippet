@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["accordion"],
+  "name": "v-accordion-10",
   "description": "Multi level accordion",
+  "registryDependencies": [
+    "accordion"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-accordion-10.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-accordion-10",
-  "registryDependencies": ["accordion"],
+  "categories": [
+    "accordion"
+  ],
   "type": "registry:block"
 }

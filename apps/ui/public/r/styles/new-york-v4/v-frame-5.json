@@ -1,18 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "categories": ["frame"],
+  "name": "v-frame-5",
   "description": "frame",
+  "registryDependencies": [
+    "frame"
+  ],
   "files": [
     {
-      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "path": "registry/default/variants/v-frame-5.tsx",
+      "content": "export default function Components() {\n  return <div>Components</div>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
     "className": ""
   },
-  "name": "v-frame-5",
-  "registryDependencies": ["frame"],
+  "categories": [
+    "frame"
+  ],
   "type": "registry:block"
 }
