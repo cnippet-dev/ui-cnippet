@@ -69,7 +69,7 @@ function CommandInput({
           {...props}
         />
       </div>
-      <div className="pointer-events-none absolute inset-s-0 inset-y-0 flex items-center justify-center ps-[calc(--spacing(3)-1px)] text-muted-foreground">
+      <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-[calc(--spacing(3)-1px)] text-muted-foreground">
         <RiSearch2Line />
       </div>
     </div>

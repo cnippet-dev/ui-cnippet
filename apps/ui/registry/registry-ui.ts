@@ -12,14 +12,18 @@ export const ui: Registry["items"] = [
       "badge",
       "breadcrumb",
       "button",
+      "calendar",
       "card",
       "carousel",
       "chart",
       "checkbox",
       "checkbox-group",
       "collapsible",
+      "command",
       "combobox",
+      "context-menu",
       "dialog",
+      "drawer",
       "empty",
       "field",
       "fieldset",
@@ -28,6 +32,7 @@ export const ui: Registry["items"] = [
       "group",
       "input",
       "input-group",
+      "input-otp",
       "kbd",
       "label",
       "menu",
@@ -275,6 +280,18 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: ["cmdk", "@remixicon/react"],
+    files: [
+      {
+        path: "ui/command.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "command",
+    registryDependencies: ["dialog"],
+    type: "registry:ui",
+  },
+  {
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -308,6 +325,18 @@ export const ui: Registry["items"] = [
     ],
     name: "dialog",
     registryDependencies: ["scroll-area"],
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/drawer.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "drawer",
+    registryDependencies: ["button", "scroll-area"],
     type: "registry:ui",
   },
   {
@@ -403,6 +432,18 @@ export const ui: Registry["items"] = [
     ],
     name: "input-group",
     registryDependencies: ["input", "textarea"],
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["input-otp"],
+    files: [
+      {
+        path: "ui/input-otp.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "input-otp",
+    registryDependencies: ["separator"],
     type: "registry:ui",
   },
   {
