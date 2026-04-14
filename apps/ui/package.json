@@ -2,6 +2,7 @@
   "dependencies": {
     "@base-ui/react": "^1.3.0",
     "@next/third-parties": "^16.2.1",
+    "@radix-ui/react-use-controllable-state": "^1.2.2",
     "@remixicon/react": "^4.9.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
@@ -55,11 +56,11 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "check-types": "tsc --noEmit",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf .source",
     "cnippet:build": "cnippet build",
     "dev": "next dev",
     "format": "biome format --write",
-    "check-types": "tsc --noEmit",
     "lint": "biome check",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
     "start": "next start"

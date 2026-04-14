@@ -1,15 +1,10 @@
-"use client";
-import { fadeUpBlur } from "cnippet-aos";
-import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  BorderBottomWithDots,
-  BorderTopWithDots,
-} from "@/components/grid-design";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
-const _blocks = [
+const blocks = [
   {
     number: "6",
     title: "blog",
@@ -34,153 +29,94 @@ const _blocks = [
 
 export default function Blocks() {
   return (
-    <section className="relative">
-      <div className="relative px-4 md:px-0">
-        <BorderTopWithDots />
-
-        <div className="mx-auto flex max-w-6xl items-center border-x px-4 pt-6 pb-4">
-          <div className="relative flex w-full flex-col justify-between gap-2 md:flex-row md:items-center">
-            <motion.h2
-              className="font-normal text-2xl uppercase sm:text-3xl md:text-6xl"
-              {...fadeUpBlur({
-                delay: 0.1,
-                duration: 0.5,
-                scroll: true,
-                y: 20,
-              })}
-            >
-              Blocks
-            </motion.h2>
-            <motion.p
-              className="text-neutral-400 text-xs md:w-72 md:text-right"
-              {...fadeUpBlur({
-                delay: 0.2,
-                duration: 0.5,
-                scroll: true,
-                y: 20,
-              })}
-            >
-              Pre-built sections, full pages, and production-ready templates
-              that reuse Cnippet UI primitives.
-            </motion.p>
-          </div>
+    <div className="relative mt-20 max-w-full">
+      <div>
+        <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
+          Blocks
         </div>
 
-        <BorderBottomWithDots />
+        <div className="relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
+          <h2 className="text-balance px-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl lg:text-6xl">
+            From components to complete pages
+          </h2>
+        </div>
+
+        <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 dark:text-white/40">
+          Hero sections, pricing tables, dashboards, authentication flows, and
+          more — all customizable with Tailwind.
+        </div>
+
+        <Separator />
       </div>
 
-      <div className="relative px-4 md:px-0">
-        <div className="relative mx-auto max-w-6xl overflow-hidden border-x px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-          <div className="space-y-6">
-            <motion.div
-              className="space-y-4 sm:space-y-6"
-              {...fadeUpBlur({
-                delay: 0.1,
-                duration: 0.5,
-                scroll: true,
-                y: 20,
-              })}
+      <div className="relative mt-10 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+          {blocks.map((item, index) => (
+            <div
+              className="relative border-gray-950/5 border-r border-b px-2 py-4 max-sm:px-4 dark:border-white/10"
+              key={`${item.title}-${index}`}
             >
-              <div className="relative mr-auto w-fit bg-foreground/5 p-1">
-                <div
-                  aria-hidden="true"
-                  className="absolute top-1 left-1 size-0.75 rounded-full bg-foreground/20"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute top-1 right-1 size-0.75 rounded-full bg-foreground/20"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute bottom-1 left-1 size-0.75 rounded-full bg-foreground/20"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute right-1 bottom-1 size-0.75 rounded-full bg-foreground/20"
-                />
-                <div className="relative flex h-fit items-center gap-2 px-3">
-                  <span className="text-sm text-title">Cnippet Blocks</span>
-                  <span className="block h-3 w-px bg-foreground/5" />
-                  <a
-                    className="text-primary text-sm"
-                    href="https://blocks.cnippet.dev/"
-                  >
-                    Visit site
-                  </a>
-                </div>
-              </div>
-              <h3 className="font-figtree font-medium text-2xl leading-tight sm:text-3xl md:text-4xl">
-                From components to complete pages in minutes
-              </h3>
-              <p className="max-w-3xl text-muted-foreground text-sm leading-relaxed sm:text-base">
-                Hero sections, pricing tables, dashboards, authentication flows,
-                and more — all customizable with Tailwind.
-              </p>
-            </motion.div>
-
-            <div className="grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-              {_blocks.map((item, index) => (
-                <motion.div
-                  key={`${item.title}-${index}`}
-                  {...fadeUpBlur({
-                    delay: 0.1 + index * 0.08,
-                    duration: 0.5,
-                    scroll: true,
-                    y: 20,
-                  })}
-                >
-                  <div className="space-y-3 text-center">
-                    <Link
-                      className="peer relative inline-flex overflow-hidden rounded-lg border transition-all hover:border-primary/50 sm:flex dark:border-zinc-700/80 dark:hover:border-zinc-600"
-                      href={`https://blocks.cnippet.dev/sections/${item.title}`}
-                      target="_blank"
-                    >
-                      <Image
-                        alt={`${item.title} block preview`}
-                        className="aspect-video h-44 w-full object-cover"
-                        height={1080}
-                        loading="lazy"
-                        src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
-                        width={1920}
-                      />
-                    </Link>
-
-                    <div className="[&_a]:peer-hover:underline">
-                      <h3>
-                        <Link
-                          className="font-medium text-sm capitalize hover:underline sm:text-base"
-                          href={item.url}
-                          target="_blank"
-                        >
-                          {item.title}
-                        </Link>
-                      </h3>
-                      <p className="text-muted-foreground text-xs sm:text-[13px]">
-                        {item.number} Components
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="group relative mx-auto max-w-6xl overflow-hidden border-x">
-          <Button
-            className="relative not-disabled:inset-shadow-none w-full rounded-none border-none py-5 text-lg text-white shadow-none dark:bg-neutral-900"
-            render={
               <Link
-                href="https://blocks.cnippet.dev/?ref=ui.cnippet.dev"
+                className="peer relative inline-flex w-full overflow-hidden"
+                href={item.url}
                 target="_blank"
-              />
-            }
-          >
-            <span className="relative z-10">Explore Blocks</span>
-            <div className="absolute right-0 bottom-0 left-0 z-0 h-full w-0 bg-neutral-800 transition-all duration-500 ease-in-out group-hover:w-full" />
-          </Button>
+              >
+                <Image
+                  alt={`${item.title} block preview`}
+                  className="aspect-video h-52 w-full object-cover"
+                  height={1080}
+                  loading="lazy"
+                  src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
+                  width={1920}
+                />
+              </Link>
+
+              <div className="mt-3 flex items-center justify-between [&_a]:peer-hover:underline">
+                <h3>
+                  <Link
+                    className="text-lg capitalize hover:underline"
+                    href={item.url}
+                    target="_blank"
+                  >
+                    {item.title}
+                  </Link>
+                </h3>
+                <p className="font-mono text-black/40 text-xs dark:text-white/40">
+                  {item.number} blocks
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+
+      <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
+        <Button
+          className="text-balance rounded-none py-2 tracking-tight"
+          render={
+            <Link
+              href="https://blocks.cnippet.dev/?ref=ui.cnippet.dev"
+              target="_blank"
+            />
+          }
+        >
+          Explore Blocks <ArrowRight />
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function Separator({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        "relative flex h-7 w-full border-edge border-y lg:h-10",
+        "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
+        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
+        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
+        className,
+      )}
+    />
   );
 }

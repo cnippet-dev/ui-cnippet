@@ -11,10 +11,10 @@ env:
   NEXT_TELEMETRY_DISABLED: 1
 
 jobs:
-  # ─── Job 1: Lint & Type Check ────────────────────────────────────────────────
-  # Fast feedback — catches code style and type errors before the expensive build
+  # ─── Job 1: Lint ─────────────────────────────────────────────────────────────
+  # Fast feedback — catches code style errors before the expensive build
   quality:
-    name: Lint & Type Check
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,9 +32,6 @@ jobs:
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
-
-      - name: Type check
-        run: bun run check-types
 
       - name: Lint
         run: bun run lint

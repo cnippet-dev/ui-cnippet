@@ -9,6 +9,10 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
         protocol: "https",
       },
+      {
+        hostname: "images.cnippet.dev",
+        protocol: "https",
+      },
     ],
   },
   typescript: {
