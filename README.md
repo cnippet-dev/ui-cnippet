@@ -1,63 +1,61 @@
-# Cnippet UI
+<div align="center">
+  <h1>Cnippet UI</h1>
+  <p>
+    Accessible, copy-paste React components built on Base UI + Tailwind CSS.<br />
+    Like shadcn/ui — but powered by Base UI instead of Radix.
+  </p>
 
-Accessible and composable React components built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/). Like shadcn/ui, but powered by Base UI — copy-paste friendly so you fully own the code.
+  [![GitHub stars](https://img.shields.io/github/stars/cnippet-dev/ui-cnippet?style=flat-square)](https://github.com/cnippet-dev/ui-cnippet)
+  [![npm version](https://img.shields.io/npm/v/cnippet?style=flat-square)](https://www.npmjs.com/package/cnippet)
+  [![CI](https://github.com/cnippet-dev/ui-cnippet/actions/workflows/ci.yml/badge.svg)](https://github.com/cnippet-dev/ui-cnippet/actions/workflows/ci.yml)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](./CONTRIBUTING.md)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square)](https://www.typescriptlang.org/)
 
-> **Early Access** — cnippet ui is in active development. Base UI is also in beta, so expect breaking changes as both projects evolve.
+  **[Live Demo](https://play.cnippet.dev)** · **[Documentation](https://ui.cnippet.dev)** · **[Discord](https://discord.gg/cnippet)** · **[Twitter](https://twitter.com/cnippetui)**
+</div>
 
-## Features
+---
 
-- **Accessible by Default** — WAI-ARIA / WCAG 2.1 AA compliant with keyboard navigation and screen reader support
-- **Fully Customizable** — Tailwind-first styling with sensible defaults, override any style to match your brand
-- **Blazing Performance** — Tree-shakeable components with minimal bundle size
-- **TypeScript Native** — Full type safety with comprehensive IntelliSense
-- **Next.js Optimized** — Works with App Router and Server Components
-- **Copy-Paste Friendly** — No black-box dependencies, you own every line of code
-- **AI Friendly** — Clear, readable, and predictable code that language models can reason about
+> Built on [Base UI](https://base-ui.com/) — fully accessible, copy-paste friendly, and production-ready.
 
-## Architecture
+## Why Cnippet UI?
 
-cnippet ui uses a layered approach:
+| Feature | shadcn/ui | Cnippet UI |
+|---------|-----------|------------|
+| Primitive layer | Radix UI | **Base UI** (MUI team) |
+| Styling | Tailwind CSS | **Tailwind CSS v4** |
+| Copy-paste | Yes | **Yes** |
+| Accessible | Yes | **Yes (WAI-ARIA / WCAG 2.1 AA)** |
+| AI-friendly code | Partial | **Optimized for LLMs** |
+| Bundle size | Medium | **Minimal (tree-shakeable)** |
 
-- **Primitives** — Unstyled, accessible building blocks powered by Base UI (the foundation)
-- **Particles** — Pre-assembled components like auth forms, tables, and date pickers (the patterns)
-- **Atoms** — API-enhanced particles that integrate with external data and services (the integrations)
-
-## Getting Started
-
-### Prerequisites
-
-A React project with [Tailwind CSS v4](https://tailwindcss.com) installed.
-
-### Install all components
+## Quick Start
 
 ```bash
+# Add a single component
+npx cnippet@latest add button
+
+# Add all components at once
 npx cnippet@latest add ui
-```
 
-With optimized color tokens (recommended):
-
-```bash
+# With optimized color tokens (recommended)
 npx cnippet@latest add ui @cnippet/colors-zinc
 ```
 
-This installs both the UI components and the default zinc-based color system, which provides crisp, contrasted borders and enhanced visual depth.
+Then import:
 
-### Add individual components
+```tsx
+import { Button } from '@/components/ui/button'
 
-Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI command, or you can manually copy the source code into your project (e.g., `components/ui/button.tsx`).
+export default function App() {
+  return <Button variant="solid">Click me</Button>
+}
+```
 
-### Manual installation
-
-1. Find a component on the docs site
-2. Copy the code from the **Code** tab
-3. Create a new file in your project and paste the code
-4. Install any dependencies listed on the component page
-5. Import and use the component
-
-## Components
+## 40+ Components · 8 Categories
 
 ### Actions
-
 | Component | Description |
 |-----------|-------------|
 | Button | Primary action trigger with multiple variants |
@@ -67,7 +65,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Toolbar | Container for grouping action controls |
 
 ### Data Display
-
 | Component | Description |
 |-----------|-------------|
 | Accordion | Expandable/collapsible content sections |
@@ -77,7 +74,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Table | Structured data display |
 
 ### Feedback
-
 | Component | Description |
 |-----------|-------------|
 | Alert | Contextual feedback messages |
@@ -89,7 +85,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Toast | Temporary notification messages |
 
 ### Forms
-
 | Component | Description |
 |-----------|-------------|
 | Checkbox | Single checkbox input |
@@ -107,7 +102,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Textarea | Multi-line text input |
 
 ### Layout
-
 | Component | Description |
 |-----------|-------------|
 | Avatar | User profile image/initials |
@@ -118,15 +112,7 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Scroll Area | Custom scrollbar container |
 | Separator | Visual divider |
 
-### Media
-
-| Component | Description |
-|-----------|-------------|
-| Avatar | User profile image display |
-| Carousel | Scrollable content slider |
-
 ### Navigation
-
 | Component | Description |
 |-----------|-------------|
 | Breadcrumb | Page hierarchy navigation |
@@ -135,7 +121,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Tabs | Tabbed content navigation |
 
 ### Overlays
-
 | Component | Description |
 |-----------|-------------|
 | Alert Dialog | Confirmation dialog requiring user action |
@@ -146,7 +131,6 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Tooltip | Hover information display |
 
 ### Pickers
-
 | Component | Description |
 |-----------|-------------|
 | Autocomplete | Input with suggestion dropdown |
@@ -154,37 +138,56 @@ Each component page on [ui.cnippet.dev](https://ui.cnippet.dev) provides a CLI c
 | Combobox | Searchable select input |
 | Select | Dropdown selection |
 
+## Architecture
+
+cnippet ui uses a layered approach:
+
+- **Primitives** — Unstyled, accessible building blocks powered by Base UI (the foundation)
+- **Particles** — Pre-assembled components like auth forms, tables, and date pickers (the patterns)
+- **Atoms** — API-enhanced particles that integrate with external data and services (the integrations)
+
+This is a [Next.js](https://nextjs.org) app within a [Turborepo](https://turbo.build/) monorepo, documented with [Fumadocs](https://fumadocs.vercel.app/).
+
 ## Styling
 
-Components use a design token system based on CSS variables, compatible with shadcn/ui tokens. Additional tokens are provided for granular control:
+Components use a design token system based on CSS variables, compatible with shadcn/ui tokens. Additional tokens:
 
 - `--destructive-foreground` — Destructive action foreground
 - `--info` / `--info-foreground` — Info state colors
 - `--success` / `--success-foreground` — Success state colors
 - `--warning` / `--warning-foreground` — Warning state colors
 
-Install the optimized color system via CLI:
-
-```bash
-npx cnippet@latest add colors-zinc
-```
-
 See the [Styling guide](https://ui.cnippet.dev/docs/styling) for full details.
 
-## Migrating from Radix UI / shadcn
+## Migrating from shadcn/ui
 
-If you're migrating from **Radix UI** or **shadcn/ui**, cnippet ui provides a clear migration path. Each component includes comparison notes and examples for translating Radix equivalents to Base UI, preserving accessibility, behaviors, and API patterns.
+cnippet ui is inspired by shadcn/ui. If you're migrating from **Radix UI** or **shadcn/ui**, each component includes comparison notes and examples for translating equivalents to Base UI, preserving accessibility, behaviors, and API patterns.
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
+
+## Built on the Shoulders of Giants
+
+cnippet ui would not exist without these incredible projects:
+
+- [Base UI](https://base-ui.com/) — The accessible primitive layer
+- [shadcn/ui](https://ui.shadcn.com/) — Inspiration for the copy-paste model
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- [Fumadocs](https://fumadocs.vercel.app/) — Documentation framework
+- [Radix UI](https://radix-ui.com/) — Original accessible primitives inspiration
 
 ## Development
 
-This is a [Next.js](https://nextjs.org) app within a Turborepo monorepo, documented with [Fumadocs](https://fumadocs.vercel.app/).
-
 ```bash
-pnpm dev
+git clone https://github.com/cnippet-dev/ui-cnippet.git
+cd cnippet-ui
+bun install
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the documentation site.
 
 ## License
 
-MIT
+MIT — see [LICENSE](./LICENSE) for details.
