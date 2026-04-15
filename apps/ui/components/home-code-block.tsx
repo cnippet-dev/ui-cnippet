@@ -36,52 +36,57 @@ const codeExamples: Record<
 > = {
   core: [
     {
-      code: `import { streamText } from "ai";
-import { browserAI } from "@browser-ai/core";
+      code: `# Install all UI components with optimized colors
+npx cnippet@latest add ui @cnippet/colors-zinc
 
-const result = streamText({
-  model: browserAI(),
-  prompt: 'Hello, how are you',
-});
-
-for await (const chunk of result.textStream) {
-  console.log(chunk);
-}`,
-      filename: "example.ts",
-      language: "typescript",
+# Or add individual components
+npx cnippet@latest add button
+npx cnippet@latest add dialog
+npx cnippet@latest add tabs`,
+      filename: "terminal",
+      language: "bash",
     },
   ],
   "transformers-js": [
     {
-      code: `import { streamText } from "ai";
-import { transformersJS } from "@browser-ai/transformers-js";
+      code: `// 1. Copy the component source into your project
+//    e.g. components/ui/button.tsx
 
-const result = streamText({
-  model: transformersJS("HuggingFaceTB/SmolLM2-360M-Instruct"),
-  prompt: 'Hello, how are you',
-});
+// 2. Install the peer dependency
+npm install @base-ui-components/react
 
-for await (const chunk of result.textStream) {
-  console.log(chunk);
+// 3. Import and use
+import { Button } from "@/components/ui/button";
+
+export default function App() {
+  return <Button variant="outline">Click me</Button>;
 }`,
-      filename: "example.ts",
+      filename: "setup.tsx",
       language: "typescript",
     },
   ],
   "web-llm": [
     {
-      code: `import { streamText } from "ai";
-import { webLLM } from "@browser-ai/web-llm";
+      code: `import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
-const result = streamText({
-  model: webLLM("Qwen3-0.6B-q0f16-MLC"),
-  prompt: 'Hello, how are you',
-});
-
-for await (const chunk of result.textStream) {
-  console.log(chunk);
+export function ConfirmDialog() {
+  return (
+    <Dialog>
+      <Dialog.Trigger render={<Button />}>
+        Open Dialog
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Backdrop />
+        <DialogContent>
+          <DialogTitle>Are you sure?</DialogTitle>
+          <p>This action cannot be undone.</p>
+        </DialogContent>
+      </Dialog.Portal>
+    </Dialog>
+  );
 }`,
-      filename: "example.ts",
+      filename: "confirm-dialog.tsx",
       language: "typescript",
     },
   ],

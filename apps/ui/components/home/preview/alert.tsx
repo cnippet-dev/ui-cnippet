@@ -1,3 +1,4 @@
+import { InfoIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -18,16 +19,13 @@ export default function AlertPreview() {
 
       {/* Info — hidden, fades in on hover */}
       <Alert
-        className="absolute inset-0 w-52 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="absolute inset-0 w-56 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         variant="info"
       >
-        <AlertTitle>
-          <Skeleton className="h-2 w-12 dark:bg-blue-600" />
-        </AlertTitle>
-        <AlertDescription>
-          <div className="space-y-2 pt-2">
-            <Skeleton className="h-2 w-full dark:bg-blue-200" />
-          </div>
+        <InfoIcon className="pt-1" />
+        <AlertTitle>Heads up!</AlertTitle>
+        <AlertDescription className="text-[9px]">
+          Describe what can be done about it here.
         </AlertDescription>
       </Alert>
     </div>

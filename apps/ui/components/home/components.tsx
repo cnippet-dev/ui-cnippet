@@ -6,6 +6,11 @@ import { Button } from "../ui/button";
 import { AccordionPreview } from "./preview/accordion";
 import AlertPreview from "./preview/alert";
 import AvatarPreview from "./preview/avatar";
+import BadgePreview from "./preview/badge";
+import BreadcrumbPreview from "./preview/breadcrumb";
+import ButtonPreview from "./preview/button";
+import CheckboxPreview from "./preview/checkbox";
+import DialogPreview from "./preview/dialog";
 
 const items = [
   {
@@ -50,6 +55,57 @@ const items = [
   },
 ];
 
+const items2 = [
+  {
+    number: "3",
+    preview: <AccordionPreview />,
+    title: "accordion",
+    url: "/ui/overlays/accordion",
+  },
+  {
+    number: "3",
+    preview: <AlertPreview />,
+    title: "alert",
+    url: "/ui/overlays/alert",
+  },
+  {
+    number: "3",
+    preview: <AvatarPreview />,
+    title: "avatar",
+    url: "/ui/overlays/avatar",
+  },
+  {
+    number: "3",
+    preview: <BadgePreview />,
+    title: "badge",
+    url: "/ui/overlays/badge",
+  },
+  {
+    number: "2",
+    preview: <BreadcrumbPreview />,
+    title: "breadcrumb",
+    url: "/ui/navigation/breadcrumb",
+  },
+  {
+    number: "2",
+    preview: <ButtonPreview />,
+    title: "button",
+    url: "/ui/actions/button",
+  },
+  {
+    number: "4",
+    preview: <CheckboxPreview />,
+    title: "checkbox",
+    url: "/ui/forms/checkbox",
+  },
+  {
+    number: "5",
+    preview: <DialogPreview />,
+    title: "dialog",
+    url: "/ui/overlays/dialog",
+  },
+];
+
 export default function Components() {
   return (
     <div className="relative mt-20 max-w-full">
@@ -74,35 +130,15 @@ export default function Components() {
 
       <div className="relative mt-10 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          <div className="m-4 flex items-center justify-center bg-neutral-900 p-4">
-            <AccordionPreview />
-          </div>
-          <div className="group m-4 flex items-center justify-center bg-neutral-900 p-4">
-            <AlertPreview />
-          </div>
-          <div className="group m-4 flex items-center justify-center bg-neutral-900 p-4">
-            <AvatarPreview />
-          </div>
-          {items.map((item, index) => (
+          {items2.map((item, index) => (
             <div
-              className="relative border-gray-950/5 border-r border-b px-2 py-4 max-sm:px-4 dark:border-white/10"
-              key={`${item.title}-${index}`}
+              className="group relative cursor-pointer"
+              key={`${item.title}`}
             >
-              <Link
-                className="peer relative inline-flex w-full overflow-hidden"
-                href={item.url}
-              >
-                <Image
-                  alt={`${item.title} component preview`}
-                  className="aspect-video h-60 w-full object-cover"
-                  height={1080}
-                  loading="eager"
-                  src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1765176526/${item.title}.png`}
-                  width={1920}
-                />
-              </Link>
-
-              <div className="mt-3 flex items-center justify-between [&_a]:peer-hover:underline">
+              <div className="m-4 flex h-60 items-center justify-center bg-neutral-900 p-4">
+                {item.preview}
+              </div>
+              <div className="mt-3 flex items-center justify-between px-4 [&_a]:peer-hover:underline">
                 <h3>
                   <Link
                     className="text-lg capitalize hover:underline"
