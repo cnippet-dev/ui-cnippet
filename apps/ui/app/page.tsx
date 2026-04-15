@@ -35,7 +35,6 @@ import Blocks from "@/components/home/blocks";
 import Components from "@/components/home/components";
 import { HomeCodeSection } from "@/components/home-code-section";
 import SiteHeader from "@/components/shared/header/site-header";
-import SponsorGrid from "@/components/sponsor-grid";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -78,14 +77,6 @@ export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const sponsors = [
-  {
-    href: "https://developer.chrome.com/",
-    logo: ChromeLogo,
-    name: "Chrome for Developers",
-  },
-];
-
 export default function HomePage() {
   return (
     <>
@@ -119,7 +110,7 @@ export default function HomePage() {
                 className="text-balance rounded-none py-2 tracking-tight"
                 render={<Link href="/docs" />}
               >
-                Get started building
+                Get started
               </Button>
 
               <Button
@@ -133,7 +124,7 @@ export default function HomePage() {
                 }
                 variant="secondary"
               >
-                Vercel AI SDK
+                Browse Components
                 <MoveUpRight className="size-3.5" />
               </Button>
             </div>
@@ -142,40 +133,6 @@ export default function HomePage() {
 
             <Components />
 
-            <div className="relative mt-20 max-w-full">
-              <div className="relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10 dark:before:bg-white/10">
-                <h2 className="max-w-2xl text-balance px-2 font-medium text-4xl tracking-tighter max-sm:px-4">
-                  Backed by the creators
-                </h2>
-              </div>
-              <div className="relative flex items-center px-2 font-mono text-black/40 text-xs/6 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:text-white/40 dark:after:bg-white/10">
-                <p className="text-balance">
-                  This project is proudly sponsored by the creators behind the{" "}
-                  <a
-                    className="underline"
-                    href="https://developer.chrome.com/docs/ai/built-in"
-                    rel="noopener sponsored"
-                    target="_blank"
-                  >
-                    Built-in AI
-                  </a>{" "}
-                  initiative, and is part of the{" "}
-                  <a
-                    className="underline"
-                    href="https://vercel.com/oss"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Vercel OSS Program
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div className="relative flex h-10 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:text-white/40 dark:after:bg-white/10" />
-              <SponsorGrid sponsors={sponsors} />
-            </div>
-            {/* Testimonials */}
             <div className="relative mt-20 max-w-full">
               <div className="flex h-4 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 max-sm:px-4 dark:text-white/40">
                 Testimonials

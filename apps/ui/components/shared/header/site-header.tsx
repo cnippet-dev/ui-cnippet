@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 import { CommandMenu } from "@/components/command-menu";
 import { appConfig } from "@/lib/config";
@@ -14,6 +16,7 @@ import { ModeSwitcher } from "./mode-switcher";
 export default function SiteHeader() {
   const pageTree = source.pageTree;
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
 
   return (
     <header
@@ -32,10 +35,21 @@ export default function SiteHeader() {
         {/* Logo */}
         <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">
-            cnippet{" "}
+            {/* cnippet{" "}
             <span className="text-muted-foreground/72 hover:text-muted-foreground">
               ui
-            </span>
+            </span> */}
+            <Image
+              alt=""
+              className="size-12 opacity-90"
+              height={500}
+              src={
+                resolvedTheme === "dark"
+                  ? "/images/logo-dark.png"
+                  : "/images/logo-light.png"
+              }
+              width={500}
+            />
           </Link>
         </div>
 

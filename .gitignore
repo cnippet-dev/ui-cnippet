@@ -40,3 +40,4 @@ yarn-error.log*
 .vscode
 .claude
 upgrade.md
+create-issues.sh

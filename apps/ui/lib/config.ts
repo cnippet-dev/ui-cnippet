@@ -8,6 +8,10 @@ export const appConfig = {
       label: "Docs",
     },
     {
+      href: "/components",
+      label: "Components",
+    },
+    {
       href: "/ui/actions/button",
       label: "Core",
     },
