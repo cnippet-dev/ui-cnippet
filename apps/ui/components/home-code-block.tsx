@@ -16,17 +16,17 @@ const packages: { id: PackageId; name: string; description: string }[] = [
   {
     description: "Chrome & Edge browser AI",
     id: "core",
-    name: "@browser-ai/core",
+    name: "Cnippet CLI",
   },
   {
     description: "Transformers.js models",
     id: "transformers-js",
-    name: "@browser-ai/transformers-js",
+    name: "Manual Setup",
   },
   {
     description: "WebLLM models",
     id: "web-llm",
-    name: "@browser-ai/web-llm",
+    name: "Usage",
   },
 ];
 

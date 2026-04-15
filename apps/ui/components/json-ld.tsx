@@ -1,5 +1,5 @@
 export function SiteJsonLd() {
-  const jsonLd = {
+  const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     description:
@@ -8,11 +8,30 @@ export function SiteJsonLd() {
     url: "https://ui.cnippet.dev",
   };
 
+  const softwareApp = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    applicationCategory: "DeveloperApplication",
+    author: { "@type": "Person", name: "Deepak Negi" },
+    description:
+      "Accessible React components built on Base UI and Tailwind CSS",
+    name: "Cnippet UI",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    operatingSystem: "Web",
+    url: "https://ui.cnippet.dev",
+  };
+
   return (
-    <script
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      type="application/ld+json"
-    />
+    <>
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApp) }}
+        type="application/ld+json"
+      />
+    </>
   );
 }
 

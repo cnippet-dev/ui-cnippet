@@ -12,19 +12,19 @@ import type { PackageId } from "./home-code-section";
 
 const commands: { id: PackageId; label: string; code: string }[] = [
   {
-    code: "npm i @browser-ai/core",
+    code: "npx cnippet@latest add ui",
     id: "core",
-    label: "@browser-ai/core",
+    label: "Cnippet CLI",
   },
   {
-    code: "npm i @browser-ai/transformers-js",
+    code: "npm install @base-ui/react",
     id: "transformers-js",
-    label: "@browser-ai/transformers-js",
+    label: "Manual Setup",
   },
   {
-    code: "npm i @browser-ai/web-llm",
+    code: `import { Button } from "@/components/ui/button";`,
     id: "web-llm",
-    label: "@browser-ai/web-llm",
+    label: "Usage",
   },
 ];
 

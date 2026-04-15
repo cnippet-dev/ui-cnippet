@@ -6,9 +6,9 @@ import HomeSnippetInstall from "./home-snippet-install";
 import { CornerPlus } from "./ui/corner-plus";
 
 const PACKAGES = [
-  { id: "core", label: "@browser-ai/core" },
-  { id: "transformers-js", label: "@browser-ai/transformers-js" },
-  { id: "web-llm", label: "@browser-ai/web-llm" },
+  { id: "core", label: "Cnippet CLI" },
+  { id: "transformers-js", label: "Manual Setup" },
+  { id: "web-llm", label: "Usage" },
 ] as const;
 
 export type PackageId = (typeof PACKAGES)[number]["id"];
