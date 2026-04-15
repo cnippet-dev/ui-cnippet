@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -12,7 +11,7 @@ import ButtonPreview from "./preview/button";
 import CheckboxPreview from "./preview/checkbox";
 import DialogPreview from "./preview/dialog";
 
-const items = [
+const _items = [
   {
     number: "2",
     title: "accordion",
@@ -130,12 +129,12 @@ export default function Components() {
 
       <div className="relative mt-10 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {items2.map((item, index) => (
+          {items2.map((item, _index) => (
             <div
               className="group relative cursor-pointer"
               key={`${item.title}`}
             >
-              <div className="m-4 flex h-60 items-center justify-center bg-neutral-900 p-4">
+              <div className="m-4 flex h-60 items-center justify-center bg-neutral-100 p-4 dark:bg-neutral-900">
                 {item.preview}
               </div>
               <div className="mt-3 flex items-center justify-between px-4 [&_a]:peer-hover:underline">
@@ -174,8 +173,8 @@ function Separator({ className }: { className?: string }) {
       className={cn(
         "relative flex h-7 w-full border-edge border-y lg:h-10",
         "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
-        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
-        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
+        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border/50! before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
+        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border/50! after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
         className,
       )}
     />

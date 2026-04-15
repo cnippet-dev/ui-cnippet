@@ -16,7 +16,7 @@ export function AccordionPreview() {
 
   return (
     <Accordion
-      className="mx-auto rounded-2xl bg-neutral-800 p-4 md:w-48"
+      className="mx-auto rounded-2xl bg-neutral-200/50 p-4 md:w-48 dark:bg-neutral-800"
       onValueChange={setValue}
       value={value}
     >

@@ -1,16 +1,12 @@
 "use client";
 
-import { fadeUpBlur } from "cnippet-aos";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { CommandMenu } from "@/components/command-menu";
-import { BorderBottomWithDots } from "@/components/grid-design";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { appConfig } from "@/lib/config";
 import { source } from "@/lib/source";
+import { cn } from "@/lib/utils";
 import { GitHubLink } from "./github-link";
 import { MainNav } from "./main-nav";
 import { ModeSwitcher } from "./mode-switcher";
@@ -21,46 +17,40 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`relative px-4 md:px-0 dark:bg-sidebar ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "sticky top-0 z-999 bg-sidebar" : ""}`}
+      className={cn(
+        "grid grid-cols-1 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-auto",
+        pathname.startsWith("/ui") || pathname.startsWith("/docs")
+          ? "sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
+          : "",
+      )}
     >
-      <motion.div
-        className={`z-999 mx-auto flex h-20 w-full items-center justify-between gap-3 border-x px-4 ${pathname.startsWith("/ui") || pathname.startsWith("/docs") ? "container" : "max-w-6xl"}`}
-        {...fadeUpBlur({ duration: 0.25, scroll: false, y: 10 })}
-      >
-        <motion.div
-          className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]"
-          {...fadeUpBlur({ delay: 0.1, duration: 0.5, scroll: false, y: 10 })}
-        >
+      {/* Left gutter */}
+      <div className="col-start-1 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
+
+      {/* Header content */}
+      <div className="relative flex h-14 items-center justify-between gap-3 px-2 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10">
+        {/* Logo */}
+        <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">
             cnippet{" "}
             <span className="text-muted-foreground/72 hover:text-muted-foreground">
               ui
             </span>
           </Link>
+        </div>
 
-          <Badge size="sm" variant="secondary">
-            Alpha
-          </Badge>
-        </motion.div>
+        {/* Navigation */}
+        <div className="flex items-center gap-2">
+          <MainNav className="hidden lg:flex" items={appConfig.navItems} />
+          <CommandMenu navItems={appConfig.navItems} tree={pageTree} />
+          <span className="ml-3 h-5 w-px bg-gray-950/10 max-md:hidden dark:bg-white/15" />
+          <GitHubLink />
+          <ModeSwitcher />
+        </div>
+      </div>
 
-        <motion.div
-          className="flex items-center"
-          {...fadeUpBlur({ delay: 0.2, duration: 0.5, scroll: false, y: 10 })}
-        >
-          <div className="flex items-center gap-2">
-            <MainNav className="hidden lg:flex" items={appConfig.navItems} />
-            <CommandMenu navItems={appConfig.navItems} tree={pageTree} />
-            <Separator
-              className="ml-3 h-5 max-md:hidden"
-              orientation="vertical"
-            />
-            <GitHubLink />
-            <ModeSwitcher />
-          </div>
-        </motion.div>
-      </motion.div>
-
-      <BorderBottomWithDots />
+      {/* Right gutter */}
+      <div className="col-start-3 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
     </header>
   );
 }

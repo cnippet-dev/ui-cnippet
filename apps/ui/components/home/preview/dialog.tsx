@@ -19,13 +19,13 @@ export default function DialogPreview() {
   return (
     <div className="relative">
       <div>
-        <Skeleton className="flex h-6 w-12 items-center justify-center rounded-sm px-3 transition-opacity duration-300 group-hover:opacity-0 dark:bg-neutral-700">
-          <div className="h-1.5 w-full rounded-md dark:bg-neutral-900" />
+        <Skeleton className="flex h-6 w-12 items-center justify-center rounded-sm px-3 transition-opacity duration-300 group-hover:opacity-0">
+          <div className="h-1.5 w-full rounded-md bg-neutral-300 dark:bg-neutral-900" />
         </Skeleton>
-        <Skeleton className="mt-4 ml-4 flex h-20 w-32 flex-col items-start justify-start space-y-2 rounded-sm p-3 px-3 transition-opacity duration-300 group-hover:opacity-0 dark:bg-neutral-800">
-          <div className="h-1.5 w-10 rounded-md dark:bg-neutral-900" />
-          <div className="h-1.5 w-20 rounded-md dark:bg-neutral-900" />
-          <Skeleton className="mt-auto flex h-4 w-12 items-center justify-center rounded-sm px-3 transition-opacity duration-300 group-hover:opacity-0 dark:bg-neutral-700" />
+        <Skeleton className="mt-4 ml-4 flex h-20 w-32 flex-col items-start justify-start space-y-2 rounded-sm p-3 px-3 transition-opacity duration-300 group-hover:opacity-0">
+          <div className="h-1.5 w-10 rounded-md bg-neutral-300 dark:bg-neutral-900" />
+          <div className="h-1.5 w-20 rounded-md bg-neutral-300 dark:bg-neutral-900" />
+          <Skeleton className="mt-auto flex h-4 w-12 items-center justify-center rounded-sm px-3 transition-opacity duration-300 group-hover:opacity-0" />
         </Skeleton>
       </div>
 

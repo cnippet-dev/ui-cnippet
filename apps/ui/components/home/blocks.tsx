@@ -51,42 +51,45 @@ export default function Blocks() {
 
       <div className="relative mt-10 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {blocks.map((item, index) => (
-            <div
-              className="relative border-gray-950/5 border-r border-b px-2 py-4 max-sm:px-4 dark:border-white/10"
-              key={`${item.title}-${index}`}
-            >
-              <Link
-                className="peer relative inline-flex w-full overflow-hidden"
-                href={item.url}
-                target="_blank"
+          {blocks.map((item, index) => {
+            const k = `${item.title}-${index}`;
+            return (
+              <div
+                className="relative border-gray-950/5 border-r border-b px-2 py-4 max-sm:px-4 dark:border-white/10"
+                key={k}
               >
-                <Image
-                  alt={`${item.title} block preview`}
-                  className="aspect-video h-52 w-full object-cover"
-                  height={1080}
-                  loading="lazy"
-                  src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
-                  width={1920}
-                />
-              </Link>
+                <Link
+                  className="peer relative inline-flex w-full overflow-hidden"
+                  href={item.url}
+                  target="_blank"
+                >
+                  <Image
+                    alt={`${item.title} block preview`}
+                    className="aspect-video h-52 w-full object-cover"
+                    height={1080}
+                    loading="lazy"
+                    src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
+                    width={1920}
+                  />
+                </Link>
 
-              <div className="mt-3 flex items-center justify-between [&_a]:peer-hover:underline">
-                <h3>
-                  <Link
-                    className="text-lg capitalize hover:underline"
-                    href={item.url}
-                    target="_blank"
-                  >
-                    {item.title}
-                  </Link>
-                </h3>
-                <p className="font-mono text-black/40 text-xs dark:text-white/40">
-                  {item.number} blocks
-                </p>
+                <div className="mt-3 flex items-center justify-between [&_a]:peer-hover:underline">
+                  <h3>
+                    <Link
+                      className="text-lg capitalize hover:underline"
+                      href={item.url}
+                      target="_blank"
+                    >
+                      {item.title}
+                    </Link>
+                  </h3>
+                  <p className="font-mono text-black/40 text-xs dark:text-white/40">
+                    {item.number} blocks
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -113,8 +116,8 @@ function Separator({ className }: { className?: string }) {
       className={cn(
         "relative flex h-7 w-full border-edge border-y lg:h-10",
         "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
-        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
-        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
+        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border/50! before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
+        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border/50! after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
         className,
       )}
     />

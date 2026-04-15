@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function BreadcrumbPreview() {
   return (
     <div className="relative w-52 space-y-4">
-      <div className="w-52 rounded-md bg-neutral-800 p-2 transition-opacity duration-300 group-hover:opacity-0">
+      <div className="w-52 rounded-md bg-white p-2 shadow-sm transition-opacity duration-300 group-hover:opacity-0 dark:bg-neutral-800">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -36,12 +36,12 @@ export default function BreadcrumbPreview() {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="absolute inset-0 h-fit rounded-md bg-neutral-700/95 p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 h-fit rounded-md bg-neutral-100 p-2 opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 dark:bg-neutral-700/95">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
               <svg
-                className="size-4 text-white"
+                className="size-4 text-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
