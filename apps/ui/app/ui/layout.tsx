@@ -1,22 +1,6 @@
-import { DocsSidebar } from "@/components/docs-sidebar";
-import SiteHeader from "@/components/shared/header/site-header";
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { source } from "@/lib/source";
-import { SidebarProvider } from "@/registry/default/ui/sidebar";
 
-export default function DocsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <>
-      <SiteHeader />
-      <main className="flex flex-1 flex-col bg-sidebar px-4 md:px-0">
-        <SidebarProvider className="container min-h-min flex-1 items-start border-x px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:--spacing(4)]">
-          <DocsSidebar tree={source.pageTree} />
-          <div className="h-full w-full">{children}</div>
-        </SidebarProvider>
-      </main>
-    </>
-  );
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <DocsLayout tree={source.pageTree}>{children}</DocsLayout>;
 }
