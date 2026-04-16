@@ -1,3 +1,4 @@
+// biome-ignore-all lint: reason for ignoring
 "use client";
 
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
@@ -558,7 +559,6 @@ export const CodeBlockContent = ({
 
     highlight(children as string, language, themes)
       .then(setHtml)
-      // biome-ignore lint/suspicious/noConsole: "it's fine"
       .catch(console.error);
   }, [children, themes, syntaxHighlighting, language]);
 
@@ -569,7 +569,6 @@ export const CodeBlockContent = ({
   return (
     <div
       className="font-mono"
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: "Kinda how Shiki works"
       dangerouslySetInnerHTML={{ __html: html }}
       {...props}
     />

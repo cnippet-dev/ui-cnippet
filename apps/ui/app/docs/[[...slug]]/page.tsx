@@ -78,7 +78,7 @@ export default async function Page(props: {
       data-slot="docs"
     >
       <div className="w-full pt-5">
-        <div className="-m-px px-6 bg-neutral-900/50 pb-10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] md:rounded-lg md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
+        <div className="-m-px bg-neutral-900/50 px-6 pb-10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] md:rounded-lg md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
           <div className="mx-auto w-full max-w-3xl pt-8">
             <div className="flex min-w-0 flex-1 flex-col gap-8">
               <div className="flex flex-col gap-2">

@@ -20,7 +20,7 @@ export type EaseType =
   | "backInOut"
   | "anticipate";
 
-type ZoomOrigin = "center" | "top" | "bottom";
+// type ZoomOrigin = "center" | "top" | "bottom";
 
 type PerspectiveOrigin = "left" | "right" | "top" | "bottom";
 

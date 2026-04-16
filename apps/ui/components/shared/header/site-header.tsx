@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
 
 import { CommandMenu } from "@/components/command-menu";
 import { appConfig } from "@/lib/config";
@@ -16,7 +15,6 @@ import { ModeSwitcher } from "./mode-switcher";
 export default function SiteHeader() {
   const pageTree = source.pageTree;
   const pathname = usePathname();
-  const { resolvedTheme } = useTheme();
 
   return (
     <header
@@ -41,13 +39,16 @@ export default function SiteHeader() {
             </span> */}
             <Image
               alt=""
-              className="size-12 opacity-90"
+              className="size-12 opacity-90 dark:hidden"
               height={500}
-              src={
-                resolvedTheme === "dark"
-                  ? "/images/logo-dark.png"
-                  : "/images/logo-light.png"
-              }
+              src="/images/logo-light.png"
+              width={500}
+            />
+            <Image
+              alt=""
+              className="hidden size-12 opacity-90 dark:block"
+              height={500}
+              src="/images/logo-dark.png"
               width={500}
             />
           </Link>

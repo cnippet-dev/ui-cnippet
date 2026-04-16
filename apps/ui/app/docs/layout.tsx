@@ -53,7 +53,7 @@ function VerticalSeparatorLeft({ className }: { className?: string }) {
   );
 }
 
-function Separator({ className }: { className?: string }) {
+function _Separator({ className }: { className?: string }) {
   return (
     <div
       className={cn(

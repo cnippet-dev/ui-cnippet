@@ -31,8 +31,12 @@
 
 import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
-import Blocks from "@/components/home/blocks";
-import Components from "@/components/home/components";
+
+// import Blocks from "@/components/home/blocks";
+const Blocks = dynamic(() => import("@/components/home/blocks"));
+const Components = dynamic(() => import("@/components/home/components"));
+
+// import Components from "@/components/home/components";
 import { HomeCodeSection } from "@/components/home-code-section";
 import SiteHeader from "@/components/shared/header/site-header";
 import { Button } from "@/components/ui/button";
@@ -50,6 +54,7 @@ const _tweetIds = [
   "1957762133787082766",
 ];
 
+import dynamic from "next/dynamic";
 import type { SVGProps } from "react";
 
 export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (

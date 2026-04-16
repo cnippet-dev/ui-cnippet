@@ -20,11 +20,8 @@ export function ModeSwitcher() {
       title="Toggle theme"
       variant="ghost"
     >
-      {resolvedTheme === "dark" ? (
-        <RiMoonClearFill className="size-4 text-muted-foreground" />
-      ) : (
-        <RiSunLine className="size-4 text-muted-foreground" />
-      )}
+      <RiSunLine className="size-4 text-muted-foreground dark:hidden" />
+      <RiMoonClearFill className="hidden size-4 text-muted-foreground dark:block" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

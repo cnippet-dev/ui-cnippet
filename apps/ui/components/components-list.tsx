@@ -118,7 +118,7 @@ const Components = () => {
           <div className="grid max-w-7xl grid-cols-1 gap-5 pt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {items.map((item, index) => (
               <motion.div
-                key={`${item.title}-${index}`}
+                key={`${item.title}`}
                 {...fadeUp({
                   delay: 0.5 + index * 0.1,
                   duration: 0.8,
