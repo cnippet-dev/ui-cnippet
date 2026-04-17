@@ -41,3 +41,4 @@ yarn-error.log*
 .claude
 upgrade.md
 create-issues.sh
+playground.md
