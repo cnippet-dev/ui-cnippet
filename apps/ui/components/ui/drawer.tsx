@@ -338,11 +338,7 @@ export function DrawerPanel({
   });
 
   if (scrollable) {
-    return (
-      <ScrollArea className="touch-auto">
-        {content}
-      </ScrollArea>
-    );
+    return <ScrollArea className="touch-auto">{content}</ScrollArea>;
   }
 
   return content;

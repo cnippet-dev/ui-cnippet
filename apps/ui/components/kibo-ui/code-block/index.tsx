@@ -354,7 +354,13 @@ export type CodeBlockSelectProps = ComponentProps<typeof Select>;
 export const CodeBlockSelect = (props: CodeBlockSelectProps) => {
   const { value, onValueChange } = useContext(CodeBlockContext);
 
-  return <Select onValueChange={onValueChange as (value: unknown) => void} value={value} {...props} />;
+  return (
+    <Select
+      onValueChange={onValueChange as (value: unknown) => void}
+      value={value}
+      {...props}
+    />
+  );
 };
 
 export type CodeBlockSelectTriggerProps = ComponentProps<typeof SelectTrigger>;

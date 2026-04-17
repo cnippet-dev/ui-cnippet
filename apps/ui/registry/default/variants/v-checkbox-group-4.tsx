@@ -28,9 +28,7 @@ export default function Particle() {
         name="frameworks"
         render={(props) => <Fieldset {...props} />}
       >
-        <FieldsetLegend className="font-normal">
-          Frameworks
-        </FieldsetLegend>
+        <FieldsetLegend className="font-normal">Frameworks</FieldsetLegend>
         <CheckboxGroup defaultValue={["next"]} disabled={loading}>
           <FieldLabel>
             <Checkbox value="next" />

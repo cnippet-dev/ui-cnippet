@@ -11,7 +11,7 @@ export function ProductsDropdown({ items }: { items: ProductItem[] }) {
     <nav className="flex items-center gap-1">
       {items.map((item) => (
         <Link
-          className="px-2 py-1 text-sm text-muted-foreground hover:text-foreground"
+          className="px-2 py-1 text-muted-foreground text-sm hover:text-foreground"
           href={item.href}
           key={item.label}
         >
