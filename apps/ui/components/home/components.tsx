@@ -59,25 +59,25 @@ const items2 = [
     number: "3",
     preview: <AccordionPreview />,
     title: "accordion",
-    url: "/ui/overlays/accordion",
+    url: "/ui/data/accordion",
   },
   {
     number: "3",
     preview: <AlertPreview />,
     title: "alert",
-    url: "/ui/overlays/alert",
+    url: "/ui/feedback/alert",
   },
   {
     number: "3",
     preview: <AvatarPreview />,
     title: "avatar",
-    url: "/ui/overlays/avatar",
+    url: "/ui/media/avatar",
   },
   {
     number: "3",
     preview: <BadgePreview />,
     title: "badge",
-    url: "/ui/overlays/badge",
+    url: "/ui/feedback/badge",
   },
   {
     number: "2",
@@ -158,7 +158,7 @@ export default function Components() {
       <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
         <Button
           className="text-balance rounded-none py-2 tracking-tight"
-          render={<Link href="/ui/actions/button" />}
+          render={<Link href="/components" />}
         >
           View all components <ArrowRight />
         </Button>

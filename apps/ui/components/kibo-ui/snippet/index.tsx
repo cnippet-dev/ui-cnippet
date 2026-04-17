@@ -37,6 +37,7 @@ export const SnippetHeader = ({ className, ...props }: SnippetHeaderProps) => (
 );
 
 export type SnippetCopyButtonProps = ComponentProps<typeof Button> & {
+  asChild?: boolean;
   value: string;
   onCopy?: () => void;
   onError?: (error: Error) => void;
