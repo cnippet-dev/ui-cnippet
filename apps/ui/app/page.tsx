@@ -1,42 +1,9 @@
-// import dynamic from "next/dynamic";
-
-// const SiteHeader = dynamic(
-//   () => import("@/components/shared/header/site-header"),
-// );
-
-// const Hero = dynamic(() => import("@/components/home/hero"));
-// const Components = dynamic(() => import("@/components/home/components"));
-// const HighlightCode = dynamic(() => import("@/components/home/highlight-code"));
-// const Testimonial = dynamic(() => import("@/components/home/testimonial"));
-// const Blocks = dynamic(() => import("@/components/home/blocks"));
-// const Footer = dynamic(() => import("@/components/shared/footer"));
-
-// import ReactLenis from "lenis/react";
-
-// export default function Page() {
-//   return (
-//     <ReactLenis root>
-//       <SiteHeader />
-//       <main className="dark:bg-sidebar">
-//         <Hero />
-//         <Components />
-//         <HighlightCode />
-//         <Testimonial />
-//         <Blocks />
-//       </main>
-//       <Footer />
-//     </ReactLenis>
-//   );
-// }
-
 import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
 
-// import Blocks from "@/components/home/blocks";
 const Blocks = dynamic(() => import("@/components/home/blocks"));
 const Components = dynamic(() => import("@/components/home/components"));
 
-// import Components from "@/components/home/components";
 import { HomeCodeSection } from "@/components/home-code-section";
 import SiteHeader from "@/components/shared/header/site-header";
 import { Button } from "@/components/ui/button";
@@ -113,20 +80,14 @@ export default function HomePage() {
             <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
               <Button
                 className="text-balance rounded-none py-2 tracking-tight"
-                render={<Link href="/docs" />}
+                render={<Link href="docs/introduction" />}
               >
                 Get started
               </Button>
 
               <Button
                 className="flex gap-2 text-balance rounded-none tracking-tight"
-                render={
-                  <Link
-                    href="https://ai-sdk.dev/docs/introduction"
-                    rel="noopener sponsored"
-                    target="_blank"
-                  />
-                }
+                render={<Link href="/components" />}
                 variant="secondary"
               >
                 Browse Components
@@ -138,7 +99,7 @@ export default function HomePage() {
 
             <Components />
 
-            <div className="relative mt-20 max-w-full">
+            {/* <div className="relative mt-20 max-w-full">
               <div className="flex h-4 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 max-sm:px-4 dark:text-white/40">
                 Testimonials
               </div>
@@ -147,7 +108,7 @@ export default function HomePage() {
                   What developers are saying
                 </h2>
               </div>
-            </div>
+            </div> */}
 
             <Blocks />
           </div>

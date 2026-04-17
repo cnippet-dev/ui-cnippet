@@ -30,7 +30,6 @@ export default function Particle() {
   return (
     <Select
       aria-label="Select framework"
-      className
       items={[...placeholder, ...frontend, ...backend]}
     >
       <SelectTrigger>

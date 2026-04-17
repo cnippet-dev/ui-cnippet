@@ -19,10 +19,10 @@ export default function SiteHeader() {
   return (
     <header
       className={cn(
-        "grid grid-cols-1 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-auto",
+        "grid grid-cols-1 [--gutter-width:2.5rem] md:-mx-4",
         pathname.startsWith("/ui") || pathname.startsWith("/docs")
-          ? "sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
-          : "",
+          ? "sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-4"
+          : "md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-auto",
       )}
     >
       {/* Left gutter */}

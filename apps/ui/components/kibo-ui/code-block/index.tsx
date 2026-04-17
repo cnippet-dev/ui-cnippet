@@ -314,7 +314,7 @@ export const CodeBlockFiles = ({
 };
 
 export type CodeBlockFilenameProps = HTMLAttributes<HTMLDivElement> & {
-  icon?: SVGProps<SVGSVGElement> | React.ComponentType<SVGProps<SVGSVGElement>>;
+  icon?: React.ComponentType<SVGProps<SVGSVGElement>>;
   value?: string;
 };
 
@@ -354,7 +354,13 @@ export type CodeBlockSelectProps = ComponentProps<typeof Select>;
 export const CodeBlockSelect = (props: CodeBlockSelectProps) => {
   const { value, onValueChange } = useContext(CodeBlockContext);
 
-  return <Select onValueChange={onValueChange} value={value} {...props} />;
+  return (
+    <Select
+      onValueChange={onValueChange as (value: unknown) => void}
+      value={value}
+      {...props}
+    />
+  );
 };
 
 export type CodeBlockSelectTriggerProps = ComponentProps<typeof SelectTrigger>;
@@ -410,6 +416,7 @@ export const CodeBlockSelectItem = ({
 );
 
 export type CodeBlockCopyButtonProps = ComponentProps<typeof Button> & {
+  asChild?: boolean;
   onCopy?: () => void;
   onError?: (error: Error) => void;
   timeout?: number;

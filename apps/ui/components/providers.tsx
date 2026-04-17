@@ -1,6 +1,7 @@
+import type { ReactNode } from "react";
 import { PageTransitionPerspective } from "@/components/motion/page-transition";
 
-export function Providers({ children }) {
+export function Providers({ children }: { children: ReactNode }) {
   return (
     <PageTransitionPerspective
       duration={0.6}
