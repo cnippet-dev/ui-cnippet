@@ -1,61 +1,221 @@
 ---
 title: Get Started
-description: A quick guide to adding your first component.
+description: Add your first cnippet ui component in minutes.
 ---
 
-This guide covers the essentials for adding **cnippet ui** components to your React application.
+This guide walks you through adding **cnippet ui** components to your React project. You'll be up and running in less than 5 minutes.
 
 ## Prerequisites
 
-Our components are built with [Tailwind CSS v4](https://tailwindcss.com). Make sure you have a React project set up with Tailwind CSS before you begin.
+Make sure your project meets these requirements:
 
-## Adding Components
+- **React 18+** (Next.js App Router, Remix, Vite — all work)
+- **Tailwind CSS v4** – [Install Tailwind](https://tailwindcss.com/docs/installation)
+- **Node.js 18+** – for the CLI
 
-You can add components **automatically with the CLI** or **manually by copying the files**. Both methods work for primitives, particles, and atoms.
+> No existing Tailwind project? Create one quickly:
+> ```bash
+> # Next.js
+> npx create-next-app@latest my-app --typescript --tailwind
+>
+> # Vite
+> npm create vite@latest my-app -- --template react-ts
+> cd my-app && npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
+> ```
 
-### With the CLI
+## Two ways to add components
 
-Each component page provides a command to add it to your project automatically. The CLI creates the necessary files and installs any dependencies for you.
+You can add components **automatically with the CLI** (recommended) or **manually**.
 
-### Install all UI Components
+### Option 1: CLI (fast & automated)
 
-You can install all **cnippet ui** primitives at once:
+The CLI creates component files, installs dependencies, and sets up CSS variables for you.
+
+#### Add a single component
+
+```bash
+npx cnippet@latest add button
+```
+
+This creates `components/ui/button.tsx` and installs any required packages (e.g., `@base-ui/react`).
+
+#### Add multiple components
+
+```bash
+npx cnippet@latest add button card dialog
+```
+
+#### Add all UI components at once
 
 ```bash
 npx cnippet@latest add ui
 ```
 
-This adds all UI components to your project in one go — button, card, avatar, dialog, tabs, and more.
+Adds all 25+ core components – perfect for starting a new project.
 
-**Recommended**: Install with our optimized color tokens for the best visual results:
+#### Add with color tokens (recommended)
 
 ```bash
 npx cnippet@latest add ui @cnippet/colors-zinc
 ```
 
-This installs both the UI components and our default zinc-based color system, which provides crisp, contrasted borders and enhanced visual depth. See the [Styling](/ui/docs/styling) guide for details about our color system.
+This installs both the components and our default zinc-based color system. The CSS variables are automatically added to your `globals.css`. See the [Styling](/ui/docs/styling) guide for details.
 
-### Manually
+**What the CLI does for you:**
 
-1. **Find a component** on the [Components](/ui/docs) or [Particles](/ui/particles) pages.
-2. **Copy the code** from the **Code** tab.
-3. **Create a new file** in your project (e.g., `components/ui/button.tsx`) and paste the code.
-4. **Install any dependencies** listed on the component's page.
-5. **Import and use** the component in your app.
+- Creates `components/ui/` folder (if missing)
+- Adds the component file with correct imports
+- Installs npm dependencies
+- Updates your CSS with required variables (when using color tokens)
+- No extra config files – your project stays clean
 
-## Styling
+### Option 2: Manual copy (full control)
 
-Components are styled with a design token system defined by CSS variables and implemented with Tailwind CSS. The variables are the same as shadcn/ui, and fully customizable in your global stylesheet (e.g., `app/globals.css`).
+Prefer to copy-paste manually? Here's how:
 
-We've introduced a few additional tokens for more granular control:
+1. Browse the [Components](/ui/docs) page and pick one (e.g., Button).
+2. Click the **Code** tab to see the source.
+3. Copy the entire component code.
+4. Create a new file in your project, e.g., `components/ui/button.tsx`, and paste the code.
+5. Check the component's page for any required dependencies – install them with npm/yarn/pnpm.
+6. Import and use the component:
 
-- `--destructive-foreground`: Used for destructive-outline buttons, destructive menu items, badges, and field errors
-- `--info` and `--info-foreground`: For info-colored badges, toast types, and alerts
-- `--success` and `--success-foreground`: For success-colored badges, toast types, and alerts
-- `--warning` and `--warning-foreground`: For warning-colored badges, toast types, and alerts
+```tsx
+import { Button } from "@/components/ui/button"
 
-**Important**: If you manually import components, you must also import these additional tokens in your CSS file. If you use the CLI, these tokens are automatically configured for you.
+export default function MyComponent() {
+  return <Button variant="outline">Click me</Button>
+}
+```
 
-## Migration from Radix UI
+> **Note:** If you install manually, you must also add the CSS variables (explained below). The CLI does this automatically.
 
-For developers migrating from **Radix UI**, many of our UI primitives include instructions and examples for translating equivalent Radix components to Base UI. This ensures a smooth transition while preserving accessibility, behaviors, and API patterns.
+## Styling and CSS variables
+
+Components use Tailwind CSS classes plus a set of CSS variables for theming (colors, borders, shadows, etc.).
+
+### Base variables (compatible with shadcn/ui)
+
+Add these to your `globals.css`:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+```
+
+### Extra tokens unique to cnippet ui
+
+For richer feedback states (badges, toasts, alerts):
+
+```css
+--info: 201 96% 32%;
+--info-foreground: 210 40% 98%;
+--success: 142 76% 36%;
+--success-foreground: 210 40% 98%;
+--warning: 38 92% 50%;
+--warning-foreground: 210 40% 98%;
+```
+
+### Dark mode support
+
+Add a `.dark` class to your root element (or use `next-themes`) and define dark variables:
+
+```css
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  /* ... copy other variables with dark values ... */
+}
+```
+
+All components include `dark:` modifiers out of the box.
+
+## Verify your setup
+
+After adding a component, test it on a page:
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export default function TestPage() {
+  return (
+    <div className="p-8 space-x-4">
+      <Button>Default</Button>
+      <Button variant="destructive">Delete</Button>
+      <Button variant="outline">Outline</Button>
+    </div>
+  )
+}
+```
+
+If you see styled buttons, everything works. If styles are missing, double-check your CSS variables and Tailwind configuration.
+
+## Troubleshooting
+
+### "Cannot find module '@/components/ui/button'"
+
+Make sure your `tsconfig.json` has the path alias:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+For Next.js, also add to `next.config.js` (if using Turbopack):
+
+```js
+experimental: {
+  turbo: {
+    resolveAlias: { '@': './' }
+  }
+}
+```
+
+### Styles look broken (no borders, weird colors)
+
+You likely missed the CSS variables. Either:
+
+- Run `npx cnippet@latest add ui @cnippet/colors-zinc` to auto-add them, or
+- Manually copy the `:root` and `.dark` variable blocks into your `globals.css`
+
+### CLI command fails
+
+Ensure you're using Node.js 18+. If you use pnpm, try `pnpm dlx cnippet@latest` instead of `npx`.
+
+### I want to remove a component
+
+Simply delete the component file and remove its imports. No package to uninstall – that's the beauty of copy-paste.
+
+## Next steps
+
+- Browse all [Components](/ui/docs)
+- Learn about [Styling](/ui/docs/styling) – custom themes, dark mode, and more
+- See [Blocks](/ui/blocks) for full page examples built with cnippet ui
+
+## Need help?
+
+- Open an issue on [GitHub](https://github.com/cnippet-site/ui-cnippet)
+- Join the discussion – we're responsive
+
+Happy building!

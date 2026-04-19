@@ -1,63 +1,99 @@
 ---
 title: Introduction
-description: A modern UI component library built on Base UI. Designed for developers and AI.
+description: A modern React component library built on Base UI. Copy-paste, own your code.
 ---
 
-**cnippet** is a developer ecosystem designed to accelerate web development. It provides an integrated suite of tools spanning UI components, pre-built page blocks, integration guides, and structured learning resources.
+**cnippet ui** is an open-source component library for React. It's part of the larger **Cnippet ecosystem**:
 
-The ecosystem is organized across four surfaces:
+- **[ui.cnippet.dev](https://ui.cnippet.dev)** – Core components (button, card, dialog, toast, etc.)
+- **[blocks.cnippet.dev](https://blocks.cnippet.dev)** – Pre-built sections, pages, and templates
+- **[next.cnippet.dev](https://next.cnippet.dev)** – Integration guides for auth, payments, and more
 
-- **ui.cnippet.dev** — Open-source component library. Core components (accordion, dialog, toast, etc.), motion components (text effects, scroll animations, carousel, etc.), and chart components (area, bar, line, and more).
-- **blocks.cnippet.dev** — Sections, full pages, and complete templates to assemble production-ready experiences fast.
-- **next.cnippet.dev** — Step-by-step integration guides for authentication, payments, DevOps, and other production workflows.
-- **learn.cnippet.dev** — Structured learning paths for React, Next.js, TypeScript, and more.
+At the heart of everything is **cnippet ui**: accessible, composable components built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/). Everything is copy-paste friendly – you own the code completely.
 
-At the heart of cnippet is **cnippet ui**: accessible and composable components for React. Built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/), everything is copy-paste friendly so you fully own the code.
+We chose Base UI for its robust, accessible, and unopinionated primitives. It handles accessibility, keyboard navigation, and focus management without imposing styles. This gives you full freedom to build a design system that fits your needs.
 
-We chose Base UI for its robust, accessible, and unopinionated primitives. It handles the hard parts — accessibility, keyboard navigation, and focus management — without imposing any styles. This gives us the freedom to build a design system that is both beautiful and flexible.
+## Why Base UI over Radix?
 
-<Alert className="bg-muted/24">
-  <InfoIcon />
-  <AlertTitle>Early Access</AlertTitle>
-  <AlertDescription>
-    cnippet ui is currently in early development. We're building the components,
-    blocks, and guides in the open and actively shipping new releases. Base UI
-    itself is also in beta, so you may encounter breaking changes as both
-    projects evolve. We recommend using this in projects where you're
-    comfortable adapting to changes.
-  </AlertDescription>
-</Alert>
+Both are excellent, but Base UI offers a few distinctive advantages:
+
+- **No extra markup** – Radix often adds wrapper divs; Base UI renders only the elements you need.
+- **Modern React APIs** – Built with hooks and context, no legacy patterns.
+- **Smaller runtime** – Tighter code means less JavaScript shipped to the browser.
+- **Active development** – Backed by MUI team, with frequent updates and a clear roadmap.
 
 ## How It Works
 
-Our approach is simple: you should own your code. Inspired by the copy-paste ethos of **shadcn/ui**.
+Inspired by the copy-paste ethos of **shadcn/ui**, you don't install a monolithic package – you copy the source code directly into your project. This means:
 
-Instead of installing a package, you get the source code. This means:
+- **No abstractions** – Full control over how components look and behave.
+- **Endless customization** – Need a different animation? Edit the file.
+- **Learn by doing** – See how accessible components are built under the hood.
+- **Zero vendor lock‑in** – Your code stays yours, forever.
 
-- **No abstractions:** Full control over how components look and behave.
-- **Endless customization:** Need to change something? Just edit the file.
-- **Learn by doing:** See how components are built and adapt them to your needs.
+## What's Included
 
-## Like shadcn/ui, but with Base UI
+The library provides **25+ production-ready components**, each fully accessible and typed:
 
-If you've used shadcn/ui, you'll feel right at home. The main difference is the foundation: **shadcn/ui uses Radix UI**, while **cnippet ui uses Base UI**.
+| Category | Components |
+|----------|-------------|
+| Layout | Accordion, Card, Dialog, Drawer, Sheet, Tabs |
+| Navigation | Dropdown Menu, Navigation Menu, Breadcrumb, Pagination |
+| Forms | Button, Input, Checkbox, Radio, Select, Switch, Textarea, Label |
+| Feedback | Alert, Toast, Progress, Skeleton, Tooltip |
+| Data Display | Avatar, Badge, Table, Calendar, Carousel |
 
-Each of our components comes with detailed comparisons with Radix / shadcn to make migration as smooth as possible.
+All components are built with Tailwind CSS v4 and support dark mode out of the box.
+
+## cnippet ui vs. shadcn/ui
+
+| Aspect | shadcn/ui | cnippet ui |
+|--------|-----------|------------|
+| Underlying primitives | Radix UI | Base UI |
+| Bundle impact | Slightly larger due to Radix wrapper divs | Tighter, no extra markup |
+| Styling approach | Tailwind + CSS variables | Same (you own the classes) |
+| API design | Radix conventions | Base UI conventions (similar, but cleaner) |
+| Migration path | N/A | Each component includes Radix migration notes |
+
+**Bottom line**: If you already use shadcn/ui, you'll feel at home. If you're starting fresh, cnippet ui gives you a modern, lightweight foundation.
 
 ## Design Principles
 
-- **Accessibility First:** All components meet WCAG 2.1 AA standards.
-- **Unstyled by Default:** Complete control over visual design via Tailwind CSS.
-- **Tree-Shakeable:** Only import what you use, keeping bundle sizes minimal.
-- **TypeScript Native:** Full type safety with comprehensive IntelliSense support.
-- **SSR Compatible:** All components work with Next.js App Router and Server Components.
+- **Accessibility First** – All components meet WCAG 2.1 AA standards. Keyboard navigation, screen reader announcements, and focus management are built-in.
+- **Unstyled by Default** – We provide a clean, minimal design with Tailwind, but you can override every class.
+- **Tree-Shakeable** – Only the components you copy end up in your bundle. No unused code.
+- **TypeScript Native** – Full type definitions included. IntelliSense works out of the box.
+- **SSR Compatible** – Works with Next.js App Router, Remix, and any React 18+ framework.
 
-## Built for Humans and AI
+## A Real Example
 
-Our components are written to be clear, readable, and predictable, so that language models can understand, reason about, and modify them.
+Here's how you'd add a button and a dialog to your Next.js app:
 
-## Get Involved
+```bash
+npx cnippet@latest add button dialog
+```
 
-We're always looking for contributors. Whether it's a bug report, a new feature, or a documentation update, we appreciate your help.
+Then use them:
 
-Check out our contribution guidelines on GitHub to get started.
+```tsx
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
+
+export default function Home() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <p>Your content here</p>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+That's it. No configuration, no providers – just copy, paste, and customize.  
+
+
+

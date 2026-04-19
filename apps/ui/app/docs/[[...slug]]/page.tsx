@@ -1,11 +1,11 @@
-import { RiArrowLeftLine, RiArrowRightLine, RiLinkM } from "@remixicon/react";
+import { RiArrowLeftLine, RiArrowRightLine } from "@remixicon/react";
 import { findNeighbour } from "fumadocs-core/page-tree";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
 import { SiteFooter } from "@/components/site-footer";
 import { docSource as source } from "@/lib/source";
+import { cn } from "@/lib/utils";
 import { mdxComponents } from "@/mdx-components";
 import { Button } from "@/registry/default/ui/button";
 
@@ -66,22 +66,34 @@ export default async function Page(props: {
   }
 
   const doc = page.data;
-  const rawContent = await page.data.getText("raw");
+  const _rawContent = await page.data.getText("raw");
   const MDX = doc.body;
   const neighbours = await findNeighbour(source.pageTree, page.url);
 
-  const links = doc.links;
+  const _links = doc.links;
 
   return (
     <div
       className="flex items-stretch sm:text-[.9375rem] xl:w-full"
       data-slot="docs"
     >
-      <div className="w-full pt-5">
-        <div className="-m-px bg-neutral-900/50 px-6 pb-10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] md:rounded-lg md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
+      <div className="w-full">
+        <div className="relative -m-px overflow-hidden pb-10 before:pointer-events-none before:absolute before:inset-0 md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
+          <div className="relative before:absolute before:top-0 before:-left-[10vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:-left-[10vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
+            <h1 className="text-balance px-2 pt-10 pb-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl md:px-6 lg:text-6xl xl:text-5xl">
+              {doc.title}
+            </h1>
+          </div>
+
+          <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 md:px-6 dark:text-white/40">
+            {doc.description}
+          </div>
+
+          <Separator />
+
           <div className="mx-auto w-full max-w-3xl pt-8">
             <div className="flex min-w-0 flex-1 flex-col gap-8">
-              <div className="flex flex-col gap-2">
+              {/* <div className="flex flex-col gap-2">
                 <div className="flex flex-col gap-2">
                   <h1 className="scroll-m-20 font-heading text-3xl xl:text-4xl">
                     {doc.title}
@@ -107,7 +119,7 @@ export default async function Page(props: {
                   )}
                   <DocsCopyPage page={rawContent} />
                 </div>
-              </div>
+              </div> */}
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
                 <MDX components={mdxComponents} />
               </div>
@@ -149,5 +161,19 @@ export default async function Page(props: {
         </div>
       </div>
     </div>
+  );
+}
+
+function Separator({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        "relative flex h-7 w-full border-edge border-y lg:h-8",
+        "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
+        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border/50! before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
+        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border/50! after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
+        className,
+      )}
+    />
   );
 }
