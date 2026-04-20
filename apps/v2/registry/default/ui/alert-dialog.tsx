@@ -161,7 +161,7 @@ export function AlertDialogClose(
 }
 
 export {
-  AlertDialogPrimitive,
   AlertDialogBackdrop as AlertDialogOverlay,
   AlertDialogPopup as AlertDialogContent,
+  AlertDialogPrimitive,
 };

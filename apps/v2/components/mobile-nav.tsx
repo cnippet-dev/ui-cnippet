@@ -5,6 +5,9 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import Link, { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
+import { PAGES_NEW } from "@/lib/docs";
+import type { source } from "@/lib/source";
+import { cn } from "@/lib/utils";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -13,9 +16,6 @@ import {
   DrawerPopup,
   DrawerTrigger,
 } from "@/registry/default/ui/drawer";
-import { PAGES_NEW } from "@/lib/docs";
-import type { source } from "@/lib/source";
-import { cn } from "@/lib/utils";
 
 export function MobileNav({
   tree,

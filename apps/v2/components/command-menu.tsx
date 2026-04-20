@@ -11,6 +11,9 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import type { ComponentProps } from "react";
 import * as React from "react";
+import { useConfig } from "@/hooks/use-config";
+import { useIsMac } from "@/hooks/use-is-mac";
+import type { source } from "@/lib/source";
 import { useCopyToClipboard } from "@/registry/default/hooks/use-copy-to-clipboard";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -28,9 +31,6 @@ import {
   CommandList,
 } from "@/registry/default/ui/command";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
-import { useConfig } from "@/hooks/use-config";
-import { useIsMac } from "@/hooks/use-is-mac";
-import type { source } from "@/lib/source";
 
 interface PageItem {
   value: string;

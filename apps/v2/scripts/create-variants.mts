@@ -12,12 +12,7 @@
  *   bun run variants:create button --reset                           → revert generated files to placeholder
  */
 
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  writeFileSync,
-} from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -156,12 +151,12 @@ function registryBlock(name: string, count: number): string {
   return (
     `  // --- ${name} ---\n` +
     `  ...Array.from({ length: ${count} }, (_, i) =>\n` +
-    `    createVariant({\n` +
+    "    createVariant({\n" +
     `      category: "${category}",\n` +
     `      dependencies: ["${dep}"],\n` +
     `      name: \`v-${name}-\${i + 1}\`,\n` +
-    `    }),\n` +
-    `  ),`
+    "    }),\n" +
+    "  ),"
   );
 }
 
@@ -206,7 +201,7 @@ function updateRegistry(name: string, count: number, force: boolean): void {
       );
       return;
     }
-    const block = "\n" + registryBlock(name, count) + "\n";
+    const block = `\n${registryBlock(name, count)}\n`;
     src = src.slice(0, closeIndex) + block + src.slice(closeIndex);
     console.log(`  [registry] Added "${name}" (${count} variants)`);
   }

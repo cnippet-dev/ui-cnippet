@@ -69,6 +69,7 @@ export function Button({
     render ? undefined : "button";
 
   const defaultProps = {
+    "aria-disabled": loading || undefined,
     children: (
       <>
         {children}
@@ -81,7 +82,6 @@ export function Button({
       </>
     ),
     className: cn(buttonVariants({ className, size, variant })),
-    "aria-disabled": loading || undefined,
     "data-loading": loading ? "" : undefined,
     "data-slot": "button",
     disabled: isDisabled,

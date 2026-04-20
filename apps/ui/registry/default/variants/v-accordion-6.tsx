@@ -42,7 +42,7 @@ export function Pattern() {
       >
         {items.map((item) => (
           <AccordionItem
-            className="rounded-lg border dark:border-neutral-900 bg-card px-2 last:border-b **:data-[slot=accordion-content]:p-0!"
+            className="rounded-lg border bg-card px-2 last:border-b **:data-[slot=accordion-content]:p-0! dark:border-neutral-900"
             key={item.value}
             value={item.value}
           >

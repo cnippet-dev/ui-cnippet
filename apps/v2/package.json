@@ -57,8 +57,8 @@
     "lint": "biome lint .",
     "postinstall": "fumadocs-mdx",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
-    "variants:create": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/create-variants.mts",
-    "start": "next start"
+    "start": "next start",
+    "variants:create": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/create-variants.mts"
   },
   "trustedDependencies": [
     "sharp",

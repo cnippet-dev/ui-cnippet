@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PAGES_NEW } from "@/lib/docs";
+import type { source } from "@/lib/source";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Sidebar,
@@ -13,8 +15,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/registry/default/ui/sidebar";
-import { PAGES_NEW } from "@/lib/docs";
-import type { source } from "@/lib/source";
 
 export function DocsSidebar({
   tree,
@@ -63,7 +63,7 @@ export function DocsSidebar({
           </SidebarGroup>
         ))}
       </SidebarContent>
-       <div className="absolute top-12 right-2 z-20 bottom-0 hidden h-screen w-px bg-linear-to-b from-transparent via-border to-transparent lg:flex" />
+      <div className="absolute top-12 right-2 bottom-0 z-20 hidden h-screen w-px bg-linear-to-b from-transparent via-border to-transparent lg:flex" />
     </Sidebar>
   );
 }

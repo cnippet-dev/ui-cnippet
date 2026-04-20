@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontHeading.variable} ${fontSans.variable} ${fontMono.variable} relative bg-neutral-950 font-sans text-foreground antialiased`}
+        className={`${fontHeading.variable} ${fontSans.variable} ${fontMono.variable} relative font-sans text-foreground antialiased dark:bg-neutral-950`}
       >
         <ThemeProvider>
           <ToastProvider position="bottom-center">
             <AnchoredToastProvider>
-               <div className="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">
+              <div className="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">
                 {children}
               </div>
             </AnchoredToastProvider>

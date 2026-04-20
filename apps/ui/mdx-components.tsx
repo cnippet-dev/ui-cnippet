@@ -183,7 +183,7 @@ export const mdxComponents = {
       <h3
         {...props}
         className={cn(
-          "scroll-m-20 font-semibold text-lg mt-8 *:[code]:text-lg",
+          "mt-8 scroll-m-20 font-semibold text-lg *:[code]:text-lg",
           className,
         )}
         id={id}

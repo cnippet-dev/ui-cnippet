@@ -115,4 +115,4 @@ export function PopoverDescription({
   );
 }
 
-export { PopoverPrimitive, PopoverPopup as PopoverContent };
+export { PopoverPopup as PopoverContent, PopoverPrimitive };

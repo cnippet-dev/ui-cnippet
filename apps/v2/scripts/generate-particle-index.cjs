@@ -72,7 +72,7 @@ function main() {
     const componentType = match ? match[1] : name.replace(/^p-/, "");
 
     if (!grouped[componentType]) grouped[componentType] = [];
-    grouped[componentType].push({ name, desc });
+    grouped[componentType].push({ desc, name });
   }
 
   const sortedTypes = Object.keys(grouped).sort();

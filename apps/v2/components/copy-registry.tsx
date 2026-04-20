@@ -5,13 +5,13 @@ import { Icons } from "@cnippet/ui/shared/icons";
 import { Tick02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type * as React from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipPopup,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { cn } from "@/lib/utils";
 
 export function CopyRegistry({
   value,

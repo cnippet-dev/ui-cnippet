@@ -1,12 +1,6 @@
-import { MoveUpRight } from "lucide-react";
-import Link from "next/link";
+const _Blocks = dynamic(() => import("@/components/home/blocks"));
+const _Components = dynamic(() => import("@/components/home/components"));
 
-const Blocks = dynamic(() => import("@/components/home/blocks"));
-const Components = dynamic(() => import("@/components/home/components"));
-
-import { HomeCodeSection } from "@/components/home-code-section";
-import SiteHeader from "@/components/shared/header/site-header";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const _tweetIds = [
@@ -23,7 +17,7 @@ const _tweetIds = [
 
 import dynamic from "next/dynamic";
 import type { SVGProps } from "react";
-import  AccordionNavigation  from "@/registry/default/variants/v-accordion-8";
+import SiteHeader from "@/components/shared/header/site-header";
 
 export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 190.5 190.5">
@@ -53,7 +47,7 @@ export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
 export default function HomePage() {
   return (
     <>
-      {/* <SiteHeader />
+      <SiteHeader />
       <div className="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-0">
         <VerticalSeparatorLeft />
 
@@ -103,8 +97,7 @@ export default function HomePage() {
         </main>
 
         <VerticalSeparatorRight />
-      </div> */}
-      <AccordionNavigation/>
+      </div>
     </>
   );
 }

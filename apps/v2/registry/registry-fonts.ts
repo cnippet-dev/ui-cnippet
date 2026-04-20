@@ -2,49 +2,49 @@ import type { Registry } from "shadcn/schema";
 
 export const fonts: Registry["items"] = [
   {
+    files: [],
     name: "fonts",
-    type: "registry:ui",
     registryDependencies: [
       "@coss/font-sans",
       "@coss/font-heading",
       "@coss/font-mono",
     ],
-    files: [],
+    type: "registry:ui",
   },
   {
-    name: "font-sans",
-    type: "registry:font",
     font: {
+      dependency: "@fontsource-variable/inter",
       family: "'Inter', sans-serif",
       import: "Inter",
       provider: "google",
       subsets: ["latin"],
       variable: "--font-sans",
-      dependency: "@fontsource-variable/inter",
     },
+    name: "font-sans",
+    type: "registry:font",
   },
   {
-    name: "font-heading",
-    type: "registry:font",
     font: {
+      dependency: "@fontsource-variable/inter",
       family: "'Inter', sans-serif",
       import: "Inter",
       provider: "google",
       subsets: ["latin"],
       variable: "--font-heading",
-      dependency: "@fontsource-variable/inter",
     },
+    name: "font-heading",
+    type: "registry:font",
   },
   {
-    name: "font-mono",
-    type: "registry:font",
     font: {
+      dependency: "geist",
       family: "'Geist Mono', monospace",
       import: "Geist_Mono",
       provider: "google",
       subsets: ["latin"],
       variable: "--font-mono",
-      dependency: "geist",
     },
+    name: "font-mono",
+    type: "registry:font",
   },
 ];

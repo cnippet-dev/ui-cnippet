@@ -1,7 +1,7 @@
-import { Index } from "@/registry/__index__";
 import { ComponentPreviewTabs } from "@/components/component-preview-tabs";
 import { ComponentSource } from "@/components/component-source";
 import { cn } from "@/lib/utils";
+import { Index } from "@/registry/__index__";
 
 interface ComponentPreviewProps
   extends Omit<React.ComponentProps<"div">, "ref"> {

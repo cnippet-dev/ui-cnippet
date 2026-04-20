@@ -38,10 +38,7 @@ export default function Pattern() {
               icon={
                 <div className="flex h-7 w-7 items-center justify-center">
                   <Plus className="in-data-open:hidden" size={16} />
-                  <Minus
-                    className="in-data-open:block hidden"
-                    size={16}
-                  />
+                  <Minus className="in-data-open:block hidden" size={16} />
                 </div>
               }
             >

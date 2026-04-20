@@ -31,12 +31,11 @@ export function Textarea({
       data-slot="textarea-control"
     >
       <FieldPrimitive.Control
-        ref={ref}
-        value={props.value}
         defaultValue={props.defaultValue}
         disabled={props.disabled}
         id={props.id}
         name={props.name}
+        ref={ref}
         render={(defaultProps: React.ComponentProps<"textarea">) => (
           <textarea
             className={cn(
@@ -50,6 +49,7 @@ export function Textarea({
             {...mergeProps(defaultProps, props)}
           />
         )}
+        value={props.value}
       />
     </span>
   );

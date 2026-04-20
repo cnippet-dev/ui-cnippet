@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Tabs, TabsList, TabsTab } from "@/registry/default/ui/tabs";
 import { cn } from "@/lib/utils";
+import { Tabs, TabsList, TabsTab } from "@/registry/default/ui/tabs";
 
 export function ComponentPreviewTabs({
   className,
