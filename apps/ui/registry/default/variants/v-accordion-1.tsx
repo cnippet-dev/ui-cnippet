@@ -40,7 +40,8 @@ export default function AccordionWithPersistence() {
 
   return (
     <Accordion
-      className="w-full max-w-lg"
+      className="w-full max-w-sm"
+      defaultValue={["general"]}
       onValueChange={setValue}
       value={value}
     >

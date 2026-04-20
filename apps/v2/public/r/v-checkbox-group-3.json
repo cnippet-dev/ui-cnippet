@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-group-3",
+  "description": "Basic checkbox group",
+  "registryDependencies": [
+    "@cnippet/checkbox-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-group-3.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox group"
+  ],
+  "type": "registry:block"
+}

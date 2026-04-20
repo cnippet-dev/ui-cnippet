@@ -12,7 +12,7 @@ import type { PackageId } from "./home-code-section";
 
 const commands: { id: PackageId; label: string; code: string }[] = [
   {
-    code: "npx cnippet@latest add ui",
+    code: "npx shadcn@latest add @cnippet/ui",
     id: "core",
     label: "Cnippet CLI",
   },

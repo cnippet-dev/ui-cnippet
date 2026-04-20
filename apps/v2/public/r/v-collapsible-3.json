@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-3",
+  "description": "Basic collapsible",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-3.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

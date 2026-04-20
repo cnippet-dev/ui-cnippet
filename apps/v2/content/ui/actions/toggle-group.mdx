@@ -1,0 +1,58 @@
+---
+title: Toggle Group
+description: Provides a shared state to a series of toggle buttons.
+---
+
+<ComponentPreview name="v-toggle-group-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/toggle-group
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toggle-group" title="components/ui/toggle-group.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Toggle, ToggleGroup } from "@/components/ui/toggle-group"
+```
+
+```tsx
+<ToggleGroup>
+  <Toggle>Bold</Toggle>
+  <Toggle>Italic</Toggle>
+  <Toggle>Underline</Toggle>
+</ToggleGroup>
+```

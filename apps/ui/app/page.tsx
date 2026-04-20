@@ -23,6 +23,7 @@ const _tweetIds = [
 
 import dynamic from "next/dynamic";
 import type { SVGProps } from "react";
+import  AccordionNavigation  from "@/registry/default/variants/v-accordion-8";
 
 export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 190.5 190.5">
@@ -52,12 +53,10 @@ export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
 export default function HomePage() {
   return (
     <>
-      <SiteHeader />
+      {/* <SiteHeader />
       <div className="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-0">
-        {/* Left vertical separators */}
         <VerticalSeparatorLeft />
 
-        {/* Main content */}
         <main className="grid gap-24 pb-24 text-gray-950 sm:gap-40 md:pb-40 dark:text-white">
           <div>
             <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
@@ -99,24 +98,13 @@ export default function HomePage() {
 
             <Components />
 
-            {/* <div className="relative mt-20 max-w-full">
-              <div className="flex h-4 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 max-sm:px-4 dark:text-white/40">
-                Testimonials
-              </div>
-              <div className="relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:h-px dark:before:bg-white/10">
-                <h2 className="max-w-2xl text-balance px-2 font-medium text-4xl tracking-tighter max-sm:px-4">
-                  What developers are saying
-                </h2>
-              </div>
-            </div> */}
-
             <Blocks />
           </div>
         </main>
 
-        {/* Right vertical separators */}
         <VerticalSeparatorRight />
-      </div>
+      </div> */}
+      <AccordionNavigation/>
     </>
   );
 }

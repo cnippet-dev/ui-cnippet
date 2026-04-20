@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "frame",
+  "files": [
+    {
+      "path": "registry/default/ui/frame.tsx",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport function Frame({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">): React.ReactElement {\n  return (\n    <div\n      className={cn(\n        \"relative flex flex-col rounded-2xl bg-muted/72 p-1\",\n        \"*:[[data-slot=frame-panel]+[data-slot=frame-panel]]:mt-1\",\n        className,\n      )}\n      data-slot=\"frame\"\n      {...props}\n    />\n  );\n}\n\nexport function FramePanel({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">): React.ReactElement {\n  return (\n    <div\n      className={cn(\n        \"relative rounded-xl border bg-background bg-clip-padding p-5 shadow-xs/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-xl)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]\",\n        className,\n      )}\n      data-slot=\"frame-panel\"\n      {...props}\n    />\n  );\n}\n\nexport function FrameHeader({\n  className,\n  ...props\n}: React.ComponentProps<\"header\">): React.ReactElement {\n  return (\n    <header\n      className={cn(\"flex flex-col px-5 py-4\", className)}\n      data-slot=\"frame-panel-header\"\n      {...props}\n    />\n  );\n}\n\nexport function FrameTitle({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">): React.ReactElement {\n  return (\n    <div\n      className={cn(\"font-semibold text-sm\", className)}\n      data-slot=\"frame-panel-title\"\n      {...props}\n    />\n  );\n}\n\nexport function FrameDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">): React.ReactElement {\n  return (\n    <div\n      className={cn(\"text-muted-foreground text-sm\", className)}\n      data-slot=\"frame-panel-description\"\n      {...props}\n    />\n  );\n}\n\nexport function FrameFooter({\n  className,\n  ...props\n}: React.ComponentProps<\"footer\">): React.ReactElement {\n  return (\n    <footer\n      className={cn(\"px-5 py-4\", className)}\n      data-slot=\"frame-panel-footer\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

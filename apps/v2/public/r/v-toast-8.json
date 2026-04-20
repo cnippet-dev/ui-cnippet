@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-8",
+  "description": "Basic toast",
+  "registryDependencies": [
+    "@cnippet/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-8.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "merge-props",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/default/base-ui/merge-props.ts",
+      "content": "export { mergeProps } from \"@base-ui/react/merge-props\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:lib"
+}

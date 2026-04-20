@@ -1,11 +1,11 @@
 export const codeSnippets: Record<string, string> = {
   cli: `# Install all UI components with optimized colors
-npx cnippet@latest add ui @cnippet/colors-zinc
+npx shadcn@latest add @cnippet/ui @cnippet/colors-zinc
 
 # Or add individual components
-npx cnippet@latest add button
-npx cnippet@latest add dialog
-npx cnippet@latest add tabs`,
+npx shadcn@latest add @cnippet/button
+npx shadcn@latest add @cnippet/dialog
+npx shadcn@latest add @cnippet/tabs`,
   manual: `// 1. Copy the component source into your project
 //    e.g. components/ui/button.tsx
 

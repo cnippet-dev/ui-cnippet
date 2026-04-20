@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-3",
+  "description": "Basic number field",
+  "registryDependencies": [
+    "@cnippet/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-3.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "number field"
+  ],
+  "type": "registry:block"
+}

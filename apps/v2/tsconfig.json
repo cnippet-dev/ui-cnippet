@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@cnippet/ui/*": ["../../packages/ui/src/*"],
+      "@source/*": ["./.source/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "extends": "@cnippet/typescript-config/nextjs.json",
+  "include": [
+    "next-env.d.ts",
+    "next.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ]
+}

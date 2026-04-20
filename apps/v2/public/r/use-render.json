@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-render",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/default/base-ui/use-render.ts",
+      "content": "export { useRender } from \"@base-ui/react/use-render\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:lib"
+}

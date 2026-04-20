@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-table-8",
+  "description": "Basic table",
+  "registryDependencies": [
+    "@cnippet/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-table-8.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "table"
+  ],
+  "type": "registry:block"
+}

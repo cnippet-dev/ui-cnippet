@@ -3,7 +3,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion";
+} from "@/components/ui/accordion";
 
 export default function Component() {
   const items = [
@@ -27,10 +27,10 @@ export default function Component() {
   ];
 
   return (
-    <Accordion className="space-y-4 md:w-lg" defaultValue={["3"]}>
+    <Accordion className="space-y-2 md:max-w-md" defaultValue={["1"]}>
       {items.map((item) => (
         <AccordionItem
-          className="rounded-lg border px-4 last:border-b"
+          className="rounded-2xl border px-4 last:border-b data-open:bg-neutral-800"
           key={item.id}
           value={item.id}
         >

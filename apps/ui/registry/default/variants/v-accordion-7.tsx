@@ -28,7 +28,7 @@ const items = [
 
 export function Pattern() {
   return (
-    <div className="mx-auto mb-auto w-full max-w-lg">
+    <div className="mx-auto w-full max-w-sm">
       <Accordion defaultValue={["item-1"]} multiple={false}>
         {items.map((item) => (
           <AccordionItem key={item.value} value={item.value}>

@@ -34,13 +34,13 @@
 
 ```bash
 # Add a single component
-npx cnippet@latest add button
+npx shadcn@latest add @cnippet/button
 
 # Add all components at once
-npx cnippet@latest add ui
+npx shadcn@latest add @cnippet/ui
 
 # With optimized color tokens (recommended)
-npx cnippet@latest add ui @cnippet/colors-zinc
+npx shadcn@latest add @cnippet/ui @cnippet/colors-zinc
 ```
 
 Then import:

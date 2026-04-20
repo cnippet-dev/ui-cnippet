@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-7",
+  "description": "Basic input otp",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-7.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

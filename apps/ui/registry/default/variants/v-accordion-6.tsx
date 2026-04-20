@@ -12,7 +12,7 @@ const items = [
     badge: "New",
     content:
       "Manage your account preferences, security settings, and personal information. You can also configure two-factor authentication here.",
-    icon: <SettingsIcon className="size-4 text-muted-foreground" />,
+    icon: <SettingsIcon />,
     trigger: "Account Settings",
     value: "account",
   },
@@ -34,7 +34,7 @@ const items = [
 
 export function Pattern() {
   return (
-    <div className="mx-auto mb-auto w-full max-w-lg">
+    <div className="mx-auto w-full max-w-sm">
       <Accordion
         className="space-y-3 border-0"
         defaultValue={["account"]}
@@ -42,13 +42,13 @@ export function Pattern() {
       >
         {items.map((item) => (
           <AccordionItem
-            className="rounded-lg border border-border bg-card px-2 last:border-b **:data-[slot=accordion-content]:p-0!"
+            className="rounded-lg border dark:border-neutral-900 bg-card px-2 last:border-b **:data-[slot=accordion-content]:p-0!"
             key={item.value}
             value={item.value}
           >
             <AccordionTrigger className="items-center px-1 py-3 font-semibold hover:no-underline">
               <div className="flex items-center gap-3">
-                <div className="flex size-8 items-center justify-center rounded-lg bg-muted">
+                <div className="flex size-8 items-center justify-center rounded-lg bg-muted [&_svg]:size-4 [&_svg]:text-muted-foreground in-data-open:[&_svg]:text-blue-500">
                   {item.icon}
                 </div>
                 <span>{item.trigger}</span>

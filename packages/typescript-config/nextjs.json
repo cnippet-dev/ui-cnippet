@@ -8,5 +8,6 @@
     "noEmit": true,
     "plugins": [{ "name": "next" }]
   },
+  "display": "Next.js",
   "extends": "./base.json"
 }

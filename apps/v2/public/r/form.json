@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/form.tsx",
+      "content": "\"use client\";\n\nimport { Form as FormPrimitive } from \"@base-ui/react/form\";\nimport type React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport function Form({\n  className,\n  ...props\n}: FormPrimitive.Props): React.ReactElement {\n  return (\n    <FormPrimitive\n      className={cn(\"flex w-full flex-col gap-4\", className)}\n      data-slot=\"form\"\n      {...props}\n    />\n  );\n}\n\nexport { FormPrimitive };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

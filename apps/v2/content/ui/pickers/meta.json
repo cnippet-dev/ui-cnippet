@@ -1,0 +1,4 @@
+{
+  "pages": ["autocomplete", "calendar", "combobox", "select"],
+  "title": "Pickers"
+}

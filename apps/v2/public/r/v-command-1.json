@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-1",
+  "description": "Basic command",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-1.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

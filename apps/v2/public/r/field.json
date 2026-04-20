@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/field.tsx",
+      "content": "\"use client\";\n\nimport { Field as FieldPrimitive } from \"@base-ui/react/field\";\nimport type React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport function Field({\n  className,\n  ...props\n}: FieldPrimitive.Root.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Root\n      className={cn(\"flex flex-col items-start gap-2\", className)}\n      data-slot=\"field\"\n      {...props}\n    />\n  );\n}\n\nexport function FieldLabel({\n  className,\n  ...props\n}: FieldPrimitive.Label.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Label\n      className={cn(\n        \"inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground data-disabled:opacity-64 sm:text-sm/4\",\n        className,\n      )}\n      data-slot=\"field-label\"\n      {...props}\n    />\n  );\n}\n\nexport function FieldItem({\n  className,\n  ...props\n}: FieldPrimitive.Item.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Item\n      className={cn(\"flex\", className)}\n      data-slot=\"field-item\"\n      {...props}\n    />\n  );\n}\n\nexport function FieldDescription({\n  className,\n  ...props\n}: FieldPrimitive.Description.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Description\n      className={cn(\"text-muted-foreground text-xs\", className)}\n      data-slot=\"field-description\"\n      {...props}\n    />\n  );\n}\n\nexport function FieldError({\n  className,\n  ...props\n}: FieldPrimitive.Error.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Error\n      className={cn(\"text-destructive-foreground text-xs\", className)}\n      data-slot=\"field-error\"\n      {...props}\n    />\n  );\n}\n\nexport const FieldControl: typeof FieldPrimitive.Control =\n  FieldPrimitive.Control;\nexport const FieldValidity: typeof FieldPrimitive.Validity =\n  FieldPrimitive.Validity;\n\nexport { FieldPrimitive };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "light": {
+      "destructive-foreground": "var(--color-red-700)"
+    },
+    "dark": {
+      "destructive-foreground": "var(--color-red-400)"
+    }
+  },
+  "type": "registry:ui"
+}

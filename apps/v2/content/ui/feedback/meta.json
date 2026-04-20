@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "alert",
+    "badge",
+    "kbd",
+    "progress",
+    "skeleton",
+    "spinner",
+    "toast"
+  ],
+  "title": "Feedback"
+}

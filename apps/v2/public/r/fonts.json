@@ -1,0 +1,11 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fonts",
+  "registryDependencies": [
+    "@coss/font-sans",
+    "@coss/font-heading",
+    "@coss/font-mono"
+  ],
+  "files": [],
+  "type": "registry:ui"
+}

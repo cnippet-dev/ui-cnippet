@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-frame-1",
+  "description": "Basic frame",
+  "registryDependencies": [
+    "@cnippet/frame"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-frame-1.tsx",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "frame"
+  ],
+  "type": "registry:block"
+}

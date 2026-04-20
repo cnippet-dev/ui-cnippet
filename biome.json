@@ -33,7 +33,11 @@
       "!**/apps/ui/public/r",
       "!**/packages/ui/src/components",
       "!**/packages/ui/src/lib",
-      "!**/packages/ui/src/hooks"
+      "!**/packages/ui/src/hooks",
+      "!**/apps/v2/public/",
+      "!**/apps/v2/registry/__index__.tsx",
+      "!**/apps/v2/registry.json",
+      "!**/apps/v2/public/r"
     ]
   },
   "formatter": {

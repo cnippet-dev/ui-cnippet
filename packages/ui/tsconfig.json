@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "dist"
+    "baseUrl": ".",
+    "composite": true,
+    "incremental": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@cnippet/ui/*": ["./src/*"]
+    },
+    "types": ["next", "react", "node", "bun-types"]
   },
-  "exclude": ["node_modules", "dist"],
-  "extends": "@repo/typescript-config/react-library.json",
-  "include": ["src"]
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"],
+  "extends": "@cnippet/typescript-config/react-library.json",
+  "include": ["."]
 }
