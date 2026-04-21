@@ -31,6 +31,7 @@ export const ui: Registry["items"] = [
       "@cnippet/frame",
       "@cnippet/group",
       "@cnippet/input",
+      "@cnippet/item",
       "@cnippet/otp-field",
       "@cnippet/input-group",
       "@cnippet/kbd",
@@ -419,6 +420,17 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "input",
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/item.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "item",
     type: "registry:ui",
   },
   {

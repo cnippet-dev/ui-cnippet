@@ -38,6 +38,17 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "accordion",
       dependencies: ["accordion"],
+      description: [
+        "Default",
+        "Single Accordion",
+        "Multiple Accordion",
+        "Controlled Accordion",
+        "With plus/minus indicators",
+        "With borders and rounded corners",
+        "Embedded within a Card",
+        "Nested accordion example with bordered items",
+        "User list accordion with avatars and role indicators",
+      ][i],
       meta: {
         className:
           "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
