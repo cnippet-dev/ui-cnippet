@@ -11,7 +11,7 @@ export function isPlaceholderVariant(name: string): boolean {
       "registry/default/variants",
       `${name}.tsx`,
     );
-    const source = readFileSync(filePath, "utf-8");
+    const source = readFileSync(filePath, "utf-8").replace(/\r\n/g, "\n");
     return source.includes(PLACEHOLDER);
   } catch {
     return true; // file missing — treat as placeholder

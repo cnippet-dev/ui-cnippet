@@ -31,6 +31,7 @@
         "@cnippet/frame",
         "@cnippet/group",
         "@cnippet/input",
+        "@cnippet/item",
         "@cnippet/otp-field",
         "@cnippet/input-group",
         "@cnippet/kbd",
@@ -490,6 +491,19 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "item",
+      "type": "registry:ui"
+    },
+    {
       "css": {
         "@keyframes caret-blink": {
           "0%, 70%, to": {
@@ -919,7 +933,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-1.tsx",
@@ -939,7 +953,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Single Accordion",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-2.tsx",
@@ -959,7 +973,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Multiple Accordion",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-3.tsx",
@@ -979,7 +993,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Controlled Accordion",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-4.tsx",
@@ -999,7 +1013,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "With plus/minus indicators",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-5.tsx",
@@ -1019,7 +1033,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "With borders and rounded corners",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-6.tsx",
@@ -1039,7 +1053,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Embedded within a Card",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-7.tsx",
@@ -1059,7 +1073,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Nested accordion example with bordered items",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-8.tsx",
@@ -1079,7 +1093,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "User list accordion with avatars and role indicators",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-9.tsx",

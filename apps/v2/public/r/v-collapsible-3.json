@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-collapsible-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ChevronDownIcon } from \"lucide-react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\n\nexport function Pattern() {\n  return (\n    <div className=\"h-40 w-full max-w-xs\">\n      <Card className=\"py-0\">\n        <CardContent className=\"px-3\">\n          <Collapsible>\n            <CollapsibleTrigger className=\"flex w-full cursor-pointer items-center justify-between gap-4 text-sm\">\n              <span>How do I reset my password?</span>\n              <ChevronDownIcon\n                aria-hidden=\"true\"\n                className=\"size-4 shrink-0 in-data-[state=open]:rotate-180 text-muted-foreground transition-transform\"\n              />\n            </CollapsibleTrigger>\n            <CollapsibleContent className=\"data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down\">\n              <div className=\"pt-3 text-muted-foreground text-sm\">\n                You can reset your password by clicking the &quot;Forgot\n                Password&quot; link on the login page. We&apos;ll send you an\n                email with instructions to create a new password.\n              </div>\n            </CollapsibleContent>\n          </Collapsible>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

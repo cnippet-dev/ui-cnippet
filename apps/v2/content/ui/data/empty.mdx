@@ -65,99 +65,37 @@ import {
 </Empty>
 ```
 
-## API Reference
 
-The API design of this component is modeled after [shadcn/ui's empty component](https://ui.shadcn.com/docs/components/empty) to ensure familiarity and consistency for developers already using shadcn. This standardization makes it easier to adopt **cnippet ui** while maintaining API parity with the patterns developers already know and love.
+## Examples
 
-### Empty
+### Search empty state
 
-The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent` components.
+<ComponentPreview name="v-empty-2" align="start" />
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+### Empty state with search input
 
-```tsx
-<Empty>
-  <EmptyHeader />
-  <EmptyContent />
-</Empty>
-```
+<ComponentPreview name="v-empty-3" align="start" />
 
-### EmptyHeader
+### Empty state with add button
 
-The `EmptyHeader` component wraps the empty media, title, and description.
+<ComponentPreview name="v-empty-4" align="start" />
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+### Dashed upload empty state
 
-```tsx
-<EmptyHeader>
-  <EmptyMedia />
-  <EmptyTitle />
-  <EmptyDescription />
-</EmptyHeader>
-```
+<ComponentPreview name="v-empty-5" align="start" />
 
-### EmptyMedia
+### No automations empty state with toggle illustration
 
-Use the `EmptyMedia` component to display the media of the empty state such as an icon or an image. You can also use it to display other components such as an avatar.
+<ComponentPreview name="v-empty-6" align="start" />
 
-| Prop        | Type                  | Default   |
-| ----------- | --------------------- | --------- |
-| `variant`   | `"default" \| "icon"` | `default` |
-| `className` | `string`              |           |
+### No products empty state with stacked cards and blur effect
 
-```tsx
-<EmptyMedia variant="icon">
-  <Icon />
-</EmptyMedia>
-```
+<ComponentPreview name="v-empty-7" align="start" />
 
-```tsx
-<EmptyMedia>
-  <Avatar>
-    <AvatarImage src="..." />
-    <AvatarFallback>JD</AvatarFallback>
-  </Avatar>
-</EmptyMedia>
-```
+### No payments empty state with credit card illustration
 
-### EmptyTitle
+<ComponentPreview name="v-empty-8" align="start" />
 
-Use the `EmptyTitle` component to display the title of the empty state.
+### No payments empty state with credit card illustration
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
-
-```tsx
-<EmptyTitle>No data</EmptyTitle>
-```
-
-### EmptyDescription
-
-Use the `EmptyDescription` component to display the description of the empty state.
-
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
-
-```tsx
-<EmptyDescription>You do not have any notifications.</EmptyDescription>
-```
-
-### EmptyContent
-
-Use the `EmptyContent` component to display the content of the empty state such as a button, input or a link.
-
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
-
-```tsx
-<EmptyContent>
-  <Button>Add Project</Button>
-</EmptyContent>
-```
+<ComponentPreview name="v-empty-9" align="start" />

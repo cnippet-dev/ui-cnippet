@@ -493,6 +493,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "item": {
+    name: "item",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/ui/item.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/item.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "otp-field": {
     name: "otp-field",
     description: "",
@@ -1017,7 +1035,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-1": {
     name: "v-accordion-1",
-    description: "Basic accordion",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1035,7 +1053,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-2": {
     name: "v-accordion-2",
-    description: "Basic accordion",
+    description: "Single Accordion",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1053,7 +1071,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-3": {
     name: "v-accordion-3",
-    description: "Basic accordion",
+    description: "Multiple Accordion",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1071,7 +1089,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-4": {
     name: "v-accordion-4",
-    description: "Basic accordion",
+    description: "Controlled Accordion",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1089,7 +1107,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-5": {
     name: "v-accordion-5",
-    description: "Basic accordion",
+    description: "With plus/minus indicators",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1107,7 +1125,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-6": {
     name: "v-accordion-6",
-    description: "Basic accordion",
+    description: "With borders and rounded corners",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1125,7 +1143,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-7": {
     name: "v-accordion-7",
-    description: "Basic accordion",
+    description: "Embedded within a Card",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1143,7 +1161,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-8": {
     name: "v-accordion-8",
-    description: "Basic accordion",
+    description: "Nested accordion example with bordered items",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -1161,7 +1179,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-9": {
     name: "v-accordion-9",
-    description: "Basic accordion",
+    description: "User list accordion with avatars and role indicators",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{

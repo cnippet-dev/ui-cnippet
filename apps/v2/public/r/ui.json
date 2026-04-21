@@ -29,6 +29,7 @@
     "@cnippet/frame",
     "@cnippet/group",
     "@cnippet/input",
+    "@cnippet/item",
     "@cnippet/otp-field",
     "@cnippet/input-group",
     "@cnippet/kbd",

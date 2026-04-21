@@ -2,6 +2,7 @@
 import { siteConfig } from "@cnippet/ui/lib/config";
 import { ModeSwitcher } from "@cnippet/ui/shared/mode-switcher";
 import { ProductLabel } from "@cnippet/ui/shared/product-label";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "../lib/utils";
@@ -43,7 +44,20 @@ export function SiteHeader({
             </a>
           ) : (
             <Link aria-label="Home" href={gatewayHome}>
-              coss.com
+              <Image
+                alt=""
+                className="size-12 opacity-90 dark:hidden"
+                height={500}
+                src="/images/logo-light.png"
+                width={500}
+              />
+              <Image
+                alt=""
+                className="hidden size-12 opacity-90 dark:block"
+                height={500}
+                src="/images/logo-dark.png"
+                width={500}
+              />
             </Link>
           )}
           <ProductLabel

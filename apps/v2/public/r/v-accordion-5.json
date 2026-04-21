@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-accordion-5",
-  "description": "Basic accordion",
+  "description": "With plus/minus indicators",
   "registryDependencies": [
     "@cnippet/accordion"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-accordion-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Minus, Plus } from \"lucide-react\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\n\nconst items = [\n  {\n    content:\n      \"We use industry-standard AES-256 encryption to protect your sensitive information at rest and in transit.\",\n    trigger: \"Data Security\",\n    value: \"security\",\n  },\n  {\n    content:\n      \"Seamlessly connect with your favorite tools using our robust REST API and pre-built connectors.\",\n    trigger: \"API Integration\",\n    value: \"integration\",\n  },\n  {\n    content:\n      \"Invite team members, assign roles, and work together in real-time on shared projects and documents.\",\n    trigger: \"Team Collaboration\",\n    value: \"collaboration\",\n  },\n];\n\nexport default function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-sm\">\n      <Accordion defaultValue={[\"security\"]}>\n        {items.map((item) => (\n          <AccordionItem key={item.value} value={item.value}>\n            <AccordionTrigger\n              className=\"hover:no-underline\"\n              icon={\n                <div className=\"flex h-7 w-7 items-center justify-center\">\n                  <Plus className=\"in-data-open:hidden\" size={16} />\n                  <Minus className=\"in-data-open:block hidden\" size={16} />\n                </div>\n              }\n            >\n              <span>{item.trigger}</span>\n            </AccordionTrigger>\n            <AccordionContent>{item.content}</AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

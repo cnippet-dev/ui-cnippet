@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-accordion-8",
-  "description": "Basic accordion",
+  "description": "Nested accordion example with bordered items",
   "registryDependencies": [
     "@cnippet/accordion"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-accordion-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\n\nconst nestedItems = [\n  {\n    content:\n      \"Detailed technical specs including dimensions, weight, and power requirements.\",\n    trigger: \"Technical Specifications\",\n    value: \"sub-item-1\",\n  },\n  {\n    content:\n      \"List of supported devices and operating systems for this product.\",\n    trigger: \"Compatibility\",\n    value: \"sub-item-2\",\n  },\n];\n\nconst mainItems = [\n  {\n    content:\n      \"This product is designed for high-performance enterprise environments requiring maximum reliability.\",\n    trigger: \"Product Overview\",\n    value: \"product-info\",\n  },\n  {\n    isNested: true,\n    trigger: \"Additional Details\",\n    value: \"details\",\n  },\n  {\n    content:\n      \"Free standard shipping on orders over $500. 30-day return policy applies.\",\n    trigger: \"Shipping & Returns\",\n    value: \"shipping\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto mb-auto w-full max-w-lg\">\n      <Accordion\n        className=\"space-y-2 border-none\"\n        defaultValue={[\"details\"]}\n        multiple={false}\n      >\n        {mainItems.map((item) => (\n          <AccordionItem\n            className=\"rounded-lg border border-border bg-transparent px-4\"\n            key={item.value}\n            value={item.value}\n          >\n            <AccordionTrigger className=\"items-center py-3 font-medium hover:no-underline\">\n              {item.trigger}\n            </AccordionTrigger>\n            <AccordionContent className=\"h-auto text-muted-foreground\">\n              {item.isNested ? (\n                <Accordion\n                  className=\"space-y-2 border-none\"\n                  defaultValue={[\"sub-item-1\"]}\n                  multiple={false}\n                >\n                  {nestedItems.map((subItem) => (\n                    <AccordionItem\n                      className=\"rounded-lg border border-border bg-transparent px-3\"\n                      key={subItem.value}\n                      value={subItem.value}\n                    >\n                      <AccordionTrigger className=\"items-center py-3 font-medium text-foreground hover:no-underline\">\n                        {subItem.trigger}\n                      </AccordionTrigger>\n                      <AccordionContent className=\"text-sm\">\n                        {subItem.content}\n                      </AccordionContent>\n                    </AccordionItem>\n                  ))}\n                </Accordion>\n              ) : (\n                item.content\n              )}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
