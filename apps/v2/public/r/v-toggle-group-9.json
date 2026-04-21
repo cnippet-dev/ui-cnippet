@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"monthly\"]} size=\"lg\" variant=\"outline\">\n        <ToggleGroupItem value=\"monthly\">Monthly</ToggleGroupItem>\n        <ToggleGroupItem className=\"gap-2\" value=\"yearly\">\n          Yearly\n          <span className=\"rounded-full bg-primary px-2 py-0.5 font-medium text-primary-foreground text-xs\">\n            Save 20%\n          </span>\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

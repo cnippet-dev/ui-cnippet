@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-switch-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nconst settings = [\n  {\n    checked: true,\n    description: \"Save changes automatically\",\n    id: \"auto-save\",\n    label: \"Auto-save\",\n  },\n  {\n    checked: true,\n    description: \"Highlight spelling errors\",\n    id: \"spell-check\",\n    label: \"Spell check\",\n  },\n  {\n    checked: false,\n    description: \"Show line numbers in editor\",\n    id: \"line-numbers\",\n    label: \"Line numbers\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-md\">\n      <p className=\"mb-3 font-medium text-sm\">Editor Preferences</p>\n      <Separator />\n      <div className=\"flex flex-col\">\n        {settings.map((setting) => (\n          <label\n            className=\"flex cursor-pointer items-center justify-between border-b py-3 last:border-b-0\"\n            htmlFor={setting.id}\n            key={setting.id}\n          >\n            <div className=\"flex flex-col gap-0.5\">\n              <span className=\"font-medium text-sm\">{setting.label}</span>\n              <span className=\"text-muted-foreground text-xs\">\n                {setting.description}\n              </span>\n            </div>\n            <Switch\n              defaultChecked={setting.checked}\n              id={setting.id}\n              size=\"sm\"\n            />\n          </label>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-switch-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"flex-row\">\n        <div className=\"space-y-2\">\n          <FieldLabel className=\"text-destructive\" htmlFor=\"sw-danger \">\n            Delete all data on sign out\n          </FieldLabel>\n          <FieldDescription>\n            When enabled, all local data will be permanently removed when you\n            sign out. This action cannot be undone.\n          </FieldDescription>\n        </div>\n        <Switch className=\"data-checked:bg-destructive\" id=\"sw-danger\" />\n      </Field>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-24",
+  "description": "Basic button",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-24.tsx",
+      "content": "\"use client\";\n\nimport { MenuIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Button\n      aria-expanded={open}\n      aria-label={open ? \"Close menu\" : \"Open menu\"}\n      onClick={() => setOpen((v) => !v)}\n      size=\"icon\"\n      variant=\"outline\"\n    >\n      <span className=\"relative flex size-4 items-center justify-center\">\n        <MenuIcon\n          aria-hidden=\"true\"\n          className={cn(\n            \"absolute size-4 transition-all duration-200\",\n            open\n              ? \"rotate-90 scale-75 opacity-0\"\n              : \"rotate-0 scale-100 opacity-100\",\n          )}\n        />\n        <XIcon\n          aria-hidden=\"true\"\n          className={cn(\n            \"absolute size-4 transition-all duration-200\",\n            open\n              ? \"rotate-0 scale-100 opacity-100\"\n              : \"-rotate-90 scale-75 opacity-0\",\n          )}\n        />\n      </span>\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

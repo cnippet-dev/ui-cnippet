@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4\">\n      <ToggleGroup defaultValue={[\"top\"]} size=\"sm\" variant=\"outline\">\n        <ToggleGroupItem value=\"top\">Top</ToggleGroupItem>\n        <ToggleGroupItem value=\"bottom\">Bottom</ToggleGroupItem>\n      </ToggleGroup>\n      <ToggleGroup defaultValue={[\"top\"]} variant=\"outline\">\n        <ToggleGroupItem value=\"top\">Top</ToggleGroupItem>\n        <ToggleGroupItem value=\"bottom\">Bottom</ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

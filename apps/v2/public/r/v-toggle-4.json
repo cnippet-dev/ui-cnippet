@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { BoldIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4\">\n      <div className=\"flex items-center gap-2\">\n        <Button size=\"sm\" variant=\"outline\">\n          Button\n        </Button>\n        <Toggle aria-label=\"Small toggle\" size=\"sm\" variant=\"outline\">\n          Toggle\n        </Toggle>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Button size=\"icon\" variant=\"outline\">\n          <BoldIcon />\n        </Button>\n        <Toggle aria-label=\"Toggle bold icon\" variant=\"outline\">\n          <BoldIcon />\n        </Toggle>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n  ToggleGroupSeparator,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={[\"bold\"]} variant=\"outline\">\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </ToggleGroupItem>\n      <ToggleGroupSeparator />\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </ToggleGroupItem>\n      <ToggleGroupSeparator />\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

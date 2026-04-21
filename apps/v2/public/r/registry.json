@@ -2617,6 +2617,206 @@
     },
     {
       "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-16",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-17",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-18",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-19",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-20",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-21",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-22",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-23.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-23",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-24.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-24",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Basic button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-25.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-25",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "calendar"
       ],
       "description": "Basic calendar",
@@ -12382,56 +12582,56 @@
       "type": "registry:style"
     },
     {
+      "files": [],
       "name": "fonts",
-      "type": "registry:ui",
       "registryDependencies": [
         "@coss/font-sans",
         "@coss/font-heading",
         "@coss/font-mono"
       ],
-      "files": []
+      "type": "registry:ui"
     },
     {
+      "font": {
+        "dependency": "@fontsource-variable/inter",
+        "family": "'Inter', sans-serif",
+        "import": "Inter",
+        "provider": "google",
+        "subsets": [
+          "latin"
+        ],
+        "variable": "--font-sans"
+      },
       "name": "font-sans",
-      "type": "registry:font",
+      "type": "registry:font"
+    },
+    {
       "font": {
+        "dependency": "@fontsource-variable/inter",
         "family": "'Inter', sans-serif",
         "import": "Inter",
         "provider": "google",
         "subsets": [
           "latin"
         ],
-        "variable": "--font-sans",
-        "dependency": "@fontsource-variable/inter"
-      }
-    },
-    {
+        "variable": "--font-heading"
+      },
       "name": "font-heading",
-      "type": "registry:font",
-      "font": {
-        "family": "'Inter', sans-serif",
-        "import": "Inter",
-        "provider": "google",
-        "subsets": [
-          "latin"
-        ],
-        "variable": "--font-heading",
-        "dependency": "@fontsource-variable/inter"
-      }
+      "type": "registry:font"
     },
     {
-      "name": "font-mono",
-      "type": "registry:font",
       "font": {
+        "dependency": "geist",
         "family": "'Geist Mono', monospace",
         "import": "Geist_Mono",
         "provider": "google",
         "subsets": [
           "latin"
         ],
-        "variable": "--font-mono",
-        "dependency": "geist"
-      }
+        "variable": "--font-mono"
+      },
+      "name": "font-mono",
+      "type": "registry:font"
     },
     {
       "dependencies": [

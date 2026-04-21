@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-20",
+  "description": "Basic button",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-20.tsx",
+      "content": "import { StarIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button className=\"pe-0\" variant=\"outline\">\n      <StarIcon aria-hidden=\"true\" />\n      Star\n      <span className=\"relative ms-1 px-2 font-medium text-muted-foreground text-xs before:absolute before:inset-0 before:left-0 before:w-px before:bg-border\">\n        589\n      </span>\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

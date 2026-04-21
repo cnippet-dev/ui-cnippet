@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  AlignCenterIcon,\n  AlignLeftIcon,\n  AlignRightIcon,\n  MenuIcon,\n} from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"left\"]}>\n        <ToggleGroupItem aria-label=\"Align left\" value=\"left\">\n          <AlignLeftIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Align center\" value=\"center\">\n          <AlignCenterIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Align right\" value=\"right\">\n          <AlignRightIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Justify\" value=\"justify\">\n          <MenuIcon />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

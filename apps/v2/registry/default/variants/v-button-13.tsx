@@ -1,5 +1,10 @@
+import { SearchIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 
-export default function Component() {
-  return <Button />;
+export function Pattern() {
+  return (
+    <Button aria-label="Search" size="icon">
+      <SearchIcon aria-hidden="true" />
+    </Button>
+  );
 }

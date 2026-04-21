@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { MonitorIcon, MoonIcon, SunIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"light\"]} variant=\"outline\">\n        <ToggleGroupItem aria-label=\"Light theme\" value=\"light\">\n          <SunIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Dark theme\" value=\"dark\">\n          <MoonIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"System theme\" value=\"system\">\n          <MonitorIcon />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

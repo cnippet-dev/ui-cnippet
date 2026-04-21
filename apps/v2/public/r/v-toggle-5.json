@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { BookmarkIcon } from \"lucide-react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Toggle aria-label=\"Toggle bookmark\" variant=\"outline\">\n        <BookmarkIcon className=\"group-data-[state=on]/toggle:fill-accent-foreground\" />\n        Bookmark\n      </Toggle>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

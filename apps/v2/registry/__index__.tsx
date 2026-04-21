@@ -2545,6 +2545,186 @@ export const Index: Record<string, any> = {
     categories: ["button"],
     meta: {"className":""},
   },
+  "v-button-16": {
+    name: "v-button-16",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-16.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-16.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-17": {
+    name: "v-button-17",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-17.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-17.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-18": {
+    name: "v-button-18",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-18.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-18.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-19": {
+    name: "v-button-19",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-19.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-19.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-20": {
+    name: "v-button-20",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-20.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-20.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-21": {
+    name: "v-button-21",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-21.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-21.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-22": {
+    name: "v-button-22",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-22.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-22.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-23": {
+    name: "v-button-23",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-23.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-23.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-24": {
+    name: "v-button-24",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-24.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-24.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
+  "v-button-25": {
+    name: "v-button-25",
+    description: "Basic button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/button"],
+    files: [{
+      path: "registry/default/variants/v-button-25.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-button-25.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["button"],
+    meta: {"className":""},
+  },
   "v-calendar-1": {
     name: "v-calendar-1",
     description: "Basic calendar",

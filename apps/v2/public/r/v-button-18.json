@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-18",
+  "description": "Basic button",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-18.tsx",
+      "content": "import { Trash2Icon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button variant=\"destructive\">\n      <Trash2Icon aria-hidden=\"true\" />\n      Delete Account\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}
