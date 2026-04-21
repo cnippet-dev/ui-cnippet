@@ -2277,7 +2277,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-1": {
     name: "v-button-1",
-    description: "Basic button",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2295,7 +2295,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-2": {
     name: "v-button-2",
-    description: "Basic button",
+    description: "Outline",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2313,7 +2313,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-3": {
     name: "v-button-3",
-    description: "Basic button",
+    description: "Secondary",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2331,7 +2331,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-4": {
     name: "v-button-4",
-    description: "Basic button",
+    description: "Destructive",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2349,7 +2349,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-5": {
     name: "v-button-5",
-    description: "Basic button",
+    description: "Destructive Outline",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2367,7 +2367,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-6": {
     name: "v-button-6",
-    description: "Basic button",
+    description: "Ghost",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2385,7 +2385,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-7": {
     name: "v-button-7",
-    description: "Basic button",
+    description: "Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2403,7 +2403,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-8": {
     name: "v-button-8",
-    description: "Basic button",
+    description: "Extra-small Size",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2421,7 +2421,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-9": {
     name: "v-button-9",
-    description: "Basic button",
+    description: "Small Size",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2439,7 +2439,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-10": {
     name: "v-button-10",
-    description: "Basic button",
+    description: "Large Size",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2457,7 +2457,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-11": {
     name: "v-button-11",
-    description: "Basic button",
+    description: "Extra-large Size",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2475,7 +2475,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-12": {
     name: "v-button-12",
-    description: "Basic button",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2493,7 +2493,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-13": {
     name: "v-button-13",
-    description: "Basic button",
+    description: "Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2511,7 +2511,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-14": {
     name: "v-button-14",
-    description: "Basic button",
+    description: "Button with an icon on the right",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2529,7 +2529,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-15": {
     name: "v-button-15",
-    description: "Basic button",
+    description: "Button with an icon on the left",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2547,7 +2547,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-16": {
     name: "v-button-16",
-    description: "Basic button",
+    description: "Outline button with an icon on the left",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2565,7 +2565,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-17": {
     name: "v-button-17",
-    description: "Basic button",
+    description: "Ghost button with an icon on the right",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2583,7 +2583,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-18": {
     name: "v-button-18",
-    description: "Basic button",
+    description: "Destructive button with an icon on the left",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2601,7 +2601,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-19": {
     name: "v-button-19",
-    description: "Basic button",
+    description: "Link button with an icon on the right",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2619,7 +2619,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-20": {
     name: "v-button-20",
-    description: "Basic button",
+    description: "Star button with count",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2637,7 +2637,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-21": {
     name: "v-button-21",
-    description: "Basic button",
+    description: "Button with an unread badge",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2655,7 +2655,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-22": {
     name: "v-button-22",
-    description: "Basic button",
+    description: "Button with icon, label, and shortcut keys",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2673,7 +2673,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-23": {
     name: "v-button-23",
-    description: "Basic button",
+    description: "Icon-only copy button with feedback",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2691,7 +2691,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-24": {
     name: "v-button-24",
-    description: "Basic button",
+    description: "Animated hamburger / close toggle button",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -2709,7 +2709,7 @@ export const Index: Record<string, any> = {
   },
   "v-button-25": {
     name: "v-button-25",
-    description: "Basic button",
+    description: "Sliding Icon Button (Hover reveal)",
     type: "registry:block",
     registryDependencies: ["@cnippet/button"],
     files: [{
@@ -9747,7 +9747,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-1": {
     name: "v-switch-1",
-    description: "Basic switch",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9765,7 +9765,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-2": {
     name: "v-switch-2",
-    description: "Basic switch",
+    description: "Description",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9783,7 +9783,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-3": {
     name: "v-switch-3",
-    description: "Basic switch",
+    description: "Switch in different sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9801,7 +9801,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-4": {
     name: "v-switch-4",
-    description: "Basic switch",
+    description: "Switch group",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9819,7 +9819,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-5": {
     name: "v-switch-5",
-    description: "Basic switch",
+    description: "Switch list in card with icons",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9837,7 +9837,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-6": {
     name: "v-switch-6",
-    description: "Basic switch",
+    description: "Destructive switch with confirmation text",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9855,7 +9855,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-7": {
     name: "v-switch-7",
-    description: "Basic switch",
+    description: "Compact settings table with switches",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -9873,7 +9873,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-8": {
     name: "v-switch-8",
-    description: "Basic switch",
+    description: "Switch with descriptions in card grid",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -10647,7 +10647,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-1": {
     name: "v-toggle-1",
-    description: "Basic toggle",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10665,7 +10665,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-2": {
     name: "v-toggle-2",
-    description: "Basic toggle",
+    description: "Toggle buttons with outline variant",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10683,7 +10683,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-3": {
     name: "v-toggle-3",
-    description: "Basic toggle",
+    description: "Toggle buttons in different sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10701,7 +10701,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-4": {
     name: "v-toggle-4",
-    description: "Basic toggle",
+    description: "Toggle with button and icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10719,7 +10719,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-5": {
     name: "v-toggle-5",
-    description: "Basic toggle",
+    description: "Toggle with icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10737,7 +10737,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-6": {
     name: "v-toggle-6",
-    description: "Basic toggle",
+    description: "Toggle with notification count badge",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10755,7 +10755,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-7": {
     name: "v-toggle-7",
-    description: "Basic toggle",
+    description: "Toggle with icon swap on press",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10773,7 +10773,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-8": {
     name: "v-toggle-8",
-    description: "Basic toggle",
+    description: "Toggle with text label that changes",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -10827,7 +10827,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-1": {
     name: "v-toggle-group-1",
-    description: "Basic toggle group",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10845,7 +10845,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-2": {
     name: "v-toggle-group-2",
-    description: "Basic toggle group",
+    description: "Toggle groups in different sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10863,7 +10863,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-3": {
     name: "v-toggle-group-3",
-    description: "Basic toggle group",
+    description: "With Outline Toggles",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10881,7 +10881,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-4": {
     name: "v-toggle-group-4",
-    description: "Basic toggle group",
+    description: "Vertical",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10899,7 +10899,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-5": {
     name: "v-toggle-group-5",
-    description: "Basic toggle group",
+    description: "Multiple selection",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10917,7 +10917,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-6": {
     name: "v-toggle-group-6",
-    description: "Basic toggle group",
+    description: "For text alignment",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10935,7 +10935,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-7": {
     name: "v-toggle-group-7",
-    description: "Basic toggle group",
+    description: "View mode switching",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10953,7 +10953,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-8": {
     name: "v-toggle-group-8",
-    description: "Basic toggle group",
+    description: "For color theme",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -10971,7 +10971,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-9": {
     name: "v-toggle-group-9",
-    description: "Basic toggle group",
+    description: "For pricing tier",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{

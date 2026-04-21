@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-button-25",
-  "description": "Basic button",
+  "description": "Sliding Icon Button (Hover reveal)",
   "registryDependencies": [
     "@cnippet/button"
   ],

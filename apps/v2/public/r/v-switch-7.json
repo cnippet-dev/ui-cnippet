@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-switch-7",
-  "description": "Basic switch",
+  "description": "Compact settings table with switches",
   "registryDependencies": [
     "@cnippet/switch"
   ],

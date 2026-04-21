@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toggle-4",
-  "description": "Basic toggle",
+  "description": "Toggle with button and icon",
   "registryDependencies": [
     "@cnippet/toggle"
   ],

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-button-13",
-  "description": "Basic button",
+  "description": "Icon",
   "registryDependencies": [
     "@cnippet/button"
   ],

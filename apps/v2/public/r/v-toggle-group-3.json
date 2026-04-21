@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toggle-group-3",
-  "description": "Basic toggle group",
+  "description": "With Outline Toggles",
   "registryDependencies": [
     "@cnippet/toggle-group"
   ],

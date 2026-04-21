@@ -8,8 +8,8 @@ export const appConfig = {
       label: "Docs",
     },
     {
-      href: "/particles",
-      label: "Particles",
+      href: "/explore",
+      label: "Explore",
     },
   ],
   ogImage: "https://coss.com/og.jpg",

@@ -2319,7 +2319,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-button-1.tsx",
@@ -2339,7 +2339,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Outline",
       "files": [
         {
           "path": "registry/default/variants/v-button-2.tsx",
@@ -2359,7 +2359,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Secondary",
       "files": [
         {
           "path": "registry/default/variants/v-button-3.tsx",
@@ -2379,7 +2379,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Destructive",
       "files": [
         {
           "path": "registry/default/variants/v-button-4.tsx",
@@ -2399,7 +2399,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Destructive Outline",
       "files": [
         {
           "path": "registry/default/variants/v-button-5.tsx",
@@ -2419,7 +2419,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Ghost",
       "files": [
         {
           "path": "registry/default/variants/v-button-6.tsx",
@@ -2439,7 +2439,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Link",
       "files": [
         {
           "path": "registry/default/variants/v-button-7.tsx",
@@ -2459,7 +2459,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Extra-small Size",
       "files": [
         {
           "path": "registry/default/variants/v-button-8.tsx",
@@ -2479,7 +2479,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Small Size",
       "files": [
         {
           "path": "registry/default/variants/v-button-9.tsx",
@@ -2499,7 +2499,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Large Size",
       "files": [
         {
           "path": "registry/default/variants/v-button-10.tsx",
@@ -2519,7 +2519,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Extra-large Size",
       "files": [
         {
           "path": "registry/default/variants/v-button-11.tsx",
@@ -2539,7 +2539,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-button-12.tsx",
@@ -2559,7 +2559,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Icon",
       "files": [
         {
           "path": "registry/default/variants/v-button-13.tsx",
@@ -2579,7 +2579,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Button with an icon on the right",
       "files": [
         {
           "path": "registry/default/variants/v-button-14.tsx",
@@ -2599,7 +2599,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Button with an icon on the left",
       "files": [
         {
           "path": "registry/default/variants/v-button-15.tsx",
@@ -2619,7 +2619,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Outline button with an icon on the left",
       "files": [
         {
           "path": "registry/default/variants/v-button-16.tsx",
@@ -2639,7 +2639,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Ghost button with an icon on the right",
       "files": [
         {
           "path": "registry/default/variants/v-button-17.tsx",
@@ -2659,7 +2659,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Destructive button with an icon on the left",
       "files": [
         {
           "path": "registry/default/variants/v-button-18.tsx",
@@ -2679,7 +2679,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Link button with an icon on the right",
       "files": [
         {
           "path": "registry/default/variants/v-button-19.tsx",
@@ -2699,7 +2699,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Star button with count",
       "files": [
         {
           "path": "registry/default/variants/v-button-20.tsx",
@@ -2719,7 +2719,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Button with an unread badge",
       "files": [
         {
           "path": "registry/default/variants/v-button-21.tsx",
@@ -2739,7 +2739,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Button with icon, label, and shortcut keys",
       "files": [
         {
           "path": "registry/default/variants/v-button-22.tsx",
@@ -2759,7 +2759,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Icon-only copy button with feedback",
       "files": [
         {
           "path": "registry/default/variants/v-button-23.tsx",
@@ -2779,7 +2779,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Animated hamburger / close toggle button",
       "files": [
         {
           "path": "registry/default/variants/v-button-24.tsx",
@@ -2799,7 +2799,7 @@
       "categories": [
         "button"
       ],
-      "description": "Basic button",
+      "description": "Sliding Icon Button (Hover reveal)",
       "files": [
         {
           "path": "registry/default/variants/v-button-25.tsx",
@@ -10599,7 +10599,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-switch-1.tsx",
@@ -10619,7 +10619,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Description",
       "files": [
         {
           "path": "registry/default/variants/v-switch-2.tsx",
@@ -10639,7 +10639,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Switch in different sizes",
       "files": [
         {
           "path": "registry/default/variants/v-switch-3.tsx",
@@ -10659,7 +10659,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Switch group",
       "files": [
         {
           "path": "registry/default/variants/v-switch-4.tsx",
@@ -10679,7 +10679,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Switch list in card with icons",
       "files": [
         {
           "path": "registry/default/variants/v-switch-5.tsx",
@@ -10699,7 +10699,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Destructive switch with confirmation text",
       "files": [
         {
           "path": "registry/default/variants/v-switch-6.tsx",
@@ -10719,7 +10719,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Compact settings table with switches",
       "files": [
         {
           "path": "registry/default/variants/v-switch-7.tsx",
@@ -10739,7 +10739,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Switch with descriptions in card grid",
       "files": [
         {
           "path": "registry/default/variants/v-switch-8.tsx",
@@ -11599,7 +11599,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-1.tsx",
@@ -11619,7 +11619,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle buttons with outline variant",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-2.tsx",
@@ -11639,7 +11639,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle buttons in different sizes",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-3.tsx",
@@ -11659,7 +11659,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle with button and icon",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-4.tsx",
@@ -11679,7 +11679,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle with icon",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-5.tsx",
@@ -11699,7 +11699,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle with notification count badge",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-6.tsx",
@@ -11719,7 +11719,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle with icon swap on press",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-7.tsx",
@@ -11739,7 +11739,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Toggle with text label that changes",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-8.tsx",
@@ -11799,7 +11799,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-1.tsx",
@@ -11819,7 +11819,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Toggle groups in different sizes",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-2.tsx",
@@ -11839,7 +11839,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "With Outline Toggles",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-3.tsx",
@@ -11859,7 +11859,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-4.tsx",
@@ -11879,7 +11879,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Multiple selection",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-5.tsx",
@@ -11899,7 +11899,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "For text alignment",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-6.tsx",
@@ -11919,7 +11919,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "View mode switching",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-7.tsx",
@@ -11939,7 +11939,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "For color theme",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-8.tsx",
@@ -11959,7 +11959,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "For pricing tier",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-9.tsx",
