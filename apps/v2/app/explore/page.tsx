@@ -48,7 +48,7 @@ export default function ExplorePage() {
             code viewer.
           </div>
 
-          <div className="px-2 pt-8 max-sm:px-4">
+          <div className="px-0 pt-8 max-sm:px-0">
             <ExploreShowcase
               categories={categories}
               variants={variantEntries}
