@@ -2113,6 +2113,42 @@ export const Index: Record<string, any> = {
     categories: ["badge"],
     meta: {"className":""},
   },
+  "v-badge-11": {
+    name: "v-badge-11",
+    description: "Basic badge",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/badge"],
+    files: [{
+      path: "registry/default/variants/v-badge-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-badge-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["badge"],
+    meta: {"className":""},
+  },
+  "v-badge-12": {
+    name: "v-badge-12",
+    description: "Basic badge",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/badge"],
+    files: [{
+      path: "registry/default/variants/v-badge-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-badge-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["badge"],
+    meta: {"className":""},
+  },
   "v-breadcrumb-1": {
     name: "v-breadcrumb-1",
     description: "Basic breadcrumb",

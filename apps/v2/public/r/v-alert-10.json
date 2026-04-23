@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-alert-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { LightbulbIcon, XIcon } from \"lucide-react\";\nimport {\n  Alert,\n  AlertAction,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto mb-auto w-full max-w-lg\">\n      <Frame>\n        <FramePanel className=\"overflow-hidden p-0!\">\n          <Alert className=\"border-0 shadow-none\" variant=\"info\">\n            <LightbulbIcon />\n            <AlertTitle>New: Advanced Analytics</AlertTitle>\n            <AlertAction className=\"flex items-start justify-start\">\n              <Button\n                className=\"text-muted-foreground hover:text-foreground -mt-1 -mr-2 size-7 p-0 hover:bg-transparent\"\n                size=\"xs\"\n                variant=\"ghost\"\n              >\n                <XIcon className=\"size-3.5\" />\n              </Button>\n            </AlertAction>\n            <AlertDescription>\n              We&apos;ve just released a new dashboard for tracking your\n              team&apos;s performance.\n              <Button\n                className=\"text-info mr-auto h-auto p-0 underline\"\n                size=\"sm\"\n                variant=\"link\"\n              >\n                Explore features\n              </Button>\n            </AlertDescription>\n          </Alert>\n        </FramePanel>\n      </Frame>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

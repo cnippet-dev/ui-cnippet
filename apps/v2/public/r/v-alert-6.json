@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-alert-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { TriangleAlertIcon } from \"lucide-react\";\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\n\nexport default function Particle() {\n  return (\n    <Alert variant=\"warning\">\n      <TriangleAlertIcon />\n      <AlertTitle>Warning!</AlertTitle>\n      <AlertDescription>\n        Please check your settings. If the problem persists, contact support.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

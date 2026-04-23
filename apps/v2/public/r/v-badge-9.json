@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-badge-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex items-center gap-2.5\">\n      <Badge size=\"sm\">Small</Badge>\n      <Badge size=\"default\">Default</Badge>\n      <Badge size=\"lg\">Large</Badge>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -94,7 +94,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- badge ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 12 }, (_, i) =>
     createVariant({
       category: "badge",
       dependencies: ["badge"],

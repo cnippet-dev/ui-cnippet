@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-alert-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ShieldCheckIcon } from \"lucide-react\";\nimport {\n  Alert,\n  AlertAction,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto mb-auto w-full max-w-lg\">\n      <Frame>\n        <FramePanel className=\"overflow-hidden p-0!\">\n          <Alert className=\"border-0 shadow-none\">\n            <ShieldCheckIcon className=\"text-emerald-500\" />\n            <AlertTitle>Security Update</AlertTitle>\n            <AlertAction>\n              <Button size=\"xs\" variant=\"outline\">\n                Dismiss\n              </Button>\n              <Button size=\"xs\">Update</Button>\n            </AlertAction>\n            <AlertDescription>\n              Update your password and enable 2FA to improve your account\n              security.\n            </AlertDescription>\n          </Alert>\n        </FramePanel>\n      </Frame>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

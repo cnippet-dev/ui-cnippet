@@ -1,3 +1,5 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Badge } from "@/registry/default/ui/badge";
+
+export default function Particle() {
+  return <Badge variant="warning">Badge</Badge>;
 }

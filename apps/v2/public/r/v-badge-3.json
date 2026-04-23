@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-badge-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge variant=\"secondary\">Badge</Badge>;\n}\n",
       "type": "registry:block"
     }
   ],

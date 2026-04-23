@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-badge-1",
+  "name": "v-badge-11",
   "description": "Basic badge",
   "registryDependencies": [
     "@cnippet/badge"
   ],
   "files": [
     {
-      "path": "registry/default/variants/v-badge-1.tsx",
-      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge>Badge</Badge>;\n}\n",
+      "path": "registry/default/variants/v-badge-11.tsx",
+      "content": "import Link from \"next/link\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>;\n}\n",
       "type": "registry:block"
     }
   ],

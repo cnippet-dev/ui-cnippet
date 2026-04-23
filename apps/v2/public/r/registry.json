@@ -2131,6 +2131,46 @@
     },
     {
       "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-11",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Basic badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-12",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "breadcrumb"
       ],
       "description": "Basic breadcrumb",
