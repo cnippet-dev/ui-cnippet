@@ -1,3 +1,17 @@
-export default function Component() {
-  return <div>Component</div>;
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/registry/default/ui/input-group";
+import { Spinner } from "@/registry/default/ui/spinner";
+
+export default function Particle() {
+  return (
+    <InputGroup>
+      <InputGroupInput disabled placeholder="Processing…" type="search" />
+      <InputGroupAddon>
+        <Spinner />
+      </InputGroupAddon>
+    </InputGroup>
+  );
 }

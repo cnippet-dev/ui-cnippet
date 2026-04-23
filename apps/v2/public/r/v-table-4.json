@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-table-4",
-  "description": "Basic table",
+  "description": "Table in Frame",
   "registryDependencies": [
     "@cnippet/table"
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-3",
-  "description": "Basic skeleton",
+  "description": "Card component",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"gap-2\">\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </CardHeader>\n      <CardContent>\n        <Skeleton className=\"aspect-video w-full rounded-md\" />\n      </CardContent>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

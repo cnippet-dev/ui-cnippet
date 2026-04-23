@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-spinner-7",
-  "description": "Basic spinner",
+  "description": "Inline loading text with spinner",
   "registryDependencies": [
     "@cnippet/spinner"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-spinner-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-3\">\n      <div className=\"flex items-center gap-2\">\n        <Spinner className=\"size-3.5\" />\n        <span className=\"text-muted-foreground text-sm\">\n          Checking availability...\n        </span>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Spinner className=\"size-3.5 text-success\" />\n        <span className=\"text-sm\">\n          <span className=\"font-medium text-success\">Connected</span>\n          <span className=\"text-muted-foreground\"> — syncing data</span>\n        </span>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Spinner className=\"size-3.5 text-warning\" />\n        <span className=\"text-sm\">\n          <span className=\"font-medium text-warning\">Reconnecting</span>\n          <span className=\"text-muted-foreground\"> — attempt 3 of 5</span>\n        </span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

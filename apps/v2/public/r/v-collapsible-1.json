@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-collapsible-1",
-  "description": "Basic collapsible",
+  "description": "Default",
   "registryDependencies": [
     "@cnippet/collapsible"
   ],

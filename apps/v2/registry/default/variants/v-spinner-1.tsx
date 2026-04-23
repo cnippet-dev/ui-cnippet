@@ -1,3 +1,5 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Spinner } from "@/registry/default/ui/spinner";
+
+export default function Particle() {
+  return <Spinner />;
 }

@@ -1215,7 +1215,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-1": {
     name: "v-alert-1",
-    description: "Basic alert",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1233,7 +1233,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-2": {
     name: "v-alert-2",
-    description: "Basic alert",
+    description: "With Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1251,7 +1251,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-3": {
     name: "v-alert-3",
-    description: "Basic alert",
+    description: "With Icon and Action Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1269,7 +1269,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-4": {
     name: "v-alert-4",
-    description: "Basic alert",
+    description: "Info Alert",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1287,7 +1287,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-5": {
     name: "v-alert-5",
-    description: "Basic alert",
+    description: "Success Alert",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1305,7 +1305,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-6": {
     name: "v-alert-6",
-    description: "Basic alert",
+    description: "Warning Alert",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1323,7 +1323,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-7": {
     name: "v-alert-7",
-    description: "Basic alert",
+    description: "Error Alert",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1341,7 +1341,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-8": {
     name: "v-alert-8",
-    description: "Basic alert",
+    description: "Stacked alerts within a Frame",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1359,7 +1359,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-9": {
     name: "v-alert-9",
-    description: "Basic alert",
+    description: "Alert with actions integrated within a Frame",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1377,7 +1377,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-10": {
     name: "v-alert-10",
-    description: "Basic alert",
+    description: "Feature discovery alert",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert"],
     files: [{
@@ -1935,7 +1935,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-1": {
     name: "v-badge-1",
-    description: "Basic badge",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -1953,7 +1953,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-2": {
     name: "v-badge-2",
-    description: "Basic badge",
+    description: "Outline",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -1971,7 +1971,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-3": {
     name: "v-badge-3",
-    description: "Basic badge",
+    description: "Secondary",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -1989,7 +1989,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-4": {
     name: "v-badge-4",
-    description: "Basic badge",
+    description: "Destructive",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2007,7 +2007,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-5": {
     name: "v-badge-5",
-    description: "Basic badge",
+    description: "Info",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2025,7 +2025,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-6": {
     name: "v-badge-6",
-    description: "Basic badge",
+    description: "Success",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2043,7 +2043,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-7": {
     name: "v-badge-7",
-    description: "Basic badge",
+    description: "Warning",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2061,7 +2061,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-8": {
     name: "v-badge-8",
-    description: "Basic badge",
+    description: "Error",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2079,7 +2079,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-9": {
     name: "v-badge-9",
-    description: "Basic badge",
+    description: "Size Variations",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2097,7 +2097,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-10": {
     name: "v-badge-10",
-    description: "Basic badge",
+    description: "With Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2115,7 +2115,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-11": {
     name: "v-badge-11",
-    description: "Basic badge",
+    description: "With Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -2133,7 +2133,7 @@ export const Index: Record<string, any> = {
   },
   "v-badge-12": {
     name: "v-badge-12",
-    description: "Basic badge",
+    description: "With Count",
     type: "registry:block",
     registryDependencies: ["@cnippet/badge"],
     files: [{
@@ -3861,7 +3861,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-1": {
     name: "v-collapsible-1",
-    description: "Basic collapsible",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3879,7 +3879,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-2": {
     name: "v-collapsible-2",
-    description: "Basic collapsible",
+    description: "Collapsible",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3897,7 +3897,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-3": {
     name: "v-collapsible-3",
-    description: "Basic collapsible",
+    description: "Collapsible animated card",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3915,7 +3915,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-4": {
     name: "v-collapsible-4",
-    description: "Basic collapsible",
+    description: "Collapsible card with bottom trigger",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3933,7 +3933,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-5": {
     name: "v-collapsible-5",
-    description: "Basic collapsible",
+    description: "Collapsible form fields",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3951,7 +3951,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-6": {
     name: "v-collapsible-6",
-    description: "Basic collapsible",
+    description: "Multi-level collapsible menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -3969,7 +3969,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-7": {
     name: "v-collapsible-7",
-    description: "Basic collapsible",
+    description: "Tree view with file actions",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -5121,7 +5121,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-1": {
     name: "v-empty-1",
-    description: "Basic empty state",
+    description: "Default",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5139,7 +5139,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-2": {
     name: "v-empty-2",
-    description: "Basic empty state",
+    description: "Search empty state",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5157,7 +5157,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-3": {
     name: "v-empty-3",
-    description: "Basic empty state",
+    description: "Empty state with search input",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5175,7 +5175,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-4": {
     name: "v-empty-4",
-    description: "Basic empty state",
+    description: "Empty state with add button",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5193,7 +5193,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-5": {
     name: "v-empty-5",
-    description: "Basic empty state",
+    description: "Dashed upload empty state",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5211,7 +5211,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-6": {
     name: "v-empty-6",
-    description: "Basic empty state",
+    description: "No automations empty state with toggle illustration",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5229,7 +5229,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-7": {
     name: "v-empty-7",
-    description: "Basic empty state",
+    description: "No products empty state with stacked cards and blur effect",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5247,7 +5247,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-8": {
     name: "v-empty-8",
-    description: "Basic empty state",
+    description: "No payments empty state with credit card illustration",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -5265,7 +5265,7 @@ export const Index: Record<string, any> = {
   },
   "v-empty-9": {
     name: "v-empty-9",
-    description: "Basic empty state",
+    description: "No events empty state with calendar illustration",
     type: "registry:block",
     registryDependencies: [],
     files: [{
@@ -6561,7 +6561,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-1": {
     name: "v-kbd-1",
-    description: "Basic kbd",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -6579,7 +6579,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-2": {
     name: "v-kbd-2",
-    description: "Basic kbd",
+    description: "Input group",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -6597,7 +6597,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-3": {
     name: "v-kbd-3",
-    description: "Basic kbd",
+    description: "Keys grouped together",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -6615,7 +6615,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-4": {
     name: "v-kbd-4",
-    description: "Basic kbd",
+    description: "With icons",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -6633,7 +6633,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-5": {
     name: "v-kbd-5",
-    description: "Basic kbd",
+    description: "In a tooltip",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -6651,7 +6651,7 @@ export const Index: Record<string, any> = {
   },
   "v-kbd-6": {
     name: "v-kbd-6",
-    description: "Basic kbd",
+    description: "Reference list",
     type: "registry:block",
     registryDependencies: ["@cnippet/kbd"],
     files: [{
@@ -8181,7 +8181,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-1": {
     name: "v-progress-1",
-    description: "Basic progress",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -8199,7 +8199,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-2": {
     name: "v-progress-2",
-    description: "Basic progress",
+    description: "With Formatted Value",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -8217,7 +8217,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-3": {
     name: "v-progress-3",
-    description: "Basic progress",
+    description: "With status messages",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -8235,7 +8235,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-4": {
     name: "v-progress-4",
-    description: "Basic progress",
+    description: "With slider",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -8253,7 +8253,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-5": {
     name: "v-progress-5",
-    description: "Basic progress",
+    description: "Multi-step progress indicator",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -8271,7 +8271,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-6": {
     name: "v-progress-6",
-    description: "Basic progress",
+    description: "With custom colors",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -9261,7 +9261,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-1": {
     name: "v-skeleton-1",
-    description: "Basic skeleton",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -9279,7 +9279,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-2": {
     name: "v-skeleton-2",
-    description: "Basic skeleton",
+    description: "Skeleton only",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -9297,7 +9297,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-3": {
     name: "v-skeleton-3",
-    description: "Basic skeleton",
+    description: "Card component",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -9315,7 +9315,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-4": {
     name: "v-skeleton-4",
-    description: "Basic skeleton",
+    description: "Dashboard stats row",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -9333,7 +9333,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-5": {
     name: "v-skeleton-5",
-    description: "Basic skeleton",
+    description: "List with actions",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -9621,7 +9621,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-1": {
     name: "v-spinner-1",
-    description: "Basic spinner",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9639,7 +9639,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-2": {
     name: "v-spinner-2",
-    description: "Basic spinner",
+    description: "Input Group",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9657,7 +9657,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-3": {
     name: "v-spinner-3",
-    description: "Basic spinner",
+    description: "In buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9675,7 +9675,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-4": {
     name: "v-spinner-4",
-    description: "Basic spinner",
+    description: "Spinner in empty state",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9693,7 +9693,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-5": {
     name: "v-spinner-5",
-    description: "Basic spinner",
+    description: "Overlay loading spinner",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9711,7 +9711,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-6": {
     name: "v-spinner-6",
-    description: "Basic spinner",
+    description: "Full page loading state",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9729,7 +9729,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-7": {
     name: "v-spinner-7",
-    description: "Basic spinner",
+    description: "Inline loading text with spinner",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9747,7 +9747,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-8": {
     name: "v-spinner-8",
-    description: "Basic spinner",
+    description: "overlay on card",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9765,7 +9765,7 @@ export const Index: Record<string, any> = {
   },
   "v-spinner-9": {
     name: "v-spinner-9",
-    description: "Basic spinner",
+    description: "Color variants",
     type: "registry:block",
     registryDependencies: ["@cnippet/spinner"],
     files: [{
@@ -9981,7 +9981,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-1": {
     name: "v-table-1",
-    description: "Basic table",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -9999,7 +9999,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-2": {
     name: "v-table-2",
-    description: "Basic table",
+    description: "Card-style table",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -10017,7 +10017,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-3": {
     name: "v-table-3",
-    description: "Basic table",
+    description: "Table in CardFrame",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -10035,7 +10035,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-4": {
     name: "v-table-4",
-    description: "Basic table",
+    description: "Table in Frame",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -10053,7 +10053,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-5": {
     name: "v-table-5",
-    description: "Basic table",
+    description: "Orders table with customer info and payment status",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -10071,7 +10071,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-6": {
     name: "v-table-6",
-    description: "Basic table",
+    description: "Team members table with avatars, roles, and status",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -10089,7 +10089,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-7": {
     name: "v-table-7",
-    description: "Basic table",
+    description: "Subscriptions table with plan badges and billing info",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{

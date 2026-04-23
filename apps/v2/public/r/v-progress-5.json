@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-progress-5",
-  "description": "Basic progress",
+  "description": "Multi-step progress indicator",
   "registryDependencies": [
     "@cnippet/progress"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-progress-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { CircleCheckIcon, CircleIcon } from \"lucide-react\";\nimport { Progress } from \"@/registry/default/ui/progress\";\n\nconst steps = [\n  { completed: true, label: \"Account\" },\n  { completed: true, label: \"Profile\" },\n  { completed: false, label: \"Preferences\" },\n  { completed: false, label: \"Review\" },\n];\n\nexport function Pattern() {\n  const completedSteps = steps.filter((s) => s.completed).length;\n  const progressValue = (completedSteps / steps.length) * 100;\n\n  return (\n    <div className=\"mx-auto w-full max-w-xs space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <span className=\"font-medium text-sm\">Setup Progress</span>\n        <span className=\"text-muted-foreground text-xs\">\n          {completedSteps} of {steps.length} steps\n        </span>\n      </div>\n      <Progress value={progressValue} />\n      <div className=\"flex flex-col gap-2\">\n        {steps.map((step) => (\n          <div className=\"flex items-center gap-2 text-sm\" key={step.label}>\n            {step.completed ? (\n              <CircleCheckIcon\n                aria-hidden=\"true\"\n                className=\"size-4 text-success\"\n              />\n            ) : (\n              <CircleIcon\n                aria-hidden=\"true\"\n                className=\"size-4 text-muted-foreground\"\n              />\n            )}\n            <span\n              className={\n                step.completed ? \"text-foreground\" : \"text-muted-foreground\"\n              }\n            >\n              {step.label}\n            </span>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

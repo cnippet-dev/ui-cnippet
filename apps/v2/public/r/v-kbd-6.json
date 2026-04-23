@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-6",
-  "description": "Basic kbd",
+  "description": "Reference list",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst shortcuts = [\n  { keys: [\"⌘\", \"K\"], label: \"Search\" },\n  { keys: [\"⌘\", \"N\"], label: \"New File\" },\n  { keys: [\"⌘\", \"S\"], label: \"Save\" },\n  { keys: [\"⌘\", \"Z\"], label: \"Undo\" },\n  { keys: [\"⌘\", \"⇧\", \"Z\"], label: \"Redo\" },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto flex flex-col\">\n      <p className=\"mb-3 font-medium text-sm\">Keyboard Shortcuts</p>\n      <Separator />\n      <div className=\"flex flex-col\">\n        {shortcuts.map((shortcut) => (\n          <div\n            className=\"flex items-center justify-between border-b py-2.5 last:border-b-0\"\n            key={shortcut.label}\n          >\n            <span className=\"text-muted-foreground text-sm\">\n              {shortcut.label}\n            </span>\n            <KbdGroup>\n              {shortcut.keys.map((key) => (\n                <Kbd key={key}>{key}</Kbd>\n              ))}\n            </KbdGroup>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

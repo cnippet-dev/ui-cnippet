@@ -1,3 +1,32 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Card, CardContent } from "@/registry/default/ui/card";
+import { Spinner } from "@/registry/default/ui/spinner";
+
+export function Pattern() {
+  return (
+    <Card className="relative w-full max-w-xs">
+      <CardContent className="space-y-3 p-4">
+        <h3 className="font-semibold text-sm">Dashboard Overview</h3>
+        <p className="text-muted-foreground text-sm">
+          Monthly revenue and user statistics for the current period.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-md border p-3">
+            <p className="text-muted-foreground text-xs">Revenue</p>
+            <p className="font-bold text-lg">$12,450</p>
+          </div>
+          <div className="rounded-md border p-3">
+            <p className="text-muted-foreground text-xs">Users</p>
+            <p className="font-bold text-lg">1,234</p>
+          </div>
+        </div>
+      </CardContent>
+
+      {/* Overlay */}
+      <Card className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-xs">
+        <CardContent className="flex grow flex-col items-center justify-center gap-2">
+          <Spinner className="size-4 opacity-60" />
+        </CardContent>
+      </Card>
+    </Card>
+  );
 }

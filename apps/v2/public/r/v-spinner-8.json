@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-spinner-8",
-  "description": "Basic spinner",
+  "description": "overlay on card",
   "registryDependencies": [
     "@cnippet/spinner"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-spinner-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Card, CardContent } from \"@/registry/default/ui/card\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"relative w-full max-w-xs\">\n      <CardContent className=\"space-y-3 p-4\">\n        <h3 className=\"font-semibold text-sm\">Dashboard Overview</h3>\n        <p className=\"text-muted-foreground text-sm\">\n          Monthly revenue and user statistics for the current period.\n        </p>\n        <div className=\"grid grid-cols-2 gap-4\">\n          <div className=\"rounded-md border p-3\">\n            <p className=\"text-muted-foreground text-xs\">Revenue</p>\n            <p className=\"font-bold text-lg\">$12,450</p>\n          </div>\n          <div className=\"rounded-md border p-3\">\n            <p className=\"text-muted-foreground text-xs\">Users</p>\n            <p className=\"font-bold text-lg\">1,234</p>\n          </div>\n        </div>\n      </CardContent>\n\n      {/* Overlay */}\n      <Card className=\"absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-xs\">\n        <CardContent className=\"flex grow flex-col items-center justify-center gap-2\">\n          <Spinner className=\"size-4 opacity-60\" />\n        </CardContent>\n      </Card>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

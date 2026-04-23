@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-4",
-  "description": "Basic skeleton",
+  "description": "Dashboard stats row",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto grid w-full max-w-lg grid-cols-3 gap-4\">\n      {Array.from({ length: 3 }).map((_, i) => {\n        const k = `skeleton-card-${i}`;\n        return (\n          <Card key={k}>\n            <CardHeader className=\"pb-2\">\n              <Skeleton className=\"h-3 w-16\" />\n            </CardHeader>\n            <CardContent className=\"space-y-2\">\n              <Skeleton className=\"h-7 w-24\" />\n              <Skeleton className=\"h-3 w-20\" />\n            </CardContent>\n          </Card>\n        );\n      })}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

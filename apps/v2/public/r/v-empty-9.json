@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-empty-9",
-  "description": "Basic empty state",
+  "description": "No events empty state with calendar illustration",
   "registryDependencies": [],
   "files": [
     {

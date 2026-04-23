@@ -19,7 +19,7 @@ export function Pattern() {
             <AlertTitle>New: Advanced Analytics</AlertTitle>
             <AlertAction className="flex items-start justify-start">
               <Button
-                className="text-muted-foreground hover:text-foreground -mt-1 -mr-2 size-7 p-0 hover:bg-transparent"
+                className="-mt-1 -mr-2 size-7 p-0 text-muted-foreground hover:bg-transparent hover:text-foreground"
                 size="xs"
                 variant="ghost"
               >
@@ -30,7 +30,7 @@ export function Pattern() {
               We&apos;ve just released a new dashboard for tracking your
               team&apos;s performance.
               <Button
-                className="text-info mr-auto h-auto p-0 underline"
+                className="mr-auto h-auto p-0 text-info underline"
                 size="sm"
                 variant="link"
               >

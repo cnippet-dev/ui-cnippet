@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-spinner-9",
-  "description": "Basic spinner",
+  "description": "Color variants",
   "registryDependencies": [
     "@cnippet/spinner"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-spinner-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center gap-4\">\n      <Spinner className=\"size-4 text-blue-500\" />\n      <Spinner className=\"size-4 text-green-500\" />\n      <Spinner className=\"size-4 text-red-500\" />\n      <Spinner className=\"size-4 text-yellow-500\" />\n      <Spinner className=\"size-4 text-purple-500\" />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

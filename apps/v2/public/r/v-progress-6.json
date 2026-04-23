@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-progress-6",
-  "description": "Basic progress",
+  "description": "With custom colors",
   "registryDependencies": [
     "@cnippet/progress"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-progress-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\n\nimport { Progress } from \"@/registry/default/ui/progress\";\n\nexport function Pattern() {\n  const [progress, setProgress] = useState(45);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setProgress(75), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-md flex-col gap-6\">\n      <div className=\"flex items-center justify-between gap-2\">\n        Custom Colors\n      </div>\n\n      <Progress\n        className=\"**:data-[slot=progress-indicator]:bg-green-500\"\n        value={progress}\n      />\n      <Progress\n        className=\"**:data-[slot=progress-indicator]:bg-yellow-500\"\n        value={progress}\n      />\n      <Progress\n        className=\"**:data-[slot=progress-indicator]:bg-fuchsia-500\"\n        value={progress}\n      />\n      <Progress\n        className=\"**:data-[slot=progress-indicator]:bg-indigo-500\"\n        value={progress}\n      />\n      <Progress\n        className=\"**:data-[slot=progress-indicator]:bg-violet-500\"\n        value={progress}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-badge-6",
-  "description": "Basic badge",
+  "description": "Success",
   "registryDependencies": [
     "@cnippet/badge"
   ],

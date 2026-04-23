@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-progress-4",
-  "description": "Basic progress",
+  "description": "With slider",
   "registryDependencies": [
     "@cnippet/progress"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-progress-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Progress } from \"@/registry/default/ui/progress\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(50);\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-6\">\n      <Progress value={value} />\n      <Slider\n        max={100}\n        min={0}\n        onValueChange={(value: number | readonly number[]) =>\n          setValue(value as number)\n        }\n        step={1}\n        value={[value]}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

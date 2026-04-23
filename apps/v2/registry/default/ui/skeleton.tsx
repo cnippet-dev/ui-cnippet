@@ -1,5 +1,5 @@
 import type React from "react";
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function Skeleton({
   className,

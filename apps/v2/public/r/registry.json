@@ -1133,7 +1133,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-alert-1.tsx",
@@ -1153,7 +1153,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "With Icon",
       "files": [
         {
           "path": "registry/default/variants/v-alert-2.tsx",
@@ -1173,7 +1173,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "With Icon and Action Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-alert-3.tsx",
@@ -1193,7 +1193,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Info Alert",
       "files": [
         {
           "path": "registry/default/variants/v-alert-4.tsx",
@@ -1213,7 +1213,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Success Alert",
       "files": [
         {
           "path": "registry/default/variants/v-alert-5.tsx",
@@ -1233,7 +1233,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Warning Alert",
       "files": [
         {
           "path": "registry/default/variants/v-alert-6.tsx",
@@ -1253,7 +1253,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Error Alert",
       "files": [
         {
           "path": "registry/default/variants/v-alert-7.tsx",
@@ -1273,7 +1273,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Stacked alerts within a Frame",
       "files": [
         {
           "path": "registry/default/variants/v-alert-8.tsx",
@@ -1293,7 +1293,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Alert with actions integrated within a Frame",
       "files": [
         {
           "path": "registry/default/variants/v-alert-9.tsx",
@@ -1313,7 +1313,7 @@
       "categories": [
         "alert"
       ],
-      "description": "Basic alert",
+      "description": "Feature discovery alert",
       "files": [
         {
           "path": "registry/default/variants/v-alert-10.tsx",
@@ -1933,7 +1933,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-badge-1.tsx",
@@ -1953,7 +1953,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Outline",
       "files": [
         {
           "path": "registry/default/variants/v-badge-2.tsx",
@@ -1973,7 +1973,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Secondary",
       "files": [
         {
           "path": "registry/default/variants/v-badge-3.tsx",
@@ -1993,7 +1993,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Destructive",
       "files": [
         {
           "path": "registry/default/variants/v-badge-4.tsx",
@@ -2013,7 +2013,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Info",
       "files": [
         {
           "path": "registry/default/variants/v-badge-5.tsx",
@@ -2033,7 +2033,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Success",
       "files": [
         {
           "path": "registry/default/variants/v-badge-6.tsx",
@@ -2053,7 +2053,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Warning",
       "files": [
         {
           "path": "registry/default/variants/v-badge-7.tsx",
@@ -2073,7 +2073,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Error",
       "files": [
         {
           "path": "registry/default/variants/v-badge-8.tsx",
@@ -2093,7 +2093,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "Size Variations",
       "files": [
         {
           "path": "registry/default/variants/v-badge-9.tsx",
@@ -2113,7 +2113,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "With Icon",
       "files": [
         {
           "path": "registry/default/variants/v-badge-10.tsx",
@@ -2133,7 +2133,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "With Link",
       "files": [
         {
           "path": "registry/default/variants/v-badge-11.tsx",
@@ -2153,7 +2153,7 @@
       "categories": [
         "badge"
       ],
-      "description": "Basic badge",
+      "description": "With Count",
       "files": [
         {
           "path": "registry/default/variants/v-badge-12.tsx",
@@ -4073,7 +4073,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-1.tsx",
@@ -4093,7 +4093,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Collapsible",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-2.tsx",
@@ -4113,7 +4113,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Collapsible animated card",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-3.tsx",
@@ -4133,7 +4133,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Collapsible card with bottom trigger",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-4.tsx",
@@ -4153,7 +4153,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Collapsible form fields",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-5.tsx",
@@ -4173,7 +4173,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Multi-level collapsible menu",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-6.tsx",
@@ -4193,7 +4193,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Tree view with file actions",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-7.tsx",
@@ -5473,7 +5473,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-empty-1.tsx",
@@ -5491,7 +5491,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Search empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-2.tsx",
@@ -5509,7 +5509,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Empty state with search input",
       "files": [
         {
           "path": "registry/default/variants/v-empty-3.tsx",
@@ -5527,7 +5527,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Empty state with add button",
       "files": [
         {
           "path": "registry/default/variants/v-empty-4.tsx",
@@ -5545,7 +5545,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Dashed upload empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-5.tsx",
@@ -5563,7 +5563,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "No automations empty state with toggle illustration",
       "files": [
         {
           "path": "registry/default/variants/v-empty-6.tsx",
@@ -5581,7 +5581,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "No products empty state with stacked cards and blur effect",
       "files": [
         {
           "path": "registry/default/variants/v-empty-7.tsx",
@@ -5599,7 +5599,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "No payments empty state with credit card illustration",
       "files": [
         {
           "path": "registry/default/variants/v-empty-8.tsx",
@@ -5617,7 +5617,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "No events empty state with calendar illustration",
       "files": [
         {
           "path": "registry/default/variants/v-empty-9.tsx",
@@ -7053,7 +7053,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-1.tsx",
@@ -7073,7 +7073,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Input group",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-2.tsx",
@@ -7093,7 +7093,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Keys grouped together",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-3.tsx",
@@ -7113,7 +7113,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "With icons",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-4.tsx",
@@ -7133,7 +7133,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "In a tooltip",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-5.tsx",
@@ -7153,7 +7153,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Reference list",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-6.tsx",
@@ -8853,7 +8853,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-progress-1.tsx",
@@ -8873,7 +8873,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "With Formatted Value",
       "files": [
         {
           "path": "registry/default/variants/v-progress-2.tsx",
@@ -8893,7 +8893,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "With status messages",
       "files": [
         {
           "path": "registry/default/variants/v-progress-3.tsx",
@@ -8913,7 +8913,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "With slider",
       "files": [
         {
           "path": "registry/default/variants/v-progress-4.tsx",
@@ -8933,7 +8933,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "Multi-step progress indicator",
       "files": [
         {
           "path": "registry/default/variants/v-progress-5.tsx",
@@ -8953,7 +8953,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "With custom colors",
       "files": [
         {
           "path": "registry/default/variants/v-progress-6.tsx",
@@ -10053,7 +10053,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-1.tsx",
@@ -10073,7 +10073,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Skeleton only",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-2.tsx",
@@ -10093,7 +10093,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Card component",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-3.tsx",
@@ -10113,7 +10113,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Dashboard stats row",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-4.tsx",
@@ -10133,7 +10133,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "List with actions",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-5.tsx",
@@ -10453,7 +10453,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-1.tsx",
@@ -10473,7 +10473,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Input Group",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-2.tsx",
@@ -10493,7 +10493,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "In buttons",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-3.tsx",
@@ -10513,7 +10513,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Spinner in empty state",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-4.tsx",
@@ -10533,7 +10533,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Overlay loading spinner",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-5.tsx",
@@ -10553,7 +10553,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Full page loading state",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-6.tsx",
@@ -10573,7 +10573,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Inline loading text with spinner",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-7.tsx",
@@ -10593,7 +10593,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "overlay on card",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-8.tsx",
@@ -10613,7 +10613,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Color variants",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-9.tsx",
@@ -10853,7 +10853,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-table-1.tsx",
@@ -10873,7 +10873,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Card-style table",
       "files": [
         {
           "path": "registry/default/variants/v-table-2.tsx",
@@ -10893,7 +10893,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Table in CardFrame",
       "files": [
         {
           "path": "registry/default/variants/v-table-3.tsx",
@@ -10913,7 +10913,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Table in Frame",
       "files": [
         {
           "path": "registry/default/variants/v-table-4.tsx",
@@ -10933,7 +10933,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Orders table with customer info and payment status",
       "files": [
         {
           "path": "registry/default/variants/v-table-5.tsx",
@@ -10953,7 +10953,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Team members table with avatars, roles, and status",
       "files": [
         {
           "path": "registry/default/variants/v-table-6.tsx",
@@ -10973,7 +10973,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Subscriptions table with plan badges and billing info",
       "files": [
         {
           "path": "registry/default/variants/v-table-7.tsx",

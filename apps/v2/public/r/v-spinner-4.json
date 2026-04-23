@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-spinner-4",
-  "description": "Basic spinner",
+  "description": "Spinner in empty state",
   "registryDependencies": [
     "@cnippet/spinner"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-spinner-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Empty className=\"min-h-75 w-full max-w-md\">\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <Spinner className=\"size-4\" />\n          </EmptyMedia>\n          <EmptyTitle>Loading projects</EmptyTitle>\n          <EmptyDescription>\n            Please wait while we fetch your project data. This should only take\n            a moment.\n          </EmptyDescription>\n        </EmptyHeader>\n        <EmptyContent>\n          <Button disabled variant=\"outline\">\n            Cancel\n          </Button>\n        </EmptyContent>\n      </Empty>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

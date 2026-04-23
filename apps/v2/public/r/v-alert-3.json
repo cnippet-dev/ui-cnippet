@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-3",
-  "description": "Basic alert",
+  "description": "With Icon and Action Buttons",
   "registryDependencies": [
     "@cnippet/alert"
   ],

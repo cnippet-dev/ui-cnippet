@@ -81,7 +81,7 @@ export function VariantCard({ name, description }: VariantCardProps) {
         ref={cardRef}
       >
         {/* Preview area */}
-        <div className="flex min-h-80 flex-1 items-center justify-center overflow-hidden p-6 dark:bg-neutral-950">
+        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden p-6 dark:bg-neutral-950">
           {!visible ? (
             <div className="h-8 w-24 animate-pulse rounded-md bg-white/8" />
           ) : Component ? (

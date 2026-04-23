@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-progress-1",
-  "description": "Basic progress",
+  "description": "Default",
   "registryDependencies": [
     "@cnippet/progress"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-progress-1.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from \"@/registry/default/ui/progress\";\n\nexport default function Particle() {\n  const [_value, setValue] = useState(20);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((current) =>\n        Math.min(100, Math.round(current + Math.random() * 25)),\n      );\n    }, 1000);\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <Progress value={60}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <ProgressLabel>Export data</ProgressLabel>\n        <ProgressValue />\n      </div>\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </Progress>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

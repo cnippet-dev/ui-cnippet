@@ -11,7 +11,7 @@ export default function Particle() {
       <CircleCheckIcon />
       <AlertTitle>Success!</AlertTitle>
       <AlertDescription>
-       Everything is working as expected. You can continue with your task.
+        Everything is working as expected. You can continue with your task.
       </AlertDescription>
     </Alert>
   );

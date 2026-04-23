@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-5",
-  "description": "Basic kbd",
+  "description": "In a tooltip",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { SaveIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Tooltip>\n        <TooltipTrigger render={<Button size=\"icon-sm\" variant=\"outline\" />}>\n          <SaveIcon />\n        </TooltipTrigger>\n        <TooltipContent className=\"pr-1.5\">\n          <div className=\"flex items-center gap-2\">\n            Save Changes <Kbd>S</Kbd>\n          </div>\n        </TooltipContent>\n      </Tooltip>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
