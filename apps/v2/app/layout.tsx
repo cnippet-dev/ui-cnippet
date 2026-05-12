@@ -1,12 +1,12 @@
 import "./globals.css";
 
-import {
-  AnchoredToastProvider,
-  ToastProvider,
-} from "@cnippet/ui/components/toast";
 import { fontHeading, fontMono, fontSans } from "@cnippet/ui/fonts";
 import { ThemeProvider } from "@cnippet/ui/shared/theme-provider";
 import type { Metadata } from "next";
+import {
+  AnchoredToastProvider,
+  ToastProvider,
+} from "@/registry/default/ui/toast";
 
 export const metadata: Metadata = {
   description: "Cnippet UI - the new component library for React and Next.js",

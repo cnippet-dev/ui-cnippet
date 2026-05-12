@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-preview-card-1.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
       "type": "registry:block"
     }
   ],

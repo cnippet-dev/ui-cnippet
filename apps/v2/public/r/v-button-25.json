@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-25.tsx",
-      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button className=\"group/sliding relative overflow-hidden rounded-full px-6\">\n      <span className=\"inline-flex items-center transition-transform duration-300 group-hover/sliding:-translate-x-2\">\n        Get Started\n      </span>\n      <ArrowRightIcon\n        aria-hidden=\"true\"\n        className=\"absolute right-2.5 translate-x-8 opacity-0 transition-all duration-300 group-hover/sliding:translate-x-0 group-hover/sliding:opacity-100\"\n      />\n    </Button>\n  );\n}\n",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui//button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button className=\"group/sliding relative overflow-hidden rounded-full px-6\">\r\n      <span className=\"inline-flex items-center transition-transform duration-300 group-hover/sliding:-translate-x-2\">\r\n        Get Started\r\n      </span>\r\n      <ArrowRightIcon\r\n        aria-hidden=\"true\"\r\n        className=\"absolute right-2.5 translate-x-8 opacity-0 transition-all duration-300 group-hover/sliding:translate-x-0 group-hover/sliding:opacity-100\"\r\n      />\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

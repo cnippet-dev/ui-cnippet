@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-field-13",
+  "description": "Basic field",
+  "registryDependencies": [
+    "@cnippet/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-13.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Field, FieldItem, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\n\nexport default function Particle() {\n  return (\n    <Field\n      className=\"gap-2\"\n      name=\"frameworks\"\n      render={(props) => <Fieldset {...props} />}\n    >\n      <FieldsetLegend className=\"font-medium text-sm\">\n        Frameworks\n      </FieldsetLegend>\n      <CheckboxGroup defaultValue={[\"react\"]}>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"react\" /> React\n          </FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"vue\" /> Vue\n          </FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"svelte\" /> Svelte\n          </FieldLabel>\n        </FieldItem>\n      </CheckboxGroup>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ],
+  "type": "registry:block"
+}

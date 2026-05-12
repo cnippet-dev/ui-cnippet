@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/base-ui/direction-provider.ts",
-      "content": "export {\n  DirectionProvider,\n  useDirection,\n} from \"@base-ui/react/direction-provider\";\n",
+      "content": "export {\r\n  DirectionProvider,\r\n  useDirection,\r\n} from \"@base-ui/react/direction-provider\";\r\n",
       "type": "registry:lib"
     }
   ],

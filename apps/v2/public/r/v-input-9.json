@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"max-w-xs\">\r\n      <FieldLabel htmlFor=\"input-demo-number\">Number</FieldLabel>\r\n      <Input id=\"input-demo-number\" placeholder=\"123\" type=\"number\" />\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

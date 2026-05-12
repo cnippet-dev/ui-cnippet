@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-8.tsx",
-      "content": "import { MonitorIcon, MoonIcon, SunIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"light\"]} variant=\"outline\">\n        <ToggleGroupItem aria-label=\"Light theme\" value=\"light\">\n          <SunIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Dark theme\" value=\"dark\">\n          <MoonIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"System theme\" value=\"system\">\n          <MonitorIcon />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
+      "content": "import { MonitorIcon, MoonIcon, SunIcon } from \"lucide-react\";\r\nimport {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <ToggleGroup defaultValue={[\"light\"]} variant=\"outline\">\r\n        <ToggleGroupItem aria-label=\"Light theme\" value=\"light\">\r\n          <SunIcon />\r\n        </ToggleGroupItem>\r\n        <ToggleGroupItem aria-label=\"Dark theme\" value=\"dark\">\r\n          <MoonIcon />\r\n        </ToggleGroupItem>\r\n        <ToggleGroupItem aria-label=\"System theme\" value=\"system\">\r\n          <MonitorIcon />\r\n        </ToggleGroupItem>\r\n      </ToggleGroup>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

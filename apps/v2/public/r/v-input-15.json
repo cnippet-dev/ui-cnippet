@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-15",
+  "description": "Basic input",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-15.tsx",
+      "content": "import { HelpCircleIcon } from \"lucide-react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <div className=\"flex items-center gap-2\">\n        <FieldLabel htmlFor=\"username\">Username</FieldLabel>\n        <Tooltip>\n          <TooltipTrigger className=\"inline-flex items-center\">\n            <HelpCircleIcon className=\"text-muted-foreground size-3.5\" />\n          </TooltipTrigger>\n          <TooltipContent>\n            Your unique identifier on the platform.\n          </TooltipContent>\n        </Tooltip>\n      </div>\n      <Input id=\"username\" placeholder=\"johndoe\" />\n      <FieldDescription>\n        Your unique identifier on the platform.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

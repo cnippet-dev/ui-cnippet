@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-kbd-5.tsx",
-      "content": "import { SaveIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Tooltip>\n        <TooltipTrigger render={<Button size=\"icon-sm\" variant=\"outline\" />}>\n          <SaveIcon />\n        </TooltipTrigger>\n        <TooltipContent className=\"pr-1.5\">\n          <div className=\"flex items-center gap-2\">\n            Save Changes <Kbd>S</Kbd>\n          </div>\n        </TooltipContent>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "content": "import { SaveIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Kbd } from \"@/registry/default/ui/kbd\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <Tooltip>\r\n        <TooltipTrigger render={<Button size=\"icon-sm\" variant=\"outline\" />}>\r\n          <SaveIcon />\r\n        </TooltipTrigger>\r\n        <TooltipContent className=\"pr-1.5\">\r\n          <div className=\"flex items-center gap-2\">\r\n            Save Changes <Kbd>S</Kbd>\r\n          </div>\r\n        </TooltipContent>\r\n      </Tooltip>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

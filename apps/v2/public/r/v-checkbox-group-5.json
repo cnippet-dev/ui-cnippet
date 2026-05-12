@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-group-5",
-  "description": "Basic checkbox group",
+  "description": "Form Integration",
   "registryDependencies": [
     "@cnippet/checkbox-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-group-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\r\n\r\nimport type { FormEvent } from \"react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\r\nimport { Field, FieldItem, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\n\r\nexport default function Particle() {\r\n  const [loading, setLoading] = useState(false);\r\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    const formData = new FormData(e.currentTarget);\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 800));\r\n    setLoading(false);\r\n    const frameworks = formData.getAll(\"frameworks\") as string[];\r\n    alert(`Selected: ${frameworks.join(\", \") || \"none\"}`);\r\n  };\r\n\r\n  return (\r\n    <Form\r\n      className=\"flex w-full max-w-40 flex-col gap-4\"\r\n      onSubmit={onSubmit}\r\n    >\r\n      <Field name=\"frameworks\" render={(props) => <Fieldset {...props} />}>\r\n        <FieldsetLegend className=\"font-medium text-sm\">\r\n          Frameworks\r\n        </FieldsetLegend>\r\n        <CheckboxGroup defaultValue={[\"next\"]}>\r\n          <FieldItem>\r\n            <FieldLabel>\r\n              <Checkbox value=\"next\" />\r\n              Next.js\r\n            </FieldLabel>\r\n          </FieldItem>\r\n          <FieldItem>\r\n            <FieldLabel>\r\n              <Checkbox value=\"vite\" />\r\n              Vite\r\n            </FieldLabel>\r\n          </FieldItem>\r\n          <FieldItem>\r\n            <FieldLabel>\r\n              <Checkbox value=\"astro\" />\r\n              Astro\r\n            </FieldLabel>\r\n          </FieldItem>\r\n        </CheckboxGroup>\r\n      </Field>\r\n      <Button loading={loading} type=\"submit\">\r\n        Submit\r\n      </Button>\r\n    </Form>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

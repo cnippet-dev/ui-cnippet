@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-6",
-  "description": "Basic checkbox",
+  "description": "Payment method card checkbox",
   "registryDependencies": [
     "@cnippet/checkbox"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\r\n\r\nimport type { SVGProps } from \"react\";\r\n\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nconst MastercardIcon = (props: SVGProps<SVGSVGElement>) => (\r\n  <svg\r\n    fill=\"none\"\r\n    viewBox=\"0 0 24 24\"\r\n    xmlns=\"http://www.w3.org/2000/svg\"\r\n    {...props}\r\n  >\r\n    <circle cx=\"7\" cy=\"12\" fill=\"#EB001B\" r=\"7\" />\r\n    <circle cx=\"17\" cy=\"12\" fill=\"#F79E1B\" r=\"7\" />\r\n    <path\r\n      d=\"M12 17.5C13.5 16.2 14.5 14.2 14.5 12C14.5 9.8 13.5 7.8 12 6.5C10.5 7.8 9.5 9.8 9.5 12C9.5 14.2 10.5 16.2 12 17.5Z\"\r\n      fill=\"#FF5F00\"\r\n    />\r\n  </svg>\r\n);\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-xs\">\r\n      <Frame className=\"w-full\">\r\n        <FramePanel>\r\n          <div className=\"flex size-10 items-center justify-center rounded-lg border border-border bg-background p-1.5 shadow-black/5 shadow-xs\">\r\n            <MastercardIcon className=\"size-full\" />\r\n          </div>\r\n          <div className=\"flex flex-col items-start gap-0.5\">\r\n            <span className=\"font-medium text-sm\">\r\n              Mastercard ending in 8888\r\n            </span>\r\n            <span className=\"text-muted-foreground text-xs\">Expires 09/25</span>\r\n          </div>\r\n        </FramePanel>\r\n        <Checkbox\r\n          className=\"absolute top-5 right-5 size-5 rounded-full\"\r\n          defaultChecked\r\n          id=\"mastercard\"\r\n        />\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-form-1.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\r\n\r\nimport type { FormEvent } from \"react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  const [loading, setLoading] = useState(false);\r\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    const formData = new FormData(e.currentTarget);\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 800));\r\n    setLoading(false);\r\n    alert(`Email: ${formData.get(\"email\") || \"\"}`);\r\n  };\r\n\r\n  return (\r\n    <Form className=\"flex w-full max-w-64 flex-col gap-4\" onSubmit={onSubmit}>\r\n      <Field name=\"email\">\r\n        <FieldLabel>Email</FieldLabel>\r\n        <Input placeholder=\"you@example.com\" required type=\"email\" />\r\n        <FieldError>Please enter a valid email.</FieldError>\r\n      </Field>\r\n      <Button loading={loading} type=\"submit\">\r\n        Submit\r\n      </Button>\r\n    </Form>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

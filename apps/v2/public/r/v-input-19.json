@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-19",
+  "description": "Basic input",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-19.tsx",
+      "content": "import { CircleAlertIcon } from \"lucide-react\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"security-code\">Security Code</FieldLabel>\n      <Input\n        aria-invalid=\"true\"\n        id=\"security-code\"\n        placeholder=\"Enter your security code\"\n      />\n      <FieldError className=\"mt-2 space-y-1.5 text-xs\">\n        <div className=\"flex items-center gap-1.5\">\n          <CircleAlertIcon className=\"size-3.5\" />\n          <span>Code must be at least 12 characters long</span>\n        </div>\n        <div className=\"flex items-center gap-1.5\">\n          <CircleAlertIcon className=\"size-3.5\" />\n          <span>Code must contain at least one uppercase letter</span>\n        </div>\n        <div className=\"flex items-center gap-1.5\">\n          <CircleAlertIcon className=\"size-3.5\" />\n          <span>Code cannot include common words or patterns</span>\n        </div>\n      </FieldError>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

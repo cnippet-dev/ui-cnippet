@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-7.tsx",
-      "content": "\"use client\";\n\nimport { HeartIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  const [pressed, setPressed] = useState(false);\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Toggle\n        aria-label=\"Toggle favorite\"\n        onPressedChange={setPressed}\n        pressed={pressed}\n      >\n        {pressed ? <HeartIcon className=\"fill-current\" /> : <HeartIcon />}\n      </Toggle>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { HeartIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Toggle } from \"@/registry/default/ui/toggle\";\r\n\r\nexport function Pattern() {\r\n  const [pressed, setPressed] = useState(false);\r\n\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <Toggle\r\n        aria-label=\"Toggle favorite\"\r\n        onPressedChange={setPressed}\r\n        pressed={pressed}\r\n      >\r\n        {pressed ? <HeartIcon className=\"fill-current\" /> : <HeartIcon />}\r\n      </Toggle>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

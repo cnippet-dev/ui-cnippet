@@ -214,6 +214,14 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "checkbox",
       dependencies: ["checkbox"],
+      description: [
+        "Default",
+        "Disabled",
+        "With Description",
+        "Card Style",
+        "Form Integration",
+        "Payment method card checkbox",
+      ][i],
       name: `v-checkbox-${i + 1}`,
     }),
   ),
@@ -223,6 +231,13 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "checkbox group",
       dependencies: ["checkbox-group"],
+      description: [
+        "Default",
+        "With Disabled Item",
+        "Parent Checkbox",
+        "Nested Parent Checkbox",
+        "Form Integration",
+      ][i],
       name: `v-checkbox-group-${i + 1}`,
     }),
   ),
@@ -320,7 +335,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- field ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "field",
       dependencies: ["field"],
@@ -365,10 +380,32 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- input ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "input",
       dependencies: ["input"],
+      description: [
+        "Default",
+        "With Label",
+        "With Description",
+        "With Error Message",
+        "With Character Counter",
+        "With Password Type",
+        "With Phone Type",
+        "With URL Type",
+        "With Number Type",
+        "With Date Type",
+        "With File Type",
+        "With Required Indicator",
+        "With Time Type",
+        "With Multiple Fields",
+        "Input label with tooltip",
+        "With Badge",
+        "With Optional Badge",
+        "With Link and Visibility Toggle",
+        "with multiple error messages",
+        "Basic password strength with dynamic hint and icons",
+      ][i],
       name: `v-input-${i + 1}`,
     }),
   ),
@@ -638,6 +675,15 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "toast",
       dependencies: ["toast"],
+      description: [
+        "Default",
+        "With Status",
+        "Loading",
+        "With Action",
+        "Promise",
+        "With Varying Heights",
+        "Submit Button with Error Toast",
+      ][i],
       name: `v-toast-${i + 1}`,
     }),
   ),
