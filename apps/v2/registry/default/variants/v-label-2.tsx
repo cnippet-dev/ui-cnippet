@@ -4,7 +4,7 @@ import { Label } from "@/registry/default/ui/label";
 
 export function Pattern() {
   return (
-    <Field className="mx-auto w-auto flex flex-row">
+    <Field className="mx-auto flex w-auto flex-row">
       <Checkbox id="label-demo-terms" />
       <Label htmlFor="label-demo-terms">Accept terms and conditions</Label>
     </Field>

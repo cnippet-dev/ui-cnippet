@@ -1,3 +1,5 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Slider } from "@/registry/default/ui/slider";
+
+export default function Particle() {
+  return <Slider defaultValue={50} disabled />;
 }

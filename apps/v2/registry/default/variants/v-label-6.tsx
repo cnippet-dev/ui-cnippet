@@ -17,7 +17,7 @@ export function Pattern() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger className="inline-flex items-center">
-              <span className="text-muted-foreground inline-flex cursor-help">
+              <span className="inline-flex cursor-help text-muted-foreground">
                 <InfoIcon className="size-3.5" />
               </span>
             </TooltipTrigger>

@@ -39,7 +39,7 @@ const PLACEHOLDER_CONTENT = `export default function Component() {
 // ---------------------------------------------------------------------------
 
 function template(name: string): string {
-  const pascal = name
+  const _pascal = name
     .split("-")
     .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
     .join("");

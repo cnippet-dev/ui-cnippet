@@ -1,4 +1,8 @@
-import { Field, FieldDescription, FieldLabel } from "@/registry/default/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldLabel,
+} from "@/registry/default/ui/field";
 import { OTPField, OTPFieldInput } from "@/registry/default/ui/otp-field";
 
 const OTP_LENGTH = 4;

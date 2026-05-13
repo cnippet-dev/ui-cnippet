@@ -12,14 +12,14 @@ links:
 
 <CodeTabs>
 
-<TabsList defaultValue="cli">
+<TabsList>
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @cnippet/slider
+npx shadcn@latest add @coss/slider
 ```
 
 </TabsPanel>
@@ -56,7 +56,24 @@ import { Slider, SliderValue } from "@/components/ui/slider"
 <Slider />
 ```
 
-{/* ## Examples
+## API Reference
+
+### Slider
+
+Root component. Styled wrapper for `Slider.Root` from Base UI with default min/max values and edge-aligned thumbs.
+
+| Prop  | Type     | Default | Description                                      |
+| ----- | -------- | ------- | ------------------------------------------------ |
+| `min` | `number` | `0`     | Minimum value of the slider                      |
+| `max` | `number` | `100`   | Maximum value of the slider                      |
+
+Note: The component sets `thumbAlignment="edge"` by default, which aligns thumbs to the edge of the track rather than centering them.
+
+### SliderValue
+
+Displays the current value. Styled wrapper for `Slider.Value` from Base UI.
+
+## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Slider field](/ui/docs/components/field#slider-field).
 
@@ -74,4 +91,4 @@ For accessible labelling and validation, prefer using the `Field` component to w
 
 ### Form Integration
 
-<ComponentPreview name="v-slider-5" /> */}
+<ComponentPreview name="v-slider-5" />
