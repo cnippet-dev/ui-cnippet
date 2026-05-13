@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-label-10",
-  "description": "Basic label",
+  "description": "With status indicator dot",
   "registryDependencies": [
     "@cnippet/label"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-label-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label className=\"gap-1.5\" htmlFor=\"label-status\">\n        Server Status\n        <span className=\"relative flex size-2\">\n          <span className=\"absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75\" />\n          <span className=\"relative inline-flex size-2 rounded-full bg-green-500\" />\n        </span>\n      </Label>\n      <Input defaultValue=\"Online\" disabled id=\"label-status\" />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

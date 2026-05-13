@@ -1,3 +1,28 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Field, FieldDescription, FieldLabel } from "@/registry/default/ui/field";
+import { OTPField, OTPFieldInput } from "@/registry/default/ui/otp-field";
+
+const OTP_LENGTH = 4;
+
+const OTP_SLOT_KEYS = Array.from(
+  { length: OTP_LENGTH },
+  (_, i) => `otp-slot-${i}`,
+);
+
+export default function Particle() {
+  return (
+    <Field className="items-center">
+      <FieldLabel>Verification code</FieldLabel>
+      <OTPField length={OTP_LENGTH}>
+        {OTP_SLOT_KEYS.map((slotKey, index) => (
+          <OTPFieldInput
+            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}
+            key={slotKey}
+          />
+        ))}
+      </OTPField>
+      <FieldDescription>
+        Enter the {OTP_LENGTH}-digit code sent to your email.
+      </FieldDescription>
+    </Field>
+  );
 }

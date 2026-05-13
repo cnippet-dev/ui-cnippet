@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-label-3",
-  "description": "Basic label",
+  "description": "With textarea field",
   "registryDependencies": [
     "@cnippet/label"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-label-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Field } from \"@/registry/default/ui/field\"\nimport { Label } from \"@/registry/default/ui/label\"\nimport { Textarea } from \"@/registry/default/ui/textarea\"\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label htmlFor=\"label-demo-message\">Message</Label>\n      <Textarea id=\"label-demo-message\" placeholder=\"Type your message here…\" />\n    </Field>\n  )\n}\n",
       "type": "registry:block"
     }
   ],

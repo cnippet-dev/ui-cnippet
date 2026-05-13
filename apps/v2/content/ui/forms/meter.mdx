@@ -12,14 +12,14 @@ links:
 
 <CodeTabs>
 
-<TabsList defaultValue="cli">
+<TabsList>
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @cnippet/meter
+npx shadcn@latest add @coss/meter
 ```
 
 </TabsPanel>
@@ -59,9 +59,31 @@ import { Meter, MeterLabel, MeterValue } from "@/components/ui/meter"
 </Meter>
 ```
 
-{/* ## Examples
+## API Reference
 
-### Without Label and Value
+### Meter
+
+Root component. Styled wrapper for `Meter.Root` from Base UI with flex column layout.
+
+### MeterTrack
+
+Track container for the meter indicator. Styled wrapper for `Meter.Track` from Base UI.
+
+### MeterIndicator
+
+Visual indicator showing the current value. Styled wrapper for `Meter.Indicator` from Base UI.
+
+### MeterLabel
+
+Label text for the meter. Styled wrapper for `Meter.Label` from Base UI.
+
+### MeterValue
+
+Displays the current value. Styled wrapper for `Meter.Value` from Base UI.
+
+## Examples
+
+### With Label
 
 <ComponentPreview name="v-meter-2" />
 
@@ -71,4 +93,4 @@ import { Meter, MeterLabel, MeterValue } from "@/components/ui/meter"
 
 ### With Range
 
-<ComponentPreview name="v-meter-4" /> */}
+<ComponentPreview name="v-meter-4" />

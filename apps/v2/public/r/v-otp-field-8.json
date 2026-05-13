@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-otp-field-8",
-  "description": "Basic input otp",
+  "description": "Placeholder hints",
   "registryDependencies": [
     "@cnippet/otp-field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-otp-field-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { cn } from \"@/lib/utils\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\n\nconst OTP_LENGTH = 6;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport default function Particle() {\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField length={OTP_LENGTH}>\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\n          <OTPFieldInput\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n            className={cn(\n              \"placeholder:text-muted-foreground focus-visible:placeholder:text-transparent\",\n            )}\n            key={slotKey}\n            placeholder=\"•\"\n          />\n        ))}\n      </OTPField>\n      <FieldDescription>\n        Placeholder hints stay visible until the focused slot is active.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

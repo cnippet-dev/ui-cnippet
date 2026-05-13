@@ -7253,7 +7253,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-1.tsx",
@@ -7273,7 +7273,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With End Icon",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-2.tsx",
@@ -7293,7 +7293,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Start Text",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-3.tsx",
@@ -7313,7 +7313,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With End Text",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-4.tsx",
@@ -7333,7 +7333,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Start and End Text",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-5.tsx",
@@ -7353,7 +7353,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Tooltip",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-6.tsx",
@@ -7373,7 +7373,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Icon Button",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-7.tsx",
@@ -7393,7 +7393,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Button",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-8.tsx",
@@ -7413,7 +7413,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Badge",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-9.tsx",
@@ -7433,7 +7433,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Keyboard Shortcut",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-10.tsx",
@@ -7453,7 +7453,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Inner Label",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-11.tsx",
@@ -7473,7 +7473,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-12.tsx",
@@ -7493,7 +7493,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-13.tsx",
@@ -7513,7 +7513,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Loading",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-14.tsx",
@@ -7533,7 +7533,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Number Field",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-15.tsx",
@@ -7553,7 +7553,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With Textarea",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-16.tsx",
@@ -7853,7 +7853,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-label-1.tsx",
@@ -7873,7 +7873,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With checkbox",
       "files": [
         {
           "path": "registry/default/variants/v-label-2.tsx",
@@ -7893,7 +7893,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With textarea field",
       "files": [
         {
           "path": "registry/default/variants/v-label-3.tsx",
@@ -7913,7 +7913,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With required indicator",
       "files": [
         {
           "path": "registry/default/variants/v-label-4.tsx",
@@ -7933,7 +7933,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With optional indicator",
       "files": [
         {
           "path": "registry/default/variants/v-label-5.tsx",
@@ -7953,7 +7953,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With tooltip info icon",
       "files": [
         {
           "path": "registry/default/variants/v-label-6.tsx",
@@ -7973,7 +7973,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With badge indicator",
       "files": [
         {
           "path": "registry/default/variants/v-label-7.tsx",
@@ -7993,7 +7993,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With character counter",
       "files": [
         {
           "path": "registry/default/variants/v-label-8.tsx",
@@ -8013,7 +8013,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With helper description text",
       "files": [
         {
           "path": "registry/default/variants/v-label-9.tsx",
@@ -8033,7 +8033,7 @@
       "categories": [
         "label"
       ],
-      "description": "Basic label",
+      "description": "With status indicator dot",
       "files": [
         {
           "path": "registry/default/variants/v-label-10.tsx",
@@ -8253,7 +8253,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-meter-1.tsx",
@@ -8273,7 +8273,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-meter-2.tsx",
@@ -8293,7 +8293,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "With Formatted Value",
       "files": [
         {
           "path": "registry/default/variants/v-meter-3.tsx",
@@ -8313,7 +8313,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "With Range",
       "files": [
         {
           "path": "registry/default/variants/v-meter-4.tsx",
@@ -8453,7 +8453,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-1.tsx",
@@ -8473,7 +8473,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-2.tsx",
@@ -8493,7 +8493,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-3.tsx",
@@ -8513,7 +8513,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "With External Label",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-4.tsx",
@@ -8533,7 +8533,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "With Scrub",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-5.tsx",
@@ -8553,7 +8553,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "With Range",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-6.tsx",
@@ -8573,7 +8573,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "With Formatted Value",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-7.tsx",
@@ -8593,7 +8593,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "With Step",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-8.tsx",
@@ -8613,7 +8613,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Form Integration",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-9.tsx",
@@ -8653,7 +8653,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-1.tsx",
@@ -8673,7 +8673,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Large",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-2.tsx",
@@ -8693,7 +8693,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "With Separator",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-3.tsx",
@@ -8713,7 +8713,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-4.tsx",
@@ -8733,7 +8733,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Custom sanitization",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-5.tsx",
@@ -8753,7 +8753,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Auto Validation",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-6.tsx",
@@ -8773,7 +8773,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Alphanumeric",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-7.tsx",
@@ -8793,7 +8793,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Placeholder hints",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-8.tsx",
@@ -8813,7 +8813,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Masked entry",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-9.tsx",

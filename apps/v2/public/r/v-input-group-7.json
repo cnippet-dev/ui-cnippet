@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-group-7",
-  "description": "Basic input group",
+  "description": "With Icon Button",
   "registryDependencies": [
     "@cnippet/input-group"
   ],

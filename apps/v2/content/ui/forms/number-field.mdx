@@ -12,7 +12,7 @@ links:
 
 <CodeTabs>
 
-<TabsList defaultValue="cli">
+<TabsList>
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
@@ -73,7 +73,41 @@ import {
 </NumberField>
 ```
 
- ## Examples
+## API Reference
+
+### NumberField
+
+Root component. Styled wrapper for `NumberField.Root` from Base UI.
+
+| Prop   | Type                        | Default     | Description                                      |
+| ------ | --------------------------- | ----------- | ------------------------------------------------ |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of all child components via context |
+
+### NumberFieldGroup
+
+Container for the input and buttons. Styled wrapper for `NumberField.Group` from Base UI.
+
+### NumberFieldInput
+
+Input element for the number value. Styled wrapper for `NumberField.Input` from Base UI.
+
+### NumberFieldIncrement
+
+Button to increment the value. Styled wrapper for `NumberField.Increment` from Base UI with plus icon.
+
+### NumberFieldDecrement
+
+Button to decrement the value. Styled wrapper for `NumberField.Decrement` from Base UI with minus icon.
+
+### NumberFieldScrubArea
+
+Draggable area for scrubbing the value. Styled wrapper for `NumberField.ScrubArea` from Base UI.
+
+| Prop    | Type     | Default | Description                                      |
+| ------- | -------- | ------- | ------------------------------------------------ |
+| `label` | `string` | -       | Label text displayed in the scrub area           |
+
+## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap number fields. See the related example: [Number field](/ui/docs/components/field#number-field).
 
@@ -81,18 +115,31 @@ For accessible labelling and validation, prefer using the `Field` component to w
 
 <ComponentPreview name="v-number-field-2" />
 
-### With External Label
+
+### Disabled
 
 <ComponentPreview name="v-number-field-3" />
 
-### With Formatted Value
+### With External Label
 
 <ComponentPreview name="v-number-field-4" />
 
-### With Step
+### With Scrub
 
 <ComponentPreview name="v-number-field-5" />
 
-### Form Integration
+### With Range
 
 <ComponentPreview name="v-number-field-6" />
+
+### With Formatted Value
+
+<ComponentPreview name="v-number-field-7" />
+
+### With Step
+
+<ComponentPreview name="v-number-field-8" />
+
+### Form Integration
+
+<ComponentPreview name="v-number-field-9" />

@@ -10,6 +10,7 @@
     "label",
     "meter",
     "number-field",
+    "otp-field",
     "radio-group",
     "slider",
     "textarea"

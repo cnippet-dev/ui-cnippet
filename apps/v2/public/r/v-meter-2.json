@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-meter-2",
-  "description": "Basic meter",
+  "description": "With Label",
   "registryDependencies": [
     "@cnippet/meter"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-meter-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter value={50}>\n      <MeterLabel>Rating</MeterLabel>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

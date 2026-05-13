@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-number-field-7",
-  "description": "Basic number field",
+  "description": "With Formatted Value",
   "registryDependencies": [
     "@cnippet/number-field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-number-field-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField\n      defaultValue={0}\n      format={{ currency: \"USD\", style: \"currency\" }}\n    >\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

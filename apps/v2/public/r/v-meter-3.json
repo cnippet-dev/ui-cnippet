@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-meter-3",
-  "description": "Basic meter",
+  "description": "With Formatted Value",
   "registryDependencies": [
     "@cnippet/meter"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-meter-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter max={5} value={3}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <MeterLabel>Rating</MeterLabel>\n        <MeterValue>{(_formatted, value) => `${value} / 5`}</MeterValue>\n      </div>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

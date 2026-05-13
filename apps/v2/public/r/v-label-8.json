@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-label-8",
-  "description": "Basic label",
+  "description": "With character counter",
   "registryDependencies": [
     "@cnippet/label"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-label-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Field } from \"@/registry/default/ui/field\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  const [length, setLength] = useState(0);\n\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label className=\"justify-between\" htmlFor=\"label-counter\">\n        Bio\n        <span className=\"text-muted-foreground\">{length}/200</span>\n      </Label>\n      <Textarea\n        id=\"label-counter\"\n        maxLength={200}\n        onChange={(e) => setLength(e.target.value.length)}\n        placeholder=\"Tell us about yourself…\"\n      />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

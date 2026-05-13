@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-otp-field-6",
-  "description": "Basic input otp",
+  "description": "Auto Validation",
   "registryDependencies": [
     "@cnippet/otp-field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-otp-field-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\n\nconst OTP_LENGTH = 6;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport default function Particle() {\n  const [value, setValue] = useState(\"\");\n  const [invalid, setInvalid] = useState(false);\n  const valid = value.length === OTP_LENGTH && value === \"123456\";\n\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField\n        length={OTP_LENGTH}\n        onValueChange={(nextValue) => {\n          setValue(nextValue);\n          setInvalid(\n            nextValue.length === OTP_LENGTH ? nextValue !== \"123456\" : false,\n          );\n        }}\n        value={value}\n      >\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\n          <OTPFieldInput\n            aria-invalid={invalid || undefined}\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n            key={slotKey}\n          />\n        ))}\n      </OTPField>\n      {!valid && !invalid && (\n        <FieldDescription>Enter `123456` to pass validation.</FieldDescription>\n      )}\n      {invalid && <FieldError>Code must be 123456.</FieldError>}\n      {valid && <FieldDescription>Code verified.</FieldDescription>}\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

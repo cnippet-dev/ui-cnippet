@@ -6741,7 +6741,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-1": {
     name: "v-input-group-1",
-    description: "Basic input group",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6759,7 +6759,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-2": {
     name: "v-input-group-2",
-    description: "Basic input group",
+    description: "With End Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6777,7 +6777,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-3": {
     name: "v-input-group-3",
-    description: "Basic input group",
+    description: "With Start Text",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6795,7 +6795,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-4": {
     name: "v-input-group-4",
-    description: "Basic input group",
+    description: "With End Text",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6813,7 +6813,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-5": {
     name: "v-input-group-5",
-    description: "Basic input group",
+    description: "With Start and End Text",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6831,7 +6831,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-6": {
     name: "v-input-group-6",
-    description: "Basic input group",
+    description: "With Tooltip",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6849,7 +6849,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-7": {
     name: "v-input-group-7",
-    description: "Basic input group",
+    description: "With Icon Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6867,7 +6867,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-8": {
     name: "v-input-group-8",
-    description: "Basic input group",
+    description: "With Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6885,7 +6885,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-9": {
     name: "v-input-group-9",
-    description: "Basic input group",
+    description: "With Badge",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6903,7 +6903,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-10": {
     name: "v-input-group-10",
-    description: "Basic input group",
+    description: "With Keyboard Shortcut",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6921,7 +6921,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-11": {
     name: "v-input-group-11",
-    description: "Basic input group",
+    description: "With Inner Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6939,7 +6939,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-12": {
     name: "v-input-group-12",
-    description: "Basic input group",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6957,7 +6957,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-13": {
     name: "v-input-group-13",
-    description: "Basic input group",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6975,7 +6975,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-14": {
     name: "v-input-group-14",
-    description: "Basic input group",
+    description: "Loading",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -6993,7 +6993,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-15": {
     name: "v-input-group-15",
-    description: "Basic input group",
+    description: "With Number Field",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -7011,7 +7011,7 @@ export const Index: Record<string, any> = {
   },
   "v-input-group-16": {
     name: "v-input-group-16",
-    description: "Basic input group",
+    description: "With Textarea",
     type: "registry:block",
     registryDependencies: ["@cnippet/input-group"],
     files: [{
@@ -7281,7 +7281,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-1": {
     name: "v-label-1",
-    description: "Basic label",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7299,7 +7299,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-2": {
     name: "v-label-2",
-    description: "Basic label",
+    description: "With checkbox",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7317,7 +7317,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-3": {
     name: "v-label-3",
-    description: "Basic label",
+    description: "With textarea field",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7335,7 +7335,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-4": {
     name: "v-label-4",
-    description: "Basic label",
+    description: "With required indicator",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7353,7 +7353,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-5": {
     name: "v-label-5",
-    description: "Basic label",
+    description: "With optional indicator",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7371,7 +7371,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-6": {
     name: "v-label-6",
-    description: "Basic label",
+    description: "With tooltip info icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7389,7 +7389,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-7": {
     name: "v-label-7",
-    description: "Basic label",
+    description: "With badge indicator",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7407,7 +7407,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-8": {
     name: "v-label-8",
-    description: "Basic label",
+    description: "With character counter",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7425,7 +7425,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-9": {
     name: "v-label-9",
-    description: "Basic label",
+    description: "With helper description text",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7443,7 +7443,7 @@ export const Index: Record<string, any> = {
   },
   "v-label-10": {
     name: "v-label-10",
-    description: "Basic label",
+    description: "With status indicator dot",
     type: "registry:block",
     registryDependencies: ["@cnippet/label"],
     files: [{
@@ -7641,7 +7641,7 @@ export const Index: Record<string, any> = {
   },
   "v-meter-1": {
     name: "v-meter-1",
-    description: "Basic meter",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/meter"],
     files: [{
@@ -7659,7 +7659,7 @@ export const Index: Record<string, any> = {
   },
   "v-meter-2": {
     name: "v-meter-2",
-    description: "Basic meter",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/meter"],
     files: [{
@@ -7677,7 +7677,7 @@ export const Index: Record<string, any> = {
   },
   "v-meter-3": {
     name: "v-meter-3",
-    description: "Basic meter",
+    description: "With Formatted Value",
     type: "registry:block",
     registryDependencies: ["@cnippet/meter"],
     files: [{
@@ -7695,7 +7695,7 @@ export const Index: Record<string, any> = {
   },
   "v-meter-4": {
     name: "v-meter-4",
-    description: "Basic meter",
+    description: "With Range",
     type: "registry:block",
     registryDependencies: ["@cnippet/meter"],
     files: [{
@@ -7821,7 +7821,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-1": {
     name: "v-number-field-1",
-    description: "Basic number field",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7839,7 +7839,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-2": {
     name: "v-number-field-2",
-    description: "Basic number field",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7857,7 +7857,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-3": {
     name: "v-number-field-3",
-    description: "Basic number field",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7875,7 +7875,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-4": {
     name: "v-number-field-4",
-    description: "Basic number field",
+    description: "With External Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7893,7 +7893,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-5": {
     name: "v-number-field-5",
-    description: "Basic number field",
+    description: "With Scrub",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7911,7 +7911,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-6": {
     name: "v-number-field-6",
-    description: "Basic number field",
+    description: "With Range",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7929,7 +7929,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-7": {
     name: "v-number-field-7",
-    description: "Basic number field",
+    description: "With Formatted Value",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7947,7 +7947,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-8": {
     name: "v-number-field-8",
-    description: "Basic number field",
+    description: "With Step",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -7965,7 +7965,7 @@ export const Index: Record<string, any> = {
   },
   "v-number-field-9": {
     name: "v-number-field-9",
-    description: "Basic number field",
+    description: "Form Integration",
     type: "registry:block",
     registryDependencies: ["@cnippet/number-field"],
     files: [{
@@ -8001,7 +8001,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-1": {
     name: "v-otp-field-1",
-    description: "Basic input otp",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8019,7 +8019,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-2": {
     name: "v-otp-field-2",
-    description: "Basic input otp",
+    description: "Large",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8037,7 +8037,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-3": {
     name: "v-otp-field-3",
-    description: "Basic input otp",
+    description: "With Separator",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8055,7 +8055,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-4": {
     name: "v-otp-field-4",
-    description: "Basic input otp",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8073,7 +8073,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-5": {
     name: "v-otp-field-5",
-    description: "Basic input otp",
+    description: "Custom sanitization",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8091,7 +8091,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-6": {
     name: "v-otp-field-6",
-    description: "Basic input otp",
+    description: "Auto Validation",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8109,7 +8109,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-7": {
     name: "v-otp-field-7",
-    description: "Basic input otp",
+    description: "Alphanumeric",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8127,7 +8127,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-8": {
     name: "v-otp-field-8",
-    description: "Basic input otp",
+    description: "Placeholder hints",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
@@ -8145,7 +8145,7 @@ export const Index: Record<string, any> = {
   },
   "v-otp-field-9": {
     name: "v-otp-field-9",
-    description: "Basic input otp",
+    description: "Masked entry",
     type: "registry:block",
     registryDependencies: ["@cnippet/otp-field"],
     files: [{
