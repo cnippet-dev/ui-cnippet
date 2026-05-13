@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-13",
+  "description": "Basic input group",
+  "registryDependencies": [
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-13.tsx",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Subscribe to our newsletter\"\n        disabled\n        placeholder=\"Your best email\"\n        type=\"email\"\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <Button aria-label=\"Subscribe\" disabled size=\"icon-xs\" variant=\"ghost\">\n          <ArrowRightIcon aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

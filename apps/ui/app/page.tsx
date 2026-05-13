@@ -1,23 +1,12 @@
-const _Blocks = dynamic(() => import("@/components/home/blocks"));
-const _Components = dynamic(() => import("@/components/home/components"));
-
-import { cn } from "@/lib/utils";
-
-const _tweetIds = [
-  "1995030252259774593",
-  "2012275639865217189",
-  "2008848683857830005",
-  "1980659099445653624",
-  "1981060426315288776",
-  "1957752385272738170",
-  "1980646442441285656",
-  "1957771454839238912",
-  "1957762133787082766",
-];
-
-import dynamic from "next/dynamic";
+import { MoveUpRight } from "lucide-react";
+import Link from "next/link";
 import type { SVGProps } from "react";
+import Components from "@/components/components-list";
+import Blocks from "@/components/home/blocks";
+import { HomeCodeSection } from "@/components/home-code-section";
 import SiteHeader from "@/components/shared/header/site-header";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const ChromeLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 190.5 190.5">
@@ -53,24 +42,24 @@ export default function HomePage() {
 
         <main className="grid gap-24 pb-24 text-gray-950 sm:gap-40 md:pb-40 dark:text-white">
           <div>
-            <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
+            <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
               Model providers for Vercel AI SDK v5 & v6
             </div>
 
-            <div className="relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
+            <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
               <h1 className="text-balance px-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl">
                 Ship stunning interfaces faster with Cnippet UI.
               </h1>
             </div>
 
-            <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 dark:text-white/40">
+            <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 dark:text-white/40">
               Build accessible, composable React components with Base UI and
               Tailwind CSS. Copy, paste, and make it yours.
             </div>
 
             <Separator />
 
-            <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
+            <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
               <Button
                 className="text-balance rounded-none py-2 tracking-tight"
                 render={<Link href="docs/introduction" />}

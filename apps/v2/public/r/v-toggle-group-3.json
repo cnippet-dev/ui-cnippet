@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-3.tsx",
-      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\r\nimport {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n  ToggleGroupSeparator,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ToggleGroup defaultValue={[\"bold\"]} variant=\"outline\">\r\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\r\n        <BoldIcon />\r\n      </ToggleGroupItem>\r\n      <ToggleGroupSeparator />\r\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\r\n        <ItalicIcon />\r\n      </ToggleGroupItem>\r\n      <ToggleGroupSeparator />\r\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\r\n        <UnderlineIcon />\r\n      </ToggleGroupItem>\r\n    </ToggleGroup>\r\n  );\r\n}\r\n",
+      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n  ToggleGroupSeparator,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={[\"bold\"]} variant=\"outline\">\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </ToggleGroupItem>\n      <ToggleGroupSeparator />\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </ToggleGroupItem>\n      <ToggleGroupSeparator />\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-3.tsx",
-      "content": "import { Toggle } from \"@/registry/default/ui/toggle\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-2\">\r\n      <Toggle aria-label=\"Small toggle\" size=\"sm\" variant=\"outline\">\r\n        Small\r\n      </Toggle>\r\n      <Toggle aria-label=\"Default toggle\" size=\"default\" variant=\"outline\">\r\n        Default\r\n      </Toggle>\r\n      <Toggle aria-label=\"Large toggle\" size=\"lg\" variant=\"outline\">\r\n        Large\r\n      </Toggle>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-2\">\n      <Toggle aria-label=\"Small toggle\" size=\"sm\" variant=\"outline\">\n        Small\n      </Toggle>\n      <Toggle aria-label=\"Default toggle\" size=\"default\" variant=\"outline\">\n        Default\n      </Toggle>\n      <Toggle aria-label=\"Large toggle\" size=\"lg\" variant=\"outline\">\n        Large\n      </Toggle>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-1.tsx",
-      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <FieldLabel>Name</FieldLabel>\r\n      <Input placeholder=\"Enter your name\" type=\"text\" />\r\n      <FieldDescription>Visible on your profile</FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Name</FieldLabel>\n      <Input placeholder=\"Enter your name\" type=\"text\" />\n      <FieldDescription>Visible on your profile</FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

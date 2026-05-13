@@ -6853,7 +6853,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-input-1.tsx",
@@ -6873,7 +6873,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-input-2.tsx",
@@ -6893,7 +6893,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Description",
       "files": [
         {
           "path": "registry/default/variants/v-input-3.tsx",
@@ -6913,7 +6913,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Error Message",
       "files": [
         {
           "path": "registry/default/variants/v-input-4.tsx",
@@ -6933,7 +6933,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Character Counter",
       "files": [
         {
           "path": "registry/default/variants/v-input-5.tsx",
@@ -6953,7 +6953,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Password Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-6.tsx",
@@ -6973,7 +6973,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Phone Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-7.tsx",
@@ -6993,7 +6993,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With URL Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-8.tsx",
@@ -7013,7 +7013,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Number Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-9.tsx",
@@ -7033,7 +7033,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Date Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-10.tsx",
@@ -7053,7 +7053,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With File Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-11.tsx",
@@ -7073,7 +7073,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Required Indicator",
       "files": [
         {
           "path": "registry/default/variants/v-input-12.tsx",
@@ -7093,7 +7093,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Time Type",
       "files": [
         {
           "path": "registry/default/variants/v-input-13.tsx",
@@ -7113,7 +7113,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Multiple Fields",
       "files": [
         {
           "path": "registry/default/variants/v-input-14.tsx",
@@ -7133,7 +7133,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "Input label with tooltip",
       "files": [
         {
           "path": "registry/default/variants/v-input-15.tsx",
@@ -7153,7 +7153,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Badge",
       "files": [
         {
           "path": "registry/default/variants/v-input-16.tsx",
@@ -7173,7 +7173,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Optional Badge",
       "files": [
         {
           "path": "registry/default/variants/v-input-17.tsx",
@@ -7193,7 +7193,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "With Link and Visibility Toggle",
       "files": [
         {
           "path": "registry/default/variants/v-input-18.tsx",
@@ -7213,7 +7213,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "with multiple error messages",
       "files": [
         {
           "path": "registry/default/variants/v-input-19.tsx",
@@ -7233,7 +7233,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic input",
+      "description": "Basic password strength with dynamic hint and icons",
       "files": [
         {
           "path": "registry/default/variants/v-input-20.tsx",
@@ -7444,6 +7444,206 @@
         "className": ""
       },
       "name": "v-input-group-10",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-11",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-12",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-13",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-14",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-15",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-16",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-17",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-18",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-19",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Basic input group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-20",
       "registryDependencies": [
         "@cnippet/input-group"
       ],

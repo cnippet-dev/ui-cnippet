@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-21.tsx",
-      "content": "import { MailIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button\r\n      aria-label=\"Inbox (8 unread)\"\r\n      className=\"relative gap-2\"\r\n      variant=\"outline\"\r\n    >\r\n      <MailIcon aria-hidden=\"true\" />\r\n      Inbox\r\n      <Badge\r\n        aria-hidden=\"true\"\r\n        className=\"absolute -top-1.5 -right-2 rounded-full px-1\"\r\n        size=\"sm\"\r\n        variant=\"destructive\"\r\n      >\r\n        8\r\n      </Badge>\r\n    </Button>\r\n  );\r\n}\r\n",
+      "content": "import { MailIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button\n      aria-label=\"Inbox (8 unread)\"\n      className=\"relative gap-2\"\n      variant=\"outline\"\n    >\n      <MailIcon aria-hidden=\"true\" />\n      Inbox\n      <Badge\n        aria-hidden=\"true\"\n        className=\"absolute -top-1.5 -right-2 rounded-full px-1\"\n        size=\"sm\"\n        variant=\"destructive\"\n      >\n        8\n      </Badge>\n    </Button>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

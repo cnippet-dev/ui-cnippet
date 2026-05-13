@@ -79,13 +79,13 @@ export default async function Page(props: {
     >
       <div className="w-full">
         <div className="relative -m-px overflow-hidden pb-10 before:pointer-events-none before:absolute before:inset-0 md:border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]">
-          <div className="relative before:absolute before:top-0 before:-left-[10vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:-left-[10vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
+          <div className="relative before:absolute before:top-0 before:left-[-10vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-10vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
             <h1 className="text-balance px-2 pt-10 pb-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl md:px-6 lg:text-6xl xl:text-5xl">
               {doc.title}
             </h1>
           </div>
 
-          <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 md:px-6 dark:text-white/40">
+          <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 md:px-6 dark:text-white/40">
             {doc.description}
           </div>
 

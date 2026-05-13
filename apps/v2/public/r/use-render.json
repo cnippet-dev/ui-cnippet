@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/base-ui/use-render.ts",
-      "content": "export { useRender } from \"@base-ui/react/use-render\";\r\n",
+      "content": "export { useRender } from \"@base-ui/react/use-render\";\n",
       "type": "registry:lib"
     }
   ],

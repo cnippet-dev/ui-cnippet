@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-3.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Set your URL\"\n        className=\"*:[input]:ps-0!\"\n        placeholder=\"coss\"\n        type=\"search\"\n      />\n      <InputGroupAddon>\n        <InputGroupText>i.cal.com/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

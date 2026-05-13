@@ -44,10 +44,8 @@ function template(name: string): string {
     .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
     .join("");
 
-  return `import { ${pascal} } from "@/registry/default/ui/${name}";
-
-export default function Component() {
-  return <${pascal} />;
+  return `export default function Component() {
+  return <div>Component</div>;
 }
 `;
 }

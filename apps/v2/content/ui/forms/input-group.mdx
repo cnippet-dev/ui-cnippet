@@ -64,114 +64,64 @@ import {
 </InputGroup>
 ```
 
- ## Examples
+## Examples
 
-### Variants With text
+### With End Icon
 
 <ComponentPreview name="v-input-group-2" />
 
-### With Number Field
+### With Start Text
 
 <ComponentPreview name="v-input-group-3" />
 
-### With Tooltip
+### With End Text
 
 <ComponentPreview name="v-input-group-4" />
 
-### With Icon Button
+### With Start and End Text
 
 <ComponentPreview name="v-input-group-5" />
 
-### With Button
+### With Tooltip
 
 <ComponentPreview name="v-input-group-6" />
 
-### With Badge
+### With Icon Button
 
 <ComponentPreview name="v-input-group-7" />
 
-### With Keyboard Shortcut
+### With Button
 
 <ComponentPreview name="v-input-group-8" />
 
-### With Inner Label
+### With Badge
 
 <ComponentPreview name="v-input-group-9" />
 
-### Sizes
+### With Keyboard Shortcut
 
 <ComponentPreview name="v-input-group-10" />
 
-### Loading
+### With Inner Label
 
 <ComponentPreview name="v-input-group-11" />
 
+### Sizes
+
+<ComponentPreview name="v-input-group-12" />
+
+### Disabled
+
+<ComponentPreview name="v-input-group-13" />
+
+### Loading
+
+<ComponentPreview name="v-input-group-14" />
+
+### With Number Field
+
+<ComponentPreview name="v-input-group-15" />
+
 ### With Textarea
 
-<ComponentPreview name="v-input-group-12" /> 
-
-## API Reference
-
-### InputGroup
-
-The main component that wraps inputs and addons.
-
-| Prop        | Type                          | Description                                      |
-| ----------- | ----------------------------- | ------------------------------------------------ |
-| `className` | `string`                      | Additional CSS classes to apply to the component |
-| `...props`  | `React.ComponentProps<'div'>` | All standard div attributes are supported        |
-
-### InputGroupAddon
-
-A container for addons like icons, text, buttons, and other elements. Can be positioned at the start or end (inline), or top or bottom (block) of the input.
-
-| Prop        | Type                                                              | Default          | Description                                                                                                                        |
-| ----------- | ----------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `align`     | `'inline-start' \| 'inline-end' \| 'block-start' \| 'block-end'` | `'inline-start'` | The position of the addon relative to the input. Use `inline-start` or `inline-end` for inputs, and `block-start` or `block-end` for textareas |
-| `className` | `string`                                                          |                  | Additional CSS classes to apply to the component                                                                                   |
-| `...props`  | `React.ComponentProps<'div'>`                                     |                  | All standard div attributes are supported                                                                                          |
-
-<Alert className="bg-muted/24">
-  <InfoIcon />
-  <AlertDescription>
-    For proper focus navigation, the `InputGroupAddon` component should be placed
-    after the input in the DOM order.
-  </AlertDescription>
-</Alert>
-
-### InputGroupText
-
-A text container component for displaying text content within an `InputGroupAddon`. Automatically styles text with muted foreground color and handles icon sizing.
-
-| Prop        | Type                           | Description                                      |
-| ----------- | ------------------------------ | ------------------------------------------------ |
-| `className` | `string`                       | Additional CSS classes to apply to the component |
-| `...props`  | `React.ComponentProps<'span'>` | All standard span attributes are supported       |
-
-### InputGroupInput
-
-A specialized input component for use within InputGroup. It's essentially an unstyled Input component that inherits styling from the parent InputGroup.
-
-| Prop        | Type         | Description                                                                                           |
-| ----------- | ------------ | ----------------------------------------------------------------------------------------------------- |
-| `className` | `string`     | Additional CSS classes to apply to the component                                                      |
-| `...props`  | `InputProps` | All props from the Input component are supported, including `type`, `placeholder`, `disabled`, etc. |
-
-### InputGroupTextarea
-
-A specialized textarea component for use within InputGroup. It's essentially an unstyled Textarea component that inherits styling from the parent InputGroup.
-
-| Prop        | Type            | Description                                                                                              |
-| ----------- | --------------- | -------------------------------------------------------------------------------------------------------- |
-| `className` | `string`        | Additional CSS classes to apply to the component                                                         |
-| `...props`  | `TextareaProps` | All props from the Textarea component are supported, including `placeholder`, `disabled`, `rows`, etc. |
-
-{/* ## Comparing with shadcn
-
-If you're already familiar with shadcn/ui, this guide highlights the small differences and similarities so you can get started with **cnippet ui** quickly.
-
-### Quick Checklist
-
-- No `InputGroupButton` component - use the regular `Button` component directly inside `InputGroupAddon` instead
-- To disable an input group, disable the `InputGroupInput` or `InputGroupTextarea` directly (and any Button inside it) - no need to add a `data-disabled` attribute on `InputGroup`. */}
-
+<ComponentPreview name="v-input-group-16" />

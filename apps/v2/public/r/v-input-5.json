@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-5",
-  "description": "Basic input",
+  "description": "With Character Counter",
   "registryDependencies": [
     "@cnippet/input"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-5.tsx",
-      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(\"\");\r\n  const maxLength = 50;\r\n\r\n  return (\r\n    <Field className=\"max-w-xs\">\r\n      <div className=\"flex items-center justify-between w-full\">\r\n        <FieldLabel htmlFor=\"bio\">Description</FieldLabel>\r\n        <span className=\"text-muted-foreground text-xs\">\r\n          {value.length}/{maxLength}\r\n        </span>\r\n      </div>\r\n      <Input\r\n        id=\"bio\"\r\n        maxLength={maxLength}\r\n        onChange={(e) => setValue(e.target.value)}\r\n        placeholder=\"Description of your project\"\r\n        value={value}\r\n      />\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const maxLength = 50;\n\n  return (\n    <Field className=\"max-w-sm\">\n      <div className=\"flex w-full items-center justify-between\">\n        <FieldLabel htmlFor=\"bio\">Description</FieldLabel>\n        <span className=\"text-muted-foreground text-xs\">\n          {value.length}/{maxLength}\n        </span>\n      </div>\n      <Input\n        id=\"bio\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Description of your project\"\n        value={value}\n      />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
