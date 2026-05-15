@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-4",
-  "description": "Basic textarea",
+  "description": "With Label",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { useId } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  const id = useId();\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Message</Label>\n      <Textarea id={id} placeholder=\"Type your message here\" />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

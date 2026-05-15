@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-6",
-  "description": "Basic textarea",
+  "description": "With Character Count",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useCallback, useRef, useState } from \"react\";\n\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nconst MAX_CHARS = 280;\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const textareaRef = useRef<HTMLTextAreaElement>(null);\n\n  const handleChange = useCallback(\n    (e: React.ChangeEvent<HTMLTextAreaElement>) => {\n      const newValue = e.target.value;\n      if (newValue.length <= MAX_CHARS) {\n        setValue(newValue);\n      }\n\n      const textarea = textareaRef.current;\n      if (textarea) {\n        textarea.style.height = \"auto\";\n        textarea.style.height = `${textarea.scrollHeight}px`;\n      }\n    },\n    [],\n  );\n\n  const remaining = MAX_CHARS - value.length;\n  const isNearLimit = remaining <= 20;\n  const isAtLimit = remaining === 0;\n\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"w-full\">\n        <div className=\"flex w-full items-center justify-between\">\n          <FieldLabel htmlFor=\"auto-resize-textarea\">Bio</FieldLabel>\n          <span\n            className={`text-xs tabular-nums ${\n              isAtLimit\n                ? \"font-semibold text-destructive\"\n                : isNearLimit\n                  ? \"text-warning\"\n                  : \"text-muted-foreground\"\n            }`}\n          >\n            {value.length}/{MAX_CHARS}\n          </span>\n        </div>\n        <Textarea\n          className=\"resize-none overflow-hidden\"\n          id=\"auto-resize-textarea\"\n          onChange={handleChange}\n          placeholder=\"Tell us about yourself...\"\n          ref={textareaRef}\n          rows={2}\n          value={value}\n        />\n      </Field>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

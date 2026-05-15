@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-15",
+  "description": "With Header Label and Link",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-15.tsx",
+      "content": "import { BookOpenIcon, LinkIcon } from \"lucide-react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nconst item = {\n  description:\n    \"Find guides, API references, and examples to integrate with our platform.\",\n  icon: <BookOpenIcon aria-hidden=\"true\" />,\n  label: \"Documentation\",\n  link: \"View docs\",\n};\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs p-0\">\n      <CardContent className=\"p-0\">\n        <div className=\"border-b px-4 py-3\">\n          <div className=\"flex items-center gap-2 text-muted-foreground [&_svg]:size-4\">\n            {item.icon}\n            <span className=\"font-medium text-foreground text-sm\">\n              {item.label}\n            </span>\n          </div>\n        </div>\n        <div className=\"space-y-3 p-4\">\n          <p className=\"text-muted-foreground text-sm leading-relaxed\">\n            {item.description}\n          </p>\n          <a\n            className=\"inline-flex items-center gap-1 font-medium text-primary text-xs hover:underline\"\n            href=\"#\"\n          >\n            <LinkIcon aria-hidden=\"true\" className=\"size-2.5 shrink-0\" />\n            {item.link}\n          </a>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-slider-3",
-  "description": "Basic slider",
+  "description": "Disabled",
   "registryDependencies": [
     "@cnippet/slider"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-slider-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return <Slider defaultValue={50} disabled />;\n}\n",
       "type": "registry:block"
     }
   ],

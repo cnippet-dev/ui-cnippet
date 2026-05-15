@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-card-4",
-  "description": "Basic card",
+  "description": "With Link",
   "registryDependencies": [
     "@cnippet/card"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-card-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ExternalLinkIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs gap-2 pt-5\">\n      <CardHeader>\n        <CardTitle>Need a help in Claim?</CardTitle>\n      </CardHeader>\n      <CardContent className=\"mb-2\">\n        <p>\n          Go to this step by step guideline process on how to certify for your\n          weekly benefits:\n        </p>\n      </CardContent>\n      <CardFooter className=\"py-2\">\n        <Button className=\"px-0\" variant=\"link\">\n          See our guideline\n          <ExternalLinkIcon aria-hidden=\"true\" />\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

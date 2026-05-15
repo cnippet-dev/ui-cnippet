@@ -183,10 +183,27 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- card ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "card",
       dependencies: ["card"],
+      description: [
+        "Default",
+        "With Border",
+        "With Border Separation",
+        "With Link",
+        "With Dropdown Menu",
+        "With Image",
+        "With Image Scale Hover Effect",
+        "With Image and Shadow Fade Effect",
+        "With Stacked depth Effect",
+        "Login Form Card",
+        "Expandable Content Card",
+        "With Overflow Menu",
+        "With Header Badge & Actions",
+        "With Icon, Title and Link",
+        "With Header Label and Link",
+      ][i],
       name: `v-card-${i + 1}`,
     }),
   ),
@@ -744,6 +761,15 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "textarea",
       dependencies: ["textarea"],
+      description: [
+        "Default",
+        "Sizes",
+        "Disabled",
+        "With Label",
+        "With Description",
+        "With Character Count",
+        "Form Integration",
+      ][i],
       name: `v-textarea-${i + 1}`,
     }),
   ),

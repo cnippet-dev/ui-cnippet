@@ -2961,7 +2961,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-1": {
     name: "v-card-1",
-    description: "Basic card",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -2979,7 +2979,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-2": {
     name: "v-card-2",
-    description: "Basic card",
+    description: "With Border",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -2997,7 +2997,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-3": {
     name: "v-card-3",
-    description: "Basic card",
+    description: "With Border Separation",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3015,7 +3015,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-4": {
     name: "v-card-4",
-    description: "Basic card",
+    description: "With Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3033,7 +3033,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-5": {
     name: "v-card-5",
-    description: "Basic card",
+    description: "With Dropdown Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3051,7 +3051,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-6": {
     name: "v-card-6",
-    description: "Basic card",
+    description: "With Image",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3069,7 +3069,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-7": {
     name: "v-card-7",
-    description: "Basic card",
+    description: "With Image Scale Hover Effect",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3087,7 +3087,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-8": {
     name: "v-card-8",
-    description: "Basic card",
+    description: "With Image and Shadow Fade Effect",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3105,7 +3105,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-9": {
     name: "v-card-9",
-    description: "Basic card",
+    description: "With Stacked depth Effect",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3123,7 +3123,7 @@ export const Index: Record<string, any> = {
   },
   "v-card-10": {
     name: "v-card-10",
-    description: "Basic card",
+    description: "Login Form Card",
     type: "registry:block",
     registryDependencies: ["@cnippet/card"],
     files: [{
@@ -3133,6 +3133,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-card-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-card-11": {
+    name: "v-card-11",
+    description: "Expandable Content Card",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/card"],
+    files: [{
+      path: "registry/default/variants/v-card-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-card-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-card-12": {
+    name: "v-card-12",
+    description: "With Overflow Menu",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/card"],
+    files: [{
+      path: "registry/default/variants/v-card-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-card-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-card-13": {
+    name: "v-card-13",
+    description: "With Header Badge & Actions",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/card"],
+    files: [{
+      path: "registry/default/variants/v-card-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-card-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-card-14": {
+    name: "v-card-14",
+    description: "With Icon, Title and Link",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/card"],
+    files: [{
+      path: "registry/default/variants/v-card-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-card-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["card"],
+    meta: {"className":""},
+  },
+  "v-card-15": {
+    name: "v-card-15",
+    description: "With Header Label and Link",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/card"],
+    files: [{
+      path: "registry/default/variants/v-card-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-card-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -8901,7 +8991,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-1": {
     name: "v-radio-group-1",
-    description: "Basic radio group",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -8919,7 +9009,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-2": {
     name: "v-radio-group-2",
-    description: "Basic radio group",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -8937,7 +9027,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-3": {
     name: "v-radio-group-3",
-    description: "Basic radio group",
+    description: "With Description",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -8955,7 +9045,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-4": {
     name: "v-radio-group-4",
-    description: "Basic radio group",
+    description: "Card Style",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -8973,7 +9063,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-5": {
     name: "v-radio-group-5",
-    description: "Basic radio group",
+    description: "Colored Variants",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -8991,7 +9081,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-6": {
     name: "v-radio-group-6",
-    description: "Basic radio group",
+    description: "With Legend",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -9009,7 +9099,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-7": {
     name: "v-radio-group-7",
-    description: "Basic radio group",
+    description: "In Card With Description",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -9027,7 +9117,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-8": {
     name: "v-radio-group-8",
-    description: "Basic radio group",
+    description: "In Card With Icons",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -9045,7 +9135,7 @@ export const Index: Record<string, any> = {
   },
   "v-radio-group-9": {
     name: "v-radio-group-9",
-    description: "Basic radio group",
+    description: "Form Integration",
     type: "registry:block",
     registryDependencies: ["@cnippet/radio-group"],
     files: [{
@@ -9981,7 +10071,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-1": {
     name: "v-slider-1",
-    description: "Basic slider",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -9999,7 +10089,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-2": {
     name: "v-slider-2",
-    description: "Basic slider",
+    description: "With Label and Value",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10017,7 +10107,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-3": {
     name: "v-slider-3",
-    description: "Basic slider",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10035,7 +10125,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-4": {
     name: "v-slider-4",
-    description: "Basic slider",
+    description: "With Reference Labels",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10053,7 +10143,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-5": {
     name: "v-slider-5",
-    description: "Basic slider",
+    description: "With Tick Marks",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10071,7 +10161,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-6": {
     name: "v-slider-6",
-    description: "Basic slider",
+    description: "With Dynamic Tooltip Indicator",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10089,7 +10179,7 @@ export const Index: Record<string, any> = {
   },
   "v-slider-7": {
     name: "v-slider-7",
-    description: "Basic slider",
+    description: "Rating Slider With Emoji Feedback",
     type: "registry:block",
     registryDependencies: ["@cnippet/slider"],
     files: [{
@@ -10881,7 +10971,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-1": {
     name: "v-textarea-1",
-    description: "Basic textarea",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10899,7 +10989,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-2": {
     name: "v-textarea-2",
-    description: "Basic textarea",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10917,7 +11007,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-3": {
     name: "v-textarea-3",
-    description: "Basic textarea",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10935,7 +11025,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-4": {
     name: "v-textarea-4",
-    description: "Basic textarea",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10953,7 +11043,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-5": {
     name: "v-textarea-5",
-    description: "Basic textarea",
+    description: "With Description",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10971,7 +11061,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-6": {
     name: "v-textarea-6",
-    description: "Basic textarea",
+    description: "With Character Count",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{
@@ -10989,7 +11079,7 @@ export const Index: Record<string, any> = {
   },
   "v-textarea-7": {
     name: "v-textarea-7",
-    description: "Basic textarea",
+    description: "Form Integration",
     type: "registry:block",
     registryDependencies: ["@cnippet/textarea"],
     files: [{

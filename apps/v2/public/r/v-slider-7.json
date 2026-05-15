@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-slider-7",
-  "description": "Basic slider",
+  "description": "Rating Slider With Emoji Feedback",
   "registryDependencies": [
     "@cnippet/slider"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-slider-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nconst emojis = [\"😡\", \"🙁\", \"😐\", \"🙂\", \"😍\"];\nconst labels = [\"Awful\", \"Poor\", \"Okay\", \"Good\", \"Amazing\"];\n\nexport function Pattern() {\n  const [value, setValue] = useState(3);\n\n  return (\n    <div className=\"mx-auto grid w-full max-w-sm gap-3\">\n      <Label className=\"font-medium text-sm\">Rate your experience</Label>\n      <div className=\"flex items-center gap-3\">\n        <Slider\n          max={5}\n          min={1}\n          onValueChange={(val) =>\n            setValue(Array.isArray(val) ? (val[0] ?? 3) : val)\n          }\n          step={1}\n          value={[value]}\n        />\n        <span aria-hidden=\"true\" className=\"text-2xl\">\n          {emojis[value - 1]}\n        </span>\n      </div>\n      <span className=\"text-center font-medium text-muted-foreground text-xs\">\n        {labels[value - 1]}\n      </span>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

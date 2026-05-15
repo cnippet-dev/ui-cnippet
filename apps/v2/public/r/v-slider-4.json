@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-slider-4",
-  "description": "Basic slider",
+  "description": "With Reference Labels",
   "registryDependencies": [
     "@cnippet/slider"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-slider-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <div>\n      <Slider\n        aria-label=\"Storage size in GB\"\n        defaultValue={15}\n        max={35}\n        min={5}\n      />\n      <div\n        aria-label=\"Storage size reference values\"\n        className=\"mt-4 flex w-full items-center justify-between gap-1 font-medium text-muted-foreground text-xs\"\n        role=\"group\"\n      >\n        <span>5 GB</span>\n        <span>20 GB</span>\n        <span>35 GB</span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-2",
-  "description": "Basic textarea",
+  "description": "Sizes",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return (\n    <div className=\"mb-1 space-y-2 pt-6 text-muted-foreground text-sm\">\n      <p>Small</p>\n      <Textarea placeholder=\"Type your message here\" size=\"sm\" />\n\n      <p>Large</p>\n      <Textarea placeholder=\"Type your message here\" size=\"lg\" />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

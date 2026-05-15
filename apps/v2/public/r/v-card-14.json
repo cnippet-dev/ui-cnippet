@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-14",
+  "description": "With Icon, Title and Link",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-14.tsx",
+      "content": "import { ChevronRightIcon, ShoppingBagIcon } from \"lucide-react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nconst item = {\n  description:\n    \"Track and review all recent purchases, updates, and status changes in one place.\",\n  icon: <ShoppingBagIcon aria-hidden=\"true\" />,\n  link: \"View Orders\",\n  title: \"Recent Orders Overview\",\n};\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardContent className=\"flex flex-col gap-3\">\n        <div className=\"flex size-11 items-center justify-center rounded-md bg-primary [&_svg]:size-5 [&_svg]:text-primary-foreground\">\n          {item.icon}\n        </div>\n        <a\n          className=\"block font-medium text-foreground text-sm leading-tight hover:text-primary\"\n          href=\"#\"\n        >\n          {item.title}\n        </a>\n        <p className=\"text-muted-foreground text-xs leading-relaxed\">\n          {item.description}\n        </p>\n        <a\n          className=\"inline-flex items-center gap-1 font-medium text-primary text-xs hover:underline\"\n          href=\"#\"\n        >\n          {item.link}\n          <ChevronRightIcon aria-hidden=\"true\" className=\"size-2.5 shrink-0\" />\n        </a>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

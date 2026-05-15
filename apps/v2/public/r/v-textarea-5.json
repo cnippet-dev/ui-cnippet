@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-5",
-  "description": "Basic textarea",
+  "description": "With Description",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"w-full\">\n        <FieldLabel htmlFor=\"textarea-with-desc\">Feedback</FieldLabel>\n        <Textarea\n          id=\"textarea-with-desc\"\n          placeholder=\"Type your message here…\"\n          rows={6}\n        />\n        <FieldDescription>\n          Type your message and press enter to send.\n        </FieldDescription>\n      </Field>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

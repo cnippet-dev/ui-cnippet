@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-radio-group-8",
-  "description": "Basic radio group",
+  "description": "In Card With Icons",
   "registryDependencies": [
     "@cnippet/radio-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-radio-group-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { Mail, MessageSquareCheck, Phone } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Card } from \"@/registry/default/ui/card\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\nimport { Label } from \"../ui/label\";\n\nexport function Pattern() {\n  const [selected, setSelected] = useState(\"r-1\");\n\n  return (\n    <RadioGroup onValueChange={setSelected} value={selected}>\n      <Card\n        className={`flex flex-row items-start justify-between gap-20 rounded-lg p-3 transition-colors ${selected === \"r-1\" ? \"bg-primary/20\" : \"\"}`}\n      >\n        <div className=\"flex flex-row gap-2\">\n          <Mail className=\"size-4\" />\n          <Label htmlFor=\"r-1\">Email</Label>\n        </div>\n        <Radio id=\"r-1\" value=\"r-1\" />\n      </Card>\n      <Card\n        className={`flex flex-row items-start justify-between gap-2 rounded-lg p-3 transition-colors ${selected === \"r-2\" ? \"bg-primary/20\" : \"\"}`}\n      >\n        <div className=\"flex flex-row gap-2\">\n          <Phone className=\"size-4\" />\n          <Label htmlFor=\"r-2\">Phone</Label>\n        </div>\n        <Radio id=\"r-2\" value=\"r-2\" />\n      </Card>\n      <Card\n        className={`flex flex-row items-start justify-between gap-2 rounded-lg p-3 transition-colors ${selected === \"r-3\" ? \"bg-primary/20\" : \"\"}`}\n      >\n        <div className=\"flex flex-row gap-2\">\n          <MessageSquareCheck className=\"size-4\" />\n          <Label htmlFor=\"r-3\">Message</Label>\n        </div>\n        <Radio id=\"r-3\" value=\"r-3\" />\n      </Card>\n    </RadioGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

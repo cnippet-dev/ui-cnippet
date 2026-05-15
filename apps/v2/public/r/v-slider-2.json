@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-slider-2",
-  "description": "Basic slider",
+  "description": "With Label and Value",
   "registryDependencies": [
     "@cnippet/slider"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-slider-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <Slider defaultValue={50}>\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\n          <SliderValue />\n        </div>\n      </Slider>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

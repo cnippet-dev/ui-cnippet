@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-card-6",
-  "description": "Basic card",
+  "description": "With Image",
   "registryDependencies": [
     "@cnippet/card"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-card-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ArrowRightIcon, BellIcon, SparklesIcon } from \"lucide-react\";\nimport Image from \"next/image\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardContent className=\"flex flex-col gap-4\">\n        <div className=\"relative h-48 w-full overflow-hidden rounded-lg\">\n          <Image\n            alt=\"16:9\"\n            className=\"object-cover\"\n            fill\n            src=\"https://res.cloudinary.com/dcxm3ccir/image/upload/v1741613286/h1.jpg\"\n          />\n        </div>\n\n        <div className=\"flex items-center justify-between gap-5\">\n          <Badge variant=\"outline\">\n            <BellIcon aria-hidden=\"true\" />\n            Trending\n          </Badge>\n          <div className=\"flex items-center gap-1\">\n            <SparklesIcon aria-hidden=\"true\" />\n            <span className=\"font-medium text-secondary-foreground text-xs\">\n              Featured\n            </span>\n          </div>\n        </div>\n\n        <p className=\"text-foreground text-sm\">\n          Simplifying your workflow from day one. Manage your tasks, projects,\n          and team in one place.\n        </p>\n\n        <Button>\n          Get Started\n          <ArrowRightIcon aria-hidden=\"true\" />\n        </Button>\n      </CardContent>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

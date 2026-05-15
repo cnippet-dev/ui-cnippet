@@ -3073,7 +3073,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-card-1.tsx",
@@ -3093,7 +3093,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Border",
       "files": [
         {
           "path": "registry/default/variants/v-card-2.tsx",
@@ -3113,7 +3113,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Border Separation",
       "files": [
         {
           "path": "registry/default/variants/v-card-3.tsx",
@@ -3133,7 +3133,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Link",
       "files": [
         {
           "path": "registry/default/variants/v-card-4.tsx",
@@ -3153,7 +3153,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Dropdown Menu",
       "files": [
         {
           "path": "registry/default/variants/v-card-5.tsx",
@@ -3173,7 +3173,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Image",
       "files": [
         {
           "path": "registry/default/variants/v-card-6.tsx",
@@ -3193,7 +3193,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Image Scale Hover Effect",
       "files": [
         {
           "path": "registry/default/variants/v-card-7.tsx",
@@ -3213,7 +3213,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Image and Shadow Fade Effect",
       "files": [
         {
           "path": "registry/default/variants/v-card-8.tsx",
@@ -3233,7 +3233,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "With Stacked depth Effect",
       "files": [
         {
           "path": "registry/default/variants/v-card-9.tsx",
@@ -3253,7 +3253,7 @@
       "categories": [
         "card"
       ],
-      "description": "Basic card",
+      "description": "Login Form Card",
       "files": [
         {
           "path": "registry/default/variants/v-card-10.tsx",
@@ -3264,6 +3264,106 @@
         "className": ""
       },
       "name": "v-card-10",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Expandable Content Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-11",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "With Overflow Menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-12",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "With Header Badge & Actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-13",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "With Icon, Title and Link",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-14",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "With Header Label and Link",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-15",
       "registryDependencies": [
         "@cnippet/card"
       ],
@@ -9653,7 +9753,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-1.tsx",
@@ -9673,7 +9773,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-2.tsx",
@@ -9693,7 +9793,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "With Description",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-3.tsx",
@@ -9713,7 +9813,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Card Style",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-4.tsx",
@@ -9733,7 +9833,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Colored Variants",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-5.tsx",
@@ -9753,7 +9853,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "With Legend",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-6.tsx",
@@ -9773,7 +9873,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "In Card With Description",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-7.tsx",
@@ -9793,7 +9893,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "In Card With Icons",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-8.tsx",
@@ -9813,7 +9913,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Form Integration",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-9.tsx",
@@ -10853,7 +10953,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-slider-1.tsx",
@@ -10873,7 +10973,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "With Label and Value",
       "files": [
         {
           "path": "registry/default/variants/v-slider-2.tsx",
@@ -10893,7 +10993,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-slider-3.tsx",
@@ -10913,7 +11013,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "With Reference Labels",
       "files": [
         {
           "path": "registry/default/variants/v-slider-4.tsx",
@@ -10933,7 +11033,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "With Tick Marks",
       "files": [
         {
           "path": "registry/default/variants/v-slider-5.tsx",
@@ -10953,7 +11053,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "With Dynamic Tooltip Indicator",
       "files": [
         {
           "path": "registry/default/variants/v-slider-6.tsx",
@@ -10973,7 +11073,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Rating Slider With Emoji Feedback",
       "files": [
         {
           "path": "registry/default/variants/v-slider-7.tsx",
@@ -11853,7 +11953,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-1.tsx",
@@ -11873,7 +11973,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-2.tsx",
@@ -11893,7 +11993,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-3.tsx",
@@ -11913,7 +12013,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-4.tsx",
@@ -11933,7 +12033,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "With Description",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-5.tsx",
@@ -11953,7 +12053,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "With Character Count",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-6.tsx",
@@ -11973,7 +12073,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Form Integration",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-7.tsx",

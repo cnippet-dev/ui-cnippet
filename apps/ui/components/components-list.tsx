@@ -1,3 +1,5 @@
+"use client";
+
 import { fadeUp } from "cnippet-aos";
 import {
   ChevronDownIcon,

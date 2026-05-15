@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-radio-group-7",
-  "description": "Basic radio group",
+  "description": "In Card With Description",
   "registryDependencies": [
     "@cnippet/radio-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-radio-group-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Card } from \"@/registry/default/ui/card\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\nimport { Label } from \"../ui/label\";\n\nexport function Pattern() {\n  const [selected, setSelected] = useState(\"r-1\");\n\n  return (\n    <RadioGroup onValueChange={setSelected} value={selected}>\n      <Card\n        className={`flex flex-row items-start gap-2 rounded-lg p-3 transition-colors ${selected === \"r-1\" ? \"bg-primary/20\" : \"\"}`}\n      >\n        <Radio id=\"r-1\" value=\"r-1\" />\n        <div className=\"flex flex-col gap-1\">\n          <Label htmlFor=\"r-1\">Free</Label>\n          <p className=\"text-muted-foreground text-xs\">\n            Basic features for personal use.\n          </p>\n        </div>\n      </Card>\n      <Card\n        className={`flex flex-row items-start gap-2 rounded-lg p-3 transition-colors ${selected === \"r-2\" ? \"bg-primary/20\" : \"\"}`}\n      >\n        <Radio id=\"r-2\" value=\"r-2\" />\n        <div className=\"flex flex-col gap-1\">\n          <Label htmlFor=\"r-2\">Pro</Label>\n          <p className=\"text-muted-foreground text-xs\">\n            Advanced tools for professionals.\n          </p>\n        </div>\n      </Card>\n    </RadioGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
