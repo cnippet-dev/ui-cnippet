@@ -21,10 +21,7 @@ export default function Particle() {
   };
 
   return (
-    <Form
-      className="flex w-full max-w-40 flex-col gap-4"
-      onSubmit={onSubmit}
-    >
+    <Form className="flex w-full max-w-40 flex-col gap-4" onSubmit={onSubmit}>
       <Field
         className="gap-2"
         name="frameworks"

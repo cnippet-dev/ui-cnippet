@@ -1,6 +1,5 @@
 "use client";
 
-import { MessageIcon } from "@hugeicons/core-free-icons";
 import { Mail, MessageSquareCheck, Phone } from "lucide-react";
 import { useState } from "react";
 import { Card } from "@/registry/default/ui/card";
@@ -13,7 +12,7 @@ export function Pattern() {
   return (
     <RadioGroup onValueChange={setSelected} value={selected}>
       <Card
-        className={`flex items-start justify-between rounded-lg flex-row p-3 gap-20 transition-colors ${selected === "r-1" ? "bg-primary/20" : ""}`}
+        className={`flex flex-row items-start justify-between gap-20 rounded-lg p-3 transition-colors ${selected === "r-1" ? "bg-primary/20" : ""}`}
       >
         <div className="flex flex-row gap-2">
           <Mail className="size-4" />
@@ -22,7 +21,7 @@ export function Pattern() {
         <Radio id="r-1" value="r-1" />
       </Card>
       <Card
-        className={`flex items-start justify-between rounded-lg flex-row p-3 gap-2 transition-colors ${selected === "r-2" ? "bg-primary/20" : ""}`}
+        className={`flex flex-row items-start justify-between gap-2 rounded-lg p-3 transition-colors ${selected === "r-2" ? "bg-primary/20" : ""}`}
       >
         <div className="flex flex-row gap-2">
           <Phone className="size-4" />
@@ -31,7 +30,7 @@ export function Pattern() {
         <Radio id="r-2" value="r-2" />
       </Card>
       <Card
-        className={`flex items-start justify-between rounded-lg flex-row p-3 gap-2 transition-colors ${selected === "r-3" ? "bg-primary/20" : ""}`}
+        className={`flex flex-row items-start justify-between gap-2 rounded-lg p-3 transition-colors ${selected === "r-3" ? "bg-primary/20" : ""}`}
       >
         <div className="flex flex-row gap-2">
           <MessageSquareCheck className="size-4" />

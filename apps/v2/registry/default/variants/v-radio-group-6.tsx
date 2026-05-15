@@ -1,7 +1,4 @@
-import {
-  Field,
-  FieldLabel,
-} from "@/registry/default/ui/field";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Fieldset, FieldsetLegend } from "@/registry/default/ui/fieldset";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 

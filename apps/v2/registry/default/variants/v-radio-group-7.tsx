@@ -11,7 +11,7 @@ export function Pattern() {
   return (
     <RadioGroup onValueChange={setSelected} value={selected}>
       <Card
-        className={`flex items-start rounded-lg flex-row p-3 gap-2 transition-colors ${selected === "r-1" ? "bg-primary/20" : ""}`}
+        className={`flex flex-row items-start gap-2 rounded-lg p-3 transition-colors ${selected === "r-1" ? "bg-primary/20" : ""}`}
       >
         <Radio id="r-1" value="r-1" />
         <div className="flex flex-col gap-1">
@@ -22,7 +22,7 @@ export function Pattern() {
         </div>
       </Card>
       <Card
-        className={`flex items-start rounded-lg flex-row p-3 gap-2 transition-colors ${selected === "r-2" ? "bg-primary/20" : ""}`}
+        className={`flex flex-row items-start gap-2 rounded-lg p-3 transition-colors ${selected === "r-2" ? "bg-primary/20" : ""}`}
       >
         <Radio id="r-2" value="r-2" />
         <div className="flex flex-col gap-1">

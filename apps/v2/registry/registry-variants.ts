@@ -588,6 +588,17 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "radio group",
       dependencies: ["radio-group"],
+      description: [
+        "Default",
+        "Disabled",
+        "With Description",
+        "Card Style",
+        "Colored Variants",
+        "With Legend",
+        "In Card With Description",
+        "In Card With Icons",
+        "Form Integration",
+      ][i],
       name: `v-radio-group-${i + 1}`,
     }),
   ),
@@ -649,6 +660,15 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "slider",
       dependencies: ["slider"],
+      description: [
+        "Default",
+        "With Label and Value",
+        "Disabled",
+        "With Reference Labels",
+        "With Tick Marks",
+        "With Dynamic Tooltip Indicator",
+        "Rating Slider With Emoji Feedback",
+      ][i],
       name: `v-slider-${i + 1}`,
     }),
   ),
