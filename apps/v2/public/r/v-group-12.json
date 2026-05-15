@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-12",
+  "description": "With Input Group",
+  "registryDependencies": [
+    "@cnippet/group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-12.tsx",
+      "content": "import {\n  ChevronDownIcon,\n  DownloadIcon,\n  EditIcon,\n  ShareIcon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Subscription actions\">\n      <Button>Subscribe</Button>\n      <GroupSeparator className=\"bg-primary/72\" />\n      <Menu>\n        <MenuTrigger render={<Button aria-label=\"Copy options\" size=\"icon\" />}>\n          <ChevronDownIcon aria-hidden=\"true\" className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <ShareIcon aria-hidden=\"true\" />\n            Share link\n          </MenuItem>\n          <MenuItem>\n            <DownloadIcon aria-hidden=\"true\" />\n            Download\n          </MenuItem>\n          <MenuItem>\n            <EditIcon aria-hidden=\"true\" />\n            Duplicate\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

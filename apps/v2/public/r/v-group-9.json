@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-9",
-  "description": "Basic group",
+  "description": "Vertical",
   "registryDependencies": [
     "@cnippet/group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-group-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ArrowLeftIcon, ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Pagination\">\n      <Group aria-label=\"Page numbers\">\n        <Button className=\"min-w-8\" variant=\"outline\">\n          1\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          2\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          3\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          4\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          5\n        </Button>\n      </Group>\n      <Group aria-label=\"Navigation\">\n        <Button aria-label=\"Previous\" size=\"icon\" variant=\"outline\">\n          <ArrowLeftIcon aria-hidden=\"true\" />\n        </Button>\n        <GroupSeparator />\n        <Button aria-label=\"Next\" size=\"icon\" variant=\"outline\">\n          <ArrowRightIcon aria-hidden=\"true\" />\n        </Button>\n      </Group>\n    </Group>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

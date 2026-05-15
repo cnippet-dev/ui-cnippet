@@ -388,10 +388,26 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- group ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "group",
       dependencies: ["group"],
+      description: [
+        "Default",
+        "With Input",
+        "Small Size",
+        "Large Size",
+        "With Disabled Button",
+        "With Default Buttons",
+        "With Start Labeled Text",
+        "With End Text",
+        "Vertical",
+        "Nested Groups",
+        "With Popup",
+        "With Input Group",
+        "With Menu",
+        "With Select",
+      ][i],
       name: `v-group-${i + 1}`,
     }),
   ),

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-11",
+  "description": "With Popup",
+  "registryDependencies": [
+    "@cnippet/group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-11.tsx",
+      "content": "import { MicIcon, PaperclipIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group } from \"@/registry/default/ui/group\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport default function Particle() {\n  return (\n    <Group\n      aria-label=\"Message composer\"\n      className=\"[--radius-lg:9999px] [--radius:9999rem]\"\n    >\n      <Group aria-label=\"Attachments\">\n        <Button aria-label=\"Attach file\" size=\"icon\" variant=\"outline\">\n          <PaperclipIcon aria-hidden=\"true\" />\n        </Button>\n      </Group>\n      <Group aria-label=\"Message input\">\n        <InputGroup>\n          <InputGroupInput placeholder=\"Send a message\" />\n          <InputGroupAddon align=\"inline-end\">\n            <Tooltip>\n              <TooltipTrigger\n                render={\n                  <Button\n                    aria-label=\"Voice Mode\"\n                    size=\"icon-xs\"\n                    variant=\"ghost\"\n                  />\n                }\n              >\n                <MicIcon aria-hidden=\"true\" />\n              </TooltipTrigger>\n              <TooltipContent>Voice Mode</TooltipContent>\n            </Tooltip>\n          </InputGroupAddon>\n        </InputGroup>\n      </Group>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

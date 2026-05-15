@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-frame-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ChevronRightIcon } from \"lucide-react\";\n\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\nimport {\n  Frame,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full\">\n      <Collapsible className=\"group/collapsible\" defaultOpen>\n        <CollapsibleTrigger className=\"w-full\">\n          <FrameHeader className=\"flex grow flex-row items-center justify-between gap-2\">\n            <FrameTitle>Start</FrameTitle>\n            <ChevronRightIcon className=\"text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90\" />\n          </FrameHeader>\n        </CollapsibleTrigger>\n        <CollapsibleContent>\n          <FramePanel>\n            <p className=\"text-muted-foreground text-sm\">\n              Initialize run to answer a user question using uploaded files and\n              the knowledge base; cite sources when relevant.\n            </p>\n          </FramePanel>\n        </CollapsibleContent>\n      </Collapsible>\n    </Frame>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

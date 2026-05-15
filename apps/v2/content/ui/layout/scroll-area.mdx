@@ -12,14 +12,14 @@ links:
 
 <CodeTabs>
 
-<TabsList defaultValue="cli">
+<TabsList>
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @cnippet/scroll-area
+npx shadcn@latest add @coss/scroll-area
 ```
 
 </TabsPanel>
@@ -54,7 +54,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 ```tsx
 <ScrollArea className="h-64 rounded-md border">
-  <div className="v-4">
+  <div className="p-4">
     Just as suddenly as it had begun, the sensation stopped, leaving Alice
     feeling slightly disoriented. She looked around and realized that the room
     hadn't changed at all - it was she who had grown smaller, shrinking down to
@@ -67,12 +67,22 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 </ScrollArea>
 ```
 
-{/* ## Examples
+## Examples
 
-### Horizontal Scroll
+### Scroll Fade
+
+Use `scrollFade` to mask the viewport edges so content subtly fades in and out as you scroll, hinting that more content is available without adding extra UI chrome.
 
 <ComponentPreview name="v-scroll-area-2" />
 
-### Both Scrollbars
+### Horizontal Scroll
 
-<ComponentPreview name="v-scroll-area-3" /> */}
+<ComponentPreview name="v-scroll-area-3" />
+
+### Scrollbar Gutter
+
+Enable `scrollbarGutter` to reserve space for the scrollbar when overflow appears, preventing layout shifts as the bar shows or hides.
+
+<ComponentPreview name="v-scroll-area-4" />
+
+

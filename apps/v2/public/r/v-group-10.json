@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-10",
-  "description": "Basic group",
+  "description": "Nested Groups",
   "registryDependencies": [
     "@cnippet/group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-group-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ChevronDownIcon, GitForkIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport {\n  Popover,\n  PopoverDescription,\n  PopoverPopup,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Repository actions\">\n      <Button variant=\"outline\">\n        <GitForkIcon aria-hidden=\"true\" />\n        Fork\n        <Badge variant=\"secondary\">48</Badge>\n      </Button>\n      <GroupSeparator />\n      <Popover>\n        <PopoverTrigger\n          render={\n            <Button aria-label=\"Send options\" size=\"icon\" variant=\"outline\" />\n          }\n        >\n          <ChevronDownIcon aria-hidden=\"true\" />\n        </PopoverTrigger>\n        <PopoverPopup align=\"end\" className=\"w-64\">\n          <PopoverTitle className=\"text-base\">Existing forks</PopoverTitle>\n          <PopoverDescription>\n            You don't have any forks of this repository.\n          </PopoverDescription>\n        </PopoverPopup>\n      </Popover>\n    </Group>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

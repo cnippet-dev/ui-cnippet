@@ -6753,7 +6753,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-group-1.tsx",
@@ -6773,7 +6773,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "With Input",
       "files": [
         {
           "path": "registry/default/variants/v-group-2.tsx",
@@ -6793,7 +6793,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Small Size",
       "files": [
         {
           "path": "registry/default/variants/v-group-3.tsx",
@@ -6813,7 +6813,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Large Size",
       "files": [
         {
           "path": "registry/default/variants/v-group-4.tsx",
@@ -6833,7 +6833,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "With Disabled Button",
       "files": [
         {
           "path": "registry/default/variants/v-group-5.tsx",
@@ -6853,7 +6853,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "With Default Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-group-6.tsx",
@@ -6873,7 +6873,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "With Start Labeled Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-7.tsx",
@@ -6893,7 +6893,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "With End Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-8.tsx",
@@ -6913,7 +6913,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-group-9.tsx",
@@ -6933,7 +6933,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Nested Groups",
       "files": [
         {
           "path": "registry/default/variants/v-group-10.tsx",
@@ -6944,6 +6944,106 @@
         "className": ""
       },
       "name": "v-group-10",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "With Popup",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-11",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "With Input Group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-12",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "With Menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-13",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "With Select",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-14",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "Basic group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-15",
       "registryDependencies": [
         "@cnippet/group"
       ],

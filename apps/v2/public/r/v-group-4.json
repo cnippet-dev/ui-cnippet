@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-4",
-  "description": "Basic group",
+  "description": "Large Size",
   "registryDependencies": [
     "@cnippet/group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-group-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ArchiveIcon,\n  EditIcon,\n  EllipsisIcon,\n  FilesIcon,\n  FilmIcon,\n  ShareIcon,\n  TrashIcon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"File actions\">\n      <Button variant=\"outline\">\n        <FilesIcon aria-hidden=\"true\" />\n        Files\n      </Button>\n      <GroupSeparator />\n      <Button disabled variant=\"outline\">\n        <FilmIcon aria-hidden=\"true\" />\n        Media\n      </Button>\n      <GroupSeparator />\n      <Menu>\n        <MenuTrigger\n          render={<Button aria-label=\"Menu\" size=\"icon\" variant=\"outline\" />}\n        >\n          <EllipsisIcon aria-hidden=\"true\" className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <EditIcon aria-hidden=\"true\" />\n            Edit\n          </MenuItem>\n          <MenuItem>\n            <ArchiveIcon aria-hidden=\"true\" />\n            Archive\n          </MenuItem>\n          <MenuItem>\n            <ShareIcon aria-hidden=\"true\" />\n            Share\n          </MenuItem>\n          <MenuItem variant=\"destructive\">\n            <TrashIcon aria-hidden=\"true\" />\n            Delete\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
