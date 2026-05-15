@@ -1,4 +1,4 @@
-import { Separator } from "@/registry/default/ui/separator"
+import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {
   return (
@@ -18,5 +18,5 @@ export function Pattern() {
         <dd className="text-muted-foreground">Value 3</dd>
       </dl>
     </div>
-  )
+  );
 }

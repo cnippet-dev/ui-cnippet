@@ -97,10 +97,28 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- avatar ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "avatar",
       dependencies: ["avatar"],
+      description: [
+        "Default",
+        "With Fallback",
+        "Different Sizes",
+        "Different Radius",
+        "Avatar Group",
+        "Avatar Group With Numeric Count",
+        "With Details and Badge",
+        "Avatar Social Proof With Text Label",
+        "Compact Social Proof With Initials",
+        "With Hover Effect",
+        "With Hover Effect & Tooltips",
+        "Avatar Inside An Empty State Example",
+        "With Loading State Demonstration",
+        "With Custom Badge",
+        "With Ring Animation",
+        "With Dropdown Menu",
+      ][i],
       name: `v-avatar-${i + 1}`,
     }),
   ),

@@ -1,11 +1,11 @@
-import { Separator } from "@/registry/default/ui/separator"
+import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {
   return (
     <div className="mx-auto flex w-full max-w-xs flex-col gap-2 text-sm">
       <p className="font-medium">Order Summary</p>
       <Separator />
-      <dl className="flex items-center gap-20 justify-between">
+      <dl className="flex items-center justify-between gap-20">
         <dt className="text-muted-foreground">Subtotal</dt>
         <dd>$49.00</dd>
       </dl>
@@ -23,5 +23,5 @@ export function Pattern() {
         <dd>$47.52</dd>
       </dl>
     </div>
-  )
+  );
 }

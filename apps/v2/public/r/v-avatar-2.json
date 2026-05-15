@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-avatar-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\n\nexport default function Particle() {\n  return (\n    <Avatar>\n      <AvatarFallback>LT</AvatarFallback>\n    </Avatar>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

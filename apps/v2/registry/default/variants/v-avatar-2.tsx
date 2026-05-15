@@ -1,3 +1,9 @@
-export default function Component() {
-  return <div>Component</div>;
+import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
+
+export default function Particle() {
+  return (
+    <Avatar>
+      <AvatarFallback>LT</AvatarFallback>
+    </Avatar>
+  );
 }

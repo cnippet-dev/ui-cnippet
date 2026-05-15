@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-13",
+  "description": "Basic avatar",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-13.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    const interval = setInterval(() => setLoading((prev) => !prev), 2000); // Toggle loading state every 3 seconds\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <div className=\"relative\">\n      <Avatar>\n        <AvatarImage alt=\"@shadcn\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      {loading && (\n        <div className=\"absolute inset-0 flex items-center justify-center rounded-full bg-background/60\">\n          <Spinner className=\"text-primary\" />\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

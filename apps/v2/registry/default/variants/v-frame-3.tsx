@@ -19,7 +19,7 @@ export function Pattern() {
         <CollapsibleTrigger className="w-full">
           <FrameHeader className="flex grow flex-row items-center justify-between gap-2">
             <FrameTitle>Start</FrameTitle>
-            <ChevronRightIcon className="text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90" />
+            <ChevronRightIcon className="size-4 text-muted-foreground transition-transform duration-200 group-data-open/collapsible:rotate-90" />
           </FrameHeader>
         </CollapsibleTrigger>
         <CollapsibleContent>

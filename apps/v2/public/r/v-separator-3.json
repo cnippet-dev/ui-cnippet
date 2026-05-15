@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div className=\"flex items-center gap-4 text-sm\">\n        <div className=\"flex flex-col gap-1\">\n          <span className=\"font-medium\">Settings</span>\n          <span className=\"text-muted-foreground text-xs\">\n            Manage preferences\n          </span>\n        </div>\n        <Separator className=\"[&]:self-auto! h-8\" orientation=\"vertical\" />\n        <div className=\"flex flex-col gap-1\">\n          <span className=\"font-medium\">Account</span>\n          <span className=\"text-muted-foreground text-xs\">\n            Profile & security\n          </span>\n        </div>\n        <Separator className=\"[&]:self-auto! h-8\" orientation=\"vertical\" />\n        <div className=\"flex flex-col gap-1\">\n          <span className=\"font-medium\">Help</span>\n          <span className=\"text-muted-foreground text-xs\">Support & docs</span>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

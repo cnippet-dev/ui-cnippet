@@ -1933,6 +1933,114 @@ export const Index: Record<string, any> = {
     categories: ["avatar"],
     meta: {"className":""},
   },
+  "v-avatar-11": {
+    name: "v-avatar-11",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-avatar-12": {
+    name: "v-avatar-12",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-avatar-13": {
+    name: "v-avatar-13",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-avatar-14": {
+    name: "v-avatar-14",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-avatar-15": {
+    name: "v-avatar-15",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
+  "v-avatar-16": {
+    name: "v-avatar-16",
+    description: "Basic avatar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/avatar"],
+    files: [{
+      path: "registry/default/variants/v-avatar-16.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-avatar-16.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["avatar"],
+    meta: {"className":""},
+  },
   "v-badge-1": {
     name: "v-badge-1",
     description: "Default",

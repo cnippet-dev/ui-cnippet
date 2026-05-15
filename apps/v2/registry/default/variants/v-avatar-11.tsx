@@ -4,6 +4,11 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/default/ui/avatar";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/registry/default/ui/tooltip";
 
 const avatars = [
   {
@@ -42,17 +47,24 @@ export function Pattern() {
             } as React.CSSProperties
           }
         >
-          <Avatar
-            className={cn(
-              "origin-center ring-2 ring-background transition-transform duration-300 ease-in-out",
-              "group-hover/avatar-item:scale-110",
-            )}
-          >
-            <AvatarImage alt={avatar.name} src={avatar.src} />
-            <AvatarFallback className="text-xs">
-              {avatar.fallback}
-            </AvatarFallback>
-          </Avatar>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Avatar
+                  className={cn(
+                    "origin-center ring-2 ring-background transition-transform duration-300 ease-in-out",
+                    "group-hover/avatar-item:scale-110",
+                  )}
+                >
+                  <AvatarImage alt={avatar.name} src={avatar.src} />
+                  <AvatarFallback className="text-xs">
+                    {avatar.fallback}
+                  </AvatarFallback>
+                </Avatar>
+              }
+            />
+            <TooltipContent sideOffset={10}>{avatar.name}</TooltipContent>
+          </Tooltip>
         </div>
       ))}
     </div>

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-2 text-sm\">\n      <dl className=\"flex items-center justify-between\">\n        <dt className=\"font-medium\">Item 1</dt>\n        <dd className=\"text-muted-foreground\">Value 1</dd>\n      </dl>\n      <Separator />\n      <dl className=\"flex items-center justify-between\">\n        <dt className=\"font-medium\">Item 2</dt>\n        <dd className=\"text-muted-foreground\">Value 2</dd>\n      </dl>\n      <Separator />\n      <dl className=\"flex items-center justify-between\">\n        <dt className=\"font-medium\">Item 3</dt>\n        <dd className=\"text-muted-foreground\">Value 3</dd>\n      </dl>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-15",
+  "description": "Basic avatar",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-15.tsx",
+      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\n\nexport function Pattern() {\n  return (\n    <div className=\"relative w-fit\">\n      <Avatar className=\"animate-pulse ring-2 ring-green-500 ring-offset-2 ring-offset-background\">\n        <AvatarImage alt=\"@shadcn\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      <span className=\"absolute -right-1 -bottom-1 size-3 rounded-full border-2 border-background bg-green-500\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

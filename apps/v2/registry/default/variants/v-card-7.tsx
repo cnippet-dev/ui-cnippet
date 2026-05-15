@@ -9,7 +9,7 @@ export function Pattern() {
         alt="Background"
         className="object-cover transition-transform duration-500 group-hover/card:scale-110"
         fill
-       src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1741613286/h1.jpg"
+        src="https://res.cloudinary.com/dcxm3ccir/image/upload/v1741613286/h1.jpg"
       />
 
       {/* Background fade effects */}

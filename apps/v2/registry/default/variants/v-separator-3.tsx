@@ -1,4 +1,4 @@
-import { Separator } from "@/registry/default/ui/separator"
+import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {
   return (
@@ -10,19 +10,19 @@ export function Pattern() {
             Manage preferences
           </span>
         </div>
-        <Separator orientation="vertical" className="h-8 [&]:self-auto!" />
+        <Separator className="[&]:self-auto! h-8" orientation="vertical" />
         <div className="flex flex-col gap-1">
           <span className="font-medium">Account</span>
           <span className="text-muted-foreground text-xs">
             Profile & security
           </span>
         </div>
-        <Separator orientation="vertical" className="h-8 [&]:self-auto!" />
+        <Separator className="[&]:self-auto! h-8" orientation="vertical" />
         <div className="flex flex-col gap-1">
           <span className="font-medium">Help</span>
           <span className="text-muted-foreground text-xs">Support & docs</span>
         </div>
       </div>
     </div>
-  )
+  );
 }

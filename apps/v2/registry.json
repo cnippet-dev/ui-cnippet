@@ -1931,6 +1931,126 @@
     },
     {
       "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-11",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-12",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-13",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-14",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-15",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Basic avatar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-16",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "badge"
       ],
       "description": "Default",
