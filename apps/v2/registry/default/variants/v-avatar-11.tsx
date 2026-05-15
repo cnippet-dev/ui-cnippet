@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { cn } from "@/lib/utils";
 import {
   Avatar,

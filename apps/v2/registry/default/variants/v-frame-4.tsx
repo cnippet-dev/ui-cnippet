@@ -8,7 +8,7 @@ import {
 
 export function Pattern() {
   return (
-    <Frame className="w-full max-w-sm" dense>
+    <Frame className="w-full max-w-sm">
       <FrameHeader>
         <FrameTitle>Inventory Check</FrameTitle>
         <FrameDescription>Real-time stock monitoring</FrameDescription>
