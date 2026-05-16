@@ -151,6 +151,18 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "breadcrumb",
       dependencies: ["breadcrumb"],
+      description: [
+        "Default",
+        "With custom separator",
+        "With Dropdown Menu",
+        "With Next.js Link",
+        "With Icons For Each Item",
+        "With Avatar",
+        "Inside Card",
+        "Starting With Home Icon",
+        "Button-style",
+        "With Project, Sser and Document Info",
+      ][i],
       name: `v-breadcrumb-${i + 1}`,
     }),
   ),
@@ -531,6 +543,18 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "menu",
       dependencies: ["menu"],
+      description: [
+        "Default",
+        "Open on Hover",
+        "With Checkbox",
+        "With Switch",
+        "With Radio Group",
+        "With Link",
+        "With Group Label",
+        "Nested Menu",
+        "Close on Click",
+        "Open a Dialog",
+      ][i],
       name: `v-menu-${i + 1}`,
     }),
   ),
@@ -591,10 +615,25 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- pagination ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "pagination",
       dependencies: ["pagination"],
+      description: [
+        "Default",
+        "Without Labels",
+        "With Hover Effect",
+        "With Circle Buttons",
+        "With Go-To-Page Input",
+        "Numbered Pagination In Card",
+        "With Arrows Buttons",
+        "With Page Info On Center",
+        "With Page Info On Left",
+        "With Outline Style Buttons",
+        "With Page Select Dropdown And First/Last Navigation",
+        "Numbered Pagination With Go-To-Page Input",
+        "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
+      ][i],
       name: `v-pagination-${i + 1}`,
     }),
   ),

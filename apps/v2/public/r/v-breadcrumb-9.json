@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-breadcrumb-9",
-  "description": "Basic breadcrumb",
+  "description": "Button-style",
   "registryDependencies": [
     "@cnippet/breadcrumb"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-breadcrumb-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ChevronRightIcon,\n  HouseIcon,\n  LayoutGridIcon,\n  SettingsIcon,\n} from \"lucide-react\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList className=\"sm:gap-1\">\n        <BreadcrumbItem>\n          <BreadcrumbLink\n            href=\"#\"\n            render={<Button size=\"sm\" variant=\"ghost\" />}\n          >\n            <HouseIcon />\n            Home\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n\n        <BreadcrumbSeparator>\n          <ChevronRightIcon />\n        </BreadcrumbSeparator>\n\n        <BreadcrumbItem>\n          <BreadcrumbLink\n            href=\"#\"\n            render={<Button size=\"sm\" variant=\"ghost\" />}\n          >\n            <LayoutGridIcon />\n            Workspace\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n\n        <BreadcrumbSeparator>\n          <ChevronRightIcon />\n        </BreadcrumbSeparator>\n\n        <BreadcrumbItem>\n          <BreadcrumbPage>\n            <Button size=\"sm\" variant=\"secondary\">\n              <SettingsIcon />\n              Settings\n            </Button>\n          </BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

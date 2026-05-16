@@ -1,13 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "v-menu-10",
-  "description": "Open a Dialog",
+  "name": "v-pagination-15",
+  "description": "Basic pagination",
   "registryDependencies": [
-    "@cnippet/menu"
+    "@cnippet/pagination"
   ],
   "files": [
     {
-      "path": "registry/default/variants/v-menu-10.tsx",
+      "path": "registry/default/variants/v-pagination-15.tsx",
       "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
       "type": "registry:block"
     }
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "pagination"
   ],
   "type": "registry:block"
 }

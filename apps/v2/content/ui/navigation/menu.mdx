@@ -12,14 +12,14 @@ links:
 
 <CodeTabs>
 
-<TabsList defaultValue="cli">
+<TabsList>
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @cnippet/menu
+npx shadcn@latest add @coss/menu
 ```
 
 </TabsPanel>
@@ -99,6 +99,7 @@ import {
 
     <MenuCheckboxItem>Shuffle</MenuCheckboxItem>
     <MenuCheckboxItem>Repeat</MenuCheckboxItem>
+    <MenuCheckboxItem variant="switch">Auto save</MenuCheckboxItem>
 
     <MenuSeparator />
 
@@ -124,29 +125,30 @@ import {
 </Menu>
 ```
 
- ## Examples
+## Examples
 
 ### Open on Hover
 
 <ComponentPreview name="v-menu-2" />
 
-### With Link
+### With Checkbox
 
 <ComponentPreview name="v-menu-3" />
 
-### With Group Label
+### With Switch
+
+`MenuCheckboxItem` supports a `variant="switch"` prop that displays a decorative switch indicator instead of a checkmark. This is a purely visual variant - the component remains a checkbox item with the same functionality.
+
+<ComponentPreview name="v-menu-9" />
+
+### With Radio Group
 
 <ComponentPreview name="v-menu-4" />
 
-### Nested Menu
+### With Link
 
 <ComponentPreview name="v-menu-5" />
 
-### Close on Click
-
-<ComponentPreview name="v-menu-6" />
-
-{/*
 ### With Group Label
 
 <ComponentPreview name="v-menu-6" />
@@ -161,4 +163,4 @@ import {
 
 ### Open a Dialog
 
-<ComponentPreview name="dialog-from-menu" /> */}
+<ComponentPreview name="v-menu-9" />

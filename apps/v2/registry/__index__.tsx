@@ -1755,7 +1755,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-1": {
     name: "v-avatar-1",
-    description: "Basic avatar",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1773,7 +1773,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-2": {
     name: "v-avatar-2",
-    description: "Basic avatar",
+    description: "With Fallback",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1791,7 +1791,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-3": {
     name: "v-avatar-3",
-    description: "Basic avatar",
+    description: "Different Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1809,7 +1809,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-4": {
     name: "v-avatar-4",
-    description: "Basic avatar",
+    description: "Different Radius",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1827,7 +1827,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-5": {
     name: "v-avatar-5",
-    description: "Basic avatar",
+    description: "Avatar Group",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1845,7 +1845,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-6": {
     name: "v-avatar-6",
-    description: "Basic avatar",
+    description: "Avatar Group With Numeric Count",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1863,7 +1863,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-7": {
     name: "v-avatar-7",
-    description: "Basic avatar",
+    description: "With Details and Badge",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1881,7 +1881,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-8": {
     name: "v-avatar-8",
-    description: "Basic avatar",
+    description: "Avatar Social Proof With Text Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1899,7 +1899,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-9": {
     name: "v-avatar-9",
-    description: "Basic avatar",
+    description: "Compact Social Proof With Initials",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1917,7 +1917,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-10": {
     name: "v-avatar-10",
-    description: "Basic avatar",
+    description: "With Hover Effect",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1935,7 +1935,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-11": {
     name: "v-avatar-11",
-    description: "Basic avatar",
+    description: "With Hover Effect & Tooltips",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1953,7 +1953,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-12": {
     name: "v-avatar-12",
-    description: "Basic avatar",
+    description: "Avatar Inside An Empty State Example",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1971,7 +1971,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-13": {
     name: "v-avatar-13",
-    description: "Basic avatar",
+    description: "With Loading State Demonstration",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -1989,7 +1989,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-14": {
     name: "v-avatar-14",
-    description: "Basic avatar",
+    description: "With Custom Badge",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -2007,7 +2007,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-15": {
     name: "v-avatar-15",
-    description: "Basic avatar",
+    description: "With Ring Animation",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -2025,7 +2025,7 @@ export const Index: Record<string, any> = {
   },
   "v-avatar-16": {
     name: "v-avatar-16",
-    description: "Basic avatar",
+    description: "With Dropdown Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/avatar"],
     files: [{
@@ -2259,7 +2259,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-1": {
     name: "v-breadcrumb-1",
-    description: "Basic breadcrumb",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2277,7 +2277,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-2": {
     name: "v-breadcrumb-2",
-    description: "Basic breadcrumb",
+    description: "With custom separator",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2295,7 +2295,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-3": {
     name: "v-breadcrumb-3",
-    description: "Basic breadcrumb",
+    description: "With Dropdown Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2313,7 +2313,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-4": {
     name: "v-breadcrumb-4",
-    description: "Basic breadcrumb",
+    description: "With Next.js Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2331,7 +2331,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-5": {
     name: "v-breadcrumb-5",
-    description: "Basic breadcrumb",
+    description: "With Icons For Each Item",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2349,7 +2349,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-6": {
     name: "v-breadcrumb-6",
-    description: "Basic breadcrumb",
+    description: "With Avatar",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2367,7 +2367,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-7": {
     name: "v-breadcrumb-7",
-    description: "Basic breadcrumb",
+    description: "Inside Card",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2385,7 +2385,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-8": {
     name: "v-breadcrumb-8",
-    description: "Basic breadcrumb",
+    description: "Starting With Home Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2403,7 +2403,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-9": {
     name: "v-breadcrumb-9",
-    description: "Basic breadcrumb",
+    description: "Button-style",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -2421,7 +2421,7 @@ export const Index: Record<string, any> = {
   },
   "v-breadcrumb-10": {
     name: "v-breadcrumb-10",
-    description: "Basic breadcrumb",
+    description: "With Project, Sser and Document Info",
     type: "registry:block",
     registryDependencies: ["@cnippet/breadcrumb"],
     files: [{
@@ -7749,7 +7749,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-1": {
     name: "v-menu-1",
-    description: "Basic menu",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7767,7 +7767,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-2": {
     name: "v-menu-2",
-    description: "Basic menu",
+    description: "Open on Hover",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7785,7 +7785,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-3": {
     name: "v-menu-3",
-    description: "Basic menu",
+    description: "With Checkbox",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7803,7 +7803,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-4": {
     name: "v-menu-4",
-    description: "Basic menu",
+    description: "With Switch",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7821,7 +7821,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-5": {
     name: "v-menu-5",
-    description: "Basic menu",
+    description: "With Radio Group",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7839,7 +7839,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-6": {
     name: "v-menu-6",
-    description: "Basic menu",
+    description: "With Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7857,7 +7857,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-7": {
     name: "v-menu-7",
-    description: "Basic menu",
+    description: "With Group Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7875,7 +7875,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-8": {
     name: "v-menu-8",
-    description: "Basic menu",
+    description: "Nested Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7893,7 +7893,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-9": {
     name: "v-menu-9",
-    description: "Basic menu",
+    description: "Close on Click",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -7911,7 +7911,7 @@ export const Index: Record<string, any> = {
   },
   "v-menu-10": {
     name: "v-menu-10",
-    description: "Basic menu",
+    description: "Open a Dialog",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -8641,6 +8641,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-pagination-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-pagination-11": {
+    name: "v-pagination-11",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-pagination-12": {
+    name: "v-pagination-12",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-pagination-13": {
+    name: "v-pagination-13",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-pagination-14": {
+    name: "v-pagination-14",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["pagination"],
+    meta: {"className":""},
+  },
+  "v-pagination-15": {
+    name: "v-pagination-15",
+    description: "Basic pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/pagination"],
+    files: [{
+      path: "registry/default/variants/v-pagination-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-pagination-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

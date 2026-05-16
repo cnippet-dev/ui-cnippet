@@ -1733,7 +1733,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-1.tsx",
@@ -1753,7 +1753,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Fallback",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-2.tsx",
@@ -1773,7 +1773,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Different Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-3.tsx",
@@ -1793,7 +1793,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Different Radius",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-4.tsx",
@@ -1813,7 +1813,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Avatar Group",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-5.tsx",
@@ -1833,7 +1833,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Avatar Group With Numeric Count",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-6.tsx",
@@ -1853,7 +1853,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Details and Badge",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-7.tsx",
@@ -1873,7 +1873,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Avatar Social Proof With Text Label",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-8.tsx",
@@ -1893,7 +1893,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Compact Social Proof With Initials",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-9.tsx",
@@ -1913,7 +1913,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Hover Effect",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-10.tsx",
@@ -1933,7 +1933,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Hover Effect & Tooltips",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-11.tsx",
@@ -1953,7 +1953,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "Avatar Inside An Empty State Example",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-12.tsx",
@@ -1973,7 +1973,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Loading State Demonstration",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-13.tsx",
@@ -1993,7 +1993,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Custom Badge",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-14.tsx",
@@ -2013,7 +2013,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Ring Animation",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-15.tsx",
@@ -2033,7 +2033,7 @@
       "categories": [
         "avatar"
       ],
-      "description": "Basic avatar",
+      "description": "With Dropdown Menu",
       "files": [
         {
           "path": "registry/default/variants/v-avatar-16.tsx",
@@ -2293,7 +2293,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-1.tsx",
@@ -2313,7 +2313,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With custom separator",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-2.tsx",
@@ -2333,7 +2333,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With Dropdown Menu",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-3.tsx",
@@ -2353,7 +2353,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With Next.js Link",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-4.tsx",
@@ -2373,7 +2373,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With Icons For Each Item",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-5.tsx",
@@ -2393,7 +2393,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With Avatar",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-6.tsx",
@@ -2413,7 +2413,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "Inside Card",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-7.tsx",
@@ -2433,7 +2433,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "Starting With Home Icon",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-8.tsx",
@@ -2453,7 +2453,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "Button-style",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-9.tsx",
@@ -2473,7 +2473,7 @@
       "categories": [
         "breadcrumb"
       ],
-      "description": "Basic breadcrumb",
+      "description": "With Project, Sser and Document Info",
       "files": [
         {
           "path": "registry/default/variants/v-breadcrumb-10.tsx",
@@ -8373,7 +8373,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-menu-1.tsx",
@@ -8393,7 +8393,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "Open on Hover",
       "files": [
         {
           "path": "registry/default/variants/v-menu-2.tsx",
@@ -8413,7 +8413,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "With Checkbox",
       "files": [
         {
           "path": "registry/default/variants/v-menu-3.tsx",
@@ -8433,7 +8433,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "With Switch",
       "files": [
         {
           "path": "registry/default/variants/v-menu-4.tsx",
@@ -8453,7 +8453,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "With Radio Group",
       "files": [
         {
           "path": "registry/default/variants/v-menu-5.tsx",
@@ -8473,7 +8473,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "With Link",
       "files": [
         {
           "path": "registry/default/variants/v-menu-6.tsx",
@@ -8493,7 +8493,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "With Group Label",
       "files": [
         {
           "path": "registry/default/variants/v-menu-7.tsx",
@@ -8513,7 +8513,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "Nested Menu",
       "files": [
         {
           "path": "registry/default/variants/v-menu-8.tsx",
@@ -8533,7 +8533,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "Close on Click",
       "files": [
         {
           "path": "registry/default/variants/v-menu-9.tsx",
@@ -8553,7 +8553,7 @@
       "categories": [
         "menu"
       ],
-      "description": "Basic menu",
+      "description": "Open a Dialog",
       "files": [
         {
           "path": "registry/default/variants/v-menu-10.tsx",
@@ -9364,6 +9364,106 @@
         "className": ""
       },
       "name": "v-pagination-10",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-11",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-12",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-13",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-14",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-15",
       "registryDependencies": [
         "@cnippet/pagination"
       ],

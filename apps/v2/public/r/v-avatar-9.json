@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-avatar-9",
-  "description": "Basic avatar",
+  "description": "Compact Social Proof With Initials",
   "registryDependencies": [
     "@cnippet/avatar"
   ],

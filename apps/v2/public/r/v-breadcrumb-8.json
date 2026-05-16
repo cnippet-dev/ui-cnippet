@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-breadcrumb-8",
-  "description": "Basic breadcrumb",
+  "description": "Starting With Home Icon",
   "registryDependencies": [
     "@cnippet/breadcrumb"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-breadcrumb-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { HouseIcon } from \"lucide-react\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink\n            href=\"#\"\n            render={<Button size=\"icon\" variant=\"outline\" />}\n          >\n            <HouseIcon className=\"size-4\" />\n            <span className=\"sr-only\">Home</span>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">Help Center</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Getting Started</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-menu-7",
-  "description": "Basic menu",
+  "description": "With Group Label",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-menu-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuItem,\n  MenuPopup,\n  MenuSeparator,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuGroup>\n          <MenuGroupLabel>Account</MenuGroupLabel>\n          <MenuItem>Profile</MenuItem>\n          <MenuItem>Billing</MenuItem>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuGroup>\n          <MenuGroupLabel>Support</MenuGroupLabel>\n          <MenuItem>Docs</MenuItem>\n          <MenuItem>Contact</MenuItem>\n        </MenuGroup>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

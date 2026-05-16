@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-avatar-4",
-  "description": "Basic avatar",
+  "description": "Different Radius",
   "registryDependencies": [
     "@cnippet/avatar"
   ],

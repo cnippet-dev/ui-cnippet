@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-pagination-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/default/ui/pagination\";\n\nexport function Pattern() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationPrevious href=\"#\" />\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink\n            className=\"hover:border-border hover:border!\"\n            href=\"#\"\n          >\n            1\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href=\"#\" isActive>\n            2\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink\n            className=\"hover:border-border hover:border!\"\n            href=\"#\"\n          >\n            3\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationNext href=\"#\" />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

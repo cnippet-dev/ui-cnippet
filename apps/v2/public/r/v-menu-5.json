@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-menu-5",
-  "description": "Basic menu",
+  "description": "With Radio Group",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-menu-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuPopup,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

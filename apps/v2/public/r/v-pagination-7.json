@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-pagination-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ArrowLeftIcon, ArrowRightIcon } from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\n\nexport function Pattern() {\n  return (\n    <Pagination className=\"w-full max-w-xs\">\n      <PaginationContent className=\"w-full justify-between\">\n        <PaginationItem>\n          <PaginationLink className=\"gap-2\" href=\"#\" size=\"default\">\n            <ArrowLeftIcon className=\"size-4\" />\n            Previous\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink className=\"gap-2\" href=\"#\" size=\"default\">\n            Next\n            <ArrowRightIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

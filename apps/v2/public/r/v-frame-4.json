@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-frame-4.tsx",
-      "content": "import {\n  Frame,\n  FrameDescription,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full max-w-sm\" dense>\n      <FrameHeader>\n        <FrameTitle>Inventory Check</FrameTitle>\n        <FrameDescription>Real-time stock monitoring</FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Warehouse A</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          Dense mode removes outer padding for a more compact appearance.\n        </p>\n      </FramePanel>\n    </Frame>\n  );\n}\n",
+      "content": "import {\n  Frame,\n  FrameDescription,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full max-w-sm\">\n      <FrameHeader>\n        <FrameTitle>Inventory Check</FrameTitle>\n        <FrameDescription>Real-time stock monitoring</FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Warehouse A</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          Dense mode removes outer padding for a more compact appearance.\n        </p>\n      </FramePanel>\n    </Frame>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

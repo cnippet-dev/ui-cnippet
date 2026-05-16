@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-breadcrumb-7",
-  "description": "Basic breadcrumb",
+  "description": "Inside Card",
   "registryDependencies": [
     "@cnippet/breadcrumb"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-breadcrumb-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { HouseIcon } from \"lucide-react\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"p-2\">\n      <CardContent className=\"px-1 py-0\">\n        <Breadcrumb>\n          <BreadcrumbList className=\"gap-1.5 sm:gap-1.5\">\n            <BreadcrumbItem>\n              <BreadcrumbLink className=\"flex items-center gap-1.5\" href=\"#\">\n                <HouseIcon aria-hidden=\"true\" className=\"size-4\" />\n                Home\n              </BreadcrumbLink>\n            </BreadcrumbItem>\n            <BreadcrumbSeparator />\n            <BreadcrumbItem>\n              <BreadcrumbLink href=\"#\">Products</BreadcrumbLink>\n            </BreadcrumbItem>\n            <BreadcrumbSeparator />\n            <BreadcrumbItem>\n              <BreadcrumbPage className=\"font-semibold\">\n                Checkout\n              </BreadcrumbPage>\n            </BreadcrumbItem>\n          </BreadcrumbList>\n        </Breadcrumb>\n      </CardContent>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

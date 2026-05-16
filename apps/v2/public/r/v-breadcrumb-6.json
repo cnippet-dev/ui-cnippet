@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-breadcrumb-6",
-  "description": "Basic breadcrumb",
+  "description": "With Avatar",
   "registryDependencies": [
     "@cnippet/breadcrumb"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-breadcrumb-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\n\nexport function Pattern() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink className=\"flex items-center gap-2\" href=\"#\">\n            <Avatar className=\"size-5 rounded-sm\">\n              <AvatarImage src=\"https://github.com/vercel.png\" />\n              <AvatarFallback>VC</AvatarFallback>\n            </Avatar>\n            Vercel\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink className=\"flex items-center gap-2\" href=\"#\">\n            <Avatar className=\"size-5\">\n              <AvatarImage src=\"https://github.com/shadcn.png\" />\n              <AvatarFallback>CN</AvatarFallback>\n            </Avatar>\n            @shadcn\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Projects</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
