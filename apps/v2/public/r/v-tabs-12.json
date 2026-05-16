@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tabs-12",
+  "description": "Basic tabs",
+  "registryDependencies": [
+    "@cnippet/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tabs-12.tsx",
+      "content": "\"use client\";\n\nimport {\n  CalendarClockIcon,\n  CalendarIcon,\n  SquareCheckIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Tabs,\n  TabsContent,\n  TabsList,\n  TabsTrigger,\n} from \"@/registry/default/ui/tabs\";\n\nexport function Pattern() {\n  const [period, setPeriod] = useState(\"monthly\");\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col items-center gap-6\">\n      <Tabs onValueChange={setPeriod} value={period}>\n        <TabsList className=\"w-full\">\n          <TabsTrigger className=\"gap-1.5\" value=\"daily\">\n            <CalendarIcon className=\"size-3.5\" />\n            Daily\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-1.5\" value=\"weekly\">\n            <SquareCheckIcon className=\"size-4\" />\n            Weekly\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-1.5\" value=\"monthly\">\n            <UsersIcon className=\"size-4\" />\n            Monthly\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-1.5\" value=\"yearly\">\n            <CalendarClockIcon className=\"size-3.5\" />\n            Yearly\n          </TabsTrigger>\n        </TabsList>\n        <TabsContent value=\"daily\">\n          <Card>\n            <CardContent className=\"text-center\">\n              <p className=\"font-bold text-3xl\">1,284</p>\n              <p className=\"mt-1 text-muted-foreground text-sm\">\n                Visitors today\n              </p>\n            </CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"weekly\">\n          <Card>\n            <CardContent className=\"text-center\">\n              <p className=\"font-bold text-3xl\">8,942</p>\n              <p className=\"mt-1 text-muted-foreground text-sm\">\n                Visitors this week\n              </p>\n            </CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"monthly\">\n          <Card>\n            <CardContent className=\"text-center\">\n              <p className=\"font-bold text-3xl\">32,156</p>\n              <p className=\"mt-1 text-muted-foreground text-sm\">\n                Visitors this month\n              </p>\n            </CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"yearly\">\n          <Card>\n            <CardContent className=\"text-center\">\n              <p className=\"font-bold text-3xl\">384,721</p>\n              <p className=\"mt-1 text-muted-foreground text-sm\">\n                Visitors this year\n              </p>\n            </CardContent>\n          </Card>\n        </TabsContent>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:block"
+}

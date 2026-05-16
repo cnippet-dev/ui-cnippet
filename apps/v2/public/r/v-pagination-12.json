@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-12",
-  "description": "Basic pagination",
+  "description": "Numbered Pagination With Go-To-Page Input",
   "registryDependencies": [
     "@cnippet/pagination"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-pagination-12.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ChevronFirstIcon,\n  ChevronLastIcon,\n  ChevronLeftIcon,\n  ChevronRightIcon,\n} from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\n\nexport function Pattern() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to first page\" href=\"#\" size=\"icon\">\n            <ChevronFirstIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to previous page\" href=\"#\" size=\"icon\">\n            <ChevronLeftIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <select\n            className=\"w-26 rounded-lg border border-input bg-background px-2 py-1 text-foreground text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/24\"\n            defaultValue=\"1\"\n          >\n            <option value=\"1\">Page 1</option>\n            <option value=\"2\">Page 2</option>\n            <option value=\"3\">Page 3</option>\n            <option value=\"4\">Page 4</option>\n            <option value=\"5\">Page 5</option>\n            <option value=\"6\">Page 6</option>\n            <option value=\"7\">Page 7</option>\n            <option value=\"8\">Page 8</option>\n            <option value=\"9\">Page 9</option>\n            <option value=\"10\">Page 10</option>\n          </select>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to next page\" href=\"#\" size=\"icon\">\n            <ChevronRightIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to last page\" href=\"#\" size=\"icon\">\n            <ChevronLastIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

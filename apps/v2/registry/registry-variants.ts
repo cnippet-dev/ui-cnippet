@@ -821,10 +821,24 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- tabs ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "tabs",
       dependencies: ["tabs"],
+      description: [
+        "Default",
+        "Underline Variant",
+        "Vertical Orientation",
+        "Underline with Vertical Orientation",
+        "With Card and Input Element",
+        "Underline Style",
+        "Vertical Orientation",
+        "Underline and Vertical Orientation",
+        "With Icons",
+        "With Badge Counts",
+        "With Icons And Line Variant",
+        "Segmented Control Tabs",
+      ][i],
       name: `v-tabs-${i + 1}`,
     }),
   ),

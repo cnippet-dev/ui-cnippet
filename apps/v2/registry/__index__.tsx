@@ -8469,7 +8469,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-1": {
     name: "v-pagination-1",
-    description: "Basic pagination",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8487,7 +8487,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-2": {
     name: "v-pagination-2",
-    description: "Basic pagination",
+    description: "Without Labels",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8505,7 +8505,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-3": {
     name: "v-pagination-3",
-    description: "Basic pagination",
+    description: "With Hover Effect",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8523,7 +8523,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-4": {
     name: "v-pagination-4",
-    description: "Basic pagination",
+    description: "With Circle Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8541,7 +8541,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-5": {
     name: "v-pagination-5",
-    description: "Basic pagination",
+    description: "With Go-To-Page Input",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8559,7 +8559,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-6": {
     name: "v-pagination-6",
-    description: "Basic pagination",
+    description: "Numbered Pagination In Card",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8577,7 +8577,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-7": {
     name: "v-pagination-7",
-    description: "Basic pagination",
+    description: "With Arrows Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8595,7 +8595,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-8": {
     name: "v-pagination-8",
-    description: "Basic pagination",
+    description: "With Page Info On Center",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8613,7 +8613,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-9": {
     name: "v-pagination-9",
-    description: "Basic pagination",
+    description: "With Page Info On Left",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8631,7 +8631,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-10": {
     name: "v-pagination-10",
-    description: "Basic pagination",
+    description: "With Outline Style Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8649,7 +8649,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-11": {
     name: "v-pagination-11",
-    description: "Basic pagination",
+    description: "With Page Select Dropdown And First/Last Navigation",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8667,7 +8667,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-12": {
     name: "v-pagination-12",
-    description: "Basic pagination",
+    description: "Numbered Pagination With Go-To-Page Input",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -8685,7 +8685,7 @@ export const Index: Record<string, any> = {
   },
   "v-pagination-13": {
     name: "v-pagination-13",
-    description: "Basic pagination",
+    description: "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
     type: "registry:block",
     registryDependencies: ["@cnippet/pagination"],
     files: [{
@@ -11251,6 +11251,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-tabs-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-tabs-11": {
+    name: "v-tabs-11",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-tabs-12": {
+    name: "v-tabs-12",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-tabs-13": {
+    name: "v-tabs-13",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-tabs-14": {
+    name: "v-tabs-14",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tabs"],
+    meta: {"className":""},
+  },
+  "v-tabs-15": {
+    name: "v-tabs-15",
+    description: "Basic tabs",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tabs"],
+    files: [{
+      path: "registry/default/variants/v-tabs-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tabs-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

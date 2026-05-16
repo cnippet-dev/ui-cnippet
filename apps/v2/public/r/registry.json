@@ -9173,7 +9173,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-1.tsx",
@@ -9193,7 +9193,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Without Labels",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-2.tsx",
@@ -9213,7 +9213,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Hover Effect",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-3.tsx",
@@ -9233,7 +9233,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Circle Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-4.tsx",
@@ -9253,7 +9253,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Go-To-Page Input",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-5.tsx",
@@ -9273,7 +9273,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Numbered Pagination In Card",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-6.tsx",
@@ -9293,7 +9293,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Arrows Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-7.tsx",
@@ -9313,7 +9313,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Page Info On Center",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-8.tsx",
@@ -9333,7 +9333,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Page Info On Left",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-9.tsx",
@@ -9353,7 +9353,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Outline Style Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-10.tsx",
@@ -9373,7 +9373,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Page Select Dropdown And First/Last Navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-11.tsx",
@@ -9393,7 +9393,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Numbered Pagination With Go-To-Page Input",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-12.tsx",
@@ -9413,7 +9413,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-13.tsx",
@@ -12264,6 +12264,106 @@
         "className": ""
       },
       "name": "v-tabs-10",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Basic tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-11",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Basic tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-12",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Basic tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-13",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Basic tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-14",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Basic tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-15",
       "registryDependencies": [
         "@cnippet/tabs"
       ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tabs-11",
+  "description": "Basic tabs",
+  "registryDependencies": [
+    "@cnippet/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tabs-11.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Tabs,\n  TabsContent,\n  TabsList,\n  TabsTrigger,\n} from \"@/registry/default/ui/tabs\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-6\">\n      <Tabs defaultValue=\"inbox\">\n        <TabsList className=\"mb-3.5 w-full\" variant=\"underline\">\n          <TabsTrigger className=\"gap-2\" value=\"inbox\">\n            Inbox\n            <Badge size=\"sm\" variant=\"secondary\">\n              12\n            </Badge>\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-2\" value=\"drafts\">\n            Drafts\n            <Badge size=\"sm\" variant=\"info\">\n              3\n            </Badge>\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-2\" value=\"sent\">\n            Sent\n          </TabsTrigger>\n          <TabsTrigger className=\"gap-2\" value=\"spam\">\n            Spam\n            <Badge size=\"sm\" variant=\"destructive\">\n              24\n            </Badge>\n          </TabsTrigger>\n        </TabsList>\n        <TabsContent value=\"inbox\">\n          <Card>\n            <CardContent>12 unread messages in your inbox.</CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"drafts\">\n          <Card>\n            <CardContent>3 drafts waiting to be sent.</CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"sent\">\n          <Card>\n            <CardContent>All sent messages appear here.</CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"spam\">\n          <Card>\n            <CardContent>24 spam messages detected.</CardContent>\n          </Card>\n        </TabsContent>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:block"
+}

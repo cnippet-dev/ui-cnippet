@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-tabs-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { BarChart3Icon, LayoutDashboardIcon, SettingsIcon } from \"lucide-react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Tabs,\n  TabsContent,\n  TabsList,\n  TabsTrigger,\n} from \"@/registry/default/ui/tabs\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-6\">\n      <Tabs defaultValue=\"overview\">\n        <TabsList className=\"w-full\">\n          <TabsTrigger value=\"overview\">\n            <LayoutDashboardIcon className=\"size-4\" />\n            Overview\n          </TabsTrigger>\n          <TabsTrigger value=\"analytics\">\n            <BarChart3Icon className=\"size-4\" />\n            Analytics\n          </TabsTrigger>\n          <TabsTrigger value=\"settings\">\n            <SettingsIcon className=\"size-4\" />\n            Settings\n          </TabsTrigger>\n        </TabsList>\n        <TabsContent value=\"overview\">\n          <Card>\n            <CardContent>Overview dashboard content goes here.</CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"analytics\">\n          <Card>\n            <CardContent>Analytics charts and metrics.</CardContent>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"settings\">\n          <Card>\n            <CardContent>Application settings and preferences.</CardContent>\n          </Card>\n        </TabsContent>\n      </Tabs>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

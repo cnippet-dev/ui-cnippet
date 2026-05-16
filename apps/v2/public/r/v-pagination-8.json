@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-8",
-  "description": "Basic pagination",
+  "description": "With Page Info On Center",
   "registryDependencies": [
     "@cnippet/pagination"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-pagination-8.tsx",
-      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\n\nexport function Pattern() {\n  return (\n    <Pagination className=\"w-full max-w-xs\">\n      <PaginationContent className=\"w-full justify-between\">\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to previous page\" href=\"#\" size=\"icon\">\n            <ChevronLeftIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <span className=\"text-muted-foreground text-xs\">\n            Page <span className=\"text-foreground font-medium\">1</span> of{\" \"}\n            <span className=\"text-foreground font-medium\">10</span>\n          </span>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to next page\" href=\"#\" size=\"icon\">\n            <ChevronRightIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\n\nexport function Pattern() {\n  return (\n    <Pagination className=\"w-full max-w-xs\">\n      <PaginationContent className=\"w-full justify-between\">\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to previous page\" href=\"#\" size=\"icon\">\n            <ChevronLeftIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <span className=\"text-muted-foreground text-xs\">\n            Page <span className=\"font-medium text-foreground\">1</span> of{\" \"}\n            <span className=\"font-medium text-foreground\">10</span>\n          </span>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink aria-label=\"Go to next page\" href=\"#\" size=\"icon\">\n            <ChevronRightIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
