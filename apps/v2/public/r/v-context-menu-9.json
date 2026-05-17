@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-9",
-  "description": "Basic menu",
+  "description": "Basic context menu",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-context-menu-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function ContextMenuSides() {\n  return (\n    <div className=\"grid w-full max-w-sm grid-cols-2 gap-4\">\n      <ContextMenu>\n        <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n          <span className=\"pointer-fine:inline-block hidden\">\n            Right click (top)\n          </span>\n          <span className=\"pointer-coarse:inline-block hidden\">\n            Long press (top)\n          </span>\n        </ContextMenuTrigger>\n        <ContextMenuContent side=\"top\">\n          <ContextMenuGroup>\n            <ContextMenuItem>Back</ContextMenuItem>\n            <ContextMenuItem>Forward</ContextMenuItem>\n            <ContextMenuItem>Reload</ContextMenuItem>\n          </ContextMenuGroup>\n        </ContextMenuContent>\n      </ContextMenu>\n      <ContextMenu>\n        <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n          <span className=\"pointer-fine:inline-block hidden\">\n            Right click (right)\n          </span>\n          <span className=\"pointer-coarse:inline-block hidden\">\n            Long press (right)\n          </span>\n        </ContextMenuTrigger>\n        <ContextMenuContent side=\"right\">\n          <ContextMenuGroup>\n            <ContextMenuItem>Back</ContextMenuItem>\n            <ContextMenuItem>Forward</ContextMenuItem>\n            <ContextMenuItem>Reload</ContextMenuItem>\n          </ContextMenuGroup>\n        </ContextMenuContent>\n      </ContextMenu>\n      <ContextMenu>\n        <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n          <span className=\"pointer-fine:inline-block hidden\">\n            Right click (bottom)\n          </span>\n          <span className=\"pointer-coarse:inline-block hidden\">\n            Long press (bottom)\n          </span>\n        </ContextMenuTrigger>\n        <ContextMenuContent side=\"bottom\">\n          <ContextMenuGroup>\n            <ContextMenuItem>Back</ContextMenuItem>\n            <ContextMenuItem>Forward</ContextMenuItem>\n            <ContextMenuItem>Reload</ContextMenuItem>\n          </ContextMenuGroup>\n        </ContextMenuContent>\n      </ContextMenu>\n      <ContextMenu>\n        <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n          <span className=\"pointer-fine:inline-block hidden\">\n            Right click (left)\n          </span>\n          <span className=\"pointer-coarse:inline-block hidden\">\n            Long press (left)\n          </span>\n        </ContextMenuTrigger>\n        <ContextMenuContent side=\"left\">\n          <ContextMenuGroup>\n            <ContextMenuItem>Back</ContextMenuItem>\n            <ContextMenuItem>Forward</ContextMenuItem>\n            <ContextMenuItem>Reload</ContextMenuItem>\n          </ContextMenuGroup>\n        </ContextMenuContent>\n      </ContextMenu>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "context menu"
   ],
   "type": "registry:block"
 }

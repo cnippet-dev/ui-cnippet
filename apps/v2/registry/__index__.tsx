@@ -1395,7 +1395,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-1": {
     name: "v-alert-dialog-1",
-    description: "Basic alert dialog",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1413,7 +1413,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-2": {
     name: "v-alert-dialog-2",
-    description: "Basic alert dialog",
+    description: "Small Size Alert Dialog",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1431,7 +1431,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-3": {
     name: "v-alert-dialog-3",
-    description: "Basic alert dialog",
+    description: "Alert Dialog Within A Standard Dialog",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1449,7 +1449,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-4": {
     name: "v-alert-dialog-4",
-    description: "Basic alert dialog",
+    description: "Task Success Confirmation",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1467,7 +1467,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-5": {
     name: "v-alert-dialog-5",
-    description: "Basic alert dialog",
+    description: "Account Deactivation Confirmation",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1485,7 +1485,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-6": {
     name: "v-alert-dialog-6",
-    description: "Basic alert dialog",
+    description: "Warning For Unsaved Changes",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1503,7 +1503,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-7": {
     name: "v-alert-dialog-7",
-    description: "Basic alert dialog",
+    description: "Confirmation For Successful e-ticket Registration",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1521,7 +1521,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-8": {
     name: "v-alert-dialog-8",
-    description: "Basic alert dialog",
+    description: "System Update Notification",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1539,7 +1539,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-9": {
     name: "v-alert-dialog-9",
-    description: "Basic alert dialog",
+    description: "Billing Warning For Expired Subscriptions",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -1557,7 +1557,7 @@ export const Index: Record<string, any> = {
   },
   "v-alert-dialog-10": {
     name: "v-alert-dialog-10",
-    description: "Basic alert dialog",
+    description: "Logout Confirmation Dialog",
     type: "registry:block",
     registryDependencies: ["@cnippet/alert-dialog"],
     files: [{
@@ -4419,7 +4419,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-1": {
     name: "v-command-1",
-    description: "Basic command",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4437,7 +4437,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-2": {
     name: "v-command-2",
-    description: "Basic command",
+    description: "Simple Command",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4455,7 +4455,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-3": {
     name: "v-command-3",
-    description: "Basic command",
+    description: "Command With Groups",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4473,7 +4473,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-4": {
     name: "v-command-4",
-    description: "Basic command",
+    description: "Command With File Search",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4491,7 +4491,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-5": {
     name: "v-command-5",
-    description: "Basic command",
+    description: "User Search Command With Avatars",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4509,7 +4509,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-6": {
     name: "v-command-6",
-    description: "Basic command",
+    description: "Action Palette With Keyboard Shortcuts",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4527,7 +4527,7 @@ export const Index: Record<string, any> = {
   },
   "v-command-7": {
     name: "v-command-7",
-    description: "Basic command",
+    description: "With Recent And Favorites Sections",
     type: "registry:block",
     registryDependencies: ["@cnippet/command"],
     files: [{
@@ -4599,7 +4599,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-1": {
     name: "v-context-menu-1",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4612,12 +4612,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-2": {
     name: "v-context-menu-2",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4630,12 +4630,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-3": {
     name: "v-context-menu-3",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4648,12 +4648,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-4": {
     name: "v-context-menu-4",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4666,12 +4666,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-5": {
     name: "v-context-menu-5",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4684,12 +4684,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-6": {
     name: "v-context-menu-6",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4702,12 +4702,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-7": {
     name: "v-context-menu-7",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4720,12 +4720,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-8": {
     name: "v-context-menu-8",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4738,12 +4738,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-9": {
     name: "v-context-menu-9",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4756,12 +4756,12 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-context-menu-10": {
     name: "v-context-menu-10",
-    description: "Basic menu",
+    description: "Basic context menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -4774,7 +4774,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
-    categories: ["menu"],
+    categories: ["context menu"],
     meta: {"className":""},
   },
   "v-date-picker-1": {
@@ -11079,7 +11079,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-1": {
     name: "v-tabs-1",
-    description: "Basic tabs",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11097,7 +11097,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-2": {
     name: "v-tabs-2",
-    description: "Basic tabs",
+    description: "Underline Variant",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11115,7 +11115,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-3": {
     name: "v-tabs-3",
-    description: "Basic tabs",
+    description: "Vertical Orientation",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11133,7 +11133,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-4": {
     name: "v-tabs-4",
-    description: "Basic tabs",
+    description: "Underline with Vertical Orientation",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11151,7 +11151,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-5": {
     name: "v-tabs-5",
-    description: "Basic tabs",
+    description: "With Card and Input Element",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11169,7 +11169,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-6": {
     name: "v-tabs-6",
-    description: "Basic tabs",
+    description: "Underline Style",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11187,7 +11187,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-7": {
     name: "v-tabs-7",
-    description: "Basic tabs",
+    description: "Vertical Orientation",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11205,7 +11205,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-8": {
     name: "v-tabs-8",
-    description: "Basic tabs",
+    description: "Underline and Vertical Orientation",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11223,7 +11223,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-9": {
     name: "v-tabs-9",
-    description: "Basic tabs",
+    description: "With Icons",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11241,7 +11241,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-10": {
     name: "v-tabs-10",
-    description: "Basic tabs",
+    description: "With Badge Counts",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11259,7 +11259,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-11": {
     name: "v-tabs-11",
-    description: "Basic tabs",
+    description: "With Icons And Line Variant",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{
@@ -11277,7 +11277,7 @@ export const Index: Record<string, any> = {
   },
   "v-tabs-12": {
     name: "v-tabs-12",
-    description: "Basic tabs",
+    description: "Segmented Control Tabs",
     type: "registry:block",
     registryDependencies: ["@cnippet/tabs"],
     files: [{

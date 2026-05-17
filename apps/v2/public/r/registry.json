@@ -1333,7 +1333,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-1.tsx",
@@ -1353,7 +1353,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Small Size Alert Dialog",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-2.tsx",
@@ -1373,7 +1373,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Alert Dialog Within A Standard Dialog",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-3.tsx",
@@ -1393,7 +1393,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Task Success Confirmation",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-4.tsx",
@@ -1413,7 +1413,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Account Deactivation Confirmation",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-5.tsx",
@@ -1433,7 +1433,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Warning For Unsaved Changes",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-6.tsx",
@@ -1453,7 +1453,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Confirmation For Successful e-ticket Registration",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-7.tsx",
@@ -1473,7 +1473,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "System Update Notification",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-8.tsx",
@@ -1493,7 +1493,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Billing Warning For Expired Subscriptions",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-9.tsx",
@@ -1513,7 +1513,7 @@
       "categories": [
         "alert dialog"
       ],
-      "description": "Basic alert dialog",
+      "description": "Logout Confirmation Dialog",
       "files": [
         {
           "path": "registry/default/variants/v-alert-dialog-10.tsx",
@@ -4693,7 +4693,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-command-1.tsx",
@@ -4713,7 +4713,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Simple Command",
       "files": [
         {
           "path": "registry/default/variants/v-command-2.tsx",
@@ -4733,7 +4733,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Command With Groups",
       "files": [
         {
           "path": "registry/default/variants/v-command-3.tsx",
@@ -4753,7 +4753,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Command With File Search",
       "files": [
         {
           "path": "registry/default/variants/v-command-4.tsx",
@@ -4773,7 +4773,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "User Search Command With Avatars",
       "files": [
         {
           "path": "registry/default/variants/v-command-5.tsx",
@@ -4793,7 +4793,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Action Palette With Keyboard Shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-command-6.tsx",
@@ -4813,7 +4813,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "With Recent And Favorites Sections",
       "files": [
         {
           "path": "registry/default/variants/v-command-7.tsx",
@@ -4891,9 +4891,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-1.tsx",
@@ -4911,9 +4911,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-2.tsx",
@@ -4931,9 +4931,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-3.tsx",
@@ -4951,9 +4951,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-4.tsx",
@@ -4971,9 +4971,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-5.tsx",
@@ -4991,9 +4991,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-6.tsx",
@@ -5011,9 +5011,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-7.tsx",
@@ -5031,9 +5031,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-8.tsx",
@@ -5051,9 +5051,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-9.tsx",
@@ -5071,9 +5071,9 @@
     },
     {
       "categories": [
-        "menu"
+        "context menu"
       ],
-      "description": "Basic menu",
+      "description": "Basic context menu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-10.tsx",
@@ -12073,7 +12073,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-1.tsx",
@@ -12093,7 +12093,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Underline Variant",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-2.tsx",
@@ -12113,7 +12113,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Vertical Orientation",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-3.tsx",
@@ -12133,7 +12133,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Underline with Vertical Orientation",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-4.tsx",
@@ -12153,7 +12153,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "With Card and Input Element",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-5.tsx",
@@ -12173,7 +12173,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Underline Style",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-6.tsx",
@@ -12193,7 +12193,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Vertical Orientation",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-7.tsx",
@@ -12213,7 +12213,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Underline and Vertical Orientation",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-8.tsx",
@@ -12233,7 +12233,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "With Icons",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-9.tsx",
@@ -12253,7 +12253,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "With Badge Counts",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-10.tsx",
@@ -12273,7 +12273,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "With Icons And Line Variant",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-11.tsx",
@@ -12293,7 +12293,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Segmented Control Tabs",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-12.tsx",

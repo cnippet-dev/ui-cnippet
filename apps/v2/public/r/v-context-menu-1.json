@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-1",
-  "description": "Basic menu",
+  "description": "Basic context menu",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-context-menu-1.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ContextMenu,\n  ContextMenuCheckboxItem,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function ContextMenuDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n        <span className=\"pointer-fine:inline-block hidden\">\n          Right click here\n        </span>\n        <span className=\"pointer-coarse:inline-block hidden\">\n          Long press here\n        </span>\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-48\">\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            Back\n            <ContextMenuShortcut>⌘[</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem disabled>\n            Forward\n            <ContextMenuShortcut>⌘]</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Reload\n            <ContextMenuShortcut>⌘R</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuSub>\n            <ContextMenuSubTrigger>More Tools</ContextMenuSubTrigger>\n            <ContextMenuSubContent className=\"w-44\">\n              <ContextMenuGroup>\n                <ContextMenuItem>Save Page...</ContextMenuItem>\n                <ContextMenuItem>Create Shortcut...</ContextMenuItem>\n                <ContextMenuItem>Name Window...</ContextMenuItem>\n              </ContextMenuGroup>\n              <ContextMenuSeparator />\n              <ContextMenuGroup>\n                <ContextMenuItem>Developer Tools</ContextMenuItem>\n              </ContextMenuGroup>\n              <ContextMenuSeparator />\n              <ContextMenuGroup>\n                <ContextMenuItem variant=\"destructive\">Delete</ContextMenuItem>\n              </ContextMenuGroup>\n            </ContextMenuSubContent>\n          </ContextMenuSub>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuCheckboxItem checked>\n            Show Bookmarks\n          </ContextMenuCheckboxItem>\n          <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuRadioGroup value=\"pedro\">\n            <ContextMenuLabel>People</ContextMenuLabel>\n            <ContextMenuRadioItem value=\"pedro\">\n              Pedro Duarte\n            </ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"colm\">Colm Tuite</ContextMenuRadioItem>\n          </ContextMenuRadioGroup>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "context menu"
   ],
   "type": "registry:block"
 }

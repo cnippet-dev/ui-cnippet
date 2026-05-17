@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-8",
-  "description": "Basic alert dialog",
+  "description": "System Update Notification",
   "registryDependencies": [
     "@cnippet/alert-dialog"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-alert-dialog-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ShieldAlertIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">System Update</Button>}\n      />\n      <AlertDialogContent className=\"gap-0 p-0 sm:max-w-sm\">\n        <div className=\"mx-auto flex flex-col items-center justify-center gap-2 p-8\">\n          <div className=\"flex size-12 items-center justify-center rounded-full bg-info/10 text-info dark:bg-info/20\">\n            <ShieldAlertIcon className=\"size-6\" />\n          </div>\n          <AlertDialogTitle className=\"text-center\">\n            System Update Available!\n          </AlertDialogTitle>\n          <Badge variant=\"success\">Release v28.1.0 (2026-01-12)</Badge>\n        </div>\n\n        <div className=\"flex flex-col items-center justify-center gap-5 rounded-b-2xl bg-muted/60 pt-6\">\n          <AlertDialogDescription className=\"px-6 text-center text-muted-foreground\">\n            A new version of the application is ready. Restarting now will apply\n            the latest security patches and features.\n          </AlertDialogDescription>\n          <AlertDialogFooter className=\"flex w-full gap-4 sm:items-center sm:justify-center\">\n            <AlertDialogClose render={<Button variant=\"ghost\" />}>\n              Remind Me Later\n            </AlertDialogClose>\n            <AlertDialogClose render={<Button />}>Update Now</AlertDialogClose>\n          </AlertDialogFooter>\n        </div>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

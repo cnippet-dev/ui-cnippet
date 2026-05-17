@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-3",
-  "description": "Basic menu",
+  "description": "Basic context menu",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-context-menu-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function ContextMenuShortcuts() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n        <span className=\"pointer-fine:inline-block hidden\">\n          Right click here\n        </span>\n        <span className=\"pointer-coarse:inline-block hidden\">\n          Long press here\n        </span>\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            Back\n            <ContextMenuShortcut>⌘[</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem disabled>\n            Forward\n            <ContextMenuShortcut>⌘]</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Reload\n            <ContextMenuShortcut>⌘R</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            Save\n            <ContextMenuShortcut>⌘S</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Save As...\n            <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "context menu"
   ],
   "type": "registry:block"
 }

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-2",
-  "description": "Basic alert dialog",
+  "description": "Small Size Alert Dialog",
   "registryDependencies": [
     "@cnippet/alert-dialog"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-alert-dialog-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { BluetoothIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">Small (Media)</Button>}\n      />\n      <AlertDialogContent className=\"max-w-xs\">\n        <AlertDialogHeader>\n          <div className=\"flex size-12 items-center justify-center rounded-full border bg-muted text-foreground [&_svg]:size-6\">\n            <BluetoothIcon />\n          </div>\n          <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>\n          <AlertDialogDescription>\n            Do you want to allow the USB accessory to connect to this device?\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"outline\" />}>\n            Don&apos;t allow\n          </AlertDialogClose>\n          <AlertDialogClose render={<Button />}>Allow</AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

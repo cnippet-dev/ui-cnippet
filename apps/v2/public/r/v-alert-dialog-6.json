@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-6",
-  "description": "Basic alert dialog",
+  "description": "Warning For Unsaved Changes",
   "registryDependencies": [
     "@cnippet/alert-dialog"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-alert-dialog-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { CardSimIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">Discard Changes</Button>}\n      />\n      <AlertDialogContent className=\"overflow-hidden p-0! ring-0\">\n        <Frame className=\"p-px\">\n          <FramePanel className=\"p-0\">\n            <div className=\"flex items-start gap-3 p-4\">\n              <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full border border-amber-100 bg-amber-50 text-amber-500 dark:bg-amber-950 dark:text-amber-300\">\n                <CardSimIcon className=\"size-5\" />\n              </div>\n              <div className=\"flex flex-col justify-center gap-1\">\n                <AlertDialogTitle className=\"font-semibold text-sm\">\n                  Unsaved changes\n                </AlertDialogTitle>\n                <AlertDialogDescription className=\"text-muted-foreground text-sm\">\n                  You have unsaved changes in this form. If you leave now, your\n                  progress will be lost.\n                </AlertDialogDescription>\n              </div>\n            </div>\n            <AlertDialogFooter className=\"mt-2 items-center gap-4 sm:justify-between\">\n              <div className=\"flex items-center gap-2\">\n                <Checkbox id=\"dont-ask-again\" />\n                <Label\n                  className=\"font-normal text-muted-foreground\"\n                  htmlFor=\"dont-ask-again\"\n                >\n                  Don&apos;t ask again\n                </Label>\n              </div>\n              <div className=\"flex items-center gap-2\">\n                <AlertDialogClose render={<Button variant=\"ghost\" />}>\n                  Stay\n                </AlertDialogClose>\n                <AlertDialogClose render={<Button />}>\n                  Discard Changes\n                </AlertDialogClose>\n              </div>\n            </AlertDialogFooter>\n          </FramePanel>\n        </Frame>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

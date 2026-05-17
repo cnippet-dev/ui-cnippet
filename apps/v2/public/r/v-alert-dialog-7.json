@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-7",
-  "description": "Basic alert dialog",
+  "description": "Confirmation For Successful e-ticket Registration",
   "registryDependencies": [
     "@cnippet/alert-dialog"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-alert-dialog-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { CheckIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">View Confirmation</Button>}\n      />\n      <AlertDialogContent className=\"gap-8 p-0 sm:max-w-sm\">\n        <div className=\"mx-auto flex flex-col items-center justify-center gap-2 p-4\">\n          <div className=\"flex size-16 items-center justify-center rounded-full bg-info/10 text-info dark:bg-info/20\">\n            <CheckIcon className=\"size-5\" />\n          </div>\n          <AlertDialogTitle className=\"text-center\">\n            Success! Your e-ticket is registered.\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"max-w-xs text-center\">\n            Please check your email for confirmation and further instructions\n            about the event.\n          </AlertDialogDescription>\n        </div>\n\n        <div className=\"m-4 grid gap-4 rounded-xl bg-muted/60 p-4\">\n          {[\n            [\"Order Number\", \"GBD99763JS\"],\n            [\"Order Date\", \"7 September 2024\"],\n            [\"Event Name\", \"Groove Beats Day Fest\"],\n            [\"Event Date\", \"20/09/2024\"],\n            [\"Register Date\", \"20/09/2024 | 09 PM\"],\n          ].map(([label, value]) => (\n            <div\n              className=\"flex items-center justify-between text-sm\"\n              key={label}\n            >\n              <span className=\"font-medium text-muted-foreground\">{label}</span>\n              <span className=\"font-semibold text-foreground\">{value}</span>\n            </div>\n          ))}\n        </div>\n\n        <AlertDialogFooter>\n          <AlertDialogClose\n            render={<Button className=\"w-full sm:w-full\" size=\"lg\" />}\n          >\n            Back to Home\n          </AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

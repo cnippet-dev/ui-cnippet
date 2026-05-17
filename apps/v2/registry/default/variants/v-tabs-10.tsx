@@ -16,7 +16,7 @@ import {
   TabsTrigger,
 } from "@/registry/default/ui/tabs";
 
-const plans = [
+const _plans = [
   {
     description: "For individuals and small projects",
     icon: <UserIcon className="size-5" />,
@@ -74,7 +74,7 @@ export function Pattern() {
         <TabsContent value="projects">
           <Card>
             <CardContent>
-              <h3 className="text-foreground mb-2 font-semibold">
+              <h3 className="mb-2 font-semibold text-foreground">
                 Active Projects
               </h3>
               <p>8 projects are currently in progress across your workspace.</p>
@@ -84,7 +84,7 @@ export function Pattern() {
         <TabsContent value="tasks">
           <Card>
             <CardContent>
-              <h3 className="text-foreground mb-2 font-semibold">
+              <h3 className="mb-2 font-semibold text-foreground">
                 Pending Tasks
               </h3>
               <p>24 tasks need your attention this week.</p>
@@ -94,7 +94,7 @@ export function Pattern() {
         <TabsContent value="team">
           <Card>
             <CardContent>
-              <h3 className="text-foreground mb-2 font-semibold">
+              <h3 className="mb-2 font-semibold text-foreground">
                 Team Members
               </h3>
               <p>Manage your team and their access permissions.</p>
@@ -104,7 +104,7 @@ export function Pattern() {
         <TabsContent value="reports">
           <Card>
             <CardContent>
-              <h3 className="text-foreground mb-2 font-semibold">Reports</h3>
+              <h3 className="mb-2 font-semibold text-foreground">Reports</h3>
               <p>View generated reports and export data.</p>
             </CardContent>
           </Card>

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-4",
-  "description": "Basic menu",
+  "description": "Basic context menu",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-context-menu-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function ContextMenuGroups() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n        <span className=\"pointer-fine:inline-block hidden\">\n          Right click here\n        </span>\n        <span className=\"pointer-coarse:inline-block hidden\">\n          Long press here\n        </span>\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuGroup>\n          <ContextMenuLabel>File</ContextMenuLabel>\n          <ContextMenuItem>\n            New File\n            <ContextMenuShortcut>⌘N</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Open File\n            <ContextMenuShortcut>⌘O</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Save\n            <ContextMenuShortcut>⌘S</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuLabel>Edit</ContextMenuLabel>\n          <ContextMenuItem>\n            Undo\n            <ContextMenuShortcut>⌘Z</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Redo\n            <ContextMenuShortcut>⇧⌘Z</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            Cut\n            <ContextMenuShortcut>⌘X</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Copy\n            <ContextMenuShortcut>⌘C</ContextMenuShortcut>\n          </ContextMenuItem>\n          <ContextMenuItem>\n            Paste\n            <ContextMenuShortcut>⌘V</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuItem variant=\"destructive\">\n            Delete\n            <ContextMenuShortcut>⌫</ContextMenuShortcut>\n          </ContextMenuItem>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "context menu"
   ],
   "type": "registry:block"
 }

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-7",
-  "description": "Basic menu",
+  "description": "Basic context menu",
   "registryDependencies": [
     "@cnippet/menu"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-context-menu-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function ContextMenuRadio() {\n  const [user, setUser] = React.useState(\"pedro\");\n  const [theme, setTheme] = React.useState(\"light\");\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm\">\n        <span className=\"pointer-fine:inline-block hidden\">\n          Right click here\n        </span>\n        <span className=\"pointer-coarse:inline-block hidden\">\n          Long press here\n        </span>\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuGroup>\n          <ContextMenuLabel>People</ContextMenuLabel>\n          <ContextMenuRadioGroup onValueChange={setUser} value={user}>\n            <ContextMenuRadioItem value=\"pedro\">\n              Pedro Duarte\n            </ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"colm\">Colm Tuite</ContextMenuRadioItem>\n          </ContextMenuRadioGroup>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuLabel>Theme</ContextMenuLabel>\n          <ContextMenuRadioGroup onValueChange={setTheme} value={theme}>\n            <ContextMenuRadioItem value=\"light\">Light</ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"dark\">Dark</ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"system\">System</ContextMenuRadioItem>\n          </ContextMenuRadioGroup>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "menu"
+    "context menu"
   ],
   "type": "registry:block"
 }

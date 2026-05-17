@@ -83,6 +83,18 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "alert dialog",
       dependencies: ["alert-dialog"],
+      description: [
+        "Default",
+        "Small Size Alert Dialog",
+        "Alert Dialog Within A Standard Dialog",
+        "Task Success Confirmation",
+        "Account Deactivation Confirmation",
+        "Warning For Unsaved Changes",
+        "Confirmation For Successful e-ticket Registration",
+        "System Update Notification",
+        "Billing Warning For Expired Subscriptions",
+        "Logout Confirmation Dialog",
+      ][i],
       name: `v-alert-dialog-${i + 1}`,
     }),
   ),
@@ -321,6 +333,15 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "command",
       dependencies: ["command"],
+      description: [
+        "Default",
+        "Simple Command",
+        "Command With Groups",
+        "Command With File Search",
+        "User Search Command With Avatars",
+        "Action Palette With Keyboard Shortcuts",
+        "With Recent And Favorites Sections",
+      ][i],
       name: `v-command-${i + 1}`,
     }),
   ),
@@ -328,7 +349,7 @@ export const variants: ParticleItem[] = [
   // --- context-menu ---
   ...Array.from({ length: 10 }, (_, i) =>
     createVariant({
-      category: "menu",
+      category: "context menu",
       dependencies: ["menu"],
       name: `v-context-menu-${i + 1}`,
     }),

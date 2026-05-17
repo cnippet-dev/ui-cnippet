@@ -3,7 +3,123 @@ title: Command
 description: A command palette component built with Dialog and Autocomplete for searching and executing commands.
 
 links:
-  doc: https://base-ui.com/react/components/command#api-reference
+  doc: https://base-ui.com/react/components/autocomplete#api-reference
 ---
 
 <ComponentPreview name="v-command-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/command
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="command" title="components/ui/command.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Command,
+  CommandCollection,
+  CommandDialog,
+  CommandDialogPopup,
+  CommandDialogTrigger,
+  CommandEmpty,
+  CommandFooter,
+  CommandGroup,
+  CommandGroupLabel,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandPanel,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+const items = [
+  { value: "linear", label: "Linear" },
+  { value: "figma", label: "Figma" },
+  { value: "slack", label: "Slack" },
+]
+
+<CommandDialog>
+  <CommandDialogTrigger render={<Button variant="outline" />}>
+    Open Command Palette
+  </CommandDialogTrigger>
+
+  <CommandDialogPopup>
+    <Command items={items}>
+      <CommandInput placeholder="Search..." />
+      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandList>
+        {(item) => (
+          <CommandItem key={item.value} value={item.value}>
+            {item.label}
+          </CommandItem>
+        )}
+      </CommandList>
+    </Command>
+  </CommandDialogPopup>
+</CommandDialog>
+```
+
+## Examples
+
+### Simple Command
+
+<ComponentPreview name="v-command-2" />
+
+### Command With Groups
+
+<ComponentPreview name="v-command-3" />
+
+### Command With File Search
+
+<ComponentPreview name="v-command-4" />
+
+### User Search Command With Avatars
+
+<ComponentPreview name="v-command-5" />
+
+### Action Palette With Keyboard Shortcuts
+
+<ComponentPreview name="v-command-6" />
+
+### With Recent And Favorites Sections
+
+<ComponentPreview name="v-command-7" />

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-tabs-4",
-  "description": "Basic tabs",
+  "description": "Underline with Vertical Orientation",
   "registryDependencies": [
     "@cnippet/tabs"
   ],

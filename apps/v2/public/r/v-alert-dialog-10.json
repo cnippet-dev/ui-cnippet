@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-alert-dialog-10",
-  "description": "Basic alert dialog",
+  "description": "Logout Confirmation Dialog",
   "registryDependencies": [
     "@cnippet/alert-dialog"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-alert-dialog-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ShieldQuestionMarkIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"outline\">Logout</Button>} />\n      <AlertDialogContent className=\"gap-0 overflow-hidden p-0 sm:max-w-sm\">\n        <div className=\"flex flex-col items-center justify-center gap-2 p-8\">\n          <div className=\"flex size-12 items-center justify-center rounded-full bg-violet-50 text-violet-500 dark:bg-violet-950 dark:text-violet-400\">\n            <ShieldQuestionMarkIcon className=\"size-6\" />\n          </div>\n          <AlertDialogTitle className=\"text-center font-semibold text-base\">\n            Are you sure?\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"p-0 text-center font-medium text-sm\">\n            You can always log in later to your account.\n          </AlertDialogDescription>\n        </div>\n        <AlertDialogFooter className=\"grid w-full flex-none grid-cols-2 gap-0 divide-x border-t py-0\">\n          <AlertDialogClose\n            render={\n              <Button\n                className=\"h-12 flex-1 rounded-none border-0 border-border border-r p-0\"\n                variant=\"ghost\"\n              />\n            }\n          >\n            No\n          </AlertDialogClose>\n          <AlertDialogClose\n            render={\n              <Button\n                className=\"h-12 flex-1 rounded-none border-0 p-0\"\n                variant=\"ghost\"\n              />\n            }\n          >\n            Yes, Logout\n          </AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

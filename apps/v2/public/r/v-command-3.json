@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-command-3",
-  "description": "Basic command",
+  "description": "Command With Groups",
   "registryDependencies": [
     "@cnippet/command"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-command-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport {\n  CalculatorIcon,\n  CalendarIcon,\n  CreditCardIcon,\n  SettingsIcon,\n  SmileIcon,\n  UserIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Command,\n  CommandDialog,\n  CommandDialogPopup,\n  CommandDialogTrigger,\n  CommandGroup,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n  CommandShortcut,\n} from \"@/registry/default/ui/command\";\n\nexport default function Component() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <CommandDialog onOpenChange={setOpen} open={open}>\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\n        Open Command\n      </CommandDialogTrigger>\n      <CommandDialogPopup className=\"max-w-sm\">\n        <Command>\n          <CommandList>\n            <CommandGroup>\n              <CommandItem className=\"gap-2\">\n                <CalendarIcon className=\"size-4 shrink-0\" />\n                <span>Calendar</span>\n              </CommandItem>\n              <CommandItem className=\"gap-2\">\n                <SmileIcon className=\"size-4 shrink-0\" />\n                <span>Search Emoji</span>\n              </CommandItem>\n              <CommandItem className=\"gap-2\">\n                <CalculatorIcon className=\"size-4 shrink-0\" />\n                <span>Calculator</span>\n              </CommandItem>\n            </CommandGroup>\n            <CommandSeparator />\n            <CommandGroup>\n              <CommandItem className=\"gap-2\">\n                <UserIcon className=\"size-4 shrink-0\" />\n                <span>Profile</span>\n                <CommandShortcut>⌘P</CommandShortcut>\n              </CommandItem>\n              <CommandItem className=\"gap-2\">\n                <CreditCardIcon className=\"size-4 shrink-0\" />\n                <span>Billing</span>\n                <CommandShortcut>⌘B</CommandShortcut>\n              </CommandItem>\n              <CommandItem className=\"gap-2\">\n                <SettingsIcon className=\"size-4 shrink-0\" />\n                <span>Settings</span>\n                <CommandShortcut>⌘S</CommandShortcut>\n              </CommandItem>\n            </CommandGroup>\n          </CommandList>\n        </Command>\n      </CommandDialogPopup>\n    </CommandDialog>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
