@@ -20,7 +20,7 @@ export function Pattern() {
             <InfoIcon />
             <Badge
               className="absolute -top-3.5 -right-3.5"
-              size="xs"
+              size="sm"
               variant="destructive"
             >
               3
@@ -31,7 +31,7 @@ export function Pattern() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between gap-2">
               <span className="font-medium">Notifications</span>
-              <Badge size="xs" variant="destructive">
+              <Badge size="sm" variant="destructive">
                 3 new
               </Badge>
             </div>

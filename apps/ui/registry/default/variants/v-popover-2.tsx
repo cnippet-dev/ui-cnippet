@@ -21,7 +21,7 @@ export default function Particle() {
       <PopoverPopup className="w-80">
         <PopoverClose
           aria-label="Close"
-          className="absolute end-2 top-2"
+          className="absolute inset-e-2 top-2"
           render={<Button size="icon" variant="ghost" />}
         >
           <XIcon />

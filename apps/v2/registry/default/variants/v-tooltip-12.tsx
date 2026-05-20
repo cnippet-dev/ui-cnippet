@@ -58,7 +58,7 @@ const features: Feature[] = [
 
 export function Pattern() {
   return (
-    <div className="flex min-h-[100px] items-center justify-center">
+    <div className="flex min-h-25 items-center justify-center">
       <TooltipProvider>
         <div className="flex items-center gap-1 rounded-lg border bg-background p-1 shadow-xs">
           {features.map(({ icon: Icon, label, description, pro }) => (
@@ -80,7 +80,7 @@ export function Pattern() {
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{label}</span>
-                      <Badge className="gap-1" size="xs" variant="outline">
+                      <Badge className="gap-1" size="sm" variant="outline">
                         <CrownIcon aria-hidden="true" className="size-2.5" />
                         Pro
                       </Badge>

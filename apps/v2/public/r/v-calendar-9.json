@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-9",
-  "description": "Basic calendar",
+  "description": "Two-Month Range Picker",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nfunction formatShort(d: Date) {\n  return d.toLocaleDateString(\"en-US\", {\n    month: \"short\",\n    day: \"numeric\",\n    year: \"numeric\",\n  });\n}\n\nfunction nightsBetween(a: Date, b: Date) {\n  return Math.round(Math.abs(b.getTime() - a.getTime()) / 86_400_000);\n}\n\nexport default function Particle() {\n  const [range, setRange] = React.useState<DateRange | undefined>();\n\n  const nights =\n    range?.from && range?.to ? nightsBetween(range.from, range.to) : 0;\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        mode=\"range\"\n        numberOfMonths={2}\n        onSelect={setRange}\n        selected={range}\n      />\n      <div className=\"rounded-lg border px-4 py-3 text-sm\">\n        {range?.from ? (\n          <p className=\"flex flex-wrap items-center gap-1.5\">\n            <span>{formatShort(range.from)}</span>\n            <span className=\"text-muted-foreground\">→</span>\n            {range.to ? (\n              <>\n                <span>{formatShort(range.to)}</span>\n                {nights > 0 && (\n                  <span className=\"rounded-full bg-secondary px-2 py-0.5 text-xs font-medium\">\n                    {nights} night{nights !== 1 ? \"s\" : \"\"}\n                  </span>\n                )}\n              </>\n            ) : (\n              <span className=\"text-muted-foreground\">pick end date</span>\n            )}\n          </p>\n        ) : (\n          <p className=\"text-muted-foreground\">Select a check-in date.</p>\n        )}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

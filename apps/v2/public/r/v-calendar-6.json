@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-6",
-  "description": "Basic calendar",
+  "description": "Custom Combobox Dropdown",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\nimport * as React from \"react\";\nimport type { DropdownProps } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from \"@/registry/default/ui/combobox\";\n\ninterface DropdownItem {\n  disabled?: boolean;\n  label: string;\n  value: string;\n}\n\nfunction CalendarDropdown(props: DropdownProps) {\n  const { options, value, onChange, \"aria-label\": ariaLabel } = props;\n\n  const items: DropdownItem[] =\n    options?.map((option) => ({\n      disabled: option.disabled,\n      label: option.label,\n      value: option.value.toString(),\n    })) ?? [];\n\n  const selectedItem = items.find((item) => item.value === value?.toString());\n\n  const handleValueChange = (newValue: DropdownItem | null) => {\n    if (onChange && newValue) {\n      const syntheticEvent = {\n        target: { value: newValue.value },\n      } as React.ChangeEvent<HTMLSelectElement>;\n      onChange(syntheticEvent);\n    }\n  };\n\n  return (\n    <Combobox\n      aria-label={ariaLabel}\n      autoHighlight\n      items={items}\n      onValueChange={handleValueChange}\n      value={selectedItem}\n    >\n      <ComboboxInput\n        className=\"**:[input]:w-0 **:[input]:flex-1\"\n        onFocus={(e) => e.currentTarget.select()}\n      />\n      <ComboboxPopup aria-label={ariaLabel}>\n        <ComboboxEmpty>No items found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item: DropdownItem) => (\n            <ComboboxItem\n              disabled={item.disabled}\n              key={item.value}\n              value={item}\n            >\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  );\n}\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      components={{ Dropdown: CalendarDropdown }}\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  );\n}\n",
       "type": "registry:block"
     }
   ],

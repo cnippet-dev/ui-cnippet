@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-5",
-  "description": "Basic calendar",
+  "description": "Custom Select Dropdown",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\nimport * as React from \"react\";\nimport type { DropdownProps } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nfunction CalendarDropdown(props: DropdownProps) {\n  const { options, value, onChange, \"aria-label\": ariaLabel } = props;\n\n  const handleValueChange = (newValue: string | null) => {\n    if (onChange && newValue) {\n      const syntheticEvent = {\n        target: { value: newValue },\n      } as React.ChangeEvent<HTMLSelectElement>;\n      onChange(syntheticEvent);\n    }\n  };\n\n  const items =\n    options?.map((option) => ({\n      disabled: option.disabled,\n      label: option.label,\n      value: option.value.toString(),\n    })) ?? [];\n\n  return (\n    <Select\n      aria-label={ariaLabel}\n      items={items}\n      onValueChange={handleValueChange}\n      value={value?.toString()}\n    >\n      <SelectTrigger className=\"min-w-none\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map((item) => (\n          <SelectItem\n            disabled={item.disabled}\n            key={item.value}\n            value={item.value}\n          >\n            {item.label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      components={{ Dropdown: CalendarDropdown }}\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  );\n}\n",
       "type": "registry:block"
     }
   ],

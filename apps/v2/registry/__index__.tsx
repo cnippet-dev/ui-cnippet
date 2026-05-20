@@ -1575,7 +1575,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-1": {
     name: "v-autocomplete-1",
-    description: "Basic autocomplete",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1593,7 +1593,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-2": {
     name: "v-autocomplete-2",
-    description: "Basic autocomplete",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1611,7 +1611,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-3": {
     name: "v-autocomplete-3",
-    description: "Basic autocomplete",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1629,7 +1629,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-4": {
     name: "v-autocomplete-4",
-    description: "Basic autocomplete",
+    description: "Inline Autocomplete",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1647,7 +1647,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-5": {
     name: "v-autocomplete-5",
-    description: "Basic autocomplete",
+    description: "Auto Highlight",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1665,7 +1665,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-6": {
     name: "v-autocomplete-6",
-    description: "Basic autocomplete",
+    description: "With Trigger and Clear Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1683,7 +1683,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-7": {
     name: "v-autocomplete-7",
-    description: "Basic autocomplete",
+    description: "With Clear Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1701,7 +1701,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-8": {
     name: "v-autocomplete-8",
-    description: "Basic autocomplete",
+    description: "With Search Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1719,7 +1719,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-9": {
     name: "v-autocomplete-9",
-    description: "Basic autocomplete",
+    description: "Grouped Items",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1737,7 +1737,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-10": {
     name: "v-autocomplete-10",
-    description: "Basic autocomplete",
+    description: "Limit Results",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1747,6 +1747,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-autocomplete-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-11": {
+    name: "v-autocomplete-11",
+    description: "Async Search",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-12": {
+    name: "v-autocomplete-12",
+    description: "Form Integration",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-13": {
+    name: "v-autocomplete-13",
+    description: "Timezone Picker",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-14": {
+    name: "v-autocomplete-14",
+    description: "Person Picker",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["autocomplete"],
+    meta: {"className":""},
+  },
+  "v-autocomplete-15": {
+    name: "v-autocomplete-15",
+    description: "Basic autocomplete",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/autocomplete"],
+    files: [{
+      path: "registry/default/variants/v-autocomplete-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-autocomplete-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -2889,7 +2979,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-1": {
     name: "v-calendar-1",
-    description: "Basic calendar",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2907,7 +2997,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-2": {
     name: "v-calendar-2",
-    description: "Basic calendar",
+    description: "Fallback Only",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2925,7 +3015,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-3": {
     name: "v-calendar-3",
-    description: "Basic calendar",
+    description: "Different Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2943,7 +3033,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-4": {
     name: "v-calendar-4",
-    description: "Basic calendar",
+    description: "Dropdown Navigation",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2961,7 +3051,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-5": {
     name: "v-calendar-5",
-    description: "Basic calendar",
+    description: "Custom Select Dropdown",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2979,7 +3069,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-6": {
     name: "v-calendar-6",
-    description: "Basic calendar",
+    description: "Custom Combobox Dropdown",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -2997,7 +3087,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-7": {
     name: "v-calendar-7",
-    description: "Basic calendar",
+    description: "Multiple Selection",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3015,7 +3105,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-8": {
     name: "v-calendar-8",
-    description: "Basic calendar",
+    description: "Appointment Booking",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3033,7 +3123,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-9": {
     name: "v-calendar-9",
-    description: "Basic calendar",
+    description: "Two-Month Range Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3051,7 +3141,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-10": {
     name: "v-calendar-10",
-    description: "Basic calendar",
+    description: "Event Indicators",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3061,6 +3151,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-calendar-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-11": {
+    name: "v-calendar-11",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar"],
+    files: [{
+      path: "registry/default/variants/v-calendar-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-12": {
+    name: "v-calendar-12",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar"],
+    files: [{
+      path: "registry/default/variants/v-calendar-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-13": {
+    name: "v-calendar-13",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar"],
+    files: [{
+      path: "registry/default/variants/v-calendar-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-14": {
+    name: "v-calendar-14",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar"],
+    files: [{
+      path: "registry/default/variants/v-calendar-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar"],
+    meta: {"className":""},
+  },
+  "v-calendar-15": {
+    name: "v-calendar-15",
+    description: "Basic calendar",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar"],
+    files: [{
+      path: "registry/default/variants/v-calendar-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-calendar-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -12339,7 +12519,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-1": {
     name: "v-tooltip-1",
-    description: "Basic tooltip",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12357,7 +12537,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-2": {
     name: "v-tooltip-2",
-    description: "Basic tooltip",
+    description: "Grouped Tooltips",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12375,7 +12555,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-3": {
     name: "v-tooltip-3",
-    description: "Basic tooltip",
+    description: "Animated Tooltips",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12393,7 +12573,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-4": {
     name: "v-tooltip-4",
-    description: "Basic tooltip",
+    description: "Placement",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12411,7 +12591,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-5": {
     name: "v-tooltip-5",
-    description: "Basic tooltip",
+    description: "Info Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12429,7 +12609,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-6": {
     name: "v-tooltip-6",
-    description: "Basic tooltip",
+    description: "Rich Tooltip",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12447,7 +12627,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-7": {
     name: "v-tooltip-7",
-    description: "Basic tooltip",
+    description: "Keyboard Shortcut Toolbar",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12465,7 +12645,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-8": {
     name: "v-tooltip-8",
-    description: "Basic tooltip",
+    description: "Avatar Stack",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12483,7 +12663,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-9": {
     name: "v-tooltip-9",
-    description: "Basic tooltip",
+    description: "Trend Metrics",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12501,7 +12681,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-10": {
     name: "v-tooltip-10",
-    description: "Basic tooltip",
+    description: "Color Palette Inspector",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12519,7 +12699,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-11": {
     name: "v-tooltip-11",
-    description: "Basic tooltip",
+    description: "Copy to Clipboard",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{
@@ -12537,7 +12717,7 @@ export const Index: Record<string, any> = {
   },
   "v-tooltip-12": {
     name: "v-tooltip-12",
-    description: "Basic tooltip",
+    description: "Feature Gate",
     type: "registry:block",
     registryDependencies: ["@cnippet/tooltip"],
     files: [{

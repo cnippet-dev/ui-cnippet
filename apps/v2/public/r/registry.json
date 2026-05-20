@@ -1533,7 +1533,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-1.tsx",
@@ -1553,7 +1553,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-2.tsx",
@@ -1573,7 +1573,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-3.tsx",
@@ -1593,7 +1593,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Inline Autocomplete",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-4.tsx",
@@ -1613,7 +1613,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Auto Highlight",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-5.tsx",
@@ -1633,7 +1633,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "With Trigger and Clear Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-6.tsx",
@@ -1653,7 +1653,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "With Clear Button",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-7.tsx",
@@ -1673,7 +1673,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "With Search Icon",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-8.tsx",
@@ -1693,7 +1693,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Grouped Items",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-9.tsx",
@@ -1713,7 +1713,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Limit Results",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-10.tsx",
@@ -1724,6 +1724,106 @@
         "className": ""
       },
       "name": "v-autocomplete-10",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Async Search",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-11",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Form Integration",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-12",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Timezone Picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-13",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Person Picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-14",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Basic autocomplete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-15",
       "registryDependencies": [
         "@cnippet/autocomplete"
       ],
@@ -2993,7 +3093,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-1.tsx",
@@ -3013,7 +3113,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Fallback Only",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-2.tsx",
@@ -3033,7 +3133,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Different Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-3.tsx",
@@ -3053,7 +3153,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Dropdown Navigation",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-4.tsx",
@@ -3073,7 +3173,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Custom Select Dropdown",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-5.tsx",
@@ -3093,7 +3193,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Custom Combobox Dropdown",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-6.tsx",
@@ -3113,7 +3213,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Multiple Selection",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-7.tsx",
@@ -3133,7 +3233,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Appointment Booking",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-8.tsx",
@@ -3153,7 +3253,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Two-Month Range Picker",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-9.tsx",
@@ -3173,7 +3273,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Event Indicators",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-10.tsx",
@@ -3184,6 +3284,106 @@
         "className": ""
       },
       "name": "v-calendar-10",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-11",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-12",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-13",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-14",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Basic calendar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-15",
       "registryDependencies": [
         "@cnippet/calendar"
       ],
@@ -13473,7 +13673,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-1.tsx",
@@ -13493,7 +13693,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Grouped Tooltips",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-2.tsx",
@@ -13513,7 +13713,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Animated Tooltips",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-3.tsx",
@@ -13533,7 +13733,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Placement",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-4.tsx",
@@ -13553,7 +13753,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Info Icon",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-5.tsx",
@@ -13573,7 +13773,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Rich Tooltip",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-6.tsx",
@@ -13593,7 +13793,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Keyboard Shortcut Toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-7.tsx",
@@ -13613,7 +13813,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Avatar Stack",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-8.tsx",
@@ -13633,7 +13833,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Trend Metrics",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-9.tsx",
@@ -13653,7 +13853,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Color Palette Inspector",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-10.tsx",
@@ -13673,7 +13873,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Copy to Clipboard",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-11.tsx",
@@ -13693,7 +13893,7 @@
       "categories": [
         "tooltip"
       ],
-      "description": "Basic tooltip",
+      "description": "Feature Gate",
       "files": [
         {
           "path": "registry/default/variants/v-tooltip-12.tsx",

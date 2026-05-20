@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-tooltip-4",
-  "description": "Basic tooltip",
+  "description": "Placement",
   "registryDependencies": [
     "@cnippet/tooltip"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-tooltip-4.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nconst sides = [\n  \"inline-start\",\n  \"left\",\n  \"top\",\n  \"bottom\",\n  \"right\",\n  \"inline-end\",\n] as const;\n\nexport function Pattern() {\n  return (\n    <div className=\"grid max-w-xs grid-cols-3 gap-2\">\n      {sides.map((side) => (\n        <Tooltip key={side}>\n          <TooltipTrigger\n            render={<Button className=\"w-full\" variant=\"outline\" />}\n          >\n            {side.replace(\"-\", \" \")[0].toUpperCase() +\n              side.replace(\"-\", \" \").slice(1)}\n          </TooltipTrigger>\n          <TooltipContent side={side}>\n            <p className=\"text-sm\">Add to library</p>\n          </TooltipContent>\n        </Tooltip>\n      ))}\n    </div>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nconst sides = [\n  \"inline-start\",\n  \"left\",\n  \"top\",\n  \"bottom\",\n  \"right\",\n  \"inline-end\",\n] as const;\n\nexport function Pattern() {\n  return (\n    <div className=\"grid max-w-xs grid-cols-3 gap-2\">\n      {sides.map((side) => (\n        <Tooltip key={side}>\n          <TooltipTrigger\n            render={<Button className=\"w-full\" variant=\"outline\" />}\n          >\n            {side.replace(\"-\", \" \")[0]?.toUpperCase() +\n              side.replace(\"-\", \" \").slice(1)}\n          </TooltipTrigger>\n          <TooltipContent side={side}>\n            <p className=\"text-sm\">Add to library</p>\n          </TooltipContent>\n        </Tooltip>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

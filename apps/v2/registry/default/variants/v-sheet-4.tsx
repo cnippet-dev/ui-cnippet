@@ -1,3 +1,4 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 import { Button } from "@/registry/default/ui/button";
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 import {

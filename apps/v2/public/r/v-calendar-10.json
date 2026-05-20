@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-10",
-  "description": "Basic calendar",
+  "description": "Event Indicators",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { CalendarDay, Modifiers } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst now = new Date();\nconst y = now.getFullYear();\nconst m = now.getMonth();\n\ntype EventType = \"meeting\" | \"deadline\" | \"holiday\";\n\nconst events: Record<string, EventType> = {\n  [new Date(y, m, 3).toDateString()]: \"meeting\",\n  [new Date(y, m, 7).toDateString()]: \"deadline\",\n  [new Date(y, m, 10).toDateString()]: \"meeting\",\n  [new Date(y, m, 14).toDateString()]: \"holiday\",\n  [new Date(y, m, 17).toDateString()]: \"meeting\",\n  [new Date(y, m, 21).toDateString()]: \"deadline\",\n  [new Date(y, m, 24).toDateString()]: \"meeting\",\n  [new Date(y, m, 28).toDateString()]: \"meeting\",\n};\n\nconst dotColor: Record<EventType, string> = {\n  deadline: \"bg-red-500\",\n  holiday: \"bg-amber-500\",\n  meeting: \"bg-blue-500\",\n};\n\ninterface DayButtonProps extends React.ComponentProps<\"button\"> {\n  day: CalendarDay;\n  modifiers: Modifiers;\n}\n\nfunction EventDayButton({ day, modifiers, children, ...buttonProps }: DayButtonProps) {\n  const eventType = events[day.date.toDateString()];\n  return (\n    <button {...buttonProps}>\n      {children}\n      {eventType && (\n        <span\n          className={`absolute bottom-1 left-1/2 size-1 -translate-x-1/2 rounded-full ${dotColor[eventType]}`}\n        />\n      )}\n    </button>\n  );\n}\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>();\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Calendar\n        components={{ DayButton: EventDayButton }}\n        mode=\"single\"\n        onSelect={setDate}\n        selected={date}\n      />\n      <div className=\"flex items-center justify-center gap-5 text-xs text-muted-foreground\">\n        <span className=\"flex items-center gap-1.5\">\n          <span className=\"size-2 rounded-full bg-blue-500\" />\n          Meeting\n        </span>\n        <span className=\"flex items-center gap-1.5\">\n          <span className=\"size-2 rounded-full bg-red-500\" />\n          Deadline\n        </span>\n        <span className=\"flex items-center gap-1.5\">\n          <span className=\"size-2 rounded-full bg-amber-500\" />\n          Holiday\n        </span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

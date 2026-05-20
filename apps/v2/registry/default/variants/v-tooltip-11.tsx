@@ -36,7 +36,7 @@ export function Pattern() {
   };
 
   return (
-    <div className="flex min-h-[100px] items-center justify-center">
+    <div className="flex min-h-25 items-center justify-center">
       <TooltipProvider>
         <div className="w-72 space-y-1.5 rounded-xl border bg-background p-3 shadow-xs">
           {fields.map(({ icon: Icon, label, value }) => (

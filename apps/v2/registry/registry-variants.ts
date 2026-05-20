@@ -100,10 +100,26 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- autocomplete ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "autocomplete",
       dependencies: ["autocomplete"],
+      description: [
+        "Default",
+        "Sizes",
+        "With Label",
+        "Inline Autocomplete",
+        "Auto Highlight",
+        "With Trigger and Clear Buttons",
+        "With Clear Button",
+        "With Search Icon",
+        "Grouped Items",
+        "Limit Results",
+        "Async Search",
+        "Form Integration",
+        "Timezone Picker",
+        "Person Picker",
+      ][i],
       name: `v-autocomplete-${i + 1}`,
     }),
   ),
@@ -216,10 +232,25 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- calendar ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "calendar",
       dependencies: ["calendar"],
+      description: [
+        "Default",
+        "Fallback Only",
+        "Different Sizes",
+        "Dropdown Navigation",
+        "Custom Select Dropdown",
+        "Custom Combobox Dropdown",
+        "Multiple Selection",
+        "Appointment Booking",
+        "Two-Month Range Picker",
+        "Event Indicators",
+        "Date Picker with Presets",
+        "Date of Birth",
+        "Week Picker",
+      ][i],
       name: `v-calendar-${i + 1}`,
     }),
   ),

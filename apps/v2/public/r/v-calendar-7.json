@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-7",
-  "description": "Basic calendar",
+  "description": "Multiple Selection",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Particle() {\n  const [dates, setDates] = React.useState<Date[] | undefined>([]);\n\n  const sorted = [...(dates ?? [])].sort((a, b) => a.getTime() - b.getTime());\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Calendar mode=\"multiple\" onSelect={setDates} selected={dates} />\n      <div className=\"min-h-12 rounded-lg border border-dashed px-4 py-3\">\n        {sorted.length > 0 ? (\n          <div className=\"flex flex-col gap-2\">\n            <p className=\"text-xs font-medium text-muted-foreground\">\n              {sorted.length} date{sorted.length !== 1 ? \"s\" : \"\"} selected\n            </p>\n            <ul className=\"flex flex-wrap gap-1.5\">\n              {sorted.map((d) => (\n                <li\n                  key={d.toISOString()}\n                  className=\"rounded-md bg-secondary px-2 py-0.5 text-xs font-medium\"\n                >\n                  {d.toLocaleDateString(\"en-US\", {\n                    month: \"short\",\n                    day: \"numeric\",\n                  })}\n                </li>\n              ))}\n            </ul>\n          </div>\n        ) : (\n          <p className=\"text-sm text-muted-foreground\">\n            Click any day to select multiple dates.\n          </p>\n        )}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

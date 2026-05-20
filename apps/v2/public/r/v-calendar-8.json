@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-8",
-  "description": "Basic calendar",
+  "description": "Appointment Booking",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst today = new Date();\ntoday.setHours(0, 0, 0, 0);\n\n// Simulate fully-booked dates\nconst y = today.getFullYear();\nconst m = today.getMonth();\nconst bookedDates = [\n  new Date(y, m, 8),\n  new Date(y, m, 9),\n  new Date(y, m, 15),\n  new Date(y, m, 22),\n  new Date(y, m + 1, 5),\n  new Date(y, m + 1, 12),\n];\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        disabled={[{ before: today }, { dayOfWeek: [0, 6] }, ...bookedDates]}\n        mode=\"single\"\n        onSelect={setDate}\n        selected={date}\n      />\n      <div className=\"rounded-lg border px-4 py-3 text-sm\">\n        {date ? (\n          <p>\n            Appointment:{\" \"}\n            <span className=\"font-semibold\">\n              {date.toLocaleDateString(\"en-US\", {\n                weekday: \"long\",\n                month: \"long\",\n                day: \"numeric\",\n              })}\n            </span>\n          </p>\n        ) : (\n          <p className=\"text-muted-foreground\">\n            Weekdays only · Greyed-out dates are fully booked.\n          </p>\n        )}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

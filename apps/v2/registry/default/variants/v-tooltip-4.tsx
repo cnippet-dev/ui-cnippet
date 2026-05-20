@@ -22,7 +22,7 @@ export function Pattern() {
           <TooltipTrigger
             render={<Button className="w-full" variant="outline" />}
           >
-            {side.replace("-", " ")[0].toUpperCase() +
+            {side.replace("-", " ")[0]?.toUpperCase() +
               side.replace("-", " ").slice(1)}
           </TooltipTrigger>
           <TooltipContent side={side}>
