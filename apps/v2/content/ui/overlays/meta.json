@@ -4,6 +4,7 @@
     "command",
     "context-menu",
     "dialog",
+    "drawer",
     "popover",
     "sheet",
     "tooltip"

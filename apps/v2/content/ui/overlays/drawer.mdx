@@ -7,3 +7,146 @@ links:
 ---
 
 <ComponentPreview name="v-drawer-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/drawer
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="drawer" title="components/ui/drawer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerPanel,
+  DrawerPopup,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger>Open Drawer</DrawerTrigger>
+  <DrawerPopup>
+    <DrawerHeader>
+      <DrawerTitle>Drawer Title</DrawerTitle>
+      <DrawerDescription>Drawer Description</DrawerDescription>
+    </DrawerHeader>
+    <DrawerPanel>Content</DrawerPanel>
+    <DrawerFooter>
+      <DrawerClose>Close</DrawerClose>
+    </DrawerFooter>
+  </DrawerPopup>
+</Drawer>
+```
+
+**Position**
+
+Use the `position` prop on `Drawer` to control which edge the drawer slides in from. Defaults to `"bottom"`.
+
+```tsx
+<Drawer position="right">...</Drawer>
+<Drawer position="left">...</Drawer>
+<Drawer position="top">...</Drawer>
+<Drawer position="bottom">...</Drawer>
+```
+
+**Variants**
+
+The `DrawerPopup` component supports a `variant` prop to control its shape:
+
+- `default` (default): Rounded corners facing inward
+- `inset`: Adds screen-edge inset spacing on larger viewports
+- `straight`: No rounded corners — flush to the screen edge
+
+```tsx
+<DrawerPopup variant="inset">...</DrawerPopup>
+<DrawerPopup variant="straight">...</DrawerPopup>
+```
+
+**Footer Variant**
+
+The `DrawerFooter` component supports a `variant` prop:
+
+- `default`: Includes a border-top, background color, and padding
+- `bare`: Removes the border and background for a minimal appearance
+
+```tsx
+<DrawerFooter variant="bare">...</DrawerFooter>
+```
+
+**Drag bar**
+
+Pass `showBar` to `DrawerPopup` to render a visible drag handle bar.
+
+```tsx
+<DrawerPopup showBar>...</DrawerPopup>
+```
+
+## Examples
+
+### Multiple Positions — Inset
+
+<ComponentPreview name="v-drawer-2" />
+
+### Multiple Positions — Straight
+
+<ComponentPreview name="v-drawer-3" />
+
+### Multi-step Nested Drawers
+
+<ComponentPreview name="v-drawer-4" />
+
+### Navigation Menu
+
+<ComponentPreview name="v-drawer-5" />
+
+### Filter & Sort Panel
+
+<ComponentPreview name="v-drawer-6" />
+
+### Shopping Cart
+
+<ComponentPreview name="v-drawer-7" />
+
+### Notification Center
+
+<ComponentPreview name="v-drawer-8" />

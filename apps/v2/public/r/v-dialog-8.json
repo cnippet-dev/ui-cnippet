@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-dialog-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Dialog>\n        <DialogTrigger render={<Button variant=\"outline\" />}>\n          Session Expired\n        </DialogTrigger>\n        <DialogContent showCloseButton={false}>\n          <DialogHeader>\n            <DialogTitle>Session Expired</DialogTitle>\n            <DialogDescription>\n              Your session has timed out due to inactivity. Please sign in again\n              to continue where you left off.\n            </DialogDescription>\n          </DialogHeader>\n          <DialogFooter>\n            <Button className=\"w-full\">Sign In Again</Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
