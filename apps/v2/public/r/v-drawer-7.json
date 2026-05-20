@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-drawer-7",
-  "description": "Basic drawer",
+  "description": "Shopping Cart",
   "registryDependencies": [
     "@cnippet/drawer"
   ],

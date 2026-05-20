@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-drawer-4",
-  "description": "Basic drawer",
+  "description": "Multi-step Nested Drawers",
   "registryDependencies": [
     "@cnippet/drawer"
   ],

@@ -4959,7 +4959,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-1": {
     name: "v-dialog-1",
-    description: "Basic dialog",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -4977,7 +4977,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-2": {
     name: "v-dialog-2",
-    description: "Basic dialog",
+    description: "Open from a Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -4995,7 +4995,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-3": {
     name: "v-dialog-3",
-    description: "Basic dialog",
+    description: "Dialog with Bare Footer",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5013,7 +5013,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-4": {
     name: "v-dialog-4",
-    description: "Basic dialog",
+    description: "Dialog with scroll inside",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5031,7 +5031,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-5": {
     name: "v-dialog-5",
-    description: "Basic dialog",
+    description: "Nested Dialogs",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5049,7 +5049,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-6": {
     name: "v-dialog-6",
-    description: "Basic dialog",
+    description: "With Destructive Action",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5067,7 +5067,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-7": {
     name: "v-dialog-7",
-    description: "Basic dialog",
+    description: "Cookie Preferences",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5085,7 +5085,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-8": {
     name: "v-dialog-8",
-    description: "Basic dialog",
+    description: "Session Expired",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5103,7 +5103,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-9": {
     name: "v-dialog-9",
-    description: "Basic dialog",
+    description: "Edit Profile with Avatar",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5121,7 +5121,7 @@ export const Index: Record<string, any> = {
   },
   "v-dialog-10": {
     name: "v-dialog-10",
-    description: "Basic dialog",
+    description: "Invite Team Members",
     type: "registry:block",
     registryDependencies: ["@cnippet/dialog"],
     files: [{
@@ -5139,7 +5139,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-1": {
     name: "v-drawer-1",
-    description: "Basic drawer",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5157,7 +5157,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-2": {
     name: "v-drawer-2",
-    description: "Basic drawer",
+    description: "Multiple Positions — Inset",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5175,7 +5175,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-3": {
     name: "v-drawer-3",
-    description: "Basic drawer",
+    description: "Multiple Positions — Straight",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5193,7 +5193,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-4": {
     name: "v-drawer-4",
-    description: "Basic drawer",
+    description: "Multi-step Nested Drawers",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5211,7 +5211,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-5": {
     name: "v-drawer-5",
-    description: "Basic drawer",
+    description: "Navigation Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5229,7 +5229,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-6": {
     name: "v-drawer-6",
-    description: "Basic drawer",
+    description: "Filter & Sort Panel",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5247,7 +5247,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-7": {
     name: "v-drawer-7",
-    description: "Basic drawer",
+    description: "Shopping Cart",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -5265,7 +5265,7 @@ export const Index: Record<string, any> = {
   },
   "v-drawer-8": {
     name: "v-drawer-8",
-    description: "Basic drawer",
+    description: "Notification Center",
     type: "registry:block",
     registryDependencies: ["@cnippet/drawer"],
     files: [{
@@ -8911,6 +8911,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-popover-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-popover-11": {
+    name: "v-popover-11",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-popover-12": {
+    name: "v-popover-12",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-popover-13": {
+    name: "v-popover-13",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-popover-14": {
+    name: "v-popover-14",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["popover"],
+    meta: {"className":""},
+  },
+  "v-popover-15": {
+    name: "v-popover-15",
+    description: "Basic popover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/popover"],
+    files: [{
+      path: "registry/default/variants/v-popover-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-popover-15.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

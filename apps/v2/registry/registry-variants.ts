@@ -369,6 +369,18 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "dialog",
       dependencies: ["dialog"],
+      description: [
+        "Default",
+        "Open from a Menu",
+        "Dialog with Bare Footer",
+        "Dialog with scroll inside",
+        "Nested Dialogs",
+        "With Destructive Action",
+        "Cookie Preferences",
+        "Session Expired",
+        "Edit Profile with Avatar",
+        "Invite Team Members",
+      ][i],
       name: `v-dialog-${i + 1}`,
     }),
   ),
@@ -378,6 +390,16 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "drawer",
       dependencies: ["drawer"],
+      description: [
+        "Default",
+        "Multiple Positions — Inset",
+        "Multiple Positions — Straight",
+        "Multi-step Nested Drawers",
+        "Navigation Menu",
+        "Filter & Sort Panel",
+        "Shopping Cart",
+        "Notification Center",
+      ][i],
       name: `v-drawer-${i + 1}`,
     }),
   ),
@@ -660,10 +682,28 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- popover ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "popover",
       dependencies: ["popover"],
+      description: [
+        "Default",
+        "With Close Button",
+        "Tooltip Style",
+        "Animated Popovers",
+        "Shared Popover with Multiple Triggers",
+        "Placement",
+        "User Profile Card",
+        "Timestamp Detail",
+        "Quick Settings",
+        "Feature Tour",
+        "Share Link",
+        "Accent Color Picker",
+        "Keyboard Shortcuts",
+        "Filter Panel",
+        "Set a Reminder",
+        "System Status",
+      ][i],
       name: `v-popover-${i + 1}`,
     }),
   ),

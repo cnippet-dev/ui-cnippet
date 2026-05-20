@@ -5293,7 +5293,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-1.tsx",
@@ -5313,7 +5313,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Open from a Menu",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-2.tsx",
@@ -5333,7 +5333,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Dialog with Bare Footer",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-3.tsx",
@@ -5353,7 +5353,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Dialog with scroll inside",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-4.tsx",
@@ -5373,7 +5373,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Nested Dialogs",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-5.tsx",
@@ -5393,7 +5393,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "With Destructive Action",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-6.tsx",
@@ -5413,7 +5413,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Cookie Preferences",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-7.tsx",
@@ -5433,7 +5433,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Session Expired",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-8.tsx",
@@ -5453,7 +5453,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Edit Profile with Avatar",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-9.tsx",
@@ -5473,7 +5473,7 @@
       "categories": [
         "dialog"
       ],
-      "description": "Basic dialog",
+      "description": "Invite Team Members",
       "files": [
         {
           "path": "registry/default/variants/v-dialog-10.tsx",
@@ -5493,7 +5493,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-1.tsx",
@@ -5513,7 +5513,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Multiple Positions — Inset",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-2.tsx",
@@ -5533,7 +5533,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Multiple Positions — Straight",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-3.tsx",
@@ -5553,7 +5553,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Multi-step Nested Drawers",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-4.tsx",
@@ -5573,7 +5573,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Navigation Menu",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-5.tsx",
@@ -5593,7 +5593,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Filter & Sort Panel",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-6.tsx",
@@ -5613,7 +5613,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Shopping Cart",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-7.tsx",
@@ -5633,7 +5633,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Notification Center",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-8.tsx",
@@ -9664,6 +9664,106 @@
         "className": ""
       },
       "name": "v-popover-10",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Basic popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-11",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Basic popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-12",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Basic popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-13",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Basic popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-14",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Basic popover",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-15",
       "registryDependencies": [
         "@cnippet/popover"
       ],

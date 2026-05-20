@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-drawer-6",
-  "description": "Basic drawer",
+  "description": "Filter & Sort Panel",
   "registryDependencies": [
     "@cnippet/drawer"
   ],

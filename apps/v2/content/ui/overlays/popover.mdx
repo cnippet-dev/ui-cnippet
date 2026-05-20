@@ -94,3 +94,75 @@ To create detached triggers:
 4. Use a single `Popover` component with the handle to render the popup
 
 <ComponentPreview name="v-popover-3" />
+
+### Shared Popover with Multiple Triggers
+
+Use a single `Popover` with a shared handle to let multiple buttons open the same popup with different content. Ideal for toolbar actions like notifications and profile where the popup position and content swap seamlessly.
+
+<ComponentPreview name="v-popover-4" />
+
+### Placement
+
+Use the `side` prop on `PopoverContent` to control which side of the trigger the popover appears on. Combine with `align` to fine-tune positioning for any layout.
+
+<ComponentPreview name="v-popover-5" />
+
+### User Profile Card
+
+Trigger a rich profile card from an inline mention or avatar button. A common pattern in collaboration tools — shows the user's name, handle, bio, and follower stats with a follow action.
+
+<ComponentPreview name="v-popover-6" />
+
+### Timestamp Detail
+
+Display a relative time label (e.g. "2 hours ago") as a trigger and reveal exact UTC and local timestamps in the popover. Useful in audit logs, activity feeds, and deployment dashboards.
+
+<ComponentPreview name="v-popover-7" />
+
+### Quick Settings
+
+Surface frequently adjusted preferences — dark mode, notifications, and volume — directly in a compact popover. Reduces trips to a full settings page for common toggles.
+
+<ComponentPreview name="v-popover-8" />
+
+### Feature Tour
+
+Walk users through onboarding steps with a multi-step popover. Step counter and prev/next navigation let users move at their own pace without leaving the current page.
+
+<ComponentPreview name="v-popover-9" />
+
+### Share Link
+
+A share popover with a one-click copy link row and contextual share-via options. The copy button transitions to a check icon on success, providing clear feedback without a toast.
+
+<ComponentPreview name="v-popover-10" />
+
+### Accent Color Picker
+
+Let users choose a theme accent from a grid of color swatches. The selected color is highlighted with a checkmark and reflected in the trigger button for instant visual feedback.
+
+<ComponentPreview name="v-popover-11" />
+
+### Keyboard Shortcuts
+
+Surface a grouped shortcut reference inline without navigating away. Pairs well with a `?` or keyboard icon trigger and keeps the reference close to where users need it.
+
+<ComponentPreview name="v-popover-12" />
+
+### Filter Panel
+
+A structured filter popover with grouped checkbox options and a live badge count on the trigger. Clear all and Apply actions give users explicit control over when filters take effect.
+
+<ComponentPreview name="v-popover-13" />
+
+### Set a Reminder
+
+Quick-pick reminder intervals presented as a scannable list with a secondary option to choose a custom date and time. The selected slot is visually confirmed with a dot indicator.
+
+<ComponentPreview name="v-popover-14" />
+
+### System Status
+
+Display real-time service health for each backend service with latency figures and status labels. The trigger dot pulses amber when any service is degraded, giving users an at-a-glance indicator.
+
+<ComponentPreview name="v-popover-15" />

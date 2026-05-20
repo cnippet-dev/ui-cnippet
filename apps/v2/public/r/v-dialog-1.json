@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-dialog-1",
-  "description": "Basic dialog",
+  "description": "Default",
   "registryDependencies": [
     "@cnippet/dialog"
   ],
