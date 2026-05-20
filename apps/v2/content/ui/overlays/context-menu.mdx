@@ -49,37 +49,54 @@ npm install @base-ui/react
 
 ### Submenu
 
+Demonstrates a nested submenu that opens from a parent item, revealing a secondary list of options without closing the parent.
+
 <ComponentPreview name="v-context-menu-2" />
 
-### Shorcuts
+### Shortcuts
+
+Each menu item shows a keyboard shortcut hint aligned to the right of its label using `CommandShortcut`.
 
 <ComponentPreview name="v-context-menu-3" />
 
 ### Group
 
+Items are organized into named groups with visual separators using `MenuGroup` and `MenuGroupLabel`.
+
 <ComponentPreview name="v-context-menu-4" />
 
 ### Icons
+
+Each menu item includes a leading icon to aid quick visual scanning of the available actions.
 
 <ComponentPreview name="v-context-menu-5" />
 
 ### Checkboxes
 
+Menu items can be toggled on or off using `MenuCheckboxItem`, persisting their checked state across menu opens.
+
 <ComponentPreview name="v-context-menu-6" />
 
 ### Radio
 
+A `MenuRadioGroup` inside the menu enforces single selection among a set of mutually exclusive options.
+
 <ComponentPreview name="v-context-menu-7" />
 
-### Destructive#
+### Destructive
+
+Shows a destructive variant item styled in red for irreversible actions such as delete or remove.
 
 <ComponentPreview name="v-context-menu-8" />
 
 ### Sides
 
+Demonstrates the available alignment positions and side placements for the context menu popup relative to its trigger.
+
 <ComponentPreview name="v-context-menu-9" />
 
-### Inside A Dialog Component
+### Inside Dialog
+
+Opens the context menu within a dialog to demonstrate correct overlay stacking and focus management.
 
 <ComponentPreview name="v-context-menu-10" />
-

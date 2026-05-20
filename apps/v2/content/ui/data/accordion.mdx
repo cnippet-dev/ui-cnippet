@@ -73,27 +73,48 @@ import {
 
 ### Single Accordion
 
+Only one panel can be open at a time. Opening a new item automatically closes the previously open one.
+
 <ComponentPreview name="v-accordion-2" align="start" />
 
 ### Multiple Accordion
+
+Set `type="multiple"` to allow any number of panels to be open simultaneously.
+
 <ComponentPreview name="v-accordion-3" align="start" />
 
 ### Controlled Accordion
+
+Manage the open state externally with `value` and `onValueChange` to drive accordion state from parent logic.
+
 <ComponentPreview name="v-accordion-4" align="start" />
 
-### With plus/minus indicators
+### Plus/Minus Indicators
+
+Replace the default chevron with a `+` / `−` icon pair that clearly communicates the expand and collapse actions.
+
 <ComponentPreview name="v-accordion-5" align="start" />
 
-### With borders and rounded corners
+### Bordered
+
+Adds individual item borders and rounded corners for a card-like appearance suited to settings or FAQ sections.
+
 <ComponentPreview name="v-accordion-6" align="start" />
 
-### Embedded within a Card
+### In Card
+
+Wraps the accordion inside a `Card` component so it inherits the card's border, padding, and background.
+
 <ComponentPreview name="v-accordion-7" align="start" />
 
-### Nested accordion example with bordered items
+### Nested
+
+Demonstrates accordion items that contain a second-level accordion, each level visually indented and bordered.
 
 <ComponentPreview name="v-accordion-8" align="start" />
 
-### User list accordion with avatars and role indicators
+### With User List
+
+Each item header shows a user avatar, name, and role badge. Expanding the item reveals additional profile details.
 
 <ComponentPreview name="v-accordion-9" align="start" />

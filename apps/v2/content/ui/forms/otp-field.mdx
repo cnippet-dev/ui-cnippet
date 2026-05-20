@@ -75,13 +75,19 @@ import {
 
 ### Large
 
+Renders the OTP field with larger slot dimensions for touch-friendly or visually prominent verification UIs.
+
 <ComponentPreview name="v-otp-field-2" />
 
 ### With Separator
 
+Adds an `OTPFieldSeparator` between groups of input slots to visually split a code into segments (e.g. 3+3 or 4+4).
+
 <ComponentPreview name="v-otp-field-3" />
 
 ### With Label
+
+Associates a `Label` with the OTP field for accessible identification without requiring a `Field` wrapper.
 
 <ComponentPreview name="v-otp-field-4" />
 
@@ -92,6 +98,8 @@ Set `validationType="none"` with `sanitizeValue` when you need to normalize past
 <ComponentPreview name="v-otp-field-5" />
 
 ### Auto Validation
+
+Automatically validates and submits the code when all slots are filled, without requiring the user to press a button.
 
 <ComponentPreview name="v-otp-field-6" />
 

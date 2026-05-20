@@ -58,30 +58,44 @@ import { Toggle } from "@/components/ui/toggle"
 
 ## Examples
 
-### Toggle buttons with outline variant
+### Outline Variant
+
+The `outline` variant renders toggles with a visible border, making the pressed/unpressed distinction clearer against light backgrounds.
 
 <ComponentPreview name="v-toggle-2" />
 
-### Toggle buttons in different sizes
+### Sizes
+
+Renders the three size variants — `sm`, `default`, and `lg` — for layout comparison and scale matching.
 
 <ComponentPreview name="v-toggle-3" />
 
-### Toggle with button and icon
+### With Label and Icon
+
+Combines a text label and a leading icon inside a single toggle, a common pattern for formatting toolbars.
 
 <ComponentPreview name="v-toggle-4" />
 
 ### Toggle with icon
 
+An icon-only toggle. Always add `aria-label` so screen readers can identify the action.
+
 <ComponentPreview name="v-toggle-5" />
 
-### Toggle with notification count badge
+### With Count Badge
+
+A toggle that carries a live badge count — useful for inbox or filter toggles where the number of affected items matters.
 
 <ComponentPreview name="v-toggle-6" />
 
-### Toggle with icon swap on press
+### Icon Swap
+
+The icon changes between two states on press, giving immediate visual confirmation that the toggle is active.
 
 <ComponentPreview name="v-toggle-7" />
 
-### Toggle with text label that changes
+### Dynamic Label
+
+The label text updates when the toggle is pressed, making the current state explicit instead of relying on styling alone.
 
 <ComponentPreview name="v-toggle-8" />

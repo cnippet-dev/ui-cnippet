@@ -57,25 +57,36 @@ import { Textarea } from "@/components/ui/textarea"
 
 ### Sizes
 
+Renders the `sm`, `default`, and `lg` size variants to show how the textarea scales across layout contexts.
+
 <ComponentPreview name="v-textarea-2" />
 
 ### Disabled
+
+Prevents all interaction while keeping the current content visible in the field.
 
 <ComponentPreview name="v-textarea-3" />
 
 ### With Label
 
+Associates a `Label` with the textarea using `htmlFor` for accessible labelling without a `Field` wrapper.
+
 <ComponentPreview name="v-textarea-4" />
 
 ### With Description
+
+Adds a short description paragraph below the textarea to provide usage guidance or character constraints.
 
 <ComponentPreview name="v-textarea-5" />
 
 ### With Character Count
 
+Displays a live character counter below the textarea that updates as the user types, useful for fields with a maximum length.
+
 <ComponentPreview name="v-textarea-6" />
 
 ### Form Integration
 
-<ComponentPreview name="v-textarea-7" />
+Wraps the textarea in `Form` and `Field` for required validation and a visible `FieldError` displayed on submit.
 
+<ComponentPreview name="v-textarea-7" />

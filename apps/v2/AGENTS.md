@@ -295,7 +295,7 @@ Note: The `align` prop controls visual positioning (e.g., `block-start` renders 
 // ✅ Decorative icon overlay
 <div
   aria-hidden="true"
-  className="pointer-events-none absolute inset-y-0 start-px z-10 flex items-center ps-3 opacity-80"
+  className="pointer-events-none absolute inset-y-0 inset-s-px z-10 flex items-center ps-3 opacity-80"
 >
   <SearchIcon />
 </div>

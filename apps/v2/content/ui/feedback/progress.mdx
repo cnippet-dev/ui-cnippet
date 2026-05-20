@@ -66,20 +66,30 @@ Note: If you render children inside `Progress`, you must also include `ProgressT
 
 ### With Formatted Value
 
+Displays the numeric percentage alongside the bar using `ProgressValue` with a custom formatter.
+
 <ComponentPreview name="v-progress-2" />
 
-### With status messages
+### With Status
+
+Shows a dynamic status label (e.g. "Uploading…", "Complete") that updates as the value crosses defined thresholds.
 
 <ComponentPreview name="v-progress-3" />
 
 ### With slider
 
+Pairs a `Progress` bar with a `Slider` so users can manually scrub the value and see both components respond simultaneously.
+
 <ComponentPreview name="v-progress-4" />
 
-### Multi-step progress indicator
+### Multi-step
+
+Renders a segmented step indicator with labeled stages — each segment fills as the user advances through a multi-step flow.
 
 <ComponentPreview name="v-progress-5" />
 
-### With custom colors
+### Custom Colors
+
+Overrides the indicator color based on the current value — green for healthy, amber for warning, red for critical.
 
 <ComponentPreview name="v-progress-6" />

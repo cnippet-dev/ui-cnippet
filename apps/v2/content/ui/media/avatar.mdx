@@ -64,60 +64,90 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 ### With Fallback
 
+Shows the `AvatarFallback` with initials when no image URL is provided or the image fails to load.
+
 <ComponentPreview name="v-avatar-2" />
 
 ### Different Sizes
+
+Renders avatars at multiple sizes to show how the component scales across layout and density contexts.
 
 <ComponentPreview name="v-avatar-3" />
 
 ### Different Radius
 
+Demonstrates square, rounded, and fully circular border radius variants for adapting the avatar to different design styles.
+
 <ComponentPreview name="v-avatar-4" />
 
 ### Avatar Group
 
+Stacks multiple avatars with overlapping offsets to represent a collection of users in a compact row.
+
 <ComponentPreview name="v-avatar-5" />
 
-### Avatar Group With Numeric Count
+### Group With Count
+
+Adds a numbered overflow indicator (+N) to an avatar group when the total count exceeds the visible limit.
 
 <ComponentPreview name="v-avatar-6" />
 
 ### With Details and Badge
 
+Pairs the avatar with a name and email label alongside a status badge for user profile list rows.
+
 <ComponentPreview name="v-avatar-7" />
 
-### Avatar Social Proof With Text Label
+### Social Proof
+
+Shows a row of overlapping avatars beside a short text label for social proof patterns like "Trusted by 200+ teams".
 
 <ComponentPreview name="v-avatar-8" />
 
-### Compact Social Proof With Initials
+### Social Proof Compact
+
+A tighter social proof strip using initials-only fallback avatars for a minimal footprint below a CTA.
 
 <ComponentPreview name="v-avatar-9" />
 
 ### With Hover Effect
 
+Avatars in a group spread apart on hover to reveal individual images that would otherwise be obscured by overlap.
+
 <ComponentPreview name="v-avatar-10" />
 
-### With Hover Effect & Tooltips
+### With Tooltips
+
+Combines the hover spread effect with a `Tooltip` showing each user's name when the avatar is focused or hovered.
 
 <ComponentPreview name="v-avatar-11" />
 
-### Avatar Inside An Empty State Example
+### In Empty State
+
+An empty state panel centered around an avatar placeholder, useful for "no members yet" or "invite your team" views.
 
 <ComponentPreview name="v-avatar-12" />
 
-### With Loading State Demonstration
+### With Loading State
+
+Cycles the avatar through image-loading and fallback states to illustrate async image behavior and transitions.
 
 <ComponentPreview name="v-avatar-13" />
 
 ### With Custom Badge
 
+Adds a custom status or role badge positioned at the bottom-right corner of the avatar.
+
 <ComponentPreview name="v-avatar-14" />
 
 ### With Ring Animation
 
+A pulsing ring animates around the avatar to draw attention, useful for active or live streaming indicators.
+
 <ComponentPreview name="v-avatar-15" />
 
 ### With Dropdown Menu
+
+Opens a `Menu` when the avatar is clicked, useful for profile quick-actions or account switchers.
 
 <ComponentPreview name="v-avatar-16" className="w-full" />

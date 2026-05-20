@@ -79,24 +79,36 @@ For accessible labelling and validation, prefer using the `Field` component to w
 
 ### With Label and Value
 
+Pairs a visible label with a `SliderValue` that updates live as the thumb is dragged.
+
 <ComponentPreview name="v-slider-2" />
 
 ### Disabled
+
+Renders the slider at reduced opacity with interaction blocked — the current value is still visible.
 
 <ComponentPreview name="v-slider-3" />
 
 ### With Reference Labels
 
+Displays min, max, and optional midpoint labels below the track to give users positional context without reading the exact value.
+
 <ComponentPreview name="v-slider-4" />
 
 ### With Tick Marks
 
+Renders discrete tick marks along the track that correspond to valid step positions, guiding snapping behavior.
+
 <ComponentPreview name="v-slider-5" />
 
-### With Dynamic Tooltip Indicator
+### Tooltip Indicator
+
+A tooltip appears above the thumb as the user drags, displaying the exact current value and dismissing when the thumb is released.
 
 <ComponentPreview name="v-slider-6" />
 
-### Rating Slider With Emoji Feedback
+### Rating With Emoji
+
+A 1–5 rating slider where the emoji and label below change to reflect the selected sentiment as the thumb moves.
 
 <ComponentPreview name="v-slider-7" />

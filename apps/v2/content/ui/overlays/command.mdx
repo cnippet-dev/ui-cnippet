@@ -102,24 +102,36 @@ const items = [
 
 ### Simple Command
 
+A basic command dialog with a flat list of searchable items and an empty-state message when no results match.
+
 <ComponentPreview name="v-command-2" />
 
-### Command With Groups
+### With Groups
+
+Organizes items into labeled sections (e.g. "Settings", "Shortcuts") using `CommandGroup` for better command palette discoverability.
 
 <ComponentPreview name="v-command-3" />
 
-### Command With File Search
+### File Search
+
+Filters a list of files by name as the user types, showing the file path and type for each match.
 
 <ComponentPreview name="v-command-4" />
 
-### User Search Command With Avatars
+### User Search
+
+Searches a user directory and displays each match with an avatar, name, and role details.
 
 <ComponentPreview name="v-command-5" />
 
-### Action Palette With Keyboard Shortcuts
+### With Shortcuts
+
+Lists available actions alongside their keyboard shortcuts using `CommandShortcut`, similar to a VS Code command palette.
 
 <ComponentPreview name="v-command-6" />
 
-### With Recent And Favorites Sections
+### Recent and Favorites
+
+Pre-populates the command list with recently used and starred items before the user types a search query.
 
 <ComponentPreview name="v-command-7" />

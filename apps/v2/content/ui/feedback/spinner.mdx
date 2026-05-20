@@ -51,32 +51,48 @@ import { Spinner } from "@/components/ui/spinner"
 
 ### Input Group
 
+A spinner placed in an `InputGroupAddon` to indicate that the input is performing a real-time lookup or validation.
+
 <ComponentPreview name="v-spinner-2" />
 
-### In buttons
+### In Buttons
+
+Replaces the button label with a spinner and "Loading…" text while an async action is in progress, then restores the original label.
 
 <ComponentPreview name="v-spinner-3" />
 
-### Spinner in empty state
+### In Empty State
+
+Displays a full centered spinner inside an `Empty` container — used as the initial loading state before content arrives.
 
 <ComponentPreview name="v-spinner-4" />
 
-### Overlay loading spinner
+### Overlay
+
+A semi-transparent overlay covers the content area and centers a spinner while a background operation completes.
 
 <ComponentPreview name="v-spinner-5" />
 
-### Full page loading state
+### Full Page
+
+A full-viewport centered spinner for top-level route or app initialization loading — shown before the page content renders.
 
 <ComponentPreview name="v-spinner-6" />
 
-### Inline loading text with spinner
+### Inline Text
+
+The spinner sits inline next to "Loading…" text for compact in-content loading indicators, such as inside a table row or list item.
 
 <ComponentPreview name="v-spinner-7" />
 
-### overlay on card
+### Card Overlay
+
+A spinner overlay scoped to a single card rather than the full page, blocking interaction only for that card's content area.
 
 <ComponentPreview name="v-spinner-8" />
 
 ### Color variants
+
+Demonstrates the available spinner color options — `default`, `muted`, `primary`, `destructive`, and custom foreground colors.
 
 <ComponentPreview name="v-spinner-9" />

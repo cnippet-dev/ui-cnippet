@@ -96,6 +96,8 @@ import { Input } from "@/components/ui/input"
 
 ### Required Field
 
+Add the `required` prop to the control inside `Field` to display a required indicator on the label and enable browser-native constraint validation.
+
 <ComponentPreview name="v-field-2" />
 
 ### With Error
@@ -106,58 +108,86 @@ Enter an invalid email address and press enter to see the error.
 
 ### With Validity
 
+Use `FieldValidity` to render custom UI based on the current validation state — such as a checkmark when the field is valid.
+
 <ComponentPreview name="v-field-4"
   className="[& .preview>*]:w-full [&_.preview>*]:max-w-80"
 />
 
 ### Input Group
 
+Wrap an `InputGroup` inside `Field` to get label association and error messaging for complex input compositions.
+
 <ComponentPreview name="v-field-5" />
 
 ### Autocomplete Field
+
+Use `Field` with `Autocomplete` to wire up an accessible label, required validation, and visible error for suggestion inputs.
 
 <ComponentPreview name="v-field-6" />
 
 ### Combobox Field
 
+Use `Field` with `Combobox` for single-selection dropdowns that need accessible labelling and form validation.
+
 <ComponentPreview name="v-field-7" />
 
-### Combobox Multiple Field
+### Combobox Multi-select
+
+Combines `Field` with a multi-select `Combobox` so chip-based selections are validated and described accessibly.
 
 <ComponentPreview name="v-field-8" />
 
 ### Textarea Field
 
+Wraps a `Textarea` in `Field` to provide a label, description, and character-count error for multi-line inputs.
+
 <ComponentPreview name="v-field-9" />
 
 ### Select Field
+
+Pairs `Field` with `Select` for validated dropdown fields with visible labels and inline error messages.
 
 <ComponentPreview name="v-field-10" />
 
 ### Checkbox Field
 
+A single checkbox wrapped in `Field` to associate an accessible label with the control and show validation feedback.
+
 <ComponentPreview name="v-field-11" />
 
 ### Checkbox Group Field
+
+A `CheckboxGroup` wrapped in `Field` and `Fieldset` for group-level labelling, description, and validation.
 
 <ComponentPreview name="v-field-12" />
 
 ### Radio Group Field
 
+A `RadioGroup` inside `Field` and `Fieldset` to validate that the user has selected one of the available options.
+
 <ComponentPreview name="v-field-13" />
 
 ### Switch Field
+
+A `Switch` inside `Field` for accessible toggle fields that need a visible label and optional error messaging.
 
 <ComponentPreview name="v-field-14" />
 
 ### Slider Field
 
+Wraps a `Slider` in `Field` to provide an accessible label and connect the value to form validation.
+
 <ComponentPreview name="v-field-15" />
 
 ### Number Field
 
+A `NumberField` inside `Field` with a label and error message for validated numeric inputs.
+
 <ComponentPreview name="v-field-16" />
 
-### Complete Form Example
+### Complete Form
+
+A multi-field form showcasing how `Field` composes with various input types, all wired up with labels, descriptions, and error messages.
 
 <ComponentPreview name="v-field-17" />

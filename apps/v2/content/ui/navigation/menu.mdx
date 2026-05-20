@@ -129,9 +129,13 @@ import {
 
 ### Open on Hover
 
+The menu popup opens when the trigger is hovered rather than clicked, useful for navigation bars and toolbars.
+
 <ComponentPreview name="v-menu-2" />
 
 ### With Checkbox
+
+Uses `MenuCheckboxItem` to let users toggle individual options on or off within a persistent menu.
 
 <ComponentPreview name="v-menu-3" />
 
@@ -143,24 +147,36 @@ import {
 
 ### With Radio Group
 
+Uses `MenuRadioGroup` and `MenuRadioItem` to enforce single selection among a set of mutually exclusive options.
+
 <ComponentPreview name="v-menu-4" />
 
 ### With Link
+
+Renders `MenuItem` elements as anchor tags for navigating to routes directly from the menu popup.
 
 <ComponentPreview name="v-menu-5" />
 
 ### With Group Label
 
+Organizes menu items into labeled sections using `MenuGroup` and `MenuGroupLabel` for better scanability.
+
 <ComponentPreview name="v-menu-6" />
 
 ### Nested Menu
+
+Opens a `MenuSub` popup from a parent item to reveal a secondary list of options without closing the parent menu.
 
 <ComponentPreview name="v-menu-7" />
 
 ### Close on Click
 
+Demonstrates controlling `closeOnClick` behavior so the menu dismisses immediately when an item is selected.
+
 <ComponentPreview name="v-menu-8" />
 
 ### Open a Dialog
+
+Triggers a `Dialog` from a `MenuItem`, allowing secondary confirmation flows to be launched directly from a menu.
 
 <ComponentPreview name="v-menu-9" />

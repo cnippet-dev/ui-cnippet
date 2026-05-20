@@ -1,3 +1,4 @@
+//biome-ignore-all lint/suspicious/noAssignInExpressions:<>
 "use client";
 
 import { Globe } from "lucide-react";

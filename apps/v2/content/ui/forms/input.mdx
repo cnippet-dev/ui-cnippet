@@ -62,78 +62,114 @@ For accessible labelling and validation, prefer using the `Field` component to w
 
 ### With Label
 
+Pair the input with a visible `FieldLabel` using `Field` for accessible name association.
+
 <ComponentPreview name="v-input-2" />
 
 ### With Description
+
+Adds a `FieldDescription` below the input to provide additional guidance or format hints.
 
 <ComponentPreview name="v-input-3" />
 
 ### With Error Message
 
+Shows a `FieldError` below the input after native constraint validation fails on form submission.
+
 <ComponentPreview name="v-input-4" />
 
 ### With Character Counter
 
+Displays a live character count below the input that updates as the user types, indicating the remaining budget.
+
 <ComponentPreview name="v-input-5" />
 
-### With Password Type
+### Password
+
+A `type="password"` input with a visibility toggle button to reveal or mask the entered value.
 
 <ComponentPreview name="v-input-6" />
 
-### With Phone Type
+### Phone
+
+A `type="tel"` input styled for phone number entry, optionally combined with a country-code prefix.
 
 <ComponentPreview name="v-input-7" />
 
-### With URL Type
+### URL
+
+A `type="url"` input that validates the format on blur and shows a browser-native or custom error message.
 
 <ComponentPreview name="v-input-8" />
 
-### With Number Type
+### Number
+
+A `type="number"` input with `min`, `max`, and `step` constraints applied for numeric-only entry.
 
 <ComponentPreview name="v-input-9" />
 
-### With Date Type
+### Date
+
+A `type="date"` input that renders the browser's native date picker widget.
 
 <ComponentPreview name="v-input-10" />
 
-### With File Type
+### File
+
+A `type="file"` input styled to match the design system, with a custom label trigger hiding the default file button.
 
 <ComponentPreview name="v-input-11" />
 
-### With Required Indicator
+### With Required
+
+Displays a red asterisk on the label to signal that the field must be filled before submitting.
 
 <ComponentPreview name="v-input-12" />
 
-### With Time Type
+### Time
+
+A `type="time"` input that renders the browser's native time picker for hour and minute selection.
 
 <ComponentPreview name="v-input-13" />
 
 ### With Multiple Fields
 
+A group of related inputs (e.g. first name and last name) laid out side by side in a single row.
+
 <ComponentPreview name="v-input-14" />
 
-### Input label with tooltip
+### Label With Tooltip
+
+The label carries an info icon button that opens a `Tooltip` with additional context about the field.
 
 <ComponentPreview name="v-input-15" />
 
 ### With Badge
 
+An inline badge appended to the label — used for plan-restricted or beta fields to indicate access requirements.
+
 <ComponentPreview name="v-input-16" />
 
-### With Optional Badge
+### With Optional
+
+An "Optional" badge appended to the label to distinguish non-required fields from required ones at a glance.
 
 <ComponentPreview name="v-input-17" />
 
-### With Link and Visibility Toggle
+### Password With Link
+
+A password-style input with a "Forgot password?" link next to the label and a show/hide toggle inside the field.
 
 <ComponentPreview name="v-input-18" />
 
-### with multiple error messages
+### Multiple Errors
+
+Displays a bulleted list of validation errors below the field — useful for fields with multiple constraints.
 
 <ComponentPreview name="v-input-19" />
 
-### Basic password strength with dynamic hint and icons
+### Password Strength
+
+A password input with a live strength indicator that evaluates the entered value and shows a color-coded hint message.
 
 <ComponentPreview name="v-input-20" />
-
-

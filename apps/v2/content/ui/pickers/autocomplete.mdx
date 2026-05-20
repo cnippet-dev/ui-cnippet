@@ -93,9 +93,13 @@ The `AutocompleteInput` component extends the original Base UI component with a 
 
 ### Sizes
 
+Renders the `sm`, `default`, and `lg` size variants to show how the autocomplete input scales across layout contexts.
+
 <ComponentPreview name="v-autocomplete-2" />
 
 ### With Label
+
+Associates a `Label` with the autocomplete input for accessible identification without a `Field` wrapper.
 
 <ComponentPreview name="v-autocomplete-3" />
 
@@ -107,21 +111,31 @@ Autofill the input with the highlighted item while navigating with arrow keys.
 
 ### Auto Highlight
 
+Sets `mode="both"` so the input filters the list while also completing the typed text inline, accepting the suggestion with `Enter`.
+
 <ComponentPreview name="v-autocomplete-5" />
 
-### With Trigger and Clear Buttons
+### Trigger and Clear
+
+Enables both `showTrigger` and `showClear` on `AutocompleteInput` to add a chevron toggle and an X clear button to the field.
 
 <ComponentPreview name="v-autocomplete-6" />
 
 ### With Clear Button
 
+Enables `showClear` on `AutocompleteInput` to display an X button that resets the value when the field is non-empty.
+
 <ComponentPreview name="v-autocomplete-7" />
 
 ### With Search Icon
 
+Prepends a search icon inside the input to visually reinforce the filtering behavior of the autocomplete field.
+
 <ComponentPreview name="v-autocomplete-9" />
 
 ### Grouped Items
+
+Organizes options into labeled sections using `AutocompleteGroup` for categorized lists like countries by region.
 
 <ComponentPreview name="v-autocomplete-10" />
 
@@ -138,6 +152,8 @@ Debounced remote search with loading and error states.
 <ComponentPreview name="v-autocomplete-12" />
 
 ### Form Integration
+
+Wraps the autocomplete in `Form` and `Field` for required validation and a visible `FieldError` on submit.
 
 <ComponentPreview name="v-autocomplete-13" />
 

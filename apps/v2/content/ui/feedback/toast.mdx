@@ -156,24 +156,36 @@ anchoredToastManager.add({
 
 ### With Status
 
+Pass a `status` of `"success"`, `"error"`, `"warning"`, or `"info"` to render a colored icon and tinted background alongside the message.
+
 <ComponentPreview name="v-toast-2" />
 
 ### Loading
+
+A toast that starts with a loading spinner and transitions to success or error once the async operation resolves.
 
 <ComponentPreview name="v-toast-3" />
 
 ### With Action
 
+Includes an inline action button — commonly used for undo operations or quick-follow-up actions.
+
 <ComponentPreview name="v-toast-4" />
 
 ### Promise
+
+Pass a `Promise` to `toastManager.promise` to automatically show loading, success, and error states as the promise resolves or rejects.
 
 <ComponentPreview name="v-toast-5" />
 
 ### With Varying Heights
 
+Demonstrates how multiple stacked toasts of different content lengths collapse and expand smoothly in the stack.
+
 <ComponentPreview name="v-toast-6" />
 
-### Submit Button with Error Toast
+### Form Submit
+
+A form submit button that shows a success toast on completion and an error toast if the operation fails, without a page reload.
 
 <ComponentPreview name="v-toast-7" />

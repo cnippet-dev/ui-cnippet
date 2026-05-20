@@ -113,33 +113,49 @@ For accessible labelling and validation, prefer using the `Field` component to w
 
 ### Sizes
 
+Renders the `sm`, `default`, and `lg` size variants to show how the number field scales across layout contexts.
+
 <ComponentPreview name="v-number-field-2" />
 
 
 ### Disabled
 
+Prevents all interaction while keeping the current value visible in the input.
+
 <ComponentPreview name="v-number-field-3" />
 
 ### With External Label
+
+Associates an external `Label` with the number field via `useId` for accessible identification without `Field`.
 
 <ComponentPreview name="v-number-field-4" />
 
 ### With Scrub
 
+Adds a `NumberFieldScrubArea` above the input so users can drag left/right to adjust the value — useful for large ranges.
+
 <ComponentPreview name="v-number-field-5" />
 
 ### With Range
+
+Sets `min` and `max` constraints to clamp the value within a defined boundary, preventing out-of-range entries.
 
 <ComponentPreview name="v-number-field-6" />
 
 ### With Formatted Value
 
+Applies a custom `format` function to display the value with a currency symbol, unit, or locale-specific formatting.
+
 <ComponentPreview name="v-number-field-7" />
 
 ### With Step
 
+Sets a `step` value so each increment or decrement click moves the value by a fixed amount (e.g. 5 or 0.25).
+
 <ComponentPreview name="v-number-field-8" />
 
 ### Form Integration
+
+Wraps the number field in `Form` and `Field` for label association, required validation, and a visible `FieldError`.
 
 <ComponentPreview name="v-number-field-9" />
