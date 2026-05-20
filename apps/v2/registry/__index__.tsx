@@ -8739,7 +8739,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-1": {
     name: "v-popover-1",
-    description: "Basic popover",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8757,7 +8757,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-2": {
     name: "v-popover-2",
-    description: "Basic popover",
+    description: "With Close Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8775,7 +8775,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-3": {
     name: "v-popover-3",
-    description: "Basic popover",
+    description: "Tooltip Style",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8793,7 +8793,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-4": {
     name: "v-popover-4",
-    description: "Basic popover",
+    description: "Animated Popovers",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8811,7 +8811,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-5": {
     name: "v-popover-5",
-    description: "Basic popover",
+    description: "Shared Popover with Multiple Triggers",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8829,7 +8829,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-6": {
     name: "v-popover-6",
-    description: "Basic popover",
+    description: "Placement",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8847,7 +8847,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-7": {
     name: "v-popover-7",
-    description: "Basic popover",
+    description: "User Profile Card",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8865,7 +8865,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-8": {
     name: "v-popover-8",
-    description: "Basic popover",
+    description: "Timestamp Detail",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8883,7 +8883,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-9": {
     name: "v-popover-9",
-    description: "Basic popover",
+    description: "Quick Settings",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8901,7 +8901,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-10": {
     name: "v-popover-10",
-    description: "Basic popover",
+    description: "Feature Tour",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8919,7 +8919,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-11": {
     name: "v-popover-11",
-    description: "Basic popover",
+    description: "Share Link",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8937,7 +8937,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-12": {
     name: "v-popover-12",
-    description: "Basic popover",
+    description: "Accent Color Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8955,7 +8955,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-13": {
     name: "v-popover-13",
-    description: "Basic popover",
+    description: "Keyboard Shortcuts",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8973,7 +8973,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-14": {
     name: "v-popover-14",
-    description: "Basic popover",
+    description: "Filter Panel",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -8991,7 +8991,7 @@ export const Index: Record<string, any> = {
   },
   "v-popover-15": {
     name: "v-popover-15",
-    description: "Basic popover",
+    description: "Set a Reminder",
     type: "registry:block",
     registryDependencies: ["@cnippet/popover"],
     files: [{
@@ -10089,7 +10089,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-1": {
     name: "v-sheet-1",
-    description: "Basic sheet",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10107,7 +10107,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-2": {
     name: "v-sheet-2",
-    description: "Basic sheet",
+    description: "Sheet with Inset",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10125,7 +10125,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-3": {
     name: "v-sheet-3",
-    description: "Basic sheet",
+    description: "Side Sheets",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10143,7 +10143,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-4": {
     name: "v-sheet-4",
-    description: "Basic sheet",
+    description: "Scrollable Content",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10161,7 +10161,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-5": {
     name: "v-sheet-5",
-    description: "Basic sheet",
+    description: "Shopping Cart",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10179,7 +10179,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-6": {
     name: "v-sheet-6",
-    description: "Basic sheet",
+    description: "Notification Center",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10197,7 +10197,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-7": {
     name: "v-sheet-7",
-    description: "Basic sheet",
+    description: "Team Invite",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10215,7 +10215,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-8": {
     name: "v-sheet-8",
-    description: "Basic sheet",
+    description: "Activity Log",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10233,7 +10233,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-9": {
     name: "v-sheet-9",
-    description: "Basic sheet",
+    description: "Navigation Menu",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -10251,7 +10251,7 @@ export const Index: Record<string, any> = {
   },
   "v-sheet-10": {
     name: "v-sheet-10",
-    description: "Basic sheet",
+    description: "Issue Detail",
     type: "registry:block",
     registryDependencies: ["@cnippet/sheet"],
     files: [{
@@ -12511,6 +12511,42 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-tooltip-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-11": {
+    name: "v-tooltip-11",
+    description: "Basic tooltip",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-12": {
+    name: "v-tooltip-12",
+    description: "Basic tooltip",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-12.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

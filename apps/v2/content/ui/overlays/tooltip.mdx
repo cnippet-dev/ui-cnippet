@@ -51,8 +51,7 @@ npm install @base-ui/react
 ```tsx
 import {
   Tooltip,
-  TooltipCreateHandle,
-  TooltipPopup,
+  TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
@@ -63,21 +62,50 @@ import {
   <TooltipTrigger render={<Button variant="outline" />}>
     Hover me
   </TooltipTrigger>
-  <TooltipPopup>Helpful hint</TooltipPopup>
+  <TooltipContent>Helpful hint</TooltipContent>
 </Tooltip>
 ```
 
-{/* ## Examples
+**Grouped Tooltips**
+
+Wrap multiple tooltips in `TooltipProvider` so that once one becomes visible, adjacent tooltips appear instantly without the usual delay:
+
+```tsx
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger>...</TooltipTrigger>
+    <TooltipContent>First</TooltipContent>
+  </Tooltip>
+  <Tooltip>
+    <TooltipTrigger>...</TooltipTrigger>
+    <TooltipContent>Second</TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+```
+
+**TooltipContent Props**
+
+- `side`: Which side the tooltip opens from. Options: `"top"` (default), `"bottom"`, `"left"`, `"right"`, `"inline-start"`, `"inline-end"`
+- `align`: Alignment relative to the trigger. Options: `"center"` (default), `"start"`, `"end"`
+- `sideOffset`: Gap in pixels between the trigger and tooltip. Default: `4`
+
+```tsx
+<TooltipContent side="bottom" align="start" sideOffset={8}>
+  Opens below, aligned to the start
+</TooltipContent>
+```
+
+## Examples
 
 ### Grouped Tooltips
 
-To group multiple tooltips so they appear instantly after the first one is opened, wrap them in `TooltipProvider`. The grouping logic ensures that once a tooltip becomes visible, the adjacent tooltips will be shown instantly.
+Wrap multiple tooltips in `TooltipProvider` so they appear instantly after the first one opens. Once any tooltip in the group is visible, adjacent ones skip the delay and show immediately.
 
 <ComponentPreview name="v-tooltip-2" />
 
 ### Animated Tooltips
 
-You can create animated tooltips that smoothly transition between different triggers using detached triggers. This pattern allows multiple triggers to share a single tooltip popup, with automatic animations for position, size, and content changes.
+Create tooltips that smoothly transition between triggers using a shared handle. All triggers share a single popup — position, size, and content animate automatically as focus moves between them.
 
 To create detached triggers:
 
@@ -86,4 +114,58 @@ To create detached triggers:
 3. Each trigger provides a `payload` prop containing the content component
 4. Use a single `Tooltip` component with the handle to render the popup
 
-<ComponentPreview name="v-tooltip-3" /> */}
+<ComponentPreview name="v-tooltip-3" />
+
+### Placement
+
+Use the `side` prop on `TooltipContent` to control which side of the trigger the tooltip appears on. Defaults to `"top"`.
+
+<ComponentPreview name="v-tooltip-4" />
+
+### Info Icon
+
+A common pattern for inline contextual help — an icon-only ghost button that reveals explanatory text on hover without cluttering the layout.
+
+<ComponentPreview name="v-tooltip-5" />
+
+### Rich Tooltip
+
+Tooltips can contain structured content beyond a single string — badges, lists, and links are all valid. Keep rich tooltips concise so they supplement rather than replace a proper UI surface.
+
+<ComponentPreview name="v-tooltip-6" />
+
+### Keyboard Shortcut Toolbar
+
+Each icon-only button in the toolbar shows its label and keyboard shortcut in a tooltip. Pairing `TooltipProvider` with `Kbd` components gives users a discoverable reference without permanent labels.
+
+<ComponentPreview name="v-tooltip-7" />
+
+### Avatar Stack
+
+Stacked member avatars with per-avatar name and role tooltips. The overflow badge lists remaining members, and the dashed add button completes the assignment UI pattern.
+
+<ComponentPreview name="v-tooltip-8" />
+
+### Trend Metrics
+
+Compact metric badges that reveal a current-vs-previous breakdown on hover. The tooltip surfaces the exact numbers behind the percentage change without expanding the card layout.
+
+<ComponentPreview name="v-tooltip-9" />
+
+### Color Palette Inspector
+
+A brand palette swatch row where hovering each swatch reveals the color name and hex code. The mini swatch preview inside the tooltip reinforces the selection at a glance.
+
+<ComponentPreview name="v-tooltip-10" />
+
+### Copy to Clipboard
+
+A credentials panel where each field has a copy icon button. The tooltip content switches from "Copy to clipboard" to "Copied!" for 2 seconds after the click — giving precise feedback without a toast notification.
+
+<ComponentPreview name="v-tooltip-11" />
+
+### Feature Gate
+
+Pro-only toolbar buttons render at reduced opacity and show a rich upgrade tooltip with a feature description and a direct upgrade link. Free-tier buttons fall back to a plain label tooltip.
+
+<ComponentPreview name="v-tooltip-12" />

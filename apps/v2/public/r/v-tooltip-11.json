@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-11",
+  "description": "Basic tooltip",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-11.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon, KeyIcon, LinkIcon, WebhookIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nconst fields = [\n  { icon: KeyIcon, label: \"API Key\", value: \"sk_live_9xKqP2mN...8rTv\" },\n  { icon: LinkIcon, label: \"Endpoint\", value: \"https://api.cnippet.ui/v2\" },\n  { icon: WebhookIcon, label: \"Webhook\", value: \"https://hooks.cnippet.ui/events\" },\n] as const;\n\nexport function Pattern() {\n  const [copiedId, setCopiedId] = useState<string | null>(null);\n\n  const copy = (value: string, id: string) => {\n    navigator.clipboard.writeText(value).catch(() => null);\n    setCopiedId(id);\n    setTimeout(() => setCopiedId(null), 2000);\n  };\n\n  return (\n    <div className=\"flex min-h-[100px] items-center justify-center\">\n      <TooltipProvider>\n        <div className=\"w-72 space-y-1.5 rounded-xl border bg-background p-3 shadow-xs\">\n          {fields.map(({ icon: Icon, label, value }) => (\n            <div\n              key={label}\n              className=\"flex items-center gap-2.5 rounded-lg bg-muted/50 px-3 py-2\"\n            >\n              <Icon\n                aria-hidden=\"true\"\n                className=\"size-3.5 shrink-0 text-muted-foreground\"\n              />\n              <div className=\"min-w-0 flex-1\">\n                <p className=\"text-[10px] font-semibold uppercase tracking-wide text-muted-foreground\">\n                  {label}\n                </p>\n                <p className=\"truncate font-mono text-xs\">{value}</p>\n              </div>\n              <Tooltip>\n                <TooltipTrigger\n                  className=\"shrink-0\"\n                  render={\n                    <Button\n                      aria-label={copiedId === label ? \"Copied\" : `Copy ${label}`}\n                      className=\"size-6\"\n                      size=\"icon\"\n                      variant=\"ghost\"\n                    />\n                  }\n                  onClick={() => copy(value, label)}\n                >\n                  {copiedId === label ? (\n                    <CheckIcon\n                      aria-hidden=\"true\"\n                      className=\"size-3.5 text-emerald-500\"\n                    />\n                  ) : (\n                    <CopyIcon aria-hidden=\"true\" className=\"size-3.5\" />\n                  )}\n                </TooltipTrigger>\n                <TooltipContent>\n                  {copiedId === label ? \"Copied!\" : \"Copy to clipboard\"}\n                </TooltipContent>\n              </Tooltip>\n            </div>\n          ))}\n        </div>\n      </TooltipProvider>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

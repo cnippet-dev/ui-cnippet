@@ -16,7 +16,7 @@ export function Pattern() {
       <Popover>
         <PopoverTrigger
           render={
-            <Button className="h-auto justify-start py-1.5" variant="outline">
+            <Button className="h-auto justify-start py-7" variant="outline">
               <Avatar className="size-8">
                 <AvatarImage
                   alt="Marcus Chen"

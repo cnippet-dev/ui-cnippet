@@ -786,6 +786,18 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "sheet",
       dependencies: ["sheet"],
+      description: [
+        "Default",
+        "Sheet with Inset",
+        "Side Sheets",
+        "Scrollable Content",
+        "Shopping Cart",
+        "Notification Center",
+        "Team Invite",
+        "Activity Log",
+        "Navigation Menu",
+        "Issue Detail",
+      ][i],
       name: `v-sheet-${i + 1}`,
     }),
   ),
@@ -989,10 +1001,24 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- tooltip ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 12 }, (_, i) =>
     createVariant({
       category: "tooltip",
       dependencies: ["tooltip"],
+      description: [
+        "Default",
+        "Grouped Tooltips",
+        "Animated Tooltips",
+        "Placement",
+        "Info Icon",
+        "Rich Tooltip",
+        "Keyboard Shortcut Toolbar",
+        "Avatar Stack",
+        "Trend Metrics",
+        "Color Palette Inspector",
+        "Copy to Clipboard",
+        "Feature Gate",
+      ][i],
       name: `v-tooltip-${i + 1}`,
     }),
   ),

@@ -9473,7 +9473,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-popover-1.tsx",
@@ -9493,7 +9493,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "With Close Button",
       "files": [
         {
           "path": "registry/default/variants/v-popover-2.tsx",
@@ -9513,7 +9513,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Tooltip Style",
       "files": [
         {
           "path": "registry/default/variants/v-popover-3.tsx",
@@ -9533,7 +9533,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Animated Popovers",
       "files": [
         {
           "path": "registry/default/variants/v-popover-4.tsx",
@@ -9553,7 +9553,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Shared Popover with Multiple Triggers",
       "files": [
         {
           "path": "registry/default/variants/v-popover-5.tsx",
@@ -9573,7 +9573,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Placement",
       "files": [
         {
           "path": "registry/default/variants/v-popover-6.tsx",
@@ -9593,7 +9593,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "User Profile Card",
       "files": [
         {
           "path": "registry/default/variants/v-popover-7.tsx",
@@ -9613,7 +9613,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Timestamp Detail",
       "files": [
         {
           "path": "registry/default/variants/v-popover-8.tsx",
@@ -9633,7 +9633,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Quick Settings",
       "files": [
         {
           "path": "registry/default/variants/v-popover-9.tsx",
@@ -9653,7 +9653,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Feature Tour",
       "files": [
         {
           "path": "registry/default/variants/v-popover-10.tsx",
@@ -9673,7 +9673,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Share Link",
       "files": [
         {
           "path": "registry/default/variants/v-popover-11.tsx",
@@ -9693,7 +9693,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Accent Color Picker",
       "files": [
         {
           "path": "registry/default/variants/v-popover-12.tsx",
@@ -9713,7 +9713,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Keyboard Shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-popover-13.tsx",
@@ -9733,7 +9733,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Filter Panel",
       "files": [
         {
           "path": "registry/default/variants/v-popover-14.tsx",
@@ -9753,7 +9753,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Basic popover",
+      "description": "Set a Reminder",
       "files": [
         {
           "path": "registry/default/variants/v-popover-15.tsx",
@@ -10973,7 +10973,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-1.tsx",
@@ -10993,7 +10993,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Sheet with Inset",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-2.tsx",
@@ -11013,7 +11013,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Side Sheets",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-3.tsx",
@@ -11033,7 +11033,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Scrollable Content",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-4.tsx",
@@ -11053,7 +11053,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Shopping Cart",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-5.tsx",
@@ -11073,7 +11073,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Notification Center",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-6.tsx",
@@ -11093,7 +11093,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Team Invite",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-7.tsx",
@@ -11113,7 +11113,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Activity Log",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-8.tsx",
@@ -11133,7 +11133,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Navigation Menu",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-9.tsx",
@@ -11153,7 +11153,7 @@
       "categories": [
         "sheet"
       ],
-      "description": "Basic sheet",
+      "description": "Issue Detail",
       "files": [
         {
           "path": "registry/default/variants/v-sheet-10.tsx",
@@ -13664,6 +13664,46 @@
         "className": ""
       },
       "name": "v-tooltip-10",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Basic tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-11",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Basic tooltip",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-12",
       "registryDependencies": [
         "@cnippet/tooltip"
       ],
