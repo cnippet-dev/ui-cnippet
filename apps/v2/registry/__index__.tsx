@@ -3159,7 +3159,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-11": {
     name: "v-calendar-11",
-    description: "Basic calendar",
+    description: "Date Picker with Presets",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3177,7 +3177,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-12": {
     name: "v-calendar-12",
-    description: "Basic calendar",
+    description: "Date of Birth",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -3195,7 +3195,7 @@ export const Index: Record<string, any> = {
   },
   "v-calendar-13": {
     name: "v-calendar-13",
-    description: "Basic calendar",
+    description: "Week Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/calendar"],
     files: [{
@@ -4419,7 +4419,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-1": {
     name: "v-combobox-1",
-    description: "Basic combobox",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4437,7 +4437,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-2": {
     name: "v-combobox-2",
-    description: "Basic combobox",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4455,7 +4455,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-3": {
     name: "v-combobox-3",
-    description: "Basic combobox",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4473,7 +4473,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-4": {
     name: "v-combobox-4",
-    description: "Basic combobox",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4491,7 +4491,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-5": {
     name: "v-combobox-5",
-    description: "Basic combobox",
+    description: "Auto Highlight",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4509,7 +4509,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-6": {
     name: "v-combobox-6",
-    description: "Basic combobox",
+    description: "With Clear Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4527,7 +4527,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-7": {
     name: "v-combobox-7",
-    description: "Basic combobox",
+    description: "With Groups",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4545,7 +4545,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-8": {
     name: "v-combobox-8",
-    description: "Basic combobox",
+    description: "Multiple Selection",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4563,7 +4563,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-9": {
     name: "v-combobox-9",
-    description: "Basic combobox",
+    description: "With Search Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4581,7 +4581,7 @@ export const Index: Record<string, any> = {
   },
   "v-combobox-10": {
     name: "v-combobox-10",
-    description: "Basic combobox",
+    description: "With Trigger Button",
     type: "registry:block",
     registryDependencies: ["@cnippet/combobox"],
     files: [{
@@ -4591,6 +4591,132 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-combobox-10.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-11": {
+    name: "v-combobox-11",
+    description: "With Select Button",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-12": {
+    name: "v-combobox-12",
+    description: "Form Integration",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-13": {
+    name: "v-combobox-13",
+    description: "Form Integration - Multiple",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-14": {
+    name: "v-combobox-14",
+    description: "Async Search",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-15": {
+    name: "v-combobox-15",
+    description: "Rich Item Rendering",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-16": {
+    name: "v-combobox-16",
+    description: "Controlled",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-16.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-16.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["combobox"],
+    meta: {"className":""},
+  },
+  "v-combobox-17": {
+    name: "v-combobox-17",
+    description: "Basic combobox",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/combobox"],
+    files: [{
+      path: "registry/default/variants/v-combobox-17.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-combobox-17.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

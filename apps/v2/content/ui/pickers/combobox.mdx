@@ -144,40 +144,92 @@ The `ComboboxInput` component extends the original Base UI component with a few 
 
 ## Examples
 
-### Sizes
+### Disabled
+
+Use the `disabled` prop to prevent interaction. A `defaultValue` can still pre-populate the field.
 
 <ComponentPreview name="v-combobox-2" />
 
-### With Label
+### Sizes
+
+Use the `size` prop on `ComboboxInput` to render `sm` or `lg` variants alongside the default.
 
 <ComponentPreview name="v-combobox-3" />
 
-### Auto Highlight
+### With Label
 
-Automatically highlight the first matching option.
+Pair `ComboboxInput` with a `Label` via `useId` to give the field an accessible name.
 
 <ComponentPreview name="v-combobox-4" />
 
-### With Clear Button
+### Auto Highlight
+
+The `autoHighlight` prop pre-focuses the first matching option as the user types.
 
 <ComponentPreview name="v-combobox-5" />
 
-### With Groups
+### With Clear Button
+
+Set `showClear` on `ComboboxInput` to render an ✕ button that resets the selection.
 
 <ComponentPreview name="v-combobox-6" />
 
-### With Multiple Selection
+### With Groups
+
+Use `ComboboxGroup`, `ComboboxGroupLabel`, `ComboboxCollection`, and `ComboboxSeparator` to organise items into labelled sections.
 
 <ComponentPreview name="v-combobox-7" />
 
-### With Input Inside Popup
+### Multiple Selection
+
+Set `multiple` on `Combobox` and wrap the input with `ComboboxChips` to render each selected value as a removable chip.
 
 <ComponentPreview name="v-combobox-8" />
 
-### Form Integration
+### With Search Icon
+
+Pass any icon to the `startAddon` prop of `ComboboxInput` to decorate the leading edge of the field.
 
 <ComponentPreview name="v-combobox-9" />
 
-### Form Integration - Multiple
+### With Trigger Button
+
+Render a `ComboboxTrigger` as a `Button` and move the search input inside `ComboboxPopup` for a select-style layout.
 
 <ComponentPreview name="v-combobox-10" />
+
+### With Select Button
+
+Use `SelectButton` as the trigger render target to match the visual style of a native select field with an inline popup search.
+
+<ComponentPreview name="v-combobox-11" />
+
+### Form Integration
+
+Place a combobox inside `Form` and `Field` to wire up label association, required validation, and a visible `FieldError`.
+
+<ComponentPreview name="v-combobox-12" />
+
+### Form Integration - Multiple
+
+Combine `multiple` selection with form validation to require at least one chip before the form can be submitted.
+
+<ComponentPreview name="v-combobox-13" />
+
+### Async Search
+
+Debounce user input and fetch results on demand. A spinner replaces the search icon while the request is in flight.
+
+<ComponentPreview name="v-combobox-14" />
+
+### Rich Item Rendering
+
+Render custom JSX inside each `ComboboxItem` — here a coloured avatar, a name, and a role subtitle — for an assignee-style picker.
+
+<ComponentPreview name="v-combobox-15" />
+
+### Controlled
+
+Manage the selected value with external state via `value` and `onValueChange`, and drive a programmatic clear from a sibling button.
+
+<ComponentPreview name="v-combobox-16" />

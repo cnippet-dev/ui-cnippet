@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-14",
+  "description": "Async Search",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-14.tsx",
+      "content": "\"use client\";\n\nimport { Loader2Icon, SearchIcon } from \"lucide-react\";\nimport { useCallback, useEffect, useRef, useState } from \"react\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from \"@/registry/default/ui/combobox\";\n\ninterface Repo {\n  label: string;\n  value: string;\n  language: string;\n  stars: string;\n}\n\nconst allRepos: Repo[] = [\n  {\n    label: \"facebook/react\",\n    language: \"JavaScript\",\n    stars: \"228k\",\n    value: \"react\",\n  },\n  {\n    label: \"vercel/next.js\",\n    language: \"TypeScript\",\n    stars: \"126k\",\n    value: \"nextjs\",\n  },\n  {\n    label: \"tailwindlabs/tailwindcss\",\n    language: \"CSS\",\n    stars: \"83k\",\n    value: \"tailwindcss\",\n  },\n  { label: \"vitejs/vite\", language: \"TypeScript\", stars: \"68k\", value: \"vite\" },\n  { label: \"vuejs/vue\", language: \"TypeScript\", stars: \"207k\", value: \"vue\" },\n  {\n    label: \"sveltejs/svelte\",\n    language: \"TypeScript\",\n    stars: \"79k\",\n    value: \"svelte\",\n  },\n  {\n    label: \"microsoft/typescript\",\n    language: \"TypeScript\",\n    stars: \"100k\",\n    value: \"typescript\",\n  },\n  {\n    label: \"prisma/prisma\",\n    language: \"TypeScript\",\n    stars: \"39k\",\n    value: \"prisma\",\n  },\n  { label: \"trpc/trpc\", language: \"TypeScript\", stars: \"35k\", value: \"trpc\" },\n  {\n    label: \"radix-ui/primitives\",\n    language: \"TypeScript\",\n    stars: \"16k\",\n    value: \"radix-ui\",\n  },\n  {\n    label: \"pmndrs/zustand\",\n    language: \"TypeScript\",\n    stars: \"48k\",\n    value: \"zustand\",\n  },\n  {\n    label: \"tanstack/query\",\n    language: \"TypeScript\",\n    stars: \"42k\",\n    value: \"tanstack-query\",\n  },\n];\n\nasync function searchRepos(query: string): Promise<Repo[]> {\n  await new Promise((r) => setTimeout(r, 400));\n  if (!query) return allRepos.slice(0, 5);\n  return allRepos.filter((r) =>\n    r.label.toLowerCase().includes(query.toLowerCase()),\n  );\n}\n\nexport default function Particle() {\n  const [inputValue, setInputValue] = useState(\"\");\n  const [results, setResults] = useState<Repo[]>(allRepos.slice(0, 5));\n  const [loading, setLoading] = useState(false);\n  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  const handleInputChange = useCallback((value: string) => {\n    setInputValue(value);\n    if (debounceRef.current) clearTimeout(debounceRef.current);\n    setLoading(true);\n    debounceRef.current = setTimeout(async () => {\n      const data = await searchRepos(value);\n      setResults(data);\n      setLoading(false);\n    }, 300);\n  }, []);\n\n  useEffect(() => {\n    return () => {\n      if (debounceRef.current) clearTimeout(debounceRef.current);\n    };\n  }, []);\n\n  return (\n    <Combobox items={results}>\n      <ComboboxInput\n        aria-label=\"Search repositories\"\n        onChange={(e) => handleInputChange(e.target.value)}\n        placeholder=\"Search repositories...\"\n        startAddon={\n          loading ? <Loader2Icon className=\"animate-spin\" /> : <SearchIcon />\n        }\n        value={inputValue}\n      />\n      <ComboboxPopup>\n        <ComboboxEmpty>\n          {loading ? \"Searching...\" : \"No repositories found.\"}\n        </ComboboxEmpty>\n        <ComboboxList>\n          {(repo: Repo) => (\n            <ComboboxItem key={repo.value} value={repo}>\n              <div className=\"flex w-full items-center justify-between gap-4\">\n                <span>{repo.label}</span>\n                <div className=\"flex shrink-0 items-center gap-2 text-muted-foreground text-xs\">\n                  <span>{repo.language}</span>\n                  <span>★ {repo.stars}</span>\n                </div>\n              </div>\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

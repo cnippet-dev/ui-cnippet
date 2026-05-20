@@ -14,25 +14,25 @@ export default function Particle() {
       <div className="min-h-12 rounded-lg border border-dashed px-4 py-3">
         {sorted.length > 0 ? (
           <div className="flex flex-col gap-2">
-            <p className="text-xs font-medium text-muted-foreground">
+            <p className="font-medium text-muted-foreground text-xs">
               {sorted.length} date{sorted.length !== 1 ? "s" : ""} selected
             </p>
             <ul className="flex flex-wrap gap-1.5">
               {sorted.map((d) => (
                 <li
+                  className="rounded-md bg-secondary px-2 py-0.5 font-medium text-xs"
                   key={d.toISOString()}
-                  className="rounded-md bg-secondary px-2 py-0.5 text-xs font-medium"
                 >
                   {d.toLocaleDateString("en-US", {
-                    month: "short",
                     day: "numeric",
+                    month: "short",
                   })}
                 </li>
               ))}
             </ul>
           </div>
         ) : (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Click any day to select multiple dates.
           </p>
         )}

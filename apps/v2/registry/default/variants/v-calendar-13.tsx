@@ -23,12 +23,12 @@ function formatWeekLabel(range: DateRange): string {
   const sameYear = from.getFullYear() === to.getFullYear();
   const sameMonth = sameYear && from.getMonth() === to.getMonth();
   const fromStr = from.toLocaleDateString("en-US", {
-    month: "short",
     day: "numeric",
+    month: "short",
   });
   const toStr = to.toLocaleDateString("en-US", {
-    month: sameMonth ? undefined : "short",
     day: "numeric",
+    month: sameMonth ? undefined : "short",
     year: "numeric",
   });
   return `${fromStr} – ${toStr}`;

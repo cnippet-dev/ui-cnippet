@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Calendar } from "@/registry/default/ui/calendar";
 import { Button } from "@/registry/default/ui/button";
+import { Calendar } from "@/registry/default/ui/calendar";
 
 function addDays(base: Date, days: number): Date {
   const d = new Date(base);
@@ -12,19 +12,19 @@ function addDays(base: Date, days: number): Date {
 
 function nextWeekday(dayOfWeek: number): Date {
   const today = new Date();
-  const diff = ((dayOfWeek - today.getDay() + 7) % 7) || 7;
+  const diff = (dayOfWeek - today.getDay() + 7) % 7 || 7;
   return addDays(today, diff);
 }
 
 const today = new Date();
 
 const presets = [
-  { label: "Today", date: today },
-  { label: "Tomorrow", date: addDays(today, 1) },
-  { label: "Next Monday", date: nextWeekday(1) },
-  { label: "In 1 week", date: addDays(today, 7) },
-  { label: "In 2 weeks", date: addDays(today, 14) },
-  { label: "In 1 month", date: addDays(today, 30) },
+  { date: today, label: "Today" },
+  { date: addDays(today, 1), label: "Tomorrow" },
+  { date: nextWeekday(1), label: "Next Monday" },
+  { date: addDays(today, 7), label: "In 1 week" },
+  { date: addDays(today, 14), label: "In 2 weeks" },
+  { date: addDays(today, 30), label: "In 1 month" },
 ];
 
 export default function Particle() {
@@ -35,8 +35,8 @@ export default function Particle() {
       <div className="flex flex-wrap gap-1.5 border-b bg-muted/40 px-3 py-2.5">
         {presets.map((p) => (
           <Button
-            key={p.label}
             className="h-7 text-xs"
+            key={p.label}
             onClick={() => setDate(p.date)}
             size="sm"
             variant={
@@ -51,11 +51,11 @@ export default function Particle() {
       </div>
       <Calendar mode="single" onSelect={setDate} selected={date} />
       {date && (
-        <div className="border-t px-4 py-2.5 text-center text-sm text-muted-foreground">
+        <div className="border-t px-4 py-2.5 text-center text-muted-foreground text-sm">
           {date.toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
             day: "numeric",
+            month: "long",
+            weekday: "long",
             year: "numeric",
           })}
         </div>

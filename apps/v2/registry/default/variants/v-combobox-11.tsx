@@ -1,5 +1,6 @@
 "use client";
 
+import { SearchIcon } from "lucide-react";
 import {
   Combobox,
   ComboboxEmpty,
@@ -7,7 +8,10 @@ import {
   ComboboxItem,
   ComboboxList,
   ComboboxPopup,
+  ComboboxTrigger,
+  ComboboxValue,
 } from "@/registry/default/ui/combobox";
+import { SelectButton } from "@/registry/default/ui/select";
 
 const items = [
   { label: "Apple", value: "apple" },
@@ -25,12 +29,18 @@ const items = [
 export default function Particle() {
   return (
     <Combobox items={items}>
-      <ComboboxInput
-        aria-label="Select a item"
-        placeholder="Select a item…"
-        showClear
-      />
-      <ComboboxPopup>
+      <ComboboxTrigger render={<SelectButton />}>
+        <ComboboxValue placeholder="Select a fruit" />
+      </ComboboxTrigger>
+      <ComboboxPopup aria-label="Select a fruit">
+        <div className="border-b p-2">
+          <ComboboxInput
+            className="rounded-md before:rounded-[calc(var(--radius-md)-1px)]"
+            placeholder="Search fruits..."
+            showTrigger={false}
+            startAddon={<SearchIcon />}
+          />
+        </div>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (

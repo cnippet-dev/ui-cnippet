@@ -6,8 +6,8 @@ import { Calendar } from "@/registry/default/ui/calendar";
 
 function formatShort(d: Date) {
   return d.toLocaleDateString("en-US", {
-    month: "short",
     day: "numeric",
+    month: "short",
     year: "numeric",
   });
 }
@@ -39,7 +39,7 @@ export default function Particle() {
               <>
                 <span>{formatShort(range.to)}</span>
                 {nights > 0 && (
-                  <span className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
+                  <span className="rounded-full bg-secondary px-2 py-0.5 font-medium text-xs">
                     {nights} night{nights !== 1 ? "s" : ""}
                   </span>
                 )}

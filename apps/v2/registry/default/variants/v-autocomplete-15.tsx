@@ -21,75 +21,75 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    id: "1",
-    label: "Alice Johnson",
-    email: "alice@company.com",
-    role: "Design",
     avatarColor: "#8b5cf6",
+    email: "alice@company.com",
+    id: "1",
     initials: "AJ",
+    label: "Alice Johnson",
+    role: "Design",
   },
   {
-    id: "2",
-    label: "Bob Chen",
-    email: "bob@company.com",
-    role: "Frontend",
     avatarColor: "#3b82f6",
+    email: "bob@company.com",
+    id: "2",
     initials: "BC",
+    label: "Bob Chen",
+    role: "Frontend",
   },
   {
-    id: "3",
-    label: "Carol Davis",
-    email: "carol@company.com",
-    role: "Backend",
     avatarColor: "#10b981",
+    email: "carol@company.com",
+    id: "3",
     initials: "CD",
+    label: "Carol Davis",
+    role: "Backend",
   },
   {
-    id: "4",
-    label: "Dan Park",
-    email: "dan@company.com",
-    role: "DevOps",
     avatarColor: "#f97316",
+    email: "dan@company.com",
+    id: "4",
     initials: "DP",
+    label: "Dan Park",
+    role: "DevOps",
   },
   {
-    id: "5",
-    label: "Eva Martín",
-    email: "eva@company.com",
-    role: "Product",
     avatarColor: "#ec4899",
+    email: "eva@company.com",
+    id: "5",
     initials: "EM",
+    label: "Eva Martín",
+    role: "Product",
   },
   {
-    id: "6",
-    label: "Frank Wright",
-    email: "frank@company.com",
-    role: "QA",
     avatarColor: "#eab308",
+    email: "frank@company.com",
+    id: "6",
     initials: "FW",
+    label: "Frank Wright",
+    role: "QA",
   },
   {
-    id: "7",
-    label: "Grace Lee",
-    email: "grace@company.com",
-    role: "Mobile",
     avatarColor: "#06b6d4",
+    email: "grace@company.com",
+    id: "7",
     initials: "GL",
+    label: "Grace Lee",
+    role: "Mobile",
   },
   {
-    id: "8",
-    label: "Hiro Tanaka",
-    email: "hiro@company.com",
-    role: "Data",
     avatarColor: "#ef4444",
+    email: "hiro@company.com",
+    id: "8",
     initials: "HT",
+    label: "Hiro Tanaka",
+    role: "Data",
   },
 ];
 
 export default function Particle() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-2">
-      <label className="text-sm font-medium">Assign to</label>
+      <label className="font-medium text-sm">Assign to</label>
       <Autocomplete items={teamMembers}>
         <AutocompleteInput
           placeholder="Search team members…"
@@ -105,20 +105,20 @@ export default function Particle() {
                 <div className="flex w-full items-center gap-2.5">
                   <span
                     aria-hidden="true"
-                    className="inline-flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
+                    className="inline-flex size-7 shrink-0 items-center justify-center rounded-full font-semibold text-white text-xs"
                     style={{ backgroundColor: member.avatarColor }}
                   >
                     {member.initials}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-sm font-medium leading-tight">
+                    <div className="truncate font-medium text-sm leading-tight">
                       {member.label}
                     </div>
-                    <div className="truncate text-xs leading-tight text-muted-foreground">
+                    <div className="truncate text-muted-foreground text-xs leading-tight">
                       {member.email}
                     </div>
                   </div>
-                  <span className="shrink-0 rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                  <span className="shrink-0 rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
                     {member.role}
                   </span>
                 </div>

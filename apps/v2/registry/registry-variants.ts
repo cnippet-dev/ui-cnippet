@@ -351,10 +351,28 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- combobox ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 17 }, (_, i) =>
     createVariant({
       category: "combobox",
       dependencies: ["combobox"],
+      description: [
+        "Default",
+        "Disabled",
+        "Sizes",
+        "With Label",
+        "Auto Highlight",
+        "With Clear Button",
+        "With Groups",
+        "Multiple Selection",
+        "With Search Icon",
+        "With Trigger Button",
+        "With Select Button",
+        "Form Integration",
+        "Form Integration - Multiple",
+        "Async Search",
+        "Rich Item Rendering",
+        "Controlled",
+      ][i],
       name: `v-combobox-${i + 1}`,
     }),
   ),

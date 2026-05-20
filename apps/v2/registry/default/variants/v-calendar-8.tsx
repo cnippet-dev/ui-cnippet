@@ -35,9 +35,9 @@ export default function Particle() {
             Appointment:{" "}
             <span className="font-semibold">
               {date.toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
                 day: "numeric",
+                month: "long",
+                weekday: "long",
               })}
             </span>
           </p>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-16",
+  "description": "Controlled",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-16.tsx",
+      "content": "\"use client\";\n\nimport { ChevronsUpDownIcon, SearchIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxTrigger,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\n\ninterface Status {\n  label: string;\n  value: string;\n  color: string;\n}\n\nconst statuses: Status[] = [\n  { color: \"bg-slate-400\", label: \"Backlog\", value: \"backlog\" },\n  { color: \"bg-blue-400\", label: \"Todo\", value: \"todo\" },\n  { color: \"bg-amber-400\", label: \"In Progress\", value: \"in-progress\" },\n  { color: \"bg-violet-400\", label: \"In Review\", value: \"in-review\" },\n  { color: \"bg-emerald-400\", label: \"Done\", value: \"done\" },\n  { color: \"bg-red-400\", label: \"Cancelled\", value: \"cancelled\" },\n];\n\nexport default function Particle() {\n  const [value, setValue] = useState<Status | null>(statuses[0] ?? null);\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <div className=\"flex items-center justify-between\">\n        <span className=\"text-muted-foreground text-sm\">Current status:</span>\n        {value ? (\n          <Badge className=\"gap-1.5\" variant=\"outline\">\n            <span className={`size-2 rounded-full ${value.color}`} />\n            {value.label}\n          </Badge>\n        ) : (\n          <span className=\"text-muted-foreground text-sm\">None</span>\n        )}\n      </div>\n\n      <div className=\"flex gap-2\">\n        <Combobox\n          items={statuses}\n          onValueChange={(v) => setValue(v as Status | null)}\n          value={value}\n        >\n          <ComboboxTrigger\n            render={\n              <Button\n                className=\"flex-1 justify-between font-normal\"\n                variant=\"outline\"\n              />\n            }\n          >\n            {value ? (\n              <span className=\"flex items-center gap-2\">\n                <span className={`size-2 rounded-full ${value.color}`} />\n                <ComboboxValue />\n              </span>\n            ) : (\n              <ComboboxValue placeholder=\"Set status...\" />\n            )}\n            <ChevronsUpDownIcon className=\"-me-1!\" />\n          </ComboboxTrigger>\n          <ComboboxPopup aria-label=\"Set status\">\n            <div className=\"border-b p-2\">\n              <ComboboxInput\n                className=\"rounded-md before:rounded-[calc(var(--radius-md)-1px)]\"\n                placeholder=\"Search status...\"\n                showTrigger={false}\n                startAddon={<SearchIcon />}\n              />\n            </div>\n            <ComboboxEmpty>No status found.</ComboboxEmpty>\n            <ComboboxList>\n              {(status: Status) => (\n                <ComboboxItem key={status.value} value={status}>\n                  <span className={`size-2 rounded-full ${status.color}`} />\n                  {status.label}\n                </ComboboxItem>\n              )}\n            </ComboboxList>\n          </ComboboxPopup>\n        </Combobox>\n\n        <Button\n          aria-label=\"Clear status\"\n          disabled={!value}\n          onClick={() => setValue(null)}\n          size=\"icon\"\n          variant=\"ghost\"\n        >\n          <XIcon />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

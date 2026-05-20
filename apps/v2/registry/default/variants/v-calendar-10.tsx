@@ -32,7 +32,12 @@ interface DayButtonProps extends React.ComponentProps<"button"> {
   modifiers: Modifiers;
 }
 
-function EventDayButton({ day, modifiers, children, ...buttonProps }: DayButtonProps) {
+function EventDayButton({
+  day,
+  modifiers,
+  children,
+  ...buttonProps
+}: DayButtonProps) {
   const eventType = events[day.date.toDateString()];
   return (
     <button {...buttonProps}>
@@ -57,7 +62,7 @@ export default function Particle() {
         onSelect={setDate}
         selected={date}
       />
-      <div className="flex items-center justify-center gap-5 text-xs text-muted-foreground">
+      <div className="flex items-center justify-center gap-5 text-muted-foreground text-xs">
         <span className="flex items-center gap-1.5">
           <span className="size-2 rounded-full bg-blue-500" />
           Meeting

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-13",
-  "description": "Basic calendar",
+  "description": "Week Picker",
   "registryDependencies": [
     "@cnippet/calendar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-calendar-13.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\n// Snaps a date to the Monday–Sunday ISO week containing it.\nfunction isoWeekRange(date: Date): DateRange {\n  const d = new Date(date);\n  d.setHours(0, 0, 0, 0);\n  const day = d.getDay();\n  const diffToMonday = day === 0 ? -6 : 1 - day;\n  const from = new Date(d);\n  from.setDate(d.getDate() + diffToMonday);\n  const to = new Date(from);\n  to.setDate(from.getDate() + 6);\n  return { from, to };\n}\n\nfunction formatWeekLabel(range: DateRange): string {\n  const { from, to } = range;\n  if (!from || !to) return \"\";\n  const sameYear = from.getFullYear() === to.getFullYear();\n  const sameMonth = sameYear && from.getMonth() === to.getMonth();\n  const fromStr = from.toLocaleDateString(\"en-US\", {\n    day: \"numeric\",\n    month: \"short\",\n  });\n  const toStr = to.toLocaleDateString(\"en-US\", {\n    day: \"numeric\",\n    month: sameMonth ? undefined : \"short\",\n    year: \"numeric\",\n  });\n  return `${fromStr} – ${toStr}`;\n}\n\nexport default function Particle() {\n  const [week, setWeek] = React.useState<DateRange>(isoWeekRange(new Date()));\n\n  function handleSelect(range: DateRange | undefined) {\n    // react-day-picker provides `from` as the newly clicked day;\n    // snap the whole selection to that day's ISO week.\n    if (range?.from) setWeek(isoWeekRange(range.from));\n  }\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        ISOWeek\n        mode=\"range\"\n        onSelect={handleSelect}\n        selected={week}\n        showWeekNumber\n      />\n      <div className=\"rounded-lg border px-4 py-3 text-sm\">\n        {week.from ? (\n          <p>\n            Week selected:{\" \"}\n            <span className=\"font-semibold\">{formatWeekLabel(week)}</span>\n          </p>\n        ) : (\n          <p className=\"text-muted-foreground\">\n            Click any day to select its full week.\n          </p>\n        )}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

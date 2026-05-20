@@ -87,12 +87,14 @@ export default function Particle() {
             Date of birth:{" "}
             <span className="font-semibold">
               {date.toLocaleDateString("en-US", {
-                month: "long",
                 day: "numeric",
+                month: "long",
                 year: "numeric",
               })}
             </span>
-            <span className="ml-2 text-muted-foreground">({age} years old)</span>
+            <span className="ml-2 text-muted-foreground">
+              ({age} years old)
+            </span>
           </p>
         ) : (
           <p className="text-muted-foreground">Select your date of birth.</p>
