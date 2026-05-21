@@ -74,7 +74,7 @@ export function MobileNav({
           </div>
           {tree ? (
             <div className="flex flex-col gap-8">
-              {tree?.children?.map((group: FolderNode, index: number) => {
+              {tree?.children?.map((group: FolderNode, _index: number) => {
                 if (group.type === "folder") {
                   return (
                     <div className="flex flex-col gap-3" key={group.name}>
