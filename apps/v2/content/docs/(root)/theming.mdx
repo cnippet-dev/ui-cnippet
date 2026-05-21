@@ -1,0 +1,201 @@
+---
+title: Theming
+description: Customize colors, radius, and dark mode with CSS variables and Tailwind CSS v4.
+---
+
+cnippet ui uses a CSS variables-based theming system built on Tailwind CSS v4. Every color, radius, and shadow is a design token you can override — globally or scoped to a single component.
+
+## How It Works
+
+Components reference semantic CSS variables (`--primary`, `--muted`, `--border`, etc.) rather than hard-coded values. Changing a variable updates every component that references it.
+
+```css
+/* globals.css */
+:root {
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+}
+```
+
+All values use HSL format (`hue saturation% lightness%`) so Tailwind's opacity modifier utilities work automatically — `text-primary/50`, `bg-primary/10`, etc.
+
+## Default Color Scale (Zinc)
+
+The default palette is zinc-based. Install it with the CLI:
+
+```bash
+npx shadcn@latest add @cnippet/colors-zinc
+```
+
+Or add it manually to your `globals.css`:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+
+  --radius: 0.5rem;
+}
+```
+
+## Extended Tokens
+
+cnippet ui adds semantic tokens for feedback states not covered by the base shadcn/ui scale:
+
+```css
+:root {
+  --info: 201 96% 32%;
+  --info-foreground: 210 40% 98%;
+
+  --success: 142 76% 36%;
+  --success-foreground: 210 40% 98%;
+
+  --warning: 38 92% 50%;
+  --warning-foreground: 210 40% 98%;
+}
+```
+
+These are consumed by `<Alert>`, `<Badge>`, and `<Toast>` when using `variant="info"`, `"success"`, or `"warning"`.
+
+## Dark Mode
+
+Add a `.dark` class to your `<html>` element and define the dark-mode values:
+
+```css
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+```
+
+### Using next-themes
+
+For Next.js, `next-themes` handles system preference detection and toggling:
+
+```bash
+npm install next-themes
+```
+
+Wrap your root layout:
+
+```tsx
+import { ThemeProvider } from "next-themes"
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+## Custom Themes
+
+Override any subset of variables to create a custom palette. Here's a blue-focused theme:
+
+```css
+:root {
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --accent: 214 95% 93%;
+  --accent-foreground: 217 91% 60%;
+
+  --ring: 217 91% 60%;
+}
+```
+
+Everything you don't override falls back to the zinc defaults.
+
+## Border Radius
+
+The `--radius` variable drives the global radius scale. Components use calculated offsets (`calc(var(--radius) - 2px)` for inner elements) so the whole UI scales together:
+
+```css
+:root {
+  --radius: 0.5rem;  /* default — try 0.25rem for sharp, 0.75rem for rounder */
+}
+```
+
+## Per-Component Overrides
+
+Because components are copied into your project, you can scope token overrides with inline styles:
+
+```tsx
+<Card style={{ "--radius": "1rem" } as React.CSSProperties}>
+  ...
+</Card>
+```
+
+## Variable Reference
+
+| Variable | Purpose | Zinc Default |
+|----------|---------|--------------|
+| `--background` | Page background | `0 0% 100%` |
+| `--foreground` | Body text | `222.2 84% 4.9%` |
+| `--primary` | Buttons, active states | `222.2 47.4% 11.2%` |
+| `--secondary` | Secondary actions | `210 40% 96.1%` |
+| `--muted` | Disabled, placeholder | `210 40% 96.1%` |
+| `--accent` | Hover highlights | `210 40% 96.1%` |
+| `--destructive` | Delete, error states | `0 84.2% 60.2%` |
+| `--border` | Dividers, outlines | `214.3 31.8% 91.4%` |
+| `--ring` | Focus rings | `222.2 84% 4.9%` |
+| `--radius` | Border radius scale | `0.5rem` |
+| `--info` | Info badges/alerts | `201 96% 32%` |
+| `--success` | Success states | `142 76% 36%` |
+| `--warning` | Warning states | `38 92% 50%` |

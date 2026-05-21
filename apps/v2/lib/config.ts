@@ -4,7 +4,7 @@ export const appConfig = {
   name: "coss ui",
   navItems: [
     {
-      href: "/docs",
+      href: "/docs/introduction",
       label: "Docs",
     },
     {

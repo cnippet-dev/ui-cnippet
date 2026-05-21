@@ -3,13 +3,13 @@ title: Introduction
 description: A modern React component library built on Base UI. Copy-paste, own your code.
 ---
 
-**cnippet ui** is an open-source component library for React. It's part of the larger **Cnippet ecosystem**:
+**cnippet ui** is an open-source component library for React built in three layers:
 
-- **[ui.cnippet.dev](https://ui.cnippet.dev)** – Core components (button, card, dialog, toast, etc.)
-- **[blocks.cnippet.dev](https://blocks.cnippet.dev)** – Pre-built sections, pages, and templates
-- **[next.cnippet.dev](https://next.cnippet.dev)** – Integration guides for auth, payments, and more
+- **UI** — 55+ core components (button, card, dialog, toast, and more), each with multiple style variants. This is what's available today.
+- **Motion** *(coming soon)* — Animation-first components built on [Motion](https://motion.dev/). Drop-in replacements for core components with entrance, exit, and interaction animations.
+- **Chart** *(coming soon)* — A dedicated chart collection built on [Recharts](https://recharts.org/). Themed automatically to your CSS variables with zero configuration.
 
-At the heart of everything is **cnippet ui**: accessible, composable components built on [Base UI](https://base-ui.com/) and styled with [Tailwind CSS](https://tailwindcss.com/). Everything is copy-paste friendly – you own the code completely.
+Everything is copy-paste friendly — you own the code completely, built on [Base UI](https://base-ui.com/) primitives and styled with [Tailwind CSS](https://tailwindcss.com/).
 
 We chose Base UI for its robust, accessible, and unopinionated primitives. It handles accessibility, keyboard navigation, and focus management without imposing styles. This gives you full freedom to build a design system that fits your needs.
 
@@ -33,17 +33,31 @@ Inspired by the copy-paste ethos of **shadcn/ui**, you don't install a monolithi
 
 ## What's Included
 
-The library provides **25+ production-ready components**, each fully accessible and typed:
+### UI — Available Now
+
+**55+ production-ready components**, each fully accessible, typed, and shipped with multiple style variants:
 
 | Category | Components |
 |----------|-------------|
-| Layout | Accordion, Card, Dialog, Drawer, Sheet, Tabs |
-| Navigation | Dropdown Menu, Navigation Menu, Breadcrumb, Pagination |
-| Forms | Button, Input, Checkbox, Radio, Select, Switch, Textarea, Label |
-| Feedback | Alert, Toast, Progress, Skeleton, Tooltip |
-| Data Display | Avatar, Badge, Table, Calendar, Carousel |
+| Actions | Button, Switch, Toggle, Toggle Group, Toolbar |
+| Data | Accordion, Chart, Collapsible, Empty, Table |
+| Feedback | Alert, Badge, Kbd, Progress, Skeleton, Spinner, Toast |
+| Forms | Checkbox, Checkbox Group, Field, Fieldset, Form, Input, Input Group, Label, Meter, Number Field, OTP Field, Radio Group, Slider, Textarea |
+| Layout | Card, Frame, Group, Preview Card, Scroll Area, Separator |
+| Media | Avatar, Carousel |
+| Navigation | Breadcrumb, Menu, Pagination, Sidebar, Tabs |
+| Overlays | Alert Dialog, Command, Context Menu, Dialog, Drawer, Popover, Sheet, Tooltip |
+| Pickers | Autocomplete, Calendar, Combobox, Date Picker, Select |
 
 All components are built with Tailwind CSS v4 and support dark mode out of the box.
+
+### Motion — Coming Soon
+
+Animated variants of core UI components using [Motion](https://motion.dev/). Each motion component is a drop-in replacement — same API, same props, with built-in entrance, exit, and interaction animations. No animation knowledge required.
+
+### Chart — Coming Soon
+
+A dedicated chart collection built on [Recharts](https://recharts.org/). Chart colors are mapped to your CSS variables automatically, so every chart matches your theme without any extra config. Supports area, bar, line, pie, radar, and radial bar charts.
 
 ## cnippet ui vs. shadcn/ui
 
@@ -53,7 +67,7 @@ All components are built with Tailwind CSS v4 and support dark mode out of the b
 | Bundle impact | Slightly larger due to Radix wrapper divs | Tighter, no extra markup |
 | Styling approach | Tailwind + CSS variables | Same (you own the classes) |
 | API design | Radix conventions | Base UI conventions (similar, but cleaner) |
-| Migration path | N/A | Each component includes Radix migration notes |
+| Migration path | N/A | Each component includes shadcn/ui compatibility notes |
 
 **Bottom line**: If you already use shadcn/ui, you'll feel at home. If you're starting fresh, cnippet ui gives you a modern, lightweight foundation.
 

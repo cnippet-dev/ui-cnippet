@@ -73,15 +73,15 @@ export default function HomePage() {
 
             <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
               <Button
-                className="text-balance rounded-none py-4 tracking-tight"
+                className="text-balance rounded-none py-5 tracking-tight"
                 render={<Link href="docs/introduction" />}
               >
                 Get started
               </Button>
 
               <Button
-                className="flex gap-2 text-balance rounded-none py-4 tracking-tight"
-                render={<Link href="/components" />}
+                className="flex gap-2 text-balance rounded-none py-5 tracking-tight"
+                render={<Link href="/explore" />}
                 variant="secondary"
               >
                 Browse Components

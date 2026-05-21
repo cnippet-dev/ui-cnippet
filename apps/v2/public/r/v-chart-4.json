@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-chart-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nexport const description = \"A line chart\";\n\nconst chartData = [\n  { desktop: 186, month: \"January\" },\n  { desktop: 305, month: \"February\" },\n  { desktop: 237, month: \"March\" },\n  { desktop: 73, month: \"April\" },\n  { desktop: 209, month: \"May\" },\n  { desktop: 214, month: \"June\" },\n];\n\nconst chartConfig = {\n  desktop: {\n    color: \"var(--chart-1)\",\n    label: \"Desktop\",\n  },\n} satisfies ChartConfig;\n\nexport function ChartLineDefault() {\n  return (\n    <ChartContainer className=\"min-h-50 w-full\" config={chartConfig}>\n      <LineChart\n        accessibilityLayer\n        data={chartData}\n        margin={{\n          left: 12,\n          right: 12,\n        }}\n      >\n        <CartesianGrid vertical={false} />\n        <XAxis\n          axisLine={false}\n          dataKey=\"month\"\n          tickFormatter={(value) => value.slice(0, 3)}\n          tickLine={false}\n          tickMargin={8}\n        />\n        <ChartTooltip\n          content={<ChartTooltipContent hideLabel />}\n          cursor={false}\n        />\n        <Line\n          dataKey=\"desktop\"\n          dot={false}\n          stroke=\"var(--color-desktop)\"\n          strokeWidth={2}\n          type=\"natural\"\n        />\n      </LineChart>\n    </ChartContainer>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

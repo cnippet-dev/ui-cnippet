@@ -1,0 +1,137 @@
+---
+title: Changelog
+description: New components, improvements, and breaking changes across all cnippet ui releases.
+---
+
+All notable changes to **cnippet ui** are documented here, newest first.
+
+## Upcoming
+
+### Motion
+
+Animation-first components built on [Motion](https://motion.dev/). Drop-in replacements for core UI components with entrance, exit, and interaction animations — same props, same API, animated by default.
+
+### Chart
+
+A standalone chart collection built on [Recharts](https://recharts.org/) with automatic CSS variable theming. Will cover area, bar, line, pie, radar, and radial bar chart types.
+
+---
+
+## v0.5 — Charts & Data Visualization
+
+**May 2025**
+
+### New Components
+
+**Chart** — A Recharts wrapper that connects your chart colors to CSS variables automatically. Includes:
+
+- `ChartContainer` — sets up the Recharts `ResponsiveContainer` with theme context
+- `ChartTooltip` + `ChartTooltipContent` — styled tooltip that reads from your CSS config
+- `ChartLegend` + `ChartLegendContent` — consistent legend layout across chart types
+
+```bash
+npx shadcn@latest add @cnippet/chart
+```
+
+### Highlights
+
+- Supports all Recharts chart types: `AreaChart`, `BarChart`, `LineChart`, `PieChart`, `RadarChart`, `RadialBarChart`
+- Chart colors are defined in your component's `config` object and automatically mapped to CSS variables — no inline color strings needed
+- Dark mode works without any extra setup; colors follow your theme tokens
+
+---
+
+## v0.4 — Combobox, Autocomplete & Calendar
+
+**April 2025**
+
+### New Components
+
+**Combobox** — Five variants covering the most common selection patterns:
+
+| Variant | Use Case |
+|---------|---------|
+| Basic | Single item selection with search |
+| Multi-select | Select multiple items, shown as badges |
+| Async | Fetch options on query change |
+| Grouped | Options organized under labeled sections |
+| Command | Full command-palette style (⌘K pattern) |
+
+**Autocomplete** — Text input with inline dropdown suggestions and full keyboard navigation.
+
+**Calendar** — Date picker built on `react-day-picker` v9:
+
+- `single` mode — pick one date
+- `range` mode — pick a start and end date
+- `multiple` mode — pick any number of dates
+
+```bash
+npx shadcn@latest add @cnippet/combobox @cnippet/autocomplete @cnippet/calendar
+```
+
+### Improvements
+
+- Combobox uses Base UI `<Select>` and `<Popover>` for accessible keyboard navigation and ARIA roles
+- Calendar ships with `react-day-picker` as a peer dependency — only installed if you add the component
+
+---
+
+## v0.3 — Tooltip & Popover Variants
+
+**March 2025**
+
+### New Components
+
+**Tooltip** — Extended with placement and interaction variants:
+
+- Side variants: `top`, `right`, `bottom`, `left`
+- Delay control via `delayDuration` and `skipDelayDuration`
+- Interactive tooltip (hoverable content area, useful for links inside tooltips)
+
+**Popover** — Multiple layout variants:
+
+- Default (header + body)
+- With footer actions
+- Scrollable body
+- Form inside popover
+- Positioned anchor variants
+
+```bash
+npx shadcn@latest add @cnippet/tooltip @cnippet/popover
+```
+
+### Improvements
+
+- Popover close button is now a first-class anatomy part — easier to style or replace
+- Tooltip arrow is optional and controlled via a prop, not a separate component
+
+---
+
+## v0.2 — Core Foundation
+
+**February 2025**
+
+First stable release. 25+ production-ready components across five categories:
+
+| Category | Components |
+|----------|------------|
+| Layout | Accordion, Card, Dialog, Drawer, Sheet, Tabs |
+| Navigation | Dropdown Menu, Navigation Menu, Breadcrumb, Pagination |
+| Forms | Button, Input, Checkbox, Radio, Select, Switch, Textarea, Label |
+| Feedback | Alert, Toast, Progress, Skeleton, Tooltip |
+| Data Display | Avatar, Badge, Table, Carousel |
+
+### Design System
+
+- Introduced the CSS variables theming system — see [Theming](/docs/theming)
+- Added zinc color palette (`@cnippet/colors-zinc`)
+- Full dark mode support via `.dark` class on `<html>`
+- All components pass WCAG 2.1 AA contrast requirements
+
+---
+
+## v0.1 — Alpha
+
+**January 2025**
+
+Initial proof of concept. Base UI primitives wired to Tailwind CSS v4. Not recommended for production — APIs changed significantly in v0.2.

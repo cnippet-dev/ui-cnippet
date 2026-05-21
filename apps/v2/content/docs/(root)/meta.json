@@ -1,4 +1,4 @@
 {
-  "pages": ["introduction", "get-started"],
+  "pages": ["introduction", "get-started", "theming", "changelog"],
   "title": "Overview"
 }

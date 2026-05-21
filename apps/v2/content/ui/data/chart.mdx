@@ -9,7 +9,7 @@ description: Beautiful charts. Built using Recharts. Copy and paste into your ap
 
 <CodeTabs>
 
-<TabsList value="manual">
+<TabsList defaultValue="cli">
   <TabsTab value="cli">CLI</TabsTab>
   <TabsTab value="manual">Manual</TabsTab>
 </TabsList>
@@ -42,3 +42,71 @@ npm install recharts
 </TabsPanel>
 
 </CodeTabs>
+
+## Usage
+
+```tsx
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import type { ChartConfig } from "@/components/ui/chart"
+```
+
+```tsx
+const chartConfig = {
+  desktop: {
+    color: "var(--chart-1)",
+    label: "Desktop",
+  },
+} satisfies ChartConfig
+
+export function MyChart() {
+  return (
+    <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      {/* Recharts component here */}
+    </ChartContainer>
+  )
+}
+```
+
+## Examples
+
+### Multi-Series Bar Chart
+
+Two data series displayed side-by-side as grouped bars. Colors are defined directly in `chartConfig` and resolved via CSS variables through `ChartContainer`.
+
+<ComponentPreview name="v-chart-1" />
+
+### Area Chart
+
+A single-series area chart with a grid, X-axis labels, and a tooltip. Uses `type="natural"` for smooth curved lines and `fillOpacity` for the semi-transparent fill.
+
+<ComponentPreview name="v-chart-2" />
+
+### Bar Chart
+
+A single-series bar chart with rounded corners, a Cartesian grid, abbreviated month labels on the X-axis, and a tooltip that hides the series label.
+
+<ComponentPreview name="v-chart-3" />
+
+### Line Chart
+
+A single-series line chart without dots, using natural curve interpolation. The tooltip shows the value on hover without repeating the axis label.
+
+<ComponentPreview name="v-chart-4" />
+
+### Pie Chart
+
+A proportional pie chart showing browser share across five segments. Each segment maps to a `--chart-N` CSS variable so colors stay in sync with the active theme.
+
+<ComponentPreview name="v-chart-5" />
+
+### Radar Chart
+
+A spider/radar chart with a polar grid and angle axis labels. Useful for comparing a single metric across multiple categories — here, monthly desktop traffic.
+
+<ComponentPreview name="v-chart-6" />
+
+### Radial Bar Chart
+
+A radial bar chart with a background track. Each segment corresponds to a browser, with inner and outer radii controlling the ring thickness.
+
+<ComponentPreview name="v-chart-7" />

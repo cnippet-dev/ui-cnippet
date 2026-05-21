@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-chart-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nexport const description = \"A radar chart\";\n\nconst chartData = [\n  { desktop: 186, month: \"January\" },\n  { desktop: 305, month: \"February\" },\n  { desktop: 237, month: \"March\" },\n  { desktop: 273, month: \"April\" },\n  { desktop: 209, month: \"May\" },\n  { desktop: 214, month: \"June\" },\n];\n\nconst chartConfig = {\n  desktop: {\n    color: \"var(--chart-1)\",\n    label: \"Desktop\",\n  },\n} satisfies ChartConfig;\n\nexport function ChartRadarDefault() {\n  return (\n    <ChartContainer\n      className=\"mx-auto aspect-square max-h-62.5 w-full\"\n      config={chartConfig}\n    >\n      <RadarChart data={chartData}>\n        <ChartTooltip content={<ChartTooltipContent />} cursor={false} />\n        <PolarAngleAxis dataKey=\"month\" />\n        <PolarGrid />\n        <Radar\n          dataKey=\"desktop\"\n          fill=\"var(--color-desktop)\"\n          fillOpacity={0.6}\n        />\n      </RadarChart>\n    </ChartContainer>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
