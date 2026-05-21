@@ -1,6 +1,5 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { highlightCode } from "@cnippet/ui/lib/highlight-code";
 import { NextResponse } from "next/server";
 import { fixImport } from "@/lib/fix-import";
 
@@ -36,7 +35,8 @@ export async function GET(
   }
 
   let html: string | null = null;
-  try { 
+  try {
+    const { highlightCode } = await import("@cnippet/ui/lib/highlight-code");
     html = await highlightCode(code, "tsx");
   } catch {
     // Fall back to raw code if highlighting fails
