@@ -16,10 +16,12 @@ export type InputProps = Omit<
 export function Input({
   className,
   size = "default",
+  style,
   unstyled = false,
   nativeInput = false,
   ...props
 }: InputProps): React.ReactElement {
+  const nativeStyle = typeof style === "function" ? undefined : style;
   const inputClassName = cn(
     "h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] leading-8.5 outline-none [transition:background-color_5000000s_ease-in-out_0s] placeholder:text-muted-foreground/72 sm:h-7.5 sm:leading-7.5",
     size === "sm" &&
@@ -48,7 +50,8 @@ export function Input({
           className={inputClassName}
           data-slot="input"
           size={typeof size === "number" ? size : undefined}
-          {...props}
+          style={nativeStyle}
+          {...(props as React.ComponentPropsWithoutRef<"input">)}
         />
       ) : (
         <InputPrimitive

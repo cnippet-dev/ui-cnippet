@@ -69,7 +69,7 @@ export function MobileNav({
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            {tree?.children?.map((group, index) => {
+            {tree?.children?.map((group) => {
               if (group.type === "folder") {
                 return (
                   <div className="flex flex-col gap-3" key={group.$id}>
@@ -80,7 +80,7 @@ export function MobileNav({
                           return (
                             <MobileLink
                               href={item.url}
-                              key={`${item.url}-${index}`}
+                              key={item.url}
                               onOpenChange={setOpen}
                             >
                               {item.name}

@@ -86,7 +86,6 @@ function CodeBlock({
       </Button>
       <div
         className="overflow-auto text-[.8125rem] [&_pre]:p-4"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: server-highlighted code
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>

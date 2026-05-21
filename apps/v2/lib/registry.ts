@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { Project, ScriptKind } from "ts-morph";
+import { fixImport } from "@/lib/fix-import";
 import { Index } from "@/registry/__index__";
 
 type RegistryFile = {
@@ -142,33 +143,7 @@ function fixFilePaths(files: RegistryFile[]) {
   });
 }
 
-export function fixImport(content: string) {
-  const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g;
-
-  const replacement = (
-    match: string,
-    _path: string,
-    type: string,
-    component: string,
-  ) => {
-    if (type.endsWith("components")) {
-      return `@/components/${component}`;
-    }
-    if (type.endsWith("ui")) {
-      return `@/components/ui/${component}`;
-    }
-    if (type.endsWith("hooks")) {
-      return `@/hooks/${component}`;
-    }
-    if (type.endsWith("lib")) {
-      return `@/lib/${component}`;
-    }
-
-    return match;
-  };
-
-  return content.replace(regex, replacement);
-}
+export { fixImport } from "@/lib/fix-import";
 
 export type FileTree = {
   name: string;

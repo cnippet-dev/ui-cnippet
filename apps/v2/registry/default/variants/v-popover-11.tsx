@@ -24,7 +24,9 @@ const colors = [
 
 export function Pattern() {
   const [selected, setSelected] = useState<string>("Blue");
-  const active = colors.find((c) => c.name === selected)!;
+  const active =
+    colors.find((c) => c.name === selected) ??
+    ({ bg: "bg-blue-500", name: "Blue" } as const);
 
   return (
     <div className="flex min-h-25 items-center justify-center">
