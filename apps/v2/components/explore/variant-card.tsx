@@ -3,6 +3,7 @@
 import { useCopyToClipboard } from "@cnippet/ui/hooks/use-copy-to-clipboard";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import * as React from "react";
+import { getVariantSource } from "@/lib/get-variant-source";
 import { cn } from "@/lib/utils";
 import { Index } from "@/registry/__index__";
 import { Button } from "@/registry/default/ui/button";
@@ -164,9 +165,7 @@ export function VariantCard({ name, description }: VariantCardProps) {
     if (code !== null) return;
     setLoadingCode(true);
     try {
-      const res = await fetch(`/api/source/${name}`);
-      if (!res.ok) throw new Error(`${res.status}`);
-      const data = await res.json();
+      const data = await getVariantSource(name);
       setCode(data.code ?? "");
       setHighlightedHtml(data.html ?? null);
     } catch {
@@ -188,8 +187,7 @@ export function VariantCard({ name, description }: VariantCardProps) {
     }
     setLoadingCode(true);
     try {
-      const res = await fetch(`/api/source/${name}`);
-      const data = await res.json();
+      const data = await getVariantSource(name);
       const src = data.code ?? "";
       setCode(src);
       setHighlightedHtml(data.html ?? null);
