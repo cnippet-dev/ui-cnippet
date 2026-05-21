@@ -85,7 +85,7 @@ export function MobileNav({
                             return (
                               <MobileLink
                                 href={item.url}
-                                key={`${item.url}-${index}`}
+                                key={item.url}
                                 onOpenChange={setOpen}
                               >
                                 {item.name}

@@ -50,6 +50,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "check-types": "tsc --noEmit",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf .source",
     "dev": "next dev --port 4000",
     "format": "biome format --write .",

@@ -5,6 +5,7 @@ on:
 
 env:
   BUN_VERSION: 1.3.6
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   NEXT_TELEMETRY_DISABLED: 1
 
 jobs:
@@ -25,13 +26,11 @@ jobs:
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
           restore-keys: ${{ runner.os }}-bun-
 
-      # Next.js stores compiled page/component cache in .next/cache.
-      # Restoring it skips re-compiling unchanged files, cutting build time significantly.
       - name: Cache Next.js build cache
         uses: actions/cache@v4
         with:
-          path: apps/ui/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('apps/ui/**/*.ts', 'apps/ui/**/*.tsx', 'apps/ui/**/*.mts') }}
+          path: apps/v2/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('apps/v2/**/*.ts', 'apps/v2/**/*.tsx', 'apps/v2/**/*.mts') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
 
       - name: Install dependencies
