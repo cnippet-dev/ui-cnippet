@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-rolling-text-3",
+  "description": "Navigation links — roll down from above with per-item delay",
+  "registryDependencies": [
+    "@cnippet/rolling-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-rolling-text-3.tsx",
+      "content": "\"use client\";\n\nimport { RollingText } from \"@/registry/default/motion/rolling-text\";\n\nconst navItems = [\"Products\", \"Pricing\", \"Docs\", \"Blog\"];\n\nexport default function RollingTextNav() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-8 px-6\">\n      <nav className=\"flex items-center gap-8\">\n        {navItems.map((item, i) => (\n          <a\n            className=\"cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground\"\n            href=\"#\"\n            key={item}\n            onClick={(e) => e.preventDefault()}\n          >\n            <RollingText\n              delay={i * 0.07}\n              direction=\"down\"\n              duration={0.45}\n              staggerDuration={0.025}\n              transition={{ ease: [0.23, 1, 0.32, 1] }}\n            >\n              {item}\n            </RollingText>\n          </a>\n        ))}\n      </nav>\n      <p className=\"text-xs text-muted-foreground\">\n        direction=\"down\" — letters roll in from above\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

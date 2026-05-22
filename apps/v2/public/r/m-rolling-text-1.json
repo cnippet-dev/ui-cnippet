@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-rolling-text-1",
+  "description": "Hero headline — letters roll up with tight stagger on mount",
+  "registryDependencies": [
+    "@cnippet/rolling-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-rolling-text-1.tsx",
+      "content": "\"use client\";\n\nimport { RollingText } from \"@/registry/default/motion/rolling-text\";\n\nexport default function RollingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Introducing\n      </p>\n      <h1 className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <RollingText\n          direction=\"up\"\n          duration={0.6}\n          staggerDuration={0.04}\n        >\n          Design with purpose\n        </RollingText>\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

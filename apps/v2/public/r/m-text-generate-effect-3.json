@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-generate-effect-3",
+  "description": "Stacked content block — eyebrow, headline, and body with different stagger settings",
+  "registryDependencies": [
+    "@cnippet/text-generate-effect"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-generate-effect-3.tsx",
+      "content": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\n\nexport default function TextGenerateEffectStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\n      <TextGenerateEffect\n        as=\"p\"\n        className=\"text-xs font-semibold uppercase tracking-widest text-primary\"\n        filter={false}\n        staggerDuration={0.08}\n        transition={{ duration: 0.3 }}\n      >\n        What we offer\n      </TextGenerateEffect>\n      <TextGenerateEffect\n        as=\"h1\"\n        className=\"max-w-lg text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        filter\n        staggerDuration={0.09}\n        transition={{ duration: 0.55 }}\n      >\n        Animate anything effortlessly\n      </TextGenerateEffect>\n      <TextGenerateEffect\n        as=\"p\"\n        className=\"max-w-sm text-center text-sm text-muted-foreground\"\n        filter\n        staggerDuration={0.05}\n        transition={{ duration: 0.45 }}\n      >\n        Copy paste animated components built on Motion and Tailwind\n      </TextGenerateEffect>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

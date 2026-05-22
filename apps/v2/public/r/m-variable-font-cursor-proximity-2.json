@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-variable-font-cursor-proximity-2",
+  "description": "Dual lines — mirrored inverted axes with gaussian falloff",
+  "registryDependencies": [
+    "@cnippet/variable-font-cursor-proximity"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-2.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\n\nexport default function VariableFontCursorProximityDual() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\"\n    >\n      <VariableFontCursorProximity\n        containerRef={containerRef}\n        fromFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n        toFontVariationSettings=\"'wght' 900, 'slnt' -15\"\n        radius={100}\n        falloff=\"gaussian\"\n        className=\"text-5xl leading-tight\"\n      >\n        Hover around\n      </VariableFontCursorProximity>\n      <VariableFontCursorProximity\n        containerRef={containerRef}\n        fromFontVariationSettings=\"'wght' 900, 'slnt' -15\"\n        toFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n        radius={100}\n        falloff=\"gaussian\"\n        className=\"text-5xl leading-tight text-muted-foreground\"\n      >\n        to see axes flip\n      </VariableFontCursorProximity>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

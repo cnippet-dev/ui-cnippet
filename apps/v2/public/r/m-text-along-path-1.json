@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-along-path-1",
+  "description": "Circular badge — text loops continuously around a circular path",
+  "registryDependencies": [
+    "@cnippet/text-along-path"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-along-path-1.tsx",
+      "content": "\"use client\";\nimport { TextAlongPath } from \"@/registry/default/motion/text-along-path\";\n\nexport default function TextAlongPathCircle() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"size-44\">\n        <TextAlongPath\n          path=\"M 50,10 A 40,40 0 1,1 49.99,10\"\n          text=\"cnippet ui • motion components • \"\n          viewBox=\"0 0 100 100\"\n          animationType=\"auto\"\n          duration={8}\n          textClassName=\"text-[5px] fill-foreground font-medium uppercase tracking-widest\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

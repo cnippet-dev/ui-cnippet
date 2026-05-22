@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-generate-effect-2",
+  "description": "AI chat response — assistant card regenerates text on demand via trigger",
+  "registryDependencies": [
+    "@cnippet/text-generate-effect"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-generate-effect-2.tsx",
+      "content": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\nimport { useState } from \"react\";\n\nconst responses = [\n  \"Here are 164 animated components built on Motion and Tailwind CSS, ready to copy and paste into your project.\",\n  \"Each component ships with a source file, three real-world examples, and a CLI install command.\",\n];\n\nexport default function TextGenerateEffectAI() {\n  const [index, setIndex] = useState(0);\n  const [trigger, setTrigger] = useState(true);\n\n  const regenerate = () => {\n    setTrigger(false);\n    setTimeout(() => {\n      setIndex((i) => (i + 1) % responses.length);\n      setTrigger(true);\n    }, 50);\n  };\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-lg rounded-2xl border border-border bg-card p-6 shadow-sm\">\n        <div className=\"mb-3 flex items-center gap-2\">\n          <div className=\"h-6 w-6 rounded-full bg-gradient-to-br from-violet-500 to-pink-500\" />\n          <span className=\"text-xs font-semibold text-muted-foreground\">\n            AI Assistant\n          </span>\n        </div>\n        <TextGenerateEffect\n          as=\"p\"\n          className=\"text-sm leading-relaxed text-foreground\"\n          filter\n          key={index}\n          staggerDuration={0.06}\n          transition={{ duration: 0.4 }}\n          trigger={trigger}\n        >\n          {responses[index]!}\n        </TextGenerateEffect>\n        <button\n          className=\"mt-4 text-xs text-muted-foreground hover:text-foreground\"\n          onClick={regenerate}\n          type=\"button\"\n        >\n          ↺ Regenerate\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

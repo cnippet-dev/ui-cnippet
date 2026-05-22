@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-encrypted-text-1",
+  "description": "Hero headline — large heading decrypts left-to-right on mount",
+  "registryDependencies": [
+    "@cnippet/encrypted-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-encrypted-text-1.tsx",
+      "content": "\"use client\";\n\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\n\nexport default function EncryptedTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-xs font-semibold uppercase tracking-widest text-muted-foreground\">\n        Decrypting\n      </p>\n      <EncryptedText\n        className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        maxIterations={18}\n        revealDirection=\"ltr\"\n        speed={40}\n      >\n        Build with motion\n      </EncryptedText>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-rolling-text-2",
+  "description": "Stacked display lines — three lines with incremental delay offsets",
+  "registryDependencies": [
+    "@cnippet/rolling-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-rolling-text-2.tsx",
+      "content": "\"use client\";\n\nimport { RollingText } from \"@/registry/default/motion/rolling-text\";\n\nconst lines = [\n  { delay: 0, text: \"Motion\" },\n  { delay: 0.15, text: \"Components\" },\n  { delay: 0.3, text: \"That Ship\" },\n];\n\nexport default function RollingTextStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center px-6\">\n      <div className=\"text-center\">\n        {lines.map(({ text, delay }) => (\n          <div key={text}>\n            <RollingText\n              className=\"text-5xl font-black tracking-tighter text-foreground sm:text-6xl\"\n              delay={delay}\n              direction=\"up\"\n              duration={0.55}\n              perspective={600}\n              staggerDuration={0.03}\n            >\n              {text}\n            </RollingText>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

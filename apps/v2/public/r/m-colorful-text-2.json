@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-colorful-text-2",
+  "description": "Brand logotype — short all-caps word with custom violet-to-teal palette",
+  "registryDependencies": [
+    "@cnippet/colorful-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-colorful-text-2.tsx",
+      "content": "\"use client\";\n\nimport { ColorfulText } from \"@/registry/default/motion/colorful-text\";\n\nconst palette = [\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#10b981\"];\n\nexport default function ColorfulTextBrand() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <ColorfulText\n        as=\"h2\"\n        className=\"text-6xl font-black tracking-tighter\"\n        colors={palette}\n        staggerDuration={0.06}\n        transition={{ damping: 16, stiffness: 280, type: \"spring\" }}\n      >\n        CNIPPET\n      </ColorfulText>\n      <p className=\"text-sm text-muted-foreground\">\n        Custom brand palette — violet → teal\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

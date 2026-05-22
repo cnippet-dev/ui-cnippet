@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-swap-text-1",
+  "description": "Feature list — each item slides in as the scrollable container is scrolled",
+  "registryDependencies": [
+    "@cnippet/scroll-swap-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-swap-text-1.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\n\nconst features = [\n  \"Zero-config setup\",\n  \"Spring physics built-in\",\n  \"Accessible by default\",\n  \"TypeScript first\",\n  \"Tree-shakeable exports\",\n  \"Server component ready\",\n];\n\nexport default function ScrollSwapTextFeatureList() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div\n        ref={containerRef}\n        className=\"h-48 w-full max-w-sm overflow-y-scroll rounded-lg border border-border\"\n      >\n        {features.map((feature) => (\n          <ScrollSwapText\n            key={feature}\n            as=\"div\"\n            containerRef={containerRef}\n            className=\"border-b border-border px-5 py-4 text-base font-medium last:border-0\"\n          >\n            {feature}\n          </ScrollSwapText>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

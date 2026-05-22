@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-letter-3d-swap-1",
+  "description": "Navigation links — letters rotate upward on hover with colour change between faces",
+  "registryDependencies": [
+    "@cnippet/letter-3d-swap"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-letter-3d-swap-1.tsx",
+      "content": "\"use client\";\n\nimport { Letter3DSwap } from \"@/registry/default/motion/letter-3d-swap\";\n\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\n\nexport default function Letter3DSwapNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-8\">\n        {links.map((link) => (\n          <Letter3DSwap\n            as=\"a\"\n            frontFaceClassName=\"text-muted-foreground\"\n            key={link}\n            mainClassName=\"cursor-pointer text-sm font-medium hover:text-foreground\"\n            rotateDirection=\"top\"\n            secondFaceClassName=\"text-foreground\"\n            staggerDuration={0.04}\n            transition={{ damping: 28, stiffness: 320, type: \"spring\" }}\n          >\n            {link}\n          </Letter3DSwap>\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

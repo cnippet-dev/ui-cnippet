@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-splitting-text-3",
+  "description": "Stacked content block — eyebrow, headline, body with different presets",
+  "registryDependencies": [
+    "@cnippet/splitting-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-splitting-text-3.tsx",
+      "content": "\"use client\";\n\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\n\nexport default function SplittingTextStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6\">\n      <SplittingText\n        as=\"p\"\n        className=\"text-xs font-semibold uppercase tracking-widest text-primary\"\n        preset=\"fade\"\n        splitBy=\"chars\"\n        staggerDuration={0.04}\n        transition={{ duration: 0.4, ease: \"easeOut\" }}\n      >\n        New release\n      </SplittingText>\n      <SplittingText\n        as=\"h1\"\n        className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        preset=\"slide-up\"\n        splitBy=\"words\"\n        staggerDuration={0.08}\n        transition={{ damping: 20, stiffness: 200, type: \"spring\" }}\n      >\n        Animate anything, effortlessly\n      </SplittingText>\n      <SplittingText\n        as=\"p\"\n        className=\"mt-2 max-w-sm text-center text-sm text-muted-foreground\"\n        preset=\"blur\"\n        splitBy=\"words\"\n        staggerDuration={0.04}\n        transition={{ duration: 0.5, ease: \"easeOut\" }}\n      >\n        164 motion components built on Framer Motion and Tailwind CSS\n      </SplittingText>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

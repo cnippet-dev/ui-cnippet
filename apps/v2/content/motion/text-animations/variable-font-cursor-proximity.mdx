@@ -1,0 +1,100 @@
+---
+title: Variable Font Cursor Proximity
+description: Font variation axes respond in real time to cursor distance — characters closest to the cursor reach the target weight, slant, or width while those farther away remain at rest. Three falloff curves give precise control over the effect radius.
+---
+
+<ComponentPreview name="m-variable-font-cursor-proximity-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add variable-font-cursor-proximity
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="variable-font-cursor-proximity" title="components/motion/variable-font-cursor-proximity.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { VariableFontCursorProximity } from "@/components/motion/variable-font-cursor-proximity";
+```
+
+```tsx
+const containerRef = useRef<HTMLDivElement>(null);
+
+<div ref={containerRef}>
+  <VariableFontCursorProximity
+    containerRef={containerRef}
+    fromFontVariationSettings="'wght' 100"
+    toFontVariationSettings="'wght' 900"
+    radius={80}
+  >
+    Hover me
+  </VariableFontCursorProximity>
+</div>
+```
+
+> **Variable font required.** This component animates `font-variation-settings` directly. Your project must load a variable font that supports the axes you specify (e.g. Inter Variable for `wght` and `slnt`).
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | — | Text to animate |
+| `as` | `ElementType` | `"span"` | HTML element rendered as the container |
+| `fromFontVariationSettings` | `string` | — | **Required.** Font variation settings at rest |
+| `toFontVariationSettings` | `string` | — | **Required.** Font variation settings at full proximity |
+| `containerRef` | `RefObject<HTMLDivElement>` | — | **Required.** Ref of the element used as the mouse coordinate space |
+| `radius` | `number` | `50` | Pixel radius within which the effect is active |
+| `falloff` | `"linear" \| "exponential" \| "gaussian"` | `"linear"` | How the effect attenuates with distance |
+| `className` | `string` | — | Class on the outer element |
+
+## Examples
+
+### Hero Headline
+
+Single line grows from ultra-light to black as the cursor approaches each character. `radius={80}` gives a wide influence zone.
+
+<ComponentPreview name="m-variable-font-cursor-proximity-1" />
+
+### Dual Lines with Inverted Axes
+
+Two lines with mirrored settings — the first goes thin-to-bold while the second goes bold-to-thin. `falloff="gaussian"` creates a smooth bell-curve effect.
+
+<ComponentPreview name="m-variable-font-cursor-proximity-2" />
+
+### Navigation Links
+
+Four nav items respond to proximity with `falloff="exponential"` for a sharper, more focused effect near the cursor.
+
+<ComponentPreview name="m-variable-font-cursor-proximity-3" />

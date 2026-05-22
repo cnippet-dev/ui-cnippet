@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-swap-text-3",
+  "description": "Testimonial quotes — pull quotes scroll into view one at a time",
+  "registryDependencies": [
+    "@cnippet/scroll-swap-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-swap-text-3.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\n\nconst quotes = [\n  { text: \"The animation quality is exceptional.\", author: \"Sarah K.\" },\n  { text: \"Saved us weeks of development time.\", author: \"Marco R.\" },\n  { text: \"Our conversion rate jumped 30%.\", author: \"Priya M.\" },\n  { text: \"Best component library we have used.\", author: \"Tom B.\" },\n  { text: \"The docs are incredibly clear.\", author: \"Yuki T.\" },\n];\n\nexport default function ScrollSwapTextTestimonials() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div\n        ref={containerRef}\n        className=\"h-48 w-full max-w-sm overflow-y-scroll\"\n      >\n        {quotes.map((q, i) => (\n          <div key={i} className=\"border-b border-border px-1 py-5 last:border-0\">\n            <ScrollSwapText\n              as=\"p\"\n              containerRef={containerRef}\n              className=\"text-base italic text-foreground\"\n            >\n              {`\"${q.text}\"`}\n            </ScrollSwapText>\n            <p className=\"mt-1 text-sm text-muted-foreground\">{q.author}</p>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

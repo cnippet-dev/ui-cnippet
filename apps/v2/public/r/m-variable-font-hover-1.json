@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-variable-font-hover-1",
+  "description": "Navigation links — letters bold from center outward on hover",
+  "registryDependencies": [
+    "@cnippet/variable-font-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-variable-font-hover-1.tsx",
+      "content": "\"use client\";\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\n\nconst navLinks = [\"Products\", \"Solutions\", \"Pricing\", \"Company\", \"Blog\"];\n\nexport default function VariableFontHoverNav() {\n  return (\n    <nav className=\"flex min-h-50 flex-wrap items-center justify-center gap-8 px-6\">\n      {navLinks.map((link) => (\n        <VariableFontHover\n          key={link}\n          label={link}\n          fromFontVariationSettings=\"'wght' 400\"\n          toFontVariationSettings=\"'wght' 700\"\n          staggerFrom=\"center\"\n          staggerDuration={0.03}\n          className=\"cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground\"\n        />\n      ))}\n    </nav>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

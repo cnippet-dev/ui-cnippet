@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-breathing-text-2",
+  "description": "Center pulse — short logotype word pulses outward from center",
+  "registryDependencies": [
+    "@cnippet/breathing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-breathing-text-2.tsx",
+      "content": "\"use client\";\n\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\n\nexport default function BreathingTextCenter() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <BreathingText\n        as=\"h2\"\n        className=\"text-5xl font-black tracking-tighter text-foreground sm:text-6xl\"\n        fromFontVariationSettings=\"'wght' 200\"\n        repeatDelay={0.5}\n        staggerDuration={0.12}\n        staggerFrom=\"center\"\n        toFontVariationSettings=\"'wght' 900\"\n        transition={{ duration: 1.8, ease: \"easeInOut\" }}\n      >\n        CNIPPET\n      </BreathingText>\n      <p className=\"text-sm text-muted-foreground\">\n        Weight pulse expanding from center\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

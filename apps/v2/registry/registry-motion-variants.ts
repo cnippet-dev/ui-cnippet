@@ -438,6 +438,76 @@ export const motionVariants: MotionVariantItem[] = [
     }),
   ),
 
+  // --- scroll-swap-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["scroll-swap-text"],
+      description: [
+        "Feature list — each item slides in as the scrollable container is scrolled",
+        "Step-by-step process — numbered steps swap in as they cross the scroll threshold",
+        "Testimonial quotes — pull quotes scroll into view one at a time",
+      ][i],
+      name: `m-scroll-swap-text-${i + 1}`,
+    }),
+  ),
+
+  // --- variable-font-hover ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["variable-font-hover"],
+      description: [
+        "Navigation links — letters bold from center outward on hover",
+        "Hero headline — two lines with inverted weight axes contrast on hover",
+        "CTA links — three links each using a different staggerFrom origin",
+      ][i],
+      name: `m-variable-font-hover-${i + 1}`,
+    }),
+  ),
+
+  // --- variable-font-cursor-proximity ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["variable-font-cursor-proximity"],
+      description: [
+        "Hero headline — characters grow from ultra-light to black near cursor",
+        "Dual lines — mirrored inverted axes with gaussian falloff",
+        "Navigation — nav items respond to proximity with exponential falloff",
+      ][i],
+      name: `m-variable-font-cursor-proximity-${i + 1}`,
+    }),
+  ),
+
+  // --- text-cursor-proximity ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["text-cursor-proximity"],
+      description: [
+        "Scale — characters grow as cursor approaches with linear falloff",
+        "Opacity reveal — two hidden lines appear as cursor sweeps with gaussian falloff",
+        "Scale and color — characters grow and shift colour with exponential falloff",
+      ][i],
+      name: `m-text-cursor-proximity-${i + 1}`,
+    }),
+  ),
+
+  // --- text-along-path ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["text-along-path"],
+      description: [
+        "Circular badge — text loops continuously around a circular path",
+        "Wave path — text flows along a sinusoidal wave in auto mode",
+        "Curved path with visible stroke — cubic Bézier with showPath for debugging",
+      ][i],
+      name: `m-text-along-path-${i + 1}`,
+    }),
+  ),
+
   // --- scroll-reveal ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({

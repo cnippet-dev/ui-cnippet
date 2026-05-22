@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-morphing-text-3",
+  "description": "Hero section — morphing headline anchored by static eyebrow and body copy",
+  "registryDependencies": [
+    "@cnippet/morphing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-morphing-text-3.tsx",
+      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/motion/morphing-text\";\n\nexport default function MorphingTextHeroSection() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-xs font-semibold uppercase tracking-widest text-primary\">\n        What will you build?\n      </p>\n      <MorphingText\n        className=\"text-foreground\"\n        texts={[\"Landing pages\", \"Dashboards\", \"Design systems\", \"SaaS apps\"]}\n      />\n      <p className=\"max-w-xs text-center text-sm text-muted-foreground\">\n        164 animated components, ready to drop into any project.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

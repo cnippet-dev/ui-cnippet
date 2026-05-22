@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-cursor-proximity-3",
+  "description": "Scale and color — characters grow and shift colour with exponential falloff",
+  "registryDependencies": [
+    "@cnippet/text-cursor-proximity"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-cursor-proximity-3.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\n\nexport default function TextCursorProximityColor() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6 text-center\"\n    >\n      <TextCursorProximity\n        containerRef={containerRef}\n        styles={{\n          scale: { from: 1, to: 1.4 },\n          color: {\n            from: \"hsl(var(--muted-foreground))\",\n            to: \"hsl(var(--foreground))\",\n          },\n        }}\n        radius={70}\n        falloff=\"exponential\"\n        className=\"text-5xl font-bold tracking-tight\"\n      >\n        Scale and Color\n      </TextCursorProximity>\n      <p className=\"text-sm text-muted-foreground\">\n        exponential falloff — sharp proximity threshold\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-variable-font-cursor-proximity-3",
+  "description": "Navigation — nav items respond to proximity with exponential falloff",
+  "registryDependencies": [
+    "@cnippet/variable-font-cursor-proximity"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-3.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\n\nconst navItems = [\"Home\", \"Work\", \"About\", \"Contact\"];\n\nexport default function VariableFontCursorProximityNav() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <nav\n      ref={containerRef}\n      className=\"flex min-h-50 flex-wrap items-center justify-center gap-10 px-6\"\n    >\n      {navItems.map((item) => (\n        <VariableFontCursorProximity\n          key={item}\n          containerRef={containerRef}\n          fromFontVariationSettings=\"'wght' 300\"\n          toFontVariationSettings=\"'wght' 800\"\n          radius={60}\n          falloff=\"exponential\"\n          className=\"cursor-pointer text-xl text-muted-foreground\"\n        >\n          {item}\n        </VariableFontCursorProximity>\n      ))}\n    </nav>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

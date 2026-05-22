@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-breathing-text-1",
+  "description": "Weight + width wave — wght and wdth axes breathe left to right",
+  "registryDependencies": [
+    "@cnippet/breathing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-breathing-text-1.tsx",
+      "content": "\"use client\";\n\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\n\nexport default function BreathingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <BreathingText\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        fromFontVariationSettings=\"'wght' 300, 'wdth' 75\"\n        staggerDuration={0.08}\n        staggerFrom=\"first\"\n        toFontVariationSettings=\"'wght' 900, 'wdth' 125\"\n        transition={{ duration: 2, ease: \"easeInOut\" }}\n      >\n        Build with motion\n      </BreathingText>\n      <p className=\"text-sm text-muted-foreground\">\n        Weight + width axis breathing left to right\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-variable-font-hover-3",
+  "description": "CTA links — three links each using a different staggerFrom origin",
+  "registryDependencies": [
+    "@cnippet/variable-font-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-variable-font-hover-3.tsx",
+      "content": "\"use client\";\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\n\nconst items = [\n  {\n    label: \"Get started free\",\n    from: \"'wght' 400\",\n    to: \"'wght' 800\",\n    from2: \"first\" as const,\n  },\n  {\n    label: \"View documentation\",\n    from: \"'wght' 300\",\n    to: \"'wght' 700\",\n    from2: \"center\" as const,\n  },\n  {\n    label: \"See examples\",\n    from: \"'wght' 400\",\n    to: \"'wght' 900\",\n    from2: \"last\" as const,\n  },\n];\n\nexport default function VariableFontHoverCTA() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      {items.map((item) => (\n        <VariableFontHover\n          key={item.label}\n          label={item.label}\n          fromFontVariationSettings={item.from}\n          toFontVariationSettings={item.to}\n          staggerFrom={item.from2}\n          staggerDuration={0.02}\n          className=\"cursor-pointer text-2xl text-foreground\"\n        />\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

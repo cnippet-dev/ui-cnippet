@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-letter-3d-swap-3",
+  "description": "Direction showcase — four rows compare top, right, bottom, and left rotations",
+  "registryDependencies": [
+    "@cnippet/letter-3d-swap"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-letter-3d-swap-3.tsx",
+      "content": "\"use client\";\n\nimport { Letter3DSwap } from \"@/registry/default/motion/letter-3d-swap\";\n\nconst directions = [\"top\", \"right\", \"bottom\", \"left\"] as const;\n\nexport default function Letter3DSwapDirections() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <p className=\"text-xs text-muted-foreground\">Hover each row</p>\n      <div className=\"space-y-3\">\n        {directions.map((dir) => (\n          <div className=\"flex items-center gap-3\" key={dir}>\n            <span className=\"w-14 text-right text-xs text-muted-foreground\">\n              {dir}\n            </span>\n            <Letter3DSwap\n              frontFaceClassName=\"text-foreground\"\n              mainClassName=\"text-2xl font-bold\"\n              rotateDirection={dir}\n              secondFaceClassName=\"text-primary\"\n              staggerDuration={0.04}\n              transition={{ damping: 26, stiffness: 300, type: \"spring\" }}\n            >\n              CNIPPET\n            </Letter3DSwap>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

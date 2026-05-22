@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-colorful-text-1",
+  "description": "Hero headline — full sentence reveals character-by-character with random vibrant colours",
+  "registryDependencies": [
+    "@cnippet/colorful-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-colorful-text-1.tsx",
+      "content": "\"use client\";\n\nimport { ColorfulText } from \"@/registry/default/motion/colorful-text\";\n\nexport default function ColorfulTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <ColorfulText\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\n        staggerDuration={0.04}\n      >\n        Build beautiful interfaces\n      </ColorfulText>\n      <p className=\"text-sm text-muted-foreground\">\n        Each character animates in with a randomised vibrant colour\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

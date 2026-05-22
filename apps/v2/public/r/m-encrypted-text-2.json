@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-encrypted-text-2",
+  "description": "Terminal session — CLI commands decrypt sequentially on Enter",
+  "registryDependencies": [
+    "@cnippet/encrypted-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-encrypted-text-2.tsx",
+      "content": "\"use client\";\n\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\nimport { useState } from \"react\";\n\nexport default function EncryptedTextTerminal() {\n  const [step, setStep] = useState(0);\n\n  const commands = [\n    \"npx cnippet@latest add text-reveal\",\n    \"npx cnippet@latest add scroll-reveal\",\n    \"npx cnippet@latest add spinning-text\",\n  ];\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-lg rounded-xl border border-border bg-neutral-950 p-5 shadow-xl\">\n        <div className=\"mb-3 flex items-center gap-1.5\">\n          <span className=\"h-3 w-3 rounded-full bg-red-500\" />\n          <span className=\"h-3 w-3 rounded-full bg-yellow-500\" />\n          <span className=\"h-3 w-3 rounded-full bg-green-500\" />\n        </div>\n        <div className=\"space-y-2 font-mono text-sm\">\n          {commands.slice(0, step + 1).map((cmd, i) => (\n            <div className=\"flex\" key={cmd}>\n              <span className=\"mr-2 text-neutral-500\">$</span>\n              <EncryptedText\n                className=\"text-green-400\"\n                key={i}\n                maxIterations={12}\n                revealDirection=\"ltr\"\n                speed={35}\n              >\n                {cmd}\n              </EncryptedText>\n            </div>\n          ))}\n        </div>\n        {step < commands.length - 1 && (\n          <button\n            className=\"mt-4 text-xs text-neutral-500 hover:text-neutral-300\"\n            onClick={() => setStep((s) => s + 1)}\n            type=\"button\"\n          >\n            Press Enter ↵\n          </button>\n        )}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

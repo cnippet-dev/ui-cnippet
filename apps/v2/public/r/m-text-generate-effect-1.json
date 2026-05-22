@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-generate-effect-1",
+  "description": "Hero headline — word-by-word blur-fade reveal for landing page headings",
+  "registryDependencies": [
+    "@cnippet/text-generate-effect"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-generate-effect-1.tsx",
+      "content": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\n\nexport default function TextGenerateEffectHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextGenerateEffect\n        as=\"h1\"\n        className=\"max-w-xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        filter\n        staggerDuration={0.1}\n        transition={{ duration: 0.5 }}\n      >\n        Motion components for modern web apps\n      </TextGenerateEffect>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

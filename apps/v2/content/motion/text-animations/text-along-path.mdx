@@ -1,0 +1,101 @@
+---
+title: Text Along Path
+description: Text follows a custom SVG path — continuously looping in auto mode or scrubbing with scroll. Supports any SVG path shape and exposes the path stroke for visual debugging.
+---
+
+<ComponentPreview name="m-text-along-path-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-along-path
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-along-path" title="components/motion/text-along-path.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextAlongPath } from "@/components/motion/text-along-path";
+```
+
+```tsx
+<TextAlongPath
+  path="M 50,10 A 40,40 0 1,1 49.99,10"
+  text="Circular text • "
+  viewBox="0 0 100 100"
+  animationType="auto"
+  duration={6}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `path` | `string` | — | **Required.** SVG path `d` attribute — any valid path string |
+| `text` | `string` | — | **Required.** Text content placed along the path |
+| `animationType` | `"auto" \| "scroll"` | `"auto"` | `"auto"` loops continuously; `"scroll"` ties offset to scroll position |
+| `duration` | `number` | `4` | Seconds for one full loop (auto mode only) |
+| `repeatCount` | `number \| "indefinite"` | `"indefinite"` | Number of animation repetitions (auto mode only) |
+| `viewBox` | `string` | `"0 0 100 100"` | SVG viewBox — coordinate space for the path |
+| `width` | `string \| number` | `"100%"` | SVG width |
+| `height` | `string \| number` | `"100%"` | SVG height |
+| `showPath` | `boolean` | `false` | Render the path stroke for visual debugging |
+| `pathClassName` | `string` | — | Class on the `<path>` element |
+| `textClassName` | `string` | — | Class on the `<textPath>` element |
+| `textAnchor` | `"start" \| "middle" \| "end"` | `"start"` | SVG text anchor |
+| `svgClassName` | `string` | — | Class on the outer `<svg>` |
+| `scrollContainer` | `RefObject<HTMLElement>` | — | Scrollable container for scroll mode |
+| `scrollOffset` | `UseScrollOptions["offset"]` | `["start end", "end end"]` | Scroll offset range for scroll mode |
+| `scrollTransformValues` | `[number, number]` | `[0, 100]` | Path offset range (%) mapped to scroll progress |
+
+## Examples
+
+### Circular Badge
+
+Text loops continuously around a circular path — classic badge or stamp design. Repeat the text with a bullet separator so the loop is seamless.
+
+<ComponentPreview name="m-text-along-path-1" />
+
+### Wave Path
+
+Text flows along a sinusoidal wave with `animationType="auto"`. Adjust `Q` control points to steepen or flatten the wave.
+
+<ComponentPreview name="m-text-along-path-2" />
+
+### Curved Path with Visible Stroke
+
+A cubic Bézier curve with `showPath={true}` reveals the guide path in a muted colour — useful during design to position text before hiding the stroke.
+
+<ComponentPreview name="m-text-along-path-3" />

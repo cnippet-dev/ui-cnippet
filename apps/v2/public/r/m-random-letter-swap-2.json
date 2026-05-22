@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-random-letter-swap-2",
+  "description": "CTA buttons — two buttons with reverse prop contrast for visual distinction",
+  "registryDependencies": [
+    "@cnippet/random-letter-swap"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-random-letter-swap-2.tsx",
+      "content": "\"use client\";\n\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\n\nexport default function RandomLetterSwapButtons() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <button\n        className=\"inline-flex rounded-full bg-foreground px-7 py-3 text-base font-semibold\"\n        type=\"button\"\n      >\n        <RandomLetterSwap\n          className=\"text-background\"\n          label=\"Get started\"\n          reverse={false}\n          staggerDuration={0.02}\n          transition={{ duration: 0.65, type: \"spring\" }}\n        />\n      </button>\n      <button\n        className=\"inline-flex rounded-full border border-border px-7 py-3 text-base font-semibold text-foreground\"\n        type=\"button\"\n      >\n        <RandomLetterSwap\n          className=\"text-foreground\"\n          label=\"View source\"\n          staggerDuration={0.02}\n          transition={{ duration: 0.65, type: \"spring\" }}\n        />\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

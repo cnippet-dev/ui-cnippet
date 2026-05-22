@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-colorful-text-3",
+  "description": "Cycling phrases — button replays the colour animation across multiple phrases",
+  "registryDependencies": [
+    "@cnippet/colorful-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-colorful-text-3.tsx",
+      "content": "\"use client\";\n\nimport { ColorfulText } from \"@/registry/default/motion/colorful-text\";\nimport { useState } from \"react\";\n\nconst phrases = [\n  \"Animate with purpose\",\n  \"Ship motion fast\",\n  \"Copy. Paste. Done.\",\n];\n\nexport default function ColorfulTextCycle() {\n  const [index, setIndex] = useState(0);\n  const [trigger, setTrigger] = useState(true);\n\n  const next = () => {\n    setTrigger(false);\n    setTimeout(() => {\n      setIndex((i) => (i + 1) % phrases.length);\n      setTrigger(true);\n    }, 50);\n  };\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"flex h-16 items-center justify-center\">\n        <ColorfulText\n          as=\"h2\"\n          className=\"text-center text-2xl font-bold sm:text-3xl\"\n          key={index}\n          staggerDuration={0.035}\n          trigger={trigger}\n        >\n          {phrases[index]!}\n        </ColorfulText>\n      </div>\n      <button\n        className=\"rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background hover:bg-foreground/80\"\n        onClick={next}\n        type=\"button\"\n      >\n        Next phrase →\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

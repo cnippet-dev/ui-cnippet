@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-random-letter-swap-3",
+  "description": "Tag chips — technology tags inside pill badges shuffle on hover",
+  "registryDependencies": [
+    "@cnippet/random-letter-swap"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-random-letter-swap-3.tsx",
+      "content": "\"use client\";\n\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\n\nconst tags = [\"motion\", \"react\", \"tailwind\", \"typescript\", \"open-source\"];\n\nexport default function RandomLetterSwapTags() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      <p className=\"text-sm text-muted-foreground\">Hover a tag</p>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {tags.map((tag) => (\n          <div\n            className=\"rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium\"\n            key={tag}\n          >\n            <RandomLetterSwap\n              className=\"text-foreground\"\n              label={tag}\n              staggerDuration={0.018}\n              transition={{ duration: 0.55, type: \"spring\" }}\n            />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

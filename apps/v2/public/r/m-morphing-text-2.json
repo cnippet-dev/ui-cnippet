@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-morphing-text-2",
+  "description": "Tech stack card — stack names morph inside a product card",
+  "registryDependencies": [
+    "@cnippet/morphing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-morphing-text-2.tsx",
+      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/motion/morphing-text\";\n\nexport default function MorphingTextCard() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-sm rounded-2xl border border-border bg-card p-8 text-center shadow-sm\">\n        <p className=\"mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground\">\n          Powered by\n        </p>\n        <MorphingText\n          className=\"h-12 text-foreground [font-size:32pt]\"\n          texts={[\"Motion\", \"React\", \"Tailwind\", \"TypeScript\"]}\n        />\n        <p className=\"mt-3 text-sm text-muted-foreground\">\n          The modern stack for animated UIs\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

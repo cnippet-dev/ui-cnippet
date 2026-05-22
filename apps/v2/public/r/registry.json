@@ -15574,6 +15574,306 @@
       "categories": [
         "text animation"
       ],
+      "description": "Weight + width wave — wght and wdth axes breathe left to right",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-breathing-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-breathing-text-1",
+      "registryDependencies": [
+        "@cnippet/breathing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Center pulse — short logotype word pulses outward from center",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-breathing-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-breathing-text-2",
+      "registryDependencies": [
+        "@cnippet/breathing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Heading + subtitle pair — two instances with opposite stagger directions",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-breathing-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-breathing-text-3",
+      "registryDependencies": [
+        "@cnippet/breathing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — word-level slide-up with spring transition",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-splitting-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-splitting-text-1",
+      "registryDependencies": [
+        "@cnippet/splitting-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Preset explorer — buttons switch all five presets on character-level split",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-splitting-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-splitting-text-2",
+      "registryDependencies": [
+        "@cnippet/splitting-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stacked content block — eyebrow, headline, body with different presets",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-splitting-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-splitting-text-3",
+      "registryDependencies": [
+        "@cnippet/splitting-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — letters roll up with tight stagger on mount",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rolling-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rolling-text-1",
+      "registryDependencies": [
+        "@cnippet/rolling-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stacked display lines — three lines with incremental delay offsets",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rolling-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rolling-text-2",
+      "registryDependencies": [
+        "@cnippet/rolling-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — roll down from above with per-item delay",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rolling-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rolling-text-3",
+      "registryDependencies": [
+        "@cnippet/rolling-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero inline — adjectives rotate inside a heading with stable width",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rotating-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rotating-text-1",
+      "registryDependencies": [
+        "@cnippet/rotating-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Framed CTA — action phrases rotate inside a bordered card",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rotating-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rotating-text-2",
+      "registryDependencies": [
+        "@cnippet/rotating-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Testimonial audience — direction down cycles target audience descriptor",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-rotating-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-rotating-text-3",
+      "registryDependencies": [
+        "@cnippet/rotating-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Auto-cycling hero words — four short action words blur-dissolve in sequence",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-morphing-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-morphing-text-1",
+      "registryDependencies": [
+        "@cnippet/morphing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Tech stack card — stack names morph inside a product card",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-morphing-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-morphing-text-2",
+      "registryDependencies": [
+        "@cnippet/morphing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero section — morphing headline anchored by static eyebrow and body copy",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-morphing-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-morphing-text-3",
+      "registryDependencies": [
+        "@cnippet/morphing-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
       "description": "Badge ring — spinning label orbits a centered icon",
       "files": [
         {
@@ -15807,6 +16107,606 @@
       "name": "m-counting-number-3",
       "registryDependencies": [
         "@cnippet/counting-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — full sentence reveals character-by-character with random vibrant colours",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-colorful-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-colorful-text-1",
+      "registryDependencies": [
+        "@cnippet/colorful-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Brand logotype — short all-caps word with custom violet-to-teal palette",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-colorful-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-colorful-text-2",
+      "registryDependencies": [
+        "@cnippet/colorful-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Cycling phrases — button replays the colour animation across multiple phrases",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-colorful-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-colorful-text-3",
+      "registryDependencies": [
+        "@cnippet/colorful-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — large heading decrypts left-to-right on mount",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-encrypted-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-encrypted-text-1",
+      "registryDependencies": [
+        "@cnippet/encrypted-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Terminal session — CLI commands decrypt sequentially on Enter",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-encrypted-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-encrypted-text-2",
+      "registryDependencies": [
+        "@cnippet/encrypted-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Direction picker — buttons replay with each of four revealDirection values",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-encrypted-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-encrypted-text-3",
+      "registryDependencies": [
+        "@cnippet/encrypted-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — word-by-word blur-fade reveal for landing page headings",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-generate-effect-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-generate-effect-1",
+      "registryDependencies": [
+        "@cnippet/text-generate-effect"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "AI chat response — assistant card regenerates text on demand via trigger",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-generate-effect-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-generate-effect-2",
+      "registryDependencies": [
+        "@cnippet/text-generate-effect"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stacked content block — eyebrow, headline, and body with different stagger settings",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-generate-effect-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-generate-effect-3",
+      "registryDependencies": [
+        "@cnippet/text-generate-effect"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — letters rotate upward on hover with colour change between faces",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-3d-swap-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-3d-swap-1",
+      "registryDependencies": [
+        "@cnippet/letter-3d-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA buttons — filled and outlined buttons with opposite rotateDirection values",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-3d-swap-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-3d-swap-2",
+      "registryDependencies": [
+        "@cnippet/letter-3d-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Direction showcase — four rows compare top, right, bottom, and left rotations",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-3d-swap-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-3d-swap-3",
+      "registryDependencies": [
+        "@cnippet/letter-3d-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — each link shuffles independently on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-random-letter-swap-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-random-letter-swap-1",
+      "registryDependencies": [
+        "@cnippet/random-letter-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA buttons — two buttons with reverse prop contrast for visual distinction",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-random-letter-swap-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-random-letter-swap-2",
+      "registryDependencies": [
+        "@cnippet/random-letter-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Tag chips — technology tags inside pill badges shuffle on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-random-letter-swap-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-random-letter-swap-3",
+      "registryDependencies": [
+        "@cnippet/random-letter-swap"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Feature list — each item slides in as the scrollable container is scrolled",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-swap-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-swap-text-1",
+      "registryDependencies": [
+        "@cnippet/scroll-swap-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Step-by-step process — numbered steps swap in as they cross the scroll threshold",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-swap-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-swap-text-2",
+      "registryDependencies": [
+        "@cnippet/scroll-swap-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Testimonial quotes — pull quotes scroll into view one at a time",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-swap-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-swap-text-3",
+      "registryDependencies": [
+        "@cnippet/scroll-swap-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — letters bold from center outward on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-hover-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-hover-1",
+      "registryDependencies": [
+        "@cnippet/variable-font-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — two lines with inverted weight axes contrast on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-hover-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-hover-2",
+      "registryDependencies": [
+        "@cnippet/variable-font-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA links — three links each using a different staggerFrom origin",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-hover-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-hover-3",
+      "registryDependencies": [
+        "@cnippet/variable-font-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — characters grow from ultra-light to black near cursor",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-cursor-proximity-1",
+      "registryDependencies": [
+        "@cnippet/variable-font-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Dual lines — mirrored inverted axes with gaussian falloff",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-cursor-proximity-2",
+      "registryDependencies": [
+        "@cnippet/variable-font-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation — nav items respond to proximity with exponential falloff",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-variable-font-cursor-proximity-3",
+      "registryDependencies": [
+        "@cnippet/variable-font-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Scale — characters grow as cursor approaches with linear falloff",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-cursor-proximity-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-cursor-proximity-1",
+      "registryDependencies": [
+        "@cnippet/text-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Opacity reveal — two hidden lines appear as cursor sweeps with gaussian falloff",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-cursor-proximity-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-cursor-proximity-2",
+      "registryDependencies": [
+        "@cnippet/text-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Scale and color — characters grow and shift colour with exponential falloff",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-cursor-proximity-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-cursor-proximity-3",
+      "registryDependencies": [
+        "@cnippet/text-cursor-proximity"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Circular badge — text loops continuously around a circular path",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-along-path-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-along-path-1",
+      "registryDependencies": [
+        "@cnippet/text-along-path"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Wave path — text flows along a sinusoidal wave in auto mode",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-along-path-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-along-path-2",
+      "registryDependencies": [
+        "@cnippet/text-along-path"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Curved path with visible stroke — cubic Bézier with showPath for debugging",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-along-path-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-along-path-3",
+      "registryDependencies": [
+        "@cnippet/text-along-path"
       ],
       "type": "registry:block"
     },

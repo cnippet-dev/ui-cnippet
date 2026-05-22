@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-morphing-text-1",
+  "description": "Auto-cycling hero words — four short action words blur-dissolve in sequence",
+  "registryDependencies": [
+    "@cnippet/morphing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-morphing-text-1.tsx",
+      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/motion/morphing-text\";\n\nexport default function MorphingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <MorphingText\n        className=\"text-foreground\"\n        texts={[\"Innovate\", \"Create\", \"Inspire\", \"Deliver\"]}\n      />\n      <p className=\"text-sm text-muted-foreground\">\n        Blur-dissolve morphing between words\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

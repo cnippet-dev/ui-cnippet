@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-splitting-text-2",
+  "description": "Preset explorer — buttons switch all five presets on character-level split",
+  "registryDependencies": [
+    "@cnippet/splitting-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-splitting-text-2.tsx",
+      "content": "\"use client\";\n\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\nimport { useState } from \"react\";\n\nconst presets = [\"fade\", \"slide-up\", \"slide-down\", \"blur\", \"scale\"] as const;\n\nexport default function SplittingTextPresets() {\n  const [preset, setPreset] = useState<(typeof presets)[number]>(\"fade\");\n  const [key, setKey] = useState(0);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"h-14 flex items-center justify-center\">\n        <SplittingText\n          as=\"p\"\n          className=\"text-center text-2xl font-bold text-foreground\"\n          key={key}\n          preset={preset}\n          splitBy=\"chars\"\n          staggerDuration={0.03}\n        >\n          Cnippet Motion\n        </SplittingText>\n      </div>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {presets.map((p) => (\n          <button\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\n              p === preset\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={p}\n            onClick={() => {\n              setPreset(p);\n              setKey((k) => k + 1);\n            }}\n            type=\"button\"\n          >\n            {p}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

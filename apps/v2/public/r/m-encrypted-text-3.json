@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-encrypted-text-3",
+  "description": "Direction picker — buttons replay with each of four revealDirection values",
+  "registryDependencies": [
+    "@cnippet/encrypted-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-encrypted-text-3.tsx",
+      "content": "\"use client\";\n\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\nimport { useState } from \"react\";\n\nconst directions = [\"ltr\", \"rtl\", \"center\", \"random\"] as const;\n\nexport default function EncryptedTextDirections() {\n  const [dir, setDir] = useState<(typeof directions)[number]>(\"ltr\");\n  const [key, setKey] = useState(0);\n\n  const replay = (d: (typeof directions)[number]) => {\n    setDir(d);\n    setKey((k) => k + 1);\n  };\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"flex h-12 items-center justify-center\">\n        <EncryptedText\n          className=\"text-2xl font-bold text-foreground\"\n          key={key}\n          maxIterations={14}\n          revealDirection={dir}\n          speed={45}\n        >\n          Cnippet Motion\n        </EncryptedText>\n      </div>\n      <div className=\"flex gap-2\">\n        {directions.map((d) => (\n          <button\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\n              d === dir\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={d}\n            onClick={() => replay(d)}\n            type=\"button\"\n          >\n            {d}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,93 @@
+---
+title: Variable Font Hover
+description: Each letter's font variation axes — weight, slant, width — animate independently on hover with a configurable stagger, giving text a fluid, character-level morphing feel.
+---
+
+<ComponentPreview name="m-variable-font-hover-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add variable-font-hover
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="variable-font-hover" title="components/motion/variable-font-hover.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { VariableFontHover } from "@/components/motion/variable-font-hover";
+```
+
+```tsx
+<VariableFontHover
+  label="Get started"
+  fromFontVariationSettings="'wght' 400"
+  toFontVariationSettings="'wght' 800"
+/>
+```
+
+> **Variable font required.** This component animates `font-variation-settings` — your project must load a variable font that supports the axes you specify (e.g. Inter Variable for `wght` and `slnt`).
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | — | The text to display and animate |
+| `fromFontVariationSettings` | `string` | — | Font variation settings at rest (e.g. `"'wght' 400"`) |
+| `toFontVariationSettings` | `string` | — | Font variation settings on hover (e.g. `"'wght' 800"`) |
+| `staggerDuration` | `number` | `0.03` | Seconds between each letter's transition |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Where the stagger wave starts |
+| `transition` | `AnimationOptions` | `{ type: "spring", duration: 0.7 }` | Motion transition applied to each letter |
+| `className` | `string` | — | Class on the outer `<motion.span>` |
+| `onClick` | `() => void` | — | Click handler |
+
+## Examples
+
+### Navigation Links
+
+Nav links bold from the center outward on hover. `staggerFrom="center"` creates a symmetric wave that feels more natural for short words.
+
+<ComponentPreview name="m-variable-font-hover-1" />
+
+### Hero Headline
+
+Two headline lines with inverted settings — the first goes thin-to-bold while the second goes bold-to-thin, creating contrast as you hover between them.
+
+<ComponentPreview name="m-variable-font-hover-2" />
+
+### CTA Links
+
+Three call-to-action links each use a different `staggerFrom` origin — `first`, `center`, and `last` — so each line feels distinct despite sharing the same component.
+
+<ComponentPreview name="m-variable-font-hover-3" />

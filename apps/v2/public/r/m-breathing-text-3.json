@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-breathing-text-3",
+  "description": "Heading + subtitle pair — two instances with opposite stagger directions",
+  "registryDependencies": [
+    "@cnippet/breathing-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-breathing-text-3.tsx",
+      "content": "\"use client\";\n\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\n\nexport default function BreathingTextSubtitle() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <BreathingText\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        fromFontVariationSettings=\"'wght' 800\"\n        staggerDuration={0.06}\n        staggerFrom=\"last\"\n        toFontVariationSettings=\"'wght' 300\"\n        transition={{ duration: 2.2, ease: \"easeInOut\" }}\n      >\n        Motion primitives\n      </BreathingText>\n      <BreathingText\n        as=\"p\"\n        className=\"text-base text-muted-foreground\"\n        fromFontVariationSettings=\"'wght' 300\"\n        repeatDelay={0.2}\n        staggerDuration={0.04}\n        staggerFrom=\"last\"\n        toFontVariationSettings=\"'wght' 600\"\n        transition={{ duration: 1.6, ease: \"easeInOut\" }}\n      >\n        Copy-paste animated components for modern web apps\n      </BreathingText>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,96 @@
+---
+title: Text Cursor Proximity
+description: Characters scale, change colour, or transform based on how close the cursor is — any CSS property can be mapped from a resting value to a target value with three falloff curve options for shaping the effect.
+---
+
+<ComponentPreview name="m-text-cursor-proximity-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-cursor-proximity
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-cursor-proximity" title="components/motion/text-cursor-proximity.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextCursorProximity } from "@/components/motion/text-cursor-proximity";
+```
+
+```tsx
+const containerRef = useRef<HTMLDivElement>(null);
+
+<div ref={containerRef}>
+  <TextCursorProximity
+    containerRef={containerRef}
+    styles={{ scale: { from: 1, to: 1.5 } }}
+    radius={60}
+  >
+    Hover over me
+  </TextCursorProximity>
+</div>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | — | Text to animate |
+| `as` | `ElementType` | `"span"` | HTML element rendered as the container |
+| `styles` | `Partial<Record<CSSProperty, { from, to }>>` | — | **Required.** Map of CSS properties with `from` and `to` values driven by cursor proximity |
+| `containerRef` | `RefObject<HTMLDivElement>` | — | **Required.** Ref of the element used as the mouse coordinate space |
+| `radius` | `number` | `50` | Pixel radius within which the effect is active |
+| `falloff` | `"linear" \| "exponential" \| "gaussian"` | `"linear"` | How the effect attenuates with distance |
+| `className` | `string` | — | Class on the outer element |
+
+## Examples
+
+### Scale
+
+Characters scale up as the cursor approaches. The `radius` controls how large the influence zone is.
+
+<ComponentPreview name="m-text-cursor-proximity-1" />
+
+### Opacity Reveal
+
+Two lines start nearly invisible and reveal as the cursor sweeps over them. `falloff="gaussian"` creates a soft spotlight effect.
+
+<ComponentPreview name="m-text-cursor-proximity-2" />
+
+### Scale and Color
+
+Characters simultaneously grow and shift colour near the cursor. `falloff="exponential"` sharpens the threshold so the effect only activates very close.
+
+<ComponentPreview name="m-text-cursor-proximity-3" />

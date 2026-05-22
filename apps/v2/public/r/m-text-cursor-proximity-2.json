@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-cursor-proximity-2",
+  "description": "Opacity reveal — two hidden lines appear as cursor sweeps with gaussian falloff",
+  "registryDependencies": [
+    "@cnippet/text-cursor-proximity"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-cursor-proximity-2.tsx",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\n\nexport default function TextCursorProximityOpacity() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6 text-center\"\n    >\n      <TextCursorProximity\n        containerRef={containerRef}\n        styles={{ opacity: { from: 0.15, to: 1 } }}\n        radius={80}\n        falloff=\"gaussian\"\n        className=\"text-3xl font-semibold\"\n      >\n        Move cursor to reveal\n      </TextCursorProximity>\n      <TextCursorProximity\n        containerRef={containerRef}\n        styles={{ opacity: { from: 0.15, to: 1 } }}\n        radius={80}\n        falloff=\"gaussian\"\n        className=\"text-3xl font-semibold text-muted-foreground\"\n      >\n        the hidden message\n      </TextCursorProximity>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

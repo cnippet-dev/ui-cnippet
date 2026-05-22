@@ -1,0 +1,91 @@
+---
+title: Scroll Swap Text
+description: Text slides in from below as its scrollable container is navigated — the current copy exits upward while a clone rises into place, creating a smooth reveal tied directly to scroll position.
+---
+
+<ComponentPreview name="m-scroll-swap-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-swap-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-swap-text" title="components/motion/scroll-swap-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollSwapText } from "@/components/motion/scroll-swap-text";
+```
+
+```tsx
+const containerRef = useRef<HTMLDivElement>(null);
+
+<div ref={containerRef} className="h-64 overflow-y-scroll">
+  <ScrollSwapText containerRef={containerRef}>
+    Scrollable text item
+  </ScrollSwapText>
+</div>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | — | Text content to display and animate |
+| `as` | `ElementType` | `"span"` | HTML element rendered as the container |
+| `containerRef` | `RefObject<HTMLElement>` | — | **Required.** Ref to the scrollable container that drives the animation |
+| `offset` | `[string, string]` | `["0 0", "0 1"]` | Scroll offset range passed to Motion's `useScroll` |
+| `springConfig` | `{ stiffness?, damping?, mass? }` | `{ stiffness: 200, damping: 30 }` | Spring configuration for the scroll animation |
+| `className` | `string` | — | Class on the outer element |
+
+## Examples
+
+### Feature List
+
+A scrollable feature list where each item slides in as you scroll. Pass the same `containerRef` to every `ScrollSwapText` so they all track the same scroll container.
+
+<ComponentPreview name="m-scroll-swap-text-1" />
+
+### Step-by-Step Process
+
+Numbered steps in a compact scroll container — each label swaps in as it crosses the scroll threshold.
+
+<ComponentPreview name="m-scroll-swap-text-2" />
+
+### Testimonial Quotes
+
+Pull quotes scroll into view one at a time. The consistent swap motion creates a unified rhythm across all items.
+
+<ComponentPreview name="m-scroll-swap-text-3" />
