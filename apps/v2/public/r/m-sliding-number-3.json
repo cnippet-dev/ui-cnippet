@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sliding-number-3",
+  "description": "Pricing plan switcher — price and seat count animate on tier change",
+  "registryDependencies": [
+    "@cnippet/sliding-number"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sliding-number-3.tsx",
+      "content": "\"use client\";\n\nimport { SlidingNumber } from \"@/registry/default/motion/sliding-number\";\nimport { useState } from \"react\";\n\nconst presets = [\n  { label: \"Starter\", seats: 5, price: 29 },\n  { label: \"Pro\", seats: 20, price: 99 },\n  { label: \"Enterprise\", seats: 100, price: 349 },\n];\n\nexport default function SlidingNumberPricing() {\n  const [active, setActive] = useState(0);\n  const plan = presets[active]!;\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      <div className=\"flex gap-2\">\n        {presets.map((p, i) => (\n          <button\n            className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${\n              i === active\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={p.label}\n            onClick={() => setActive(i)}\n            type=\"button\"\n          >\n            {p.label}\n          </button>\n        ))}\n      </div>\n      <div className=\"rounded-2xl border border-border bg-card p-6 text-center\">\n        <div className=\"flex items-start justify-center gap-0.5\">\n          <span className=\"mt-2 text-xl font-semibold text-foreground\">$</span>\n          <span className=\"text-6xl font-bold text-foreground\">\n            <SlidingNumber value={plan.price} />\n          </span>\n          <span className=\"mt-4 text-sm text-muted-foreground\">/mo</span>\n        </div>\n        <p className=\"mt-2 text-sm text-muted-foreground\">\n          Up to <SlidingNumber value={plan.seats} /> seats\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

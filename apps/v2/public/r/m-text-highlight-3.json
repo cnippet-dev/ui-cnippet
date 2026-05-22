@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-highlight-3",
+  "description": "Direction picker — buttons call ref to demonstrate all four sweep directions",
+  "registryDependencies": [
+    "@cnippet/text-highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-highlight-3.tsx",
+      "content": "\"use client\";\n\nimport { TextHighlight, type TextHighlightRef } from \"@/registry/default/motion/text-highlight\";\nimport { useRef, useState } from \"react\";\n\nconst directions = [\"ltr\", \"rtl\", \"ttb\", \"btt\"] as const;\n\nexport default function TextHighlightDirections() {\n  const ref = useRef<TextHighlightRef>(null);\n  const [dir, setDir] = useState<(typeof directions)[number]>(\"ltr\");\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <p className=\"text-2xl font-bold text-foreground\">\n        <TextHighlight\n          direction={dir}\n          highlightColor=\"hsl(155, 70%, 75%)\"\n          ref={ref}\n          transition={{ bounce: 0, duration: 0.7, type: \"spring\" }}\n          triggerType=\"ref\"\n        >\n          Highlight direction\n        </TextHighlight>\n      </p>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {directions.map((d) => (\n          <button\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\n              d === dir\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={d}\n            onClick={() => {\n              setDir(d);\n              ref.current?.reset();\n              setTimeout(() => ref.current?.animate(d), 50);\n            }}\n            type=\"button\"\n          >\n            {d.toUpperCase()}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

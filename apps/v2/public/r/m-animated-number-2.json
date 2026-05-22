@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-animated-number-2",
+  "description": "Upload progress — percentage label animates alongside a CSS progress bar",
+  "registryDependencies": [
+    "@cnippet/animated-number"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-animated-number-2.tsx",
+      "content": "\"use client\";\n\nimport { AnimatedNumber } from \"@/registry/default/motion/animated-number\";\nimport { useState } from \"react\";\n\nconst snapValues = [0, 25, 50, 75, 100];\n\nexport default function AnimatedNumberProgress() {\n  const [progress, setProgress] = useState(0);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"w-full max-w-xs\">\n        <div className=\"mb-2 flex items-end justify-between\">\n          <p className=\"text-sm text-muted-foreground\">Upload progress</p>\n          <p className=\"text-xl font-bold tabular-nums text-foreground\">\n            <AnimatedNumber\n              springOptions={{ damping: 25, stiffness: 150 }}\n              value={progress}\n            />\n            %\n          </p>\n        </div>\n        <div className=\"h-2 w-full overflow-hidden rounded-full bg-accent\">\n          <div\n            className=\"h-full rounded-full bg-primary transition-all duration-500\"\n            style={{ width: `${progress}%` }}\n          />\n        </div>\n      </div>\n      <div className=\"flex gap-2\">\n        {snapValues.map((v) => (\n          <button\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\n              v === progress\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={v}\n            onClick={() => setProgress(v)}\n            type=\"button\"\n          >\n            {v}%\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

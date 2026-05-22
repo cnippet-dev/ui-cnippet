@@ -1,0 +1,85 @@
+---
+title: Random Letter Swap
+description: Letters swap in a randomised order on hover — each letter slides out and a copy slides in, but the sequence is shuffled for a glitchy, unpredictable feel.
+---
+
+<ComponentPreview name="m-random-letter-swap-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add random-letter-swap
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="random-letter-swap" title="components/motion/random-letter-swap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RandomLetterSwap } from "@/components/motion/random-letter-swap";
+```
+
+```tsx
+<RandomLetterSwap label="Get started" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | — | The text to display and animate |
+| `reverse` | `boolean` | `true` | `true` slides letters downward; `false` slides them upward |
+| `staggerDuration` | `number` | `0.02` | Seconds between each letter in the random sequence |
+| `transition` | `AnimationOptions` | `{ type: "spring", duration: 0.8 }` | Motion transition for each letter swap |
+| `className` | `string` | — | Class on the outer `<motion.span>` |
+| `onClick` | `() => void` | — | Click handler |
+
+## Examples
+
+### Navigation Links
+
+Each link shuffles independently on hover. The random order makes each nav item feel distinct even though they share the same component.
+
+<ComponentPreview name="m-random-letter-swap-1" />
+
+### CTA Buttons
+
+Two call-to-action buttons with `reverse={false}` on the primary so the letters slide up instead of down, creating visual contrast.
+
+<ComponentPreview name="m-random-letter-swap-2" />
+
+### Tag Chips
+
+Technology tags inside pill badges shuffle on hover. Short words with fast `staggerDuration` produce a rapid glitch pop.
+
+<ComponentPreview name="m-random-letter-swap-3" />

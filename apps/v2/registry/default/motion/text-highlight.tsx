@@ -81,10 +81,8 @@ export const TextHighlight = forwardRef<TextHighlightRef, TextHighlightProps>(
       setCurrentDirection(direction);
     }, [direction]);
 
-    const isInView =
-      triggerType === "inView"
-        ? useInView(componentRef, useInViewOptions)
-        : false;
+    const inViewResult = useInView(componentRef, useInViewOptions);
+    const isInView = triggerType === "inView" ? inViewResult : false;
 
     useImperativeHandle(ref, () => ({
       animate: (dir?: TextHighlightDirection) => {

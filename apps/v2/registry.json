@@ -15334,6 +15334,306 @@
       "categories": [
         "text animation"
       ],
+      "description": "Hero heading — violet to cyan looping gradient sweep",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-gradient-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-gradient-1",
+      "registryDependencies": [
+        "@cnippet/text-gradient"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Inline word accent — single word with fast orange-to-green sweep inside static heading",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-gradient-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-gradient-2",
+      "registryDependencies": [
+        "@cnippet/text-gradient"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Pricing cards — each tier has its own palette and speed",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-gradient-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-gradient-3",
+      "registryDependencies": [
+        "@cnippet/text-gradient"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Scroll triggered — key phrase highlights ltr on viewport entry",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-highlight-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-highlight-1",
+      "registryDependencies": [
+        "@cnippet/text-highlight"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hover triggered — highlight fills in on mouse enter and resets on leave",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-highlight-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-highlight-2",
+      "registryDependencies": [
+        "@cnippet/text-highlight"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Direction picker — buttons call ref to demonstrate all four sweep directions",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-highlight-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-highlight-3",
+      "registryDependencies": [
+        "@cnippet/text-highlight"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Increment/decrement — +/- buttons drive a single odometer display",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sliding-number-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sliding-number-1",
+      "registryDependencies": [
+        "@cnippet/sliding-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Live clock — hours, minutes, seconds as separate padded sliding numbers",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sliding-number-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sliding-number-2",
+      "registryDependencies": [
+        "@cnippet/sliding-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Pricing plan switcher — price and seat count animate on tier change",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sliding-number-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sliding-number-3",
+      "registryDependencies": [
+        "@cnippet/sliding-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stepper — +10/-10 buttons spring the figure through intermediate values",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-animated-number-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-animated-number-1",
+      "registryDependencies": [
+        "@cnippet/animated-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Upload progress — percentage label animates alongside a CSS progress bar",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-animated-number-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-animated-number-2",
+      "registryDependencies": [
+        "@cnippet/animated-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Dashboard metrics — three KPI cards spring on multiplier toggle",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-animated-number-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-animated-number-3",
+      "registryDependencies": [
+        "@cnippet/animated-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Badge ring — spinning label orbits a centered icon",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-spinning-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-spinning-text-1",
+      "registryDependencies": [
+        "@cnippet/spinning-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA orbit — reversed ring around a clickable arrow button",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-spinning-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-spinning-text-2",
+      "registryDependencies": [
+        "@cnippet/spinning-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Concentric rings — two rings at different radii, speeds, and directions",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-spinning-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-spinning-text-3",
+      "registryDependencies": [
+        "@cnippet/spinning-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
       "description": "Hero headline — letter-by-letter 3D roll reveal for a landing page heading",
       "files": [
         {

@@ -186,6 +186,146 @@ export const motionVariants: MotionVariantItem[] = [
     }),
   ),
 
+  // --- text-gradient ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["text-gradient"],
+      description: [
+        "Hero heading — violet to cyan looping gradient sweep",
+        "Inline word accent — single word with fast orange-to-green sweep inside static heading",
+        "Pricing cards — each tier has its own palette and speed",
+      ][i],
+      name: `m-text-gradient-${i + 1}`,
+    }),
+  ),
+
+  // --- text-highlight ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["text-highlight"],
+      description: [
+        "Scroll triggered — key phrase highlights ltr on viewport entry",
+        "Hover triggered — highlight fills in on mouse enter and resets on leave",
+        "Direction picker — buttons call ref to demonstrate all four sweep directions",
+      ][i],
+      name: `m-text-highlight-${i + 1}`,
+    }),
+  ),
+
+  // --- sliding-number ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["sliding-number"],
+      description: [
+        "Increment/decrement — +/- buttons drive a single odometer display",
+        "Live clock — hours, minutes, seconds as separate padded sliding numbers",
+        "Pricing plan switcher — price and seat count animate on tier change",
+      ][i],
+      name: `m-sliding-number-${i + 1}`,
+    }),
+  ),
+
+  // --- animated-number ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["animated-number"],
+      description: [
+        "Stepper — +10/-10 buttons spring the figure through intermediate values",
+        "Upload progress — percentage label animates alongside a CSS progress bar",
+        "Dashboard metrics — three KPI cards spring on multiplier toggle",
+      ][i],
+      name: `m-animated-number-${i + 1}`,
+    }),
+  ),
+
+  // --- breathing-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["breathing-text"],
+      description: [
+        "Weight + width wave — wght and wdth axes breathe left to right",
+        "Center pulse — short logotype word pulses outward from center",
+        "Heading + subtitle pair — two instances with opposite stagger directions",
+      ][i],
+      name: `m-breathing-text-${i + 1}`,
+    }),
+  ),
+
+  // --- splitting-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["splitting-text"],
+      description: [
+        "Hero headline — word-level slide-up with spring transition",
+        "Preset explorer — buttons switch all five presets on character-level split",
+        "Stacked content block — eyebrow, headline, body with different presets",
+      ][i],
+      name: `m-splitting-text-${i + 1}`,
+    }),
+  ),
+
+  // --- rolling-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["rolling-text"],
+      description: [
+        "Hero headline — letters roll up with tight stagger on mount",
+        "Stacked display lines — three lines with incremental delay offsets",
+        "Navigation links — roll down from above with per-item delay",
+      ][i],
+      name: `m-rolling-text-${i + 1}`,
+    }),
+  ),
+
+  // --- rotating-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["rotating-text"],
+      description: [
+        "Hero inline — adjectives rotate inside a heading with stable width",
+        "Framed CTA — action phrases rotate inside a bordered card",
+        "Testimonial audience — direction down cycles target audience descriptor",
+      ][i],
+      name: `m-rotating-text-${i + 1}`,
+    }),
+  ),
+
+  // --- morphing-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["morphing-text"],
+      description: [
+        "Auto-cycling hero words — four short action words blur-dissolve in sequence",
+        "Tech stack card — stack names morph inside a product card",
+        "Hero section — morphing headline anchored by static eyebrow and body copy",
+      ][i],
+      name: `m-morphing-text-${i + 1}`,
+    }),
+  ),
+
+  // --- spinning-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["spinning-text"],
+      description: [
+        "Badge ring — spinning label orbits a centered icon",
+        "CTA orbit — reversed ring around a clickable arrow button",
+        "Concentric rings — two rings at different radii, speeds, and directions",
+      ][i],
+      name: `m-spinning-text-${i + 1}`,
+    }),
+  ),
+
   // --- text-roll ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
@@ -225,6 +365,76 @@ export const motionVariants: MotionVariantItem[] = [
         "Dashboard metrics — three gradient counters inside bordered cards with different durations",
       ][i],
       name: `m-counting-number-${i + 1}`,
+    }),
+  ),
+
+  // --- colorful-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["colorful-text"],
+      description: [
+        "Hero headline — full sentence reveals character-by-character with random vibrant colours",
+        "Brand logotype — short all-caps word with custom violet-to-teal palette",
+        "Cycling phrases — button replays the colour animation across multiple phrases",
+      ][i],
+      name: `m-colorful-text-${i + 1}`,
+    }),
+  ),
+
+  // --- encrypted-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["encrypted-text"],
+      description: [
+        "Hero headline — large heading decrypts left-to-right on mount",
+        "Terminal session — CLI commands decrypt sequentially on Enter",
+        "Direction picker — buttons replay with each of four revealDirection values",
+      ][i],
+      name: `m-encrypted-text-${i + 1}`,
+    }),
+  ),
+
+  // --- text-generate-effect ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["text-generate-effect"],
+      description: [
+        "Hero headline — word-by-word blur-fade reveal for landing page headings",
+        "AI chat response — assistant card regenerates text on demand via trigger",
+        "Stacked content block — eyebrow, headline, and body with different stagger settings",
+      ][i],
+      name: `m-text-generate-effect-${i + 1}`,
+    }),
+  ),
+
+  // --- letter-3d-swap ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["letter-3d-swap"],
+      description: [
+        "Navigation links — letters rotate upward on hover with colour change between faces",
+        "CTA buttons — filled and outlined buttons with opposite rotateDirection values",
+        "Direction showcase — four rows compare top, right, bottom, and left rotations",
+      ][i],
+      name: `m-letter-3d-swap-${i + 1}`,
+    }),
+  ),
+
+  // --- random-letter-swap ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text animation",
+      dependencies: ["random-letter-swap"],
+      description: [
+        "Navigation links — each link shuffles independently on hover",
+        "CTA buttons — two buttons with reverse prop contrast for visual distinction",
+        "Tag chips — technology tags inside pill badges shuffle on hover",
+      ][i],
+      name: `m-random-letter-swap-${i + 1}`,
     }),
   ),
 

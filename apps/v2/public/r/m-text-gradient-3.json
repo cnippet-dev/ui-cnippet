@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-gradient-3",
+  "description": "Pricing cards — each tier has its own palette and speed",
+  "registryDependencies": [
+    "@cnippet/text-gradient"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-gradient-3.tsx",
+      "content": "\"use client\";\n\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\n\nconst tiers = [\n  {\n    colors: [\"#a855f7\", \"#ec4899\", \"#a855f7\"],\n    duration: 4,\n    label: \"Pro\",\n    price: \"$12\",\n  },\n  {\n    colors: [\"#3b82f6\", \"#06b6d4\", \"#3b82f6\"],\n    duration: 5,\n    label: \"Team\",\n    price: \"$49\",\n  },\n  {\n    colors: [\"#f97316\", \"#eab308\", \"#f97316\"],\n    duration: 6,\n    label: \"Enterprise\",\n    price: \"$199\",\n  },\n];\n\nexport default function TextGradientPricing() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"flex gap-6\">\n        {tiers.map((tier) => (\n          <div\n            className=\"flex flex-col items-center gap-1 rounded-xl border border-border bg-card p-5 text-center\"\n            key={tier.label}\n          >\n            <TextGradient\n              as=\"p\"\n              className=\"text-3xl font-bold\"\n              colors={tier.colors}\n              duration={tier.duration}\n            >\n              {tier.price}\n            </TextGradient>\n            <p className=\"text-xs text-muted-foreground\">{tier.label}</p>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

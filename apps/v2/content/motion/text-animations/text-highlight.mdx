@@ -1,0 +1,99 @@
+---
+title: Text Highlight
+description: A background colour animates in behind text — triggered by scroll, hover, or imperative ref. Supports four sweep directions and fully customisable colour.
+---
+
+<ComponentPreview name="m-text-highlight-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-highlight
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-highlight" title="components/motion/text-highlight.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextHighlight } from "@/components/motion/text-highlight";
+```
+
+```tsx
+<TextHighlight triggerType="inView" highlightColor="hsl(262, 80%, 85%)">
+  production-ready
+</TextHighlight>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Text or content to highlight |
+| `triggerType` | `"inView" \| "hover" \| "ref" \| "auto"` | `"inView"` | What triggers the highlight animation |
+| `highlightColor` | `string` | `"hsl(25, 90%, 80%)"` | CSS colour value for the highlight fill |
+| `direction` | `"ltr" \| "rtl" \| "ttb" \| "btt"` | `"ltr"` | Direction the highlight sweeps in from |
+| `transition` | `Transition` | spring | Motion transition for the sweep |
+| `useInViewOptions` | `UseInViewOptions` | `{ once: true, amount: 0.1 }` | Options passed to `useInView` when `triggerType="inView"` |
+| `as` | `ElementType` | `"span"` | HTML element for the outer wrapper |
+| `className` | `string` | — | Class applied to the animated highlight span |
+
+### Ref API
+
+With `triggerType="ref"`, control the animation imperatively:
+
+```tsx
+const ref = useRef<TextHighlightRef>(null);
+ref.current?.animate("rtl"); // sweep in from right
+ref.current?.reset();        // remove highlight
+```
+
+## Examples
+
+### Scroll Triggered
+
+A key phrase in a heading highlights left-to-right when it enters the viewport. `once: true` means it only plays once.
+
+<ComponentPreview name="m-text-highlight-1" />
+
+### Hover Triggered
+
+The highlight fills in on mouse enter and vanishes on mouse leave — works well for editorial callouts.
+
+<ComponentPreview name="m-text-highlight-2" />
+
+### Direction Picker
+
+Buttons call `ref.current.animate(direction)` to demonstrate all four sweep directions — `ltr`, `rtl`, `ttb`, `btt` — on demand.
+
+<ComponentPreview name="m-text-highlight-3" />

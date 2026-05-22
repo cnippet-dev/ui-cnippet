@@ -1,0 +1,83 @@
+---
+title: Animated Number
+description: A spring-animated number that smoothly interpolates to a new value whenever the prop changes. Simpler than SlidingNumber — the entire figure transitions as one unit.
+---
+
+<ComponentPreview name="m-animated-number-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add animated-number
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="animated-number" title="components/motion/animated-number.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { AnimatedNumber } from "@/components/motion/animated-number";
+```
+
+```tsx
+<AnimatedNumber value={score} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Target value — update to trigger animation |
+| `springOptions` | `SpringOptions` | — | Motion spring config (`stiffness`, `damping`, `mass`) |
+| `as` | `React.ElementType` | `"span"` | HTML element rendered as the container |
+| `className` | `string` | — | Class for font styling |
+
+## Examples
+
+### Stepper
+
++10 / −10 buttons update the value. The spring eases through intermediate numbers, making large jumps feel smooth rather than jarring.
+
+<ComponentPreview name="m-animated-number-1" />
+
+### Upload Progress
+
+A percentage figure animates alongside a CSS progress bar. Both update from the same state, keeping the animated label in sync with the visual indicator.
+
+<ComponentPreview name="m-animated-number-2" />
+
+### Dashboard Metrics
+
+Three KPI cards share a multiplier toggle (1×, 2×, 5×). All three counters spring to their new values simultaneously, giving the dashboard a lively feel on range changes.
+
+<ComponentPreview name="m-animated-number-3" />

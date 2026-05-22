@@ -1,0 +1,84 @@
+---
+title: Rotating Text
+description: A single-slot word rotator — one string at a time slides in and out vertically on a configurable interval. Drop it inline in a heading to cycle through key phrases.
+---
+
+<ComponentPreview name="m-rotating-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add rotating-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="rotating-text" title="components/motion/rotating-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RotatingText } from "@/components/motion/rotating-text";
+```
+
+```tsx
+<RotatingText words={["beautiful", "accessible", "composable"]} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `words` | `string[]` | — | Array of strings to rotate through |
+| `interval` | `number` | `2500` | Milliseconds each word is shown |
+| `direction` | `"up" \| "down"` | `"up"` | `"up"` enters from below; `"down"` enters from above |
+| `transition` | `Transition` | spring | Motion transition for enter/exit |
+| `className` | `string` | — | Class on the outer wrapper — use for font styling and colour |
+
+## Examples
+
+### Hero Inline
+
+Adjectives rotate inline in a heading. The slot width is set by the longest word so surrounding text stays stable.
+
+<ComponentPreview name="m-rotating-text-1" />
+
+### Framed CTA
+
+Action phrases rotate inside a bordered card, making static supporting copy feel dynamic without changing the layout.
+
+<ComponentPreview name="m-rotating-text-2" />
+
+### Testimonial Audience
+
+`direction="down"` (words enter from above) inside a pull-quote cycles the target audience descriptor.
+
+<ComponentPreview name="m-rotating-text-3" />

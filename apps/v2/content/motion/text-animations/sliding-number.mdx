@@ -1,0 +1,82 @@
+---
+title: Sliding Number
+description: Each digit slides up or down independently using spring physics when its value changes — an odometer-style display for live or user-driven numbers.
+---
+
+<ComponentPreview name="m-sliding-number-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add sliding-number
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sliding-number" title="components/motion/sliding-number.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SlidingNumber } from "@/components/motion/sliding-number";
+```
+
+```tsx
+<SlidingNumber value={count} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | The current number to display — update this prop to trigger the slide animation |
+| `padStart` | `boolean` | `false` | Pad single-digit values with a leading zero (e.g. `07`) |
+| `decimalSeparator` | `string` | `"."` | Character used between integer and decimal parts |
+
+## Examples
+
+### Increment / Decrement
+
+Increment and decrement buttons drive a single `SlidingNumber`. Each digit column slides independently so only the changed place animates.
+
+<ComponentPreview name="m-sliding-number-1" />
+
+### Live Clock
+
+Hours, minutes, and seconds each rendered as a separate `SlidingNumber` with `padStart`. The seconds column slides every tick while higher columns stay still.
+
+<ComponentPreview name="m-sliding-number-2" />
+
+### Pricing Plan Switcher
+
+Switching between plan tiers updates both price and seat count simultaneously. The odometer motion makes the price change feel tangible rather than instant.
+
+<ComponentPreview name="m-sliding-number-3" />

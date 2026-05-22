@@ -1,0 +1,86 @@
+---
+title: Colorful Text
+description: Each character animates in from below with a randomly assigned vibrant colour. Fully customisable colour palette, stagger speed, and spring transition.
+---
+
+<ComponentPreview name="m-colorful-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add colorful-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="colorful-text" title="components/motion/colorful-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ColorfulText } from "@/components/motion/colorful-text";
+```
+
+```tsx
+<ColorfulText>Build beautiful interfaces</ColorfulText>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to animate |
+| `as` | `React.ElementType` | `"p"` | HTML element rendered as the container |
+| `colors` | `string[]` | 10 vibrant defaults | Array of hex/CSS colours assigned randomly to characters |
+| `trigger` | `boolean` | `true` | Controls animate/exit — set `false` to hide, `true` to play |
+| `staggerDuration` | `number` | `0.04` | Seconds between each character |
+| `transition` | `Transition` | spring | Per-character Motion transition |
+| `className` | `string` | — | Class on the container element |
+
+## Examples
+
+### Hero Headline
+
+Full sentence reveals character-by-character with random colours from the default vibrant palette.
+
+<ComponentPreview name="m-colorful-text-1" />
+
+### Brand Logotype
+
+Short all-caps word with a custom 5-colour brand palette (violet → teal) and a bolder spring for snappier entrance.
+
+<ComponentPreview name="m-colorful-text-2" />
+
+### Cycling Phrases
+
+A "Next phrase" button resets `trigger` and re-mounts with a new `key`, replaying the colour animation on demand across multiple phrases.
+
+<ComponentPreview name="m-colorful-text-3" />

@@ -1,0 +1,86 @@
+---
+title: Encrypted Text
+description: Characters scramble through random glyphs and progressively resolve to the real text — a military terminal-style decrypt effect. Supports four reveal directions.
+---
+
+<ComponentPreview name="m-encrypted-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add encrypted-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="encrypted-text" title="components/motion/encrypted-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { EncryptedText } from "@/components/motion/encrypted-text";
+```
+
+```tsx
+<EncryptedText revealDirection="ltr">Build with motion</EncryptedText>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The final resolved text |
+| `speed` | `number` | `50` | Milliseconds between each scramble tick |
+| `maxIterations` | `number` | `15` | Number of scramble ticks before fully resolving |
+| `revealDirection` | `"ltr" \| "rtl" \| "center" \| "random"` | `"ltr"` | Order in which characters lock to their final value |
+| `trigger` | `boolean` | `true` | Set `false` to pause; set back to `true` to replay |
+| `onComplete` | `() => void` | — | Callback fired when all characters have resolved |
+| `className` | `string` | — | Class on the outer `<span>` — always renders in `font-mono` |
+
+## Examples
+
+### Hero Headline
+
+Large heading decrypts left-to-right on mount with a fast `speed` and high `maxIterations` for a dramatic reveal.
+
+<ComponentPreview name="m-encrypted-text-1" />
+
+### Terminal Session
+
+CLI commands decrypt sequentially as the user presses "Enter", simulating a live terminal session. Each command is a separate `EncryptedText` instance.
+
+<ComponentPreview name="m-encrypted-text-2" />
+
+### Direction Picker
+
+Buttons trigger a replay with each of the four `revealDirection` values — `ltr`, `rtl`, `center`, `random` — to compare the effects side by side.
+
+<ComponentPreview name="m-encrypted-text-3" />

@@ -1,0 +1,90 @@
+---
+title: Spinning Text
+description: Characters are arranged in a circle and rotate continuously. Use it as a decorative badge ring, a CTA orbit, or layered concentric rings at different speeds.
+---
+
+<ComponentPreview name="m-spinning-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add spinning-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="spinning-text" title="components/motion/spinning-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SpinningText } from "@/components/motion/spinning-text";
+```
+
+```tsx
+<SpinningText className="h-32 w-32" radius={4.5} fontSize={0.6}>
+  {"cnippet ui • motion • "}
+</SpinningText>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to arrange in a circle — repeat with `•` separators to fill the ring evenly |
+| `duration` | `number` | `10` | Seconds per full rotation |
+| `reverse` | `boolean` | `false` | Spin counter-clockwise |
+| `radius` | `number` | `5` | Distance of characters from centre in `ch` units |
+| `fontSize` | `number` | `1` | Font size in `rem` |
+| `transition` | `Transition` | — | Override the rotation transition |
+| `variants` | `{ container?: Variants; item?: Variants }` | — | Override container/item variants |
+| `className` | `string` | — | Class on the outer `div` — set `h-*` and `w-*` to control the ring size |
+| `style` | `CSSProperties` | — | Inline style on the outer `div` |
+
+## Examples
+
+### Badge Ring
+
+A spinning label orbits a centered icon — the classic "stamp" or "award badge" pattern. Adjust `radius` and `fontSize` to fit any icon size.
+
+<ComponentPreview name="m-spinning-text-1" />
+
+### CTA Orbit
+
+A reversed ring (`reverse`) spins around a clickable arrow button. The `group-hover:scale-110` on the button creates a satisfying focal-point interaction.
+
+<ComponentPreview name="m-spinning-text-2" />
+
+### Concentric Rings
+
+Two `SpinningText` rings at different radii, speeds, and directions with a dot at the centre. The inner ring spins fast and the outer ring slow — a common decorative hero motif.
+
+<ComponentPreview name="m-spinning-text-3" />

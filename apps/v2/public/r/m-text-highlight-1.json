@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-highlight-1",
+  "description": "Scroll triggered — key phrase highlights ltr on viewport entry",
+  "registryDependencies": [
+    "@cnippet/text-highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-highlight-1.tsx",
+      "content": "\"use client\";\n\nimport { TextHighlight } from \"@/registry/default/motion/text-highlight\";\n\nexport default function TextHighlightInView() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h2 className=\"max-w-xl text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">\n        Ship{\" \"}\n        <TextHighlight\n          highlightColor=\"hsl(262, 80%, 85%)\"\n          transition={{ bounce: 0, duration: 0.9, type: \"spring\" }}\n          triggerType=\"inView\"\n        >\n          production-ready\n        </TextHighlight>{\" \"}\n        animations in minutes\n      </h2>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

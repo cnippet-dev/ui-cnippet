@@ -1,0 +1,90 @@
+---
+title: Splitting Text
+description: Text is split into characters, words, or lines and each segment animates in with a staggered entrance. Five built-in presets — fade, slide-up, slide-down, blur, and scale.
+---
+
+<ComponentPreview name="m-splitting-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add splitting-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="splitting-text" title="components/motion/splitting-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SplittingText } from "@/components/motion/splitting-text";
+```
+
+```tsx
+<SplittingText preset="slide-up" splitBy="words">
+  Motion components for modern web apps
+</SplittingText>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to split and animate |
+| `splitBy` | `"words" \| "chars" \| "lines"` | `"words"` | Granularity of the split |
+| `preset` | `"fade" \| "slide-up" \| "slide-down" \| "blur" \| "scale"` | `"slide-up"` | Built-in animation style |
+| `staggerDuration` | `number` | `0.05` | Seconds between each segment |
+| `trigger` | `boolean` | `true` | Set `false` to hold hidden; set back to `true` to play |
+| `transition` | `Transition` | spring | Per-segment transition |
+| `as` | `ElementType` | `"p"` | HTML element for the container |
+| `className` | `string` | — | Class on the container |
+| `segmentClassName` | `string` | — | Class on each animated segment span |
+
+## Examples
+
+### Hero Headline
+
+Word-level `slide-up` with a spring transition — the standard pattern for landing page headings.
+
+<ComponentPreview name="m-splitting-text-1" />
+
+### Preset Explorer
+
+Buttons switch the `preset` and re-mount the component via `key`. Demonstrates all five presets on character-level splitting.
+
+<ComponentPreview name="m-splitting-text-2" />
+
+### Stacked Content Block
+
+Three `SplittingText` instances — eyebrow, headline, body — each using a different preset and split granularity to build a complete hero section.
+
+<ComponentPreview name="m-splitting-text-3" />

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-gradient-1",
+  "description": "Hero heading — violet to cyan looping gradient sweep",
+  "registryDependencies": [
+    "@cnippet/text-gradient"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-gradient-1.tsx",
+      "content": "\"use client\";\n\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\n\nexport default function TextGradientHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextGradient\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\n        colors={[\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#a855f7\"]}\n        duration={5}\n      >\n        Build with motion\n      </TextGradient>\n      <p className=\"text-sm text-muted-foreground\">\n        Looping violet → indigo → blue gradient\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

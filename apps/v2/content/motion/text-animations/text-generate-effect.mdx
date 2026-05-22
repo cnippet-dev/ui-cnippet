@@ -1,0 +1,87 @@
+---
+title: Text Generate Effect
+description: Words fade in and unblur sequentially — mimicking the token-by-token output of an AI language model. Optional blur filter and fully configurable stagger.
+---
+
+<ComponentPreview name="m-text-generate-effect-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-generate-effect
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-generate-effect" title="components/motion/text-generate-effect.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextGenerateEffect } from "@/components/motion/text-generate-effect";
+```
+
+```tsx
+<TextGenerateEffect>Motion components for modern web apps</TextGenerateEffect>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to generate — split by whitespace into words |
+| `as` | `React.ElementType` | `"p"` | HTML element rendered as the container |
+| `filter` | `boolean` | `true` | Apply blur unblur effect to each word |
+| `trigger` | `boolean` | `true` | Set `false` to hold hidden; `true` to play |
+| `staggerDuration` | `number` | `0.1` | Seconds between each word |
+| `transition` | `Transition` | `{ duration: 0.5 }` | Per-word Motion transition |
+| `className` | `string` | — | Class on the container |
+| `wordClassName` | `string` | — | Class applied to each word span |
+
+## Examples
+
+### Hero Headline
+
+Large heading generates word-by-word with blur enabled — the classic AI-generated feel for landing page headings.
+
+<ComponentPreview name="m-text-generate-effect-1" />
+
+### AI Chat Response
+
+A simulated assistant card regenerates its response text on demand. Toggling `trigger` off and back on via a key change replays the effect cleanly.
+
+<ComponentPreview name="m-text-generate-effect-2" />
+
+### Stacked Content Block
+
+Eyebrow, headline, and body copy each use `TextGenerateEffect` with different `staggerDuration` and `filter` settings, building a layered hero section.
+
+<ComponentPreview name="m-text-generate-effect-3" />

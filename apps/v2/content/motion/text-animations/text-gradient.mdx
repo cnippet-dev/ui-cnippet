@@ -1,0 +1,88 @@
+---
+title: Text Gradient
+description: An animated gradient flows continuously through text using background-clip. Fully customisable colour stops, angle, and speed.
+---
+
+<ComponentPreview name="m-text-gradient-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-gradient
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-gradient" title="components/motion/text-gradient.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextGradient } from "@/components/motion/text-gradient";
+```
+
+```tsx
+<TextGradient colors={["#a855f7", "#3b82f6", "#06b6d4", "#a855f7"]}>
+  Build with motion
+</TextGradient>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to apply the gradient to |
+| `as` | `React.ElementType` | `"p"` | HTML element rendered as the container |
+| `colors` | `string[]` | `["#ff6b6b", "#ffd93d", "#6bcb77", "#4d96ff", "#c77dff"]` | Array of colour stops for the gradient |
+| `duration` | `number` | `4` | Seconds for one full gradient cycle |
+| `angle` | `number` | `135` | Gradient angle in degrees |
+| `transition` | `Transition` | — | Override the Motion transition |
+| `className` | `string` | — | Additional classes for font size, weight, etc. |
+
+## Examples
+
+### Hero Heading
+
+A violet-to-cyan gradient sweeps across a large heading. Supply colours that repeat at start and end to ensure a seamless loop.
+
+<ComponentPreview name="m-text-gradient-1" />
+
+### Inline Word Accent
+
+A single word inside a static heading uses `TextGradient` as a `<span>`, warming the key term with a fast orange-to-green sweep.
+
+<ComponentPreview name="m-text-gradient-2" />
+
+### Pricing Cards
+
+Each pricing tier gets its own gradient palette at a slightly different speed, making the prices feel distinct without extra markup.
+
+<ComponentPreview name="m-text-gradient-3" />

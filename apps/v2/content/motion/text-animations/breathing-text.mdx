@@ -1,0 +1,95 @@
+---
+title: Breathing Text
+description: Characters pulse between two variable font settings — weight, width, or any axis — in a continuous wave that repeats forever. Requires a variable font.
+---
+
+<ComponentPreview name="m-breathing-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add breathing-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="breathing-text" title="components/motion/breathing-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BreathingText } from "@/components/motion/breathing-text";
+```
+
+```tsx
+<BreathingText
+  fromFontVariationSettings="'wght' 300, 'wdth' 75"
+  toFontVariationSettings="'wght' 900, 'wdth' 125"
+>
+  Build with motion
+</BreathingText>
+```
+
+> **Variable font required** — `BreathingText` animates `font-variation-settings`. The effect is only visible when the active font supports the axes used (e.g. `wght`, `wdth`). Inter Variable, Geist, and most Google Fonts variable fonts work out of the box.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Text content to animate |
+| `fromFontVariationSettings` | `string` | — | Starting CSS `font-variation-settings` value |
+| `toFontVariationSettings` | `string` | — | Peak CSS `font-variation-settings` value |
+| `transition` | `Transition` | `{ duration: 1.5, ease: "easeInOut" }` | Transition for the breath cycle |
+| `staggerDuration` | `number` | `0.1` | Seconds between each letter's cycle offset |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Wave origin |
+| `repeatDelay` | `number` | `0.1` | Pause between each repeat cycle |
+| `as` | `ElementType` | `"span"` | HTML element rendered as the container |
+| `className` | `string` | — | Class applied to the container |
+
+## Examples
+
+### Weight + Width Wave
+
+Both `wght` and `wdth` axes breathe left-to-right. The characters cycle from thin/condensed to black/expanded.
+
+<ComponentPreview name="m-breathing-text-1" />
+
+### Center Pulse
+
+A short logotype word pulses outward from the center using `staggerFrom="center"`. Works well for brand marks or hero splash screens.
+
+<ComponentPreview name="m-breathing-text-2" />
+
+### Heading + Subtitle Pair
+
+Two `BreathingText` instances — heading and subtitle — with opposite stagger directions and complementary speeds create a layered breathing composition.
+
+<ComponentPreview name="m-breathing-text-3" />

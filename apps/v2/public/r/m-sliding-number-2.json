@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sliding-number-2",
+  "description": "Live clock — hours, minutes, seconds as separate padded sliding numbers",
+  "registryDependencies": [
+    "@cnippet/sliding-number"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sliding-number-2.tsx",
+      "content": "\"use client\";\n\nimport { SlidingNumber } from \"@/registry/default/motion/sliding-number\";\nimport { useEffect, useState } from \"react\";\n\nfunction pad(n: number) {\n  return n;\n}\n\nexport default function SlidingNumberClock() {\n  const [time, setTime] = useState(new Date());\n\n  useEffect(() => {\n    const id = setInterval(() => setTime(new Date()), 1000);\n    return () => clearInterval(id);\n  }, []);\n\n  const h = time.getHours();\n  const m = time.getMinutes();\n  const s = time.getSeconds();\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"flex items-center gap-1 font-mono text-5xl font-bold tabular-nums text-foreground\">\n        <SlidingNumber padStart value={h} />\n        <span className=\"mb-1 text-muted-foreground\">:</span>\n        <SlidingNumber padStart value={m} />\n        <span className=\"mb-1 text-muted-foreground\">:</span>\n        <SlidingNumber padStart value={s} />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

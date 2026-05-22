@@ -1,0 +1,90 @@
+---
+title: Letter 3D Swap
+description: Each letter rotates in 3D space on hover — the front face spins away and a second face takes its place. Supports four rotation axes and independent colour per face.
+---
+
+<ComponentPreview name="m-letter-3d-swap-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add letter-3d-swap
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="letter-3d-swap" title="components/motion/letter-3d-swap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Letter3DSwap } from "@/components/motion/letter-3d-swap";
+```
+
+```tsx
+<Letter3DSwap rotateDirection="top" frontFaceClassName="text-foreground" secondFaceClassName="text-primary">
+  Get started
+</Letter3DSwap>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string \| number` | — | Text to animate |
+| `as` | `ElementType` | `"p"` | HTML element rendered as the container |
+| `rotateDirection` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | Which axis the letters rotate around |
+| `staggerDuration` | `number` | `0.05` | Seconds between each character's rotation |
+| `staggerFrom` | `"first" \| "last" \| "center" \| "random" \| number` | `"first"` | Stagger wave origin |
+| `transition` | `AnimationOptions` | spring | Motion transition for the rotation |
+| `frontFaceClassName` | `string` | — | Class on the visible (front) face |
+| `secondFaceClassName` | `string` | — | Class on the hidden (back) face shown during hover |
+| `mainClassName` | `string` | — | Class on the outer element |
+
+## Examples
+
+### Navigation Links
+
+Nav links rotate upward on hover (`rotateDirection="top"`). Front face uses `text-muted-foreground`, second face reveals `text-foreground` — a colour-change through 3D space.
+
+<ComponentPreview name="m-letter-3d-swap-1" />
+
+### CTA Buttons
+
+Two buttons — filled and outlined — with opposite `rotateDirection` values and `staggerFrom="last"` on the secondary to reverse the wave.
+
+<ComponentPreview name="m-letter-3d-swap-2" />
+
+### Direction Showcase
+
+Four rows of the same word, each with a different `rotateDirection`. Hover to compare `top`, `right`, `bottom`, and `left` rotations side by side.
+
+<ComponentPreview name="m-letter-3d-swap-3" />

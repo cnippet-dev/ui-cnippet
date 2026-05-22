@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-spinning-text-2",
+  "description": "CTA orbit — reversed ring around a clickable arrow button",
+  "registryDependencies": [
+    "@cnippet/spinning-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-spinning-text-2.tsx",
+      "content": "\"use client\";\n\nimport { SpinningText } from \"@/registry/default/motion/spinning-text\";\n\nexport default function SpinningTextCTA() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"group relative flex items-center justify-center\">\n        <SpinningText\n          className=\"h-40 w-40 text-xs font-medium uppercase tracking-widest text-foreground\"\n          duration={10}\n          fontSize={0.65}\n          radius={5}\n          reverse\n        >\n          {\"get started • free forever • \"}\n        </SpinningText>\n        <button\n          className=\"absolute flex h-16 w-16 items-center justify-center rounded-full bg-foreground text-xl text-background transition-transform group-hover:scale-110\"\n          type=\"button\"\n        >\n          →\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

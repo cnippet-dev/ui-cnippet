@@ -1,0 +1,83 @@
+---
+title: Morphing Text
+description: Words dissolve into each other through a blur-based SVG filter morph — characters melt and reform rather than sliding or fading, creating a liquid transition between strings.
+---
+
+<ComponentPreview name="m-morphing-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add morphing-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="morphing-text" title="components/motion/morphing-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { MorphingText } from "@/components/motion/morphing-text";
+```
+
+```tsx
+<MorphingText texts={["Innovate", "Create", "Inspire", "Deliver"]} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `texts` | `string[]` | — | Array of strings to morph through in sequence |
+| `className` | `string` | — | Class on the container — use to set text colour. Font size is controlled by the built-in `[font-size:40pt]` default; override with a utility like `[font-size:32pt]` |
+
+> **How it works** — The component uses a `requestAnimationFrame` loop that drives two overlapping `<span>` elements. A SVG `feColorMatrix` filter thresholds the combined blur, making partial overlap appear as a solid glyph rather than a blurred smear. The `morph` / `cooldown` timing constants are internal and not currently exposed as props.
+
+## Examples
+
+### Auto-cycling Hero Words
+
+Four short action words cycle on the default timing — "Innovate → Create → Inspire → Deliver". Works best with single words of similar character count.
+
+<ComponentPreview name="m-morphing-text-1" />
+
+### Tech Stack Card
+
+Stack names morph inside a product card with a slightly smaller font size (`[font-size:32pt]`). The contained width ensures the text stays within the card boundary.
+
+<ComponentPreview name="m-morphing-text-2" />
+
+### Hero Section Context
+
+Combined with a static eyebrow and supporting body copy, the morphing headline becomes the visual anchor of a full hero section.
+
+<ComponentPreview name="m-morphing-text-3" />

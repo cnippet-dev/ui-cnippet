@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-highlight-2",
+  "description": "Hover triggered — highlight fills in on mouse enter and resets on leave",
+  "registryDependencies": [
+    "@cnippet/text-highlight"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-highlight-2.tsx",
+      "content": "\"use client\";\n\nimport { TextHighlight } from \"@/registry/default/motion/text-highlight\";\n\nexport default function TextHighlightHover() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <p className=\"text-sm text-muted-foreground\">Hover to highlight</p>\n      <p className=\"max-w-lg text-center text-2xl font-semibold leading-snug text-foreground\">\n        Design systems that feel{\" \"}\n        <TextHighlight\n          className=\"rounded px-0.5\"\n          highlightColor=\"hsl(45, 95%, 75%)\"\n          transition={{ bounce: 0, duration: 0.5, type: \"spring\" }}\n          triggerType=\"hover\"\n        >\n          alive\n        </TextHighlight>\n        , not just correct.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}
