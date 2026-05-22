@@ -1,0 +1,101 @@
+---
+title: Vertical Cut Reveal
+description: Text slides up from a hidden clip region — each word or character emerges through an invisible overflow mask, creating a clean editorial reveal effect.
+---
+
+<ComponentPreview name="m-vertical-cut-reveal-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add vertical-cut-reveal
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="vertical-cut-reveal" title="components/motion/vertical-cut-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { VerticalCutReveal } from "@/components/motion/vertical-cut-reveal";
+```
+
+```tsx
+<VerticalCutReveal splitBy="words">
+  Motion components for modern web
+</VerticalCutReveal>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text content to reveal |
+| `splitBy` | `"words" \| "characters" \| "lines" \| string` | `"words"` | Granularity of the reveal |
+| `reverse` | `boolean` | `false` | Slide down from above instead of up from below |
+| `staggerDuration` | `number` | `0.2` | Seconds between each segment |
+| `staggerFrom` | `"first" \| "last" \| "center" \| "random" \| number` | `"first"` | Where the stagger wave starts |
+| `transition` | `AnimationOptions` | spring | Transition applied per segment |
+| `autoStart` | `boolean` | `true` | Trigger the reveal on mount |
+| `onStart` | `() => void` | — | Callback when reveal begins |
+| `onComplete` | `() => void` | — | Callback when the last segment finishes |
+| `containerClassName` | `string` | — | Class on the outer span |
+| `wordLevelClassName` | `string` | — | Class on each word's overflow wrapper |
+| `elementLevelClassName` | `string` | — | Class on each character wrapper |
+
+### Ref API
+
+```tsx
+const ref = useRef<VerticalCutRevealRef>(null);
+ref.current?.startAnimation(); // trigger reveal
+ref.current?.reset();          // snap back to hidden
+```
+
+## Examples
+
+### Hero Headline
+
+Word-by-word upward reveal for a landing page heading. `staggerFrom="first"` creates a left-to-right wave.
+
+<ComponentPreview name="m-vertical-cut-reveal-1" />
+
+### Character-Level Logotype
+
+Character granularity (`splitBy="characters"`) with `staggerFrom="center"` fans the reveal outward from the middle — ideal for short brand marks or logotypes.
+
+<ComponentPreview name="m-vertical-cut-reveal-2" />
+
+### Stacked Lines with Alternating Direction
+
+Three lines reveal sequentially with increasing `delay`. Odd-indexed lines use `reverse={true}` so each line drops in from the opposite direction, creating a rhythmic editorial feel.
+
+<ComponentPreview name="m-vertical-cut-reveal-3" />

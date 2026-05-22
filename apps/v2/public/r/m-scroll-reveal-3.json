@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-reveal-3",
+  "description": "Stepped list — each item slides in from the left with incrementing delay",
+  "registryDependencies": [
+    "@cnippet/scroll-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-reveal-3.tsx",
+      "content": "import { ScrollReveal } from \"@/registry/default/motion/scroll-reveal\";\n\nconst items = [\n  \"Pick a component\",\n  \"Run the CLI command\",\n  \"Paste into your project\",\n  \"Customise props & styles\",\n  \"Ship to production\",\n];\n\nexport default function ScrollRevealList() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <ol className=\"w-full max-w-xs space-y-2\">\n        {items.map((item, i) => (\n          <ScrollReveal\n            as=\"li\"\n            key={item}\n            transition={{ delay: i * 0.1, duration: 0.45, ease: \"easeOut\" }}\n            variants={{\n              hidden: { opacity: 0, x: -20 },\n              visible: { opacity: 1, x: 0 },\n            }}\n            viewOptions={{ amount: 0.5 }}\n          >\n            <div className=\"flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3\">\n              <span className=\"flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground\">\n                {i + 1}\n              </span>\n              <span className=\"text-sm font-medium text-foreground\">{item}</span>\n            </div>\n          </ScrollReveal>\n        ))}\n      </ol>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

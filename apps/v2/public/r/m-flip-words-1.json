@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-flip-words-1",
+  "description": "Hero inline — adjectives flip inside a heading with primary colour accent",
+  "registryDependencies": [
+    "@cnippet/flip-words"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-flip-words-1.tsx",
+      "content": "import { FlipWords } from \"@/registry/default/motion/flip-words\";\n\nconst adjectives = [\"beautiful\", \"accessible\", \"composable\", \"performant\"];\n\nexport default function FlipWordsHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Build{\" \"}\n        <FlipWords\n          className=\"text-primary\"\n          duration={2500}\n          words={adjectives}\n        />\n        <br />\n        interfaces with ease\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

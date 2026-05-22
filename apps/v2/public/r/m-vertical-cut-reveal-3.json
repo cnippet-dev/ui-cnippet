@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-vertical-cut-reveal-3",
+  "description": "Stacked lines — alternating reverse direction per line with sequential delays",
+  "registryDependencies": [
+    "@cnippet/vertical-cut-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-vertical-cut-reveal-3.tsx",
+      "content": "\"use client\";\n\nimport { VerticalCutReveal } from \"@/registry/default/motion/vertical-cut-reveal\";\n\nconst lines = [\n  \"Design with intention.\",\n  \"Build with precision.\",\n  \"Ship with confidence.\",\n];\n\nexport default function VerticalCutRevealStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6\">\n      {lines.map((line, i) => (\n        <p\n          className=\"text-2xl font-bold text-foreground sm:text-3xl\"\n          key={line}\n        >\n          <VerticalCutReveal\n            reverse={i % 2 !== 0}\n            splitBy=\"words\"\n            staggerDuration={0.15}\n            staggerFrom=\"first\"\n            transition={{\n              damping: 24,\n              delay: i * 0.25,\n              stiffness: 180,\n              type: \"spring\",\n            }}\n          >\n            {line}\n          </VerticalCutReveal>\n        </p>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

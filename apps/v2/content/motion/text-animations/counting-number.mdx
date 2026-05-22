@@ -1,0 +1,95 @@
+---
+title: Counting Number
+description: Smoothly animates from a start value to a target number using a spring or tween. Supports imperative replay via a ref and fires start/complete callbacks.
+---
+
+<ComponentPreview name="m-counting-number-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add counting-number
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="counting-number" title="components/motion/counting-number.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CountingNumber } from "@/components/motion/counting-number";
+```
+
+```tsx
+<CountingNumber target={1000} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `target` | `number` | — | The final value to count to |
+| `from` | `number` | `0` | Starting value |
+| `autoStart` | `boolean` | `true` | Start counting immediately on mount |
+| `transition` | `ValueAnimationTransition` | `{ type: "tween", duration: 3, ease: "easeInOut" }` | Motion transition controlling the count animation |
+| `onStart` | `() => void` | — | Callback fired when counting starts |
+| `onComplete` | `() => void` | — | Callback fired when counting reaches `target` |
+| `className` | `string` | — | Class applied to the `<span>` element |
+
+### Ref API
+
+Pass a `ref` to access `startAnimation()` imperatively:
+
+```tsx
+const ref = useRef<CountingNumberRef>(null);
+ref.current?.startAnimation(); // resets to `from` and counts again
+```
+
+## Examples
+
+### Stats Section
+
+Four `CountingNumber` components animate a social-proof grid on mount. Values use `toLocaleString` formatting automatically.
+
+<ComponentPreview name="m-counting-number-1" />
+
+### Large Hero Metric
+
+A single full-width counter dominates the hero section with a large typographic treatment. A replay button calls `ref.current.startAnimation()` to re-run the count.
+
+<ComponentPreview name="m-counting-number-2" />
+
+### Dashboard Metrics
+
+Three counters inside bordered cards with gradient text colours. Different `duration` values create a staggered feel without any extra wrapper logic.
+
+<ComponentPreview name="m-counting-number-3" />

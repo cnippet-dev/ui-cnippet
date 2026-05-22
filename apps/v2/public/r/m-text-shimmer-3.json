@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-shimmer-3",
+  "description": "Feature list — heading and three feature strings shimmer at different speeds",
+  "registryDependencies": [
+    "@cnippet/text-shimmer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-shimmer-3.tsx",
+      "content": "\"use client\";\n\nimport { TextShimmer } from \"@/registry/default/motion/text-shimmer\";\n\nconst features = [\n  \"Copy-paste components\",\n  \"Accessible animations\",\n  \"Zero runtime overhead\",\n];\n\nexport default function TextShimmerList() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      <TextShimmer\n        as=\"h2\"\n        className=\"text-3xl font-bold tracking-tight\"\n        duration={3}\n        spread={4}\n      >\n        Why Cnippet Motion?\n      </TextShimmer>\n      <ul className=\"space-y-2 text-center\">\n        {features.map((f, i) => (\n          <li key={f}>\n            <TextShimmer\n              as=\"span\"\n              className=\"text-base font-medium\"\n              duration={2 + i * 0.4}\n              spread={2}\n            >\n              {f}\n            </TextShimmer>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

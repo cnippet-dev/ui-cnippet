@@ -1,0 +1,84 @@
+---
+title: Text Shimmer
+description: A gradient highlight sweeps continuously across text from right to left, creating a polished metallic shimmer effect using CSS background-clip.
+---
+
+<ComponentPreview name="m-text-shimmer-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-shimmer
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-shimmer" title="components/motion/text-shimmer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextShimmer } from "@/components/motion/text-shimmer";
+```
+
+```tsx
+<TextShimmer>Build beautiful interfaces</TextShimmer>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to apply the shimmer to |
+| `as` | `React.ElementType` | `"p"` | HTML element rendered as the container |
+| `duration` | `number` | `2` | Seconds for one full shimmer pass |
+| `spread` | `number` | `2` | Multiplied by character count to determine highlight width in px |
+| `className` | `string` | — | Additional classes — use to set font size, weight, and custom color tokens |
+
+## Examples
+
+### Hero Headline
+
+A large heading with a slow shimmer pass (`duration={2.5}`). Pairs well with dark backgrounds where the light sweep reads clearly.
+
+<ComponentPreview name="m-text-shimmer-1" />
+
+### Status Badges
+
+Two inline badges use `TextShimmer` to convey live system state — "operational" and "processing". The shimmer loop keeps the badge feeling active without any blinking.
+
+<ComponentPreview name="m-text-shimmer-2" />
+
+### Feature List
+
+A section heading and three feature strings each shimmer at slightly different speeds, creating a layered depth without additional motion logic.
+
+<ComponentPreview name="m-text-shimmer-3" />

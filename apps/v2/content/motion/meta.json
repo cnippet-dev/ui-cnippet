@@ -1,4 +1,4 @@
 {
-  "pages": ["text-animations"],
+  "pages": ["text-animations", "scroll-animations"],
   "title": "Motion"
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-rotate-2",
+  "description": "Manual step control — prev/next buttons drive word-by-word rotation via ref",
+  "registryDependencies": [
+    "@cnippet/text-rotate"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-rotate-2.tsx",
+      "content": "\"use client\";\n\nimport { TextRotate, type TextRotateRef } from \"@/registry/default/motion/text-rotate\";\nimport { useRef } from \"react\";\n\nconst steps = [\n  \"Pick a component\",\n  \"Run the CLI\",\n  \"Customise props\",\n  \"Ship to production\",\n];\n\nexport default function TextRotateManual() {\n  const ref = useRef<TextRotateRef>(null);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"text-center\">\n        <p className=\"text-xs font-semibold uppercase tracking-widest text-muted-foreground\">\n          How it works\n        </p>\n        <TextRotate\n          as=\"h2\"\n          auto={false}\n          mainClassName=\"mt-2 justify-center text-2xl font-bold text-foreground sm:text-3xl\"\n          ref={ref}\n          splitBy=\"words\"\n          staggerDuration={0.06}\n          staggerFrom=\"first\"\n          texts={steps}\n          transition={{ damping: 20, stiffness: 200, type: \"spring\" }}\n        />\n      </div>\n      <div className=\"flex gap-2\">\n        <button\n          className=\"rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-foreground hover:bg-accent/80\"\n          onClick={() => ref.current?.previous()}\n          type=\"button\"\n        >\n          ← Prev\n        </button>\n        <button\n          className=\"rounded-md bg-foreground px-3 py-1.5 text-sm font-medium text-background hover:bg-foreground/80\"\n          onClick={() => ref.current?.next()}\n          type=\"button\"\n        >\n          Next →\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -128,16 +128,19 @@ export const VerticalCutReveal = forwardRef<
       if (autoStart) startAnimation();
     }, [autoStart, startAnimation]);
 
-    const variants = {
-      hidden: { y: reverse ? "-100%" : "100%" },
-      visible: (i: number) => ({
-        transition: {
-          ...transition,
-          delay: ((transition?.delay as number) || 0) + getStaggerDelay(i),
-        },
-        y: 0,
+    const variants = useMemo(
+      () => ({
+        hidden: { y: reverse ? "-100%" : "100%" },
+        visible: (i: number) => ({
+          transition: {
+            ...transition,
+            delay: ((transition?.delay as number) || 0) + getStaggerDelay(i),
+          },
+          y: 0,
+        }),
       }),
-    };
+      [reverse, transition, getStaggerDelay],
+    );
 
     return (
       <span

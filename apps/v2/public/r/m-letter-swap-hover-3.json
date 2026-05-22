@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-letter-swap-hover-3",
+  "description": "Stats row — labels use center-out stagger beneath stat figures",
+  "registryDependencies": [
+    "@cnippet/letter-swap-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-letter-swap-hover-3.tsx",
+      "content": "\"use client\";\n\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\n\nconst items = [\n  { label: \"Components\", count: \"164\" },\n  { label: \"Downloads\", count: \"98K\" },\n  { label: \"Stars\", count: \"4.2K\" },\n];\n\nexport default function LetterSwapHoverStats() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"flex divide-x divide-border\">\n        {items.map((item) => (\n          <div className=\"px-8 text-center first:pl-0 last:pr-0\" key={item.label}>\n            <p className=\"text-3xl font-bold tabular-nums text-foreground\">\n              {item.count}\n            </p>\n            <LetterSwapHover\n              className=\"mt-1 cursor-default text-xs text-muted-foreground\"\n              label={item.label}\n              staggerFrom=\"center\"\n              staggerDuration={0.035}\n              transition={{ duration: 0.6, type: \"spring\" }}\n            />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

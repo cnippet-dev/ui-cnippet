@@ -1,0 +1,108 @@
+---
+title: Text Rotate
+description: Cycles through an array of strings with per-character staggered enter and exit animations. Supports auto-advance, manual control via ref, configurable stagger origin, and custom Motion variants.
+---
+
+<ComponentPreview name="m-text-rotate-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-rotate
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-rotate" title="components/motion/text-rotate.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextRotate } from "@/components/motion/text-rotate";
+```
+
+```tsx
+<TextRotate texts={["engineers", "designers", "founders"]} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `texts` | `string[]` | — | Array of strings to cycle through |
+| `rotationInterval` | `number` | `2000` | Milliseconds between automatic advances |
+| `auto` | `boolean` | `true` | Advance automatically on an interval |
+| `loop` | `boolean` | `true` | Wrap back to the first string after the last |
+| `splitBy` | `"characters" \| "words" \| "lines" \| string` | `"characters"` | How to split each string for staggering |
+| `staggerDuration` | `number` | `0` | Seconds between each segment's animation |
+| `staggerFrom` | `"first" \| "last" \| "center" \| "random" \| number` | `"first"` | Which end the stagger starts from |
+| `initial` | `MotionProps["initial"]` | `{ opacity: 0, y: "100%" }` | Enter-from state |
+| `animate` | `MotionProps["animate"]` | `{ opacity: 1, y: 0 }` | Visible state |
+| `exit` | `MotionProps["exit"]` | `{ opacity: 0, y: "-120%" }` | Exit-to state |
+| `transition` | `Transition` | spring | Shared transition for all segments |
+| `animatePresenceMode` | `AnimatePresenceProps["mode"]` | `"wait"` | AnimatePresence mode |
+| `as` | `ElementType` | `"p"` | HTML element rendered as the container |
+| `mainClassName` | `string` | — | Class on the outer container |
+| `splitLevelClassName` | `string` | — | Class on each word wrapper |
+| `elementLevelClassName` | `string` | — | Class on each character wrapper |
+| `onNext` | `(index: number) => void` | — | Callback fired on each advance |
+
+### Ref API
+
+Pass a `ref` to control rotation imperatively:
+
+```tsx
+const ref = useRef<TextRotateRef>(null);
+ref.current?.next();      // advance forward
+ref.current?.previous();  // go back
+ref.current?.jumpTo(2);   // jump to index
+ref.current?.reset();     // go to index 0
+```
+
+## Examples
+
+### Hero Inline
+
+Audience descriptor cycles inline in a heading. `staggerFrom="first"` with a tight `staggerDuration` creates a character waterfall.
+
+<ComponentPreview name="m-text-rotate-1" />
+
+### Manual Step Control
+
+`auto={false}` disables the timer. Prev/Next buttons call `ref.current.previous()` and `ref.current.next()` to step through how-it-works copy word by word.
+
+<ComponentPreview name="m-text-rotate-2" />
+
+### Feature Ticker
+
+Short feature strings rotate with a fade+y tween instead of the default spring. Dot indicators below give a passive sense of progress.
+
+<ComponentPreview name="m-text-rotate-3" />

@@ -1,0 +1,83 @@
+---
+title: Flip Words
+description: Words flip in and out with a 3D rotation on a configurable timer — drop it inline in a heading to cycle through key phrases with spring physics.
+---
+
+<ComponentPreview name="m-flip-words-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add flip-words
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="flip-words" title="components/motion/flip-words.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { FlipWords } from "@/components/motion/flip-words";
+```
+
+```tsx
+<FlipWords words={["beautiful", "accessible", "composable"]} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `words` | `string[]` | — | Array of strings to cycle through |
+| `duration` | `number` | `3000` | Milliseconds each word is displayed before flipping |
+| `transition` | `Transition` | `{ type: "spring", stiffness: 100, damping: 14 }` | Motion transition for the flip animation |
+| `className` | `string` | — | Class applied to the outer wrapper span |
+
+## Examples
+
+### Hero Inline
+
+Words flip inline inside a heading. Use `className` to colour the cycling word differently from the surrounding text.
+
+<ComponentPreview name="m-flip-words-1" />
+
+### CTA Button
+
+Short action verbs flip inside a full-width button, giving static copy a sense of urgency and motion. A tighter spring (`stiffness: 120, damping: 10`) makes the snap feel snappier.
+
+<ComponentPreview name="m-flip-words-2" />
+
+### Testimonial Card
+
+A testimonial quote uses `FlipWords` to cycle the audience descriptor — "engineers", "designers", "founders" — inside a card layout with avatar.
+
+<ComponentPreview name="m-flip-words-3" />

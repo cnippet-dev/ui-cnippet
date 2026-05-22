@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-flip-words-2",
+  "description": "CTA button — action verbs flip inside a full-width button for a sense of urgency",
+  "registryDependencies": [
+    "@cnippet/flip-words"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-flip-words-2.tsx",
+      "content": "import { FlipWords } from \"@/registry/default/motion/flip-words\";\n\nconst verbs = [\"Ship\", \"Deploy\", \"Launch\", \"Scale\"];\n\nexport default function FlipWordsCTA() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Ready to start?\n      </p>\n      <div className=\"inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xl font-semibold text-background shadow-lg\">\n        <FlipWords\n          duration={2000}\n          transition={{ damping: 10, stiffness: 120, type: \"spring\" }}\n          words={verbs}\n        />\n        <span>faster</span>\n      </div>\n      <p className=\"max-w-sm text-center text-sm text-muted-foreground\">\n        From prototype to production in minutes, not months.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

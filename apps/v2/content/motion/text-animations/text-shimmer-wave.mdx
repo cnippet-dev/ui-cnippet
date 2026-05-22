@@ -1,0 +1,90 @@
+---
+title: Text Shimmer Wave
+description: A ripple wave travels across each character — animating colour, scale, 3D rotation, and z-depth in sequence to create a flowing, dimensional shimmer.
+---
+
+<ComponentPreview name="m-text-shimmer-wave-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-shimmer-wave
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-shimmer-wave" title="components/motion/text-shimmer-wave.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextShimmerWave } from "@/components/motion/text-shimmer-wave";
+```
+
+```tsx
+<TextShimmerWave>Animate with purpose</TextShimmerWave>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | Text to animate |
+| `as` | `React.ElementType` | `"p"` | HTML element rendered as the container |
+| `duration` | `number` | `1` | Seconds for the wave to travel the full string |
+| `spread` | `number` | `1` | Higher values compress the wave delay, making it travel faster relative to string length |
+| `zDistance` | `number` | `10` | Peak z-axis translation in px |
+| `xDistance` | `number` | `2` | Peak x-axis translation in px |
+| `yDistance` | `number` | `-2` | Peak y-axis translation in px (negative = up) |
+| `scaleDistance` | `number` | `1.1` | Peak scale multiplier at the wave crest |
+| `rotateYDistance` | `number` | `10` | Peak Y-axis rotation in degrees at the crest |
+| `transition` | `Transition` | — | Override the per-character transition |
+| `className` | `string` | — | Class on the container element |
+
+## Examples
+
+### Hero Heading
+
+A gentle wave with moderate `zDistance` and `yDistance` on a large heading — noticeable but not distracting.
+
+<ComponentPreview name="m-text-shimmer-wave-1" />
+
+### Loading / Processing States
+
+Short strings with a faster `duration` and tighter `spread` convey activity. Works alongside spinners or pulsing indicators for loading UI.
+
+<ComponentPreview name="m-text-shimmer-wave-2" />
+
+### Exaggerated Logotype
+
+Pushed values — high `scaleDistance`, `rotateYDistance`, and `zDistance` — on a short all-caps word creates a bold 3D wave suitable for splash screens or motion showcases.
+
+<ComponentPreview name="m-text-shimmer-wave-3" />

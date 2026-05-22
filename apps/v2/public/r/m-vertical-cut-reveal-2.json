@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-vertical-cut-reveal-2",
+  "description": "Character logotype — center-out stagger on a short brand name",
+  "registryDependencies": [
+    "@cnippet/vertical-cut-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-vertical-cut-reveal-2.tsx",
+      "content": "\"use client\";\n\nimport { VerticalCutReveal } from \"@/registry/default/motion/vertical-cut-reveal\";\n\nexport default function VerticalCutRevealChars() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <h2 className=\"text-5xl font-black tracking-tighter text-foreground sm:text-7xl\">\n        <VerticalCutReveal\n          splitBy=\"characters\"\n          staggerDuration={0.04}\n          staggerFrom=\"center\"\n          transition={{ damping: 20, stiffness: 300, type: \"spring\" }}\n        >\n          CNIPPET\n        </VerticalCutReveal>\n      </h2>\n      <p className=\"text-sm text-muted-foreground\">\n        Character-level stagger from center\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

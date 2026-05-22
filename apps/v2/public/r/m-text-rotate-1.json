@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-rotate-1",
+  "description": "Hero inline — audience descriptor cycles in a heading with character stagger",
+  "registryDependencies": [
+    "@cnippet/text-rotate"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-rotate-1.tsx",
+      "content": "\"use client\";\n\nimport { TextRotate } from \"@/registry/default/motion/text-rotate\";\n\nconst roles = [\"engineers\", \"designers\", \"founders\", \"makers\"];\n\nexport default function TextRotateHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Built for{\" \"}\n        <TextRotate\n          mainClassName=\"text-primary inline-flex\"\n          rotationInterval={2200}\n          staggerDuration={0.03}\n          staggerFrom=\"first\"\n          texts={roles}\n          transition={{ damping: 22, stiffness: 280, type: \"spring\" }}\n        />\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

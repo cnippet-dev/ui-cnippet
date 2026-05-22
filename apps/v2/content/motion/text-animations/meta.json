@@ -1,4 +1,4 @@
 {
-  "pages": ["text-reveal", "text-scramble", "scramble-hover", "typewriter", "text-loop", "text-morph"],
+  "pages": ["text-reveal", "text-scramble", "scramble-hover", "typewriter", "text-loop", "text-morph", "text-roll", "flip-words", "counting-number", "text-rotate", "vertical-cut-reveal", "letter-swap-hover", "text-shimmer", "text-shimmer-wave"],
   "title": "Text Animations"
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-roll-1",
+  "description": "Hero headline — letter-by-letter 3D roll reveal for a landing page heading",
+  "registryDependencies": [
+    "@cnippet/text-roll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-roll-1.tsx",
+      "content": "\"use client\";\n\nimport { TextRoll } from \"@/registry/default/motion/text-roll\";\n\nexport default function TextRollHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Introducing\n      </p>\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <TextRoll duration={0.5} getEnterDelay={(i) => i * 0.04}>\n          Design with motion\n        </TextRoll>\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,90 @@
+---
+title: Scroll Reveal
+description: Elements animate into view when they enter the viewport. Supports any Motion variant, configurable thresholds, and a once-only mode.
+---
+
+<ComponentPreview name="m-scroll-reveal-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-reveal
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-reveal" title="components/motion/scroll-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollReveal } from "@/components/motion/scroll-reveal";
+```
+
+```tsx
+<ScrollReveal
+  variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+>
+  <YourContent />
+</ScrollReveal>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Content to reveal |
+| `variants` | `{ hidden: Variant; visible: Variant }` | `{ hidden: { opacity: 0 }, visible: { opacity: 1 } }` | Motion variants for the hidden and visible states |
+| `transition` | `Transition` | — | Transition applied to the visible state |
+| `viewOptions` | `UseInViewOptions` | — | Options passed to Motion's `useInView` (e.g. `amount`, `margin`) |
+| `as` | `React.ElementType` | `"div"` | HTML element or component to render as |
+| `once` | `boolean` | — | When `true`, the element stays visible after the first reveal and never hides again |
+
+## Examples
+
+### Feature Cards
+
+Three cards slide up and fade in with staggered `delay` values as they enter the viewport. Each card is its own `ScrollReveal` instance.
+
+<ComponentPreview name="m-scroll-reveal-1" />
+
+### Feature Section (Split Layout)
+
+A two-column layout where the image slides in from the left and the text from the right, creating a balanced split reveal.
+
+<ComponentPreview name="m-scroll-reveal-2" />
+
+### Stepped List
+
+Each list item slides in from the left with an incrementing delay, building a step-by-step visual sequence on scroll.
+
+<ComponentPreview name="m-scroll-reveal-3" />

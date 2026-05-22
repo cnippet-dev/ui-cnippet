@@ -13,7 +13,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useState,
+  useRef,
 } from "react";
 import { cn } from "@/lib/utils";
 
@@ -52,27 +52,24 @@ export const CountingNumber = forwardRef<
     const rounded = useTransform(count, (latest) =>
       Math.round(latest).toLocaleString(),
     );
-    const [controls, setControls] = useState<AnimationPlaybackControls | null>(
-      null,
-    );
+    const controlsRef = useRef<AnimationPlaybackControls | null>(null);
 
     const startAnimation = useCallback(() => {
-      controls?.stop();
+      controlsRef.current?.stop();
       onStart?.();
       count.set(from);
-      const newControls = animate(count, target, {
+      controlsRef.current = animate(count, target, {
         ...transition,
         onComplete: () => onComplete?.(),
       });
-      setControls(newControls);
-    }, [from, target, transition, onStart, onComplete, count, controls?.stop]);
+    }, [from, target, transition, onStart, onComplete, count]);
 
     useImperativeHandle(ref, () => ({ startAnimation }));
 
     useEffect(() => {
       if (autoStart) startAnimation();
-      return () => controls?.stop();
-    }, [autoStart, controls?.stop, startAnimation]);
+      return () => controlsRef.current?.stop();
+    }, [autoStart, startAnimation]);
 
     return (
       <motion.span className={cn("tabular-nums", className)} {...props}>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-flip-words-3",
+  "description": "Testimonial card — audience descriptor cycles in a pull-quote layout",
+  "registryDependencies": [
+    "@cnippet/flip-words"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-flip-words-3.tsx",
+      "content": "import { FlipWords } from \"@/registry/default/motion/flip-words\";\n\nconst roles = [\"engineers\", \"designers\", \"founders\", \"teams\"];\n\nexport default function FlipWordsTestimonial() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <div className=\"w-full max-w-2xl rounded-2xl border border-border bg-card p-8 text-center shadow-sm\">\n        <blockquote className=\"text-2xl font-medium leading-snug text-foreground sm:text-3xl\">\n          \"Built for{\" \"}\n          <FlipWords\n            className=\"text-primary\"\n            duration={2200}\n            transition={{ damping: 16, stiffness: 90, type: \"spring\" }}\n            words={roles}\n          />\n          <br />\n          who move fast.\"\n        </blockquote>\n        <div className=\"mt-6 flex items-center justify-center gap-3\">\n          <div className=\"h-8 w-8 rounded-full bg-gradient-to-br from-violet-500 to-pink-500\" />\n          <div className=\"text-left\">\n            <p className=\"text-sm font-semibold text-foreground\">Alex Kim</p>\n            <p className=\"text-xs text-muted-foreground\">Lead Engineer, Acme</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

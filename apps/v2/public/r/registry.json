@@ -15031,6 +15031,606 @@
       "type": "registry:block"
     },
     {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero inline — audience descriptor cycles in a heading with character stagger",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-rotate-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-rotate-1",
+      "registryDependencies": [
+        "@cnippet/text-rotate"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Manual step control — prev/next buttons drive word-by-word rotation via ref",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-rotate-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-rotate-2",
+      "registryDependencies": [
+        "@cnippet/text-rotate"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Feature ticker — short feature strings rotate with fade+y tween and dot indicators",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-rotate-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-rotate-3",
+      "registryDependencies": [
+        "@cnippet/text-rotate"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — word-by-word upward clip reveal with left-to-right stagger",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-vertical-cut-reveal-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-vertical-cut-reveal-1",
+      "registryDependencies": [
+        "@cnippet/vertical-cut-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Character logotype — center-out stagger on a short brand name",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-vertical-cut-reveal-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-vertical-cut-reveal-2",
+      "registryDependencies": [
+        "@cnippet/vertical-cut-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stacked lines — alternating reverse direction per line with sequential delays",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-vertical-cut-reveal-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-vertical-cut-reveal-3",
+      "registryDependencies": [
+        "@cnippet/vertical-cut-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — each link swaps independently on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-swap-hover-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-swap-hover-1",
+      "registryDependencies": [
+        "@cnippet/letter-swap-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA buttons — filled and outlined buttons with opposite swap directions",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-swap-hover-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-swap-hover-2",
+      "registryDependencies": [
+        "@cnippet/letter-swap-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stats row — labels use center-out stagger beneath stat figures",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-letter-swap-hover-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-letter-swap-hover-3",
+      "registryDependencies": [
+        "@cnippet/letter-swap-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — slow sweep on a large heading",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-1",
+      "registryDependencies": [
+        "@cnippet/text-shimmer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Status badges — system-state and AI-processing badges with active shimmer loop",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-2",
+      "registryDependencies": [
+        "@cnippet/text-shimmer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Feature list — heading and three feature strings shimmer at different speeds",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-3",
+      "registryDependencies": [
+        "@cnippet/text-shimmer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero heading — gentle wave with moderate z and y distance",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-wave-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-wave-1",
+      "registryDependencies": [
+        "@cnippet/text-shimmer-wave"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Loading states — fast wave on short strings alongside spinners and pulse indicators",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-wave-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-wave-2",
+      "registryDependencies": [
+        "@cnippet/text-shimmer-wave"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Exaggerated logotype — pushed scale, rotateY, and zDistance on a short all-caps word",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-shimmer-wave-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-shimmer-wave-3",
+      "registryDependencies": [
+        "@cnippet/text-shimmer-wave"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — letter-by-letter 3D roll reveal for a landing page heading",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-roll-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-roll-1",
+      "registryDependencies": [
+        "@cnippet/text-roll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stats row — three TextRoll instances with offset delays animate key metrics with replay",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-roll-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-roll-2",
+      "registryDependencies": [
+        "@cnippet/text-roll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — staggered roll-in across nav items on mount",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-roll-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-roll-3",
+      "registryDependencies": [
+        "@cnippet/text-roll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero inline — adjectives flip inside a heading with primary colour accent",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-flip-words-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-flip-words-1",
+      "registryDependencies": [
+        "@cnippet/flip-words"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "CTA button — action verbs flip inside a full-width button for a sense of urgency",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-flip-words-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-flip-words-2",
+      "registryDependencies": [
+        "@cnippet/flip-words"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Testimonial card — audience descriptor cycles in a pull-quote layout",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-flip-words-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-flip-words-3",
+      "registryDependencies": [
+        "@cnippet/flip-words"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stats section — four counters animate a social-proof grid on mount",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-counting-number-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-counting-number-1",
+      "registryDependencies": [
+        "@cnippet/counting-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Large hero metric — single full-width counter with imperative replay via ref",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-counting-number-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-counting-number-2",
+      "registryDependencies": [
+        "@cnippet/counting-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Dashboard metrics — three gradient counters inside bordered cards with different durations",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-counting-number-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-counting-number-3",
+      "registryDependencies": [
+        "@cnippet/counting-number"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "Feature cards — three cards slide up and fade in with staggered delays on scroll",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-reveal-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-reveal-1",
+      "registryDependencies": [
+        "@cnippet/scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "Feature section — image slides from left, text from right in a split layout",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-reveal-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-reveal-2",
+      "registryDependencies": [
+        "@cnippet/scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "Stepped list — each item slides in from the left with incrementing delay",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-reveal-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-reveal-3",
+      "registryDependencies": [
+        "@cnippet/scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "Fixed reading bar — 1px bar pinned to viewport top tracks window scroll",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-progress-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-progress-1",
+      "registryDependencies": [
+        "@cnippet/scroll-progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "In-container progress — gradient bar in card header scoped to a scrollable div",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-progress-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-progress-2",
+      "registryDependencies": [
+        "@cnippet/scroll-progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "description": "Styled bar with percentage — rounded gradient bar with live percentage label",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-progress-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-progress-3",
+      "registryDependencies": [
+        "@cnippet/scroll-progress"
+      ],
+      "type": "registry:block"
+    },
+    {
       "css": {
         "@layer base": {
           "*": {

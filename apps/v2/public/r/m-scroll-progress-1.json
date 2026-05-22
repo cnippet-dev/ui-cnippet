@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-progress-1",
+  "description": "Fixed reading bar — 1px bar pinned to viewport top tracks window scroll",
+  "registryDependencies": [
+    "@cnippet/scroll-progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-progress-1.tsx",
+      "content": "\"use client\";\n\nimport { ScrollProgress } from \"@/registry/default/motion/scroll-progress\";\n\nexport default function ScrollProgressFixed() {\n  return (\n    <div className=\"relative flex min-h-50 flex-col items-center justify-start overflow-y-auto px-6\">\n      <div className=\"sticky top-0 z-10 w-full\">\n        <ScrollProgress className=\"fixed left-0 right-0 top-0 h-1 bg-primary\" />\n      </div>\n      <div className=\"w-full max-w-lg space-y-4 py-6\">\n        <h2 className=\"text-xl font-bold text-foreground\">\n          Scroll to see progress\n        </h2>\n        {Array.from({ length: 6 }).map((_, i) => (\n          <p className=\"text-sm leading-relaxed text-muted-foreground\" key={i}>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\n            ad minim veniam, quis nostrud exercitation ullamco laboris.\n          </p>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

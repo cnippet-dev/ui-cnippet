@@ -1,0 +1,86 @@
+---
+title: Letter Swap Hover
+description: Each letter slides out vertically on hover while an identical copy slides in behind it — creating a smooth looping swap effect driven entirely by cursor entry.
+---
+
+<ComponentPreview name="m-letter-swap-hover-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add letter-swap-hover
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="letter-swap-hover" title="components/motion/letter-swap-hover.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { LetterSwapHover } from "@/components/motion/letter-swap-hover";
+```
+
+```tsx
+<LetterSwapHover label="Get started" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | — | The text to display and animate |
+| `reverse` | `boolean` | `true` | `true` slides letters down; `false` slides them up |
+| `staggerDuration` | `number` | `0.03` | Seconds between each letter's animation |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Which end the stagger wave originates from |
+| `transition` | `AnimationOptions` | `{ type: "spring", duration: 0.7 }` | Motion transition for the swap |
+| `className` | `string` | — | Class applied to the outer span |
+| `onClick` | `() => void` | — | Click handler |
+
+## Examples
+
+### Navigation Links
+
+Each nav link swaps independently on hover. The stagger makes the motion feel distinct per item even when items sit close together.
+
+<ComponentPreview name="m-letter-swap-hover-1" />
+
+### CTA Buttons
+
+Two buttons — filled and outlined — both using `LetterSwapHover`. `reverse={false}` on the primary flips the direction for visual contrast.
+
+<ComponentPreview name="m-letter-swap-hover-2" />
+
+### Stats Row
+
+Labels beneath stat figures use `staggerFrom="center"` so letters fan outward from the middle — a subtle touch that differentiates them from standard hover states.
+
+<ComponentPreview name="m-letter-swap-hover-3" />

@@ -1,0 +1,82 @@
+---
+title: Scroll Progress
+description: A spring-animated progress bar that tracks scroll position — works for the full page or a scrollable container element.
+---
+
+<ComponentPreview name="m-scroll-progress-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-progress
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-progress" title="components/motion/scroll-progress.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollProgress } from "@/components/motion/scroll-progress";
+```
+
+```tsx
+<ScrollProgress className="fixed inset-x-0 top-0 h-1 bg-primary" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Class applied to the progress bar element — use this to set colour, height, and position |
+| `springOptions` | `SpringOptions` | `{ stiffness: 200, damping: 50, restDelta: 0.001 }` | Spring physics for smoothing the progress value |
+| `containerRef` | `RefObject<HTMLDivElement>` | — | When provided, tracks scroll inside that container instead of the window |
+
+## Examples
+
+### Fixed Reading Progress Bar
+
+A 1 px bar fixed to the top of the viewport, coloured with the primary theme token. Tracks window scroll.
+
+<ComponentPreview name="m-scroll-progress-1" />
+
+### In-Container Progress
+
+A scrollable changelog card with a gradient progress bar along the bottom of the header. Pass a `containerRef` to scope tracking to the card's scroll area.
+
+<ComponentPreview name="m-scroll-progress-2" />
+
+### Styled Bar with Percentage Label
+
+A rounded gradient bar with a live percentage counter rendered next to it using `useTransform`. The label updates in sync with the smooth spring value.
+
+<ComponentPreview name="m-scroll-progress-3" />

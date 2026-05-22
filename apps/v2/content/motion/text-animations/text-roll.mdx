@@ -1,0 +1,87 @@
+---
+title: Text Roll
+description: Characters roll in and out with a 3D perspective flip — each letter animates independently for a mechanical, tactile reveal effect.
+---
+
+<ComponentPreview name="m-text-roll-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-roll
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-roll" title="components/motion/text-roll.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextRoll } from "@/components/motion/text-roll";
+```
+
+```tsx
+<TextRoll>Design with motion</TextRoll>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The text to animate letter by letter |
+| `duration` | `number` | `0.5` | Duration of each letter's roll animation (seconds) |
+| `getEnterDelay` | `(index: number) => number` | `(i) => i * 0.1` | Delay for the entering letter at position `i` |
+| `getExitDelay` | `(index: number) => number` | `(i) => i * 0.1 + 0.2` | Delay for the exiting letter at position `i` |
+| `transition` | `Transition` | `{ ease: "easeIn" }` | Motion transition shared by all letters |
+| `variants` | `{ enter: { initial, animate }, exit: { initial, animate } }` | — | Override the enter/exit rotation variants |
+| `onAnimationComplete` | `() => void` | — | Callback fired when the last letter finishes |
+| `className` | `string` | — | Class applied to the wrapping `<span>` |
+
+## Examples
+
+### Hero Headline
+
+Letter-by-letter roll reveal for a landing page heading. Each character flips in sequentially with a tight stagger.
+
+<ComponentPreview name="m-text-roll-1" />
+
+### Stats Row
+
+Three `TextRoll` instances with offset `getEnterDelay` functions animate a row of key metrics simultaneously. A replay button re-mounts the animation.
+
+<ComponentPreview name="m-text-roll-2" />
+
+### Navigation Links
+
+Staggered text-roll applied to nav links on mount. Each link starts with a small group offset so the entire nav rolls in left to right.
+
+<ComponentPreview name="m-text-roll-3" />

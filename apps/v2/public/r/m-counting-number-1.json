@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-counting-number-1",
+  "description": "Stats section — four counters animate a social-proof grid on mount",
+  "registryDependencies": [
+    "@cnippet/counting-number"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-counting-number-1.tsx",
+      "content": "import { CountingNumber } from \"@/registry/default/motion/counting-number\";\n\nconst stats = [\n  { label: \"Components shipped\", suffix: \"+\", value: 164 },\n  { label: \"GitHub stars\", suffix: \"K\", value: 4.2 },\n  { label: \"Monthly downloads\", suffix: \"K\", value: 98 },\n  { label: \"Contributors\", suffix: \"\", value: 37 },\n];\n\nexport default function CountingNumberStats() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"grid grid-cols-2 gap-8 sm:grid-cols-4\">\n        {stats.map((stat) => (\n          <div className=\"text-center\" key={stat.label}>\n            <p className=\"text-4xl font-bold tracking-tight text-foreground\">\n              <CountingNumber\n                target={stat.value}\n                transition={{ duration: 2, ease: \"easeOut\", type: \"tween\" }}\n              />\n              {stat.suffix}\n            </p>\n            <p className=\"mt-1 text-xs text-muted-foreground\">{stat.label}</p>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}
