@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A hook that allows you to automatically adjust the height of an element based on its content.",
+  "files": [
+    {
+      "path": "registry/hooks/use-auto-height/index.tsx",
+      "target": "hooks/use-auto-height.tsx",
+      "type": "registry:hook"
+    }
+  ],
+  "name": "hooks-use-auto-height",
+  "title": "useAutoHeight",
+  "type": "registry:hook"
+}

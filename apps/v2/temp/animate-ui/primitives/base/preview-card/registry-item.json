@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@base-ui-components/react"],
+  "description": "A popup that appears when a link is hovered, showing a preview for sighted users.",
+  "files": [
+    {
+      "path": "registry/primitives/base/preview-card/index.tsx",
+      "target": "components/animate-ui/primitives/base/preview-card.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-base-preview-card",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Base Preview Card",
+  "type": "registry:ui"
+}

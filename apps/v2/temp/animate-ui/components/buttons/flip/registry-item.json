@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["class-variance-authority"],
+  "description": "A button that flips between two states on hover.",
+  "files": [
+    {
+      "path": "registry/components/buttons/flip/index.tsx",
+      "target": "components/animate-ui/components/buttons/flip.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-buttons-flip",
+  "registryDependencies": [
+    "@animate-ui/components-buttons-button",
+    "@animate-ui/primitives-buttons-flip"
+  ],
+  "title": "Flip Button",
+  "type": "registry:ui"
+}

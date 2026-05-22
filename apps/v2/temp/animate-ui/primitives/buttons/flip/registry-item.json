@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A button that flips between two states on hover.",
+  "files": [
+    {
+      "path": "registry/primitives/buttons/flip/index.tsx",
+      "target": "components/animate-ui/primitives/buttons/flip.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-buttons-flip",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/primitives-animate-slot"
+  ],
+  "title": "Flip Button",
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "radix-ui"],
+  "description": "Extends the Dialog component to display content that complements the main content of the screen.",
+  "files": [
+    {
+      "path": "registry/primitives/radix/sheet/index.tsx",
+      "target": "components/animate-ui/primitives/radix/sheet.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-radix-sheet",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Radix Sheet",
+  "type": "registry:ui"
+}

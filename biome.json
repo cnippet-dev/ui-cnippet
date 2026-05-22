@@ -52,6 +52,7 @@
       "trailingCommas": "all"
     }
   },
+
   "linter": {
     "enabled": true,
     "rules": {
@@ -94,6 +95,9 @@
         "useNumberNamespace": "error",
         "useSelfClosingElements": "error",
         "useSingleVarDeclarator": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       }
     }
   },

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "react-use-measure"],
+  "description": "A sliding number animation.",
+  "files": [
+    {
+      "path": "registry/primitives/texts/sliding-number/index.tsx",
+      "target": "components/animate-ui/primitives/texts/sliding-number.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-texts-sliding-number",
+  "registryDependencies": ["@animate-ui/hooks-use-is-in-view"],
+  "title": "Sliding Number",
+  "type": "registry:ui"
+}

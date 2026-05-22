@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "lucide-react"],
+  "description": "A circular navigation menu with animated pointer and expanding buttons for smooth interactive transitions.",
+  "files": [
+    {
+      "path": "registry/components/community/radial-nav/index.tsx",
+      "target": "components/animate-ui/components/community/radial-nav.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-radial-nav",
+  "registryDependencies": [],
+  "title": "Radial Nav",
+  "type": "registry:ui"
+}

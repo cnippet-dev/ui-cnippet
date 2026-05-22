@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "lucide-react", "class-variance-authority"],
+  "description": "This is a button for sharing.",
+  "files": [
+    {
+      "path": "registry/components/community/share-button/index.tsx",
+      "target": "components/animate-ui/components/community/share-button.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-share-button",
+  "title": "Share Button",
+  "type": "registry:ui"
+}

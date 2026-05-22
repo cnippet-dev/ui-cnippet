@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A hook that allows you to check if an element is in view.",
+  "files": [
+    {
+      "path": "registry/hooks/use-is-in-view/index.tsx",
+      "target": "hooks/use-is-in-view.tsx",
+      "type": "registry:hook"
+    }
+  ],
+  "name": "hooks-use-is-in-view",
+  "title": "useIsInView",
+  "type": "registry:hook"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
+  "files": [
+    {
+      "path": "registry/components/base/tooltip/index.tsx",
+      "target": "components/animate-ui/components/base/tooltip.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-base-tooltip",
+  "registryDependencies": ["@animate-ui/primitives-base-tooltip"],
+  "title": "Tooltip",
+  "type": "registry:ui"
+}

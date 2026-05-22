@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "class-variance-authority", "lucide-react"],
+  "description": "A 3D animated card component that flips to reveal content on the back.",
+  "files": [
+    {
+      "path": "registry/components/community/flip-card/index.tsx",
+      "target": "components/animate-ui/components/community/flip-card.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-flip-card",
+  "title": "Flip Card",
+  "type": "registry:ui"
+}

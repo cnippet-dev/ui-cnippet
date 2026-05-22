@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@headlessui/react"],
+  "description": "Checkboxes provide the same functionality as native HTML checkboxes, without any of the styling, giving you a clean slate to design them however you'd like.",
+  "files": [
+    {
+      "path": "registry/primitives/headless/checkbox/index.tsx",
+      "target": "components/animate-ui/primitives/headless/checkbox.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-headless-checkbox",
+  "title": "Headless Checkbox",
+  "type": "registry:ui"
+}

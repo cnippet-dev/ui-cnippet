@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["class-variance-authority"],
+  "description": "A button that animates on tap with a ripple effect.",
+  "files": [
+    {
+      "path": "registry/components/buttons/ripple/index.tsx",
+      "target": "components/animate-ui/components/buttons/ripple.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-buttons-ripple",
+  "registryDependencies": [
+    "@animate-ui/components-buttons-button",
+    "@animate-ui/primitives-buttons-ripple"
+  ],
+  "title": "Ripple Button",
+  "type": "registry:ui"
+}

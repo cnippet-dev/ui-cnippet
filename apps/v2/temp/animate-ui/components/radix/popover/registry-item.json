@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "Displays rich content in a portal, triggered by a button.",
+  "files": [
+    {
+      "path": "registry/components/radix/popover/index.tsx",
+      "target": "components/animate-ui/components/radix/popover.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-radix-popover",
+  "registryDependencies": ["@animate-ui/primitives-radix-popover"],
+  "title": "Popover",
+  "type": "registry:ui"
+}

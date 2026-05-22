@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@base-ui-components/react"],
+  "description": "An easily stylable accordion component.",
+  "files": [
+    {
+      "path": "registry/primitives/base/accordion/index.tsx",
+      "target": "components/animate-ui/primitives/base/accordion.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-base-accordion",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Base Accordion",
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["lucide-react"],
+  "description": "A clickable button that links to a GitHub repository and displays the number of stars.",
+  "files": [
+    {
+      "path": "registry/components/buttons/github-stars/index.tsx",
+      "target": "components/animate-ui/components/buttons/github-stars.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-buttons-github-stars",
+  "registryDependencies": [
+    "@animate-ui/primitives-buttons-button",
+    "@animate-ui/primitives-animate-github-stars"
+  ],
+  "title": "GitHub Stars Button",
+  "type": "registry:ui"
+}

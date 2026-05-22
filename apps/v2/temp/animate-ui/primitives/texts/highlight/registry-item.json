@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A highlight text animation.",
+  "files": [
+    {
+      "path": "registry/primitives/texts/highlight/index.tsx",
+      "target": "components/animate-ui/primitives/texts/highlight.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-texts-highlight",
+  "registryDependencies": ["@animate-ui/hooks-use-is-in-view"],
+  "title": "Highlight Text",
+  "type": "registry:ui"
+}

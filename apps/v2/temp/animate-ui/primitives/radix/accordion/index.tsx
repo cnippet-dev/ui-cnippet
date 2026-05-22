@@ -1,0 +1,171 @@
+"use client";
+
+import { AnimatePresence, type HTMLMotionProps, motion } from "motion/react";
+import { Accordion as AccordionPrimitive } from "radix-ui";
+import * as React from "react";
+
+import { useControlledState } from "@/registry/hooks/use-controlled-state";
+import { getStrictContext } from "@/registry/lib/get-strict-context";
+
+type AccordionContextType = {
+  value: string | string[] | undefined;
+  setValue: (value: string | string[] | undefined) => void;
+};
+
+type AccordionItemContextType = {
+  value: string;
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+};
+
+const [AccordionProvider, useAccordion] =
+  getStrictContext<AccordionContextType>("AccordionContext");
+
+const [AccordionItemProvider, useAccordionItem] =
+  getStrictContext<AccordionItemContextType>("AccordionItemContext");
+
+type AccordionProps = React.ComponentProps<typeof AccordionPrimitive.Root>;
+
+function Accordion(props: AccordionProps) {
+  const [value, setValue] = useControlledState<string | string[] | undefined>({
+    defaultValue: props?.defaultValue,
+    onChange: props?.onValueChange as (
+      value: string | string[] | undefined,
+    ) => void,
+    value: props?.value,
+  });
+
+  return (
+    <AccordionProvider value={{ setValue, value }}>
+      <AccordionPrimitive.Root
+        data-slot="accordion"
+        {...props}
+        onValueChange={setValue}
+      />
+    </AccordionProvider>
+  );
+}
+
+type AccordionItemProps = React.ComponentProps<typeof AccordionPrimitive.Item>;
+
+function AccordionItem(props: AccordionItemProps) {
+  const { value } = useAccordion();
+  const [isOpen, setIsOpen] = React.useState(
+    value?.includes(props?.value) ?? false,
+  );
+
+  React.useEffect(() => {
+    setIsOpen(value?.includes(props?.value) ?? false);
+  }, [value, props?.value]);
+
+  return (
+    <AccordionItemProvider value={{ isOpen, setIsOpen, value: props.value }}>
+      <AccordionPrimitive.Item data-slot="accordion-item" {...props} />
+    </AccordionItemProvider>
+  );
+}
+
+type AccordionHeaderProps = React.ComponentProps<
+  typeof AccordionPrimitive.Header
+>;
+
+function AccordionHeader(props: AccordionHeaderProps) {
+  return <AccordionPrimitive.Header data-slot="accordion-header" {...props} />;
+}
+
+type AccordionTriggerProps = React.ComponentProps<
+  typeof AccordionPrimitive.Trigger
+>;
+
+function AccordionTrigger(props: AccordionTriggerProps) {
+  return (
+    <AccordionPrimitive.Trigger data-slot="accordion-trigger" {...props} />
+  );
+}
+
+type AccordionContentProps = Omit<
+  React.ComponentProps<typeof AccordionPrimitive.Content>,
+  "asChild" | "forceMount"
+> &
+  HTMLMotionProps<"div"> & {
+    keepRendered?: boolean;
+  };
+
+function AccordionContent({
+  keepRendered = false,
+  transition = { duration: 0.35, ease: "easeInOut" },
+  ...props
+}: AccordionContentProps) {
+  const { isOpen } = useAccordionItem();
+
+  return (
+    <AnimatePresence>
+      {keepRendered ? (
+        <AccordionPrimitive.Content asChild forceMount>
+          <motion.div
+            animate={
+              isOpen
+                ? { "--mask-stop": "100%", height: "auto", opacity: 1, y: 0 }
+                : { "--mask-stop": "0%", height: 0, opacity: 0, y: 20 }
+            }
+            data-slot="accordion-content"
+            initial={{ "--mask-stop": "0%", height: 0, opacity: 0, y: 20 }}
+            key="accordion-content"
+            style={{
+              maskImage:
+                "linear-gradient(black var(--mask-stop), transparent var(--mask-stop))",
+              overflow: "hidden",
+              WebkitMaskImage:
+                "linear-gradient(black var(--mask-stop), transparent var(--mask-stop))",
+            }}
+            transition={transition}
+            {...props}
+          />
+        </AccordionPrimitive.Content>
+      ) : (
+        isOpen && (
+          <AccordionPrimitive.Content asChild forceMount>
+            <motion.div
+              animate={{
+                "--mask-stop": "100%",
+                height: "auto",
+                opacity: 1,
+                y: 0,
+              }}
+              data-slot="accordion-content"
+              exit={{ "--mask-stop": "0%", height: 0, opacity: 0, y: 20 }}
+              initial={{ "--mask-stop": "0%", height: 0, opacity: 0, y: 20 }}
+              key="accordion-content"
+              style={{
+                maskImage:
+                  "linear-gradient(black var(--mask-stop), transparent var(--mask-stop))",
+                overflow: "hidden",
+                WebkitMaskImage:
+                  "linear-gradient(black var(--mask-stop), transparent var(--mask-stop))",
+              }}
+              transition={transition}
+              {...props}
+            />
+          </AccordionPrimitive.Content>
+        )
+      )}
+    </AnimatePresence>
+  );
+}
+
+export {
+  Accordion,
+  AccordionContent,
+  type AccordionContentProps,
+  type AccordionContextType,
+  AccordionHeader,
+  type AccordionHeaderProps,
+  AccordionItem,
+  type AccordionItemContextType,
+  type AccordionItemProps,
+  type AccordionProps,
+  AccordionTrigger,
+  type AccordionTriggerProps,
+  useAccordion,
+  useAccordionItem,
+};

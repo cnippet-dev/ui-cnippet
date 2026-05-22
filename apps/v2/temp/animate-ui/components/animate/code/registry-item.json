@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["next-themes"],
+  "description": "A code component that animates the code as it is written.",
+  "files": [
+    {
+      "path": "registry/components/animate/code/index.tsx",
+      "target": "components/animate-ui/components/animate/code.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-animate-code",
+  "registryDependencies": [
+    "@animate-ui/primitives-animate-code-block",
+    "@animate-ui/components-buttons-copy",
+    "@animate-ui/lib-get-strict-context"
+  ],
+  "title": "Code",
+  "type": "registry:ui"
+}

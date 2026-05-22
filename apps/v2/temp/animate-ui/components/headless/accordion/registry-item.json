@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["lucide-react"],
+  "description": "A vertically stacked set of interactive headings that each reveal an associated section of content.",
+  "files": [
+    {
+      "path": "registry/components/headless/accordion/index.tsx",
+      "target": "components/animate-ui/components/headless/accordion.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-headless-accordion",
+  "registryDependencies": ["@animate-ui/primitives-headless-disclosure"],
+  "title": "Accordion",
+  "type": "registry:ui"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "Easily create accessible, fully customizable tab interfaces, with robust focus management and keyboard navigation support.",
+  "files": [
+    {
+      "path": "registry/components/headless/tabs/index.tsx",
+      "target": "components/animate-ui/components/headless/tabs.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-headless-tabs",
+  "registryDependencies": ["@animate-ui/primitives-headless-tabs"],
+  "title": "Tabs",
+  "type": "registry:ui"
+}

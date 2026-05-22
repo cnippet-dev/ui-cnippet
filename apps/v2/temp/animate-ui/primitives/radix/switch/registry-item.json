@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "radix-ui"],
+  "description": "A control that allows the user to toggle between checked and not checked.",
+  "files": [
+    {
+      "path": "registry/primitives/radix/switch/index.tsx",
+      "target": "components/animate-ui/primitives/radix/switch.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-radix-switch",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Radix Switch",
+  "type": "registry:ui"
+}

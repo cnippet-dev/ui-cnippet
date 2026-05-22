@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "An effect that allows you to toggle the theme gradually.",
+  "files": [
+    {
+      "path": "registry/primitives/effects/theme-toggler/index.tsx",
+      "target": "components/animate-ui/primitives/effects/theme-toggler.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-effects-theme-toggler",
+  "title": "Theme Toggler",
+  "type": "registry:ui"
+}

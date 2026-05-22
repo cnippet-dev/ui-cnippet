@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "An interactive background featuring smoothly animated gradient bubbles, creating a playful, dynamic, and visually engaging backdrop.",
+  "files": [
+    {
+      "path": "registry/components/backgrounds/bubble/index.tsx",
+      "target": "components/animate-ui/components/backgrounds/bubble.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-backgrounds-bubble",
+  "title": "Bubble Background",
+  "type": "registry:ui"
+}

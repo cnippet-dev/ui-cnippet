@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "radix-ui"],
+  "description": "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+  "files": [
+    {
+      "path": "registry/primitives/radix/radio-group/index.tsx",
+      "target": "components/animate-ui/primitives/radix/radio-group.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-radix-radio-group",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Radix Radio Group",
+  "type": "registry:ui"
+}

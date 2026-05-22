@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A dialog that requires user response to proceed.",
+  "files": [
+    {
+      "path": "registry/components/base/alert-dialog/index.tsx",
+      "target": "components/animate-ui/components/base/alert-dialog.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-base-alert-dialog",
+  "registryDependencies": [
+    "@animate-ui/primitives-base-alert-dialog",
+    "@animate-ui/components-buttons-button"
+  ],
+  "title": "Alert Dialog",
+  "type": "registry:ui"
+}

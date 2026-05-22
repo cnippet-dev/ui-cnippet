@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "An effect that allows you to animate elements on first view or load.",
+  "files": [
+    {
+      "path": "registry/primitives/effects/effect/index.tsx",
+      "target": "components/animate-ui/primitives/effects/effect.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-effects-effect",
+  "registryDependencies": [
+    "@animate-ui/primitives-animate-slot",
+    "@animate-ui/hooks-use-is-in-view"
+  ],
+  "title": "Effect",
+  "type": "registry:ui"
+}

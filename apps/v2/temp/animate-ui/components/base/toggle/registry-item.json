@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A two-state button that can be on or off.",
+  "files": [
+    {
+      "path": "registry/components/base/toggle/index.tsx",
+      "target": "components/animate-ui/components/base/toggle.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-base-toggle",
+  "registryDependencies": ["@animate-ui/primitives-base-toggle"],
+  "title": "Toggle",
+  "type": "registry:ui"
+}

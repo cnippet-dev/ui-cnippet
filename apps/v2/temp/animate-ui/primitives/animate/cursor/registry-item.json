@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "An animated cursor component that allows you to customize both the cursor and cursor follow elements with smooth animations.",
+  "files": [
+    {
+      "path": "registry/primitives/animate/cursor/index.tsx",
+      "target": "components/animate-ui/primitives/animate/cursor.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-animate-cursor",
+  "registryDependencies": [
+    "@animate-ui/primitives-animate-slot",
+    "@animate-ui/lib-get-strict-context"
+  ],
+  "title": "Cursor",
+  "type": "registry:ui"
+}

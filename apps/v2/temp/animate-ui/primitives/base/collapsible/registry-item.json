@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@base-ui-components/react"],
+  "description": "A collapsible panel controlled by a button.",
+  "files": [
+    {
+      "path": "registry/primitives/base/collapsible/index.tsx",
+      "target": "components/animate-ui/primitives/base/collapsible.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-base-collapsible",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Base Collapsible",
+  "type": "registry:ui"
+}

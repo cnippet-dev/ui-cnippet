@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A rotating text animation.",
+  "files": [
+    {
+      "path": "registry/primitives/texts/rotating/index.tsx",
+      "target": "components/animate-ui/primitives/texts/rotating.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-texts-rotating",
+  "registryDependencies": [
+    "@animate-ui/hooks-use-is-in-view",
+    "@animate-ui/lib-get-strict-context"
+  ],
+  "title": "Rotating Text",
+  "type": "registry:ui"
+}

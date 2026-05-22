@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A grid that displays animations in a grid.",
+  "files": [
+    {
+      "path": "registry/primitives/animate/motion-grid/index.tsx",
+      "target": "components/animate-ui/primitives/animate/motion-grid.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-animate-motion-grid",
+  "registryDependencies": [
+    "@animate-ui/primitives-animate-slot",
+    "@animate-ui/lib-get-strict-context"
+  ],
+  "title": "Motion Grid",
+  "type": "registry:ui"
+}

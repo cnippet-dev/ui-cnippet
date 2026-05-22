@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@base-ui-components/react"],
+  "description": "An easily stylable checkbox component.",
+  "files": [
+    {
+      "path": "registry/primitives/base/checkbox/index.tsx",
+      "target": "components/animate-ui/primitives/base/checkbox.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-base-checkbox",
+  "registryDependencies": [
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Base Checkbox",
+  "type": "registry:ui"
+}

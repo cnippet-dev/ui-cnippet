@@ -1,0 +1,71 @@
+﻿"use client";
+
+import {
+  AnimatePresence,
+  type AnimatePresenceProps,
+  motion,
+  type Transition,
+  type Variants,
+} from "motion/react";
+import { Children, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
+export type TextLoopProps = {
+  children: React.ReactNode[];
+  className?: string;
+  interval?: number;
+  transition?: Transition;
+  variants?: Variants;
+  onIndexChange?: (index: number) => void;
+  trigger?: boolean;
+  mode?: AnimatePresenceProps["mode"];
+};
+
+const defaultVariants: Variants = {
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+  initial: { opacity: 0, y: 20 },
+};
+
+export function TextLoop({
+  children,
+  className,
+  interval = 2,
+  transition = { duration: 0.3 },
+  variants,
+  onIndexChange,
+  trigger = true,
+  mode = "popLayout",
+}: TextLoopProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const items = Children.toArray(children);
+
+  useEffect(() => {
+    if (!trigger) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((current) => {
+        const next = (current + 1) % items.length;
+        onIndexChange?.(next);
+        return next;
+      });
+    }, interval * 1000);
+    return () => clearInterval(timer);
+  }, [items.length, interval, onIndexChange, trigger]);
+
+  return (
+    <div className={cn("relative inline-block whitespace-nowrap", className)}>
+      <AnimatePresence initial={false} mode={mode}>
+        <motion.div
+          animate="animate"
+          exit="exit"
+          initial="initial"
+          key={currentIndex}
+          transition={transition}
+          variants={variants ?? defaultVariants}
+        >
+          {items[currentIndex]}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}

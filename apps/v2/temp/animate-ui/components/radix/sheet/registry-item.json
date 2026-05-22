@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["lucide-react"],
+  "description": "Extends the Dialog component to display content that complements the main content of the screen.",
+  "files": [
+    {
+      "path": "registry/components/radix/sheet/index.tsx",
+      "target": "components/animate-ui/components/radix/sheet.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-radix-sheet",
+  "registryDependencies": ["@animate-ui/primitives-radix-sheet"],
+  "title": "Sheet",
+  "type": "registry:ui"
+}

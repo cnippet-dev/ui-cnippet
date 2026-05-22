@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "@headlessui/react"],
+  "description": "A simple, accessible foundation for building custom UIs that show and hide content, like togglable accordion panels.",
+  "files": [
+    {
+      "path": "registry/primitives/headless/disclosure/index.tsx",
+      "target": "components/animate-ui/primitives/headless/disclosure.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-headless-disclosure",
+  "registryDependencies": ["@animate-ui/lib-get-strict-context"],
+  "title": "Headless Disclosure",
+  "type": "registry:ui"
+}

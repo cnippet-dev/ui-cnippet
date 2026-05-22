@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["class-variance-authority"],
+  "description": "An icon button component with a variety of styles and animations.",
+  "files": [
+    {
+      "path": "registry/components/buttons/icon/index.tsx",
+      "target": "components/animate-ui/components/buttons/icon.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-buttons-icon",
+  "registryDependencies": [
+    "@animate-ui/primitives-buttons-button",
+    "@animate-ui/primitives-effects-particles"
+  ],
+  "title": "Icon Button",
+  "type": "registry:ui"
+}

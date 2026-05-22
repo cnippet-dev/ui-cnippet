@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "lucide-react"],
+  "description": "A management bar for managing items.",
+  "files": [
+    {
+      "path": "registry/components/community/management-bar/index.tsx",
+      "target": "components/animate-ui/components/community/management-bar.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-management-bar",
+  "registryDependencies": ["@animate-ui/primitives-texts-sliding-number"],
+  "title": "Management Bar",
+  "type": "registry:ui"
+}

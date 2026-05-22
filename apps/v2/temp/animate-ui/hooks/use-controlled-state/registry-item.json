@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A hook that allows you to control a state.",
+  "files": [
+    {
+      "path": "registry/hooks/use-controlled-state/index.tsx",
+      "target": "hooks/use-controlled-state.tsx",
+      "type": "registry:hook"
+    }
+  ],
+  "name": "hooks-use-controlled-state",
+  "title": "useControlledState",
+  "type": "registry:hook"
+}

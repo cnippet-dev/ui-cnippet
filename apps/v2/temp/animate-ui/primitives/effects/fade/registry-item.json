@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "An effect that allows you to animate elements with a fade effect on first view or load.",
+  "files": [
+    {
+      "path": "registry/primitives/effects/fade/index.tsx",
+      "target": "components/animate-ui/primitives/effects/fade.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-effects-fade",
+  "registryDependencies": [
+    "@animate-ui/primitives-animate-slot",
+    "@animate-ui/hooks-use-is-in-view"
+  ],
+  "title": "Fade",
+  "type": "registry:ui"
+}

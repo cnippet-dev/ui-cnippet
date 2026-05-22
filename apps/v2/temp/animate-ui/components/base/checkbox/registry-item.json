@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["class-variance-authority"],
+  "description": "An easily stylable checkbox component.",
+  "files": [
+    {
+      "path": "registry/components/base/checkbox/index.tsx",
+      "target": "components/animate-ui/components/base/checkbox.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-base-checkbox",
+  "registryDependencies": ["@animate-ui/primitives-base-checkbox"],
+  "title": "Checkbox",
+  "type": "registry:ui"
+}

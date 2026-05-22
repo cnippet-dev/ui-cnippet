@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  "files": [
+    {
+      "path": "registry/components/radix/tabs/index.tsx",
+      "target": "components/animate-ui/components/radix/tabs.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-radix-tabs",
+  "registryDependencies": ["@animate-ui/primitives-radix-tabs"],
+  "title": "Tabs",
+  "type": "registry:ui"
+}

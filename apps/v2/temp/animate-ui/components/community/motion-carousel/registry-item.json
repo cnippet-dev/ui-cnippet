@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "embla-carousel",
+    "embla-carousel-react"
+  ],
+  "description": "A carousel built on top of Embla Carousel with smooth Motion-powered animations. Each slide scales dynamically based on its active state, and the pagination uses animated pill-style dot buttons for an interactive, fluid experience.",
+  "files": [
+    {
+      "path": "registry/components/community/motion-carousel/index.tsx",
+      "target": "components/animate-ui/components/community/motion-carousel.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-motion-carousel",
+  "registryDependencies": ["@animate-ui/components-buttons-button"],
+  "title": "Motion Carousel",
+  "type": "registry:ui"
+}

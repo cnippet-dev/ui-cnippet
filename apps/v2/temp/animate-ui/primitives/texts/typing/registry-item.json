@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion"],
+  "description": "A typing text animation.",
+  "files": [
+    {
+      "path": "registry/primitives/texts/typing/index.tsx",
+      "target": "components/animate-ui/primitives/texts/typing.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-texts-typing",
+  "registryDependencies": [
+    "@animate-ui/hooks-use-is-in-view",
+    "@animate-ui/lib-get-strict-context"
+  ],
+  "title": "Typing Text",
+  "type": "registry:ui"
+}

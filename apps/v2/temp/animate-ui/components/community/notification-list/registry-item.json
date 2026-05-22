@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "lucide-react"],
+  "description": "A fun notification list with animated stacking and cards that expand as you interact.",
+  "files": [
+    {
+      "path": "registry/components/community/notification-list/index.tsx",
+      "target": "components/animate-ui/components/community/notification-list.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "components-community-notification-list",
+  "title": "Notification List",
+  "type": "registry:ui"
+}

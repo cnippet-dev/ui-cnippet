@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": ["motion", "radix-ui"],
+  "description": "A set of two-state buttons that can be toggled on or off.",
+  "files": [
+    {
+      "path": "registry/primitives/radix/toggle-group/index.tsx",
+      "target": "components/animate-ui/primitives/radix/toggle-group.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "primitives-radix-toggle-group",
+  "registryDependencies": [
+    "@animate-ui/primitives-effects-highlight",
+    "@animate-ui/lib-get-strict-context",
+    "@animate-ui/hooks-use-controlled-state"
+  ],
+  "title": "Radix Toggle Group",
+  "type": "registry:ui"
+}
