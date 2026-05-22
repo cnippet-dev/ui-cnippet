@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "letter-swap-hover",
+  "description": "Each letter swaps position vertically on hover",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/letter-swap-hover.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  type AnimationOptions,\n  motion,\n  stagger,\n  useAnimate,\n} from \"motion/react\";\nimport { useCallback, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type LetterSwapHoverProps = {\n  label: string;\n  reverse?: boolean;\n  transition?: AnimationOptions;\n  staggerDuration?: number;\n  staggerFrom?: \"first\" | \"last\" | \"center\" | number;\n  className?: string;\n  onClick?: () => void;\n};\n\nexport function LetterSwapHover({\n  label,\n  reverse = true,\n  transition = { duration: 0.7, type: \"spring\" },\n  staggerDuration = 0.03,\n  staggerFrom = \"first\",\n  className,\n  onClick,\n  ...props\n}: LetterSwapHoverProps) {\n  const [scope, animate] = useAnimate();\n  const [blocked, setBlocked] = useState(false);\n\n  const mergeTransition = (base: AnimationOptions): AnimationOptions => ({\n    ...base,\n    delay: stagger(staggerDuration, { from: staggerFrom }),\n  });\n\n  const hoverStart = useCallback(() => {\n    if (blocked) return;\n    setBlocked(true);\n\n    animate(\n      \".letter\",\n      { y: reverse ? \"100%\" : \"-100%\" },\n      mergeTransition(transition),\n    ).then(() => {\n      animate(\".letter\", { y: 0 }, { duration: 0 }).then(() =>\n        setBlocked(false),\n      );\n    });\n\n    animate(\n      \".letter-secondary\",\n      { top: \"0%\" },\n      mergeTransition(transition),\n    ).then(() => {\n      animate(\n        \".letter-secondary\",\n        { top: reverse ? \"-100%\" : \"100%\" },\n        { duration: 0 },\n      );\n    });\n  }, [blocked, animate, transition, reverse, mergeTransition]);\n\n  return (\n    <span\n      aria-label={label}\n      className={cn(\n        \"relative flex items-center justify-center overflow-hidden\",\n        className,\n      )}\n      onClick={onClick}\n      onMouseEnter={hoverStart}\n      ref={scope}\n      {...props}\n    >\n      <span className=\"sr-only\">{label}</span>\n      {label.split(\"\").map((letter, i) => (\n        <span\n          aria-hidden=\"true\"\n          className=\"relative flex whitespace-pre\"\n          key={i}\n        >\n          <motion.span className=\"letter relative\" style={{ top: 0 }}>\n            {letter}\n          </motion.span>\n          <motion.span\n            className=\"letter-secondary absolute\"\n            style={{ top: reverse ? \"-100%\" : \"100%\" }}\n          >\n            {letter}\n          </motion.span>\n        </span>\n      ))}\n    </span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/letter-swap-hover.tsx"
+    }
+  ],
+  "categories": [
+    "text animation",
+    "hover animation"
+  ],
+  "type": "registry:ui"
+}

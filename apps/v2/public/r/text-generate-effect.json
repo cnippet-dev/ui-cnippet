@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-generate-effect",
+  "description": "Words fade in sequentially as if being AI-generated",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-generate-effect.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition } from \"motion/react\";\nimport { type ElementType, useMemo } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type TextGenerateEffectProps = {\n  children: string;\n  as?: ElementType;\n  className?: string;\n  wordClassName?: string;\n  trigger?: boolean;\n  staggerDuration?: number;\n  transition?: Transition;\n  filter?: boolean;\n};\n\nexport function TextGenerateEffect({\n  children,\n  as = \"p\",\n  className,\n  wordClassName,\n  trigger = true,\n  staggerDuration = 0.1,\n  transition = { duration: 0.5 },\n  filter = true,\n}: TextGenerateEffectProps) {\n  const words = useMemo(() => children.split(\" \"), [children]);\n  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;\n\n  return (\n    <MotionTag aria-label={children} className={cn(\"inline-block\", className)}>\n      <span className=\"sr-only\">{children}</span>\n      {words.map((word, i) => (\n        <motion.span\n          animate={\n            trigger\n              ? { filter: filter ? \"blur(0px)\" : undefined, opacity: 1 }\n              : { filter: filter ? \"blur(4px)\" : undefined, opacity: 0 }\n          }\n          aria-hidden=\"true\"\n          className={cn(\"inline-block whitespace-pre opacity-0\", wordClassName)}\n          initial={{ filter: filter ? \"blur(4px)\" : undefined, opacity: 0 }}\n          key={`${i}-${word}`}\n          transition={{ ...transition, delay: i * staggerDuration }}\n        >\n          {word}{\" \"}\n        </motion.span>\n      ))}\n    </MotionTag>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-generate-effect.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

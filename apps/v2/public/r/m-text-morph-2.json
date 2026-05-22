@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-morph-2",
+  "description": "Auto-cycling plan name — interval advances through strings in a card",
+  "registryDependencies": [
+    "@cnippet/text-morph"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-morph-2.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { TextMorph } from \"@/registry/default/motion/text-morph\";\n\nconst plans = [\"Starter\", \"Pro\", \"Enterprise\"];\n\nexport default function TextMorphPricing() {\n  const [index, setIndex] = useState(0);\n\n  useEffect(() => {\n    const id = setInterval(\n      () => setIndex((i) => (i + 1) % plans.length),\n      2200,\n    );\n    return () => clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-xs rounded-xl border border-border bg-card p-6 text-center\">\n        <p className=\"mb-1 text-xs font-medium uppercase tracking-widest text-muted-foreground\">\n          Current plan\n        </p>\n        <TextMorph\n          as=\"h3\"\n          className=\"text-3xl font-bold text-foreground\"\n          transition={{ damping: 20, mass: 0.25, stiffness: 320, type: \"spring\" }}\n        >\n          {plans[index] ?? plans[0]}\n        </TextMorph>\n        <p className=\"mt-3 text-sm text-muted-foreground\">\n          Upgrade or downgrade at any time.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

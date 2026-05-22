@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-scramble",
+  "description": "Characters scramble through random glyphs before resolving to the final text",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-scramble.tsx",
+      "content": "﻿\"use client\";\n\nimport { type MotionProps, motion } from \"motion/react\";\nimport { type JSX, useEffect, useState } from \"react\";\n\nconst DEFAULT_CHARS =\n  \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\nexport type TextScrambleProps = {\n  children: string;\n  duration?: number;\n  speed?: number;\n  characterSet?: string;\n  as?: React.ElementType;\n  className?: string;\n  trigger?: boolean;\n  onScrambleComplete?: () => void;\n} & MotionProps;\n\nexport function TextScramble({\n  children,\n  duration = 0.8,\n  speed = 0.04,\n  characterSet = DEFAULT_CHARS,\n  className,\n  as: Component = \"p\",\n  trigger = true,\n  onScrambleComplete,\n  ...props\n}: TextScrambleProps) {\n  const MotionComponent = motion.create(\n    Component as keyof JSX.IntrinsicElements,\n  );\n  const [scrambledText, setScrambledText] = useState<string | null>(null);\n  const [isAnimating, setIsAnimating] = useState(false);\n  const text = children;\n\n  const scramble = async () => {\n    if (isAnimating) return;\n    setIsAnimating(true);\n\n    const steps = duration / speed;\n    let step = 0;\n\n    const interval = setInterval(() => {\n      const progress = step / steps;\n      let scrambled = \"\";\n\n      for (let i = 0; i < text.length; i++) {\n        if (text[i] === \" \") {\n          scrambled += \" \";\n          continue;\n        }\n        if (progress * text.length > i) {\n          scrambled += text[i];\n        } else {\n          scrambled +=\n            characterSet[Math.floor(Math.random() * characterSet.length)];\n        }\n      }\n\n      setScrambledText(scrambled);\n      step++;\n\n      if (step > steps) {\n        clearInterval(interval);\n        setScrambledText(null);\n        setIsAnimating(false);\n        onScrambleComplete?.();\n      }\n    }, speed * 1000);\n  };\n\n  useEffect(() => {\n    if (!trigger) return;\n    scramble();\n  }, [trigger, scramble]);\n\n  return (\n    <MotionComponent className={className} {...props}>\n      {scrambledText ?? children}\n    </MotionComponent>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-scramble.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

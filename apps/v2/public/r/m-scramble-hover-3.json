@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scramble-hover-3",
+  "description": "Repository card — title and metadata scramble with different settings",
+  "registryDependencies": [
+    "@cnippet/scramble-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scramble-hover-3.tsx",
+      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\n\nexport default function ScrambleHoverCard() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-sm rounded-xl border border-border bg-card p-6\">\n        <div className=\"mb-4 flex items-center justify-between\">\n          <ScrambleHover\n            className=\"text-base font-semibold text-foreground\"\n            maxIterations={10}\n            revealDirection=\"start\"\n            scrambleSpeed={45}\n          >\n            cnippet/motion\n          </ScrambleHover>\n          <span className=\"rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400\">\n            public\n          </span>\n        </div>\n        <p className=\"mb-5 text-sm text-muted-foreground\">\n          Copy-paste motion primitives for modern React apps. Powered by Motion.\n        </p>\n        <div className=\"flex items-center gap-4 text-xs text-muted-foreground\">\n          <ScrambleHover scrambleSpeed={50} maxIterations={8} useOriginalCharsOnly>\n            ★ 2.4k\n          </ScrambleHover>\n          <ScrambleHover scrambleSpeed={50} maxIterations={8} useOriginalCharsOnly>\n            TypeScript\n          </ScrambleHover>\n          <ScrambleHover scrambleSpeed={50} maxIterations={8} useOriginalCharsOnly>\n            MIT License\n          </ScrambleHover>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

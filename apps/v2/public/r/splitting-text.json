@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "splitting-text",
+  "description": "Text splits into characters or words with individual animation control",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/splitting-text.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  AnimatePresence,\n  motion,\n  type Transition,\n  type Variants,\n} from \"motion/react\";\nimport { type ElementType, useMemo } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction splitIntoChars(text: string): string[] {\n  if (typeof Intl !== \"undefined\" && \"Segmenter\" in Intl) {\n    const segmenter = new Intl.Segmenter(\"en\", { granularity: \"grapheme\" });\n    return Array.from(segmenter.segment(text), ({ segment }) => segment);\n  }\n  return Array.from(text);\n}\n\nexport type SplittingTextProps = {\n  children: string;\n  as?: ElementType;\n  splitBy?: \"chars\" | \"words\" | \"lines\";\n  preset?: \"fade\" | \"slide-up\" | \"slide-down\" | \"blur\" | \"scale\";\n  staggerDuration?: number;\n  trigger?: boolean;\n  transition?: Transition;\n  className?: string;\n  segmentClassName?: string;\n};\n\nconst presets: Record<string, Variants> = {\n  blur: {\n    hidden: { filter: \"blur(8px)\", opacity: 0 },\n    visible: { filter: \"blur(0px)\", opacity: 1 },\n  },\n  fade: {\n    hidden: { opacity: 0 },\n    visible: { opacity: 1 },\n  },\n  scale: {\n    hidden: { opacity: 0, scale: 0.5 },\n    visible: { opacity: 1, scale: 1 },\n  },\n  \"slide-down\": {\n    hidden: { opacity: 0, y: -20 },\n    visible: { opacity: 1, y: 0 },\n  },\n  \"slide-up\": {\n    hidden: { opacity: 0, y: 20 },\n    visible: { opacity: 1, y: 0 },\n  },\n};\n\nexport function SplittingText({\n  children,\n  as = \"p\",\n  splitBy = \"words\",\n  preset = \"slide-up\",\n  staggerDuration = 0.05,\n  trigger = true,\n  transition = { damping: 20, stiffness: 200, type: \"spring\" },\n  className,\n  segmentClassName,\n}: SplittingTextProps) {\n  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;\n  const itemVariants = presets[preset] ?? presets.fade;\n\n  const segments = useMemo(() => {\n    if (splitBy === \"chars\") return splitIntoChars(children);\n    if (splitBy === \"lines\") return children.split(\"\\n\");\n    return children.split(\" \");\n  }, [children, splitBy]);\n\n  const containerVariants: Variants = {\n    exit: {\n      opacity: 0,\n      transition: {\n        staggerChildren: staggerDuration / 2,\n        staggerDirection: -1,\n      },\n    },\n    hidden: { opacity: 0 },\n    visible: {\n      opacity: 1,\n      transition: { staggerChildren: staggerDuration },\n    },\n  };\n\n  return (\n    <AnimatePresence mode=\"popLayout\">\n      {trigger && (\n        <MotionTag\n          animate=\"visible\"\n          className={className}\n          exit=\"exit\"\n          initial=\"hidden\"\n          variants={containerVariants}\n        >\n          <span className=\"sr-only\">{children}</span>\n          {segments.map((segment, i) => (\n            <motion.span\n              aria-hidden=\"true\"\n              className={cn(\n                splitBy === \"lines\" ? \"block\" : \"inline-block whitespace-pre\",\n                segmentClassName,\n              )}\n              key={`${i}-${segment}`}\n              transition={transition}\n              variants={itemVariants}\n            >\n              {segment}\n            </motion.span>\n          ))}\n        </MotionTag>\n      )}\n    </AnimatePresence>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/splitting-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

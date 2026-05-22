@@ -1,0 +1,4 @@
+{
+  "pages": ["text-reveal", "text-scramble", "scramble-hover", "typewriter", "text-loop", "text-morph"],
+  "title": "Text Animations"
+}

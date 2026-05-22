@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scramble-hover-1",
+  "description": "Navigation links — each link scrambles independently on hover",
+  "registryDependencies": [
+    "@cnippet/scramble-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scramble-hover-1.tsx",
+      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\n\nconst links = [\"Features\", \"Pricing\", \"Changelog\", \"Docs\", \"Blog\"];\n\nexport default function ScrambleHoverNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-6\">\n        {links.map((link) => (\n          <ScrambleHover\n            className=\"text-sm font-medium text-muted-foreground transition-colors hover:text-foreground\"\n            key={link}\n            scrambleSpeed={40}\n            maxIterations={8}\n          >\n            {link}\n          </ScrambleHover>\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

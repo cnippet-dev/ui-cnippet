@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-number",
+  "description": "Smooth spring-based number interpolation",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/animated-number.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  motion,\n  type SpringOptions,\n  useSpring,\n  useTransform,\n} from \"motion/react\";\nimport { type JSX, useEffect } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type AnimatedNumberProps = {\n  value: number;\n  className?: string;\n  springOptions?: SpringOptions;\n  as?: React.ElementType;\n};\n\nexport function AnimatedNumber({\n  value,\n  className,\n  springOptions,\n  as = \"span\",\n}: AnimatedNumberProps) {\n  const MotionComponent = motion.create(as as keyof JSX.IntrinsicElements);\n  const spring = useSpring(value, springOptions);\n  const display = useTransform(spring, (current) =>\n    Math.round(current).toLocaleString(),\n  );\n\n  useEffect(() => {\n    spring.set(value);\n  }, [spring, value]);\n\n  return (\n    <MotionComponent className={cn(\"tabular-nums\", className)}>\n      {display}\n    </MotionComponent>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/animated-number.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

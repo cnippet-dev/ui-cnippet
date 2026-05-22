@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typewriter",
+  "description": "Characters appear one by one with an optional blinking cursor",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/typewriter.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Variants } from \"motion/react\";\nimport { type ElementType, useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type TypewriterProps = {\n  text: string | string[];\n  as?: ElementType;\n  speed?: number;\n  initialDelay?: number;\n  waitTime?: number;\n  deleteSpeed?: number;\n  loop?: boolean;\n  className?: string;\n  showCursor?: boolean;\n  hideCursorOnType?: boolean;\n  cursorChar?: string | React.ReactNode;\n  cursorClassName?: string;\n  cursorAnimationVariants?: {\n    initial: Variants[\"initial\"];\n    animate: Variants[\"animate\"];\n  };\n} & React.HTMLAttributes<HTMLElement>;\n\nexport function Typewriter({\n  text,\n  as: Tag = \"div\",\n  speed = 50,\n  initialDelay = 0,\n  waitTime = 2000,\n  deleteSpeed = 30,\n  loop = true,\n  className,\n  showCursor = true,\n  hideCursorOnType = false,\n  cursorChar = \"|\",\n  cursorClassName = \"ml-1\",\n  cursorAnimationVariants = {\n    animate: {\n      opacity: 1,\n      transition: {\n        duration: 0.01,\n        repeat: Number.POSITIVE_INFINITY,\n        repeatDelay: 0.4,\n        repeatType: \"reverse\",\n      },\n    },\n    initial: { opacity: 0 },\n  },\n  ...props\n}: TypewriterProps) {\n  const [displayText, setDisplayText] = useState(\"\");\n  const [currentIndex, setCurrentIndex] = useState(0);\n  const [isDeleting, setIsDeleting] = useState(false);\n  const [currentTextIndex, setCurrentTextIndex] = useState(0);\n\n  const texts = Array.isArray(text) ? text : [text];\n\n  useEffect(() => {\n    let timeout: ReturnType<typeof setTimeout>;\n    const currentText = texts[currentTextIndex] ?? \"\";\n\n    const tick = () => {\n      if (isDeleting) {\n        if (displayText === \"\") {\n          setIsDeleting(false);\n          if (currentTextIndex === texts.length - 1 && !loop) return;\n          setCurrentTextIndex((prev) => (prev + 1) % texts.length);\n          setCurrentIndex(0);\n        } else {\n          timeout = setTimeout(\n            () => setDisplayText((prev) => prev.slice(0, -1)),\n            deleteSpeed,\n          );\n        }\n      } else {\n        if (currentIndex < currentText.length) {\n          timeout = setTimeout(() => {\n            setDisplayText((prev) => prev + currentText[currentIndex]);\n            setCurrentIndex((prev) => prev + 1);\n          }, speed);\n        } else if (texts.length > 1) {\n          timeout = setTimeout(() => setIsDeleting(true), waitTime);\n        }\n      }\n    };\n\n    if (currentIndex === 0 && !isDeleting && displayText === \"\") {\n      timeout = setTimeout(tick, initialDelay);\n    } else {\n      tick();\n    }\n\n    return () => clearTimeout(timeout);\n  }, [\n    currentIndex,\n    displayText,\n    isDeleting,\n    speed,\n    deleteSpeed,\n    waitTime,\n    texts,\n    currentTextIndex,\n    loop,\n    initialDelay,\n  ]);\n\n  const isTyping =\n    currentIndex < (texts[currentTextIndex]?.length ?? 0) || isDeleting;\n\n  return (\n    <Tag\n      className={cn(\"inline whitespace-pre-wrap tracking-tight\", className)}\n      {...props}\n    >\n      <span>{displayText}</span>\n      {showCursor && (\n        <motion.span\n          animate=\"animate\"\n          className={cn(\n            cursorClassName,\n            hideCursorOnType && isTyping ? \"hidden\" : \"\",\n          )}\n          initial=\"initial\"\n          variants={cursorAnimationVariants as Variants}\n        >\n          {cursorChar}\n        </motion.span>\n      )}\n    </Tag>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/typewriter.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

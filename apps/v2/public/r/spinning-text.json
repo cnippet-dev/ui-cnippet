@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinning-text",
+  "description": "Text arranged in a circle rotating continuously",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/spinning-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition, type Variants } from \"motion/react\";\nimport type React from \"react\";\nimport type { CSSProperties } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type SpinningTextProps = {\n  children: string;\n  style?: CSSProperties;\n  duration?: number;\n  className?: string;\n  reverse?: boolean;\n  fontSize?: number;\n  radius?: number;\n  transition?: Transition;\n  variants?: {\n    container?: Variants;\n    item?: Variants;\n  };\n};\n\nconst BASE_TRANSITION = {\n  ease: \"linear\" as const,\n  repeat: Number.POSITIVE_INFINITY,\n};\nconst BASE_ITEM_VARIANTS = { hidden: { opacity: 1 }, visible: { opacity: 1 } };\n\nexport function SpinningText({\n  children,\n  duration = 10,\n  style,\n  className,\n  reverse = false,\n  fontSize = 1,\n  radius = 5,\n  transition,\n  variants,\n}: SpinningTextProps) {\n  const letters = children.split(\"\");\n  const totalLetters = letters.length;\n\n  const finalTransition = {\n    ...BASE_TRANSITION,\n    ...transition,\n    duration: (transition as { duration?: number })?.duration ?? duration,\n  };\n\n  const containerVariants: Variants = {\n    visible: { rotate: reverse ? -360 : 360 },\n    ...variants?.container,\n  };\n\n  const itemVariants: Variants = { ...BASE_ITEM_VARIANTS, ...variants?.item };\n\n  return (\n    <motion.div\n      animate=\"visible\"\n      className={cn(\"relative\", className)}\n      initial=\"hidden\"\n      style={style}\n      transition={finalTransition}\n      variants={containerVariants}\n    >\n      {letters.map((letter, index) => (\n        <motion.span\n          aria-hidden=\"true\"\n          className=\"absolute top-1/2 left-1/2 inline-block\"\n          key={`${index}-${letter}`}\n          style={\n            {\n              \"--font-size\": fontSize,\n              \"--index\": index,\n              \"--radius\": radius,\n              \"--total\": totalLetters,\n              fontSize: \"calc(var(--font-size, 2) * 1rem)\",\n              transform: `\n                translate(-50%, -50%)\n                rotate(calc(360deg / var(--total) * var(--index)))\n                translateY(calc(var(--radius, 5) * -1ch))\n              `,\n              transformOrigin: \"center\",\n            } as React.CSSProperties\n          }\n          variants={itemVariants}\n        >\n          {letter}\n        </motion.span>\n      ))}\n      <span className=\"sr-only\">{children}</span>\n    </motion.div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/spinning-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

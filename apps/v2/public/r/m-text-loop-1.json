@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-loop-1",
+  "description": "Looping adjectives — cycles benefit words inline in a heading",
+  "registryDependencies": [
+    "@cnippet/text-loop"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-loop-1.tsx",
+      "content": "import { TextLoop } from \"@/registry/default/motion/text-loop\";\n\nexport default function TextLoopHeading() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Components that are{\" \"}\n        <TextLoop\n          className=\"text-primary\"\n          interval={2.5}\n          transition={{ duration: 0.4, ease: \"easeInOut\" }}\n        >\n          <span>beautiful</span>\n          <span>accessible</span>\n          <span>composable</span>\n          <span>fast</span>\n        </TextLoop>\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

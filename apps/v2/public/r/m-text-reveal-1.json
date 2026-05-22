@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-reveal-1",
+  "description": "Hero headline — word-by-word fade-in-blur reveal",
+  "registryDependencies": [
+    "@cnippet/text-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-reveal-1.tsx",
+      "content": "import { TextReveal } from \"@/registry/default/motion/text-reveal\";\n\nexport default function TextRevealHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <TextReveal\n        as=\"h1\"\n        className=\"max-w-2xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        per=\"word\"\n        preset=\"fade-in-blur\"\n        speedReveal={1.2}\n      >\n        Build beautiful interfaces that move with purpose\n      </TextReveal>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

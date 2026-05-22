@@ -1,0 +1,88 @@
+---
+title: Scramble Hover
+description: Text scrambles through random characters on hover, then resolves back to the original string when the cursor leaves.
+---
+
+<ComponentPreview name="m-scramble-hover-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scramble-hover
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scramble-hover" title="components/motion/scramble-hover.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrambleHover } from "@/components/motion/scramble-hover";
+```
+
+```tsx
+<ScrambleHover>Hover over me</ScrambleHover>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The text to scramble on hover |
+| `scrambleSpeed` | `number` | `50` | Interval in ms between scramble ticks |
+| `maxIterations` | `number` | `10` | Number of scramble steps before resolving |
+| `revealDirection` | `"start" \| "end" \| "center" \| "random"` | `"start"` | Direction characters resolve from |
+| `useOriginalCharsOnly` | `boolean` | `false` | Restrict scramble pool to original characters |
+| `characterSet` | `string` | A–Z, a–z, 0–9, symbols | Characters to scramble through |
+| `onHoverStart` | `() => void` | — | Callback fired when hover starts |
+| `onHoverEnd` | `() => void` | — | Callback fired when hover ends |
+| `className` | `string` | — | Class applied to the wrapper span |
+
+## Examples
+
+### Navigation Links
+
+A row of nav items that each scramble independently on hover. Lower `scrambleSpeed` and `maxIterations` keep it snappy.
+
+<ComponentPreview name="m-scramble-hover-1" />
+
+### Hero Heading
+
+Full heading scrambles with `revealDirection="center"` for a symmetric decode effect. Pairs well with a supporting label.
+
+<ComponentPreview name="m-scramble-hover-2" />
+
+### Repository Card
+
+Multiple `ScrambleHover` instances inside a card — title decodes left-to-right while metadata uses `useOriginalCharsOnly` for a subtler shuffle.
+
+<ComponentPreview name="m-scramble-hover-3" />

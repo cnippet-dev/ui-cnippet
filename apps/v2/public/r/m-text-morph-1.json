@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-morph-1",
+  "description": "Word cycler — button group drives character-level morphing between words",
+  "registryDependencies": [
+    "@cnippet/text-morph"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-morph-1.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { TextMorph } from \"@/registry/default/motion/text-morph\";\n\nconst words = [\"Innovate\", \"Collaborate\", \"Accelerate\", \"Automate\"];\n\nexport default function TextMorphCycler() {\n  const [index, setIndex] = useState(0);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <h2 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <TextMorph>{words[index] ?? words[0]}</TextMorph>\n      </h2>\n      <div className=\"flex gap-2\">\n        {words.map((word, i) => (\n          <button\n            className={`rounded-md px-3 py-1 text-sm font-medium transition-colors ${\n              i === index\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={word}\n            onClick={() => setIndex(i)}\n            type=\"button\"\n          >\n            {word}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

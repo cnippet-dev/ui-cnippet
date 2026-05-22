@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "morphing-text",
+  "description": "Smooth blur-based morphing between words",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/morphing-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { useCallback, useEffect, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst morphTime = 1.5;\nconst cooldownTime = 0.5;\n\nfunction useMorphingTexts(texts: string[]) {\n  const textIndexRef = useRef(0);\n  const morphRef = useRef(0);\n  const cooldownRef = useRef(0);\n  const timeRef = useRef(new Date());\n  const text1Ref = useRef<HTMLSpanElement>(null);\n  const text2Ref = useRef<HTMLSpanElement>(null);\n\n  const setStyles = useCallback(\n    (fraction: number) => {\n      const [t1, t2] = [text1Ref.current, text2Ref.current];\n      if (!t1 || !t2) return;\n      t2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;\n      t2.style.opacity = `${fraction ** 0.4 * 100}%`;\n      const inv = 1 - fraction;\n      t1.style.filter = `blur(${Math.min(8 / inv - 8, 100)}px)`;\n      t1.style.opacity = `${inv ** 0.4 * 100}%`;\n      t1.textContent = texts[textIndexRef.current % texts.length] ?? \"\";\n      t2.textContent = texts[(textIndexRef.current + 1) % texts.length] ?? \"\";\n    },\n    [texts],\n  );\n\n  const doMorph = useCallback(() => {\n    morphRef.current -= cooldownRef.current;\n    cooldownRef.current = 0;\n    let fraction = morphRef.current / morphTime;\n    if (fraction > 1) {\n      cooldownRef.current = cooldownTime;\n      fraction = 1;\n    }\n    setStyles(fraction);\n    if (fraction === 1) textIndexRef.current++;\n  }, [setStyles]);\n\n  const doCooldown = useCallback(() => {\n    morphRef.current = 0;\n    const [t1, t2] = [text1Ref.current, text2Ref.current];\n    if (t1 && t2) {\n      t2.style.filter = \"none\";\n      t2.style.opacity = \"100%\";\n      t1.style.filter = \"none\";\n      t1.style.opacity = \"0%\";\n    }\n  }, []);\n\n  useEffect(() => {\n    let raf: number;\n    const animate = () => {\n      raf = requestAnimationFrame(animate);\n      const now = new Date();\n      const dt = (now.getTime() - timeRef.current.getTime()) / 1000;\n      timeRef.current = now;\n      cooldownRef.current -= dt;\n      if (cooldownRef.current <= 0) doMorph();\n      else doCooldown();\n    };\n    animate();\n    return () => cancelAnimationFrame(raf);\n  }, [doMorph, doCooldown]);\n\n  return { text1Ref, text2Ref };\n}\n\nexport type MorphingTextProps = {\n  texts: string[];\n  className?: string;\n};\n\nexport function MorphingText({ texts, className }: MorphingTextProps) {\n  const { text1Ref, text2Ref } = useMorphingTexts(texts);\n\n  return (\n    <div\n      className={cn(\n        \"filter-[url(#morphing-threshold)_blur(0.6px)] relative mx-auto h-16 w-full text-center font-bold font-sans text-[40pt] leading-none\",\n        className,\n      )}\n    >\n      <span\n        className=\"absolute inset-x-0 top-0 m-auto inline-block w-full\"\n        ref={text1Ref}\n      />\n      <span\n        className=\"absolute inset-x-0 top-0 m-auto inline-block w-full\"\n        ref={text2Ref}\n      />\n      <svg\n        className=\"fixed h-0 w-0\"\n        id=\"morphing-threshold\"\n        preserveAspectRatio=\"xMidYMid slice\"\n      >\n        <defs>\n          <filter id=\"morphing-threshold\">\n            <feColorMatrix\n              in=\"SourceGraphic\"\n              type=\"matrix\"\n              values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140\"\n            />\n          </filter>\n        </defs>\n      </svg>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/morphing-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

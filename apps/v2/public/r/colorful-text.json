@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "colorful-text",
+  "description": "Characters animate in with randomized vibrant colors",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/colorful-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition } from \"motion/react\";\nimport { type ElementType, useMemo, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst VIBRANT_COLORS = [\n  \"#FF6B6B\",\n  \"#FF8E53\",\n  \"#FFC300\",\n  \"#2ECC71\",\n  \"#1ABC9C\",\n  \"#3498DB\",\n  \"#9B59B6\",\n  \"#E91E63\",\n  \"#FF5722\",\n  \"#00BCD4\",\n];\n\nfunction getRandomColor(colors: string[]): string {\n  return colors[Math.floor(Math.random() * colors.length)]!;\n}\n\nfunction splitIntoChars(text: string): string[] {\n  if (typeof Intl !== \"undefined\" && \"Segmenter\" in Intl) {\n    const segmenter = new Intl.Segmenter(\"en\", { granularity: \"grapheme\" });\n    return Array.from(segmenter.segment(text), ({ segment }) => segment);\n  }\n  return Array.from(text);\n}\n\nexport type ColorfulTextProps = {\n  children: string;\n  as?: ElementType;\n  colors?: string[];\n  trigger?: boolean;\n  staggerDuration?: number;\n  transition?: Transition;\n  className?: string;\n};\n\nexport function ColorfulText({\n  children,\n  as = \"p\",\n  colors = VIBRANT_COLORS,\n  trigger = true,\n  staggerDuration = 0.04,\n  transition = { damping: 20, stiffness: 300, type: \"spring\" },\n  className,\n}: ColorfulTextProps) {\n  const chars = useMemo(() => splitIntoChars(children), [children]);\n  const charColors = useRef<string[]>(chars.map(() => getRandomColor(colors)));\n  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;\n\n  return (\n    <MotionTag aria-label={children} className={cn(\"inline-block\", className)}>\n      <span className=\"sr-only\">{children}</span>\n      {chars.map((char, i) => (\n        <motion.span\n          animate={\n            trigger\n              ? { opacity: 1, scale: 1, y: 0 }\n              : { opacity: 0, scale: 0.8, y: 20 }\n          }\n          aria-hidden=\"true\"\n          className=\"inline-block whitespace-pre\"\n          initial={{ opacity: 0, scale: 0.8, y: 20 }}\n          key={i}\n          style={{ color: charColors.current[i] }}\n          transition={{ ...transition, delay: i * staggerDuration }}\n        >\n          {char}\n        </motion.span>\n      ))}\n    </MotionTag>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/colorful-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

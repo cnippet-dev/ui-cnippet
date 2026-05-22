@@ -14050,6 +14050,987 @@
       "type": "registry:block"
     },
     {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters or words animate in with fade, slide-up, or blur and stagger",
+      "files": [
+        {
+          "path": "registry/default/motion/text-reveal.tsx",
+          "target": "components/motion/text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-reveal",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters scramble through random glyphs before resolving to the final text",
+      "files": [
+        {
+          "path": "registry/default/motion/text-scramble.tsx",
+          "target": "components/motion/text-scramble.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-scramble",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text scrambles on hover then resolves back to original",
+      "files": [
+        {
+          "path": "registry/default/motion/scramble-hover.tsx",
+          "target": "components/motion/scramble-hover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scramble-hover",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters appear one by one with an optional blinking cursor",
+      "files": [
+        {
+          "path": "registry/default/motion/typewriter.tsx",
+          "target": "components/motion/typewriter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "typewriter",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Cycles through an array of strings with smooth exit and enter transitions",
+      "files": [
+        {
+          "path": "registry/default/motion/text-loop.tsx",
+          "target": "components/motion/text-loop.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-loop",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Smooth character-level morphing between two strings using shared layout",
+      "files": [
+        {
+          "path": "registry/default/motion/text-morph.tsx",
+          "target": "components/motion/text-morph.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-morph",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Words roll in and out vertically like a slot machine",
+      "files": [
+        {
+          "path": "registry/default/motion/text-roll.tsx",
+          "target": "components/motion/text-roll.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-roll",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Words flip in 3D on a timer along X or Y axis rotation",
+      "files": [
+        {
+          "path": "registry/default/motion/flip-words.tsx",
+          "target": "components/motion/flip-words.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "flip-words",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Rotating text with configurable enter/exit animations and stagger",
+      "files": [
+        {
+          "path": "registry/default/motion/text-rotate.tsx",
+          "target": "components/motion/text-rotate.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-rotate",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text reveals with a vertical clip-path wipe per character, word, or line",
+      "files": [
+        {
+          "path": "registry/default/motion/vertical-cut-reveal.tsx",
+          "target": "components/motion/vertical-cut-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "vertical-cut-reveal",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Each letter swaps position vertically on hover",
+      "files": [
+        {
+          "path": "registry/default/motion/letter-swap-hover.tsx",
+          "target": "components/motion/letter-swap-hover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "letter-swap-hover",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Letters rotate in 3D space on hover revealing a second face",
+      "files": [
+        {
+          "path": "registry/default/motion/letter-3d-swap.tsx",
+          "target": "components/motion/letter-3d-swap.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "letter-3d-swap",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Letters swap in random order on hover for a glitchy effect",
+      "files": [
+        {
+          "path": "registry/default/motion/random-letter-swap.tsx",
+          "target": "components/motion/random-letter-swap.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "random-letter-swap",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Gradient shine sweeps across text continuously",
+      "files": [
+        {
+          "path": "registry/default/motion/text-shimmer.tsx",
+          "target": "components/motion/text-shimmer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-shimmer",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Wave-like shimmer ripples across text characters",
+      "files": [
+        {
+          "path": "registry/default/motion/text-shimmer-wave.tsx",
+          "target": "components/motion/text-shimmer-wave.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-shimmer-wave",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Animated gradient colors flowing through text",
+      "files": [
+        {
+          "path": "registry/default/motion/text-gradient.tsx",
+          "target": "components/motion/text-gradient.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-gradient",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Background highlight animates behind text on scroll or hover",
+      "files": [
+        {
+          "path": "registry/default/motion/text-highlight.tsx",
+          "target": "components/motion/text-highlight.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-highlight",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Animates from a start value to a target number",
+      "files": [
+        {
+          "path": "registry/default/motion/counting-number.tsx",
+          "target": "components/motion/counting-number.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "counting-number",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Digits slide up or down independently when value changes (odometer style)",
+      "files": [
+        {
+          "path": "registry/default/motion/sliding-number.tsx",
+          "target": "components/motion/sliding-number.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sliding-number",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Smooth spring-based number interpolation",
+      "files": [
+        {
+          "path": "registry/default/motion/animated-number.tsx",
+          "target": "components/motion/animated-number.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "animated-number",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text arranged in a circle rotating continuously",
+      "files": [
+        {
+          "path": "registry/default/motion/spinning-text.tsx",
+          "target": "components/motion/spinning-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "spinning-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "svg animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text follows an SVG path, optionally animated",
+      "files": [
+        {
+          "path": "registry/default/motion/text-along-path.tsx",
+          "target": "components/motion/text-along-path.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-along-path",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters scale and opacity pulse in a wave pattern using variable fonts",
+      "files": [
+        {
+          "path": "registry/default/motion/breathing-text.tsx",
+          "target": "components/motion/breathing-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "breathing-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text splits into characters or words with individual animation control",
+      "files": [
+        {
+          "path": "registry/default/motion/splitting-text.tsx",
+          "target": "components/motion/splitting-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "splitting-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text rolls in from top or bottom with 3D perspective",
+      "files": [
+        {
+          "path": "registry/default/motion/rolling-text.tsx",
+          "target": "components/motion/rolling-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "rolling-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Single-slot word rotator with configurable transitions",
+      "files": [
+        {
+          "path": "registry/default/motion/rotating-text.tsx",
+          "target": "components/motion/rotating-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "rotating-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Smooth blur-based morphing between words",
+      "files": [
+        {
+          "path": "registry/default/motion/morphing-text.tsx",
+          "target": "components/motion/morphing-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "morphing-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters animate in with randomized vibrant colors",
+      "files": [
+        {
+          "path": "registry/default/motion/colorful-text.tsx",
+          "target": "components/motion/colorful-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "colorful-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters decrypt from gibberish in a military terminal style",
+      "files": [
+        {
+          "path": "registry/default/motion/encrypted-text.tsx",
+          "target": "components/motion/encrypted-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "encrypted-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Words fade in sequentially as if being AI-generated",
+      "files": [
+        {
+          "path": "registry/default/motion/text-generate-effect.tsx",
+          "target": "components/motion/text-generate-effect.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-generate-effect",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text content swaps and transforms tied to scroll position",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-swap-text.tsx",
+          "target": "components/motion/scroll-swap-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-swap-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Variable font weight and width changes per letter on hover",
+      "files": [
+        {
+          "path": "registry/default/motion/variable-font-hover.tsx",
+          "target": "components/motion/variable-font-hover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "variable-font-hover",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Font axes respond to cursor distance from each character",
+      "files": [
+        {
+          "path": "registry/default/motion/variable-font-cursor-proximity.tsx",
+          "target": "components/motion/variable-font-cursor-proximity.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "variable-font-cursor-proximity",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation",
+        "hover animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Characters scale and transform based on cursor distance",
+      "files": [
+        {
+          "path": "registry/default/motion/text-cursor-proximity.tsx",
+          "target": "components/motion/text-cursor-proximity.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-cursor-proximity",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — word-by-word fade-in-blur reveal",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-reveal-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-reveal-1",
+      "registryDependencies": [
+        "@cnippet/text-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Character scale — letter-level scale reveal for short taglines",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-reveal-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-reveal-2",
+      "registryDependencies": [
+        "@cnippet/text-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Stacked content block — eyebrow, headline, and body with sequential delays",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-reveal-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-reveal-3",
+      "registryDependencies": [
+        "@cnippet/text-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — auto-scramble on mount resolving left-to-right",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-scramble-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-scramble-1",
+      "registryDependencies": [
+        "@cnippet/text-scramble"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Click to retrigger — manually replays the scramble via trigger prop",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-scramble-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-scramble-2",
+      "registryDependencies": [
+        "@cnippet/text-scramble"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Scrambled stats — staggered duration across a metric row",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-scramble-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-scramble-3",
+      "registryDependencies": [
+        "@cnippet/text-scramble"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Navigation links — each link scrambles independently on hover",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scramble-hover-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scramble-hover-1",
+      "registryDependencies": [
+        "@cnippet/scramble-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero heading — center reveal direction for a symmetric decode",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scramble-hover-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scramble-hover-2",
+      "registryDependencies": [
+        "@cnippet/scramble-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Repository card — title and metadata scramble with different settings",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scramble-hover-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scramble-hover-3",
+      "registryDependencies": [
+        "@cnippet/scramble-hover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Hero headline — types once with a block-underscore cursor",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-typewriter-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-typewriter-1",
+      "registryDependencies": [
+        "@cnippet/typewriter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Looping phrases — cycles through strings with delete animation",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-typewriter-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-typewriter-2",
+      "registryDependencies": [
+        "@cnippet/typewriter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Terminal prompt — monospace CLI-style with block cursor",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-typewriter-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-typewriter-3",
+      "registryDependencies": [
+        "@cnippet/typewriter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Looping adjectives — cycles benefit words inline in a heading",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-loop-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-loop-1",
+      "registryDependencies": [
+        "@cnippet/text-loop"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Animated status badge — rich content items in a pill with slide transition",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-loop-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-loop-2",
+      "registryDependencies": [
+        "@cnippet/text-loop"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Horizontal slide — custom variants swap fade+y for a left-to-right slide",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-loop-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-loop-3",
+      "registryDependencies": [
+        "@cnippet/text-loop"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Word cycler — button group drives character-level morphing between words",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-morph-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-morph-1",
+      "registryDependencies": [
+        "@cnippet/text-morph"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Auto-cycling plan name — interval advances through strings in a card",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-morph-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-morph-2",
+      "registryDependencies": [
+        "@cnippet/text-morph"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "description": "Morphing placeholder — placeholder morphs character-by-character as user types",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-morph-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-morph-3",
+      "registryDependencies": [
+        "@cnippet/text-morph"
+      ],
+      "type": "registry:block"
+    },
+    {
       "css": {
         "@layer base": {
           "*": {

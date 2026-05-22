@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-swap-text",
+  "description": "Text content swaps and transforms tied to scroll position",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/scroll-swap-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, useScroll, useSpring, useTransform } from \"motion/react\";\nimport React, { type ElementType, useMemo, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction extractText(children: React.ReactNode): string {\n  if (children == null) return \"\";\n  if (typeof children === \"string\") return children;\n  if (typeof children === \"number\") return String(children);\n  if (Array.isArray(children)) return children.map(extractText).join(\"\");\n  if (React.isValidElement(children)) {\n    const props = (children as React.ReactElement).props;\n    return extractText((props as { children?: React.ReactNode }).children);\n  }\n  return \"\";\n}\n\nexport type ScrollSwapTextProps = {\n  children: React.ReactNode;\n  as?: ElementType;\n  containerRef: React.RefObject<HTMLElement | null>;\n  offset?: [string, string];\n  className?: string;\n  springConfig?: { stiffness?: number; damping?: number; mass?: number };\n};\n\nexport function ScrollSwapText({\n  children,\n  as = \"span\",\n  offset = [\"0 0\", \"0 1\"],\n  className,\n  containerRef,\n  springConfig = { damping: 30, stiffness: 200 },\n  ...props\n}: ScrollSwapTextProps) {\n  const ref = useRef<HTMLElement>(null);\n\n  const text = useMemo(() => {\n    try {\n      return extractText(children);\n    } catch {\n      return \"\";\n    }\n  }, [children]);\n\n  const { scrollYProgress } = useScroll({\n    container: containerRef,\n    // eslint-disable-next-line @typescript-eslint/no-explicit-any\n    offset: offset as any,\n    target: ref,\n  });\n\n  const springProgress = useSpring(scrollYProgress, springConfig);\n  const top = useTransform(springProgress, [0, 1], [\"0%\", \"-100%\"]);\n  const bottom = useTransform(springProgress, [0, 1], [\"100%\", \"0%\"]);\n\n  const ElementTag = as;\n\n  return (\n    <ElementTag\n      className={cn(\n        \"relative flex items-center justify-center overflow-hidden p-0\",\n        className,\n      )}\n      ref={ref}\n      {...props}\n    >\n      <span aria-hidden=\"true\" className=\"relative text-transparent\">\n        {text}\n      </span>\n      <motion.span className=\"absolute\" style={{ top }}>\n        {text}\n      </motion.span>\n      <motion.span\n        aria-hidden=\"true\"\n        className=\"absolute\"\n        style={{ top: bottom }}\n      >\n        {text}\n      </motion.span>\n    </ElementTag>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/scroll-swap-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation",
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

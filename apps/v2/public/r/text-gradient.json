@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-gradient",
+  "description": "Animated gradient colors flowing through text",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-gradient.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition } from \"motion/react\";\nimport type { JSX } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type TextGradientProps = {\n  children: string;\n  as?: React.ElementType;\n  className?: string;\n  colors?: string[];\n  duration?: number;\n  angle?: number;\n  transition?: Transition;\n};\n\nexport function TextGradient({\n  children,\n  as: Component = \"p\",\n  className,\n  colors = [\"#ff6b6b\", \"#ffd93d\", \"#6bcb77\", \"#4d96ff\", \"#c77dff\"],\n  duration = 4,\n  angle = 135,\n  transition,\n}: TextGradientProps) {\n  const MotionComponent = motion.create(\n    Component as keyof JSX.IntrinsicElements,\n  );\n  const gradientSize = colors.length * 100;\n\n  return (\n    <MotionComponent\n      animate={{ backgroundPosition: [\"0% 50%\", \"100% 50%\", \"0% 50%\"] }}\n      className={cn(\"inline-block bg-clip-text text-transparent\", className)}\n      style={{\n        backgroundImage: `linear-gradient(${angle}deg, ${[...colors, ...colors].join(\", \")})`,\n        backgroundSize: `${gradientSize}% 100%`,\n      }}\n      transition={{\n        duration,\n        ease: \"linear\",\n        repeat: Number.POSITIVE_INFINITY,\n        ...transition,\n      }}\n    >\n      {children}\n    </MotionComponent>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-gradient.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

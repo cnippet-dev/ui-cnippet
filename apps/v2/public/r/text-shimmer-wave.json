@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-shimmer-wave",
+  "description": "Wave-like shimmer ripples across text characters",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-shimmer-wave.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition } from \"motion/react\";\nimport type { JSX } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type TextShimmerWaveProps = {\n  children: string;\n  as?: React.ElementType;\n  className?: string;\n  duration?: number;\n  zDistance?: number;\n  xDistance?: number;\n  yDistance?: number;\n  spread?: number;\n  scaleDistance?: number;\n  rotateYDistance?: number;\n  transition?: Transition;\n};\n\nexport function TextShimmerWave({\n  children,\n  as: Component = \"p\",\n  className,\n  duration = 1,\n  zDistance = 10,\n  xDistance = 2,\n  yDistance = -2,\n  spread = 1,\n  scaleDistance = 1.1,\n  rotateYDistance = 10,\n  transition,\n}: TextShimmerWaveProps) {\n  const MotionComponent = motion.create(\n    Component as keyof JSX.IntrinsicElements,\n  );\n\n  return (\n    <MotionComponent\n      className={cn(\n        \"perspective-normal relative inline-block\",\n        \"[--base-color:#a1a1aa] [--base-gradient-color:#000]\",\n        \"dark:[--base-color:#71717a] dark:[--base-gradient-color:#ffffff]\",\n        className,\n      )}\n      style={{ color: \"var(--base-color)\" }}\n    >\n      {children.split(\"\").map((char, i) => {\n        const delay = (i * duration * (1 / spread)) / children.length;\n        return (\n          <motion.span\n            animate={{\n              color: [\n                \"var(--base-color)\",\n                \"var(--base-gradient-color)\",\n                \"var(--base-color)\",\n              ],\n              rotateY: [0, rotateYDistance, 0],\n              scale: [1, scaleDistance, 1],\n              translateX: [0, xDistance, 0],\n              translateY: [0, yDistance, 0],\n              translateZ: [0, zDistance, 0],\n            }}\n            className=\"transform-3d inline-block whitespace-pre\"\n            initial={{\n              color: \"var(--base-color)\",\n              rotateY: 0,\n              scale: 1,\n              translateZ: 0,\n            }}\n            key={i}\n            transition={{\n              delay,\n              duration,\n              ease: \"easeInOut\",\n              repeat: Number.POSITIVE_INFINITY,\n              repeatDelay: (children.length * 0.05) / spread,\n              ...transition,\n            }}\n          >\n            {char}\n          </motion.span>\n        );\n      })}\n    </MotionComponent>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-shimmer-wave.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

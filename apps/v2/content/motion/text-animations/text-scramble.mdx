@@ -1,0 +1,87 @@
+---
+title: Text Scramble
+description: Characters scramble through random glyphs before resolving to the final text, creating a cipher-decoding effect on mount.
+---
+
+<ComponentPreview name="m-text-scramble-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-scramble
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-scramble" title="components/motion/text-scramble.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextScramble } from "@/components/motion/text-scramble";
+```
+
+```tsx
+<TextScramble duration={0.8}>Your text here</TextScramble>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The target text to resolve to |
+| `duration` | `number` | `0.8` | Total scramble duration in seconds |
+| `speed` | `number` | `0.04` | Interval between scramble steps in seconds |
+| `characterSet` | `string` | A–Z, a–z, 0–9 | Characters to scramble through |
+| `trigger` | `boolean` | `true` | Set `false` to pause, `true` to play |
+| `as` | `React.ElementType` | `"p"` | HTML tag for the container |
+| `onScrambleComplete` | `() => void` | — | Callback fired when scramble finishes |
+| `className` | `string` | — | Class applied to the container |
+
+## Examples
+
+### Hero Headline
+
+Auto-triggers on mount and resolves the full headline left-to-right. Increase `duration` for longer text.
+
+<ComponentPreview name="m-text-scramble-1" />
+
+### Click to Retrigger
+
+Manually controls the `trigger` prop by briefly resetting it, letting users replay the scramble on demand.
+
+<ComponentPreview name="m-text-scramble-2" />
+
+### Scrambled Stats
+
+Multiple `TextScramble` instances with staggered `duration` values create a sequential reveal across a stats row.
+
+<ComponentPreview name="m-text-scramble-3" />

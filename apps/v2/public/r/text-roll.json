@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-roll",
+  "description": "Words roll in and out vertically like a slot machine",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-roll.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  motion,\n  type Target,\n  type TargetAndTransition,\n  type Transition,\n  type VariantLabels,\n} from \"motion/react\";\n\nexport type TextRollProps = {\n  children: string;\n  duration?: number;\n  getEnterDelay?: (index: number) => number;\n  getExitDelay?: (index: number) => number;\n  className?: string;\n  transition?: Transition;\n  variants?: {\n    enter: {\n      initial: Target | VariantLabels | boolean;\n      animate: TargetAndTransition | VariantLabels;\n    };\n    exit: {\n      initial: Target | VariantLabels | boolean;\n      animate: TargetAndTransition | VariantLabels;\n    };\n  };\n  onAnimationComplete?: () => void;\n};\n\nconst defaultVariants = {\n  enter: {\n    animate: { rotateX: 90 },\n    initial: { rotateX: 0 },\n  },\n  exit: {\n    animate: { rotateX: 0 },\n    initial: { rotateX: 90 },\n  },\n} as const;\n\nexport function TextRoll({\n  children,\n  duration = 0.5,\n  getEnterDelay = (i) => i * 0.1,\n  getExitDelay = (i) => i * 0.1 + 0.2,\n  className,\n  transition = { ease: \"easeIn\" },\n  variants,\n  onAnimationComplete,\n}: TextRollProps) {\n  const letters = children.split(\"\");\n\n  return (\n    <span className={className}>\n      {letters.map((letter, i) => (\n        <span\n          aria-hidden=\"true\"\n          className=\"perspective-[10000px] transform-3d relative inline-block w-auto\"\n          key={i}\n        >\n          <motion.span\n            animate={variants?.enter?.animate ?? defaultVariants.enter.animate}\n            className=\"backface-hidden absolute inline-block origin-[50%_25%]\"\n            initial={variants?.enter?.initial ?? defaultVariants.enter.initial}\n            transition={{ ...transition, delay: getEnterDelay(i), duration }}\n          >\n            {letter === \" \" ? \" \" : letter}\n          </motion.span>\n          <motion.span\n            animate={variants?.exit?.animate ?? defaultVariants.exit.animate}\n            className=\"backface-hidden absolute inline-block origin-[50%_100%]\"\n            initial={variants?.exit?.initial ?? defaultVariants.exit.initial}\n            onAnimationComplete={\n              letters.length === i + 1 ? onAnimationComplete : undefined\n            }\n            transition={{ ...transition, delay: getExitDelay(i), duration }}\n          >\n            {letter === \" \" ? \" \" : letter}\n          </motion.span>\n          <span className=\"invisible\">{letter === \" \" ? \" \" : letter}</span>\n        </span>\n      ))}\n      <span className=\"sr-only\">{children}</span>\n    </span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-roll.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

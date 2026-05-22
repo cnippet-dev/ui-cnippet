@@ -12859,6 +12859,942 @@ export const Index: Record<string, any> = {
     categories: ["tooltip"],
     meta: {"className":""},
   },
+  "text-reveal": {
+    name: "text-reveal",
+    description: "Characters or words animate in with fade, slide-up, or blur and stagger",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-reveal.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-reveal.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-reveal.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-scramble": {
+    name: "text-scramble",
+    description: "Characters scramble through random glyphs before resolving to the final text",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-scramble.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-scramble.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-scramble.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "scramble-hover": {
+    name: "scramble-hover",
+    description: "Text scrambles on hover then resolves back to original",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/scramble-hover.tsx",
+      type: "registry:ui",
+      target: "components/motion/scramble-hover.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/scramble-hover.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "typewriter": {
+    name: "typewriter",
+    description: "Characters appear one by one with an optional blinking cursor",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/typewriter.tsx",
+      type: "registry:ui",
+      target: "components/motion/typewriter.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/typewriter.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-loop": {
+    name: "text-loop",
+    description: "Cycles through an array of strings with smooth exit and enter transitions",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-loop.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-loop.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-loop.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-morph": {
+    name: "text-morph",
+    description: "Smooth character-level morphing between two strings using shared layout",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-morph.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-morph.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-morph.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-roll": {
+    name: "text-roll",
+    description: "Words roll in and out vertically like a slot machine",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-roll.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-roll.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-roll.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "flip-words": {
+    name: "flip-words",
+    description: "Words flip in 3D on a timer along X or Y axis rotation",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/flip-words.tsx",
+      type: "registry:ui",
+      target: "components/motion/flip-words.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/flip-words.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-rotate": {
+    name: "text-rotate",
+    description: "Rotating text with configurable enter/exit animations and stagger",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-rotate.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-rotate.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-rotate.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "vertical-cut-reveal": {
+    name: "vertical-cut-reveal",
+    description: "Text reveals with a vertical clip-path wipe per character, word, or line",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/vertical-cut-reveal.tsx",
+      type: "registry:ui",
+      target: "components/motion/vertical-cut-reveal.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/vertical-cut-reveal.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "letter-swap-hover": {
+    name: "letter-swap-hover",
+    description: "Each letter swaps position vertically on hover",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/letter-swap-hover.tsx",
+      type: "registry:ui",
+      target: "components/motion/letter-swap-hover.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/letter-swap-hover.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "letter-3d-swap": {
+    name: "letter-3d-swap",
+    description: "Letters rotate in 3D space on hover revealing a second face",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/letter-3d-swap.tsx",
+      type: "registry:ui",
+      target: "components/motion/letter-3d-swap.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/letter-3d-swap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "random-letter-swap": {
+    name: "random-letter-swap",
+    description: "Letters swap in random order on hover for a glitchy effect",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/random-letter-swap.tsx",
+      type: "registry:ui",
+      target: "components/motion/random-letter-swap.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/random-letter-swap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "text-shimmer": {
+    name: "text-shimmer",
+    description: "Gradient shine sweeps across text continuously",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-shimmer.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-shimmer.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-shimmer.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-shimmer-wave": {
+    name: "text-shimmer-wave",
+    description: "Wave-like shimmer ripples across text characters",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-shimmer-wave.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-shimmer-wave.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-shimmer-wave.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-gradient": {
+    name: "text-gradient",
+    description: "Animated gradient colors flowing through text",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-gradient.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-gradient.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-gradient.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-highlight": {
+    name: "text-highlight",
+    description: "Background highlight animates behind text on scroll or hover",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-highlight.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-highlight.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-highlight.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "counting-number": {
+    name: "counting-number",
+    description: "Animates from a start value to a target number",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/counting-number.tsx",
+      type: "registry:ui",
+      target: "components/motion/counting-number.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/counting-number.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "sliding-number": {
+    name: "sliding-number",
+    description: "Digits slide up or down independently when value changes (odometer style)",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/sliding-number.tsx",
+      type: "registry:ui",
+      target: "components/motion/sliding-number.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/sliding-number.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "animated-number": {
+    name: "animated-number",
+    description: "Smooth spring-based number interpolation",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/animated-number.tsx",
+      type: "registry:ui",
+      target: "components/motion/animated-number.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/animated-number.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "spinning-text": {
+    name: "spinning-text",
+    description: "Text arranged in a circle rotating continuously",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/spinning-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/spinning-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/spinning-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-along-path": {
+    name: "text-along-path",
+    description: "Text follows an SVG path, optionally animated",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-along-path.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-along-path.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-along-path.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","svg animation"],
+    meta: undefined,
+  },
+  "breathing-text": {
+    name: "breathing-text",
+    description: "Characters scale and opacity pulse in a wave pattern using variable fonts",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/breathing-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/breathing-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/breathing-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "splitting-text": {
+    name: "splitting-text",
+    description: "Text splits into characters or words with individual animation control",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/splitting-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/splitting-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/splitting-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "rolling-text": {
+    name: "rolling-text",
+    description: "Text rolls in from top or bottom with 3D perspective",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/rolling-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/rolling-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/rolling-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "rotating-text": {
+    name: "rotating-text",
+    description: "Single-slot word rotator with configurable transitions",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/rotating-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/rotating-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/rotating-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "morphing-text": {
+    name: "morphing-text",
+    description: "Smooth blur-based morphing between words",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/morphing-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/morphing-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/morphing-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "colorful-text": {
+    name: "colorful-text",
+    description: "Characters animate in with randomized vibrant colors",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/colorful-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/colorful-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/colorful-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "encrypted-text": {
+    name: "encrypted-text",
+    description: "Characters decrypt from gibberish in a military terminal style",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/encrypted-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/encrypted-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/encrypted-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "text-generate-effect": {
+    name: "text-generate-effect",
+    description: "Words fade in sequentially as if being AI-generated",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-generate-effect.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-generate-effect.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-generate-effect.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: undefined,
+  },
+  "scroll-swap-text": {
+    name: "scroll-swap-text",
+    description: "Text content swaps and transforms tied to scroll position",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/scroll-swap-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/scroll-swap-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/scroll-swap-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","scroll animation"],
+    meta: undefined,
+  },
+  "variable-font-hover": {
+    name: "variable-font-hover",
+    description: "Variable font weight and width changes per letter on hover",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/variable-font-hover.tsx",
+      type: "registry:ui",
+      target: "components/motion/variable-font-hover.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/variable-font-hover.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "variable-font-cursor-proximity": {
+    name: "variable-font-cursor-proximity",
+    description: "Font axes respond to cursor distance from each character",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/variable-font-cursor-proximity.tsx",
+      type: "registry:ui",
+      target: "components/motion/variable-font-cursor-proximity.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/variable-font-cursor-proximity.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "text-cursor-proximity": {
+    name: "text-cursor-proximity",
+    description: "Characters scale and transform based on cursor distance",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/text-cursor-proximity.tsx",
+      type: "registry:ui",
+      target: "components/motion/text-cursor-proximity.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/text-cursor-proximity.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation","hover animation"],
+    meta: undefined,
+  },
+  "m-text-reveal-1": {
+    name: "m-text-reveal-1",
+    description: "Hero headline — word-by-word fade-in-blur reveal",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-reveal"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-reveal-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-reveal-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-reveal-2": {
+    name: "m-text-reveal-2",
+    description: "Character scale — letter-level scale reveal for short taglines",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-reveal"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-reveal-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-reveal-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-reveal-3": {
+    name: "m-text-reveal-3",
+    description: "Stacked content block — eyebrow, headline, and body with sequential delays",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-reveal"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-reveal-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-reveal-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-scramble-1": {
+    name: "m-text-scramble-1",
+    description: "Hero headline — auto-scramble on mount resolving left-to-right",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-scramble"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-scramble-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-scramble-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-scramble-2": {
+    name: "m-text-scramble-2",
+    description: "Click to retrigger — manually replays the scramble via trigger prop",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-scramble"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-scramble-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-scramble-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-scramble-3": {
+    name: "m-text-scramble-3",
+    description: "Scrambled stats — staggered duration across a metric row",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-scramble"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-scramble-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-scramble-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-scramble-hover-1": {
+    name: "m-scramble-hover-1",
+    description: "Navigation links — each link scrambles independently on hover",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scramble-hover"],
+    files: [{
+      path: "registry/default/motion-variants/m-scramble-hover-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scramble-hover-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-scramble-hover-2": {
+    name: "m-scramble-hover-2",
+    description: "Hero heading — center reveal direction for a symmetric decode",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scramble-hover"],
+    files: [{
+      path: "registry/default/motion-variants/m-scramble-hover-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scramble-hover-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-scramble-hover-3": {
+    name: "m-scramble-hover-3",
+    description: "Repository card — title and metadata scramble with different settings",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scramble-hover"],
+    files: [{
+      path: "registry/default/motion-variants/m-scramble-hover-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scramble-hover-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-typewriter-1": {
+    name: "m-typewriter-1",
+    description: "Hero headline — types once with a block-underscore cursor",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/typewriter"],
+    files: [{
+      path: "registry/default/motion-variants/m-typewriter-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-typewriter-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-typewriter-2": {
+    name: "m-typewriter-2",
+    description: "Looping phrases — cycles through strings with delete animation",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/typewriter"],
+    files: [{
+      path: "registry/default/motion-variants/m-typewriter-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-typewriter-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-typewriter-3": {
+    name: "m-typewriter-3",
+    description: "Terminal prompt — monospace CLI-style with block cursor",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/typewriter"],
+    files: [{
+      path: "registry/default/motion-variants/m-typewriter-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-typewriter-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-loop-1": {
+    name: "m-text-loop-1",
+    description: "Looping adjectives — cycles benefit words inline in a heading",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-loop"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-loop-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-loop-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-loop-2": {
+    name: "m-text-loop-2",
+    description: "Animated status badge — rich content items in a pill with slide transition",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-loop"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-loop-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-loop-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-loop-3": {
+    name: "m-text-loop-3",
+    description: "Horizontal slide — custom variants swap fade+y for a left-to-right slide",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-loop"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-loop-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-loop-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-morph-1": {
+    name: "m-text-morph-1",
+    description: "Word cycler — button group drives character-level morphing between words",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-morph"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-morph-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-morph-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-morph-2": {
+    name: "m-text-morph-2",
+    description: "Auto-cycling plan name — interval advances through strings in a card",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-morph"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-morph-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-morph-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
+  "m-text-morph-3": {
+    name: "m-text-morph-3",
+    description: "Morphing placeholder — placeholder morphs character-by-character as user types",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/text-morph"],
+    files: [{
+      path: "registry/default/motion-variants/m-text-morph-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-text-morph-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["text animation"],
+    meta: {"className":""},
+  },
   "fonts": {
     name: "fonts",
     description: "",

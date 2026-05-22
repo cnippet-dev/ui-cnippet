@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rolling-text",
+  "description": "Text rolls in from top or bottom with 3D perspective",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/rolling-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type RollingTextProps = {\n  children: string;\n  className?: string;\n  duration?: number;\n  delay?: number;\n  direction?: \"up\" | \"down\";\n  perspective?: number;\n  transition?: Transition;\n  staggerDuration?: number;\n};\n\nexport function RollingText({\n  children,\n  className,\n  duration = 0.6,\n  delay = 0,\n  direction = \"up\",\n  perspective = 400,\n  transition = { ease: [0.215, 0.61, 0.355, 1] },\n  staggerDuration = 0.04,\n}: RollingTextProps) {\n  const letters = children.split(\"\");\n  const yOffset = direction === \"up\" ? \"100%\" : \"-100%\";\n  const rotateX = direction === \"up\" ? -60 : 60;\n\n  return (\n    <span\n      className={cn(\"inline-block overflow-hidden\", className)}\n      style={{ perspective }}\n    >\n      <span className=\"sr-only\">{children}</span>\n      {letters.map((letter, i) => (\n        <motion.span\n          animate={{ opacity: 1, rotateX: 0, y: 0 }}\n          aria-hidden=\"true\"\n          className=\"inline-block\"\n          initial={{ opacity: 0, rotateX, y: yOffset }}\n          key={i}\n          transition={{\n            ...transition,\n            delay: delay + i * staggerDuration,\n            duration,\n          }}\n        >\n          {letter === \" \" ? \" \" : letter}\n        </motion.span>\n      ))}\n    </span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/rolling-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

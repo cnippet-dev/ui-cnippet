@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "random-letter-swap",
+  "description": "Letters swap in random order on hover for a glitchy effect",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/random-letter-swap.tsx",
+      "content": "﻿\"use client\";\n\nimport { type AnimationOptions, motion, useAnimate } from \"motion/react\";\nimport { useCallback, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type RandomLetterSwapProps = {\n  label: string;\n  reverse?: boolean;\n  transition?: AnimationOptions;\n  staggerDuration?: number;\n  className?: string;\n  onClick?: () => void;\n};\n\nexport function RandomLetterSwap({\n  label,\n  reverse = true,\n  transition = { duration: 0.8, type: \"spring\" },\n  staggerDuration = 0.02,\n  className,\n  onClick,\n  ...props\n}: RandomLetterSwapProps) {\n  const [scope, animate] = useAnimate();\n  const [blocked, setBlocked] = useState(false);\n  const shuffledRef = useRef<number[]>(\n    Array.from({ length: label.length }, (_, i) => i).sort(\n      () => Math.random() - 0.5,\n    ),\n  );\n\n  const hoverStart = useCallback(() => {\n    if (blocked) return;\n    setBlocked(true);\n\n    const shuffled = shuffledRef.current;\n\n    for (let i = 0; i < label.length; i++) {\n      const idx = shuffled[i];\n      const mergedTransition: AnimationOptions = {\n        ...transition,\n        delay: i * staggerDuration,\n      };\n\n      animate(\n        `.letter-${idx}`,\n        { y: reverse ? \"100%\" : \"-100%\" },\n        mergedTransition,\n      ).then(() => {\n        animate(`.letter-${idx}`, { y: 0 }, { duration: 0 });\n      });\n\n      animate(`.letter-secondary-${idx}`, { top: \"0%\" }, mergedTransition)\n        .then(() =>\n          animate(\n            `.letter-secondary-${idx}`,\n            { top: reverse ? \"-100%\" : \"100%\" },\n            { duration: 0 },\n          ),\n        )\n        .then(() => {\n          if (i === label.length - 1) setBlocked(false);\n        });\n    }\n  }, [blocked, label, animate, transition, staggerDuration, reverse]);\n\n  return (\n    <motion.span\n      aria-label={label}\n      className={cn(\n        \"relative flex items-center justify-center overflow-hidden\",\n        className,\n      )}\n      onClick={onClick}\n      onHoverStart={hoverStart}\n      ref={scope}\n      {...props}\n    >\n      <span className=\"sr-only\">{label}</span>\n      {label.split(\"\").map((letter, i) => (\n        <span\n          aria-hidden=\"true\"\n          className=\"relative flex whitespace-pre\"\n          key={i}\n        >\n          <motion.span\n            className={`relative pb-2 letter-${i}`}\n            style={{ top: 0 }}\n          >\n            {letter}\n          </motion.span>\n          <motion.span\n            className={`absolute letter-secondary-${i}`}\n            style={{ top: reverse ? \"-100%\" : \"100%\" }}\n          >\n            {letter}\n          </motion.span>\n        </span>\n      ))}\n    </motion.span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/random-letter-swap.tsx"
+    }
+  ],
+  "categories": [
+    "text animation",
+    "hover animation"
+  ],
+  "type": "registry:ui"
+}

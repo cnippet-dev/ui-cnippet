@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-scramble-2",
+  "description": "Click to retrigger — manually replays the scramble via trigger prop",
+  "registryDependencies": [
+    "@cnippet/text-scramble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-scramble-2.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { TextScramble } from \"@/registry/default/motion/text-scramble\";\n\nexport default function TextScrambleTrigger() {\n  const [trigger, setTrigger] = useState(true);\n\n  function handleClick() {\n    setTrigger(false);\n    setTimeout(() => setTrigger(true), 50);\n  }\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <TextScramble\n        as=\"p\"\n        className=\"font-mono text-xl font-medium tracking-widest text-foreground uppercase\"\n        duration={0.8}\n        speed={0.04}\n        trigger={trigger}\n      >\n        Decrypt on demand\n      </TextScramble>\n      <button\n        className=\"rounded-md border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground\"\n        onClick={handleClick}\n        type=\"button\"\n      >\n        Scramble again\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

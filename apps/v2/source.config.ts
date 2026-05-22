@@ -55,3 +55,17 @@ export const docs = defineDocs({
     }),
   },
 });
+
+export const motion = defineDocs({
+  dir: "content/motion",
+  docs: {
+    schema: frontmatterSchema.extend({
+      links: z
+        .object({
+          api: z.string().optional(),
+          doc: z.string().optional(),
+        })
+        .optional(),
+    }),
+  },
+});

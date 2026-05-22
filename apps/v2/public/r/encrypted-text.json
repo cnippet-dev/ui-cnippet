@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "encrypted-text",
+  "description": "Characters decrypt from gibberish in a military terminal style",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/encrypted-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { useCallback, useEffect, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst CIPHER_CHARS =\n  \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*\";\n\nexport type EncryptedTextProps = {\n  children: string;\n  speed?: number;\n  maxIterations?: number;\n  className?: string;\n  revealDirection?: \"ltr\" | \"rtl\" | \"center\" | \"random\";\n  trigger?: boolean;\n  onComplete?: () => void;\n};\n\nexport function EncryptedText({\n  children,\n  speed = 50,\n  maxIterations = 15,\n  className,\n  revealDirection = \"ltr\",\n  trigger = true,\n  onComplete,\n}: EncryptedTextProps) {\n  const [displayText, setDisplayText] = useState(children);\n  const [isRunning, setIsRunning] = useState(false);\n  const iterRef = useRef(0);\n  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);\n\n  const getRevealIndices = useCallback(\n    (iter: number, length: number): Set<number> => {\n      const revealed = new Set<number>();\n      const count = Math.floor((iter / maxIterations) * length);\n      if (revealDirection === \"ltr\") {\n        for (let i = 0; i < count; i++) revealed.add(i);\n      } else if (revealDirection === \"rtl\") {\n        for (let i = length - 1; i >= length - count; i--) revealed.add(i);\n      } else if (revealDirection === \"center\") {\n        const mid = Math.floor(length / 2);\n        for (let r = 0; r <= count / 2; r++) {\n          revealed.add(mid - r);\n          revealed.add(mid + r);\n        }\n      } else {\n        const indices = Array.from({ length }, (_, i) => i).sort(\n          () => 0.5 - Math.random(),\n        );\n        for (let i = 0; i < count; i++) {\n          const idx = indices[i];\n          if (idx !== undefined) revealed.add(idx);\n        }\n      }\n      return revealed;\n    },\n    [maxIterations, revealDirection],\n  );\n\n  const start = useCallback(() => {\n    if (isRunning) return;\n    iterRef.current = 0;\n    setIsRunning(true);\n\n    intervalRef.current = setInterval(() => {\n      const iter = iterRef.current;\n      const revealed = getRevealIndices(iter, children.length);\n\n      setDisplayText(\n        children\n          .split(\"\")\n          .map((char, i) => {\n            if (char === \" \") return \" \";\n            if (revealed.has(i)) return char;\n            return CIPHER_CHARS[\n              Math.floor(Math.random() * CIPHER_CHARS.length)\n            ];\n          })\n          .join(\"\"),\n      );\n\n      iterRef.current++;\n      if (iter >= maxIterations) {\n        if (intervalRef.current) clearInterval(intervalRef.current);\n        setDisplayText(children);\n        setIsRunning(false);\n        onComplete?.();\n      }\n    }, speed);\n  }, [children, isRunning, maxIterations, speed, getRevealIndices, onComplete]);\n\n  useEffect(() => {\n    if (trigger) start();\n    return () => {\n      if (intervalRef.current) clearInterval(intervalRef.current);\n    };\n  }, [trigger, start]);\n\n  return (\n    <span aria-label={children} className={cn(\"font-mono\", className)}>\n      <span aria-hidden=\"true\">{displayText}</span>\n    </span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/encrypted-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

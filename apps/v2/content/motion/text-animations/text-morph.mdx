@@ -1,0 +1,85 @@
+---
+title: Text Morph
+description: Shared-layout character morphing between two strings — individual letters animate to their new positions with spring physics.
+---
+
+<ComponentPreview name="m-text-morph-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-morph
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-morph" title="components/motion/text-morph.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextMorph } from "@/components/motion/text-morph";
+```
+
+```tsx
+<TextMorph>{currentWord}</TextMorph>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The string to display; change this prop to trigger morphing |
+| `as` | `React.ElementType` | `"p"` | HTML tag for the container |
+| `transition` | `Transition` | spring (stiffness 280) | Motion transition for character movement |
+| `variants` | `Variants` | opacity fade | Custom enter/exit variants per character |
+| `className` | `string` | — | Class applied to the container |
+| `style` | `React.CSSProperties` | — | Inline style for the container |
+
+## Examples
+
+### Word Cycler
+
+A button group selects the active word and passes it as `children`. Characters shared between words animate smoothly to their new positions.
+
+<ComponentPreview name="m-text-morph-1" />
+
+### Auto-Cycling Plan Name
+
+An interval drives the `children` prop through an array. The tighter spring `transition` creates a snappier feel suitable for compact UI.
+
+<ComponentPreview name="m-text-morph-2" />
+
+### Morphing Placeholder
+
+The placeholder string cycles as the user types, morphing character-by-character. Controlled by `query.length % suggestions.length` so each keystroke advances the suggestion.
+
+<ComponentPreview name="m-text-morph-3" />

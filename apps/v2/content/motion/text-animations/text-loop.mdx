@@ -1,0 +1,91 @@
+---
+title: Text Loop
+description: Cycles through an array of children with smooth enter and exit transitions, swapping content on a configurable interval.
+---
+
+<ComponentPreview name="m-text-loop-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-loop
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-loop" title="components/motion/text-loop.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextLoop } from "@/components/motion/text-loop";
+```
+
+```tsx
+<TextLoop interval={2}>
+  <span>First</span>
+  <span>Second</span>
+  <span>Third</span>
+</TextLoop>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode[]` | — | Array of items to loop through |
+| `interval` | `number` | `2` | Seconds between transitions |
+| `transition` | `Transition` | `{ duration: 0.3 }` | Motion transition for enter/exit |
+| `variants` | `Variants` | fade + slide-y | Custom enter/exit variants |
+| `mode` | `AnimatePresenceProps["mode"]` | `"popLayout"` | AnimatePresence mode |
+| `trigger` | `boolean` | `true` | Set `false` to pause the loop |
+| `onIndexChange` | `(index: number) => void` | — | Callback fired on each step |
+| `className` | `string` | — | Class applied to the container |
+
+## Examples
+
+### Looping Adjectives
+
+Inline within a heading, cycling benefit words in the brand color. Each child is a `<span>` but can be any ReactNode.
+
+<ComponentPreview name="m-text-loop-1" />
+
+### Animated Status Badge
+
+Rich content items — icon + label — cycle inside a pill badge with a vertical slide transition. The `variants` prop drives direction.
+
+<ComponentPreview name="m-text-loop-2" />
+
+### Horizontal Slide
+
+Custom `variants` swap the default fade+y for a horizontal slide, matching the direction to a left-to-right reading flow.
+
+<ComponentPreview name="m-text-loop-3" />

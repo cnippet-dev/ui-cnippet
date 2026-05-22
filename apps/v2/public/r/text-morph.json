@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-morph",
+  "description": "Smooth character-level morphing between two strings using shared layout",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/text-morph.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  AnimatePresence,\n  motion,\n  type Transition,\n  type Variants,\n} from \"motion/react\";\nimport { useId, useMemo } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type TextMorphProps = {\n  children: string;\n  as?: React.ElementType;\n  className?: string;\n  style?: React.CSSProperties;\n  variants?: Variants;\n  transition?: Transition;\n};\n\nconst defaultVariants: Variants = {\n  animate: { opacity: 1 },\n  exit: { opacity: 0 },\n  initial: { opacity: 0 },\n};\n\nconst defaultTransition: Transition = {\n  damping: 18,\n  mass: 0.3,\n  stiffness: 280,\n  type: \"spring\",\n};\n\nexport function TextMorph({\n  children,\n  as: Component = \"p\",\n  className,\n  style,\n  variants,\n  transition,\n}: TextMorphProps) {\n  const uniqueId = useId();\n\n  const characters = useMemo(() => {\n    const charCounts: Record<string, number> = {};\n    return children.split(\"\").map((char) => {\n      const key = char.toLowerCase();\n      charCounts[key] = (charCounts[key] || 0) + 1;\n      return {\n        id: `${uniqueId}-${key}${charCounts[key]}`,\n        label: char === \" \" ? \" \" : char,\n      };\n    });\n  }, [children, uniqueId]);\n\n  return (\n    <Component aria-label={children} className={cn(className)} style={style}>\n      <AnimatePresence initial={false} mode=\"popLayout\">\n        {characters.map((character) => (\n          <motion.span\n            animate=\"animate\"\n            aria-hidden=\"true\"\n            className=\"inline-block\"\n            exit=\"exit\"\n            initial=\"initial\"\n            key={character.id}\n            layoutId={character.id}\n            transition={transition ?? defaultTransition}\n            variants={variants ?? defaultVariants}\n          >\n            {character.label}\n          </motion.span>\n        ))}\n      </AnimatePresence>\n    </Component>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/text-morph.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

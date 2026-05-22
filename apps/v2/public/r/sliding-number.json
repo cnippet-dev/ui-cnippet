@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sliding-number",
+  "description": "Digits slide up or down independently when value changes (odometer style)",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/sliding-number.tsx",
+      "content": "﻿\"use client\";\n\nimport {\n  type MotionValue,\n  motion,\n  motionValue,\n  useSpring,\n  useTransform,\n} from \"motion/react\";\nimport { useEffect } from \"react\";\n\nconst TRANSITION = {\n  damping: 18,\n  mass: 0.3,\n  stiffness: 280,\n  type: \"spring\" as const,\n};\n\nconst DIGIT_HEIGHT_EM = 1.2;\n\nfunction NumberDigit({\n  mv,\n  number,\n}: {\n  mv: MotionValue<number>;\n  number: number;\n}) {\n  const y = useTransform(mv, (latest) => {\n    const placeValue = latest % 10;\n    const offset = (10 + number - placeValue) % 10;\n    let memo = offset * DIGIT_HEIGHT_EM;\n    if (offset > 5) memo -= 10 * DIGIT_HEIGHT_EM;\n    return `${memo}em`;\n  });\n\n  return (\n    <motion.span\n      className=\"absolute inset-0 flex items-center justify-center\"\n      style={{ y }}\n      transition={TRANSITION}\n    >\n      {number}\n    </motion.span>\n  );\n}\n\nfunction Digit({ value, place }: { value: number; place: number }) {\n  const valueRoundedToPlace = Math.floor(value / place) % 10;\n  const initial = motionValue(valueRoundedToPlace);\n  const animatedValue = useSpring(initial, TRANSITION);\n\n  useEffect(() => {\n    animatedValue.set(valueRoundedToPlace);\n  }, [animatedValue, valueRoundedToPlace]);\n\n  return (\n    <div\n      className=\"relative inline-block w-[1ch] overflow-y-clip overflow-x-visible tabular-nums\"\n      style={{\n        height: `${DIGIT_HEIGHT_EM}em`,\n        lineHeight: `${DIGIT_HEIGHT_EM}em`,\n      }}\n    >\n      <span className=\"invisible\">0</span>\n      {Array.from({ length: 10 }, (_, i) => (\n        <NumberDigit key={i} mv={animatedValue} number={i} />\n      ))}\n    </div>\n  );\n}\n\nexport type SlidingNumberProps = {\n  value: number;\n  padStart?: boolean;\n  decimalSeparator?: string;\n};\n\nexport function SlidingNumber({\n  value,\n  padStart = false,\n  decimalSeparator = \".\",\n}: SlidingNumberProps) {\n  const absValue = Math.abs(value);\n  const parts = absValue.toString().split(\".\");\n  const integerPart = parts[0] ?? \"0\";\n  const decimalPart = parts[1];\n  const integerValue = Number.parseInt(integerPart, 10);\n  const paddedInteger =\n    padStart && integerValue < 10 ? `0${integerPart}` : integerPart;\n  const integerDigits = paddedInteger.split(\"\");\n  const integerPlaces = integerDigits.map(\n    (_, i) => 10 ** (integerDigits.length - i - 1),\n  );\n\n  return (\n    <div className=\"flex items-center\">\n      {value < 0 && <span>-</span>}\n      {integerDigits.map((_, index) => (\n        <Digit\n          key={`pos-${integerPlaces[index] ?? 1}`}\n          place={integerPlaces[index] ?? 1}\n          value={integerValue}\n        />\n      ))}\n      {decimalPart && (\n        <>\n          <span>{decimalSeparator}</span>\n          {decimalPart.split(\"\").map((_, index) => (\n            <Digit\n              key={`decimal-${index}`}\n              place={10 ** (decimalPart.length - index - 1)}\n              value={Number.parseInt(decimalPart, 10)}\n            />\n          ))}\n        </>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/sliding-number.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-typewriter-3",
+  "description": "Terminal prompt — monospace CLI-style with block cursor",
+  "registryDependencies": [
+    "@cnippet/typewriter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-typewriter-3.tsx",
+      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\n\nexport default function TypewriterTerminal() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-lg rounded-xl border border-border bg-neutral-950 p-5 shadow-xl\">\n        <div className=\"mb-3 flex items-center gap-1.5\">\n          <span className=\"h-3 w-3 rounded-full bg-red-500\" />\n          <span className=\"h-3 w-3 rounded-full bg-yellow-500\" />\n          <span className=\"h-3 w-3 rounded-full bg-green-500\" />\n        </div>\n        <div className=\"font-mono text-sm text-green-400\">\n          <p className=\"mb-1 text-neutral-500\">~ cnippet</p>\n          <div className=\"flex\">\n            <span className=\"mr-2 text-neutral-500\">$</span>\n            <Typewriter\n              as=\"span\"\n              cursorChar=\"▋\"\n              cursorClassName=\"ml-0.5 text-green-400\"\n              initialDelay={400}\n              loop={false}\n              speed={45}\n              text=\"npx cnippet@latest add text-reveal\"\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

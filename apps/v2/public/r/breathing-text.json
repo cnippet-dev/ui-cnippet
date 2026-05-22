@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breathing-text",
+  "description": "Characters scale and opacity pulse in a wave pattern using variable fonts",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/breathing-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { motion, type Transition, type Variants } from \"motion/react\";\nimport type { ElementType } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type BreathingTextProps = {\n  children: React.ReactNode;\n  as?: ElementType;\n  fromFontVariationSettings: string;\n  toFontVariationSettings: string;\n  transition?: Transition;\n  staggerDuration?: number;\n  staggerFrom?: \"first\" | \"last\" | \"center\" | number;\n  repeatDelay?: number;\n  className?: string;\n} & React.HTMLAttributes<HTMLElement>;\n\nexport function BreathingText({\n  children,\n  as = \"span\",\n  fromFontVariationSettings,\n  toFontVariationSettings,\n  transition = { duration: 1.5, ease: \"easeInOut\" },\n  staggerDuration = 0.1,\n  staggerFrom = \"first\",\n  repeatDelay = 0.1,\n  className,\n  ...props\n}: BreathingTextProps) {\n  const letterVariants: Variants = {\n    animate: (i: number) => ({\n      fontVariationSettings: toFontVariationSettings,\n      transition: {\n        ...transition,\n        delay: i * staggerDuration,\n        repeat: Number.POSITIVE_INFINITY,\n        repeatDelay,\n        repeatType: \"mirror\",\n      },\n    }),\n    initial: { fontVariationSettings: fromFontVariationSettings },\n  };\n\n  const getCustomIndex = (index: number, total: number) => {\n    if (typeof staggerFrom === \"number\") return Math.abs(index - staggerFrom);\n    switch (staggerFrom) {\n      case \"first\":\n        return index;\n      case \"last\":\n        return total - 1 - index;\n      case \"center\":\n        return Math.abs(index - Math.floor(total / 2));\n      default:\n        return index;\n    }\n  };\n\n  const letters = String(children).split(\"\");\n  const ElementTag = as;\n\n  return (\n    <ElementTag\n      className={cn(\n        \"relative after:pointer-events-none after:invisible after:absolute after:h-0 after:select-none after:overflow-hidden after:font-black after:content-[attr(data-text)]\",\n        className,\n      )}\n      data-text={children}\n      {...props}\n    >\n      {letters.map((letter, i) => (\n        <motion.span\n          animate=\"animate\"\n          aria-hidden=\"true\"\n          className=\"inline-block whitespace-pre\"\n          custom={getCustomIndex(i, letters.length)}\n          initial=\"initial\"\n          key={i}\n          variants={letterVariants}\n        >\n          {letter}\n        </motion.span>\n      ))}\n      <span className=\"sr-only\">{children}</span>\n    </ElementTag>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/breathing-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rotating-text",
+  "description": "Single-slot word rotator with configurable transitions",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/rotating-text.tsx",
+      "content": "﻿\"use client\";\n\nimport { AnimatePresence, motion, type Transition } from \"motion/react\";\nimport { useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type RotatingTextProps = {\n  words: string[];\n  interval?: number;\n  className?: string;\n  transition?: Transition;\n  direction?: \"up\" | \"down\";\n};\n\nexport function RotatingText({\n  words,\n  interval = 2500,\n  className,\n  transition = { damping: 20, stiffness: 150, type: \"spring\" },\n  direction = \"up\",\n}: RotatingTextProps) {\n  const [index, setIndex] = useState(0);\n\n  useEffect(() => {\n    const timer = setInterval(\n      () => setIndex((prev) => (prev + 1) % words.length),\n      interval,\n    );\n    return () => clearInterval(timer);\n  }, [words.length, interval]);\n\n  const enterFrom = direction === \"up\" ? \"100%\" : \"-100%\";\n  const exitTo = direction === \"up\" ? \"-100%\" : \"100%\";\n\n  return (\n    <span className={cn(\"relative inline-flex overflow-hidden\", className)}>\n      <span className=\"invisible\">\n        {words.reduce((a, b) => (a.length > b.length ? a : b))}\n      </span>\n      <AnimatePresence initial={false} mode=\"wait\">\n        <motion.span\n          animate={{ opacity: 1, y: 0 }}\n          className=\"absolute inset-0 flex items-center justify-center\"\n          exit={{ opacity: 0, y: exitTo }}\n          initial={{ opacity: 0, y: enterFrom }}\n          key={index}\n          transition={transition}\n        >\n          {words[index]}\n        </motion.span>\n      </AnimatePresence>\n    </span>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/rotating-text.tsx"
+    }
+  ],
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:ui"
+}

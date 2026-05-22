@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-typewriter-1",
+  "description": "Hero headline — types once with a block-underscore cursor",
+  "registryDependencies": [
+    "@cnippet/typewriter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-typewriter-1.tsx",
+      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\n\nexport default function TypewriterHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Now available\n      </p>\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <Typewriter\n          cursorChar=\"_\"\n          cursorClassName=\"ml-0.5 text-primary\"\n          loop={false}\n          speed={60}\n          text=\"Build. Ship. Animate.\"\n        />\n      </h1>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

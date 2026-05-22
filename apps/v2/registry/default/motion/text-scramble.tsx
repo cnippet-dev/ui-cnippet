@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { type MotionProps, motion } from "motion/react";
-import { type JSX, useEffect, useState } from "react";
+import { type JSX, useEffect, useRef, useState } from "react";
 
 const DEFAULT_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -32,49 +32,45 @@ export function TextScramble({
     Component as keyof JSX.IntrinsicElements,
   );
   const [scrambledText, setScrambledText] = useState<string | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const text = children;
+  const onScrambleCompleteRef = useRef(onScrambleComplete);
+  onScrambleCompleteRef.current = onScrambleComplete;
 
-  const scramble = async () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
+  useEffect(() => {
+    if (!trigger) return;
 
-    const steps = duration / speed;
+    const steps = Math.ceil(duration / speed);
     let step = 0;
 
     const interval = setInterval(() => {
       const progress = step / steps;
       let scrambled = "";
 
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") {
+      for (let i = 0; i < children.length; i++) {
+        if (children[i] === " ") {
           scrambled += " ";
           continue;
         }
-        if (progress * text.length > i) {
-          scrambled += text[i];
+        if (progress * children.length > i) {
+          scrambled += children[i];
         } else {
           scrambled +=
             characterSet[Math.floor(Math.random() * characterSet.length)];
         }
       }
 
-      setScrambledText(scrambled);
       step++;
 
       if (step > steps) {
         clearInterval(interval);
         setScrambledText(null);
-        setIsAnimating(false);
-        onScrambleComplete?.();
+        onScrambleCompleteRef.current?.();
+      } else {
+        setScrambledText(scrambled);
       }
     }, speed * 1000);
-  };
 
-  useEffect(() => {
-    if (!trigger) return;
-    scramble();
-  }, [trigger, scramble]);
+    return () => clearInterval(interval);
+  }, [trigger, children, duration, speed, characterSet]);
 
   return (
     <MotionComponent className={className} {...props}>

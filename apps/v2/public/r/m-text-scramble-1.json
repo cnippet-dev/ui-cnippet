@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-scramble-1",
+  "description": "Hero headline — auto-scramble on mount resolving left-to-right",
+  "registryDependencies": [
+    "@cnippet/text-scramble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-scramble-1.tsx",
+      "content": "import { TextScramble } from \"@/registry/default/motion/text-scramble\";\n\nexport default function TextScrambleHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <TextScramble\n        as=\"h1\"\n        className=\"max-w-2xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        duration={1.2}\n        speed={0.03}\n      >\n        The future of UI is in motion\n      </TextScramble>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text animation"
+  ],
+  "type": "registry:block"
+}

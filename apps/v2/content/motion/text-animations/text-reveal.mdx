@@ -1,0 +1,95 @@
+---
+title: Text Reveal
+description: Reveals text word-by-word, character-by-character, or line-by-line with smooth staggered entrance animations.
+---
+
+<ComponentPreview name="m-text-reveal-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-reveal
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-reveal" title="components/motion/text-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextReveal } from "@/components/motion/text-reveal";
+```
+
+```tsx
+<TextReveal preset="fade-in-blur" per="word">
+  Your headline text goes here
+</TextReveal>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `string` | — | The text content to animate |
+| `per` | `"word" \| "char" \| "line"` | `"word"` | How to split the text for staggering |
+| `preset` | `"fade" \| "blur" \| "fade-in-blur" \| "scale" \| "slide"` | `"fade"` | Built-in animation preset |
+| `delay` | `number` | `0` | Initial delay before animation starts (seconds) |
+| `speedReveal` | `number` | `1` | Multiplier for stagger speed between segments |
+| `speedSegment` | `number` | `1` | Multiplier for each segment's animation duration |
+| `trigger` | `boolean` | `true` | Mount/unmount control — set `false` to hold, `true` to play |
+| `as` | `React.ElementType` | `"p"` | HTML tag rendered as the container |
+| `variants` | `{ container?: Variants; item?: Variants }` | — | Override built-in Motion variants |
+| `containerTransition` | `Transition` | — | Override the container stagger transition |
+| `segmentTransition` | `Transition` | — | Override the per-segment transition |
+| `onAnimationComplete` | `() => void` | — | Callback fired when animation finishes |
+| `className` | `string` | — | Class applied to the container element |
+| `segmentWrapperClassName` | `string` | — | Class applied to each segment's wrapper span |
+
+## Examples
+
+### Hero Headline
+
+Word-by-word `fade-in-blur` reveal — the standard pattern for landing page headings. Each word fades and unblurs from below with a fast stagger.
+
+<ComponentPreview name="m-text-reveal-1" />
+
+### Character Scale
+
+Character-level `scale` reveal with a tight stagger. Works well for short punchy taglines where individual letter motion creates visual interest.
+
+<ComponentPreview name="m-text-reveal-2" />
+
+### Stacked Content Block
+
+Three `TextReveal` instances with sequential `delay` offsets build a complete section — eyebrow label, headline, and supporting copy each animate in after the previous finishes.
+
+<ComponentPreview name="m-text-reveal-3" />

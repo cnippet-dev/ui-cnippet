@@ -1,5 +1,5 @@
 import { loader } from "fumadocs-core/source";
-import { docs, ui } from "@/.source/server";
+import { docs, motion, ui } from "@/.source/server";
 
 export const source = loader({
   baseUrl: "/ui",
@@ -9,4 +9,9 @@ export const source = loader({
 export const docSource = loader({
   baseUrl: "/docs",
   source: docs.toFumadocsSource(),
+});
+
+export const motionSource = loader({
+  baseUrl: "/motion",
+  source: motion.toFumadocsSource(),
 });

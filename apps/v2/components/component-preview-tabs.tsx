@@ -1,8 +1,17 @@
 "use client";
 
+import { RotateCcw } from "lucide-react";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTab } from "@/registry/default/ui/tabs";
+
+function PreviewSlot({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="w-full" data-slot="preview">
+      {children}
+    </div>
+  );
+}
 
 export function ComponentPreviewTabs({
   className,
@@ -18,6 +27,13 @@ export function ComponentPreviewTabs({
   source: React.ReactNode;
 }) {
   const [tab, setTab] = React.useState("preview");
+  const [reloadKey, setReloadKey] = React.useState(0);
+  const [spinning, setSpinning] = React.useState(false);
+
+  function handleReload() {
+    setReloadKey((k) => k + 1);
+    setSpinning(true);
+  }
 
   return (
     <div
@@ -36,6 +52,22 @@ export function ComponentPreviewTabs({
               </TabsTab>
             </TabsList>
           )}
+          {tab === "preview" && (
+            <button
+              aria-label="Reload animation"
+              className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              onClick={handleReload}
+              type="button"
+            >
+              <RotateCcw
+                className={cn(
+                  "h-3.5 w-3.5 transition-transform",
+                  spinning && "animate-spin-once",
+                )}
+                onAnimationEnd={() => setSpinning(false)}
+              />
+            </button>
+          )}
         </div>
       </Tabs>
       <div
@@ -52,9 +84,9 @@ export function ComponentPreviewTabs({
             )}
             data-align={align}
           >
-            <div className="w-full" data-slot="preview">
+            <PreviewSlot key={reloadKey}>
               {component}
-            </div>
+            </PreviewSlot>
           </div>
         </div>
         <div
