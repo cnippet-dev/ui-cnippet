@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-carousel-5",
-  "description": "Basic carousel",
+  "description": "Autoplay with Indicators",
   "registryDependencies": [
     "@cnippet/carousel"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-carousel-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\n\"use client\";\n\nimport useEmblaCarousel from \"embla-carousel-react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst SLIDES = [\n  {\n    bg: \"from-violet-500 to-purple-700\",\n    label: \"Build fast\",\n    sub: \"Ship production-ready components today\",\n  },\n  {\n    bg: \"from-sky-500 to-blue-700\",\n    label: \"Stay consistent\",\n    sub: \"One design system, every surface\",\n  },\n  {\n    bg: \"from-emerald-500 to-teal-700\",\n    label: \"Scale with ease\",\n    sub: \"From prototype to enterprise\",\n  },\n  {\n    bg: \"from-rose-500 to-pink-700\",\n    label: \"Fully accessible\",\n    sub: \"WCAG 2.1 AA out of the box\",\n  },\n  {\n    bg: \"from-amber-500 to-orange-600\",\n    label: \"Open source\",\n    sub: \"Free forever, community-driven\",\n  },\n];\n\nexport default function Particle() {\n  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });\n  const [current, setCurrent] = React.useState(0);\n\n  React.useEffect(() => {\n    if (!emblaApi) return;\n    const onSelect = () => setCurrent(emblaApi.selectedScrollSnap());\n    emblaApi.on(\"select\", onSelect);\n    return () => {\n      emblaApi.off(\"select\", onSelect);\n    };\n  }, [emblaApi]);\n\n  React.useEffect(() => {\n    if (!emblaApi) return;\n    const id = setInterval(() => emblaApi.scrollNext(), 2500);\n    return () => clearInterval(id);\n  }, [emblaApi]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"overflow-hidden rounded-2xl\" ref={emblaRef}>\n        <div className=\"flex\">\n          {SLIDES.map((slide, i) => (\n            <div className=\"min-w-0 shrink-0 grow-0 basis-full\" key={i}>\n              <div\n                className={cn(\n                  \"flex h-48 flex-col items-center justify-center rounded-2xl bg-linear-to-br text-white\",\n                  slide.bg,\n                )}\n              >\n                <p className=\"font-bold text-xl\">{slide.label}</p>\n                <p className=\"mt-1 text-sm opacity-80\">{slide.sub}</p>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n      <div className=\"flex justify-center gap-1.5\">\n        {SLIDES.map((_, i) => (\n          <button\n            aria-label={`Go to slide ${i + 1}`}\n            className={cn(\n              \"h-1.5 rounded-full transition-all duration-300\",\n              i === current ? \"w-6 bg-primary\" : \"w-1.5 bg-muted-foreground/30\",\n            )}\n            key={i}\n            onClick={() => emblaApi?.scrollTo(i)}\n            type=\"button\"\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

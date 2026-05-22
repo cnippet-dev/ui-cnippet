@@ -3693,7 +3693,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-1.tsx",
@@ -3713,7 +3713,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Multiple Items",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-2.tsx",
@@ -3733,7 +3733,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Custom Spacing",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-3.tsx",
@@ -3753,7 +3753,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Vertical Orientation",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-4.tsx",
@@ -3773,7 +3773,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Autoplay with Indicators",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-5.tsx",
@@ -3793,7 +3793,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Testimonials",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-6.tsx",
@@ -3813,7 +3813,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Product Showcase",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-7.tsx",
@@ -3833,7 +3833,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Onboarding Steps",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-8.tsx",
@@ -3853,7 +3853,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Team Members",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-9.tsx",
@@ -3873,7 +3873,7 @@
       "categories": [
         "carousel"
       ],
-      "description": "Basic carousel",
+      "description": "Gallery with Thumbnails",
       "files": [
         {
           "path": "registry/default/variants/v-carousel-10.tsx",
@@ -5433,7 +5433,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-1.tsx",
@@ -5453,7 +5453,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Date Range",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-2.tsx",
@@ -5473,7 +5473,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Dropdown Navigation",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-3.tsx",
@@ -5493,7 +5493,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "With Presets",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-4.tsx",
@@ -5513,7 +5513,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "With Input",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-5.tsx",
@@ -5533,7 +5533,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Auto-close on Select",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-6.tsx",
@@ -5553,7 +5553,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Appointment Booking",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-7.tsx",
@@ -5573,7 +5573,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Team Meeting Scheduler",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-8.tsx",
@@ -5593,7 +5593,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Delivery Date Selector",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-9.tsx",
@@ -5613,7 +5613,7 @@
       "categories": [
         "date picker"
       ],
-      "description": "Basic date picker",
+      "description": "Task Deadline Reschedule",
       "files": [
         {
           "path": "registry/default/variants/v-date-picker-10.tsx",

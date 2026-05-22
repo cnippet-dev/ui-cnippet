@@ -3519,7 +3519,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-1": {
     name: "v-carousel-1",
-    description: "Basic carousel",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3537,7 +3537,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-2": {
     name: "v-carousel-2",
-    description: "Basic carousel",
+    description: "Multiple Items",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3555,7 +3555,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-3": {
     name: "v-carousel-3",
-    description: "Basic carousel",
+    description: "Custom Spacing",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3573,7 +3573,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-4": {
     name: "v-carousel-4",
-    description: "Basic carousel",
+    description: "Vertical Orientation",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3591,7 +3591,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-5": {
     name: "v-carousel-5",
-    description: "Basic carousel",
+    description: "Autoplay with Indicators",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3609,7 +3609,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-6": {
     name: "v-carousel-6",
-    description: "Basic carousel",
+    description: "Testimonials",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3627,7 +3627,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-7": {
     name: "v-carousel-7",
-    description: "Basic carousel",
+    description: "Product Showcase",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3645,7 +3645,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-8": {
     name: "v-carousel-8",
-    description: "Basic carousel",
+    description: "Onboarding Steps",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3663,7 +3663,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-9": {
     name: "v-carousel-9",
-    description: "Basic carousel",
+    description: "Team Members",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -3681,7 +3681,7 @@ export const Index: Record<string, any> = {
   },
   "v-carousel-10": {
     name: "v-carousel-10",
-    description: "Basic carousel",
+    description: "Gallery with Thumbnails",
     type: "registry:block",
     registryDependencies: ["@cnippet/carousel"],
     files: [{
@@ -5085,7 +5085,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-1": {
     name: "v-date-picker-1",
-    description: "Basic date picker",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5103,7 +5103,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-2": {
     name: "v-date-picker-2",
-    description: "Basic date picker",
+    description: "Date Range",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5121,7 +5121,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-3": {
     name: "v-date-picker-3",
-    description: "Basic date picker",
+    description: "Dropdown Navigation",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5139,7 +5139,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-4": {
     name: "v-date-picker-4",
-    description: "Basic date picker",
+    description: "With Presets",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5157,7 +5157,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-5": {
     name: "v-date-picker-5",
-    description: "Basic date picker",
+    description: "With Input",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5175,7 +5175,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-6": {
     name: "v-date-picker-6",
-    description: "Basic date picker",
+    description: "Auto-close on Select",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5193,7 +5193,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-7": {
     name: "v-date-picker-7",
-    description: "Basic date picker",
+    description: "Appointment Booking",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5211,7 +5211,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-8": {
     name: "v-date-picker-8",
-    description: "Basic date picker",
+    description: "Team Meeting Scheduler",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5229,7 +5229,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-9": {
     name: "v-date-picker-9",
-    description: "Basic date picker",
+    description: "Delivery Date Selector",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{
@@ -5247,7 +5247,7 @@ export const Index: Record<string, any> = {
   },
   "v-date-picker-10": {
     name: "v-date-picker-10",
-    description: "Basic date picker",
+    description: "Task Deadline Reschedule",
     type: "registry:block",
     registryDependencies: ["@cnippet/date-picker"],
     files: [{

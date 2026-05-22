@@ -52,9 +52,7 @@ export function ComponentPreviewTabs({
             )}
             data-align={align}
           >
-            <div className="w-full" data-slot="preview">
-              {component}
-            </div>
+            <div data-slot="preview">{component}</div>
           </div>
         </div>
         <div

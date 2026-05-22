@@ -7,3 +7,98 @@ links:
 ---
 
 <ComponentPreview name="v-date-picker-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/date-picker
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-day-picker date-fns
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar" title="components/ui/calendar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Examples
+
+### Date Range
+
+A range picker using `mode="range"` that highlights all days between the selected start and end date.
+
+<ComponentPreview name="v-date-picker-2" />
+
+### Dropdown Navigation
+
+Year and month selection via a searchable `Combobox` dropdown, spanning 1900 to today — useful for date-of-birth or historical date inputs.
+
+<ComponentPreview name="v-date-picker-3" />
+
+### With Presets
+
+Quick-select buttons for common offsets (Today, Tomorrow, In 3 days, In a week) alongside a full calendar so users can jump to frequent dates in one click.
+
+<ComponentPreview name="v-date-picker-4" />
+
+### With Input
+
+Combines a native `type="date"` text field with a popover calendar — users can type a date directly or open the picker, and both stay in sync.
+
+<ComponentPreview name="v-date-picker-5" />
+
+### Auto-close on Select
+
+Closes the popover immediately after a date is chosen, reducing the number of clicks needed for a simple selection task.
+
+<ComponentPreview name="v-date-picker-6" />
+
+### Appointment Booking
+
+Displays a specialist card with available time slots that update per selected date — booked slots are struck through and disabled, confirming only when both a date and slot are chosen.
+
+<ComponentPreview name="v-date-picker-7" />
+
+### Team Meeting Scheduler
+
+Pick a date to instantly see each team member's availability (Free / Busy) based on their schedule — weekends are disabled, and the invite button stays locked until a valid day is chosen.
+
+<ComponentPreview name="v-date-picker-8" />
+
+### Delivery Date Selector
+
+Choose between Standard and Express shipping — the calendar disables ineligible dates per method (no weekends for Standard), and the estimated delivery window updates live as the user picks a date.
+
+<ComponentPreview name="v-date-picker-9" />
+
+### Task Deadline Reschedule
+
+A project task card with assignee avatars and a protected date picker — the calendar requires explicit **Apply** before the deadline updates, preventing accidental changes; a **Rescheduled** badge and the original date appear once a new deadline is set.
+
+<ComponentPreview name="v-date-picker-10" />

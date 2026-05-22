@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-carousel-4",
-  "description": "Basic carousel",
+  "description": "Vertical Orientation",
   "registryDependencies": [
     "@cnippet/carousel"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-carousel-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nexport function CarouselOrientation() {\n  return (\n    <Carousel\n      className=\"w-full max-w-xs\"\n      opts={{\n        align: \"start\",\n      }}\n      orientation=\"vertical\"\n    >\n      <CarouselContent className=\"-mt-1 h-67.5\">\n        {Array.from({ length: 5 }).map((_, index) => (\n          <CarouselItem className=\"basis-1/2 pt-1\" key={index}>\n            <div className=\"p-1\">\n              <Card>\n                <CardContent className=\"flex items-center justify-center p-6\">\n                  <span className=\"font-semibold text-3xl\">{index + 1}</span>\n                </CardContent>\n              </Card>\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

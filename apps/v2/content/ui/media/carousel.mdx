@@ -44,29 +44,58 @@ npm install embla-carousel-react
 
 </CodeTabs>
 
-{/* ## Usage
-
-```tsx
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-```
-
-```tsx
-<Avatar>
-  <AvatarImage src="/avatars/01.png" alt="User avatar" />
-  <AvatarFallback>JD</AvatarFallback>
-</Avatar>
-``` */}
-
 ## Examples
 
-### Fallback Only
+### Multiple Items
 
-Reserved for an upcoming carousel variant.
+Shows multiple slides at once using fractional `basis` — each item takes half or a third of the track width, letting users see what's coming next.
 
 <ComponentPreview name="v-carousel-2" />
 
-### Different Sizes
+### Custom Spacing
 
-Reserved for an upcoming carousel variant.
+Reduces the gap between slides by overriding the default padding, useful for tighter layouts where breathing room should be minimal.
 
 <ComponentPreview name="v-carousel-3" />
+
+### Vertical Orientation
+
+Switches the scroll axis to vertical via `orientation="vertical"` — suited for feeds, timelines, or any layout that naturally flows top-to-bottom.
+
+<ComponentPreview name="v-carousel-4" />
+
+### Autoplay with Indicators
+
+Auto-advances every 2.5 s using the Embla API directly via `setInterval`, with pill-shaped dot indicators below that expand to show the active slide and allow manual jump.
+
+<ComponentPreview name="v-carousel-5" />
+
+### Testimonials
+
+Single-slide carousel for customer quotes — each card shows a star rating, a pull quote, and an avatar with name and role; loops infinitely with arrow controls.
+
+<ComponentPreview name="v-carousel-6" />
+
+### Product Showcase
+
+Multi-item carousel showing product cards with an image area, name, price, badge, and an Add to Cart button — aligned to `start` so partial next-slide is always visible.
+
+<ComponentPreview name="v-carousel-7" />
+
+### Onboarding Steps
+
+Step-by-step wizard built on raw Embla with drag disabled — a progress bar and "Step N of M" label update as the user moves through each step using labeled Back / Next buttons.
+
+<ComponentPreview name="v-carousel-8" />
+
+### Team Members
+
+Peek-style multi-item carousel for team cards — each card shows an avatar, name, role, department badge, and links; the partial next card signals more to explore.
+
+<ComponentPreview name="v-carousel-9" />
+
+### Gallery with Thumbnails
+
+Main carousel controlled programmatically via `setApi` — clicking a thumbnail scrolls the main view to that image, and the thumbnail strip stays in sync as the user swipes.
+
+<ComponentPreview name="v-carousel-10" />

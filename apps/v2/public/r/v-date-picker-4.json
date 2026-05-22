@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-date-picker-4",
-  "description": "Basic date picker",
+  "description": "With Presets",
   "registryDependencies": [
     "@cnippet/date-picker"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-date-picker-4.tsx",
-      "content": "export default function Component() {\n  return <div>Date Picker</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { addDays, format } from \"date-fns\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  const today = new Date();\n  const [month, setMonth] = useState(today);\n  const [date, setDate] = useState<Date | undefined>(today);\n\n  return (\n    <Popover>\n      <PopoverTrigger\n        render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\n      >\n        <CalendarIcon aria-hidden=\"true\" />\n        {date ? format(date, \"PPP\") : \"Pick a date\"}\n      </PopoverTrigger>\n      <PopoverPopup>\n        <div className=\"flex max-sm:flex-col\">\n          <div className=\"relative py-1 ps-1 max-sm:order-1 max-sm:border-t\">\n            <div className=\"flex h-full flex-col sm:border-e sm:pe-3\">\n              <Button\n                className=\"w-full justify-start\"\n                onClick={() => {\n                  setDate(today);\n                  setMonth(today);\n                }}\n                size=\"sm\"\n                variant=\"ghost\"\n              >\n                Today\n              </Button>\n              <Button\n                className=\"w-full justify-start\"\n                onClick={() => {\n                  const tomorrow = addDays(today, 1);\n                  setDate(tomorrow);\n                  setMonth(tomorrow);\n                }}\n                size=\"sm\"\n                variant=\"ghost\"\n              >\n                Tomorrow\n              </Button>\n              <Button\n                className=\"w-full justify-start\"\n                onClick={() => {\n                  const in3Days = addDays(today, 3);\n                  setDate(in3Days);\n                  setMonth(in3Days);\n                }}\n                size=\"sm\"\n                variant=\"ghost\"\n              >\n                In 3 days\n              </Button>\n              <Button\n                className=\"w-full justify-start\"\n                onClick={() => {\n                  const inAWeek = addDays(today, 7);\n                  setDate(inAWeek);\n                  setMonth(inAWeek);\n                }}\n                size=\"sm\"\n                variant=\"ghost\"\n              >\n                In a week\n              </Button>\n            </div>\n          </div>\n          <Calendar\n            className=\"max-sm:pb-3 sm:ps-2\"\n            mode=\"single\"\n            month={month}\n            onMonthChange={setMonth}\n            onSelect={setDate}\n            selected={date}\n          />\n        </div>\n      </PopoverPopup>\n    </Popover>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

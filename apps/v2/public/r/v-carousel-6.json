@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-carousel-6",
-  "description": "Basic carousel",
+  "description": "Testimonials",
   "registryDependencies": [
     "@cnippet/carousel"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-carousel-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\n\"use client\";\n\nimport { StarIcon } from \"lucide-react\";\nimport { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nconst TESTIMONIALS = [\n  {\n    initials: \"AP\",\n    name: \"Alice Park\",\n    quote:\n      \"Cut our design-system setup from weeks to a single afternoon. The component quality is outstanding.\",\n    rating: 5,\n    role: \"Frontend Lead, Vercel\",\n  },\n  {\n    initials: \"BT\",\n    name: \"Ben Torres\",\n    quote:\n      \"We ship across 3 products with cnippet. Consistent, accessible, and easy to extend — exactly what we needed.\",\n    rating: 5,\n    role: \"CTO, Linear\",\n  },\n  {\n    initials: \"CK\",\n    name: \"Celia Kim\",\n    quote:\n      \"The Figma-to-code fidelity is remarkable. My team ships faster because they trust the components.\",\n    rating: 5,\n    role: \"Product Designer, Figma\",\n  },\n  {\n    initials: \"DM\",\n    name: \"Dan Moss\",\n    quote:\n      \"Best component library I've used. Open source, well-documented, and it just works.\",\n    rating: 5,\n    role: \"Indie Developer\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <Carousel className=\"w-full max-w-sm\" opts={{ loop: true }}>\n      <CarouselContent>\n        {TESTIMONIALS.map((t, i) => (\n          <CarouselItem key={i}>\n            <Card>\n              <CardContent className=\"space-y-4\">\n                <div className=\"flex gap-0.5\">\n                  {Array.from({ length: t.rating }).map((_, j) => (\n                    <StarIcon\n                      className=\"size-4 fill-amber-400 text-amber-400\"\n                      key={j}\n                    />\n                  ))}\n                </div>\n                <p className=\"text-muted-foreground text-sm leading-relaxed\">\n                  &ldquo;{t.quote}&rdquo;\n                </p>\n                <div className=\"flex items-center gap-3\">\n                  <Avatar>\n                    <AvatarFallback className=\"text-xs\">\n                      {t.initials}\n                    </AvatarFallback>\n                  </Avatar>\n                  <div>\n                    <p className=\"font-semibold text-sm\">{t.name}</p>\n                    <p className=\"text-muted-foreground text-xs\">{t.role}</p>\n                  </div>\n                </div>\n              </CardContent>\n            </Card>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-carousel-10",
-  "description": "Basic carousel",
+  "description": "Gallery with Thumbnails",
   "registryDependencies": [
     "@cnippet/carousel"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-carousel-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport useEmblaCarousel from \"embla-carousel-react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  Carousel,\n  type CarouselApi,\n  CarouselContent,\n  CarouselItem,\n} from \"@/registry/default/ui/carousel\";\n\nconst GALLERY = [\n  { bg: \"from-violet-400 to-purple-600\", id: 1, label: \"Mountain Sunset\" },\n  { bg: \"from-sky-400 to-blue-600\", id: 2, label: \"Ocean Waves\" },\n  { bg: \"from-emerald-400 to-teal-600\", id: 3, label: \"Forest Path\" },\n  { bg: \"from-rose-400 to-pink-600\", id: 4, label: \"City Lights\" },\n  { bg: \"from-amber-400 to-orange-500\", id: 5, label: \"Desert Dunes\" },\n  { bg: \"from-indigo-400 to-cyan-500\", id: 6, label: \"Northern Lights\" },\n];\n\nexport default function Particle() {\n  const [api, setApi] = React.useState<CarouselApi>();\n  const [thumbRef, thumbApi] = useEmblaCarousel({\n    containScroll: \"keepSnaps\",\n    dragFree: true,\n  });\n  const [selected, setSelected] = React.useState(0);\n\n  React.useEffect(() => {\n    if (!api) return;\n    const onSelect = () => {\n      const idx = api.selectedScrollSnap();\n      setSelected(idx);\n      thumbApi?.scrollTo(idx);\n    };\n    api.on(\"select\", onSelect);\n    return () => {\n      api.off(\"select\", onSelect);\n    };\n  }, [api, thumbApi]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <Carousel className=\"w-full\" setApi={setApi}>\n        <CarouselContent>\n          {GALLERY.map((item) => (\n            <CarouselItem key={item.id}>\n              <div\n                className={cn(\n                  \"relative flex h-52 flex-col items-center justify-end rounded-xl bg-linear-to-br pb-4 text-white\",\n                  item.bg,\n                )}\n              >\n                <p className=\"font-medium text-sm drop-shadow\">{item.label}</p>\n              </div>\n            </CarouselItem>\n          ))}\n        </CarouselContent>\n      </Carousel>\n\n      <div className=\"overflow-hidden\" ref={thumbRef}>\n        <div className=\"flex gap-2 px-px py-1\">\n          {GALLERY.map((item, i) => (\n            <button\n              aria-label={`View ${item.label}`}\n              className={cn(\n                \"shrink-0 rounded-lg transition-all duration-200\",\n                selected === i\n                  ? \"ring-2 ring-primary ring-offset-2\"\n                  : \"opacity-50 hover:opacity-80\",\n              )}\n              key={item.id}\n              onClick={() => api?.scrollTo(i)}\n              type=\"button\"\n            >\n              <div\n                className={cn(\"h-12 w-16 rounded-lg bg-linear-to-br\", item.bg)}\n              />\n            </button>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

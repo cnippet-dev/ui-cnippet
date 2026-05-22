@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-date-picker-2",
-  "description": "Basic date picker",
+  "description": "Date Range",
   "registryDependencies": [
     "@cnippet/date-picker"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-date-picker-2.tsx",
-      "content": "export default function Component() {\n  return <div>Date Picker</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { format } from \"date-fns\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  const [date, setDate] = useState<DateRange | undefined>();\n\n  return (\n    <Popover>\n      <PopoverTrigger\n        render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\n      >\n        <CalendarIcon aria-hidden=\"true\" />\n        {date?.from ? (\n          date.to ? (\n            <>\n              {format(date.from, \"LLL dd, y\")} - {format(date.to, \"LLL dd, y\")}\n            </>\n          ) : (\n            format(date.from, \"LLL dd, y\")\n          )\n        ) : (\n          <span>Pick a date range</span>\n        )}\n      </PopoverTrigger>\n      <PopoverPopup>\n        <Calendar\n          defaultMonth={date?.from}\n          mode=\"range\"\n          onSelect={setDate}\n          selected={date}\n        />\n      </PopoverPopup>\n    </Popover>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
