@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-3.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Set your URL\"\n        className=\"*:[input]:ps-0!\"\n        placeholder=\"coss\"\n        type=\"search\"\n      />\n      <InputGroupAddon>\n        <InputGroupText>i.cal.com/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n  InputGroupText,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Set your URL\"\r\n        className=\"*:[input]:ps-0!\"\r\n        placeholder=\"coss\"\r\n        type=\"search\"\r\n      />\r\n      <InputGroupAddon>\r\n        <InputGroupText>i.cal.com/</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

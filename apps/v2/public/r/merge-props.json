@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/base-ui/merge-props.ts",
-      "content": "export { mergeProps } from \"@base-ui/react/merge-props\";\n",
+      "content": "export { mergeProps } from \"@base-ui/react/merge-props\";\r\n",
       "type": "registry:lib"
     }
   ],

@@ -8,7 +8,7 @@ import { ui } from "@/registry/registry-ui";
 import { variants } from "@/registry/registry-variants";
 
 export const registry = {
-  homepage: "https://coss.com",
+  homepage: "https://ui.cnippet.dev/",
   items: [
     ...ui,
     ...(variants as Registry["items"]),
@@ -18,5 +18,5 @@ export const registry = {
     ...baseUi,
     ...hooks,
   ],
-  name: "coss ui",
+  name: "cnippet ui",
 } satisfies Registry;

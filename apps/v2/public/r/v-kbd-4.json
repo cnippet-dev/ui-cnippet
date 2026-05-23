@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-kbd-4.tsx",
-      "content": "import { ArrowLeftIcon, CircleDashedIcon } from \"lucide-react\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <KbdGroup>\n        <Kbd>\n          <ArrowLeftIcon />\n          Left\n        </Kbd>\n        <Kbd>\n          <CircleDashedIcon />\n          Voice Enabled\n        </Kbd>\n      </KbdGroup>\n    </div>\n  );\n}\n",
+      "content": "import { ArrowLeftIcon, CircleDashedIcon } from \"lucide-react\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <KbdGroup>\r\n        <Kbd>\r\n          <ArrowLeftIcon />\r\n          Left\r\n        </Kbd>\r\n        <Kbd>\r\n          <CircleDashedIcon />\r\n          Voice Enabled\r\n        </Kbd>\r\n      </KbdGroup>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

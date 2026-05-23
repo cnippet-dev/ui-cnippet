@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-textarea-2.tsx",
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return (\n    <div className=\"mb-1 space-y-2 pt-6 text-muted-foreground text-sm\">\n      <p>Small</p>\n      <Textarea placeholder=\"Type your message here\" size=\"sm\" />\n\n      <p>Large</p>\n      <Textarea placeholder=\"Type your message here\" size=\"lg\" />\n    </div>\n  );\n}\n",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"mb-1 space-y-2 pt-6 text-muted-foreground text-sm\">\r\n      <p>Small</p>\r\n      <Textarea placeholder=\"Type your message here\" size=\"sm\" />\r\n\r\n      <p>Large</p>\r\n      <Textarea placeholder=\"Type your message here\" size=\"lg\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

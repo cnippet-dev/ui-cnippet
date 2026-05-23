@@ -1,5 +1,5 @@
 {
-  "homepage": "https://coss.com",
+  "homepage": "https://ui.cnippet.dev/",
   "items": [
     {
       "name": "ui",
@@ -14374,5 +14374,5 @@
       "type": "registry:hook"
     }
   ],
-  "name": "coss ui"
+  "name": "cnippet ui"
 }

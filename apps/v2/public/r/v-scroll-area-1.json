@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-scroll-area-1.tsx",
-      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst tags = Array.from({ length: 50 }, (_, i) => `v1.0.0-alpha.${i}`);\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"h-64 rounded-lg border\">\n      <div className=\"px-4 py-2\">\n        <h4 className=\"mb-2 font-medium text-sm\">Tags</h4>\n        <div className=\"flex flex-col gap-1\">\n          {tags.map((tag) => (\n            <div className=\"text-sm\" key={tag}>\n              {tag}\n            </div>\n          ))}\n        </div>\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\r\n\r\nconst tags = Array.from({ length: 50 }, (_, i) => `v1.0.0-alpha.${i}`);\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ScrollArea className=\"h-64 rounded-lg border\">\r\n      <div className=\"px-4 py-2\">\r\n        <h4 className=\"mb-2 font-medium text-sm\">Tags</h4>\r\n        <div className=\"flex flex-col gap-1\">\r\n          {tags.map((tag) => (\r\n            <div className=\"text-sm\" key={tag}>\r\n              {tag}\r\n            </div>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </ScrollArea>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

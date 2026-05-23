@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-spinner-6.tsx",
-      "content": "import { Card, CardContent } from \"@/registry/default/ui/card\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"min-h-50 w-full max-w-xs\">\n      <CardContent className=\"flex grow flex-col items-center justify-center gap-4\">\n        <Spinner className=\"size-4 opacity-50\" />\n        <div className=\"flex flex-col items-center gap-1\">\n          <p className=\"font-medium text-sm\">Setting up your workspace</p>\n          <p className=\"text-muted-foreground text-xs\">\n            This may take a few seconds...\n          </p>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "content": "import { Card, CardContent } from \"@/registry/default/ui/card\";\r\nimport { Spinner } from \"@/registry/default/ui/spinner\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Card className=\"min-h-50 w-full max-w-xs\">\r\n      <CardContent className=\"flex grow flex-col items-center justify-center gap-4\">\r\n        <Spinner className=\"size-4 opacity-50\" />\r\n        <div className=\"flex flex-col items-center gap-1\">\r\n          <p className=\"font-medium text-sm\">Setting up your workspace</p>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            This may take a few seconds...\r\n          </p>\r\n        </div>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-18.tsx",
-      "content": "import { Trash2Icon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button variant=\"destructive\">\n      <Trash2Icon aria-hidden=\"true\" />\n      Delete Account\n    </Button>\n  );\n}\n",
+      "content": "import { Trash2Icon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui//button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button variant=\"destructive\">\r\n      <Trash2Icon aria-hidden=\"true\" />\r\n      Delete Account\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],
