@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-progressive-blur-1",
+  "description": "List fade — content list with progressive blur fade at the bottom",
+  "registryDependencies": [
+    "@cnippet/progressive-blur"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-progressive-blur-1.tsx",
+      "content": "import { ProgressiveBlur } from \"@/registry/default/motion/progressive-blur\";\n\nconst items = [\n  \"Scroll Reveal\",\n  \"Scroll Progress\",\n  \"Scroll Velocity Text\",\n  \"Parallax Floating\",\n  \"Stacking Cards\",\n  \"Progressive Blur\",\n  \"Horizontal Scroll\",\n  \"Scroll Direction Header\",\n];\n\nexport default function ProgressiveBlurList() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"relative h-52 w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card\">\n        <ul className=\"space-y-1 p-4\">\n          {items.map((item) => (\n            <li\n              className=\"rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted\"\n              key={item}\n            >\n              {item}\n            </li>\n          ))}\n        </ul>\n        <ProgressiveBlur\n          blurIntensity={0.3}\n          blurLayers={6}\n          className=\"absolute inset-x-0 bottom-0 h-24\"\n          direction=\"bottom\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

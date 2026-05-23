@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-rotating-text-1.tsx",
-      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/motion/rotating-text\";\n\nconst adjectives = [\"beautiful\", \"accessible\", \"composable\", \"performant\", \"animated\"];\n\nexport default function RotatingTextHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Build{\" \"}\n        <RotatingText\n          className=\"text-primary\"\n          direction=\"up\"\n          interval={2000}\n          transition={{ damping: 20, stiffness: 160, type: \"spring\" }}\n          words={adjectives}\n        />{\" \"}\n        interfaces\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { RotatingText } from \"@/registry/default/motion/rotating-text\";\r\n\r\nconst adjectives = [\"beautiful\", \"accessible\", \"composable\", \"performant\", \"animated\"];\r\n\r\nexport default function RotatingTextHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        Build{\" \"}\r\n        <RotatingText\r\n          className=\"text-primary\"\r\n          direction=\"up\"\r\n          interval={2000}\r\n          transition={{ damping: 20, stiffness: 160, type: \"spring\" }}\r\n          words={adjectives}\r\n        />{\" \"}\r\n        interfaces\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

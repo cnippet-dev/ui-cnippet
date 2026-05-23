@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-9.tsx",
-      "content": "import {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"monthly\"]} size=\"lg\" variant=\"outline\">\n        <ToggleGroupItem value=\"monthly\">Monthly</ToggleGroupItem>\n        <ToggleGroupItem className=\"gap-2\" value=\"yearly\">\n          Yearly\n          <span className=\"rounded-full bg-primary px-2 py-0.5 font-medium text-primary-foreground text-xs\">\n            Save 20%\n          </span>\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
+      "content": "import {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <ToggleGroup defaultValue={[\"monthly\"]} size=\"lg\" variant=\"outline\">\r\n        <ToggleGroupItem value=\"monthly\">Monthly</ToggleGroupItem>\r\n        <ToggleGroupItem className=\"gap-2\" value=\"yearly\">\r\n          Yearly\r\n          <span className=\"rounded-full bg-primary px-2 py-0.5 font-medium text-primary-foreground text-xs\">\r\n            Save 20%\r\n          </span>\r\n        </ToggleGroupItem>\r\n      </ToggleGroup>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

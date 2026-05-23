@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-cursor-proximity-1.tsx",
-      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\n\nexport default function TextCursorProximityScale() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      ref={containerRef}\n      className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\"\n    >\n      <p className=\"text-sm text-muted-foreground\">Hover to scale letters</p>\n      <TextCursorProximity\n        containerRef={containerRef}\n        styles={{ scale: { from: 1, to: 1.6 } }}\n        radius={60}\n        className=\"text-4xl font-bold tracking-tight\"\n      >\n        Move cursor here\n      </TextCursorProximity>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\r\n\r\nexport default function TextCursorProximityScale() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div\r\n      ref={containerRef}\r\n      className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\"\r\n    >\r\n      <p className=\"text-sm text-muted-foreground\">Hover to scale letters</p>\r\n      <TextCursorProximity\r\n        containerRef={containerRef}\r\n        styles={{ scale: { from: 1, to: 1.6 } }}\r\n        radius={60}\r\n        className=\"text-4xl font-bold tracking-tight\"\r\n      >\r\n        Move cursor here\r\n      </TextCursorProximity>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

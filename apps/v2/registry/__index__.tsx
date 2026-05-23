@@ -13417,6 +13417,78 @@ export const Index: Record<string, any> = {
     categories: ["text animation","scroll animation"],
     meta: undefined,
   },
+  "scroll-velocity-text": {
+    name: "scroll-velocity-text",
+    description: "Text marquee speed reacts to scroll velocity — faster scrolling spins it faster",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/scroll-velocity-text.tsx",
+      type: "registry:ui",
+      target: "components/motion/scroll-velocity-text.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/scroll-velocity-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: undefined,
+  },
+  "parallax-floating": {
+    name: "parallax-floating",
+    description: "Elements float at different speeds based on cursor position for a parallax depth effect",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/parallax-floating.tsx",
+      type: "registry:ui",
+      target: "components/motion/parallax-floating.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/parallax-floating.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation","hover animation"],
+    meta: undefined,
+  },
+  "stacking-cards": {
+    name: "stacking-cards",
+    description: "Cards stack and scale on scroll — each pins to the top while the next slides underneath",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/stacking-cards.tsx",
+      type: "registry:ui",
+      target: "components/motion/stacking-cards.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/stacking-cards.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: undefined,
+  },
+  "progressive-blur": {
+    name: "progressive-blur",
+    description: "Layered backdrop-blur overlay that progressively fades content at container edges",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/progressive-blur.tsx",
+      type: "registry:ui",
+      target: "components/motion/progressive-blur.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/progressive-blur.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: undefined,
+  },
   "variable-font-hover": {
     name: "variable-font-hover",
     description: "Variable font weight and width changes per letter on hover",
@@ -15409,6 +15481,222 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/motion-variants/m-scroll-progress-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-scroll-velocity-text-1": {
+    name: "m-scroll-velocity-text-1",
+    description: "Word marquee — continuous horizontal scroll of tech-stack words, speeds up on scroll",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scroll-velocity-text"],
+    files: [{
+      path: "registry/default/motion-variants/m-scroll-velocity-text-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scroll-velocity-text-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-scroll-velocity-text-2": {
+    name: "m-scroll-velocity-text-2",
+    description: "Opposing rows — two rows scrolling in opposite directions, velocity-reactive",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scroll-velocity-text"],
+    files: [{
+      path: "registry/default/motion-variants/m-scroll-velocity-text-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scroll-velocity-text-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-scroll-velocity-text-3": {
+    name: "m-scroll-velocity-text-3",
+    description: "Pill marquee — badge-style items scrolling continuously at a fixed speed",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/scroll-velocity-text"],
+    files: [{
+      path: "registry/default/motion-variants/m-scroll-velocity-text-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-scroll-velocity-text-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-parallax-floating-1": {
+    name: "m-parallax-floating-1",
+    description: "Floating shapes — geometric shapes at different depths follow the cursor",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/parallax-floating"],
+    files: [{
+      path: "registry/default/motion-variants/m-parallax-floating-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-parallax-floating-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-parallax-floating-2": {
+    name: "m-parallax-floating-2",
+    description: "Floating card — card with glow blobs and dot accents at independent depth layers",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/parallax-floating"],
+    files: [{
+      path: "registry/default/motion-variants/m-parallax-floating-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-parallax-floating-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-parallax-floating-3": {
+    name: "m-parallax-floating-3",
+    description: "Floating symbols — abstract symbols drift at different depths following cursor",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/parallax-floating"],
+    files: [{
+      path: "registry/default/motion-variants/m-parallax-floating-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-parallax-floating-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-stacking-cards-1": {
+    name: "m-stacking-cards-1",
+    description: "Feature cards — three feature cards stack as you scroll through the section",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/stacking-cards"],
+    files: [{
+      path: "registry/default/motion-variants/m-stacking-cards-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-stacking-cards-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-stacking-cards-2": {
+    name: "m-stacking-cards-2",
+    description: "Testimonial cards — customer quotes stack on scroll with subtle scaling",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/stacking-cards"],
+    files: [{
+      path: "registry/default/motion-variants/m-stacking-cards-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-stacking-cards-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-stacking-cards-3": {
+    name: "m-stacking-cards-3",
+    description: "Process steps — numbered steps stack sequentially on scroll",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/stacking-cards"],
+    files: [{
+      path: "registry/default/motion-variants/m-stacking-cards-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-stacking-cards-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-progressive-blur-1": {
+    name: "m-progressive-blur-1",
+    description: "List fade — content list with progressive blur fade at the bottom",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/progressive-blur"],
+    files: [{
+      path: "registry/default/motion-variants/m-progressive-blur-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-progressive-blur-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-progressive-blur-2": {
+    name: "m-progressive-blur-2",
+    description: "Gallery edges — horizontal row of cards with left and right edge blur",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/progressive-blur"],
+    files: [{
+      path: "registry/default/motion-variants/m-progressive-blur-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-progressive-blur-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: {"className":""},
+  },
+  "m-progressive-blur-3": {
+    name: "m-progressive-blur-3",
+    description: "Nav overflow — horizontal nav bar with right-edge blur for overflow indication",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/progressive-blur"],
+    files: [{
+      path: "registry/default/motion-variants/m-progressive-blur-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion-variants/m-progressive-blur-3.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

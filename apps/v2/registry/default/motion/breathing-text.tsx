@@ -1,6 +1,3 @@
-﻿"use client";
-
-import { motion, type Transition, type Variants } from "motion/react";
 import type { ElementType } from "react";
 import { cn } from "@/lib/utils";
 
@@ -9,10 +6,9 @@ export type BreathingTextProps = {
   as?: ElementType;
   fromFontVariationSettings: string;
   toFontVariationSettings: string;
-  transition?: Transition;
+  duration?: number;
   staggerDuration?: number;
   staggerFrom?: "first" | "last" | "center" | number;
-  repeatDelay?: number;
   className?: string;
 } & React.HTMLAttributes<HTMLElement>;
 
@@ -21,32 +17,17 @@ export function BreathingText({
   as = "span",
   fromFontVariationSettings,
   toFontVariationSettings,
-  transition = { duration: 1.5, ease: "easeInOut" },
+  duration = 3,
   staggerDuration = 0.1,
   staggerFrom = "first",
-  repeatDelay = 0.1,
   className,
   ...props
 }: BreathingTextProps) {
-  const letterVariants: Variants = {
-    animate: (i: number) => ({
-      fontVariationSettings: toFontVariationSettings,
-      transition: {
-        ...transition,
-        delay: i * staggerDuration,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatDelay,
-        repeatType: "mirror",
-      },
-    }),
-    initial: { fontVariationSettings: fromFontVariationSettings },
-  };
+  const letters = String(children).split("");
 
-  const getCustomIndex = (index: number, total: number) => {
+  const getStaggerIndex = (index: number, total: number) => {
     if (typeof staggerFrom === "number") return Math.abs(index - staggerFrom);
     switch (staggerFrom) {
-      case "first":
-        return index;
       case "last":
         return total - 1 - index;
       case "center":
@@ -56,7 +37,6 @@ export function BreathingText({
     }
   };
 
-  const letters = String(children).split("");
   const ElementTag = as;
 
   return (
@@ -69,17 +49,25 @@ export function BreathingText({
       {...props}
     >
       {letters.map((letter, i) => (
-        <motion.span
-          animate="animate"
+        <span
           aria-hidden="true"
           className="inline-block whitespace-pre"
-          custom={getCustomIndex(i, letters.length)}
-          initial="initial"
           key={i}
-          variants={letterVariants}
+          style={
+            {
+              "--fvs-from": fromFontVariationSettings,
+              "--fvs-to": toFontVariationSettings,
+              animationDelay: `${getStaggerIndex(i, letters.length) * staggerDuration}s`,
+              animationDuration: `${duration}s`,
+              animationFillMode: "both",
+              animationIterationCount: "infinite",
+              animationName: "breathing",
+              animationTimingFunction: "ease-in-out",
+            } as React.CSSProperties
+          }
         >
           {letter}
-        </motion.span>
+        </span>
       ))}
       <span className="sr-only">{children}</span>
     </ElementTag>

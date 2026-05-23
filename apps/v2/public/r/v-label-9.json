@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-9.tsx",
-      "content": "import { Field, FieldDescription } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <div className=\"flex flex-col gap-1\">\n        <Label htmlFor=\"label-helper\">API Key</Label>\n        <FieldDescription>\n          Your secret key for API authentication\n        </FieldDescription>\n      </div>\n      <Input\n        className=\"font-mono\"\n        id=\"label-helper\"\n        placeholder=\"sk_live_...\"\n      />\n    </Field>\n  );\n}\n",
+      "content": "import { Field, FieldDescription } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <div className=\"flex flex-col gap-1\">\r\n        <Label htmlFor=\"label-helper\">API Key</Label>\r\n        <FieldDescription>\r\n          Your secret key for API authentication\r\n        </FieldDescription>\r\n      </div>\r\n      <Input\r\n        className=\"font-mono\"\r\n        id=\"label-helper\"\r\n        placeholder=\"sk_live_...\"\r\n      />\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

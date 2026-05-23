@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-card-3.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"border-b\">\n        <CardTitle>Header with Border</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <p>\n          The footer has a border-t class applied, creating a visual separation\n          between the content and footer sections.\n        </p>\n      </CardContent>\n      <CardFooter className=\"border-t\">\n        <Button className=\"w-full\" variant=\"outline\">\n          Action\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/default/ui/card\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Card className=\"w-full max-w-xs\">\r\n      <CardHeader className=\"border-b\">\r\n        <CardTitle>Header with Border</CardTitle>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <p>\r\n          The footer has a border-t class applied, creating a visual separation\r\n          between the content and footer sections.\r\n        </p>\r\n      </CardContent>\r\n      <CardFooter className=\"border-t\">\r\n        <Button className=\"w-full\" variant=\"outline\">\r\n          Action\r\n        </Button>\r\n      </CardFooter>\r\n    </Card>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

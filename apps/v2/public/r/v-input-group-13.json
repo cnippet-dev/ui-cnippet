@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-13.tsx",
-      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Subscribe to our newsletter\"\n        disabled\n        placeholder=\"Your best email\"\n        type=\"email\"\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <Button aria-label=\"Subscribe\" disabled size=\"icon-xs\" variant=\"ghost\">\n          <ArrowRightIcon aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Subscribe to our newsletter\"\r\n        disabled\r\n        placeholder=\"Your best email\"\r\n        type=\"email\"\r\n      />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <Button aria-label=\"Subscribe\" disabled size=\"icon-xs\" variant=\"ghost\">\r\n          <ArrowRightIcon aria-hidden=\"true\" />\r\n        </Button>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

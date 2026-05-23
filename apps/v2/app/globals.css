@@ -13,6 +13,18 @@
   .animate-spin-once {
     animation: spin-once 0.4s ease-in-out;
   }
+
+  @keyframes breathing {
+    0% {
+      font-variation-settings: var(--fvs-from);
+    }
+    50% {
+      font-variation-settings: var(--fvs-to);
+    }
+    100% {
+      font-variation-settings: var(--fvs-from);
+    }
+  }
 }
 
 @layer base {

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-14.tsx",
-      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button>\n      Get Started\n      <ArrowRightIcon aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button>\r\n      Get Started\r\n      <ArrowRightIcon aria-hidden=\"true\" />\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

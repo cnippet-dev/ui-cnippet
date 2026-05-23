@@ -8,23 +8,22 @@ export default function BreathingTextSubtitle() {
       <BreathingText
         as="h1"
         className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
-        fromFontVariationSettings="'wght' 800"
+        duration={3}
+        fromFontVariationSettings="'wght' 700"
         staggerDuration={0.06}
         staggerFrom="last"
         toFontVariationSettings="'wght' 300"
-        transition={{ duration: 2.2, ease: "easeInOut" }}
       >
         Motion primitives
       </BreathingText>
       <BreathingText
         as="p"
         className="text-base text-muted-foreground"
+        duration={2.8}
         fromFontVariationSettings="'wght' 300"
-        repeatDelay={0.2}
         staggerDuration={0.04}
         staggerFrom="last"
-        toFontVariationSettings="'wght' 600"
-        transition={{ duration: 1.6, ease: "easeInOut" }}
+        toFontVariationSettings="'wght' 700"
       >
         Copy-paste animated components for modern web apps
       </BreathingText>

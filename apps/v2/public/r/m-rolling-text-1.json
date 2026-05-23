@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-rolling-text-1.tsx",
-      "content": "\"use client\";\n\nimport { RollingText } from \"@/registry/default/motion/rolling-text\";\n\nexport default function RollingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Introducing\n      </p>\n      <h1 className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <RollingText\n          direction=\"up\"\n          duration={0.6}\n          staggerDuration={0.04}\n        >\n          Design with purpose\n        </RollingText>\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { RollingText } from \"@/registry/default/motion/rolling-text\";\r\n\r\nexport default function RollingTextHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\r\n        Introducing\r\n      </p>\r\n      <h1 className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        <RollingText\r\n          direction=\"up\"\r\n          duration={0.6}\r\n          staggerDuration={0.04}\r\n        >\r\n          Design with purpose\r\n        </RollingText>\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-tooltip-5.tsx",
-      "content": "import { InfoIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Tooltip>\n        <TooltipTrigger\n          render={\n            <Button aria-label=\"More information\" size=\"icon\" variant=\"ghost\" />\n          }\n        >\n          <InfoIcon />\n        </TooltipTrigger>\n        <TooltipContent>\n          <p className=\"text-center text-sm\">\n            Additional information and help context.\n          </p>\n        </TooltipContent>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "content": "import { InfoIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <Tooltip>\r\n        <TooltipTrigger\r\n          render={\r\n            <Button aria-label=\"More information\" size=\"icon\" variant=\"ghost\" />\r\n          }\r\n        >\r\n          <InfoIcon />\r\n        </TooltipTrigger>\r\n        <TooltipContent>\r\n          <p className=\"text-center text-sm\">\r\n            Additional information and help context.\r\n          </p>\r\n        </TooltipContent>\r\n      </Tooltip>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-15.tsx",
-      "content": "import { CloudDownloadIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button>\n      <CloudDownloadIcon aria-hidden=\"true\" />\n      Download\n    </Button>\n  );\n}\n",
+      "content": "import { CloudDownloadIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button>\r\n      <CloudDownloadIcon aria-hidden=\"true\" />\r\n      Download\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

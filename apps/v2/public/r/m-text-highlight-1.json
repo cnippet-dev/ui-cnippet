@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-highlight-1.tsx",
-      "content": "\"use client\";\n\nimport { TextHighlight } from \"@/registry/default/motion/text-highlight\";\n\nexport default function TextHighlightInView() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h2 className=\"max-w-xl text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">\n        Ship{\" \"}\n        <TextHighlight\n          highlightColor=\"hsl(262, 80%, 85%)\"\n          transition={{ bounce: 0, duration: 0.9, type: \"spring\" }}\n          triggerType=\"inView\"\n        >\n          production-ready\n        </TextHighlight>{\" \"}\n        animations in minutes\n      </h2>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextHighlight } from \"@/registry/default/motion/text-highlight\";\r\n\r\nexport default function TextHighlightInView() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h2 className=\"max-w-xl text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">\r\n        Ship{\" \"}\r\n        <TextHighlight\r\n          highlightColor=\"hsl(262, 80%, 85%)\"\r\n          transition={{ bounce: 0, duration: 0.9, type: \"spring\" }}\r\n          triggerType=\"inView\"\r\n        >\r\n          production-ready\r\n        </TextHighlight>{\" \"}\r\n        animations in minutes\r\n      </h2>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

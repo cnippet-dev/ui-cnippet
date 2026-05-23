@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-velocity-text-2",
+  "description": "Opposing rows — two rows scrolling in opposite directions, velocity-reactive",
+  "registryDependencies": [
+    "@cnippet/scroll-velocity-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-velocity-text-2.tsx",
+      "content": "import {\n  ScrollVelocityContainer,\n  ScrollVelocityRow,\n} from \"@/registry/default/motion/scroll-velocity-text\";\n\nconst row1 = [\"Build\", \"Design\", \"Ship\", \"Scale\", \"Iterate\", \"Launch\"];\nconst row2 = [\n  \"Accessible\",\n  \"Animated\",\n  \"Composable\",\n  \"Fast\",\n  \"Type-safe\",\n  \"Open Source\",\n];\n\nexport default function ScrollVelocityOpposing() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 overflow-hidden py-6\">\n      <ScrollVelocityContainer className=\"space-y-4\">\n        <ScrollVelocityRow baseVelocity={4} direction={1}>\n          {row1.map((word) => (\n            <span\n              className=\"mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10\"\n              key={word}\n            >\n              {word}\n            </span>\n          ))}\n        </ScrollVelocityRow>\n        <ScrollVelocityRow baseVelocity={4} direction={-1}>\n          {row2.map((word) => (\n            <span\n              className=\"mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10\"\n              key={word}\n            >\n              {word}\n            </span>\n          ))}\n        </ScrollVelocityRow>\n      </ScrollVelocityContainer>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

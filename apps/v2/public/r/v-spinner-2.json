@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-spinner-2.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\n      <InputGroupAddon>\n        <Spinner />\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/registry/default/ui/input-group\";\r\nimport { Spinner } from \"@/registry/default/ui/spinner\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\r\n      <InputGroupAddon>\r\n        <Spinner />\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

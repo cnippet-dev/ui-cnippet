@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-7.tsx",
-      "content": "import { Columns2Icon, LayoutGridIcon, ListIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ToggleGroup defaultValue={[\"list\"]} variant=\"outline\">\n        <ToggleGroupItem aria-label=\"List view\" value=\"list\">\n          <ListIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Grid view\" value=\"grid\">\n          <LayoutGridIcon />\n        </ToggleGroupItem>\n        <ToggleGroupItem aria-label=\"Kanban view\" value=\"kanban\">\n          <Columns2Icon />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n}\n",
+      "content": "import { Columns2Icon, LayoutGridIcon, ListIcon } from \"lucide-react\";\r\nimport {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <ToggleGroup defaultValue={[\"list\"]} variant=\"outline\">\r\n        <ToggleGroupItem aria-label=\"List view\" value=\"list\">\r\n          <ListIcon />\r\n        </ToggleGroupItem>\r\n        <ToggleGroupItem aria-label=\"Grid view\" value=\"grid\">\r\n          <LayoutGridIcon />\r\n        </ToggleGroupItem>\r\n        <ToggleGroupItem aria-label=\"Kanban view\" value=\"kanban\">\r\n          <Columns2Icon />\r\n        </ToggleGroupItem>\r\n      </ToggleGroup>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

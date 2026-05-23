@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-stacking-cards-3",
+  "description": "Process steps — numbered steps stack sequentially on scroll",
+  "registryDependencies": [
+    "@cnippet/stacking-cards"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-stacking-cards-3.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport {\n  StackingCardItem,\n  StackingCards,\n} from \"@/registry/default/motion/stacking-cards\";\n\nconst steps = [\n  {\n    description: \"Explore 164 animated components across 14 categories.\",\n    step: \"01\",\n    title: \"Browse\",\n  },\n  {\n    description: \"Run npx cnippet@latest add <component> to add it.\",\n    step: \"02\",\n    title: \"Install\",\n  },\n  {\n    description: \"Adjust props, variants, and Tailwind classes freely.\",\n    step: \"03\",\n    title: \"Customise\",\n  },\n  {\n    description: \"Deploy production-ready animations with confidence.\",\n    step: \"04\",\n    title: \"Ship\",\n  },\n];\n\nexport default function StackingCardsSteps() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-56 overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <StackingCards\n        className=\"mx-auto h-[600px] w-full max-w-sm\"\n        scaleMultiplier={0.04}\n        scrollOptions={{ container: containerRef }}\n        totalCards={steps.length}\n      >\n        {steps.map((s, i) => (\n          <StackingCardItem index={i} key={s.step} topPosition={`${i * 14}px`}>\n            <div className=\"flex h-32 items-start gap-4 rounded-2xl border border-border bg-card p-5\">\n              <span className=\"text-3xl font-black text-primary/20\">\n                {s.step}\n              </span>\n              <div>\n                <h3 className=\"font-bold text-foreground\">{s.title}</h3>\n                <p className=\"mt-0.5 text-xs text-muted-foreground\">\n                  {s.description}\n                </p>\n              </div>\n            </div>\n          </StackingCardItem>\n        ))}\n      </StackingCards>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

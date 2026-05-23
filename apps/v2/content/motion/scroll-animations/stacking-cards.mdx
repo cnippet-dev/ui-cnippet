@@ -1,0 +1,104 @@
+---
+title: Stacking Cards
+description: Cards pin to the top and scale down as subsequent cards scroll underneath, creating a layered stacking effect.
+---
+
+<ComponentPreview name="m-stacking-cards-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add stacking-cards
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="stacking-cards" title="components/motion/stacking-cards.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  StackingCardItem,
+  StackingCards,
+} from "@/components/motion/stacking-cards";
+```
+
+```tsx
+<StackingCards className="h-[300vh]" totalCards={3}>
+  {cards.map((card, i) => (
+    <StackingCardItem index={i} key={card.id} topPosition={`${5 + i * 5}%`}>
+      <div className="h-64 rounded-2xl border bg-card p-6">
+        {card.content}
+      </div>
+    </StackingCardItem>
+  ))}
+</StackingCards>
+```
+
+## Props
+
+### StackingCards
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `totalCards` | `number` | — | Total number of card items — required for scale calculations |
+| `scaleMultiplier` | `number` | `0.03` | How much each card shrinks relative to the one above it |
+| `scrollOptions` | `UseScrollOptions` | — | Options passed to Motion's `useScroll` — use `container` to scope scroll to a div |
+| `className` | `string` | — | Class applied to the outer container — set the height here |
+
+### StackingCardItem
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `index` | `number` | — | Zero-based position of this card in the stack |
+| `topPosition` | `string` | `"5 + index * 3%"` | CSS `top` value for the stacked offset (e.g. `"8%"`, `"24px"`) |
+| `className` | `string` | — | Class applied to the sticky wrapper |
+
+## Examples
+
+### Feature Cards
+
+Three feature cards stack as you scroll, each pinning to the top while the next slides underneath.
+
+<ComponentPreview name="m-stacking-cards-1" />
+
+### Testimonial Cards
+
+Customer quotes stack on scroll with subtle scaling, ideal for social proof sections.
+
+<ComponentPreview name="m-stacking-cards-2" />
+
+### Process Steps
+
+Numbered steps stack sequentially on scroll, guiding users through a flow one step at a time.
+
+<ComponentPreview name="m-stacking-cards-3" />

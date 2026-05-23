@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-generate-effect-1.tsx",
-      "content": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\n\nexport default function TextGenerateEffectHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextGenerateEffect\n        as=\"h1\"\n        className=\"max-w-xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\n        filter\n        staggerDuration={0.1}\n        transition={{ duration: 0.5 }}\n      >\n        Motion components for modern web apps\n      </TextGenerateEffect>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\r\n\r\nexport default function TextGenerateEffectHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <TextGenerateEffect\r\n        as=\"h1\"\r\n        className=\"max-w-xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        filter\r\n        staggerDuration={0.1}\r\n        transition={{ duration: 0.5 }}\r\n      >\r\n        Motion components for modern web apps\r\n      </TextGenerateEffect>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

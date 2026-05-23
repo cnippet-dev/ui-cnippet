@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-progressive-blur-2",
+  "description": "Gallery edges — horizontal row of cards with left and right edge blur",
+  "registryDependencies": [
+    "@cnippet/progressive-blur"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-progressive-blur-2.tsx",
+      "content": "import { ProgressiveBlur } from \"@/registry/default/motion/progressive-blur\";\n\nconst gradients = [\n  \"from-violet-500/40 to-indigo-500/40\",\n  \"from-pink-500/40 to-rose-500/40\",\n  \"from-emerald-500/40 to-teal-500/40\",\n  \"from-amber-500/40 to-orange-500/40\",\n  \"from-sky-500/40 to-cyan-500/40\",\n  \"from-fuchsia-500/40 to-purple-500/40\",\n];\n\nexport default function ProgressiveBlurGallery() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"relative w-full max-w-lg overflow-hidden\">\n        <div className=\"flex gap-3\">\n          {gradients.map((gradient, i) => (\n            <div\n              className={`h-28 w-28 shrink-0 rounded-xl bg-gradient-to-br ${gradient}`}\n              key={i}\n            />\n          ))}\n        </div>\n        <ProgressiveBlur\n          blurIntensity={0.4}\n          blurLayers={6}\n          className=\"absolute inset-y-0 left-0 w-16\"\n          direction=\"left\"\n        />\n        <ProgressiveBlur\n          blurIntensity={0.4}\n          blurLayers={6}\n          className=\"absolute inset-y-0 right-0 w-16\"\n          direction=\"right\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

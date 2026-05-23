@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-letter-swap-hover-1.tsx",
-      "content": "\"use client\";\n\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\n\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\n\nexport default function LetterSwapHoverNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-8\">\n        {links.map((link) => (\n          <LetterSwapHover\n            className=\"cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground\"\n            key={link}\n            label={link}\n            staggerDuration={0.03}\n            transition={{ duration: 0.5, type: \"spring\" }}\n          />\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\r\n\r\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\r\n\r\nexport default function LetterSwapHoverNav() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <nav className=\"flex items-center gap-8\">\r\n        {links.map((link) => (\r\n          <LetterSwapHover\r\n            className=\"cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground\"\r\n            key={link}\r\n            label={link}\r\n            staggerDuration={0.03}\r\n            transition={{ duration: 0.5, type: \"spring\" }}\r\n          />\r\n        ))}\r\n      </nav>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

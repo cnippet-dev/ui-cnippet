@@ -1,0 +1,102 @@
+---
+title: Scroll Velocity Text
+description: A continuous text marquee whose speed reacts to scroll velocity — the faster you scroll, the faster the marquee moves.
+---
+
+<ComponentPreview name="m-scroll-velocity-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-velocity-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-velocity-text" title="components/motion/scroll-velocity-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "@/components/motion/scroll-velocity-text";
+```
+
+```tsx
+<ScrollVelocityContainer>
+  <ScrollVelocityRow baseVelocity={3}>
+    <span className="mx-6">React</span>
+    <span className="mx-6">TypeScript</span>
+    <span className="mx-6">Next.js</span>
+  </ScrollVelocityRow>
+</ScrollVelocityContainer>
+```
+
+## Props
+
+### ScrollVelocityContainer
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | One or more `ScrollVelocityRow` elements |
+| `className` | `string` | — | Class applied to the outer wrapper |
+
+### ScrollVelocityRow
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Content block that is repeated to fill the row |
+| `baseVelocity` | `number` | `5` | Base scroll speed as a percentage of block width per second |
+| `direction` | `1 \| -1` | `1` | Scroll direction — `1` for left-to-right, `-1` for right-to-left |
+| `scrollReactivity` | `boolean` | `true` | When `true`, scroll velocity modifies the speed |
+| `className` | `string` | — | Class applied to the row container |
+
+## Examples
+
+### Word Marquee
+
+A continuous horizontal scroll of tech-stack words that speeds up as you scroll the page.
+
+<ComponentPreview name="m-scroll-velocity-text-1" />
+
+### Opposing Rows
+
+Two rows scroll in opposite directions. Useful for decorative hero sections.
+
+<ComponentPreview name="m-scroll-velocity-text-2" />
+
+### Pill Marquee
+
+Badge-style items scroll at a constant speed with `scrollReactivity` disabled.
+
+<ComponentPreview name="m-scroll-velocity-text-3" />

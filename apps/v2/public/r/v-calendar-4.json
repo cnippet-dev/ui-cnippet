@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-calendar-4.tsx",
-      "content": "\"use client\";\nimport * as React from \"react\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  );\n}\n",
+      "content": "\"use client\";\r\nimport * as React from \"react\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Particle() {\r\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\r\n  return (\r\n    <Calendar\r\n      captionLayout=\"dropdown\"\r\n      endMonth={new Date(2030, 11)}\r\n      mode=\"single\"\r\n      onSelect={setDate}\r\n      selected={date}\r\n      startMonth={new Date(1930, 0)}\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-20.tsx",
-      "content": "import { StarIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button className=\"pe-0\" variant=\"outline\">\n      <StarIcon aria-hidden=\"true\" />\n      Star\n      <span className=\"relative ms-1 px-2 font-medium text-muted-foreground text-xs before:absolute before:inset-0 before:left-0 before:w-px before:bg-border\">\n        589\n      </span>\n    </Button>\n  );\n}\n",
+      "content": "import { StarIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui//button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button className=\"pe-0\" variant=\"outline\">\r\n      <StarIcon aria-hidden=\"true\" />\r\n      Star\r\n      <span className=\"relative ms-1 px-2 font-medium text-muted-foreground text-xs before:absolute before:inset-0 before:left-0 before:w-px before:bg-border\">\r\n        589\r\n      </span>\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

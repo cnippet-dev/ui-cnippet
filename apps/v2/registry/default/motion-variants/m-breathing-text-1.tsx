@@ -8,11 +8,11 @@ export default function BreathingTextHero() {
       <BreathingText
         as="h1"
         className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
-        fromFontVariationSettings="'wght' 300, 'wdth' 75"
+        duration={3}
+        fromFontVariationSettings="'wght' 300"
         staggerDuration={0.08}
         staggerFrom="first"
-        toFontVariationSettings="'wght' 900, 'wdth' 125"
-        transition={{ duration: 2, ease: "easeInOut" }}
+        toFontVariationSettings="'wght' 700"
       >
         Build with motion
       </BreathingText>

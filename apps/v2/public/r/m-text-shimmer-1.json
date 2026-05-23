@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-shimmer-1.tsx",
-      "content": "\"use client\";\n\nimport { TextShimmer } from \"@/registry/default/motion/text-shimmer\";\n\nexport default function TextShimmerHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextShimmer\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\n        duration={2.5}\n        spread={3}\n      >\n        Build beautiful interfaces\n      </TextShimmer>\n      <p className=\"text-sm text-muted-foreground\">\n        Continuously shimmering headline\n      </p>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextShimmer } from \"@/registry/default/motion/text-shimmer\";\r\n\r\nexport default function TextShimmerHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <TextShimmer\r\n        as=\"h1\"\r\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\r\n        duration={2.5}\r\n        spread={3}\r\n      >\r\n        Build beautiful interfaces\r\n      </TextShimmer>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Continuously shimmering headline\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

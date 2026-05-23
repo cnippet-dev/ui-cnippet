@@ -195,6 +195,31 @@ export const motionComponents: MotionItem[] = [
     description: "Text content swaps and transforms tied to scroll position",
     name: "scroll-swap-text",
   }),
+  // Scroll Animation
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Text marquee speed reacts to scroll velocity — faster scrolling spins it faster",
+    name: "scroll-velocity-text",
+  }),
+  createMotion({
+    categories: ["scroll animation", "hover animation"],
+    description:
+      "Elements float at different speeds based on cursor position for a parallax depth effect",
+    name: "parallax-floating",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Cards stack and scale on scroll — each pins to the top while the next slides underneath",
+    name: "stacking-cards",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Layered backdrop-blur overlay that progressively fades content at container edges",
+    name: "progressive-blur",
+  }),
   createMotion({
     categories: ["text animation", "hover animation"],
     description: "Variable font weight and width changes per letter on hover",

@@ -535,4 +535,60 @@ export const motionVariants: MotionVariantItem[] = [
       name: `m-scroll-progress-${i + 1}`,
     }),
   ),
+
+  // --- scroll-velocity-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll animation",
+      dependencies: ["scroll-velocity-text"],
+      description: [
+        "Word marquee — continuous horizontal scroll of tech-stack words, speeds up on scroll",
+        "Opposing rows — two rows scrolling in opposite directions, velocity-reactive",
+        "Pill marquee — badge-style items scrolling continuously at a fixed speed",
+      ][i],
+      name: `m-scroll-velocity-text-${i + 1}`,
+    }),
+  ),
+
+  // --- parallax-floating ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll animation",
+      dependencies: ["parallax-floating"],
+      description: [
+        "Floating shapes — geometric shapes at different depths follow the cursor",
+        "Floating card — card with glow blobs and dot accents at independent depth layers",
+        "Floating symbols — abstract symbols drift at different depths following cursor",
+      ][i],
+      name: `m-parallax-floating-${i + 1}`,
+    }),
+  ),
+
+  // --- stacking-cards ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll animation",
+      dependencies: ["stacking-cards"],
+      description: [
+        "Feature cards — three feature cards stack as you scroll through the section",
+        "Testimonial cards — customer quotes stack on scroll with subtle scaling",
+        "Process steps — numbered steps stack sequentially on scroll",
+      ][i],
+      name: `m-stacking-cards-${i + 1}`,
+    }),
+  ),
+
+  // --- progressive-blur ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll animation",
+      dependencies: ["progressive-blur"],
+      description: [
+        "List fade — content list with progressive blur fade at the bottom",
+        "Gallery edges — horizontal row of cards with left and right edge blur",
+        "Nav overflow — horizontal nav bar with right-edge blur for overflow indication",
+      ][i],
+      name: `m-progressive-blur-${i + 1}`,
+    }),
+  ),
 ];

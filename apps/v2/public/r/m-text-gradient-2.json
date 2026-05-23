@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-gradient-2.tsx",
-      "content": "\"use client\";\n\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\n\nexport default function TextGradientInline() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h2 className=\"max-w-xl text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">\n        The fastest way to ship{\" \"}\n        <TextGradient\n          as=\"span\"\n          colors={[\"#f97316\", \"#eab308\", \"#22c55e\", \"#f97316\"]}\n          duration={3}\n        >\n          animated\n        </TextGradient>{\" \"}\n        interfaces\n      </h2>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\r\n\r\nexport default function TextGradientInline() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h2 className=\"max-w-xl text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">\r\n        The fastest way to ship{\" \"}\r\n        <TextGradient\r\n          as=\"span\"\r\n          colors={[\"#f97316\", \"#eab308\", \"#22c55e\", \"#f97316\"]}\r\n          duration={3}\r\n        >\r\n          animated\r\n        </TextGradient>{\" \"}\r\n        interfaces\r\n      </h2>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

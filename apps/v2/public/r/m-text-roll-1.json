@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-roll-1.tsx",
-      "content": "\"use client\";\n\nimport { TextRoll } from \"@/registry/default/motion/text-roll\";\n\nexport default function TextRollHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\n        Introducing\n      </p>\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        <TextRoll duration={0.5} getEnterDelay={(i) => i * 0.04}>\n          Design with motion\n        </TextRoll>\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextRoll } from \"@/registry/default/motion/text-roll\";\r\n\r\nexport default function TextRollHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\r\n        Introducing\r\n      </p>\r\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        <TextRoll duration={0.5} getEnterDelay={(i) => i * 0.04}>\r\n          Design with motion\r\n        </TextRoll>\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

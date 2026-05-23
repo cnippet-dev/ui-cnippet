@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stacking-cards",
+  "description": "Cards stack and scale on scroll — each pins to the top while the next slides underneath",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/stacking-cards.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  type MotionValue,\r\n  motion,\r\n  type UseScrollOptions,\r\n  useScroll,\r\n  useTransform,\r\n} from \"motion/react\";\r\nimport {\r\n  createContext,\r\n  type HTMLAttributes,\r\n  type PropsWithChildren,\r\n  useContext,\r\n  useRef,\r\n} from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface StackingCardsContextValue {\r\n  progress: MotionValue<number>;\r\n  scaleMultiplier?: number;\r\n  totalCards?: number;\r\n}\r\n\r\nconst StackingCardsContext = createContext<StackingCardsContextValue | null>(\r\n  null,\r\n);\r\n\r\nexport function useStackingCardsContext() {\r\n  const context = useContext(StackingCardsContext);\r\n  if (!context)\r\n    throw new Error(\"StackingCardItem must be used within StackingCards\");\r\n  return context;\r\n}\r\n\r\nexport interface StackingCardsProps\r\n  extends PropsWithChildren,\r\n    HTMLAttributes<HTMLDivElement> {\r\n  scrollOptions?: UseScrollOptions;\r\n  scaleMultiplier?: number;\r\n  totalCards: number;\r\n}\r\n\r\nexport function StackingCards({\r\n  children,\r\n  className,\r\n  scrollOptions,\r\n  scaleMultiplier,\r\n  totalCards,\r\n  ...props\r\n}: StackingCardsProps) {\r\n  const targetRef = useRef<HTMLDivElement>(null);\r\n  const { scrollYProgress } = useScroll({\r\n    offset: [\"start start\", \"end end\"],\r\n    ...scrollOptions,\r\n    target: targetRef,\r\n  });\r\n\r\n  return (\r\n    <StackingCardsContext.Provider\r\n      value={{ progress: scrollYProgress, scaleMultiplier, totalCards }}\r\n    >\r\n      <div className={cn(className)} ref={targetRef} {...props}>\r\n        {children}\r\n      </div>\r\n    </StackingCardsContext.Provider>\r\n  );\r\n}\r\n\r\nexport interface StackingCardItemProps\r\n  extends HTMLAttributes<HTMLDivElement>,\r\n    PropsWithChildren {\r\n  index: number;\r\n  topPosition?: string;\r\n}\r\n\r\nexport function StackingCardItem({\r\n  index,\r\n  topPosition,\r\n  className,\r\n  children,\r\n  ...props\r\n}: StackingCardItemProps) {\r\n  const { progress, scaleMultiplier, totalCards = 0 } =\r\n    useStackingCardsContext();\r\n  const scaleTo = 1 - (totalCards - index) * (scaleMultiplier ?? 0.03);\r\n  const rangeScale = [index * (1 / totalCards), 1];\r\n  const scale = useTransform(progress, rangeScale, [1, scaleTo]);\r\n  const top = topPosition ?? `${5 + index * 3}%`;\r\n\r\n  return (\r\n    <div className={cn(\"sticky top-0 h-full\", className)} {...props}>\r\n      <motion.div className=\"relative h-full origin-top\" style={{ scale, top }}>\r\n        {children}\r\n      </motion.div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/motion/stacking-cards.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-3.tsx",
-      "content": "import { Field } from \"@/registry/default/ui/field\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label htmlFor=\"label-demo-message\">Message</Label>\n      <Textarea id=\"label-demo-message\" placeholder=\"Type your message here…\" />\n    </Field>\n  );\n}\n",
+      "content": "import { Field } from \"@/registry/default/ui/field\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label htmlFor=\"label-demo-message\">Message</Label>\r\n      <Textarea id=\"label-demo-message\" placeholder=\"Type your message here…\" />\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

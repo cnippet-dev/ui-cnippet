@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-velocity-text-3",
+  "description": "Pill marquee — badge-style items scrolling continuously at a fixed speed",
+  "registryDependencies": [
+    "@cnippet/scroll-velocity-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-velocity-text-3.tsx",
+      "content": "import {\n  ScrollVelocityRow,\n} from \"@/registry/default/motion/scroll-velocity-text\";\n\nconst items = [\n  { icon: \"⚡\", label: \"Open Source\" },\n  { icon: \"🔒\", label: \"Type-safe\" },\n  { icon: \"🌙\", label: \"Dark Mode\" },\n  { icon: \"♿\", label: \"Accessible\" },\n  { icon: \"✨\", label: \"Animated\" },\n  { icon: \"🧩\", label: \"Composable\" },\n];\n\nexport default function ScrollVelocityPills() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center overflow-hidden\">\n      <ScrollVelocityRow baseVelocity={2.5} scrollReactivity={false}>\n        {items.map((item) => (\n          <span\n            className=\"mx-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground shadow-sm\"\n            key={item.label}\n          >\n            <span>{item.icon}</span>\n            {item.label}\n          </span>\n        ))}\n      </ScrollVelocityRow>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-shimmer-wave-1.tsx",
-      "content": "\"use client\";\n\nimport { TextShimmerWave } from \"@/registry/default/motion/text-shimmer-wave\";\n\nexport default function TextShimmerWaveHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextShimmerWave\n        as=\"h1\"\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\n        duration={1.2}\n        spread={1.2}\n        yDistance={-3}\n        zDistance={12}\n      >\n        Animate with purpose\n      </TextShimmerWave>\n      <p className=\"text-sm text-muted-foreground\">Wave shimmer on a heading</p>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TextShimmerWave } from \"@/registry/default/motion/text-shimmer-wave\";\r\n\r\nexport default function TextShimmerWaveHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <TextShimmerWave\r\n        as=\"h1\"\r\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\r\n        duration={1.2}\r\n        spread={1.2}\r\n        yDistance={-3}\r\n        zDistance={12}\r\n      >\r\n        Animate with purpose\r\n      </TextShimmerWave>\r\n      <p className=\"text-sm text-muted-foreground\">Wave shimmer on a heading</p>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

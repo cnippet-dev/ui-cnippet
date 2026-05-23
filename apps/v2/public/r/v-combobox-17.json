@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-combobox-17.tsx",
-      "content": "export default function Component() {\n  return <div>Combobox</div>;\n}\n",
+      "content": "export default function Component() {\r\n  return <div>Combobox</div>;\r\n}\r\n",
       "type": "registry:block"
     }
   ],

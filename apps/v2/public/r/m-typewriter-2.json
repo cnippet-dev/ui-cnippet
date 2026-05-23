@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-typewriter-2.tsx",
-      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\n\nexport default function TypewriterLoop() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h2 className=\"text-center text-3xl font-bold tracking-tight text-foreground\">\n        We help teams{\" \"}\n        <span className=\"text-primary\">\n          <Typewriter\n            deleteSpeed={25}\n            loop\n            speed={55}\n            text={[\n              \"ship faster\",\n              \"design better\",\n              \"animate beautifully\",\n              \"stay consistent\",\n            ]}\n            waitTime={1800}\n          />\n        </span>\n      </h2>\n    </div>\n  );\n}\n",
+      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\r\n\r\nexport default function TypewriterLoop() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h2 className=\"text-center text-3xl font-bold tracking-tight text-foreground\">\r\n        We help teams{\" \"}\r\n        <span className=\"text-primary\">\r\n          <Typewriter\r\n            deleteSpeed={25}\r\n            loop\r\n            speed={55}\r\n            text={[\r\n              \"ship faster\",\r\n              \"design better\",\r\n              \"animate beautifully\",\r\n              \"stay consistent\",\r\n            ]}\r\n            waitTime={1800}\r\n          />\r\n        </span>\r\n      </h2>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

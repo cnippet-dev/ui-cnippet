@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-progress-4.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Progress } from \"@/registry/default/ui/progress\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(50);\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-6\">\n      <Progress value={value} />\n      <Slider\n        max={100}\n        min={0}\n        onValueChange={(value: number | readonly number[]) =>\n          setValue(value as number)\n        }\n        step={1}\n        value={[value]}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Progress } from \"@/registry/default/ui/progress\";\r\nimport { Slider } from \"@/registry/default/ui/slider\";\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(50);\r\n\r\n  return (\r\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-6\">\r\n      <Progress value={value} />\r\n      <Slider\r\n        max={100}\r\n        min={0}\r\n        onValueChange={(value: number | readonly number[]) =>\r\n          setValue(value as number)\r\n        }\r\n        step={1}\r\n        value={[value]}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

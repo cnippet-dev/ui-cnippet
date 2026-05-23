@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-stacking-cards-2",
+  "description": "Testimonial cards — customer quotes stack on scroll with subtle scaling",
+  "registryDependencies": [
+    "@cnippet/stacking-cards"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-stacking-cards-2.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport {\n  StackingCardItem,\n  StackingCards,\n} from \"@/registry/default/motion/stacking-cards\";\n\nconst testimonials = [\n  {\n    name: \"Alex Chen\",\n    quote:\n      \"The animation quality is exceptional. Dropped it into production in minutes.\",\n    role: \"Frontend Engineer\",\n  },\n  {\n    name: \"Maria Garcia\",\n    quote:\n      \"Finally, a component library that doesn't fight the design system.\",\n    role: \"Product Designer\",\n  },\n  {\n    name: \"James Kim\",\n    quote:\n      \"Copy-paste components with zero configuration. This is the future.\",\n    role: \"Full-stack Developer\",\n  },\n];\n\nexport default function StackingCardsTestimonials() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-56 overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <StackingCards\n        className=\"mx-auto h-[500px] w-full max-w-sm\"\n        scaleMultiplier={0.05}\n        scrollOptions={{ container: containerRef }}\n        totalCards={testimonials.length}\n      >\n        {testimonials.map((t, i) => (\n          <StackingCardItem index={i} key={t.name} topPosition={`${i * 14}px`}>\n            <div className=\"flex h-44 flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm\">\n              <p className=\"text-sm italic text-muted-foreground\">\n                &ldquo;{t.quote}&rdquo;\n              </p>\n              <div>\n                <p className=\"text-sm font-semibold text-foreground\">{t.name}</p>\n                <p className=\"text-xs text-muted-foreground\">{t.role}</p>\n              </div>\n            </div>\n          </StackingCardItem>\n        ))}\n      </StackingCards>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:block"
+}

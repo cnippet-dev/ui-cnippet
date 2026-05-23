@@ -39,9 +39,9 @@ export default function SlidingNumberPricing() {
           </span>
           <span className="mt-4 text-sm text-muted-foreground">/mo</span>
         </div>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <div className="mt-2 text-sm text-muted-foreground">
           Up to <SlidingNumber value={plan.seats} /> seats
-        </p>
+        </div>
       </div>
     </div>
   );

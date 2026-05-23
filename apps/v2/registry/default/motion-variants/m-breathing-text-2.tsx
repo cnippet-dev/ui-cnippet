@@ -8,12 +8,11 @@ export default function BreathingTextCenter() {
       <BreathingText
         as="h2"
         className="text-5xl font-black tracking-tighter text-foreground sm:text-6xl"
-        fromFontVariationSettings="'wght' 200"
-        repeatDelay={0.5}
+        duration={3}
+        fromFontVariationSettings="'wght' 300"
         staggerDuration={0.12}
         staggerFrom="center"
-        toFontVariationSettings="'wght' 900"
-        transition={{ duration: 1.8, ease: "easeInOut" }}
+        toFontVariationSettings="'wght' 700"
       >
         CNIPPET
       </BreathingText>

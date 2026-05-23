@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-flip-words-1.tsx",
-      "content": "import { FlipWords } from \"@/registry/default/motion/flip-words\";\n\nconst adjectives = [\"beautiful\", \"accessible\", \"composable\", \"performant\"];\n\nexport default function FlipWordsHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Build{\" \"}\n        <FlipWords\n          className=\"text-primary\"\n          duration={2500}\n          words={adjectives}\n        />\n        <br />\n        interfaces with ease\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "import { FlipWords } from \"@/registry/default/motion/flip-words\";\r\n\r\nconst adjectives = [\"beautiful\", \"accessible\", \"composable\", \"performant\"];\r\n\r\nexport default function FlipWordsHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        Build{\" \"}\r\n        <FlipWords\r\n          className=\"text-primary\"\r\n          duration={2500}\r\n          words={adjectives}\r\n        />\r\n        <br />\r\n        interfaces with ease\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

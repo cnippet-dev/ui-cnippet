@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-group-7.tsx",
-      "content": "import { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Domain input\">\n      <Input\n        aria-label=\"Domain\"\n        defaultValue=\"coss\"\n        id=\"domain-suffix\"\n        type=\"text\"\n      />\n      <GroupSeparator />\n      <GroupText\n        render={<Label aria-label=\"Domain suffix\" htmlFor=\"domain-suffix\" />}\n      >\n        .com\n      </GroupText>\n    </Group>\n  );\n}\n",
+      "content": "import { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Group aria-label=\"Domain input\">\r\n      <Input\r\n        aria-label=\"Domain\"\r\n        defaultValue=\"coss\"\r\n        id=\"domain-suffix\"\r\n        type=\"text\"\r\n      />\r\n      <GroupSeparator />\r\n      <GroupText\r\n        render={<Label aria-label=\"Domain suffix\" htmlFor=\"domain-suffix\" />}\r\n      >\r\n        .com\r\n      </GroupText>\r\n    </Group>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

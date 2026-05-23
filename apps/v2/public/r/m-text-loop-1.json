@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-loop-1.tsx",
-      "content": "import { TextLoop } from \"@/registry/default/motion/text-loop\";\n\nexport default function TextLoopHeading() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\n        Components that are{\" \"}\n        <TextLoop\n          className=\"text-primary\"\n          interval={2.5}\n          transition={{ duration: 0.4, ease: \"easeInOut\" }}\n        >\n          <span>beautiful</span>\n          <span>accessible</span>\n          <span>composable</span>\n          <span>fast</span>\n        </TextLoop>\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "import { TextLoop } from \"@/registry/default/motion/text-loop\";\r\n\r\nexport default function TextLoopHeading() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        Components that are{\" \"}\r\n        <TextLoop\r\n          className=\"text-primary\"\r\n          interval={2.5}\r\n          transition={{ duration: 0.4, ease: \"easeInOut\" }}\r\n        >\r\n          <span>beautiful</span>\r\n          <span>accessible</span>\r\n          <span>composable</span>\r\n          <span>fast</span>\r\n        </TextLoop>\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

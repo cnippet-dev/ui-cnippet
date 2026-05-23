@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-vertical-cut-reveal-2.tsx",
-      "content": "\"use client\";\n\nimport { VerticalCutReveal } from \"@/registry/default/motion/vertical-cut-reveal\";\n\nexport default function VerticalCutRevealChars() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <h2 className=\"text-5xl font-black tracking-tighter text-foreground sm:text-7xl\">\n        <VerticalCutReveal\n          splitBy=\"characters\"\n          staggerDuration={0.04}\n          staggerFrom=\"center\"\n          transition={{ damping: 20, stiffness: 300, type: \"spring\" }}\n        >\n          CNIPPET\n        </VerticalCutReveal>\n      </h2>\n      <p className=\"text-sm text-muted-foreground\">\n        Character-level stagger from center\n      </p>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { VerticalCutReveal } from \"@/registry/default/motion/vertical-cut-reveal\";\r\n\r\nexport default function VerticalCutRevealChars() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <h2 className=\"text-5xl font-black tracking-tighter text-foreground sm:text-7xl\">\r\n        <VerticalCutReveal\r\n          splitBy=\"characters\"\r\n          staggerDuration={0.04}\r\n          staggerFrom=\"center\"\r\n          transition={{ damping: 20, stiffness: 300, type: \"spring\" }}\r\n        >\r\n          CNIPPET\r\n        </VerticalCutReveal>\r\n      </h2>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Character-level stagger from center\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

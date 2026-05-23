@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-slider-4.tsx",
-      "content": "import { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <div>\n      <Slider\n        aria-label=\"Storage size in GB\"\n        defaultValue={15}\n        max={35}\n        min={5}\n      />\n      <div\n        aria-label=\"Storage size reference values\"\n        className=\"mt-4 flex w-full items-center justify-between gap-1 font-medium text-muted-foreground text-xs\"\n        role=\"group\"\n      >\n        <span>5 GB</span>\n        <span>20 GB</span>\n        <span>35 GB</span>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { Slider } from \"@/registry/default/ui/slider\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div>\r\n      <Slider\r\n        aria-label=\"Storage size in GB\"\r\n        defaultValue={15}\r\n        max={35}\r\n        min={5}\r\n      />\r\n      <div\r\n        aria-label=\"Storage size reference values\"\r\n        className=\"mt-4 flex w-full items-center justify-between gap-1 font-medium text-muted-foreground text-xs\"\r\n        role=\"group\"\r\n      >\r\n        <span>5 GB</span>\r\n        <span>20 GB</span>\r\n        <span>35 GB</span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

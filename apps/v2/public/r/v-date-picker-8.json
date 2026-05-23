@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-date-picker-8.tsx",
-      "content": "export default function Component() {\n  return <div>Date Picker</div>;\n}\n",
+      "content": "export default function Component() {\r\n  return <div>Date Picker</div>;\r\n}\r\n",
       "type": "registry:block"
     }
   ],

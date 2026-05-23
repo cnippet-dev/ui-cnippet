@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-5.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Enter your domain\"\n        className=\"*:[input]:px-0!\"\n        placeholder=\"coss\"\n        type=\"text\"\n      />\n      <InputGroupAddon>\n        <InputGroupText>https://</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>.com</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n  InputGroupText,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Enter your domain\"\r\n        className=\"*:[input]:px-0!\"\r\n        placeholder=\"coss\"\r\n        type=\"text\"\r\n      />\r\n      <InputGroupAddon>\r\n        <InputGroupText>https://</InputGroupText>\r\n      </InputGroupAddon>\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <InputGroupText>.com</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-menu-5.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuPopup,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuPopup,\r\n  MenuRadioGroup,\r\n  MenuRadioItem,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\r\n      <MenuPopup>\r\n        <MenuRadioGroup defaultValue=\"system\">\r\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\r\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\r\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\r\n        </MenuRadioGroup>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],
