@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/ui/label.tsx",
-      "content": "\"use client\";\r\n\r\nimport { mergeProps } from \"@base-ui/react/merge-props\";\r\nimport { useRender } from \"@base-ui/react/use-render\";\r\nimport type React from \"react\";\r\nimport { cn } from \"@/registry/default/lib/utils\";\r\n\r\nexport function Label({\r\n  className,\r\n  render,\r\n  ...props\r\n}: useRender.ComponentProps<\"label\">): React.ReactElement {\r\n  const defaultProps = {\r\n    className: cn(\r\n      \"inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4\",\r\n      className,\r\n    ),\r\n    \"data-slot\": \"label\",\r\n  };\r\n\r\n  return useRender({\r\n    defaultTagName: \"label\",\r\n    props: mergeProps<\"label\">(defaultProps, props),\r\n    render,\r\n  });\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport type React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport function Label({\n  className,\n  render,\n  ...props\n}: useRender.ComponentProps<\"label\">): React.ReactElement {\n  const defaultProps = {\n    className: cn(\n      \"inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4\",\n      className,\n    ),\n    \"data-slot\": \"label\",\n  };\n\n  return useRender({\n    defaultTagName: \"label\",\n    props: mergeProps<\"label\">(defaultProps, props),\n    render,\n  });\n}\n",
       "type": "registry:ui"
     }
   ],

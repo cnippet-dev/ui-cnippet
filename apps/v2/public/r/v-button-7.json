@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-7.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport default function Particle() {\r\n  return <Button variant=\"link\">Link</Button>;\r\n}\r\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  return <Button variant=\"link\">Link</Button>;\n}\n",
       "type": "registry:block"
     }
   ],

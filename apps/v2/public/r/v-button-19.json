@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-19.tsx",
-      "content": "import { ArrowUpRightIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui//button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button className=\"group/link-button\" variant=\"link\">\r\n      View Documentation\r\n      <ArrowUpRightIcon\r\n        aria-hidden=\"true\"\r\n        className=\"transition-transform group-hover/link-button:rotate-45\"\r\n      />\r\n    </Button>\r\n  );\r\n}\r\n",
+      "content": "import { ArrowUpRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\n\nexport function Pattern() {\n  return (\n    <Button className=\"group/link-button\" variant=\"link\">\n      View Documentation\n      <ArrowUpRightIcon\n        aria-hidden=\"true\"\n        className=\"transition-transform group-hover/link-button:rotate-45\"\n      />\n    </Button>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

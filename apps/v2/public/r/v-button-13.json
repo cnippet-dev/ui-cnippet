@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-13.tsx",
-      "content": "import { SearchIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Button aria-label=\"Search\" size=\"icon\">\r\n      <SearchIcon aria-hidden=\"true\" />\r\n    </Button>\r\n  );\r\n}\r\n",
+      "content": "import { SearchIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button aria-label=\"Search\" size=\"icon\">\n      <SearchIcon aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-5.tsx",
-      "content": "import { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-6\">\r\n      <div className=\"relative\">\r\n        <Separator />\r\n        <span className=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-muted-foreground text-xs\">\r\n          or continue with\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto flex w-full max-w-xs flex-col gap-6\">\n      <div className=\"relative\">\n        <Separator />\n        <span className=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-muted-foreground text-xs\">\n          or continue with\n        </span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

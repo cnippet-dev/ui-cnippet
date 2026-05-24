@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-3.tsx",
-      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"max-w-xs\">\r\n      <FieldLabel htmlFor=\"input-demo-username\">Username</FieldLabel>\r\n      <Input\r\n        id=\"input-demo-username\"\r\n        placeholder=\"Enter your username\"\r\n        type=\"text\"\r\n      />\r\n      <FieldDescription>\r\n        Choose a unique username for your account.\r\n      </FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-username\">Username</FieldLabel>\n      <Input\n        id=\"input-demo-username\"\n        placeholder=\"Enter your username\"\n        type=\"text\"\n      />\n      <FieldDescription>\n        Choose a unique username for your account.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

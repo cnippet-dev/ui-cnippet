@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/default/base-ui/csp-provider.ts",
-      "content": "export { CSPProvider } from \"@base-ui/react/csp-provider\";\r\n",
+      "content": "export { CSPProvider } from \"@base-ui/react/csp-provider\";\n",
       "type": "registry:lib"
     }
   ],

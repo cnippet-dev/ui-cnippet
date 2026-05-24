@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-5.tsx",
-      "content": "import { Field } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label htmlFor=\"label-optional\">\r\n        Phone number\r\n        <span className=\"text-muted-foreground\">(optional)</span>\r\n      </Label>\r\n      <Input id=\"label-optional\" placeholder=\"+1 (555) 000-0000\" type=\"tel\" />\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "import { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label htmlFor=\"label-optional\">\n        Phone number\n        <span className=\"text-muted-foreground\">(optional)</span>\n      </Label>\n      <Input id=\"label-optional\" placeholder=\"+1 (555) 000-0000\" type=\"tel\" />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

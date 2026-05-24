@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-menu-6.tsx",
-      "content": "import Link from \"next/link\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\r\n      <MenuPopup>\r\n        <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\r\n        <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
+      "content": "import Link from \"next/link\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem render={<Link href=\"/docs\" />}>Docs</MenuItem>\n        <MenuItem render={<Link href=\"/particles\" />}>Particles</MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

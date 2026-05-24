@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-textarea-5.tsx",
-      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-xs\">\r\n      <Field className=\"w-full\">\r\n        <FieldLabel htmlFor=\"textarea-with-desc\">Feedback</FieldLabel>\r\n        <Textarea\r\n          id=\"textarea-with-desc\"\r\n          placeholder=\"Type your message here…\"\r\n          rows={6}\r\n        />\r\n        <FieldDescription>\r\n          Type your message and press enter to send.\r\n        </FieldDescription>\r\n      </Field>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"w-full\">\n        <FieldLabel htmlFor=\"textarea-with-desc\">Feedback</FieldLabel>\n        <Textarea\n          id=\"textarea-with-desc\"\n          placeholder=\"Type your message here…\"\n          rows={6}\n        />\n        <FieldDescription>\n          Type your message and press enter to send.\n        </FieldDescription>\n      </Field>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

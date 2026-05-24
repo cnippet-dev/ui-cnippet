@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-badge-11.tsx",
-      "content": "import Link from \"next/link\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\n\r\nexport default function Particle() {\r\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>;\r\n}\r\n",
+      "content": "import Link from \"next/link\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Particle() {\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>;\n}\n",
       "type": "registry:block"
     }
   ],

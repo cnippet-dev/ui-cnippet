@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-meter-2.tsx",
-      "content": "import {\r\n  Meter,\r\n  MeterIndicator,\r\n  MeterLabel,\r\n  MeterTrack,\r\n} from \"@/registry/default/ui/meter\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Meter value={50}>\r\n      <MeterLabel>Rating</MeterLabel>\r\n      <MeterTrack>\r\n        <MeterIndicator />\r\n      </MeterTrack>\r\n    </Meter>\r\n  );\r\n}\r\n",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter value={50}>\n      <MeterLabel>Rating</MeterLabel>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

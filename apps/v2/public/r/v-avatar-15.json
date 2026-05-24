@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-avatar-15.tsx",
-      "content": "import {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/default/ui/avatar\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"relative w-fit\">\r\n      <Avatar className=\"animate-pulse ring-2 ring-green-500 ring-offset-2 ring-offset-background\">\r\n        <AvatarImage alt=\"@shadcn\" src=\"https://github.com/shadcn.png\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <span className=\"absolute -right-1 -bottom-1 size-3 rounded-full border-2 border-background bg-green-500\" />\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\n\nexport function Pattern() {\n  return (\n    <div className=\"relative w-fit\">\n      <Avatar className=\"animate-pulse ring-2 ring-green-500 ring-offset-2 ring-offset-background\">\n        <AvatarImage alt=\"@shadcn\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      <span className=\"absolute -right-1 -bottom-1 size-3 rounded-full border-2 border-background bg-green-500\" />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

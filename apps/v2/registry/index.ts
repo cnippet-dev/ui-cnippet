@@ -8,7 +8,7 @@ import { ui } from "@/registry/registry-ui";
 import { variants } from "@/registry/registry-variants";
 
 export const registry = {
-  homepage: "https://ui.cnippet.dev/",
+  homepage: "https://ui.cnippet.dev",
   items: [
     ...ui,
     ...(variants as Registry["items"]),

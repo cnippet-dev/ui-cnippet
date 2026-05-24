@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-slider-2.tsx",
-      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <Slider defaultValue={50}>\r\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\r\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\r\n          <SliderValue />\r\n        </div>\r\n      </Slider>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <Slider defaultValue={50}>\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\n          <SliderValue />\n        </div>\n      </Slider>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
