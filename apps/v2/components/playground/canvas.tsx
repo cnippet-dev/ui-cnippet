@@ -16,7 +16,8 @@ export function InspectCanvas({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const Component = !isPlaceholder && variantKey ? Index[variantKey]?.component : null;
+  const Component =
+    !isPlaceholder && variantKey ? Index[variantKey]?.component : null;
 
   return (
     <div className="flex flex-1 items-center justify-center overflow-auto p-8">

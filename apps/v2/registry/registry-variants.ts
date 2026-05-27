@@ -689,7 +689,7 @@ export const variants: ParticleItem[] = [
         "Close on Click",
         "Open a Dialog",
         "Cookie Preferences Manager",
-        "Notification Delivery Channels"
+        "Notification Delivery Channels",
       ][i],
       name: `v-menu-${i + 1}`,
     }),
@@ -1077,7 +1077,7 @@ export const variants: ParticleItem[] = [
         "Toggle with icon swap on press",
         "Toggle with text label that changes",
         "Video Call Controls Bar",
-        "Role Filter Chips with Live Count"
+        "Role Filter Chips with Live Count",
       ][i],
       name: `v-toggle-${i + 1}`,
     }),

@@ -1,11 +1,11 @@
 "use client";
 
+import type { PropSchema } from "@/lib/playground/props-schemas";
 import {
   getCatalogEntry,
   getCategoryFromRegistryId,
 } from "@/lib/playground/registry-catalog";
 import { usePropsStore } from "@/lib/playground/store";
-import type { PropSchema } from "@/lib/playground/props-schemas";
 
 export function PropsPanel({ variantKey }: { variantKey: string }) {
   const propsMap = usePropsStore((s) => s.propsMap);

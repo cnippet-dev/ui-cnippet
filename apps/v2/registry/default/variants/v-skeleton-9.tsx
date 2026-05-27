@@ -1,11 +1,13 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 const messages = [
-  { self: false, lines: [72, 56] },
-  { self: true, lines: [88] },
-  { self: false, lines: [64, 80, 48] },
-  { self: true, lines: [76, 60] },
-  { self: false, lines: [52] },
+  { lines: [72, 56], self: false },
+  { lines: [88], self: true },
+  { lines: [64, 80, 48], self: false },
+  { lines: [76, 60], self: true },
+  { lines: [52], self: false },
 ];
 
 export function Pattern() {
@@ -25,7 +27,9 @@ export function Pattern() {
             className={`flex items-end gap-2 ${msg.self ? "flex-row-reverse" : ""}`}
             key={i}
           >
-            {!msg.self && <Skeleton className="mb-0.5 size-7 shrink-0 rounded-full" />}
+            {!msg.self && (
+              <Skeleton className="mb-0.5 size-7 shrink-0 rounded-full" />
+            )}
             <div
               className={`flex max-w-[75%] flex-col gap-1 ${msg.self ? "items-end" : "items-start"}`}
             >

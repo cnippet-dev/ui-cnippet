@@ -7,12 +7,12 @@ import { Badge } from "@/registry/default/ui/badge";
 import { Toggle } from "@/registry/default/ui/toggle";
 
 const filters = [
-  { id: "design", label: "Design", count: 24 },
-  { id: "engineering", label: "Engineering", count: 41 },
-  { id: "product", label: "Product", count: 18 },
-  { id: "marketing", label: "Marketing", count: 12 },
-  { id: "leadership", label: "Leadership", count: 7 },
-  { id: "research", label: "Research", count: 9 },
+  { count: 24, id: "design", label: "Design" },
+  { count: 41, id: "engineering", label: "Engineering" },
+  { count: 18, id: "product", label: "Product" },
+  { count: 12, id: "marketing", label: "Marketing" },
+  { count: 7, id: "leadership", label: "Leadership" },
+  { count: 9, id: "research", label: "Research" },
 ];
 
 export function Pattern() {
@@ -40,7 +40,9 @@ export function Pattern() {
           <span>Filter by role</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-muted-foreground text-xs">{totalResults} results</span>
+          <span className="text-muted-foreground text-xs">
+            {totalResults} results
+          </span>
           {active.size > 0 && (
             <button
               className="text-muted-foreground text-xs underline-offset-2 hover:text-foreground hover:underline"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 import { PlaygroundShell } from "@/components/playground/playground-shell";
 
 export const metadata: Metadata = {

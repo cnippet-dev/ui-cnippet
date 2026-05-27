@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 const colWidths = ["w-32", "w-20", "w-24", "w-16", "w-14"];
@@ -20,9 +22,7 @@ export function Pattern() {
             <Skeleton className="size-7 rounded-full" />
             <Skeleton className="h-3.5 flex-1" />
           </div>
-          <Skeleton
-            className={`h-5 w-14 shrink-0 rounded-full`}
-          />
+          <Skeleton className={"h-5 w-14 shrink-0 rounded-full"} />
           <Skeleton className="h-3.5 w-24 shrink-0" />
           <Skeleton className="h-3.5 w-16 shrink-0" />
           <Skeleton className="h-6 w-14 shrink-0 rounded-md" />

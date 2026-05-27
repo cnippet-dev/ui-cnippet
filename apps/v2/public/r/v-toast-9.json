@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toast-9",
-  "description": "Basic toast",
+  "description": "Timeout Control",
   "registryDependencies": [
     "@cnippet/toast"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toast-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { toastManager } from \"@/registry/default/ui/toast\";\n\nexport function Pattern() {\n  const persistentIdRef = useRef<string | null>(null);\n\n  function showPersistent() {\n    if (persistentIdRef.current) return;\n    persistentIdRef.current = toastManager.add({\n      actionProps: {\n        children: \"Dismiss\",\n        onClick: () => {\n          if (persistentIdRef.current) {\n            toastManager.close(persistentIdRef.current);\n            persistentIdRef.current = null;\n          }\n        },\n      },\n      description: \"This toast stays until you dismiss it manually.\",\n      timeout: 0,\n      title: \"Persistent notification\",\n      type: \"warning\",\n    });\n  }\n\n  function showTimed(ms: number) {\n    toastManager.add({\n      description: `This toast auto-dismisses after ${ms / 1000}s.`,\n      timeout: ms,\n      title: `Auto-dismiss in ${ms / 1000}s`,\n      type: \"info\",\n    });\n  }\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Button onClick={() => showTimed(3000)} variant=\"outline\">\n        3s toast\n      </Button>\n      <Button onClick={() => showTimed(8000)} variant=\"outline\">\n        8s toast\n      </Button>\n      <Button onClick={showPersistent} variant=\"outline\">\n        Persistent toast\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-6",
-  "description": "Basic skeleton",
+  "description": "Blog Article",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xl space-y-6\">\n      <Skeleton className=\"aspect-[2/1] w-full rounded-xl\" />\n\n      <div className=\"space-y-3\">\n        <div className=\"flex items-center gap-2\">\n          <Skeleton className=\"h-5 w-16 rounded-full\" />\n          <Skeleton className=\"h-5 w-20 rounded-full\" />\n        </div>\n        <Skeleton className=\"h-7 w-full\" />\n        <Skeleton className=\"h-7 w-4/5\" />\n      </div>\n\n      <div className=\"flex items-center gap-3\">\n        <Skeleton className=\"size-9 rounded-full\" />\n        <div className=\"space-y-1.5\">\n          <Skeleton className=\"h-3.5 w-28\" />\n          <Skeleton className=\"h-3 w-20\" />\n        </div>\n      </div>\n\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-full\" />\n        <Skeleton className=\"h-4 w-full\" />\n        <Skeleton className=\"h-4 w-11/12\" />\n        <Skeleton className=\"h-4 w-full\" />\n        <Skeleton className=\"h-4 w-3/4\" />\n      </div>\n\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-full\" />\n        <Skeleton className=\"h-4 w-full\" />\n        <Skeleton className=\"h-4 w-5/6\" />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

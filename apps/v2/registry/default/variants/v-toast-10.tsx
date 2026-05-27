@@ -8,9 +8,27 @@ import { toastManager } from "@/registry/default/ui/toast";
 type DeployState = "idle" | "running";
 
 const steps = [
-  { delay: 0, description: "Compiling and bundling your project…", title: "Building", type: "loading" as const, timeout: 0 },
-  { delay: 2500, description: "All 48 tests passed with no failures.", title: "Tests passed", type: "success" as const, timeout: 3500 },
-  { delay: 5000, description: "Live at https://acme.vercel.app", title: "Deployed to production", type: "success" as const, timeout: 6000 },
+  {
+    delay: 0,
+    description: "Compiling and bundling your project…",
+    timeout: 0,
+    title: "Building",
+    type: "loading" as const,
+  },
+  {
+    delay: 2500,
+    description: "All 48 tests passed with no failures.",
+    timeout: 3500,
+    title: "Tests passed",
+    type: "success" as const,
+  },
+  {
+    delay: 5000,
+    description: "Live at https://acme.vercel.app",
+    timeout: 6000,
+    title: "Deployed to production",
+    type: "success" as const,
+  },
 ];
 
 export function Pattern() {

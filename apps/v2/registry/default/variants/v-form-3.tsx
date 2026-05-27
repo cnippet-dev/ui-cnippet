@@ -47,7 +47,7 @@ export function Pattern() {
           <div className="flex items-center justify-between">
             <FieldLabel>Password</FieldLabel>
             <button
-              className="text-muted-foreground text-xs hover:text-foreground hover:underline underline-offset-2 transition-colors"
+              className="text-muted-foreground text-xs underline-offset-2 transition-colors hover:text-foreground hover:underline"
               type="button"
             >
               Forgot password?
@@ -63,7 +63,7 @@ export function Pattern() {
             />
             <button
               aria-label={showPassword ? "Hide password" : "Show password"}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute top-1/2 right-3 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setShowPassword((v) => !v)}
               type="button"
             >
@@ -95,7 +95,7 @@ export function Pattern() {
         <Separator className="flex-1" />
       </div>
 
-      <Button className="w-full" variant="outline" type="button">
+      <Button className="w-full" type="button" variant="outline">
         Create account
       </Button>
     </div>

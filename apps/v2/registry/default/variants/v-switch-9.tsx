@@ -6,11 +6,11 @@ import { useState } from "react";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Card,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardPanel,
   CardTitle,
-  CardDescription,
 } from "@/registry/default/ui/card";
 import { Separator } from "@/registry/default/ui/separator";
 import { Switch } from "@/registry/default/ui/switch";
@@ -48,9 +48,7 @@ const cookieCategories = [
 
 export function Pattern() {
   const [consent, setConsent] = useState<Record<string, boolean>>(
-    Object.fromEntries(
-      cookieCategories.map((c) => [c.id, c.defaultChecked]),
-    ),
+    Object.fromEntries(cookieCategories.map((c) => [c.id, c.defaultChecked])),
   );
 
   const activeCount = Object.values(consent).filter(Boolean).length;

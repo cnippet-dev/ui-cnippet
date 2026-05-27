@@ -1113,7 +1113,7 @@
       "categories": [
         "accordion"
       ],
-      "description": "Basic accordion",
+      "description": "Changelog / Release Notes with versioned entries",
       "files": [
         {
           "path": "registry/default/variants/v-accordion-10.tsx",
@@ -4213,7 +4213,7 @@
       "categories": [
         "checkbox"
       ],
-      "description": "Basic checkbox",
+      "description": "Select All with Indeterminate State",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-7.tsx",
@@ -4233,7 +4233,7 @@
       "categories": [
         "checkbox"
       ],
-      "description": "Basic checkbox",
+      "description": "Issue Label Picker",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-8.tsx",
@@ -4253,7 +4253,7 @@
       "categories": [
         "checkbox"
       ],
-      "description": "Basic checkbox",
+      "description": "Notification Channel Selector",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-9.tsx",
@@ -4273,7 +4273,7 @@
       "categories": [
         "checkbox"
       ],
-      "description": "Basic checkbox",
+      "description": "Multi-Consent Registration Gate",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-10.tsx",
@@ -4633,7 +4633,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Read More Content Expander",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-8.tsx",
@@ -4653,7 +4653,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "CI/CD Build Step Log Viewer",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-9.tsx",
@@ -4673,7 +4673,7 @@
       "categories": [
         "collapsible"
       ],
-      "description": "Basic collapsible",
+      "description": "Incident Status with Timeline",
       "files": [
         {
           "path": "registry/default/variants/v-collapsible-10.tsx",
@@ -6813,7 +6813,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-form-1.tsx",
@@ -6833,7 +6833,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Multi-field form with validation",
       "files": [
         {
           "path": "registry/default/variants/v-form-2.tsx",
@@ -6853,7 +6853,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Sign In",
       "files": [
         {
           "path": "registry/default/variants/v-form-3.tsx",
@@ -6873,7 +6873,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Profile Settings",
       "files": [
         {
           "path": "registry/default/variants/v-form-4.tsx",
@@ -6893,7 +6893,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Contact Form",
       "files": [
         {
           "path": "registry/default/variants/v-form-5.tsx",
@@ -6913,7 +6913,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Change Password",
       "files": [
         {
           "path": "registry/default/variants/v-form-6.tsx",
@@ -6933,7 +6933,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Newsletter Signup",
       "files": [
         {
           "path": "registry/default/variants/v-form-7.tsx",
@@ -6953,7 +6953,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "3-Step Onboarding Wizard",
       "files": [
         {
           "path": "registry/default/variants/v-form-8.tsx",
@@ -10433,7 +10433,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "Skills Meter",
       "files": [
         {
           "path": "registry/default/variants/v-progress-7.tsx",
@@ -10453,7 +10453,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "Multi-file Upload Queue",
       "files": [
         {
           "path": "registry/default/variants/v-progress-8.tsx",
@@ -10473,7 +10473,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "Monthly Budget Breakdown",
       "files": [
         {
           "path": "registry/default/variants/v-progress-9.tsx",
@@ -10493,7 +10493,7 @@
       "categories": [
         "progress"
       ],
-      "description": "Basic progress",
+      "description": "API Usage with Tier Milestones",
       "files": [
         {
           "path": "registry/default/variants/v-progress-10.tsx",
@@ -11613,7 +11613,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Blog Article",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-6.tsx",
@@ -11633,7 +11633,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Data Table",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-7.tsx",
@@ -11653,7 +11653,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Sidebar Dashboard Layout",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-8.tsx",
@@ -11673,7 +11673,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Chat Thread",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-9.tsx",
@@ -11693,7 +11693,7 @@
       "categories": [
         "skeleton"
       ],
-      "description": "Basic skeleton",
+      "description": "Settings Page",
       "files": [
         {
           "path": "registry/default/variants/v-skeleton-10.tsx",
@@ -12273,7 +12273,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Cookie Preferences Manager",
       "files": [
         {
           "path": "registry/default/variants/v-switch-9.tsx",
@@ -12293,7 +12293,7 @@
       "categories": [
         "switch"
       ],
-      "description": "Basic switch",
+      "description": "Notification Delivery Channels",
       "files": [
         {
           "path": "registry/default/variants/v-switch-10.tsx",
@@ -12453,7 +12453,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Sortable API Endpoints",
       "files": [
         {
           "path": "registry/default/variants/v-table-8.tsx",
@@ -12473,7 +12473,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Storage Usage with Progress Bars",
       "files": [
         {
           "path": "registry/default/variants/v-table-9.tsx",
@@ -12493,7 +12493,7 @@
       "categories": [
         "table"
       ],
-      "description": "Basic table",
+      "description": "Audit Log",
       "files": [
         {
           "path": "registry/default/variants/v-table-10.tsx",
@@ -13153,7 +13153,7 @@
       "categories": [
         "toast"
       ],
-      "description": "Basic toast",
+      "description": "Staggered Notification Burst",
       "files": [
         {
           "path": "registry/default/variants/v-toast-8.tsx",
@@ -13173,7 +13173,7 @@
       "categories": [
         "toast"
       ],
-      "description": "Basic toast",
+      "description": "Timeout Control",
       "files": [
         {
           "path": "registry/default/variants/v-toast-9.tsx",
@@ -13193,7 +13193,7 @@
       "categories": [
         "toast"
       ],
-      "description": "Basic toast",
+      "description": "Auto-progressing Deploy Pipeline",
       "files": [
         {
           "path": "registry/default/variants/v-toast-10.tsx",
@@ -13373,7 +13373,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Video Call Controls Bar",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-9.tsx",
@@ -13393,7 +13393,7 @@
       "categories": [
         "toggle"
       ],
-      "description": "Basic toggle",
+      "description": "Role Filter Chips with Live Count",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-10.tsx",

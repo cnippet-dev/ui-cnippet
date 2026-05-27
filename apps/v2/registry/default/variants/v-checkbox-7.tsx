@@ -7,10 +7,14 @@ import { Label } from "@/registry/default/ui/label";
 import { Separator } from "@/registry/default/ui/separator";
 
 const permissions = [
-  { id: "read", label: "Read", description: "View all resources" },
-  { id: "write", label: "Write", description: "Create and edit resources" },
-  { id: "delete", label: "Delete", description: "Remove resources permanently" },
-  { id: "admin", label: "Admin", description: "Manage members and billing" },
+  { description: "View all resources", id: "read", label: "Read" },
+  { description: "Create and edit resources", id: "write", label: "Write" },
+  {
+    description: "Remove resources permanently",
+    id: "delete",
+    label: "Delete",
+  },
+  { description: "Manage members and billing", id: "admin", label: "Admin" },
 ];
 
 export function Pattern() {
@@ -40,7 +44,7 @@ export function Pattern() {
           indeterminate={someChecked}
           onCheckedChange={toggleAll}
         />
-        <Label htmlFor={parentId} className="font-semibold">
+        <Label className="font-semibold" htmlFor={parentId}>
           {allChecked ? "Deselect all" : "Select all permissions"}
         </Label>
       </div>
@@ -59,7 +63,9 @@ export function Pattern() {
             />
             <div className="flex flex-col gap-0.5">
               <Label htmlFor={perm.id}>{perm.label}</Label>
-              <p className="text-muted-foreground text-xs">{perm.description}</p>
+              <p className="text-muted-foreground text-xs">
+                {perm.description}
+              </p>
             </div>
           </div>
         ))}

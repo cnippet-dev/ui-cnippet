@@ -49,9 +49,7 @@ export function Pattern() {
               id={label.id}
               onCheckedChange={() => toggle(label.id)}
             />
-            <span
-              className={`size-2.5 shrink-0 rounded-full ${label.color}`}
-            />
+            <span className={`size-2.5 shrink-0 rounded-full ${label.color}`} />
             <span className="text-sm">{label.name}</span>
           </label>
         ))}

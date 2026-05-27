@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 function SettingsSection({
@@ -48,7 +50,11 @@ export function Pattern() {
 
       <div className="flex gap-1">
         {[60, 80, 56, 72].map((w, i) => (
-          <Skeleton className="h-8 rounded-md" key={i} style={{ width: `${w}px` }} />
+          <Skeleton
+            className="h-8 rounded-md"
+            key={i}
+            style={{ width: `${w}px` }}
+          />
         ))}
       </div>
 

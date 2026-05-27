@@ -3,10 +3,10 @@ import { ZapIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Card,
-  CardHeader,
-  CardTitle,
   CardDescription,
+  CardHeader,
   CardPanel,
+  CardTitle,
 } from "@/registry/default/ui/card";
 import {
   Progress,
@@ -42,13 +42,14 @@ export function Pattern() {
         <CardHeader className="border-b">
           <div className="flex items-center justify-between gap-2">
             <CardTitle>API Usage</CardTitle>
-            <Badge variant="info" size="sm">
+            <Badge size="sm" variant="info">
               <ZapIcon className="size-3" />
               {currentTier.label}
             </Badge>
           </div>
           <CardDescription>
-            {USED.toLocaleString()} of {LIMIT.toLocaleString()} requests this month
+            {USED.toLocaleString()} of {LIMIT.toLocaleString()} requests this
+            month
           </CardDescription>
         </CardHeader>
         <CardPanel className="space-y-5">
@@ -88,10 +89,15 @@ export function Pattern() {
 
           {nextTier && (
             <div className="rounded-lg border bg-muted/40 px-3 py-2.5 text-xs">
-              <span className="font-medium">{toNext.toLocaleString()} requests</span>
+              <span className="font-medium">
+                {toNext.toLocaleString()} requests
+              </span>
               <span className="text-muted-foreground">
-                {" "}until you reach the{" "}
-                <span className="font-medium text-foreground">{nextTier.label}</span>{" "}
+                {" "}
+                until you reach the{" "}
+                <span className="font-medium text-foreground">
+                  {nextTier.label}
+                </span>{" "}
                 tier limit
               </span>
             </div>

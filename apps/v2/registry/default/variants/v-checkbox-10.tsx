@@ -7,28 +7,28 @@ import { Checkbox } from "@/registry/default/ui/checkbox";
 
 const consents = [
   {
-    id: "terms",
-    label: "I agree to the Terms of Service",
     description:
       "You accept our terms of use, including policies on prohibited content and account termination.",
+    id: "terms",
+    label: "I agree to the Terms of Service",
   },
   {
-    id: "privacy",
-    label: "I have read the Privacy Policy",
     description:
       "You understand how we collect, store, and process your personal data.",
+    id: "privacy",
+    label: "I have read the Privacy Policy",
   },
   {
-    id: "age",
-    label: "I confirm I am 18 years of age or older",
     description:
       "Our service is only available to users who are at least 18 years old.",
+    id: "age",
+    label: "I confirm I am 18 years of age or older",
   },
   {
-    id: "marketing",
-    label: "Send me product updates and offers (optional)",
     description:
       "Occasional emails about new features and promotions. Unsubscribe any time.",
+    id: "marketing",
+    label: "Send me product updates and offers (optional)",
     optional: true,
   },
 ];
@@ -50,13 +50,13 @@ export function Pattern() {
     <div className="w-full max-w-sm space-y-5">
       <div>
         <p className="font-semibold text-sm">Before you continue</p>
-        <p className="text-muted-foreground text-xs mt-0.5">
+        <p className="mt-0.5 text-muted-foreground text-xs">
           Please review and accept the required agreements.
         </p>
       </div>
 
       <div className="space-y-4">
-        {consents.map((consent, i) => (
+        {consents.map((consent, _i) => (
           <div className="flex items-start gap-3" key={consent.id}>
             <Checkbox
               checked={accepted[consent.id]}
@@ -70,7 +70,7 @@ export function Pattern() {
               >
                 {consent.label}
                 {consent.optional && (
-                  <span className="ml-1.5 text-muted-foreground font-normal text-xs">
+                  <span className="ml-1.5 font-normal text-muted-foreground text-xs">
                     (optional)
                   </span>
                 )}

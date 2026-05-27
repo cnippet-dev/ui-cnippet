@@ -1,6 +1,7 @@
 //biome-ignore-all lint/suspicious/noExplicitAny: <>
 "use client";
 
+import type { FC } from "react";
 import {
   Alert,
   AlertDescription,
@@ -11,7 +12,6 @@ import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { Spinner } from "@/registry/default/ui/spinner";
 import { Textarea } from "@/registry/default/ui/textarea";
-import type { FC } from "react";
 import type { PropSchema } from "./props-schemas";
 import {
   alertSchema,

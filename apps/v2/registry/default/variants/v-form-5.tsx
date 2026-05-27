@@ -41,7 +41,7 @@ export function Pattern() {
             We'll get back to you within 24 hours.
           </p>
         </div>
-        <Button onClick={() => setSubmitted(false)} variant="outline" size="sm">
+        <Button onClick={() => setSubmitted(false)} size="sm" variant="outline">
           Send another
         </Button>
       </div>

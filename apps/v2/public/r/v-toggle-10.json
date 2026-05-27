@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toggle-10",
-  "description": "Basic toggle",
+  "description": "Role Filter Chips with Live Count",
   "registryDependencies": [
     "@cnippet/toggle"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toggle-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { SlidersHorizontalIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nconst filters = [\n  { count: 24, id: \"design\", label: \"Design\" },\n  { count: 41, id: \"engineering\", label: \"Engineering\" },\n  { count: 18, id: \"product\", label: \"Product\" },\n  { count: 12, id: \"marketing\", label: \"Marketing\" },\n  { count: 7, id: \"leadership\", label: \"Leadership\" },\n  { count: 9, id: \"research\", label: \"Research\" },\n];\n\nexport function Pattern() {\n  const [active, setActive] = useState<Set<string>>(new Set());\n\n  const toggle = (id: string) =>\n    setActive((prev) => {\n      const next = new Set(prev);\n      next.has(id) ? next.delete(id) : next.add(id);\n      return next;\n    });\n\n  const totalResults =\n    active.size === 0\n      ? filters.reduce((sum, f) => sum + f.count, 0)\n      : filters\n          .filter((f) => active.has(f.id))\n          .reduce((sum, f) => sum + f.count, 0);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"flex items-center justify-between\">\n        <div className=\"flex items-center gap-1.5 text-muted-foreground text-sm\">\n          <SlidersHorizontalIcon className=\"size-3.5\" />\n          <span>Filter by role</span>\n        </div>\n        <div className=\"flex items-center gap-1.5\">\n          <span className=\"text-muted-foreground text-xs\">\n            {totalResults} results\n          </span>\n          {active.size > 0 && (\n            <button\n              className=\"text-muted-foreground text-xs underline-offset-2 hover:text-foreground hover:underline\"\n              onClick={() => setActive(new Set())}\n              type=\"button\"\n            >\n              Clear\n            </button>\n          )}\n        </div>\n      </div>\n\n      <div className=\"flex flex-wrap gap-2\">\n        {filters.map((filter) => {\n          const isActive = active.has(filter.id);\n          return (\n            <Toggle\n              aria-label={`Filter by ${filter.label}`}\n              className=\"gap-1.5 rounded-full\"\n              key={filter.id}\n              onPressedChange={() => toggle(filter.id)}\n              pressed={isActive}\n              size=\"sm\"\n              variant=\"outline\"\n            >\n              {filter.label}\n              <Badge\n                className={`transition-colors ${isActive ? \"bg-primary-foreground/20 text-current\" : \"\"}`}\n                size=\"sm\"\n                variant={isActive ? \"default\" : \"outline\"}\n              >\n                {filter.count}\n              </Badge>\n            </Toggle>\n          );\n        })}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

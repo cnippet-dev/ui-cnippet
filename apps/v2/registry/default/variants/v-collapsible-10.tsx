@@ -1,7 +1,14 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { ChevronDownIcon, CircleAlertIcon } from "lucide-react";
 
 import { Badge } from "@/registry/default/ui/badge";
-import { Card, CardHeader, CardPanel, CardTitle } from "@/registry/default/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardPanel,
+  CardTitle,
+} from "@/registry/default/ui/card";
 import {
   Collapsible,
   CollapsiblePanel,
@@ -11,23 +18,29 @@ import { Separator } from "@/registry/default/ui/separator";
 
 const timeline = [
   {
-    time: "14:32 UTC",
+    message:
+      "We are investigating reports of elevated API error rates affecting a subset of requests.",
     status: "investigating",
-    message: "We are investigating reports of elevated API error rates affecting a subset of requests.",
+    time: "14:32 UTC",
   },
   {
-    time: "14:48 UTC",
+    message:
+      "The issue has been identified as a misconfigured load balancer rule following a routine deployment at 14:15 UTC.",
     status: "identified",
-    message: "The issue has been identified as a misconfigured load balancer rule following a routine deployment at 14:15 UTC.",
+    time: "14:48 UTC",
   },
   {
-    time: "15:04 UTC",
+    message:
+      "A fix has been deployed and rolled out to all regions. Error rates are returning to normal. We are monitoring the situation.",
     status: "monitoring",
-    message: "A fix has been deployed and rolled out to all regions. Error rates are returning to normal. We are monitoring the situation.",
+    time: "15:04 UTC",
   },
 ];
 
-const statusVariant: Record<string, "warning" | "info" | "success" | "destructive"> = {
+const statusVariant: Record<
+  string,
+  "warning" | "info" | "success" | "destructive"
+> = {
   identified: "warning",
   investigating: "destructive",
   monitoring: "success",
@@ -56,16 +69,16 @@ export function Pattern() {
                 Monitoring
               </Badge>
             </div>
-            <CollapsibleTrigger className="mt-2 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <CollapsibleTrigger className="mt-2 inline-flex items-center gap-1 text-muted-foreground text-xs transition-colors hover:text-foreground">
               View incident timeline
-              <ChevronDownIcon className="size-3 transition-transform duration-200 in-data-panel-open:rotate-180" />
+              <ChevronDownIcon className="size-3 in-data-panel-open:rotate-180 transition-transform duration-200" />
             </CollapsibleTrigger>
           </CardHeader>
 
           <CollapsiblePanel>
             <CardPanel className="py-3">
               <div className="relative">
-                <div className="absolute top-0 bottom-0 left-[7px] w-px bg-border" />
+                <div className="absolute top-0 bottom-0 left-1.75 w-px bg-border" />
                 <div className="space-y-4">
                   {timeline.map((event, i) => (
                     <div className="relative flex gap-3" key={i}>
@@ -100,7 +113,8 @@ export function Pattern() {
               </div>
               <Separator className="mt-4 mb-3" />
               <p className="text-muted-foreground text-xs">
-                Next update in <span className="font-medium text-foreground">12 minutes</span>.
+                Next update in{" "}
+                <span className="font-medium text-foreground">12 minutes</span>.
               </p>
             </CardPanel>
           </CollapsiblePanel>

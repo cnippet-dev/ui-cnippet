@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-7",
-  "description": "Basic checkbox",
+  "description": "Select All with Indeterminate State",
   "registryDependencies": [
     "@cnippet/checkbox"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useId, useState } from \"react\";\n\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst permissions = [\n  { description: \"View all resources\", id: \"read\", label: \"Read\" },\n  { description: \"Create and edit resources\", id: \"write\", label: \"Write\" },\n  {\n    description: \"Remove resources permanently\",\n    id: \"delete\",\n    label: \"Delete\",\n  },\n  { description: \"Manage members and billing\", id: \"admin\", label: \"Admin\" },\n];\n\nexport function Pattern() {\n  const parentId = useId();\n  const [checked, setChecked] = useState<Record<string, boolean>>({\n    admin: false,\n    delete: false,\n    read: true,\n    write: true,\n  });\n\n  const values = Object.values(checked);\n  const allChecked = values.every(Boolean);\n  const someChecked = values.some(Boolean) && !allChecked;\n\n  const toggleAll = () => {\n    const next = !allChecked;\n    setChecked(Object.fromEntries(permissions.map((p) => [p.id, next])));\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-3\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox\n          checked={allChecked}\n          id={parentId}\n          indeterminate={someChecked}\n          onCheckedChange={toggleAll}\n        />\n        <Label className=\"font-semibold\" htmlFor={parentId}>\n          {allChecked ? \"Deselect all\" : \"Select all permissions\"}\n        </Label>\n      </div>\n\n      <Separator />\n\n      <div className=\"space-y-2.5 pl-1\">\n        {permissions.map((perm) => (\n          <div className=\"flex items-start gap-2.5\" key={perm.id}>\n            <Checkbox\n              checked={checked[perm.id]}\n              id={perm.id}\n              onCheckedChange={(val) =>\n                setChecked((prev) => ({ ...prev, [perm.id]: !!val }))\n              }\n            />\n            <div className=\"flex flex-col gap-0.5\">\n              <Label htmlFor={perm.id}>{perm.label}</Label>\n              <p className=\"text-muted-foreground text-xs\">\n                {perm.description}\n              </p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
