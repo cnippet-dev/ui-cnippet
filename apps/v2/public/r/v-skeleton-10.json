@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-10",
-  "description": "Basic skeleton",
+  "description": "Settings Page",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey: <>\n\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nfunction SettingsSection({\n  rows,\n  titleWidth,\n}: {\n  rows: number;\n  titleWidth: string;\n}) {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"space-y-1\">\n        <Skeleton className={`h-4 ${titleWidth}`} />\n        <Skeleton className=\"h-3 w-48\" />\n      </div>\n      <div className=\"space-y-3\">\n        {Array.from({ length: rows }).map((_, i) => (\n          <div\n            className=\"flex items-center justify-between gap-4 rounded-lg border px-4 py-3\"\n            key={i}\n          >\n            <div className=\"space-y-1.5\">\n              <Skeleton className=\"h-3.5 w-32\" />\n              <Skeleton className=\"h-3 w-52\" />\n            </div>\n            {i % 3 === 2 ? (\n              <Skeleton className=\"h-8 w-20 shrink-0 rounded-md\" />\n            ) : (\n              <Skeleton className=\"h-5 w-9 shrink-0 rounded-full\" />\n            )}\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-lg space-y-8\">\n      <div className=\"flex items-center justify-between\">\n        <div className=\"space-y-1.5\">\n          <Skeleton className=\"h-6 w-24\" />\n          <Skeleton className=\"h-3.5 w-48\" />\n        </div>\n        <Skeleton className=\"h-9 w-24 rounded-md\" />\n      </div>\n\n      <div className=\"flex gap-1\">\n        {[60, 80, 56, 72].map((w, i) => (\n          <Skeleton\n            className=\"h-8 rounded-md\"\n            key={i}\n            style={{ width: `${w}px` }}\n          />\n        ))}\n      </div>\n\n      <SettingsSection rows={3} titleWidth=\"w-36\" />\n      <SettingsSection rows={2} titleWidth=\"w-28\" />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

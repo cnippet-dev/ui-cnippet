@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-9",
-  "description": "Basic checkbox",
+  "description": "Notification Channel Selector",
   "registryDependencies": [
     "@cnippet/checkbox"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport {\n  BellIcon,\n  MailIcon,\n  MessageSquareIcon,\n  SmartphoneIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\n\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst channels = [\n  {\n    description: \"Receive updates in your inbox\",\n    icon: MailIcon,\n    id: \"ch-email\",\n    label: \"Email\",\n  },\n  {\n    description: \"Alerts sent to your phone\",\n    icon: SmartphoneIcon,\n    id: \"ch-sms\",\n    label: \"SMS\",\n  },\n  {\n    description: \"Banners while using the app\",\n    icon: BellIcon,\n    id: \"ch-inapp\",\n    label: \"In-app\",\n  },\n  {\n    description: \"Messages to your Slack workspace\",\n    icon: MessageSquareIcon,\n    id: \"ch-slack\",\n    label: \"Slack\",\n  },\n];\n\nexport function Pattern() {\n  const [checked, setChecked] = useState<Record<string, boolean>>({\n    \"ch-email\": true,\n    \"ch-inapp\": true,\n    \"ch-slack\": false,\n    \"ch-sms\": false,\n  });\n\n  const toggle = (id: string, val: boolean) =>\n    setChecked((prev) => ({ ...prev, [id]: val }));\n\n  return (\n    <div className=\"w-full max-w-xs\">\n      <p className=\"mb-3 font-semibold text-sm\">Notification channels</p>\n      <Separator className=\"mb-1\" />\n      {channels.map((ch) => {\n        const Icon = ch.icon;\n        return (\n          <label\n            className=\"flex cursor-pointer items-start gap-3 border-b py-3 last:border-b-0\"\n            htmlFor={ch.id}\n            key={ch.id}\n          >\n            <Checkbox\n              checked={checked[ch.id]}\n              id={ch.id}\n              onCheckedChange={(val) => toggle(ch.id, !!val)}\n            />\n            <div\n              className={`flex size-8 shrink-0 items-center justify-center rounded-md border transition-colors ${\n                checked[ch.id]\n                  ? \"border-primary/20 bg-primary/10 text-primary\"\n                  : \"border-border bg-muted/50 text-muted-foreground\"\n              }`}\n            >\n              <Icon className=\"size-3.5\" />\n            </div>\n            <div className=\"flex flex-col gap-0.5\">\n              <span className=\"pt-0.5 font-medium text-sm leading-none\">\n                {ch.label}\n              </span>\n              <span className=\"text-muted-foreground text-xs\">\n                {ch.description}\n              </span>\n            </div>\n          </label>\n        );\n      })}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

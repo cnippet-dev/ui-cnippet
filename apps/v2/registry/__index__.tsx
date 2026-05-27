@@ -1197,7 +1197,7 @@ export const Index: Record<string, any> = {
   },
   "v-accordion-10": {
     name: "v-accordion-10",
-    description: "Basic accordion",
+    description: "Changelog / Release Notes with versioned entries",
     type: "registry:block",
     registryDependencies: ["@cnippet/accordion"],
     files: [{
@@ -3987,7 +3987,7 @@ export const Index: Record<string, any> = {
   },
   "v-checkbox-7": {
     name: "v-checkbox-7",
-    description: "Basic checkbox",
+    description: "Select All with Indeterminate State",
     type: "registry:block",
     registryDependencies: ["@cnippet/checkbox"],
     files: [{
@@ -4005,7 +4005,7 @@ export const Index: Record<string, any> = {
   },
   "v-checkbox-8": {
     name: "v-checkbox-8",
-    description: "Basic checkbox",
+    description: "Issue Label Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/checkbox"],
     files: [{
@@ -4023,7 +4023,7 @@ export const Index: Record<string, any> = {
   },
   "v-checkbox-9": {
     name: "v-checkbox-9",
-    description: "Basic checkbox",
+    description: "Notification Channel Selector",
     type: "registry:block",
     registryDependencies: ["@cnippet/checkbox"],
     files: [{
@@ -4041,7 +4041,7 @@ export const Index: Record<string, any> = {
   },
   "v-checkbox-10": {
     name: "v-checkbox-10",
-    description: "Basic checkbox",
+    description: "Multi-Consent Registration Gate",
     type: "registry:block",
     registryDependencies: ["@cnippet/checkbox"],
     files: [{
@@ -4365,7 +4365,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-8": {
     name: "v-collapsible-8",
-    description: "Basic collapsible",
+    description: "Read More Content Expander",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -4383,7 +4383,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-9": {
     name: "v-collapsible-9",
-    description: "Basic collapsible",
+    description: "CI/CD Build Step Log Viewer",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -4401,7 +4401,7 @@ export const Index: Record<string, any> = {
   },
   "v-collapsible-10": {
     name: "v-collapsible-10",
-    description: "Basic collapsible",
+    description: "Incident Status with Timeline",
     type: "registry:block",
     registryDependencies: ["@cnippet/collapsible"],
     files: [{
@@ -6345,7 +6345,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-1": {
     name: "v-form-1",
-    description: "Basic form",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6363,7 +6363,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-2": {
     name: "v-form-2",
-    description: "Basic form",
+    description: "Multi-field form with validation",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6381,7 +6381,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-3": {
     name: "v-form-3",
-    description: "Basic form",
+    description: "Sign In",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6399,7 +6399,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-4": {
     name: "v-form-4",
-    description: "Basic form",
+    description: "Profile Settings",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6417,7 +6417,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-5": {
     name: "v-form-5",
-    description: "Basic form",
+    description: "Contact Form",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6435,7 +6435,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-6": {
     name: "v-form-6",
-    description: "Basic form",
+    description: "Change Password",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6453,7 +6453,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-7": {
     name: "v-form-7",
-    description: "Basic form",
+    description: "Newsletter Signup",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -6471,7 +6471,7 @@ export const Index: Record<string, any> = {
   },
   "v-form-8": {
     name: "v-form-8",
-    description: "Basic form",
+    description: "3-Step Onboarding Wizard",
     type: "registry:block",
     registryDependencies: ["@cnippet/form"],
     files: [{
@@ -9603,7 +9603,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-7": {
     name: "v-progress-7",
-    description: "Basic progress",
+    description: "Skills Meter",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -9621,7 +9621,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-8": {
     name: "v-progress-8",
-    description: "Basic progress",
+    description: "Multi-file Upload Queue",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -9639,7 +9639,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-9": {
     name: "v-progress-9",
-    description: "Basic progress",
+    description: "Monthly Budget Breakdown",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -9657,7 +9657,7 @@ export const Index: Record<string, any> = {
   },
   "v-progress-10": {
     name: "v-progress-10",
-    description: "Basic progress",
+    description: "API Usage with Tier Milestones",
     type: "registry:block",
     registryDependencies: ["@cnippet/progress"],
     files: [{
@@ -10665,7 +10665,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-6": {
     name: "v-skeleton-6",
-    description: "Basic skeleton",
+    description: "Blog Article",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -10683,7 +10683,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-7": {
     name: "v-skeleton-7",
-    description: "Basic skeleton",
+    description: "Data Table",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -10701,7 +10701,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-8": {
     name: "v-skeleton-8",
-    description: "Basic skeleton",
+    description: "Sidebar Dashboard Layout",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -10719,7 +10719,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-9": {
     name: "v-skeleton-9",
-    description: "Basic skeleton",
+    description: "Chat Thread",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -10737,7 +10737,7 @@ export const Index: Record<string, any> = {
   },
   "v-skeleton-10": {
     name: "v-skeleton-10",
-    description: "Basic skeleton",
+    description: "Settings Page",
     type: "registry:block",
     registryDependencies: ["@cnippet/skeleton"],
     files: [{
@@ -11259,7 +11259,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-9": {
     name: "v-switch-9",
-    description: "Basic switch",
+    description: "Cookie Preferences Manager",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -11277,7 +11277,7 @@ export const Index: Record<string, any> = {
   },
   "v-switch-10": {
     name: "v-switch-10",
-    description: "Basic switch",
+    description: "Notification Delivery Channels",
     type: "registry:block",
     registryDependencies: ["@cnippet/switch"],
     files: [{
@@ -11421,7 +11421,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-8": {
     name: "v-table-8",
-    description: "Basic table",
+    description: "Sortable API Endpoints",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -11439,7 +11439,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-9": {
     name: "v-table-9",
-    description: "Basic table",
+    description: "Storage Usage with Progress Bars",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -11457,7 +11457,7 @@ export const Index: Record<string, any> = {
   },
   "v-table-10": {
     name: "v-table-10",
-    description: "Basic table",
+    description: "Audit Log",
     type: "registry:block",
     registryDependencies: ["@cnippet/table"],
     files: [{
@@ -12051,7 +12051,7 @@ export const Index: Record<string, any> = {
   },
   "v-toast-8": {
     name: "v-toast-8",
-    description: "Basic toast",
+    description: "Staggered Notification Burst",
     type: "registry:block",
     registryDependencies: ["@cnippet/toast"],
     files: [{
@@ -12069,7 +12069,7 @@ export const Index: Record<string, any> = {
   },
   "v-toast-9": {
     name: "v-toast-9",
-    description: "Basic toast",
+    description: "Timeout Control",
     type: "registry:block",
     registryDependencies: ["@cnippet/toast"],
     files: [{
@@ -12087,7 +12087,7 @@ export const Index: Record<string, any> = {
   },
   "v-toast-10": {
     name: "v-toast-10",
-    description: "Basic toast",
+    description: "Auto-progressing Deploy Pipeline",
     type: "registry:block",
     registryDependencies: ["@cnippet/toast"],
     files: [{
@@ -12249,7 +12249,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-9": {
     name: "v-toggle-9",
-    description: "Basic toggle",
+    description: "Video Call Controls Bar",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{
@@ -12267,7 +12267,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-10": {
     name: "v-toggle-10",
-    description: "Basic toggle",
+    description: "Role Filter Chips with Live Count",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle"],
     files: [{

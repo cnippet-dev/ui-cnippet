@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-9",
-  "description": "Basic skeleton",
+  "description": "Chat Thread",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey: <>\n\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nconst messages = [\n  { lines: [72, 56], self: false },\n  { lines: [88], self: true },\n  { lines: [64, 80, 48], self: false },\n  { lines: [76, 60], self: true },\n  { lines: [52], self: false },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col overflow-hidden rounded-xl border\">\n      <div className=\"flex items-center gap-3 border-b px-4 py-3\">\n        <Skeleton className=\"size-8 rounded-full\" />\n        <div className=\"space-y-1.5\">\n          <Skeleton className=\"h-3.5 w-28\" />\n          <Skeleton className=\"h-3 w-16\" />\n        </div>\n      </div>\n\n      <div className=\"flex flex-1 flex-col gap-4 px-4 py-4\">\n        {messages.map((msg, i) => (\n          <div\n            className={`flex items-end gap-2 ${msg.self ? \"flex-row-reverse\" : \"\"}`}\n            key={i}\n          >\n            {!msg.self && (\n              <Skeleton className=\"mb-0.5 size-7 shrink-0 rounded-full\" />\n            )}\n            <div\n              className={`flex max-w-[75%] flex-col gap-1 ${msg.self ? \"items-end\" : \"items-start\"}`}\n            >\n              {msg.lines.map((w, j) => (\n                <Skeleton\n                  className={`h-8 rounded-2xl ${\n                    msg.self\n                      ? j === 0\n                        ? \"rounded-tr-sm\"\n                        : j === msg.lines.length - 1\n                          ? \"rounded-br-sm\"\n                          : \"\"\n                      : j === 0\n                        ? \"rounded-tl-sm\"\n                        : j === msg.lines.length - 1\n                          ? \"rounded-bl-sm\"\n                          : \"\"\n                  }`}\n                  key={j}\n                  style={{ width: `${w}%` }}\n                />\n              ))}\n            </div>\n          </div>\n        ))}\n      </div>\n\n      <div className=\"flex items-center gap-2 border-t px-3 py-2.5\">\n        <Skeleton className=\"h-9 flex-1 rounded-full\" />\n        <Skeleton className=\"size-9 shrink-0 rounded-full\" />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

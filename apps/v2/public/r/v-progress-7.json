@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-progress-7",
-  "description": "Basic progress",
+  "description": "Skills Meter",
   "registryDependencies": [
     "@cnippet/progress"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-progress-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Progress,\n  ProgressIndicator,\n  ProgressTrack,\n} from \"@/registry/default/ui/progress\";\n\nconst skills = [\n  { label: \"TypeScript\", value: 92 },\n  { label: \"React\", value: 88 },\n  { label: \"Node.js\", value: 74 },\n  { label: \"PostgreSQL\", value: 65 },\n  { label: \"Docker\", value: 58 },\n  { label: \"Rust\", value: 31 },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-xs space-y-3\">\n      <p className=\"font-semibold text-sm\">Skills</p>\n      {skills.map((skill) => (\n        <Progress key={skill.label} value={skill.value}>\n          <div className=\"flex items-center justify-between text-xs\">\n            <span className=\"font-medium text-foreground\">{skill.label}</span>\n            <span className=\"text-muted-foreground tabular-nums\">\n              {skill.value}%\n            </span>\n          </div>\n          <ProgressTrack className=\"h-1.5\">\n            <ProgressIndicator />\n          </ProgressTrack>\n        </Progress>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

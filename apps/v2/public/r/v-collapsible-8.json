@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-collapsible-8",
-  "description": "Basic collapsible",
+  "description": "Read More Content Expander",
   "registryDependencies": [
     "@cnippet/collapsible"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-collapsible-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Card,\n  CardDescription,\n  CardHeader,\n  CardPanel,\n  CardTitle,\n} from \"@/registry/default/ui/card\";\nimport {\n  Collapsible,\n  CollapsiblePanel,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\n\nconst fullText = `Designed for professionals who demand uncompromising audio fidelity, the Studio Pro X headphones deliver an immersive listening experience that redefines what wireless audio can be. The 40mm custom-tuned neodymium drivers produce a wide, detailed soundstage with rich lows, clear mids, and airy highs — whether you're mixing a track or unwinding after a long day.\n\nThe adaptive active noise cancellation system continuously samples ambient sound up to 200 times per second, dynamically adjusting to your environment so you can stay focused in busy offices, flights, or city streets. When you need to be aware of your surroundings, Transparency mode lets in just the right amount of the outside world without removing the headphones.\n\nBattery life is rated at 36 hours with ANC enabled, and a 10-minute quick charge gives you an additional 4 hours of playback. The ear cushions are crafted from premium memory foam wrapped in soft protein leather, providing a comfortable seal even during extended sessions.`;\n\nconst preview = `${fullText.slice(0, 220)}…`;\n\nexport function Pattern() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <Card>\n        <CardHeader>\n          <CardTitle>Studio Pro X Headphones</CardTitle>\n          <CardDescription>Wireless · ANC · 36h battery</CardDescription>\n        </CardHeader>\n        <CardPanel className=\"pt-0\">\n          <Collapsible onOpenChange={setOpen} open={open}>\n            <div className=\"relative\">\n              {!open && (\n                <div className=\"pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-card to-transparent\" />\n              )}\n              <p className=\"text-muted-foreground text-sm leading-relaxed\">\n                {open ? fullText : preview}\n              </p>\n              <CollapsiblePanel>\n                <span />\n              </CollapsiblePanel>\n            </div>\n            <CollapsibleTrigger className=\"mt-2 inline-flex items-center gap-1 font-medium text-primary text-sm underline-offset-2 hover:underline\">\n              {open ? \"Show less\" : \"Read more\"}\n              <ChevronDownIcon\n                className={`size-3.5 transition-transform duration-200 ${open ? \"rotate-180\" : \"\"}`}\n              />\n            </CollapsibleTrigger>\n          </Collapsible>\n        </CardPanel>\n      </Card>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-7",
-  "description": "Basic skeleton",
+  "description": "Data Table",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey: <>\n\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nconst colWidths = [\"w-32\", \"w-20\", \"w-24\", \"w-16\", \"w-14\"];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-2xl overflow-hidden rounded-xl border\">\n      <div className=\"flex items-center gap-4 border-b bg-muted/40 px-4 py-3\">\n        {colWidths.map((w, i) => (\n          <Skeleton className={`h-3.5 ${w} shrink-0`} key={i} />\n        ))}\n      </div>\n\n      {Array.from({ length: 6 }).map((_, row) => (\n        <div\n          className=\"flex items-center gap-4 border-b px-4 py-3.5 last:border-b-0\"\n          key={row}\n        >\n          <div className=\"flex w-32 shrink-0 items-center gap-2.5\">\n            <Skeleton className=\"size-7 rounded-full\" />\n            <Skeleton className=\"h-3.5 flex-1\" />\n          </div>\n          <Skeleton className={\"h-5 w-14 shrink-0 rounded-full\"} />\n          <Skeleton className=\"h-3.5 w-24 shrink-0\" />\n          <Skeleton className=\"h-3.5 w-16 shrink-0\" />\n          <Skeleton className=\"h-6 w-14 shrink-0 rounded-md\" />\n        </div>\n      ))}\n\n      <div className=\"flex items-center justify-between border-t bg-muted/30 px-4 py-3\">\n        <Skeleton className=\"h-3.5 w-32\" />\n        <div className=\"flex items-center gap-2\">\n          <Skeleton className=\"h-7 w-7 rounded-md\" />\n          <Skeleton className=\"h-7 w-7 rounded-md\" />\n          <Skeleton className=\"h-7 w-7 rounded-md\" />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
