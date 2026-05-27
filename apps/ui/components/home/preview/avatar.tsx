@@ -22,7 +22,7 @@ export default function AvatarPreview() {
       </Skeleton>
 
       {/* Stacked avatars — hidden, fades in on hover */}
-      <div className="absolute flex -space-x-[0.9rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute flex space-x-[-0.9rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <Skeleton className="flex size-12 items-center justify-center rounded-full">
           <Image
             alt="Avatar"

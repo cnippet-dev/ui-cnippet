@@ -40,7 +40,7 @@ export function CodePanel({ source, label }: CodePanelProps) {
       </div>
 
       {/* Code */}
-      <div className="max-h-64 overflow-auto bg-gray-950/2 dark:bg-white/2">
+      <div className="max-h-72 min-h-60 overflow-auto bg-gray-950/2 dark:bg-white/2">
         <pre className="p-4 font-mono text-[11px] text-gray-950/80 leading-relaxed dark:text-white/70">
           <code>{source}</code>
         </pre>

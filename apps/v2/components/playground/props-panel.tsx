@@ -1,17 +1,17 @@
 "use client";
 
+import {
+  getCatalogEntry,
+  getCategoryFromRegistryId,
+} from "@/lib/playground/registry-catalog";
+import { usePropsStore } from "@/lib/playground/store";
 import type { PropSchema } from "@/lib/playground/props-schemas";
-import { getCatalogEntry } from "@/lib/playground/registry-catalog";
-import { usePlaygroundStore } from "@/lib/playground/store";
-import { findNodeById } from "@/lib/playground/tree-utils";
-import { LayoutControls } from "./layout-controls";
 
-export function PropsPanel() {
-  const tree = usePlaygroundStore((s) => s.tree);
-  const selectedId = usePlaygroundStore((s) => s.selectedId);
-  const updateProps = usePlaygroundStore((s) => s.updateProps);
+export function PropsPanel({ variantKey }: { variantKey: string }) {
+  const propsMap = usePropsStore((s) => s.propsMap);
+  const setProp = usePropsStore((s) => s.setProp);
 
-  if (!selectedId) {
+  if (!variantKey) {
     return (
       <div className="flex h-full items-center justify-center border-gray-950/8 border-l dark:border-white/10">
         <p className="px-4 text-center font-mono text-[11px] text-gray-950/25 dark:text-white/20">
@@ -21,10 +21,9 @@ export function PropsPanel() {
     );
   }
 
-  const node = findNodeById(tree, selectedId);
-  if (!node) return null;
-
-  const entry = getCatalogEntry(node.registryId);
+  const category = getCategoryFromRegistryId(variantKey);
+  const entry = getCatalogEntry(variantKey);
+  const currentProps = propsMap[category] ?? {};
 
   return (
     <div className="flex h-full flex-col border-gray-950/8 border-l dark:border-white/10">
@@ -34,15 +33,13 @@ export function PropsPanel() {
           Props
         </p>
         <p className="mt-0.5 font-mono text-gray-950/60 text-xs dark:text-white/50">
-          {node.registryId}
+          {variantKey}
         </p>
       </div>
 
       {/* Controls */}
       <div className="flex-1 overflow-y-auto p-4">
-        {node.type === "layout" ? (
-          <LayoutControls node={node} />
-        ) : !entry || entry.propsSchema.length === 0 ? (
+        {!entry || entry.propsSchema.length === 0 ? (
           <p className="font-mono text-[11px] text-gray-950/30 dark:text-white/25">
             {entry
               ? "No configurable props for this component."
@@ -53,11 +50,11 @@ export function PropsPanel() {
             {entry.propsSchema.map((schema) => (
               <PropControl
                 key={schema.name}
-                onChange={(v) => updateProps(node.id, { [schema.name]: v })}
+                onChange={(v) => setProp(category, schema.name, v)}
                 schema={schema}
                 value={
-                  node.props[schema.name] !== undefined
-                    ? node.props[schema.name]
+                  currentProps[schema.name] !== undefined
+                    ? currentProps[schema.name]
                     : schema.default
                 }
               />

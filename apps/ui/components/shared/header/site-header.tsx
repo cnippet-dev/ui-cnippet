@@ -29,7 +29,7 @@ export default function SiteHeader() {
       <div className="col-start-1 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
 
       {/* Header content */}
-      <div className="relative flex h-14 items-center justify-between gap-3 px-2 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10">
+      <div className="relative flex h-14 items-center justify-between gap-3 px-2 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10">
         {/* Logo */}
         <div className="-mt-0.5 flex shrink-0 items-center gap-1.5 font-figtree font-medium text-2xl sm:text-[1.625em]">
           <Link aria-label="Home" href="/">

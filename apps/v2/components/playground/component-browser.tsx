@@ -1,22 +1,16 @@
 "use client";
 
-import { useDraggable } from "@dnd-kit/core";
 import { parseAsString, useQueryState } from "nuqs";
 import { useState } from "react";
 import { catalogue } from "@/components/components-page/registry";
-import { layoutBlocks } from "@/lib/playground/layout-blocks";
-import { usePlaygroundStore } from "@/lib/playground/store";
-import type { PlaygroundMode } from "@/lib/playground/types";
 import { cn } from "@/lib/utils";
 
 interface ComponentBrowserProps {
-  mode: PlaygroundMode;
   selectedComponent: string;
   selectedVariant: string;
 }
 
 export function ComponentBrowser({
-  mode,
   selectedComponent,
   selectedVariant,
 }: ComponentBrowserProps) {
@@ -28,11 +22,10 @@ export function ComponentBrowser({
     "variant",
     parseAsString.withDefault(""),
   );
-  const addNode = usePlaygroundStore((s) => s.addNode);
 
   const [search, setSearch] = useState("");
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    () => new Set(["Layouts", ...catalogue.map((c) => c.label)]),
+    () => new Set(catalogue.map((c) => c.label)),
   );
 
   const query = search.toLowerCase().trim();
@@ -49,10 +42,6 @@ export function ComponentBrowser({
     }))
     .filter((cat) => cat.components.length > 0);
 
-  const filteredLayouts = layoutBlocks.filter(
-    (b) => !query || b.label.toLowerCase().includes(query),
-  );
-
   function toggle(label: string) {
     setExpandedCategories((prev) => {
       const next = new Set(prev);
@@ -62,12 +51,8 @@ export function ComponentBrowser({
   }
 
   function handleVariantClick(compName: string, variantKey: string) {
-    if (mode === "inspect") {
-      setComponent(compName.toLowerCase());
-      setVariant(variantKey);
-    } else {
-      addNode(variantKey, "component", null);
-    }
+    setComponent(compName.toLowerCase());
+    setVariant(variantKey);
   }
 
   return (
@@ -84,35 +69,6 @@ export function ComponentBrowser({
       </div>
 
       <div className="flex-1 overflow-y-auto py-2">
-        {/* ── Layouts section (Build mode only) ── */}
-        {mode === "build" && filteredLayouts.length > 0 && (
-          <div>
-            <button
-              className="flex w-full items-center justify-between px-3 py-1.5 font-mono font-semibold text-[10px] text-gray-950/40 uppercase tracking-widest hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
-              onClick={() => toggle("Layouts")}
-              type="button"
-            >
-              Layouts
-              <span className="text-[10px]">
-                {expandedCategories.has("Layouts") ? "−" : "+"}
-              </span>
-            </button>
-
-            {expandedCategories.has("Layouts") && (
-              <div className="mb-2">
-                {filteredLayouts.map((block) => (
-                  <DraggableLayoutItem
-                    id={block.id}
-                    key={block.id}
-                    label={block.label}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ── Component categories ── */}
         {filteredCatalogue.map((cat) => {
           const isExpanded = expandedCategories.has(cat.label) || !!query;
           return (
@@ -130,7 +86,6 @@ export function ComponentBrowser({
                 <div className="mb-1">
                   {cat.components.map((comp) => {
                     const isActive =
-                      mode === "inspect" &&
                       selectedComponent === comp.name.toLowerCase();
                     return (
                       <div key={comp.name}>
@@ -174,11 +129,6 @@ export function ComponentBrowser({
                                 >
                                   {v.label}
                                 </span>
-                                {mode === "build" && (
-                                  <span className="ml-auto shrink-0 text-gray-950/20 dark:text-white/20">
-                                    +
-                                  </span>
-                                )}
                               </button>
                             );
                           })}
@@ -192,36 +142,6 @@ export function ComponentBrowser({
           );
         })}
       </div>
-    </div>
-  );
-}
-
-// ── Draggable layout block item ────────────────────────────────────────────
-
-function DraggableLayoutItem({ id, label }: { id: string; label: string }) {
-  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    data: { nodeType: "layout", registryId: id, source: "sidebar" },
-    id: `sidebar-${id}`,
-  });
-
-  return (
-    <div
-      ref={setNodeRef}
-      {...attributes}
-      {...listeners}
-      className={cn(
-        "mx-2 mb-1 flex cursor-grab items-center gap-2 rounded-md border border-gray-950/10 border-dashed px-2 py-1.5 transition-colors active:cursor-grabbing dark:border-white/10",
-        isDragging
-          ? "opacity-40"
-          : "hover:border-gray-950/20 hover:bg-gray-950/3 dark:hover:border-white/20 dark:hover:bg-white/5",
-      )}
-    >
-      <span className="font-mono text-[10px] text-gray-950/25 dark:text-white/20">
-        ⣿
-      </span>
-      <span className="font-mono text-[11px] text-gray-950/60 dark:text-white/50">
-        {label}
-      </span>
     </div>
   );
 }

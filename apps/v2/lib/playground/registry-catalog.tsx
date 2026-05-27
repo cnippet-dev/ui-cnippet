@@ -1,17 +1,6 @@
 //biome-ignore-all lint/suspicious/noExplicitAny: <>
 "use client";
 
-/**
- * Maps component categories to their live renderers, prop schemas, and code
- * generation logic.
- *
- * Category is derived from registryId by stripping the "v-" prefix and the
- * trailing "-{number}", e.g. "v-button-3" → "button".
- */
-
-import type React from "react";
-import type { FC } from "react";
-import { cn } from "@/lib/utils";
 import {
   Alert,
   AlertDescription,
@@ -22,31 +11,27 @@ import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { Spinner } from "@/registry/default/ui/spinner";
 import { Textarea } from "@/registry/default/ui/textarea";
+import type { FC } from "react";
 import type { PropSchema } from "./props-schemas";
 import {
   alertSchema,
   badgeSchema,
   buttonSchema,
-  headingSchema,
   inputSchema,
   kbdSchema,
   spinnerSchema,
   switchSchema,
   textareaSchema,
-  textSchema,
 } from "./props-schemas";
 
 type LiveRendererProps = { props: Record<string, unknown> };
 
 export interface CatalogEntry {
   category: string;
-  /** Named exports required for the import statement in generated code */
   namedExports: string[];
   importPath: string;
   propsSchema: PropSchema[];
-  /** Generates the JSX snippet for the code panel */
   generateJSX: (props: Record<string, unknown>) => string;
-  /** React component that renders the live preview with current props */
   LiveRenderer: FC<LiveRendererProps>;
 }
 
@@ -64,10 +49,9 @@ function attr(props: Record<string, unknown>, exclude: string[] = []): string {
   return parts.length ? ` ${parts.join(" ")}` : "";
 }
 
-// ── Catalog entries ────────────────────────────────────────────────────────
+// ── Catalog ────────────────────────────────────────────────────────────────
 
 const catalog: CatalogEntry[] = [
-  // ── Button ────────────────────────────────────────────────────────────────
   {
     category: "button",
     generateJSX(p) {
@@ -79,9 +63,7 @@ const catalog: CatalogEntry[] = [
       return (
         <Button
           disabled={(p.disabled as boolean) ?? false}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           size={(p.size as any) ?? "default"}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           variant={(p.variant as any) ?? "default"}
         >
           {(p.label as string) || "Button"}
@@ -92,7 +74,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: buttonSchema,
   },
 
-  // ── Badge ─────────────────────────────────────────────────────────────────
   {
     category: "badge",
     generateJSX(p) {
@@ -102,10 +83,7 @@ const catalog: CatalogEntry[] = [
     importPath: "@/registry/default/ui/badge",
     LiveRenderer({ props: p }) {
       return (
-        <Badge
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          variant={(p.variant as any) ?? "default"}
-        >
+        <Badge variant={(p.variant as any) ?? "default"}>
           {(p.label as string) || "Badge"}
         </Badge>
       );
@@ -114,7 +92,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: badgeSchema,
   },
 
-  // ── Input ─────────────────────────────────────────────────────────────────
   {
     category: "input",
     generateJSX(p) {
@@ -128,7 +105,6 @@ const catalog: CatalogEntry[] = [
           className="w-64"
           disabled={(p.disabled as boolean) ?? false}
           placeholder={(p.placeholder as string) ?? "Enter text…"}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           type={(p.type as any) ?? "text"}
         />
       );
@@ -137,7 +113,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: inputSchema,
   },
 
-  // ── Textarea ──────────────────────────────────────────────────────────────
   {
     category: "textarea",
     generateJSX(p) {
@@ -159,7 +134,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: textareaSchema,
   },
 
-  // ── Alert ─────────────────────────────────────────────────────────────────
   {
     category: "alert",
     generateJSX(p) {
@@ -187,7 +161,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: alertSchema,
   },
 
-  // ── Spinner ───────────────────────────────────────────────────────────────
   {
     category: "spinner",
     generateJSX(_p) {
@@ -201,7 +174,6 @@ const catalog: CatalogEntry[] = [
     propsSchema: spinnerSchema,
   },
 
-  // ── Switch ────────────────────────────────────────────────────────────────
   {
     category: "switch",
     generateJSX(p) {
@@ -216,7 +188,6 @@ const catalog: CatalogEntry[] = [
     },
     importPath: "@/registry/default/ui/switch",
     LiveRenderer({ props: p }) {
-      // Render a fallback visual for Switch (avoid importing the full Switch component)
       return (
         <div className="flex items-center gap-2">
           <div className="relative inline-flex h-5 w-9 items-center rounded-full border border-gray-950/15 bg-gray-950/10 dark:border-white/15 dark:bg-white/10">
@@ -234,11 +205,10 @@ const catalog: CatalogEntry[] = [
         </div>
       );
     },
-    namedExports: ["Switch", "SwitchThumb"],
+    namedExports: ["Switch"],
     propsSchema: switchSchema,
   },
 
-  // ── Kbd ───────────────────────────────────────────────────────────────────
   {
     category: "kbd",
     generateJSX(p) {
@@ -256,87 +226,26 @@ const catalog: CatalogEntry[] = [
     namedExports: ["Kbd"],
     propsSchema: kbdSchema,
   },
-
-  // ── Heading ───────────────────────────────────────────────────────────────
-  {
-    category: "heading",
-    generateJSX(p) {
-      const tag = (p.as as string) || "h2";
-      const classes = [
-        (p.size as string) || "text-3xl",
-        (p.weight as string) || "font-bold",
-        (p.tracking as string) || "tracking-tight",
-        (p.leading as string) || "leading-tight",
-        p.align && p.align !== "text-left" ? (p.align as string) : "",
-        p.color as string,
-      ]
-        .filter(Boolean)
-        .join(" ");
-      return `<${tag} className="${classes}">${(p.text as string) || "Heading"}</${tag}>`;
-    },
-    importPath: "",
-    LiveRenderer({ props: p }) {
-      const Tag = ((p.as as string) || "h2") as React.ElementType;
-      const classes = cn(
-        (p.size as string) || "text-3xl",
-        (p.weight as string) || "font-bold",
-        (p.tracking as string) || "tracking-tight",
-        (p.leading as string) || "leading-tight",
-        p.align as string,
-        p.color as string,
-      );
-      return <Tag className={classes}>{(p.text as string) || "Heading"}</Tag>;
-    },
-    namedExports: [],
-    propsSchema: headingSchema,
-  },
-
-  // ── Text ─────────────────────────────────────────────────────────────────
-  {
-    category: "text",
-    generateJSX(p) {
-      const classes = [
-        (p.size as string) || "text-base",
-        (p.weight as string) || "font-normal",
-        (p.tracking as string) || "tracking-normal",
-        (p.leading as string) || "leading-relaxed",
-        p.align && p.align !== "text-left" ? (p.align as string) : "",
-        (p.color as string) || "text-muted-foreground",
-      ]
-        .filter(Boolean)
-        .join(" ");
-      return `<p className="${classes}">${(p.text as string) || "Body paragraph text."}</p>`;
-    },
-    importPath: "",
-    LiveRenderer({ props: p }) {
-      const classes = cn(
-        (p.size as string) || "text-base",
-        (p.weight as string) || "font-normal",
-        (p.tracking as string) || "tracking-normal",
-        (p.leading as string) || "leading-relaxed",
-        p.align as string,
-        (p.color as string) || "text-muted-foreground",
-      );
-      return (
-        <p className={classes}>
-          {(p.text as string) || "Body paragraph text."}
-        </p>
-      );
-    },
-    namedExports: [],
-    propsSchema: textSchema,
-  },
 ];
 
 // ── Lookup helpers ─────────────────────────────────────────────────────────
 
 /** "v-button-3" → "button", "v-input-group-2" → "input-group" */
 export function getCategoryFromRegistryId(registryId: string): string {
-  // Strip "v-" prefix, then strip trailing "-{digits}"
   return registryId.replace(/^v-/, "").replace(/-\d+$/, "");
 }
 
 export function getCatalogEntry(registryId: string): CatalogEntry | undefined {
   const category = getCategoryFromRegistryId(registryId);
   return catalog.find((e) => e.category === category);
+}
+
+/** Returns the full import + JSX snippet for the code panel. */
+export function generateSnippet(
+  entry: CatalogEntry,
+  props: Record<string, unknown>,
+): string {
+  const jsx = entry.generateJSX(props);
+  if (!entry.importPath) return jsx;
+  return `import { ${entry.namedExports.join(", ")} } from "${entry.importPath}";\n\n${jsx}`;
 }

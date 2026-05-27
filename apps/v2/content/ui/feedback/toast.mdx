@@ -189,3 +189,21 @@ Demonstrates how multiple stacked toasts of different content lengths collapse a
 A form submit button that shows a success toast on completion and an error toast if the operation fails, without a page reload.
 
 <ComponentPreview name="v-toast-7" />
+
+### Staggered Burst
+
+Four toasts fire with staggered delays (0 / 800 / 1600 / 2400 ms) so they animate into the stack one after another. The trigger button is disabled while the burst is in progress.
+
+<ComponentPreview name="v-toast-8" />
+
+### Timeout Control
+
+Demonstrates the three common timeout modes: a 3-second auto-dismiss, an 8-second extended toast, and a persistent toast (timeout 0) that requires an explicit "Dismiss" action button.
+
+<ComponentPreview name="v-toast-9" />
+
+### Deploy Pipeline
+
+A chained sequence of toasts that progress through a deploy flow — loading → tests passed → deployed. Each stage closes the previous toast by ID before opening the next.
+
+<ComponentPreview name="v-toast-10" />
