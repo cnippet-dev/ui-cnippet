@@ -5,13 +5,18 @@ import { type FormEvent, useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Card,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardPanel,
   CardTitle,
-  CardDescription,
 } from "@/registry/default/ui/card";
-import { Field, FieldDescription, FieldError, FieldLabel } from "@/registry/default/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldLabel,
+} from "@/registry/default/ui/field";
 import { Form } from "@/registry/default/ui/form";
 import { Input } from "@/registry/default/ui/input";
 import {
@@ -48,7 +53,7 @@ export function Pattern() {
         </CardHeader>
 
         <Form onSubmit={onSubmit}>
-          <CardPanel className="gap-4 flex flex-col">
+          <CardPanel className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
               <Field name="firstName">
                 <FieldLabel>First name</FieldLabel>

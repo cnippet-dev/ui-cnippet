@@ -1,7 +1,12 @@
 "use client";
 
-import { FileIcon, CheckCircle2Icon, XCircleIcon, Loader2Icon } from "lucide-react";
-import { useState, useEffect } from "react";
+import {
+  CheckCircle2Icon,
+  FileIcon,
+  Loader2Icon,
+  XCircleIcon,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 import {
   Progress,
@@ -20,16 +25,42 @@ type UploadFile = {
 };
 
 const initialFiles: UploadFile[] = [
-  { id: "1", name: "design-system.fig", progress: 100, size: "4.2 MB", status: "done" },
-  { id: "2", name: "brand-assets.zip", progress: 67, size: "12.8 MB", status: "uploading" },
-  { id: "3", name: "prototype-v3.mp4", progress: 23, size: "38.5 MB", status: "uploading" },
-  { id: "4", name: "corrupted-file.pdf", progress: 41, size: "1.1 MB", status: "error" },
+  {
+    id: "1",
+    name: "design-system.fig",
+    progress: 100,
+    size: "4.2 MB",
+    status: "done",
+  },
+  {
+    id: "2",
+    name: "brand-assets.zip",
+    progress: 67,
+    size: "12.8 MB",
+    status: "uploading",
+  },
+  {
+    id: "3",
+    name: "prototype-v3.mp4",
+    progress: 23,
+    size: "38.5 MB",
+    status: "uploading",
+  },
+  {
+    id: "4",
+    name: "corrupted-file.pdf",
+    progress: 41,
+    size: "1.1 MB",
+    status: "error",
+  },
 ];
 
 const statusIcon: Record<FileStatus, React.ReactNode> = {
   done: <CheckCircle2Icon className="size-4 text-success" />,
   error: <XCircleIcon className="size-4 text-destructive" />,
-  uploading: <Loader2Icon className="size-4 animate-spin text-muted-foreground" />,
+  uploading: (
+    <Loader2Icon className="size-4 animate-spin text-muted-foreground" />
+  ),
 };
 
 const indicatorColor: Record<FileStatus, string> = {
@@ -47,7 +78,11 @@ export function Pattern() {
         prev.map((f) => {
           if (f.status !== "uploading") return f;
           const next = Math.min(f.progress + Math.random() * 8, 100);
-          return { ...f, progress: next, status: next >= 100 ? "done" : "uploading" };
+          return {
+            ...f,
+            progress: next,
+            status: next >= 100 ? "done" : "uploading",
+          };
         }),
       );
     }, 400);
@@ -59,7 +94,8 @@ export function Pattern() {
       <div className="flex items-center justify-between">
         <p className="font-semibold text-sm">Uploading files</p>
         <span className="text-muted-foreground text-xs">
-          {files.filter((f) => f.status === "done").length} / {files.length} done
+          {files.filter((f) => f.status === "done").length} / {files.length}{" "}
+          done
         </span>
       </div>
       {files.map((file) => (
@@ -69,7 +105,7 @@ export function Pattern() {
           </div>
           <div className="min-w-0 flex-1 space-y-1.5">
             <div className="flex items-center justify-between gap-2">
-              <span className="truncate text-sm font-medium">{file.name}</span>
+              <span className="truncate font-medium text-sm">{file.name}</span>
               {statusIcon[file.status]}
             </div>
             <Progress
@@ -80,7 +116,7 @@ export function Pattern() {
                 <ProgressIndicator />
               </ProgressTrack>
             </Progress>
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <div className="flex items-center justify-between text-muted-foreground text-xs">
               <span>{file.size}</span>
               <span className="tabular-nums">
                 {file.status === "error"

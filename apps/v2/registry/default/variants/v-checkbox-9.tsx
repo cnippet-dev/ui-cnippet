@@ -76,7 +76,7 @@ export function Pattern() {
               <Icon className="size-3.5" />
             </div>
             <div className="flex flex-col gap-0.5">
-              <span className="font-medium text-sm leading-none pt-0.5">
+              <span className="pt-0.5 font-medium text-sm leading-none">
                 {ch.label}
               </span>
               <span className="text-muted-foreground text-xs">

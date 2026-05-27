@@ -11,7 +11,7 @@ export const appConfig = {
       href: "/explore",
       label: "Explore",
     },
-     {
+    {
       href: "/playground",
       label: "Playground  ",
     },

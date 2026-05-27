@@ -12,10 +12,10 @@ import { useState } from "react";
 
 import {
   Card,
+  CardDescription,
   CardHeader,
   CardPanel,
   CardTitle,
-  CardDescription,
 } from "@/registry/default/ui/card";
 import { Separator } from "@/registry/default/ui/separator";
 import { Switch } from "@/registry/default/ui/switch";
@@ -130,9 +130,7 @@ export function Pattern() {
                     size="sm"
                   />
                 </label>
-                {index < channels.length - 1 && (
-                  <Separator className="ml-16" />
-                )}
+                {index < channels.length - 1 && <Separator className="ml-16" />}
               </div>
             );
           })}

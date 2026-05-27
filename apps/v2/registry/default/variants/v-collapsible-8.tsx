@@ -2,19 +2,18 @@
 
 import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
-
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardPanel,
+  CardTitle,
+} from "@/registry/default/ui/card";
 import {
   Collapsible,
   CollapsiblePanel,
   CollapsibleTrigger,
 } from "@/registry/default/ui/collapsible";
-import {
-  Card,
-  CardHeader,
-  CardPanel,
-  CardTitle,
-  CardDescription,
-} from "@/registry/default/ui/card";
 
 const fullText = `Designed for professionals who demand uncompromising audio fidelity, the Studio Pro X headphones deliver an immersive listening experience that redefines what wireless audio can be. The 40mm custom-tuned neodymium drivers produce a wide, detailed soundstage with rich lows, clear mids, and airy highs — whether you're mixing a track or unwinding after a long day.
 
@@ -22,7 +21,7 @@ The adaptive active noise cancellation system continuously samples ambient sound
 
 Battery life is rated at 36 hours with ANC enabled, and a 10-minute quick charge gives you an additional 4 hours of playback. The ear cushions are crafted from premium memory foam wrapped in soft protein leather, providing a comfortable seal even during extended sessions.`;
 
-const preview = fullText.slice(0, 220) + "…";
+const preview = `${fullText.slice(0, 220)}…`;
 
 export function Pattern() {
   const [open, setOpen] = useState(false);
@@ -47,7 +46,7 @@ export function Pattern() {
                 <span />
               </CollapsiblePanel>
             </div>
-            <CollapsibleTrigger className="mt-2 inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline underline-offset-2">
+            <CollapsibleTrigger className="mt-2 inline-flex items-center gap-1 font-medium text-primary text-sm underline-offset-2 hover:underline">
               {open ? "Show less" : "Read more"}
               <ChevronDownIcon
                 className={`size-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}

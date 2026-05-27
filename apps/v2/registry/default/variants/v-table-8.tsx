@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDownIcon, ArrowUpIcon, ArrowUpDownIcon } from "lucide-react";
+import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon } from "lucide-react";
 import { useState } from "react";
 
 import { Badge } from "@/registry/default/ui/badge";
@@ -16,7 +16,10 @@ import {
 type SortKey = "endpoint" | "latency" | "requests" | "errorRate";
 type SortDir = "asc" | "desc";
 
-const methodVariant: Record<string, "success" | "info" | "warning" | "destructive"> = {
+const methodVariant: Record<
+  string,
+  "success" | "info" | "warning" | "destructive"
+> = {
   DELETE: "destructive",
   GET: "success",
   PATCH: "warning",
@@ -25,19 +28,65 @@ const methodVariant: Record<string, "success" | "info" | "warning" | "destructiv
 };
 
 const rows = [
-  { endpoint: "/api/users", errorRate: 0.2, latency: 48, method: "GET", requests: 12400 },
-  { endpoint: "/api/orders", errorRate: 1.4, latency: 134, method: "POST", requests: 3200 },
-  { endpoint: "/api/products", errorRate: 0.0, latency: 22, method: "GET", requests: 28900 },
-  { endpoint: "/api/auth/login", errorRate: 3.8, latency: 210, method: "POST", requests: 8700 },
-  { endpoint: "/api/users/:id", errorRate: 0.5, latency: 61, method: "PATCH", requests: 1100 },
-  { endpoint: "/api/orders/:id", errorRate: 0.0, latency: 38, method: "DELETE", requests: 540 },
+  {
+    endpoint: "/api/users",
+    errorRate: 0.2,
+    latency: 48,
+    method: "GET",
+    requests: 12400,
+  },
+  {
+    endpoint: "/api/orders",
+    errorRate: 1.4,
+    latency: 134,
+    method: "POST",
+    requests: 3200,
+  },
+  {
+    endpoint: "/api/products",
+    errorRate: 0.0,
+    latency: 22,
+    method: "GET",
+    requests: 28900,
+  },
+  {
+    endpoint: "/api/auth/login",
+    errorRate: 3.8,
+    latency: 210,
+    method: "POST",
+    requests: 8700,
+  },
+  {
+    endpoint: "/api/users/:id",
+    errorRate: 0.5,
+    latency: 61,
+    method: "PATCH",
+    requests: 1100,
+  },
+  {
+    endpoint: "/api/orders/:id",
+    errorRate: 0.0,
+    latency: 38,
+    method: "DELETE",
+    requests: 540,
+  },
 ];
 
-function SortIcon({ col, sortKey, sortDir }: { col: SortKey; sortKey: SortKey; sortDir: SortDir }) {
+function SortIcon({
+  col,
+  sortKey,
+  sortDir,
+}: {
+  col: SortKey;
+  sortKey: SortKey;
+  sortDir: SortDir;
+}) {
   if (col !== sortKey) return <ArrowUpDownIcon className="size-3 opacity-40" />;
-  return sortDir === "asc"
-    ? <ArrowUpIcon className="size-3" />
-    : <ArrowDownIcon className="size-3" />;
+  return sortDir === "asc" ? (
+    <ArrowUpIcon className="size-3" />
+  ) : (
+    <ArrowDownIcon className="size-3" />
+  );
 }
 
 export function Pattern() {
@@ -54,15 +103,20 @@ export function Pattern() {
 
   const toggleSort = (key: SortKey) => {
     if (sortKey === key) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
-    else { setSortKey(key); setSortDir("desc"); }
+    else {
+      setSortKey(key);
+      setSortDir("desc");
+    }
   };
 
   const th = (key: SortKey, label: string, align = "left") => (
     <TableHead
-      className={`cursor-pointer select-none hover:text-foreground transition-colors ${align === "right" ? "text-right" : ""}`}
+      className={`cursor-pointer select-none transition-colors hover:text-foreground ${align === "right" ? "text-right" : ""}`}
       onClick={() => toggleSort(key)}
     >
-      <span className={`inline-flex items-center gap-1 ${align === "right" ? "flex-row-reverse" : ""}`}>
+      <span
+        className={`inline-flex items-center gap-1 ${align === "right" ? "flex-row-reverse" : ""}`}
+      >
         {label}
         <SortIcon col={key} sortDir={sortDir} sortKey={sortKey} />
       </span>
@@ -89,13 +143,23 @@ export function Pattern() {
                   {row.method}
                 </Badge>
               </TableCell>
-              <TableCell className="font-mono text-xs">{row.endpoint}</TableCell>
-              <TableCell className="text-right text-sm">{row.latency} ms</TableCell>
-              <TableCell className="text-right text-sm">{row.requests.toLocaleString()}</TableCell>
+              <TableCell className="font-mono text-xs">
+                {row.endpoint}
+              </TableCell>
+              <TableCell className="text-right text-sm">
+                {row.latency} ms
+              </TableCell>
+              <TableCell className="text-right text-sm">
+                {row.requests.toLocaleString()}
+              </TableCell>
               <TableCell className="text-right">
                 <span
-                  className={`text-sm font-medium ${
-                    row.errorRate >= 3 ? "text-destructive" : row.errorRate >= 1 ? "text-warning" : "text-success-foreground"
+                  className={`font-medium text-sm ${
+                    row.errorRate >= 3
+                      ? "text-destructive"
+                      : row.errorRate >= 1
+                        ? "text-warning"
+                        : "text-success-foreground"
                   }`}
                 >
                   {row.errorRate.toFixed(1)}%

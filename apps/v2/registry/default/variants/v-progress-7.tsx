@@ -21,7 +21,7 @@ export function Pattern() {
         <Progress key={skill.label} value={skill.value}>
           <div className="flex items-center justify-between text-xs">
             <span className="font-medium text-foreground">{skill.label}</span>
-            <span className="tabular-nums text-muted-foreground">
+            <span className="text-muted-foreground tabular-nums">
               {skill.value}%
             </span>
           </div>

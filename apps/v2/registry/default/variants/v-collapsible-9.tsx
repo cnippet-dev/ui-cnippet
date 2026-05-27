@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { ChevronDownIcon } from "lucide-react";
 
 import { Badge } from "@/registry/default/ui/badge";
@@ -70,10 +72,7 @@ export function Pattern() {
               <CardPanel className="py-3">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5">
-                    <Badge
-                      size="sm"
-                      variant={statusVariant[step.status]}
-                    >
+                    <Badge size="sm" variant={statusVariant[step.status]}>
                       {step.status}
                     </Badge>
                     <span className="font-medium text-sm">{step.name}</span>
@@ -81,7 +80,7 @@ export function Pattern() {
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <span className="text-xs">{step.duration}</span>
                     {step.status !== "pending" && (
-                      <ChevronDownIcon className="size-3.5 transition-transform duration-200 in-data-panel-open:rotate-180" />
+                      <ChevronDownIcon className="size-3.5 in-data-panel-open:rotate-180 transition-transform duration-200" />
                     )}
                   </div>
                 </div>

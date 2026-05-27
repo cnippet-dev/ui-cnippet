@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 export function Pattern() {
@@ -10,15 +12,24 @@ export function Pattern() {
         </div>
 
         {[60, 44, 52, 36].map((w, i) => (
-          <div className="flex items-center gap-2 rounded-md px-2 py-1.5" key={i}>
+          <div
+            className="flex items-center gap-2 rounded-md px-2 py-1.5"
+            key={i}
+          >
             <Skeleton className="size-4 rounded-sm" />
-            <Skeleton className={`h-3.5 w-${w === 60 ? "full" : `[${w}%]`}`} style={{ width: `${w}%` }} />
+            <Skeleton
+              className={`h-3.5 w-${w === 60 ? "full" : `[${w}%]`}`}
+              style={{ width: `${w}%` }}
+            />
           </div>
         ))}
 
         <div className="mt-3 border-t pt-3">
           {[48, 56].map((w, i) => (
-            <div className="flex items-center gap-2 rounded-md px-2 py-1.5" key={i}>
+            <div
+              className="flex items-center gap-2 rounded-md px-2 py-1.5"
+              key={i}
+            >
               <Skeleton className="size-4 rounded-sm" />
               <Skeleton className="h-3.5" style={{ width: `${w}%` }} />
             </div>
@@ -46,7 +57,7 @@ export function Pattern() {
         <div className="flex-1 space-y-4 p-5">
           <div className="grid grid-cols-3 gap-3">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div className="rounded-lg border p-3 space-y-2" key={i}>
+              <div className="space-y-2 rounded-lg border p-3" key={i}>
                 <Skeleton className="h-3 w-16" />
                 <Skeleton className="h-6 w-20" />
                 <Skeleton className="h-3 w-24" />
@@ -56,7 +67,10 @@ export function Pattern() {
 
           <div className="space-y-2">
             {Array.from({ length: 3 }).map((_, i) => (
-              <div className="flex items-center gap-3 rounded-lg border px-3 py-2.5" key={i}>
+              <div
+                className="flex items-center gap-3 rounded-lg border px-3 py-2.5"
+                key={i}
+              >
                 <Skeleton className="size-8 rounded-md" />
                 <div className="flex-1 space-y-1.5">
                   <Skeleton className="h-3.5 w-40" />

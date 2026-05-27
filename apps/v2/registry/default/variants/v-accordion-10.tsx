@@ -1,3 +1,5 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey: <>
+
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +10,10 @@ import { Badge } from "@/registry/default/ui/badge";
 
 type ChangeType = "new" | "improved" | "fixed" | "breaking";
 
-const changeVariant: Record<ChangeType, "default" | "info" | "success" | "destructive"> = {
+const changeVariant: Record<
+  ChangeType,
+  "default" | "info" | "success" | "destructive"
+> = {
   breaking: "destructive",
   fixed: "success",
   improved: "info",
@@ -18,10 +23,19 @@ const changeVariant: Record<ChangeType, "default" | "info" | "success" | "destru
 const releases = [
   {
     changes: [
-      { label: "new", text: "Introduced real-time collaboration with live cursors" },
+      {
+        label: "new",
+        text: "Introduced real-time collaboration with live cursors",
+      },
       { label: "new", text: "Added webhook support for all resource events" },
-      { label: "improved", text: "Dashboard load time reduced by 60% with incremental rendering" },
-      { label: "fixed", text: "Resolved token refresh race condition on simultaneous requests" },
+      {
+        label: "improved",
+        text: "Dashboard load time reduced by 60% with incremental rendering",
+      },
+      {
+        label: "fixed",
+        text: "Resolved token refresh race condition on simultaneous requests",
+      },
     ],
     date: "May 22, 2025",
     isLatest: true,
@@ -30,10 +44,22 @@ const releases = [
   },
   {
     changes: [
-      { label: "improved", text: "Overhauled settings UI for better discoverability" },
-      { label: "improved", text: "CSV export now supports custom column ordering" },
-      { label: "fixed", text: "Fixed pagination offset bug on filtered table views" },
-      { label: "fixed", text: "Corrected timezone handling in scheduled reports" },
+      {
+        label: "improved",
+        text: "Overhauled settings UI for better discoverability",
+      },
+      {
+        label: "improved",
+        text: "CSV export now supports custom column ordering",
+      },
+      {
+        label: "fixed",
+        text: "Fixed pagination offset bug on filtered table views",
+      },
+      {
+        label: "fixed",
+        text: "Corrected timezone handling in scheduled reports",
+      },
     ],
     date: "Apr 10, 2025",
     isLatest: false,
@@ -42,10 +68,22 @@ const releases = [
   },
   {
     changes: [
-      { label: "breaking", text: "Removed legacy /v1/users endpoint — migrate to /v2/users" },
-      { label: "new", text: "Role-based access control with custom permission sets" },
-      { label: "new", text: "Two-factor authentication via TOTP and hardware keys" },
-      { label: "improved", text: "API rate limit headers now returned on every response" },
+      {
+        label: "breaking",
+        text: "Removed legacy /v1/users endpoint — migrate to /v2/users",
+      },
+      {
+        label: "new",
+        text: "Role-based access control with custom permission sets",
+      },
+      {
+        label: "new",
+        text: "Two-factor authentication via TOTP and hardware keys",
+      },
+      {
+        label: "improved",
+        text: "API rate limit headers now returned on every response",
+      },
     ],
     date: "Feb 28, 2025",
     isLatest: false,
@@ -54,8 +92,14 @@ const releases = [
   },
   {
     changes: [
-      { label: "fixed", text: "File uploads no longer fail silently on network timeout" },
-      { label: "fixed", text: "Resolved mobile layout overflow on narrow viewports" },
+      {
+        label: "fixed",
+        text: "File uploads no longer fail silently on network timeout",
+      },
+      {
+        label: "fixed",
+        text: "Resolved mobile layout overflow on narrow viewports",
+      },
     ],
     date: "Jan 15, 2025",
     isLatest: false,
@@ -69,7 +113,9 @@ export function Pattern() {
     <div className="mx-auto w-full max-w-lg">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="font-semibold text-sm">Changelog</h2>
-        <span className="text-muted-foreground text-xs">{releases.length} releases</span>
+        <span className="text-muted-foreground text-xs">
+          {releases.length} releases
+        </span>
       </div>
 
       <Accordion defaultValue={["v3-2-0"]} multiple>
@@ -90,7 +136,7 @@ export function Pattern() {
                     Breaking
                   </Badge>
                 )}
-                <span className="text-muted-foreground text-xs font-normal">
+                <span className="font-normal text-muted-foreground text-xs">
                   {release.date}
                 </span>
               </div>

@@ -5,7 +5,7 @@ import { type FormEvent, useState } from "react";
 
 import { Button } from "@/registry/default/ui/button";
 import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Field, FieldDescription, FieldError, FieldLabel } from "@/registry/default/ui/field";
+import { Field, FieldError, FieldLabel } from "@/registry/default/ui/field";
 import { Form } from "@/registry/default/ui/form";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
@@ -15,9 +15,13 @@ const STEPS = ["Account", "Plan", "Confirm"] as const;
 type Step = 0 | 1 | 2;
 
 const plans = [
-  { id: "hobby", label: "Hobby", description: "Free forever, up to 3 projects" },
-  { id: "pro", label: "Pro", description: "$12/mo — unlimited projects" },
-  { id: "team", label: "Team", description: "$49/mo — collaboration tools" },
+  {
+    description: "Free forever, up to 3 projects",
+    id: "hobby",
+    label: "Hobby",
+  },
+  { description: "$12/mo — unlimited projects", id: "pro", label: "Pro" },
+  { description: "$49/mo — collaboration tools", id: "team", label: "Team" },
 ];
 
 export function Pattern() {
@@ -83,7 +87,7 @@ export function Pattern() {
           <div className="flex items-center gap-2" key={label}>
             <div className="flex items-center gap-1.5">
               <div
-                className={`flex size-6 items-center justify-center rounded-full text-xs font-semibold transition-colors ${
+                className={`flex size-6 items-center justify-center rounded-full font-semibold text-xs transition-colors ${
                   i < step
                     ? "bg-primary text-primary-foreground"
                     : i === step
@@ -94,13 +98,15 @@ export function Pattern() {
                 {i < step ? <CheckCircle2Icon className="size-3.5" /> : i + 1}
               </div>
               <span
-                className={`text-xs font-medium ${i === step ? "text-foreground" : "text-muted-foreground"}`}
+                className={`font-medium text-xs ${i === step ? "text-foreground" : "text-muted-foreground"}`}
               >
                 {label}
               </span>
             </div>
             {i < STEPS.length - 1 && (
-              <div className={`h-px flex-1 min-w-6 ${i < step ? "bg-primary" : "bg-border"}`} />
+              <div
+                className={`h-px min-w-6 flex-1 ${i < step ? "bg-primary" : "bg-border"}`}
+              />
             )}
           </div>
         ))}
@@ -110,12 +116,21 @@ export function Pattern() {
         <Form className="gap-4" onSubmit={handleAccount}>
           <Field name="name">
             <FieldLabel>Full name</FieldLabel>
-            <Input defaultValue={data.name} placeholder="Alex Rivera" required />
+            <Input
+              defaultValue={data.name}
+              placeholder="Alex Rivera"
+              required
+            />
             <FieldError />
           </Field>
           <Field name="email">
             <FieldLabel>Email</FieldLabel>
-            <Input defaultValue={data.email} placeholder="you@example.com" required type="email" />
+            <Input
+              defaultValue={data.email}
+              placeholder="you@example.com"
+              required
+              type="email"
+            />
             <FieldError />
           </Field>
           <Button className="w-full" type="submit">
@@ -131,13 +146,15 @@ export function Pattern() {
             <RadioGroup className="gap-3" defaultValue={data.plan} name="plan">
               {plans.map((p) => (
                 <label
-                  className="flex cursor-pointer items-start gap-3 rounded-lg border p-3 hover:bg-accent/50 has-[input[data-checked]]:border-primary/40 has-[input[data-checked]]:bg-accent/50 transition-colors"
+                  className="flex cursor-pointer items-start gap-3 rounded-lg border p-3 transition-colors hover:bg-accent/50 has-[input[data-checked]]:border-primary/40 has-[input[data-checked]]:bg-accent/50"
                   key={p.id}
                 >
                   <Radio className="mt-0.5" value={p.id} />
                   <div className="flex flex-col gap-0.5">
                     <span className="font-medium text-sm">{p.label}</span>
-                    <span className="text-muted-foreground text-xs">{p.description}</span>
+                    <span className="text-muted-foreground text-xs">
+                      {p.description}
+                    </span>
                   </div>
                 </label>
               ))}
@@ -148,7 +165,12 @@ export function Pattern() {
             Send me product updates and tips
           </Label>
           <div className="flex gap-3">
-            <Button className="flex-1" onClick={() => setStep(0)} type="button" variant="outline">
+            <Button
+              className="flex-1"
+              onClick={() => setStep(0)}
+              type="button"
+              variant="outline"
+            >
               Back
             </Button>
             <Button className="flex-1" type="submit">
@@ -160,24 +182,40 @@ export function Pattern() {
 
       {step === 2 && (
         <div className="space-y-4">
-          <div className="rounded-lg border divide-y">
+          <div className="divide-y rounded-lg border">
             {[
               { label: "Name", value: data.name },
               { label: "Email", value: data.email },
-              { label: "Plan", value: plans.find((p) => p.id === data.plan)?.label ?? data.plan },
+              {
+                label: "Plan",
+                value:
+                  plans.find((p) => p.id === data.plan)?.label ?? data.plan,
+              },
               { label: "Updates", value: data.newsletter ? "Yes" : "No" },
             ].map(({ label, value }) => (
-              <div className="flex items-center justify-between px-4 py-3 text-sm" key={label}>
+              <div
+                className="flex items-center justify-between px-4 py-3 text-sm"
+                key={label}
+              >
                 <span className="text-muted-foreground">{label}</span>
                 <span className="font-medium">{value}</span>
               </div>
             ))}
           </div>
           <div className="flex gap-3">
-            <Button className="flex-1" onClick={() => setStep(1)} type="button" variant="outline">
+            <Button
+              className="flex-1"
+              onClick={() => setStep(1)}
+              type="button"
+              variant="outline"
+            >
               Back
             </Button>
-            <Button className="flex-1" loading={loading} onClick={handleConfirm}>
+            <Button
+              className="flex-1"
+              loading={loading}
+              onClick={handleConfirm}
+            >
               Create account
             </Button>
           </div>

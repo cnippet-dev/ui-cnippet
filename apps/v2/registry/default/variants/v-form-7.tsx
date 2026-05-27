@@ -76,7 +76,7 @@ export function Pattern() {
           <FieldError />
         </Field>
 
-        <Label className="flex items-start gap-2 font-normal text-xs text-muted-foreground">
+        <Label className="flex items-start gap-2 font-normal text-muted-foreground text-xs">
           <Checkbox className="mt-0.5" defaultChecked name="digest" />
           Send me a weekly digest instead of individual emails
         </Label>

@@ -12,7 +12,14 @@ export const buttonSchema: PropSchema[] = [
     default: "default",
     label: "Variant",
     name: "variant",
-    options: ["default", "outline", "secondary", "ghost", "destructive", "link"],
+    options: [
+      "default",
+      "outline",
+      "secondary",
+      "ghost",
+      "destructive",
+      "link",
+    ],
     type: "enum",
   },
   {
@@ -78,7 +85,12 @@ export const alertSchema: PropSchema[] = [
 export const switchSchema: PropSchema[] = [
   { default: "Toggle", label: "Label", name: "label", type: "string" },
   { default: false, label: "Disabled", name: "disabled", type: "boolean" },
-  { default: false, label: "Default on", name: "defaultChecked", type: "boolean" },
+  {
+    default: false,
+    label: "Default on",
+    name: "defaultChecked",
+    type: "boolean",
+  },
 ];
 
 export const spinnerSchema: PropSchema[] = [];

@@ -13,13 +13,13 @@ const notifications = [
   },
   {
     delay: 800,
-    description: "Your post \"Building with Base UI\" got 142 likes.",
+    description: 'Your post "Building with Base UI" got 142 likes.',
     title: "Post liked",
     type: "success" as const,
   },
   {
     delay: 1600,
-    description: "Sarah replied to your comment: \"Great point!\"",
+    description: 'Sarah replied to your comment: "Great point!"',
     title: "New reply",
     type: "info" as const,
   },
@@ -40,7 +40,7 @@ export function Pattern() {
     notifications.forEach(({ delay, ...toast }) => {
       setTimeout(() => toastManager.add(toast), delay);
     });
-    setTimeout(() => setFiring(false), notifications.at(-1)!.delay + 500);
+    setTimeout(() => setFiring(false), notifications.at(-1)?.delay + 500);
   }
 
   return (
