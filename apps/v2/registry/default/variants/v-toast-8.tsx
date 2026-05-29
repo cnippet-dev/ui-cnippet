@@ -40,7 +40,10 @@ export function Pattern() {
     notifications.forEach(({ delay, ...toast }) => {
       setTimeout(() => toastManager.add(toast), delay);
     });
-    setTimeout(() => setFiring(false), (notifications.at(-1)?.delay ?? 0) + 500);
+    setTimeout(
+      () => setFiring(false),
+      (notifications.at(-1)?.delay ?? 0) + 500,
+    );
   }
 
   return (

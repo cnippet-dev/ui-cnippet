@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "otp-field",
   "dependencies": [
-    "otp-field"
+    "@base-ui/react"
   ],
   "registryDependencies": [
     "@cnippet/separator"
