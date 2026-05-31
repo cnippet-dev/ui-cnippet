@@ -1,6 +1,6 @@
 ---
 title: Preview Card
-description: A popup that appears when a link is hovered, showing a preview for sighted users.
+description: A popup that appears when a link is hovered, showing a preview for sighted users. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/preview-card#api-reference
@@ -63,3 +63,9 @@ import {
   <PreviewCardPopup>Preview Card Content</PreviewCardPopup>
 </PreviewCard>
 ```
+
+## Notes
+
+- **Hover only** — the popup appears on hover and is hidden from screen readers by design. Use it for visual enhancement, not critical information.
+- **Not a tooltip** — tooltips are for short label text. Use `PreviewCard` when you want to show a richer preview (image, description, metadata) before the user navigates.
+- **Delay** — Base UI adds a short hover delay by default to avoid flickering when the user mouses across the trigger.

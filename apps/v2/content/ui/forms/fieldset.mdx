@@ -1,6 +1,6 @@
 ---
 title: Fieldset
-description: A native fieldset element with a legend.
+description: A native fieldset element with a legend. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/fieldset#api-reference
@@ -57,3 +57,9 @@ import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset"
   <FieldsetLegend>Fieldset legend</FieldsetLegend>
 </Fieldset>
 ```
+
+## Notes
+
+- **When to use** — wrap a group of related inputs (radio buttons, checkboxes, or multiple fields for the same concept) inside a `Fieldset`. The `FieldsetLegend` names the group for screen readers.
+- **Accessibility** — screen readers announce the legend text before reading each input inside the fieldset, giving users context for each field without extra labels.
+- **Disabled state** — setting `disabled` on `<Fieldset>` disables all interactive elements inside it at the browser level. No JavaScript needed.

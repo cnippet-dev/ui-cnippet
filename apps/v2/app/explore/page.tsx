@@ -5,10 +5,21 @@ import { SiteHeader } from "@/components/site-header";
 import { isPlaceholderVariant } from "@/lib/variants";
 import { variants } from "@/registry/registry-variants";
 
+const exploreDescription =
+  "Explore all Cnippet UI component variants with live previews. Copy source code or view it inline.";
+
 export const metadata: Metadata = {
-  description:
-    "Explore all Cnippet UI component variants with live previews. Copy source code or view it inline.",
+  description: exploreDescription,
+  openGraph: {
+    description: exploreDescription,
+    title: "Explore Components",
+    url: "https://ui.cnippet.dev/explore",
+  },
   title: "Explore Components",
+  twitter: {
+    description: exploreDescription,
+    title: "Explore Components",
+  },
 };
 
 export default function ExplorePage() {

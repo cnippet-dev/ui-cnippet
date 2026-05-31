@@ -1,6 +1,6 @@
 ---
 title: Date Picker
-description: A date picker component built with Calendar and Popover.
+description: A date picker component built with Calendar and Popover. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/date-picker#api-reference
@@ -46,6 +46,41 @@ npm install react-day-picker date-fns
 </TabsPanel>
 
 </CodeTabs>
+
+## Usage
+
+A date picker is built by composing `Calendar` inside a `Popover`. There is no separate date-picker component file — copy the pieces you need.
+
+```tsx
+import { useState } from "react"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverPopup,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```tsx
+export function DatePicker() {
+  const [date, setDate] = useState<Date>()
+
+  return (
+    <Popover>
+      <PopoverTrigger render={<Button variant="outline" />}>
+        <CalendarIcon />
+        {date ? format(date, "PPP") : "Pick a date"}
+      </PopoverTrigger>
+      <PopoverPopup>
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </PopoverPopup>
+    </Popover>
+  )
+}
+```
 
 ## Examples
 

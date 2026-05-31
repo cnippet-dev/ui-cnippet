@@ -84,30 +84,35 @@ A dedicated chart collection built on [Recharts](https://recharts.org/). Chart c
 Here's how you'd add a button and a dialog to your Next.js app:
 
 ```bash
-npx shadcn@latest add @cnippet/button dialog
+npx shadcn@latest add @cnippet/button @cnippet/dialog
 ```
 
 Then use them:
 
 ```tsx
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
+import {
+  Dialog,
+  DialogPanel,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export default function Home() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Open Dialog</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <p>Your content here</p>
-      </DialogContent>
+      <DialogTrigger render={<Button />}>Open Dialog</DialogTrigger>
+      <DialogPopup>
+        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogPanel>Your content here</DialogPanel>
+      </DialogPopup>
     </Dialog>
   )
 }
 ```
 
-That's it. No configuration, no providers – just copy, paste, and customize.  
+That's it. No configuration, no providers – just copy, paste, and customize.
 
 
 

@@ -34,9 +34,23 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const slug = params.slug?.join("/") ?? "";
+  const url = `https://ui.cnippet.dev/ui/${slug}`;
+  const fullTitle = `${doc.title} Component — Cnippet UI`;
+
   return {
+    alternates: { canonical: url },
     description: doc.description,
-    title: `${doc.title} - Cnippet UI`,
+    openGraph: {
+      description: doc.description,
+      title: fullTitle,
+      url,
+    },
+    title: { absolute: fullTitle },
+    twitter: {
+      description: doc.description,
+      title: fullTitle,
+    },
   };
 }
 
