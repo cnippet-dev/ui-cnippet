@@ -11,12 +11,12 @@ export default function Particle() {
   return (
     <PreviewCard>
       <PreviewCardTrigger render={<Button variant="ghost" />}>
-        coss.com/ui
+        cnippet.dev/ui
       </PreviewCardTrigger>
       <PreviewCardPopup>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <h4 className="font-medium text-sm">coss.com/ui</h4>
+            <h4 className="font-medium text-sm">cnippet.dev/ui</h4>
             <p className="text-muted-foreground text-sm">
               Beautifully designed components that you can copy and paste into
               your apps.

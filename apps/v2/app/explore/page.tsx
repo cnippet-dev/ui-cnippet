@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
 import { SiteHeader } from "@/components/site-header";
 import { isPlaceholderVariant } from "@/lib/variants";
@@ -60,10 +61,14 @@ export default function ExplorePage() {
           </div>
 
           <div className="px-0 pt-8 max-sm:px-0">
-            <ExploreShowcase
-              categories={categories}
-              variants={variantEntries}
-            />
+            <NuqsAdapter>
+              <Suspense>
+                <ExploreShowcase
+                  categories={categories}
+                  variants={variantEntries}
+                />
+              </Suspense>
+            </NuqsAdapter>
           </div>
         </main>
 

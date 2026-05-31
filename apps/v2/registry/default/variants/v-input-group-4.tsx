@@ -14,7 +14,7 @@ export default function Particle() {
         type="text"
       />
       <InputGroupAddon align="inline-end">
-        <InputGroupText>@coss.com</InputGroupText>
+        <InputGroupText>@ui.cnippet.dev</InputGroupText>
       </InputGroupAddon>
     </InputGroup>
   );

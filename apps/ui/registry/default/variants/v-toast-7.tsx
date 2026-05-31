@@ -34,7 +34,7 @@ export default function Particle() {
   });
 
   function handleCopy() {
-    const url = "https://coss.com";
+    const url = "ui.cnippet.dev";
     copyToClipboard(url);
   }
 

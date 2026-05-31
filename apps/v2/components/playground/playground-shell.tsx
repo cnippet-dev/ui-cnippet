@@ -9,6 +9,7 @@ import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { InspectCanvas } from "./canvas";
 import { CodePanel } from "./code-panel";
 import { ComponentBrowser } from "./component-browser";
+import { PropsPanel } from "./props-panel";
 import {
   PREVIEW_WIDTHS,
   type PreviewWidth,
@@ -26,6 +27,7 @@ export function PlaygroundShell() {
   );
 
   const [previewWidth, setPreviewWidth] = useState<PreviewWidth>("desktop");
+  const [mode, setMode] = useState<"preview" | "customize">("preview");
   const [inspectSource, setInspectSource] = useState("");
   const { isCopied: isCodeCopied, copyToClipboard: copyCode } =
     useCopyToClipboard();
@@ -81,6 +83,32 @@ export function PlaygroundShell() {
         </div>
 
         <div className="flex items-center gap-1">
+          <div className="flex items-center overflow-hidden rounded-md border border-gray-950/10 dark:border-white/10">
+            <button
+              className={
+                mode === "preview"
+                  ? "bg-gray-950/8 px-2.5 py-1 font-mono text-[11px] text-gray-950/80 dark:bg-white/10 dark:text-white/70"
+                  : "px-2.5 py-1 font-mono text-[11px] text-gray-950/40 transition-colors hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
+              }
+              onClick={() => setMode("preview")}
+              type="button"
+            >
+              Preview
+            </button>
+            <span className="h-4 w-px bg-gray-950/10 dark:bg-white/10" />
+            <button
+              className={
+                mode === "customize"
+                  ? "bg-gray-950/8 px-2.5 py-1 font-mono text-[11px] text-gray-950/80 dark:bg-white/10 dark:text-white/70"
+                  : "px-2.5 py-1 font-mono text-[11px] text-gray-950/40 transition-colors hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
+              }
+              onClick={() => setMode("customize")}
+              type="button"
+            >
+              Customize
+            </button>
+          </div>
+          <span className="mx-1 h-4 w-px bg-gray-950/10 dark:bg-white/10" />
           <ResponsivePreview onChange={setPreviewWidth} value={previewWidth} />
           <span className="mx-1 h-4 w-px bg-gray-950/10 dark:bg-white/10" />
 
@@ -129,6 +157,7 @@ export function PlaygroundShell() {
         <div className="flex min-w-0 flex-1 flex-col">
           <InspectCanvas
             isPlaceholder={isPlaceholder}
+            mode={mode}
             previewWidth={PREVIEW_WIDTHS[previewWidth]}
             variantKey={variant}
           />
@@ -137,6 +166,10 @@ export function PlaygroundShell() {
             source={isPlaceholder ? "" : inspectSource}
           />
         </div>
+
+        <aside className="w-64 shrink-0 overflow-hidden">
+          <PropsPanel variantKey={variant ?? ""} />
+        </aside>
       </div>
     </div>
   );

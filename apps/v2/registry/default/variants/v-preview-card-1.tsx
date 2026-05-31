@@ -10,7 +10,7 @@ export default function Particle() {
   return (
     <PreviewCard>
       <PreviewCardTrigger render={<Button variant="ghost" />}>
-        coss.com/ui
+        cnippet.dev/ui
       </PreviewCardTrigger>
       <PreviewCardPopup>
         <div className="flex flex-col gap-4">

@@ -1,6 +1,7 @@
 "use client";
 
 import { SearchIcon, XIcon } from "lucide-react";
+import { parseAsString, useQueryState } from "nuqs";
 import * as React from "react";
 import { VariantCard } from "./variant-card";
 
@@ -19,10 +20,11 @@ export function ExploreShowcase({
   variants,
   categories,
 }: ExploreShowcaseProps) {
-  const [activeCategory, setActiveCategory] = React.useState(
-    categories[0] ?? "",
+  const [activeCategory, setActiveCategory] = useQueryState(
+    "category",
+    parseAsString.withDefault(categories[0] ?? ""),
   );
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = useQueryState("q", parseAsString.withDefault(""));
   const [debouncedQuery, setDebouncedQuery] = React.useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
 
