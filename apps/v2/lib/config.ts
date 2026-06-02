@@ -15,6 +15,10 @@ export const appConfig = {
       href: "/playground",
       label: "Playground",
     },
+    {
+      href: "/themes",
+      label: "Themes",
+    },
   ],
   ogImage: "https://ui.cnippet.dev/opengraph-image.png",
   url: "https://ui.cnippet.dev/",

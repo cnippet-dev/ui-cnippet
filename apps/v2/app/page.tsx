@@ -1,4 +1,5 @@
 import { Button } from "@cnippet/ui/components/button";
+import { ReactLenis } from "lenis/react";
 import { MoveUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <ReactLenis root>
       <SiteHeader />
       <div className="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center border-gray-950/5 border-t [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-0 dark:border-white/10">
         <VerticalSeparatorLeft />
@@ -76,7 +77,7 @@ export default function HomePage() {
 
         <VerticalSeparatorRight />
       </div>
-    </>
+    </ReactLenis>
   );
 }
 
