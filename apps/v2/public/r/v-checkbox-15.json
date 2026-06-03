@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-15",
+  "description": "Sprint task checklist with priority badges and completion celebration",
+  "registryDependencies": [
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-15.tsx",
+      "content": "\"use client\";\n\nimport { useId, useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\n\nconst TASKS = [\n  { id: \"t1\", label: \"Review pull request #142\", priority: \"high\" },\n  { id: \"t2\", label: \"Update API documentation\", priority: \"medium\" },\n  { id: \"t3\", label: \"Fix login redirect bug\", priority: \"high\" },\n  { id: \"t4\", label: \"Write unit tests for AuthService\", priority: \"medium\" },\n  { id: \"t5\", label: \"Migrate legacy endpoints to v2\", priority: \"low\" },\n  { id: \"t6\", label: \"Deploy staging environment\", priority: \"low\" },\n];\n\nconst priorityVariant: Record<string, \"destructive\" | \"warning\" | \"secondary\"> =\n  {\n    high: \"destructive\",\n    low: \"secondary\",\n    medium: \"warning\",\n  };\n\nexport function Pattern() {\n  const id = useId();\n  const [done, setDone] = useState<Set<string>>(new Set());\n\n  const toggle = (tid: string) =>\n    setDone((prev) => {\n      const next = new Set(prev);\n      next.has(tid) ? next.delete(tid) : next.add(tid);\n      return next;\n    });\n\n  const remaining = TASKS.length - done.size;\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"font-semibold text-sm\">Sprint Tasks</p>\n        <span className=\"text-muted-foreground text-xs\">\n          {remaining} remaining\n        </span>\n      </div>\n      <div className=\"space-y-0.5\">\n        {TASKS.map((task) => (\n          <label\n            className={`flex cursor-pointer items-center gap-3 rounded-md px-2 py-2 transition-colors hover:bg-muted/50 ${done.has(task.id) ? \"opacity-50\" : \"\"}`}\n            htmlFor={`${id}-${task.id}`}\n            key={task.id}\n          >\n            <Checkbox\n              checked={done.has(task.id)}\n              id={`${id}-${task.id}`}\n              onCheckedChange={() => toggle(task.id)}\n            />\n            <span\n              className={`flex-1 text-sm ${done.has(task.id) ? \"text-muted-foreground line-through\" : \"\"}`}\n            >\n              {task.label}\n            </span>\n            <Badge size=\"sm\" variant={priorityVariant[task.priority]}>\n              {task.priority}\n            </Badge>\n          </label>\n        ))}\n      </div>\n      {remaining === 0 && (\n        <div className=\"rounded-lg bg-emerald-50 px-4 py-2.5 text-center font-medium text-emerald-700 text-sm dark:bg-emerald-950/40 dark:text-emerald-400\">\n          All tasks complete! 🎉\n        </div>\n      )}\n      <Button\n        className=\"w-full\"\n        onClick={() => setDone(new Set())}\n        size=\"sm\"\n        variant=\"outline\"\n      >\n        Reset\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:block"
+}

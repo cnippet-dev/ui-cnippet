@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-15",
+  "description": "Subscription plan tiers with pricing",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-15.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\n\nconst tiers = [\n  {\n    description: \"For individuals getting started\",\n    label: \"Free\",\n    price: \"$0/mo\",\n    variant: \"secondary\" as const,\n  },\n  {\n    description: \"For small teams and projects\",\n    label: \"Starter\",\n    price: \"$12/mo\",\n    variant: \"info\" as const,\n  },\n  {\n    description: \"Advanced features for growing teams\",\n    label: \"Pro\",\n    price: \"$49/mo\",\n    variant: \"default\" as const,\n  },\n  {\n    description: \"Custom pricing for large organisations\",\n    label: \"Enterprise\",\n    price: \"Custom\",\n    variant: \"success\" as const,\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-sm\">\n      <Frame>\n        {tiers.map((tier) => (\n          <FramePanel\n            className=\"flex items-center justify-between gap-3\"\n            key={tier.label}\n          >\n            <div className=\"flex items-center gap-2.5\">\n              <Badge size=\"sm\" variant={tier.variant}>\n                {tier.label}\n              </Badge>\n              <span className=\"text-muted-foreground text-sm\">\n                {tier.description}\n              </span>\n            </div>\n            <span className=\"shrink-0 font-semibold text-sm\">{tier.price}</span>\n          </FramePanel>\n        ))}\n      </Frame>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

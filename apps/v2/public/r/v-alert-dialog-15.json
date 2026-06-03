@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-15",
+  "description": "Rate Limit Exceeded with live countdown timer",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-15.tsx",
+      "content": "\"use client\";\n\nimport { TimerIcon, ZapIcon } from \"lucide-react\";\nimport { useEffect, useState } from \"react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nfunction Countdown({ seconds }: { seconds: number }) {\n  const [left, setLeft] = useState(seconds);\n\n  useEffect(() => {\n    if (left <= 0) return;\n    const t = setTimeout(() => setLeft((l) => l - 1), 1000);\n    return () => clearTimeout(t);\n  }, [left]);\n\n  const m = Math.floor(left / 60)\n    .toString()\n    .padStart(2, \"0\");\n  const s = (left % 60).toString().padStart(2, \"0\");\n\n  return (\n    <span className=\"font-mono font-semibold text-foreground\">\n      {m}:{s}\n    </span>\n  );\n}\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button>Make API Request</Button>} />\n      <AlertDialogContent className=\"sm:max-w-sm\">\n        <div className=\"flex flex-col items-center gap-3 p-6 pb-4\">\n          <div className=\"flex size-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950\">\n            <ZapIcon className=\"size-5 text-amber-600 dark:text-amber-400\" />\n          </div>\n          <AlertDialogTitle className=\"text-center font-semibold text-base\">\n            Rate limit exceeded\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"text-center text-muted-foreground text-sm\">\n            You&apos;ve reached the limit of 100 requests per minute. Retry\n            automatically in:\n          </AlertDialogDescription>\n          <div className=\"flex items-center gap-2 rounded-lg border bg-muted/60 px-4 py-2 text-sm\">\n            <TimerIcon className=\"size-4 text-muted-foreground\" />\n            <Countdown seconds={90} />\n          </div>\n          <p className=\"text-center text-muted-foreground text-xs\">\n            Upgrade to Pro for a 10× higher rate limit.\n          </p>\n        </div>\n        <AlertDialogFooter className=\"px-6 pb-6\">\n          <AlertDialogClose\n            render={<Button className=\"flex-1\" variant=\"outline\" />}\n          >\n            Dismiss\n          </AlertDialogClose>\n          <AlertDialogClose render={<Button className=\"flex-1\" />}>\n            Upgrade to Pro\n          </AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

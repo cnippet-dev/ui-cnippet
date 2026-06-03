@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-group-13",
+  "description": "Integration enablement list with card rows and a master enable-all parent checkbox",
+  "registryDependencies": [
+    "@cnippet/checkbox-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-group-13.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst INTEGRATIONS = [\n  { desc: \"Sync repos and pull requests.\", id: \"github\", label: \"GitHub\" },\n  { desc: \"Import issues and sprints.\", id: \"jira\", label: \"Jira\" },\n  { desc: \"Post updates to channels.\", id: \"slack\", label: \"Slack\" },\n  { desc: \"Embed design files in docs.\", id: \"figma\", label: \"Figma\" },\n  { desc: \"Sync pages and databases.\", id: \"notion\", label: \"Notion\" },\n];\n\nexport function Pattern() {\n  const [value, setValue] = useState<string[]>([\"github\"]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div>\n        <p className=\"font-semibold text-sm\">Enable integrations</p>\n        <p className=\"mt-0.5 text-muted-foreground text-xs\">\n          Connect tools your team already uses.\n        </p>\n      </div>\n      <CheckboxGroup\n        allValues={INTEGRATIONS.map((i) => i.id)}\n        onValueChange={setValue}\n        value={value}\n      >\n        <Label className=\"mb-1 text-muted-foreground text-sm\">\n          <Checkbox parent />\n          Enable all\n        </Label>\n        {INTEGRATIONS.map((intg) => (\n          <label\n            className=\"flex cursor-pointer items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-muted/50\"\n            htmlFor={intg.id}\n            key={intg.id}\n          >\n            <Checkbox className=\"mt-0.5\" id={intg.id} value={intg.id} />\n            <div>\n              <span className=\"font-medium text-sm\">{intg.label}</span>\n              <p className=\"mt-0.5 text-muted-foreground text-xs\">\n                {intg.desc}\n              </p>\n            </div>\n          </label>\n        ))}\n      </CheckboxGroup>\n      <Button className=\"w-full\" size=\"sm\">\n        Save integrations ({value.length})\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox group"
+  ],
+  "type": "registry:block"
+}

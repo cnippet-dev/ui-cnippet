@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-autocomplete-19",
+  "description": "Priority selector with icon and description",
+  "registryDependencies": [
+    "@cnippet/autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-autocomplete-19.tsx",
+      "content": "\"use client\";\n\nimport {\n  AlertCircleIcon,\n  ArrowDownIcon,\n  ArrowRightIcon,\n  ArrowUpIcon,\n  MinusIcon,\n} from \"lucide-react\";\nimport type { ElementType } from \"react\";\nimport {\n  Autocomplete,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompletePopup,\n} from \"@/registry/default/ui/autocomplete\";\n\ntype Priority = {\n  id: string;\n  label: string;\n  description: string;\n  colorClass: string;\n  icon: ElementType;\n};\n\nconst priorities: Priority[] = [\n  {\n    colorClass: \"text-red-500\",\n    description: \"Requires immediate attention\",\n    icon: AlertCircleIcon,\n    id: \"urgent\",\n    label: \"Urgent\",\n  },\n  {\n    colorClass: \"text-orange-500\",\n    description: \"Should be done soon\",\n    icon: ArrowUpIcon,\n    id: \"high\",\n    label: \"High\",\n  },\n  {\n    colorClass: \"text-yellow-500\",\n    description: \"Normal workflow priority\",\n    icon: ArrowRightIcon,\n    id: \"medium\",\n    label: \"Medium\",\n  },\n  {\n    colorClass: \"text-slate-400\",\n    description: \"Address when time allows\",\n    icon: ArrowDownIcon,\n    id: \"low\",\n    label: \"Low\",\n  },\n  {\n    colorClass: \"text-muted-foreground\",\n    description: \"Not yet prioritized\",\n    icon: MinusIcon,\n    id: \"none\",\n    label: \"No priority\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-1.5\">\n      <label className=\"font-medium text-sm\">Priority</label>\n      <Autocomplete items={priorities}>\n        <AutocompleteInput placeholder=\"Set priority…\" showClear showTrigger />\n        <AutocompletePopup>\n          <AutocompleteEmpty>No priority found.</AutocompleteEmpty>\n          <AutocompleteList>\n            {(p: Priority) => (\n              <AutocompleteItem key={p.id} value={p}>\n                <div className=\"flex items-center gap-2.5\">\n                  <p.icon className={`size-4 shrink-0 ${p.colorClass}`} />\n                  <div className=\"flex flex-col\">\n                    <span className=\"font-medium text-sm\">{p.label}</span>\n                    <span className=\"text-muted-foreground text-xs\">\n                      {p.description}\n                    </span>\n                  </div>\n                </div>\n              </AutocompleteItem>\n            )}\n          </AutocompleteList>\n        </AutocompletePopup>\n      </Autocomplete>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "autocomplete"
+  ],
+  "type": "registry:block"
+}

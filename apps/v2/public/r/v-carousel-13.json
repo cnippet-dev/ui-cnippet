@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-carousel-13",
+  "description": "Media gallery carousel with caption badge and progress dots",
+  "registryDependencies": [
+    "@cnippet/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-13.tsx",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  Carousel,\n  type CarouselApi,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nconst MEDIA = [\n  {\n    bg: \"from-violet-400 to-indigo-600\",\n    caption: \"Brand identity refresh\",\n    type: \"Image\",\n  },\n  {\n    bg: \"from-sky-400 to-cyan-600\",\n    caption: \"Product launch 2026\",\n    type: \"Video\",\n  },\n  {\n    bg: \"from-rose-400 to-pink-600\",\n    caption: \"Social media kit\",\n    type: \"Image\",\n  },\n  {\n    bg: \"from-amber-400 to-orange-500\",\n    caption: \"Campaign assets\",\n    type: \"Image\",\n  },\n  { bg: \"from-emerald-400 to-teal-600\", caption: \"Demo reel\", type: \"Video\" },\n];\n\nexport default function Particle() {\n  const [api, setApi] = React.useState<CarouselApi>();\n  const [current, setCurrent] = React.useState(0);\n  const [count, setCount] = React.useState(0);\n\n  React.useEffect(() => {\n    if (!api) return;\n    setCount(api.scrollSnapList().length);\n    setCurrent(api.selectedScrollSnap());\n    api.on(\"select\", () => setCurrent(api.selectedScrollSnap()));\n  }, [api]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <Carousel className=\"w-full\" setApi={setApi}>\n        <CarouselContent>\n          {MEDIA.map((item, i) => (\n            <CarouselItem key={i}>\n              <div\n                className={cn(\n                  \"relative flex h-48 items-end rounded-xl bg-linear-to-br p-4\",\n                  item.bg,\n                )}\n              >\n                <div className=\"flex flex-col gap-0.5\">\n                  <span className=\"w-fit rounded-md bg-black/30 px-2 py-0.5 font-medium text-[10px] text-white\">\n                    {item.type}\n                  </span>\n                  <span className=\"font-semibold text-sm text-white drop-shadow\">\n                    {item.caption}\n                  </span>\n                </div>\n              </div>\n            </CarouselItem>\n          ))}\n        </CarouselContent>\n        <CarouselPrevious />\n        <CarouselNext />\n      </Carousel>\n      <div className=\"flex items-center justify-between px-1 text-muted-foreground text-xs\">\n        <span>\n          {current + 1} of {count}\n        </span>\n        <div className=\"flex gap-1\">\n          {MEDIA.map((_, i) => (\n            <span\n              className={cn(\n                \"block h-1 rounded-full transition-all\",\n                i === current\n                  ? \"w-4 bg-primary\"\n                  : \"w-1.5 bg-muted-foreground/30\",\n              )}\n              key={i}\n            />\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "carousel"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-breadcrumb-12",
+  "description": "Checkout step progress breadcrumb with numbered circles and navigation buttons",
+  "registryDependencies": [
+    "@cnippet/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-breadcrumb-12.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nconst steps = [\n  { id: 1, label: \"Cart\" },\n  { id: 2, label: \"Shipping\" },\n  { id: 3, label: \"Payment\" },\n  { id: 4, label: \"Review\" },\n];\n\nexport function Pattern() {\n  const [current, setCurrent] = useState(2);\n\n  return (\n    <div className=\"flex flex-col items-center gap-6\">\n      <Breadcrumb>\n        <BreadcrumbList className=\"gap-1 sm:gap-1\">\n          {steps.map((step, i) => {\n            const done = step.id < current;\n            const active = step.id === current;\n            return (\n              <>\n                <BreadcrumbItem key={step.id}>\n                  {active ? (\n                    <BreadcrumbPage className=\"flex items-center gap-1.5\">\n                      <span className=\"flex size-5 items-center justify-center rounded-full bg-primary font-bold text-[10px] text-primary-foreground\">\n                        {step.id}\n                      </span>\n                      <span className=\"font-semibold text-sm\">\n                        {step.label}\n                      </span>\n                    </BreadcrumbPage>\n                  ) : (\n                    <button\n                      className={`flex items-center gap-1.5 text-sm ${done ? \"text-foreground\" : \"text-muted-foreground/50\"}`}\n                      disabled={!done}\n                      onClick={() => done && setCurrent(step.id)}\n                      type=\"button\"\n                    >\n                      <span\n                        className={`flex size-5 items-center justify-center rounded-full font-bold text-[10px] ${\n                          done\n                            ? \"bg-emerald-500 text-white\"\n                            : \"border text-muted-foreground/50\"\n                        }`}\n                      >\n                        {done ? <CheckIcon className=\"size-3\" /> : step.id}\n                      </span>\n                      {step.label}\n                    </button>\n                  )}\n                </BreadcrumbItem>\n                {i < steps.length - 1 && <BreadcrumbSeparator />}\n              </>\n            );\n          })}\n        </BreadcrumbList>\n      </Breadcrumb>\n      <div className=\"flex gap-2\">\n        <Button\n          disabled={current === 1}\n          onClick={() => setCurrent((c) => Math.max(1, c - 1))}\n          size=\"sm\"\n          variant=\"outline\"\n        >\n          Back\n        </Button>\n        <Button\n          disabled={current === steps.length}\n          onClick={() => setCurrent((c) => Math.min(steps.length, c + 1))}\n          size=\"sm\"\n        >\n          {current === steps.length - 1 ? \"Place Order\" : \"Continue\"}\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "breadcrumb"
+  ],
+  "type": "registry:block"
+}

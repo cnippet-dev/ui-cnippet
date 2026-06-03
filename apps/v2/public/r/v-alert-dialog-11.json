@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-11",
+  "description": "File Overwrite Confirmation with three-way choice",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-11.tsx",
+      "content": "import { FileIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">Upload File</Button>}\n      />\n      <AlertDialogContent className=\"sm:max-w-sm\">\n        <div className=\"flex items-start gap-3 p-4\">\n          <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full bg-muted\">\n            <FileIcon className=\"size-5 text-muted-foreground\" />\n          </div>\n          <div className=\"flex flex-col gap-1\">\n            <AlertDialogTitle className=\"font-semibold text-sm\">\n              File already exists\n            </AlertDialogTitle>\n            <AlertDialogDescription className=\"text-muted-foreground text-sm\">\n              <strong className=\"text-foreground\">design-system-v2.fig</strong>{\" \"}\n              (48 MB) already exists in{\" \"}\n              <span className=\"font-mono text-xs\">/Projects/Design</span>. Do\n              you want to replace it?\n            </AlertDialogDescription>\n          </div>\n        </div>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>\n            Keep Both\n          </AlertDialogClose>\n          <AlertDialogClose render={<Button variant=\"outline\" />}>\n            Skip\n          </AlertDialogClose>\n          <AlertDialogClose render={<Button />}>Replace</AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

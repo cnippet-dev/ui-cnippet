@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-19",
+  "description": "Sprint selector with status badge and date range per item",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-19.tsx",
+      "content": "\"use client\";\n\nimport { ChevronsUpDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxTrigger,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\n\ninterface Sprint {\n  label: string;\n  value: string;\n  status: \"active\" | \"upcoming\" | \"completed\";\n  dates: string;\n}\n\nconst sprints: Sprint[] = [\n  { dates: \"Jun 2–15\", label: \"Sprint 24\", status: \"active\", value: \"s24\" },\n  { dates: \"Jun 16–29\", label: \"Sprint 25\", status: \"upcoming\", value: \"s25\" },\n  {\n    dates: \"Jun 30–Jul 13\",\n    label: \"Sprint 26\",\n    status: \"upcoming\",\n    value: \"s26\",\n  },\n  {\n    dates: \"May 19–Jun 1\",\n    label: \"Sprint 23\",\n    status: \"completed\",\n    value: \"s23\",\n  },\n  { dates: \"May 5–18\", label: \"Sprint 22\", status: \"completed\", value: \"s22\" },\n];\n\nconst statusVariant: Record<\n  Sprint[\"status\"],\n  \"success\" | \"info\" | \"secondary\"\n> = {\n  active: \"success\",\n  completed: \"secondary\",\n  upcoming: \"info\",\n};\n\nexport default function Particle() {\n  const [value, setValue] = useState<Sprint | null>(sprints[0] ?? null);\n\n  return (\n    <Combobox\n      items={sprints}\n      onValueChange={(v) => setValue(v as Sprint | null)}\n      value={value}\n    >\n      <ComboboxTrigger\n        render={\n          <Button\n            className=\"w-full max-w-xs justify-between font-normal\"\n            variant=\"outline\"\n          />\n        }\n      >\n        <ComboboxValue placeholder=\"Select sprint...\" />\n        <ChevronsUpDownIcon className=\"-me-1!\" />\n      </ComboboxTrigger>\n      <ComboboxPopup className=\"w-64\">\n        <ComboboxInput placeholder=\"Search sprints...\" showTrigger={false} />\n        <ComboboxEmpty>No sprints found.</ComboboxEmpty>\n        <ComboboxList>\n          {(sprint: Sprint) => (\n            <ComboboxItem\n              className=\"**:data-check:ms-auto\"\n              key={sprint.value}\n              value={sprint}\n            >\n              <div className=\"flex flex-1 items-center justify-between gap-2\">\n                <span className=\"text-sm\">{sprint.label}</span>\n                <div className=\"flex items-center gap-2\">\n                  <span className=\"text-muted-foreground text-xs\">\n                    {sprint.dates}\n                  </span>\n                  <Badge size=\"sm\" variant={statusVariant[sprint.status]}>\n                    {sprint.status}\n                  </Badge>\n                </div>\n              </div>\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-22",
+  "description": "Currency picker with symbol icon in trigger and code trailing each item",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-22.tsx",
+      "content": "\"use client\";\n\nimport { ChevronsUpDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxTrigger,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\n\ninterface Currency {\n  code: string;\n  label: string;\n  symbol: string;\n  value: string;\n}\n\nconst currencies: Currency[] = [\n  { code: \"USD\", label: \"US Dollar\", symbol: \"$\", value: \"usd\" },\n  { code: \"EUR\", label: \"Euro\", symbol: \"€\", value: \"eur\" },\n  { code: \"GBP\", label: \"British Pound\", symbol: \"£\", value: \"gbp\" },\n  { code: \"JPY\", label: \"Japanese Yen\", symbol: \"¥\", value: \"jpy\" },\n  { code: \"CAD\", label: \"Canadian Dollar\", symbol: \"$\", value: \"cad\" },\n  { code: \"AUD\", label: \"Australian Dollar\", symbol: \"$\", value: \"aud\" },\n  { code: \"CHF\", label: \"Swiss Franc\", symbol: \"Fr\", value: \"chf\" },\n  { code: \"INR\", label: \"Indian Rupee\", symbol: \"₹\", value: \"inr\" },\n  { code: \"SGD\", label: \"Singapore Dollar\", symbol: \"$\", value: \"sgd\" },\n  { code: \"BRL\", label: \"Brazilian Real\", symbol: \"R$\", value: \"brl\" },\n];\n\nexport default function Particle() {\n  const [value, setValue] = useState<Currency | null>(currencies[0] ?? null);\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\n      <Combobox\n        items={currencies}\n        onValueChange={(v) => setValue(v as Currency | null)}\n        value={value}\n      >\n        <ComboboxTrigger\n          render={\n            <Button\n              className=\"w-full justify-between font-normal\"\n              variant=\"outline\"\n            />\n          }\n        >\n          {value ? (\n            <span className=\"flex items-center gap-2 text-sm\">\n              <span className=\"flex size-6 items-center justify-center rounded bg-muted font-mono font-semibold text-xs\">\n                {value.symbol}\n              </span>\n              <ComboboxValue />\n            </span>\n          ) : (\n            <ComboboxValue placeholder=\"Select currency...\" />\n          )}\n          <ChevronsUpDownIcon className=\"-me-1!\" />\n        </ComboboxTrigger>\n        <ComboboxPopup>\n          <ComboboxInput placeholder=\"Search currency...\" showTrigger={false} />\n          <ComboboxEmpty>No currencies found.</ComboboxEmpty>\n          <ComboboxList>\n            {(cur: Currency) => (\n              <ComboboxItem\n                className=\"**:data-check:ms-auto\"\n                key={cur.value}\n                value={cur}\n              >\n                <span className=\"flex size-6 shrink-0 items-center justify-center rounded bg-muted font-mono font-semibold text-xs\">\n                  {cur.symbol}\n                </span>\n                <div className=\"flex flex-1 items-center justify-between\">\n                  <span className=\"text-sm\">{cur.label}</span>\n                  <span className=\"text-muted-foreground text-xs\">\n                    {cur.code}\n                  </span>\n                </div>\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n        </ComboboxPopup>\n      </Combobox>\n      {value && (\n        <div className=\"rounded-lg border px-4 py-2 text-sm\">\n          <span className=\"text-muted-foreground\">Displaying prices in </span>\n          <span className=\"font-medium\">{value.label}</span>\n          <span className=\"text-muted-foreground\"> ({value.code})</span>\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

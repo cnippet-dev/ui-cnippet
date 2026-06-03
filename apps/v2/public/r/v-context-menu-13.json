@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-context-menu-13",
+  "description": "File explorer rows with extension badge, rename, download, and delete per file",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-context-menu-13.tsx",
+      "content": "\"use client\";\n\nimport {\n  DownloadIcon,\n  FolderOpenIcon,\n  InfoIcon,\n  PencilIcon,\n  RefreshCwIcon,\n  TrashIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\ntype FileItem = {\n  ext: string;\n  id: string;\n  modified: string;\n  name: string;\n  size: string;\n};\n\nconst FILES: FileItem[] = [\n  {\n    ext: \"tsx\",\n    id: \"f1\",\n    modified: \"2m ago\",\n    name: \"button.tsx\",\n    size: \"4.2 KB\",\n  },\n  { ext: \"ts\", id: \"f2\", modified: \"1h ago\", name: \"utils.ts\", size: \"1.8 KB\" },\n  {\n    ext: \"mdx\",\n    id: \"f3\",\n    modified: \"3h ago\",\n    name: \"readme.mdx\",\n    size: \"8.6 KB\",\n  },\n  {\n    ext: \"json\",\n    id: \"f4\",\n    modified: \"1d ago\",\n    name: \"package.json\",\n    size: \"2.1 KB\",\n  },\n];\n\nconst extColor: Record<string, string> = {\n  json: \"bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400\",\n  mdx: \"bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-400\",\n  ts: \"bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400\",\n  tsx: \"bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-400\",\n};\n\nexport function Pattern() {\n  const [selected, setSelected] = useState<string | null>(null);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-0.5 rounded-xl border p-1\">\n      {FILES.map((file) => (\n        <ContextMenu key={file.id}>\n          <ContextMenuTrigger\n            className={`flex w-full cursor-default items-center justify-between rounded-md px-3 py-2 text-sm transition-colors hover:bg-muted ${selected === file.id ? \"bg-muted\" : \"\"}`}\n            onClick={() => setSelected(file.id)}\n          >\n            <div className=\"flex items-center gap-2.5\">\n              <span\n                className={`rounded px-1.5 py-0.5 font-mono font-semibold text-[10px] ${extColor[file.ext] ?? \"bg-muted text-muted-foreground\"}`}\n              >\n                .{file.ext}\n              </span>\n              <span>{file.name}</span>\n            </div>\n            <span className=\"text-muted-foreground text-xs\">\n              {file.modified}\n            </span>\n          </ContextMenuTrigger>\n          <ContextMenuContent className=\"w-44\">\n            <ContextMenuGroup>\n              <ContextMenuItem>\n                <FolderOpenIcon />\n                Open\n              </ContextMenuItem>\n              <ContextMenuItem>\n                <PencilIcon />\n                Rename\n              </ContextMenuItem>\n              <ContextMenuItem>\n                <DownloadIcon />\n                Download\n              </ContextMenuItem>\n            </ContextMenuGroup>\n            <ContextMenuSeparator />\n            <ContextMenuGroup>\n              <ContextMenuItem>\n                <InfoIcon />\n                <span>\n                  Get info\n                  <span className=\"ml-auto text-muted-foreground text-xs\">\n                    {file.size}\n                  </span>\n                </span>\n              </ContextMenuItem>\n              <ContextMenuItem>\n                <RefreshCwIcon />\n                Refresh\n              </ContextMenuItem>\n            </ContextMenuGroup>\n            <ContextMenuSeparator />\n            <ContextMenuGroup>\n              <ContextMenuItem variant=\"destructive\">\n                <TrashIcon />\n                Delete\n              </ContextMenuItem>\n            </ContextMenuGroup>\n          </ContextMenuContent>\n        </ContextMenu>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "context menu"
+  ],
+  "type": "registry:block"
+}

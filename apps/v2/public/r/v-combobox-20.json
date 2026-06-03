@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-20",
+  "description": "Font picker grouped by category with live preview sentence",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-20.tsx",
+      "content": "\"use client\";\n\nimport { ChevronsUpDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxGroup,\n  ComboboxGroupLabel,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxSeparator,\n  ComboboxTrigger,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\n\ninterface Font {\n  label: string;\n  value: string;\n  category: \"sans\" | \"serif\" | \"mono\";\n}\n\nconst fonts: Font[] = [\n  { category: \"sans\", label: \"Inter\", value: \"inter\" },\n  { category: \"sans\", label: \"Geist\", value: \"geist\" },\n  { category: \"sans\", label: \"DM Sans\", value: \"dm-sans\" },\n  { category: \"serif\", label: \"Lora\", value: \"lora\" },\n  { category: \"serif\", label: \"Playfair Display\", value: \"playfair\" },\n  { category: \"mono\", label: \"Geist Mono\", value: \"geist-mono\" },\n  { category: \"mono\", label: \"JetBrains Mono\", value: \"jetbrains\" },\n  { category: \"mono\", label: \"Fira Code\", value: \"fira-code\" },\n];\n\nconst groups = [\n  {\n    id: \"sans\",\n    items: fonts.filter((f) => f.category === \"sans\"),\n    label: \"Sans-serif\",\n  },\n  {\n    id: \"serif\",\n    items: fonts.filter((f) => f.category === \"serif\"),\n    label: \"Serif\",\n  },\n  {\n    id: \"mono\",\n    items: fonts.filter((f) => f.category === \"mono\"),\n    label: \"Monospace\",\n  },\n];\n\nexport default function Particle() {\n  const [value, setValue] = useState<Font | null>(fonts[0] ?? null);\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\n      <Combobox\n        items={fonts}\n        onValueChange={(v) => setValue(v as Font | null)}\n        value={value}\n      >\n        <ComboboxTrigger\n          render={\n            <Button\n              className=\"w-full justify-between font-normal\"\n              variant=\"outline\"\n            />\n          }\n        >\n          <ComboboxValue placeholder=\"Select font...\" />\n          <ChevronsUpDownIcon className=\"-me-1!\" />\n        </ComboboxTrigger>\n        <ComboboxPopup>\n          <ComboboxInput placeholder=\"Search fonts...\" showTrigger={false} />\n          <ComboboxEmpty>No fonts found.</ComboboxEmpty>\n          <ComboboxList>\n            {groups.map((group, i) => (\n              <ComboboxGroup items={group.items} key={group.id}>\n                {i > 0 && <ComboboxSeparator />}\n                <ComboboxGroupLabel>{group.label}</ComboboxGroupLabel>\n                {(font: Font) => (\n                  <ComboboxItem key={font.value} value={font}>\n                    <span\n                      className={\n                        font.category === \"mono\"\n                          ? \"font-mono text-sm\"\n                          : \"text-sm\"\n                      }\n                    >\n                      {font.label}\n                    </span>\n                  </ComboboxItem>\n                )}\n              </ComboboxGroup>\n            ))}\n          </ComboboxList>\n        </ComboboxPopup>\n      </Combobox>\n      {value && (\n        <p\n          className={`text-muted-foreground text-sm ${value.category === \"mono\" ? \"font-mono\" : \"\"}`}\n        >\n          The quick brown fox jumps over the lazy dog.\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

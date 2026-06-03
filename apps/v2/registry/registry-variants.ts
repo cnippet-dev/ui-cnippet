@@ -34,7 +34,7 @@ function createVariant(options: {
 
 export const variants: ParticleItem[] = [
   // --- accordion ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "accordion",
       dependencies: ["accordion"],
@@ -49,6 +49,11 @@ export const variants: ParticleItem[] = [
         "Nested accordion example with bordered items",
         "User list accordion with avatars and role indicators",
         "Changelog / Release Notes with versioned entries",
+        "Searchable FAQ with live keyword filter",
+        "Settings sidebar navigation with icon sections",
+        "Job board listings with requirements and apply action",
+        "Onboarding step tracker with completion state",
+        "Product specifications table by category",
       ][i],
       meta: {
         className:
@@ -59,7 +64,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- alert ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "alert",
       dependencies: ["alert"],
@@ -74,13 +79,18 @@ export const variants: ParticleItem[] = [
         "Stacked alerts within a Frame",
         "Alert with actions integrated within a Frame",
         "Feature discovery alert",
+        "Dismissible announcement banner with CTA",
+        "Cookie consent banner with accept and decline",
+        "Storage limit warning with usage progress bar",
+        "Update available with async install feedback",
+        "Email verification with resend countdown",
       ][i],
       name: `v-alert-${i + 1}`,
     }),
   ),
 
   // --- alert-dialog ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "alert dialog",
       dependencies: ["alert-dialog"],
@@ -95,13 +105,18 @@ export const variants: ParticleItem[] = [
         "System Update Notification",
         "Billing Warning For Expired Subscriptions",
         "Logout Confirmation Dialog",
+        "File Overwrite Confirmation with three-way choice",
+        "Subscription Downgrade Warning with feature loss list",
+        "Transfer Ownership with typed confirmation input",
+        "Clear All Data with checkbox consent gate",
+        "Rate Limit Exceeded with live countdown timer",
       ][i],
       name: `v-alert-dialog-${i + 1}`,
     }),
   ),
 
   // --- autocomplete ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "autocomplete",
       dependencies: ["autocomplete"],
@@ -120,13 +135,19 @@ export const variants: ParticleItem[] = [
         "Form Integration",
         "Timezone Picker",
         "Person Picker",
+        undefined,
+        "Country picker with flag and ISO code",
+        "Repository picker with language and star count",
+        "Multi-select tag input with dismissible chip pills",
+        "Priority selector with icon and description",
+        "Tech stack picker grouped by category",
       ][i],
       name: `v-autocomplete-${i + 1}`,
     }),
   ),
 
   // --- avatar ---
-  ...Array.from({ length: 16 }, (_, i) =>
+  ...Array.from({ length: 21 }, (_, i) =>
     createVariant({
       category: "avatar",
       dependencies: ["avatar"],
@@ -147,13 +168,18 @@ export const variants: ParticleItem[] = [
         "With Custom Badge",
         "With Ring Animation",
         "With Dropdown Menu",
+        "Team grid with online presence status dots",
+        "Pull request comment thread",
+        "Interactive assignee picker with selection state",
+        "Contributor leaderboard with rank and commit count",
+        "Profile card with stats and action buttons",
       ][i],
       name: `v-avatar-${i + 1}`,
     }),
   ),
 
   // --- badge ---
-  ...Array.from({ length: 12 }, (_, i) =>
+  ...Array.from({ length: 17 }, (_, i) =>
     createVariant({
       category: "badge",
       dependencies: ["badge"],
@@ -170,13 +196,18 @@ export const variants: ParticleItem[] = [
         "With Icon",
         "With Link",
         "With Count",
+        "Status dot indicators (Online, Busy, Away, Offline)",
+        "Release channel tags (Stable, Beta, Experimental, Deprecated)",
+        "Subscription plan tiers with pricing",
+        "Notification category badges with unread counts",
+        "Priority labels in a task list",
       ][i],
       name: `v-badge-${i + 1}`,
     }),
   ),
 
   // --- breadcrumb ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "breadcrumb",
       dependencies: ["breadcrumb"],
@@ -191,13 +222,18 @@ export const variants: ParticleItem[] = [
         "Starting With Home Icon",
         "Button-style",
         "With Project, Sser and Document Info",
+        "File path breadcrumb with folder and file icons in monospace",
+        "Checkout step progress breadcrumb with numbered circles and navigation buttons",
+        "Admin hierarchy breadcrumb with colored icon badges per level",
+        "Page header breadcrumb with edit and share action buttons",
+        "Compact breadcrumb with ellipsis and hidden-items count badge",
       ][i],
       name: `v-breadcrumb-${i + 1}`,
     }),
   ),
 
   // --- button ---
-  ...Array.from({ length: 25 }, (_, i) =>
+  ...Array.from({ length: 30 }, (_, i) =>
     createVariant({
       category: "button",
       dependencies: ["button"],
@@ -227,13 +263,18 @@ export const variants: ParticleItem[] = [
         "Icon-only copy button with feedback",
         "Animated hamburger / close toggle button",
         "Sliding Icon Button (Hover reveal)",
+        "Social login buttons with GitHub, Google, and email options",
+        "Loading and success state button with animated icon swap",
+        "File upload button with attachment preview and clear action",
+        "Split button with primary action and dropdown menu via Group",
+        "Segmented view toggle with list, table, and kanban options",
       ][i],
       name: `v-button-${i + 1}`,
     }),
   ),
 
   // --- calendar ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "calendar",
       dependencies: ["calendar"],
@@ -251,13 +292,20 @@ export const variants: ParticleItem[] = [
         "Date Picker with Presets",
         "Date of Birth",
         "Week Picker",
+        undefined,
+        undefined,
+        "Habit tracker with completion indicators and monthly streak counter",
+        "Sprint planner with two-month range selection and duration stats",
+        "Time off request with leave type selector and range picker",
+        "Mini year view with all 12 months in a compact grid",
+        "Time slot booking with available/booked slot grid and confirmation",
       ][i],
       name: `v-calendar-${i + 1}`,
     }),
   ),
 
   // --- card ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "card",
       dependencies: ["card"],
@@ -277,13 +325,18 @@ export const variants: ParticleItem[] = [
         "With Header Badge & Actions",
         "With Icon, Title and Link",
         "With Header Label and Link",
+        "GitHub repository list cards with language, star, and fork counts",
+        "Settings card with sidebar navigation and swappable content panels",
+        "Pricing plan card with feature checklist and highlighted ring",
+        "Event card with date, time, location, attendee count, and RSVP button",
+        "Stats dashboard grid with four metric tiles and trend indicators",
       ][i],
       name: `v-card-${i + 1}`,
     }),
   ),
 
   // --- carousel ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "carousel",
       dependencies: ["carousel"],
@@ -298,22 +351,44 @@ export const variants: ParticleItem[] = [
         "Onboarding Steps",
         "Team Members",
         "Gallery with Thumbnails",
+        "Testimonial carousel with avatar, quote, and dot indicators",
+        "Pricing plan carousel with arrow navigation and highlighted active plan",
+        "Media gallery carousel with caption badge and progress dots",
+        "Changelog carousel with drag-free multi-slide and version tags",
+        "Feature highlight carousel with icon slides and Prev/Next controls",
       ][i],
       name: `v-carousel-${i + 1}`,
     }),
   ),
 
   // --- chart ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "chart",
       dependencies: ["chart"],
+      description: [
+        "Multi-Series Bar Chart",
+        "Area Chart",
+        "Bar Chart",
+        "Line Chart",
+        "Pie Chart",
+        "Radar Chart",
+        "Radial Bar Chart",
+        undefined,
+        undefined,
+        undefined,
+        "Stacked area chart with two revenue series and a Y-axis legend",
+        "Horizontal bar chart ranking traffic channels by session count",
+        "Donut chart with center label showing team headcount by department",
+        "Multi-series line chart comparing API response percentiles (p50/p90/p99)",
+        "Composed chart overlaying revenue bars with a growth-rate line on dual axes",
+      ][i],
       name: `v-chart-${i + 1}`,
     }),
   ),
 
   // --- checkbox ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "checkbox",
       dependencies: ["checkbox"],
@@ -328,13 +403,18 @@ export const variants: ParticleItem[] = [
         "Issue Label Picker",
         "Notification Channel Selector",
         "Multi-Consent Registration Gate",
+        "Weekly availability grid with checkboxes per day and time slot",
+        "Role permissions picker with colored badge per access level",
+        "Notification preferences matrix with event rows and channel columns",
+        "Plan add-on selector with dynamic price total as features are toggled",
+        "Sprint task checklist with priority badges and completion celebration",
       ][i],
       name: `v-checkbox-${i + 1}`,
     }),
   ),
 
   // --- checkbox-group ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "checkbox group",
       dependencies: ["checkbox-group"],
@@ -344,13 +424,23 @@ export const variants: ParticleItem[] = [
         "Parent Checkbox",
         "Nested Parent Checkbox",
         "Form Integration",
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        "Two-level nested group for tech stack selection by frontend and backend category",
+        "Recurring schedule picker with weekday and weekend sub-groups and day count badge",
+        "Integration enablement list with card rows and a master enable-all parent checkbox",
+        "Data export selector with two section groups and an item count summary",
+        "Food preference picker with independent cuisine and dietary checkbox groups",
       ][i],
       name: `v-checkbox-group-${i + 1}`,
     }),
   ),
 
   // --- collapsible ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "collapsible",
       dependencies: ["collapsible"],
@@ -365,13 +455,18 @@ export const variants: ParticleItem[] = [
         "Read More Content Expander",
         "CI/CD Build Step Log Viewer",
         "Incident Status with Timeline",
+        "Accordion-style FAQ with single-open behavior and question count badge",
+        "Sidebar filter panel with collapsible groups, checkboxes, and active count",
+        "Package dependency list with version badges and expandable package names",
+        "Team directory with status dots, role labels, and per-team collapsible sections",
+        "Privacy policy card with accordion sections and single-panel-open behavior",
       ][i],
       name: `v-collapsible-${i + 1}`,
     }),
   ),
 
   // --- combobox ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...Array.from({ length: 22 }, (_, i) =>
     createVariant({
       category: "combobox",
       dependencies: ["combobox"],
@@ -392,13 +487,19 @@ export const variants: ParticleItem[] = [
         "Async Search",
         "Rich Item Rendering",
         "Controlled",
+        undefined,
+        "City picker with timezone and country code trailing metadata",
+        "Sprint selector with status badge and date range per item",
+        "Font picker grouped by category with live preview sentence",
+        "Timezone picker with UTC offset badge in trigger and region info below",
+        "Currency picker with symbol icon in trigger and code trailing each item",
       ][i],
       name: `v-combobox-${i + 1}`,
     }),
   ),
 
   // --- command ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "command",
       dependencies: ["command"],
@@ -410,22 +511,47 @@ export const variants: ParticleItem[] = [
         "User Search Command With Avatars",
         "Action Palette With Keyboard Shortcuts",
         "With Recent And Favorites Sections",
+        undefined,
+        undefined,
+        undefined,
+        "Account settings palette with grouped profile, preferences, and sign-out actions",
+        "Repository search palette showing issues, pull requests, branches, and files",
+        "Go-to-page palette with shortcut hints and arrow icon for unbound items",
+        "Appearance picker with theme and accent-color options and active check marks",
+        "Quick-open palette with page list, notification badges, and a keyboard footer",
       ][i],
       name: `v-command-${i + 1}`,
     }),
   ),
 
   // --- context-menu ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "context menu",
       dependencies: ["menu"],
+      description: [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        "Bookmark list with per-item star toggle, open, copy, share, and delete actions",
+        "Rich-text editor with checkbox formatting and alignment submenu",
+        "File explorer rows with extension badge, rename, download, and delete per file",
+        "Social feed with upvote/downvote controls and a report submenu per post",
+        "Task board with inline status radio, priority submenu, reassign, and delete",
+      ][i],
       name: `v-context-menu-${i + 1}`,
     }),
   ),
 
   // --- date-picker ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "date picker",
       dependencies: ["date-picker"],
@@ -440,13 +566,18 @@ export const variants: ParticleItem[] = [
         "Team Meeting Scheduler",
         "Delivery Date Selector",
         "Task Deadline Reschedule",
+        "Report Period Range with Presets",
+        "Recurring Event Date Picker",
+        "Hotel Stay Range with Duration Shortcuts",
+        "Birthday Picker with Age Validation",
+        "Multi-date Availability Selector",
       ][i],
       name: `v-date-picker-${i + 1}`,
     }),
   ),
 
   // --- dialog ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "dialog",
       dependencies: ["dialog"],
@@ -461,13 +592,18 @@ export const variants: ParticleItem[] = [
         "Session Expired",
         "Edit Profile with Avatar",
         "Invite Team Members",
+        "Share Document with Link Copy",
+        "Two-Factor Authentication Setup",
+        "Subscription Cancellation with Reason",
+        "API Key Generation and Reveal",
+        "Product Feedback Star Rating",
       ][i],
       name: `v-dialog-${i + 1}`,
     }),
   ),
 
   // --- drawer ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "drawer",
       dependencies: ["drawer"],
@@ -480,6 +616,13 @@ export const variants: ParticleItem[] = [
         "Filter & Sort Panel",
         "Shopping Cart",
         "Notification Center",
+        undefined,
+        undefined,
+        "User Preferences & Theme Settings",
+        "File Attachments with Upload",
+        "Activity Log with Status Timeline",
+        "Help Center with FAQ Search",
+        "Quick Actions Grid",
       ][i],
       name: `v-drawer-${i + 1}`,
     }),

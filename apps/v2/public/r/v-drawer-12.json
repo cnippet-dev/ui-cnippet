@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-drawer-12",
+  "description": "File Attachments with Upload",
+  "registryDependencies": [
+    "@cnippet/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-drawer-12.tsx",
+      "content": "\"use client\";\n\nimport {\n  FileTextIcon,\n  ImageIcon,\n  PaperclipIcon,\n  TrashIcon,\n  UploadIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/registry/default/ui/drawer\";\n\ntype MockFile = {\n  id: number;\n  name: string;\n  size: string;\n  type: \"image\" | \"doc\";\n};\n\nconst INITIAL_FILES: MockFile[] = [\n  { id: 1, name: \"Q3-report.pdf\", size: \"2.4 MB\", type: \"doc\" },\n  { id: 2, name: \"hero-banner.png\", size: \"840 KB\", type: \"image\" },\n  { id: 3, name: \"notes.txt\", size: \"12 KB\", type: \"doc\" },\n];\n\nexport default function Particle() {\n  const [files, setFiles] = useState<MockFile[]>(INITIAL_FILES);\n\n  const remove = (id: number) =>\n    setFiles((prev) => prev.filter((f) => f.id !== id));\n\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>\n        <PaperclipIcon className=\"size-4\" />\n        Attachments ({files.length})\n      </DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader>\n          <DrawerTitle>Attachments</DrawerTitle>\n        </DrawerHeader>\n        <DrawerPanel className=\"space-y-3\">\n          <label className=\"flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed p-6 text-center transition-colors hover:border-primary hover:bg-primary/5\">\n            <UploadIcon className=\"size-6 text-muted-foreground\" />\n            <span className=\"font-medium text-sm\">\n              Drop files or click to upload\n            </span>\n            <span className=\"text-muted-foreground text-xs\">\n              PNG, JPG, PDF up to 10 MB\n            </span>\n            <input\n              accept=\".png,.jpg,.jpeg,.pdf,.txt\"\n              className=\"sr-only\"\n              type=\"file\"\n            />\n          </label>\n          {files.length > 0 && (\n            <ul className=\"divide-y divide-border rounded-lg border\">\n              {files.map((file) => (\n                <li\n                  className=\"flex items-center gap-3 px-3 py-2.5\"\n                  key={file.id}\n                >\n                  <div className=\"flex size-8 shrink-0 items-center justify-center rounded-md bg-muted\">\n                    {file.type === \"image\" ? (\n                      <ImageIcon className=\"size-4 text-muted-foreground\" />\n                    ) : (\n                      <FileTextIcon className=\"size-4 text-muted-foreground\" />\n                    )}\n                  </div>\n                  <div className=\"min-w-0 flex-1\">\n                    <p className=\"truncate font-medium text-sm\">{file.name}</p>\n                    <p className=\"text-muted-foreground text-xs\">{file.size}</p>\n                  </div>\n                  <button\n                    className=\"shrink-0 rounded-md p-1 text-muted-foreground hover:bg-destructive/10 hover:text-destructive\"\n                    onClick={() => remove(file.id)}\n                    type=\"button\"\n                  >\n                    <TrashIcon className=\"size-4\" />\n                  </button>\n                </li>\n              ))}\n            </ul>\n          )}\n        </DrawerPanel>\n        <DrawerFooter>\n          <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n          <DrawerClose render={<Button />}>\n            Attach {files.length} file{files.length !== 1 ? \"s\" : \"\"}\n          </DrawerClose>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-16",
+  "description": "Notification category badges with unread counts",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-16.tsx",
+      "content": "import { BellIcon, GitPullRequestIcon, MessageSquareIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\n\nconst notifications = [\n  {\n    count: 12,\n    icon: MessageSquareIcon,\n    label: \"Messages\",\n    variant: \"default\" as const,\n  },\n  {\n    count: 3,\n    icon: BellIcon,\n    label: \"Mentions\",\n    variant: \"destructive\" as const,\n  },\n  {\n    count: 7,\n    icon: GitPullRequestIcon,\n    label: \"Reviews\",\n    variant: \"info\" as const,\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Frame>\n        <FramePanel>\n          <p className=\"mb-3 font-semibold text-sm\">Notifications</p>\n          <div className=\"flex flex-col gap-1.5\">\n            {notifications.map((n) => (\n              <Button\n                className=\"h-auto justify-between px-2 py-2\"\n                key={n.label}\n                variant=\"ghost\"\n              >\n                <span className=\"flex items-center gap-2 text-sm\">\n                  <n.icon className=\"size-4 text-muted-foreground\" />\n                  {n.label}\n                </span>\n                <Badge size=\"sm\" variant={n.variant}>\n                  {n.count}\n                </Badge>\n              </Button>\n            ))}\n          </div>\n        </FramePanel>\n      </Frame>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

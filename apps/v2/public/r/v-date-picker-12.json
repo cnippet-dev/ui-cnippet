@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-12",
+  "description": "Recurring Event Date Picker",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-12.tsx",
+      "content": "\"use client\";\n\nimport { format } from \"date-fns\";\nimport { CalendarIcon, RepeatIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\ntype Recurrence = \"none\" | \"daily\" | \"weekly\" | \"monthly\";\n\nconst OPTIONS: { id: Recurrence; label: string }[] = [\n  { id: \"none\", label: \"Does not repeat\" },\n  { id: \"daily\", label: \"Daily\" },\n  { id: \"weekly\", label: \"Weekly\" },\n  { id: \"monthly\", label: \"Monthly\" },\n];\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>();\n  const [recurrence, setRecurrence] = useState<Recurrence>(\"none\");\n  const [open, setOpen] = useState(false);\n\n  const summaryParts = [\n    date ? format(date, \"EEE, MMM d, yyyy\") : null,\n    recurrence !== \"none\"\n      ? OPTIONS.find((o) => o.id === recurrence)?.label\n      : null,\n  ].filter(Boolean);\n\n  return (\n    <div className=\"w-full max-w-xs space-y-3\">\n      <Popover onOpenChange={setOpen} open={open}>\n        <PopoverTrigger\n          render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\n        >\n          <CalendarIcon />\n          {date ? format(date, \"MMM d, yyyy\") : \"Pick a date\"}\n        </PopoverTrigger>\n        <PopoverPopup>\n          <Calendar\n            disabled={{ before: new Date() }}\n            mode=\"single\"\n            onSelect={(d) => {\n              setDate(d);\n              setOpen(false);\n            }}\n            selected={date}\n          />\n        </PopoverPopup>\n      </Popover>\n\n      <div className=\"flex items-center gap-2\">\n        <RepeatIcon className=\"size-4 shrink-0 text-muted-foreground\" />\n        <div className=\"flex flex-wrap gap-1.5\">\n          {OPTIONS.map((opt) => (\n            <button\n              className={`rounded-full border px-3 py-0.5 font-medium text-xs transition-colors ${\n                recurrence === opt.id\n                  ? \"border-primary bg-primary text-primary-foreground\"\n                  : \"text-muted-foreground hover:border-foreground/30\"\n              }`}\n              key={opt.id}\n              onClick={() => setRecurrence(opt.id)}\n              type=\"button\"\n            >\n              {opt.label}\n            </button>\n          ))}\n        </div>\n      </div>\n\n      {summaryParts.length > 0 && (\n        <p className=\"text-muted-foreground text-xs\">\n          Scheduled:{\" \"}\n          <span className=\"font-medium text-foreground\">\n            {summaryParts.join(\" · \")}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

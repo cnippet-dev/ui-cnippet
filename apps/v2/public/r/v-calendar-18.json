@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-18",
+  "description": "Time off request with leave type selector and range picker",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-18.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst today = new Date();\n\nconst TIME_OFF_TYPES = [\"Vacation\", \"Sick Leave\", \"Personal\", \"Work From Home\"];\n\nexport default function Particle() {\n  const [range, setRange] = React.useState<DateRange | undefined>();\n  const [type, setType] = React.useState(\"Vacation\");\n  const [submitted, setSubmitted] = React.useState(false);\n\n  const days =\n    range?.from && range?.to\n      ? Math.round((range.to.getTime() - range.from.getTime()) / 86400000) + 1\n      : null;\n\n  function handleSubmit() {\n    if (!range?.from || !range?.to) return;\n    setSubmitted(true);\n    setTimeout(() => {\n      setSubmitted(false);\n      setRange(undefined);\n    }, 2500);\n  }\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <div className=\"flex flex-wrap gap-1.5\">\n        {TIME_OFF_TYPES.map((t) => (\n          <button\n            className={`rounded-full border px-3 py-0.5 font-medium text-xs transition-colors ${\n              type === t\n                ? \"border-primary bg-primary text-primary-foreground\"\n                : \"text-muted-foreground hover:border-foreground/30\"\n            }`}\n            key={t}\n            onClick={() => setType(t)}\n            type=\"button\"\n          >\n            {t}\n          </button>\n        ))}\n      </div>\n      <Calendar\n        disabled={{ before: today }}\n        mode=\"range\"\n        onSelect={setRange}\n        selected={range}\n      />\n      <div className=\"flex items-center justify-between\">\n        <span className=\"text-muted-foreground text-sm\">\n          {days\n            ? `${days} day${days !== 1 ? \"s\" : \"\"} · ${type}`\n            : \"Select dates\"}\n        </span>\n        <Button\n          disabled={!range?.from || !range?.to || submitted}\n          onClick={handleSubmit}\n          size=\"sm\"\n        >\n          {submitted ? \"Submitted!\" : \"Request Time Off\"}\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

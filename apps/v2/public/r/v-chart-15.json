@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-chart-15",
+  "description": "Composed chart overlaying revenue bars with a growth-rate line on dual axes",
+  "registryDependencies": [
+    "@cnippet/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-chart-15.tsx",
+      "content": "\"use client\";\n\nimport {\n  Bar,\n  CartesianGrid,\n  ComposedChart,\n  Line,\n  XAxis,\n  YAxis,\n} from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { growth: 8.2, month: \"Jan\", revenue: 12400 },\n  { growth: 21.8, month: \"Feb\", revenue: 15100 },\n  { growth: -8.6, month: \"Mar\", revenue: 13800 },\n  { growth: 24.6, month: \"Apr\", revenue: 17200 },\n  { growth: 14.0, month: \"May\", revenue: 19600 },\n  { growth: 12.8, month: \"Jun\", revenue: 22100 },\n];\n\nconst chartConfig = {\n  growth: { color: \"var(--chart-2)\", label: \"Growth %\" },\n  revenue: { color: \"var(--chart-1)\", label: \"Revenue ($)\" },\n} satisfies ChartConfig;\n\nexport function Pattern() {\n  return (\n    <ChartContainer className=\"min-h-52 w-full\" config={chartConfig}>\n      <ComposedChart\n        accessibilityLayer\n        data={chartData}\n        margin={{ left: 8, right: 16 }}\n      >\n        <CartesianGrid vertical={false} />\n        <XAxis\n          axisLine={false}\n          dataKey=\"month\"\n          tickLine={false}\n          tickMargin={8}\n        />\n        <YAxis\n          axisLine={false}\n          tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}\n          tickLine={false}\n          width={44}\n          yAxisId=\"left\"\n        />\n        <YAxis\n          axisLine={false}\n          orientation=\"right\"\n          tickFormatter={(v) => `${v}%`}\n          tickLine={false}\n          width={36}\n          yAxisId=\"right\"\n        />\n        <ChartTooltip content={<ChartTooltipContent />} cursor={false} />\n        <ChartLegend content={<ChartLegendContent />} />\n        <Bar\n          dataKey=\"revenue\"\n          fill=\"var(--color-revenue)\"\n          radius={4}\n          yAxisId=\"left\"\n        />\n        <Line\n          dataKey=\"growth\"\n          dot={{ fill: \"var(--color-growth)\", r: 3 }}\n          stroke=\"var(--color-growth)\"\n          strokeWidth={2}\n          type=\"monotone\"\n          yAxisId=\"right\"\n        />\n      </ComposedChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart"
+  ],
+  "type": "registry:block"
+}

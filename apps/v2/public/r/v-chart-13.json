@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-chart-13",
+  "description": "Donut chart with center label showing team headcount by department",
+  "registryDependencies": [
+    "@cnippet/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-chart-13.tsx",
+      "content": "\"use client\";\n\nimport { Cell, Pie, PieChart } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { fill: \"var(--color-design)\", label: \"Design\", value: 35 },\n  { fill: \"var(--color-engineering)\", label: \"Engineering\", value: 42 },\n  { fill: \"var(--color-marketing)\", label: \"Marketing\", value: 15 },\n  { fill: \"var(--color-ops)\", label: \"Operations\", value: 8 },\n];\n\nconst chartConfig = {\n  design: { color: \"var(--chart-2)\", label: \"Design\" },\n  engineering: { color: \"var(--chart-1)\", label: \"Engineering\" },\n  marketing: { color: \"var(--chart-3)\", label: \"Marketing\" },\n  ops: { color: \"var(--chart-4)\", label: \"Operations\" },\n} satisfies ChartConfig;\n\nconst total = chartData.reduce((sum, d) => sum + d.value, 0);\n\nexport function Pattern() {\n  return (\n    <ChartContainer\n      className=\"mx-auto aspect-square max-h-64 w-full\"\n      config={chartConfig}\n    >\n      <PieChart>\n        <ChartTooltip\n          content={<ChartTooltipContent hideLabel />}\n          cursor={false}\n        />\n        <Pie\n          cx=\"50%\"\n          cy=\"42%\"\n          data={chartData}\n          dataKey=\"value\"\n          innerRadius=\"55%\"\n          outerRadius=\"75%\"\n          paddingAngle={3}\n          strokeWidth={0}\n        >\n          {chartData.map((entry) => (\n            <Cell fill={entry.fill} key={entry.label} />\n          ))}\n        </Pie>\n        <text dominantBaseline=\"central\" textAnchor=\"middle\" x=\"50%\" y=\"42%\">\n          <tspan\n            className=\"fill-foreground font-bold text-2xl\"\n            dy=\"-0.5em\"\n            x=\"50%\"\n          >\n            {total}\n          </tspan>\n          <tspan className=\"fill-muted-foreground text-xs\" dy=\"1.4em\" x=\"50%\">\n            headcount\n          </tspan>\n        </text>\n        <ChartLegend content={<ChartLegendContent nameKey=\"label\" />} />\n      </PieChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart"
+  ],
+  "type": "registry:block"
+}

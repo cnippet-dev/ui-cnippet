@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-30",
+  "description": "Segmented view toggle with list, table, and kanban options",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-30.tsx",
+      "content": "\"use client\";\n\nimport { KanbanIcon, LayoutListIcon, TableIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\n\ntype View = \"list\" | \"table\" | \"board\";\n\nconst views: { id: View; icon: typeof LayoutListIcon; label: string }[] = [\n  { icon: LayoutListIcon, id: \"list\", label: \"List\" },\n  { icon: TableIcon, id: \"table\", label: \"Table\" },\n  { icon: KanbanIcon, id: \"board\", label: \"Board\" },\n];\n\nexport function Pattern() {\n  const [view, setView] = useState<View>(\"list\");\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Group aria-label=\"View mode\">\n        {views.map((v, i) => (\n          <>\n            {i > 0 && <GroupSeparator key={`sep-${v.id}`} />}\n            <Button\n              aria-pressed={view === v.id}\n              key={v.id}\n              onClick={() => setView(v.id)}\n              size=\"sm\"\n              variant={view === v.id ? \"default\" : \"ghost\"}\n            >\n              <v.icon className=\"size-4\" />\n              {v.label}\n            </Button>\n          </>\n        ))}\n      </Group>\n      <p className=\"text-muted-foreground text-sm\">\n        Viewing as:{\" \"}\n        <span className=\"font-medium text-foreground capitalize\">{view}</span>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

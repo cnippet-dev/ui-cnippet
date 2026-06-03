@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-14",
+  "description": "Team directory with status dots, role labels, and per-team collapsible sections",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-14.tsx",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon, UserIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  Collapsible,\n  CollapsiblePanel,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\n\ntype Member = {\n  id: string;\n  name: string;\n  role: string;\n  status: \"active\" | \"away\" | \"offline\";\n};\n\nconst TEAMS: { id: string; label: string; members: Member[] }[] = [\n  {\n    id: \"design\",\n    label: \"Design\",\n    members: [\n      { id: \"m1\", name: \"Aria Chen\", role: \"Lead Designer\", status: \"active\" },\n      { id: \"m2\", name: \"Leo Park\", role: \"Product Designer\", status: \"away\" },\n    ],\n  },\n  {\n    id: \"engineering\",\n    label: \"Engineering\",\n    members: [\n      { id: \"m3\", name: \"Kai Nguyen\", role: \"Tech Lead\", status: \"active\" },\n      { id: \"m4\", name: \"Sam Rivera\", role: \"Frontend\", status: \"active\" },\n      { id: \"m5\", name: \"Mia Johansson\", role: \"Backend\", status: \"offline\" },\n    ],\n  },\n  {\n    id: \"marketing\",\n    label: \"Marketing\",\n    members: [\n      { id: \"m6\", name: \"James Okafor\", role: \"Growth\", status: \"active\" },\n      { id: \"m7\", name: \"Priya Singh\", role: \"Content\", status: \"away\" },\n    ],\n  },\n];\n\nconst statusDot: Record<string, string> = {\n  active: \"bg-emerald-500\",\n  away: \"bg-amber-500\",\n  offline: \"bg-muted-foreground/40\",\n};\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-xs space-y-1\">\n      <p className=\"mb-3 font-semibold text-sm\">Team directory</p>\n      {TEAMS.map((team) => (\n        <Collapsible defaultOpen key={team.id}>\n          <CollapsibleTrigger className=\"flex w-full items-center justify-between rounded-md px-2 py-2 font-medium text-sm transition-colors hover:bg-muted/50\">\n            <span className=\"flex items-center gap-2\">\n              <UserIcon className=\"size-3.5 text-muted-foreground\" />\n              {team.label}\n              <Badge size=\"sm\" variant=\"secondary\">\n                {team.members.length}\n              </Badge>\n            </span>\n            <ChevronDownIcon className=\"size-3.5 in-data-panel-open:rotate-180 text-muted-foreground transition-transform duration-200\" />\n          </CollapsibleTrigger>\n          <CollapsiblePanel>\n            <div className=\"ml-5 space-y-0.5 border-l pb-1 pl-3\">\n              {team.members.map((m) => (\n                <div\n                  className=\"flex items-center gap-2 rounded-md px-2 py-1.5\"\n                  key={m.id}\n                >\n                  <span\n                    className={`size-1.5 shrink-0 rounded-full ${statusDot[m.status]}`}\n                  />\n                  <div className=\"min-w-0\">\n                    <p className=\"text-sm leading-none\">{m.name}</p>\n                    <p className=\"mt-0.5 text-muted-foreground text-xs\">\n                      {m.role}\n                    </p>\n                  </div>\n                </div>\n              ))}\n            </div>\n          </CollapsiblePanel>\n        </Collapsible>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

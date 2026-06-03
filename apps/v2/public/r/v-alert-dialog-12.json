@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-12",
+  "description": "Subscription Downgrade Warning with feature loss list",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-12.tsx",
+      "content": "import { TrendingDownIcon } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nconst lostFeatures = [\n  \"Unlimited team members\",\n  \"Custom domain support\",\n  \"Priority support (24h SLA)\",\n  \"Advanced analytics dashboard\",\n  \"SSO & SAML integration\",\n];\n\nexport function Pattern() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger\n        render={<Button variant=\"outline\">Downgrade to Free</Button>}\n      />\n      <AlertDialogContent className=\"sm:max-w-md\">\n        <div className=\"flex items-start gap-3 p-4\">\n          <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full bg-destructive/10\">\n            <TrendingDownIcon className=\"size-5 text-destructive\" />\n          </div>\n          <div>\n            <AlertDialogTitle className=\"font-semibold text-sm\">\n              Downgrade to Free plan?\n            </AlertDialogTitle>\n            <AlertDialogDescription className=\"mt-1 text-muted-foreground text-sm\">\n              You&apos;ll lose access to the following features at the end of\n              your billing period:\n            </AlertDialogDescription>\n          </div>\n        </div>\n        <ul className=\"mx-4 mb-4 space-y-1.5 rounded-lg border bg-muted/50 p-3\">\n          {lostFeatures.map((f) => (\n            <li\n              className=\"flex items-center gap-2 text-muted-foreground text-sm\"\n              key={f}\n            >\n              <span className=\"size-1.5 shrink-0 rounded-full bg-destructive\" />\n              {f}\n            </li>\n          ))}\n        </ul>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>\n            Keep Pro\n          </AlertDialogClose>\n          <AlertDialogClose render={<Button variant=\"destructive\" />}>\n            Downgrade Anyway\n          </AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

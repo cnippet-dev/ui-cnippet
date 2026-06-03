@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-dialog-11",
+  "description": "Share Document with Link Copy",
+  "registryDependencies": [
+    "@cnippet/dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-dialog-11.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon, LinkIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nconst SHARE_LINK = \"https://app.example.com/docs/q3-roadmap?share=abc123\";\n\nexport default function Particle() {\n  const [copied, setCopied] = useState(false);\n\n  const handleCopy = () => {\n    navigator.clipboard.writeText(SHARE_LINK).catch(() => {});\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);\n  };\n\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>\n        <LinkIcon className=\"size-4\" />\n        Share\n      </DialogTrigger>\n      <DialogPopup className=\"sm:max-w-md\">\n        <DialogHeader>\n          <DialogTitle>Share document</DialogTitle>\n          <DialogDescription>\n            Anyone with the link can view this document.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogPanel className=\"space-y-4\">\n          <div className=\"flex gap-2\">\n            <Input\n              className=\"flex-1 font-mono text-xs\"\n              readOnly\n              value={SHARE_LINK}\n            />\n            <Button\n              className=\"shrink-0\"\n              onClick={handleCopy}\n              size=\"icon\"\n              variant=\"outline\"\n            >\n              {copied ? (\n                <CheckIcon className=\"size-4 text-green-500\" />\n              ) : (\n                <CopyIcon className=\"size-4\" />\n              )}\n            </Button>\n          </div>\n          <div className=\"space-y-1\">\n            <p className=\"font-medium text-muted-foreground text-xs uppercase tracking-wide\">\n              Link access\n            </p>\n            <div className=\"grid grid-cols-3 gap-2\">\n              {[\"View only\", \"Can comment\", \"Can edit\"].map((perm) => (\n                <button\n                  className={`rounded-md border px-3 py-2 font-medium text-xs transition-colors ${\n                    perm === \"View only\"\n                      ? \"border-primary bg-primary/5 text-primary\"\n                      : \"text-muted-foreground hover:border-foreground/30\"\n                  }`}\n                  key={perm}\n                  type=\"button\"\n                >\n                  {perm}\n                </button>\n              ))}\n            </div>\n          </div>\n        </DialogPanel>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"ghost\" />}>Done</DialogClose>\n        </DialogFooter>\n      </DialogPopup>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:block"
+}

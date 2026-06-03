@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-dialog-13",
+  "description": "Subscription Cancellation with Reason",
+  "registryDependencies": [
+    "@cnippet/dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-dialog-13.tsx",
+      "content": "\"use client\";\n\nimport { AlertTriangleIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\n\nconst REASONS = [\n  \"Too expensive\",\n  \"Not using it enough\",\n  \"Missing features I need\",\n  \"Switching to a competitor\",\n  \"Other\",\n];\n\nexport default function Particle() {\n  const [reason, setReason] = useState(\"\");\n\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>\n        Cancel subscription\n      </DialogTrigger>\n      <DialogPopup className=\"sm:max-w-sm\">\n        <DialogHeader>\n          <div className=\"flex size-10 items-center justify-center rounded-full bg-destructive/10\">\n            <AlertTriangleIcon className=\"size-5 text-destructive\" />\n          </div>\n          <DialogTitle>Cancel your plan</DialogTitle>\n          <DialogDescription>\n            We&apos;re sorry to see you go. Help us improve by telling us why\n            you&apos;re leaving.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogPanel className=\"space-y-2\">\n          {REASONS.map((r) => (\n            <button\n              className={`flex w-full items-center gap-3 rounded-md border px-3 py-2.5 text-left text-sm transition-colors ${\n                reason === r\n                  ? \"border-destructive bg-destructive/5 text-destructive\"\n                  : \"text-muted-foreground hover:border-foreground/20 hover:text-foreground\"\n              }`}\n              key={r}\n              onClick={() => setReason(r)}\n              type=\"button\"\n            >\n              <span\n                className={`size-4 shrink-0 rounded-full border-2 ${\n                  reason === r\n                    ? \"border-destructive bg-destructive\"\n                    : \"border-muted-foreground\"\n                }`}\n              />\n              {r}\n            </button>\n          ))}\n        </DialogPanel>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"ghost\" />}>\n            Keep plan\n          </DialogClose>\n          <Button disabled={!reason} variant=\"destructive\">\n            Confirm cancellation\n          </Button>\n        </DialogFooter>\n      </DialogPopup>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:block"
+}

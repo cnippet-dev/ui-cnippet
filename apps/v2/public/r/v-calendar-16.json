@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-16",
+  "description": "Habit tracker with completion indicators and monthly streak counter",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-16.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport type { CalendarDay, Modifiers } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst today = new Date();\nconst y = today.getFullYear();\nconst m = today.getMonth();\n\nconst completedDays = new Set(\n  [1, 2, 3, 5, 6, 8, 9, 10, 12, 13, 15, 16, 17, 19, 20].map((d) =>\n    new Date(y, m, d).toDateString(),\n  ),\n);\n\ninterface DayButtonProps extends React.ComponentProps<\"button\"> {\n  day: CalendarDay;\n  modifiers: Modifiers;\n}\n\nfunction HabitDayButton({\n  day,\n  modifiers,\n  children,\n  ...props\n}: DayButtonProps) {\n  const done = completedDays.has(day.date.toDateString());\n  const isFuture = day.date > today;\n  return (\n    <button\n      {...props}\n      className={[\n        props.className,\n        done && !modifiers.selected\n          ? \"relative bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400\"\n          : \"\",\n      ]\n        .filter(Boolean)\n        .join(\" \")}\n    >\n      {children}\n      {done && !isFuture && (\n        <CheckIcon className=\"absolute right-0.5 bottom-0.5 size-2.5 text-emerald-500\" />\n      )}\n    </button>\n  );\n}\n\nexport default function Particle() {\n  const streak = [...completedDays].filter((d) => new Date(d) <= today).length;\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        components={{ DayButton: HabitDayButton }}\n        disabled={{ after: today }}\n        mode=\"single\"\n        onSelect={() => {}}\n        selected={undefined}\n      />\n      <div className=\"flex items-center justify-between rounded-lg border px-4 py-2.5 text-sm\">\n        <span className=\"text-muted-foreground\">Days completed this month</span>\n        <span className=\"font-semibold\">\n          {streak} / {today.getDate()}\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

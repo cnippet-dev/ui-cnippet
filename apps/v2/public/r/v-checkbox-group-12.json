@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-group-12",
+  "description": "Recurring schedule picker with weekday and weekend sub-groups and day count badge",
+  "registryDependencies": [
+    "@cnippet/checkbox-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-group-12.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst DAYS = [\n  { id: \"mon\", label: \"Mon\" },\n  { id: \"tue\", label: \"Tue\" },\n  { id: \"wed\", label: \"Wed\" },\n  { id: \"thu\", label: \"Thu\" },\n  { id: \"fri\", label: \"Fri\" },\n  { id: \"sat\", label: \"Sat\" },\n  { id: \"sun\", label: \"Sun\" },\n];\n\nconst WEEKDAYS = DAYS.slice(0, 5).map((d) => d.id);\nconst WEEKEND = DAYS.slice(5).map((d) => d.id);\n\nexport function Pattern() {\n  const [value, setValue] = useState<string[]>(WEEKDAYS);\n\n  return (\n    <div className=\"w-full max-w-xs space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"font-semibold text-sm\">Recurring schedule</p>\n        <Badge size=\"sm\" variant=\"secondary\">\n          {value.length} days/wk\n        </Badge>\n      </div>\n      <CheckboxGroup\n        allValues={DAYS.map((d) => d.id)}\n        onValueChange={setValue}\n        value={value}\n      >\n        <Label className=\"font-medium text-muted-foreground text-sm\">\n          <Checkbox parent />\n          Select all\n        </Label>\n        <div className=\"mt-1 ml-1 space-y-1 border-l pl-4\">\n          <Label className=\"font-medium text-muted-foreground text-xs uppercase tracking-wide\">\n            <Checkbox parent partialValues={WEEKDAYS} />\n            Weekdays\n          </Label>\n          {DAYS.slice(0, 5).map((d) => (\n            <Label className=\"ms-5 text-sm\" key={d.id}>\n              <Checkbox value={d.id} />\n              {d.label}\n            </Label>\n          ))}\n          <Label className=\"mt-2 font-medium text-muted-foreground text-xs uppercase tracking-wide\">\n            <Checkbox parent partialValues={WEEKEND} />\n            Weekend\n          </Label>\n          {DAYS.slice(5).map((d) => (\n            <Label className=\"ms-5 text-sm\" key={d.id}>\n              <Checkbox value={d.id} />\n              {d.label}\n            </Label>\n          ))}\n        </div>\n      </CheckboxGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox group"
+  ],
+  "type": "registry:block"
+}
