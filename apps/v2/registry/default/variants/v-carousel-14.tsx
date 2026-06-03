@@ -66,7 +66,7 @@ export default function Particle() {
         <div className="flex gap-3">
           {CHANGELOG.map((release, i) => (
             <div
-              className="min-w-[220px] shrink-0 rounded-xl border bg-card p-4"
+              className="min-w-55 shrink-0 rounded-xl border bg-card p-4"
               key={i}
             >
               <div className="mb-3 flex items-center justify-between">

@@ -159,3 +159,33 @@ Sets a `step` value so each increment or decrement click moves the value by a fi
 Wraps the number field in `Form` and `Field` for label association, required validation, and a visible `FieldError`.
 
 <ComponentPreview name="v-number-field-9" />
+
+### Percentage with Scrub
+
+Uses `format={{ style: "percent" }}` with a `0–1` range and `step={0.05}`, rendered as a draggable scrub area for an opacity or volume control.
+
+<ComponentPreview name="v-number-field-11" />
+
+### Shopping Cart Quantity
+
+A compact product row pairing a thumbnail placeholder, name, price, and an inline `NumberField` for adjusting item count — common in cart and order summary UIs.
+
+<ComponentPreview name="v-number-field-12" />
+
+### Typography Settings
+
+Three labeled rows (font size, line height, letter spacing) each with a `NumberFieldScrubArea` and unit suffix, forming a compact typographic control panel.
+
+<ComponentPreview name="v-number-field-13" />
+
+### Min/Max Budget Range
+
+Two side-by-side currency-formatted fields (Min and Max) with a dash separator — ideal for price range filters in search or marketplace UIs.
+
+<ComponentPreview name="v-number-field-14" />
+
+### Controlled with Reset
+
+A `useState`-controlled field paired with a ghost icon button that restores the value to its default — useful for settings panels where users can undo edits.
+
+<ComponentPreview name="v-number-field-15" />

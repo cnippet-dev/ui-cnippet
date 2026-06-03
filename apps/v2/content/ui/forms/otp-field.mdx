@@ -120,3 +120,33 @@ Each slot is a real `<input>`, so `placeholder` and CSS behave as usual. Hide th
 Pass `mask` on the root when the code should be obscured while it is typed (e.g. shared screens).
 
 <ComponentPreview name="v-otp-field-9" />
+
+### Email Verification Card
+
+A bordered card with a mail icon header, recipient email display, the OTP slots, and an inline "Resend code" button — ready to drop into an email verification flow.
+
+<ComponentPreview name="v-otp-field-11" />
+
+### 2FA Authenticator App
+
+A compact card with an authenticator app icon, contextual description, OTP input with `inputMode="numeric"`, and a "Verify" submit button.
+
+<ComponentPreview name="v-otp-field-12" />
+
+### 8-Character Invite Code
+
+A two-group `XXXX-XXXX` layout using `OTPFieldSeparator` with `validationType="alphanumeric"` — suitable for invite, license, or access codes.
+
+<ComponentPreview name="v-otp-field-13" />
+
+### Success State
+
+A controlled field that swaps the OTP slots for a green "Identity verified" confirmation once the correct code is entered, and shows a `FieldError` for wrong attempts.
+
+<ComponentPreview name="v-otp-field-14" />
+
+### Resend Countdown Timer
+
+A `useEffect`-driven countdown shows "Resend code in Xs" while the timer runs, then reveals a clickable "Resend code" link that resets the clock.
+
+<ComponentPreview name="v-otp-field-15" />

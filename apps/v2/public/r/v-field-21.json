@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-field-21",
+  "description": "Field with file upload",
+  "registryDependencies": [
+    "@cnippet/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-21.tsx",
+      "content": "import { UploadIcon } from \"lucide-react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        <span className=\"flex items-center gap-1.5\">\n          <UploadIcon aria-hidden=\"true\" className=\"size-4 opacity-60\" />\n          Upload resume\n        </span>\n      </FieldLabel>\n      <Input accept=\".pdf,.doc,.docx\" type=\"file\" />\n      <FieldDescription>PDF or Word document, max 5 MB.</FieldDescription>\n      <FieldError>Please upload a valid file.</FieldError>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ],
+  "type": "registry:block"
+}

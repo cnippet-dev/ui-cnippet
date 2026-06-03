@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-meter-13",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-13.tsx",
+      "content": "import { DatabaseIcon, FileIcon, ImageIcon } from \"lucide-react\";\nimport {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nconst breakdown = [\n  { icon: ImageIcon, label: \"Photos\", used: 4.2, total: 10 },\n  { icon: FileIcon, label: \"Documents\", used: 1.8, total: 10 },\n  { icon: DatabaseIcon, label: \"Backups\", used: 7.5, total: 10 },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      {breakdown.map(({ icon: Icon, label, used, total }) => (\n        <Meter key={label} max={total} value={used}>\n          <div className=\"flex items-center justify-between gap-2\">\n            <MeterLabel className=\"flex items-center gap-1.5\">\n              <Icon aria-hidden=\"true\" className=\"size-3.5 text-muted-foreground\" />\n              {label}\n            </MeterLabel>\n            <MeterValue>\n              {() => `${used} / ${total} GB`}\n            </MeterValue>\n          </div>\n          <MeterTrack>\n            <MeterIndicator />\n          </MeterTrack>\n        </Meter>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:block"
+}

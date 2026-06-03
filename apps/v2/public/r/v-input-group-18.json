@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-group-18",
-  "description": "Basic input group",
+  "description": "Newsletter subscribe with arrow button",
   "registryDependencies": [
     "@cnippet/input-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-group-18.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <p className=\"font-medium text-sm\">Stay in the loop</p>\n      <p className=\"text-muted-foreground text-xs\">\n        Get weekly updates. No spam, unsubscribe anytime.\n      </p>\n      <InputGroup>\n        <InputGroupInput\n          aria-label=\"Email address\"\n          placeholder=\"you@example.com\"\n          type=\"email\"\n        />\n        <InputGroupAddon align=\"inline-end\">\n          <Button aria-label=\"Subscribe\" size=\"icon-xs\" variant=\"ghost\">\n            <ArrowRightIcon aria-hidden=\"true\" />\n          </Button>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

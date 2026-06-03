@@ -63,3 +63,35 @@ import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset"
 - **When to use** — wrap a group of related inputs (radio buttons, checkboxes, or multiple fields for the same concept) inside a `Fieldset`. The `FieldsetLegend` names the group for screen readers.
 - **Accessibility** — screen readers announce the legend text before reading each input inside the fieldset, giving users context for each field without extra labels.
 - **Disabled state** — setting `disabled` on `<Fieldset>` disables all interactive elements inside it at the browser level. No JavaScript needed.
+
+## Examples
+
+### Personal Information
+
+A fieldset grouping first name, last name, email, and optional phone fields — a typical account creation or profile section.
+
+<ComponentPreview name="v-fieldset-2" />
+
+### Shipping Address
+
+Street, city, ZIP, and country fields grouped under a "Shipping Address" legend, with required indicators and inline error messages.
+
+<ComponentPreview name="v-fieldset-3" />
+
+### Notification Preferences
+
+Three toggle rows — email, push, and marketing notifications — each with a label and description, inside a shared fieldset for semantic grouping.
+
+<ComponentPreview name="v-fieldset-4" />
+
+### Change Password
+
+Current and new password fields plus a confirm step, grouped under a "Change Password" legend with per-field validation errors.
+
+<ComponentPreview name="v-fieldset-5" />
+
+### Payment Information
+
+Cardholder name, card number, expiry date, and CVC laid out in a responsive grid, with autocomplete hints and required-field validation.
+
+<ComponentPreview name="v-fieldset-6" />

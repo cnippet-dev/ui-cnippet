@@ -629,7 +629,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- empty ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "empty state",
       dependencies: [],
@@ -643,16 +643,45 @@ export const variants: ParticleItem[] = [
         "No products empty state with stacked cards and blur effect",
         "No payments empty state with credit card illustration",
         "No events empty state with calendar illustration",
+        "All caught up — no new notifications",
+        "No team members — invite form empty state",
+        "No matching results — clear filters empty state",
+        "Inbox zero — illustration with compose action",
+        "Access restricted — permission request empty state",
       ][i],
       name: `v-empty-${i + 1}`,
     }),
   ),
 
   // --- field ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 22 }, (_, i) =>
     createVariant({
       category: "field",
       dependencies: ["field"],
+      description: [
+        "Basic field with label and description",
+        "Required password field",
+        "Disabled field",
+        "Field with validation error",
+        "Field with validity state inspector",
+        "Field wrapping an input group",
+        "Field with autocomplete",
+        "Field with single-select combobox",
+        "Field with multi-select combobox chips",
+        "Field with textarea",
+        "Field with select dropdown",
+        "Field with checkbox",
+        "Field with checkbox group",
+        "Field with radio group",
+        "Field with slider",
+        "Field with number input",
+        "Complete multi-field form",
+        "Field with switch toggle",
+        "Field with date input",
+        "Field with OTP verification input",
+        "Field with file upload",
+        "Field with password strength indicator",
+      ][i],
       name: `v-field-${i + 1}`,
     }),
   ),
@@ -662,12 +691,20 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "fieldset",
       dependencies: ["fieldset"],
+      description: [
+        "Billing details fieldset",
+        "Personal information fieldset",
+        "Shipping address fieldset",
+        "Notification preferences fieldset",
+        "Change password fieldset",
+        "Payment information fieldset",
+      ][i],
       name: `v-fieldset-${i + 1}`,
     }),
   ),
 
   // --- form ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 13 }, (_, i) =>
     createVariant({
       category: "form",
       dependencies: ["form"],
@@ -680,6 +717,11 @@ export const variants: ParticleItem[] = [
         "Change Password",
         "Newsletter Signup",
         "3-Step Onboarding Wizard",
+        "Sign Up / Register",
+        "Feedback form with rating",
+        "Forgot password — reset email",
+        "Delete account — danger zone confirmation",
+        "Invite team member",
       ][i],
       name: `v-form-${i + 1}`,
     }),
@@ -690,12 +732,23 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "frame",
       dependencies: ["frame"],
+      description: [
+        "Default",
+        "Separated panels",
+        "With collapsible panel",
+        "Dense layout",
+        "With action button in header",
+        "Stats metrics display",
+        "With badge status indicator",
+        "Read-only key-value info",
+        "With footer CTA buttons",
+      ][i],
       name: `v-frame-${i + 1}`,
     }),
   ),
 
   // --- group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 18 }, (_, i) =>
     createVariant({
       category: "group",
       dependencies: ["group"],
@@ -714,13 +767,18 @@ export const variants: ParticleItem[] = [
         "With Input Group",
         "With Menu",
         "With Select",
+        "Text formatting toolbar",
+        "Thumbs up / down vote buttons",
+        "Media player controls",
+        "Price range input with apply button",
+        "Search with category filter select",
       ][i],
       name: `v-group-${i + 1}`,
     }),
   ),
 
   // --- input ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 25 }, (_, i) =>
     createVariant({
       category: "input",
       dependencies: ["input"],
@@ -743,15 +801,20 @@ export const variants: ParticleItem[] = [
         "With Badge",
         "With Optional Badge",
         "With Link and Visibility Toggle",
-        "with multiple error messages",
-        "Basic password strength with dynamic hint and icons",
+        "With multiple error messages",
+        "Password strength with dynamic hint and icons",
+        "Disabled input with masked value",
+        "Readonly with copy-to-clipboard button",
+        "Input with inline start icon",
+        "Color picker input",
+        "Input with inline clear button",
       ][i],
       name: `v-input-${i + 1}`,
     }),
   ),
 
   // --- input-group ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 21 }, (_, i) =>
     createVariant({
       category: "input group",
       dependencies: ["input-group"],
@@ -772,13 +835,18 @@ export const variants: ParticleItem[] = [
         "Loading",
         "With Number Field",
         "With Textarea",
+        "With currency select prefix",
+        "Newsletter subscribe with arrow button",
+        "With inline clear button",
+        "Chat input with async send",
+        "Textarea with character countdown",
       ][i],
       name: `v-input-group-${i + 1}`,
     }),
   ),
 
   // --- kbd ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 11 }, (_, i) =>
     createVariant({
       category: "kbd",
       dependencies: ["kbd"],
@@ -789,13 +857,18 @@ export const variants: ParticleItem[] = [
         "With icons",
         "In a tooltip",
         "Reference list",
+        "Keyboard shortcut in button",
+        "Arrow key navigation display",
+        "Cross-platform Mac vs Win shortcut table",
+        "Shortcuts in menu items",
+        "Command palette result rows with navigation hints",
       ][i],
       name: `v-kbd-${i + 1}`,
     }),
   ),
 
   // --- label ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "label",
       dependencies: ["label"],
@@ -810,13 +883,18 @@ export const variants: ParticleItem[] = [
         "With character counter",
         "With helper description text",
         "With status indicator dot",
+        "With keyboard shortcut",
+        "With inline link",
+        "With icon prefix",
+        "Horizontal layout",
+        "With error state",
       ][i],
       name: `v-label-${i + 1}`,
     }),
   ),
 
   // --- menu ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "menu",
       dependencies: ["menu"],
@@ -831,15 +909,18 @@ export const variants: ParticleItem[] = [
         "Nested Menu",
         "Close on Click",
         "Open a Dialog",
-        "Cookie Preferences Manager",
-        "Notification Delivery Channels",
+        "Account menu",
+        "File actions",
+        "Icon button trigger",
+        "Notification settings",
+        "Share with export sub-menu",
       ][i],
       name: `v-menu-${i + 1}`,
     }),
   ),
 
   // --- meter ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "meter",
       dependencies: ["meter"],
@@ -848,13 +929,18 @@ export const variants: ParticleItem[] = [
         "With Label",
         "With Formatted Value",
         "With Range",
+        "Stacked resource meters",
+        "Color-coded by severity",
+        "Storage breakdown with icons",
+        "Upload progress card",
+        "Profile strength checklist",
       ][i],
       name: `v-meter-${i + 1}`,
     }),
   ),
 
   // --- number-field ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "number field",
       dependencies: ["number-field"],
@@ -868,13 +954,18 @@ export const variants: ParticleItem[] = [
         "With Formatted Value",
         "With Step",
         "Form Integration",
+        "Percentage with scrub",
+        "Shopping cart quantity row",
+        "Typography settings",
+        "Min/max budget range",
+        "Controlled with reset",
       ][i],
       name: `v-number-field-${i + 1}`,
     }),
   ),
 
   // --- otp-field ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "input otp",
       dependencies: ["otp-field"],
@@ -888,13 +979,18 @@ export const variants: ParticleItem[] = [
         "Alphanumeric",
         "Placeholder hints",
         "Masked entry",
+        "Email verification card",
+        "2FA authenticator app",
+        "8-char invite code with separator",
+        "Success state on completion",
+        "Resend countdown timer",
       ][i],
       name: `v-otp-field-${i + 1}`,
     }),
   ),
 
   // --- pagination ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "pagination",
       dependencies: ["pagination"],
@@ -912,13 +1008,18 @@ export const variants: ParticleItem[] = [
         "With Page Select Dropdown And First/Last Navigation",
         "Numbered Pagination With Go-To-Page Input",
         "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
+        "Mini pill",
+        "Older/newer cursor navigation",
+        "Controlled with smart ellipsis",
+        "Results summary with compact nav",
+        "Loading/disabled state",
       ][i],
       name: `v-pagination-${i + 1}`,
     }),
   ),
 
   // --- popover ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 20 }, (_, i) =>
     createVariant({
       category: "popover",
       dependencies: ["popover"],
@@ -939,22 +1040,35 @@ export const variants: ParticleItem[] = [
         "Filter Panel",
         "Set a Reminder",
         "System Status",
+        "Emoji picker",
+        "Confirmation / delete",
+        "Inline tag editor",
+        "Notification panel",
+        "Inline text edit",
       ][i],
       name: `v-popover-${i + 1}`,
     }),
   ),
 
   // --- preview-card ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "preview card",
       dependencies: ["preview-card"],
+      description: [
+        "Default",
+        "User mention profile card",
+        "Article / blog post preview",
+        "Product card",
+        "GitHub-style issue preview",
+        "NPM package preview",
+      ][i],
       name: `v-preview-card-${i + 1}`,
     }),
   ),
 
   // --- progress ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "progress",
       dependencies: ["progress"],
@@ -969,6 +1083,11 @@ export const variants: ParticleItem[] = [
         "Multi-file Upload Queue",
         "Monthly Budget Breakdown",
         "API Usage with Tier Milestones",
+        "Survey completion counter",
+        "Download with speed stats",
+        "Fundraiser goal tracker",
+        "Reading progress bar",
+        "Build pipeline stages",
       ][i],
       name: `v-progress-${i + 1}`,
     }),

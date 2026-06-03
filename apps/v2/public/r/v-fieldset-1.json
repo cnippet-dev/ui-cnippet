@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-1",
-  "description": "Basic fieldset",
+  "description": "Billing details fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-14",
+  "description": "Controlled with reset",
+  "registryDependencies": [
+    "@cnippet/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-14.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-end gap-3\">\n      <div className=\"flex flex-col gap-1.5\">\n        <span className=\"text-sm font-medium\">Min</span>\n        <NumberField\n          defaultValue={100}\n          format={{ currency: \"USD\", style: \"currency\" }}\n          min={0}\n          step={50}\n        >\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </div>\n      <span className=\"mb-2.5 text-muted-foreground\">–</span>\n      <div className=\"flex flex-col gap-1.5\">\n        <span className=\"text-sm font-medium\">Max</span>\n        <NumberField\n          defaultValue={1000}\n          format={{ currency: \"USD\", style: \"currency\" }}\n          min={0}\n          step={50}\n        >\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "number field"
+  ],
+  "type": "registry:block"
+}

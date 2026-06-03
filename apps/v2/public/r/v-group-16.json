@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-16",
+  "description": "Thumbs up / down vote buttons",
+  "registryDependencies": [
+    "@cnippet/group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-16.tsx",
+      "content": "\"use client\";\n\nimport { PauseIcon, PlayIcon, SkipBackIcon, SkipForwardIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\n\nexport default function Particle() {\n  const [playing, setPlaying] = useState(false);\n\n  return (\n    <Group aria-label=\"Media player controls\">\n      <Button\n        aria-label=\"Previous track\"\n        size=\"icon\"\n        variant=\"outline\"\n      >\n        <SkipBackIcon aria-hidden=\"true\" />\n      </Button>\n      <GroupSeparator />\n      <Button\n        aria-label={playing ? \"Pause\" : \"Play\"}\n        onClick={() => setPlaying((p) => !p)}\n        size=\"icon\"\n        variant=\"outline\"\n      >\n        {playing ? (\n          <PauseIcon aria-hidden=\"true\" />\n        ) : (\n          <PlayIcon aria-hidden=\"true\" />\n        )}\n      </Button>\n      <GroupSeparator />\n      <Button\n        aria-label=\"Next track\"\n        size=\"icon\"\n        variant=\"outline\"\n      >\n        <SkipForwardIcon aria-hidden=\"true\" />\n      </Button>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

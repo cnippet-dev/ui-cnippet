@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-popover-17",
+  "description": "Emoji picker",
+  "registryDependencies": [
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-17.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { TrashIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Popover,\n  PopoverClose,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport function Pattern() {\n  const [deleted, setDeleted] = useState(false);\n\n  if (deleted) {\n    return <p className=\"text-muted-foreground text-sm\">Item deleted.</p>;\n  }\n\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\" />}>\n        <TrashIcon aria-hidden=\"true\" />\n        Delete item\n      </PopoverTrigger>\n      <PopoverContent className=\"w-64 gap-3\" side=\"bottom\">\n        <div>\n          <p className=\"font-semibold text-sm\">Delete this item?</p>\n          <p className=\"mt-0.5 text-muted-foreground text-xs\">\n            This action cannot be undone.\n          </p>\n        </div>\n        <div className=\"flex gap-2\">\n          <PopoverClose\n            render={\n              <Button className=\"flex-1\" size=\"sm\" variant=\"outline\" />\n            }\n          >\n            Cancel\n          </PopoverClose>\n          <Button\n            className=\"flex-1\"\n            onClick={() => setDeleted(true)}\n            size=\"sm\"\n            variant=\"destructive\"\n          >\n            Delete\n          </Button>\n        </div>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ],
+  "type": "registry:block"
+}

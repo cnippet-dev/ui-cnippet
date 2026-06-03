@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-progress-15",
+  "description": "Build pipeline stages",
+  "registryDependencies": [
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-progress-15.tsx",
+      "content": "import { CheckIcon, CircleDotIcon, ClockIcon } from \"lucide-react\";\nimport {\n  Progress,\n  ProgressIndicator,\n  ProgressTrack,\n} from \"@/registry/default/ui/progress\";\n\ntype StageStatus = \"done\" | \"active\" | \"pending\";\n\nconst stages: { label: string; status: StageStatus; time: string }[] = [\n  { label: \"Checkout\", status: \"done\", time: \"3s\" },\n  { label: \"Install\", status: \"done\", time: \"42s\" },\n  { label: \"Build\", status: \"active\", time: \"1m 12s\" },\n  { label: \"Test\", status: \"pending\", time: \"—\" },\n  { label: \"Deploy\", status: \"pending\", time: \"—\" },\n];\n\nconst done = stages.filter((s) => s.status === \"done\").length;\n\nconst stageIcon: Record<StageStatus, React.ReactNode> = {\n  active: (\n    <CircleDotIcon\n      aria-hidden=\"true\"\n      className=\"size-4 animate-pulse text-primary\"\n    />\n  ),\n  done: (\n    <CheckIcon aria-hidden=\"true\" className=\"size-4 text-success\" />\n  ),\n  pending: (\n    <ClockIcon aria-hidden=\"true\" className=\"size-4 text-muted-foreground\" />\n  ),\n};\n\nexport function Pattern() {\n  const value = (done / stages.length) * 100;\n\n  return (\n    <div className=\"w-full max-w-xs space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <span className=\"text-sm font-medium\">Build pipeline</span>\n        <span className=\"text-xs text-muted-foreground\">\n          {done}/{stages.length} stages\n        </span>\n      </div>\n      <Progress value={value}>\n        <ProgressTrack>\n          <ProgressIndicator />\n        </ProgressTrack>\n      </Progress>\n      <div className=\"space-y-2\">\n        {stages.map(({ label, status, time }) => (\n          <div className=\"flex items-center gap-3\" key={label}>\n            {stageIcon[status]}\n            <span\n              className={`flex-1 text-sm ${status === \"pending\" ? \"text-muted-foreground\" : \"\"}`}\n            >\n              {label}\n            </span>\n            <span className=\"tabular-nums text-xs text-muted-foreground\">\n              {time}\n            </span>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress"
+  ],
+  "type": "registry:block"
+}

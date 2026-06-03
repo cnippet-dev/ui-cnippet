@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-popover-20",
+  "description": "Notification panel",
+  "registryDependencies": [
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-20.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { PencilIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Popover,\n  PopoverClose,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport function Pattern() {\n  const [name, setName] = useState(\"Acme Corporation\");\n  const [draft, setDraft] = useState(name);\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <p className=\"text-sm\">\n        Team: <span className=\"font-medium\">{name}</span>\n      </p>\n      <Popover onOpenChange={(open) => { if (open) setDraft(name); }}>\n        <PopoverTrigger\n          aria-label=\"Edit team name\"\n          render={<Button className=\"size-6\" size=\"icon\" variant=\"ghost\" />}\n        >\n          <PencilIcon className=\"size-3.5\" />\n        </PopoverTrigger>\n        <PopoverContent className=\"w-64 gap-3\">\n          <p className=\"font-medium text-sm\">Edit team name</p>\n          <Input\n            onChange={(e) => setDraft(e.target.value)}\n            value={draft}\n          />\n          <div className=\"flex gap-2\">\n            <PopoverClose\n              render={<Button className=\"flex-1\" size=\"sm\" variant=\"outline\" />}\n            >\n              Cancel\n            </PopoverClose>\n            <PopoverClose\n              render={\n                <Button\n                  className=\"flex-1\"\n                  onClick={() => setName(draft)}\n                  size=\"sm\"\n                />\n              }\n            >\n              Save\n            </PopoverClose>\n          </div>\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ],
+  "type": "registry:block"
+}

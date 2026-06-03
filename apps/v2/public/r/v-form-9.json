@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-form-9",
-  "description": "Basic form",
+  "description": "Sign Up / Register",
   "registryDependencies": [
     "@cnippet/form"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-form-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { type FormEvent, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  const [loading, setLoading] = useState(false);\n\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 900));\n    setLoading(false);\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-5\">\n      <div className=\"space-y-1\">\n        <h2 className=\"font-semibold text-lg\">Create an account</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          Fill in the details below to get started.\n        </p>\n      </div>\n\n      <Form className=\"gap-4\" onSubmit={onSubmit}>\n        <Field name=\"email\">\n          <FieldLabel>Email</FieldLabel>\n          <Input\n            autoComplete=\"email\"\n            placeholder=\"you@example.com\"\n            required\n            type=\"email\"\n          />\n          <FieldError />\n        </Field>\n\n        <Field name=\"password\">\n          <FieldLabel>Password</FieldLabel>\n          <Input\n            autoComplete=\"new-password\"\n            minLength={8}\n            placeholder=\"At least 8 characters\"\n            required\n            type=\"password\"\n          />\n          <FieldError />\n        </Field>\n\n        <Field name=\"confirm\">\n          <FieldLabel>Confirm password</FieldLabel>\n          <Input\n            autoComplete=\"new-password\"\n            placeholder=\"Re-enter your password\"\n            required\n            type=\"password\"\n          />\n          <FieldError />\n        </Field>\n\n        <Label className=\"flex items-start gap-2 font-normal text-sm\">\n          <Checkbox className=\"mt-0.5\" name=\"terms\" required />\n          <span className=\"text-muted-foreground\">\n            I agree to the{\" \"}\n            <a className=\"text-foreground underline underline-offset-2\" href=\"#\">\n              Terms of Service\n            </a>{\" \"}\n            and{\" \"}\n            <a className=\"text-foreground underline underline-offset-2\" href=\"#\">\n              Privacy Policy\n            </a>\n          </span>\n        </Label>\n\n        <Button className=\"w-full\" loading={loading} type=\"submit\">\n          Create account\n        </Button>\n      </Form>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-13",
+  "description": "Success state on completion",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-13.tsx",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport {\n  OTPField,\n  OTPFieldInput,\n  OTPFieldSeparator,\n} from \"@/registry/default/ui/otp-field\";\n\nconst OTP_LENGTH = 8;\nconst GROUP_LENGTH = 4;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport default function Particle() {\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Invite code</FieldLabel>\n      <OTPField length={OTP_LENGTH} validationType=\"alphanumeric\">\n        {OTP_SLOT_KEYS.slice(0, GROUP_LENGTH).map((slotKey, index) => (\n          <OTPFieldInput\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n            key={slotKey}\n          />\n        ))}\n        <OTPFieldSeparator />\n        {OTP_SLOT_KEYS.slice(GROUP_LENGTH).map((slotKey, index) => (\n          <OTPFieldInput\n            aria-label={`Character ${index + GROUP_LENGTH + 1} of ${OTP_LENGTH}`}\n            key={slotKey}\n          />\n        ))}\n      </OTPField>\n      <FieldDescription>\n        Enter the 8-character invite code in the format{\" \"}\n        <code className=\"font-mono text-foreground\">XXXX-XXXX</code>.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

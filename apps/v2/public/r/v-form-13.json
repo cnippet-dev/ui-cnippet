@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-13",
+  "description": "Invite team member",
+  "registryDependencies": [
+    "@cnippet/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-13.tsx",
+      "content": "\"use client\";\n\nimport { type FormEvent, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nexport function Pattern() {\n  const [loading, setLoading] = useState(false);\n  const [sent, setSent] = useState(false);\n\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 900));\n    setLoading(false);\n    setSent(true);\n    setTimeout(() => setSent(false), 3000);\n  };\n\n  return (\n    <Form className=\"w-full max-w-sm gap-4\" onSubmit={onSubmit}>\n      <div className=\"space-y-1\">\n        <h2 className=\"font-semibold\">Invite team member</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          Send an invitation to join your workspace.\n        </p>\n      </div>\n\n      <Field name=\"email\">\n        <FieldLabel>\n          Email address <span className=\"text-destructive-foreground\">*</span>\n        </FieldLabel>\n        <Input\n          autoComplete=\"email\"\n          placeholder=\"colleague@company.com\"\n          required\n          type=\"email\"\n        />\n        <FieldError />\n      </Field>\n\n      <Field name=\"role\">\n        <FieldLabel>Role</FieldLabel>\n        <Select\n          defaultValue=\"member\"\n          items={[\n            { label: \"Admin\", value: \"admin\" },\n            { label: \"Member\", value: \"member\" },\n            { label: \"Viewer\", value: \"viewer\" },\n          ]}\n        >\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            <SelectItem value=\"admin\">Admin</SelectItem>\n            <SelectItem value=\"member\">Member</SelectItem>\n            <SelectItem value=\"viewer\">Viewer</SelectItem>\n          </SelectPopup>\n        </Select>\n        <FieldDescription>\n          Admins can manage members and billing.\n        </FieldDescription>\n      </Field>\n\n      <div className=\"flex gap-3\">\n        <Button className=\"flex-1\" type=\"reset\" variant=\"outline\">\n          Cancel\n        </Button>\n        <Button className=\"flex-1\" loading={loading} type=\"submit\">\n          {sent ? \"Invitation sent!\" : \"Send invitation\"}\n        </Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ],
+  "type": "registry:block"
+}

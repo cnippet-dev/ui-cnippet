@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-meter-11",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-11.tsx",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nconst resources = [\n  { label: \"CPU\", value: 42 },\n  { label: \"Memory\", value: 68 },\n  { label: \"Disk\", value: 91 },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      {resources.map(({ label, value }) => (\n        <Meter key={label} value={value}>\n          <div className=\"flex items-center justify-between gap-2\">\n            <MeterLabel>{label}</MeterLabel>\n            <MeterValue />\n          </div>\n          <MeterTrack>\n            <MeterIndicator />\n          </MeterTrack>\n        </Meter>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:block"
+}

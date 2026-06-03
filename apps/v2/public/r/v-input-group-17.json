@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-group-17",
-  "description": "Basic input group",
+  "description": "With currency select prefix",
   "registryDependencies": [
     "@cnippet/input-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-group-17.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst currencies = [\n  { label: \"USD\", value: \"usd\" },\n  { label: \"EUR\", value: \"eur\" },\n  { label: \"GBP\", value: \"gbp\" },\n];\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupAddon>\n        <Select defaultValue=\"usd\" items={currencies}>\n          <SelectTrigger className=\"h-full rounded-none border-0 border-e bg-transparent shadow-none focus-visible:z-10\">\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            {currencies.map(({ label, value }) => (\n              <SelectItem key={value} value={value}>\n                {label}\n              </SelectItem>\n            ))}\n          </SelectPopup>\n        </Select>\n      </InputGroupAddon>\n      <InputGroupInput\n        aria-label=\"Amount\"\n        inputMode=\"decimal\"\n        placeholder=\"0.00\"\n        type=\"text\"\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>per unit</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-9",
-  "description": "Basic kbd",
+  "description": "Cross-platform Mac vs Win shortcut table",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  EditIcon,\n  SearchIcon,\n  UndoIcon,\n} from \"lucide-react\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst shortcuts = [\n  {\n    icon: SearchIcon,\n    label: \"Open command palette\",\n    mac: [\"⌘\", \"K\"],\n    win: [\"Ctrl\", \"K\"],\n  },\n  {\n    icon: EditIcon,\n    label: \"Find and replace\",\n    mac: [\"⌘\", \"H\"],\n    win: [\"Ctrl\", \"H\"],\n  },\n  {\n    icon: UndoIcon,\n    label: \"Undo last action\",\n    mac: [\"⌘\", \"Z\"],\n    win: [\"Ctrl\", \"Z\"],\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"grid grid-cols-[1fr_auto_auto] items-center gap-x-4 gap-y-0\">\n        <span className=\"text-muted-foreground text-xs font-medium pb-2\">Action</span>\n        <span className=\"text-muted-foreground text-xs font-medium pb-2\">Mac</span>\n        <span className=\"text-muted-foreground text-xs font-medium pb-2\">Win / Linux</span>\n        <Separator className=\"col-span-3\" />\n        {shortcuts.map(({ icon: Icon, label, mac, win }) => (\n          <>\n            <div className=\"flex items-center gap-2 py-2.5\" key={label}>\n              <Icon aria-hidden=\"true\" className=\"size-3.5 text-muted-foreground\" />\n              <span className=\"text-sm\">{label}</span>\n            </div>\n            <KbdGroup className=\"py-2.5\">\n              {mac.map((k) => <Kbd key={k}>{k}</Kbd>)}\n            </KbdGroup>\n            <KbdGroup className=\"py-2.5\">\n              {win.map((k) => <Kbd key={k}>{k}</Kbd>)}\n            </KbdGroup>\n          </>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

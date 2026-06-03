@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-preview-card-15",
+  "description": "Basic preview card",
+  "registryDependencies": [
+    "@cnippet/preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-preview-card-15.tsx",
+      "content": "import { DownloadIcon, PackageIcon } from \"lucide-react\";\nimport {\n  PreviewCard,\n  PreviewCardPopup,\n  PreviewCardTrigger,\n} from \"@/registry/default/ui/preview-card\";\n\nexport function Pattern() {\n  return (\n    <p className=\"text-sm\">\n      Install{\" \"}\n      <PreviewCard>\n        <PreviewCardTrigger className=\"cursor-pointer font-mono font-medium underline underline-offset-4\">\n          @base-ui/react\n        </PreviewCardTrigger>\n        <PreviewCardPopup>\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"flex items-center gap-2.5\">\n              <div className=\"flex size-9 items-center justify-center rounded-lg bg-muted\">\n                <PackageIcon\n                  aria-hidden=\"true\"\n                  className=\"size-4 text-muted-foreground\"\n                />\n              </div>\n              <div>\n                <p className=\"font-semibold text-sm\">@base-ui/react</p>\n                <p className=\"text-xs text-muted-foreground\">v1.0.0</p>\n              </div>\n            </div>\n            <p className=\"text-xs text-muted-foreground\">\n              Unstyled, accessible UI components for React built with\n              accessibility in mind.\n            </p>\n            <div className=\"flex items-center gap-3 text-xs text-muted-foreground\">\n              <div className=\"flex items-center gap-1\">\n                <DownloadIcon aria-hidden=\"true\" className=\"size-3\" />\n                <span>124k / week</span>\n              </div>\n              <div className=\"flex items-center gap-1\">\n                <span\n                  aria-hidden=\"true\"\n                  className=\"size-2 rounded-full bg-blue-500\"\n                />\n                <span>TypeScript</span>\n              </div>\n            </div>\n          </div>\n        </PreviewCardPopup>\n      </PreviewCard>{\" \"}\n      to get started with accessible primitives.\n    </p>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:block"
+}

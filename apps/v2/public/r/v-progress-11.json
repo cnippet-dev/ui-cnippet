@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-progress-11",
+  "description": "Survey completion counter",
+  "registryDependencies": [
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-progress-11.tsx",
+      "content": "import {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from \"@/registry/default/ui/progress\";\n\nconst TOTAL = 10;\nconst CURRENT = 4;\n\nexport function Pattern() {\n  const value = (CURRENT / TOTAL) * 100;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Progress value={value}>\n        <div className=\"flex items-center justify-between gap-2\">\n          <ProgressLabel>Survey progress</ProgressLabel>\n          <ProgressValue>{() => `${CURRENT} of ${TOTAL}`}</ProgressValue>\n        </div>\n        <ProgressTrack>\n          <ProgressIndicator />\n        </ProgressTrack>\n      </Progress>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress"
+  ],
+  "type": "registry:block"
+}

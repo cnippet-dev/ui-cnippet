@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-14",
+  "description": "Resend countdown timer",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-14.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CheckCircle2Icon } from \"lucide-react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\n\nconst VALID_CODE = \"246810\";\nconst OTP_LENGTH = 6;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const isComplete = value.length === OTP_LENGTH;\n  const isValid = isComplete && value === VALID_CODE;\n  const isInvalid = isComplete && value !== VALID_CODE;\n\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      {isValid ? (\n        <div className=\"flex items-center gap-2 py-1 text-sm text-green-600\">\n          <CheckCircle2Icon aria-hidden=\"true\" className=\"size-4\" />\n          Identity verified\n        </div>\n      ) : (\n        <OTPField length={OTP_LENGTH} onValueChange={setValue} value={value}>\n          {OTP_SLOT_KEYS.map((slotKey, index) => (\n            <OTPFieldInput\n              aria-invalid={isInvalid || undefined}\n              aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n              key={slotKey}\n            />\n          ))}\n        </OTPField>\n      )}\n      {isInvalid && <FieldError>Incorrect code. Please try again.</FieldError>}\n      {!isComplete && !isValid && (\n        <FieldDescription>\n          Enter code{\" \"}\n          <code className=\"font-mono text-foreground\">{VALID_CODE}</code> to\n          verify.\n        </FieldDescription>\n      )}\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

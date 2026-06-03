@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-popover-18",
+  "description": "Confirmation / delete",
+  "registryDependencies": [
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-18.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { PlusIcon, XIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nconst SUGGESTIONS = [\"design\", \"engineering\", \"product\", \"research\", \"growth\"];\n\nexport function Pattern() {\n  const [tags, setTags] = useState([\"react\", \"typescript\"]);\n  const [input, setInput] = useState(\"\");\n\n  function addTag(tag: string) {\n    const trimmed = tag.trim().toLowerCase();\n    if (trimmed && !tags.includes(trimmed)) setTags((p) => [...p, trimmed]);\n    setInput(\"\");\n  }\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-1.5\">\n      {tags.map((tag) => (\n        <Badge className=\"gap-1 pr-1\" key={tag} variant=\"secondary\">\n          {tag}\n          <button\n            aria-label={`Remove ${tag}`}\n            className=\"rounded-full hover:bg-foreground/10\"\n            onClick={() => setTags((p) => p.filter((t) => t !== tag))}\n            type=\"button\"\n          >\n            <XIcon className=\"size-3\" />\n          </button>\n        </Badge>\n      ))}\n      <Popover>\n        <PopoverTrigger\n          aria-label=\"Add tag\"\n          render={<Button className=\"size-6\" size=\"icon\" variant=\"ghost\" />}\n        >\n          <PlusIcon className=\"size-3.5\" />\n        </PopoverTrigger>\n        <PopoverContent className=\"w-52 gap-2\" side=\"bottom\">\n          <Input\n            onChange={(e) => setInput(e.target.value)}\n            onKeyDown={(e) => {\n              if (e.key === \"Enter\") {\n                e.preventDefault();\n                addTag(input);\n              }\n            }}\n            placeholder=\"Add tag…\"\n            value={input}\n          />\n          <div className=\"space-y-0.5\">\n            {SUGGESTIONS.filter((s) => !tags.includes(s))\n              .slice(0, 3)\n              .map((s) => (\n                <button\n                  className=\"flex w-full items-center rounded px-2 py-1 text-sm hover:bg-muted\"\n                  key={s}\n                  onClick={() => addTag(s)}\n                  type=\"button\"\n                >\n                  {s}\n                </button>\n              ))}\n          </div>\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ],
+  "type": "registry:block"
+}

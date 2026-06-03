@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-5",
-  "description": "Basic fieldset",
+  "description": "Change password fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Fieldset className=\"flex w-full flex-col gap-5\">\n      <FieldsetLegend>Change Password</FieldsetLegend>\n      <Field>\n        <FieldLabel>Current password</FieldLabel>\n        <Input\n          autoComplete=\"current-password\"\n          placeholder=\"Enter current password\"\n          required\n          type=\"password\"\n        />\n        <FieldError>Current password is required.</FieldError>\n      </Field>\n      <Field>\n        <FieldLabel>\n          New password <span className=\"text-destructive-foreground\">*</span>\n        </FieldLabel>\n        <Input\n          autoComplete=\"new-password\"\n          minLength={8}\n          placeholder=\"Enter new password\"\n          required\n          type=\"password\"\n        />\n        <FieldDescription>At least 8 characters.</FieldDescription>\n        <FieldError>Password must be at least 8 characters.</FieldError>\n      </Field>\n      <Field>\n        <FieldLabel>\n          Confirm new password <span className=\"text-destructive-foreground\">*</span>\n        </FieldLabel>\n        <Input\n          autoComplete=\"new-password\"\n          placeholder=\"Re-enter new password\"\n          required\n          type=\"password\"\n        />\n        <FieldError>Passwords do not match.</FieldError>\n      </Field>\n    </Fieldset>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

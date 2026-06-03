@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-field-18",
-  "description": "Basic field",
+  "description": "Field with switch toggle",
   "registryDependencies": [
     "@cnippet/field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-field-18.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  return (\n    <Field className=\"flex-row items-center justify-between rounded-lg border p-4\">\n      <div className=\"flex flex-col gap-1\">\n        <FieldLabel className=\"cursor-pointer\">Marketing emails</FieldLabel>\n        <FieldDescription>\n          Receive emails about new products, features, and updates.\n        </FieldDescription>\n      </div>\n      <Switch />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
