@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-table-14",
+  "description": "Server health monitoring with CPU and memory progress bars",
+  "registryDependencies": [
+    "@cnippet/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-table-14.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Progress } from \"@/registry/default/ui/progress\";\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/default/ui/table\";\n\nconst servers = [\n  {\n    cpu: 42,\n    memory: 61,\n    name: \"web-prod-01\",\n    region: \"us-east-1\",\n    status: \"Healthy\",\n    statusVariant: \"success\" as const,\n    uptime: \"99.98%\",\n  },\n  {\n    cpu: 38,\n    memory: 55,\n    name: \"web-prod-02\",\n    region: \"us-east-1\",\n    status: \"Healthy\",\n    statusVariant: \"success\" as const,\n    uptime: \"99.98%\",\n  },\n  {\n    cpu: 87,\n    memory: 79,\n    name: \"api-prod-01\",\n    region: \"us-west-2\",\n    status: \"Warning\",\n    statusVariant: \"warning\" as const,\n    uptime: \"99.81%\",\n  },\n  {\n    cpu: 23,\n    memory: 68,\n    name: \"db-primary\",\n    region: \"eu-west-1\",\n    status: \"Healthy\",\n    statusVariant: \"success\" as const,\n    uptime: \"99.99%\",\n  },\n  {\n    cpu: 96,\n    memory: 91,\n    name: \"worker-01\",\n    region: \"ap-east-1\",\n    status: \"Critical\",\n    statusVariant: \"destructive\" as const,\n    uptime: \"97.23%\",\n  },\n  {\n    cpu: 14,\n    memory: 33,\n    name: \"cache-01\",\n    region: \"us-east-1\",\n    status: \"Healthy\",\n    statusVariant: \"success\" as const,\n    uptime: \"100%\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-3xl\">\n      <Table>\n        <TableHeader>\n          <TableRow>\n            <TableHead>Server</TableHead>\n            <TableHead>Region</TableHead>\n            <TableHead>Status</TableHead>\n            <TableHead>CPU</TableHead>\n            <TableHead>Memory</TableHead>\n            <TableHead className=\"text-right\">Uptime</TableHead>\n          </TableRow>\n        </TableHeader>\n        <TableBody>\n          {servers.map((s) => (\n            <TableRow key={s.name}>\n              <TableCell className=\"font-mono font-medium text-sm\">\n                {s.name}\n              </TableCell>\n              <TableCell className=\"text-muted-foreground text-xs\">\n                {s.region}\n              </TableCell>\n              <TableCell>\n                <Badge size=\"sm\" variant={s.statusVariant}>\n                  {s.status}\n                </Badge>\n              </TableCell>\n              <TableCell>\n                <div className=\"flex items-center gap-2\">\n                  <Progress className=\"h-1.5 w-16\" value={s.cpu} />\n                  <span className=\"w-8 text-right tabular-nums text-muted-foreground text-xs\">\n                    {s.cpu}%\n                  </span>\n                </div>\n              </TableCell>\n              <TableCell>\n                <div className=\"flex items-center gap-2\">\n                  <Progress className=\"h-1.5 w-16\" value={s.memory} />\n                  <span className=\"w-8 text-right tabular-nums text-muted-foreground text-xs\">\n                    {s.memory}%\n                  </span>\n                </div>\n              </TableCell>\n              <TableCell className=\"text-right font-mono text-sm\">\n                {s.uptime}\n              </TableCell>\n            </TableRow>\n          ))}\n        </TableBody>\n      </Table>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "table"
+  ],
+  "type": "registry:block"
+}

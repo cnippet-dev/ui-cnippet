@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-spinner-13",
+  "description": "Table Row Loading State",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-13.tsx",
+      "content": "\"use client\";\n\nimport { RefreshCwIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nconst rows = [\n  { id: \"INV-001\", customer: \"Acme Corp\", amount: \"$1,200\", status: \"Paid\" },\n  { id: \"INV-002\", customer: \"Globex Inc\", amount: \"$840\", status: \"Pending\" },\n  { id: \"INV-003\", customer: \"Initech\", amount: \"$3,500\", status: \"Paid\" },\n];\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false);\n\n  function handleRefresh() {\n    setLoading(true);\n    setTimeout(() => setLoading(false), 1800);\n  }\n\n  return (\n    <div className=\"w-full max-w-md overflow-hidden rounded-xl border\">\n      <div className=\"flex items-center justify-between border-b px-4 py-3\">\n        <p className=\"font-medium text-sm\">Invoices</p>\n        <Button onClick={handleRefresh} size=\"sm\" variant=\"ghost\">\n          {loading ? (\n            <Spinner aria-hidden=\"true\" className=\"size-4\" />\n          ) : (\n            <RefreshCwIcon aria-hidden=\"true\" className=\"size-4\" />\n          )}\n          Refresh\n        </Button>\n      </div>\n      <div className=\"divide-y\">\n        {loading\n          ? Array.from({ length: 3 }).map((_, i) => (\n              <div\n                className=\"flex items-center justify-between px-4 py-3\"\n                key={String(i)}\n              >\n                <div className=\"flex items-center gap-3\">\n                  <Spinner className=\"size-4 text-muted-foreground\" />\n                  <span className=\"text-sm text-muted-foreground\">\n                    Loading…\n                  </span>\n                </div>\n              </div>\n            ))\n          : rows.map((row) => (\n              <div\n                className=\"flex items-center justify-between px-4 py-3\"\n                key={row.id}\n              >\n                <div>\n                  <p className=\"text-sm font-medium\">{row.customer}</p>\n                  <p className=\"text-xs text-muted-foreground\">{row.id}</p>\n                </div>\n                <div className=\"text-right\">\n                  <p className=\"text-sm font-semibold\">{row.amount}</p>\n                  <p\n                    className={`text-xs ${row.status === \"Paid\" ? \"text-green-600\" : \"text-muted-foreground\"}`}\n                  >\n                    {row.status}\n                  </p>\n                </div>\n              </div>\n            ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-15",
+  "description": "Billing Frequency",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-15.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\n\nconst frequencies = [\n  {\n    badge: null,\n    description: \"Pay each month\",\n    label: \"Monthly\",\n    value: \"monthly\",\n  },\n  {\n    badge: \"Save 10%\",\n    description: \"Billed every quarter\",\n    label: \"Quarterly\",\n    value: \"quarterly\",\n  },\n  {\n    badge: \"Save 25%\",\n    description: \"Billed once a year\",\n    label: \"Annually\",\n    value: \"annually\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\n      <p className=\"font-medium text-sm\">Billing frequency</p>\n      <RadioGroup defaultValue=\"monthly\">\n        {frequencies.map(({ badge, description, label, value }) => (\n          <Label\n            className=\"flex cursor-pointer items-center justify-between rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50\"\n            key={value}\n          >\n            <div className=\"flex items-center gap-3\">\n              <Radio value={value} />\n              <div className=\"flex flex-col gap-0.5\">\n                <span className=\"font-medium text-sm\">{label}</span>\n                <span className=\"text-muted-foreground text-xs\">\n                  {description}\n                </span>\n              </div>\n            </div>\n            {badge && <Badge variant=\"secondary\">{badge}</Badge>}\n          </Label>\n        ))}\n      </RadioGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

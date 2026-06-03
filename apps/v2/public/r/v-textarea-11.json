@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-textarea-11",
+  "description": "Chat message composer with bubble thread and send on Enter",
+  "registryDependencies": [
+    "@cnippet/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-11.tsx",
+      "content": "\"use client\";\n\nimport { PaperclipIcon, SendIcon, SmileIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { KeyboardEvent } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\ntype Message = {\n  id: number;\n  own: boolean;\n  text: string;\n  time: string;\n};\n\nconst INITIAL_MESSAGES: Message[] = [\n  { id: 1, own: false, text: \"Hey! Can you review the PR I just opened?\", time: \"2:30 PM\" },\n  { id: 2, own: true, text: \"Sure, I'll take a look this afternoon.\", time: \"2:31 PM\" },\n  { id: 3, own: false, text: \"Thanks! No rush, just want fresh eyes on it.\", time: \"2:32 PM\" },\n];\n\nexport function Pattern() {\n  const [message, setMessage] = useState(\"\");\n  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);\n\n  const send = () => {\n    if (!message.trim()) return;\n    const now = new Date().toLocaleTimeString(\"en-US\", {\n      hour: \"2-digit\",\n      minute: \"2-digit\",\n    });\n    setMessages((prev) => [\n      ...prev,\n      { id: Date.now(), own: true, text: message.trim(), time: now },\n    ]);\n    setMessage(\"\");\n  };\n\n  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {\n    if (e.key === \"Enter\" && !e.shiftKey) {\n      e.preventDefault();\n      send();\n    }\n  };\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col overflow-hidden rounded-xl border border-border\">\n      <div className=\"border-b border-border bg-muted/30 px-3 py-2\">\n        <p className=\"font-medium text-sm\">Alice Chen</p>\n        <p className=\"text-emerald-500 text-xs\">Online</p>\n      </div>\n\n      <div className=\"flex min-h-48 flex-col justify-end gap-2 bg-muted/10 p-3\">\n        {messages.map((m) => (\n          <div\n            className={`flex flex-col gap-0.5 ${m.own ? \"items-end\" : \"items-start\"}`}\n            key={m.id}\n          >\n            <div\n              className={`max-w-[80%] rounded-xl px-3 py-1.5 text-xs ${\n                m.own\n                  ? \"rounded-tr-sm bg-primary text-primary-foreground\"\n                  : \"rounded-tl-sm border border-border bg-background\"\n              }`}\n            >\n              {m.text}\n            </div>\n            <span className=\"text-[10px] text-muted-foreground\">{m.time}</span>\n          </div>\n        ))}\n      </div>\n\n      <div className=\"border-t border-border bg-background p-2\">\n        <div className=\"flex items-end gap-1.5\">\n          <Textarea\n            onChange={(e) => setMessage(e.target.value)}\n            onKeyDown={handleKeyDown}\n            placeholder=\"Type a message… (↵ to send)\"\n            size=\"sm\"\n            style={{ minHeight: \"2.5rem\", resize: \"none\" }}\n            value={message}\n          />\n          <div className=\"flex items-center gap-0.5\">\n            <Button className=\"size-8 p-0\" size=\"sm\" variant=\"ghost\">\n              <PaperclipIcon className=\"size-3.5\" />\n            </Button>\n            <Button className=\"size-8 p-0\" size=\"sm\" variant=\"ghost\">\n              <SmileIcon className=\"size-3.5\" />\n            </Button>\n            <Button\n              className=\"size-8 p-0\"\n              disabled={!message.trim()}\n              onClick={send}\n              size=\"sm\"\n            >\n              <SendIcon className=\"size-3.5\" />\n            </Button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:block"
+}

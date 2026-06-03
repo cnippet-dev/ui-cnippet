@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-12",
+  "description": "Dual-Thumb Price Range",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-12.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  const [range, setRange] = useState([200, 800]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"font-medium text-sm\">Price Range</p>\n        <span className=\"text-sm font-semibold tabular-nums\">\n          ${range[0]} – ${range[1]}\n        </span>\n      </div>\n      <Slider\n        aria-label=\"Price range\"\n        max={1000}\n        min={0}\n        onValueChange={setRange}\n        step={10}\n        value={range}\n      />\n      <div className=\"flex justify-between text-xs text-muted-foreground\">\n        <span>$0</span>\n        <span>$1,000</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

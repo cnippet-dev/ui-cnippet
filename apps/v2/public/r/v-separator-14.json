@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-separator-14",
+  "description": "Card Section Dividers",
+  "registryDependencies": [
+    "@cnippet/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-separator-14.tsx",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nconst sections = [\n  {\n    description: \"Manage your personal details and preferences.\",\n    title: \"Profile\",\n  },\n  {\n    description: \"Update password, 2FA, and login sessions.\",\n    title: \"Security\",\n  },\n  {\n    description: \"Choose what you get notified about.\",\n    title: \"Notifications\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"w-64 overflow-hidden rounded-lg border\">\n      {sections.map(({ description, title }, i) => (\n        <div key={title}>\n          {i > 0 && <Separator />}\n          <div className=\"p-4\">\n            <p className=\"font-medium text-sm\">{title}</p>\n            <p className=\"mt-0.5 text-muted-foreground text-xs\">{description}</p>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "separator"
+  ],
+  "type": "registry:block"
+}

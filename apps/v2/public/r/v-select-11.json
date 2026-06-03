@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-11",
+  "description": "With Disabled Options",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-11.tsx",
+      "content": "import {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst activeRoles = [\n  { label: \"Owner\", value: \"owner\" },\n  { label: \"Admin\", value: \"admin\" },\n  { label: \"Editor\", value: \"editor\" },\n  { label: \"Viewer\", value: \"viewer\" },\n];\n\nconst comingSoon = [\n  { label: \"Guest\", value: \"guest\" },\n  { label: \"Contractor\", value: \"contractor\" },\n];\n\nconst placeholder = { label: \"Select a role\", value: null };\nconst allItems = [placeholder, ...activeRoles, ...comingSoon];\n\nexport default function Particle() {\n  return (\n    <Select defaultValue={activeRoles[2]} items={allItems}>\n      <SelectTrigger className=\"w-52\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {activeRoles.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            {item.label}\n          </SelectItem>\n        ))}\n        <SelectSeparator />\n        {comingSoon.map((item) => (\n          <SelectItem disabled key={item.value} value={item}>\n            {item.label}\n            <span className=\"ms-1.5 text-xs text-muted-foreground\">\n              (coming soon)\n            </span>\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

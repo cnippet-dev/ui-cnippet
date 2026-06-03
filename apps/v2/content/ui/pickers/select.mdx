@@ -119,3 +119,33 @@ Demonstrates using complex object values (e.g. `{ id, label }`) rather than plai
 Wraps the select in `Form` and `Field` for required validation and a `FieldError` displayed on submit.
 
 <ComponentPreview name="v-select-7" />
+
+### With Disabled Options
+
+Active role options are listed first; unavailable roles (Guest, Contractor) appear below a separator as disabled items with a "coming soon" label.
+
+<ComponentPreview name="v-select-11" />
+
+### Country Selector with Groups
+
+Options organized into `SelectGroup` regions (Americas, Europe, Asia Pacific) with `SelectGroupLabel` headings for each continent.
+
+<ComponentPreview name="v-select-12" />
+
+### Controlled with External Display
+
+A priority selector whose selected value drives a `Badge` rendered below the trigger — shows how to wire `onValueChange` to external UI.
+
+<ComponentPreview name="v-select-13" />
+
+### Items with Description
+
+Each dropdown option includes a secondary description line below its label — useful for environment selectors, plan tiers, or deployment targets.
+
+<ComponentPreview name="v-select-14" />
+
+### Sort Order with Icons
+
+A compact sort select where each option is prefixed with a `lucide-react` icon representing the sort direction or criteria.
+
+<ComponentPreview name="v-select-15" />

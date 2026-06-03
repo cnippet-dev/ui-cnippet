@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-11",
+  "description": "Plan Feature Toggles",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-11.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nconst features = [\n  { id: \"analytics\", label: \"Advanced Analytics\", pro: true },\n  { id: \"api\", label: \"API Access\", pro: true },\n  { id: \"export\", label: \"Data Export\", pro: true },\n  { id: \"sso\", label: \"Single Sign-On\", pro: true },\n  { id: \"audit\", label: \"Audit Logs\", pro: false },\n  { id: \"support\", label: \"Priority Support\", pro: false },\n];\n\nexport default function Particle() {\n  const [enabled, setEnabled] = useState<Record<string, boolean>>({\n    analytics: true,\n    api: false,\n    export: true,\n    sso: false,\n    audit: false,\n    support: false,\n  });\n\n  return (\n    <div className=\"w-full max-w-sm space-y-1 rounded-xl border p-1\">\n      {features.map(({ id, label, pro }) => (\n        <div\n          className=\"flex items-center justify-between rounded-lg px-3 py-2.5 hover:bg-muted/50\"\n          key={id}\n        >\n          <div className=\"flex items-center gap-2\">\n            <span className=\"text-sm font-medium\">{label}</span>\n            {!pro && (\n              <Badge className=\"text-[10px]\" variant=\"secondary\">\n                Enterprise\n              </Badge>\n            )}\n          </div>\n          <Switch\n            checked={enabled[id]}\n            disabled={!pro}\n            onCheckedChange={(v) => setEnabled((prev) => ({ ...prev, [id]: v }))}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-15",
+  "description": "Do Not Disturb Mode",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-15.tsx",
+      "content": "\"use client\";\n\nimport { BellOffIcon, MoonIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nconst scheduleOptions = [\"1 hour\", \"2 hours\", \"4 hours\", \"Until tomorrow\"];\n\nexport default function Particle() {\n  const [dnd, setDnd] = useState(false);\n  const [selected, setSelected] = useState(\"1 hour\");\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\n      <div className=\"flex items-center justify-between\">\n        <div className=\"flex items-center gap-2\">\n          <div\n            className={`flex size-9 items-center justify-center rounded-lg transition-colors ${dnd ? \"bg-primary/10 text-primary\" : \"bg-muted text-muted-foreground\"}`}\n          >\n            {dnd ? (\n              <BellOffIcon aria-hidden=\"true\" className=\"size-4\" />\n            ) : (\n              <MoonIcon aria-hidden=\"true\" className=\"size-4\" />\n            )}\n          </div>\n          <div>\n            <p className=\"text-sm font-medium\">Do Not Disturb</p>\n            <p className=\"text-xs text-muted-foreground\">\n              {dnd ? `Active for ${selected}` : \"All notifications enabled\"}\n            </p>\n          </div>\n        </div>\n        <Switch checked={dnd} onCheckedChange={setDnd} />\n      </div>\n\n      {dnd && (\n        <div className=\"space-y-2\">\n          <p className=\"text-xs font-medium text-muted-foreground uppercase tracking-wide\">\n            Duration\n          </p>\n          <div className=\"grid grid-cols-2 gap-2\">\n            {scheduleOptions.map((opt) => (\n              <button\n                className={`rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${\n                  selected === opt\n                    ? \"border-primary bg-primary/5 text-primary\"\n                    : \"hover:bg-muted\"\n                }`}\n                key={opt}\n                onClick={() => setSelected(opt)}\n                type=\"button\"\n              >\n                {opt}\n              </button>\n            ))}\n          </div>\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

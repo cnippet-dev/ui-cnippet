@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sheet-13",
+  "description": "Support Contact Form",
+  "registryDependencies": [
+    "@cnippet/sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sheet-13.tsx",
+      "content": "\"use client\";\n\nimport { HelpCircleIcon, SendIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Sheet,\n  SheetClose,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetPanel,\n  SheetPopup,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/registry/default/ui/sheet\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nconst categories = [\"Bug report\", \"Feature request\", \"Question\", \"Other\"];\n\nexport default function Particle() {\n  const [category, setCategory] = useState(\"Bug report\");\n  const [submitted, setSubmitted] = useState(false);\n\n  return (\n    <Sheet>\n      <SheetTrigger render={<Button variant=\"outline\" />}>\n        <HelpCircleIcon aria-hidden=\"true\" />\n        Get Support\n      </SheetTrigger>\n      <SheetPopup>\n        <SheetHeader>\n          <SheetTitle>Contact Support</SheetTitle>\n          <SheetDescription>\n            We typically respond within 24 hours.\n          </SheetDescription>\n        </SheetHeader>\n        {submitted ? (\n          <SheetPanel className=\"flex flex-col items-center justify-center gap-3 py-16 text-center\">\n            <div className=\"flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary\">\n              <SendIcon aria-hidden=\"true\" className=\"size-5\" />\n            </div>\n            <p className=\"font-medium\">Message sent!</p>\n            <p className=\"text-muted-foreground text-sm\">\n              Our team will get back to you shortly.\n            </p>\n          </SheetPanel>\n        ) : (\n          <SheetPanel className=\"space-y-4\">\n            <div className=\"space-y-2\">\n              <p className=\"font-medium text-sm\">Category</p>\n              <div className=\"flex flex-wrap gap-2\">\n                {categories.map((cat) => (\n                  <button\n                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${\n                      category === cat\n                        ? \"border-primary bg-primary text-primary-foreground\"\n                        : \"hover:bg-muted\"\n                    }`}\n                    key={cat}\n                    onClick={() => setCategory(cat)}\n                    type=\"button\"\n                  >\n                    {cat}\n                  </button>\n                ))}\n              </div>\n            </div>\n            <Field>\n              <FieldLabel>Subject</FieldLabel>\n              <Input placeholder=\"Brief description of your issue\" type=\"text\" />\n            </Field>\n            <Field>\n              <FieldLabel>Message</FieldLabel>\n              <Textarea\n                className=\"min-h-28 resize-none\"\n                placeholder=\"Describe the problem in detail…\"\n              />\n            </Field>\n          </SheetPanel>\n        )}\n        <SheetFooter>\n          <SheetClose render={<Button variant=\"ghost\" />}>Cancel</SheetClose>\n          {!submitted && (\n            <Button onClick={() => setSubmitted(true)}>\n              <SendIcon aria-hidden=\"true\" />\n              Send Message\n            </Button>\n          )}\n        </SheetFooter>\n      </SheetPopup>\n    </Sheet>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sheet"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-skeleton-12",
+  "description": "Form Fields",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-skeleton-12.tsx",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nconst fields = [\n  { wide: true },\n  { wide: true },\n  { wide: false },\n  { wide: false },\n  { wide: true },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm space-y-5\">\n      <div className=\"space-y-1.5\">\n        <Skeleton className=\"h-6 w-36\" />\n        <Skeleton className=\"h-4 w-52\" />\n      </div>\n\n      <div className=\"grid grid-cols-2 gap-4\">\n        {fields.map(({ wide }, i) => (\n          <div\n            className={`space-y-1.5 ${wide ? \"col-span-2\" : \"\"}`}\n            key={String(i)}\n          >\n            <Skeleton className=\"h-3.5 w-20\" />\n            <Skeleton className=\"h-9 w-full rounded-lg\" />\n          </div>\n        ))}\n      </div>\n\n      <div className=\"space-y-1.5\">\n        <Skeleton className=\"h-3.5 w-16\" />\n        <Skeleton className=\"h-24 w-full rounded-lg\" />\n      </div>\n\n      <div className=\"flex items-center justify-end gap-2 pt-1\">\n        <Skeleton className=\"h-9 w-20 rounded-lg\" />\n        <Skeleton className=\"h-9 w-28 rounded-lg\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:block"
+}

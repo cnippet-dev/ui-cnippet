@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-8",
-  "description": "Basic textarea",
+  "description": "Auto-grow with live word and character count",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const wordCount = value.trim() ? value.trim().split(/\\s+/).length : 0;\n  const charCount = value.length;\n\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Textarea\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Start writing. The field grows as you type…\"\n        value={value}\n      />\n      <div className=\"mt-1.5 flex items-center justify-between text-muted-foreground text-xs\">\n        <span>\n          {wordCount} {wordCount === 1 ? \"word\" : \"words\"}\n        </span>\n        <span>{charCount} chars</span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

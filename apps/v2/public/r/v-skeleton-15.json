@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-skeleton-15",
+  "description": "Profile Hero Page",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-skeleton-15.tsx",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-lg overflow-hidden rounded-xl border\">\n      <Skeleton className=\"h-28 w-full rounded-none\" />\n\n      <div className=\"px-5 pb-5\">\n        <div className=\"-mt-8 mb-4 flex items-end justify-between gap-3\">\n          <Skeleton className=\"size-16 rounded-full ring-4 ring-background\" />\n          <Skeleton className=\"h-8 w-24 rounded-lg\" />\n        </div>\n\n        <div className=\"space-y-1.5\">\n          <Skeleton className=\"h-5 w-40\" />\n          <Skeleton className=\"h-4 w-28\" />\n        </div>\n\n        <div className=\"mt-3 space-y-1.5\">\n          <Skeleton className=\"h-3.5 w-full\" />\n          <Skeleton className=\"h-3.5 w-5/6\" />\n          <Skeleton className=\"h-3.5 w-4/5\" />\n        </div>\n\n        <div className=\"mt-4 flex items-center gap-4 border-y py-3\">\n          {Array.from({ length: 3 }).map((_, i) => (\n            <div className=\"flex items-center gap-1.5\" key={String(i)}>\n              <Skeleton className=\"h-4 w-10\" />\n              <Skeleton className=\"h-3.5 w-16\" />\n            </div>\n          ))}\n        </div>\n\n        <div className=\"mt-4 grid grid-cols-3 gap-2\">\n          {Array.from({ length: 6 }).map((_, i) => (\n            <Skeleton\n              className=\"aspect-square w-full rounded-lg\"\n              key={String(i)}\n            />\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:block"
+}

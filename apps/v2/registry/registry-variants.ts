@@ -1094,7 +1094,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- radio-group ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "radio group",
       dependencies: ["radio-group"],
@@ -1108,40 +1108,73 @@ export const variants: ParticleItem[] = [
         "In Card With Description",
         "In Card With Icons",
         "Form Integration",
+        undefined,
+        "Horizontal Layout",
+        "Shipping Options",
+        "Theme Selector",
+        "Availability Status",
+        "Billing Frequency",
       ][i],
       name: `v-radio-group-${i + 1}`,
     }),
   ),
 
   // --- scroll-area ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "scroll area",
       dependencies: ["scroll-area"],
+      ...(i >= 10 && {
+        description: [
+          "Chat Feed",
+          "Notification List",
+          "Sidebar Navigation",
+          "Activity Log",
+          "File Explorer",
+        ][i - 10],
+      }),
       name: `v-scroll-area-${i + 1}`,
     }),
   ),
 
   // --- select ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "select",
       dependencies: ["select"],
+      ...(i >= 10 && {
+        description: [
+          "With Disabled Options",
+          "Country Selector with Groups",
+          "Controlled with External Display",
+          "Items with Description",
+          "Sort Order with Icons",
+        ][i - 10],
+      }),
       name: `v-select-${i + 1}`,
     }),
   ),
 
   // --- separator ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "separator",
       dependencies: ["separator"],
+      ...(i >= 10 && {
+        description: [
+          "Social Stats Bar",
+          "Section Heading with Line",
+          "Footer Links",
+          "Card Section Dividers",
+          "Toolbar with Separator Groups",
+        ][i - 10],
+      }),
       name: `v-separator-${i + 1}`,
     }),
   ),
 
   // --- sheet ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "sheet",
       dependencies: ["sheet"],
@@ -1156,13 +1189,18 @@ export const variants: ParticleItem[] = [
         "Activity Log",
         "Navigation Menu",
         "Issue Detail",
+        "Export Data Panel",
+        "User Profile Viewer",
+        "Support Contact Form",
+        "Keyboard Shortcuts Reference",
+        "API Key Manager",
       ][i],
       name: `v-sheet-${i + 1}`,
     }),
   ),
 
   // --- skeleton ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "skeleton",
       dependencies: ["skeleton"],
@@ -1177,13 +1215,18 @@ export const variants: ParticleItem[] = [
         "Sidebar Dashboard Layout",
         "Chat Thread",
         "Settings Page",
+        "Product Grid",
+        "Form Fields",
+        "Email Inbox",
+        "Kanban Board",
+        "Profile Hero Page",
       ][i],
       name: `v-skeleton-${i + 1}`,
     }),
   ),
 
   // --- slider ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "slider",
       dependencies: ["slider"],
@@ -1195,13 +1238,21 @@ export const variants: ParticleItem[] = [
         "With Tick Marks",
         "With Dynamic Tooltip Indicator",
         "Rating Slider With Emoji Feedback",
+        undefined,
+        undefined,
+        undefined,
+        "Volume Control With Mute Toggle",
+        "Dual-Thumb Price Range",
+        "Hue Color Picker",
+        "Temperature Control",
+        "Display Settings Sliders",
       ][i],
       name: `v-slider-${i + 1}`,
     }),
   ),
 
   // --- spinner ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "spinner",
       dependencies: ["spinner"],
@@ -1215,13 +1266,19 @@ export const variants: ParticleItem[] = [
         "Inline loading text with spinner",
         "overlay on card",
         "Color variants",
+        undefined,
+        "Page Transition Overlay",
+        "File Upload Progress",
+        "Table Row Loading State",
+        "Auth Form With Spinner",
+        "Spinner Sizes",
       ][i],
       name: `v-spinner-${i + 1}`,
     }),
   ),
 
   // --- switch ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "switch",
       dependencies: ["switch"],
@@ -1236,13 +1293,18 @@ export const variants: ParticleItem[] = [
         "Switch with descriptions in card grid",
         "Cookie Preferences Manager",
         "Notification Delivery Channels",
+        "Plan Feature Toggles",
+        "Privacy Settings With Icons",
+        "Dark Mode Toggle Card",
+        "Required Agreement Switch",
+        "Do Not Disturb Mode",
       ][i],
       name: `v-switch-${i + 1}`,
     }),
   ),
 
   // --- table ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "table",
       dependencies: ["table"],
@@ -1257,13 +1319,18 @@ export const variants: ParticleItem[] = [
         "Sortable API Endpoints",
         "Storage Usage with Progress Bars",
         "Audit Log",
+        "Product inventory with stock level badges and quantity",
+        "Invoice history with status badges and outstanding total",
+        "Feature comparison table with checkmarks across plan tiers",
+        "Server health monitoring with CPU and memory progress bars",
+        "Contributor leaderboard with rank, avatar, and change indicator",
       ][i],
       name: `v-table-${i + 1}`,
     }),
   ),
 
   // --- tabs ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 17 }, (_, i) =>
     createVariant({
       category: "tabs",
       dependencies: ["tabs"],
@@ -1280,13 +1347,18 @@ export const variants: ParticleItem[] = [
         "With Badge Counts",
         "With Icons And Line Variant",
         "Segmented Control Tabs",
+        "Settings navigation with vertical underline tabs and profile form",
+        "Code file viewer with per-file tabs and copy button",
+        "Profile repository listing with badge counts per tab",
+        "Pricing toggle between monthly and yearly billing with plan cards",
+        "Dashboard metrics with icon tabs and stat card content panels",
       ][i],
       name: `v-tabs-${i + 1}`,
     }),
   ),
 
   // --- textarea ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 12 }, (_, i) =>
     createVariant({
       category: "textarea",
       dependencies: ["textarea"],
@@ -1298,6 +1370,11 @@ export const variants: ParticleItem[] = [
         "With Description",
         "With Character Count",
         "Form Integration",
+        "Auto-grow with live word and character count",
+        "Write / Preview markdown toggle",
+        "Support ticket with category chips and message field",
+        "Chat message composer with bubble thread and send on Enter",
+        "Release notes editor with title input and publish action",
       ][i],
       name: `v-textarea-${i + 1}`,
     }),

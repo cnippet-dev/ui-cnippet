@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-13",
+  "description": "Sidebar Navigation",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-13.tsx",
+      "content": "import {\n  BellIcon,\n  FolderIcon,\n  LayoutDashboardIcon,\n  SettingsIcon,\n  ShieldIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst sections = [\n  {\n    items: [\n      { Icon: LayoutDashboardIcon, label: \"Overview\" },\n      { Icon: FolderIcon, label: \"Projects\" },\n      { Icon: UsersIcon, label: \"Team\" },\n    ],\n    title: \"Workspace\",\n  },\n  {\n    items: [\n      { Icon: SettingsIcon, label: \"General\" },\n      { Icon: ShieldIcon, label: \"Security\" },\n      { Icon: UsersIcon, label: \"Members\" },\n    ],\n    title: \"Settings\",\n  },\n  {\n    items: [\n      { Icon: FolderIcon, label: \"Assets\" },\n      { Icon: LayoutDashboardIcon, label: \"Analytics\" },\n      { Icon: BellIcon, label: \"Alerts\" },\n    ],\n    title: \"Resources\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"h-72 w-48 rounded-lg border\">\n      <div className=\"flex flex-col gap-4 p-3\">\n        {sections.map(({ items, title }) => (\n          <div key={title}>\n            <p className=\"mb-1 px-2 font-medium text-muted-foreground text-xs uppercase tracking-wide\">\n              {title}\n            </p>\n            <div className=\"flex flex-col gap-0.5\">\n              {items.map(({ Icon, label }, idx) => (\n                <button\n                  className={`flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent ${title === \"Workspace\" && idx === 0 ? \"bg-accent\" : \"\"}`}\n                  key={label}\n                  type=\"button\"\n                >\n                  <Icon aria-hidden=\"true\" className=\"size-4 opacity-70\" />\n                  {label}\n                </button>\n              ))}\n            </div>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

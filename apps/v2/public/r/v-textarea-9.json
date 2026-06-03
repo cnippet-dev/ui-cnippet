@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-textarea-9",
-  "description": "Basic textarea",
+  "description": "Write / Preview markdown toggle",
   "registryDependencies": [
     "@cnippet/textarea"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-textarea-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Tabs, TabsList, TabsPanel, TabsTab } from \"@/registry/default/ui/tabs\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nconst INITIAL = `## What's new in v2.4\n\nThis release ships the **new dashboard** layout and several performance improvements.\n\n### Changes\n- Redesigned sidebar navigation\n- Improved data table with column sorting\n- Fixed auth token refresh on mobile\n`;\n\nexport function Pattern() {\n  const [content, setContent] = useState(INITIAL);\n\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Tabs defaultValue=\"write\">\n        <TabsList className=\"mb-2\" variant=\"underline\">\n          <TabsTab value=\"write\">Write</TabsTab>\n          <TabsTab value=\"preview\">Preview</TabsTab>\n        </TabsList>\n\n        <TabsPanel value=\"write\">\n          <Textarea\n            onChange={(e) => setContent(e.target.value)}\n            placeholder=\"Write markdown here…\"\n            style={{ minHeight: \"10rem\" }}\n            value={content}\n          />\n        </TabsPanel>\n\n        <TabsPanel value=\"preview\">\n          <div className=\"min-h-40 rounded-lg border border-input bg-background p-3\">\n            {content ? (\n              <p className=\"whitespace-pre-wrap text-foreground/80 text-xs leading-relaxed\">\n                {content}\n              </p>\n            ) : (\n              <p className=\"text-muted-foreground text-xs\">\n                Nothing to preview.\n              </p>\n            )}\n          </div>\n        </TabsPanel>\n      </Tabs>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

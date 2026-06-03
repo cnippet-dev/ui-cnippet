@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-skeleton-14",
+  "description": "Kanban Board",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-skeleton-14.tsx",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nconst columns = [\n  { cards: 3, label: \"To Do\" },\n  { cards: 2, label: \"In Progress\" },\n  { cards: 4, label: \"Done\" },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-2xl gap-4 overflow-x-auto pb-2\">\n      {columns.map(({ cards, label }) => (\n        <div\n          className=\"w-60 shrink-0 space-y-3 rounded-xl border bg-muted/30 p-3\"\n          key={label}\n        >\n          <div className=\"flex items-center justify-between\">\n            <Skeleton className=\"h-4 w-16\" />\n            <Skeleton className=\"h-5 w-5 rounded-full\" />\n          </div>\n          {Array.from({ length: cards }).map((_, i) => (\n            <div\n              className=\"space-y-2.5 rounded-lg border bg-background p-3\"\n              key={String(i)}\n            >\n              <Skeleton className=\"h-3.5 w-4/5\" />\n              <Skeleton className=\"h-3 w-3/5\" />\n              <div className=\"flex items-center justify-between pt-1\">\n                <div className=\"flex -space-x-1.5\">\n                  {Array.from({ length: 2 }).map((_, j) => (\n                    <Skeleton\n                      className=\"size-5 rounded-full ring-2 ring-background\"\n                      key={String(j)}\n                    />\n                  ))}\n                </div>\n                <Skeleton className=\"h-4 w-12 rounded-full\" />\n              </div>\n            </div>\n          ))}\n          <Skeleton className=\"h-7 w-full rounded-md\" />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:block"
+}
