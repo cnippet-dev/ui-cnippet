@@ -10,7 +10,7 @@ export function Pattern() {
   return (
     <div className="flex items-end gap-3">
       <div className="flex flex-col gap-1.5">
-        <span className="text-sm font-medium">Min</span>
+        <span className="font-medium text-sm">Min</span>
         <NumberField
           defaultValue={100}
           format={{ currency: "USD", style: "currency" }}
@@ -26,7 +26,7 @@ export function Pattern() {
       </div>
       <span className="mb-2.5 text-muted-foreground">–</span>
       <div className="flex flex-col gap-1.5">
-        <span className="text-sm font-medium">Max</span>
+        <span className="font-medium text-sm">Max</span>
         <NumberField
           defaultValue={1000}
           format={{ currency: "USD", style: "currency" }}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-15",
+  "description": "Task list with per-task priority flag toggles",
+  "registryDependencies": [
+    "@cnippet/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-15.tsx",
+      "content": "\"use client\";\n\nimport {\n  CalendarIcon,\n  CheckIcon,\n  ClockIcon,\n  FlagIcon,\n  StarIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\ntype Priority = \"low\" | \"medium\" | \"high\" | \"urgent\";\n\nconst priorities: {\n  color: string;\n  id: Priority;\n  label: string;\n}[] = [\n  { color: \"text-muted-foreground\", id: \"low\", label: \"Low\" },\n  { color: \"text-blue-500\", id: \"medium\", label: \"Medium\" },\n  { color: \"text-amber-500\", id: \"high\", label: \"High\" },\n  { color: \"text-red-500\", id: \"urgent\", label: \"Urgent\" },\n];\n\nconst tasks = [\n  { due: \"Today\", id: \"t1\", title: \"Review PR #482\", status: \"open\" },\n  { due: \"Tomorrow\", id: \"t2\", title: \"Update API docs\", status: \"open\" },\n  { due: \"Jun 10\", id: \"t3\", title: \"Write release notes\", status: \"open\" },\n];\n\nexport function Pattern() {\n  const [taskPriorities, setTaskPriorities] = useState<\n    Record<string, Priority>\n  >({ t1: \"high\", t2: \"medium\", t3: \"low\" });\n  const [done, setDone] = useState<Set<string>>(new Set());\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <p className=\"font-semibold text-sm\">Task priority</p>\n      {tasks.map((task) => (\n        <div\n          className={`rounded-lg border border-border p-3 transition-opacity ${done.has(task.id) ? \"opacity-50\" : \"\"}`}\n          key={task.id}\n        >\n          <div className=\"mb-2 flex items-center justify-between gap-2\">\n            <div className=\"flex items-center gap-2\">\n              <Toggle\n                aria-label={done.has(task.id) ? \"Mark incomplete\" : \"Mark complete\"}\n                className={done.has(task.id) ? \"text-emerald-500\" : \"text-muted-foreground\"}\n                onPressedChange={() =>\n                  setDone((prev) => {\n                    const next = new Set(prev);\n                    next.has(task.id) ? next.delete(task.id) : next.add(task.id);\n                    return next;\n                  })\n                }\n                pressed={done.has(task.id)}\n                size=\"sm\"\n              >\n                <CheckIcon className=\"size-3.5\" />\n              </Toggle>\n              <span\n                className={`text-sm font-medium ${done.has(task.id) ? \"line-through text-muted-foreground\" : \"\"}`}\n              >\n                {task.title}\n              </span>\n            </div>\n            <div className=\"flex items-center gap-1 text-muted-foreground text-xs\">\n              <CalendarIcon className=\"size-3\" />\n              {task.due}\n            </div>\n          </div>\n          <div className=\"flex gap-1\">\n            {priorities.map((p) => (\n              <Toggle\n                aria-label={`Set ${p.label} priority`}\n                className={`gap-1 text-xs ${taskPriorities[task.id] === p.id ? p.color : \"text-muted-foreground/60\"}`}\n                key={p.id}\n                onPressedChange={() =>\n                  setTaskPriorities((prev) => ({ ...prev, [task.id]: p.id }))\n                }\n                pressed={taskPriorities[task.id] === p.id}\n                size=\"sm\"\n              >\n                <FlagIcon className=\"size-3\" />\n                {p.label}\n              </Toggle>\n            ))}\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:block"
+}

@@ -6,14 +6,24 @@ import { Label } from "@/registry/default/ui/label";
 const fields = [
   { key: "first", label: "First name", placeholder: "Jane" },
   { key: "last", label: "Last name", placeholder: "Smith" },
-  { key: "email", label: "Email", placeholder: "jane@example.com", type: "email" },
+  {
+    key: "email",
+    label: "Email",
+    placeholder: "jane@example.com",
+    type: "email",
+  },
 ] as const;
 
 export function Pattern() {
   return (
     <div className="w-full max-w-sm space-y-3">
       {fields.map(({ key, label, placeholder, type }) => (
-        <HorizontalField key={key} label={label} placeholder={placeholder} type={type} />
+        <HorizontalField
+          key={key}
+          label={label}
+          placeholder={placeholder}
+          type={type}
+        />
       ))}
     </div>
   );

@@ -10,14 +10,12 @@ import {
 
 type StockStatus = "in-stock" | "low-stock" | "out-of-stock";
 
-const stockVariant: Record<
-  StockStatus,
-  "success" | "warning" | "destructive"
-> = {
-  "in-stock": "success",
-  "low-stock": "warning",
-  "out-of-stock": "destructive",
-};
+const stockVariant: Record<StockStatus, "success" | "warning" | "destructive"> =
+  {
+    "in-stock": "success",
+    "low-stock": "warning",
+    "out-of-stock": "destructive",
+  };
 
 const stockLabel: Record<StockStatus, string> = {
   "in-stock": "In Stock",
@@ -101,7 +99,7 @@ export function Pattern() {
                 {p.category}
               </TableCell>
               <TableCell className="text-right text-sm">{p.price}</TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right text-sm tabular-nums">
                 {p.qty}
               </TableCell>
               <TableCell>

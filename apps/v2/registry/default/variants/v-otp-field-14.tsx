@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { CheckCircle2Icon } from "lucide-react";
+import { useState } from "react";
 import {
   Field,
   FieldDescription,
@@ -28,7 +28,7 @@ export function Pattern() {
     <Field className="items-center">
       <FieldLabel>Verification code</FieldLabel>
       {isValid ? (
-        <div className="flex items-center gap-2 py-1 text-sm text-green-600">
+        <div className="flex items-center gap-2 py-1 text-green-600 text-sm">
           <CheckCircle2Icon aria-hidden="true" className="size-4" />
           Identity verified
         </div>

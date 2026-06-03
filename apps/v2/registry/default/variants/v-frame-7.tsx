@@ -24,7 +24,10 @@ export function Pattern() {
             { label: "Storage API", status: "operational" },
             { label: "Webhooks", status: "degraded" },
           ].map((service) => (
-            <div className="flex items-center justify-between" key={service.label}>
+            <div
+              className="flex items-center justify-between"
+              key={service.label}
+            >
               <p className="text-sm">{service.label}</p>
               <span
                 className={`size-2 rounded-full ${service.status === "operational" ? "bg-success" : "bg-warning"}`}

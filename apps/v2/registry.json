@@ -17681,6 +17681,106 @@
     },
     {
       "categories": [
+        "toast"
+      ],
+      "description": "Anchored clipboard copy with tooltip-style toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-11",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Team invite with per-row undo action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-12",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Background CSV export with download action on complete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-13",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Session expiry warning with live countdown and renew action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-14",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Unsaved changes reminder with save and discard actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-15",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle"
       ],
       "description": "Default",
@@ -17881,6 +17981,106 @@
     },
     {
       "categories": [
+        "toggle"
+      ],
+      "description": "Bookmark toggle per article row with saved count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-11",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Rich-text formatting toolbar with markdown preview",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-12",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Social post interactions with live like and repost counts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-13",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Server settings toggles with icon swap and status color",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-14",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Task list with per-task priority flag toggles",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-15",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle group"
       ],
       "description": "Default",
@@ -18063,7 +18263,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Language picker with live code snippet preview",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-10.tsx",
@@ -18081,9 +18281,109 @@
     },
     {
       "categories": [
+        "toggle group"
+      ],
+      "description": "Per-column sort direction control",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-11",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Issue priority picker with color-coded labels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-12",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Date range quick-select with live stats grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-13",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Code viewer toolbar with multi-select options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-14",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Zoom level control with live scale preview",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-15",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-1.tsx",
@@ -18103,7 +18403,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Rich text editor toolbar with formatting and alignment controls",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-2.tsx",
@@ -18123,7 +18423,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Image editor toolbar with transform, zoom, and export actions",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-3.tsx",
@@ -18143,7 +18443,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Data table toolbar with search input, filter controls, and add row",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-4.tsx",
@@ -18163,7 +18463,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Code editor toolbar with language select, word wrap, copy, and run",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-5.tsx",
@@ -18183,7 +18483,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Document collaboration toolbar with edit/preview toggle and share",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-6.tsx",
@@ -18514,6 +18814,106 @@
         "className": ""
       },
       "name": "v-tooltip-12",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Form field validation hints with info icon tooltips",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-13",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "System status dots revealing service name, uptime, and latency",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-14",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Icon-only sidebar nav with label and description tooltips",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-15",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Permissions matrix with role access details per cell",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-16",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Deployment pipeline steps with status and detail per stage",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-17",
       "registryDependencies": [
         "@cnippet/tooltip"
       ],

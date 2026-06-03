@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { DownloadIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   Progress,
   ProgressIndicator,
@@ -27,9 +27,12 @@ export function Pattern() {
   return (
     <div className="w-full max-w-xs space-y-3">
       <div className="flex items-center gap-2">
-        <DownloadIcon aria-hidden="true" className="size-4 text-muted-foreground" />
-        <span className="text-sm font-medium">Downloading update…</span>
-        <span className="ml-auto text-xs tabular-nums text-muted-foreground">
+        <DownloadIcon
+          aria-hidden="true"
+          className="size-4 text-muted-foreground"
+        />
+        <span className="font-medium text-sm">Downloading update…</span>
+        <span className="ml-auto text-muted-foreground text-xs tabular-nums">
           {pct}%
         </span>
       </div>
@@ -38,7 +41,7 @@ export function Pattern() {
           <ProgressIndicator />
         </ProgressTrack>
       </Progress>
-      <div className="flex justify-between text-xs tabular-nums text-muted-foreground">
+      <div className="flex justify-between text-muted-foreground text-xs tabular-nums">
         <span>2.4 MB/s</span>
         <span>
           {remaining > 0 ? `~${remaining}s remaining` : "Finalizing…"}

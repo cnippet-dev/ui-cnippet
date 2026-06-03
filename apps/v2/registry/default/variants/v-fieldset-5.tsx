@@ -37,7 +37,8 @@ export default function Particle() {
       </Field>
       <Field>
         <FieldLabel>
-          Confirm new password <span className="text-destructive-foreground">*</span>
+          Confirm new password{" "}
+          <span className="text-destructive-foreground">*</span>
         </FieldLabel>
         <Input
           autoComplete="new-password"

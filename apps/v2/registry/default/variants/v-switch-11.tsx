@@ -17,9 +17,9 @@ export default function Particle() {
   const [enabled, setEnabled] = useState<Record<string, boolean>>({
     analytics: true,
     api: false,
+    audit: false,
     export: true,
     sso: false,
-    audit: false,
     support: false,
   });
 
@@ -31,7 +31,7 @@ export default function Particle() {
           key={id}
         >
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">{label}</span>
+            <span className="font-medium text-sm">{label}</span>
             {!pro && (
               <Badge className="text-[10px]" variant="secondary">
                 Enterprise
@@ -41,7 +41,9 @@ export default function Particle() {
           <Switch
             checked={enabled[id]}
             disabled={!pro}
-            onCheckedChange={(v) => setEnabled((prev) => ({ ...prev, [id]: v }))}
+            onCheckedChange={(v) =>
+              setEnabled((prev) => ({ ...prev, [id]: v }))
+            }
           />
         </div>
       ))}

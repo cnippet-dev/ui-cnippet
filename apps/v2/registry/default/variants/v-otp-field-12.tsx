@@ -1,9 +1,6 @@
 import { SmartphoneIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
-import {
-  Field,
-  FieldLabel,
-} from "@/registry/default/ui/field";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { OTPField, OTPFieldInput } from "@/registry/default/ui/otp-field";
 
 const OTP_LENGTH = 6;
@@ -24,8 +21,8 @@ export function Pattern() {
           />
         </div>
         <div>
-          <p className="text-sm font-medium">Authenticator app</p>
-          <p className="text-xs text-muted-foreground">
+          <p className="font-medium text-sm">Authenticator app</p>
+          <p className="text-muted-foreground text-xs">
             Enter the 6-digit code shown in your app
           </p>
         </div>

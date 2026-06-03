@@ -18,10 +18,13 @@ export function Pattern() {
     <div className="w-full max-w-xs space-y-4 rounded-xl border p-6">
       <div className="flex flex-col items-center gap-2 text-center">
         <div className="flex size-10 items-center justify-center rounded-full bg-muted">
-          <MailIcon aria-hidden="true" className="size-5 text-muted-foreground" />
+          <MailIcon
+            aria-hidden="true"
+            className="size-5 text-muted-foreground"
+          />
         </div>
-        <h3 className="text-sm font-semibold">Check your email</h3>
-        <p className="text-xs text-muted-foreground">
+        <h3 className="font-semibold text-sm">Check your email</h3>
+        <p className="text-muted-foreground text-xs">
           We sent a 6-digit code to{" "}
           <span className="font-medium text-foreground">jane@example.com</span>
         </p>

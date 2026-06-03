@@ -1,8 +1,8 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   Pagination,
   PaginationContent,
@@ -13,10 +13,7 @@ import {
 
 const TOTAL_PAGES = 20;
 
-function getVisiblePages(
-  current: number,
-  total: number,
-): (number | "...")[] {
+function getVisiblePages(current: number, total: number): (number | "...")[] {
   if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
   if (current <= 4) return [1, 2, 3, 4, 5, "...", total];
   if (current >= total - 3)
@@ -70,7 +67,9 @@ export function Pattern() {
           <PaginationLink
             aria-disabled={page === TOTAL_PAGES}
             aria-label="Go to next page"
-            className={page === TOTAL_PAGES ? "pointer-events-none opacity-50" : ""}
+            className={
+              page === TOTAL_PAGES ? "pointer-events-none opacity-50" : ""
+            }
             href="#"
             onClick={(e) => go(e, page + 1)}
             size="icon"

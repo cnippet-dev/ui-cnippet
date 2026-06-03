@@ -24,8 +24,8 @@ export default function Particle() {
             )}
           </div>
           <div>
-            <p className="text-sm font-medium">Do Not Disturb</p>
-            <p className="text-xs text-muted-foreground">
+            <p className="font-medium text-sm">Do Not Disturb</p>
+            <p className="text-muted-foreground text-xs">
               {dnd ? `Active for ${selected}` : "All notifications enabled"}
             </p>
           </div>
@@ -35,13 +35,13 @@ export default function Particle() {
 
       {dnd && (
         <div className="space-y-2">
-          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+          <p className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
             Duration
           </p>
           <div className="grid grid-cols-2 gap-2">
             {scheduleOptions.map((opt) => (
               <button
-                className={`rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                className={`rounded-lg border px-3 py-2 font-medium text-xs transition-colors ${
                   selected === opt
                     ? "border-primary bg-primary/5 text-primary"
                     : "hover:bg-muted"

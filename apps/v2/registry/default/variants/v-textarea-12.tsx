@@ -21,7 +21,10 @@ export function Pattern() {
     <div className="flex w-full max-w-xs flex-col gap-4">
       <div className="flex items-center justify-between">
         <p className="font-semibold text-sm">Release Notes</p>
-        <Badge size="sm" variant={status === "published" ? "success" : "secondary"}>
+        <Badge
+          size="sm"
+          variant={status === "published" ? "success" : "secondary"}
+        >
           {status === "published" ? "Published" : "Draft"}
         </Badge>
       </div>
@@ -46,12 +49,10 @@ export function Pattern() {
           style={{ minHeight: "8rem" }}
           value={notes}
         />
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
+        <div className="flex items-center justify-between text-muted-foreground text-xs">
           <span>Markdown supported</span>
           <span
-            className={
-              notes.length > MAX_CHARS * 0.9 ? "text-amber-500" : ""
-            }
+            className={notes.length > MAX_CHARS * 0.9 ? "text-amber-500" : ""}
           >
             {notes.length} / {MAX_CHARS}
           </span>

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { BellIcon } from "lucide-react";
+import { useState } from "react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -11,9 +11,24 @@ import {
 } from "@/registry/default/ui/popover";
 
 const initialNotifications = [
-  { id: 1, read: false, text: "Jamie left a comment on your post.", time: "2m ago" },
-  { id: 2, read: false, text: "Your export is ready to download.", time: "15m ago" },
-  { id: 3, read: true, text: "Alex invited you to join the workspace.", time: "1h ago" },
+  {
+    id: 1,
+    read: false,
+    text: "Jamie left a comment on your post.",
+    time: "2m ago",
+  },
+  {
+    id: 2,
+    read: false,
+    text: "Your export is ready to download.",
+    time: "15m ago",
+  },
+  {
+    id: 3,
+    read: true,
+    text: "Alex invited you to join the workspace.",
+    time: "1h ago",
+  },
 ];
 
 export function Pattern() {
@@ -30,7 +45,7 @@ export function Pattern() {
           <span className="relative">
             <BellIcon aria-hidden="true" className="size-4" />
             {unread > 0 && (
-              <span className="absolute -right-1 -top-1 flex size-3.5 items-center justify-center rounded-full bg-destructive text-[9px] font-bold text-destructive-foreground">
+              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-destructive font-bold text-[9px] text-destructive-foreground">
                 {unread}
               </span>
             )}

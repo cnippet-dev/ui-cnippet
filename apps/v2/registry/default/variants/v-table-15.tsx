@@ -89,7 +89,7 @@ export function Pattern() {
         <TableBody>
           {contributors.map((c) => (
             <TableRow key={c.rank}>
-              <TableCell className="font-bold tabular-nums text-muted-foreground text-sm">
+              <TableCell className="font-bold text-muted-foreground text-sm tabular-nums">
                 #{c.rank}
               </TableCell>
               <TableCell>
@@ -111,18 +111,18 @@ export function Pattern() {
                   )}
                 </div>
               </TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right text-sm tabular-nums">
                 {c.commits}
               </TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right text-sm tabular-nums">
                 {c.prs}
               </TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right text-sm tabular-nums">
                 {c.reviews}
               </TableCell>
               <TableCell className="text-right">
                 <span
-                  className={`inline-flex items-center gap-0.5 tabular-nums text-xs ${
+                  className={`inline-flex items-center gap-0.5 text-xs tabular-nums ${
                     c.change > 0
                       ? "text-emerald-500"
                       : c.change < 0

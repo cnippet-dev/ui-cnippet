@@ -1381,7 +1381,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- toast ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "toast",
       dependencies: ["toast"],
@@ -1396,13 +1396,18 @@ export const variants: ParticleItem[] = [
         "Staggered Notification Burst",
         "Timeout Control",
         "Auto-progressing Deploy Pipeline",
+        "Anchored clipboard copy with tooltip-style toast",
+        "Team invite with per-row undo action",
+        "Background CSV export with download action on complete",
+        "Session expiry warning with live countdown and renew action",
+        "Unsaved changes reminder with save and discard actions",
       ][i],
       name: `v-toast-${i + 1}`,
     }),
   ),
 
   // --- toggle ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "toggle",
       dependencies: ["toggle"],
@@ -1417,13 +1422,18 @@ export const variants: ParticleItem[] = [
         "Toggle with text label that changes",
         "Video Call Controls Bar",
         "Role Filter Chips with Live Count",
+        "Bookmark toggle per article row with saved count",
+        "Rich-text formatting toolbar with markdown preview",
+        "Social post interactions with live like and repost counts",
+        "Server settings toggles with icon swap and status color",
+        "Task list with per-task priority flag toggles",
       ][i],
       name: `v-toggle-${i + 1}`,
     }),
   ),
 
   // --- toggle-group ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...Array.from({ length: 15 }, (_, i) =>
     createVariant({
       category: "toggle group",
       dependencies: ["toggle-group"],
@@ -1437,6 +1447,12 @@ export const variants: ParticleItem[] = [
         "View mode switching",
         "For color theme",
         "For pricing tier",
+        "Language picker with live code snippet preview",
+        "Per-column sort direction control",
+        "Issue priority picker with color-coded labels",
+        "Date range quick-select with live stats grid",
+        "Code viewer toolbar with multi-select options",
+        "Zoom level control with live scale preview",
       ][i],
       name: `v-toggle-group-${i + 1}`,
     }),
@@ -1447,12 +1463,20 @@ export const variants: ParticleItem[] = [
     createVariant({
       category: "toolbar",
       dependencies: ["toolbar"],
+      description: [
+        "Default",
+        "Rich text editor toolbar with formatting and alignment controls",
+        "Image editor toolbar with transform, zoom, and export actions",
+        "Data table toolbar with search input, filter controls, and add row",
+        "Code editor toolbar with language select, word wrap, copy, and run",
+        "Document collaboration toolbar with edit/preview toggle and share",
+      ][i],
       name: `v-toolbar-${i + 1}`,
     }),
   ),
 
   // --- tooltip ---
-  ...Array.from({ length: 12 }, (_, i) =>
+  ...Array.from({ length: 17 }, (_, i) =>
     createVariant({
       category: "tooltip",
       dependencies: ["tooltip"],
@@ -1469,6 +1493,11 @@ export const variants: ParticleItem[] = [
         "Color Palette Inspector",
         "Copy to Clipboard",
         "Feature Gate",
+        "Form field validation hints with info icon tooltips",
+        "System status dots revealing service name, uptime, and latency",
+        "Icon-only sidebar nav with label and description tooltips",
+        "Permissions matrix with role access details per cell",
+        "Deployment pipeline steps with status and detail per stage",
       ][i],
       name: `v-tooltip-${i + 1}`,
     }),

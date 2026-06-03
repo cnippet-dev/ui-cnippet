@@ -40,7 +40,7 @@ export function Pattern() {
         {seconds > 0 ? (
           <>
             Resend code in{" "}
-            <span className="font-medium tabular-nums text-foreground">
+            <span className="font-medium text-foreground tabular-nums">
               {seconds}s
             </span>
           </>

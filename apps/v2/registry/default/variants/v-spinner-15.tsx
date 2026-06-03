@@ -1,12 +1,12 @@
 import { Spinner } from "@/registry/default/ui/spinner";
 
 const sizes = [
-  { label: "xs", className: "size-3" },
-  { label: "sm", className: "size-4" },
-  { label: "md", className: "size-5" },
-  { label: "lg", className: "size-6" },
-  { label: "xl", className: "size-8" },
-  { label: "2xl", className: "size-10" },
+  { className: "size-3", label: "xs" },
+  { className: "size-4", label: "sm" },
+  { className: "size-5", label: "md" },
+  { className: "size-6", label: "lg" },
+  { className: "size-8", label: "xl" },
+  { className: "size-10", label: "2xl" },
 ];
 
 export default function Particle() {
@@ -15,7 +15,7 @@ export default function Particle() {
       {sizes.map(({ label, className }) => (
         <div className="flex flex-col items-center gap-2" key={label}>
           <Spinner className={`${className} text-primary`} />
-          <span className="text-xs text-muted-foreground">{label}</span>
+          <span className="text-muted-foreground text-xs">{label}</span>
         </div>
       ))}
     </div>

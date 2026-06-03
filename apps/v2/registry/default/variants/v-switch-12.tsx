@@ -13,44 +13,44 @@ import { Switch } from "@/registry/default/ui/switch";
 
 const settings = [
   {
-    id: "location",
-    Icon: MapPinIcon,
-    label: "Location Services",
     description: "Allow apps to access your location",
+    Icon: MapPinIcon,
+    id: "location",
+    label: "Location Services",
   },
   {
-    id: "camera",
-    Icon: SmartphoneIcon,
-    label: "Camera & Microphone",
     description: "Grant access to media devices",
+    Icon: SmartphoneIcon,
+    id: "camera",
+    label: "Camera & Microphone",
   },
   {
-    id: "microphone",
-    Icon: MicIcon,
-    label: "Microphone Only",
     description: "Used for voice features",
+    Icon: MicIcon,
+    id: "microphone",
+    label: "Microphone Only",
   },
   {
-    id: "activity",
-    Icon: EyeIcon,
-    label: "Activity Tracking",
     description: "Help improve your experience",
+    Icon: EyeIcon,
+    id: "activity",
+    label: "Activity Tracking",
   },
   {
-    id: "ads",
-    Icon: ShieldIcon,
-    label: "Personalised Ads",
     description: "See relevant advertisements",
+    Icon: ShieldIcon,
+    id: "ads",
+    label: "Personalised Ads",
   },
 ];
 
 export default function Particle() {
   const [values, setValues] = useState<Record<string, boolean>>({
-    location: true,
-    camera: false,
-    microphone: false,
     activity: true,
     ads: false,
+    camera: false,
+    location: true,
+    microphone: false,
   });
 
   return (
@@ -63,11 +63,14 @@ export default function Particle() {
           <div key={id}>
             <div className="flex items-center gap-3 px-4 py-3">
               <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted">
-                <Icon aria-hidden="true" className="size-4 text-muted-foreground" />
+                <Icon
+                  aria-hidden="true"
+                  className="size-4 text-muted-foreground"
+                />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium">{label}</p>
-                <p className="text-xs text-muted-foreground">{description}</p>
+                <p className="font-medium text-sm">{label}</p>
+                <p className="text-muted-foreground text-xs">{description}</p>
               </div>
               <Switch
                 checked={values[id]}

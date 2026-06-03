@@ -4,7 +4,11 @@ import { CheckIcon, CopyIcon } from "lucide-react";
 import { useRef } from "react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Button } from "@/registry/default/ui/button";
-import { Field, FieldDescription, FieldLabel } from "@/registry/default/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldLabel,
+} from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 
 export function Pattern() {
@@ -24,11 +28,17 @@ export function Pattern() {
         />
         <Button
           aria-label="Copy referral link"
-          onClick={() => inputRef.current && copyToClipboard(inputRef.current.value)}
+          onClick={() =>
+            inputRef.current && copyToClipboard(inputRef.current.value)
+          }
           size="icon"
           variant="outline"
         >
-          {isCopied ? <CheckIcon aria-hidden="true" /> : <CopyIcon aria-hidden="true" />}
+          {isCopied ? (
+            <CheckIcon aria-hidden="true" />
+          ) : (
+            <CopyIcon aria-hidden="true" />
+          )}
         </Button>
       </div>
       <FieldDescription>Share this link to invite friends.</FieldDescription>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-12",
+  "description": "Rich-text formatting toolbar with markdown preview",
+  "registryDependencies": [
+    "@cnippet/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-12.tsx",
+      "content": "\"use client\";\n\nimport {\n  CodeIcon,\n  LinkIcon,\n  QuoteIcon,\n  StrikethroughIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nconst tools = [\n  { icon: StrikethroughIcon, id: \"strike\", label: \"Strikethrough\" },\n  { icon: CodeIcon, id: \"code\", label: \"Inline code\" },\n  { icon: QuoteIcon, id: \"quote\", label: \"Blockquote\" },\n  { icon: LinkIcon, id: \"link\", label: \"Link\" },\n];\n\nexport function Pattern() {\n  const [active, setActive] = useState<Set<string>>(new Set());\n\n  const toggle = (id: string) =>\n    setActive((prev) => {\n      const next = new Set(prev);\n      next.has(id) ? next.delete(id) : next.add(id);\n      return next;\n    });\n\n  const preview = () => {\n    let text = \"The quick brown fox\";\n    if (active.has(\"strike\"))\n      text = `~~${text}~~`;\n    if (active.has(\"code\"))\n      text = `\\`${text}\\``;\n    if (active.has(\"quote\"))\n      text = `> ${text}`;\n    if (active.has(\"link\"))\n      text = `[${text}](https://example.com)`;\n    return text || \"The quick brown fox\";\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-3\">\n      <div className=\"flex items-center gap-1 rounded-lg border border-input bg-muted/30 p-1\">\n        {tools.map(({ icon: Icon, id, label }) => (\n          <Toggle\n            aria-label={label}\n            key={id}\n            onPressedChange={() => toggle(id)}\n            pressed={active.has(id)}\n            size=\"sm\"\n          >\n            <Icon className=\"size-3.5\" />\n          </Toggle>\n        ))}\n      </div>\n      <div className=\"rounded-lg border border-input bg-background px-3 py-2 font-mono text-sm text-foreground/80\">\n        {preview()}\n      </div>\n      <p className=\"text-center text-muted-foreground text-xs\">\n        {active.size > 0\n          ? `Active: ${[...active].join(\", \")}`\n          : \"No formatting applied\"}\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:block"
+}

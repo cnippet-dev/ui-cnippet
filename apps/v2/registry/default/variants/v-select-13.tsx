@@ -47,7 +47,7 @@ export default function Particle() {
           ))}
         </SelectPopup>
       </Select>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Priority:{" "}
         {selected?.value ? (
           <Badge

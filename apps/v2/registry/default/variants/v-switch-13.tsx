@@ -9,7 +9,7 @@ export default function Particle() {
 
   return (
     <div
-      className={`flex w-full max-w-xs flex-col items-center gap-6 rounded-2xl border p-8 transition-colors duration-300 ${dark ? "bg-zinc-900 text-white border-zinc-700" : "bg-white text-zinc-900"}`}
+      className={`flex w-full max-w-xs flex-col items-center gap-6 rounded-2xl border p-8 transition-colors duration-300 ${dark ? "border-zinc-700 bg-zinc-900 text-white" : "bg-white text-zinc-900"}`}
     >
       <div
         className={`flex size-16 items-center justify-center rounded-full transition-colors duration-300 ${dark ? "bg-zinc-800" : "bg-amber-50"}`}

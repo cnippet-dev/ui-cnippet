@@ -8,9 +8,9 @@ import {
 } from "@/registry/default/ui/meter";
 
 const breakdown = [
-  { icon: ImageIcon, label: "Photos", used: 4.2, total: 10 },
-  { icon: FileIcon, label: "Documents", used: 1.8, total: 10 },
-  { icon: DatabaseIcon, label: "Backups", used: 7.5, total: 10 },
+  { icon: ImageIcon, label: "Photos", total: 10, used: 4.2 },
+  { icon: FileIcon, label: "Documents", total: 10, used: 1.8 },
+  { icon: DatabaseIcon, label: "Backups", total: 10, used: 7.5 },
 ];
 
 export function Pattern() {
@@ -20,12 +20,13 @@ export function Pattern() {
         <Meter key={label} max={total} value={used}>
           <div className="flex items-center justify-between gap-2">
             <MeterLabel className="flex items-center gap-1.5">
-              <Icon aria-hidden="true" className="size-3.5 text-muted-foreground" />
+              <Icon
+                aria-hidden="true"
+                className="size-3.5 text-muted-foreground"
+              />
               {label}
             </MeterLabel>
-            <MeterValue>
-              {() => `${used} / ${total} GB`}
-            </MeterValue>
+            <MeterValue>{() => `${used} / ${total} GB`}</MeterValue>
           </div>
           <MeterTrack>
             <MeterIndicator />

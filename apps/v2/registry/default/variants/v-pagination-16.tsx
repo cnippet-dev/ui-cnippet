@@ -21,7 +21,7 @@ export function Pattern() {
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <span className="flex items-center px-4 text-sm text-muted-foreground">
+          <span className="flex items-center px-4 text-muted-foreground text-sm">
             <span className="font-medium text-foreground">3</span>&nbsp;of 12
           </span>
         </PaginationItem>

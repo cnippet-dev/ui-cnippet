@@ -24,9 +24,7 @@ const stageIcon: Record<StageStatus, React.ReactNode> = {
       className="size-4 animate-pulse text-primary"
     />
   ),
-  done: (
-    <CheckIcon aria-hidden="true" className="size-4 text-success" />
-  ),
+  done: <CheckIcon aria-hidden="true" className="size-4 text-success" />,
   pending: (
     <ClockIcon aria-hidden="true" className="size-4 text-muted-foreground" />
   ),
@@ -38,8 +36,8 @@ export function Pattern() {
   return (
     <div className="w-full max-w-xs space-y-4">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">Build pipeline</span>
-        <span className="text-xs text-muted-foreground">
+        <span className="font-medium text-sm">Build pipeline</span>
+        <span className="text-muted-foreground text-xs">
           {done}/{stages.length} stages
         </span>
       </div>
@@ -57,7 +55,7 @@ export function Pattern() {
             >
               {label}
             </span>
-            <span className="tabular-nums text-xs text-muted-foreground">
+            <span className="text-muted-foreground text-xs tabular-nums">
               {time}
             </span>
           </div>

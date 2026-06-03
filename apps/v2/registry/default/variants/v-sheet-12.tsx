@@ -1,9 +1,4 @@
-import {
-  BoxIcon,
-  CircuitBoardIcon,
-  GlobeIcon,
-  LinkIcon,
-} from "lucide-react";
+import { BoxIcon, CircuitBoardIcon, GlobeIcon, LinkIcon } from "lucide-react";
 import {
   Avatar,
   AvatarFallback,
@@ -92,7 +87,9 @@ export default function Particle() {
         <div className="border-t p-4">
           <div className="flex gap-2">
             <Button className="flex-1">Follow</Button>
-            <SheetClose render={<Button className="flex-1" variant="outline" />}>
+            <SheetClose
+              render={<Button className="flex-1" variant="outline" />}
+            >
               Close
             </SheetClose>
           </div>

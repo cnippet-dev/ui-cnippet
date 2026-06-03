@@ -53,7 +53,7 @@ export function Pattern() {
   return (
     <div className="mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-border">
       <Tabs onValueChange={setActive} value={active}>
-        <div className="flex items-center justify-between border-b border-border bg-muted/30 pl-2 pr-2 pt-2">
+        <div className="flex items-center justify-between border-border border-b bg-muted/30 pt-2 pr-2 pl-2">
           <TabsList variant="underline">
             {Object.keys(files).map((file) => (
               <TabsTab
@@ -81,7 +81,7 @@ export function Pattern() {
         </div>
         {Object.entries(files).map(([file, content]) => (
           <TabsPanel key={file} value={file}>
-            <pre className="overflow-x-auto bg-muted/10 p-4 text-xs leading-relaxed text-foreground/80">
+            <pre className="overflow-x-auto bg-muted/10 p-4 text-foreground/80 text-xs leading-relaxed">
               <code>{content}</code>
             </pre>
           </TabsPanel>

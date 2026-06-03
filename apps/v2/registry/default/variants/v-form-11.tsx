@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2Icon, MailIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import { type FormEvent, useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Field, FieldError, FieldLabel } from "@/registry/default/ui/field";

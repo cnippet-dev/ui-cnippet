@@ -76,7 +76,7 @@ export function Pattern() {
         <TableBody>
           {invoices.map((inv) => (
             <TableRow key={inv.id}>
-              <TableCell className="font-mono font-medium text-sm">
+              <TableCell className="font-medium font-mono text-sm">
                 {inv.id}
               </TableCell>
               <TableCell className="text-sm">{inv.client}</TableCell>

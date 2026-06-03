@@ -24,7 +24,7 @@ export function Pattern() {
           <div className="flex items-center justify-between">
             <p className="text-muted-foreground text-sm">{stat.label}</p>
             <span
-              className={`text-xs font-medium ${stat.trend.startsWith("+") ? "text-success" : "text-destructive-foreground"}`}
+              className={`font-medium text-xs ${stat.trend.startsWith("+") ? "text-success" : "text-destructive-foreground"}`}
             >
               {stat.trend}
             </span>

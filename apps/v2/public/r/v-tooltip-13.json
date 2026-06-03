@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-13",
+  "description": "Form field validation hints with info icon tooltips",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-13.tsx",
+      "content": "import { InfoIcon } from \"lucide-react\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\ntype Field = {\n  id: string;\n  label: string;\n  placeholder: string;\n  hint: string;\n};\n\nconst fields: Field[] = [\n  {\n    hint: \"3–20 characters, letters, numbers, and underscores only.\",\n    id: \"username\",\n    label: \"Username\",\n    placeholder: \"john_doe\",\n  },\n  {\n    hint: \"Must be 8+ chars with at least one uppercase letter and one number.\",\n    id: \"password\",\n    label: \"Password\",\n    placeholder: \"••••••••\",\n  },\n  {\n    hint: \"We only use this for account recovery — no marketing emails.\",\n    id: \"email\",\n    label: \"Email\",\n    placeholder: \"you@example.com\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      <TooltipProvider>\n        {fields.map(({ id, label, placeholder, hint }) => (\n          <div key={id} className=\"space-y-1.5\">\n            <div className=\"flex items-center gap-1.5\">\n              <Label htmlFor={id}>{label}</Label>\n              <Tooltip>\n                <TooltipTrigger\n                  aria-label={`${label} format requirements`}\n                  className=\"inline-flex cursor-default text-muted-foreground hover:text-foreground\"\n                >\n                  <InfoIcon className=\"size-3.5\" />\n                </TooltipTrigger>\n                <TooltipContent className=\"max-w-52\">{hint}</TooltipContent>\n              </Tooltip>\n            </div>\n            <Input id={id} placeholder={placeholder} />\n          </div>\n        ))}\n      </TooltipProvider>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

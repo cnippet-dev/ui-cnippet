@@ -6,9 +6,9 @@ import { Button } from "@/registry/default/ui/button";
 import { Spinner } from "@/registry/default/ui/spinner";
 
 const rows = [
-  { id: "INV-001", customer: "Acme Corp", amount: "$1,200", status: "Paid" },
-  { id: "INV-002", customer: "Globex Inc", amount: "$840", status: "Pending" },
-  { id: "INV-003", customer: "Initech", amount: "$3,500", status: "Paid" },
+  { amount: "$1,200", customer: "Acme Corp", id: "INV-001", status: "Paid" },
+  { amount: "$840", customer: "Globex Inc", id: "INV-002", status: "Pending" },
+  { amount: "$3,500", customer: "Initech", id: "INV-003", status: "Paid" },
 ];
 
 export default function Particle() {
@@ -41,7 +41,7 @@ export default function Particle() {
               >
                 <div className="flex items-center gap-3">
                   <Spinner className="size-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-muted-foreground text-sm">
                     Loading…
                   </span>
                 </div>
@@ -53,11 +53,11 @@ export default function Particle() {
                 key={row.id}
               >
                 <div>
-                  <p className="text-sm font-medium">{row.customer}</p>
-                  <p className="text-xs text-muted-foreground">{row.id}</p>
+                  <p className="font-medium text-sm">{row.customer}</p>
+                  <p className="text-muted-foreground text-xs">{row.id}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-semibold">{row.amount}</p>
+                  <p className="font-semibold text-sm">{row.amount}</p>
                   <p
                     className={`text-xs ${row.status === "Paid" ? "text-green-600" : "text-muted-foreground"}`}
                   >

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { SmileIcon } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
@@ -10,10 +10,26 @@ import {
 } from "@/registry/default/ui/popover";
 
 const EMOJIS = [
-  "👍", "❤️", "😂", "🎉", "🔥", "👏",
-  "🙌", "💡", "✅", "⭐", "🚀", "💯",
-  "🤔", "👀", "💪", "🌟", "😊", "🎯",
-  "💎", "🦄",
+  "👍",
+  "❤️",
+  "😂",
+  "🎉",
+  "🔥",
+  "👏",
+  "🙌",
+  "💡",
+  "✅",
+  "⭐",
+  "🚀",
+  "💯",
+  "🤔",
+  "👀",
+  "💪",
+  "🌟",
+  "😊",
+  "🎯",
+  "💎",
+  "🦄",
 ];
 
 export function Pattern() {

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-15",
+  "description": "Zoom level control with live scale preview",
+  "registryDependencies": [
+    "@cnippet/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-15.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\ntype Zoom = \"50\" | \"75\" | \"100\" | \"125\" | \"150\";\n\nconst levels: Zoom[] = [\"50\", \"75\", \"100\", \"125\", \"150\"];\n\nexport function Pattern() {\n  const [zoom, setZoom] = useState<Zoom>(\"100\");\n\n  const scale = Number(zoom) / 100;\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col items-center gap-5\">\n      <ToggleGroup\n        onValueChange={(v) => v[0] && setZoom(v[0] as Zoom)}\n        size=\"sm\"\n        value={[zoom]}\n        variant=\"outline\"\n      >\n        {levels.map((z) => (\n          <ToggleGroupItem\n            aria-label={`Zoom to ${z}%`}\n            className=\"min-w-10 text-xs tabular-nums\"\n            key={z}\n            value={z}\n          >\n            {z}%\n          </ToggleGroupItem>\n        ))}\n      </ToggleGroup>\n\n      <div\n        className=\"flex h-32 w-full items-center justify-center overflow-hidden rounded-lg border border-border bg-muted/20\"\n        style={{ perspective: \"400px\" }}\n      >\n        <div\n          className=\"rounded-md border border-border bg-background p-4 shadow-sm transition-transform duration-300\"\n          style={{ transform: `scale(${scale})` }}\n        >\n          <p className=\"font-semibold text-sm\">Hello, world!</p>\n          <p className=\"mt-0.5 text-muted-foreground text-xs\">\n            Zoom: {zoom}%\n          </p>\n        </div>\n      </div>\n\n      <p className=\"text-muted-foreground text-xs\">\n        Current zoom:{\" \"}\n        <span className=\"font-medium text-foreground\">{zoom}%</span>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ],
+  "type": "registry:block"
+}

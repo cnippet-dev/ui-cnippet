@@ -1,8 +1,8 @@
 "use client";
 
 import { PaperclipIcon, SendIcon, SmileIcon } from "lucide-react";
-import { useState } from "react";
 import type { KeyboardEvent } from "react";
+import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Textarea } from "@/registry/default/ui/textarea";
 
@@ -14,9 +14,24 @@ type Message = {
 };
 
 const INITIAL_MESSAGES: Message[] = [
-  { id: 1, own: false, text: "Hey! Can you review the PR I just opened?", time: "2:30 PM" },
-  { id: 2, own: true, text: "Sure, I'll take a look this afternoon.", time: "2:31 PM" },
-  { id: 3, own: false, text: "Thanks! No rush, just want fresh eyes on it.", time: "2:32 PM" },
+  {
+    id: 1,
+    own: false,
+    text: "Hey! Can you review the PR I just opened?",
+    time: "2:30 PM",
+  },
+  {
+    id: 2,
+    own: true,
+    text: "Sure, I'll take a look this afternoon.",
+    time: "2:31 PM",
+  },
+  {
+    id: 3,
+    own: false,
+    text: "Thanks! No rush, just want fresh eyes on it.",
+    time: "2:32 PM",
+  },
 ];
 
 export function Pattern() {
@@ -45,7 +60,7 @@ export function Pattern() {
 
   return (
     <div className="flex w-full max-w-xs flex-col overflow-hidden rounded-xl border border-border">
-      <div className="border-b border-border bg-muted/30 px-3 py-2">
+      <div className="border-border border-b bg-muted/30 px-3 py-2">
         <p className="font-medium text-sm">Alice Chen</p>
         <p className="text-emerald-500 text-xs">Online</p>
       </div>
@@ -70,7 +85,7 @@ export function Pattern() {
         ))}
       </div>
 
-      <div className="border-t border-border bg-background p-2">
+      <div className="border-border border-t bg-background p-2">
         <div className="flex items-end gap-1.5">
           <Textarea
             onChange={(e) => setMessage(e.target.value)}

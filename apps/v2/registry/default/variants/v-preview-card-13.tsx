@@ -1,3 +1,5 @@
+// biome-ignore-all lint/suspicious/noArrayIndexKey:<>
+
 import { StarIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import {
@@ -26,9 +28,8 @@ export function Pattern() {
                   New
                 </Badge>
               </div>
-              <div className="mt-1 flex items-center gap-0.5 text-xs text-muted-foreground">
+              <div className="mt-1 flex items-center gap-0.5 text-muted-foreground text-xs">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: static star icons
                   <StarIcon
                     aria-hidden="true"
                     className={`size-3 ${i < 4 ? "fill-amber-400 text-amber-400" : "text-muted-foreground"}`}

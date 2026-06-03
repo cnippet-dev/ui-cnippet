@@ -10,7 +10,7 @@ export function Pattern() {
     <p className="text-sm">
       Install{" "}
       <PreviewCard>
-        <PreviewCardTrigger className="cursor-pointer font-mono font-medium underline underline-offset-4">
+        <PreviewCardTrigger className="cursor-pointer font-medium font-mono underline underline-offset-4">
           @base-ui/react
         </PreviewCardTrigger>
         <PreviewCardPopup>
@@ -24,14 +24,14 @@ export function Pattern() {
               </div>
               <div>
                 <p className="font-semibold text-sm">@base-ui/react</p>
-                <p className="text-xs text-muted-foreground">v1.0.0</p>
+                <p className="text-muted-foreground text-xs">v1.0.0</p>
               </div>
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               Unstyled, accessible UI components for React built with
               accessibility in mind.
             </p>
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <div className="flex items-center gap-3 text-muted-foreground text-xs">
               <div className="flex items-center gap-1">
                 <DownloadIcon aria-hidden="true" className="size-3" />
                 <span>124k / week</span>

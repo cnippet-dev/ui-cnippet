@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import {
   ArrowDownAZIcon,
   ArrowUpAZIcon,
@@ -5,7 +6,6 @@ import {
   CalendarArrowUpIcon,
   SparklesIcon,
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import {
   Select,
   SelectItem,

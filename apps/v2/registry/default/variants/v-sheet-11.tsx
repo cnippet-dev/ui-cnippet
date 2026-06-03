@@ -1,6 +1,11 @@
 "use client";
 
-import { DownloadIcon, FileJsonIcon, FileSpreadsheetIcon, FileTextIcon } from "lucide-react";
+import {
+  DownloadIcon,
+  FileJsonIcon,
+  FileSpreadsheetIcon,
+  FileTextIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
@@ -75,7 +80,7 @@ export default function Particle() {
               </span>
             </div>
           </Field>
-          <div className="space-y-1.5 rounded-lg bg-muted/50 p-3 text-xs text-muted-foreground">
+          <div className="space-y-1.5 rounded-lg bg-muted/50 p-3 text-muted-foreground text-xs">
             <p className="font-medium text-foreground">Export includes:</p>
             <p>• All records from the current view</p>
             <p>• Applied filters and column order</p>

@@ -1,4 +1,5 @@
 import { CopyIcon, DownloadIcon, PencilIcon, TrashIcon } from "lucide-react";
+import { Button } from "@/registry/default/ui/button";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 import {
   Menu,
@@ -6,7 +7,6 @@ import {
   MenuPopup,
   MenuTrigger,
 } from "@/registry/default/ui/menu";
-import { Button } from "@/registry/default/ui/button";
 
 export function Pattern() {
   return (

@@ -11,7 +11,7 @@ export function Pattern() {
     <p className="text-sm">
       Related to issue{" "}
       <PreviewCard>
-        <PreviewCardTrigger className="cursor-pointer font-mono font-medium text-primary underline underline-offset-4">
+        <PreviewCardTrigger className="cursor-pointer font-medium font-mono text-primary underline underline-offset-4">
           #1842
         </PreviewCardTrigger>
         <PreviewCardPopup>
@@ -25,7 +25,7 @@ export function Pattern() {
                 <h4 className="font-semibold text-sm leading-snug">
                   PopoverContent loses focus when Slider is used inside
                 </h4>
-                <p className="mt-0.5 text-xs text-muted-foreground">
+                <p className="mt-0.5 text-muted-foreground text-xs">
                   Opened by <strong>@deepak</strong> · 3 days ago
                 </p>
               </div>
@@ -41,7 +41,7 @@ export function Pattern() {
                 popover
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               repo: ui-cnippet · labels: 3 · comments: 7
             </p>
           </div>

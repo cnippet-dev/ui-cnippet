@@ -22,11 +22,7 @@ export function Pattern() {
       <FramePanel>
         <div className="flex flex-col gap-2">
           <Label htmlFor="display-name">Name</Label>
-          <Input
-            defaultValue="Alex Rivera"
-            id="display-name"
-            type="text"
-          />
+          <Input defaultValue="Alex Rivera" id="display-name" type="text" />
         </div>
       </FramePanel>
       <FrameFooter className="flex justify-end gap-2">

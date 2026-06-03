@@ -16135,6 +16135,96 @@ export const Index: Record<string, any> = {
     categories: ["toast"],
     meta: {"className":""},
   },
+  "v-toast-11": {
+    name: "v-toast-11",
+    description: "Anchored clipboard copy with tooltip-style toast",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
+  "v-toast-12": {
+    name: "v-toast-12",
+    description: "Team invite with per-row undo action",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
+  "v-toast-13": {
+    name: "v-toast-13",
+    description: "Background CSV export with download action on complete",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
+  "v-toast-14": {
+    name: "v-toast-14",
+    description: "Session expiry warning with live countdown and renew action",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
+  "v-toast-15": {
+    name: "v-toast-15",
+    description: "Unsaved changes reminder with save and discard actions",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toast"],
+    files: [{
+      path: "registry/default/variants/v-toast-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toast-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toast"],
+    meta: {"className":""},
+  },
   "v-toggle-1": {
     name: "v-toggle-1",
     description: "Default",
@@ -16315,6 +16405,96 @@ export const Index: Record<string, any> = {
     categories: ["toggle"],
     meta: {"className":""},
   },
+  "v-toggle-11": {
+    name: "v-toggle-11",
+    description: "Bookmark toggle per article row with saved count",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
+  "v-toggle-12": {
+    name: "v-toggle-12",
+    description: "Rich-text formatting toolbar with markdown preview",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
+  "v-toggle-13": {
+    name: "v-toggle-13",
+    description: "Social post interactions with live like and repost counts",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
+  "v-toggle-14": {
+    name: "v-toggle-14",
+    description: "Server settings toggles with icon swap and status color",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
+  "v-toggle-15": {
+    name: "v-toggle-15",
+    description: "Task list with per-task priority flag toggles",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle"],
+    files: [{
+      path: "registry/default/variants/v-toggle-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle"],
+    meta: {"className":""},
+  },
   "v-toggle-group-1": {
     name: "v-toggle-group-1",
     description: "Default",
@@ -16479,7 +16659,7 @@ export const Index: Record<string, any> = {
   },
   "v-toggle-group-10": {
     name: "v-toggle-group-10",
-    description: "Basic toggle group",
+    description: "Language picker with live code snippet preview",
     type: "registry:block",
     registryDependencies: ["@cnippet/toggle-group"],
     files: [{
@@ -16495,9 +16675,99 @@ export const Index: Record<string, any> = {
     categories: ["toggle group"],
     meta: {"className":""},
   },
+  "v-toggle-group-11": {
+    name: "v-toggle-group-11",
+    description: "Per-column sort direction control",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-11.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-11.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
+  "v-toggle-group-12": {
+    name: "v-toggle-group-12",
+    description: "Issue priority picker with color-coded labels",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-12.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
+  "v-toggle-group-13": {
+    name: "v-toggle-group-13",
+    description: "Date range quick-select with live stats grid",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
+  "v-toggle-group-14": {
+    name: "v-toggle-group-14",
+    description: "Code viewer toolbar with multi-select options",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
+  "v-toggle-group-15": {
+    name: "v-toggle-group-15",
+    description: "Zoom level control with live scale preview",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/toggle-group"],
+    files: [{
+      path: "registry/default/variants/v-toggle-group-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-toggle-group-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["toggle group"],
+    meta: {"className":""},
+  },
   "v-toolbar-1": {
     name: "v-toolbar-1",
-    description: "Basic toolbar",
+    description: "Default",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16515,7 +16785,7 @@ export const Index: Record<string, any> = {
   },
   "v-toolbar-2": {
     name: "v-toolbar-2",
-    description: "Basic toolbar",
+    description: "Rich text editor toolbar with formatting and alignment controls",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16533,7 +16803,7 @@ export const Index: Record<string, any> = {
   },
   "v-toolbar-3": {
     name: "v-toolbar-3",
-    description: "Basic toolbar",
+    description: "Image editor toolbar with transform, zoom, and export actions",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16551,7 +16821,7 @@ export const Index: Record<string, any> = {
   },
   "v-toolbar-4": {
     name: "v-toolbar-4",
-    description: "Basic toolbar",
+    description: "Data table toolbar with search input, filter controls, and add row",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16569,7 +16839,7 @@ export const Index: Record<string, any> = {
   },
   "v-toolbar-5": {
     name: "v-toolbar-5",
-    description: "Basic toolbar",
+    description: "Code editor toolbar with language select, word wrap, copy, and run",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16587,7 +16857,7 @@ export const Index: Record<string, any> = {
   },
   "v-toolbar-6": {
     name: "v-toolbar-6",
-    description: "Basic toolbar",
+    description: "Document collaboration toolbar with edit/preview toggle and share",
     type: "registry:block",
     registryDependencies: ["@cnippet/toolbar"],
     files: [{
@@ -16885,6 +17155,96 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/variants/v-tooltip-12.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-13": {
+    name: "v-tooltip-13",
+    description: "Form field validation hints with info icon tooltips",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-13.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-13.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-14": {
+    name: "v-tooltip-14",
+    description: "System status dots revealing service name, uptime, and latency",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-14.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-14.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-15": {
+    name: "v-tooltip-15",
+    description: "Icon-only sidebar nav with label and description tooltips",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-15.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-15.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-16": {
+    name: "v-tooltip-16",
+    description: "Permissions matrix with role access details per cell",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-16.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-16.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["tooltip"],
+    meta: {"className":""},
+  },
+  "v-tooltip-17": {
+    name: "v-tooltip-17",
+    description: "Deployment pipeline steps with status and detail per stage",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/variants/v-tooltip-17.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-tooltip-17.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

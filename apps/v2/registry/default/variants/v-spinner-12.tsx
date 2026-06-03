@@ -29,12 +29,12 @@ export default function Particle() {
           )}
         </div>
         <div className="flex-1">
-          <p className="text-sm font-medium">
+          <p className="font-medium text-sm">
             {status === "idle" && "Ready to upload"}
             {status === "uploading" && "Uploading report.pdf…"}
             {status === "done" && "Upload complete"}
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-muted-foreground text-xs">
             {status === "idle" && "Max file size 25 MB"}
             {status === "uploading" && "Please wait"}
             {status === "done" && "report.pdf · 4.2 MB"}
@@ -48,7 +48,11 @@ export default function Particle() {
         variant={status === "done" ? "outline" : "default"}
       >
         {status === "uploading" && (
-          <Spinner aria-hidden="true" className="size-4" data-icon="inline-start" />
+          <Spinner
+            aria-hidden="true"
+            className="size-4"
+            data-icon="inline-start"
+          />
         )}
         {status === "idle" && "Upload File"}
         {status === "uploading" && "Uploading…"}

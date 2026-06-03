@@ -80,6 +80,7 @@
         "@tanstack/react-table": "^8.21.3",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "cnippet-aos": "^1.0.10",
         "date-fns": "^4.1.0",
         "embla-carousel-react": "^8.6.0",
         "fumadocs-core": "^16.8.9",

@@ -8,12 +8,7 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
 
 const plans = [
   {
-    features: [
-      "5 projects",
-      "3 team members",
-      "5 GB storage",
-      "Email support",
-    ],
+    features: ["5 projects", "3 team members", "5 GB storage", "Email support"],
     monthly: 9,
     name: "Starter",
     yearly: 7,

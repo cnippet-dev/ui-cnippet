@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
-import { Field, FieldDescription, FieldLabel } from "@/registry/default/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldLabel,
+} from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Switch } from "@/registry/default/ui/switch";
 

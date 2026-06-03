@@ -30,8 +30,8 @@ export default function Particle() {
               <Skeleton className="h-3.5 w-28" />
               <Skeleton className="h-3 w-12 shrink-0" />
             </div>
-            <Skeleton className={`h-3.5`} style={{ width: `${subject}%` }} />
-            <Skeleton className={`h-3`} style={{ width: `${preview}%` }} />
+            <Skeleton className={"h-3.5"} style={{ width: `${subject}%` }} />
+            <Skeleton className={"h-3"} style={{ width: `${preview}%` }} />
           </div>
           {!read && (
             <Skeleton className="mt-1.5 size-2 shrink-0 rounded-full" />

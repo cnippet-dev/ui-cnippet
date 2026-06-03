@@ -20,15 +20,14 @@ export function Pattern() {
               <h4 className="font-semibold text-sm leading-snug">
                 Building accessible components with Base UI
               </h4>
-              <p className="mt-1 line-clamp-3 text-xs text-muted-foreground">
+              <p className="mt-1 line-clamp-3 text-muted-foreground text-xs">
                 Learn how to leverage Base UI primitives to build fully
                 accessible components with keyboard navigation, focus
                 management, and ARIA attributes without the heavy lifting.
               </p>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <ClockIcon aria-hidden="true" className="size-3" />
-              8 min read
+            <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
+              <ClockIcon aria-hidden="true" className="size-3" />8 min read
             </div>
           </div>
         </PreviewCardPopup>

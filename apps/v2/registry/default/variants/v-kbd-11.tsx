@@ -34,10 +34,15 @@ export function Pattern() {
             className={`flex cursor-pointer items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-accent ${i === 0 ? "bg-accent" : ""}`}
             key={label}
           >
-            <Icon aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
+            <Icon
+              aria-hidden="true"
+              className="size-4 shrink-0 text-muted-foreground"
+            />
             <div className="flex min-w-0 flex-1 flex-col">
               <span className="truncate font-medium">{label}</span>
-              <span className="truncate text-muted-foreground text-xs">{description}</span>
+              <span className="truncate text-muted-foreground text-xs">
+                {description}
+              </span>
             </div>
             <KbdGroup className="shrink-0">
               {kbd.map((k) => (
@@ -49,7 +54,11 @@ export function Pattern() {
       </ul>
       <div className="flex items-center gap-3 border-t px-3 py-2">
         <span className="flex items-center gap-1 text-muted-foreground text-xs">
-          <KbdGroup><Kbd>↑</Kbd><Kbd>↓</Kbd></KbdGroup> navigate
+          <KbdGroup>
+            <Kbd>↑</Kbd>
+            <Kbd>↓</Kbd>
+          </KbdGroup>{" "}
+          navigate
         </span>
         <span className="flex items-center gap-1 text-muted-foreground text-xs">
           <Kbd>↵</Kbd> open

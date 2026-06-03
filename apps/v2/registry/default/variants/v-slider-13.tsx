@@ -29,7 +29,7 @@ export default function Particle() {
         onValueChange={(v) => setHue(v[0])}
         value={[hue]}
       />
-      <p className="text-center text-xs text-muted-foreground">
+      <p className="text-center text-muted-foreground text-xs">
         hsl({hue}, 70%, 55%)
       </p>
     </div>

@@ -38,7 +38,7 @@ export default function Particle() {
         {comingSoon.map((item) => (
           <SelectItem disabled key={item.value} value={item}>
             {item.label}
-            <span className="ms-1.5 text-xs text-muted-foreground">
+            <span className="ms-1.5 text-muted-foreground text-xs">
               (coming soon)
             </span>
           </SelectItem>

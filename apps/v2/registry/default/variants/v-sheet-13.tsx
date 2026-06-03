@@ -70,7 +70,10 @@ export default function Particle() {
             </div>
             <Field>
               <FieldLabel>Subject</FieldLabel>
-              <Input placeholder="Brief description of your issue" type="text" />
+              <Input
+                placeholder="Brief description of your issue"
+                type="text"
+              />
             </Field>
             <Field>
               <FieldLabel>Message</FieldLabel>

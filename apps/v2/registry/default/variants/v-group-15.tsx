@@ -12,8 +12,7 @@ export default function Particle() {
 
   const vote = (dir: "up" | "down") => {
     setVotes((v) => {
-      if (voted === dir)
-        return { ...v, [dir]: v[dir] - 1 };
+      if (voted === dir) return { ...v, [dir]: v[dir] - 1 };
       const next = { ...v, [dir]: v[dir] + 1 };
       if (voted) next[voted] = v[voted] - 1;
       return next;

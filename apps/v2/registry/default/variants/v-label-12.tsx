@@ -11,7 +11,7 @@ export function Pattern() {
       <Label className="justify-between" htmlFor={id}>
         Password
         <Link
-          className="text-xs font-normal text-muted-foreground underline-offset-4 hover:underline"
+          className="font-normal text-muted-foreground text-xs underline-offset-4 hover:underline"
           href="/forgot-password"
         >
           Forgot password?

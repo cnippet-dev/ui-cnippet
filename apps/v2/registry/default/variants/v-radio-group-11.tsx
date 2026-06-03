@@ -3,7 +3,10 @@ import { Radio, RadioGroup } from "@/registry/default/ui/radio-group";
 
 export default function Particle() {
   return (
-    <RadioGroup className="flex-row flex-wrap gap-x-6 gap-y-2" defaultValue="react">
+    <RadioGroup
+      className="flex-row flex-wrap gap-x-6 gap-y-2"
+      defaultValue="react"
+    >
       <Label>
         <Radio value="react" /> React
       </Label>

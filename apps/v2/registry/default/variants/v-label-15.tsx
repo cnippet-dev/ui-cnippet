@@ -20,9 +20,7 @@ export function Pattern() {
         aria-describedby={hasError ? `${id}-error` : undefined}
         aria-invalid={hasError}
         className={
-          hasError
-            ? "border-destructive focus-visible:ring-destructive/20"
-            : ""
+          hasError ? "border-destructive focus-visible:ring-destructive/20" : ""
         }
         id={id}
         onChange={(e) => setValue(e.target.value)}

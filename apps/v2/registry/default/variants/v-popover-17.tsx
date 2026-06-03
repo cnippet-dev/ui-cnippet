@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { TrashIcon } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
@@ -32,9 +32,7 @@ export function Pattern() {
         </div>
         <div className="flex gap-2">
           <PopoverClose
-            render={
-              <Button className="flex-1" size="sm" variant="outline" />
-            }
+            render={<Button className="flex-1" size="sm" variant="outline" />}
           >
             Cancel
           </PopoverClose>

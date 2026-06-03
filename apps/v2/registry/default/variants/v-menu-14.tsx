@@ -15,7 +15,11 @@ export default function Particle() {
     <Menu>
       <MenuTrigger
         render={
-          <Button aria-label="Notification settings" size="icon" variant="outline" />
+          <Button
+            aria-label="Notification settings"
+            size="icon"
+            variant="outline"
+          />
         }
       >
         <BellIcon aria-hidden="true" className="size-4" />

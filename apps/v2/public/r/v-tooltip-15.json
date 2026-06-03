@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-15",
+  "description": "Icon-only sidebar nav with label and description tooltips",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-15.tsx",
+      "content": "import {\n  BarChart2Icon,\n  FileTextIcon,\n  HomeIcon,\n  SettingsIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\ntype NavItem = {\n  icon: React.ElementType;\n  label: string;\n  description: string;\n  active?: boolean;\n};\n\nconst navItems: NavItem[] = [\n  { description: \"Your workspace overview\", icon: HomeIcon, label: \"Home\", active: true },\n  { description: \"Visitor and revenue analytics\", icon: BarChart2Icon, label: \"Analytics\" },\n  { description: \"Manage team members and roles\", icon: UsersIcon, label: \"Team\" },\n  { description: \"Create and edit documents\", icon: FileTextIcon, label: \"Docs\" },\n  { description: \"App preferences and integrations\", icon: SettingsIcon, label: \"Settings\" },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"flex min-h-40 items-start\">\n      <TooltipProvider>\n        <nav className=\"flex flex-col items-center gap-1 rounded-xl border bg-card p-1.5\">\n          {navItems.map(({ icon: Icon, label, description, active }) => (\n            <Tooltip key={label}>\n              <TooltipTrigger\n                render={\n                  <Button\n                    aria-label={label}\n                    className={active ? \"bg-accent text-accent-foreground\" : \"\"}\n                    size=\"icon\"\n                    variant=\"ghost\"\n                  />\n                }\n              >\n                <Icon className=\"size-4\" />\n              </TooltipTrigger>\n              <TooltipContent className=\"p-2.5\" side=\"right\">\n                <p className=\"font-medium\">{label}</p>\n                <p className=\"text-muted-foreground\">{description}</p>\n              </TooltipContent>\n            </Tooltip>\n          ))}\n        </nav>\n      </TooltipProvider>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

@@ -30,7 +30,7 @@ export function Pattern() {
         </ProgressTrack>
       </Progress>
       <div
-        className="h-44 overflow-y-auto p-4 text-sm text-muted-foreground"
+        className="h-44 overflow-y-auto p-4 text-muted-foreground text-sm"
         id="scroll-article"
       >
         <p className="mb-2 font-semibold text-foreground">Reading Progress</p>

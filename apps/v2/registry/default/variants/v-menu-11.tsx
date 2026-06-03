@@ -1,4 +1,9 @@
-import { CreditCardIcon, LogOutIcon, SettingsIcon, UserIcon } from "lucide-react";
+import {
+  CreditCardIcon,
+  LogOutIcon,
+  SettingsIcon,
+  UserIcon,
+} from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Menu,
@@ -29,7 +34,7 @@ export default function Particle() {
           <MenuGroupLabel>
             <div className="flex flex-col gap-0.5">
               <span>Jane Smith</span>
-              <span className="text-xs font-normal text-muted-foreground">
+              <span className="font-normal text-muted-foreground text-xs">
                 jane@example.com
               </span>
             </div>

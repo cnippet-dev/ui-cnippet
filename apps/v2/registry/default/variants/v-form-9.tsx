@@ -66,11 +66,17 @@ export function Pattern() {
           <Checkbox className="mt-0.5" name="terms" required />
           <span className="text-muted-foreground">
             I agree to the{" "}
-            <a className="text-foreground underline underline-offset-2" href="#">
+            <a
+              className="text-foreground underline underline-offset-2"
+              href="#"
+            >
               Terms of Service
             </a>{" "}
             and{" "}
-            <a className="text-foreground underline underline-offset-2" href="#">
+            <a
+              className="text-foreground underline underline-offset-2"
+              href="#"
+            >
               Privacy Policy
             </a>
           </span>

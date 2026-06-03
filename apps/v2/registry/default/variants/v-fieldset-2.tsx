@@ -30,7 +30,9 @@ export default function Particle() {
       <Field>
         <FieldLabel>Phone number</FieldLabel>
         <Input placeholder="+1 (555) 000-0000" type="tel" />
-        <FieldDescription>Optional. Used for SMS notifications.</FieldDescription>
+        <FieldDescription>
+          Optional. Used for SMS notifications.
+        </FieldDescription>
       </Field>
     </Fieldset>
   );

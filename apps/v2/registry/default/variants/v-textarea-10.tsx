@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import type { FormEvent } from "react";
+import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Textarea } from "@/registry/default/ui/textarea";
 
-const categories = ["Bug Report", "Feature Request", "Billing", "Account", "Other"];
+const categories = [
+  "Bug Report",
+  "Feature Request",
+  "Billing",
+  "Account",
+  "Other",
+];
 
 export function Pattern() {
   const [category, setCategory] = useState("");

@@ -34,7 +34,7 @@ export default function Particle() {
         step={1}
         value={[temp]}
       />
-      <div className="flex justify-between text-xs text-muted-foreground">
+      <div className="flex justify-between text-muted-foreground text-xs">
         <span>10°C</span>
         <span className="font-medium text-foreground">{label}</span>
         <span>30°C</span>

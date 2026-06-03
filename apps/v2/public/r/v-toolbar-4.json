@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toolbar-4",
-  "description": "Basic toolbar",
+  "description": "Data table toolbar with search input, filter controls, and add row",
   "registryDependencies": [
     "@cnippet/toolbar"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toolbar-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport {\n  Columns3Icon,\n  DownloadIcon,\n  FilterIcon,\n  PlusIcon,\n  SearchIcon,\n  TrashIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Toolbar,\n  ToolbarButton,\n  ToolbarGroup,\n  ToolbarInput,\n  ToolbarSeparator,\n} from \"@/registry/default/ui/toolbar\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nconst iconActions = [\n  { icon: FilterIcon, label: \"Filter rows\" },\n  { icon: Columns3Icon, label: \"Manage columns\" },\n  { icon: DownloadIcon, label: \"Export CSV\" },\n  { icon: TrashIcon, label: \"Delete selected\" },\n] as const;\n\nexport function Pattern() {\n  const [query, setQuery] = useState(\"\");\n\n  return (\n    <TooltipProvider>\n      <Toolbar className=\"w-full max-w-lg\">\n        <ToolbarGroup className=\"flex-1\">\n          <div className=\"relative flex items-center\">\n            <SearchIcon className=\"pointer-events-none absolute left-2 size-3.5 text-muted-foreground\" />\n            <ToolbarInput\n              className=\"h-7 w-full rounded-md border bg-transparent py-1 pl-7 pr-2 text-xs outline-none placeholder:text-muted-foreground focus:ring-1 focus:ring-ring\"\n              placeholder=\"Search rows…\"\n              value={query}\n              onChange={(e) => setQuery(e.target.value)}\n            />\n          </div>\n        </ToolbarGroup>\n\n        <ToolbarSeparator />\n\n        <ToolbarGroup>\n          {iconActions.map(({ icon: Icon, label }) => (\n            <Tooltip key={label}>\n              <TooltipTrigger\n                render={\n                  <ToolbarButton\n                    aria-label={label}\n                    render={<Button size=\"icon\" variant=\"ghost\" />}\n                  >\n                    <Icon />\n                  </ToolbarButton>\n                }\n              />\n              <TooltipContent>{label}</TooltipContent>\n            </Tooltip>\n          ))}\n        </ToolbarGroup>\n\n        <ToolbarSeparator />\n\n        <ToolbarGroup>\n          <ToolbarButton render={<Button size=\"sm\" />}>\n            <PlusIcon className=\"size-3.5\" />\n            Add row\n          </ToolbarButton>\n        </ToolbarGroup>\n      </Toolbar>\n    </TooltipProvider>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

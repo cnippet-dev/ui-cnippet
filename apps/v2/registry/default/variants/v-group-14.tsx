@@ -1,6 +1,11 @@
 "use client";
 
-import { BoldIcon, ItalicIcon, StrikethroughIcon, UnderlineIcon } from "lucide-react";
+import {
+  BoldIcon,
+  ItalicIcon,
+  StrikethroughIcon,
+  UnderlineIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator } from "@/registry/default/ui/group";

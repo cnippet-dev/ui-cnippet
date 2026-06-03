@@ -1,4 +1,10 @@
-import { CopyIcon, DownloadIcon, FilePenIcon, MoveIcon, TrashIcon } from "lucide-react";
+import {
+  CopyIcon,
+  DownloadIcon,
+  FilePenIcon,
+  MoveIcon,
+  TrashIcon,
+} from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Menu,
@@ -13,7 +19,9 @@ import {
 export default function Particle() {
   return (
     <Menu>
-      <MenuTrigger render={<Button variant="outline" />}>File actions</MenuTrigger>
+      <MenuTrigger render={<Button variant="outline" />}>
+        File actions
+      </MenuTrigger>
       <MenuPopup align="start">
         <MenuGroup>
           <MenuItem>

@@ -28,7 +28,7 @@ export default function Particle() {
         onValueChange={(v) => setVolume(v[0])}
         value={[volume]}
       />
-      <span className="w-8 text-right text-sm tabular-nums text-muted-foreground">
+      <span className="w-8 text-right text-muted-foreground text-sm tabular-nums">
         {volume}
       </span>
     </div>

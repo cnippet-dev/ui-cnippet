@@ -4,10 +4,7 @@ export default function Particle() {
   return (
     <div className="grid w-full max-w-lg grid-cols-2 gap-4">
       {Array.from({ length: 4 }).map((_, i) => (
-        <div
-          className="overflow-hidden rounded-xl border"
-          key={String(i)}
-        >
+        <div className="overflow-hidden rounded-xl border" key={String(i)}>
           <Skeleton className="aspect-square w-full rounded-none" />
           <div className="space-y-2 p-3">
             <Skeleton className="h-4 w-3/4" />

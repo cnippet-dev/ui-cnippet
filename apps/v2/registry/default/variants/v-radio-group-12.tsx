@@ -34,7 +34,9 @@ export default function Particle() {
           <div className="flex flex-1 items-center justify-between">
             <div className="flex flex-col gap-0.5">
               <span className="font-medium text-sm">{label}</span>
-              <span className="text-muted-foreground text-xs">{description}</span>
+              <span className="text-muted-foreground text-xs">
+                {description}
+              </span>
             </div>
             <span className="font-medium text-sm">{price}</span>
           </div>

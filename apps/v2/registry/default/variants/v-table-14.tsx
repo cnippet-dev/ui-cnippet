@@ -83,7 +83,7 @@ export function Pattern() {
         <TableBody>
           {servers.map((s) => (
             <TableRow key={s.name}>
-              <TableCell className="font-mono font-medium text-sm">
+              <TableCell className="font-medium font-mono text-sm">
                 {s.name}
               </TableCell>
               <TableCell className="text-muted-foreground text-xs">
@@ -97,7 +97,7 @@ export function Pattern() {
               <TableCell>
                 <div className="flex items-center gap-2">
                   <Progress className="h-1.5 w-16" value={s.cpu} />
-                  <span className="w-8 text-right tabular-nums text-muted-foreground text-xs">
+                  <span className="w-8 text-right text-muted-foreground text-xs tabular-nums">
                     {s.cpu}%
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export function Pattern() {
               <TableCell>
                 <div className="flex items-center gap-2">
                   <Progress className="h-1.5 w-16" value={s.memory} />
-                  <span className="w-8 text-right tabular-nums text-muted-foreground text-xs">
+                  <span className="w-8 text-right text-muted-foreground text-xs tabular-nums">
                     {s.memory}%
                   </span>
                 </div>

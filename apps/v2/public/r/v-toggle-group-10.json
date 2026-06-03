@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toggle-group-10",
-  "description": "Basic toggle group",
+  "description": "Language picker with live code snippet preview",
   "registryDependencies": [
     "@cnippet/toggle-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nconst languages = [\n  { ext: \".ts\", id: \"typescript\", label: \"TypeScript\" },\n  { ext: \".js\", id: \"javascript\", label: \"JavaScript\" },\n  { ext: \".py\", id: \"python\", label: \"Python\" },\n  { ext: \".rs\", id: \"rust\", label: \"Rust\" },\n];\n\nconst snippets: Record<string, string> = {\n  javascript: `function greet(name) {\\n  return \\`Hello, \\${name}!\\`;\\n}`,\n  python: `def greet(name: str) -> str:\\n    return f\"Hello, {name}!\"`,\n  rust: `fn greet(name: &str) -> String {\\n    format!(\"Hello, {}!\", name)\\n}`,\n  typescript: `function greet(name: string): string {\\n  return \\`Hello, \\${name}!\\`;\\n}`,\n};\n\nexport function Pattern() {\n  const [lang, setLang] = useState(\"typescript\");\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\n      <ToggleGroup\n        onValueChange={(v) => v && setLang(v)}\n        value={[lang]}\n        variant=\"outline\"\n      >\n        {languages.map((l) => (\n          <ToggleGroupItem\n            aria-label={`Select ${l.label}`}\n            className=\"text-xs\"\n            key={l.id}\n            value={l.id}\n          >\n            {l.label}\n          </ToggleGroupItem>\n        ))}\n      </ToggleGroup>\n      <pre className=\"overflow-x-auto rounded-lg border border-input bg-muted/20 p-3 font-mono text-xs leading-relaxed text-foreground/80\">\n        {snippets[lang]}\n      </pre>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

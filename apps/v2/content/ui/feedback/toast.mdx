@@ -207,3 +207,33 @@ Demonstrates the three common timeout modes: a 3-second auto-dismiss, an 8-secon
 A chained sequence of toasts that progress through a deploy flow — loading → tests passed → deployed. Each stage closes the previous toast by ID before opening the next.
 
 <ComponentPreview name="v-toast-10" />
+
+### Anchored Copy Toast
+
+Uses `anchoredToastManager` with `tooltipStyle: true` to pop a "Copied!" tooltip directly above a copy button — no full notification stack needed.
+
+<ComponentPreview name="v-toast-11" />
+
+### Invite with Undo
+
+Each team invite fires a success toast with an Undo action. Clicking Undo closes the toast, removes the invite, and fires an info toast confirming the revocation.
+
+<ComponentPreview name="v-toast-12" />
+
+### Background Export
+
+An Export to CSV button triggers a loading toast while work runs in the background. When complete, it closes the loading toast and opens a success toast with a Download action.
+
+<ComponentPreview name="v-toast-13" />
+
+### Session Expiry Warning
+
+Simulates a session timeout: a persistent warning toast appears with a live countdown and a "Renew session" action. If ignored the timer reaches zero and an error toast replaces it.
+
+<ComponentPreview name="v-toast-14" />
+
+### Unsaved Changes
+
+A persistent "Unsaved changes" warning toast appears when the document is edited. The inline "Save now" action and the explicit Save button both resolve the toast and confirm with a success notification.
+
+<ComponentPreview name="v-toast-15" />

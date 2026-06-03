@@ -12,7 +12,7 @@ import {
 export function Pattern() {
   return (
     <div className="flex items-center justify-center p-4">
-      <Empty className="bg-muted/40 border">
+      <Empty className="border bg-muted/40">
         <EmptyHeader>
           <EmptyMedia variant="icon">
             <LockIcon />

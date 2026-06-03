@@ -1,6 +1,11 @@
 "use client";
 
-import { PauseIcon, PlayIcon, SkipBackIcon, SkipForwardIcon } from "lucide-react";
+import {
+  PauseIcon,
+  PlayIcon,
+  SkipBackIcon,
+  SkipForwardIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator } from "@/registry/default/ui/group";
@@ -10,11 +15,7 @@ export default function Particle() {
 
   return (
     <Group aria-label="Media player controls">
-      <Button
-        aria-label="Previous track"
-        size="icon"
-        variant="outline"
-      >
+      <Button aria-label="Previous track" size="icon" variant="outline">
         <SkipBackIcon aria-hidden="true" />
       </Button>
       <GroupSeparator />
@@ -31,11 +32,7 @@ export default function Particle() {
         )}
       </Button>
       <GroupSeparator />
-      <Button
-        aria-label="Next track"
-        size="icon"
-        variant="outline"
-      >
+      <Button aria-label="Next track" size="icon" variant="outline">
         <SkipForwardIcon aria-hidden="true" />
       </Button>
     </Group>

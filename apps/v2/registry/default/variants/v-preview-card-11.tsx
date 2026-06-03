@@ -27,10 +27,10 @@ export function Pattern() {
                 <p className="text-muted-foreground text-xs">@sarah_designs</p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Senior product designer. Open to work. Based in San Francisco.
             </p>
-            <div className="flex gap-4 text-xs text-muted-foreground">
+            <div className="flex gap-4 text-muted-foreground text-xs">
               <span>
                 <strong className="text-foreground">2.4k</strong> followers
               </span>

@@ -45,7 +45,8 @@ export default function Particle() {
   const [keys, setKeys] = useState<ApiKey[]>(initial);
   const [rotating, setRotating] = useState<number | null>(null);
 
-  const revoke = (id: number) => setKeys((prev) => prev.filter((k) => k.id !== id));
+  const revoke = (id: number) =>
+    setKeys((prev) => prev.filter((k) => k.id !== id));
 
   const rotate = async (id: number) => {
     setRotating(id);
@@ -72,7 +73,7 @@ export default function Particle() {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <p className="font-medium text-sm">{key.label}</p>
-                  <Badge variant="outline" className="text-[10px]">
+                  <Badge className="text-[10px]" variant="outline">
                     {key.id === 1 ? "Live" : "Test"}
                   </Badge>
                 </div>
@@ -104,7 +105,7 @@ export default function Particle() {
               <p className="mt-1.5 font-mono text-muted-foreground text-xs">
                 {key.prefix}
               </p>
-              <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
+              <div className="mt-2 flex items-center gap-3 text-muted-foreground text-xs">
                 <span>Created {key.created}</span>
                 <span>·</span>
                 <span>Last used {key.lastUsed}</span>

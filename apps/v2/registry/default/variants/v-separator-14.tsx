@@ -23,7 +23,9 @@ export default function Particle() {
           {i > 0 && <Separator />}
           <div className="p-4">
             <p className="font-medium text-sm">{title}</p>
-            <p className="mt-0.5 text-muted-foreground text-xs">{description}</p>
+            <p className="mt-0.5 text-muted-foreground text-xs">
+              {description}
+            </p>
           </div>
         </div>
       ))}

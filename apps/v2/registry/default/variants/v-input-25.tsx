@@ -13,12 +13,12 @@ export function Pattern() {
       <FieldLabel htmlFor="input-clearable">Full name</FieldLabel>
       <div className="relative">
         <Input
+          className={value ? "pe-9" : ""}
           id="input-clearable"
           onChange={(e) => setValue(e.target.value)}
           placeholder="Enter your full name"
           type="text"
           value={value}
-          className={value ? "pe-9" : ""}
         />
         {value && (
           <button

@@ -1,7 +1,12 @@
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const logs = [
-  { id: 1, level: "info", message: "Server started on port 3000", time: "10:00:01" },
+  {
+    id: 1,
+    level: "info",
+    message: "Server started on port 3000",
+    time: "10:00:01",
+  },
   {
     id: 2,
     level: "info",
@@ -76,7 +81,13 @@ export default function Particle() {
             >
               {level}
             </span>
-            <span className={levelClass[level] !== "text-muted-foreground" ? levelClass[level] : ""}>
+            <span
+              className={
+                levelClass[level] !== "text-muted-foreground"
+                  ? levelClass[level]
+                  : ""
+              }
+            >
               {message}
             </span>
           </div>

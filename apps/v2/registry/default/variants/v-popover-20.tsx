@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { PencilIcon } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import {
@@ -20,7 +20,11 @@ export function Pattern() {
       <p className="text-sm">
         Team: <span className="font-medium">{name}</span>
       </p>
-      <Popover onOpenChange={(open) => { if (open) setDraft(name); }}>
+      <Popover
+        onOpenChange={(open) => {
+          if (open) setDraft(name);
+        }}
+      >
         <PopoverTrigger
           aria-label="Edit team name"
           render={<Button className="size-6" size="icon" variant="ghost" />}
@@ -29,10 +33,7 @@ export function Pattern() {
         </PopoverTrigger>
         <PopoverContent className="w-64 gap-3">
           <p className="font-medium text-sm">Edit team name</p>
-          <Input
-            onChange={(e) => setDraft(e.target.value)}
-            value={draft}
-          />
+          <Input onChange={(e) => setDraft(e.target.value)} value={draft} />
           <div className="flex gap-2">
             <PopoverClose
               render={<Button className="flex-1" size="sm" variant="outline" />}
