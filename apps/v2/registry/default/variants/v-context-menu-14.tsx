@@ -71,7 +71,7 @@ export function Pattern() {
             <ContextMenuGroup>
               <ContextMenuItem
                 onSelect={() =>
-                  setVotes((v) => ({ ...v, [post.id]: v[post.id] + 1 }))
+                  setVotes((v) => ({ ...v, [post.id]: (v[post.id] ?? 0) + 1 }))
                 }
               >
                 <ThumbsUpIcon />
@@ -81,7 +81,7 @@ export function Pattern() {
                 onSelect={() =>
                   setVotes((v) => ({
                     ...v,
-                    [post.id]: Math.max(0, v[post.id] - 1),
+                    [post.id]: Math.max(0, (v[post.id] ?? 0) - 1),
                   }))
                 }
               >

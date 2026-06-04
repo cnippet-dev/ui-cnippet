@@ -43,7 +43,7 @@ export function Pattern() {
                 const next: SortDir = (v[0] as SortDir) ?? "none";
                 setSorts((prev) => ({ ...prev, [col]: next }));
               }}
-              value={dir !== "none" ? [dir] : []}
+              value={dir && dir !== "none" ? [dir] : []}
             >
               <ToggleGroupItem
                 aria-label={`Sort ${col} ascending`}

@@ -78,10 +78,10 @@ export default function Particle() {
           <ComboboxEmpty>No fonts found.</ComboboxEmpty>
           <ComboboxList>
             {groups.map((group, i) => (
-              <ComboboxGroup items={group.items} key={group.id}>
+              <ComboboxGroup key={group.id}>
                 {i > 0 && <ComboboxSeparator />}
                 <ComboboxGroupLabel>{group.label}</ComboboxGroupLabel>
-                {(font: Font) => (
+                {group.items.map((font) => (
                   <ComboboxItem key={font.value} value={font}>
                     <span
                       className={
@@ -93,7 +93,7 @@ export default function Particle() {
                       {font.label}
                     </span>
                   </ComboboxItem>
-                )}
+                ))}
               </ComboboxGroup>
             ))}
           </ComboboxList>

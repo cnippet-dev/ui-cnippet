@@ -19,7 +19,10 @@ export function Pattern() {
 
   return (
     <div className="flex items-center gap-2">
-      <NumberField onValueChange={setValue} value={value}>
+      <NumberField
+        onValueChange={(v) => setValue(v ?? DEFAULT_VALUE)}
+        value={value}
+      >
         <NumberFieldScrubArea label="Volume" />
         <NumberFieldGroup>
           <NumberFieldDecrement />

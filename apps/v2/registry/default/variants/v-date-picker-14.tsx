@@ -53,14 +53,14 @@ export default function Particle() {
           <Calendar
             captionLayout="dropdown"
             disabled={[{ before: minDate }, { after: maxDate }]}
-            fromYear={minDate.getFullYear()}
+            endMonth={maxDate}
             mode="single"
             onSelect={(d) => {
               setDob(d);
               if (d) setOpen(false);
             }}
             selected={dob}
-            toYear={maxDate.getFullYear()}
+            startMonth={minDate}
           />
         </PopoverPopup>
       </Popover>

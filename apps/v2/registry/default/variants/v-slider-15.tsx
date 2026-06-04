@@ -23,7 +23,12 @@ export default function Particle() {
           key={key}
           max={100}
           min={0}
-          onValueChange={(v) => setValues((prev) => ({ ...prev, [key]: v[0] }))}
+          onValueChange={(v) =>
+            setValues((prev) => ({
+              ...prev,
+              [key]: Array.isArray(v) ? (v[0] ?? 0) : v,
+            }))
+          }
           value={[values[key]]}
         >
           <div className="mb-2 flex items-center justify-between text-sm">

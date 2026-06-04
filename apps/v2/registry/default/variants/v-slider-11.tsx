@@ -25,7 +25,7 @@ export default function Particle() {
         className="flex-1"
         max={100}
         min={0}
-        onValueChange={(v) => setVolume(v[0])}
+        onValueChange={(v) => setVolume(Array.isArray(v) ? (v[0] ?? 60) : v)}
         value={[volume]}
       />
       <span className="w-8 text-right text-muted-foreground text-sm tabular-nums">

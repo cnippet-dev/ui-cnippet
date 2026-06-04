@@ -1,3 +1,4 @@
+//biome-ignore-all lint/style/noNonNullAssertion:<>
 "use client";
 
 import { ChevronDownIcon, FilterIcon, XIcon } from "lucide-react";
@@ -35,7 +36,7 @@ export function Pattern() {
   const toggle = (group: string, opt: string) =>
     setSelected((prev) => {
       const next = { ...prev, [group]: new Set(prev[group] ?? []) };
-      next[group].has(opt) ? next[group].delete(opt) : next[group].add(opt);
+      next[group]!.has(opt) ? next[group]!.delete(opt) : next[group]!.add(opt);
       return next;
     });
 
@@ -70,7 +71,7 @@ export function Pattern() {
               {f.label}
               {(selected[f.id]?.size ?? 0) > 0 && (
                 <Badge size="sm" variant="secondary">
-                  {selected[f.id].size}
+                  {selected[f.id]?.size}
                 </Badge>
               )}
             </span>

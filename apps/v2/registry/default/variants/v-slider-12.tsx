@@ -18,7 +18,7 @@ export default function Particle() {
         aria-label="Price range"
         max={1000}
         min={0}
-        onValueChange={setRange}
+        onValueChange={(v) => setRange(Array.isArray(v) ? [...v] : [v])}
         step={10}
         value={range}
       />

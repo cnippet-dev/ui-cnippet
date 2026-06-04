@@ -25,7 +25,6 @@ export function Pattern() {
           <ToggleGroup
             className="gap-0"
             onValueChange={setActiveOptions}
-            type="multiple"
             value={activeOptions}
           >
             <ToggleGroupItem

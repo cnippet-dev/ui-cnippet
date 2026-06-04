@@ -30,7 +30,7 @@ export default function Particle() {
         aria-label="Temperature"
         max={30}
         min={10}
-        onValueChange={(v) => setTemp(v[0])}
+        onValueChange={(v) => setTemp(Array.isArray(v) ? (v[0] ?? 22) : v)}
         step={1}
         value={[temp]}
       />

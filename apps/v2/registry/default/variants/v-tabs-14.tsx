@@ -45,7 +45,7 @@ export function Pattern() {
   const [copied, setCopied] = useState(false);
 
   const copy = () => {
-    void navigator.clipboard.writeText(files[active]);
+    void navigator.clipboard.writeText(files[active] ?? "");
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   };

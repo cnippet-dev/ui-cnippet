@@ -26,7 +26,7 @@ export default function Particle() {
         aria-label="Color hue"
         max={360}
         min={0}
-        onValueChange={(v) => setHue(v[0])}
+        onValueChange={(v) => setHue(Array.isArray(v) ? (v[0] ?? 210) : v)}
         value={[hue]}
       />
       <p className="text-center text-muted-foreground text-xs">

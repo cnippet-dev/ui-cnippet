@@ -3,7 +3,12 @@ import { Field } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 
-const fields = [
+const fields: {
+  key: string;
+  label: string;
+  placeholder: string;
+  type?: string;
+}[] = [
   { key: "first", label: "First name", placeholder: "Jane" },
   { key: "last", label: "Last name", placeholder: "Smith" },
   {
@@ -12,7 +17,7 @@ const fields = [
     placeholder: "jane@example.com",
     type: "email",
   },
-] as const;
+];
 
 export function Pattern() {
   return (

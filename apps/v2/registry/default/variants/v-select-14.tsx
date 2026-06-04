@@ -6,7 +6,11 @@ import {
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const deployTargets = [
+const deployTargets: {
+  description: string;
+  label: string;
+  value: string | null;
+}[] = [
   { description: "", label: "Select environment", value: null },
   {
     description: "Public-facing production environment",

@@ -80,7 +80,7 @@ export function Pattern() {
 
         <ToolbarSeparator />
 
-        <ToggleGroup className="border-none p-0" type="multiple">
+        <ToggleGroup className="border-none p-0">
           {formatTools.map(({ icon: Icon, label, shortcut }) => (
             <Tooltip key={label}>
               <TooltipTrigger
