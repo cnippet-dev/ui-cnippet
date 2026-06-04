@@ -55,9 +55,9 @@ export function Pattern() {
           ))}
         </nav>
         <div className="flex flex-col gap-2 p-4">
-          <h3 className="font-semibold text-sm">{panel.title}</h3>
+          <h3 className="font-semibold text-sm">{panel?.title}</h3>
           <p className="text-muted-foreground text-xs leading-relaxed">
-            {panel.description}
+            {panel?.description}
           </p>
         </div>
       </CardContent>
