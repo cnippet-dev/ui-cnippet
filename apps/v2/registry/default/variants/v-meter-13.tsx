@@ -1,3 +1,5 @@
+"use client";
+
 import { DatabaseIcon, FileIcon, ImageIcon } from "lucide-react";
 import {
   Meter,
