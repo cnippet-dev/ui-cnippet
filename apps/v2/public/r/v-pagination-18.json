@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-18",
+  "description": "Loading/disabled state",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-18.tsx",
+      "content": "\"use client\";\n\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport type React from \"react\";\nimport { useState } from \"react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\n\nconst TOTAL_PAGES = 20;\n\nfunction getVisiblePages(current: number, total: number): (number | \"...\")[] {\n  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);\n  if (current <= 4) return [1, 2, 3, 4, 5, \"...\", total];\n  if (current >= total - 3)\n    return [1, \"...\", total - 4, total - 3, total - 2, total - 1, total];\n  return [1, \"...\", current - 1, current, current + 1, \"...\", total];\n}\n\nexport function Pattern() {\n  const [page, setPage] = useState(5);\n  const pages = getVisiblePages(page, TOTAL_PAGES);\n\n  function go(e: React.MouseEvent, p: number) {\n    e.preventDefault();\n    setPage(p);\n  }\n\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={page === 1}\n            aria-label=\"Go to previous page\"\n            className={page === 1 ? \"pointer-events-none opacity-50\" : \"\"}\n            href=\"#\"\n            onClick={(e) => go(e, page - 1)}\n            size=\"icon\"\n          >\n            <ChevronLeftIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n        {pages.map((p, idx) =>\n          p === \"...\" ? (\n            // biome-ignore lint/suspicious/noArrayIndexKey: ellipsis placeholders have no stable key\n            <PaginationItem key={`ellipsis-${idx}`}>\n              <PaginationEllipsis />\n            </PaginationItem>\n          ) : (\n            <PaginationItem key={p}>\n              <PaginationLink\n                href=\"#\"\n                isActive={p === page}\n                onClick={(e) => go(e, p as number)}\n              >\n                {p}\n              </PaginationLink>\n            </PaginationItem>\n          ),\n        )}\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={page === TOTAL_PAGES}\n            aria-label=\"Go to next page\"\n            className={\n              page === TOTAL_PAGES ? \"pointer-events-none opacity-50\" : \"\"\n            }\n            href=\"#\"\n            onClick={(e) => go(e, page + 1)}\n            size=\"icon\"\n          >\n            <ChevronRightIcon className=\"size-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

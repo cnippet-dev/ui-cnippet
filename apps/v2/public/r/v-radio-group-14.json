@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-14",
+  "description": "Availability Status",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-14.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\n\nconst statuses = [\n  {\n    color: \"bg-green-500\",\n    description: \"Visible to everyone\",\n    label: \"Online\",\n    value: \"online\",\n  },\n  {\n    color: \"bg-yellow-500\",\n    description: \"Will reply when back\",\n    label: \"Away\",\n    value: \"away\",\n  },\n  {\n    color: \"bg-red-500\",\n    description: \"Minimizing interruptions\",\n    label: \"Busy\",\n    value: \"busy\",\n  },\n  {\n    color: \"bg-foreground/30\",\n    description: \"Appears offline to others\",\n    label: \"Offline\",\n    value: \"offline\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <RadioGroup className=\"w-full max-w-xs\" defaultValue=\"online\">\n      {statuses.map(({ color, description, label, value }) => (\n        <Label\n          className=\"flex cursor-pointer items-center gap-3 rounded-lg p-2 hover:bg-accent/50\"\n          key={value}\n        >\n          <Radio value={value} />\n          <span\n            aria-hidden=\"true\"\n            className={`size-2.5 shrink-0 rounded-full ${color}`}\n          />\n          <div className=\"flex flex-col\">\n            <span className=\"font-medium text-sm\">{label}</span>\n            <span className=\"text-muted-foreground text-xs\">{description}</span>\n          </div>\n        </Label>\n      ))}\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

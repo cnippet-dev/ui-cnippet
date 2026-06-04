@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-6",
-  "description": "Basic frame",
+  "description": "Stats metrics display",
   "registryDependencies": [
     "@cnippet/frame"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-frame-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Frame,\n  FrameDescription,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\n\nconst stats = [\n  { label: \"Total revenue\", trend: \"+12.5%\", value: \"$48,295\" },\n  { label: \"Active users\", trend: \"+8.1%\", value: \"3,842\" },\n  { label: \"Conversion rate\", trend: \"-0.4%\", value: \"3.6%\" },\n];\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full max-w-sm\">\n      <FrameHeader>\n        <FrameTitle>Overview</FrameTitle>\n        <FrameDescription>Last 30 days</FrameDescription>\n      </FrameHeader>\n      {stats.map((stat) => (\n        <FramePanel key={stat.label}>\n          <div className=\"flex items-center justify-between\">\n            <p className=\"text-muted-foreground text-sm\">{stat.label}</p>\n            <span\n              className={`font-medium text-xs ${stat.trend.startsWith(\"+\") ? \"text-success\" : \"text-destructive-foreground\"}`}\n            >\n              {stat.trend}\n            </span>\n          </div>\n          <p className=\"font-semibold text-xl\">{stat.value}</p>\n        </FramePanel>\n      ))}\n    </Frame>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

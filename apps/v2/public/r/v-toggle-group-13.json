@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-13",
+  "description": "Date range quick-select with live stats grid",
+  "registryDependencies": [
+    "@cnippet/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-13.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\ntype Range = \"today\" | \"week\" | \"month\" | \"quarter\" | \"year\";\n\nconst ranges: { id: Range; label: string; sublabel: string }[] = [\n  { id: \"today\", label: \"Today\", sublabel: \"Jun 3\" },\n  { id: \"week\", label: \"Week\", sublabel: \"Jun 1–7\" },\n  { id: \"month\", label: \"Month\", sublabel: \"June\" },\n  { id: \"quarter\", label: \"Quarter\", sublabel: \"Q2\" },\n  { id: \"year\", label: \"Year\", sublabel: \"2025\" },\n];\n\nconst stats: Record<Range, { label: string; value: string }[]> = {\n  month: [\n    { label: \"Revenue\", value: \"$34,892\" },\n    { label: \"Sessions\", value: \"128,430\" },\n    { label: \"Conversions\", value: \"3.4%\" },\n  ],\n  quarter: [\n    { label: \"Revenue\", value: \"$98,241\" },\n    { label: \"Sessions\", value: \"385,291\" },\n    { label: \"Conversions\", value: \"3.1%\" },\n  ],\n  today: [\n    { label: \"Revenue\", value: \"$1,284\" },\n    { label: \"Sessions\", value: \"4,231\" },\n    { label: \"Conversions\", value: \"2.8%\" },\n  ],\n  week: [\n    { label: \"Revenue\", value: \"$8,942\" },\n    { label: \"Sessions\", value: \"29,840\" },\n    { label: \"Conversions\", value: \"3.2%\" },\n  ],\n  year: [\n    { label: \"Revenue\", value: \"$412,840\" },\n    { label: \"Sessions\", value: \"1.54M\" },\n    { label: \"Conversions\", value: \"3.3%\" },\n  ],\n};\n\nexport function Pattern() {\n  const [range, setRange] = useState<Range>(\"month\");\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <ToggleGroup\n        className=\"w-full\"\n        onValueChange={(v) => v[0] && setRange(v[0] as Range)}\n        value={[range]}\n        variant=\"outline\"\n      >\n        {ranges.map((r) => (\n          <ToggleGroupItem\n            aria-label={`View ${r.label} stats`}\n            className=\"flex-1 flex-col gap-0 py-2 text-xs leading-none\"\n            key={r.id}\n            value={r.id}\n          >\n            <span className=\"font-medium\">{r.label}</span>\n            <span className=\"mt-0.5 text-[10px] text-muted-foreground\">\n              {r.sublabel}\n            </span>\n          </ToggleGroupItem>\n        ))}\n      </ToggleGroup>\n\n      <div className=\"grid grid-cols-3 gap-2\">\n        {stats[range].map((s) => (\n          <div\n            className=\"flex flex-col gap-0.5 rounded-lg border border-border p-3 text-center\"\n            key={s.label}\n          >\n            <span className=\"font-bold text-lg\">{s.value}</span>\n            <span className=\"text-muted-foreground text-xs\">{s.label}</span>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ],
+  "type": "registry:block"
+}

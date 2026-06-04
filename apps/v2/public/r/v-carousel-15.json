@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-carousel-15",
+  "description": "Feature highlight carousel with icon slides and Prev/Next controls",
+  "registryDependencies": [
+    "@cnippet/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-15.tsx",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\"use client\";\n\nimport useEmblaCarousel from \"embla-carousel-react\";\nimport { CheckIcon } from \"lucide-react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst FEATURES = [\n  {\n    bg: \"bg-violet-50 dark:bg-violet-950/40\",\n    description:\n      \"Browse, copy, and install 50+ production-ready components with a single command.\",\n    icon: \"⚡\",\n    title: \"Instant CLI install\",\n  },\n  {\n    bg: \"bg-sky-50 dark:bg-sky-950/40\",\n    description:\n      \"Every component meets WCAG 2.1 AA, with full keyboard navigation built in.\",\n    icon: \"♿\",\n    title: \"Accessibility first\",\n  },\n  {\n    bg: \"bg-emerald-50 dark:bg-emerald-950/40\",\n    description:\n      \"Powered by Tailwind CSS — override any style without fighting specificity wars.\",\n    icon: \"🎨\",\n    title: \"Fully themeable\",\n  },\n  {\n    bg: \"bg-amber-50 dark:bg-amber-950/40\",\n    description:\n      \"Built on Base UI primitives so unstyled logic stays separate from visual styles.\",\n    icon: \"🧩\",\n    title: \"Headless foundation\",\n  },\n];\n\nexport default function Particle() {\n  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });\n  const [current, setCurrent] = React.useState(0);\n\n  React.useEffect(() => {\n    if (!emblaApi) return;\n    const onSelect = () => setCurrent(emblaApi.selectedScrollSnap());\n    emblaApi.on(\"select\", onSelect);\n    return () => {\n      emblaApi.off(\"select\", onSelect);\n    };\n  }, [emblaApi]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      <div className=\"overflow-hidden rounded-xl\" ref={emblaRef}>\n        <div className=\"flex\">\n          {FEATURES.map((f, i) => (\n            <div className=\"min-w-0 shrink-0 grow-0 basis-full\" key={i}>\n              <div className={cn(\"flex flex-col gap-4 rounded-xl p-6\", f.bg)}>\n                <span className=\"text-3xl\">{f.icon}</span>\n                <div>\n                  <p className=\"font-semibold\">{f.title}</p>\n                  <p className=\"mt-1 text-muted-foreground text-sm leading-relaxed\">\n                    {f.description}\n                  </p>\n                </div>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n      <div className=\"flex items-center justify-between px-1\">\n        <div className=\"flex gap-1.5\">\n          {FEATURES.map((_, i) => (\n            <button\n              aria-label={`Go to ${i + 1}`}\n              className={cn(\n                \"h-1.5 rounded-full transition-all\",\n                i === current\n                  ? \"w-6 bg-primary\"\n                  : \"w-1.5 bg-muted-foreground/30\",\n              )}\n              key={i}\n              onClick={() => emblaApi?.scrollTo(i)}\n              type=\"button\"\n            />\n          ))}\n        </div>\n        <div className=\"flex gap-2\">\n          <button\n            className=\"rounded-full border px-3 py-1 text-xs hover:bg-muted disabled:opacity-30\"\n            disabled={current === 0}\n            onClick={() => emblaApi?.scrollPrev()}\n            type=\"button\"\n          >\n            Prev\n          </button>\n          <button\n            className=\"rounded-full border bg-primary px-3 py-1 text-primary-foreground text-xs hover:bg-primary/90 disabled:opacity-30\"\n            disabled={current === FEATURES.length - 1}\n            onClick={() => emblaApi?.scrollNext()}\n            type=\"button\"\n          >\n            {current === FEATURES.length - 1 ? (\n              <span className=\"flex items-center gap-1\">\n                <CheckIcon className=\"size-3\" /> Done\n              </span>\n            ) : (\n              \"Next\"\n            )}\n          </button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "carousel"
+  ],
+  "type": "registry:block"
+}

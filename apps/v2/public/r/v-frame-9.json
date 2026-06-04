@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-9",
-  "description": "Basic frame",
+  "description": "With footer CTA buttons",
   "registryDependencies": [
     "@cnippet/frame"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-frame-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Frame,\n  FrameDescription,\n  FrameFooter,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full max-w-md\">\n      <FrameHeader>\n        <FrameTitle>Display name</FrameTitle>\n        <FrameDescription>\n          This is the name that will be visible to other users.\n        </FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <div className=\"flex flex-col gap-2\">\n          <Label htmlFor=\"display-name\">Name</Label>\n          <Input defaultValue=\"Alex Rivera\" id=\"display-name\" type=\"text\" />\n        </div>\n      </FramePanel>\n      <FrameFooter className=\"flex justify-end gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Cancel\n        </Button>\n        <Button type=\"submit\">Save changes</Button>\n      </FrameFooter>\n    </Frame>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

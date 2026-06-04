@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-16",
+  "description": "GitHub repository list cards with language, star, and fork counts",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-16.tsx",
+      "content": "import { GitBranch, GitForkIcon, StarIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nconst repos = [\n  {\n    description: \"A UI component library built with Base UI and Tailwind CSS.\",\n    forks: 248,\n    langColor: \"bg-blue-500\",\n    language: \"TypeScript\",\n    name: \"ui-cnippet\",\n    stars: 1_420,\n  },\n  {\n    description: \"Minimal blogging starter with MDX, Tailwind, and Next.js.\",\n    forks: 91,\n    langColor: \"bg-blue-500\",\n    language: \"TypeScript\",\n    name: \"next-blog-starter\",\n    stars: 673,\n  },\n  {\n    description: \"Lightweight state manager for React with zero boilerplate.\",\n    forks: 57,\n    langColor: \"bg-yellow-400\",\n    language: \"JavaScript\",\n    name: \"micro-store\",\n    stars: 312,\n  },\n];\n\nfunction fmt(n: number) {\n  return n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);\n}\n\nexport function Pattern() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      {repos.map((repo) => (\n        <Card className=\"w-full\" key={repo.name}>\n          <CardContent className=\"flex flex-col gap-2.5\">\n            <div className=\"flex items-start justify-between gap-2\">\n              <div className=\"flex items-center gap-2\">\n                <GitBranch className=\"size-4 shrink-0 text-muted-foreground\" />\n                <span className=\"font-semibold text-sm\">{repo.name}</span>\n              </div>\n              <Badge size=\"sm\" variant=\"secondary\">\n                Public\n              </Badge>\n            </div>\n            <p className=\"text-muted-foreground text-xs leading-relaxed\">\n              {repo.description}\n            </p>\n            <div className=\"flex items-center gap-4 text-muted-foreground text-xs\">\n              <span className=\"flex items-center gap-1\">\n                <span className={`size-2.5 rounded-full ${repo.langColor}`} />\n                {repo.language}\n              </span>\n              <span className=\"flex items-center gap-1\">\n                <StarIcon className=\"size-3\" />\n                {fmt(repo.stars)}\n              </span>\n              <span className=\"flex items-center gap-1\">\n                <GitForkIcon className=\"size-3\" />\n                {fmt(repo.forks)}\n              </span>\n            </div>\n          </CardContent>\n        </Card>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

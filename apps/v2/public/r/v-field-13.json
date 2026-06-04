@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-field-13",
-  "description": "Basic field",
+  "description": "Field with checkbox group",
   "registryDependencies": [
     "@cnippet/field"
   ],

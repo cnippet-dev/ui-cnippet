@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Blocks from "@/components/blocks";
 import Components from "@/components/components";
+import { HomeThemes } from "@/components/home-themes";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { cn } from "@/lib/utils";
 
@@ -71,12 +73,15 @@ export default function HomePage() {
 
             <Components />
 
+            <HomeThemes />
+            <Separator />
             <Blocks />
           </div>
         </main>
 
         <VerticalSeparatorRight />
       </div>
+      <SiteFooter />
     </ReactLenis>
   );
 }

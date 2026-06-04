@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-15",
+  "description": "Product specifications table by category",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-15.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nconst specs = [\n  {\n    category: \"Display\",\n    rows: [\n      [\"Screen Size\", \"14.2-inch Liquid Retina XDR\"],\n      [\"Resolution\", \"3024 × 1964 at 254 ppi\"],\n      [\"Brightness\", \"1000 nits sustained (full-screen)\"],\n      [\"Refresh Rate\", \"ProMotion adaptive 24Hz to 120Hz\"],\n    ],\n    value: \"display\",\n  },\n  {\n    category: \"Performance\",\n    rows: [\n      [\"Chip\", \"Apple M4 Pro\"],\n      [\"CPU Cores\", \"14-core (10 performance, 4 efficiency)\"],\n      [\"GPU Cores\", \"20-core\"],\n      [\"Memory\", \"24 GB unified memory\"],\n      [\"Storage\", \"512 GB SSD\"],\n    ],\n    value: \"performance\",\n  },\n  {\n    category: \"Battery & Power\",\n    rows: [\n      [\"Battery Life\", \"Up to 22 hours video playback\"],\n      [\"Battery Capacity\", \"72.4-watt-hour lithium-polymer\"],\n      [\"Fast Charge\", \"0–50% in ~30 min with 96W+ adapter\"],\n      [\"Charger\", \"96W USB-C Power Adapter (included)\"],\n    ],\n    value: \"battery\",\n  },\n  {\n    category: \"Connectivity\",\n    rows: [\n      [\"Wi-Fi\", \"Wi-Fi 6E (802.11ax)\"],\n      [\"Bluetooth\", \"5.3\"],\n      [\"Ports\", \"3× Thunderbolt 4, HDMI, SD card, MagSafe 3\"],\n    ],\n    value: \"connectivity\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-lg\">\n      <div className=\"mb-4 flex items-center gap-2\">\n        <h2 className=\"font-semibold text-base\">Technical Specifications</h2>\n        <Badge size=\"sm\" variant=\"secondary\">\n          MacBook Pro 14&Prime;\n        </Badge>\n      </div>\n      <Accordion className=\"w-full\" defaultValue={[\"display\"]} multiple>\n        {specs.map((spec) => (\n          <AccordionItem key={spec.value} value={spec.value}>\n            <AccordionTrigger className=\"font-medium\">\n              {spec.category}\n            </AccordionTrigger>\n            <AccordionContent>\n              <dl className=\"divide-y text-sm\">\n                {spec.rows.map(([label, value]) => (\n                  <div className=\"flex items-baseline gap-4 py-2.5\" key={label}>\n                    <dt className=\"w-36 shrink-0 text-muted-foreground\">\n                      {label}\n                    </dt>\n                    <dd className=\"text-foreground\">{value}</dd>\n                  </div>\n                ))}\n              </dl>\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

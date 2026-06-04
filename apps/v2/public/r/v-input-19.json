@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-19",
-  "description": "with multiple error messages",
+  "description": "With multiple error messages",
   "registryDependencies": [
     "@cnippet/input"
   ],

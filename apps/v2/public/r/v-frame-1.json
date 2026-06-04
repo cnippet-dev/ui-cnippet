@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-1",
-  "description": "Basic frame",
+  "description": "Default",
   "registryDependencies": [
     "@cnippet/frame"
   ],

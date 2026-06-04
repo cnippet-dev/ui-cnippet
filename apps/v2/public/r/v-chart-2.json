@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-chart-2",
-  "description": "Basic chart",
+  "description": "Area Chart",
   "registryDependencies": [
     "@cnippet/chart"
   ],

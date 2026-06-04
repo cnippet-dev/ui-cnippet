@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-context-menu-12",
+  "description": "Rich-text editor with checkbox formatting and alignment submenu",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-context-menu-12.tsx",
+      "content": "\"use client\";\n\nimport {\n  AlignCenterIcon,\n  AlignLeftIcon,\n  AlignRightIcon,\n  BoldIcon,\n  ItalicIcon,\n  LinkIcon,\n  UnderlineIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  ContextMenu,\n  ContextMenuCheckboxItem,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nexport function Pattern() {\n  const [bold, setBold] = useState(false);\n  const [italic, setItalic] = useState(false);\n  const [underline, setUnderline] = useState(false);\n  const [align, setAlign] = useState<\"left\" | \"center\" | \"right\">(\"left\");\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed\">\n        <p\n          className={`max-w-[160px] text-muted-foreground text-sm text-${align} ${bold ? \"font-bold\" : \"\"} ${italic ? \"italic\" : \"\"} ${underline ? \"underline\" : \"\"}`}\n        >\n          Right-click to format this text sample.\n        </p>\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-48\">\n        <ContextMenuLabel>Formatting</ContextMenuLabel>\n        <ContextMenuGroup>\n          <ContextMenuCheckboxItem checked={bold} onCheckedChange={setBold}>\n            <BoldIcon />\n            Bold\n          </ContextMenuCheckboxItem>\n          <ContextMenuCheckboxItem checked={italic} onCheckedChange={setItalic}>\n            <ItalicIcon />\n            Italic\n          </ContextMenuCheckboxItem>\n          <ContextMenuCheckboxItem\n            checked={underline}\n            onCheckedChange={setUnderline}\n          >\n            <UnderlineIcon />\n            Underline\n          </ContextMenuCheckboxItem>\n        </ContextMenuGroup>\n        <ContextMenuSeparator />\n        <ContextMenuSub>\n          <ContextMenuSubTrigger>\n            <AlignLeftIcon />\n            Alignment\n          </ContextMenuSubTrigger>\n          <ContextMenuSubContent>\n            <ContextMenuGroup>\n              <ContextMenuItem onSelect={() => setAlign(\"left\")}>\n                <AlignLeftIcon />\n                Left\n              </ContextMenuItem>\n              <ContextMenuItem onSelect={() => setAlign(\"center\")}>\n                <AlignCenterIcon />\n                Center\n              </ContextMenuItem>\n              <ContextMenuItem onSelect={() => setAlign(\"right\")}>\n                <AlignRightIcon />\n                Right\n              </ContextMenuItem>\n            </ContextMenuGroup>\n          </ContextMenuSubContent>\n        </ContextMenuSub>\n        <ContextMenuSeparator />\n        <ContextMenuGroup>\n          <ContextMenuItem>\n            <LinkIcon />\n            Insert link\n          </ContextMenuItem>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "context menu"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-breadcrumb-15",
+  "description": "Compact breadcrumb with ellipsis and hidden-items count badge",
+  "registryDependencies": [
+    "@cnippet/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-breadcrumb-15.tsx",
+      "content": "import { HouseIcon } from \"lucide-react\";\nimport Link from \"next/link\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nconst hidden = [\n  { href: \"#\", label: \"Dashboard\" },\n  { href: \"#\", label: \"Settings\" },\n  { href: \"#\", label: \"Integrations\" },\n];\n\nexport function Pattern() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList className=\"sm:gap-1.5\">\n        <BreadcrumbItem>\n          <BreadcrumbLink className=\"flex items-center gap-1\" href=\"#\">\n            <HouseIcon className=\"size-4\" />\n            <span className=\"sr-only sm:not-sr-only\">Home</span>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n\n        <BreadcrumbSeparator />\n\n        <BreadcrumbItem>\n          <Menu>\n            <MenuTrigger\n              render={\n                <Button\n                  className=\"-m-1.5 gap-1 text-muted-foreground\"\n                  size=\"icon-sm\"\n                  variant=\"ghost\"\n                />\n              }\n            >\n              <BreadcrumbEllipsis />\n              <Badge\n                className=\"hidden sm:inline-flex\"\n                size=\"sm\"\n                variant=\"secondary\"\n              >\n                {hidden.length}\n              </Badge>\n            </MenuTrigger>\n            <MenuPopup align=\"start\">\n              {hidden.map((item) => (\n                <MenuItem key={item.label} render={<Link href={item.href} />}>\n                  {item.label}\n                </MenuItem>\n              ))}\n            </MenuPopup>\n          </Menu>\n        </BreadcrumbItem>\n\n        <BreadcrumbSeparator />\n\n        <BreadcrumbItem>\n          <BreadcrumbPage className=\"font-medium\">Notifications</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "breadcrumb"
+  ],
+  "type": "registry:block"
+}

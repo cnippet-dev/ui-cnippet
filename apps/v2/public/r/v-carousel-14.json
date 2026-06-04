@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-carousel-14",
+  "description": "Changelog carousel with drag-free multi-slide and version tags",
+  "registryDependencies": [
+    "@cnippet/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-14.tsx",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\"use client\";\n\nimport useEmblaCarousel from \"embla-carousel-react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst CHANGELOG = [\n  {\n    date: \"Jun 2026\",\n    items: [\n      \"Redesigned command palette\",\n      \"New chart variants\",\n      \"Dark mode improvements\",\n    ],\n    tag: \"v2.4.0\",\n    tagColor: \"bg-emerald-500\",\n  },\n  {\n    date: \"Apr 2026\",\n    items: [\n      \"Base UI migration complete\",\n      \"New autocomplete component\",\n      \"Bug fixes\",\n    ],\n    tag: \"v2.3.0\",\n    tagColor: \"bg-blue-500\",\n  },\n  {\n    date: \"Feb 2026\",\n    items: [\n      \"Carousel with thumbnails\",\n      \"Accordion multi-mode\",\n      \"Performance improvements\",\n    ],\n    tag: \"v2.2.0\",\n    tagColor: \"bg-violet-500\",\n  },\n  {\n    date: \"Dec 2025\",\n    items: [\"Initial stable release\", \"30+ components\", \"CLI installer\"],\n    tag: \"v2.0.0\",\n    tagColor: \"bg-amber-500\",\n  },\n];\n\nexport default function Particle() {\n  const [emblaRef, emblaApi] = useEmblaCarousel({\n    align: \"start\",\n    dragFree: true,\n  });\n  const [selected, setSelected] = React.useState(0);\n\n  React.useEffect(() => {\n    if (!emblaApi) return;\n    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());\n    emblaApi.on(\"select\", onSelect);\n    return () => {\n      emblaApi.off(\"select\", onSelect);\n    };\n  }, [emblaApi]);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"overflow-hidden\" ref={emblaRef}>\n        <div className=\"flex gap-3\">\n          {CHANGELOG.map((release, i) => (\n            <div\n              className=\"min-w-55 shrink-0 rounded-xl border bg-card p-4\"\n              key={i}\n            >\n              <div className=\"mb-3 flex items-center justify-between\">\n                <span\n                  className={cn(\n                    \"rounded-full px-2 py-0.5 font-bold text-[10px] text-white\",\n                    release.tagColor,\n                  )}\n                >\n                  {release.tag}\n                </span>\n                <span className=\"text-muted-foreground text-xs\">\n                  {release.date}\n                </span>\n              </div>\n              <ul className=\"flex flex-col gap-1.5\">\n                {release.items.map((item) => (\n                  <li className=\"text-xs\" key={item}>\n                    · {item}\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n      </div>\n      <div className=\"flex justify-center gap-1.5\">\n        {CHANGELOG.map((_, i) => (\n          <button\n            aria-label={`Scroll to ${i + 1}`}\n            className={cn(\n              \"h-1.5 rounded-full transition-all\",\n              i === selected\n                ? \"w-5 bg-primary\"\n                : \"w-1.5 bg-muted-foreground/30\",\n            )}\n            key={i}\n            onClick={() => emblaApi?.scrollTo(i)}\n            type=\"button\"\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "carousel"
+  ],
+  "type": "registry:block"
+}

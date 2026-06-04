@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-spinner-14",
+  "description": "Auth Form With Spinner",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-14.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false);\n  const [done, setDone] = useState(false);\n\n  function handleSubmit(e: React.FormEvent) {\n    e.preventDefault();\n    setLoading(true);\n    setTimeout(() => {\n      setLoading(false);\n      setDone(true);\n    }, 2000);\n  }\n\n  return (\n    <form\n      className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\"\n      onSubmit={handleSubmit}\n    >\n      <p className=\"font-semibold\">Sign in</p>\n      <Field>\n        <FieldLabel>Email</FieldLabel>\n        <Input\n          defaultValue=\"user@example.com\"\n          disabled={loading || done}\n          type=\"email\"\n        />\n      </Field>\n      <Field>\n        <FieldLabel>Password</FieldLabel>\n        <Input\n          defaultValue=\"••••••••\"\n          disabled={loading || done}\n          type=\"password\"\n        />\n      </Field>\n      <Button className=\"w-full\" disabled={loading || done} type=\"submit\">\n        {loading && (\n          <Spinner\n            aria-hidden=\"true\"\n            className=\"size-4\"\n            data-icon=\"inline-start\"\n          />\n        )}\n        {done ? \"Signed in!\" : loading ? \"Signing in…\" : \"Sign in\"}\n      </Button>\n    </form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:block"
+}

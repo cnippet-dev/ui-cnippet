@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-11",
+  "description": "Searchable FAQ with live keyword filter",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-11.tsx",
+      "content": "\"use client\";\n\nimport { SearchIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nconst faqs = [\n  {\n    content:\n      'Go to the login page and click \"Forgot password\". You\\'ll receive a reset link within a few minutes. The link expires after 24 hours.',\n    trigger: \"How do I reset my password?\",\n    value: \"q1\",\n  },\n  {\n    content:\n      \"Yes, you can upgrade or downgrade at any time from account settings. Changes take effect at the start of your next billing cycle.\",\n    trigger: \"Can I change my subscription plan?\",\n    value: \"q2\",\n  },\n  {\n    content:\n      \"All new accounts start with a 14-day free trial on the Pro plan. No credit card is required to start.\",\n    trigger: \"Is there a free trial available?\",\n    value: \"q3\",\n  },\n  {\n    content:\n      \"Navigate to Settings > Data & Privacy > Export. You can export in CSV or JSON format. Large exports may take a few minutes.\",\n    trigger: \"How do I export my data?\",\n    value: \"q4\",\n  },\n  {\n    content:\n      \"We accept all major credit cards (Visa, Mastercard, AmEx), PayPal, and bank transfers for annual enterprise plans.\",\n    trigger: \"What payment methods do you accept?\",\n    value: \"q5\",\n  },\n  {\n    content:\n      'From your dashboard, go to Settings > Team, then click \"Invite Member\". Enter their email and select a role. They\\'ll receive an invite within minutes.',\n    trigger: \"How do I invite team members?\",\n    value: \"q6\",\n  },\n];\n\nexport function Pattern() {\n  const [query, setQuery] = useState(\"\");\n  const filtered = faqs.filter(\n    (f) =>\n      f.trigger.toLowerCase().includes(query.toLowerCase()) ||\n      f.content.toLowerCase().includes(query.toLowerCase()),\n  );\n\n  return (\n    <div className=\"mx-auto w-full max-w-lg\">\n      <div className=\"mb-4 flex flex-col gap-1\">\n        <h2 className=\"font-semibold text-lg\">Frequently Asked Questions</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          Search or browse answers below.\n        </p>\n      </div>\n      <div className=\"relative mb-4\">\n        <SearchIcon className=\"absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\" />\n        <Input\n          className=\"pl-9\"\n          onChange={(e) => setQuery(e.target.value)}\n          placeholder=\"Search questions…\"\n          value={query}\n        />\n      </div>\n      {filtered.length === 0 ? (\n        <p className=\"py-8 text-center text-muted-foreground text-sm\">\n          No results for &quot;{query}&quot;\n        </p>\n      ) : (\n        <Accordion className=\"w-full\" multiple>\n          {filtered.map((faq) => (\n            <AccordionItem key={faq.value} value={faq.value}>\n              <AccordionTrigger>{faq.trigger}</AccordionTrigger>\n              <AccordionContent className=\"text-muted-foreground\">\n                {faq.content}\n              </AccordionContent>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

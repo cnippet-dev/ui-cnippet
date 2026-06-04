@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-field-22",
+  "description": "Field with password strength indicator",
+  "registryDependencies": [
+    "@cnippet/field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-field-22.tsx",
+      "content": "\"use client\";\n\nimport { Field, FieldLabel, FieldValidity } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        New password <span className=\"text-destructive-foreground\">*</span>\n      </FieldLabel>\n      <Input\n        minLength={8}\n        placeholder=\"Enter new password\"\n        required\n        type=\"password\"\n      />\n      <FieldValidity>\n        {(validity) => {\n          const value = validity.value as string | undefined;\n          const len = value?.length ?? 0;\n          const strength =\n            len === 0 ? 0 : len < 6 ? 1 : len < 10 ? 2 : len < 14 ? 3 : 4;\n          const labels = [\"\", \"Weak\", \"Fair\", \"Good\", \"Strong\"];\n          const colors = [\n            \"\",\n            \"bg-destructive\",\n            \"bg-yellow-500\",\n            \"bg-blue-500\",\n            \"bg-green-500\",\n          ];\n          return (\n            <div className=\"flex flex-col gap-1.5\">\n              <div className=\"flex gap-1\">\n                {[1, 2, 3, 4].map((level) => (\n                  <div\n                    className={`h-1.5 flex-1 rounded-full transition-colors ${\n                      level <= strength ? colors[strength] : \"bg-muted\"\n                    }`}\n                    key={level}\n                  />\n                ))}\n              </div>\n              {strength > 0 && (\n                <p className=\"text-muted-foreground text-xs\">\n                  {labels[strength]} password\n                </p>\n              )}\n            </div>\n          );\n        }}\n      </FieldValidity>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "field"
+  ],
+  "type": "registry:block"
+}

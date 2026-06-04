@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-12",
+  "description": "Team invite with per-row undo action",
+  "registryDependencies": [
+    "@cnippet/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-12.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { toastManager } from \"@/registry/default/ui/toast\";\n\nconst members = [\n  {\n    email: \"olivia@example.com\",\n    id: \"olivia\",\n    initials: \"OM\",\n    name: \"Olivia Martin\",\n    role: \"Editor\",\n  },\n  {\n    email: \"jackson@example.com\",\n    id: \"jackson\",\n    initials: \"JL\",\n    name: \"Jackson Lee\",\n    role: \"Viewer\",\n  },\n  {\n    email: \"isabella@example.com\",\n    id: \"isabella\",\n    initials: \"IN\",\n    name: \"Isabella Nguyen\",\n    role: \"Editor\",\n  },\n];\n\nexport function Pattern() {\n  const [invited, setInvited] = useState<Set<string>>(new Set());\n\n  const invite = (member: (typeof members)[0]) => {\n    setInvited((prev) => new Set(prev).add(member.id));\n    const id = toastManager.add({\n      actionProps: {\n        children: \"Undo\",\n        onClick: () => {\n          toastManager.close(id);\n          setInvited((prev) => {\n            const next = new Set(prev);\n            next.delete(member.id);\n            return next;\n          });\n          toastManager.add({\n            description: `${member.name}'s invite has been revoked.`,\n            title: \"Invite revoked\",\n            type: \"info\",\n          });\n        },\n      },\n      description: `${member.email} will receive an email invite.`,\n      timeout: 6000,\n      title: `Invite sent to ${member.name}`,\n      type: \"success\",\n    });\n  };\n\n  return (\n    <div className=\"w-full max-w-xs rounded-xl border border-border p-4\">\n      <p className=\"mb-3 font-semibold text-sm\">Invite team members</p>\n      <div className=\"flex flex-col gap-2\">\n        {members.map((m) => (\n          <div className=\"flex items-center justify-between gap-2\" key={m.id}>\n            <div className=\"flex items-center gap-2.5\">\n              <div className=\"flex size-7 items-center justify-center rounded-full bg-muted font-medium text-xs\">\n                {m.initials}\n              </div>\n              <div className=\"flex flex-col\">\n                <span className=\"font-medium text-sm leading-none\">\n                  {m.name}\n                </span>\n                <span className=\"text-muted-foreground text-xs\">{m.role}</span>\n              </div>\n            </div>\n            <Button\n              disabled={invited.has(m.id)}\n              onClick={() => invite(m)}\n              size=\"sm\"\n              variant=\"outline\"\n            >\n              {invited.has(m.id) ? \"Invited\" : \"Invite\"}\n            </Button>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-13",
+  "description": "Transfer Ownership with typed confirmation input",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-13.tsx",
+      "content": "\"use client\";\n\nimport { KeyRoundIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/default/ui/alert-dialog\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst CONFIRM_TEXT = \"transfer\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const confirmed = value === CONFIRM_TEXT;\n\n  return (\n    <AlertDialog onOpenChange={(open) => !open && setValue(\"\")}>\n      <AlertDialogTrigger\n        render={\n          <Button variant=\"destructive-outline\">Transfer Ownership</Button>\n        }\n      />\n      <AlertDialogContent className=\"sm:max-w-sm\">\n        <div className=\"flex items-start gap-3 p-4\">\n          <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950\">\n            <KeyRoundIcon className=\"size-5 text-amber-600 dark:text-amber-400\" />\n          </div>\n          <div className=\"flex flex-col gap-1\">\n            <AlertDialogTitle className=\"font-semibold text-sm\">\n              Transfer organization ownership\n            </AlertDialogTitle>\n            <AlertDialogDescription className=\"text-muted-foreground text-sm\">\n              This transfers full ownership to another member. You will lose\n              admin privileges immediately and cannot undo this.\n            </AlertDialogDescription>\n          </div>\n        </div>\n        <div className=\"mx-4 mb-4 flex flex-col gap-2\">\n          <Label className=\"text-sm\" htmlFor=\"confirm-transfer\">\n            Type <span className=\"font-mono font-semibold\">{CONFIRM_TEXT}</span>{\" \"}\n            to confirm\n          </Label>\n          <Input\n            id=\"confirm-transfer\"\n            onChange={(e) => setValue(e.target.value)}\n            placeholder={CONFIRM_TEXT}\n            value={value}\n          />\n        </div>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>\n            Cancel\n          </AlertDialogClose>\n          <AlertDialogClose\n            render={<Button disabled={!confirmed} variant=\"destructive\" />}\n          >\n            Transfer Ownership\n          </AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

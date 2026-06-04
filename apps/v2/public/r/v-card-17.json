@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-17",
+  "description": "Settings card with sidebar navigation and swappable content panels",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-17.tsx",
+      "content": "\"use client\";\n\nimport { BellIcon, CreditCardIcon, ShieldIcon, UserIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nconst sections = [\n  { icon: UserIcon, id: \"profile\", label: \"Profile\" },\n  { icon: BellIcon, id: \"notifications\", label: \"Notifications\" },\n  { icon: CreditCardIcon, id: \"billing\", label: \"Billing\" },\n  { icon: ShieldIcon, id: \"security\", label: \"Security\" },\n];\n\nconst content: Record<string, { description: string; title: string }> = {\n  billing: {\n    description: \"Manage your subscription, invoices, and payment methods.\",\n    title: \"Billing & Plans\",\n  },\n  notifications: {\n    description: \"Control how and when you receive alerts and digest emails.\",\n    title: \"Notification Preferences\",\n  },\n  profile: {\n    description: \"Update your display name, avatar, and contact information.\",\n    title: \"Profile Settings\",\n  },\n  security: {\n    description: \"Set a strong password and enable two-factor authentication.\",\n    title: \"Security Settings\",\n  },\n};\n\nexport function Pattern() {\n  const [active, setActive] = useState(\"profile\");\n  const panel = content[active];\n\n  return (\n    <Card className=\"w-full max-w-sm p-0\">\n      <CardContent className=\"flex gap-0 p-0\">\n        <nav className=\"flex w-36 shrink-0 flex-col gap-0.5 border-r p-2\">\n          {sections.map(({ icon: Icon, id, label }) => (\n            <button\n              className={`flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors ${\n                active === id\n                  ? \"bg-primary text-primary-foreground\"\n                  : \"text-muted-foreground hover:bg-muted\"\n              }`}\n              key={id}\n              onClick={() => setActive(id)}\n              type=\"button\"\n            >\n              <Icon className=\"size-3.5 shrink-0\" />\n              {label}\n            </button>\n          ))}\n        </nav>\n        <div className=\"flex flex-col gap-2 p-4\">\n          <h3 className=\"font-semibold text-sm\">{panel.title}</h3>\n          <p className=\"text-muted-foreground text-xs leading-relaxed\">\n            {panel.description}\n          </p>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

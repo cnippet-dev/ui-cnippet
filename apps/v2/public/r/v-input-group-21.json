@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-21",
+  "description": "Textarea with character countdown",
+  "registryDependencies": [
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-21.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/registry/default/ui/input-group\";\n\nconst MAX = 280;\n\nexport default function Particle() {\n  const [value, setValue] = useState(\"\");\n  const remaining = MAX - value.length;\n  const isNear = remaining <= 20;\n  const isOver = remaining < 0;\n\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupTextarea\n        aria-label=\"Post content\"\n        maxLength={MAX + 20}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"What's on your mind?\"\n        rows={3}\n        value={value}\n      />\n      <InputGroupAddon align=\"block-end\">\n        <InputGroupText\n          className={\n            isOver\n              ? \"text-destructive-foreground\"\n              : isNear\n                ? \"text-warning\"\n                : \"text-muted-foreground\"\n          }\n        >\n          {remaining}\n        </InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+//biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 
 import * as React from "react";
@@ -336,7 +337,7 @@ function ChartLegendContent({
     >
       {payload
         .filter((item) => item.type !== "none")
-        .map((item) => {
+        .map((item, index) => {
           const key = `${nameKey || item.dataKey || "value"}`;
           const itemConfig = getPayloadConfigFromPayload(config, item, key);
 
@@ -345,7 +346,7 @@ function ChartLegendContent({
               className={cn(
                 "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground",
               )}
-              key={item.value}
+              key={`${item.dataKey ?? key}-${index}`}
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />

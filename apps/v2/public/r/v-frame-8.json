@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-8",
-  "description": "Basic frame",
+  "description": "Read-only key-value info",
   "registryDependencies": [
     "@cnippet/frame"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-frame-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Frame,\n  FrameDescription,\n  FrameHeader,\n  FramePanel,\n  FrameTitle,\n} from \"@/registry/default/ui/frame\";\n\nconst details = [\n  { label: \"Plan\", value: \"Pro\" },\n  { label: \"Billing cycle\", value: \"Monthly\" },\n  { label: \"Next renewal\", value: \"Jul 3, 2026\" },\n  { label: \"Seats used\", value: \"7 of 20\" },\n];\n\nexport function Pattern() {\n  return (\n    <Frame className=\"w-full max-w-sm\">\n      <FrameHeader>\n        <FrameTitle>Subscription details</FrameTitle>\n        <FrameDescription>Your current plan information</FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <dl className=\"flex flex-col gap-2\">\n          {details.map(({ label, value }) => (\n            <div className=\"flex items-center justify-between\" key={label}>\n              <dt className=\"text-muted-foreground text-sm\">{label}</dt>\n              <dd className=\"font-medium text-sm\">{value}</dd>\n            </div>\n          ))}\n        </dl>\n      </FramePanel>\n    </Frame>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

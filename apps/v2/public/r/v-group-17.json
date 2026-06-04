@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-17",
+  "description": "Media player controls",
+  "registryDependencies": [
+    "@cnippet/group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-17.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Price range\">\n      <GroupText render={<Label htmlFor=\"price-min\" />}>$</GroupText>\n      <GroupSeparator />\n      <Input\n        aria-label=\"Minimum price\"\n        defaultValue=\"0\"\n        id=\"price-min\"\n        inputMode=\"numeric\"\n        type=\"text\"\n      />\n      <GroupSeparator />\n      <GroupText>–</GroupText>\n      <GroupSeparator />\n      <Input\n        aria-label=\"Maximum price\"\n        defaultValue=\"500\"\n        inputMode=\"numeric\"\n        type=\"text\"\n      />\n      <GroupSeparator />\n      <Button variant=\"outline\">Apply</Button>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

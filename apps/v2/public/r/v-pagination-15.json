@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-15",
-  "description": "Basic pagination",
+  "description": "Older/newer cursor navigation",
   "registryDependencies": [
     "@cnippet/pagination"
   ],

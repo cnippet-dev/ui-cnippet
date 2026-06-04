@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-14",
+  "description": "Code viewer toolbar with multi-select options",
+  "registryDependencies": [
+    "@cnippet/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-14.tsx",
+      "content": "\"use client\";\n\nimport {\n  CaseSensitiveIcon,\n  FilterIcon,\n  SortAscIcon,\n  WrapTextIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Separator } from \"@/registry/default/ui/separator\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport function Pattern() {\n  const [activeOptions, setActiveOptions] = useState<string[]>([\"wrap\"]);\n\n  const isActive = (id: string) => activeOptions.includes(id);\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4\">\n      <div className=\"rounded-lg border border-border\">\n        <div className=\"flex items-center gap-1 border-border border-b bg-muted/30 px-2 py-1\">\n          <ToggleGroup\n            className=\"gap-0\"\n            onValueChange={setActiveOptions}\n            type=\"multiple\"\n            value={activeOptions}\n          >\n            <ToggleGroupItem\n              aria-label=\"Toggle word wrap\"\n              size=\"sm\"\n              value=\"wrap\"\n            >\n              <WrapTextIcon className=\"size-3.5\" />\n            </ToggleGroupItem>\n            <ToggleGroupItem\n              aria-label=\"Toggle case-sensitive search\"\n              size=\"sm\"\n              value=\"case\"\n            >\n              <CaseSensitiveIcon className=\"size-3.5\" />\n            </ToggleGroupItem>\n            <ToggleGroupItem\n              aria-label=\"Toggle filters\"\n              size=\"sm\"\n              value=\"filter\"\n            >\n              <FilterIcon className=\"size-3.5\" />\n            </ToggleGroupItem>\n            <ToggleGroupItem\n              aria-label=\"Toggle sort ascending\"\n              size=\"sm\"\n              value=\"sort\"\n            >\n              <SortAscIcon className=\"size-3.5\" />\n            </ToggleGroupItem>\n          </ToggleGroup>\n          <Separator className=\"mx-1 h-4\" orientation=\"vertical\" />\n          <span className=\"text-muted-foreground text-xs\">\n            {activeOptions.length} active\n          </span>\n        </div>\n        <div className=\"space-y-1.5 p-3\">\n          {[\n            \"src/components/Button.tsx\",\n            \"src/components/Input.tsx\",\n            \"src/components/Badge.tsx\",\n            \"src/hooks/useForm.ts\",\n          ].map((file) => (\n            <div\n              className=\"flex items-center gap-2 text-muted-foreground text-xs\"\n              key={file}\n            >\n              <span className=\"size-1.5 rounded-full bg-emerald-500\" />\n              {file}\n            </div>\n          ))}\n        </div>\n      </div>\n      <p className=\"text-center text-muted-foreground text-xs\">\n        {isActive(\"wrap\") && \"Word wrap on · \"}\n        {isActive(\"case\") && \"Case sensitive · \"}\n        {isActive(\"filter\") && \"Filtered · \"}\n        {isActive(\"sort\") && \"Sorted asc\"}\n        {activeOptions.length === 0 && \"No options active\"}\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ],
+  "type": "registry:block"
+}

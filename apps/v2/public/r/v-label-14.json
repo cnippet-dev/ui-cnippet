@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-label-14",
+  "description": "Horizontal layout",
+  "registryDependencies": [
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-label-14.tsx",
+      "content": "import { useId } from \"react\";\nimport { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst fields = [\n  { key: \"first\", label: \"First name\", placeholder: \"Jane\" },\n  { key: \"last\", label: \"Last name\", placeholder: \"Smith\" },\n  {\n    key: \"email\",\n    label: \"Email\",\n    placeholder: \"jane@example.com\",\n    type: \"email\",\n  },\n] as const;\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      {fields.map(({ key, label, placeholder, type }) => (\n        <HorizontalField\n          key={key}\n          label={label}\n          placeholder={placeholder}\n          type={type}\n        />\n      ))}\n    </div>\n  );\n}\n\nfunction HorizontalField({\n  label,\n  placeholder,\n  type,\n}: {\n  label: string;\n  placeholder: string;\n  type?: string;\n}) {\n  const id = useId();\n  return (\n    <Field className=\"grid grid-cols-[100px_1fr] items-center gap-4\">\n      <Label className=\"text-right\" htmlFor={id}>\n        {label}\n      </Label>\n      <Input id={id} placeholder={placeholder} type={type} />\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "label"
+  ],
+  "type": "registry:block"
+}

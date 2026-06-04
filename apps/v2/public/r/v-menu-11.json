@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-11",
+  "description": "Account menu",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-11.tsx",
+      "content": "import {\n  CreditCardIcon,\n  LogOutIcon,\n  SettingsIcon,\n  UserIcon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuItem,\n  MenuPopup,\n  MenuSeparator,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger\n        render={\n          <Button\n            aria-label=\"Open account menu\"\n            className=\"size-9 rounded-full font-semibold\"\n            variant=\"outline\"\n          />\n        }\n      >\n        JS\n      </MenuTrigger>\n      <MenuPopup align=\"end\">\n        <MenuGroup>\n          <MenuGroupLabel>\n            <div className=\"flex flex-col gap-0.5\">\n              <span>Jane Smith</span>\n              <span className=\"font-normal text-muted-foreground text-xs\">\n                jane@example.com\n              </span>\n            </div>\n          </MenuGroupLabel>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuItem>\n          <UserIcon aria-hidden=\"true\" />\n          Profile\n        </MenuItem>\n        <MenuItem>\n          <CreditCardIcon aria-hidden=\"true\" />\n          Billing\n        </MenuItem>\n        <MenuItem>\n          <SettingsIcon aria-hidden=\"true\" />\n          Settings\n        </MenuItem>\n        <MenuSeparator />\n        <MenuItem variant=\"destructive\">\n          <LogOutIcon aria-hidden=\"true\" />\n          Sign out\n        </MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ],
+  "type": "registry:block"
+}

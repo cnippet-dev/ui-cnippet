@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-13",
+  "description": "Theme Selector",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-13.tsx",
+      "content": "import { MonitorIcon, MoonIcon, SunIcon } from \"lucide-react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\n\nconst themes = [\n  { Icon: SunIcon, label: \"Light\", value: \"light\" },\n  { Icon: MoonIcon, label: \"Dark\", value: \"dark\" },\n  { Icon: MonitorIcon, label: \"System\", value: \"system\" },\n];\n\nexport default function Particle() {\n  return (\n    <RadioGroup className=\"flex-row gap-3\" defaultValue=\"system\">\n      {themes.map(({ Icon, label, value }) => (\n        <Label\n          className=\"relative flex w-24 cursor-pointer flex-col items-center gap-3 rounded-lg border p-4 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50\"\n          key={value}\n        >\n          <Radio className=\"absolute top-3 right-3\" value={value} />\n          <Icon aria-hidden=\"true\" className=\"size-5\" />\n          <span className=\"text-sm\">{label}</span>\n        </Label>\n      ))}\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

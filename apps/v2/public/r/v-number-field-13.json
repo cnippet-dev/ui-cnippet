@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-13",
+  "description": "Min/max budget range",
+  "registryDependencies": [
+    "@cnippet/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-13.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from \"@/registry/default/ui/number-field\";\n\nconst settings = [\n  {\n    defaultValue: 16,\n    label: \"Font size\",\n    max: 96,\n    min: 8,\n    step: 1,\n    unit: \"px\",\n  },\n  {\n    defaultValue: 1.5,\n    label: \"Line height\",\n    max: 3,\n    min: 1,\n    step: 0.1,\n    unit: \"rem\",\n  },\n  {\n    defaultValue: 0,\n    label: \"Letter spacing\",\n    max: 0.5,\n    min: -0.1,\n    step: 0.01,\n    unit: \"em\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      {settings.map(({ label, unit, defaultValue, min, max, step }) => (\n        <div className=\"flex items-center gap-3\" key={label}>\n          <span className=\"w-28 shrink-0 text-right text-sm\">{label}</span>\n          <NumberField\n            defaultValue={defaultValue}\n            max={max}\n            min={min}\n            step={step}\n          >\n            <NumberFieldScrubArea label={label} />\n            <NumberFieldGroup>\n              <NumberFieldDecrement />\n              <NumberFieldInput />\n              <NumberFieldIncrement />\n            </NumberFieldGroup>\n          </NumberField>\n          <span className=\"w-6 shrink-0 text-muted-foreground text-xs\">\n            {unit}\n          </span>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "number field"
+  ],
+  "type": "registry:block"
+}

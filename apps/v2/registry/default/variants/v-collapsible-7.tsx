@@ -70,6 +70,7 @@ function TreeItem({
     return (
       <Collapsible className="group/collapsible">
         <CollapsibleTrigger
+          nativeButton={false}
           render={
             <Item
               className="cursor-pointer py-1.5 hover:bg-accent data-[state=open]:bg-accent"

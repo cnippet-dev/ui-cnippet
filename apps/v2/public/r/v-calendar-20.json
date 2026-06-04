@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-20",
+  "description": "Time slot booking with available/booked slot grid and confirmation",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-20.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst today = new Date();\n\nconst SLOTS = [\n  \"9:00 AM\",\n  \"10:00 AM\",\n  \"11:00 AM\",\n  \"1:00 PM\",\n  \"2:00 PM\",\n  \"3:00 PM\",\n  \"4:00 PM\",\n];\n\nconst BOOKED: Record<string, string[]> = {\n  [new Date(\n    today.getFullYear(),\n    today.getMonth(),\n    today.getDate() + 1,\n  ).toDateString()]: [\"10:00 AM\", \"2:00 PM\"],\n  [new Date(\n    today.getFullYear(),\n    today.getMonth(),\n    today.getDate() + 2,\n  ).toDateString()]: [\"9:00 AM\", \"1:00 PM\", \"3:00 PM\"],\n};\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>();\n  const [slot, setSlot] = React.useState<string | undefined>();\n  const [confirmed, setConfirmed] = React.useState(false);\n\n  const booked = date ? (BOOKED[date.toDateString()] ?? []) : [];\n\n  function handleConfirm() {\n    setConfirmed(true);\n    setTimeout(() => {\n      setConfirmed(false);\n      setDate(undefined);\n      setSlot(undefined);\n    }, 2500);\n  }\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        disabled={{ before: today }}\n        mode=\"single\"\n        onSelect={(d) => {\n          setDate(d);\n          setSlot(undefined);\n        }}\n        selected={date}\n      />\n      {date && (\n        <div className=\"flex flex-col gap-2\">\n          <p className=\"text-muted-foreground text-xs\">\n            Available slots for{\" \"}\n            <span className=\"font-medium text-foreground\">\n              {date.toLocaleDateString(\"en-US\", {\n                day: \"numeric\",\n                month: \"short\",\n              })}\n            </span>\n          </p>\n          <div className=\"grid grid-cols-4 gap-1.5\">\n            {SLOTS.map((s) => {\n              const isBooked = booked.includes(s);\n              return (\n                <button\n                  className={`rounded-md border px-2 py-1.5 font-medium text-xs transition-colors ${\n                    isBooked\n                      ? \"cursor-not-allowed border-dashed text-muted-foreground/40\"\n                      : slot === s\n                        ? \"border-primary bg-primary text-primary-foreground\"\n                        : \"text-foreground hover:border-foreground/30\"\n                  }`}\n                  disabled={isBooked}\n                  key={s}\n                  onClick={() => setSlot(s)}\n                  type=\"button\"\n                >\n                  {s}\n                </button>\n              );\n            })}\n          </div>\n          <div className=\"flex items-center justify-between pt-1\">\n            <div className=\"flex items-center gap-1.5\">\n              {slot && (\n                <Badge variant=\"secondary\">\n                  {date.toLocaleDateString(\"en-US\", {\n                    day: \"numeric\",\n                    month: \"short\",\n                  })}{\" \"}\n                  · {slot}\n                </Badge>\n              )}\n            </div>\n            <Button\n              disabled={!slot || confirmed}\n              onClick={handleConfirm}\n              size=\"sm\"\n            >\n              {confirmed ? \"Booked!\" : \"Book Slot\"}\n            </Button>\n          </div>\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

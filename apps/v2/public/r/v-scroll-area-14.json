@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-14",
+  "description": "Activity Log",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-14.tsx",
+      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst logs = [\n  {\n    id: 1,\n    level: \"info\",\n    message: \"Server started on port 3000\",\n    time: \"10:00:01\",\n  },\n  {\n    id: 2,\n    level: \"info\",\n    message: \"Connected to database successfully\",\n    time: \"10:00:02\",\n  },\n  {\n    id: 3,\n    level: \"warn\",\n    message: \"Deprecated API endpoint accessed: /api/v1/users\",\n    time: \"10:00:15\",\n  },\n  {\n    id: 4,\n    level: \"info\",\n    message: \"GET /api/health → 200 (12ms)\",\n    time: \"10:00:23\",\n  },\n  {\n    id: 5,\n    level: \"error\",\n    message: \"Failed to send email: SMTP connection refused\",\n    time: \"10:00:31\",\n  },\n  {\n    id: 6,\n    level: \"info\",\n    message: \"Cache cleared for key: user:sessions\",\n    time: \"10:00:44\",\n  },\n  {\n    id: 7,\n    level: \"warn\",\n    message: \"Rate limit threshold reached for IP 192.168.1.42\",\n    time: \"10:01:02\",\n  },\n  {\n    id: 8,\n    level: \"info\",\n    message: \"POST /api/auth/login → 200 (38ms)\",\n    time: \"10:01:09\",\n  },\n  {\n    id: 9,\n    level: \"error\",\n    message: \"Unhandled promise rejection in worker thread\",\n    time: \"10:01:22\",\n  },\n  {\n    id: 10,\n    level: \"info\",\n    message: \"Scheduled job 'cleanup' completed in 142ms\",\n    time: \"10:01:30\",\n  },\n];\n\nconst levelClass: Record<string, string> = {\n  error: \"text-red-500\",\n  info: \"text-muted-foreground\",\n  warn: \"text-yellow-500\",\n};\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"h-64 w-full max-w-xl rounded-lg border bg-muted/30\">\n      <div className=\"flex flex-col gap-0.5 p-3 font-mono text-xs\">\n        {logs.map(({ id, level, message, time }) => (\n          <div className=\"flex items-start gap-3\" key={id}>\n            <span className=\"shrink-0 text-muted-foreground\">{time}</span>\n            <span\n              className={`w-10 shrink-0 font-semibold uppercase ${levelClass[level]}`}\n            >\n              {level}\n            </span>\n            <span\n              className={\n                levelClass[level] !== \"text-muted-foreground\"\n                  ? levelClass[level]\n                  : \"\"\n              }\n            >\n              {message}\n            </span>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

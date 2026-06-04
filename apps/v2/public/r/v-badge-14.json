@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-14",
+  "description": "Release channel tags (Stable, Beta, Experimental, Deprecated)",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-14.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nconst channels = [\n  { label: \"Stable\", variant: \"success\" as const },\n  { label: \"Beta\", variant: \"info\" as const },\n  { label: \"Experimental\", variant: \"warning\" as const },\n  { label: \"Deprecated\", variant: \"destructive\" as const },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <p className=\"text-muted-foreground text-sm\">Release channels</p>\n      <div className=\"flex flex-wrap items-center gap-2\">\n        {channels.map((c) => (\n          <Badge key={c.label} variant={c.variant}>\n            {c.label}\n          </Badge>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

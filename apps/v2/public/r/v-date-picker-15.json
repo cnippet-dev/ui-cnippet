@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-15",
+  "description": "Multi-date Availability Selector",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-15.tsx",
+      "content": "\"use client\";\n\nimport { format, isSameDay } from \"date-fns\";\nimport { CalendarIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  const [dates, setDates] = useState<Date[]>([]);\n  const [open, setOpen] = useState(false);\n  const today = new Date();\n\n  const toggleDate = (d: Date) => {\n    setDates((prev) =>\n      prev.some((p) => isSameDay(p, d))\n        ? prev.filter((p) => !isSameDay(p, d))\n        : [...prev, d].sort((a, b) => a.getTime() - b.getTime()),\n    );\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"space-y-1\">\n        <p className=\"font-medium text-sm\">Available days</p>\n        <p className=\"text-muted-foreground text-xs\">\n          Select the days you are available for meetings.\n        </p>\n      </div>\n\n      <Popover onOpenChange={setOpen} open={open}>\n        <PopoverTrigger\n          render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\n        >\n          <CalendarIcon />\n          {dates.length === 0\n            ? \"Pick available days\"\n            : `${dates.length} day${dates.length !== 1 ? \"s\" : \"\"} selected`}\n          {dates.length > 0 && (\n            <Badge className=\"ml-auto\" size=\"sm\" variant=\"secondary\">\n              {dates.length}\n            </Badge>\n          )}\n        </PopoverTrigger>\n        <PopoverPopup>\n          <Calendar\n            disabled={{ before: today }}\n            mode=\"multiple\"\n            onSelect={(days) => setDates(days ?? [])}\n            selected={dates}\n          />\n          <div className=\"flex justify-end gap-2 border-t p-3\">\n            <Button onClick={() => setDates([])} size=\"sm\" variant=\"ghost\">\n              Clear\n            </Button>\n            <Button onClick={() => setOpen(false)} size=\"sm\">\n              Done\n            </Button>\n          </div>\n        </PopoverPopup>\n      </Popover>\n\n      {dates.length > 0 && (\n        <div className=\"flex flex-wrap gap-1.5\">\n          {dates.map((d) => (\n            <span\n              className=\"flex items-center gap-1 rounded-full border bg-muted px-2.5 py-0.5 font-medium text-xs\"\n              key={d.toISOString()}\n            >\n              {format(d, \"MMM d\")}\n              <button\n                aria-label={`Remove ${format(d, \"MMM d\")}`}\n                className=\"rounded-full text-muted-foreground hover:text-foreground\"\n                onClick={() => toggleDate(d)}\n                type=\"button\"\n              >\n                <XIcon className=\"size-3\" />\n              </button>\n            </span>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

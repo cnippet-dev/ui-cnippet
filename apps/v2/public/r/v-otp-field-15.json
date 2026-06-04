@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-15",
+  "description": "Basic input otp",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-15.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\n\nconst OTP_LENGTH = 6;\nconst RESEND_SECONDS = 30;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport function Pattern() {\n  const [seconds, setSeconds] = useState(RESEND_SECONDS);\n\n  useEffect(() => {\n    if (seconds <= 0) return;\n    const id = setTimeout(() => setSeconds((s) => s - 1), 1000);\n    return () => clearTimeout(id);\n  }, [seconds]);\n\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField aria-label=\"Verification code\" length={OTP_LENGTH}>\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\n          <OTPFieldInput\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n            key={slotKey}\n          />\n        ))}\n      </OTPField>\n      <FieldDescription className=\"text-center\">\n        {seconds > 0 ? (\n          <>\n            Resend code in{\" \"}\n            <span className=\"font-medium text-foreground tabular-nums\">\n              {seconds}s\n            </span>\n          </>\n        ) : (\n          <button\n            className=\"font-medium underline-offset-4 hover:underline\"\n            onClick={() => setSeconds(RESEND_SECONDS)}\n            type=\"button\"\n          >\n            Resend code\n          </button>\n        )}\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

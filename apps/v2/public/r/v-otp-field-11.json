@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-11",
+  "description": "2FA authenticator app",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-11.tsx",
+      "content": "import { MailIcon } from \"lucide-react\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\n\nconst OTP_LENGTH = 6;\n\nconst OTP_SLOT_KEYS = Array.from(\n  { length: OTP_LENGTH },\n  (_, i) => `otp-slot-${i}`,\n);\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-xs space-y-4 rounded-xl border p-6\">\n      <div className=\"flex flex-col items-center gap-2 text-center\">\n        <div className=\"flex size-10 items-center justify-center rounded-full bg-muted\">\n          <MailIcon\n            aria-hidden=\"true\"\n            className=\"size-5 text-muted-foreground\"\n          />\n        </div>\n        <h3 className=\"font-semibold text-sm\">Check your email</h3>\n        <p className=\"text-muted-foreground text-xs\">\n          We sent a 6-digit code to{\" \"}\n          <span className=\"font-medium text-foreground\">jane@example.com</span>\n        </p>\n      </div>\n      <Field className=\"items-center\">\n        <FieldLabel className=\"sr-only\">Verification code</FieldLabel>\n        <OTPField aria-label=\"Email verification code\" length={OTP_LENGTH}>\n          {OTP_SLOT_KEYS.map((slotKey, index) => (\n            <OTPFieldInput\n              aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n              key={slotKey}\n            />\n          ))}\n        </OTPField>\n        <FieldDescription className=\"text-center\">\n          Didn't receive it?{\" \"}\n          <button\n            className=\"font-medium underline-offset-4 hover:underline\"\n            type=\"button\"\n          >\n            Resend code\n          </button>\n        </FieldDescription>\n      </Field>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

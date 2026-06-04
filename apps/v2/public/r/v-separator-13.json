@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-separator-13",
+  "description": "Footer Links",
+  "registryDependencies": [
+    "@cnippet/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-separator-13.tsx",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nconst links = [\"Privacy\", \"Terms\", \"Cookies\", \"Status\", \"Contact\"];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-x-2 gap-y-1 text-muted-foreground text-xs\">\n      {links.map((link, i) => (\n        <div className=\"flex items-center gap-2\" key={link}>\n          {i > 0 && <Separator className=\"h-3\" orientation=\"vertical\" />}\n          <button\n            className=\"transition-colors hover:text-foreground\"\n            type=\"button\"\n          >\n            {link}\n          </button>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "separator"
+  ],
+  "type": "registry:block"
+}

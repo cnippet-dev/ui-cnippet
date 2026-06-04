@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-context-menu-14",
+  "description": "Social feed with upvote/downvote controls and a report submenu per post",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-context-menu-14.tsx",
+      "content": "\"use client\";\n\nimport {\n  ArrowUpIcon,\n  FlagIcon,\n  MessageSquareIcon,\n  ThumbsDownIcon,\n  ThumbsUpIcon,\n  UserXIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuGroup,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/registry/default/ui/context-menu\";\n\nconst POSTS = [\n  {\n    author: \"Luna V.\",\n    body: \"Just shipped a redesign of our onboarding flow. Cut drop-off by 34% in the first week. The key was reducing the number of steps from 7 to 3.\",\n    id: \"p1\",\n    time: \"2h\",\n  },\n  {\n    author: \"Rafi A.\",\n    body: \"Hot take: dark mode is not an accessibility feature — it's a preference. True accessibility is about contrast ratios and text size, not color scheme.\",\n    id: \"p2\",\n    time: \"5h\",\n  },\n];\n\nexport function Pattern() {\n  const [votes, setVotes] = useState<Record<string, number>>({\n    p1: 24,\n    p2: 11,\n  });\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      {POSTS.map((post) => (\n        <ContextMenu key={post.id}>\n          <ContextMenuTrigger className=\"block w-full cursor-default rounded-xl border px-4 py-3 text-left\">\n            <div className=\"mb-2 flex items-center justify-between\">\n              <span className=\"font-semibold text-sm\">{post.author}</span>\n              <span className=\"text-muted-foreground text-xs\">\n                {post.time} ago\n              </span>\n            </div>\n            <p className=\"text-muted-foreground text-sm leading-relaxed\">\n              {post.body}\n            </p>\n            <div className=\"mt-3 flex items-center gap-3 text-muted-foreground text-xs\">\n              <span className=\"flex items-center gap-1\">\n                <ArrowUpIcon className=\"size-3.5\" />\n                {votes[post.id]}\n              </span>\n              <span className=\"flex items-center gap-1\">\n                <MessageSquareIcon className=\"size-3.5\" />\n                Reply\n              </span>\n            </div>\n          </ContextMenuTrigger>\n          <ContextMenuContent className=\"w-44\">\n            <ContextMenuGroup>\n              <ContextMenuItem\n                onSelect={() =>\n                  setVotes((v) => ({ ...v, [post.id]: v[post.id] + 1 }))\n                }\n              >\n                <ThumbsUpIcon />\n                Upvote\n              </ContextMenuItem>\n              <ContextMenuItem\n                onSelect={() =>\n                  setVotes((v) => ({\n                    ...v,\n                    [post.id]: Math.max(0, v[post.id] - 1),\n                  }))\n                }\n              >\n                <ThumbsDownIcon />\n                Downvote\n              </ContextMenuItem>\n              <ContextMenuItem>\n                <MessageSquareIcon />\n                Reply\n              </ContextMenuItem>\n            </ContextMenuGroup>\n            <ContextMenuSeparator />\n            <ContextMenuSub>\n              <ContextMenuSubTrigger>\n                <FlagIcon />\n                Report\n              </ContextMenuSubTrigger>\n              <ContextMenuSubContent>\n                <ContextMenuGroup>\n                  <ContextMenuItem>Spam</ContextMenuItem>\n                  <ContextMenuItem>Misinformation</ContextMenuItem>\n                  <ContextMenuItem>Harassment</ContextMenuItem>\n                  <ContextMenuItem>Off-topic</ContextMenuItem>\n                </ContextMenuGroup>\n              </ContextMenuSubContent>\n            </ContextMenuSub>\n            <ContextMenuGroup>\n              <ContextMenuItem variant=\"destructive\">\n                <UserXIcon />\n                Mute author\n              </ContextMenuItem>\n            </ContextMenuGroup>\n          </ContextMenuContent>\n        </ContextMenu>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "context menu"
+  ],
+  "type": "registry:block"
+}

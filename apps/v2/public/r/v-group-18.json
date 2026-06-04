@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-group-18",
+  "description": "Price range input with apply button",
+  "registryDependencies": [
+    "@cnippet/group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-group-18.tsx",
+      "content": "import { SearchIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst categories = [\n  { label: \"All\", value: \"all\" },\n  { label: \"Articles\", value: \"articles\" },\n  { label: \"People\", value: \"people\" },\n  { label: \"Files\", value: \"files\" },\n];\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Search with category filter\">\n      <Select defaultValue=\"all\" items={categories}>\n        <SelectTrigger className=\"w-fit min-w-none\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {categories.map(({ label, value }) => (\n            <SelectItem key={value} value={value}>\n              {label}\n            </SelectItem>\n          ))}\n        </SelectPopup>\n      </Select>\n      <GroupSeparator />\n      <Input\n        aria-label=\"Search\"\n        className=\"min-w-48\"\n        placeholder=\"Search…\"\n        type=\"search\"\n      />\n      <GroupSeparator />\n      <Button aria-label=\"Search\" size=\"icon\" variant=\"outline\">\n        <SearchIcon aria-hidden=\"true\" />\n      </Button>\n    </Group>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "group"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-21",
+  "description": "Profile card with stats and action buttons",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-21.tsx",
+      "content": "import { LinkIcon, MapPinIcon } from \"lucide-react\";\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nconst stats = [\n  { label: \"Repos\", value: \"142\" },\n  { label: \"Followers\", value: \"8.4k\" },\n  { label: \"Following\", value: \"91\" },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Frame>\n        <FramePanel>\n          <div className=\"flex flex-col items-center gap-3 text-center\">\n            <Avatar className=\"size-20 ring-2 ring-background ring-offset-2 ring-offset-muted\">\n              <AvatarImage\n                alt=\"Jordan Blake\"\n                src=\"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=128&h=128&dpr=2&q=80\"\n              />\n              <AvatarFallback className=\"text-xl\">JB</AvatarFallback>\n            </Avatar>\n            <div className=\"flex flex-col gap-1\">\n              <div className=\"flex items-center justify-center gap-1.5\">\n                <span className=\"font-semibold text-base\">Jordan Blake</span>\n                <Badge size=\"sm\" variant=\"success\">\n                  Pro\n                </Badge>\n              </div>\n              <span className=\"text-muted-foreground text-sm\">\n                @jordanblake\n              </span>\n            </div>\n            <p className=\"text-muted-foreground text-sm leading-relaxed\">\n              Building open-source tools for developers. TypeScript enthusiast\n              and design systems advocate.\n            </p>\n            <div className=\"flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-muted-foreground text-xs\">\n              <span className=\"flex items-center gap-1\">\n                <MapPinIcon className=\"size-3\" />\n                San Francisco, CA\n              </span>\n              <span className=\"flex items-center gap-1\">\n                <LinkIcon className=\"size-3\" />\n                jordanblake.dev\n              </span>\n            </div>\n          </div>\n          <Separator className=\"my-3\" />\n          <div className=\"grid grid-cols-3 divide-x text-center\">\n            {stats.map((s) => (\n              <div className=\"flex flex-col py-1\" key={s.label}>\n                <span className=\"font-semibold text-sm\">{s.value}</span>\n                <span className=\"text-muted-foreground text-xs\">{s.label}</span>\n              </div>\n            ))}\n          </div>\n          <div className=\"mt-3 flex gap-2\">\n            <Button className=\"flex-1\" size=\"sm\">\n              Follow\n            </Button>\n            <Button className=\"flex-1\" size=\"sm\" variant=\"outline\">\n              Message\n            </Button>\n          </div>\n        </FramePanel>\n      </Frame>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

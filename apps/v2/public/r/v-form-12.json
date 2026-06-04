@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-12",
+  "description": "Delete account — danger zone confirmation",
+  "registryDependencies": [
+    "@cnippet/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-12.tsx",
+      "content": "\"use client\";\n\nimport { TriangleAlertIcon } from \"lucide-react\";\nimport { type FormEvent, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Form } from \"@/registry/default/ui/form\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nconst CONFIRM_PHRASE = \"delete my account\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const [loading, setLoading] = useState(false);\n  const isConfirmed = value.toLowerCase() === CONFIRM_PHRASE;\n\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    if (!isConfirmed) return;\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 1200));\n    setLoading(false);\n    alert(\"Account deleted.\");\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border border-destructive/30 bg-destructive/5 p-5\">\n      <div className=\"flex items-start gap-3\">\n        <TriangleAlertIcon className=\"mt-0.5 size-5 shrink-0 text-destructive\" />\n        <div className=\"space-y-1\">\n          <p className=\"font-semibold text-sm\">Delete your account</p>\n          <p className=\"text-muted-foreground text-xs\">\n            This action is permanent and cannot be undone. All your data,\n            projects, and settings will be deleted.\n          </p>\n        </div>\n      </div>\n\n      <Form className=\"gap-3\" onSubmit={onSubmit}>\n        <Field name=\"confirm\">\n          <FieldLabel className=\"text-sm\">\n            Type{\" \"}\n            <code className=\"rounded bg-muted px-1 py-0.5 font-mono text-xs\">\n              {CONFIRM_PHRASE}\n            </code>{\" \"}\n            to confirm\n          </FieldLabel>\n          <Input\n            onChange={(e) => setValue(e.target.value)}\n            placeholder={CONFIRM_PHRASE}\n            type=\"text\"\n            value={value}\n          />\n          <FieldDescription className=\"text-xs\">\n            This cannot be undone. Please be certain.\n          </FieldDescription>\n        </Field>\n\n        <Button\n          className=\"w-full\"\n          disabled={!isConfirmed}\n          loading={loading}\n          type=\"submit\"\n          variant=\"destructive\"\n        >\n          Permanently delete account\n        </Button>\n      </Form>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ],
+  "type": "registry:block"
+}

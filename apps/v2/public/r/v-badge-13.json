@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-13",
+  "description": "Status dot indicators (Online, Busy, Away, Offline)",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-13.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\ntype Status = {\n  label: string;\n  dotClass: string;\n  variant:\n    | \"default\"\n    | \"outline\"\n    | \"secondary\"\n    | \"success\"\n    | \"warning\"\n    | \"destructive\"\n    | \"info\";\n};\n\nconst statuses: Status[] = [\n  { dotClass: \"bg-emerald-500\", label: \"Online\", variant: \"success\" },\n  { dotClass: \"bg-red-500\", label: \"Busy\", variant: \"destructive\" },\n  { dotClass: \"bg-yellow-400\", label: \"Away\", variant: \"warning\" },\n  { dotClass: \"bg-slate-400\", label: \"Offline\", variant: \"secondary\" },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      {statuses.map((s) => (\n        <Badge key={s.label} variant={s.variant}>\n          <span\n            aria-hidden=\"true\"\n            className={`size-1.5 rounded-full ${s.dotClass}`}\n          />\n          {s.label}\n        </Badge>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

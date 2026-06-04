@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-4",
-  "description": "Basic fieldset",
+  "description": "Notification preferences fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-4.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  return (\n    <Fieldset className=\"flex w-full max-w-sm flex-col gap-1\">\n      <FieldsetLegend className=\"mb-3\">Notification Preferences</FieldsetLegend>\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\n        <div className=\"flex flex-col gap-0.5\">\n          <FieldLabel className=\"cursor-pointer text-sm\">\n            Email notifications\n          </FieldLabel>\n          <FieldDescription className=\"text-xs\">\n            Receive updates and alerts by email.\n          </FieldDescription>\n        </div>\n        <Switch defaultChecked />\n      </Field>\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\n        <div className=\"flex flex-col gap-0.5\">\n          <FieldLabel className=\"cursor-pointer text-sm\">\n            Push notifications\n          </FieldLabel>\n          <FieldDescription className=\"text-xs\">\n            Get real-time alerts on your device.\n          </FieldDescription>\n        </div>\n        <Switch />\n      </Field>\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\n        <div className=\"flex flex-col gap-0.5\">\n          <FieldLabel className=\"cursor-pointer text-sm\">\n            Marketing emails\n          </FieldLabel>\n          <FieldDescription className=\"text-xs\">\n            News, promotions, and product updates.\n          </FieldDescription>\n        </div>\n        <Switch />\n      </Field>\n    </Fieldset>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

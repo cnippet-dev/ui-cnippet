@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-17",
+  "description": "Sprint planner with two-month range selection and duration stats",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-17.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nconst today = new Date();\n\nfunction diffDays(a: Date, b: Date) {\n  return Math.round((b.getTime() - a.getTime()) / 86400000);\n}\n\nexport default function Particle() {\n  const [range, setRange] = React.useState<DateRange | undefined>();\n\n  const duration =\n    range?.from && range?.to ? diffDays(range.from, range.to) + 1 : null;\n\n  const sprintNum = range?.from\n    ? Math.ceil(\n        (diffDays(new Date(today.getFullYear(), 0, 1), range.from) + 1) / 14,\n      )\n    : null;\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Calendar\n        disabled={{ before: today }}\n        mode=\"range\"\n        numberOfMonths={2}\n        onSelect={setRange}\n        selected={range}\n      />\n      <div className=\"grid grid-cols-3 gap-2 rounded-lg border px-4 py-3 text-sm\">\n        <div className=\"flex flex-col gap-0.5\">\n          <span className=\"text-muted-foreground text-xs\">Start</span>\n          <span className=\"font-medium\">\n            {range?.from\n              ? range.from.toLocaleDateString(\"en-US\", {\n                  day: \"numeric\",\n                  month: \"short\",\n                })\n              : \"—\"}\n          </span>\n        </div>\n        <div className=\"flex flex-col gap-0.5\">\n          <span className=\"text-muted-foreground text-xs\">End</span>\n          <span className=\"font-medium\">\n            {range?.to\n              ? range.to.toLocaleDateString(\"en-US\", {\n                  day: \"numeric\",\n                  month: \"short\",\n                })\n              : \"—\"}\n          </span>\n        </div>\n        <div className=\"flex flex-col gap-0.5\">\n          <span className=\"text-muted-foreground text-xs\">Duration</span>\n          <span className=\"font-medium\">\n            {duration ? (\n              <span className=\"flex items-center gap-1.5\">\n                {duration}d\n                {sprintNum && (\n                  <Badge size=\"sm\" variant=\"secondary\">\n                    S{sprintNum}\n                  </Badge>\n                )}\n              </span>\n            ) : (\n              \"—\"\n            )}\n          </span>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

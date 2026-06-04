@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-spinner-12",
+  "description": "File Upload Progress",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-12.tsx",
+      "content": "\"use client\";\n\nimport { UploadCloudIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\ntype Status = \"idle\" | \"uploading\" | \"done\";\n\nexport default function Particle() {\n  const [status, setStatus] = useState<Status>(\"idle\");\n\n  function handleUpload() {\n    setStatus(\"uploading\");\n    setTimeout(() => setStatus(\"done\"), 2500);\n  }\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\n      <div className=\"flex items-center gap-3\">\n        <div className=\"flex size-10 items-center justify-center rounded-lg bg-muted\">\n          {status === \"uploading\" ? (\n            <Spinner className=\"size-5 text-primary\" />\n          ) : (\n            <UploadCloudIcon\n              aria-hidden=\"true\"\n              className={`size-5 ${status === \"done\" ? \"text-green-500\" : \"text-muted-foreground\"}`}\n            />\n          )}\n        </div>\n        <div className=\"flex-1\">\n          <p className=\"font-medium text-sm\">\n            {status === \"idle\" && \"Ready to upload\"}\n            {status === \"uploading\" && \"Uploading report.pdf…\"}\n            {status === \"done\" && \"Upload complete\"}\n          </p>\n          <p className=\"text-muted-foreground text-xs\">\n            {status === \"idle\" && \"Max file size 25 MB\"}\n            {status === \"uploading\" && \"Please wait\"}\n            {status === \"done\" && \"report.pdf · 4.2 MB\"}\n          </p>\n        </div>\n      </div>\n      <Button\n        className=\"w-full\"\n        disabled={status === \"uploading\" || status === \"done\"}\n        onClick={handleUpload}\n        variant={status === \"done\" ? \"outline\" : \"default\"}\n      >\n        {status === \"uploading\" && (\n          <Spinner\n            aria-hidden=\"true\"\n            className=\"size-4\"\n            data-icon=\"inline-start\"\n          />\n        )}\n        {status === \"idle\" && \"Upload File\"}\n        {status === \"uploading\" && \"Uploading…\"}\n        {status === \"done\" && \"Uploaded\"}\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-24",
+  "description": "Color picker input",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-24.tsx",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-color\">Brand color</FieldLabel>\n      <Input defaultValue=\"#6366f1\" id=\"input-color\" type=\"color\" />\n      <FieldDescription>\n        Choose the primary color for your workspace theme.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

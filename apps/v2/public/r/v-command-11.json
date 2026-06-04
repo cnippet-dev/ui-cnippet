@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-11",
+  "description": "Account settings palette with grouped profile, preferences, and sign-out actions",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-11.tsx",
+      "content": "\"use client\";\n\nimport {\n  BarChart2Icon,\n  BellIcon,\n  CreditCardIcon,\n  KeyIcon,\n  LogOutIcon,\n  MoonIcon,\n  SunIcon,\n  UserIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Command,\n  CommandCollection,\n  CommandDialog,\n  CommandDialogPopup,\n  CommandDialogTrigger,\n  CommandEmpty,\n  CommandGroup,\n  CommandGroupLabel,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandPanel,\n  CommandSeparator,\n} from \"@/registry/default/ui/command\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\ntype Action = { icon: React.ReactNode; label: string; value: string };\ntype Section = { items: Action[]; label: string; value: string };\n\nconst sections: Section[] = [\n  {\n    items: [\n      {\n        icon: <UserIcon className=\"size-4\" />,\n        label: \"Edit profile\",\n        value: \"profile\",\n      },\n      {\n        icon: <BellIcon className=\"size-4\" />,\n        label: \"Notifications\",\n        value: \"notifications\",\n      },\n      {\n        icon: <CreditCardIcon className=\"size-4\" />,\n        label: \"Billing\",\n        value: \"billing\",\n      },\n      {\n        icon: <KeyIcon className=\"size-4\" />,\n        label: \"API keys\",\n        value: \"api-keys\",\n      },\n    ],\n    label: \"Account\",\n    value: \"account\",\n  },\n  {\n    items: [\n      {\n        icon: <SunIcon className=\"size-4\" />,\n        label: \"Light mode\",\n        value: \"light\",\n      },\n      {\n        icon: <MoonIcon className=\"size-4\" />,\n        label: \"Dark mode\",\n        value: \"dark\",\n      },\n      {\n        icon: <BarChart2Icon className=\"size-4\" />,\n        label: \"Analytics\",\n        value: \"analytics\",\n      },\n    ],\n    label: \"Preferences\",\n    value: \"prefs\",\n  },\n  {\n    items: [\n      {\n        icon: <LogOutIcon className=\"size-4 text-destructive\" />,\n        label: \"Sign out\",\n        value: \"signout\",\n      },\n    ],\n    label: \"Session\",\n    value: \"session\",\n  },\n];\n\nexport default function Particle() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <CommandDialog onOpenChange={setOpen} open={open}>\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\n        Account settings\n        <KbdGroup>\n          <Kbd>⌘</Kbd>\n          <Kbd>K</Kbd>\n        </KbdGroup>\n      </CommandDialogTrigger>\n      <CommandDialogPopup>\n        <Command items={sections}>\n          <CommandInput placeholder=\"Search settings...\" />\n          <CommandPanel>\n            <CommandEmpty>No settings found.</CommandEmpty>\n            <CommandList>\n              {(section: Section, i: number) => (\n                <>\n                  {i > 0 && <CommandSeparator key={`sep-${section.value}`} />}\n                  <CommandGroup items={section.items} key={section.value}>\n                    <CommandGroupLabel>{section.label}</CommandGroupLabel>\n                    <CommandCollection>\n                      {(action: Action) => (\n                        <CommandItem\n                          className=\"gap-2\"\n                          key={action.value}\n                          onSelect={() => setOpen(false)}\n                          value={action.value}\n                        >\n                          {action.icon}\n                          {action.label}\n                        </CommandItem>\n                      )}\n                    </CommandCollection>\n                  </CommandGroup>\n                </>\n              )}\n            </CommandList>\n          </CommandPanel>\n        </Command>\n      </CommandDialogPopup>\n    </CommandDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

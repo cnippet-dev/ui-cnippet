@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-17",
+  "description": "Priority labels in a task list",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-17.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\n\ntype Priority = \"urgent\" | \"high\" | \"medium\" | \"low\";\n\nconst priorityVariant: Record<\n  Priority,\n  \"destructive\" | \"warning\" | \"info\" | \"secondary\"\n> = {\n  high: \"warning\",\n  low: \"secondary\",\n  medium: \"info\",\n  urgent: \"destructive\",\n};\n\nconst tasks = [\n  {\n    assignee: \"Alex J.\",\n    priority: \"urgent\" as Priority,\n    title: \"Fix authentication token refresh race condition\",\n  },\n  {\n    assignee: \"Sarah C.\",\n    priority: \"high\" as Priority,\n    title: \"Migrate legacy REST endpoints to GraphQL\",\n  },\n  {\n    assignee: \"Marcus R.\",\n    priority: \"medium\" as Priority,\n    title: \"Add dark mode support to dashboard charts\",\n  },\n  {\n    assignee: \"Laura P.\",\n    priority: \"low\" as Priority,\n    title: \"Update onboarding copy for new signup flow\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-lg\">\n      <Frame>\n        {tasks.map((task) => (\n          <FramePanel\n            className=\"flex items-start justify-between gap-3\"\n            key={task.title}\n          >\n            <div className=\"flex flex-1 flex-col gap-1\">\n              <span className=\"font-medium text-sm\">{task.title}</span>\n              <span className=\"text-muted-foreground text-xs\">\n                {task.assignee}\n              </span>\n            </div>\n            <Badge\n              className=\"shrink-0 capitalize\"\n              size=\"sm\"\n              variant={priorityVariant[task.priority]}\n            >\n              {task.priority}\n            </Badge>\n          </FramePanel>\n        ))}\n      </Frame>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

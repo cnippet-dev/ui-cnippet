@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-13",
+  "description": "Go-to-page palette with shortcut hints and arrow icon for unbound items",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-13.tsx",
+      "content": "\"use client\";\n\nimport {\n  ArrowRightIcon,\n  GlobeIcon,\n  LayoutDashboardIcon,\n  MessageSquareIcon,\n  PackageIcon,\n  SettingsIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { Fragment, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Command,\n  CommandCollection,\n  CommandDialog,\n  CommandDialogPopup,\n  CommandDialogTrigger,\n  CommandEmpty,\n  CommandGroup,\n  CommandGroupLabel,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandPanel,\n  CommandSeparator,\n  CommandShortcut,\n} from \"@/registry/default/ui/command\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\n\ntype NavItem = {\n  icon: React.ReactNode;\n  label: string;\n  shortcut?: string;\n  value: string;\n};\ntype NavGroup = { items: NavItem[]; label: string; value: string };\n\nconst nav: NavGroup[] = [\n  {\n    items: [\n      {\n        icon: <LayoutDashboardIcon className=\"size-4\" />,\n        label: \"Dashboard\",\n        shortcut: \"G D\",\n        value: \"dashboard\",\n      },\n      {\n        icon: <UsersIcon className=\"size-4\" />,\n        label: \"Users\",\n        shortcut: \"G U\",\n        value: \"users\",\n      },\n      {\n        icon: <PackageIcon className=\"size-4\" />,\n        label: \"Products\",\n        shortcut: \"G P\",\n        value: \"products\",\n      },\n      {\n        icon: <MessageSquareIcon className=\"size-4\" />,\n        label: \"Messages\",\n        value: \"messages\",\n      },\n    ],\n    label: \"Navigation\",\n    value: \"nav\",\n  },\n  {\n    items: [\n      {\n        icon: <SettingsIcon className=\"size-4\" />,\n        label: \"Settings\",\n        shortcut: \"G S\",\n        value: \"settings\",\n      },\n      {\n        icon: <GlobeIcon className=\"size-4\" />,\n        label: \"Domains\",\n        value: \"domains\",\n      },\n    ],\n    label: \"Admin\",\n    value: \"admin\",\n  },\n];\n\nexport default function Particle() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <CommandDialog onOpenChange={setOpen} open={open}>\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\n        Go to page...\n        <Kbd>G</Kbd>\n      </CommandDialogTrigger>\n      <CommandDialogPopup>\n        <Command items={nav}>\n          <CommandInput placeholder=\"Go to...\" />\n          <CommandPanel>\n            <CommandEmpty>Page not found.</CommandEmpty>\n            <CommandList>\n              {(group: NavGroup, i: number) => (\n                <Fragment key={group.value}>\n                  {i > 0 && <CommandSeparator />}\n                  <CommandGroup items={group.items}>\n                    <CommandGroupLabel>{group.label}</CommandGroupLabel>\n                    <CommandCollection>\n                      {(item: NavItem) => (\n                        <CommandItem\n                          className=\"gap-2\"\n                          key={item.value}\n                          onSelect={() => setOpen(false)}\n                          value={item.value}\n                        >\n                          {item.icon}\n                          <span className=\"flex-1\">{item.label}</span>\n                          {item.shortcut ? (\n                            <CommandShortcut>{item.shortcut}</CommandShortcut>\n                          ) : (\n                            <ArrowRightIcon className=\"size-3.5 text-muted-foreground\" />\n                          )}\n                        </CommandItem>\n                      )}\n                    </CommandCollection>\n                  </CommandGroup>\n                </Fragment>\n              )}\n            </CommandList>\n          </CommandPanel>\n        </Command>\n      </CommandDialogPopup>\n    </CommandDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

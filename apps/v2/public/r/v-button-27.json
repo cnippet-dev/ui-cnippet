@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-27",
+  "description": "Loading and success state button with animated icon swap",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-27.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CloudUploadIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\ntype State = \"idle\" | \"loading\" | \"success\";\n\nexport function Pattern() {\n  const [state, setState] = useState<State>(\"idle\");\n\n  const handleClick = () => {\n    if (state !== \"idle\") return;\n    setState(\"loading\");\n    setTimeout(() => {\n      setState(\"success\");\n      setTimeout(() => setState(\"idle\"), 2000);\n    }, 1800);\n  };\n\n  return (\n    <Button\n      disabled={state === \"loading\"}\n      loading={state === \"loading\"}\n      onClick={handleClick}\n      variant={state === \"success\" ? \"outline\" : \"default\"}\n    >\n      {state === \"success\" ? (\n        <>\n          <CheckIcon className=\"size-4 text-emerald-500\" />\n          Saved\n        </>\n      ) : (\n        <>\n          <CloudUploadIcon className=\"size-4\" />\n          {state === \"loading\" ? \"Saving…\" : \"Save Changes\"}\n        </>\n      )}\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-separator-12",
+  "description": "Section Heading with Line",
+  "registryDependencies": [
+    "@cnippet/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-separator-12.tsx",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-xs space-y-4\">\n      <div className=\"flex items-center gap-3\">\n        <span className=\"shrink-0 font-medium text-sm\">Recent Activity</span>\n        <Separator />\n      </div>\n      <div className=\"space-y-1.5 text-muted-foreground text-sm\">\n        <p>Pushed 3 commits to main branch</p>\n        <p>Opened pull request #45</p>\n        <p>Commented on issue #38</p>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <span className=\"shrink-0 font-medium text-sm\">Repositories</span>\n        <Separator />\n      </div>\n      <div className=\"space-y-1.5 text-muted-foreground text-sm\">\n        <p>ui-cnippet (public)</p>\n        <p>design-system (private)</p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "separator"
+  ],
+  "type": "registry:block"
+}

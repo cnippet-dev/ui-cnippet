@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-group-20",
-  "description": "Basic input group",
+  "description": "Chat input with async send",
   "registryDependencies": [
     "@cnippet/input-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-group-20.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { SendIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false);\n  const [value, setValue] = useState(\"\");\n\n  const handleSend = async () => {\n    if (!value.trim()) return;\n    setLoading(true);\n    await new Promise((r) => setTimeout(r, 1200));\n    setLoading(false);\n    setValue(\"\");\n  };\n\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupInput\n        aria-label=\"Message\"\n        onChange={(e) => setValue(e.target.value)}\n        onKeyDown={(e) => e.key === \"Enter\" && handleSend()}\n        placeholder=\"Type a message…\"\n        type=\"text\"\n        value={value}\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <Button\n          aria-label=\"Send message\"\n          loading={loading}\n          onClick={handleSend}\n          size=\"icon-xs\"\n          variant=\"ghost\"\n        >\n          {!loading && <SendIcon aria-hidden=\"true\" />}\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

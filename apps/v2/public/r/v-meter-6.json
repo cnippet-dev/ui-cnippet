@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-meter-6",
-  "description": "Basic meter",
+  "description": "Color-coded by severity",
   "registryDependencies": [
     "@cnippet/meter"
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-15",
+  "description": "Quick-open palette with page list, notification badges, and a keyboard footer",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-15.tsx",
+      "content": "\"use client\";\n\nimport {\n  ArrowDownIcon,\n  ArrowUpIcon,\n  CornerDownLeftIcon,\n  HashIcon,\n  LayoutDashboardIcon,\n  SearchIcon,\n  UserCircleIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Command,\n  CommandCollection,\n  CommandDialog,\n  CommandDialogPopup,\n  CommandDialogTrigger,\n  CommandEmpty,\n  CommandFooter,\n  CommandGroup,\n  CommandGroupLabel,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandPanel,\n} from \"@/registry/default/ui/command\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\ntype Page = {\n  badge?: string;\n  icon: React.ReactNode;\n  label: string;\n  value: string;\n};\n\nconst pages: Page[] = [\n  {\n    badge: \"12\",\n    icon: <LayoutDashboardIcon className=\"size-4\" />,\n    label: \"Dashboard\",\n    value: \"dashboard\",\n  },\n  {\n    icon: <UserCircleIcon className=\"size-4\" />,\n    label: \"Profile\",\n    value: \"profile\",\n  },\n  {\n    badge: \"3\",\n    icon: <HashIcon className=\"size-4\" />,\n    label: \"Channels\",\n    value: \"channels\",\n  },\n  { icon: <SearchIcon className=\"size-4\" />, label: \"Search\", value: \"search\" },\n];\n\nexport default function Particle() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <CommandDialog onOpenChange={setOpen} open={open}>\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\n        Quick open\n        <KbdGroup>\n          <Kbd>⌘</Kbd>\n          <Kbd>P</Kbd>\n        </KbdGroup>\n      </CommandDialogTrigger>\n      <CommandDialogPopup>\n        <Command items={[{ items: pages, label: \"Pages\", value: \"pages\" }]}>\n          <CommandInput placeholder=\"Search pages and actions...\" />\n          <CommandPanel>\n            <CommandEmpty>No results found.</CommandEmpty>\n            <CommandList>\n              {(group: { items: Page[]; label: string; value: string }) => (\n                <CommandGroup items={group.items} key={group.value}>\n                  <CommandGroupLabel>{group.label}</CommandGroupLabel>\n                  <CommandCollection>\n                    {(page: Page) => (\n                      <CommandItem\n                        className=\"gap-2\"\n                        key={page.value}\n                        onSelect={() => setOpen(false)}\n                        value={page.value}\n                      >\n                        {page.icon}\n                        <span className=\"flex-1\">{page.label}</span>\n                        {page.badge && (\n                          <Badge size=\"sm\" variant=\"secondary\">\n                            {page.badge}\n                          </Badge>\n                        )}\n                      </CommandItem>\n                    )}\n                  </CommandCollection>\n                </CommandGroup>\n              )}\n            </CommandList>\n          </CommandPanel>\n          <CommandFooter>\n            <div className=\"flex items-center gap-3\">\n              <KbdGroup>\n                <Kbd>\n                  <ArrowUpIcon />\n                </Kbd>\n                <Kbd>\n                  <ArrowDownIcon />\n                </Kbd>\n              </KbdGroup>\n              <span>navigate</span>\n              <Kbd>\n                <CornerDownLeftIcon />\n              </Kbd>\n              <span>open</span>\n            </div>\n            <div className=\"flex items-center gap-2\">\n              <Kbd>Esc</Kbd>\n              <span>close</span>\n            </div>\n          </CommandFooter>\n        </Command>\n      </CommandDialogPopup>\n    </CommandDialog>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

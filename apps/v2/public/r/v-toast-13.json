@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-13",
+  "description": "Background CSV export with download action on complete",
+  "registryDependencies": [
+    "@cnippet/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-13.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { toastManager } from \"@/registry/default/ui/toast\";\n\ntype ExportState = \"idle\" | \"running\";\n\nexport function Pattern() {\n  const [state, setState] = useState<ExportState>(\"idle\");\n\n  const runExport = () => {\n    if (state === \"running\") return;\n    setState(\"running\");\n\n    const id = toastManager.add({\n      description: \"Preparing your CSV file…\",\n      timeout: 0,\n      title: \"Exporting data\",\n      type: \"loading\",\n    });\n\n    setTimeout(() => {\n      toastManager.close(id);\n      toastManager.add({\n        actionProps: {\n          children: \"Download\",\n          onClick: () => {\n            toastManager.add({\n              description: \"report-2025-q1.csv saved to your downloads.\",\n              title: \"File saved\",\n              type: \"success\",\n            });\n          },\n        },\n        description: \"1,842 rows · report-2025-q1.csv\",\n        timeout: 8000,\n        title: \"Export ready\",\n        type: \"success\",\n      });\n      setState(\"idle\");\n    }, 2800);\n  };\n\n  return (\n    <Button\n      disabled={state === \"running\"}\n      onClick={runExport}\n      variant=\"outline\"\n    >\n      {state === \"running\" ? \"Exporting…\" : \"Export to CSV\"}\n    </Button>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:block"
+}

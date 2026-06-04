@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-14",
+  "description": "Onboarding step tracker with completion state",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-14.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nconst steps = [\n  {\n    description:\n      \"Give your workspace a name and upload a logo. This is how your team will identify the space.\",\n    title: \"Create your workspace\",\n    value: \"step-1\",\n  },\n  {\n    description:\n      \"Add teammates by email. They'll receive an invite link and can join immediately.\",\n    title: \"Invite your team\",\n    value: \"step-2\",\n  },\n  {\n    description:\n      \"Integrate with Slack, GitHub, Jira, and 50+ other tools. Connections can be updated anytime.\",\n    title: \"Connect your tools\",\n    value: \"step-3\",\n  },\n  {\n    description:\n      \"Add a payment method to keep access after your 14-day trial ends. Cancel anytime.\",\n    title: \"Set up billing\",\n    value: \"step-4\",\n  },\n];\n\nexport function Pattern() {\n  const [completed, setCompleted] = useState<string[]>([\"step-1\"]);\n  const [opened, setOpened] = useState<string[]>([\"step-2\"]);\n\n  const markDone = (value: string, index: number) => {\n    setCompleted((prev) => [...prev, value]);\n    const next = steps[index + 1];\n    if (next) setOpened([next.value]);\n  };\n\n  return (\n    <div className=\"mx-auto w-full max-w-md\">\n      <div className=\"mb-4\">\n        <h2 className=\"font-semibold text-base\">Getting started</h2>\n        <p className=\"text-muted-foreground text-sm\">\n          {completed.length} of {steps.length} steps completed\n        </p>\n      </div>\n      <Accordion\n        className=\"w-full space-y-2 border-none\"\n        multiple\n        onValueChange={setOpened}\n        value={opened}\n      >\n        {steps.map((step, i) => {\n          const done = completed.includes(step.value);\n          return (\n            <AccordionItem\n              className={`rounded-lg border px-4 last:border-b ${\n                done\n                  ? \"border-emerald-200 bg-emerald-50/50 dark:border-emerald-900 dark:bg-emerald-950/30\"\n                  : \"\"\n              }`}\n              key={step.value}\n              value={step.value}\n            >\n              <AccordionTrigger className=\"hover:no-underline\">\n                <div className=\"flex items-center gap-3\">\n                  <div\n                    className={`flex size-6 shrink-0 items-center justify-center rounded-full font-semibold text-xs ${\n                      done\n                        ? \"bg-emerald-500 text-white\"\n                        : \"border-2 bg-background text-muted-foreground\"\n                    }`}\n                  >\n                    {done ? <CheckIcon className=\"size-3.5\" /> : i + 1}\n                  </div>\n                  <span className=\"font-medium text-sm\">{step.title}</span>\n                </div>\n              </AccordionTrigger>\n              <AccordionContent className=\"pb-4 pl-9\">\n                <p className=\"mb-3 text-muted-foreground text-sm\">\n                  {step.description}\n                </p>\n                {!done && (\n                  <Button onClick={() => markDone(step.value, i)} size=\"sm\">\n                    Mark as complete\n                  </Button>\n                )}\n              </AccordionContent>\n            </AccordionItem>\n          );\n        })}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

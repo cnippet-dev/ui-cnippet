@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-13",
+  "description": "Hotel Stay Range with Duration Shortcuts",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-13.tsx",
+      "content": "\"use client\";\n\nimport { addDays, format } from \"date-fns\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nconst DURATIONS = [\n  { label: \"1 week\", nights: 7 },\n  { label: \"2 weeks\", nights: 14 },\n  { label: \"1 month\", nights: 30 },\n];\n\nexport default function Particle() {\n  const [range, setRange] = useState<DateRange | undefined>();\n  const [open, setOpen] = useState(false);\n  const today = new Date();\n\n  const nights =\n    range?.from && range?.to\n      ? Math.round((range.to.getTime() - range.from.getTime()) / 86400000)\n      : null;\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3 rounded-xl border bg-background p-4 shadow-sm\">\n      <p className=\"font-semibold text-sm\">Plan your stay</p>\n\n      <div className=\"flex gap-1.5\">\n        {DURATIONS.map((d) => (\n          <button\n            className=\"flex-1 rounded-md border py-1.5 font-medium text-muted-foreground text-xs transition-colors hover:border-primary hover:text-primary\"\n            key={d.label}\n            onClick={() =>\n              setRange({ from: today, to: addDays(today, d.nights) })\n            }\n            type=\"button\"\n          >\n            {d.label}\n          </button>\n        ))}\n      </div>\n\n      <Popover onOpenChange={setOpen} open={open}>\n        <PopoverTrigger\n          render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\n        >\n          <CalendarIcon />\n          {range?.from && range?.to\n            ? `${format(range.from, \"MMM d\")} – ${format(range.to, \"MMM d, yyyy\")}`\n            : \"Select check-in / check-out\"}\n          {nights && (\n            <Badge className=\"ml-auto\" size=\"sm\" variant=\"secondary\">\n              {nights}n\n            </Badge>\n          )}\n        </PopoverTrigger>\n        <PopoverPopup>\n          <Calendar\n            disabled={{ before: today }}\n            mode=\"range\"\n            numberOfMonths={2}\n            onSelect={setRange}\n            selected={range}\n          />\n          <div className=\"flex items-center justify-between border-t px-4 py-3\">\n            <p className=\"text-muted-foreground text-xs\">\n              {nights\n                ? `${nights} night${nights !== 1 ? \"s\" : \"\"}`\n                : \"Select dates\"}\n            </p>\n            <div className=\"flex gap-2\">\n              <Button\n                onClick={() => {\n                  setRange(undefined);\n                }}\n                size=\"sm\"\n                variant=\"ghost\"\n              >\n                Clear\n              </Button>\n              <Button\n                disabled={!range?.from || !range?.to}\n                onClick={() => setOpen(false)}\n                size=\"sm\"\n              >\n                Done\n              </Button>\n            </div>\n          </div>\n        </PopoverPopup>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

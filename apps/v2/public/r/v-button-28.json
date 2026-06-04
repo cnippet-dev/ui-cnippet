@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-28",
+  "description": "File upload button with attachment preview and clear action",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-28.tsx",
+      "content": "\"use client\";\n\nimport { PaperclipIcon, XIcon } from \"lucide-react\";\nimport { useRef, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  const inputRef = useRef<HTMLInputElement>(null);\n  const [fileName, setFileName] = useState<string | null>(null);\n\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const file = e.target.files?.[0];\n    setFileName(file?.name ?? null);\n  };\n\n  const handleClear = () => {\n    setFileName(null);\n    if (inputRef.current) inputRef.current.value = \"\";\n  };\n\n  return (\n    <div className=\"flex flex-col items-start gap-3\">\n      <input\n        accept=\"image/*,.pdf,.doc,.docx\"\n        className=\"sr-only\"\n        id=\"file-upload\"\n        onChange={handleChange}\n        ref={inputRef}\n        type=\"file\"\n      />\n      <Button onClick={() => inputRef.current?.click()} variant=\"outline\">\n        <PaperclipIcon className=\"size-4\" />\n        {fileName ? \"Change file\" : \"Attach file\"}\n      </Button>\n      {fileName && (\n        <div className=\"flex items-center gap-2 rounded-lg border bg-muted/50 px-3 py-1.5 text-sm\">\n          <PaperclipIcon className=\"size-3.5 shrink-0 text-muted-foreground\" />\n          <span className=\"max-w-45 truncate\">{fileName}</span>\n          <button\n            aria-label=\"Remove file\"\n            className=\"ml-1 text-muted-foreground hover:text-foreground\"\n            onClick={handleClear}\n            type=\"button\"\n          >\n            <XIcon className=\"size-3.5\" />\n          </button>\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

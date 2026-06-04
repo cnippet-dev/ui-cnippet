@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-13",
+  "description": "Hue Color Picker",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-13.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  const [hue, setHue] = useState(210);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"font-medium text-sm\">Accent Color</p>\n        <div\n          className=\"size-6 rounded-full border\"\n          style={{ backgroundColor: `hsl(${hue}, 70%, 55%)` }}\n        />\n      </div>\n      <div\n        className=\"h-2 rounded-full\"\n        style={{\n          background:\n            \"linear-gradient(to right, hsl(0,70%,55%), hsl(60,70%,55%), hsl(120,70%,55%), hsl(180,70%,55%), hsl(240,70%,55%), hsl(300,70%,55%), hsl(360,70%,55%))\",\n        }}\n      />\n      <Slider\n        aria-label=\"Color hue\"\n        max={360}\n        min={0}\n        onValueChange={(v) => setHue(v[0])}\n        value={[hue]}\n      />\n      <p className=\"text-center text-muted-foreground text-xs\">\n        hsl({hue}, 70%, 55%)\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

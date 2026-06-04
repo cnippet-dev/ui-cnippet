@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-15",
+  "description": "Sort Order with Icons",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-15.tsx",
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport {\n  ArrowDownAZIcon,\n  ArrowUpAZIcon,\n  CalendarArrowDownIcon,\n  CalendarArrowUpIcon,\n  SparklesIcon,\n} from \"lucide-react\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\ntype SortItem = { Icon: LucideIcon; label: string; value: string };\n\nconst sortOptions: SortItem[] = [\n  { Icon: SparklesIcon, label: \"Relevance\", value: \"relevance\" },\n  { Icon: ArrowDownAZIcon, label: \"Name A–Z\", value: \"name-asc\" },\n  { Icon: ArrowUpAZIcon, label: \"Name Z–A\", value: \"name-desc\" },\n  { Icon: CalendarArrowDownIcon, label: \"Newest first\", value: \"date-desc\" },\n  { Icon: CalendarArrowUpIcon, label: \"Oldest first\", value: \"date-asc\" },\n];\n\nconst placeholder = { label: \"Sort by\", value: null };\nconst allItems = [placeholder, ...sortOptions];\n\nexport default function Particle() {\n  return (\n    <Select defaultValue={sortOptions[0]} items={allItems}>\n      <SelectTrigger className=\"w-44\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {sortOptions.map((item) => {\n          const { Icon, label, value } = item;\n          return (\n            <SelectItem key={value} value={item}>\n              <span className=\"flex items-center gap-2\">\n                <Icon aria-hidden=\"true\" className=\"size-4\" />\n                {label}\n              </span>\n            </SelectItem>\n          );\n        })}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

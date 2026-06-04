@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-12",
+  "description": "Cookie consent banner with accept and decline",
+  "registryDependencies": [
+    "@cnippet/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-12.tsx",
+      "content": "\"use client\";\n\nimport { CookieIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Alert,\n  AlertAction,\n  AlertDescription,\n  AlertTitle,\n} from \"@/registry/default/ui/alert\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  const [dismissed, setDismissed] = useState(false);\n\n  if (dismissed) return null;\n\n  return (\n    <div className=\"w-full max-w-lg\">\n      <Alert className=\"shadow-md\">\n        <CookieIcon />\n        <AlertTitle>We use cookies</AlertTitle>\n        <AlertDescription className=\"inline-auto\">\n          We use cookies to personalize content, analyze traffic, and improve\n          your experience. By continuing, you agree to our{\" \"}\n          <a\n            className=\"underline underline-offset-2 hover:text-foreground\"\n            href=\"#\"\n          >\n            cookie policy\n          </a>\n          .\n        </AlertDescription>\n        <AlertAction className=\"mt-1\">\n          <Button\n            onClick={() => setDismissed(true)}\n            size=\"xs\"\n            variant=\"outline\"\n          >\n            Decline\n          </Button>\n          <Button onClick={() => setDismissed(true)} size=\"xs\">\n            Accept All\n          </Button>\n        </AlertAction>\n      </Alert>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:block"
+}

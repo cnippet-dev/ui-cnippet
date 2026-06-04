@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-chart-12",
+  "description": "Horizontal bar chart ranking traffic channels by session count",
+  "registryDependencies": [
+    "@cnippet/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-chart-12.tsx",
+      "content": "\"use client\";\n\nimport { Bar, BarChart, XAxis, YAxis } from \"recharts\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst chartData = [\n  { channel: \"Organic\", sessions: 4820 },\n  { channel: \"Direct\", sessions: 3210 },\n  { channel: \"Referral\", sessions: 2760 },\n  { channel: \"Social\", sessions: 1940 },\n  { channel: \"Email\", sessions: 1380 },\n  { channel: \"Paid\", sessions: 920 },\n];\n\nconst chartConfig = {\n  sessions: { color: \"var(--chart-1)\", label: \"Sessions\" },\n} satisfies ChartConfig;\n\nexport function Pattern() {\n  return (\n    <ChartContainer className=\"min-h-52 w-full\" config={chartConfig}>\n      <BarChart\n        accessibilityLayer\n        data={chartData}\n        layout=\"vertical\"\n        margin={{ left: 0, right: 12 }}\n      >\n        <XAxis hide type=\"number\" />\n        <YAxis\n          axisLine={false}\n          dataKey=\"channel\"\n          tickLine={false}\n          tickMargin={4}\n          type=\"category\"\n          width={60}\n        />\n        <ChartTooltip\n          content={<ChartTooltipContent hideLabel />}\n          cursor={false}\n        />\n        <Bar dataKey=\"sessions\" fill=\"var(--color-sessions)\" radius={4} />\n      </BarChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart"
+  ],
+  "type": "registry:block"
+}

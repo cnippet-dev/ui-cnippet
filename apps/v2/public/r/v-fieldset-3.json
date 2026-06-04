@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-3",
-  "description": "Basic fieldset",
+  "description": "Shipping address fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-3.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst countries = [\n  { label: \"Select a country\", value: null },\n  { label: \"United States\", value: \"us\" },\n  { label: \"United Kingdom\", value: \"uk\" },\n  { label: \"Canada\", value: \"ca\" },\n  { label: \"Australia\", value: \"au\" },\n  { label: \"Germany\", value: \"de\" },\n];\n\nexport default function Particle() {\n  return (\n    <Fieldset className=\"flex w-full flex-col gap-4\">\n      <FieldsetLegend>Shipping Address</FieldsetLegend>\n      <Field>\n        <FieldLabel>\n          Street address <span className=\"text-destructive-foreground\">*</span>\n        </FieldLabel>\n        <Input placeholder=\"123 Main St\" required type=\"text\" />\n        <FieldError>Street address is required.</FieldError>\n      </Field>\n      <div className=\"grid grid-cols-2 gap-4\">\n        <Field>\n          <FieldLabel>\n            City <span className=\"text-destructive-foreground\">*</span>\n          </FieldLabel>\n          <Input placeholder=\"San Francisco\" required type=\"text\" />\n          <FieldError>City is required.</FieldError>\n        </Field>\n        <Field>\n          <FieldLabel>\n            ZIP / Postal code{\" \"}\n            <span className=\"text-destructive-foreground\">*</span>\n          </FieldLabel>\n          <Input placeholder=\"94103\" required type=\"text\" />\n          <FieldError>ZIP code is required.</FieldError>\n        </Field>\n      </div>\n      <Field>\n        <FieldLabel>Country</FieldLabel>\n        <Select items={countries}>\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            {countries.map(({ label, value }) => (\n              <SelectItem key={value} value={value}>\n                {label}\n              </SelectItem>\n            ))}\n          </SelectPopup>\n        </Select>\n      </Field>\n    </Fieldset>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

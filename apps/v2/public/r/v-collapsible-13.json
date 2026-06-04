@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-13",
+  "description": "Package dependency list with version badges and expandable package names",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-13.tsx",
+      "content": "\"use client\";\n\nimport {\n  ChevronDownIcon,\n  PackageIcon,\n  ShieldIcon,\n  ZapIcon,\n} from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Card, CardPanel } from \"@/registry/default/ui/card\";\nimport {\n  Collapsible,\n  CollapsiblePanel,\n  CollapsibleTrigger,\n} from \"@/registry/default/ui/collapsible\";\n\nconst PACKAGES = [\n  {\n    description: \"Logging, rate limiting, and request tracing utilities.\",\n    icon: ZapIcon,\n    id: \"middleware\",\n    items: [\"@cnippet/logger\", \"@cnippet/rate-limit\", \"@cnippet/trace\"],\n    label: \"Middleware\",\n    version: \"v1.4.2\",\n  },\n  {\n    description: \"Input sanitization and schema validation.\",\n    icon: ShieldIcon,\n    id: \"security\",\n    items: [\"@cnippet/sanitize\", \"@cnippet/zod-adapter\"],\n    label: \"Security\",\n    version: \"v2.1.0\",\n  },\n  {\n    description: \"UI component bundles and design tokens.\",\n    icon: PackageIcon,\n    id: \"ui\",\n    items: [\"@cnippet/ui\", \"@cnippet/tokens\", \"@cnippet/icons\"],\n    label: \"UI\",\n    version: \"v3.0.0\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <p className=\"mb-3 font-semibold text-sm\">Package dependencies</p>\n      {PACKAGES.map((pkg) => {\n        const Icon = pkg.icon;\n        return (\n          <Card className=\"overflow-hidden p-0\" key={pkg.id}>\n            <Collapsible>\n              <CollapsibleTrigger className=\"w-full\">\n                <CardPanel className=\"py-3\">\n                  <div className=\"flex items-center justify-between gap-2\">\n                    <div className=\"flex items-center gap-2.5\">\n                      <Icon className=\"size-4 text-muted-foreground\" />\n                      <span className=\"font-medium text-sm\">{pkg.label}</span>\n                      <Badge size=\"sm\" variant=\"secondary\">\n                        {pkg.version}\n                      </Badge>\n                    </div>\n                    <ChevronDownIcon className=\"size-3.5 in-data-panel-open:rotate-180 text-muted-foreground transition-transform duration-200\" />\n                  </div>\n                </CardPanel>\n              </CollapsibleTrigger>\n              <CollapsiblePanel>\n                <div className=\"space-y-1.5 border-t bg-muted/30 px-4 py-3\">\n                  <p className=\"mb-2 text-muted-foreground text-xs\">\n                    {pkg.description}\n                  </p>\n                  {pkg.items.map((item) => (\n                    <div\n                      className=\"font-mono text-foreground text-xs\"\n                      key={item}\n                    >\n                      {item}\n                    </div>\n                  ))}\n                </div>\n              </CollapsiblePanel>\n            </Collapsible>\n          </Card>\n        );\n      })}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

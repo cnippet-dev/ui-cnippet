@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tabs-16",
+  "description": "Pricing toggle between monthly and yearly billing with plan cards",
+  "registryDependencies": [
+    "@cnippet/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tabs-16.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Tabs, TabsList, TabsPanel, TabsTab } from \"@/registry/default/ui/tabs\";\n\nconst plans = [\n  {\n    features: [\"5 projects\", \"3 team members\", \"5 GB storage\", \"Email support\"],\n    monthly: 9,\n    name: \"Starter\",\n    yearly: 7,\n  },\n  {\n    features: [\n      \"Unlimited projects\",\n      \"20 team members\",\n      \"50 GB storage\",\n      \"Priority support\",\n      \"Advanced analytics\",\n    ],\n    monthly: 29,\n    name: \"Pro\",\n    yearly: 23,\n  },\n  {\n    features: [\n      \"Unlimited projects\",\n      \"Unlimited members\",\n      \"1 TB storage\",\n      \"Dedicated support\",\n      \"SSO & SAML\",\n      \"Audit logs\",\n    ],\n    monthly: 99,\n    name: \"Enterprise\",\n    yearly: 79,\n  },\n];\n\nexport function Pattern() {\n  const [billing, setBilling] = useState<\"monthly\" | \"yearly\">(\"monthly\");\n\n  return (\n    <div className=\"mx-auto flex w-full max-w-lg flex-col items-center gap-6\">\n      <Tabs\n        onValueChange={(v) => setBilling(v as \"monthly\" | \"yearly\")}\n        value={billing}\n      >\n        <TabsList>\n          <TabsTab value=\"monthly\">Monthly</TabsTab>\n          <TabsTab className=\"gap-1.5\" value=\"yearly\">\n            Yearly\n            <Badge size=\"sm\" variant=\"success\">\n              Save 20%\n            </Badge>\n          </TabsTab>\n        </TabsList>\n        <TabsPanel value=\"monthly\" />\n        <TabsPanel value=\"yearly\" />\n      </Tabs>\n\n      <div className=\"grid w-full grid-cols-3 gap-3\">\n        {plans.map((plan) => (\n          <div\n            className={`flex flex-col gap-3 rounded-xl border p-4 ${plan.name === \"Pro\" ? \"border-primary ring-1 ring-primary/20\" : \"border-border\"}`}\n            key={plan.name}\n          >\n            <div>\n              <p className=\"font-semibold text-sm\">{plan.name}</p>\n              <p className=\"mt-1 font-bold text-2xl\">\n                ${billing === \"monthly\" ? plan.monthly : plan.yearly}\n                <span className=\"font-normal text-muted-foreground text-xs\">\n                  /mo\n                </span>\n              </p>\n            </div>\n            <ul className=\"flex flex-col gap-1.5\">\n              {plan.features.map((f) => (\n                <li\n                  className=\"flex items-start gap-1.5 text-muted-foreground text-xs\"\n                  key={f}\n                >\n                  <CheckIcon className=\"mt-px size-3 shrink-0 text-emerald-500\" />\n                  {f}\n                </li>\n              ))}\n            </ul>\n            <Button\n              className=\"mt-auto\"\n              size=\"sm\"\n              variant={plan.name === \"Pro\" ? \"default\" : \"outline\"}\n            >\n              Get started\n            </Button>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:block"
+}

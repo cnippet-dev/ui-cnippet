@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-14",
+  "description": "Items with Description",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-14.tsx",
+      "content": "import {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst deployTargets = [\n  { description: \"\", label: \"Select environment\", value: null },\n  {\n    description: \"Public-facing production environment\",\n    label: \"Production\",\n    value: \"production\",\n  },\n  {\n    description: \"Internal testing and QA environment\",\n    label: \"Staging\",\n    value: \"staging\",\n  },\n  {\n    description: \"For feature development and experiments\",\n    label: \"Development\",\n    value: \"development\",\n  },\n  {\n    description: \"Isolated per-branch preview deployments\",\n    label: \"Preview\",\n    value: \"preview\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <Select defaultValue={deployTargets[2]} items={deployTargets}>\n      <SelectTrigger className=\"w-56\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {deployTargets.slice(1).map((item) => (\n          <SelectItem key={item.value} value={item}>\n            <span className=\"flex flex-col gap-0.5\">\n              <span>{item.label}</span>\n              <span className=\"text-muted-foreground text-xs\">\n                {item.description}\n              </span>\n            </span>\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

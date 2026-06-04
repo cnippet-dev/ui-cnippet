@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-drawer-14",
+  "description": "Help Center with FAQ Search",
+  "registryDependencies": [
+    "@cnippet/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-drawer-14.tsx",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\n\n\"use client\";\n\nimport {\n  ChevronDownIcon,\n  ChevronUpIcon,\n  HelpCircleIcon,\n  SearchIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/registry/default/ui/drawer\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nconst FAQ = [\n  {\n    a: 'Go to Settings → Security and click \"Change password\". A reset link will be sent to your email.',\n    q: \"How do I reset my password?\",\n  },\n  {\n    a: \"Yes. Navigate to Settings → Data & Privacy → Export data. Exports are delivered within 24 hours.\",\n    q: \"Can I export my data?\",\n  },\n  {\n    a: 'Open your workspace, click \"Members\" in the sidebar, then \"Invite\" and enter their email addresses.',\n    q: \"How do I invite team members?\",\n  },\n  {\n    a: \"Yes, our mobile app is available on iOS and Android. Search for the app in your device's app store.\",\n    q: \"Is there a mobile app?\",\n  },\n  {\n    a: \"Billing is per active seat, prorated to the day. Seats added mid-cycle appear on the next invoice.\",\n    q: \"How is billing calculated?\",\n  },\n];\n\nexport default function Particle() {\n  const [query, setQuery] = useState(\"\");\n  const [expanded, setExpanded] = useState<number | null>(null);\n\n  const filtered = FAQ.filter(\n    (item) =>\n      item.q.toLowerCase().includes(query.toLowerCase()) ||\n      item.a.toLowerCase().includes(query.toLowerCase()),\n  );\n\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>\n        <HelpCircleIcon className=\"size-4\" />\n        Help & Support\n      </DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader>\n          <DrawerTitle>Help Center</DrawerTitle>\n        </DrawerHeader>\n        <DrawerPanel className=\"space-y-4\">\n          <div className=\"relative\">\n            <SearchIcon className=\"absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input\n              className=\"pl-9\"\n              onChange={(e) => {\n                setQuery(e.target.value);\n                setExpanded(null);\n              }}\n              placeholder=\"Search help articles...\"\n              value={query}\n            />\n          </div>\n          <div className=\"space-y-1\">\n            {filtered.length === 0 ? (\n              <p className=\"py-8 text-center text-muted-foreground text-sm\">\n                No results for &quot;{query}&quot;\n              </p>\n            ) : (\n              filtered.map((item, i) => (\n                <div className=\"rounded-lg border\" key={i}>\n                  <button\n                    className=\"flex w-full items-center justify-between gap-3 px-4 py-3 text-left font-medium text-sm\"\n                    onClick={() => setExpanded(expanded === i ? null : i)}\n                    type=\"button\"\n                  >\n                    {item.q}\n                    {expanded === i ? (\n                      <ChevronUpIcon className=\"size-4 shrink-0 text-muted-foreground\" />\n                    ) : (\n                      <ChevronDownIcon className=\"size-4 shrink-0 text-muted-foreground\" />\n                    )}\n                  </button>\n                  {expanded === i && (\n                    <p className=\"border-t px-4 py-3 text-muted-foreground text-sm\">\n                      {item.a}\n                    </p>\n                  )}\n                </div>\n              ))\n            )}\n          </div>\n        </DrawerPanel>\n        <DrawerFooter>\n          <DrawerClose render={<Button variant=\"ghost\" />}>Close</DrawerClose>\n          <Button>Contact support</Button>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:block"
+}

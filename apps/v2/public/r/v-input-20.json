@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-20",
-  "description": "Basic password strength with dynamic hint and icons",
+  "description": "Password strength with dynamic hint and icons",
   "registryDependencies": [
     "@cnippet/input"
   ],

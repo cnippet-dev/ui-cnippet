@@ -10,5 +10,12 @@ export default function Particle() {
     to: new Date(new Date().setDate(new Date().getDate() + 7)),
   });
 
-  return <Calendar mode="range" onSelect={setRange} selected={range} />;
+  return (
+    <Calendar
+      className="mx-auto"
+      mode="range"
+      onSelect={setRange}
+      selected={range}
+    />
+  );
 }

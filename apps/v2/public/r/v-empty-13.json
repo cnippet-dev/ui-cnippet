@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-13",
+  "description": "Inbox zero — illustration with compose action",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-13.tsx",
+      "content": "import { FilterXIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center p-4\">\n      <Empty className=\"border\">\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <FilterXIcon />\n          </EmptyMedia>\n          <EmptyTitle>No matching results</EmptyTitle>\n          <EmptyDescription>\n            Your current filters returned no results. Try adjusting or clearing\n            them.\n          </EmptyDescription>\n        </EmptyHeader>\n        <EmptyContent>\n          <div className=\"flex gap-2\">\n            <Button size=\"sm\">Clear filters</Button>\n            <Button size=\"sm\" variant=\"outline\">\n              Edit filters\n            </Button>\n          </div>\n        </EmptyContent>\n      </Empty>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

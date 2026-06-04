@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-13",
+  "description": "Icon button trigger",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-13.tsx",
+      "content": "import {\n  ArchiveIcon,\n  EllipsisVerticalIcon,\n  FlagIcon,\n  ShareIcon,\n  StarIcon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuSeparator,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger\n        render={\n          <Button aria-label=\"More options\" size=\"icon\" variant=\"ghost\" />\n        }\n      >\n        <EllipsisVerticalIcon aria-hidden=\"true\" className=\"size-4\" />\n      </MenuTrigger>\n      <MenuPopup align=\"end\">\n        <MenuItem>\n          <StarIcon aria-hidden=\"true\" />\n          Add to favourites\n        </MenuItem>\n        <MenuItem>\n          <ShareIcon aria-hidden=\"true\" />\n          Share\n        </MenuItem>\n        <MenuItem>\n          <ArchiveIcon aria-hidden=\"true\" />\n          Archive\n        </MenuItem>\n        <MenuSeparator />\n        <MenuItem variant=\"destructive\">\n          <FlagIcon aria-hidden=\"true\" />\n          Report\n        </MenuItem>\n      </MenuPopup>\n    </Menu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ],
+  "type": "registry:block"
+}

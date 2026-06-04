@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-22",
+  "description": "Readonly with copy-to-clipboard button",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-22.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\nimport { useRef } from \"react\";\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  const { copyToClipboard, isCopied } = useCopyToClipboard();\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <FieldLabel htmlFor=\"referral-link\">Referral link</FieldLabel>\n      <div className=\"flex gap-2\">\n        <Input\n          defaultValue=\"https://app.example.com/ref/abc123\"\n          id=\"referral-link\"\n          readOnly\n          ref={inputRef}\n          type=\"text\"\n        />\n        <Button\n          aria-label=\"Copy referral link\"\n          onClick={() =>\n            inputRef.current && copyToClipboard(inputRef.current.value)\n          }\n          size=\"icon\"\n          variant=\"outline\"\n        >\n          {isCopied ? (\n            <CheckIcon aria-hidden=\"true\" />\n          ) : (\n            <CopyIcon aria-hidden=\"true\" />\n          )}\n        </Button>\n      </div>\n      <FieldDescription>Share this link to invite friends.</FieldDescription>\n    </Field>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

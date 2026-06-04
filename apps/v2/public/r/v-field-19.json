@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-field-19",
-  "description": "Basic field",
+  "description": "Field with date input",
   "registryDependencies": [
     "@cnippet/field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-field-19.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Date of birth</FieldLabel>\n      <Input type=\"date\" />\n      <FieldDescription>Used to verify your age and identity.</FieldDescription>\n      <FieldError>Please enter a valid date.</FieldError>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

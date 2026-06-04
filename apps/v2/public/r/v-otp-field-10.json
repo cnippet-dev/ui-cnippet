@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-otp-field-10",
-  "description": "Basic input otp",
+  "description": "Email verification card",
   "registryDependencies": [
     "@cnippet/otp-field"
   ],

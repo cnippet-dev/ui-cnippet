@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-13",
+  "description": "Dark Mode Toggle Card",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-13.tsx",
+      "content": "\"use client\";\n\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  const [dark, setDark] = useState(false);\n\n  return (\n    <div\n      className={`flex w-full max-w-xs flex-col items-center gap-6 rounded-2xl border p-8 transition-colors duration-300 ${dark ? \"border-zinc-700 bg-zinc-900 text-white\" : \"bg-white text-zinc-900\"}`}\n    >\n      <div\n        className={`flex size-16 items-center justify-center rounded-full transition-colors duration-300 ${dark ? \"bg-zinc-800\" : \"bg-amber-50\"}`}\n      >\n        {dark ? (\n          <MoonIcon aria-hidden=\"true\" className=\"size-7 text-indigo-400\" />\n        ) : (\n          <SunIcon aria-hidden=\"true\" className=\"size-7 text-amber-500\" />\n        )}\n      </div>\n      <div className=\"text-center\">\n        <p className=\"font-semibold\">{dark ? \"Dark Mode\" : \"Light Mode\"}</p>\n        <p\n          className={`text-sm ${dark ? \"text-zinc-400\" : \"text-zinc-500\"} mt-1`}\n        >\n          {dark ? \"Easy on the eyes at night\" : \"Crisp and clear in daylight\"}\n        </p>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <SunIcon\n          aria-hidden=\"true\"\n          className={`size-4 ${dark ? \"text-zinc-500\" : \"text-amber-500\"}`}\n        />\n        <Switch\n          checked={dark}\n          className=\"data-checked:bg-indigo-600\"\n          onCheckedChange={setDark}\n        />\n        <MoonIcon\n          aria-hidden=\"true\"\n          className={`size-4 ${dark ? \"text-indigo-400\" : \"text-zinc-400\"}`}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

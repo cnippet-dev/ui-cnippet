@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-14",
+  "description": "Plan add-on selector with dynamic price total as features are toggled",
+  "registryDependencies": [
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-14.tsx",
+      "content": "\"use client\";\n\nimport { useId, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\n\nconst FEATURES = [\n  {\n    desc: \"Dedicated infrastructure with 99.99% SLA.\",\n    id: \"uptime\",\n    label: \"High Availability\",\n  },\n  {\n    desc: \"End-to-end encryption for all data at rest and in transit.\",\n    id: \"encryption\",\n    label: \"Data Encryption\",\n  },\n  {\n    desc: \"Access real-time metrics, logs, and alerting dashboards.\",\n    id: \"monitoring\",\n    label: \"Advanced Monitoring\",\n  },\n  {\n    desc: \"Enterprise SSO via SAML 2.0 and OIDC.\",\n    id: \"sso\",\n    label: \"SSO & SAML\",\n  },\n  {\n    desc: \"Guaranteed 4-hour response for Severity 1 issues.\",\n    id: \"support\",\n    label: \"Priority Support\",\n  },\n];\n\nexport function Pattern() {\n  const id = useId();\n  const [selected, setSelected] = useState<Set<string>>(\n    new Set([\"uptime\", \"encryption\"]),\n  );\n\n  const toggle = (fid: string) =>\n    setSelected((prev) => {\n      const next = new Set(prev);\n      next.has(fid) ? next.delete(fid) : next.add(fid);\n      return next;\n    });\n\n  const basePrice = 49;\n  const addOnPrice = (selected.size - 2) * 12;\n  const total = basePrice + Math.max(0, addOnPrice);\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      <div>\n        <p className=\"font-semibold text-sm\">Customize your plan</p>\n        <p className=\"mt-0.5 text-muted-foreground text-xs\">\n          Select the add-ons you need.\n        </p>\n      </div>\n      <div className=\"space-y-1.5\">\n        {FEATURES.map((f) => (\n          <label\n            className=\"flex cursor-pointer items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-muted/50\"\n            htmlFor={`${id}-${f.id}`}\n            key={f.id}\n          >\n            <Checkbox\n              checked={selected.has(f.id)}\n              className=\"mt-0.5\"\n              id={`${id}-${f.id}`}\n              onCheckedChange={() => toggle(f.id)}\n            />\n            <div className=\"flex-1\">\n              <span className=\"font-medium text-sm\">{f.label}</span>\n              <p className=\"mt-0.5 text-muted-foreground text-xs\">{f.desc}</p>\n            </div>\n          </label>\n        ))}\n      </div>\n      <div className=\"flex items-center justify-between rounded-lg bg-muted px-4 py-2.5\">\n        <span className=\"font-medium text-sm\">Estimated total</span>\n        <span className=\"font-bold text-sm\">${total}/mo</span>\n      </div>\n      <Button className=\"w-full\">Confirm selection</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:block"
+}

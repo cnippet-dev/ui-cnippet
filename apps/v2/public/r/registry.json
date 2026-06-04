@@ -1131,6 +1131,106 @@
     },
     {
       "categories": [
+        "accordion"
+      ],
+      "description": "Searchable FAQ with live keyword filter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+      },
+      "name": "v-accordion-11",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Settings sidebar navigation with icon sections",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+      },
+      "name": "v-accordion-12",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Job board listings with requirements and apply action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+      },
+      "name": "v-accordion-13",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Onboarding step tracker with completion state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+      },
+      "name": "v-accordion-14",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Product specifications table by category",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+      },
+      "name": "v-accordion-15",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "alert"
       ],
       "description": "Default",
@@ -1324,6 +1424,106 @@
         "className": ""
       },
       "name": "v-alert-10",
+      "registryDependencies": [
+        "@cnippet/alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Dismissible announcement banner with CTA",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-11",
+      "registryDependencies": [
+        "@cnippet/alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Cookie consent banner with accept and decline",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-12",
+      "registryDependencies": [
+        "@cnippet/alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Storage limit warning with usage progress bar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-13",
+      "registryDependencies": [
+        "@cnippet/alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Update available with async install feedback",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-14",
+      "registryDependencies": [
+        "@cnippet/alert"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert"
+      ],
+      "description": "Email verification with resend countdown",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-15",
       "registryDependencies": [
         "@cnippet/alert"
       ],
@@ -1531,6 +1731,106 @@
     },
     {
       "categories": [
+        "alert dialog"
+      ],
+      "description": "File Overwrite Confirmation with three-way choice",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-11",
+      "registryDependencies": [
+        "@cnippet/alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "Subscription Downgrade Warning with feature loss list",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-12",
+      "registryDependencies": [
+        "@cnippet/alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "Transfer Ownership with typed confirmation input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-13",
+      "registryDependencies": [
+        "@cnippet/alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "Clear All Data with checkbox consent gate",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-14",
+      "registryDependencies": [
+        "@cnippet/alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "alert dialog"
+      ],
+      "description": "Rate Limit Exceeded with live countdown timer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-alert-dialog-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-alert-dialog-15",
+      "registryDependencies": [
+        "@cnippet/alert-dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "autocomplete"
       ],
       "description": "Default",
@@ -1553,7 +1853,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Sizes",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-2.tsx",
@@ -1573,7 +1873,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Label",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-3.tsx",
@@ -1593,7 +1893,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Inline Autocomplete",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-4.tsx",
@@ -1613,7 +1913,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Auto Highlight",
+      "description": "Inline Autocomplete",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-5.tsx",
@@ -1633,7 +1933,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Trigger and Clear Buttons",
+      "description": "Auto Highlight",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-6.tsx",
@@ -1673,7 +1973,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Search Icon",
+      "description": "With Trigger and Clear Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-8.tsx",
@@ -1693,7 +1993,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Grouped Items",
+      "description": "With Search Icon",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-9.tsx",
@@ -1713,7 +2013,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Limit Results",
+      "description": "Grouped Items",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-10.tsx",
@@ -1733,7 +2033,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Async Search",
+      "description": "Limit Results",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-11.tsx",
@@ -1753,7 +2053,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Form Integration",
+      "description": "Async Search",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-12.tsx",
@@ -1773,7 +2073,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Timezone Picker",
+      "description": "Form Integration",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-13.tsx",
@@ -1793,7 +2093,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Person Picker",
+      "description": "Timezone Picker",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-14.tsx",
@@ -1813,7 +2113,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Person Picker",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-15.tsx",
@@ -1824,6 +2124,106 @@
         "className": ""
       },
       "name": "v-autocomplete-15",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Country picker with flag and ISO code",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-16",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Repository picker with language and star count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-17",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Multi-select tag input with dismissible chip pills",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-18",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Priority selector with icon and description",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-19",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "autocomplete"
+      ],
+      "description": "Tech stack picker grouped by category",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-autocomplete-20",
       "registryDependencies": [
         "@cnippet/autocomplete"
       ],
@@ -2151,6 +2551,106 @@
     },
     {
       "categories": [
+        "avatar"
+      ],
+      "description": "Team grid with online presence status dots",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-17",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Pull request comment thread",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-18",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Interactive assignee picker with selection state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-19",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Contributor leaderboard with rank and commit count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-20",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "avatar"
+      ],
+      "description": "Profile card with stats and action buttons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-avatar-21",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "badge"
       ],
       "description": "Default",
@@ -2391,6 +2891,106 @@
     },
     {
       "categories": [
+        "badge"
+      ],
+      "description": "Status dot indicators (Online, Busy, Away, Offline)",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-13",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Release channel tags (Stable, Beta, Experimental, Deprecated)",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-14",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Subscription plan tiers with pricing",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-15",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Notification category badges with unread counts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-16",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "badge"
+      ],
+      "description": "Priority labels in a task list",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-badge-17",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "breadcrumb"
       ],
       "description": "Default",
@@ -2584,6 +3184,106 @@
         "className": ""
       },
       "name": "v-breadcrumb-10",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "File path breadcrumb with folder and file icons in monospace",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-11",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Checkout step progress breadcrumb with numbered circles and navigation buttons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-12",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Admin hierarchy breadcrumb with colored icon badges per level",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-13",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Page header breadcrumb with edit and share action buttons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-14",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "breadcrumb"
+      ],
+      "description": "Compact breadcrumb with ellipsis and hidden-items count badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-breadcrumb-15",
       "registryDependencies": [
         "@cnippet/breadcrumb"
       ],
@@ -3091,6 +3791,106 @@
     },
     {
       "categories": [
+        "button"
+      ],
+      "description": "Social login buttons with GitHub, Google, and email options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-26.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-26",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Loading and success state button with animated icon swap",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-27.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-27",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "File upload button with attachment preview and clear action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-28.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-28",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Split button with primary action and dropdown menu via Group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-29.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-29",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "button"
+      ],
+      "description": "Segmented view toggle with list, table, and kanban options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-30.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-button-30",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "calendar"
       ],
       "description": "Default",
@@ -3384,6 +4184,106 @@
         "className": ""
       },
       "name": "v-calendar-15",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Habit tracker with completion indicators and monthly streak counter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-16",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Sprint planner with two-month range selection and duration stats",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-17",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Time off request with leave type selector and range picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-18",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Mini year view with all 12 months in a compact grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-19",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Time slot booking with available/booked slot grid and confirmation",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-calendar-20",
       "registryDependencies": [
         "@cnippet/calendar"
       ],
@@ -3691,6 +4591,106 @@
     },
     {
       "categories": [
+        "card"
+      ],
+      "description": "GitHub repository list cards with language, star, and fork counts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-16",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Settings card with sidebar navigation and swappable content panels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-17",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Pricing plan card with feature checklist and highlighted ring",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-18",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Event card with date, time, location, attendee count, and RSVP button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-19",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "card"
+      ],
+      "description": "Stats dashboard grid with four metric tiles and trend indicators",
+      "files": [
+        {
+          "path": "registry/default/variants/v-card-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-card-20",
+      "registryDependencies": [
+        "@cnippet/card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "carousel"
       ],
       "description": "Default",
@@ -3891,9 +4891,109 @@
     },
     {
       "categories": [
+        "carousel"
+      ],
+      "description": "Testimonial carousel with avatar, quote, and dot indicators",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-11",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Pricing plan carousel with arrow navigation and highlighted active plan",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-12",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Media gallery carousel with caption badge and progress dots",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-13",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Changelog carousel with drag-free multi-slide and version tags",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-14",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "carousel"
+      ],
+      "description": "Feature highlight carousel with icon slides and Prev/Next controls",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-carousel-15",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Multi-Series Bar Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-1.tsx",
@@ -3913,7 +5013,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Area Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-2.tsx",
@@ -3933,7 +5033,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Bar Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-3.tsx",
@@ -3953,7 +5053,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Line Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-4.tsx",
@@ -3973,7 +5073,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Pie Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-5.tsx",
@@ -3993,7 +5093,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Radar Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-6.tsx",
@@ -4013,7 +5113,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Radial Bar Chart",
       "files": [
         {
           "path": "registry/default/variants/v-chart-7.tsx",
@@ -4084,6 +5184,106 @@
         "className": ""
       },
       "name": "v-chart-10",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Stacked area chart with two revenue series and a Y-axis legend",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-11",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Horizontal bar chart ranking traffic channels by session count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-12",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Donut chart with center label showing team headcount by department",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-13",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Multi-series line chart comparing API response percentiles (p50/p90/p99)",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-14",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart"
+      ],
+      "description": "Composed chart overlaying revenue bars with a growth-rate line on dual axes",
+      "files": [
+        {
+          "path": "registry/default/variants/v-chart-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-chart-15",
       "registryDependencies": [
         "@cnippet/chart"
       ],
@@ -4291,6 +5491,106 @@
     },
     {
       "categories": [
+        "checkbox"
+      ],
+      "description": "Weekly availability grid with checkboxes per day and time slot",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-11",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Role permissions picker with colored badge per access level",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-12",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Notification preferences matrix with event rows and channel columns",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-13",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Plan add-on selector with dynamic price total as features are toggled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-14",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox"
+      ],
+      "description": "Sprint task checklist with priority badges and completion celebration",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-15",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "checkbox group"
       ],
       "description": "Default",
@@ -4491,6 +5791,106 @@
     },
     {
       "categories": [
+        "checkbox group"
+      ],
+      "description": "Two-level nested group for tech stack selection by frontend and backend category",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-11",
+      "registryDependencies": [
+        "@cnippet/checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Recurring schedule picker with weekday and weekend sub-groups and day count badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-12",
+      "registryDependencies": [
+        "@cnippet/checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Integration enablement list with card rows and a master enable-all parent checkbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-13",
+      "registryDependencies": [
+        "@cnippet/checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Data export selector with two section groups and an item count summary",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-14",
+      "registryDependencies": [
+        "@cnippet/checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "checkbox group"
+      ],
+      "description": "Food preference picker with independent cuisine and dietary checkbox groups",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-checkbox-group-15",
+      "registryDependencies": [
+        "@cnippet/checkbox-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "collapsible"
       ],
       "description": "Default",
@@ -4684,6 +6084,106 @@
         "className": ""
       },
       "name": "v-collapsible-10",
+      "registryDependencies": [
+        "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Accordion-style FAQ with single-open behavior and question count badge",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-11",
+      "registryDependencies": [
+        "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Sidebar filter panel with collapsible groups, checkboxes, and active count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-12",
+      "registryDependencies": [
+        "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Package dependency list with version badges and expandable package names",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-13",
+      "registryDependencies": [
+        "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Team directory with status dots, role labels, and per-team collapsible sections",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-14",
+      "registryDependencies": [
+        "@cnippet/collapsible"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "collapsible"
+      ],
+      "description": "Privacy policy card with accordion sections and single-panel-open behavior",
+      "files": [
+        {
+          "path": "registry/default/variants/v-collapsible-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-collapsible-15",
       "registryDependencies": [
         "@cnippet/collapsible"
       ],
@@ -5031,6 +6531,106 @@
     },
     {
       "categories": [
+        "combobox"
+      ],
+      "description": "City picker with timezone and country code trailing metadata",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-18",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Sprint selector with status badge and date range per item",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-19",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Font picker grouped by category with live preview sentence",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-20",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Timezone picker with UTC offset badge in trigger and region info below",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-21",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Currency picker with symbol icon in trigger and code trailing each item",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-combobox-22",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "command"
       ],
       "description": "Default",
@@ -5224,6 +6824,106 @@
         "className": ""
       },
       "name": "v-command-10",
+      "registryDependencies": [
+        "@cnippet/command"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "command"
+      ],
+      "description": "Account settings palette with grouped profile, preferences, and sign-out actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-command-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-command-11",
+      "registryDependencies": [
+        "@cnippet/command"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "command"
+      ],
+      "description": "Repository search palette showing issues, pull requests, branches, and files",
+      "files": [
+        {
+          "path": "registry/default/variants/v-command-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-command-12",
+      "registryDependencies": [
+        "@cnippet/command"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "command"
+      ],
+      "description": "Go-to-page palette with shortcut hints and arrow icon for unbound items",
+      "files": [
+        {
+          "path": "registry/default/variants/v-command-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-command-13",
+      "registryDependencies": [
+        "@cnippet/command"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "command"
+      ],
+      "description": "Appearance picker with theme and accent-color options and active check marks",
+      "files": [
+        {
+          "path": "registry/default/variants/v-command-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-command-14",
+      "registryDependencies": [
+        "@cnippet/command"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "command"
+      ],
+      "description": "Quick-open palette with page list, notification badges, and a keyboard footer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-command-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-command-15",
       "registryDependencies": [
         "@cnippet/command"
       ],
@@ -5431,6 +7131,106 @@
     },
     {
       "categories": [
+        "context menu"
+      ],
+      "description": "Bookmark list with per-item star toggle, open, copy, share, and delete actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-11",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context menu"
+      ],
+      "description": "Rich-text editor with checkbox formatting and alignment submenu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-12",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context menu"
+      ],
+      "description": "File explorer rows with extension badge, rename, download, and delete per file",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-13",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context menu"
+      ],
+      "description": "Social feed with upvote/downvote controls and a report submenu per post",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-14",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "context menu"
+      ],
+      "description": "Task board with inline status radio, priority submenu, reassign, and delete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-context-menu-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-context-menu-15",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "date picker"
       ],
       "description": "Default",
@@ -5624,6 +7424,106 @@
         "className": ""
       },
       "name": "v-date-picker-10",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "date picker"
+      ],
+      "description": "Report Period Range with Presets",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-date-picker-11",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "date picker"
+      ],
+      "description": "Recurring Event Date Picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-date-picker-12",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "date picker"
+      ],
+      "description": "Hotel Stay Range with Duration Shortcuts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-date-picker-13",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "date picker"
+      ],
+      "description": "Birthday Picker with Age Validation",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-date-picker-14",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "date picker"
+      ],
+      "description": "Multi-date Availability Selector",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-date-picker-15",
       "registryDependencies": [
         "@cnippet/date-picker"
       ],
@@ -5831,6 +7731,106 @@
     },
     {
       "categories": [
+        "dialog"
+      ],
+      "description": "Share Document with Link Copy",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-11",
+      "registryDependencies": [
+        "@cnippet/dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Two-Factor Authentication Setup",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-12",
+      "registryDependencies": [
+        "@cnippet/dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Subscription Cancellation with Reason",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-13",
+      "registryDependencies": [
+        "@cnippet/dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "API Key Generation and Reveal",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-14",
+      "registryDependencies": [
+        "@cnippet/dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "dialog"
+      ],
+      "description": "Product Feedback Star Rating",
+      "files": [
+        {
+          "path": "registry/default/variants/v-dialog-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-dialog-15",
+      "registryDependencies": [
+        "@cnippet/dialog"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "drawer"
       ],
       "description": "Default",
@@ -6031,6 +8031,106 @@
     },
     {
       "categories": [
+        "drawer"
+      ],
+      "description": "User Preferences & Theme Settings",
+      "files": [
+        {
+          "path": "registry/default/variants/v-drawer-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-drawer-11",
+      "registryDependencies": [
+        "@cnippet/drawer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drawer"
+      ],
+      "description": "File Attachments with Upload",
+      "files": [
+        {
+          "path": "registry/default/variants/v-drawer-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-drawer-12",
+      "registryDependencies": [
+        "@cnippet/drawer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drawer"
+      ],
+      "description": "Activity Log with Status Timeline",
+      "files": [
+        {
+          "path": "registry/default/variants/v-drawer-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-drawer-13",
+      "registryDependencies": [
+        "@cnippet/drawer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drawer"
+      ],
+      "description": "Help Center with FAQ Search",
+      "files": [
+        {
+          "path": "registry/default/variants/v-drawer-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-drawer-14",
+      "registryDependencies": [
+        "@cnippet/drawer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drawer"
+      ],
+      "description": "Quick Actions Grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-drawer-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-drawer-15",
+      "registryDependencies": [
+        "@cnippet/drawer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "empty state"
       ],
       "description": "Default",
@@ -6195,7 +8295,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "All caught up — no new notifications",
       "files": [
         {
           "path": "registry/default/variants/v-empty-10.tsx",
@@ -6211,9 +8311,99 @@
     },
     {
       "categories": [
+        "empty state"
+      ],
+      "description": "No team members — invite form empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-11",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "No matching results — clear filters empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-12",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "Inbox zero — illustration with compose action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-13",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "Access restricted — permission request empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-14",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "empty state"
+      ],
+      "description": "Basic empty state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-empty-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-empty-15",
+      "registryDependencies": [],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Basic field with label and description",
       "files": [
         {
           "path": "registry/default/variants/v-field-1.tsx",
@@ -6233,7 +8423,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Required password field",
       "files": [
         {
           "path": "registry/default/variants/v-field-2.tsx",
@@ -6253,7 +8443,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Disabled field",
       "files": [
         {
           "path": "registry/default/variants/v-field-3.tsx",
@@ -6273,7 +8463,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with validation error",
       "files": [
         {
           "path": "registry/default/variants/v-field-4.tsx",
@@ -6293,7 +8483,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with validity state inspector",
       "files": [
         {
           "path": "registry/default/variants/v-field-5.tsx",
@@ -6313,7 +8503,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field wrapping an input group",
       "files": [
         {
           "path": "registry/default/variants/v-field-6.tsx",
@@ -6333,7 +8523,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with autocomplete",
       "files": [
         {
           "path": "registry/default/variants/v-field-7.tsx",
@@ -6353,7 +8543,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with single-select combobox",
       "files": [
         {
           "path": "registry/default/variants/v-field-8.tsx",
@@ -6373,7 +8563,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with multi-select combobox chips",
       "files": [
         {
           "path": "registry/default/variants/v-field-9.tsx",
@@ -6393,7 +8583,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with textarea",
       "files": [
         {
           "path": "registry/default/variants/v-field-10.tsx",
@@ -6413,7 +8603,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with select dropdown",
       "files": [
         {
           "path": "registry/default/variants/v-field-11.tsx",
@@ -6433,7 +8623,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with checkbox",
       "files": [
         {
           "path": "registry/default/variants/v-field-12.tsx",
@@ -6453,7 +8643,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with checkbox group",
       "files": [
         {
           "path": "registry/default/variants/v-field-13.tsx",
@@ -6473,7 +8663,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with radio group",
       "files": [
         {
           "path": "registry/default/variants/v-field-14.tsx",
@@ -6493,7 +8683,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with slider",
       "files": [
         {
           "path": "registry/default/variants/v-field-15.tsx",
@@ -6513,7 +8703,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with number input",
       "files": [
         {
           "path": "registry/default/variants/v-field-16.tsx",
@@ -6533,7 +8723,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Complete multi-field form",
       "files": [
         {
           "path": "registry/default/variants/v-field-17.tsx",
@@ -6553,7 +8743,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with switch toggle",
       "files": [
         {
           "path": "registry/default/variants/v-field-18.tsx",
@@ -6573,7 +8763,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with date input",
       "files": [
         {
           "path": "registry/default/variants/v-field-19.tsx",
@@ -6593,7 +8783,7 @@
       "categories": [
         "field"
       ],
-      "description": "Basic field",
+      "description": "Field with OTP verification input",
       "files": [
         {
           "path": "registry/default/variants/v-field-20.tsx",
@@ -6611,9 +8801,49 @@
     },
     {
       "categories": [
+        "field"
+      ],
+      "description": "Field with file upload",
+      "files": [
+        {
+          "path": "registry/default/variants/v-field-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-field-21",
+      "registryDependencies": [
+        "@cnippet/field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "field"
+      ],
+      "description": "Field with password strength indicator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-field-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-field-22",
+      "registryDependencies": [
+        "@cnippet/field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Billing details fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-1.tsx",
@@ -6633,7 +8863,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Personal information fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-2.tsx",
@@ -6653,7 +8883,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Shipping address fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-3.tsx",
@@ -6673,7 +8903,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Notification preferences fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-4.tsx",
@@ -6693,7 +8923,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Change password fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-5.tsx",
@@ -6713,7 +8943,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Payment information fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-6.tsx",
@@ -6973,7 +9203,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Sign Up / Register",
       "files": [
         {
           "path": "registry/default/variants/v-form-9.tsx",
@@ -6993,7 +9223,7 @@
       "categories": [
         "form"
       ],
-      "description": "Basic form",
+      "description": "Feedback form with rating",
       "files": [
         {
           "path": "registry/default/variants/v-form-10.tsx",
@@ -7011,9 +9241,69 @@
     },
     {
       "categories": [
+        "form"
+      ],
+      "description": "Forgot password — reset email",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-11",
+      "registryDependencies": [
+        "@cnippet/form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "Delete account — danger zone confirmation",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-12",
+      "registryDependencies": [
+        "@cnippet/form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "form"
+      ],
+      "description": "Invite team member",
+      "files": [
+        {
+          "path": "registry/default/variants/v-form-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-form-13",
+      "registryDependencies": [
+        "@cnippet/form"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-frame-1.tsx",
@@ -7033,7 +9323,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Separated panels",
       "files": [
         {
           "path": "registry/default/variants/v-frame-2.tsx",
@@ -7053,7 +9343,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "With collapsible panel",
       "files": [
         {
           "path": "registry/default/variants/v-frame-3.tsx",
@@ -7073,7 +9363,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Dense layout",
       "files": [
         {
           "path": "registry/default/variants/v-frame-4.tsx",
@@ -7093,7 +9383,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "With action button in header",
       "files": [
         {
           "path": "registry/default/variants/v-frame-5.tsx",
@@ -7113,7 +9403,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Stats metrics display",
       "files": [
         {
           "path": "registry/default/variants/v-frame-6.tsx",
@@ -7133,7 +9423,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "With badge status indicator",
       "files": [
         {
           "path": "registry/default/variants/v-frame-7.tsx",
@@ -7153,7 +9443,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Read-only key-value info",
       "files": [
         {
           "path": "registry/default/variants/v-frame-8.tsx",
@@ -7173,7 +9463,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "With footer CTA buttons",
       "files": [
         {
           "path": "registry/default/variants/v-frame-9.tsx",
@@ -7493,7 +9783,7 @@
       "categories": [
         "group"
       ],
-      "description": "Basic group",
+      "description": "Text formatting toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-group-15.tsx",
@@ -7504,6 +9794,66 @@
         "className": ""
       },
       "name": "v-group-15",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "Thumbs up / down vote buttons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-16",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "Media player controls",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-17",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "Price range input with apply button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-group-18",
       "registryDependencies": [
         "@cnippet/group"
       ],
@@ -7873,7 +10223,7 @@
       "categories": [
         "input"
       ],
-      "description": "with multiple error messages",
+      "description": "With multiple error messages",
       "files": [
         {
           "path": "registry/default/variants/v-input-19.tsx",
@@ -7893,7 +10243,7 @@
       "categories": [
         "input"
       ],
-      "description": "Basic password strength with dynamic hint and icons",
+      "description": "Password strength with dynamic hint and icons",
       "files": [
         {
           "path": "registry/default/variants/v-input-20.tsx",
@@ -7904,6 +10254,106 @@
         "className": ""
       },
       "name": "v-input-20",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "Disabled input with masked value",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-21",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "Readonly with copy-to-clipboard button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-22",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "Input with inline start icon",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-23.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-23",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "Color picker input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-24.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-24",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input"
+      ],
+      "description": "Input with inline clear button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-25.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-25",
       "registryDependencies": [
         "@cnippet/input"
       ],
@@ -8233,7 +10683,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With currency select prefix",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-17.tsx",
@@ -8253,7 +10703,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Newsletter subscribe with arrow button",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-18.tsx",
@@ -8273,7 +10723,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "With inline clear button",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-19.tsx",
@@ -8293,7 +10743,7 @@
       "categories": [
         "input group"
       ],
-      "description": "Basic input group",
+      "description": "Chat input with async send",
       "files": [
         {
           "path": "registry/default/variants/v-input-group-20.tsx",
@@ -8304,6 +10754,26 @@
         "className": ""
       },
       "name": "v-input-group-20",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Textarea with character countdown",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-input-group-21",
       "registryDependencies": [
         "@cnippet/input-group"
       ],
@@ -8433,7 +10903,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Keyboard shortcut in button",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-7.tsx",
@@ -8453,7 +10923,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Arrow key navigation display",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-8.tsx",
@@ -8473,7 +10943,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Cross-platform Mac vs Win shortcut table",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-9.tsx",
@@ -8493,7 +10963,7 @@
       "categories": [
         "kbd"
       ],
-      "description": "Basic kbd",
+      "description": "Shortcuts in menu items",
       "files": [
         {
           "path": "registry/default/variants/v-kbd-10.tsx",
@@ -8504,6 +10974,26 @@
         "className": ""
       },
       "name": "v-kbd-10",
+      "registryDependencies": [
+        "@cnippet/kbd"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "kbd"
+      ],
+      "description": "Command palette result rows with navigation hints",
+      "files": [
+        {
+          "path": "registry/default/variants/v-kbd-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-kbd-11",
       "registryDependencies": [
         "@cnippet/kbd"
       ],
@@ -8711,6 +11201,106 @@
     },
     {
       "categories": [
+        "label"
+      ],
+      "description": "With keyboard shortcut",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-label-11",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "With inline link",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-label-12",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "With icon prefix",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-label-13",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "Horizontal layout",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-label-14",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "With error state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-label-15",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "menu"
       ],
       "description": "Default",
@@ -8911,6 +11501,106 @@
     },
     {
       "categories": [
+        "menu"
+      ],
+      "description": "Account menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-11",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "File actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-12",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "Icon button trigger",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-13",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "Notification settings",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-14",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "menu"
+      ],
+      "description": "Share with export sub-menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-menu-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-menu-15",
+      "registryDependencies": [
+        "@cnippet/menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "meter"
       ],
       "description": "Default",
@@ -8993,7 +11683,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Stacked resource meters",
       "files": [
         {
           "path": "registry/default/variants/v-meter-5.tsx",
@@ -9013,7 +11703,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Color-coded by severity",
       "files": [
         {
           "path": "registry/default/variants/v-meter-6.tsx",
@@ -9033,7 +11723,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Storage breakdown with icons",
       "files": [
         {
           "path": "registry/default/variants/v-meter-7.tsx",
@@ -9053,7 +11743,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Upload progress card",
       "files": [
         {
           "path": "registry/default/variants/v-meter-8.tsx",
@@ -9073,7 +11763,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Profile strength checklist",
       "files": [
         {
           "path": "registry/default/variants/v-meter-9.tsx",
@@ -9104,6 +11794,106 @@
         "className": ""
       },
       "name": "v-meter-10",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "Basic meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-11",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "Basic meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-12",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "Basic meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-13",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "Basic meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-14",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "meter"
+      ],
+      "description": "Basic meter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-meter-15",
       "registryDependencies": [
         "@cnippet/meter"
       ],
@@ -9293,7 +12083,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Percentage with scrub",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-10.tsx",
@@ -9304,6 +12094,106 @@
         "className": ""
       },
       "name": "v-number-field-10",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "Shopping cart quantity row",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-11",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "Typography settings",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-12",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "Min/max budget range",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-13",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "Controlled with reset",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-14",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "number field"
+      ],
+      "description": "Basic number field",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-number-field-15",
       "registryDependencies": [
         "@cnippet/number-field"
       ],
@@ -9493,7 +12383,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Email verification card",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-10.tsx",
@@ -9504,6 +12394,106 @@
         "className": ""
       },
       "name": "v-otp-field-10",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input otp"
+      ],
+      "description": "2FA authenticator app",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-otp-field-11",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input otp"
+      ],
+      "description": "8-char invite code with separator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-otp-field-12",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input otp"
+      ],
+      "description": "Success state on completion",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-otp-field-13",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input otp"
+      ],
+      "description": "Resend countdown timer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-otp-field-14",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input otp"
+      ],
+      "description": "Basic input otp",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-otp-field-15",
       "registryDependencies": [
         "@cnippet/otp-field"
       ],
@@ -9773,7 +12763,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Mini pill",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-14.tsx",
@@ -9793,7 +12783,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Older/newer cursor navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-15.tsx",
@@ -9804,6 +12794,106 @@
         "className": ""
       },
       "name": "v-pagination-15",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Controlled with smart ellipsis",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-16",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Results summary with compact nav",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-17",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Loading/disabled state",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-18",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-19",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pagination"
+      ],
+      "description": "Basic pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-pagination-20",
       "registryDependencies": [
         "@cnippet/pagination"
       ],
@@ -10111,9 +13201,109 @@
     },
     {
       "categories": [
+        "popover"
+      ],
+      "description": "System Status",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-16",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Emoji picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-17",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Confirmation / delete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-18",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Inline tag editor",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-19",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "popover"
+      ],
+      "description": "Notification panel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-popover-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-popover-20",
+      "registryDependencies": [
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-1.tsx",
@@ -10133,7 +13323,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "User mention profile card",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-2.tsx",
@@ -10153,7 +13343,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Article / blog post preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-3.tsx",
@@ -10173,7 +13363,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Product card",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-4.tsx",
@@ -10193,7 +13383,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "GitHub-style issue preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-5.tsx",
@@ -10213,7 +13403,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "NPM package preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-6.tsx",
@@ -10304,6 +13494,106 @@
         "className": ""
       },
       "name": "v-preview-card-10",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-11",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-12",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-13",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-14",
+      "registryDependencies": [
+        "@cnippet/preview-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "preview card"
+      ],
+      "description": "Basic preview card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-preview-card-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-preview-card-15",
       "registryDependencies": [
         "@cnippet/preview-card"
       ],
@@ -10511,6 +13801,106 @@
     },
     {
       "categories": [
+        "progress"
+      ],
+      "description": "Survey completion counter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-11",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "Download with speed stats",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-12",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "Fundraiser goal tracker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-13",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "Reading progress bar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-14",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress"
+      ],
+      "description": "Build pipeline stages",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-progress-15",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "radio group"
       ],
       "description": "Default",
@@ -10704,6 +14094,106 @@
         "className": ""
       },
       "name": "v-radio-group-10",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "Horizontal Layout",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-11",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "Shipping Options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-12",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "Theme Selector",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-13",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "Availability Status",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-14",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radio group"
+      ],
+      "description": "Billing Frequency",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-radio-group-15",
       "registryDependencies": [
         "@cnippet/radio-group"
       ],
@@ -10911,6 +14401,106 @@
     },
     {
       "categories": [
+        "scroll area"
+      ],
+      "description": "Chat Feed",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-11",
+      "registryDependencies": [
+        "@cnippet/scroll-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "Notification List",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-12",
+      "registryDependencies": [
+        "@cnippet/scroll-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "Sidebar Navigation",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-13",
+      "registryDependencies": [
+        "@cnippet/scroll-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "Activity Log",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-14",
+      "registryDependencies": [
+        "@cnippet/scroll-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll area"
+      ],
+      "description": "File Explorer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-scroll-area-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-scroll-area-15",
+      "registryDependencies": [
+        "@cnippet/scroll-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "select"
       ],
       "description": "Basic select",
@@ -11104,6 +14694,106 @@
         "className": ""
       },
       "name": "v-select-10",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "With Disabled Options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-11",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "Country Selector with Groups",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-12",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "Controlled with External Display",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-13",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "Items with Description",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-14",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "select"
+      ],
+      "description": "Sort Order with Icons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-select-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-select-15",
       "registryDependencies": [
         "@cnippet/select"
       ],
@@ -11311,6 +15001,106 @@
     },
     {
       "categories": [
+        "separator"
+      ],
+      "description": "Social Stats Bar",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-11",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "Section Heading with Line",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-12",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "Footer Links",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-13",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "Card Section Dividers",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-14",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "Toolbar with Separator Groups",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-separator-15",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "sheet"
       ],
       "description": "Default",
@@ -11504,6 +15294,106 @@
         "className": ""
       },
       "name": "v-sheet-10",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "Export Data Panel",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-11",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "User Profile Viewer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-12",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "Support Contact Form",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-13",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "Keyboard Shortcuts Reference",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-14",
+      "registryDependencies": [
+        "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sheet"
+      ],
+      "description": "API Key Manager",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sheet-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sheet-15",
       "registryDependencies": [
         "@cnippet/sheet"
       ],
@@ -11711,6 +15601,106 @@
     },
     {
       "categories": [
+        "skeleton"
+      ],
+      "description": "Product Grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-11",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "Form Fields",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-12",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "Email Inbox",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-13",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "Kanban Board",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-14",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "skeleton"
+      ],
+      "description": "Profile Hero Page",
+      "files": [
+        {
+          "path": "registry/default/variants/v-skeleton-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-skeleton-15",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "slider"
       ],
       "description": "Default",
@@ -11904,6 +15894,106 @@
         "className": ""
       },
       "name": "v-slider-10",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "Volume Control With Mute Toggle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-11",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "Dual-Thumb Price Range",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-12",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "Hue Color Picker",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-13",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "Temperature Control",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-14",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "slider"
+      ],
+      "description": "Display Settings Sliders",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-slider-15",
       "registryDependencies": [
         "@cnippet/slider"
       ],
@@ -12111,6 +16201,106 @@
     },
     {
       "categories": [
+        "spinner"
+      ],
+      "description": "Page Transition Overlay",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-11",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "File Upload Progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-12",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "Table Row Loading State",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-13",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "Auth Form With Spinner",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-14",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "Spinner Sizes",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-spinner-15",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "switch"
       ],
       "description": "Default",
@@ -12311,6 +16501,106 @@
     },
     {
       "categories": [
+        "switch"
+      ],
+      "description": "Plan Feature Toggles",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-11",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Privacy Settings With Icons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-12",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Dark Mode Toggle Card",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-13",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Required Agreement Switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-14",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "switch"
+      ],
+      "description": "Do Not Disturb Mode",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-switch-15",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "table"
       ],
       "description": "Default",
@@ -12504,6 +16794,106 @@
         "className": ""
       },
       "name": "v-table-10",
+      "registryDependencies": [
+        "@cnippet/table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Product inventory with stock level badges and quantity",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-11",
+      "registryDependencies": [
+        "@cnippet/table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Invoice history with status badges and outstanding total",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-12",
+      "registryDependencies": [
+        "@cnippet/table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Feature comparison table with checkmarks across plan tiers",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-13",
+      "registryDependencies": [
+        "@cnippet/table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Server health monitoring with CPU and memory progress bars",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-14",
+      "registryDependencies": [
+        "@cnippet/table"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "table"
+      ],
+      "description": "Contributor leaderboard with rank, avatar, and change indicator",
+      "files": [
+        {
+          "path": "registry/default/variants/v-table-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-table-15",
       "registryDependencies": [
         "@cnippet/table"
       ],
@@ -12753,7 +17143,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Settings navigation with vertical underline tabs and profile form",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-13.tsx",
@@ -12773,7 +17163,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Code file viewer with per-file tabs and copy button",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-14.tsx",
@@ -12793,7 +17183,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Basic tabs",
+      "description": "Profile repository listing with badge counts per tab",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-15.tsx",
@@ -12804,6 +17194,46 @@
         "className": ""
       },
       "name": "v-tabs-15",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Pricing toggle between monthly and yearly billing with plan cards",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-16",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tabs"
+      ],
+      "description": "Dashboard metrics with icon tabs and stat card content panels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tabs-17",
       "registryDependencies": [
         "@cnippet/tabs"
       ],
@@ -12953,7 +17383,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Auto-grow with live word and character count",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-8.tsx",
@@ -12973,7 +17403,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Write / Preview markdown toggle",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-9.tsx",
@@ -12993,7 +17423,7 @@
       "categories": [
         "textarea"
       ],
-      "description": "Basic textarea",
+      "description": "Support ticket with category chips and message field",
       "files": [
         {
           "path": "registry/default/variants/v-textarea-10.tsx",
@@ -13004,6 +17434,46 @@
         "className": ""
       },
       "name": "v-textarea-10",
+      "registryDependencies": [
+        "@cnippet/textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "Chat message composer with bubble thread and send on Enter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-11",
+      "registryDependencies": [
+        "@cnippet/textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "Release notes editor with title input and publish action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-textarea-12",
       "registryDependencies": [
         "@cnippet/textarea"
       ],
@@ -13211,6 +17681,106 @@
     },
     {
       "categories": [
+        "toast"
+      ],
+      "description": "Anchored clipboard copy with tooltip-style toast",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-11",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Team invite with per-row undo action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-12",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Background CSV export with download action on complete",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-13",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Session expiry warning with live countdown and renew action",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-14",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toast"
+      ],
+      "description": "Unsaved changes reminder with save and discard actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toast-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toast-15",
+      "registryDependencies": [
+        "@cnippet/toast"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle"
       ],
       "description": "Default",
@@ -13411,6 +17981,106 @@
     },
     {
       "categories": [
+        "toggle"
+      ],
+      "description": "Bookmark toggle per article row with saved count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-11",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Rich-text formatting toolbar with markdown preview",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-12",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Social post interactions with live like and repost counts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-13",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Server settings toggles with icon swap and status color",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-14",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle"
+      ],
+      "description": "Task list with per-task priority flag toggles",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-15",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle group"
       ],
       "description": "Default",
@@ -13593,7 +18263,7 @@
       "categories": [
         "toggle group"
       ],
-      "description": "Basic toggle group",
+      "description": "Language picker with live code snippet preview",
       "files": [
         {
           "path": "registry/default/variants/v-toggle-group-10.tsx",
@@ -13611,9 +18281,109 @@
     },
     {
       "categories": [
+        "toggle group"
+      ],
+      "description": "Per-column sort direction control",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-11",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Issue priority picker with color-coded labels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-12",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Date range quick-select with live stats grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-13",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Code viewer toolbar with multi-select options",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-14",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "toggle group"
+      ],
+      "description": "Zoom level control with live scale preview",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-toggle-group-15",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-1.tsx",
@@ -13633,7 +18403,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Rich text editor toolbar with formatting and alignment controls",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-2.tsx",
@@ -13653,7 +18423,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Image editor toolbar with transform, zoom, and export actions",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-3.tsx",
@@ -13673,7 +18443,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Data table toolbar with search input, filter controls, and add row",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-4.tsx",
@@ -13693,7 +18463,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Code editor toolbar with language select, word wrap, copy, and run",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-5.tsx",
@@ -13713,7 +18483,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Document collaboration toolbar with edit/preview toggle and share",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-6.tsx",
@@ -14044,6 +18814,106 @@
         "className": ""
       },
       "name": "v-tooltip-12",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Form field validation hints with info icon tooltips",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-13",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "System status dots revealing service name, uptime, and latency",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-14",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Icon-only sidebar nav with label and description tooltips",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-15",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Permissions matrix with role access details per cell",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-16",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tooltip"
+      ],
+      "description": "Deployment pipeline steps with status and detail per stage",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tooltip-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tooltip-17",
       "registryDependencies": [
         "@cnippet/tooltip"
       ],

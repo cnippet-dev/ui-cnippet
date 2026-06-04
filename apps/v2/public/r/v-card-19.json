@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-19",
+  "description": "Event card with date, time, location, attendee count, and RSVP button",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-19.tsx",
+      "content": "import { CalendarIcon, ClockIcon, MapPinIcon, UsersIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\n\nconst event = {\n  attendees: 42,\n  category: \"Workshop\",\n  date: \"Jun 18, 2026\",\n  location: \"Design Hub, Floor 3\",\n  spots: 10,\n  time: \"2:00 PM – 4:30 PM\",\n  title: \"Design Systems in Practice\",\n};\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardContent className=\"flex flex-col gap-4\">\n        <div className=\"flex items-start justify-between gap-2\">\n          <h3 className=\"font-semibold text-sm leading-snug\">{event.title}</h3>\n          <Badge size=\"sm\" variant=\"secondary\">\n            {event.category}\n          </Badge>\n        </div>\n        <div className=\"flex flex-col gap-2 text-muted-foreground text-xs\">\n          <span className=\"flex items-center gap-2\">\n            <CalendarIcon className=\"size-3.5 shrink-0\" />\n            {event.date}\n          </span>\n          <span className=\"flex items-center gap-2\">\n            <ClockIcon className=\"size-3.5 shrink-0\" />\n            {event.time}\n          </span>\n          <span className=\"flex items-center gap-2\">\n            <MapPinIcon className=\"size-3.5 shrink-0\" />\n            {event.location}\n          </span>\n          <span className=\"flex items-center gap-2\">\n            <UsersIcon className=\"size-3.5 shrink-0\" />\n            {event.attendees} attending ·{\" \"}\n            <span className=\"text-amber-600 dark:text-amber-400\">\n              {event.spots} spots left\n            </span>\n          </span>\n        </div>\n        <Button className=\"w-full\" size=\"sm\">\n          Reserve a Spot\n        </Button>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}
