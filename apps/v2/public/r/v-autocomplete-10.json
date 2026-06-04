@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-autocomplete-10",
-  "description": "Limit Results",
+  "description": "Grouped Items",
   "registryDependencies": [
     "@cnippet/autocomplete"
   ],

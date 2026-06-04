@@ -6,7 +6,7 @@ import {
   StrikethroughIcon,
   UnderlineIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator } from "@/registry/default/ui/group";
 
@@ -31,19 +31,18 @@ export default function Particle() {
   return (
     <Group aria-label="Text formatting">
       {formats.map((fmt, i) => (
-        <>
-          {i > 0 && <GroupSeparator key={`sep-${fmt.value}`} />}
+        <Fragment key={fmt.value}>
+          {i > 0 && <GroupSeparator />}
           <Button
             aria-label={fmt.label}
             aria-pressed={active.has(fmt.value)}
-            key={fmt.value}
             onClick={() => toggle(fmt.value)}
             size="icon"
             variant={active.has(fmt.value) ? "secondary" : "outline"}
           >
             <fmt.icon aria-hidden="true" />
           </Button>
-        </>
+        </Fragment>
       ))}
     </Group>
   );

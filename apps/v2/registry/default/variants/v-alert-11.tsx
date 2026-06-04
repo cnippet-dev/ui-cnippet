@@ -35,7 +35,7 @@ export function Pattern() {
         <AlertDescription className="text-violet-700 dark:text-violet-300">
           Unlock premium components, templates, and priority support.{" "}
           <Button
-            className="h-auto p-0 text-violet-700 underline underline-offset-2 dark:text-violet-300"
+            className="mr-auto h-auto p-0 text-violet-700 underline underline-offset-2 dark:text-violet-300"
             size="sm"
             variant="link"
           >

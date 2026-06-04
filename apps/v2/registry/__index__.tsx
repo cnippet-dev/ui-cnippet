@@ -1863,7 +1863,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-2": {
     name: "v-autocomplete-2",
-    description: "Sizes",
+    description: "Disabled",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1881,7 +1881,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-3": {
     name: "v-autocomplete-3",
-    description: "With Label",
+    description: "Sizes",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1899,7 +1899,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-4": {
     name: "v-autocomplete-4",
-    description: "Inline Autocomplete",
+    description: "With Label",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1917,7 +1917,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-5": {
     name: "v-autocomplete-5",
-    description: "Auto Highlight",
+    description: "Inline Autocomplete",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1935,7 +1935,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-6": {
     name: "v-autocomplete-6",
-    description: "With Trigger and Clear Buttons",
+    description: "Auto Highlight",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1971,7 +1971,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-8": {
     name: "v-autocomplete-8",
-    description: "With Search Icon",
+    description: "With Trigger and Clear Buttons",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -1989,7 +1989,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-9": {
     name: "v-autocomplete-9",
-    description: "Grouped Items",
+    description: "With Search Icon",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2007,7 +2007,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-10": {
     name: "v-autocomplete-10",
-    description: "Limit Results",
+    description: "Grouped Items",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2025,7 +2025,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-11": {
     name: "v-autocomplete-11",
-    description: "Async Search",
+    description: "Limit Results",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2043,7 +2043,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-12": {
     name: "v-autocomplete-12",
-    description: "Form Integration",
+    description: "Async Search",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2061,7 +2061,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-13": {
     name: "v-autocomplete-13",
-    description: "Timezone Picker",
+    description: "Form Integration",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2079,7 +2079,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-14": {
     name: "v-autocomplete-14",
-    description: "Person Picker",
+    description: "Timezone Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{
@@ -2097,7 +2097,7 @@ export const Index: Record<string, any> = {
   },
   "v-autocomplete-15": {
     name: "v-autocomplete-15",
-    description: "Basic autocomplete",
+    description: "Person Picker",
     type: "registry:block",
     registryDependencies: ["@cnippet/autocomplete"],
     files: [{

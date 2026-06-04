@@ -1,7 +1,7 @@
 "use client";
 
 import { KanbanIcon, LayoutListIcon, TableIcon } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator } from "@/registry/default/ui/group";
 
@@ -20,11 +20,10 @@ export function Pattern() {
     <div className="flex flex-col items-center gap-4">
       <Group aria-label="View mode">
         {views.map((v, i) => (
-          <>
-            {i > 0 && <GroupSeparator key={`sep-${v.id}`} />}
+          <Fragment key={v.id}>
+            {i > 0 && <GroupSeparator />}
             <Button
               aria-pressed={view === v.id}
-              key={v.id}
               onClick={() => setView(v.id)}
               size="sm"
               variant={view === v.id ? "default" : "ghost"}
@@ -32,7 +31,7 @@ export function Pattern() {
               <v.icon className="size-4" />
               {v.label}
             </Button>
-          </>
+          </Fragment>
         ))}
       </Group>
       <p className="text-muted-foreground text-sm">

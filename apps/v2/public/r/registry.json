@@ -1853,7 +1853,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Sizes",
+      "description": "Disabled",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-2.tsx",
@@ -1873,7 +1873,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Label",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-3.tsx",
@@ -1893,7 +1893,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Inline Autocomplete",
+      "description": "With Label",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-4.tsx",
@@ -1913,7 +1913,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Auto Highlight",
+      "description": "Inline Autocomplete",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-5.tsx",
@@ -1933,7 +1933,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Trigger and Clear Buttons",
+      "description": "Auto Highlight",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-6.tsx",
@@ -1973,7 +1973,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "With Search Icon",
+      "description": "With Trigger and Clear Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-8.tsx",
@@ -1993,7 +1993,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Grouped Items",
+      "description": "With Search Icon",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-9.tsx",
@@ -2013,7 +2013,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Limit Results",
+      "description": "Grouped Items",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-10.tsx",
@@ -2033,7 +2033,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Async Search",
+      "description": "Limit Results",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-11.tsx",
@@ -2053,7 +2053,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Form Integration",
+      "description": "Async Search",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-12.tsx",
@@ -2073,7 +2073,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Timezone Picker",
+      "description": "Form Integration",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-13.tsx",
@@ -2093,7 +2093,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Person Picker",
+      "description": "Timezone Picker",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-14.tsx",
@@ -2113,7 +2113,7 @@
       "categories": [
         "autocomplete"
       ],
-      "description": "Basic autocomplete",
+      "description": "Person Picker",
       "files": [
         {
           "path": "registry/default/variants/v-autocomplete-15.tsx",

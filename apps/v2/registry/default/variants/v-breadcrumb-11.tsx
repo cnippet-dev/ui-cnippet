@@ -1,4 +1,5 @@
 import { FileIcon, FolderIcon } from "lucide-react";
+import { Fragment } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -25,8 +26,8 @@ export function Pattern() {
         <Breadcrumb>
           <BreadcrumbList className="flex-nowrap sm:gap-1">
             {segments.map((seg) => (
-              <>
-                <BreadcrumbItem key={seg.label}>
+              <Fragment key={seg.label}>
+                <BreadcrumbItem>
                   <BreadcrumbLink
                     className="flex items-center gap-1 font-mono text-xs"
                     href={seg.href}
@@ -38,7 +39,7 @@ export function Pattern() {
                 <BreadcrumbSeparator className="text-muted-foreground/50">
                   /
                 </BreadcrumbSeparator>
-              </>
+              </Fragment>
             ))}
             <BreadcrumbItem>
               <BreadcrumbPage className="flex items-center gap-1 font-mono text-xs">

@@ -1,13 +1,27 @@
-"use client";
-import { fadeUp } from "cnippet-aos";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import * as React from "react";
 import { cn } from "@/lib/utils";
 
-const _links = {
+const LINKS = {
+  connect: [
+    {
+      external: true,
+      href: "https://instagram.com/cnippet",
+      label: "Instagram",
+    },
+    { external: true, href: "https://x.com/cnippet", label: "X / Twitter" },
+    {
+      external: true,
+      href: "https://21st.dev/community/cnippet_dev",
+      label: "21st Dev",
+    },
+    {
+      external: true,
+      href: "https://github.com/cnippet-dev/ui-cnippet",
+      label: "GitHub",
+    },
+  ],
   docs: [
     { href: "/docs/introduction", label: "Introduction" },
     { href: "/docs/installation", label: "Installation" },
@@ -18,241 +32,128 @@ const _links = {
     { href: "/explore", label: "All Components" },
     { href: "/playground", label: "Playground" },
     { href: "/themes", label: "Themes" },
-    {
-      external: true,
-      href: "https://blocks.cnippet.dev",
-      label: "Blocks",
-    },
+    { external: true, href: "https://blocks.cnippet.dev", label: "Blocks" },
   ],
   resources: [
     { external: true, href: "https://base-ui.com", label: "Base UI" },
-    {
-      external: true,
-      href: "https://tailwindcss.com",
-      label: "Tailwind CSS",
-    },
+    { external: true, href: "https://tailwindcss.com", label: "Tailwind CSS" },
     { external: true, href: "https://nextjs.org", label: "Next.js" },
-    {
-      external: true,
-      href: "https://github.com/in-deepaknegi/cnippet-ui",
-      label: "GitHub",
-    },
+    { external: true, href: "https://react.dev", label: "React" },
   ],
 };
 
-const pages = [
-  { href: "/", label: "Home" },
-  { href: "/sections", label: "Sections" },
-  { href: "/templates", label: "Templates" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/sections/hero", label: "Hero" },
-  { href: "/sections/feature", label: "Feature" },
-  { href: "/sections/team", label: "Team" },
-  { href: "/sections/integration", label: "Integration" },
-];
-
-const socials = [
-  { href: "https://instagram.com/cnippet", label: "Instagram" },
-  { href: "https://x.com/cnippet", label: "X" },
-  { href: "https://21st.dev/community/cnippet_dev", label: "21st Dev" },
-];
-
-const legal = [
-  { href: "/terms", label: "Terms" },
-  { href: "/privacy", label: "Privacy" },
-];
-
-const formatTime = () =>
-  new Date().toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    hour12: false,
-    minute: "2-digit",
-    second: "2-digit",
-  });
+// const LEGAL = [
+//   { href: "/terms", label: "Terms" },
+//   { href: "/privacy", label: "Privacy" },
+// ];
 
 export function SiteFooter() {
-  const pathname = usePathname();
-  const [currentTime, setCurrentTime] = React.useState(formatTime());
-
-  React.useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(formatTime()), 1000);
-    return () => clearInterval(timer);
-  }, []);
   return (
-    <header
+    <footer
       className={cn(
-        "grid grid-cols-1 md:-mx-4",
-        pathname.startsWith("/ui") || pathname.startsWith("/docs")
-          ? "sticky top-0 z-50 border-b px-4 backdrop-blur [--gutter-width:2rem] md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-auto dark:supports-backdrop-filter:bg-neutral-950/60"
-          : "[--gutter-width:2.5rem] md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-auto",
+        "grid grid-cols-1 border-gray-950/5 border-t",
+        "[--gutter-width:2.5rem] md:-mx-4",
+        "md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)]",
+        "lg:mx-auto dark:border-white/10",
       )}
     >
       {/* Left gutter */}
       <div className="col-start-1 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
 
-      {/* Header content */}
+      {/* Footer content */}
+      <div className="text-gray-950 dark:text-white">
+        {/* Label bar */}
+        <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
+          cnippet.dev · Base UI · Tailwind CSS v4 · MIT License
+        </div>
 
-      <div>
-        <footer className="relative px-4 text-primary md:px-0 dark:bg-sidebar">
-          <div
-            className={`mx-auto flex ${pathname.startsWith("/sections") || pathname.startsWith("/docs") ? "container" : "max-w-6xl"} flex-col gap-16 border-x px-2 py-20`}
-          >
-            <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_auto]">
-              <motion.div
-                {...fadeUp({
-                  delay: 0.1,
-                  duration: 0.8,
-                  once: true,
-                  scroll: true,
-                })}
-                className="flex flex-col justify-between gap-12"
-              >
-                <div className="max-w-xl space-y-6">
-                  <p className="font-light text-base sm:text-lg">
-                    Start your project today! Contact us to learn more and
-                    let&apos;s work together to achieve your goals.
-                  </p>
-                  <Link
-                    className="group flex cursor-pointer items-center justify-start gap-0"
-                    href="mailto:support@cnippet.dev"
-                  >
-                    <span className="rounded-full bg-sidebar px-6 py-3 text-black duration-500 ease-in-out dark:bg-white">
-                      Start a Project
-                    </span>
-                    <div className="relative flex h-fit cursor-pointer items-center overflow-hidden rounded-full bg-sidebar p-5 text-black duration-500 ease-in-out group-hover:bg-secondary group-hover:text-black group-hover:transition-colors dark:bg-white">
-                      <ArrowUpRight className="absolute h-5 w-5 -translate-x-1/2 transition-all duration-500 ease-in-out group-hover:translate-x-10" />
-                      <ArrowUpRight className="absolute h-5 w-5 -translate-x-10 transition-all duration-500 ease-in-out group-hover:-translate-x-1/2" />
-                    </div>
-                  </Link>
-                </div>
-              </motion.div>
-              <motion.div
-                {...fadeUp({
-                  delay: 0.2,
-                  duration: 0.8,
-                  once: true,
-                  scroll: true,
-                })}
-                className="flex flex-wrap gap-12 text-base lg:items-start lg:gap-16"
-              >
-                <motion.div
-                  {...fadeUp({
-                    delay: 0.25,
-                    duration: 0.8,
-                    once: true,
-                    scroll: true,
-                  })}
-                  className="flex items-start gap-5"
-                >
-                  <span className="block text-neutral-500 text-xs uppercase tracking-[0.35em]">
-                    ↳ Pages
-                  </span>
-                  <ul className="-mt-1 space-y-2">
-                    {pages.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          className="text-sm capitalize transition hover:text-black dark:hover:text-white/80"
-                          href={item.href}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-                <motion.div
-                  {...fadeUp({
-                    delay: 0.35,
-                    duration: 0.8,
-                    once: true,
-                    scroll: true,
-                  })}
-                  className="flex items-start gap-5"
-                >
-                  <span className="mb-2 block text-neutral-500 text-xs uppercase tracking-[0.35em]">
-                    ↳ Social
-                  </span>
-                  <ul className="-mt-1 space-y-2">
-                    {socials.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          className="text-sm transition hover:text-black dark:hover:text-white/80"
-                          href={item.href}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-                <motion.div
-                  {...fadeUp({
-                    delay: 0.45,
-                    duration: 0.8,
-                    once: true,
-                    scroll: true,
-                  })}
-                  className="flex items-start gap-5"
-                >
-                  <span className="mb-2 block text-neutral-500 text-xs uppercase tracking-[0.35em]">
-                    ↳ Legal
-                  </span>
-                  <ul className="-mt-1 space-y-2">
-                    {legal.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          className="text-sm transition hover:text-black dark:hover:text-white/80"
-                          href={item.href}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </motion.div>
-            </div>
-            <motion.div
-              {...fadeUp({
-                delay: 0.3,
-                duration: 0.8,
-                once: true,
-                scroll: true,
-              })}
-              className="flex flex-col justify-between gap-4 text-neutral-800 text-xs uppercase tracking-[0.35em] sm:flex-row md:items-end dark:text-neutral-600"
-            >
-              <div className="font-medium text-[2rem] uppercase leading-none sm:text-[6rem] md:text-[7rem] lg:text-[6rem]">
-                ©Cnippet
-              </div>
-
-              <div className="flex flex-col space-x-5 font-mono">
-                <span>INDIA: {currentTime}</span>
-                <span className="text-[0.65rem] text-neutral-500 tracking-[0.4em]">
-                  ©{new Date().getFullYear()} Cnippet All Rights Reserved
-                </span>
-              </div>
-            </motion.div>
+        {/* Heading */}
+        <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
+          <div className="flex items-center gap-3 text-balance px-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:gap-4 sm:text-5xl lg:gap-5 lg:text-6xl xl:gap-6 xl:text-6xl">
+            <span className="w-fit">
+              <Image
+                alt=""
+                className="size-40 dark:hidden"
+                height={500}
+                src="/images/logo-light.png"
+                width={500}
+              />
+              <Image
+                alt=""
+                className="hidden size-40 object-cover dark:block"
+                height={1000}
+                src="/images/logo-dark.png"
+                width={1000}
+              />
+            </span>
+            Build beautiful <br /> interfaces, faster.
           </div>
-        </footer>
+        </div>
+
+        {/* Subtitle */}
+        <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:text-white/40 dark:after:bg-white/10">
+          Copy, paste, and make it yours — no subscription required.
+        </div>
+
+        {/* Link columns */}
+        <div className="relative grid grid-cols-2 gap-x-8 gap-y-10 px-2 py-12 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:grid-cols-4 dark:after:bg-white/10">
+          {(
+            [
+              { items: LINKS.docs, label: "Docs" },
+              { items: LINKS.explore, label: "Explore" },
+              { items: LINKS.resources, label: "Resources" },
+              { items: LINKS.connect, label: "Connect" },
+            ] as const
+          ).map(({ label, items }) => (
+            <div key={label}>
+              <p className="mb-4 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+                {label}
+              </p>
+              <ul className="space-y-2.5">
+                {items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      className="inline-flex items-center gap-1 font-mono text-black/60 text-xs tracking-tighter transition-colors hover:text-black dark:text-white/50 dark:hover:text-white"
+                      href={item.href}
+                      {...("external" in item && item.external
+                        ? { rel: "noopener noreferrer", target: "_blank" }
+                        : {})}
+                    >
+                      {item.label}
+                      {"external" in item && item.external && (
+                        <ArrowUpRight className="size-2.5 opacity-40" />
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="relative flex flex-wrap items-center justify-between gap-4 px-2 py-4 font-mono text-black/30 text-xs tracking-tighter max-sm:px-4 dark:text-white/30">
+          <div className="flex items-center gap-2.5">
+            <span>
+              © {new Date().getFullYear()} Cnippet. All rights reserved.
+            </span>
+          </div>
+          {/* <div className="flex items-center gap-4">
+            {LEGAL.map((item) => (
+              <Link
+                className="transition-colors hover:text-black/60 dark:hover:text-white/50"
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div> */}
+        </div>
       </div>
 
+      {/* Right gutter */}
       <div className="col-start-3 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
-    </header>
-  );
-}
-
-function _Separator({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-7 w-full border-edge border-gray-950/5 border-y lg:h-10 dark:border-white/10!",
-        "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
-        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-edge before:border-gray-950/5! before:border-y lg:before:h-10 dark:before:border-white/10!",
-        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-edge after:border-gray-950/5! after:border-y lg:after:h-10 dark:after:border-white/10!",
-        className,
-      )}
-    />
+    </footer>
   );
 }

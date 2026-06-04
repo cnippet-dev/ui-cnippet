@@ -65,7 +65,7 @@ export function Pattern() {
           const done = completed.includes(step.value);
           return (
             <AccordionItem
-              className={`rounded-lg border px-4 ${
+              className={`rounded-lg border px-4 last:border-b ${
                 done
                   ? "border-emerald-200 bg-emerald-50/50 dark:border-emerald-900 dark:bg-emerald-950/30"
                   : ""

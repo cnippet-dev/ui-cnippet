@@ -22,6 +22,16 @@ const WEEKEND = DAYS.slice(5).map((d) => d.id);
 export function Pattern() {
   const [value, setValue] = useState<string[]>(WEEKDAYS);
 
+  const weekdayValues = value.filter((v) => WEEKDAYS.includes(v));
+  const weekendValues = value.filter((v) => WEEKEND.includes(v));
+
+  function updateSubValues(subIds: string[], newSubValues: string[]) {
+    setValue((prev) => [
+      ...prev.filter((v) => !subIds.includes(v)),
+      ...newSubValues,
+    ]);
+  }
+
   return (
     <div className="w-full max-w-xs space-y-4">
       <div className="flex items-center justify-between">
@@ -40,26 +50,38 @@ export function Pattern() {
           Select all
         </Label>
         <div className="mt-1 ml-1 space-y-1 border-l pl-4">
-          <Label className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
-            <Checkbox parent partialValues={WEEKDAYS} />
-            Weekdays
-          </Label>
-          {DAYS.slice(0, 5).map((d) => (
-            <Label className="ms-5 text-sm" key={d.id}>
-              <Checkbox value={d.id} />
-              {d.label}
+          <CheckboxGroup
+            allValues={WEEKDAYS}
+            onValueChange={(v) => updateSubValues(WEEKDAYS, v)}
+            value={weekdayValues}
+          >
+            <Label className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
+              <Checkbox parent />
+              Weekdays
             </Label>
-          ))}
-          <Label className="mt-2 font-medium text-muted-foreground text-xs uppercase tracking-wide">
-            <Checkbox parent partialValues={WEEKEND} />
-            Weekend
-          </Label>
-          {DAYS.slice(5).map((d) => (
-            <Label className="ms-5 text-sm" key={d.id}>
-              <Checkbox value={d.id} />
-              {d.label}
+            {DAYS.slice(0, 5).map((d) => (
+              <Label className="ms-5 text-sm" key={d.id}>
+                <Checkbox value={d.id} />
+                {d.label}
+              </Label>
+            ))}
+          </CheckboxGroup>
+          <CheckboxGroup
+            allValues={WEEKEND}
+            onValueChange={(v) => updateSubValues(WEEKEND, v)}
+            value={weekendValues}
+          >
+            <Label className="mt-2 font-medium text-muted-foreground text-xs uppercase tracking-wide">
+              <Checkbox parent />
+              Weekend
             </Label>
-          ))}
+            {DAYS.slice(5).map((d) => (
+              <Label className="ms-5 text-sm" key={d.id}>
+                <Checkbox value={d.id} />
+                {d.label}
+              </Label>
+            ))}
+          </CheckboxGroup>
         </div>
       </CheckboxGroup>
     </div>

@@ -20,7 +20,7 @@ export function Pattern() {
       <Alert className="shadow-md">
         <CookieIcon />
         <AlertTitle>We use cookies</AlertTitle>
-        <AlertDescription>
+        <AlertDescription className="inline-auto">
           We use cookies to personalize content, analyze traffic, and improve
           your experience. By continuing, you agree to our{" "}
           <a

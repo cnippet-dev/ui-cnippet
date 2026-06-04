@@ -27,24 +27,27 @@ const CATEGORIES = [
 ];
 
 export function Pattern() {
-  const [value, setValue] = useState<string[]>([]);
+  const [values, setValues] = useState<Record<string, string[]>>(
+    Object.fromEntries(CATEGORIES.map((c) => [c.id, []])),
+  );
+
+  const allSelected = CATEGORIES.flatMap((c) => values[c.id] ?? []);
 
   return (
     <div className="w-full max-w-xs space-y-4">
       <p className="font-semibold text-sm">Tech stack interests</p>
-      <CheckboxGroup
-        allValues={CATEGORIES.flatMap((c) => c.items.map((i) => i.id))}
-        onValueChange={setValue}
-        value={value}
-      >
+      <div className="space-y-4">
         {CATEGORIES.map((cat) => (
-          <div className="space-y-1.5" key={cat.id}>
+          <CheckboxGroup
+            allValues={cat.items.map((i) => i.id)}
+            key={cat.id}
+            onValueChange={(v) =>
+              setValues((prev) => ({ ...prev, [cat.id]: v }))
+            }
+            value={values[cat.id] ?? []}
+          >
             <Label className="font-medium text-sm">
-              <Checkbox
-                name={cat.id}
-                parent
-                partialValues={cat.items.map((i) => i.id)}
-              />
+              <Checkbox name={cat.id} parent />
               {cat.label}
             </Label>
             {cat.items.map((item) => (
@@ -56,12 +59,12 @@ export function Pattern() {
                 {item.label}
               </Label>
             ))}
-          </div>
+          </CheckboxGroup>
         ))}
-      </CheckboxGroup>
-      {value.length > 0 && (
+      </div>
+      {allSelected.length > 0 && (
         <p className="text-muted-foreground text-xs">
-          Selected: {value.join(", ")}
+          Selected: {allSelected.join(", ")}
         </p>
       )}
     </div>

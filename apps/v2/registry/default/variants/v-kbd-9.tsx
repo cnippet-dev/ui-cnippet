@@ -1,4 +1,5 @@
 import { EditIcon, SearchIcon, UndoIcon } from "lucide-react";
+import { Fragment } from "react";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 import { Separator } from "@/registry/default/ui/separator";
 
@@ -38,8 +39,8 @@ export function Pattern() {
         </span>
         <Separator className="col-span-3" />
         {shortcuts.map(({ icon: Icon, label, mac, win }) => (
-          <>
-            <div className="flex items-center gap-2 py-2.5" key={label}>
+          <Fragment key={label}>
+            <div className="flex items-center gap-2 py-2.5">
               <Icon
                 aria-hidden="true"
                 className="size-3.5 text-muted-foreground"
@@ -56,7 +57,7 @@ export function Pattern() {
                 <Kbd key={k}>{k}</Kbd>
               ))}
             </KbdGroup>
-          </>
+          </Fragment>
         ))}
       </div>
     </div>

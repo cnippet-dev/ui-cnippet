@@ -66,7 +66,7 @@ export function Pattern() {
       <Accordion className="w-full space-y-2 border-none" multiple>
         {jobs.map((job) => (
           <AccordionItem
-            className="rounded-lg border px-4"
+            className="rounded-lg border px-4 last:border-b"
             key={job.value}
             value={job.value}
           >

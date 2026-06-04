@@ -30,6 +30,16 @@ export function Pattern() {
   const [value, setValue] = useState<string[]>([]);
   const allIds = EXPORT_SECTIONS.flatMap((s) => s.items.map((i) => i.id));
 
+  function updateSectionValues(
+    sectionIds: string[],
+    newSectionValues: string[],
+  ) {
+    setValue((prev) => [
+      ...prev.filter((v) => !sectionIds.includes(v)),
+      ...newSectionValues,
+    ]);
+  }
+
   return (
     <div className="w-full max-w-xs space-y-4">
       <div>
@@ -44,26 +54,33 @@ export function Pattern() {
           Select everything
         </Label>
         <div className="mt-2 ml-1.5 space-y-4 border-l pl-4">
-          {EXPORT_SECTIONS.map((section) => (
-            <div className="space-y-1.5" key={section.id}>
-              <Label className="font-medium text-sm">
-                <Checkbox
-                  parent
-                  partialValues={section.items.map((i) => i.id)}
-                />
-                {section.label}
-              </Label>
-              {section.items.map((item) => (
-                <Label
-                  className="ms-5 text-muted-foreground text-sm"
-                  key={item.id}
+          {EXPORT_SECTIONS.map((section) => {
+            const sectionIds = section.items.map((i) => i.id);
+            const sectionValues = value.filter((v) => sectionIds.includes(v));
+            return (
+              <div className="space-y-1.5" key={section.id}>
+                <CheckboxGroup
+                  allValues={sectionIds}
+                  onValueChange={(v) => updateSectionValues(sectionIds, v)}
+                  value={sectionValues}
                 >
-                  <Checkbox value={item.id} />
-                  {item.label}
-                </Label>
-              ))}
-            </div>
-          ))}
+                  <Label className="font-medium text-sm">
+                    <Checkbox parent />
+                    {section.label}
+                  </Label>
+                  {section.items.map((item) => (
+                    <Label
+                      className="ms-5 text-muted-foreground text-sm"
+                      key={item.id}
+                    >
+                      <Checkbox value={item.id} />
+                      {item.label}
+                    </Label>
+                  ))}
+                </CheckboxGroup>
+              </div>
+            );
+          })}
         </div>
       </CheckboxGroup>
       <p className="text-muted-foreground text-xs">

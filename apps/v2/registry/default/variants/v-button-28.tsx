@@ -35,7 +35,7 @@ export function Pattern() {
       {fileName && (
         <div className="flex items-center gap-2 rounded-lg border bg-muted/50 px-3 py-1.5 text-sm">
           <PaperclipIcon className="size-3.5 shrink-0 text-muted-foreground" />
-          <span className="max-w-[180px] truncate">{fileName}</span>
+          <span className="max-w-45 truncate">{fileName}</span>
           <button
             aria-label="Remove file"
             className="ml-1 text-muted-foreground hover:text-foreground"

@@ -21,12 +21,12 @@ export function Pattern() {
           render={
             <Button
               aria-label="More deploy options"
-              className="px-2"
+              className="px-2 py-3.75"
               size="icon-sm"
             />
           }
         >
-          <ChevronDownIcon className="size-4" />
+          <ChevronDownIcon className="size-5" />
         </MenuTrigger>
         <MenuPopup align="end">
           <MenuItem>Deploy to Staging</MenuItem>

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-21.tsx",
-      "content": "import { Field, FieldDescription, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-disabled\">API token</FieldLabel>\n      <Input\n        defaultValue=\"sk-••••••••••••••••••••••••••••••••\"\n        disabled\n        id=\"input-disabled\"\n        type=\"text\"\n      />\n      <FieldDescription>\n        Your token is masked. Regenerate it from your security settings.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-disabled\">API token</FieldLabel>\n      <Input\n        defaultValue=\"sk-••••••••••••••••••••••••••••••••\"\n        disabled\n        id=\"input-disabled\"\n        type=\"text\"\n      />\n      <FieldDescription>\n        Your token is masked. Regenerate it from your security settings.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

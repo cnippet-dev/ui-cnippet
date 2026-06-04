@@ -79,7 +79,7 @@ export function ExploreShowcase({
 
       {/* Tab strip */}
       {!search && (
-        <div className="relative flex flex-wrap divide-x border-gray-950/5 dark:border-white/10">
+        <div className="relative flex flex-wrap">
           {categories.map((cat) => (
             <TabButton
               active={activeCategory === cat}
@@ -127,7 +127,7 @@ function TabButton({
       className={
         active
           ? "rounded-none bg-gray-950 px-3 py-1 font-mono text-white text-xs dark:bg-white dark:text-gray-950"
-          : "rounded-none border-b bg-transparent px-3 py-3 font-mono text-gray-950/60 text-xs transition-colors last:border-r hover:border-gray-950/20 hover:text-gray-950 dark:border-white/10 dark:text-white/50 dark:hover:border-white/20 dark:hover:text-white"
+          : "cursor-pointer rounded-none bg-transparent px-3 py-3 font-mono text-gray-950/60 text-xs transition-colors hover:border-gray-950/20 hover:text-gray-950 dark:border-white/10 dark:text-white/50 dark:hover:border-white/20 dark:hover:text-white"
       }
       onClick={onClick}
       type="button"

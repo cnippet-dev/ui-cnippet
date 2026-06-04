@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckIcon } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -29,8 +29,8 @@ export function Pattern() {
             const done = step.id < current;
             const active = step.id === current;
             return (
-              <>
-                <BreadcrumbItem key={step.id}>
+              <Fragment key={step.id}>
+                <BreadcrumbItem>
                   {active ? (
                     <BreadcrumbPage className="flex items-center gap-1.5">
                       <span className="flex size-5 items-center justify-center rounded-full bg-primary font-bold text-[10px] text-primary-foreground">
@@ -61,7 +61,7 @@ export function Pattern() {
                   )}
                 </BreadcrumbItem>
                 {i < steps.length - 1 && <BreadcrumbSeparator />}
-              </>
+              </Fragment>
             );
           })}
         </BreadcrumbList>
