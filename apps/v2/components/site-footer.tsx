@@ -24,7 +24,7 @@ const LINKS = {
   ],
   docs: [
     { href: "/docs/introduction", label: "Introduction" },
-    { href: "/docs/installation", label: "Installation" },
+    { href: "/docs/get-started", label: "Installation" },
     { href: "/docs/theming", label: "Theming" },
     { href: "/docs/changelog", label: "Changelog" },
   ],
