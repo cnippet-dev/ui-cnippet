@@ -109,6 +109,65 @@ The `DialogPanel` component automatically wraps its content in a `ScrollArea` co
 </DialogPanel>
 ```
 
+## API Reference
+
+### Dialog
+
+Root provider. Wraps Base UI `Dialog.Root`.
+
+### DialogTrigger
+
+Button that opens the dialog.
+
+### DialogClose
+
+Button that closes the dialog.
+
+### DialogPopup
+
+The modal popup. Also exported as `DialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showCloseButton` | `boolean` | `true` | Renders an ✕ close button in the top-right corner |
+| `bottomStickOnMobile` | `boolean` | `true` | On mobile the popup slides up from the bottom |
+| `closeProps` | `DialogPrimitive.Close.Props` | — | Props forwarded to the built-in close button |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### DialogHeader
+
+Flex column container for `DialogTitle` and `DialogDescription`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### DialogFooter
+
+Action button row at the bottom of the dialog.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### DialogTitle
+
+Accessible title element.
+
+### DialogDescription
+
+Accessible description providing additional context.
+
+### DialogPanel
+
+Scrollable content region. Automatically wrapped in `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `true` | Fades edges of the scroll area |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
 ## Examples
 
 ### Open from a Menu

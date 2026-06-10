@@ -56,6 +56,21 @@ import { Toggle } from "@/components/ui/toggle"
 <Toggle>Toggle</Toggle>
 ```
 
+## API Reference
+
+### Toggle
+
+Styled wrapper around Base UI's `Toggle` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline"` | `"default"` | Visual style of the toggle |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Size of the toggle |
+| `pressed` | `boolean` | — | Controlled pressed state |
+| `defaultPressed` | `boolean` | `false` | Initial pressed state for uncontrolled usage |
+| `onPressedChange` | `(pressed: boolean) => void` | — | Callback when pressed state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+
 ## Examples
 
 ### Outline Variant

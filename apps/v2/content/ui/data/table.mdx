@@ -73,6 +73,44 @@ import {
 </Table>
 ```
 
+## API Reference
+
+### Table
+
+Root wrapper that adds horizontal scrolling and sets the variant context.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "card"` | `"default"` | `"card"` wraps cells in a rounded bordered card style |
+
+### TableHeader
+
+`<thead>` wrapper. Children `<tr>` elements get a bottom border.
+
+### TableBody
+
+`<tbody>` wrapper. In `"card"` variant, applies the rounded card border treatment to cells.
+
+### TableRow
+
+`<tr>` wrapper. Hover and selected (`data-state="selected"`) states adapt per variant.
+
+### TableHead
+
+`<th>` wrapper. Muted foreground, medium font weight, 10-unit height.
+
+### TableCell
+
+`<td>` wrapper. Consistent padding across both variants.
+
+### TableFooter
+
+`<tfoot>` wrapper. Slightly elevated background and top border in `"default"` variant.
+
+### TableCaption
+
+`<caption>` wrapper. Muted, small text beneath the table.
+
 ## Examples
 
 ### Card-style table

@@ -61,6 +61,46 @@ import {
 </Card>
 ```
 
+## API Reference
+
+### Card
+
+Root container. Renders as a `<div>` by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+All standard `<div>` HTML attributes are forwarded.
+
+### CardFrame / CardFrameHeader / CardFrameTitle / CardFrameDescription / CardFrameAction / CardFrameFooter
+
+Structural sub-components for a frame-style card layout with a distinct header region and footer.
+
+### CardHeader
+
+Flex column container for `CardTitle`, `CardDescription`, and `CardAction`.
+
+### CardTitle
+
+Heading element for the card. Renders as `<div>` with heading styles.
+
+### CardDescription
+
+Muted secondary text below the title.
+
+### CardAction
+
+Trailing slot inside `CardHeader` for icon buttons or badges.
+
+### CardPanel
+
+Main content region of the card. Also exported as `CardContent`.
+
+### CardFooter
+
+Footer row at the bottom of the card.
+
 ## Examples
 
 ### With Border

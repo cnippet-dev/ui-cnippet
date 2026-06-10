@@ -80,6 +80,70 @@ const items = [
   </Select>
 ```
 
+## API Reference
+
+### Select
+
+Root provider. Wraps Base UI `Select.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `T` | — | Controlled selected value |
+| `defaultValue` | `T` | — | Initial selected value for uncontrolled usage |
+| `onValueChange` | `(value: T) => void` | — | Callback when the selection changes |
+| `items` | `T[]` | — | Array of selectable items for keyboard navigation and filtering |
+| `disabled` | `boolean` | `false` | Disables the entire select |
+
+### SelectTrigger
+
+The button that opens the dropdown. Includes a `ChevronsUpDown` icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Visual size of the trigger |
+
+### SelectValue
+
+Displays the currently selected item's label inside the trigger.
+
+### SelectPopup
+
+The floating dropdown panel. Also exported as `SelectContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side to open relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `alignOffset` | `number` | `0` | Offset along the alignment axis |
+| `alignItemWithTrigger` | `boolean` | `true` | Positions the selected item directly over the trigger |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor element for positioning |
+
+### SelectItem
+
+Individual option inside the popup. Shows a checkmark when selected.
+
+### SelectGroup / SelectGroupLabel
+
+Groups related options with an optional label.
+
+### SelectLabel
+
+Accessible label for the select, rendered outside the popup.
+
+### SelectSeparator
+
+Horizontal divider between option groups.
+
+### SelectButton
+
+Alternative trigger that renders a plain `<button>` instead of `SelectTrigger`, useful for custom trigger layouts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | — | Visual size |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<button>` |
+
 ## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap selects. See the related example: [Select field](/ui/forms/field#select-field).

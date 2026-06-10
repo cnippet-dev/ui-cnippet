@@ -64,6 +64,27 @@ import {
 </PreviewCard>
 ```
 
+## API Reference
+
+### PreviewCard
+
+Root provider for the preview card. Also exported as `HoverCard`.
+
+### PreviewCardTrigger
+
+The element that triggers the popup on hover. Also exported as `HoverCardTrigger`.
+
+### PreviewCardPopup
+
+The floating popup content. Also exported as `HoverCardContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels between trigger and popup |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor element for positioning |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
 ## Notes
 
 - **Hover only** — the popup appears on hover and is hidden from screen readers by design. Use it for visual enhancement, not critical information.

@@ -125,6 +125,79 @@ import {
 </Menu>
 ```
 
+## API Reference
+
+### Menu
+
+Root provider. Also exported as `DropdownMenu`.
+
+### MenuTrigger
+
+Button that opens the menu. Also exported as `DropdownMenuTrigger`.
+
+### MenuPopup
+
+The floating menu panel. Also exported as `DropdownMenuContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side to open relative to trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `alignOffset` | `number` | — | Offset along the alignment axis |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor for positioning |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### MenuGroup
+
+Groups related menu items. Also exported as `DropdownMenuGroup`.
+
+### MenuGroupLabel
+
+Label displayed above a `MenuGroup`. Also exported as `DropdownMenuLabel`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with items that have icons |
+
+### MenuItem
+
+Standard action item. Also exported as `DropdownMenuItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with icon items |
+| `variant` | `"default" \| "destructive"` | `"default"` | Styles the item for destructive actions |
+
+### MenuCheckboxItem
+
+Toggleable item with a checkmark indicator. Also exported as `DropdownMenuCheckboxItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | — | Controlled checked state |
+| `variant` | `"default" \| "switch"` | `"default"` | Shows a switch toggle instead of a checkmark |
+
+### MenuRadioGroup / MenuRadioItem
+
+Single-selection group. Also exported as `DropdownMenuRadioGroup` / `DropdownMenuRadioItem`.
+
+### MenuSeparator
+
+Horizontal divider between item groups. Also exported as `DropdownMenuSeparator`.
+
+### MenuShortcut
+
+Right-aligned keyboard hint `<kbd>` element. Also exported as `DropdownMenuShortcut`.
+
+### MenuSub / MenuSubTrigger / MenuSubPopup
+
+Nested submenu. Also exported as `DropdownMenuSub`, `DropdownMenuSubTrigger`, `DropdownMenuSubContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `MenuSubTrigger` |
+
 ## Examples
 
 ### Open on Hover

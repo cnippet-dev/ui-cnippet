@@ -64,6 +64,32 @@ import {
 </InputGroup>
 ```
 
+## API Reference
+
+### InputGroup
+
+Root container with role `group`. Handles focus ring, disabled, and error states for the entire group.
+
+### InputGroupAddon
+
+Container for icons, text, or buttons placed around the input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` | Position relative to the input |
+
+### InputGroupText
+
+Muted `<span>` for static text or icon decorations inside an addon.
+
+### InputGroupInput
+
+Drop-in replacement for `Input` inside `InputGroup`. Automatically sets `unstyled` to avoid double borders.
+
+### InputGroupTextarea
+
+Drop-in replacement for `Textarea` inside `InputGroup`. Automatically sets `unstyled` to avoid double borders.
+
 ## Examples
 
 ### With End Icon

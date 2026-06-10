@@ -82,6 +82,26 @@ export function DatePicker() {
 }
 ```
 
+## API Reference
+
+A date picker is a composition of `Calendar` inside a `Popover` — there is no separate component file. The following props cover the pieces you'll combine.
+
+### Calendar (inside the popover)
+
+See the [Calendar API Reference](/ui/pickers/calendar#api-reference) for the full prop list. Common props when used inside a date picker:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `mode` | `"single" \| "multiple" \| "range"` | `"single"` | Date selection mode |
+| `selected` | `Date \| DateRange \| Date[]` | — | Controlled selected date(s) |
+| `onSelect` | `(date) => void` | — | Called when the user selects a date |
+| `disabled` | `Matcher \| Matcher[]` | — | Rules for disabling specific days |
+| `initialFocus` | `boolean` | — | Auto-focuses the calendar when it mounts inside a popover |
+
+### PopoverPopup (wrapping the Calendar)
+
+See the [Popover API Reference](/ui/overlays/popover#api-reference). The popover closes when the user selects a date if you call the popover's close handle in `onSelect`.
+
 ## Examples
 
 ### Date Range

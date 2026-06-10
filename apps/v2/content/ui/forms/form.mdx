@@ -72,6 +72,19 @@ import { Input } from "@/components/ui/input"
 </Form>
 ```
 
+## API Reference
+
+### Form
+
+Styled wrapper around Base UI's `Form` primitive. Renders a `<form>` element and provides shared validation context to all `Field` children.
+
+Accepts all standard `<form>` HTML attributes. Key props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `onSubmit` | `React.FormEventHandler<HTMLFormElement>` | — | Called when the form is submitted (after validation passes) |
+| `errors` | `Record<string, string>` | — | Server-side error map keyed by field name; overrides client validation |
+
 ## Examples
 
 ### Using with Zod

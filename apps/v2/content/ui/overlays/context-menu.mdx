@@ -1,6 +1,8 @@
 ---
 title: Context Menu
 description: Displays a menu to the user — such as a set of actions or functions — triggered by a button. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://base-ui.com/react/components/context-menu#api-reference
 ---
 
 <ComponentPreview name="v-context-menu-1" />
@@ -44,6 +46,73 @@ npm install @base-ui/react
 </CodeTabs>
 
 
+
+## API Reference
+
+### ContextMenu
+
+Root provider. Wraps Base UI `ContextMenu.Root`.
+
+### ContextMenuTrigger
+
+The area that the user right-clicks to open the menu.
+
+### ContextMenuContent
+
+The floating popup panel.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | Side to open from the pointer position |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the pointer |
+| `sideOffset` | `number` | `0` | Gap in pixels from the pointer |
+| `alignOffset` | `number` | `4` | Offset along the alignment axis |
+
+### ContextMenuGroup / ContextMenuLabel
+
+Groups related items with an optional label.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `ContextMenuLabel` |
+
+### ContextMenuItem
+
+Standard action item.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with icon items |
+| `variant` | `"default" \| "destructive"` | `"default"` | Styles the item for destructive actions |
+
+### ContextMenuCheckboxItem
+
+Toggleable item with a checkmark indicator.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | — | Controlled checked state |
+| `inset` | `boolean` | `false` | Adds start padding |
+
+### ContextMenuRadioGroup / ContextMenuRadioItem
+
+Single-selection group inside the context menu.
+
+### ContextMenuSub / ContextMenuSubTrigger / ContextMenuSubContent
+
+Nested submenu.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `ContextMenuSubTrigger` |
+
+### ContextMenuSeparator
+
+Horizontal divider between item groups.
+
+### ContextMenuShortcut
+
+Right-aligned keyboard shortcut hint.
 
 ## Examples
 

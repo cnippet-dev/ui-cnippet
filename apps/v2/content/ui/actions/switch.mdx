@@ -56,6 +56,23 @@ import { Switch } from "@/components/ui/switch"
 <Switch />
 ```
 
+## API Reference
+
+### Switch
+
+Styled wrapper around Base UI's `Switch.Root` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "sm"` | `"default"` | Size of the switch track and thumb |
+| `checked` | `boolean` | — | Controlled checked state |
+| `defaultChecked` | `boolean` | `false` | Initial checked state for uncontrolled usage |
+| `onCheckedChange` | `(checked: boolean) => void` | — | Callback when checked state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `name` | `string` | — | Name used when submitting an HTML form |
+| `required` | `boolean` | `false` | Whether the field must be checked before form submission |
+| `readOnly` | `boolean` | `false` | Prevents the user from changing the checked state |
+
 ## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Switch field](/ui/forms/field#switch-field).

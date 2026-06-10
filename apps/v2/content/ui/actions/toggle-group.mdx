@@ -1,6 +1,8 @@
 ---
 title: Toggle Group
 description: Provides a shared state to a series of toggle buttons. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://base-ui.com/react/components/toggle-group#api-reference
 ---
 
 <ComponentPreview name="v-toggle-group-1" />
@@ -56,6 +58,41 @@ import { Toggle, ToggleGroup } from "@/components/ui/toggle-group"
   <Toggle>Underline</Toggle>
 </ToggleGroup>
 ```
+
+## API Reference
+
+### ToggleGroup
+
+Root container that provides shared `variant` and `size` context to all child `ToggleGroupItem` elements.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline"` | `"default"` | Visual style applied to all items |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Size applied to all items |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction of the group |
+| `value` | `string[]` | — | Controlled array of pressed item values |
+| `defaultValue` | `string[]` | `[]` | Initial pressed values for uncontrolled usage |
+| `onValueChange` | `(value: string[]) => void` | — | Callback when the selection changes |
+| `toggleMultiple` | `boolean` | `true` | Whether multiple items can be active simultaneously |
+
+### ToggleGroupItem
+
+Individual toggle inside a `ToggleGroup`. Inherits `variant` and `size` from the group context unless overridden.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Unique identifier for this item (required) |
+| `variant` | `"default" \| "outline"` | inherited | Overrides the group's variant for this item |
+| `size` | `"sm" \| "default" \| "lg"` | inherited | Overrides the group's size for this item |
+| `disabled` | `boolean` | `false` | Prevents interaction for this item only |
+
+### ToggleGroupSeparator
+
+Visual divider between toggle items. Best used with the `outline` variant.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Direction of the separator line |
 
 ## Examples
 

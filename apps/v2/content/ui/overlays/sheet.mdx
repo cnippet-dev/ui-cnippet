@@ -126,6 +126,66 @@ The `SheetPopup` component supports the following props:
 </SheetPopup>
 ```
 
+## API Reference
+
+### Sheet
+
+Root provider. Wraps Base UI `Dialog.Root`.
+
+### SheetTrigger
+
+Button that opens the sheet.
+
+### SheetClose
+
+Button that closes the sheet.
+
+### SheetPopup
+
+The sliding panel. Also exported as `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"right" \| "left" \| "top" \| "bottom"` | `"right"` | Edge the sheet slides in from |
+| `variant` | `"default" \| "inset"` | `"default"` | `inset` adds screen-edge spacing on desktop |
+| `showCloseButton` | `boolean` | `true` | Renders an ✕ close button |
+| `closeProps` | `SheetPrimitive.Close.Props` | — | Props forwarded to the built-in close button |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### SheetHeader
+
+Container for `SheetTitle` and `SheetDescription`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### SheetFooter
+
+Action button row at the bottom of the sheet.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### SheetTitle
+
+Accessible title element.
+
+### SheetDescription
+
+Accessible description.
+
+### SheetPanel
+
+Scrollable content region. Automatically wrapped in `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `true` | Fades scroll edges |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
 ## Examples
 
 ### Sheet with Inset

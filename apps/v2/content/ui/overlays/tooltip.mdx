@@ -95,6 +95,32 @@ Wrap multiple tooltips in `TooltipProvider` so that once one becomes visible, ad
 </TooltipContent>
 ```
 
+## API Reference
+
+### TooltipProvider
+
+Wrap multiple tooltips in `TooltipProvider` so they share the same open delay. Once one tooltip opens, the rest appear instantly.
+
+### Tooltip
+
+Root provider for a single tooltip. Wraps Base UI `Tooltip.Root`.
+
+### TooltipTrigger
+
+The element that triggers the tooltip on hover or focus.
+
+### TooltipPopup / TooltipContent
+
+The floating popup label.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"top"` | Side to open relative to the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor element for positioning |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
 ## Examples
 
 ### Grouped Tooltips

@@ -56,6 +56,18 @@ import { Input } from "@/components/ui/input"
 <Input />
 ```
 
+## API Reference
+
+### Input
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg" \| number` | `"default"` | Visual size; a `number` sets the HTML `size` attribute (character width) |
+| `unstyled` | `boolean` | `false` | Strips the outer border/shadow wrapper — use inside `InputGroup` |
+| `nativeInput` | `boolean` | `false` | Renders a plain `<input>` instead of Base UI Input (avoids Base UI validation integration) |
+
+All standard `<input>` HTML attributes are forwarded to the inner input element.
+
 ## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap inputs, or the `FieldControl` component. See some [related examples](/ui/forms/field).

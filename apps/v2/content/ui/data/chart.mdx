@@ -67,6 +67,55 @@ export function MyChart() {
 }
 ```
 
+## API Reference
+
+### ChartContainer
+
+Root wrapper that injects CSS color variables from `config` and renders a Recharts `ResponsiveContainer`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `config` | `ChartConfig` | — | Map of data keys to labels, icons, and colors (required) |
+| `id` | `string` | auto | Stable HTML id for the chart; auto-generated when omitted |
+
+`ChartConfig` shape:
+```ts
+type ChartConfig = {
+  [key: string]: {
+    label?: React.ReactNode;
+    icon?: React.ComponentType;
+    color?: string;                              // e.g. "hsl(200 80% 50%)"
+    theme?: { light: string; dark: string };    // per-theme colors
+  };
+};
+```
+
+### ChartTooltipContent
+
+Drop-in `content` prop for Recharts `<Tooltip>`. Reads labels and icons from the nearest `ChartContainer` config.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `indicator` | `"dot" \| "line" \| "dashed"` | `"dot"` | Shape of the color swatch next to each series |
+| `hideLabel` | `boolean` | `false` | Hides the category label row |
+| `hideIndicator` | `boolean` | `false` | Hides color swatches entirely |
+| `nameKey` | `string` | — | Config key used to look up the series name |
+| `labelKey` | `string` | — | Config key used to look up the category label |
+
+### ChartLegendContent
+
+Drop-in `content` prop for Recharts `<Legend>`. Reads labels and icons from the nearest `ChartContainer` config.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `hideIcon` | `boolean` | `false` | Shows a color square instead of the config icon |
+| `nameKey` | `string` | — | Config key used to look up each series name |
+| `verticalAlign` | `"top" \| "middle" \| "bottom"` | `"bottom"` | Adds padding to offset the legend from the chart |
+
+### ChartTooltip / ChartLegend
+
+Re-exports of Recharts `Tooltip` and `Legend`. Use these with `content={<ChartTooltipContent />}` and `content={<ChartLegendContent />}`.
+
 ## Examples
 
 ### Multi-Series Bar Chart

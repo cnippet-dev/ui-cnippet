@@ -58,6 +58,32 @@ import { Group, GroupSeparator } from "@/components/ui/group"
 </Group>
 ```
 
+## API Reference
+
+### Group
+
+Root container that collapses borders between adjacent children into a single shared border. Also exported as `ButtonGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+### GroupText
+
+Static text or label element inside the group. Also exported as `ButtonGroupText`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of the default wrapper |
+
+### GroupSeparator
+
+Visual divider between group items. Also exported as `ButtonGroupSeparator`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Orientation of the separator |
+
 ## Examples
 
 ### With Input

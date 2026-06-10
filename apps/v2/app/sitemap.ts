@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       url: `${BASE_URL}/explore`,
     },
+    {
+      changeFrequency: "monthly",
+      lastModified: new Date(),
+      priority: 0.8,
+      url: `${BASE_URL}/playground`,
+    },
+    {
+      changeFrequency: "monthly",
+      lastModified: new Date(),
+      priority: 0.8,
+      url: `${BASE_URL}/themes`,
+    },
   ];
 
   const uiPages: MetadataRoute.Sitemap = source.getPages().map((page) => ({

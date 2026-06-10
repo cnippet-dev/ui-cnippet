@@ -70,6 +70,42 @@ import {
 </Pagination>
 ```
 
+## API Reference
+
+### Pagination
+
+Root `<nav>` element with `aria-label="pagination"`.
+
+### PaginationContent
+
+`<ul>` flex row holding all pagination items.
+
+### PaginationItem
+
+`<li>` wrapper for each pagination element.
+
+### PaginationLink
+
+Navigable page link.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isActive` | `boolean` | `false` | Marks this link as the current page (`aria-current="page"`, outline style) |
+| `size` | `ButtonSize` | `"icon"` | Size of the link button |
+| `render` | `React.ReactElement` | — | Renders a different element (e.g. `next/link`) |
+
+### PaginationPrevious
+
+Pre-built previous-page link with a `ChevronLeft` icon and "Previous" label.
+
+### PaginationNext
+
+Pre-built next-page link with a `ChevronRight` icon and "Next" label.
+
+### PaginationEllipsis
+
+`<span>` placeholder for collapsed page ranges. Renders a `MoreHorizontal` icon.
+
 ## Examples
 
 ### Without Labels

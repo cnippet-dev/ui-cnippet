@@ -57,6 +57,22 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 </Avatar>
 ``` */}
 
+## API Reference
+
+### Calendar
+
+A styled wrapper around [react-day-picker](https://daypicker.dev/)'s `DayPicker` component. All `DayPicker` props are forwarded.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `mode` | `"single" \| "multiple" \| "range"` | `"single"` | Date selection mode |
+| `showOutsideDays` | `boolean` | `true` | Shows days from adjacent months in the current view |
+| `selected` | `Date \| Date[] \| DateRange` | — | Controlled selected date(s) |
+| `onSelect` | `(date) => void` | — | Callback when the selection changes |
+| `disabled` | `Matcher \| Matcher[]` | — | Dates or rules for disabling specific days |
+| `components` | `CustomComponents` | — | Override internal sub-components (e.g. `DayButton`, `Chevron`) |
+| `classNames` | `ClassNames` | — | Override CSS class names for any internal element |
+
 ## Examples
 
 ### Large Cells

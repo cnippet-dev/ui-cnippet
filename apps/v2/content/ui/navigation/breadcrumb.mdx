@@ -72,6 +72,40 @@ import {
 </Breadcrumb>
 ```
 
+## API Reference
+
+### Breadcrumb
+
+Root `<nav>` element with `aria-label="breadcrumb"`.
+
+### BreadcrumbList
+
+Ordered list (`<ol>`) that lays out items in a wrapping flex row.
+
+### BreadcrumbItem
+
+List item (`<li>`) wrapper for each breadcrumb segment.
+
+### BreadcrumbLink
+
+Navigable link for non-current path segments.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element (e.g. `next/link`) in place of `<a>` |
+
+### BreadcrumbPage
+
+`<span>` for the current page segment with `aria-current="page"`.
+
+### BreadcrumbSeparator
+
+Visual divider between breadcrumb items. Defaults to a `ChevronRight` icon.
+
+### BreadcrumbEllipsis
+
+`<span>` placeholder for collapsed path segments. Renders a `MoreHorizontal` icon.
+
 ## Examples
 
 ### With custom separator

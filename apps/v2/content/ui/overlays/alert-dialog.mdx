@@ -104,7 +104,50 @@ The `AlertDialogFooter` component supports a `variant` prop to control its styli
 </AlertDialogFooter>
 ```
 
- ## Examples
+## API Reference
+
+### AlertDialog
+
+Root provider. Wraps Base UI `AlertDialog.Root`.
+
+### AlertDialogTrigger
+
+Button that opens the alert dialog.
+
+### AlertDialogPopup
+
+The modal popup. Also exported as `AlertDialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `bottomStickOnMobile` | `boolean` | `true` | On mobile the popup slides up from the bottom instead of centering |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### AlertDialogHeader
+
+Flex column container for `AlertDialogTitle` and `AlertDialogDescription`.
+
+### AlertDialogFooter
+
+Action button row at the bottom of the dialog.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+
+### AlertDialogTitle
+
+Accessible title element. Announced by screen readers when the dialog opens.
+
+### AlertDialogDescription
+
+Accessible description providing additional context.
+
+### AlertDialogClose
+
+Button that closes the alert dialog.
+
+## Examples
 
 ### Small Size
 

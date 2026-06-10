@@ -1,7 +1,7 @@
 import { LinkSquare02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
 import { source } from "@/lib/source";
@@ -58,6 +58,11 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  if (!params.slug || params.slug.length === 0) {
+    redirect("/explore");
+  }
+
   const page = source.getPage(params.slug);
   if (!page) {
     notFound();

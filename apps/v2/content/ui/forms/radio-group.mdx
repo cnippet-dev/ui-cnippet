@@ -67,6 +67,30 @@ import { Radio, RadioGroup } from "@/components/ui/radio-group"
 </RadioGroup>
 ```
 
+## API Reference
+
+### RadioGroup
+
+Root container providing shared state to all `Radio` items.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Controlled selected value |
+| `defaultValue` | `string` | — | Initial selected value for uncontrolled usage |
+| `onValueChange` | `(value: string) => void` | — | Callback when the selection changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Layout direction |
+| `disabled` | `boolean` | `false` | Disables all radio items in the group |
+
+### Radio
+
+Individual radio button. Also exported as `RadioGroupItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | The value this radio represents (required) |
+| `disabled` | `boolean` | `false` | Disables this specific item |
+| `required` | `boolean` | `false` | Marks the field as required |
+
 ## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap radio buttons. See the related example: [Radio Group field](/ui/forms/field#radio-group-field).

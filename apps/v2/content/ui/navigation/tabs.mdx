@@ -59,6 +59,44 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs"
 </Tabs>
 ```
 
+## API Reference
+
+### Tabs
+
+Root container that manages tab state. Wraps Base UI `Tabs.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string` | — | Initially selected tab for uncontrolled usage |
+| `value` | `string` | — | Controlled selected tab |
+| `onValueChange` | `(value: string) => void` | — | Callback when the active tab changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+### TabsList
+
+Tab trigger strip. Renders the animated indicator internally.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "underline"` | `"default"` | Visual style — pill background or animated underline |
+
+### TabsTab
+
+Individual tab trigger. Also exported as `TabsTrigger`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Unique identifier for this tab (required) |
+| `disabled` | `boolean` | `false` | Prevents activation of this tab |
+
+### TabsPanel
+
+Content panel shown when its tab is active. Also exported as `TabsContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Must match the `value` of the corresponding `TabsTab` (required) |
+
 ## Examples
 
 ### Underline Variant

@@ -69,6 +69,40 @@ import {
 </Accordion>
 ```
 
+## API Reference
+
+### Accordion
+
+Root container. Thin wrapper around Base UI's `Accordion.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `openMultiple` | `boolean` | `true` | Whether multiple items can be open simultaneously |
+| `value` | `string[]` | — | Controlled array of open item values |
+| `defaultValue` | `string[]` | `[]` | Initial open values for uncontrolled usage |
+| `onValueChange` | `(value: string[]) => void` | — | Callback when open items change |
+
+### AccordionItem
+
+A single accordion entry.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Unique identifier for this item (required) |
+| `disabled` | `boolean` | `false` | Prevents the item from being opened |
+
+### AccordionTrigger
+
+The clickable header that toggles the panel.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `icon` | `React.ReactNode` | chevron | Replaces the default chevron icon |
+
+### AccordionPanel
+
+The collapsible content area. Also exported as `AccordionContent`.
+
 ## Examples
 
 ### Single Accordion

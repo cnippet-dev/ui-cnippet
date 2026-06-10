@@ -65,6 +65,25 @@ import {
 </Collapsible>
 ```
 
+## API Reference
+
+### Collapsible
+
+Root container. Thin wrapper around Base UI's `Collapsible.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Initial open state for uncontrolled usage |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback when open state changes |
+
+### CollapsibleTrigger
+
+The element that toggles the panel open and closed.
+
+### CollapsiblePanel
+
+The collapsible content area. Also exported as `CollapsibleContent`. Animates height via CSS transition.
 
 ## Examples
 

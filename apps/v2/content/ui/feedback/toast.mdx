@@ -152,6 +152,34 @@ anchoredToastManager.add({
 })
 ```
 
+## API Reference
+
+### toastManager.add() / anchoredToastManager.add()
+
+The primary way to trigger a toast. Call from any component without prop drilling.
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `title` | `string` | — | Main text shown in the toast (required) |
+| `description` | `string` | — | Secondary text below the title |
+| `type` | `"success" \| "error" \| "warning" \| "info" \| "loading"` | — | Renders a matching colored icon |
+| `actionProps` | `{ children: ReactNode }` | — | Adds an action button inside the toast |
+| `duration` | `number` | `5000` | Auto-dismiss delay in milliseconds |
+| `positionerProps` | `{ anchor: Element; sideOffset?: number }` | — | For `anchoredToastManager` — positions the toast relative to an element |
+| `data` | `{ tooltipStyle?: boolean }` | — | Pass `{ tooltipStyle: true }` to render an anchored toast as a tooltip |
+
+### ToastProvider
+
+Wrap your app with this to enable stacked toasts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `position` | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Screen corner where toasts appear |
+
+### AnchoredToastProvider
+
+Wrap your app with this (alongside `ToastProvider`) to enable element-anchored toasts.
+
 ## Examples
 
 ### With Status

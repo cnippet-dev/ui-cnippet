@@ -67,6 +67,25 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 </ScrollArea>
 ```
 
+## API Reference
+
+### ScrollArea
+
+Root scroll container with custom scrollbars.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `false` | Fades content at the viewport edges to hint at overflow |
+| `scrollbarGutter` | `boolean` | `false` | Reserves space for the scrollbar to prevent layout shifts |
+
+### ScrollBar
+
+The custom scrollbar track. Rendered automatically inside `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Scrollbar orientation |
+
 ## Examples
 
 ### Scroll Fade

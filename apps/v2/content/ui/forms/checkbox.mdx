@@ -56,6 +56,22 @@ import { Checkbox } from "@/components/ui/checkbox"
 <Checkbox />
 ```
 
+## API Reference
+
+### Checkbox
+
+Styled wrapper around Base UI's `Checkbox.Root` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean \| "mixed"` | — | Controlled checked state; `"mixed"` renders an indeterminate indicator |
+| `defaultChecked` | `boolean \| "mixed"` | `false` | Initial state for uncontrolled usage |
+| `onCheckedChange` | `(checked: boolean \| "mixed") => void` | — | Callback when checked state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `required` | `boolean` | `false` | Marks the field as required for form validation |
+| `name` | `string` | — | Form field name submitted with the form |
+| `value` | `string` | — | Value submitted when the checkbox is checked |
+
 ## Examples
 
 For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Checkbox field](/ui/forms/field#checkbox-field).

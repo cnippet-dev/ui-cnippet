@@ -64,6 +64,20 @@ import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset"
 - **Accessibility** — screen readers announce the legend text before reading each input inside the fieldset, giving users context for each field without extra labels.
 - **Disabled state** — setting `disabled` on `<Fieldset>` disables all interactive elements inside it at the browser level. No JavaScript needed.
 
+## API Reference
+
+### Fieldset
+
+Styled `<fieldset>` wrapper. Setting `disabled` disables all interactive elements inside at the browser level — no JavaScript needed.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `disabled` | `boolean` | `false` | Disables all interactive elements inside the fieldset |
+
+### FieldsetLegend
+
+The `<legend>` element that names the group for screen readers. Announced before each input inside the fieldset.
+
 ## Examples
 
 ### Personal Information

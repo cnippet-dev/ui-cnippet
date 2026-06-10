@@ -70,6 +70,42 @@ import {
 </Toolbar>
 ```
 
+## API Reference
+
+All components are styled wrappers over Base UI's Toolbar primitives and forward all their respective props.
+
+### Toolbar
+
+Root container with role `toolbar`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction; sets `aria-orientation` |
+
+### ToolbarGroup
+
+Groups related controls with a shared label for screen readers.
+
+### ToolbarButton
+
+An interactive button inside the toolbar. Use the `render` prop with `<Button>` or `<Toggle>` for full styling.
+
+### ToolbarSeparator
+
+Visual and semantic divider between toolbar sections.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Direction of the separator line |
+
+### ToolbarLink
+
+An anchor element inside the toolbar that participates in toolbar keyboard navigation.
+
+### ToolbarInput
+
+An input element inside the toolbar that participates in toolbar keyboard navigation.
+
 ## Examples
 
 ### Rich Text Editor

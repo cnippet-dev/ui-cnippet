@@ -92,6 +92,47 @@ import { Input } from "@/components/ui/input"
 </Field>
 ```
 
+## API Reference
+
+### Field
+
+Root container that propagates label/description/error associations to child controls.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `disabled` | `boolean` | `false` | Disables the field and all interactive children |
+| `validate` | `(value: unknown) => string \| null` | — | Custom validation function; return an error string or `null` |
+
+### FieldLabel
+
+Styled `<label>` that automatically associates with the field's control.
+
+### FieldDescription
+
+Muted helper text linked to the control via `aria-describedby`.
+
+### FieldError
+
+Validation error text. Only visible when the field is invalid.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `match` | `string \| string[]` | — | Validity constraint(s) that trigger this error message |
+
+### FieldControl
+
+Invisible proxy that connects arbitrary controls to the field's validation context. Use when the control is not a native input.
+
+### FieldValidity
+
+Render-prop component exposing the field's current validity state.
+
+```tsx
+<FieldValidity>
+  {({ error }) => error && <p className="text-destructive">{error}</p>}
+</FieldValidity>
+```
+
 ## Examples
 
 ### Required Field

@@ -44,6 +44,40 @@ npm install embla-carousel-react
 
 </CodeTabs>
 
+## API Reference
+
+### Carousel
+
+Root carousel container powered by [Embla Carousel](https://www.embla-carousel.com/).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Scroll axis |
+| `opts` | `EmblaOptionsType` | — | Embla options object (loop, align, dragFree, etc.) |
+| `plugins` | `EmblaPluginType[]` | — | Embla plugins (autoplay, autoScroll, etc.) |
+| `setApi` | `(api: CarouselApi) => void` | — | Callback to receive the Embla API instance for programmatic control |
+
+### CarouselContent
+
+Scroll container holding all `CarouselItem` children.
+
+### CarouselItem
+
+Individual slide. Use Tailwind `basis-*` utilities to control how many slides are visible at once.
+
+### CarouselPrevious
+
+Previous-slide button.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `ButtonVariant` | `"outline"` | Button visual style |
+| `size` | `ButtonSize` | `"icon"` | Button size |
+
+### CarouselNext
+
+Next-slide button. Accepts the same `variant` and `size` props as `CarouselPrevious`.
+
 ## Examples
 
 ### Multiple Items

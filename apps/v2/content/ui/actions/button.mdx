@@ -1,6 +1,8 @@
 ---
 title: Button
 description: A button or a component that looks like a button. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://base-ui.com/react/components/button#api-reference
 ---
 
 <ComponentPreview name="v-button-1" />
@@ -83,6 +85,20 @@ export function LinkAsButton() {
 }
 ```
 
+
+## API Reference
+
+### Button
+
+The root button component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline" \| "ghost" \| "destructive" \| "destructive-outline" \| "secondary" \| "link"` | `"default"` | Visual style of the button |
+| `size` | `"xs" \| "sm" \| "default" \| "lg" \| "xl" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg" \| "icon-xl"` | `"default"` | Size of the button |
+| `loading` | `boolean` | `false` | Shows a spinner and disables interaction while true |
+| `render` | `React.ReactElement` | — | Renders a different element (e.g. `<Link>`) in place of `<button>` |
+| `disabled` | `boolean` | `false` | Prevents interaction |
 
 ## Examples
 

@@ -53,6 +53,17 @@ import { Textarea } from "@/components/ui/textarea"
 <Textarea />
 ```
 
+## API Reference
+
+### Textarea
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Visual size of the textarea |
+| `unstyled` | `boolean` | `false` | Strips the outer border/shadow wrapper — use inside `InputGroup` |
+
+All standard `<textarea>` HTML attributes are forwarded (e.g. `placeholder`, `rows`, `disabled`, `required`, `name`). The textarea auto-sizes its height to content via `field-sizing: content`.
+
 ## Examples
 
 ### Sizes

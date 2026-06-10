@@ -60,6 +60,29 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 </Avatar>
 ```
 
+## API Reference
+
+### Avatar
+
+Root container that manages image loading state. Built on Base UI's `Avatar.Root`.
+
+### AvatarImage
+
+The image element. Automatically triggers the fallback when the image fails to load.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | — | URL of the avatar image |
+| `alt` | `string` | — | Accessible alt text for the image |
+
+### AvatarFallback
+
+Rendered when the image is absent or fails to load. Typically contains initials or an icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delay` | `number` | — | Milliseconds to wait before showing the fallback (prevents flicker on fast loads) |
+
 ## Examples
 
 ### With Fallback

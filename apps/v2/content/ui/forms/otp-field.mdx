@@ -71,6 +71,29 @@ import {
 </OTPField>
 ```
 
+## API Reference
+
+### OTPField
+
+Root container that manages focus and input across all slots.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "lg"` | `"default"` | Size of each input slot |
+| `length` | `number` | — | Total number of input slots (required) |
+| `aria-label` | `string` | — | Accessible label for the whole field (required) |
+| `value` | `string` | — | Controlled value of the entire OTP string |
+| `defaultValue` | `string` | — | Initial value for uncontrolled usage |
+| `onValueChange` | `(value: string) => void` | — | Callback when the OTP value changes |
+
+### OTPFieldInput
+
+An individual character slot. Each slot needs its own `aria-label` (e.g. `"Character 1 of 6"`).
+
+### OTPFieldSeparator
+
+Visual separator between groups of digits (e.g. between slots 3 and 4 in a 6-digit code).
+
 ## Examples
 
 ### Large
