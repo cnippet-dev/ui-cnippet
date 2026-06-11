@@ -197,7 +197,7 @@ export function HomeThemes() {
     <div className="px-2 max-sm:px-4" suppressHydrationWarning>
       {/* Label bar */}
       <div className="relative flex h-16 items-end whitespace-pre font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-        Themes · color &amp; radius
+        Themes · color & radius
       </div>
 
       {/* Heading */}

@@ -65,7 +65,8 @@ export function DocsTableOfContents({
   }
 
   return (
-    <div
+    <nav
+      aria-label="On this page"
       className={cn(
         "z-10 flex flex-col gap-1 py-2 ps-6 pe-4 text-sm",
         className,
@@ -85,6 +86,6 @@ export function DocsTableOfContents({
           </a>
         ))}
       </div>
-    </div>
+    </nav>
   );
 }
