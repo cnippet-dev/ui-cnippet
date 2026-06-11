@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-context-menu-11",
+  "description": "Bookmark list with per-item star toggle, open, copy, share, and delete actions",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-context-menu-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  CopyIcon,\r\n  EditIcon,\r\n  ExternalLinkIcon,\r\n  LinkIcon,\r\n  ShareIcon,\r\n  StarIcon,\r\n  TrashIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  ContextMenu,\r\n  ContextMenuContent,\r\n  ContextMenuGroup,\r\n  ContextMenuItem,\r\n  ContextMenuSeparator,\r\n  ContextMenuTrigger,\r\n} from \"@/registry/default/ui/context-menu\";\r\n\r\nconst LINKS = [\r\n  { href: \"#\", label: \"Design Systems 101\" },\r\n  { href: \"#\", label: \"Component Architecture\" },\r\n  { href: \"#\", label: \"Accessibility Guide\" },\r\n  { href: \"#\", label: \"Tailwind Best Practices\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [starred, setStarred] = useState<Set<string>>(new Set());\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-1 rounded-xl border p-2\">\r\n      {LINKS.map((link) => (\r\n        <ContextMenu key={link.label}>\r\n          <ContextMenuTrigger className=\"flex w-full cursor-default items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-muted\">\r\n            <span>{link.label}</span>\r\n            {starred.has(link.label) && (\r\n              <StarIcon className=\"size-3.5 fill-amber-400 text-amber-400\" />\r\n            )}\r\n          </ContextMenuTrigger>\r\n          <ContextMenuContent className=\"w-48\">\r\n            <ContextMenuGroup>\r\n              <ContextMenuItem>\r\n                <ExternalLinkIcon />\r\n                Open\r\n              </ContextMenuItem>\r\n              <ContextMenuItem>\r\n                <LinkIcon />\r\n                Copy link\r\n              </ContextMenuItem>\r\n            </ContextMenuGroup>\r\n            <ContextMenuSeparator />\r\n            <ContextMenuGroup>\r\n              <ContextMenuItem>\r\n                <EditIcon />\r\n                Rename\r\n              </ContextMenuItem>\r\n              <ContextMenuItem\r\n                onSelect={() =>\r\n                  setStarred((prev) => {\r\n                    const next = new Set(prev);\r\n                    next.has(link.label)\r\n                      ? next.delete(link.label)\r\n                      : next.add(link.label);\r\n                    return next;\r\n                  })\r\n                }\r\n              >\r\n                <StarIcon />\r\n                {starred.has(link.label) ? \"Unstar\" : \"Star\"}\r\n              </ContextMenuItem>\r\n              <ContextMenuItem>\r\n                <ShareIcon />\r\n                Share\r\n              </ContextMenuItem>\r\n              <ContextMenuItem>\r\n                <CopyIcon />\r\n                Duplicate\r\n              </ContextMenuItem>\r\n            </ContextMenuGroup>\r\n            <ContextMenuSeparator />\r\n            <ContextMenuGroup>\r\n              <ContextMenuItem variant=\"destructive\">\r\n                <TrashIcon />\r\n                Delete\r\n              </ContextMenuItem>\r\n            </ContextMenuGroup>\r\n          </ContextMenuContent>\r\n        </ContextMenu>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "context menu"
+  ],
+  "type": "registry:block"
+}

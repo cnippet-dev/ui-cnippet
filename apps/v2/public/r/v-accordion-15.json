@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-15",
+  "description": "Product specifications table by category",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-15.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/default/ui/accordion\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\n\r\nconst specs = [\r\n  {\r\n    category: \"Display\",\r\n    rows: [\r\n      [\"Screen Size\", \"14.2-inch Liquid Retina XDR\"],\r\n      [\"Resolution\", \"3024 × 1964 at 254 ppi\"],\r\n      [\"Brightness\", \"1000 nits sustained (full-screen)\"],\r\n      [\"Refresh Rate\", \"ProMotion adaptive 24Hz to 120Hz\"],\r\n    ],\r\n    value: \"display\",\r\n  },\r\n  {\r\n    category: \"Performance\",\r\n    rows: [\r\n      [\"Chip\", \"Apple M4 Pro\"],\r\n      [\"CPU Cores\", \"14-core (10 performance, 4 efficiency)\"],\r\n      [\"GPU Cores\", \"20-core\"],\r\n      [\"Memory\", \"24 GB unified memory\"],\r\n      [\"Storage\", \"512 GB SSD\"],\r\n    ],\r\n    value: \"performance\",\r\n  },\r\n  {\r\n    category: \"Battery & Power\",\r\n    rows: [\r\n      [\"Battery Life\", \"Up to 22 hours video playback\"],\r\n      [\"Battery Capacity\", \"72.4-watt-hour lithium-polymer\"],\r\n      [\"Fast Charge\", \"0–50% in ~30 min with 96W+ adapter\"],\r\n      [\"Charger\", \"96W USB-C Power Adapter (included)\"],\r\n    ],\r\n    value: \"battery\",\r\n  },\r\n  {\r\n    category: \"Connectivity\",\r\n    rows: [\r\n      [\"Wi-Fi\", \"Wi-Fi 6E (802.11ax)\"],\r\n      [\"Bluetooth\", \"5.3\"],\r\n      [\"Ports\", \"3× Thunderbolt 4, HDMI, SD card, MagSafe 3\"],\r\n    ],\r\n    value: \"connectivity\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-lg\">\r\n      <div className=\"mb-4 flex items-center gap-2\">\r\n        <h2 className=\"font-semibold text-base\">Technical Specifications</h2>\r\n        <Badge size=\"sm\" variant=\"secondary\">\r\n          MacBook Pro 14&Prime;\r\n        </Badge>\r\n      </div>\r\n      <Accordion className=\"w-full\" defaultValue={[\"display\"]} multiple>\r\n        {specs.map((spec) => (\r\n          <AccordionItem key={spec.value} value={spec.value}>\r\n            <AccordionTrigger className=\"font-medium\">\r\n              {spec.category}\r\n            </AccordionTrigger>\r\n            <AccordionContent>\r\n              <dl className=\"divide-y text-sm\">\r\n                {spec.rows.map(([label, value]) => (\r\n                  <div className=\"flex items-baseline gap-4 py-2.5\" key={label}>\r\n                    <dt className=\"w-36 shrink-0 text-muted-foreground\">\r\n                      {label}\r\n                    </dt>\r\n                    <dd className=\"text-foreground\">{value}</dd>\r\n                  </div>\r\n                ))}\r\n              </dl>\r\n            </AccordionContent>\r\n          </AccordionItem>\r\n        ))}\r\n      </Accordion>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-15",
+  "description": "Email verification with resend countdown",
+  "registryDependencies": [
+    "@cnippet/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { MailIcon } from \"lucide-react\";\r\nimport { useEffect, useState } from \"react\";\r\nimport {\r\n  Alert,\r\n  AlertAction,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/default/ui/alert\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  const [sent, setSent] = useState(false);\r\n  const [countdown, setCountdown] = useState(0);\r\n\r\n  useEffect(() => {\r\n    if (countdown <= 0) return;\r\n    const t = setTimeout(() => setCountdown((c) => c - 1), 1000);\r\n    return () => clearTimeout(t);\r\n  }, [countdown]);\r\n\r\n  const handleResend = () => {\r\n    setSent(true);\r\n    setCountdown(60);\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-lg\">\r\n      <Alert>\r\n        <MailIcon />\r\n        <AlertTitle>Verify your email address</AlertTitle>\r\n        <AlertAction>\r\n          <Button\r\n            disabled={countdown > 0}\r\n            onClick={handleResend}\r\n            size=\"xs\"\r\n            variant=\"outline\"\r\n          >\r\n            {countdown > 0 ? `Resend in ${countdown}s` : \"Resend\"}\r\n          </Button>\r\n        </AlertAction>\r\n        <AlertDescription>\r\n          {sent\r\n            ? \"A new verification email has been sent to your inbox.\"\r\n            : \"We sent a confirmation link to hello@example.com. Check your inbox and click the link to activate your account.\"}\r\n        </AlertDescription>\r\n      </Alert>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:block"
+}

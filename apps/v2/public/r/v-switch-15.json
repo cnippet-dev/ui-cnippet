@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-15",
+  "description": "Do Not Disturb Mode",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { BellOffIcon, MoonIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Switch } from \"@/registry/default/ui/switch\";\r\n\r\nconst scheduleOptions = [\"1 hour\", \"2 hours\", \"4 hours\", \"Until tomorrow\"];\r\n\r\nexport default function Particle() {\r\n  const [dnd, setDnd] = useState(false);\r\n  const [selected, setSelected] = useState(\"1 hour\");\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <div className=\"flex items-center gap-2\">\r\n          <div\r\n            className={`flex size-9 items-center justify-center rounded-lg transition-colors ${dnd ? \"bg-primary/10 text-primary\" : \"bg-muted text-muted-foreground\"}`}\r\n          >\r\n            {dnd ? (\r\n              <BellOffIcon aria-hidden=\"true\" className=\"size-4\" />\r\n            ) : (\r\n              <MoonIcon aria-hidden=\"true\" className=\"size-4\" />\r\n            )}\r\n          </div>\r\n          <div>\r\n            <p className=\"font-medium text-sm\">Do Not Disturb</p>\r\n            <p className=\"text-muted-foreground text-xs\">\r\n              {dnd ? `Active for ${selected}` : \"All notifications enabled\"}\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <Switch checked={dnd} onCheckedChange={setDnd} />\r\n      </div>\r\n\r\n      {dnd && (\r\n        <div className=\"space-y-2\">\r\n          <p className=\"font-medium text-muted-foreground text-xs uppercase tracking-wide\">\r\n            Duration\r\n          </p>\r\n          <div className=\"grid grid-cols-2 gap-2\">\r\n            {scheduleOptions.map((opt) => (\r\n              <button\r\n                className={`rounded-lg border px-3 py-2 font-medium text-xs transition-colors ${\r\n                  selected === opt\r\n                    ? \"border-primary bg-primary/5 text-primary\"\r\n                    : \"hover:bg-muted\"\r\n                }`}\r\n                key={opt}\r\n                onClick={() => setSelected(opt)}\r\n                type=\"button\"\r\n              >\r\n                {opt}\r\n              </button>\r\n            ))}\r\n          </div>\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

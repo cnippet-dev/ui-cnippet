@@ -3,12 +3,11 @@ import { ScrambleHover } from "@/registry/default/motion/scramble-hover";
 export default function ScrambleHoverHeading() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-3 px-6">
-      <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+      <p className="font-medium text-muted-foreground text-sm uppercase tracking-widest">
         Hover to reveal
       </p>
       <ScrambleHover
-        as="h2"
-        className="cursor-pointer text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+        className="cursor-pointer text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl"
         maxIterations={14}
         revealDirection="center"
         scrambleSpeed={35}

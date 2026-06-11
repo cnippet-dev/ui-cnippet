@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-19",
+  "description": "Basic pagination",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-19.tsx",
+      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from \"@/registry/default/ui/pagination\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Pagination className=\"w-full\">\r\n      <PaginationContent className=\"w-full justify-between\">\r\n        <PaginationItem>\r\n          <p className=\"text-muted-foreground text-sm\">\r\n            Showing <span className=\"font-medium text-foreground\">41–60</span>{\" \"}\r\n            of <span className=\"font-medium text-foreground\">230</span> results\r\n          </p>\r\n        </PaginationItem>\r\n        <PaginationItem className=\"flex items-center gap-1\">\r\n          <PaginationLink aria-label=\"Go to previous page\" href=\"#\" size=\"icon\">\r\n            <ChevronLeftIcon className=\"size-4\" />\r\n          </PaginationLink>\r\n          <span className=\"text-muted-foreground text-sm tabular-nums\">\r\n            3 / 12\r\n          </span>\r\n          <PaginationLink aria-label=\"Go to next page\" href=\"#\" size=\"icon\">\r\n            <ChevronRightIcon className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

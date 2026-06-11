@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-15",
+  "description": "Basic number field",
+  "registryDependencies": [
+    "@cnippet/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { RotateCcwIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  NumberField,\r\n  NumberFieldDecrement,\r\n  NumberFieldGroup,\r\n  NumberFieldIncrement,\r\n  NumberFieldInput,\r\n  NumberFieldScrubArea,\r\n} from \"@/registry/default/ui/number-field\";\r\n\r\nconst DEFAULT_VALUE = 50;\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(DEFAULT_VALUE);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-2\">\r\n      <NumberField\r\n        onValueChange={(v) => setValue(v ?? DEFAULT_VALUE)}\r\n        value={value}\r\n      >\r\n        <NumberFieldScrubArea label=\"Volume\" />\r\n        <NumberFieldGroup>\r\n          <NumberFieldDecrement />\r\n          <NumberFieldInput />\r\n          <NumberFieldIncrement />\r\n        </NumberFieldGroup>\r\n      </NumberField>\r\n      <Button\r\n        aria-label=\"Reset to default\"\r\n        onClick={() => setValue(DEFAULT_VALUE)}\r\n        size=\"icon\"\r\n        variant=\"ghost\"\r\n      >\r\n        <RotateCcwIcon className=\"size-4\" />\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "number field"
+  ],
+  "type": "registry:block"
+}

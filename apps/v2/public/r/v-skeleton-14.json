@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-skeleton-14",
+  "description": "Kanban Board",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-skeleton-14.tsx",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\r\n\r\nconst columns = [\r\n  { cards: 3, label: \"To Do\" },\r\n  { cards: 2, label: \"In Progress\" },\r\n  { cards: 4, label: \"Done\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex w-full max-w-2xl gap-4 overflow-x-auto pb-2\">\r\n      {columns.map(({ cards, label }) => (\r\n        <div\r\n          className=\"w-60 shrink-0 space-y-3 rounded-xl border bg-muted/30 p-3\"\r\n          key={label}\r\n        >\r\n          <div className=\"flex items-center justify-between\">\r\n            <Skeleton className=\"h-4 w-16\" />\r\n            <Skeleton className=\"h-5 w-5 rounded-full\" />\r\n          </div>\r\n          {Array.from({ length: cards }).map((_, i) => (\r\n            <div\r\n              className=\"space-y-2.5 rounded-lg border bg-background p-3\"\r\n              key={String(i)}\r\n            >\r\n              <Skeleton className=\"h-3.5 w-4/5\" />\r\n              <Skeleton className=\"h-3 w-3/5\" />\r\n              <div className=\"flex items-center justify-between pt-1\">\r\n                <div className=\"flex -space-x-1.5\">\r\n                  {Array.from({ length: 2 }).map((_, j) => (\r\n                    <Skeleton\r\n                      className=\"size-5 rounded-full ring-2 ring-background\"\r\n                      key={String(j)}\r\n                    />\r\n                  ))}\r\n                </div>\r\n                <Skeleton className=\"h-4 w-12 rounded-full\" />\r\n              </div>\r\n            </div>\r\n          ))}\r\n          <Skeleton className=\"h-7 w-full rounded-md\" />\r\n        </div>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-17",
+  "description": "Results summary with compact nav",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-17.tsx",
+      "content": "import { ArrowLeftIcon, ArrowRightIcon } from \"lucide-react\";\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from \"@/registry/default/ui/pagination\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-2\">\r\n        <PaginationItem>\r\n          <PaginationLink className=\"gap-1.5\" href=\"#\">\r\n            <ArrowLeftIcon aria-hidden=\"true\" className=\"size-4\" />\r\n            Newer posts\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink className=\"gap-1.5\" href=\"#\">\r\n            Older posts\r\n            <ArrowRightIcon aria-hidden=\"true\" className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

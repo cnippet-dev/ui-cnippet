@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-12",
+  "description": "File actions",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-12.tsx",
+      "content": "import {\r\n  CopyIcon,\r\n  DownloadIcon,\r\n  FilePenIcon,\r\n  MoveIcon,\r\n  TrashIcon,\r\n} from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuGroup,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuSeparator,\r\n  MenuShortcut,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>\r\n        File actions\r\n      </MenuTrigger>\r\n      <MenuPopup align=\"start\">\r\n        <MenuGroup>\r\n          <MenuItem>\r\n            <FilePenIcon aria-hidden=\"true\" />\r\n            Rename\r\n            <MenuShortcut>F2</MenuShortcut>\r\n          </MenuItem>\r\n          <MenuItem>\r\n            <CopyIcon aria-hidden=\"true\" />\r\n            Duplicate\r\n            <MenuShortcut>⌘D</MenuShortcut>\r\n          </MenuItem>\r\n          <MenuItem>\r\n            <MoveIcon aria-hidden=\"true\" />\r\n            Move to\r\n          </MenuItem>\r\n          <MenuItem>\r\n            <DownloadIcon aria-hidden=\"true\" />\r\n            Download\r\n            <MenuShortcut>⌘↓</MenuShortcut>\r\n          </MenuItem>\r\n        </MenuGroup>\r\n        <MenuSeparator />\r\n        <MenuItem variant=\"destructive\">\r\n          <TrashIcon aria-hidden=\"true\" />\r\n          Delete\r\n          <MenuShortcut>⌫</MenuShortcut>\r\n        </MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ],
+  "type": "registry:block"
+}

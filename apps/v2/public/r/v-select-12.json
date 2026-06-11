@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-12",
+  "description": "Country Selector with Groups",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-12.tsx",
+      "content": "import {\r\n  Select,\r\n  SelectGroup,\r\n  SelectGroupLabel,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nconst regionGroups = [\r\n  {\r\n    items: [\r\n      { label: \"United States\", value: \"us\" },\r\n      { label: \"Canada\", value: \"ca\" },\r\n      { label: \"Brazil\", value: \"br\" },\r\n    ],\r\n    label: \"Americas\",\r\n  },\r\n  {\r\n    items: [\r\n      { label: \"United Kingdom\", value: \"gb\" },\r\n      { label: \"Germany\", value: \"de\" },\r\n      { label: \"France\", value: \"fr\" },\r\n    ],\r\n    label: \"Europe\",\r\n  },\r\n  {\r\n    items: [\r\n      { label: \"Japan\", value: \"jp\" },\r\n      { label: \"Australia\", value: \"au\" },\r\n      { label: \"India\", value: \"in\" },\r\n    ],\r\n    label: \"Asia Pacific\",\r\n  },\r\n];\r\n\r\nconst placeholder = { label: \"Select a region\", value: null };\r\nconst allItems = [placeholder, ...regionGroups.flatMap((g) => g.items)];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select items={allItems}>\r\n      <SelectTrigger className=\"w-52\">\r\n        <SelectValue />\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {regionGroups.map((group) => (\r\n          <SelectGroup key={group.label}>\r\n            <SelectGroupLabel>{group.label}</SelectGroupLabel>\r\n            {group.items.map((item) => (\r\n              <SelectItem key={item.value} value={item}>\r\n                {item.label}\r\n              </SelectItem>\r\n            ))}\r\n          </SelectGroup>\r\n        ))}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

@@ -1,4 +1,4 @@
-﻿//biome-ignore-all lint/suspicious/noArrayIndexKey:<>
+//biome-ignore-all lint/suspicious/noArrayIndexKey: index is stable for letter positions
 "use client";
 
 import {

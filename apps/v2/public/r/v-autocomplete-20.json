@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-autocomplete-20",
+  "description": "Tech stack picker grouped by category",
+  "registryDependencies": [
+    "@cnippet/autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-autocomplete-20.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Fragment } from \"react\";\r\nimport {\r\n  Autocomplete,\r\n  AutocompleteCollection,\r\n  AutocompleteEmpty,\r\n  AutocompleteGroup,\r\n  AutocompleteGroupLabel,\r\n  AutocompleteInput,\r\n  AutocompleteItem,\r\n  AutocompleteList,\r\n  AutocompletePopup,\r\n  AutocompleteSeparator,\r\n} from \"@/registry/default/ui/autocomplete\";\r\n\r\ntype Skill = {\r\n  id: string;\r\n  label: string;\r\n  category: \"Language\" | \"Framework\" | \"Tool\";\r\n};\r\ntype SkillGroup = { value: string; items: Skill[] };\r\n\r\nconst skills: Skill[] = [\r\n  { category: \"Language\", id: \"ts\", label: \"TypeScript\" },\r\n  { category: \"Language\", id: \"rust\", label: \"Rust\" },\r\n  { category: \"Language\", id: \"go\", label: \"Go\" },\r\n  { category: \"Language\", id: \"python\", label: \"Python\" },\r\n  { category: \"Language\", id: \"java\", label: \"Java\" },\r\n  { category: \"Framework\", id: \"nextjs\", label: \"Next.js\" },\r\n  { category: \"Framework\", id: \"remix\", label: \"Remix\" },\r\n  { category: \"Framework\", id: \"fastapi\", label: \"FastAPI\" },\r\n  { category: \"Framework\", id: \"spring\", label: \"Spring Boot\" },\r\n  { category: \"Framework\", id: \"trpc\", label: \"tRPC\" },\r\n  { category: \"Tool\", id: \"docker\", label: \"Docker\" },\r\n  { category: \"Tool\", id: \"k8s\", label: \"Kubernetes\" },\r\n  { category: \"Tool\", id: \"gha\", label: \"GitHub Actions\" },\r\n  { category: \"Tool\", id: \"terraform\", label: \"Terraform\" },\r\n  { category: \"Tool\", id: \"grafana\", label: \"Grafana\" },\r\n];\r\n\r\nfunction groupSkills(data: Skill[]): SkillGroup[] {\r\n  const order: Array<Skill[\"category\"]> = [\"Language\", \"Framework\", \"Tool\"];\r\n  return order.map((cat) => ({\r\n    items: data.filter((s) => s.category === cat),\r\n    value: cat,\r\n  }));\r\n}\r\n\r\nconst grouped = groupSkills(skills);\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-1.5\">\r\n      <label className=\"font-medium text-sm\">Skill</label>\r\n      <Autocomplete items={grouped}>\r\n        <AutocompleteInput placeholder=\"Search skills…\" showClear showTrigger />\r\n        <AutocompletePopup>\r\n          <AutocompleteEmpty>No skills found.</AutocompleteEmpty>\r\n          <AutocompleteList>\r\n            {(group: SkillGroup) => (\r\n              <Fragment key={group.value}>\r\n                <AutocompleteGroup items={group.items}>\r\n                  <AutocompleteGroupLabel>\r\n                    {group.value}s\r\n                  </AutocompleteGroupLabel>\r\n                  <AutocompleteCollection>\r\n                    {(skill: Skill) => (\r\n                      <AutocompleteItem key={skill.id} value={skill}>\r\n                        {skill.label}\r\n                      </AutocompleteItem>\r\n                    )}\r\n                  </AutocompleteCollection>\r\n                </AutocompleteGroup>\r\n                {group.value !== \"Tool\" && <AutocompleteSeparator />}\r\n              </Fragment>\r\n            )}\r\n          </AutocompleteList>\r\n        </AutocompletePopup>\r\n      </Autocomplete>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "autocomplete"
+  ],
+  "type": "registry:block"
+}

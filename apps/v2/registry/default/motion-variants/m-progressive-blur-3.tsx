@@ -19,7 +19,7 @@ export default function ProgressiveBlurNav() {
         <div className="flex h-full items-center gap-1 px-3">
           {navItems.map((item) => (
             <button
-              className="shrink-0 rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="shrink-0 rounded-full px-3 py-1.5 font-medium text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
               key={item}
             >
               {item}

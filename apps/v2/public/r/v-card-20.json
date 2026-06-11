@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-20",
+  "description": "Stats dashboard grid with four metric tiles and trend indicators",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-20.tsx",
+      "content": "import { TrendingDownIcon, TrendingUpIcon } from \"lucide-react\";\r\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\r\n\r\nconst stats = [\r\n  { delta: \"+14.2%\", label: \"Total Users\", trend: \"up\", value: \"84,210\" },\r\n  { delta: \"+7.8%\", label: \"Monthly Revenue\", trend: \"up\", value: \"$31,540\" },\r\n  { delta: \"-3.1%\", label: \"Churn Rate\", trend: \"down\", value: \"2.4%\" },\r\n  { delta: \"+22.5%\", label: \"Active Sessions\", trend: \"up\", value: \"12,840\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"grid w-full max-w-lg grid-cols-2 gap-3\">\r\n      {stats.map((stat) => (\r\n        <Card className=\"w-full\" key={stat.label}>\r\n          <CardContent className=\"flex flex-col gap-1.5\">\r\n            <span className=\"text-muted-foreground text-xs\">{stat.label}</span>\r\n            <span className=\"font-bold text-xl tabular-nums\">{stat.value}</span>\r\n            <span\r\n              className={`flex items-center gap-1 font-medium text-xs ${\r\n                stat.trend === \"up\"\r\n                  ? \"text-emerald-600 dark:text-emerald-400\"\r\n                  : \"text-red-500 dark:text-red-400\"\r\n              }`}\r\n            >\r\n              {stat.trend === \"up\" ? (\r\n                <TrendingUpIcon className=\"size-3.5\" />\r\n              ) : (\r\n                <TrendingDownIcon className=\"size-3.5\" />\r\n              )}\r\n              {stat.delta} vs last month\r\n            </span>\r\n          </CardContent>\r\n        </Card>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

@@ -6,7 +6,7 @@ export default function RandomLetterSwapButtons() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-4 px-6">
       <button
-        className="inline-flex rounded-full bg-foreground px-7 py-3 text-base font-semibold"
+        className="inline-flex rounded-full bg-foreground px-7 py-3 font-semibold text-base"
         type="button"
       >
         <RandomLetterSwap
@@ -18,7 +18,7 @@ export default function RandomLetterSwapButtons() {
         />
       </button>
       <button
-        className="inline-flex rounded-full border border-border px-7 py-3 text-base font-semibold text-foreground"
+        className="inline-flex rounded-full border border-border px-7 py-3 font-semibold text-base text-foreground"
         type="button"
       >
         <RandomLetterSwap

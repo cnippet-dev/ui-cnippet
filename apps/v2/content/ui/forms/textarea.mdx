@@ -1,6 +1,8 @@
 ---
 title: Textarea
-description: A native textarea element.
+description: A native textarea element. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://base-ui.com/react/components/field#api-reference
 ---
 
 <ComponentPreview name="v-textarea-1" />
@@ -53,6 +55,17 @@ import { Textarea } from "@/components/ui/textarea"
 <Textarea />
 ```
 
+## API Reference
+
+### Textarea
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Visual size of the textarea |
+| `unstyled` | `boolean` | `false` | Strips the outer border/shadow wrapper — use inside `InputGroup` |
+
+All standard `<textarea>` HTML attributes are forwarded (e.g. `placeholder`, `rows`, `disabled`, `required`, `name`). The textarea auto-sizes its height to content via `field-sizing: content`.
+
 ## Examples
 
 ### Sizes
@@ -90,3 +103,33 @@ Displays a live character counter below the textarea that updates as the user ty
 Wraps the textarea in `Form` and `Field` for required validation and a visible `FieldError` displayed on submit.
 
 <ComponentPreview name="v-textarea-7" />
+
+### Word Count
+
+Displays live word and character counts below the textarea as the user types, useful for length-aware fields like bios or summaries.
+
+<ComponentPreview name="v-textarea-8" />
+
+### Write / Preview
+
+A two-tab toggle that switches between an editable textarea and a read-only preview panel, mimicking a markdown editor's split view.
+
+<ComponentPreview name="v-textarea-9" />
+
+### Support Ticket
+
+A support form with pill-style category chips (Bug Report, Feature Request, etc.) and a message textarea. Submitting shows an inline confirmation state without navigating away.
+
+<ComponentPreview name="v-textarea-10" />
+
+### Chat Composer
+
+An inline chat thread with a growing message textarea and action buttons for attachment, emoji, and send. Pressing Enter sends the message and appends a new bubble to the thread.
+
+<ComponentPreview name="v-textarea-11" />
+
+### Release Notes Editor
+
+A release notes form with a version title input, a character-capped markdown textarea, and Save Draft / Publish actions. The header badge reflects the current publish status.
+
+<ComponentPreview name="v-textarea-12" />

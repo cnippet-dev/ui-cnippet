@@ -1,6 +1,6 @@
 ---
 title: Checkbox
-description: A control allowing the user to toggle between checked and not checked.
+description: A control allowing the user to toggle between checked and not checked. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/checkbox#api-reference
@@ -56,9 +56,25 @@ import { Checkbox } from "@/components/ui/checkbox"
 <Checkbox />
 ```
 
+## API Reference
+
+### Checkbox
+
+Styled wrapper around Base UI's `Checkbox.Root` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean \| "mixed"` | — | Controlled checked state; `"mixed"` renders an indeterminate indicator |
+| `defaultChecked` | `boolean \| "mixed"` | `false` | Initial state for uncontrolled usage |
+| `onCheckedChange` | `(checked: boolean \| "mixed") => void` | — | Callback when checked state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `required` | `boolean` | `false` | Marks the field as required for form validation |
+| `name` | `string` | — | Form field name submitted with the form |
+| `value` | `string` | — | Value submitted when the checkbox is checked |
+
 ## Examples
 
-For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Checkbox field](/ui/docs/components/field#checkbox-field).
+For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Checkbox field](/ui/forms/field#checkbox-field).
 
 ### Disabled
 
@@ -89,3 +105,57 @@ Field provides accessible labelling and validation primitives for form controls.
 A selectable card containing payment method details — clicking anywhere on the card checks the checkbox and highlights the selection.
 
 <ComponentPreview name="v-checkbox-6" />
+
+### Select All with Indeterminate State
+
+A parent checkbox that controls a group of children. When only some children are checked the parent displays the indeterminate state; checking it toggles all children on or off.
+
+<ComponentPreview name="v-checkbox-7" />
+
+### Issue Label Picker
+
+Eight colored labels each rendered as a checkbox with a color dot. The header updates the selected count live as labels are toggled.
+
+<ComponentPreview name="v-checkbox-8" />
+
+### Notification Channel Selector
+
+Four notification channels (email, SMS, push, Slack) as checkboxes. The icon box changes accent color when its channel is enabled, giving immediate visual feedback.
+
+<ComponentPreview name="v-checkbox-9" />
+
+### Multi-Consent Gate
+
+Three required consent items and one optional item. The submit button is disabled until all required items are checked, and its label counts how many remain.
+
+<ComponentPreview name="v-checkbox-10" />
+
+### Weekly Availability Grid
+
+A checkbox grid with time slots (Morning, Afternoon, Evening) as rows and days of the week as columns, with a live count of selected slots.
+
+<ComponentPreview name="v-checkbox-11" />
+
+### Role Permissions
+
+Four permission levels (Read, Write, Delete, Admin) each rendered as a bordered card row with a colored badge and a description line.
+
+<ComponentPreview name="v-checkbox-12" />
+
+### Notification Preferences Matrix
+
+A table with event rows and channel columns (Email, Push, SMS) where each cell is an individually togglable checkbox, with a Save button below.
+
+<ComponentPreview name="v-checkbox-13" />
+
+### Plan Add-on Selector
+
+Selectable feature add-ons where the estimated monthly price updates in real time as the user checks or unchecks items.
+
+<ComponentPreview name="v-checkbox-14" />
+
+### Sprint Task Checklist
+
+A task list with priority badges (High, Medium, Low). Completed tasks receive a strikethrough, and a celebration banner appears when all tasks are checked off.
+
+<ComponentPreview name="v-checkbox-15" />

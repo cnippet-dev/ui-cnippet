@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-popover-19",
+  "description": "Inline tag editor",
+  "registryDependencies": [
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-19.tsx",
+      "content": "\"use client\";\r\n\r\nimport { BellIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\n\r\nconst initialNotifications = [\r\n  {\r\n    id: 1,\r\n    read: false,\r\n    text: \"Jamie left a comment on your post.\",\r\n    time: \"2m ago\",\r\n  },\r\n  {\r\n    id: 2,\r\n    read: false,\r\n    text: \"Your export is ready to download.\",\r\n    time: \"15m ago\",\r\n  },\r\n  {\r\n    id: 3,\r\n    read: true,\r\n    text: \"Alex invited you to join the workspace.\",\r\n    time: \"1h ago\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [items, setItems] = useState(initialNotifications);\r\n  const unread = items.filter((n) => !n.read).length;\r\n\r\n  return (\r\n    <div className=\"flex min-h-25 items-center justify-center\">\r\n      <Popover>\r\n        <PopoverTrigger\r\n          aria-label=\"Notifications\"\r\n          render={<Button size=\"icon\" variant=\"outline\" />}\r\n        >\r\n          <span className=\"relative\">\r\n            <BellIcon aria-hidden=\"true\" className=\"size-4\" />\r\n            {unread > 0 && (\r\n              <span className=\"absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-destructive font-bold text-[9px] text-destructive-foreground\">\r\n                {unread}\r\n              </span>\r\n            )}\r\n          </span>\r\n        </PopoverTrigger>\r\n        <PopoverContent align=\"end\" className=\"w-72 gap-0 p-0\">\r\n          <div className=\"flex items-center justify-between border-b px-3 py-2.5\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <h4 className=\"font-semibold text-sm\">Notifications</h4>\r\n              {unread > 0 && <Badge size=\"sm\">{unread}</Badge>}\r\n            </div>\r\n            <button\r\n              className=\"text-muted-foreground text-xs hover:text-foreground\"\r\n              onClick={() =>\r\n                setItems((p) => p.map((n) => ({ ...n, read: true })))\r\n              }\r\n              type=\"button\"\r\n            >\r\n              Mark all read\r\n            </button>\r\n          </div>\r\n          <div className=\"divide-y\">\r\n            {items.map((n) => (\r\n              <button\r\n                className={`flex w-full gap-3 px-3 py-2.5 text-left transition-colors hover:bg-muted ${n.read ? \"opacity-60\" : \"\"}`}\r\n                key={n.id}\r\n                onClick={() =>\r\n                  setItems((p) =>\r\n                    p.map((item) =>\r\n                      item.id === n.id ? { ...item, read: true } : item,\r\n                    ),\r\n                  )\r\n                }\r\n                type=\"button\"\r\n              >\r\n                <span\r\n                  className={`mt-1.5 size-1.5 shrink-0 rounded-full ${n.read ? \"bg-transparent\" : \"bg-primary\"}`}\r\n                />\r\n                <div className=\"min-w-0 flex-1\">\r\n                  <p className=\"text-sm\">{n.text}</p>\r\n                  <p className=\"text-muted-foreground text-xs\">{n.time}</p>\r\n                </div>\r\n              </button>\r\n            ))}\r\n          </div>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ],
+  "type": "registry:block"
+}

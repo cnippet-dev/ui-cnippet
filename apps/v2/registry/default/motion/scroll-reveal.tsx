@@ -38,7 +38,9 @@ export function ScrollReveal({
   const isInView = useInView(ref, viewOptions);
   const [isViewed, setIsViewed] = useState(false);
 
-  const MotionComponent = motion[as as keyof typeof motion] as typeof motion.div;
+  const MotionComponent = motion[
+    as as keyof typeof motion
+  ] as typeof motion.div;
 
   return (
     <MotionComponent

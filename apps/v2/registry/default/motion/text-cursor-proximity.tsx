@@ -78,7 +78,10 @@ export const TextCursorProximity = forwardRef<
     const letterProximities = useRef(
       Array(text.replace(/\s/g, "").length)
         .fill(0)
-        .map(() => useMotionValue(0)),
+        .map(() => {
+          // biome-ignore lint/correctness/useHookAtTopLevel: initialized once as useRef initial value
+          return useMotionValue(0);
+        }),
     );
 
     const calcFalloff = (distance: number): number => {
@@ -117,10 +120,12 @@ export const TextCursorProximity = forwardRef<
               const idx = letterIndex++;
               const proximity = letterProximities.current[idx];
 
+              // biome-ignore lint/correctness/useHookAtTopLevel: fallback for missing proximity value
               const mv = proximity ?? useMotionValue(0);
               const transformedStyles = Object.fromEntries(
                 Object.entries(styles).map(([key, value]) => [
                   key,
+                  // biome-ignore lint/correctness/useHookAtTopLevel: transform per letter inside render map
                   useTransform(mv, [0, 1], [value.from, value.to]),
                 ]),
               );

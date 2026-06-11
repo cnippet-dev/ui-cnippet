@@ -32,10 +32,13 @@ export function LetterSwapHover({
   const [scope, animate] = useAnimate();
   const [blocked, setBlocked] = useState(false);
 
-  const mergeTransition = (base: AnimationOptions): AnimationOptions => ({
-    ...base,
-    delay: stagger(staggerDuration, { from: staggerFrom }),
-  });
+  const mergeTransition = useCallback(
+    (base: AnimationOptions): AnimationOptions => ({
+      ...base,
+      delay: stagger(staggerDuration, { from: staggerFrom }),
+    }),
+    [staggerDuration, staggerFrom],
+  );
 
   const hoverStart = useCallback(() => {
     if (blocked) return;

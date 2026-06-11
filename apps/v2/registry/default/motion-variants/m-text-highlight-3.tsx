@@ -1,7 +1,10 @@
 "use client";
 
-import { TextHighlight, type TextHighlightRef } from "@/registry/default/motion/text-highlight";
 import { useRef, useState } from "react";
+import {
+  TextHighlight,
+  type TextHighlightRef,
+} from "@/registry/default/motion/text-highlight";
 
 const directions = ["ltr", "rtl", "ttb", "btt"] as const;
 
@@ -11,7 +14,7 @@ export default function TextHighlightDirections() {
 
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-6 px-6">
-      <p className="text-2xl font-bold text-foreground">
+      <p className="font-bold text-2xl text-foreground">
         <TextHighlight
           direction={dir}
           highlightColor="hsl(155, 70%, 75%)"
@@ -25,7 +28,7 @@ export default function TextHighlightDirections() {
       <div className="flex flex-wrap justify-center gap-2">
         {directions.map((d) => (
           <button
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 font-medium text-xs transition-colors ${
               d === dir
                 ? "bg-foreground text-background"
                 : "bg-accent text-muted-foreground hover:text-foreground"

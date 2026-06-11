@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-14",
+  "description": "Items with Description",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-14.tsx",
+      "content": "import {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nconst deployTargets: {\r\n  description: string;\r\n  label: string;\r\n  value: string | null;\r\n}[] = [\r\n  { description: \"\", label: \"Select environment\", value: null },\r\n  {\r\n    description: \"Public-facing production environment\",\r\n    label: \"Production\",\r\n    value: \"production\",\r\n  },\r\n  {\r\n    description: \"Internal testing and QA environment\",\r\n    label: \"Staging\",\r\n    value: \"staging\",\r\n  },\r\n  {\r\n    description: \"For feature development and experiments\",\r\n    label: \"Development\",\r\n    value: \"development\",\r\n  },\r\n  {\r\n    description: \"Isolated per-branch preview deployments\",\r\n    label: \"Preview\",\r\n    value: \"preview\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select defaultValue={deployTargets[2]} items={deployTargets}>\r\n      <SelectTrigger className=\"w-56\">\r\n        <SelectValue />\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {deployTargets.slice(1).map((item) => (\r\n          <SelectItem key={item.value} value={item}>\r\n            <span className=\"flex flex-col gap-0.5\">\r\n              <span>{item.label}</span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                {item.description}\r\n              </span>\r\n            </span>\r\n          </SelectItem>\r\n        ))}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

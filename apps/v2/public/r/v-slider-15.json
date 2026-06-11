@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-15",
+  "description": "Display Settings Sliders",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\r\n\r\nconst settings = [\r\n  { key: \"brightness\", label: \"Brightness\" },\r\n  { key: \"contrast\", label: \"Contrast\" },\r\n  { key: \"saturation\", label: \"Saturation\" },\r\n] as const;\r\n\r\nconst defaults = { brightness: 80, contrast: 50, saturation: 60 };\r\n\r\nexport default function Particle() {\r\n  const [values, setValues] = useState(defaults);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-5 rounded-xl border p-5\">\r\n      <p className=\"font-semibold\">Display Settings</p>\r\n      {settings.map(({ key, label }) => (\r\n        <Slider\r\n          key={key}\r\n          max={100}\r\n          min={0}\r\n          onValueChange={(v) =>\r\n            setValues((prev) => ({\r\n              ...prev,\r\n              [key]: Array.isArray(v) ? (v[0] ?? 0) : v,\r\n            }))\r\n          }\r\n          value={[values[key]]}\r\n        >\r\n          <div className=\"mb-2 flex items-center justify-between text-sm\">\r\n            <span className=\"text-muted-foreground\">{label}</span>\r\n            <SliderValue />\r\n          </div>\r\n        </Slider>\r\n      ))}\r\n      <div className=\"flex gap-2 pt-1\">\r\n        <Button\r\n          className=\"flex-1\"\r\n          onClick={() => setValues(defaults)}\r\n          variant=\"outline\"\r\n        >\r\n          Reset\r\n        </Button>\r\n        <Button className=\"flex-1\">Apply</Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

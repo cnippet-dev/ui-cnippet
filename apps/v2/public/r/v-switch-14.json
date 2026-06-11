@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-14",
+  "description": "Required Agreement Switch",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Switch } from \"@/registry/default/ui/switch\";\r\n\r\nexport default function Particle() {\r\n  const [agreed, setAgreed] = useState(false);\r\n\r\n  return (\r\n    <form\r\n      className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\"\r\n      onSubmit={(e) => e.preventDefault()}\r\n    >\r\n      <p className=\"font-semibold\">Create Account</p>\r\n      <Field>\r\n        <FieldLabel>Full name</FieldLabel>\r\n        <Input placeholder=\"Jane Smith\" type=\"text\" />\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>Email</FieldLabel>\r\n        <Input placeholder=\"jane@example.com\" type=\"email\" />\r\n      </Field>\r\n      <Field className=\"flex-row items-start gap-3\">\r\n        <Switch\r\n          checked={agreed}\r\n          className=\"mt-0.5\"\r\n          onCheckedChange={setAgreed}\r\n          required\r\n        />\r\n        <div>\r\n          <FieldLabel>Terms &amp; Conditions</FieldLabel>\r\n          <FieldDescription>\r\n            I agree to the Terms of Service and Privacy Policy\r\n          </FieldDescription>\r\n        </div>\r\n      </Field>\r\n      <Button className=\"w-full\" disabled={!agreed} type=\"submit\">\r\n        Create Account\r\n      </Button>\r\n    </form>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

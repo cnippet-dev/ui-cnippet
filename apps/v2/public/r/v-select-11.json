@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-11",
+  "description": "With Disabled Options",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-11.tsx",
+      "content": "import {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectSeparator,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nconst activeRoles = [\r\n  { label: \"Owner\", value: \"owner\" },\r\n  { label: \"Admin\", value: \"admin\" },\r\n  { label: \"Editor\", value: \"editor\" },\r\n  { label: \"Viewer\", value: \"viewer\" },\r\n];\r\n\r\nconst comingSoon = [\r\n  { label: \"Guest\", value: \"guest\" },\r\n  { label: \"Contractor\", value: \"contractor\" },\r\n];\r\n\r\nconst placeholder = { label: \"Select a role\", value: null };\r\nconst allItems = [placeholder, ...activeRoles, ...comingSoon];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select defaultValue={activeRoles[2]} items={allItems}>\r\n      <SelectTrigger className=\"w-52\">\r\n        <SelectValue />\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {activeRoles.map((item) => (\r\n          <SelectItem key={item.value} value={item}>\r\n            {item.label}\r\n          </SelectItem>\r\n        ))}\r\n        <SelectSeparator />\r\n        {comingSoon.map((item) => (\r\n          <SelectItem disabled key={item.value} value={item}>\r\n            {item.label}\r\n            <span className=\"ms-1.5 text-muted-foreground text-xs\">\r\n              (coming soon)\r\n            </span>\r\n          </SelectItem>\r\n        ))}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

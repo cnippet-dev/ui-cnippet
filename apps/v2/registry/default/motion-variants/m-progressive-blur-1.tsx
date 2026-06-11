@@ -18,7 +18,7 @@ export default function ProgressiveBlurList() {
         <ul className="space-y-1 p-4">
           {items.map((item) => (
             <li
-              className="rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted"
+              className="rounded-md px-3 py-2 text-foreground/80 text-sm hover:bg-muted"
               key={item}
             >
               {item}

@@ -13,14 +13,14 @@ export default function CountingNumberStats() {
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
         {stats.map((stat) => (
           <div className="text-center" key={stat.label}>
-            <p className="text-4xl font-bold tracking-tight text-foreground">
+            <p className="font-bold text-4xl text-foreground tracking-tight">
               <CountingNumber
                 target={stat.value}
                 transition={{ duration: 2, ease: "easeOut", type: "tween" }}
               />
               {stat.suffix}
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
+            <p className="mt-1 text-muted-foreground text-xs">{stat.label}</p>
           </div>
         ))}
       </div>

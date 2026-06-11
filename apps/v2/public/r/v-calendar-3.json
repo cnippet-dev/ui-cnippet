@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-calendar-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport type { DateRange } from \"react-day-picker\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Particle() {\r\n  const [range, setRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(),\r\n    to: new Date(new Date().setDate(new Date().getDate() + 7)),\r\n  });\r\n\r\n  return <Calendar mode=\"range\" onSelect={setRange} selected={range} />;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport type { DateRange } from \"react-day-picker\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nexport default function Particle() {\r\n  const [range, setRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(),\r\n    to: new Date(new Date().setDate(new Date().getDate() + 7)),\r\n  });\r\n\r\n  return (\r\n    <Calendar\r\n      className=\"mx-auto\"\r\n      mode=\"range\"\r\n      onSelect={setRange}\r\n      selected={range}\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

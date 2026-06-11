@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-kbd-11",
+  "description": "Command palette result rows with navigation hints",
+  "registryDependencies": [
+    "@cnippet/kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-kbd-11.tsx",
+      "content": "import { FileTextIcon, FolderIcon, SettingsIcon } from \"lucide-react\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\n\r\nconst results = [\r\n  {\r\n    description: \"Updated 2 hours ago\",\r\n    icon: FileTextIcon,\r\n    kbd: [\"↵\"],\r\n    label: \"Getting started guide\",\r\n  },\r\n  {\r\n    description: \"12 documents\",\r\n    icon: FolderIcon,\r\n    kbd: [\"↵\"],\r\n    label: \"Design resources\",\r\n  },\r\n  {\r\n    description: \"Workspace · Billing\",\r\n    icon: SettingsIcon,\r\n    kbd: [\"↵\"],\r\n    label: \"Account settings\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-popover shadow-md\">\r\n      <div className=\"border-b px-3 py-2\">\r\n        <p className=\"text-muted-foreground text-xs\">Recent</p>\r\n      </div>\r\n      <ul>\r\n        {results.map(({ description, icon: Icon, kbd, label }, i) => (\r\n          <li\r\n            className={`flex cursor-pointer items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-accent ${i === 0 ? \"bg-accent\" : \"\"}`}\r\n            key={label}\r\n          >\r\n            <Icon\r\n              aria-hidden=\"true\"\r\n              className=\"size-4 shrink-0 text-muted-foreground\"\r\n            />\r\n            <div className=\"flex min-w-0 flex-1 flex-col\">\r\n              <span className=\"truncate font-medium\">{label}</span>\r\n              <span className=\"truncate text-muted-foreground text-xs\">\r\n                {description}\r\n              </span>\r\n            </div>\r\n            <KbdGroup className=\"shrink-0\">\r\n              {kbd.map((k) => (\r\n                <Kbd key={k}>{k}</Kbd>\r\n              ))}\r\n            </KbdGroup>\r\n          </li>\r\n        ))}\r\n      </ul>\r\n      <div className=\"flex items-center gap-3 border-t px-3 py-2\">\r\n        <span className=\"flex items-center gap-1 text-muted-foreground text-xs\">\r\n          <KbdGroup>\r\n            <Kbd>↑</Kbd>\r\n            <Kbd>↓</Kbd>\r\n          </KbdGroup>{\" \"}\r\n          navigate\r\n        </span>\r\n        <span className=\"flex items-center gap-1 text-muted-foreground text-xs\">\r\n          <Kbd>↵</Kbd> open\r\n        </span>\r\n        <span className=\"flex items-center gap-1 text-muted-foreground text-xs\">\r\n          <Kbd>Esc</Kbd> close\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "kbd"
+  ],
+  "type": "registry:block"
+}

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-8.tsx",
-      "content": "\"use client\";\r\n\r\nimport { BookmarkCheckIcon, BookmarkIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Toggle } from \"@/registry/default/ui/toggle\";\r\n\r\nexport function Pattern() {\r\n  const [pressed, setPressed] = useState(false);\r\n\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <Toggle\r\n        aria-label=\"Toggle bookmark\"\r\n        onPressedChange={setPressed}\r\n        pressed={pressed}\r\n        variant=\"outline\"\r\n      >\r\n        {pressed ? (\r\n          <BookmarkCheckIcon className=\"fill-current\" />\r\n        ) : (\r\n          <BookmarkIcon />\r\n        )}\r\n        {pressed ? \"Bookmarked\" : \"Bookmark\"}\r\n      </Toggle>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { BookmarkCheckIcon, BookmarkIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  const [pressed, setPressed] = useState(false);\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <Toggle\n        aria-label=\"Toggle bookmark\"\n        onPressedChange={setPressed}\n        pressed={pressed}\n        variant=\"outline\"\n      >\n        {pressed ? (\n          <BookmarkCheckIcon className=\"fill-current\" />\n        ) : (\n          <BookmarkIcon />\n        )}\n        {pressed ? \"Bookmarked\" : \"Bookmark\"}\n      </Toggle>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

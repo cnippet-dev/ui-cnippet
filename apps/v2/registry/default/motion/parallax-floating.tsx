@@ -30,7 +30,7 @@ function useMousePositionRef(
       updatePosition(ev.clientX, ev.clientY);
     const handleTouchMove = (ev: TouchEvent) => {
       const touch = ev.touches[0];
-      updatePosition(touch.clientX, touch.clientY);
+      if (touch) updatePosition(touch.clientX, touch.clientY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);

@@ -24,10 +24,12 @@ export default function ScrollRevealList() {
             viewOptions={{ amount: 0.5 }}
           >
             <div className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-[10px] text-primary-foreground">
                 {i + 1}
               </span>
-              <span className="text-sm font-medium text-foreground">{item}</span>
+              <span className="font-medium text-foreground text-sm">
+                {item}
+              </span>
             </div>
           </ScrollReveal>
         ))}

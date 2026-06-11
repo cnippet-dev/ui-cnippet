@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-7",
-  "description": "Basic kbd",
+  "description": "Keyboard shortcut in button",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-7.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { PrinterIcon, SaveIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      <Button variant=\"outline\">\r\n        <SaveIcon aria-hidden=\"true\" />\r\n        Save\r\n        <KbdGroup className=\"-me-1\">\r\n          <Kbd>⌘</Kbd>\r\n          <Kbd>S</Kbd>\r\n        </KbdGroup>\r\n      </Button>\r\n      <Button variant=\"outline\">\r\n        <PrinterIcon aria-hidden=\"true\" />\r\n        Print\r\n        <KbdGroup className=\"-me-1\">\r\n          <Kbd>⌘</Kbd>\r\n          <Kbd>P</Kbd>\r\n        </KbdGroup>\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-12",
+  "description": "8-char invite code with separator",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-12.tsx",
+      "content": "import { SmartphoneIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\r\n\r\nconst OTP_LENGTH = 6;\r\n\r\nconst OTP_SLOT_KEYS = Array.from(\r\n  { length: OTP_LENGTH },\r\n  (_, i) => `otp-slot-${i}`,\r\n);\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-4 rounded-xl border p-5\">\r\n      <div className=\"flex items-center gap-3\">\r\n        <div className=\"flex size-9 items-center justify-center rounded-lg bg-muted\">\r\n          <SmartphoneIcon\r\n            aria-hidden=\"true\"\r\n            className=\"size-4 text-muted-foreground\"\r\n          />\r\n        </div>\r\n        <div>\r\n          <p className=\"font-medium text-sm\">Authenticator app</p>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            Enter the 6-digit code shown in your app\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <Field className=\"items-center\">\r\n        <FieldLabel className=\"sr-only\">Authentication code</FieldLabel>\r\n        <OTPField\r\n          aria-label=\"Two-factor authentication code\"\r\n          inputMode=\"numeric\"\r\n          length={OTP_LENGTH}\r\n        >\r\n          {OTP_SLOT_KEYS.map((slotKey, index) => (\r\n            <OTPFieldInput\r\n              aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\r\n              key={slotKey}\r\n            />\r\n          ))}\r\n        </OTPField>\r\n      </Field>\r\n      <Button className=\"w-full\" size=\"sm\">\r\n        Verify\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

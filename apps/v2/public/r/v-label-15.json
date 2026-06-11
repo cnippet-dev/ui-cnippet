@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-label-15",
+  "description": "With error state",
+  "registryDependencies": [
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-label-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { Field, FieldDescription } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(\"existing@taken.com\");\r\n  const id = useId();\r\n  const hasError = value.length > 0 && value.includes(\"taken\");\r\n\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label htmlFor={id}>\r\n        Email address\r\n        <span className=\"text-destructive\">*</span>\r\n      </Label>\r\n      <Input\r\n        aria-describedby={hasError ? `${id}-error` : undefined}\r\n        aria-invalid={hasError}\r\n        className={\r\n          hasError ? \"border-destructive focus-visible:ring-destructive/20\" : \"\"\r\n        }\r\n        id={id}\r\n        onChange={(e) => setValue(e.target.value)}\r\n        type=\"email\"\r\n        value={value}\r\n      />\r\n      {hasError && (\r\n        <FieldDescription className=\"text-destructive\" id={`${id}-error`}>\r\n          This email is already registered.\r\n        </FieldDescription>\r\n      )}\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "label"
+  ],
+  "type": "registry:block"
+}

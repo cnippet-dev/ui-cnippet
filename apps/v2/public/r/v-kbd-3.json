@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-kbd-3.tsx",
-      "content": "import { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <KbdGroup>\r\n        <Kbd>Ctrl</Kbd>\r\n        <Kbd>Shift</Kbd>\r\n        <Kbd>P</Kbd>\r\n      </KbdGroup>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <KbdGroup>\n        <Kbd>Ctrl</Kbd>\n        <Kbd>Shift</Kbd>\n        <Kbd>P</Kbd>\n      </KbdGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

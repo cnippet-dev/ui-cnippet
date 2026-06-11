@@ -9,27 +9,29 @@ export default function TextMorphPricing() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % plans.length),
-      2200,
-    );
+    const id = setInterval(() => setIndex((i) => (i + 1) % plans.length), 2200);
     return () => clearInterval(id);
   }, []);
 
   return (
     <div className="flex min-h-50 items-center justify-center px-6">
       <div className="w-full max-w-xs rounded-xl border border-border bg-card p-6 text-center">
-        <p className="mb-1 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+        <p className="mb-1 font-medium text-muted-foreground text-xs uppercase tracking-widest">
           Current plan
         </p>
         <TextMorph
           as="h3"
-          className="text-3xl font-bold text-foreground"
-          transition={{ damping: 20, mass: 0.25, stiffness: 320, type: "spring" }}
+          className="font-bold text-3xl text-foreground"
+          transition={{
+            damping: 20,
+            mass: 0.25,
+            stiffness: 320,
+            type: "spring",
+          }}
         >
-          {plans[index] ?? plans[0]}
+          {plans[index] ?? plans[0] ?? ""}
         </TextMorph>
-        <p className="mt-3 text-sm text-muted-foreground">
+        <p className="mt-3 text-muted-foreground text-sm">
           Upgrade or downgrade at any time.
         </p>
       </div>

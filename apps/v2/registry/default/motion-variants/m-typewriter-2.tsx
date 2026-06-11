@@ -3,7 +3,7 @@ import { Typewriter } from "@/registry/default/motion/typewriter";
 export default function TypewriterLoop() {
   return (
     <div className="flex min-h-50 items-center justify-center px-6">
-      <h2 className="text-center text-3xl font-bold tracking-tight text-foreground">
+      <h2 className="text-center font-bold text-3xl text-foreground tracking-tight">
         We help teams{" "}
         <span className="text-primary">
           <Typewriter

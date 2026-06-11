@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-skeleton-10",
-  "description": "Basic skeleton",
+  "description": "Settings Page",
   "registryDependencies": [
     "@cnippet/skeleton"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-10.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey: <>\r\n\r\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\r\n\r\nfunction SettingsSection({\r\n  rows,\r\n  titleWidth,\r\n}: {\r\n  rows: number;\r\n  titleWidth: string;\r\n}) {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"space-y-1\">\r\n        <Skeleton className={`h-4 ${titleWidth}`} />\r\n        <Skeleton className=\"h-3 w-48\" />\r\n      </div>\r\n      <div className=\"space-y-3\">\r\n        {Array.from({ length: rows }).map((_, i) => (\r\n          <div\r\n            className=\"flex items-center justify-between gap-4 rounded-lg border px-4 py-3\"\r\n            key={i}\r\n          >\r\n            <div className=\"space-y-1.5\">\r\n              <Skeleton className=\"h-3.5 w-32\" />\r\n              <Skeleton className=\"h-3 w-52\" />\r\n            </div>\r\n            {i % 3 === 2 ? (\r\n              <Skeleton className=\"h-8 w-20 shrink-0 rounded-md\" />\r\n            ) : (\r\n              <Skeleton className=\"h-5 w-9 shrink-0 rounded-full\" />\r\n            )}\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-lg space-y-8\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <div className=\"space-y-1.5\">\r\n          <Skeleton className=\"h-6 w-24\" />\r\n          <Skeleton className=\"h-3.5 w-48\" />\r\n        </div>\r\n        <Skeleton className=\"h-9 w-24 rounded-md\" />\r\n      </div>\r\n\r\n      <div className=\"flex gap-1\">\r\n        {[60, 80, 56, 72].map((w, i) => (\r\n          <Skeleton\r\n            className=\"h-8 rounded-md\"\r\n            key={i}\r\n            style={{ width: `${w}px` }}\r\n          />\r\n        ))}\r\n      </div>\r\n\r\n      <SettingsSection rows={3} titleWidth=\"w-36\" />\r\n      <SettingsSection rows={2} titleWidth=\"w-28\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

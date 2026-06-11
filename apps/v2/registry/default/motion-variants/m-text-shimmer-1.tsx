@@ -7,13 +7,13 @@ export default function TextShimmerHero() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-3 px-6">
       <TextShimmer
         as="h1"
-        className="text-4xl font-bold tracking-tight sm:text-5xl"
+        className="font-bold text-4xl tracking-tight sm:text-5xl"
         duration={2.5}
         spread={3}
       >
         Build beautiful interfaces
       </TextShimmer>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Continuously shimmering headline
       </p>
     </div>

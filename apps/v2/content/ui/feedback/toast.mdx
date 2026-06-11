@@ -1,6 +1,6 @@
 ---
 title: Toast
-description: Generates toast notifications.
+description: Generates toast notifications. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/toast#api-reference
@@ -119,10 +119,10 @@ toastManager.add({
 
 By default, toasts appear in the **bottom-right** corner. You can change this by setting the `position` prop on the `ToastProvider`.
 
-Allowed values: `tov-left`, `tov-center`, `tov-right`, `bottom-left`, `bottom-center`, `bottom-right`. For example:
+Allowed values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`. For example:
 
 ```tsx
-<ToastProvider position="tov-center">{children}</ToastProvider>
+<ToastProvider position="top-center">{children}</ToastProvider>
 ```
 
 ### Anchored Toasts
@@ -151,6 +151,34 @@ anchoredToastManager.add({
   },
 })
 ```
+
+## API Reference
+
+### toastManager.add() / anchoredToastManager.add()
+
+The primary way to trigger a toast. Call from any component without prop drilling.
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `title` | `string` | — | Main text shown in the toast (required) |
+| `description` | `string` | — | Secondary text below the title |
+| `type` | `"success" \| "error" \| "warning" \| "info" \| "loading"` | — | Renders a matching colored icon |
+| `actionProps` | `{ children: ReactNode }` | — | Adds an action button inside the toast |
+| `duration` | `number` | `5000` | Auto-dismiss delay in milliseconds |
+| `positionerProps` | `{ anchor: Element; sideOffset?: number }` | — | For `anchoredToastManager` — positions the toast relative to an element |
+| `data` | `{ tooltipStyle?: boolean }` | — | Pass `{ tooltipStyle: true }` to render an anchored toast as a tooltip |
+
+### ToastProvider
+
+Wrap your app with this to enable stacked toasts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `position` | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Screen corner where toasts appear |
+
+### AnchoredToastProvider
+
+Wrap your app with this (alongside `ToastProvider`) to enable element-anchored toasts.
 
 ## Examples
 
@@ -189,3 +217,51 @@ Demonstrates how multiple stacked toasts of different content lengths collapse a
 A form submit button that shows a success toast on completion and an error toast if the operation fails, without a page reload.
 
 <ComponentPreview name="v-toast-7" />
+
+### Staggered Burst
+
+Four toasts fire with staggered delays (0 / 800 / 1600 / 2400 ms) so they animate into the stack one after another. The trigger button is disabled while the burst is in progress.
+
+<ComponentPreview name="v-toast-8" />
+
+### Timeout Control
+
+Demonstrates the three common timeout modes: a 3-second auto-dismiss, an 8-second extended toast, and a persistent toast (timeout 0) that requires an explicit "Dismiss" action button.
+
+<ComponentPreview name="v-toast-9" />
+
+### Deploy Pipeline
+
+A chained sequence of toasts that progress through a deploy flow — loading → tests passed → deployed. Each stage closes the previous toast by ID before opening the next.
+
+<ComponentPreview name="v-toast-10" />
+
+### Anchored Copy Toast
+
+Uses `anchoredToastManager` with `tooltipStyle: true` to pop a "Copied!" tooltip directly above a copy button — no full notification stack needed.
+
+<ComponentPreview name="v-toast-11" />
+
+### Invite with Undo
+
+Each team invite fires a success toast with an Undo action. Clicking Undo closes the toast, removes the invite, and fires an info toast confirming the revocation.
+
+<ComponentPreview name="v-toast-12" />
+
+### Background Export
+
+An Export to CSV button triggers a loading toast while work runs in the background. When complete, it closes the loading toast and opens a success toast with a Download action.
+
+<ComponentPreview name="v-toast-13" />
+
+### Session Expiry Warning
+
+Simulates a session timeout: a persistent warning toast appears with a live countdown and a "Renew session" action. If ignored the timer reaches zero and an error toast replaces it.
+
+<ComponentPreview name="v-toast-14" />
+
+### Unsaved Changes
+
+A persistent "Unsaved changes" warning toast appears when the document is edited. The inline "Save now" action and the explicit Save button both resolve the toast and confirm with a success notification.
+
+<ComponentPreview name="v-toast-15" />

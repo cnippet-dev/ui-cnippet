@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-14",
+  "description": "Availability Status",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-14.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\r\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\r\n\r\nconst statuses = [\r\n  {\r\n    color: \"bg-green-500\",\r\n    description: \"Visible to everyone\",\r\n    label: \"Online\",\r\n    value: \"online\",\r\n  },\r\n  {\r\n    color: \"bg-yellow-500\",\r\n    description: \"Will reply when back\",\r\n    label: \"Away\",\r\n    value: \"away\",\r\n  },\r\n  {\r\n    color: \"bg-red-500\",\r\n    description: \"Minimizing interruptions\",\r\n    label: \"Busy\",\r\n    value: \"busy\",\r\n  },\r\n  {\r\n    color: \"bg-foreground/30\",\r\n    description: \"Appears offline to others\",\r\n    label: \"Offline\",\r\n    value: \"offline\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <RadioGroup className=\"w-full max-w-xs\" defaultValue=\"online\">\r\n      {statuses.map(({ color, description, label, value }) => (\r\n        <Label\r\n          className=\"flex cursor-pointer items-center gap-3 rounded-lg p-2 hover:bg-accent/50\"\r\n          key={value}\r\n        >\r\n          <Radio value={value} />\r\n          <span\r\n            aria-hidden=\"true\"\r\n            className={`size-2.5 shrink-0 rounded-full ${color}`}\r\n          />\r\n          <div className=\"flex flex-col\">\r\n            <span className=\"font-medium text-sm\">{label}</span>\r\n            <span className=\"text-muted-foreground text-xs\">{description}</span>\r\n          </div>\r\n        </Label>\r\n      ))}\r\n    </RadioGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

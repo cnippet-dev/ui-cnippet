@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-table-11",
+  "description": "Product inventory with stock level badges and quantity",
+  "registryDependencies": [
+    "@cnippet/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-table-11.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/registry/default/ui/table\";\r\n\r\ntype StockStatus = \"in-stock\" | \"low-stock\" | \"out-of-stock\";\r\n\r\nconst stockVariant: Record<StockStatus, \"success\" | \"warning\" | \"destructive\"> =\r\n  {\r\n    \"in-stock\": \"success\",\r\n    \"low-stock\": \"warning\",\r\n    \"out-of-stock\": \"destructive\",\r\n  };\r\n\r\nconst stockLabel: Record<StockStatus, string> = {\r\n  \"in-stock\": \"In Stock\",\r\n  \"low-stock\": \"Low Stock\",\r\n  \"out-of-stock\": \"Out of Stock\",\r\n};\r\n\r\nconst products = [\r\n  {\r\n    category: \"Electronics\",\r\n    name: \"Wireless Earbuds\",\r\n    price: \"$89.00\",\r\n    qty: 142,\r\n    sku: \"SKU-0021\",\r\n    stock: \"in-stock\" as StockStatus,\r\n  },\r\n  {\r\n    category: \"Accessories\",\r\n    name: \"Mechanical Keyboard\",\r\n    price: \"$149.00\",\r\n    qty: 8,\r\n    sku: \"SKU-0047\",\r\n    stock: \"low-stock\" as StockStatus,\r\n  },\r\n  {\r\n    category: \"Accessories\",\r\n    name: \"USB-C Hub\",\r\n    price: \"$49.00\",\r\n    qty: 256,\r\n    sku: \"SKU-0093\",\r\n    stock: \"in-stock\" as StockStatus,\r\n  },\r\n  {\r\n    category: \"Furniture\",\r\n    name: \"Laptop Stand\",\r\n    price: \"$79.00\",\r\n    qty: 0,\r\n    sku: \"SKU-0104\",\r\n    stock: \"out-of-stock\" as StockStatus,\r\n  },\r\n  {\r\n    category: \"Lighting\",\r\n    name: \"Monitor Light Bar\",\r\n    price: \"$59.00\",\r\n    qty: 14,\r\n    sku: \"SKU-0118\",\r\n    stock: \"low-stock\" as StockStatus,\r\n  },\r\n  {\r\n    category: \"Electronics\",\r\n    name: \"Webcam 4K\",\r\n    price: \"$199.00\",\r\n    qty: 67,\r\n    sku: \"SKU-0132\",\r\n    stock: \"in-stock\" as StockStatus,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-3xl\">\r\n      <Table>\r\n        <TableHeader>\r\n          <TableRow>\r\n            <TableHead>Product</TableHead>\r\n            <TableHead>SKU</TableHead>\r\n            <TableHead>Category</TableHead>\r\n            <TableHead className=\"text-right\">Price</TableHead>\r\n            <TableHead className=\"text-right\">Qty</TableHead>\r\n            <TableHead>Status</TableHead>\r\n          </TableRow>\r\n        </TableHeader>\r\n        <TableBody>\r\n          {products.map((p) => (\r\n            <TableRow key={p.sku}>\r\n              <TableCell className=\"font-medium text-sm\">{p.name}</TableCell>\r\n              <TableCell className=\"font-mono text-muted-foreground text-xs\">\r\n                {p.sku}\r\n              </TableCell>\r\n              <TableCell className=\"text-muted-foreground text-sm\">\r\n                {p.category}\r\n              </TableCell>\r\n              <TableCell className=\"text-right text-sm\">{p.price}</TableCell>\r\n              <TableCell className=\"text-right text-sm tabular-nums\">\r\n                {p.qty}\r\n              </TableCell>\r\n              <TableCell>\r\n                <Badge size=\"sm\" variant={stockVariant[p.stock]}>\r\n                  {stockLabel[p.stock]}\r\n                </Badge>\r\n              </TableCell>\r\n            </TableRow>\r\n          ))}\r\n        </TableBody>\r\n      </Table>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "table"
+  ],
+  "type": "registry:block"
+}

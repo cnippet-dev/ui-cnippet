@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-12",
+  "description": "Notification List",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-12.tsx",
+      "content": "import {\r\n  BellIcon,\r\n  CheckCheckIcon,\r\n  MessageSquareIcon,\r\n  UserPlusIcon,\r\n} from \"lucide-react\";\r\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\r\n\r\nconst notifications = [\r\n  {\r\n    Icon: MessageSquareIcon,\r\n    id: 1,\r\n    message: \"Alex commented on your pull request.\",\r\n    read: false,\r\n    time: \"2m ago\",\r\n  },\r\n  {\r\n    Icon: UserPlusIcon,\r\n    id: 2,\r\n    message: \"Sarah accepted your team invitation.\",\r\n    read: false,\r\n    time: \"15m ago\",\r\n  },\r\n  {\r\n    Icon: CheckCheckIcon,\r\n    id: 3,\r\n    message: \"Deployment to production was successful.\",\r\n    read: true,\r\n    time: \"1h ago\",\r\n  },\r\n  {\r\n    Icon: MessageSquareIcon,\r\n    id: 4,\r\n    message: \"Jordan left a review on your design.\",\r\n    read: true,\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    Icon: BellIcon,\r\n    id: 5,\r\n    message: \"Your free trial expires in 3 days.\",\r\n    read: true,\r\n    time: \"5h ago\",\r\n  },\r\n  {\r\n    Icon: UserPlusIcon,\r\n    id: 6,\r\n    message: \"New team member joined: Morgan.\",\r\n    read: true,\r\n    time: \"1d ago\",\r\n  },\r\n  {\r\n    Icon: CheckCheckIcon,\r\n    id: 7,\r\n    message: \"Staging environment updated successfully.\",\r\n    read: true,\r\n    time: \"2d ago\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ScrollArea className=\"h-72 w-full max-w-sm rounded-lg border\">\r\n      <div className=\"flex flex-col\">\r\n        {notifications.map(({ Icon, id, message, read, time }) => (\r\n          <div\r\n            className={`flex items-start gap-3 border-b px-4 py-3 last:border-b-0 ${!read ? \"bg-accent/30\" : \"\"}`}\r\n            key={id}\r\n          >\r\n            <div className=\"mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted\">\r\n              <Icon aria-hidden=\"true\" className=\"size-4\" />\r\n            </div>\r\n            <div className=\"flex flex-1 flex-col gap-0.5\">\r\n              <p className=\"text-sm\">{message}</p>\r\n              <span className=\"text-muted-foreground text-xs\">{time}</span>\r\n            </div>\r\n            {!read && (\r\n              <span\r\n                aria-label=\"Unread\"\r\n                className=\"mt-2 size-2 shrink-0 rounded-full bg-primary\"\r\n              />\r\n            )}\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </ScrollArea>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

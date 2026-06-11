@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-11",
+  "description": "Report Period Range with Presets",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { addMonths, endOfMonth, format, startOfMonth } from \"date-fns\";\r\nimport { CalendarIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\nimport {\r\n  Popover,\r\n  PopoverPopup,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\n\r\nconst today = new Date();\r\nconst PRESETS = [\r\n  { from: startOfMonth(today), label: \"This month\", to: endOfMonth(today) },\r\n  {\r\n    from: startOfMonth(addMonths(today, 1)),\r\n    label: \"Next month\",\r\n    to: endOfMonth(addMonths(today, 1)),\r\n  },\r\n  { from: today, label: \"Next 3 months\", to: endOfMonth(addMonths(today, 2)) },\r\n  { from: today, label: \"Next 6 months\", to: endOfMonth(addMonths(today, 5)) },\r\n];\r\n\r\nimport type { DateRange } from \"react-day-picker\";\r\n\r\nexport default function Particle() {\r\n  const [range, setRange] = useState<DateRange | undefined>();\r\n  const [open, setOpen] = useState(false);\r\n\r\n  const label =\r\n    range?.from && range?.to\r\n      ? `${format(range.from, \"MMM d\")} – ${format(range.to, \"MMM d, yyyy\")}`\r\n      : \"Select report period\";\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\r\n      <div className=\"flex flex-wrap gap-1.5\">\r\n        {PRESETS.map((p) => (\r\n          <button\r\n            className=\"rounded-full border px-3 py-0.5 font-medium text-muted-foreground text-xs transition-colors hover:border-foreground/30 hover:text-foreground\"\r\n            key={p.label}\r\n            onClick={() => {\r\n              setRange({ from: p.from, to: p.to });\r\n              setOpen(false);\r\n            }}\r\n            type=\"button\"\r\n          >\r\n            {p.label}\r\n          </button>\r\n        ))}\r\n      </div>\r\n      <Popover onOpenChange={setOpen} open={open}>\r\n        <PopoverTrigger\r\n          render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\r\n        >\r\n          <CalendarIcon />\r\n          {label}\r\n          {range?.from && range?.to && (\r\n            <Badge className=\"ml-auto\" size=\"sm\" variant=\"secondary\">\r\n              {Math.round(\r\n                (range.to.getTime() - range.from.getTime()) / 86400000,\r\n              ) + 1}\r\n              d\r\n            </Badge>\r\n          )}\r\n        </PopoverTrigger>\r\n        <PopoverPopup>\r\n          <Calendar\r\n            mode=\"range\"\r\n            numberOfMonths={2}\r\n            onSelect={setRange}\r\n            selected={range}\r\n          />\r\n          <div className=\"flex justify-end gap-2 border-t p-3\">\r\n            <Button\r\n              onClick={() => {\r\n                setRange(undefined);\r\n                setOpen(false);\r\n              }}\r\n              size=\"sm\"\r\n              variant=\"ghost\"\r\n            >\r\n              Clear\r\n            </Button>\r\n            <Button\r\n              disabled={!range?.from || !range?.to}\r\n              onClick={() => setOpen(false)}\r\n              size=\"sm\"\r\n            >\r\n              Apply\r\n            </Button>\r\n          </div>\r\n        </PopoverPopup>\r\n      </Popover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

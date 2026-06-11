@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-drawer-15",
+  "description": "Quick Actions Grid",
+  "registryDependencies": [
+    "@cnippet/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-drawer-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  ArchiveIcon,\r\n  BookmarkIcon,\r\n  DownloadIcon,\r\n  FlagIcon,\r\n  MessageSquareIcon,\r\n  MoreHorizontalIcon,\r\n  PencilIcon,\r\n  Share2Icon,\r\n  TrashIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Drawer,\r\n  DrawerClose,\r\n  DrawerFooter,\r\n  DrawerHeader,\r\n  DrawerPanel,\r\n  DrawerPopup,\r\n  DrawerTitle,\r\n  DrawerTrigger,\r\n} from \"@/registry/default/ui/drawer\";\r\n\r\nconst ACTIONS = [\r\n  { description: \"Modify this item\", icon: PencilIcon, label: \"Edit\" },\r\n  { description: \"Add a comment\", icon: MessageSquareIcon, label: \"Comment\" },\r\n  { description: \"Share with others\", icon: Share2Icon, label: \"Share\" },\r\n  { description: \"Save for later\", icon: BookmarkIcon, label: \"Bookmark\" },\r\n  { description: \"Export as file\", icon: DownloadIcon, label: \"Download\" },\r\n  { description: \"Move to archive\", icon: ArchiveIcon, label: \"Archive\" },\r\n  { description: \"Flag for review\", icon: FlagIcon, label: \"Report\" },\r\n  {\r\n    description: \"Remove permanently\",\r\n    destructive: true,\r\n    icon: TrashIcon,\r\n    label: \"Delete\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [lastAction, setLastAction] = useState<string | null>(null);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-3\">\r\n      {lastAction && (\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Action:{\" \"}\r\n          <span className=\"font-medium text-foreground\">{lastAction}</span>\r\n        </p>\r\n      )}\r\n      <Drawer>\r\n        <DrawerTrigger render={<Button size=\"icon\" variant=\"outline\" />}>\r\n          <MoreHorizontalIcon className=\"size-4\" />\r\n        </DrawerTrigger>\r\n        <DrawerPopup showBar>\r\n          <DrawerHeader>\r\n            <DrawerTitle>Actions</DrawerTitle>\r\n          </DrawerHeader>\r\n          <DrawerPanel>\r\n            <div className=\"grid grid-cols-4 gap-2\">\r\n              {ACTIONS.map((action) => (\r\n                <DrawerClose\r\n                  key={action.label}\r\n                  render={\r\n                    <button\r\n                      className={`flex flex-col items-center gap-2 rounded-xl border p-3 text-center transition-colors ${\r\n                        action.destructive\r\n                          ? \"border-destructive/20 text-destructive hover:bg-destructive/5\"\r\n                          : \"text-muted-foreground hover:border-foreground/20 hover:text-foreground\"\r\n                      }`}\r\n                      onClick={() => setLastAction(action.label)}\r\n                      type=\"button\"\r\n                    />\r\n                  }\r\n                >\r\n                  <action.icon className=\"size-5\" />\r\n                  <span className=\"font-medium text-xs leading-none\">\r\n                    {action.label}\r\n                  </span>\r\n                </DrawerClose>\r\n              ))}\r\n            </div>\r\n          </DrawerPanel>\r\n          <DrawerFooter\r\n            className=\"justify-center sm:justify-center\"\r\n            variant=\"bare\"\r\n          >\r\n            <DrawerClose render={<Button variant=\"outline\" />}>\r\n              Cancel\r\n            </DrawerClose>\r\n          </DrawerFooter>\r\n        </DrawerPopup>\r\n      </Drawer>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:block"
+}

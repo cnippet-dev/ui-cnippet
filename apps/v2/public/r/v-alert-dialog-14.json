@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-14",
+  "description": "Clear All Data with checkbox consent gate",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Trash2Icon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogClose,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/registry/default/ui/alert-dialog\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  const [agreed, setAgreed] = useState(false);\r\n\r\n  return (\r\n    <AlertDialog onOpenChange={(open) => !open && setAgreed(false)}>\r\n      <AlertDialogTrigger\r\n        render={<Button variant=\"destructive\">Clear All Data</Button>}\r\n      />\r\n      <AlertDialogContent className=\"sm:max-w-sm\">\r\n        <div className=\"flex flex-col items-center gap-3 p-6 pb-4\">\r\n          <div className=\"flex size-12 items-center justify-center rounded-full bg-destructive/10\">\r\n            <Trash2Icon className=\"size-5 text-destructive\" />\r\n          </div>\r\n          <AlertDialogTitle className=\"text-center font-semibold\">\r\n            Clear all workspace data?\r\n          </AlertDialogTitle>\r\n          <AlertDialogDescription className=\"text-center text-muted-foreground text-sm\">\r\n            This permanently deletes all projects, files, members, and settings.\r\n            This action is irreversible and cannot be undone.\r\n          </AlertDialogDescription>\r\n        </div>\r\n        <div className=\"mx-6 mb-4 flex items-start gap-2 rounded-lg border border-destructive/20 bg-destructive/5 p-3\">\r\n          <Checkbox\r\n            checked={agreed}\r\n            id=\"clear-confirm\"\r\n            onCheckedChange={(v) => setAgreed(Boolean(v))}\r\n          />\r\n          <Label\r\n            className=\"cursor-pointer text-muted-foreground text-sm leading-snug\"\r\n            htmlFor=\"clear-confirm\"\r\n          >\r\n            I understand this will permanently delete all data and cannot be\r\n            recovered.\r\n          </Label>\r\n        </div>\r\n        <AlertDialogFooter>\r\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>\r\n            Cancel\r\n          </AlertDialogClose>\r\n          <AlertDialogClose\r\n            render={<Button disabled={!agreed} variant=\"destructive\" />}\r\n          >\r\n            Delete Everything\r\n          </AlertDialogClose>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

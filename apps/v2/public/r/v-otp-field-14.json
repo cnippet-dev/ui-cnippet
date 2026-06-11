@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-14",
+  "description": "Resend countdown timer",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckCircle2Icon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\r\n\r\nconst VALID_CODE = \"246810\";\r\nconst OTP_LENGTH = 6;\r\n\r\nconst OTP_SLOT_KEYS = Array.from(\r\n  { length: OTP_LENGTH },\r\n  (_, i) => `otp-slot-${i}`,\r\n);\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(\"\");\r\n  const isComplete = value.length === OTP_LENGTH;\r\n  const isValid = isComplete && value === VALID_CODE;\r\n  const isInvalid = isComplete && value !== VALID_CODE;\r\n\r\n  return (\r\n    <Field className=\"items-center\">\r\n      <FieldLabel>Verification code</FieldLabel>\r\n      {isValid ? (\r\n        <div className=\"flex items-center gap-2 py-1 text-green-600 text-sm\">\r\n          <CheckCircle2Icon aria-hidden=\"true\" className=\"size-4\" />\r\n          Identity verified\r\n        </div>\r\n      ) : (\r\n        <OTPField length={OTP_LENGTH} onValueChange={setValue} value={value}>\r\n          {OTP_SLOT_KEYS.map((slotKey, index) => (\r\n            <OTPFieldInput\r\n              aria-invalid={isInvalid || undefined}\r\n              aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\r\n              key={slotKey}\r\n            />\r\n          ))}\r\n        </OTPField>\r\n      )}\r\n      {isInvalid && <FieldError>Incorrect code. Please try again.</FieldError>}\r\n      {!isComplete && !isValid && (\r\n        <FieldDescription>\r\n          Enter code{\" \"}\r\n          <code className=\"font-mono text-foreground\">{VALID_CODE}</code> to\r\n          verify.\r\n        </FieldDescription>\r\n      )}\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

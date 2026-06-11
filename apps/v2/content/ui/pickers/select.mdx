@@ -1,6 +1,6 @@
 ---
 title: Select
-description: A common form component for choosing a predefined value in a dropdown menu.
+description: A common form component for choosing a predefined value in a dropdown menu. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/select#api-reference
@@ -80,9 +80,73 @@ const items = [
   </Select>
 ```
 
+## API Reference
+
+### Select
+
+Root provider. Wraps Base UI `Select.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `T` | — | Controlled selected value |
+| `defaultValue` | `T` | — | Initial selected value for uncontrolled usage |
+| `onValueChange` | `(value: T) => void` | — | Callback when the selection changes |
+| `items` | `T[]` | — | Array of selectable items for keyboard navigation and filtering |
+| `disabled` | `boolean` | `false` | Disables the entire select |
+
+### SelectTrigger
+
+The button that opens the dropdown. Includes a `ChevronsUpDown` icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Visual size of the trigger |
+
+### SelectValue
+
+Displays the currently selected item's label inside the trigger.
+
+### SelectPopup
+
+The floating dropdown panel. Also exported as `SelectContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side to open relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `alignOffset` | `number` | `0` | Offset along the alignment axis |
+| `alignItemWithTrigger` | `boolean` | `true` | Positions the selected item directly over the trigger |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor element for positioning |
+
+### SelectItem
+
+Individual option inside the popup. Shows a checkmark when selected.
+
+### SelectGroup / SelectGroupLabel
+
+Groups related options with an optional label.
+
+### SelectLabel
+
+Accessible label for the select, rendered outside the popup.
+
+### SelectSeparator
+
+Horizontal divider between option groups.
+
+### SelectButton
+
+Alternative trigger that renders a plain `<button>` instead of `SelectTrigger`, useful for custom trigger layouts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg"` | — | Visual size |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<button>` |
+
 ## Examples
 
-For accessible labelling and validation, prefer using the `Field` component to wrap selects. See the related example: [Select field](/ui/docs/components/field#select-field).
+For accessible labelling and validation, prefer using the `Field` component to wrap selects. See the related example: [Select field](/ui/forms/field#select-field).
 
 ### Sizes
 
@@ -119,3 +183,33 @@ Demonstrates using complex object values (e.g. `{ id, label }`) rather than plai
 Wraps the select in `Form` and `Field` for required validation and a `FieldError` displayed on submit.
 
 <ComponentPreview name="v-select-7" />
+
+### With Disabled Options
+
+Active role options are listed first; unavailable roles (Guest, Contractor) appear below a separator as disabled items with a "coming soon" label.
+
+<ComponentPreview name="v-select-11" />
+
+### Country Selector with Groups
+
+Options organized into `SelectGroup` regions (Americas, Europe, Asia Pacific) with `SelectGroupLabel` headings for each continent.
+
+<ComponentPreview name="v-select-12" />
+
+### Controlled with External Display
+
+A priority selector whose selected value drives a `Badge` rendered below the trigger — shows how to wire `onValueChange` to external UI.
+
+<ComponentPreview name="v-select-13" />
+
+### Items with Description
+
+Each dropdown option includes a secondary description line below its label — useful for environment selectors, plan tiers, or deployment targets.
+
+<ComponentPreview name="v-select-14" />
+
+### Sort Order with Icons
+
+A compact sort select where each option is prefixed with a `lucide-react` icon representing the sort direction or criteria.
+
+<ComponentPreview name="v-select-15" />

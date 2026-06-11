@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimatedNumber } from "@/registry/default/motion/animated-number";
 import { useState } from "react";
+import { AnimatedNumber } from "@/registry/default/motion/animated-number";
 
 const metrics = [
-  { label: "Revenue", prefix: "$", suffix: "K", base: 84 },
-  { label: "Users", prefix: "", suffix: "K", base: 12 },
-  { label: "Uptime", prefix: "", suffix: "%", base: 99 },
+  { base: 84, label: "Revenue", prefix: "$", suffix: "K" },
+  { base: 12, label: "Users", prefix: "", suffix: "K" },
+  { base: 99, label: "Uptime", prefix: "", suffix: "%" },
 ];
 
 export default function AnimatedNumberDashboard() {
@@ -20,7 +20,7 @@ export default function AnimatedNumberDashboard() {
             className="rounded-xl border border-border bg-card px-5 py-4 text-center"
             key={m.label}
           >
-            <p className="text-2xl font-bold tabular-nums text-foreground">
+            <p className="font-bold text-2xl text-foreground tabular-nums">
               {m.prefix}
               <AnimatedNumber
                 springOptions={{ damping: 18, stiffness: 120 }}
@@ -28,14 +28,14 @@ export default function AnimatedNumberDashboard() {
               />
               {m.suffix}
             </p>
-            <p className="mt-0.5 text-xs text-muted-foreground">{m.label}</p>
+            <p className="mt-0.5 text-muted-foreground text-xs">{m.label}</p>
           </div>
         ))}
       </div>
       <div className="flex gap-2">
         {[1, 2, 5].map((x) => (
           <button
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 font-medium text-xs transition-colors ${
               multiplier === x
                 ? "bg-foreground text-background"
                 : "bg-accent text-muted-foreground hover:text-foreground"

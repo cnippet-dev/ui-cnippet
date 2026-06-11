@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-drawer-12",
+  "description": "File Attachments with Upload",
+  "registryDependencies": [
+    "@cnippet/drawer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-drawer-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  FileTextIcon,\r\n  ImageIcon,\r\n  PaperclipIcon,\r\n  TrashIcon,\r\n  UploadIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Drawer,\r\n  DrawerClose,\r\n  DrawerFooter,\r\n  DrawerHeader,\r\n  DrawerPanel,\r\n  DrawerPopup,\r\n  DrawerTitle,\r\n  DrawerTrigger,\r\n} from \"@/registry/default/ui/drawer\";\r\n\r\ntype MockFile = {\r\n  id: number;\r\n  name: string;\r\n  size: string;\r\n  type: \"image\" | \"doc\";\r\n};\r\n\r\nconst INITIAL_FILES: MockFile[] = [\r\n  { id: 1, name: \"Q3-report.pdf\", size: \"2.4 MB\", type: \"doc\" },\r\n  { id: 2, name: \"hero-banner.png\", size: \"840 KB\", type: \"image\" },\r\n  { id: 3, name: \"notes.txt\", size: \"12 KB\", type: \"doc\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [files, setFiles] = useState<MockFile[]>(INITIAL_FILES);\r\n\r\n  const remove = (id: number) =>\r\n    setFiles((prev) => prev.filter((f) => f.id !== id));\r\n\r\n  return (\r\n    <Drawer>\r\n      <DrawerTrigger render={<Button variant=\"outline\" />}>\r\n        <PaperclipIcon className=\"size-4\" />\r\n        Attachments ({files.length})\r\n      </DrawerTrigger>\r\n      <DrawerPopup showBar>\r\n        <DrawerHeader>\r\n          <DrawerTitle>Attachments</DrawerTitle>\r\n        </DrawerHeader>\r\n        <DrawerPanel className=\"space-y-3\">\r\n          <label className=\"flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed p-6 text-center transition-colors hover:border-primary hover:bg-primary/5\">\r\n            <UploadIcon className=\"size-6 text-muted-foreground\" />\r\n            <span className=\"font-medium text-sm\">\r\n              Drop files or click to upload\r\n            </span>\r\n            <span className=\"text-muted-foreground text-xs\">\r\n              PNG, JPG, PDF up to 10 MB\r\n            </span>\r\n            <input\r\n              accept=\".png,.jpg,.jpeg,.pdf,.txt\"\r\n              className=\"sr-only\"\r\n              type=\"file\"\r\n            />\r\n          </label>\r\n          {files.length > 0 && (\r\n            <ul className=\"divide-y divide-border rounded-lg border\">\r\n              {files.map((file) => (\r\n                <li\r\n                  className=\"flex items-center gap-3 px-3 py-2.5\"\r\n                  key={file.id}\r\n                >\r\n                  <div className=\"flex size-8 shrink-0 items-center justify-center rounded-md bg-muted\">\r\n                    {file.type === \"image\" ? (\r\n                      <ImageIcon className=\"size-4 text-muted-foreground\" />\r\n                    ) : (\r\n                      <FileTextIcon className=\"size-4 text-muted-foreground\" />\r\n                    )}\r\n                  </div>\r\n                  <div className=\"min-w-0 flex-1\">\r\n                    <p className=\"truncate font-medium text-sm\">{file.name}</p>\r\n                    <p className=\"text-muted-foreground text-xs\">{file.size}</p>\r\n                  </div>\r\n                  <button\r\n                    className=\"shrink-0 rounded-md p-1 text-muted-foreground hover:bg-destructive/10 hover:text-destructive\"\r\n                    onClick={() => remove(file.id)}\r\n                    type=\"button\"\r\n                  >\r\n                    <TrashIcon className=\"size-4\" />\r\n                  </button>\r\n                </li>\r\n              ))}\r\n            </ul>\r\n          )}\r\n        </DrawerPanel>\r\n        <DrawerFooter>\r\n          <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\r\n          <DrawerClose render={<Button />}>\r\n            Attach {files.length} file{files.length !== 1 ? \"s\" : \"\"}\r\n          </DrawerClose>\r\n        </DrawerFooter>\r\n      </DrawerPopup>\r\n    </Drawer>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:block"
+}

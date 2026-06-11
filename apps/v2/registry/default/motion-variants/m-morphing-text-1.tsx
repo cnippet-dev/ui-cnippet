@@ -9,7 +9,7 @@ export default function MorphingTextHero() {
         className="text-foreground"
         texts={["Innovate", "Create", "Inspire", "Deliver"]}
       />
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Blur-dissolve morphing between words
       </p>
     </div>

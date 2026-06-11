@@ -7,24 +7,24 @@ export default function TextCursorProximityOpacity() {
 
   return (
     <div
-      ref={containerRef}
       className="flex min-h-50 flex-col items-center justify-center gap-3 px-6 text-center"
+      ref={containerRef}
     >
       <TextCursorProximity
+        className="font-semibold text-3xl"
         containerRef={containerRef}
-        styles={{ opacity: { from: 0.15, to: 1 } }}
-        radius={80}
         falloff="gaussian"
-        className="text-3xl font-semibold"
+        radius={80}
+        styles={{ opacity: { from: 0.15, to: 1 } }}
       >
         Move cursor to reveal
       </TextCursorProximity>
       <TextCursorProximity
+        className="font-semibold text-3xl text-muted-foreground"
         containerRef={containerRef}
-        styles={{ opacity: { from: 0.15, to: 1 } }}
-        radius={80}
         falloff="gaussian"
-        className="text-3xl font-semibold text-muted-foreground"
+        radius={80}
+        styles={{ opacity: { from: 0.15, to: 1 } }}
       >
         the hidden message
       </TextCursorProximity>

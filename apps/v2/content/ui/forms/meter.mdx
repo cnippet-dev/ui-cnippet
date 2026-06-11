@@ -1,6 +1,6 @@
 ---
 title: Meter
-description: A graphical display of a numeric value within a range.
+description: A graphical display of a numeric value within a range. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/meter#api-reference
@@ -19,7 +19,7 @@ links:
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @coss/meter
+npx shadcn@latest add @cnippet/meter
 ```
 
 </TabsPanel>
@@ -100,3 +100,33 @@ Uses `MeterValue` with a custom formatter to display the current value as a perc
 Sets explicit `min` and `max` values to represent a bounded measurement, such as available disk space or quota usage.
 
 <ComponentPreview name="v-meter-4" />
+
+### Stacked Resource Meters
+
+Three labeled meters rendered in a vertical list — CPU, Memory, and Disk — each showing live percentage values for a system dashboard.
+
+<ComponentPreview name="v-meter-11" />
+
+### Color-Coded by Severity
+
+`MeterIndicator` receives a dynamic `className` (green / amber / destructive) based on thresholds, giving instant visual feedback on metric health.
+
+<ComponentPreview name="v-meter-12" />
+
+### Storage Breakdown with Icons
+
+Each meter row has a small icon prefix in the `MeterLabel` and a custom `MeterValue` formatter showing `used / total GB` instead of the default percentage.
+
+<ComponentPreview name="v-meter-13" />
+
+### Upload Progress Card
+
+A bordered card with a header icon, descriptive sub-label ("3 of 5 files complete"), and a single meter showing batch upload progress.
+
+<ComponentPreview name="v-meter-14" />
+
+### Profile Strength Checklist
+
+A meter paired with a completion checklist — finished steps are struck through in muted text, remaining steps are highlighted, giving users a clear path to 100%.
+
+<ComponentPreview name="v-meter-15" />

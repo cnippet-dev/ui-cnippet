@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-4.tsx",
-      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\r\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto grid w-full max-w-lg grid-cols-3 gap-4\">\r\n      {Array.from({ length: 3 }).map((_, i) => {\r\n        const k = `skeleton-card-${i}`;\r\n        return (\r\n          <Card key={k}>\r\n            <CardHeader className=\"pb-2\">\r\n              <Skeleton className=\"h-3 w-16\" />\r\n            </CardHeader>\r\n            <CardContent className=\"space-y-2\">\r\n              <Skeleton className=\"h-7 w-24\" />\r\n              <Skeleton className=\"h-3 w-20\" />\r\n            </CardContent>\r\n          </Card>\r\n        );\r\n      })}\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto grid w-full max-w-lg grid-cols-3 gap-4\">\n      {Array.from({ length: 3 }).map((_, i) => {\n        const k = `skeleton-card-${i}`;\n        return (\n          <Card key={k}>\n            <CardHeader className=\"pb-2\">\n              <Skeleton className=\"h-3 w-16\" />\n            </CardHeader>\n            <CardContent className=\"space-y-2\">\n              <Skeleton className=\"h-7 w-24\" />\n              <Skeleton className=\"h-3 w-20\" />\n            </CardContent>\n          </Card>\n        );\n      })}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

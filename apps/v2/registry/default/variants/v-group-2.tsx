@@ -20,7 +20,7 @@ export default function Particle() {
     <Group aria-label="Url input">
       <Input
         aria-label="Url"
-        defaultValue="https://coss.com"
+        defaultValue="https://ui.cnippet.dev"
         ref={inputRef}
         type="text"
       />

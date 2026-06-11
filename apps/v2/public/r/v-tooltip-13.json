@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-13",
+  "description": "Form field validation hints with info icon tooltips",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-13.tsx",
+      "content": "import { InfoIcon } from \"lucide-react\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\ntype Field = {\r\n  id: string;\r\n  label: string;\r\n  placeholder: string;\r\n  hint: string;\r\n};\r\n\r\nconst fields: Field[] = [\r\n  {\r\n    hint: \"3–20 characters, letters, numbers, and underscores only.\",\r\n    id: \"username\",\r\n    label: \"Username\",\r\n    placeholder: \"john_doe\",\r\n  },\r\n  {\r\n    hint: \"Must be 8+ chars with at least one uppercase letter and one number.\",\r\n    id: \"password\",\r\n    label: \"Password\",\r\n    placeholder: \"••••••••\",\r\n  },\r\n  {\r\n    hint: \"We only use this for account recovery — no marketing emails.\",\r\n    id: \"email\",\r\n    label: \"Email\",\r\n    placeholder: \"you@example.com\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4\">\r\n      <TooltipProvider>\r\n        {fields.map(({ id, label, placeholder, hint }) => (\r\n          <div className=\"space-y-1.5\" key={id}>\r\n            <div className=\"flex items-center gap-1.5\">\r\n              <Label htmlFor={id}>{label}</Label>\r\n              <Tooltip>\r\n                <TooltipTrigger\r\n                  aria-label={`${label} format requirements`}\r\n                  className=\"inline-flex cursor-default text-muted-foreground hover:text-foreground\"\r\n                >\r\n                  <InfoIcon className=\"size-3.5\" />\r\n                </TooltipTrigger>\r\n                <TooltipContent className=\"max-w-52\">{hint}</TooltipContent>\r\n              </Tooltip>\r\n            </div>\r\n            <Input id={id} placeholder={placeholder} />\r\n          </div>\r\n        ))}\r\n      </TooltipProvider>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

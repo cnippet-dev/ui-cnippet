@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-20",
+  "description": "Contributor leaderboard with rank and commit count",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-20.tsx",
+      "content": "import { GitCommitHorizontalIcon, TrophyIcon } from \"lucide-react\";\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/default/ui/avatar\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nconst leaderboard = [\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&dpr=2&q=80\",\r\n    commits: 312,\r\n    initials: \"AJ\",\r\n    name: \"Alex Johnson\",\r\n    rank: 1,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=96&h=96&dpr=2&q=80\",\r\n    commits: 247,\r\n    initials: \"SC\",\r\n    name: \"Sarah Chen\",\r\n    rank: 2,\r\n  },\r\n  {\r\n    avatar: \"https://github.com/maxleiter.png\",\r\n    commits: 198,\r\n    initials: \"ML\",\r\n    name: \"Max Leiter\",\r\n    rank: 3,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=96&h=96&dpr=2&q=80\",\r\n    commits: 154,\r\n    initials: \"MR\",\r\n    name: \"Marcus Reed\",\r\n    rank: 4,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=96&h=96&dpr=2&q=80\",\r\n    commits: 89,\r\n    initials: \"LP\",\r\n    name: \"Laura Park\",\r\n    rank: 5,\r\n  },\r\n];\r\n\r\nconst rankMedal: Record<number, string> = { 1: \"🥇\", 2: \"🥈\", 3: \"🥉\" };\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-sm\">\r\n      <Frame>\r\n        <FramePanel className=\"flex items-center gap-2 px-4 py-2.5!\">\r\n          <TrophyIcon className=\"size-4 text-amber-500\" />\r\n          <span className=\"font-semibold text-sm\">Contributor Leaderboard</span>\r\n          <Badge className=\"ml-auto\" size=\"sm\" variant=\"secondary\">\r\n            This month\r\n          </Badge>\r\n        </FramePanel>\r\n        {leaderboard.map((entry) => (\r\n          <FramePanel\r\n            className=\"flex items-center gap-3 px-4 py-2.5!\"\r\n            key={entry.initials}\r\n          >\r\n            <span className=\"w-5 shrink-0 text-center text-sm\">\r\n              {rankMedal[entry.rank] ?? (\r\n                <span className=\"text-muted-foreground\">{entry.rank}</span>\r\n              )}\r\n            </span>\r\n            <Avatar className=\"size-8\">\r\n              <AvatarImage alt={entry.name} src={entry.avatar} />\r\n              <AvatarFallback className=\"text-xs\">\r\n                {entry.initials}\r\n              </AvatarFallback>\r\n            </Avatar>\r\n            <span className=\"flex-1 font-medium text-sm\">{entry.name}</span>\r\n            <span className=\"flex items-center gap-1 text-muted-foreground text-xs\">\r\n              <GitCommitHorizontalIcon className=\"size-3.5\" />\r\n              {entry.commits}\r\n            </span>\r\n          </FramePanel>\r\n        ))}\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

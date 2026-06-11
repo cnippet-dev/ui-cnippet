@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-17",
+  "description": "Settings card with sidebar navigation and swappable content panels",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-17.tsx",
+      "content": "\"use client\";\r\n\r\nimport { BellIcon, CreditCardIcon, ShieldIcon, UserIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\r\n\r\nconst sections = [\r\n  { icon: UserIcon, id: \"profile\", label: \"Profile\" },\r\n  { icon: BellIcon, id: \"notifications\", label: \"Notifications\" },\r\n  { icon: CreditCardIcon, id: \"billing\", label: \"Billing\" },\r\n  { icon: ShieldIcon, id: \"security\", label: \"Security\" },\r\n];\r\n\r\nconst content: Record<string, { description: string; title: string }> = {\r\n  billing: {\r\n    description: \"Manage your subscription, invoices, and payment methods.\",\r\n    title: \"Billing & Plans\",\r\n  },\r\n  notifications: {\r\n    description: \"Control how and when you receive alerts and digest emails.\",\r\n    title: \"Notification Preferences\",\r\n  },\r\n  profile: {\r\n    description: \"Update your display name, avatar, and contact information.\",\r\n    title: \"Profile Settings\",\r\n  },\r\n  security: {\r\n    description: \"Set a strong password and enable two-factor authentication.\",\r\n    title: \"Security Settings\",\r\n  },\r\n};\r\n\r\nexport function Pattern() {\r\n  const [active, setActive] = useState(\"profile\");\r\n  const panel = content[active];\r\n\r\n  return (\r\n    <Card className=\"w-full max-w-sm p-0\">\r\n      <CardContent className=\"flex gap-0 p-0\">\r\n        <nav className=\"flex w-36 shrink-0 flex-col gap-0.5 border-r p-2\">\r\n          {sections.map(({ icon: Icon, id, label }) => (\r\n            <button\r\n              className={`flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors ${\r\n                active === id\r\n                  ? \"bg-primary text-primary-foreground\"\r\n                  : \"text-muted-foreground hover:bg-muted\"\r\n              }`}\r\n              key={id}\r\n              onClick={() => setActive(id)}\r\n              type=\"button\"\r\n            >\r\n              <Icon className=\"size-3.5 shrink-0\" />\r\n              {label}\r\n            </button>\r\n          ))}\r\n        </nav>\r\n        <div className=\"flex flex-col gap-2 p-4\">\r\n          <h3 className=\"font-semibold text-sm\">{panel?.title}</h3>\r\n          <p className=\"text-muted-foreground text-xs leading-relaxed\">\r\n            {panel?.description}\r\n          </p>\r\n        </div>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

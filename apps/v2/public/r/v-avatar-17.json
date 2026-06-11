@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-17",
+  "description": "Team grid with online presence status dots",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-17.tsx",
+      "content": "import {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/default/ui/avatar\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\ntype Status = \"online\" | \"busy\" | \"away\" | \"offline\";\r\n\r\nconst statusColor: Record<Status, string> = {\r\n  away: \"bg-yellow-400\",\r\n  busy: \"bg-red-500\",\r\n  offline: \"bg-muted-foreground/40\",\r\n  online: \"bg-emerald-500\",\r\n};\r\n\r\nconst members = [\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&dpr=2&q=80\",\r\n    initials: \"AJ\",\r\n    name: \"Alex Johnson\",\r\n    status: \"online\" as Status,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=96&h=96&dpr=2&q=80\",\r\n    initials: \"SC\",\r\n    name: \"Sarah Chen\",\r\n    status: \"busy\" as Status,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=96&h=96&dpr=2&q=80\",\r\n    initials: \"MR\",\r\n    name: \"Marcus Reed\",\r\n    status: \"online\" as Status,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=96&h=96&dpr=2&q=80\",\r\n    initials: \"LP\",\r\n    name: \"Laura Park\",\r\n    status: \"away\" as Status,\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80\",\r\n    initials: \"TK\",\r\n    name: \"Tom Kim\",\r\n    status: \"offline\" as Status,\r\n  },\r\n  {\r\n    avatar: \"https://github.com/maxleiter.png\",\r\n    initials: \"ML\",\r\n    name: \"Max Leiter\",\r\n    status: \"online\" as Status,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-sm\">\r\n      <Frame>\r\n        <FramePanel>\r\n          <p className=\"mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-widest\">\r\n            Team · {members.filter((m) => m.status === \"online\").length} online\r\n          </p>\r\n          <div className=\"grid grid-cols-3 gap-4\">\r\n            {members.map((m) => (\r\n              <div\r\n                className=\"flex flex-col items-center gap-1.5\"\r\n                key={m.initials}\r\n              >\r\n                <div className=\"relative\">\r\n                  <Avatar className=\"size-10\">\r\n                    <AvatarImage alt={m.name} src={m.avatar} />\r\n                    <AvatarFallback className=\"text-xs\">\r\n                      {m.initials}\r\n                    </AvatarFallback>\r\n                  </Avatar>\r\n                  <span\r\n                    className={`absolute right-0 bottom-0 size-2.5 rounded-full ring-2 ring-background ${statusColor[m.status]}`}\r\n                  />\r\n                </div>\r\n                <span className=\"max-w-full truncate text-center text-muted-foreground text-xs\">\r\n                  {m.name.split(\" \")[0]}\r\n                </span>\r\n              </div>\r\n            ))}\r\n          </div>\r\n        </FramePanel>\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-11",
+  "description": "Dismissible announcement banner with CTA",
+  "registryDependencies": [
+    "@cnippet/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ArrowRightIcon, MegaphoneIcon, XIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Alert,\r\n  AlertAction,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/default/ui/alert\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  const [visible, setVisible] = useState(true);\r\n\r\n  if (!visible) return null;\r\n\r\n  return (\r\n    <div className=\"w-full max-w-2xl\">\r\n      <Alert className=\"border-violet-200 bg-violet-50 dark:border-violet-800 dark:bg-violet-950/40\">\r\n        <MegaphoneIcon className=\"text-violet-600 dark:text-violet-400\" />\r\n        <AlertTitle className=\"text-violet-900 dark:text-violet-100\">\r\n          Introducing Cnippet Pro\r\n        </AlertTitle>\r\n        <AlertAction className=\"flex items-start\">\r\n          <Button\r\n            className=\"-mt-1 -mr-1 size-7 text-violet-500 hover:bg-violet-100 dark:hover:bg-violet-900\"\r\n            onClick={() => setVisible(false)}\r\n            size=\"xs\"\r\n            variant=\"ghost\"\r\n          >\r\n            <XIcon className=\"size-3.5\" />\r\n          </Button>\r\n        </AlertAction>\r\n        <AlertDescription className=\"text-violet-700 dark:text-violet-300\">\r\n          Unlock premium components, templates, and priority support.{\" \"}\r\n          <Button\r\n            className=\"mr-auto h-auto p-0 text-violet-700 underline underline-offset-2 dark:text-violet-300\"\r\n            size=\"sm\"\r\n            variant=\"link\"\r\n          >\r\n            Learn more\r\n            <ArrowRightIcon className=\"size-3\" />\r\n          </Button>\r\n        </AlertDescription>\r\n      </Alert>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:block"
+}

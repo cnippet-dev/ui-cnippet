@@ -35,7 +35,7 @@ export default function ScrollRevealCards() {
             <div className="rounded-xl border border-border bg-card p-5">
               <p className="mb-2 text-2xl">{card.icon}</p>
               <h3 className="font-semibold text-foreground">{card.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-1 text-muted-foreground text-sm">
                 {card.description}
               </p>
             </div>

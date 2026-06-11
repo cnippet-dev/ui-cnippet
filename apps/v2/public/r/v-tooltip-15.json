@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-15",
+  "description": "Icon-only sidebar nav with label and description tooltips",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-15.tsx",
+      "content": "import {\r\n  BarChart2Icon,\r\n  FileTextIcon,\r\n  HomeIcon,\r\n  SettingsIcon,\r\n  UsersIcon,\r\n} from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\ntype NavItem = {\r\n  icon: React.ElementType;\r\n  label: string;\r\n  description: string;\r\n  active?: boolean;\r\n};\r\n\r\nconst navItems: NavItem[] = [\r\n  {\r\n    active: true,\r\n    description: \"Your workspace overview\",\r\n    icon: HomeIcon,\r\n    label: \"Home\",\r\n  },\r\n  {\r\n    description: \"Visitor and revenue analytics\",\r\n    icon: BarChart2Icon,\r\n    label: \"Analytics\",\r\n  },\r\n  {\r\n    description: \"Manage team members and roles\",\r\n    icon: UsersIcon,\r\n    label: \"Team\",\r\n  },\r\n  {\r\n    description: \"Create and edit documents\",\r\n    icon: FileTextIcon,\r\n    label: \"Docs\",\r\n  },\r\n  {\r\n    description: \"App preferences and integrations\",\r\n    icon: SettingsIcon,\r\n    label: \"Settings\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex min-h-40 items-start\">\r\n      <TooltipProvider>\r\n        <nav className=\"flex flex-col items-center gap-1 rounded-xl border bg-card p-1.5\">\r\n          {navItems.map(({ icon: Icon, label, description, active }) => (\r\n            <Tooltip key={label}>\r\n              <TooltipTrigger\r\n                render={\r\n                  <Button\r\n                    aria-label={label}\r\n                    className={active ? \"bg-accent text-accent-foreground\" : \"\"}\r\n                    size=\"icon\"\r\n                    variant=\"ghost\"\r\n                  />\r\n                }\r\n              >\r\n                <Icon className=\"size-4\" />\r\n              </TooltipTrigger>\r\n              <TooltipContent className=\"p-2.5\" side=\"right\">\r\n                <p className=\"font-medium\">{label}</p>\r\n                <p className=\"text-muted-foreground\">{description}</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n          ))}\r\n        </nav>\r\n      </TooltipProvider>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

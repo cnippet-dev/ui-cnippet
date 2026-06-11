@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-13",
+  "description": "Go-to-page palette with shortcut hints and arrow icon for unbound items",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  ArrowRightIcon,\r\n  GlobeIcon,\r\n  LayoutDashboardIcon,\r\n  MessageSquareIcon,\r\n  PackageIcon,\r\n  SettingsIcon,\r\n  UsersIcon,\r\n} from \"lucide-react\";\r\nimport { Fragment, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Command,\r\n  CommandCollection,\r\n  CommandDialog,\r\n  CommandDialogPopup,\r\n  CommandDialogTrigger,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandGroupLabel,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n  CommandPanel,\r\n  CommandSeparator,\r\n  CommandShortcut,\r\n} from \"@/registry/default/ui/command\";\r\nimport { Kbd } from \"@/registry/default/ui/kbd\";\r\n\r\ntype NavItem = {\r\n  icon: React.ReactNode;\r\n  label: string;\r\n  shortcut?: string;\r\n  value: string;\r\n};\r\ntype NavGroup = { items: NavItem[]; label: string; value: string };\r\n\r\nconst nav: NavGroup[] = [\r\n  {\r\n    items: [\r\n      {\r\n        icon: <LayoutDashboardIcon className=\"size-4\" />,\r\n        label: \"Dashboard\",\r\n        shortcut: \"G D\",\r\n        value: \"dashboard\",\r\n      },\r\n      {\r\n        icon: <UsersIcon className=\"size-4\" />,\r\n        label: \"Users\",\r\n        shortcut: \"G U\",\r\n        value: \"users\",\r\n      },\r\n      {\r\n        icon: <PackageIcon className=\"size-4\" />,\r\n        label: \"Products\",\r\n        shortcut: \"G P\",\r\n        value: \"products\",\r\n      },\r\n      {\r\n        icon: <MessageSquareIcon className=\"size-4\" />,\r\n        label: \"Messages\",\r\n        value: \"messages\",\r\n      },\r\n    ],\r\n    label: \"Navigation\",\r\n    value: \"nav\",\r\n  },\r\n  {\r\n    items: [\r\n      {\r\n        icon: <SettingsIcon className=\"size-4\" />,\r\n        label: \"Settings\",\r\n        shortcut: \"G S\",\r\n        value: \"settings\",\r\n      },\r\n      {\r\n        icon: <GlobeIcon className=\"size-4\" />,\r\n        label: \"Domains\",\r\n        value: \"domains\",\r\n      },\r\n    ],\r\n    label: \"Admin\",\r\n    value: \"admin\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  return (\r\n    <CommandDialog onOpenChange={setOpen} open={open}>\r\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\r\n        Go to page...\r\n        <Kbd>G</Kbd>\r\n      </CommandDialogTrigger>\r\n      <CommandDialogPopup>\r\n        <Command items={nav}>\r\n          <CommandInput placeholder=\"Go to...\" />\r\n          <CommandPanel>\r\n            <CommandEmpty>Page not found.</CommandEmpty>\r\n            <CommandList>\r\n              {(group: NavGroup, i: number) => (\r\n                <Fragment key={group.value}>\r\n                  {i > 0 && <CommandSeparator />}\r\n                  <CommandGroup items={group.items}>\r\n                    <CommandGroupLabel>{group.label}</CommandGroupLabel>\r\n                    <CommandCollection>\r\n                      {(item: NavItem) => (\r\n                        <CommandItem\r\n                          className=\"gap-2\"\r\n                          key={item.value}\r\n                          onSelect={() => setOpen(false)}\r\n                          value={item.value}\r\n                        >\r\n                          {item.icon}\r\n                          <span className=\"flex-1\">{item.label}</span>\r\n                          {item.shortcut ? (\r\n                            <CommandShortcut>{item.shortcut}</CommandShortcut>\r\n                          ) : (\r\n                            <ArrowRightIcon className=\"size-3.5 text-muted-foreground\" />\r\n                          )}\r\n                        </CommandItem>\r\n                      )}\r\n                    </CommandCollection>\r\n                  </CommandGroup>\r\n                </Fragment>\r\n              )}\r\n            </CommandList>\r\n          </CommandPanel>\r\n        </Command>\r\n      </CommandDialogPopup>\r\n    </CommandDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

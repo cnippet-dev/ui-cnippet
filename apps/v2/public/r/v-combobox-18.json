@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-18",
+  "description": "City picker with timezone and country code trailing metadata",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-18.tsx",
+      "content": "\"use client\";\r\n\r\nimport { MapPinIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Combobox,\r\n  ComboboxEmpty,\r\n  ComboboxInput,\r\n  ComboboxItem,\r\n  ComboboxList,\r\n  ComboboxPopup,\r\n} from \"@/registry/default/ui/combobox\";\r\n\r\ninterface City {\r\n  label: string;\r\n  value: string;\r\n  country: string;\r\n  timezone: string;\r\n}\r\n\r\nconst cities: City[] = [\r\n  { country: \"US\", label: \"New York\", timezone: \"UTC-5\", value: \"nyc\" },\r\n  { country: \"UK\", label: \"London\", timezone: \"UTC+0\", value: \"lon\" },\r\n  { country: \"JP\", label: \"Tokyo\", timezone: \"UTC+9\", value: \"tyo\" },\r\n  { country: \"FR\", label: \"Paris\", timezone: \"UTC+1\", value: \"par\" },\r\n  { country: \"AU\", label: \"Sydney\", timezone: \"UTC+11\", value: \"syd\" },\r\n  { country: \"SG\", label: \"Singapore\", timezone: \"UTC+8\", value: \"sin\" },\r\n  { country: \"DE\", label: \"Berlin\", timezone: \"UTC+1\", value: \"ber\" },\r\n  { country: \"IN\", label: \"Mumbai\", timezone: \"UTC+5:30\", value: \"bom\" },\r\n  { country: \"CA\", label: \"Toronto\", timezone: \"UTC-5\", value: \"yyz\" },\r\n  { country: \"BR\", label: \"São Paulo\", timezone: \"UTC-3\", value: \"gru\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [selected, setSelected] = useState<City | null>(null);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\r\n      <Combobox\r\n        items={cities}\r\n        onValueChange={(v) => setSelected(v as City | null)}\r\n        value={selected}\r\n      >\r\n        <ComboboxInput\r\n          placeholder=\"Search city...\"\r\n          startAddon={<MapPinIcon />}\r\n        />\r\n        <ComboboxPopup>\r\n          <ComboboxEmpty>No cities found.</ComboboxEmpty>\r\n          <ComboboxList>\r\n            {(city: City) => (\r\n              <ComboboxItem\r\n                className=\"**:data-check:ms-auto\"\r\n                key={city.value}\r\n                value={city}\r\n              >\r\n                <div className=\"flex flex-1 items-center justify-between\">\r\n                  <span className=\"text-sm\">{city.label}</span>\r\n                  <span className=\"text-muted-foreground text-xs\">\r\n                    {city.country} · {city.timezone}\r\n                  </span>\r\n                </div>\r\n              </ComboboxItem>\r\n            )}\r\n          </ComboboxList>\r\n        </ComboboxPopup>\r\n      </Combobox>\r\n      {selected && (\r\n        <div className=\"rounded-lg border px-4 py-2.5 text-sm\">\r\n          <span className=\"text-muted-foreground\">Selected: </span>\r\n          <span className=\"font-medium\">{selected.label}</span>\r\n          <span className=\"ml-2 text-muted-foreground text-xs\">\r\n            {selected.timezone}\r\n          </span>\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

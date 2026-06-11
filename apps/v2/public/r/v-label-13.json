@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-label-13",
+  "description": "With icon prefix",
+  "registryDependencies": [
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-label-13.tsx",
+      "content": "import { MailIcon } from \"lucide-react\";\r\nimport { useId } from \"react\";\r\nimport { Field } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  const id = useId();\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label className=\"gap-1.5\" htmlFor={id}>\r\n        <MailIcon aria-hidden=\"true\" className=\"size-3.5\" />\r\n        Email address\r\n      </Label>\r\n      <Input id={id} placeholder=\"you@example.com\" type=\"email\" />\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "label"
+  ],
+  "type": "registry:block"
+}

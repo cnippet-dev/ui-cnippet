@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-15",
+  "description": "Unsaved changes reminder with save and discard actions",
+  "registryDependencies": [
+    "@cnippet/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { toastManager } from \"@/registry/default/ui/toast\";\r\n\r\ntype SaveState = \"clean\" | \"dirty\" | \"saving\";\r\n\r\nexport function Pattern() {\r\n  const [saveState, setSaveState] = useState<SaveState>(\"clean\");\r\n  const [content, setContent] = useState(\r\n    \"Project Alpha\\n\\nThis is the project description. Click below to make changes and see the unsaved changes toast appear.\",\r\n  );\r\n  const toastIdRef = { current: null as string | null };\r\n\r\n  const makeChange = () => {\r\n    if (saveState === \"dirty\") return;\r\n    setContent((c) => `${c} Updated.`);\r\n    setSaveState(\"dirty\");\r\n\r\n    const id = toastManager.add({\r\n      actionProps: {\r\n        children: \"Save now\",\r\n        onClick: () => save(id),\r\n      },\r\n      description: \"Your recent edits haven't been saved yet.\",\r\n      timeout: 0,\r\n      title: \"Unsaved changes\",\r\n      type: \"warning\",\r\n    });\r\n    toastIdRef.current = id;\r\n  };\r\n\r\n  const save = (id?: string) => {\r\n    const toastId = id ?? toastIdRef.current;\r\n    if (toastId) toastManager.close(toastId);\r\n    setSaveState(\"saving\");\r\n    setTimeout(() => {\r\n      setSaveState(\"clean\");\r\n      toastManager.add({\r\n        description: \"All changes have been saved to the server.\",\r\n        title: \"Document saved\",\r\n        type: \"success\",\r\n      });\r\n    }, 900);\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\r\n      <div className=\"min-h-24 rounded-lg border border-input bg-background p-3 text-foreground/80 text-sm leading-relaxed\">\r\n        {content}\r\n      </div>\r\n      <div className=\"flex gap-2\">\r\n        <Button\r\n          className=\"flex-1\"\r\n          disabled={saveState !== \"clean\"}\r\n          onClick={makeChange}\r\n          variant=\"outline\"\r\n        >\r\n          Edit document\r\n        </Button>\r\n        <Button\r\n          className=\"flex-1\"\r\n          disabled={saveState !== \"dirty\"}\r\n          loading={saveState === \"saving\"}\r\n          onClick={() => save()}\r\n        >\r\n          Save\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:block"
+}

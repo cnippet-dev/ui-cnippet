@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-15",
+  "description": "Basic input otp",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { OTPField, OTPFieldInput } from \"@/registry/default/ui/otp-field\";\r\n\r\nconst OTP_LENGTH = 6;\r\nconst RESEND_SECONDS = 30;\r\n\r\nconst OTP_SLOT_KEYS = Array.from(\r\n  { length: OTP_LENGTH },\r\n  (_, i) => `otp-slot-${i}`,\r\n);\r\n\r\nexport function Pattern() {\r\n  const [seconds, setSeconds] = useState(RESEND_SECONDS);\r\n\r\n  useEffect(() => {\r\n    if (seconds <= 0) return;\r\n    const id = setTimeout(() => setSeconds((s) => s - 1), 1000);\r\n    return () => clearTimeout(id);\r\n  }, [seconds]);\r\n\r\n  return (\r\n    <Field className=\"items-center\">\r\n      <FieldLabel>Verification code</FieldLabel>\r\n      <OTPField aria-label=\"Verification code\" length={OTP_LENGTH}>\r\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\r\n          <OTPFieldInput\r\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\r\n            key={slotKey}\r\n          />\r\n        ))}\r\n      </OTPField>\r\n      <FieldDescription className=\"text-center\">\r\n        {seconds > 0 ? (\r\n          <>\r\n            Resend code in{\" \"}\r\n            <span className=\"font-medium text-foreground tabular-nums\">\r\n              {seconds}s\r\n            </span>\r\n          </>\r\n        ) : (\r\n          <button\r\n            className=\"font-medium underline-offset-4 hover:underline\"\r\n            onClick={() => setSeconds(RESEND_SECONDS)}\r\n            type=\"button\"\r\n          >\r\n            Resend code\r\n          </button>\r\n        )}\r\n      </FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

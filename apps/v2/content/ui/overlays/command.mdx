@@ -1,6 +1,6 @@
 ---
 title: Command
-description: A command palette component built with Dialog and Autocomplete for searching and executing commands.
+description: A command palette component built with Dialog and Autocomplete for searching and executing commands. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/autocomplete#api-reference
@@ -98,6 +98,78 @@ const items = [
 </CommandDialog>
 ```
 
+## API Reference
+
+### CommandDialog
+
+Root dialog provider. Wraps Base UI `Dialog.Root`.
+
+### CommandDialogTrigger
+
+Button that opens the command palette dialog.
+
+### CommandDialogPopup
+
+The modal dialog popup wrapping the command palette.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### Command
+
+The inline command palette (built on `Autocomplete`). Renders open with `autoHighlight` always on.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `autoHighlight` | `"always" \| "first" \| false` | `"always"` | Controls when items are auto-highlighted |
+| `keepHighlight` | `boolean` | `true` | Keeps the highlight when the input changes |
+| `items` | `T[]` | — | Array of items to filter |
+
+### CommandInput
+
+Search input with a leading search icon. Auto-focused when mounted.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `placeholder` | `string` | — | Placeholder text for the search field |
+
+### CommandList
+
+Scroll container for `CommandItem` children. Renders inside `CommandPanel`.
+
+### CommandEmpty
+
+Shown when the list has no matching results.
+
+### CommandPanel
+
+Content panel that wraps `CommandList` and `CommandFooter` with shared border styling.
+
+### CommandGroup / CommandGroupLabel
+
+Organizes items into labeled sections.
+
+### CommandCollection
+
+Groups items for virtual or dynamic list rendering.
+
+### CommandItem
+
+Individual selectable item in the list.
+
+### CommandSeparator
+
+Horizontal divider between groups.
+
+### CommandShortcut
+
+Right-aligned keyboard hint `<kbd>` element.
+
+### CommandFooter
+
+Bottom bar for keyboard-hint legends (e.g. ↑↓ to navigate, ↵ to select, Esc to close).
+
 ## Examples
 
 ### Simple Command
@@ -135,3 +207,33 @@ Lists available actions alongside their keyboard shortcuts using `CommandShortcu
 Pre-populates the command list with recently used and starred items before the user types a search query.
 
 <ComponentPreview name="v-command-7" />
+
+### Account Settings Palette
+
+Three groups — Account, Preferences, and Session — each with icon-prefixed items. Sign out is in the Session group styled as destructive.
+
+<ComponentPreview name="v-command-11" />
+
+### Repository Search
+
+Searches across issues, pull requests, branches, and files in one palette. Each result type has a distinct colored icon and a number badge where applicable.
+
+<ComponentPreview name="v-command-12" />
+
+### Go To Page
+
+A navigation palette where frequently accessed pages have keyboard shortcut hints. Unbound pages show a trailing arrow instead.
+
+<ComponentPreview name="v-command-13" />
+
+### Appearance Picker
+
+Two groups — Theme and Accent Color — with a checkmark on the currently active option. Selecting an item closes the dialog and updates external state.
+
+<ComponentPreview name="v-command-14" />
+
+### Quick Open With Footer
+
+A minimal page-jump palette with notification count badges on relevant items and a `CommandFooter` showing keyboard navigation hints.
+
+<ComponentPreview name="v-command-15" />

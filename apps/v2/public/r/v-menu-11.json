@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-11",
+  "description": "Account menu",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-11.tsx",
+      "content": "import {\r\n  CreditCardIcon,\r\n  LogOutIcon,\r\n  SettingsIcon,\r\n  UserIcon,\r\n} from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuGroup,\r\n  MenuGroupLabel,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuSeparator,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger\r\n        render={\r\n          <Button\r\n            aria-label=\"Open account menu\"\r\n            className=\"size-9 rounded-full font-semibold\"\r\n            variant=\"outline\"\r\n          />\r\n        }\r\n      >\r\n        JS\r\n      </MenuTrigger>\r\n      <MenuPopup align=\"end\">\r\n        <MenuGroup>\r\n          <MenuGroupLabel>\r\n            <div className=\"flex flex-col gap-0.5\">\r\n              <span>Jane Smith</span>\r\n              <span className=\"font-normal text-muted-foreground text-xs\">\r\n                jane@example.com\r\n              </span>\r\n            </div>\r\n          </MenuGroupLabel>\r\n        </MenuGroup>\r\n        <MenuSeparator />\r\n        <MenuItem>\r\n          <UserIcon aria-hidden=\"true\" />\r\n          Profile\r\n        </MenuItem>\r\n        <MenuItem>\r\n          <CreditCardIcon aria-hidden=\"true\" />\r\n          Billing\r\n        </MenuItem>\r\n        <MenuItem>\r\n          <SettingsIcon aria-hidden=\"true\" />\r\n          Settings\r\n        </MenuItem>\r\n        <MenuSeparator />\r\n        <MenuItem variant=\"destructive\">\r\n          <LogOutIcon aria-hidden=\"true\" />\r\n          Sign out\r\n        </MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ],
+  "type": "registry:block"
+}

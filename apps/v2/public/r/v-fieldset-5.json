@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-5",
-  "description": "Basic fieldset",
+  "description": "Change password fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-5.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"flex w-full flex-col gap-5\">\r\n      <FieldsetLegend>Change Password</FieldsetLegend>\r\n      <Field>\r\n        <FieldLabel>Current password</FieldLabel>\r\n        <Input\r\n          autoComplete=\"current-password\"\r\n          placeholder=\"Enter current password\"\r\n          required\r\n          type=\"password\"\r\n        />\r\n        <FieldError>Current password is required.</FieldError>\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>\r\n          New password <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input\r\n          autoComplete=\"new-password\"\r\n          minLength={8}\r\n          placeholder=\"Enter new password\"\r\n          required\r\n          type=\"password\"\r\n        />\r\n        <FieldDescription>At least 8 characters.</FieldDescription>\r\n        <FieldError>Password must be at least 8 characters.</FieldError>\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>\r\n          Confirm new password{\" \"}\r\n          <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input\r\n          autoComplete=\"new-password\"\r\n          placeholder=\"Re-enter new password\"\r\n          required\r\n          type=\"password\"\r\n        />\r\n        <FieldError>Passwords do not match.</FieldError>\r\n      </Field>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -6,7 +6,7 @@ export default function Letter3DSwapButtons() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-4 px-6">
       <button
-        className="inline-flex rounded-full bg-foreground px-7 py-3 text-base font-semibold text-background"
+        className="inline-flex rounded-full bg-foreground px-7 py-3 font-semibold text-background text-base"
         type="button"
       >
         <Letter3DSwap
@@ -20,15 +20,15 @@ export default function Letter3DSwapButtons() {
         </Letter3DSwap>
       </button>
       <button
-        className="inline-flex rounded-full border border-border px-7 py-3 text-base font-semibold text-foreground"
+        className="inline-flex rounded-full border border-border px-7 py-3 font-semibold text-base text-foreground"
         type="button"
       >
         <Letter3DSwap
           frontFaceClassName="text-foreground"
           rotateDirection="top"
           secondFaceClassName="text-muted-foreground"
-          staggerFrom="last"
           staggerDuration={0.03}
+          staggerFrom="last"
           transition={{ damping: 24, stiffness: 300, type: "spring" }}
         >
           View docs

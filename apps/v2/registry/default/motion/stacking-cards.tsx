@@ -81,8 +81,11 @@ export function StackingCardItem({
   children,
   ...props
 }: StackingCardItemProps) {
-  const { progress, scaleMultiplier, totalCards = 0 } =
-    useStackingCardsContext();
+  const {
+    progress,
+    scaleMultiplier,
+    totalCards = 0,
+  } = useStackingCardsContext();
   const scaleTo = 1 - (totalCards - index) * (scaleMultiplier ?? 0.03);
   const rangeScale = [index * (1 / totalCards), 1];
   const scale = useTransform(progress, rangeScale, [1, scaleTo]);

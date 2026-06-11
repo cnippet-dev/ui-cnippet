@@ -1,6 +1,6 @@
 ---
 title: Menu
-description: A list of actions in a dropdown, enhanced with keyboard navigation.
+description: A list of actions in a dropdown, enhanced with keyboard navigation. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/menu#api-reference
@@ -19,7 +19,7 @@ links:
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @coss/menu
+npx shadcn@latest add @cnippet/menu
 ```
 
 </TabsPanel>
@@ -125,6 +125,79 @@ import {
 </Menu>
 ```
 
+## API Reference
+
+### Menu
+
+Root provider. Also exported as `DropdownMenu`.
+
+### MenuTrigger
+
+Button that opens the menu. Also exported as `DropdownMenuTrigger`.
+
+### MenuPopup
+
+The floating menu panel. Also exported as `DropdownMenuContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side to open relative to trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `alignOffset` | `number` | — | Offset along the alignment axis |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor for positioning |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### MenuGroup
+
+Groups related menu items. Also exported as `DropdownMenuGroup`.
+
+### MenuGroupLabel
+
+Label displayed above a `MenuGroup`. Also exported as `DropdownMenuLabel`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with items that have icons |
+
+### MenuItem
+
+Standard action item. Also exported as `DropdownMenuItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with icon items |
+| `variant` | `"default" \| "destructive"` | `"default"` | Styles the item for destructive actions |
+
+### MenuCheckboxItem
+
+Toggleable item with a checkmark indicator. Also exported as `DropdownMenuCheckboxItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | — | Controlled checked state |
+| `variant` | `"default" \| "switch"` | `"default"` | Shows a switch toggle instead of a checkmark |
+
+### MenuRadioGroup / MenuRadioItem
+
+Single-selection group. Also exported as `DropdownMenuRadioGroup` / `DropdownMenuRadioItem`.
+
+### MenuSeparator
+
+Horizontal divider between item groups. Also exported as `DropdownMenuSeparator`.
+
+### MenuShortcut
+
+Right-aligned keyboard hint `<kbd>` element. Also exported as `DropdownMenuShortcut`.
+
+### MenuSub / MenuSubTrigger / MenuSubPopup
+
+Nested submenu. Also exported as `DropdownMenuSub`, `DropdownMenuSubTrigger`, `DropdownMenuSubContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `MenuSubTrigger` |
+
 ## Examples
 
 ### Open on Hover
@@ -180,3 +253,33 @@ Demonstrates controlling `closeOnClick` behavior so the menu dismisses immediate
 Triggers a `Dialog` from a `MenuItem`, allowing secondary confirmation flows to be launched directly from a menu.
 
 <ComponentPreview name="v-menu-9" />
+
+### Account Menu
+
+A circular avatar trigger with user info in the `MenuGroupLabel` header, account links, and a destructive "Sign out" item at the bottom.
+
+<ComponentPreview name="v-menu-11" />
+
+### File Actions
+
+A labeled "File actions" trigger grouping rename, duplicate, move, and download items with keyboard shortcuts, plus a destructive delete at the bottom.
+
+<ComponentPreview name="v-menu-12" />
+
+### Icon Button Trigger
+
+A compact `size="icon"` ghost button (⋮) as the trigger — a common pattern for per-row action menus in lists and tables.
+
+<ComponentPreview name="v-menu-13" />
+
+### Notification Settings
+
+A bell icon trigger that opens a menu mixing `variant="switch"` channel toggles with standard checkbox activity options in separate groups.
+
+<ComponentPreview name="v-menu-14" />
+
+### Share with Export Sub-menu
+
+A "Share" button trigger offering a copy link item alongside an "Export as" `MenuSub` with format choices (PDF, PNG, SVG, CSV).
+
+<ComponentPreview name="v-menu-15" />

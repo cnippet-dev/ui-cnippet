@@ -24,8 +24,10 @@ export function DocsSidebar({
 
   return (
     <Sidebar
+      aria-label="Documentation navigation"
       className="sticky top-(--header-height) z-30 hidden h-[calc(100svh-var(--header-height))] bg-transparent lg:flex"
       collapsible="none"
+      role="navigation"
       {...props}
     >
       <SidebarContent className="px-4 py-2">

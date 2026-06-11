@@ -8,13 +8,13 @@ export default function VariableFontHoverNav() {
     <nav className="flex min-h-50 flex-wrap items-center justify-center gap-8 px-6">
       {navLinks.map((link) => (
         <VariableFontHover
+          className="cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground"
+          fromFontVariationSettings="'wght' 400"
           key={link}
           label={link}
-          fromFontVariationSettings="'wght' 400"
-          toFontVariationSettings="'wght' 700"
-          staggerFrom="center"
           staggerDuration={0.03}
-          className="cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground"
+          staggerFrom="center"
+          toFontVariationSettings="'wght' 700"
         />
       ))}
     </nav>

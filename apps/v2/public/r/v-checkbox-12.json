@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-12",
+  "description": "Role permissions picker with colored badge per access level",
+  "registryDependencies": [
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\n\r\nconst PERMISSIONS = [\r\n  {\r\n    description: \"View dashboards, reports, and analytics.\",\r\n    id: \"read\",\r\n    label: \"Read\",\r\n    variant: \"secondary\" as const,\r\n  },\r\n  {\r\n    description: \"Create and modify records, posts, and settings.\",\r\n    id: \"write\",\r\n    label: \"Write\",\r\n    variant: \"info\" as const,\r\n  },\r\n  {\r\n    description: \"Remove records and bulk-delete resources.\",\r\n    id: \"delete\",\r\n    label: \"Delete\",\r\n    variant: \"warning\" as const,\r\n  },\r\n  {\r\n    description: \"Invite members, change roles, and manage billing.\",\r\n    id: \"admin\",\r\n    label: \"Admin\",\r\n    variant: \"destructive\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const id = useId();\r\n  const [selected, setSelected] = useState<Set<string>>(new Set([\"read\"]));\r\n\r\n  const toggle = (pid: string) =>\r\n    setSelected((prev) => {\r\n      const next = new Set(prev);\r\n      next.has(pid) ? next.delete(pid) : next.add(pid);\r\n      return next;\r\n    });\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <p className=\"font-semibold text-sm\">Role Permissions</p>\r\n      <div className=\"space-y-1\">\r\n        {PERMISSIONS.map((perm) => (\r\n          <label\r\n            className=\"flex cursor-pointer items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-muted/50\"\r\n            htmlFor={`${id}-${perm.id}`}\r\n            key={perm.id}\r\n          >\r\n            <Checkbox\r\n              checked={selected.has(perm.id)}\r\n              className=\"mt-0.5\"\r\n              id={`${id}-${perm.id}`}\r\n              onCheckedChange={() => toggle(perm.id)}\r\n            />\r\n            <div className=\"flex flex-1 flex-col gap-0.5\">\r\n              <div className=\"flex items-center gap-2\">\r\n                <span className=\"font-medium text-sm\">{perm.label}</span>\r\n                <Badge size=\"sm\" variant={perm.variant}>\r\n                  {perm.id}\r\n                </Badge>\r\n              </div>\r\n              <p className=\"text-muted-foreground text-xs\">\r\n                {perm.description}\r\n              </p>\r\n            </div>\r\n          </label>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:block"
+}

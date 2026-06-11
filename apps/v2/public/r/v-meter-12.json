@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-meter-12",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-12.tsx",
+      "content": "import {\r\n  Meter,\r\n  MeterIndicator,\r\n  MeterLabel,\r\n  MeterTrack,\r\n  MeterValue,\r\n} from \"@/registry/default/ui/meter\";\r\n\r\nfunction indicatorColor(value: number) {\r\n  if (value >= 80) return \"bg-destructive\";\r\n  if (value >= 50) return \"bg-amber-500\";\r\n  return \"bg-green-500\";\r\n}\r\n\r\nconst metrics = [\r\n  { label: \"Error rate\", value: 12 },\r\n  { label: \"Latency\", value: 63 },\r\n  { label: \"Memory\", value: 88 },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4\">\r\n      {metrics.map(({ label, value }) => (\r\n        <Meter key={label} value={value}>\r\n          <div className=\"flex items-center justify-between gap-2\">\r\n            <MeterLabel>{label}</MeterLabel>\r\n            <MeterValue />\r\n          </div>\r\n          <MeterTrack>\r\n            <MeterIndicator className={indicatorColor(value)} />\r\n          </MeterTrack>\r\n        </Meter>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:block"
+}

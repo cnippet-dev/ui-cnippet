@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-8",
-  "description": "Basic kbd",
+  "description": "Arrow key navigation display",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-8.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { Kbd } from \"@/registry/default/ui/kbd\";\r\n\r\nconst arrowKeys = [\r\n  { key: \"↑\", label: \"Up\" },\r\n  { key: \"↓\", label: \"Down\" },\r\n  { key: \"←\", label: \"Left\" },\r\n  { key: \"→\", label: \"Right\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-3\">\r\n      <p className=\"text-muted-foreground text-xs\">Navigate with arrow keys</p>\r\n      <div className=\"flex flex-col items-center gap-1\">\r\n        <Kbd aria-label=\"Up arrow\">↑</Kbd>\r\n        <div className=\"flex gap-1\">\r\n          <Kbd aria-label=\"Left arrow\">←</Kbd>\r\n          <Kbd aria-label=\"Down arrow\">↓</Kbd>\r\n          <Kbd aria-label=\"Right arrow\">→</Kbd>\r\n        </div>\r\n      </div>\r\n      <div className=\"flex gap-3\">\r\n        {arrowKeys.map(({ key, label }) => (\r\n          <div className=\"flex flex-col items-center gap-1\" key={label}>\r\n            <Kbd aria-label={`${label} arrow`}>{key}</Kbd>\r\n            <span className=\"text-muted-foreground text-xs\">{label}</span>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

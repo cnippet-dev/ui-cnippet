@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-menu-14",
+  "description": "Notification settings",
+  "registryDependencies": [
+    "@cnippet/menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-menu-14.tsx",
+      "content": "import { BellIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Menu,\r\n  MenuCheckboxItem,\r\n  MenuGroup,\r\n  MenuGroupLabel,\r\n  MenuPopup,\r\n  MenuSeparator,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger\r\n        render={\r\n          <Button\r\n            aria-label=\"Notification settings\"\r\n            size=\"icon\"\r\n            variant=\"outline\"\r\n          />\r\n        }\r\n      >\r\n        <BellIcon aria-hidden=\"true\" className=\"size-4\" />\r\n      </MenuTrigger>\r\n      <MenuPopup align=\"end\">\r\n        <MenuGroup>\r\n          <MenuGroupLabel>Channels</MenuGroupLabel>\r\n          <MenuCheckboxItem defaultChecked variant=\"switch\">\r\n            Email\r\n          </MenuCheckboxItem>\r\n          <MenuCheckboxItem defaultChecked variant=\"switch\">\r\n            Push\r\n          </MenuCheckboxItem>\r\n          <MenuCheckboxItem variant=\"switch\">SMS</MenuCheckboxItem>\r\n        </MenuGroup>\r\n        <MenuSeparator />\r\n        <MenuGroup>\r\n          <MenuGroupLabel>Activity</MenuGroupLabel>\r\n          <MenuCheckboxItem defaultChecked>Mentions</MenuCheckboxItem>\r\n          <MenuCheckboxItem defaultChecked>Comments</MenuCheckboxItem>\r\n          <MenuCheckboxItem>Reactions</MenuCheckboxItem>\r\n        </MenuGroup>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "menu"
+  ],
+  "type": "registry:block"
+}

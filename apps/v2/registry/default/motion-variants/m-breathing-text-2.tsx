@@ -7,7 +7,7 @@ export default function BreathingTextCenter() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-3 px-6">
       <BreathingText
         as="h2"
-        className="text-5xl font-black tracking-tighter text-foreground sm:text-6xl"
+        className="font-black text-5xl text-foreground tracking-tighter sm:text-6xl"
         duration={3}
         fromFontVariationSettings="'wght' 300"
         staggerDuration={0.12}
@@ -16,7 +16,7 @@ export default function BreathingTextCenter() {
       >
         CNIPPET
       </BreathingText>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Weight pulse expanding from center
       </p>
     </div>

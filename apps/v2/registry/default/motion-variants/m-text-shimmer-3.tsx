@@ -13,7 +13,7 @@ export default function TextShimmerList() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-5 px-6">
       <TextShimmer
         as="h2"
-        className="text-3xl font-bold tracking-tight"
+        className="font-bold text-3xl tracking-tight"
         duration={3}
         spread={4}
       >
@@ -24,7 +24,7 @@ export default function TextShimmerList() {
           <li key={f}>
             <TextShimmer
               as="span"
-              className="text-base font-medium"
+              className="font-medium text-base"
               duration={2 + i * 0.4}
               spread={2}
             >

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-label-11",
+  "description": "With keyboard shortcut",
+  "registryDependencies": [
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-label-11.tsx",
+      "content": "import { useId } from \"react\";\r\nimport { Field } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Kbd } from \"@/registry/default/ui/kbd\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  const id = useId();\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label className=\"justify-between\" htmlFor={id}>\r\n        Quick search\r\n        <Kbd className=\"font-normal text-muted-foreground\">⌘K</Kbd>\r\n      </Label>\r\n      <Input id={id} placeholder=\"Type to search…\" type=\"search\" />\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "label"
+  ],
+  "type": "registry:block"
+}

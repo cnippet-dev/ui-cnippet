@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-18",
+  "description": "Pricing plan card with feature checklist and highlighted ring",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-18.tsx",
+      "content": "import { CheckIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nconst plan = {\r\n  badge: \"Most Popular\",\r\n  cta: \"Start free trial\",\r\n  features: [\r\n    \"Unlimited components\",\r\n    \"Team collaboration\",\r\n    \"Priority support\",\r\n    \"Custom themes\",\r\n    \"CLI access\",\r\n  ],\r\n  name: \"Pro\",\r\n  period: \"/ month\",\r\n  price: \"$12\",\r\n};\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Card className=\"w-full max-w-xs ring-2 ring-primary\">\r\n      <CardContent className=\"flex flex-col gap-4\">\r\n        <div className=\"flex items-center justify-between\">\r\n          <span className=\"font-semibold text-sm\">{plan.name}</span>\r\n          <Badge size=\"sm\">{plan.badge}</Badge>\r\n        </div>\r\n        <div className=\"flex items-baseline gap-1\">\r\n          <span className=\"font-bold text-3xl\">{plan.price}</span>\r\n          <span className=\"text-muted-foreground text-sm\">{plan.period}</span>\r\n        </div>\r\n        <Separator />\r\n        <ul className=\"flex flex-col gap-2\">\r\n          {plan.features.map((f) => (\r\n            <li className=\"flex items-center gap-2 text-sm\" key={f}>\r\n              <CheckIcon className=\"size-4 shrink-0 text-emerald-500\" />\r\n              {f}\r\n            </li>\r\n          ))}\r\n        </ul>\r\n        <Button className=\"w-full\">{plan.cta}</Button>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

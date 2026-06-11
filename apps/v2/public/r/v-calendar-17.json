@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-17",
+  "description": "Sprint planner with two-month range selection and duration stats",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-17.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport type { DateRange } from \"react-day-picker\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nconst today = new Date();\r\n\r\nfunction diffDays(a: Date, b: Date) {\r\n  return Math.round((b.getTime() - a.getTime()) / 86400000);\r\n}\r\n\r\nexport default function Particle() {\r\n  const [range, setRange] = React.useState<DateRange | undefined>();\r\n\r\n  const duration =\r\n    range?.from && range?.to ? diffDays(range.from, range.to) + 1 : null;\r\n\r\n  const sprintNum = range?.from\r\n    ? Math.ceil(\r\n        (diffDays(new Date(today.getFullYear(), 0, 1), range.from) + 1) / 14,\r\n      )\r\n    : null;\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <Calendar\r\n        disabled={{ before: today }}\r\n        mode=\"range\"\r\n        numberOfMonths={2}\r\n        onSelect={setRange}\r\n        selected={range}\r\n      />\r\n      <div className=\"grid grid-cols-3 gap-2 rounded-lg border px-4 py-3 text-sm\">\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <span className=\"text-muted-foreground text-xs\">Start</span>\r\n          <span className=\"font-medium\">\r\n            {range?.from\r\n              ? range.from.toLocaleDateString(\"en-US\", {\r\n                  day: \"numeric\",\r\n                  month: \"short\",\r\n                })\r\n              : \"—\"}\r\n          </span>\r\n        </div>\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <span className=\"text-muted-foreground text-xs\">End</span>\r\n          <span className=\"font-medium\">\r\n            {range?.to\r\n              ? range.to.toLocaleDateString(\"en-US\", {\r\n                  day: \"numeric\",\r\n                  month: \"short\",\r\n                })\r\n              : \"—\"}\r\n          </span>\r\n        </div>\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <span className=\"text-muted-foreground text-xs\">Duration</span>\r\n          <span className=\"font-medium\">\r\n            {duration ? (\r\n              <span className=\"flex items-center gap-1.5\">\r\n                {duration}d\r\n                {sprintNum && (\r\n                  <Badge size=\"sm\" variant=\"secondary\">\r\n                    S{sprintNum}\r\n                  </Badge>\r\n                )}\r\n              </span>\r\n            ) : (\r\n              \"—\"\r\n            )}\r\n          </span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

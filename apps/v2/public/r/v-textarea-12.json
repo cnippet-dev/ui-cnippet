@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-textarea-12",
+  "description": "Release notes editor with title input and publish action",
+  "registryDependencies": [
+    "@cnippet/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nconst MAX_CHARS = 2000;\r\n\r\nexport function Pattern() {\r\n  const [title, setTitle] = useState(\"v2.4.0 — New Dashboard\");\r\n  const [notes, setNotes] = useState(\r\n    `## What's new\\n\\n- Redesigned dashboard layout with improved navigation\\n- Performance improvements across all pages\\n- Fixed critical authentication bug on mobile`,\r\n  );\r\n  const [status, setStatus] = useState<\"draft\" | \"published\">(\"draft\");\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-4\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <p className=\"font-semibold text-sm\">Release Notes</p>\r\n        <Badge\r\n          size=\"sm\"\r\n          variant={status === \"published\" ? \"success\" : \"secondary\"}\r\n        >\r\n          {status === \"published\" ? \"Published\" : \"Draft\"}\r\n        </Badge>\r\n      </div>\r\n\r\n      <Separator />\r\n\r\n      <Field>\r\n        <FieldLabel>Version title</FieldLabel>\r\n        <Input\r\n          onChange={(e) => setTitle(e.target.value)}\r\n          placeholder=\"e.g. v2.4.0 — Feature name\"\r\n          value={title}\r\n        />\r\n      </Field>\r\n\r\n      <Field>\r\n        <FieldLabel>Release notes</FieldLabel>\r\n        <Textarea\r\n          maxLength={MAX_CHARS}\r\n          onChange={(e) => setNotes(e.target.value)}\r\n          placeholder=\"Describe what changed in this release…\"\r\n          style={{ minHeight: \"8rem\" }}\r\n          value={notes}\r\n        />\r\n        <div className=\"flex items-center justify-between text-muted-foreground text-xs\">\r\n          <span>Markdown supported</span>\r\n          <span\r\n            className={notes.length > MAX_CHARS * 0.9 ? \"text-amber-500\" : \"\"}\r\n          >\r\n            {notes.length} / {MAX_CHARS}\r\n          </span>\r\n        </div>\r\n      </Field>\r\n\r\n      <div className=\"flex gap-2\">\r\n        <Button\r\n          className=\"flex-1\"\r\n          onClick={() => setStatus(\"draft\")}\r\n          size=\"sm\"\r\n          variant=\"outline\"\r\n        >\r\n          Save Draft\r\n        </Button>\r\n        <Button\r\n          className=\"flex-1\"\r\n          onClick={() => setStatus(\"published\")}\r\n          size=\"sm\"\r\n        >\r\n          Publish\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:block"
+}

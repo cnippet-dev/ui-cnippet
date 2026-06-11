@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-21",
+  "description": "Disabled input with masked value",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-21.tsx",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"max-w-xs\">\r\n      <FieldLabel htmlFor=\"input-disabled\">API token</FieldLabel>\r\n      <Input\r\n        defaultValue=\"sk-••••••••••••••••••••••••••••••••\"\r\n        disabled\r\n        id=\"input-disabled\"\r\n        type=\"text\"\r\n      />\r\n      <FieldDescription>\r\n        Your token is masked. Regenerate it from your security settings.\r\n      </FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

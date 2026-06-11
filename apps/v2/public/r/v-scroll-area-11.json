@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-11",
+  "description": "Chat Feed",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-11.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\r\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\r\n\r\nconst messages = [\r\n  {\r\n    id: 1,\r\n    initials: \"A\",\r\n    text: \"Hey! Are we still on for the review meeting today?\",\r\n    time: \"9:41 AM\",\r\n    user: \"Alice\",\r\n  },\r\n  {\r\n    id: 2,\r\n    initials: \"B\",\r\n    text: \"Yes, I'll be there. Just finishing up some PRs.\",\r\n    time: \"9:43 AM\",\r\n    user: \"Bob\",\r\n  },\r\n  {\r\n    id: 3,\r\n    initials: \"A\",\r\n    text: \"Perfect. I've prepared the design handoff notes.\",\r\n    time: \"9:44 AM\",\r\n    user: \"Alice\",\r\n  },\r\n  {\r\n    id: 4,\r\n    initials: \"C\",\r\n    text: \"Can we push it 30 minutes? My call ends at 2:30.\",\r\n    time: \"9:47 AM\",\r\n    user: \"Carol\",\r\n  },\r\n  {\r\n    id: 5,\r\n    initials: \"B\",\r\n    text: \"Works for me.\",\r\n    time: \"9:48 AM\",\r\n    user: \"Bob\",\r\n  },\r\n  {\r\n    id: 6,\r\n    initials: \"A\",\r\n    text: \"Sure! Updated the calendar invite.\",\r\n    time: \"9:49 AM\",\r\n    user: \"Alice\",\r\n  },\r\n  {\r\n    id: 7,\r\n    initials: \"C\",\r\n    text: \"Thanks! See you all then.\",\r\n    time: \"9:50 AM\",\r\n    user: \"Carol\",\r\n  },\r\n  {\r\n    id: 8,\r\n    initials: \"B\",\r\n    text: \"One more thing — should we demo the new dashboard too?\",\r\n    time: \"9:52 AM\",\r\n    user: \"Bob\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ScrollArea className=\"h-72 w-full max-w-sm rounded-lg border\">\r\n      <div className=\"flex flex-col gap-4 p-4\">\r\n        {messages.map(({ id, initials, text, time, user }) => (\r\n          <div className=\"flex items-start gap-3\" key={id}>\r\n            <Avatar className=\"size-7 shrink-0\">\r\n              <AvatarFallback className=\"text-xs\">{initials}</AvatarFallback>\r\n            </Avatar>\r\n            <div className=\"flex flex-col gap-0.5\">\r\n              <div className=\"flex items-baseline gap-2\">\r\n                <span className=\"font-medium text-sm\">{user}</span>\r\n                <span className=\"text-muted-foreground text-xs\">{time}</span>\r\n              </div>\r\n              <p className=\"text-sm\">{text}</p>\r\n            </div>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </ScrollArea>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

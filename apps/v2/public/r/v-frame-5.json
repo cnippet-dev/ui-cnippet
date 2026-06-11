@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-5",
-  "description": "Basic frame",
+  "description": "With action button in header",
   "registryDependencies": [
     "@cnippet/frame"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-frame-5.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { SettingsIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Frame,\r\n  FrameDescription,\r\n  FrameHeader,\r\n  FramePanel,\r\n  FrameTitle,\r\n} from \"@/registry/default/ui/frame\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Frame className=\"w-full max-w-md\">\r\n      <FrameHeader className=\"flex-row items-center justify-between\">\r\n        <div>\r\n          <FrameTitle>Workspace settings</FrameTitle>\r\n          <FrameDescription>Manage your workspace preferences</FrameDescription>\r\n        </div>\r\n        <Button aria-label=\"Open settings\" size=\"icon\" variant=\"ghost\">\r\n          <SettingsIcon aria-hidden=\"true\" />\r\n        </Button>\r\n      </FrameHeader>\r\n      <FramePanel>\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Configure integrations, billing, and team permissions from the\r\n          settings panel.\r\n        </p>\r\n      </FramePanel>\r\n    </Frame>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

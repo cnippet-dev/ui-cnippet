@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-11",
+  "description": "Accordion-style FAQ with single-open behavior and question count badge",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ChevronDownIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport {\r\n  Collapsible,\r\n  CollapsiblePanel,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/default/ui/collapsible\";\r\n\r\nconst FAQS = [\r\n  {\r\n    answer:\r\n      \"You can cancel at any time from your account settings. Your subscription remains active until the end of the current billing period.\",\r\n    id: \"cancel\",\r\n    question: \"How do I cancel my subscription?\",\r\n  },\r\n  {\r\n    answer:\r\n      \"Yes — we offer a 14-day free trial with no credit card required. You get full access to all Pro features during the trial.\",\r\n    id: \"trial\",\r\n    question: \"Is there a free trial?\",\r\n  },\r\n  {\r\n    answer:\r\n      \"We accept Visa, Mastercard, American Express, and PayPal. All transactions are secured with TLS encryption.\",\r\n    id: \"payment\",\r\n    question: \"What payment methods do you accept?\",\r\n  },\r\n  {\r\n    answer:\r\n      \"Absolutely. You can upgrade or downgrade your plan at any time and the price difference will be prorated automatically.\",\r\n    id: \"switch\",\r\n    question: \"Can I switch plans mid-cycle?\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [open, setOpen] = useState<string | null>(null);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md space-y-2\">\r\n      <div className=\"mb-1 flex items-center justify-between\">\r\n        <p className=\"font-semibold text-sm\">Frequently Asked Questions</p>\r\n        <Badge size=\"sm\" variant=\"secondary\">\r\n          {FAQS.length} questions\r\n        </Badge>\r\n      </div>\r\n      {FAQS.map((faq) => (\r\n        <Collapsible\r\n          key={faq.id}\r\n          onOpenChange={(o) => setOpen(o ? faq.id : null)}\r\n          open={open === faq.id}\r\n        >\r\n          <CollapsibleTrigger className=\"flex w-full items-center justify-between rounded-lg border px-4 py-3 text-left font-medium text-sm transition-colors hover:bg-muted/50\">\r\n            {faq.question}\r\n            <ChevronDownIcon className=\"size-4 shrink-0 in-data-panel-open:rotate-180 text-muted-foreground transition-transform duration-200\" />\r\n          </CollapsibleTrigger>\r\n          <CollapsiblePanel>\r\n            <div className=\"rounded-b-lg border border-t-0 bg-muted/30 px-4 py-3 text-muted-foreground text-sm leading-relaxed\">\r\n              {faq.answer}\r\n            </div>\r\n          </CollapsiblePanel>\r\n        </Collapsible>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

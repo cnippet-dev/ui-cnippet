@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-autocomplete-18",
+  "description": "Multi-select tag input with dismissible chip pills",
+  "registryDependencies": [
+    "@cnippet/autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-autocomplete-18.tsx",
+      "content": "\"use client\";\r\n\r\nimport { XIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Autocomplete,\r\n  AutocompleteEmpty,\r\n  AutocompleteInput,\r\n  AutocompleteItem,\r\n  AutocompleteList,\r\n  AutocompletePopup,\r\n} from \"@/registry/default/ui/autocomplete\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\ntype Tech = { id: string; label: string };\r\n\r\nconst allTechs: Tech[] = [\r\n  { id: \"react\", label: \"React\" },\r\n  { id: \"vue\", label: \"Vue\" },\r\n  { id: \"angular\", label: \"Angular\" },\r\n  { id: \"svelte\", label: \"Svelte\" },\r\n  { id: \"nextjs\", label: \"Next.js\" },\r\n  { id: \"nuxt\", label: \"Nuxt\" },\r\n  { id: \"remix\", label: \"Remix\" },\r\n  { id: \"astro\", label: \"Astro\" },\r\n  { id: \"typescript\", label: \"TypeScript\" },\r\n  { id: \"graphql\", label: \"GraphQL\" },\r\n  { id: \"tailwind\", label: \"Tailwind CSS\" },\r\n  { id: \"prisma\", label: \"Prisma\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [selected, setSelected] = useState<Tech[]>([\r\n    { id: \"react\", label: \"React\" },\r\n    { id: \"typescript\", label: \"TypeScript\" },\r\n  ]);\r\n  const [inputValue, setInputValue] = useState(\"\");\r\n\r\n  const available = allTechs.filter(\r\n    (t) => !selected.some((s) => s.id === t.id),\r\n  );\r\n\r\n  const handleValueChange = (value: string) => {\r\n    setInputValue(value);\r\n    const match = allTechs.find(\r\n      (t) => t.label.toLowerCase() === value.toLowerCase(),\r\n    );\r\n    if (match && !selected.some((s) => s.id === match.id)) {\r\n      setSelected((prev) => [...prev, match]);\r\n      setInputValue(\"\");\r\n    }\r\n  };\r\n\r\n  const remove = (id: string) =>\r\n    setSelected((prev) => prev.filter((t) => t.id !== id));\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\r\n      <Label>Tech stack</Label>\r\n      {selected.length > 0 && (\r\n        <div className=\"flex flex-wrap gap-1.5\">\r\n          {selected.map((tech) => (\r\n            <Badge className=\"gap-1 pr-1\" key={tech.id} variant=\"secondary\">\r\n              {tech.label}\r\n              <button\r\n                aria-label={`Remove ${tech.label}`}\r\n                className=\"rounded-sm opacity-60 hover:opacity-100\"\r\n                onClick={() => remove(tech.id)}\r\n                type=\"button\"\r\n              >\r\n                <XIcon className=\"size-3\" />\r\n              </button>\r\n            </Badge>\r\n          ))}\r\n        </div>\r\n      )}\r\n      <Autocomplete\r\n        items={available}\r\n        onValueChange={handleValueChange}\r\n        value={inputValue}\r\n      >\r\n        <AutocompleteInput placeholder=\"Add technology…\" showClear />\r\n        <AutocompletePopup>\r\n          <AutocompleteEmpty>All technologies selected.</AutocompleteEmpty>\r\n          <AutocompleteList>\r\n            {(tech: Tech) => (\r\n              <AutocompleteItem key={tech.id} value={tech}>\r\n                {tech.label}\r\n              </AutocompleteItem>\r\n            )}\r\n          </AutocompleteList>\r\n        </AutocompletePopup>\r\n      </Autocomplete>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "autocomplete"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-14",
+  "description": "Onboarding step tracker with completion state",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/default/ui/accordion\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nconst steps = [\r\n  {\r\n    description:\r\n      \"Give your workspace a name and upload a logo. This is how your team will identify the space.\",\r\n    title: \"Create your workspace\",\r\n    value: \"step-1\",\r\n  },\r\n  {\r\n    description:\r\n      \"Add teammates by email. They'll receive an invite link and can join immediately.\",\r\n    title: \"Invite your team\",\r\n    value: \"step-2\",\r\n  },\r\n  {\r\n    description:\r\n      \"Integrate with Slack, GitHub, Jira, and 50+ other tools. Connections can be updated anytime.\",\r\n    title: \"Connect your tools\",\r\n    value: \"step-3\",\r\n  },\r\n  {\r\n    description:\r\n      \"Add a payment method to keep access after your 14-day trial ends. Cancel anytime.\",\r\n    title: \"Set up billing\",\r\n    value: \"step-4\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [completed, setCompleted] = useState<string[]>([\"step-1\"]);\r\n  const [opened, setOpened] = useState<string[]>([\"step-2\"]);\r\n\r\n  const markDone = (value: string, index: number) => {\r\n    setCompleted((prev) => [...prev, value]);\r\n    const next = steps[index + 1];\r\n    if (next) setOpened([next.value]);\r\n  };\r\n\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-md\">\r\n      <div className=\"mb-4\">\r\n        <h2 className=\"font-semibold text-base\">Getting started</h2>\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          {completed.length} of {steps.length} steps completed\r\n        </p>\r\n      </div>\r\n      <Accordion\r\n        className=\"w-full space-y-2 border-none\"\r\n        multiple\r\n        onValueChange={setOpened}\r\n        value={opened}\r\n      >\r\n        {steps.map((step, i) => {\r\n          const done = completed.includes(step.value);\r\n          return (\r\n            <AccordionItem\r\n              className={`rounded-lg border px-4 last:border-b ${\r\n                done\r\n                  ? \"border-emerald-200 bg-emerald-50/50 dark:border-emerald-900 dark:bg-emerald-950/30\"\r\n                  : \"\"\r\n              }`}\r\n              key={step.value}\r\n              value={step.value}\r\n            >\r\n              <AccordionTrigger className=\"hover:no-underline\">\r\n                <div className=\"flex items-center gap-3\">\r\n                  <div\r\n                    className={`flex size-6 shrink-0 items-center justify-center rounded-full font-semibold text-xs ${\r\n                      done\r\n                        ? \"bg-emerald-500 text-white\"\r\n                        : \"border-2 bg-background text-muted-foreground\"\r\n                    }`}\r\n                  >\r\n                    {done ? <CheckIcon className=\"size-3.5\" /> : i + 1}\r\n                  </div>\r\n                  <span className=\"font-medium text-sm\">{step.title}</span>\r\n                </div>\r\n              </AccordionTrigger>\r\n              <AccordionContent className=\"pb-4 pl-9\">\r\n                <p className=\"mb-3 text-muted-foreground text-sm\">\r\n                  {step.description}\r\n                </p>\r\n                {!done && (\r\n                  <Button onClick={() => markDone(step.value, i)} size=\"sm\">\r\n                    Mark as complete\r\n                  </Button>\r\n                )}\r\n              </AccordionContent>\r\n            </AccordionItem>\r\n          );\r\n        })}\r\n      </Accordion>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

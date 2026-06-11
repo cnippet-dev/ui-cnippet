@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-13",
+  "description": "Storage limit warning with usage progress bar",
+  "registryDependencies": [
+    "@cnippet/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-13.tsx",
+      "content": "import { HardDriveIcon } from \"lucide-react\";\r\nimport {\r\n  Alert,\r\n  AlertAction,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/default/ui/alert\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nexport function Pattern() {\r\n  const used = 9.1;\r\n  const limit = 10;\r\n  const pct = Math.round((used / limit) * 100);\r\n\r\n  return (\r\n    <div className=\"mx-auto mb-auto w-full max-w-lg\">\r\n      <Frame>\r\n        <FramePanel className=\"p-0!\">\r\n          <Alert\r\n            className=\"rounded-none border-0 shadow-none\"\r\n            variant=\"warning\"\r\n          >\r\n            <HardDriveIcon className=\"text-yellow-500\" />\r\n            <AlertTitle>Storage almost full</AlertTitle>\r\n            <AlertAction>\r\n              <Button size=\"xs\">Upgrade</Button>\r\n            </AlertAction>\r\n            <AlertDescription>\r\n              <span>\r\n                You&apos;ve used{\" \"}\r\n                <strong>\r\n                  {used} GB of {limit} GB\r\n                </strong>{\" \"}\r\n                ({pct}%).\r\n              </span>\r\n              <div className=\"mt-2 h-1.5 w-full overflow-hidden rounded-full bg-yellow-100 dark:bg-yellow-900/40\">\r\n                <div\r\n                  className=\"h-full rounded-full bg-yellow-500 transition-all\"\r\n                  style={{ width: `${pct}%` }}\r\n                />\r\n              </div>\r\n            </AlertDescription>\r\n          </Alert>\r\n        </FramePanel>\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:block"
+}

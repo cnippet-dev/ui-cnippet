@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sheet-11",
+  "description": "Export Data Panel",
+  "registryDependencies": [
+    "@cnippet/sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sheet-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  DownloadIcon,\r\n  FileJsonIcon,\r\n  FileSpreadsheetIcon,\r\n  FileTextIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetDescription,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetPanel,\r\n  SheetPopup,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/registry/default/ui/sheet\";\r\n\r\nconst formats = [\r\n  { ext: \"csv\", Icon: FileSpreadsheetIcon, label: \"CSV\" },\r\n  { ext: \"json\", Icon: FileJsonIcon, label: \"JSON\" },\r\n  { ext: \"txt\", Icon: FileTextIcon, label: \"TXT\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [format, setFormat] = useState(\"csv\");\r\n  const [filename, setFilename] = useState(\"export\");\r\n\r\n  return (\r\n    <Sheet>\r\n      <SheetTrigger render={<Button variant=\"outline\" />}>\r\n        <DownloadIcon aria-hidden=\"true\" />\r\n        Export Data\r\n      </SheetTrigger>\r\n      <SheetPopup>\r\n        <SheetHeader>\r\n          <SheetTitle>Export Data</SheetTitle>\r\n          <SheetDescription>\r\n            Choose a format and filename before downloading.\r\n          </SheetDescription>\r\n        </SheetHeader>\r\n        <SheetPanel className=\"space-y-5\">\r\n          <div className=\"space-y-2\">\r\n            <p className=\"font-medium text-sm\">File format</p>\r\n            <div className=\"grid grid-cols-3 gap-2\">\r\n              {formats.map(({ ext, Icon, label }) => (\r\n                <button\r\n                  className={`flex flex-col items-center gap-2 rounded-lg border p-3 text-sm transition-colors ${\r\n                    format === ext\r\n                      ? \"border-primary bg-primary/5 text-primary\"\r\n                      : \"hover:bg-muted\"\r\n                  }`}\r\n                  key={ext}\r\n                  onClick={() => setFormat(ext)}\r\n                  type=\"button\"\r\n                >\r\n                  <Icon aria-hidden=\"true\" className=\"size-5\" />\r\n                  {label}\r\n                </button>\r\n              ))}\r\n            </div>\r\n          </div>\r\n          <Field>\r\n            <FieldLabel>Filename</FieldLabel>\r\n            <div className=\"flex items-center\">\r\n              <Input\r\n                className=\"rounded-r-none\"\r\n                onChange={(e) => setFilename(e.target.value)}\r\n                type=\"text\"\r\n                value={filename}\r\n              />\r\n              <span className=\"flex h-9 items-center rounded-r-lg border border-l-0 bg-muted px-3 text-muted-foreground text-sm\">\r\n                .{format}\r\n              </span>\r\n            </div>\r\n          </Field>\r\n          <div className=\"space-y-1.5 rounded-lg bg-muted/50 p-3 text-muted-foreground text-xs\">\r\n            <p className=\"font-medium text-foreground\">Export includes:</p>\r\n            <p>• All records from the current view</p>\r\n            <p>• Applied filters and column order</p>\r\n            <p>• Column headers in the first row</p>\r\n          </div>\r\n        </SheetPanel>\r\n        <SheetFooter>\r\n          <SheetClose render={<Button variant=\"ghost\" />}>Cancel</SheetClose>\r\n          <Button>\r\n            <DownloadIcon aria-hidden=\"true\" />\r\n            Download\r\n          </Button>\r\n        </SheetFooter>\r\n      </SheetPopup>\r\n    </Sheet>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sheet"
+  ],
+  "type": "registry:block"
+}

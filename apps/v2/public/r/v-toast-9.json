@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toast-9",
-  "description": "Basic toast",
+  "description": "Timeout Control",
   "registryDependencies": [
     "@cnippet/toast"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toast-9.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { useRef } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { toastManager } from \"@/registry/default/ui/toast\";\r\n\r\nexport function Pattern() {\r\n  const persistentIdRef = useRef<string | null>(null);\r\n\r\n  function showPersistent() {\r\n    if (persistentIdRef.current) return;\r\n    persistentIdRef.current = toastManager.add({\r\n      actionProps: {\r\n        children: \"Dismiss\",\r\n        onClick: () => {\r\n          if (persistentIdRef.current) {\r\n            toastManager.close(persistentIdRef.current);\r\n            persistentIdRef.current = null;\r\n          }\r\n        },\r\n      },\r\n      description: \"This toast stays until you dismiss it manually.\",\r\n      timeout: 0,\r\n      title: \"Persistent notification\",\r\n      type: \"warning\",\r\n    });\r\n  }\r\n\r\n  function showTimed(ms: number) {\r\n    toastManager.add({\r\n      description: `This toast auto-dismisses after ${ms / 1000}s.`,\r\n      timeout: ms,\r\n      title: `Auto-dismiss in ${ms / 1000}s`,\r\n      type: \"info\",\r\n    });\r\n  }\r\n\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-2\">\r\n      <Button onClick={() => showTimed(3000)} variant=\"outline\">\r\n        3s toast\r\n      </Button>\r\n      <Button onClick={() => showTimed(8000)} variant=\"outline\">\r\n        8s toast\r\n      </Button>\r\n      <Button onClick={showPersistent} variant=\"outline\">\r\n        Persistent toast\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-20",
+  "description": "Basic pagination",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-20.tsx",
+      "content": "import { Loader2Icon } from \"lucide-react\";\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationEllipsis,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from \"@/registry/default/ui/pagination\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"relative\">\r\n      <Pagination className=\"pointer-events-none opacity-40\">\r\n        <PaginationContent>\r\n          <PaginationItem>\r\n            <PaginationPrevious href=\"#\" />\r\n          </PaginationItem>\r\n          <PaginationItem>\r\n            <PaginationLink href=\"#\">1</PaginationLink>\r\n          </PaginationItem>\r\n          <PaginationItem>\r\n            <PaginationLink href=\"#\" isActive>\r\n              2\r\n            </PaginationLink>\r\n          </PaginationItem>\r\n          <PaginationItem>\r\n            <PaginationLink href=\"#\">3</PaginationLink>\r\n          </PaginationItem>\r\n          <PaginationItem>\r\n            <PaginationEllipsis />\r\n          </PaginationItem>\r\n          <PaginationItem>\r\n            <PaginationNext href=\"#\" />\r\n          </PaginationItem>\r\n        </PaginationContent>\r\n      </Pagination>\r\n      <div className=\"absolute inset-0 flex items-center justify-center\">\r\n        <Loader2Icon\r\n          aria-label=\"Loading results\"\r\n          className=\"size-4 animate-spin text-muted-foreground\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

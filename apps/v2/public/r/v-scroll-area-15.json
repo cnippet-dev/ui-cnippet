@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-15",
+  "description": "File Explorer",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-15.tsx",
+      "content": "import { FileIcon, FolderIcon } from \"lucide-react\";\r\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\r\n\r\nconst files = [\r\n  { isFolder: true, name: \"app\", path: \"app/\" },\r\n  { isFolder: true, name: \"components\", path: \"app/components/\" },\r\n  { isFolder: false, name: \"layout.tsx\", path: \"app/layout.tsx\" },\r\n  { isFolder: false, name: \"page.tsx\", path: \"app/page.tsx\" },\r\n  { isFolder: false, name: \"globals.css\", path: \"app/globals.css\" },\r\n  { isFolder: true, name: \"lib\", path: \"lib/\" },\r\n  { isFolder: false, name: \"utils.ts\", path: \"lib/utils.ts\" },\r\n  { isFolder: false, name: \"auth.ts\", path: \"lib/auth.ts\" },\r\n  { isFolder: true, name: \"public\", path: \"public/\" },\r\n  { isFolder: false, name: \"favicon.ico\", path: \"public/favicon.ico\" },\r\n  { isFolder: false, name: \"logo.svg\", path: \"public/logo.svg\" },\r\n  { isFolder: false, name: \"next.config.ts\", path: \"next.config.ts\" },\r\n  { isFolder: false, name: \"tailwind.config.ts\", path: \"tailwind.config.ts\" },\r\n  { isFolder: false, name: \"package.json\", path: \"package.json\" },\r\n  { isFolder: false, name: \"tsconfig.json\", path: \"tsconfig.json\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ScrollArea className=\"h-64 w-56 rounded-lg border\" scrollFade>\r\n      <div className=\"flex flex-col gap-0.5 p-2\">\r\n        {files.map(({ isFolder, name, path }) => {\r\n          const Icon = isFolder ? FolderIcon : FileIcon;\r\n          return (\r\n            <button\r\n              className=\"flex items-center gap-2 rounded-md px-2 py-1.5 text-start text-sm transition-colors hover:bg-accent\"\r\n              key={path}\r\n              type=\"button\"\r\n            >\r\n              <Icon aria-hidden=\"true\" className=\"size-4 shrink-0 opacity-60\" />\r\n              <span className=\"truncate\">{name}</span>\r\n            </button>\r\n          );\r\n        })}\r\n      </div>\r\n    </ScrollArea>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

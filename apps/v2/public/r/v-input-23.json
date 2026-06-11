@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-23",
+  "description": "Input with inline start icon",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-23.tsx",
+      "content": "import { SearchIcon } from \"lucide-react\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <FieldLabel htmlFor=\"input-icon-search\">Search</FieldLabel>\r\n      <div className=\"relative\">\r\n        <div\r\n          aria-hidden=\"true\"\r\n          className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3 text-muted-foreground/80\"\r\n        >\r\n          <SearchIcon className=\"size-4\" />\r\n        </div>\r\n        <Input\r\n          className=\"ps-9\"\r\n          id=\"input-icon-search\"\r\n          placeholder=\"Search projects…\"\r\n          type=\"search\"\r\n        />\r\n      </div>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

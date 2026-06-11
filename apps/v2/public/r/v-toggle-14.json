@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-14",
+  "description": "Server settings toggles with icon swap and status color",
+  "registryDependencies": [
+    "@cnippet/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  EyeIcon,\r\n  EyeOffIcon,\r\n  LockIcon,\r\n  UnlockIcon,\r\n  WifiIcon,\r\n  WifiOffIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Toggle } from \"@/registry/default/ui/toggle\";\r\n\r\nconst settings = [\r\n  {\r\n    description: \"Allow only HTTPS connections\",\r\n    id: \"secure\",\r\n    initial: true,\r\n    offIcon: UnlockIcon,\r\n    offLabel: \"Insecure\",\r\n    onIcon: LockIcon,\r\n    onLabel: \"Secure mode\",\r\n  },\r\n  {\r\n    description: \"Restrict access to public networks\",\r\n    id: \"network\",\r\n    initial: true,\r\n    offIcon: WifiOffIcon,\r\n    offLabel: \"Offline\",\r\n    onIcon: WifiIcon,\r\n    onLabel: \"Network access\",\r\n  },\r\n  {\r\n    description: \"Show stack traces in error responses\",\r\n    id: \"debug\",\r\n    initial: false,\r\n    offIcon: EyeOffIcon,\r\n    offLabel: \"Debug hidden\",\r\n    onIcon: EyeIcon,\r\n    onLabel: \"Debug visible\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [states, setStates] = useState<Record<string, boolean>>(\r\n    Object.fromEntries(settings.map((s) => [s.id, s.initial])),\r\n  );\r\n\r\n  const toggle = (id: string) =>\r\n    setStates((prev) => ({ ...prev, [id]: !prev[id] }));\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <p className=\"mb-3 font-semibold text-sm\">Server settings</p>\r\n      {settings.map((s) => {\r\n        const on = states[s.id];\r\n        const Icon = on ? s.onIcon : s.offIcon;\r\n        return (\r\n          <div\r\n            className=\"flex items-center justify-between gap-3 rounded-lg border border-border px-3 py-2.5\"\r\n            key={s.id}\r\n          >\r\n            <div className=\"flex flex-col gap-0.5\">\r\n              <span className=\"font-medium text-sm\">\r\n                {on ? s.onLabel : s.offLabel}\r\n              </span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                {s.description}\r\n              </span>\r\n            </div>\r\n            <Toggle\r\n              aria-label={on ? s.offLabel : s.onLabel}\r\n              className={on ? \"text-emerald-500\" : \"text-muted-foreground\"}\r\n              onPressedChange={() => toggle(s.id)}\r\n              pressed={on}\r\n              size=\"sm\"\r\n              variant=\"outline\"\r\n            >\r\n              <Icon className=\"size-4\" />\r\n            </Toggle>\r\n          </div>\r\n        );\r\n      })}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:block"
+}

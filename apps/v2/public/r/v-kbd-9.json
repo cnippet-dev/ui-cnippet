@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-9",
-  "description": "Basic kbd",
+  "description": "Cross-platform Mac vs Win shortcut table",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-9.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { EditIcon, SearchIcon, UndoIcon } from \"lucide-react\";\r\nimport { Fragment } from \"react\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nconst shortcuts = [\r\n  {\r\n    icon: SearchIcon,\r\n    label: \"Open command palette\",\r\n    mac: [\"⌘\", \"K\"],\r\n    win: [\"Ctrl\", \"K\"],\r\n  },\r\n  {\r\n    icon: EditIcon,\r\n    label: \"Find and replace\",\r\n    mac: [\"⌘\", \"H\"],\r\n    win: [\"Ctrl\", \"H\"],\r\n  },\r\n  {\r\n    icon: UndoIcon,\r\n    label: \"Undo last action\",\r\n    mac: [\"⌘\", \"Z\"],\r\n    win: [\"Ctrl\", \"Z\"],\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm\">\r\n      <div className=\"grid grid-cols-[1fr_auto_auto] items-center gap-x-4 gap-y-0\">\r\n        <span className=\"pb-2 font-medium text-muted-foreground text-xs\">\r\n          Action\r\n        </span>\r\n        <span className=\"pb-2 font-medium text-muted-foreground text-xs\">\r\n          Mac\r\n        </span>\r\n        <span className=\"pb-2 font-medium text-muted-foreground text-xs\">\r\n          Win / Linux\r\n        </span>\r\n        <Separator className=\"col-span-3\" />\r\n        {shortcuts.map(({ icon: Icon, label, mac, win }) => (\r\n          <Fragment key={label}>\r\n            <div className=\"flex items-center gap-2 py-2.5\">\r\n              <Icon\r\n                aria-hidden=\"true\"\r\n                className=\"size-3.5 text-muted-foreground\"\r\n              />\r\n              <span className=\"text-sm\">{label}</span>\r\n            </div>\r\n            <KbdGroup className=\"py-2.5\">\r\n              {mac.map((k) => (\r\n                <Kbd key={k}>{k}</Kbd>\r\n              ))}\r\n            </KbdGroup>\r\n            <KbdGroup className=\"py-2.5\">\r\n              {win.map((k) => (\r\n                <Kbd key={k}>{k}</Kbd>\r\n              ))}\r\n            </KbdGroup>\r\n          </Fragment>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

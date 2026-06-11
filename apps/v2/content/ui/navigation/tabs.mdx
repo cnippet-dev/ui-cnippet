@@ -1,6 +1,6 @@
 ---
 title: Tabs
-description: A component for toggling between related panels on the same page.
+description: A component for toggling between related panels on the same page. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/tabs#api-reference
@@ -58,6 +58,44 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs"
   <TabsPanel value="tab-3">Tab 3 content</TabsPanel>
 </Tabs>
 ```
+
+## API Reference
+
+### Tabs
+
+Root container that manages tab state. Wraps Base UI `Tabs.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string` | — | Initially selected tab for uncontrolled usage |
+| `value` | `string` | — | Controlled selected tab |
+| `onValueChange` | `(value: string) => void` | — | Callback when the active tab changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+### TabsList
+
+Tab trigger strip. Renders the animated indicator internally.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "underline"` | `"default"` | Visual style — pill background or animated underline |
+
+### TabsTab
+
+Individual tab trigger. Also exported as `TabsTrigger`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Unique identifier for this tab (required) |
+| `disabled` | `boolean` | `false` | Prevents activation of this tab |
+
+### TabsPanel
+
+Content panel shown when its tab is active. Also exported as `TabsContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Must match the `value` of the corresponding `TabsTab` (required) |
 
 ## Examples
 
@@ -126,3 +164,33 @@ Combines leading icons with the line/underline style variant for an icon-forward
 Renders tabs as a segmented control — a pill background slides between options — suited for binary or small option sets.
 
 <ComponentPreview name="v-tabs-12" />
+
+### Settings Navigation
+
+A vertical underline tab layout for a settings page with profile, security, notifications, and integrations panels. The active tab animates a left-edge underline indicator.
+
+<ComponentPreview name="v-tabs-13" />
+
+### Code File Viewer
+
+Per-file tabs styled like an editor tab bar. The active file's content appears below; a copy button in the header writes the current file's code to the clipboard.
+
+<ComponentPreview name="v-tabs-14" />
+
+### Profile Repositories
+
+Underline-style tabs with numeric badge counts for Repositories and Stars. The Repositories panel lists each repo with language dot, star count, and a Public badge.
+
+<ComponentPreview name="v-tabs-15" />
+
+### Pricing Toggle
+
+A segmented Monthly / Yearly billing toggle with a "Save 20%" badge on the yearly tab. Switching recalculates all plan prices in the card grid below without remounting.
+
+<ComponentPreview name="v-tabs-16" />
+
+### Dashboard Metrics
+
+Icon tabs for Analytics, Reports, Exports, and Activity. The Analytics panel shows a two-column grid of metric cards; other panels render contextual placeholder content.
+
+<ComponentPreview name="v-tabs-17" />

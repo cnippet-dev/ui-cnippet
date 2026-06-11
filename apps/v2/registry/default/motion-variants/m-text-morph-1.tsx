@@ -10,13 +10,13 @@ export default function TextMorphCycler() {
 
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-6 px-6">
-      <h2 className="text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-        <TextMorph>{words[index] ?? words[0]}</TextMorph>
+      <h2 className="text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl">
+        <TextMorph>{words[index] ?? words[0] ?? ""}</TextMorph>
       </h2>
       <div className="flex gap-2">
         {words.map((word, i) => (
           <button
-            className={`rounded-md px-3 py-1 text-sm font-medium transition-colors ${
+            className={`rounded-md px-3 py-1 font-medium text-sm transition-colors ${
               i === index
                 ? "bg-foreground text-background"
                 : "bg-accent text-muted-foreground hover:text-foreground"

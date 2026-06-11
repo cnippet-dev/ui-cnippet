@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-table-12",
+  "description": "Invoice history with status badges and outstanding total",
+  "registryDependencies": [
+    "@cnippet/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-table-12.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/registry/default/ui/table\";\r\n\r\nconst invoices = [\r\n  {\r\n    amount: \"$4,800.00\",\r\n    client: \"Acme Corp\",\r\n    due: \"Feb 5, 2025\",\r\n    id: \"INV-2025-001\",\r\n    issued: \"Jan 5, 2025\",\r\n    status: \"Paid\",\r\n    statusVariant: \"success\" as const,\r\n  },\r\n  {\r\n    amount: \"$2,150.00\",\r\n    client: \"Globex Inc\",\r\n    due: \"Feb 12, 2025\",\r\n    id: \"INV-2025-002\",\r\n    issued: \"Jan 12, 2025\",\r\n    status: \"Overdue\",\r\n    statusVariant: \"destructive\" as const,\r\n  },\r\n  {\r\n    amount: \"$9,320.00\",\r\n    client: \"Initech Ltd\",\r\n    due: \"Feb 20, 2025\",\r\n    id: \"INV-2025-003\",\r\n    issued: \"Jan 20, 2025\",\r\n    status: \"Pending\",\r\n    statusVariant: \"warning\" as const,\r\n  },\r\n  {\r\n    amount: \"$1,500.00\",\r\n    client: \"Umbrella Co\",\r\n    due: \"Feb 27, 2025\",\r\n    id: \"INV-2025-004\",\r\n    issued: \"Jan 27, 2025\",\r\n    status: \"Paid\",\r\n    statusVariant: \"success\" as const,\r\n  },\r\n  {\r\n    amount: \"$7,200.00\",\r\n    client: \"Cyberdyne Systems\",\r\n    due: \"Mar 3, 2025\",\r\n    id: \"INV-2025-005\",\r\n    issued: \"Feb 3, 2025\",\r\n    status: \"Draft\",\r\n    statusVariant: \"outline\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-3xl\">\r\n      <Table>\r\n        <TableHeader>\r\n          <TableRow>\r\n            <TableHead>Invoice</TableHead>\r\n            <TableHead>Client</TableHead>\r\n            <TableHead>Issued</TableHead>\r\n            <TableHead>Due</TableHead>\r\n            <TableHead>Status</TableHead>\r\n            <TableHead className=\"text-right\">Amount</TableHead>\r\n            <TableHead />\r\n          </TableRow>\r\n        </TableHeader>\r\n        <TableBody>\r\n          {invoices.map((inv) => (\r\n            <TableRow key={inv.id}>\r\n              <TableCell className=\"font-medium font-mono text-sm\">\r\n                {inv.id}\r\n              </TableCell>\r\n              <TableCell className=\"text-sm\">{inv.client}</TableCell>\r\n              <TableCell className=\"text-muted-foreground text-sm\">\r\n                {inv.issued}\r\n              </TableCell>\r\n              <TableCell className=\"text-muted-foreground text-sm\">\r\n                {inv.due}\r\n              </TableCell>\r\n              <TableCell>\r\n                <Badge size=\"sm\" variant={inv.statusVariant}>\r\n                  {inv.status}\r\n                </Badge>\r\n              </TableCell>\r\n              <TableCell className=\"text-right font-medium text-sm\">\r\n                {inv.amount}\r\n              </TableCell>\r\n              <TableCell className=\"text-right\">\r\n                <Button className=\"h-7\" size=\"sm\" variant=\"ghost\">\r\n                  View\r\n                </Button>\r\n              </TableCell>\r\n            </TableRow>\r\n          ))}\r\n        </TableBody>\r\n        <TableFooter>\r\n          <TableRow>\r\n            <TableCell colSpan={5}>Total outstanding</TableCell>\r\n            <TableCell className=\"text-right\">$11,470.00</TableCell>\r\n            <TableCell />\r\n          </TableRow>\r\n        </TableFooter>\r\n      </Table>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "table"
+  ],
+  "type": "registry:block"
+}

@@ -13,7 +13,7 @@ export default function VerticalCutRevealStacked() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-1 px-6">
       {lines.map((line, i) => (
         <p
-          className="text-2xl font-bold text-foreground sm:text-3xl"
+          className="font-bold text-2xl text-foreground sm:text-3xl"
           key={line}
         >
           <VerticalCutReveal

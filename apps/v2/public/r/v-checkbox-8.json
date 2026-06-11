@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-8",
-  "description": "Basic checkbox",
+  "description": "Issue Label Picker",
   "registryDependencies": [
     "@cnippet/checkbox"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-8.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nconst labels = [\r\n  { color: \"bg-red-500\", id: \"bug\", name: \"bug\" },\r\n  { color: \"bg-blue-500\", id: \"feature\", name: \"feature\" },\r\n  { color: \"bg-yellow-500\", id: \"improvement\", name: \"improvement\" },\r\n  { color: \"bg-green-500\", id: \"documentation\", name: \"documentation\" },\r\n  { color: \"bg-purple-500\", id: \"design\", name: \"design\" },\r\n  { color: \"bg-orange-500\", id: \"performance\", name: \"performance\" },\r\n  { color: \"bg-pink-500\", id: \"security\", name: \"security\" },\r\n  { color: \"bg-cyan-500\", id: \"testing\", name: \"testing\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [selected, setSelected] = useState<Set<string>>(\r\n    new Set([\"bug\", \"feature\"]),\r\n  );\r\n\r\n  const toggle = (id: string) =>\r\n    setSelected((prev) => {\r\n      const next = new Set(prev);\r\n      next.has(id) ? next.delete(id) : next.add(id);\r\n      return next;\r\n    });\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <p className=\"font-semibold text-sm\">Labels</p>\r\n        <span className=\"text-muted-foreground text-xs\">\r\n          {selected.size} selected\r\n        </span>\r\n      </div>\r\n      <Separator />\r\n      <div className=\"space-y-0.5\">\r\n        {labels.map((label) => (\r\n          <label\r\n            className=\"flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 hover:bg-accent\"\r\n            htmlFor={label.id}\r\n            key={label.id}\r\n          >\r\n            <Checkbox\r\n              checked={selected.has(label.id)}\r\n              id={label.id}\r\n              onCheckedChange={() => toggle(label.id)}\r\n            />\r\n            <span className={`size-2.5 shrink-0 rounded-full ${label.color}`} />\r\n            <span className=\"text-sm\">{label.name}</span>\r\n          </label>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

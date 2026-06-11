@@ -9,7 +9,7 @@
       "@source/*": ["./.source/*"]
     }
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "temp/**"],
   "extends": "@cnippet/typescript-config/nextjs.json",
   "include": [
     "next-env.d.ts",

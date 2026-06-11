@@ -7,15 +7,15 @@ export default function TextCursorProximityScale() {
 
   return (
     <div
-      ref={containerRef}
       className="flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center"
+      ref={containerRef}
     >
-      <p className="text-sm text-muted-foreground">Hover to scale letters</p>
+      <p className="text-muted-foreground text-sm">Hover to scale letters</p>
       <TextCursorProximity
+        className="font-bold text-4xl tracking-tight"
         containerRef={containerRef}
-        styles={{ scale: { from: 1, to: 1.6 } }}
         radius={60}
-        className="text-4xl font-bold tracking-tight"
+        styles={{ scale: { from: 1, to: 1.6 } }}
       >
         Move cursor here
       </TextCursorProximity>

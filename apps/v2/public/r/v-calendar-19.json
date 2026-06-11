@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-19",
+  "description": "Mini year view with all 12 months in a compact grid",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-19.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nconst today = new Date();\r\n\r\nexport default function Particle() {\r\n  const [selected, setSelected] = React.useState<Date | undefined>();\r\n\r\n  const months = Array.from({ length: 12 }, (_, i) => i);\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <div className=\"grid grid-cols-3 gap-2 sm:grid-cols-4\">\r\n        {months.map((month) => (\r\n          <div className=\"overflow-hidden rounded-lg border\" key={month}>\r\n            <Calendar\r\n              className=\"[&_.rdp-nav]:hidden [&_table]:text-[10px] [&_td]:p-0 [&_th]:p-0 [&_th]:text-[9px]\"\r\n              defaultMonth={new Date(today.getFullYear(), month)}\r\n              mode=\"single\"\r\n              onSelect={setSelected}\r\n              selected={selected}\r\n            />\r\n          </div>\r\n        ))}\r\n      </div>\r\n      {selected && (\r\n        <p className=\"text-center text-muted-foreground text-sm\">\r\n          Selected:{\" \"}\r\n          <span className=\"font-medium text-foreground\">\r\n            {selected.toLocaleDateString(\"en-US\", {\r\n              day: \"numeric\",\r\n              month: \"long\",\r\n              year: \"numeric\",\r\n            })}\r\n          </span>\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

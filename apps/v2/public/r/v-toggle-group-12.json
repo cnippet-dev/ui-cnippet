@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-group-12",
+  "description": "Issue priority picker with color-coded labels",
+  "registryDependencies": [
+    "@cnippet/toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-group-12.tsx",
+      "content": "// biome-ignore-all lint/style/noNonNullAssertion:<>\r\n\r\n\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\ntype Priority = \"low\" | \"medium\" | \"high\" | \"critical\";\r\n\r\nconst priorities: {\r\n  color: string;\r\n  dot: string;\r\n  id: Priority;\r\n  label: string;\r\n}[] = [\r\n  {\r\n    color: \"text-muted-foreground\",\r\n    dot: \"bg-muted-foreground/60\",\r\n    id: \"low\",\r\n    label: \"Low\",\r\n  },\r\n  { color: \"text-blue-500\", dot: \"bg-blue-500\", id: \"medium\", label: \"Medium\" },\r\n  { color: \"text-amber-500\", dot: \"bg-amber-500\", id: \"high\", label: \"High\" },\r\n  {\r\n    color: \"text-red-500\",\r\n    dot: \"bg-red-500\",\r\n    id: \"critical\",\r\n    label: \"Critical\",\r\n  },\r\n];\r\n\r\nconst issues = [\r\n  { id: \"ISS-101\", title: \"Login page unresponsive on mobile\" },\r\n  { id: \"ISS-102\", title: \"Dashboard charts not loading\" },\r\n  { id: \"ISS-103\", title: \"Typo in onboarding copy\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [issuePriorities, setIssuePriorities] = useState<\r\n    Record<string, Priority>\r\n  >({\r\n    \"ISS-101\": \"critical\",\r\n    \"ISS-102\": \"high\",\r\n    \"ISS-103\": \"low\",\r\n  });\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\r\n      {issues.map((issue) => {\r\n        const current = issuePriorities[issue.id] ?? \"low\";\r\n        const p = priorities.find((x) => x.id === current)!;\r\n        return (\r\n          <div\r\n            className=\"flex flex-col gap-2 rounded-lg border border-border p-3\"\r\n            key={issue.id}\r\n          >\r\n            <div className=\"flex items-center justify-between gap-2\">\r\n              <span className=\"font-mono text-muted-foreground text-xs\">\r\n                {issue.id}\r\n              </span>\r\n              <div className=\"flex items-center gap-1.5\">\r\n                <span className={`size-2 rounded-full ${p.dot}`} />\r\n                <span className={`font-medium text-xs ${p.color}`}>\r\n                  {p.label}\r\n                </span>\r\n              </div>\r\n            </div>\r\n            <p className=\"text-sm leading-snug\">{issue.title}</p>\r\n            <ToggleGroup\r\n              className=\"justify-start\"\r\n              onValueChange={(v) => {\r\n                if (v[0])\r\n                  setIssuePriorities((prev) => ({\r\n                    ...prev,\r\n                    [issue.id]: v[0] as Priority,\r\n                  }));\r\n              }}\r\n              size=\"sm\"\r\n              value={[current]}\r\n              variant=\"outline\"\r\n            >\r\n              {priorities.map((pri) => (\r\n                <ToggleGroupItem\r\n                  aria-label={`Set ${pri.label} priority`}\r\n                  className={`gap-1 text-xs ${issuePriorities[issue.id] === pri.id ? pri.color : \"\"}`}\r\n                  key={pri.id}\r\n                  value={pri.id}\r\n                >\r\n                  <span className={`size-1.5 rounded-full ${pri.dot}`} />\r\n                  {pri.label}\r\n                </ToggleGroupItem>\r\n              ))}\r\n            </ToggleGroup>\r\n          </div>\r\n        );\r\n      })}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle group"
+  ],
+  "type": "registry:block"
+}

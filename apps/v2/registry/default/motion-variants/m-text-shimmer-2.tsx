@@ -9,7 +9,7 @@ export default function TextShimmerBadge() {
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
         <TextShimmer
           as="span"
-          className="text-sm font-medium"
+          className="font-medium text-sm"
           duration={1.8}
           spread={2}
         >
@@ -21,7 +21,7 @@ export default function TextShimmerBadge() {
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-violet-500" />
         <TextShimmer
           as="span"
-          className="text-sm font-medium"
+          className="font-medium text-sm"
           duration={1.4}
           spread={2}
         >

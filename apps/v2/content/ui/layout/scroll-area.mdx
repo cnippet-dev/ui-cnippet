@@ -1,6 +1,6 @@
 ---
 title: Scroll Area
-description: A native scroll container with custom scrollbars.
+description: A native scroll container with custom scrollbars. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/scroll-area#api-reference
@@ -19,7 +19,7 @@ links:
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @coss/scroll-area
+npx shadcn@latest add @cnippet/scroll-area
 ```
 
 </TabsPanel>
@@ -67,6 +67,25 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 </ScrollArea>
 ```
 
+## API Reference
+
+### ScrollArea
+
+Root scroll container with custom scrollbars.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `false` | Fades content at the viewport edges to hint at overflow |
+| `scrollbarGutter` | `boolean` | `false` | Reserves space for the scrollbar to prevent layout shifts |
+
+### ScrollBar
+
+The custom scrollbar track. Rendered automatically inside `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Scrollbar orientation |
+
 ## Examples
 
 ### Scroll Fade
@@ -86,3 +105,33 @@ Renders a horizontally scrollable area with a custom scrollbar for browsing wide
 Enable `scrollbarGutter` to reserve space for the scrollbar when overflow appears, preventing layout shifts as the bar shows or hides.
 
 <ComponentPreview name="v-scroll-area-4" />
+
+### Chat Feed
+
+A scrollable message thread with avatars, sender names, and timestamps — a common pattern for team chat or comment history UIs.
+
+<ComponentPreview name="v-scroll-area-11" />
+
+### Notification List
+
+A vertically scrollable list of notifications with icon, message, timestamp, and an unread indicator dot.
+
+<ComponentPreview name="v-scroll-area-12" />
+
+### Sidebar Navigation
+
+A scrollable sidebar with section labels and icon-prefixed nav items — useful for settings panels or admin layouts.
+
+<ComponentPreview name="v-scroll-area-13" />
+
+### Activity Log
+
+A `scrollFade`-less monospace log viewer with colored level labels (info, warn, error) and per-entry timestamps.
+
+<ComponentPreview name="v-scroll-area-14" />
+
+### File Explorer
+
+A `scrollFade`-enabled file tree with folder and file icons, truncated names, and hover highlight on each row.
+
+<ComponentPreview name="v-scroll-area-15" />

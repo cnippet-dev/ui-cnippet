@@ -1,6 +1,6 @@
 ---
 title: Input
-description: A native input element.
+description: A native input element. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/input#api-reference
@@ -55,6 +55,18 @@ import { Input } from "@/components/ui/input"
 ```tsx
 <Input />
 ```
+
+## API Reference
+
+### Input
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default" \| "lg" \| number` | `"default"` | Visual size; a `number` sets the HTML `size` attribute (character width) |
+| `unstyled` | `boolean` | `false` | Strips the outer border/shadow wrapper — use inside `InputGroup` |
+| `nativeInput` | `boolean` | `false` | Renders a plain `<input>` instead of Base UI Input (avoids Base UI validation integration) |
+
+All standard `<input>` HTML attributes are forwarded to the inner input element.
 
 ## Examples
 
@@ -173,3 +185,33 @@ Displays a bulleted list of validation errors below the field — useful for fie
 A password input with a live strength indicator that evaluates the entered value and shows a color-coded hint message.
 
 <ComponentPreview name="v-input-20" />
+
+### Disabled
+
+A disabled input showing a masked value — used for read-only secrets like API tokens with a description pointing to where to manage them.
+
+<ComponentPreview name="v-input-21" />
+
+### Readonly With Copy
+
+A `readOnly` input for shareable links or tokens, paired with a copy-to-clipboard icon button that toggles to a checkmark on success.
+
+<ComponentPreview name="v-input-22" />
+
+### With Inline Icon
+
+An absolutely-positioned icon rendered inside the input's leading edge using padding offset — no wrapper component required.
+
+<ComponentPreview name="v-input-23" />
+
+### Color Picker
+
+A `type="color"` input styled to match the design system, used for theme or brand color selection.
+
+<ComponentPreview name="v-input-24" />
+
+### With Clear Button
+
+A text input with an `×` clear button that appears only when the field has a value and empties it on click.
+
+<ComponentPreview name="v-input-25" />

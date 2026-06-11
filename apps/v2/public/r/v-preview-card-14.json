@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-preview-card-14",
+  "description": "Basic preview card",
+  "registryDependencies": [
+    "@cnippet/preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-preview-card-14.tsx",
+      "content": "import { CircleDotIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport {\r\n  PreviewCard,\r\n  PreviewCardPopup,\r\n  PreviewCardTrigger,\r\n} from \"@/registry/default/ui/preview-card\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <p className=\"text-sm\">\r\n      Related to issue{\" \"}\r\n      <PreviewCard>\r\n        <PreviewCardTrigger className=\"cursor-pointer font-medium font-mono text-primary underline underline-offset-4\">\r\n          #1842\r\n        </PreviewCardTrigger>\r\n        <PreviewCardPopup>\r\n          <div className=\"flex flex-col gap-2.5\">\r\n            <div className=\"flex items-start gap-2\">\r\n              <CircleDotIcon\r\n                aria-hidden=\"true\"\r\n                className=\"mt-0.5 size-4 shrink-0 text-green-500\"\r\n              />\r\n              <div>\r\n                <h4 className=\"font-semibold text-sm leading-snug\">\r\n                  PopoverContent loses focus when Slider is used inside\r\n                </h4>\r\n                <p className=\"mt-0.5 text-muted-foreground text-xs\">\r\n                  Opened by <strong>@deepak</strong> · 3 days ago\r\n                </p>\r\n              </div>\r\n            </div>\r\n            <div className=\"flex flex-wrap gap-1\">\r\n              <Badge size=\"sm\" variant=\"secondary\">\r\n                bug\r\n              </Badge>\r\n              <Badge size=\"sm\" variant=\"secondary\">\r\n                accessibility\r\n              </Badge>\r\n              <Badge size=\"sm\" variant=\"secondary\">\r\n                popover\r\n              </Badge>\r\n            </div>\r\n            <p className=\"text-muted-foreground text-xs\">\r\n              repo: ui-cnippet · labels: 3 · comments: 7\r\n            </p>\r\n          </div>\r\n        </PreviewCardPopup>\r\n      </PreviewCard>{\" \"}\r\n      which is now resolved.\r\n    </p>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:block"
+}

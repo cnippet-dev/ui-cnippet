@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-22",
+  "description": "Readonly with copy-to-clipboard button",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-22.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\r\nimport { useRef } from \"react\";\r\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  const { copyToClipboard, isCopied } = useCopyToClipboard();\r\n  const inputRef = useRef<HTMLInputElement>(null);\r\n\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <FieldLabel htmlFor=\"referral-link\">Referral link</FieldLabel>\r\n      <div className=\"flex gap-2\">\r\n        <Input\r\n          defaultValue=\"https://app.example.com/ref/abc123\"\r\n          id=\"referral-link\"\r\n          readOnly\r\n          ref={inputRef}\r\n          type=\"text\"\r\n        />\r\n        <Button\r\n          aria-label=\"Copy referral link\"\r\n          onClick={() =>\r\n            inputRef.current && copyToClipboard(inputRef.current.value)\r\n          }\r\n          size=\"icon\"\r\n          variant=\"outline\"\r\n        >\r\n          {isCopied ? (\r\n            <CheckIcon aria-hidden=\"true\" />\r\n          ) : (\r\n            <CopyIcon aria-hidden=\"true\" />\r\n          )}\r\n        </Button>\r\n      </div>\r\n      <FieldDescription>Share this link to invite friends.</FieldDescription>\r\n    </Field>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

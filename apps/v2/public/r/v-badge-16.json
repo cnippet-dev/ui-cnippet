@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-16",
+  "description": "Notification category badges with unread counts",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-16.tsx",
+      "content": "import { BellIcon, GitPullRequestIcon, MessageSquareIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nconst notifications = [\r\n  {\r\n    count: 12,\r\n    icon: MessageSquareIcon,\r\n    label: \"Messages\",\r\n    variant: \"default\" as const,\r\n  },\r\n  {\r\n    count: 3,\r\n    icon: BellIcon,\r\n    label: \"Mentions\",\r\n    variant: \"destructive\" as const,\r\n  },\r\n  {\r\n    count: 7,\r\n    icon: GitPullRequestIcon,\r\n    label: \"Reviews\",\r\n    variant: \"info\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-xs\">\r\n      <Frame>\r\n        <FramePanel>\r\n          <p className=\"mb-3 font-semibold text-sm\">Notifications</p>\r\n          <div className=\"flex flex-col gap-1.5\">\r\n            {notifications.map((n) => (\r\n              <Button\r\n                className=\"h-auto justify-between px-2 py-2\"\r\n                key={n.label}\r\n                variant=\"ghost\"\r\n              >\r\n                <span className=\"flex items-center gap-2 text-sm\">\r\n                  <n.icon className=\"size-4 text-muted-foreground\" />\r\n                  {n.label}\r\n                </span>\r\n                <Badge size=\"sm\" variant={n.variant}>\r\n                  {n.count}\r\n                </Badge>\r\n              </Button>\r\n            ))}\r\n          </div>\r\n        </FramePanel>\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

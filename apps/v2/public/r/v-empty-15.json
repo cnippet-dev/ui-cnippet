@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-15",
+  "description": "Basic empty state",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-15.tsx",
+      "content": "import { LockIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/registry/default/ui/empty\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-4\">\r\n      <Empty className=\"border bg-muted/40\">\r\n        <EmptyHeader>\r\n          <EmptyMedia variant=\"icon\">\r\n            <LockIcon />\r\n          </EmptyMedia>\r\n          <EmptyTitle>Access restricted</EmptyTitle>\r\n          <EmptyDescription>\r\n            You don&apos;t have permission to view this content. Contact your\r\n            admin to request access.\r\n          </EmptyDescription>\r\n        </EmptyHeader>\r\n        <EmptyContent>\r\n          <div className=\"flex gap-2\">\r\n            <Button size=\"sm\">Request access</Button>\r\n            <Button size=\"sm\" variant=\"outline\">\r\n              Go back\r\n            </Button>\r\n          </div>\r\n        </EmptyContent>\r\n      </Empty>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

@@ -1,6 +1,6 @@
 ---
 title: Toggle
-description: A two-state button that can be on or off.
+description: A two-state button that can be on or off. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/toggle#api-reference
@@ -56,6 +56,21 @@ import { Toggle } from "@/components/ui/toggle"
 <Toggle>Toggle</Toggle>
 ```
 
+## API Reference
+
+### Toggle
+
+Styled wrapper around Base UI's `Toggle` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline"` | `"default"` | Visual style of the toggle |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Size of the toggle |
+| `pressed` | `boolean` | — | Controlled pressed state |
+| `defaultPressed` | `boolean` | `false` | Initial pressed state for uncontrolled usage |
+| `onPressedChange` | `(pressed: boolean) => void` | — | Callback when pressed state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+
 ## Examples
 
 ### Outline Variant
@@ -99,3 +114,45 @@ The icon changes between two states on press, giving immediate visual confirmati
 The label text updates when the toggle is pressed, making the current state explicit instead of relying on styling alone.
 
 <ComponentPreview name="v-toggle-8" />
+
+### Video Call Controls
+
+A call overlay card with an animated status indicator. Mic, camera, and screen-share toggles swap icons and turn destructive red when disabled. A static Leave button ends the call.
+
+<ComponentPreview name="v-toggle-9" />
+
+### Role Filter Chips
+
+Pill-style toggle chips with per-category badge counts. The total result count updates reactively and a "Clear" link appears only when at least one filter is active.
+
+<ComponentPreview name="v-toggle-10" />
+
+### Bookmark Toggle
+
+Each article row has a bookmark toggle that fills the icon when pressed. A counter below tracks how many articles are saved across the list.
+
+<ComponentPreview name="v-toggle-11" />
+
+### Rich-Text Formatting Toolbar
+
+Strikethrough, inline code, blockquote, and link toggles each apply markdown syntax to a live preview string below the toolbar.
+
+<ComponentPreview name="v-toggle-12" />
+
+### Social Post Interactions
+
+Reply, repost, like, and share toggles on a post card. The repost and like counts increment live when pressed and the heart fills with a color transition.
+
+<ComponentPreview name="v-toggle-13" />
+
+### Server Settings
+
+A settings card with icon-swap toggles for Secure mode, Network access, and Debug visibility. Active toggles turn green; inactive ones show the off-state icon in muted color.
+
+<ComponentPreview name="v-toggle-14" />
+
+### Task Priority Flags
+
+A task list where each item has a row of flag toggles for Low / Medium / High / Urgent priority. A separate checkmark toggle marks tasks as done and applies a strikethrough.
+
+<ComponentPreview name="v-toggle-15" />

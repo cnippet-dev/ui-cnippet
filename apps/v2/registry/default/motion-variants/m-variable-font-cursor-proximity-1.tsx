@@ -7,18 +7,18 @@ export default function VariableFontCursorProximityHero() {
 
   return (
     <div
-      ref={containerRef}
       className="flex min-h-50 flex-col items-center justify-center gap-1 px-6 text-center"
+      ref={containerRef}
     >
-      <p className="mb-3 text-sm text-muted-foreground">
+      <p className="mb-3 text-muted-foreground text-sm">
         Move your cursor over the text
       </p>
       <VariableFontCursorProximity
+        className="text-4xl leading-snug tracking-tight"
         containerRef={containerRef}
         fromFontVariationSettings="'wght' 100"
-        toFontVariationSettings="'wght' 900"
         radius={80}
-        className="text-4xl leading-snug tracking-tight"
+        toFontVariationSettings="'wght' 900"
       >
         Animate with proximity
       </VariableFontCursorProximity>

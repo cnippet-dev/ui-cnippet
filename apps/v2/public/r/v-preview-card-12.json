@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-preview-card-12",
+  "description": "Basic preview card",
+  "registryDependencies": [
+    "@cnippet/preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-preview-card-12.tsx",
+      "content": "import { ClockIcon } from \"lucide-react\";\r\nimport {\r\n  PreviewCard,\r\n  PreviewCardPopup,\r\n  PreviewCardTrigger,\r\n} from \"@/registry/default/ui/preview-card\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <p className=\"text-sm\">\r\n      Read more in{\" \"}\r\n      <PreviewCard>\r\n        <PreviewCardTrigger className=\"cursor-pointer font-medium text-primary underline underline-offset-4\">\r\n          Building accessible components with Base UI\r\n        </PreviewCardTrigger>\r\n        <PreviewCardPopup>\r\n          <div className=\"flex flex-col gap-3\">\r\n            <div className=\"h-28 w-full rounded-md bg-muted\" />\r\n            <div>\r\n              <h4 className=\"font-semibold text-sm leading-snug\">\r\n                Building accessible components with Base UI\r\n              </h4>\r\n              <p className=\"mt-1 line-clamp-3 text-muted-foreground text-xs\">\r\n                Learn how to leverage Base UI primitives to build fully\r\n                accessible components with keyboard navigation, focus\r\n                management, and ARIA attributes without the heavy lifting.\r\n              </p>\r\n            </div>\r\n            <div className=\"flex items-center gap-1.5 text-muted-foreground text-xs\">\r\n              <ClockIcon aria-hidden=\"true\" className=\"size-3\" />8 min read\r\n            </div>\r\n          </div>\r\n        </PreviewCardPopup>\r\n      </PreviewCard>\r\n      .\r\n    </p>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:block"
+}

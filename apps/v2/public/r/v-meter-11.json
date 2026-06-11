@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-meter-11",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-11.tsx",
+      "content": "import {\r\n  Meter,\r\n  MeterIndicator,\r\n  MeterLabel,\r\n  MeterTrack,\r\n  MeterValue,\r\n} from \"@/registry/default/ui/meter\";\r\n\r\nconst resources = [\r\n  { label: \"CPU\", value: 42 },\r\n  { label: \"Memory\", value: 68 },\r\n  { label: \"Disk\", value: 91 },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4\">\r\n      {resources.map(({ label, value }) => (\r\n        <Meter key={label} value={value}>\r\n          <div className=\"flex items-center justify-between gap-2\">\r\n            <MeterLabel>{label}</MeterLabel>\r\n            <MeterValue />\r\n          </div>\r\n          <MeterTrack>\r\n            <MeterIndicator />\r\n          </MeterTrack>\r\n        </Meter>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:block"
+}

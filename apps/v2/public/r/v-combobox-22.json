@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-22",
+  "description": "Currency picker with symbol icon in trigger and code trailing each item",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-22.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ChevronsUpDownIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Combobox,\r\n  ComboboxEmpty,\r\n  ComboboxInput,\r\n  ComboboxItem,\r\n  ComboboxList,\r\n  ComboboxPopup,\r\n  ComboboxTrigger,\r\n  ComboboxValue,\r\n} from \"@/registry/default/ui/combobox\";\r\n\r\ninterface Currency {\r\n  code: string;\r\n  label: string;\r\n  symbol: string;\r\n  value: string;\r\n}\r\n\r\nconst currencies: Currency[] = [\r\n  { code: \"USD\", label: \"US Dollar\", symbol: \"$\", value: \"usd\" },\r\n  { code: \"EUR\", label: \"Euro\", symbol: \"€\", value: \"eur\" },\r\n  { code: \"GBP\", label: \"British Pound\", symbol: \"£\", value: \"gbp\" },\r\n  { code: \"JPY\", label: \"Japanese Yen\", symbol: \"¥\", value: \"jpy\" },\r\n  { code: \"CAD\", label: \"Canadian Dollar\", symbol: \"$\", value: \"cad\" },\r\n  { code: \"AUD\", label: \"Australian Dollar\", symbol: \"$\", value: \"aud\" },\r\n  { code: \"CHF\", label: \"Swiss Franc\", symbol: \"Fr\", value: \"chf\" },\r\n  { code: \"INR\", label: \"Indian Rupee\", symbol: \"₹\", value: \"inr\" },\r\n  { code: \"SGD\", label: \"Singapore Dollar\", symbol: \"$\", value: \"sgd\" },\r\n  { code: \"BRL\", label: \"Brazilian Real\", symbol: \"R$\", value: \"brl\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [value, setValue] = useState<Currency | null>(currencies[0] ?? null);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\r\n      <Combobox\r\n        items={currencies}\r\n        onValueChange={(v) => setValue(v as Currency | null)}\r\n        value={value}\r\n      >\r\n        <ComboboxTrigger\r\n          render={\r\n            <Button\r\n              className=\"w-full justify-between font-normal\"\r\n              variant=\"outline\"\r\n            />\r\n          }\r\n        >\r\n          {value ? (\r\n            <span className=\"flex items-center gap-2 text-sm\">\r\n              <span className=\"flex size-6 items-center justify-center rounded bg-muted font-mono font-semibold text-xs\">\r\n                {value.symbol}\r\n              </span>\r\n              <ComboboxValue />\r\n            </span>\r\n          ) : (\r\n            <ComboboxValue placeholder=\"Select currency...\" />\r\n          )}\r\n          <ChevronsUpDownIcon className=\"-me-1!\" />\r\n        </ComboboxTrigger>\r\n        <ComboboxPopup>\r\n          <ComboboxInput placeholder=\"Search currency...\" showTrigger={false} />\r\n          <ComboboxEmpty>No currencies found.</ComboboxEmpty>\r\n          <ComboboxList>\r\n            {(cur: Currency) => (\r\n              <ComboboxItem\r\n                className=\"**:data-check:ms-auto\"\r\n                key={cur.value}\r\n                value={cur}\r\n              >\r\n                <span className=\"flex size-6 shrink-0 items-center justify-center rounded bg-muted font-mono font-semibold text-xs\">\r\n                  {cur.symbol}\r\n                </span>\r\n                <div className=\"flex flex-1 items-center justify-between\">\r\n                  <span className=\"text-sm\">{cur.label}</span>\r\n                  <span className=\"text-muted-foreground text-xs\">\r\n                    {cur.code}\r\n                  </span>\r\n                </div>\r\n              </ComboboxItem>\r\n            )}\r\n          </ComboboxList>\r\n        </ComboboxPopup>\r\n      </Combobox>\r\n      {value && (\r\n        <div className=\"rounded-lg border px-4 py-2 text-sm\">\r\n          <span className=\"text-muted-foreground\">Displaying prices in </span>\r\n          <span className=\"font-medium\">{value.label}</span>\r\n          <span className=\"text-muted-foreground\"> ({value.code})</span>\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

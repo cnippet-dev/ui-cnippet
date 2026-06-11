@@ -1,6 +1,6 @@
 ---
 title: Switch
-description: A control that indicates whether a setting is on or off.
+description: A control that indicates whether a setting is on or off. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/switch#api-reference
@@ -56,9 +56,26 @@ import { Switch } from "@/components/ui/switch"
 <Switch />
 ```
 
+## API Reference
+
+### Switch
+
+Styled wrapper around Base UI's `Switch.Root` primitive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "sm"` | `"default"` | Size of the switch track and thumb |
+| `checked` | `boolean` | — | Controlled checked state |
+| `defaultChecked` | `boolean` | `false` | Initial checked state for uncontrolled usage |
+| `onCheckedChange` | `(checked: boolean) => void` | — | Callback when checked state changes |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `name` | `string` | — | Name used when submitting an HTML form |
+| `required` | `boolean` | `false` | Whether the field must be checked before form submission |
+| `readOnly` | `boolean` | `false` | Prevents the user from changing the checked state |
+
 ## Examples
 
-For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Switch field](/ui/docs/components/field#switch-field).
+For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Switch field](/ui/forms/field#switch-field).
 
 
 ### With Description
@@ -102,3 +119,45 @@ Displays multiple on/off settings as a scannable table with alternating rows, su
 A two-column card grid where each card contains a switch with a title and a short description — ideal for feature or plan settings.
 
 <ComponentPreview name="v-switch-8" />
+
+### Cookie Preferences
+
+A cookie consent manager grouping switches into Always On, Analytics, and Marketing categories, each with a contextual badge that reflects the current state.
+
+<ComponentPreview name="v-switch-9" />
+
+### Notification Delivery Channels
+
+A master toggle that enables or disables all delivery channels at once. Individual channel rows (email, SMS, push, Slack) each carry their own switch and are dimmed while the master is off.
+
+<ComponentPreview name="v-switch-10" />
+
+### Plan Feature Toggles
+
+A feature list where pro features are togglable and enterprise-only features are shown with a badge and rendered as disabled.
+
+<ComponentPreview name="v-switch-11" />
+
+### Privacy Settings
+
+A permission panel with an icon, label, and description for each setting. A separator divides the media permissions from the tracking and ad preferences.
+
+<ComponentPreview name="v-switch-12" />
+
+### Dark Mode Toggle
+
+An animated card that transitions between light and dark appearances. Sun and Moon icons flank the switch to reinforce the current mode.
+
+<ComponentPreview name="v-switch-13" />
+
+### Required Agreement
+
+A sign-up form with a required Terms &amp; Conditions switch. The submit button remains disabled until the user has toggled the switch on.
+
+<ComponentPreview name="v-switch-14" />
+
+### Do Not Disturb
+
+A do-not-disturb toggle that expands a duration picker when enabled. The icon and description text update to reflect whether the mode is active.
+
+<ComponentPreview name="v-switch-15" />

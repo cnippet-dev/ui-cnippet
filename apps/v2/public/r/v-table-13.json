@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-table-13",
+  "description": "Feature comparison table with checkmarks across plan tiers",
+  "registryDependencies": [
+    "@cnippet/table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-table-13.tsx",
+      "content": "import { CheckIcon, MinusIcon } from \"lucide-react\";\r\nimport {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/registry/default/ui/table\";\r\n\r\nconst features: {\r\n  enterprise: boolean | string;\r\n  free: boolean | string;\r\n  name: string;\r\n  pro: boolean | string;\r\n}[] = [\r\n  { enterprise: true, free: true, name: \"Projects\", pro: true },\r\n  {\r\n    enterprise: \"Unlimited\",\r\n    free: \"Up to 3\",\r\n    name: \"Team members\",\r\n    pro: \"Up to 20\",\r\n  },\r\n  { enterprise: \"1 TB\", free: \"5 GB\", name: \"Storage\", pro: \"50 GB\" },\r\n  { enterprise: true, free: false, name: \"Custom domains\", pro: true },\r\n  { enterprise: true, free: false, name: \"Advanced analytics\", pro: true },\r\n  { enterprise: true, free: false, name: \"API access\", pro: true },\r\n  { enterprise: true, free: false, name: \"Priority support\", pro: true },\r\n  { enterprise: true, free: false, name: \"SSO & SAML\", pro: false },\r\n  { enterprise: true, free: false, name: \"Audit logs\", pro: false },\r\n  { enterprise: true, free: false, name: \"Dedicated manager\", pro: false },\r\n];\r\n\r\nfunction FeatureCell({ value }: { value: boolean | string }) {\r\n  if (typeof value === \"string\") {\r\n    return <span className=\"text-muted-foreground text-sm\">{value}</span>;\r\n  }\r\n  return value ? (\r\n    <CheckIcon className=\"size-4 text-emerald-500\" />\r\n  ) : (\r\n    <MinusIcon className=\"size-4 text-muted-foreground/40\" />\r\n  );\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-2xl\">\r\n      <Table>\r\n        <TableHeader>\r\n          <TableRow>\r\n            <TableHead className=\"w-1/2\">Feature</TableHead>\r\n            <TableHead className=\"text-center\">Free</TableHead>\r\n            <TableHead className=\"text-center\">Pro</TableHead>\r\n            <TableHead className=\"text-center\">Enterprise</TableHead>\r\n          </TableRow>\r\n        </TableHeader>\r\n        <TableBody>\r\n          {features.map((f) => (\r\n            <TableRow key={f.name}>\r\n              <TableCell className=\"font-medium text-sm\">{f.name}</TableCell>\r\n              <TableCell className=\"text-center\">\r\n                <FeatureCell value={f.free} />\r\n              </TableCell>\r\n              <TableCell className=\"text-center\">\r\n                <FeatureCell value={f.pro} />\r\n              </TableCell>\r\n              <TableCell className=\"text-center\">\r\n                <FeatureCell value={f.enterprise} />\r\n              </TableCell>\r\n            </TableRow>\r\n          ))}\r\n        </TableBody>\r\n      </Table>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "table"
+  ],
+  "type": "registry:block"
+}

@@ -11,49 +11,6 @@ import ButtonPreview from "./preview/button";
 import CheckboxPreview from "./preview/checkbox";
 import DialogPreview from "./preview/dialog";
 
-const _items = [
-  {
-    number: "2",
-    title: "accordion",
-    url: "/ui/data/accordion",
-  },
-  {
-    number: "5",
-    title: "alert",
-    url: "/ui/feedback/alert",
-  },
-  {
-    number: "4",
-    title: "avatar",
-    url: "/ui/media/avatar",
-  },
-  {
-    number: "3",
-    title: "badge",
-    url: "/ui/feedback/badge",
-  },
-  {
-    number: "2",
-    title: "breadcrumb",
-    url: "/ui/navigation/breadcrumb",
-  },
-  {
-    number: "3",
-    title: "button",
-    url: "/ui/actions/button",
-  },
-  {
-    number: "4",
-    title: "checkbox",
-    url: "/ui/forms/checkbox",
-  },
-  {
-    number: "5",
-    title: "dialog",
-    url: "/ui/overlays/dialog",
-  },
-];
-
 const items2 = [
   {
     number: "3",
@@ -158,7 +115,7 @@ export default function Components() {
       <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
         <Button
           className="text-balance rounded-none py-5 tracking-tight"
-          render={<Link href="/components" />}
+          render={<Link href="/explore" />}
         >
           View all components <ArrowRight />
         </Button>

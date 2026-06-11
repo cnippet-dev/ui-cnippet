@@ -1,6 +1,6 @@
 ---
 title: Kbd
-description: A component for displaying keyboard keys and shortcuts.
+description: A component for displaying keyboard keys and shortcuts. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-kbd-1" />
@@ -58,6 +58,16 @@ Multiple keys (key combination):
 </KbdGroup>
 ```
 
+## API Reference
+
+### Kbd
+
+Renders a `<kbd>` element styled as a key cap. Accepts all standard `<kbd>` HTML attributes.
+
+### KbdGroup
+
+A `<kbd>` wrapper for multi-key combinations. Renders children inline with a small gap. Accepts all standard `<kbd>` HTML attributes.
+
 ## Examples
 
 ### Input group
@@ -89,3 +99,33 @@ Append shortcut keys inside a `TooltipContent` so users can discover keyboard sh
 A formatted keyboard shortcut reference card listing actions and their corresponding key combinations in a two-column layout.
 
 <ComponentPreview name="v-kbd-6" />
+
+### In Buttons
+
+`KbdGroup` appended inside `Button` components to surface keyboard shortcuts inline with the action they trigger.
+
+<ComponentPreview name="v-kbd-7" />
+
+### Arrow Keys
+
+A directional pad layout of arrow key `Kbd` badges with labels below — useful in onboarding flows or keyboard shortcut docs.
+
+<ComponentPreview name="v-kbd-8" />
+
+### Cross-Platform Shortcuts
+
+A three-column table comparing action labels with Mac (`⌘`) and Windows/Linux (`Ctrl`) equivalents side by side.
+
+<ComponentPreview name="v-kbd-9" />
+
+### In Menu Items
+
+Shortcut badges aligned to the trailing edge of `MenuItem` components using `ms-auto` — the standard pattern for context menus.
+
+<ComponentPreview name="v-kbd-10" />
+
+### Command Palette Results
+
+A command palette result list where each row includes a trailing `Kbd` for the confirmation key, plus a footer legend for navigate, open, and close.
+
+<ComponentPreview name="v-kbd-11" />

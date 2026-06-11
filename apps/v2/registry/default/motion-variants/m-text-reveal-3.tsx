@@ -6,7 +6,7 @@ export default function TextRevealStacked() {
       <div className="flex max-w-xl flex-col gap-3 text-center">
         <TextReveal
           as="span"
-          className="text-sm font-medium uppercase tracking-widest text-muted-foreground"
+          className="font-medium text-muted-foreground text-sm uppercase tracking-widest"
           delay={0}
           per="word"
           preset="slide"
@@ -16,7 +16,7 @@ export default function TextRevealStacked() {
         </TextReveal>
         <TextReveal
           as="h2"
-          className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          className="font-bold text-3xl text-foreground tracking-tight sm:text-4xl"
           delay={0.3}
           per="word"
           preset="fade-in-blur"

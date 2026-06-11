@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toggle-group-10",
-  "description": "Basic toggle group",
+  "description": "Language picker with live code snippet preview",
   "registryDependencies": [
     "@cnippet/toggle-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-10.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "// biome-ignore-all lint/suspicious/noTemplateCurlyInString:<>\r\n\r\n\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport {\r\n  ToggleGroup,\r\n  ToggleGroupItem,\r\n} from \"@/registry/default/ui/toggle-group\";\r\n\r\nconst languages = [\r\n  { ext: \".ts\", id: \"typescript\", label: \"TypeScript\" },\r\n  { ext: \".js\", id: \"javascript\", label: \"JavaScript\" },\r\n  { ext: \".py\", id: \"python\", label: \"Python\" },\r\n  { ext: \".rs\", id: \"rust\", label: \"Rust\" },\r\n];\r\n\r\nconst snippets: Record<string, string> = {\r\n  javascript: \"function greet(name) {\\n  return `Hello, ${name}!`;\\n}\",\r\n  python: `def greet(name: str) -> str:\\n    return f\"Hello, {name}!\"`,\r\n  rust: `fn greet(name: &str) -> String {\\n    format!(\"Hello, {}!\", name)\\n}`,\r\n  typescript:\r\n    \"function greet(name: string): string {\\n  return `Hello, ${name}!`;\\n}\",\r\n};\r\n\r\nexport function Pattern() {\r\n  const [lang, setLang] = useState(\"typescript\");\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\r\n      <ToggleGroup\r\n        onValueChange={(v) => {\r\n          const next = v[v.length - 1];\r\n          if (next) setLang(next);\r\n        }}\r\n        value={[lang]}\r\n        variant=\"outline\"\r\n      >\r\n        {languages.map((l) => (\r\n          <ToggleGroupItem\r\n            aria-label={`Select ${l.label}`}\r\n            className=\"text-xs\"\r\n            key={l.id}\r\n            value={l.id}\r\n          >\r\n            {l.label}\r\n          </ToggleGroupItem>\r\n        ))}\r\n      </ToggleGroup>\r\n      <pre className=\"overflow-x-auto rounded-lg border border-input bg-muted/20 p-3 font-mono text-foreground/80 text-xs leading-relaxed\">\r\n        {snippets[lang]}\r\n      </pre>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

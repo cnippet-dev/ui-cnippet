@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-frame-7",
-  "description": "Basic frame",
+  "description": "With badge status indicator",
   "registryDependencies": [
     "@cnippet/frame"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-frame-7.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport {\r\n  Frame,\r\n  FrameDescription,\r\n  FrameHeader,\r\n  FramePanel,\r\n  FrameTitle,\r\n} from \"@/registry/default/ui/frame\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Frame className=\"w-full max-w-md\">\r\n      <FrameHeader className=\"flex-row items-start justify-between\">\r\n        <div>\r\n          <FrameTitle>API Status</FrameTitle>\r\n          <FrameDescription>Current system health</FrameDescription>\r\n        </div>\r\n        <Badge variant=\"success\">Operational</Badge>\r\n      </FrameHeader>\r\n      <FramePanel>\r\n        <div className=\"flex flex-col gap-2\">\r\n          {[\r\n            { label: \"Authentication API\", status: \"operational\" },\r\n            { label: \"Storage API\", status: \"operational\" },\r\n            { label: \"Webhooks\", status: \"degraded\" },\r\n          ].map((service) => (\r\n            <div\r\n              className=\"flex items-center justify-between\"\r\n              key={service.label}\r\n            >\r\n              <p className=\"text-sm\">{service.label}</p>\r\n              <span\r\n                className={`size-2 rounded-full ${service.status === \"operational\" ? \"bg-success\" : \"bg-warning\"}`}\r\n              />\r\n            </div>\r\n          ))}\r\n        </div>\r\n      </FramePanel>\r\n    </Frame>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

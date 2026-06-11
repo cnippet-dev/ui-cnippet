@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-field-20",
-  "description": "Basic field",
+  "description": "Field with OTP verification input",
   "registryDependencies": [
     "@cnippet/field"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-field-20.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport {\r\n  OTPField,\r\n  OTPFieldInput,\r\n  OTPFieldSeparator,\r\n} from \"@/registry/default/ui/otp-field\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Field>\r\n      <FieldLabel>Verification code</FieldLabel>\r\n      <OTPField length={6}>\r\n        <OTPFieldInput />\r\n        <OTPFieldInput />\r\n        <OTPFieldInput />\r\n        <OTPFieldSeparator />\r\n        <OTPFieldInput />\r\n        <OTPFieldInput />\r\n        <OTPFieldInput />\r\n      </OTPField>\r\n      <FieldDescription>\r\n        Enter the 6-digit code sent to your phone.\r\n      </FieldDescription>\r\n      <FieldError>Invalid verification code. Please try again.</FieldError>\r\n    </Field>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -31,10 +31,7 @@ export default function StackingCardsFeatures() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      className="relative h-56 overflow-y-auto px-6"
-      ref={containerRef}
-    >
+    <div className="relative h-56 overflow-y-auto px-6" ref={containerRef}>
       <StackingCards
         className="mx-auto h-[500px] w-full max-w-sm"
         scaleMultiplier={0.05}
@@ -49,7 +46,7 @@ export default function StackingCardsFeatures() {
               <span className="text-2xl">{f.icon}</span>
               <div>
                 <h3 className="font-bold text-foreground">{f.title}</h3>
-                <p className="mt-0.5 text-xs text-muted-foreground">
+                <p className="mt-0.5 text-muted-foreground text-xs">
                   {f.description}
                 </p>
               </div>

@@ -1,4 +1,5 @@
-﻿"use client";
+//biome-ignore-all lint/suspicious/noExplicitAny: motion offset type requires any cast
+"use client";
 
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import React, { type ElementType, useMemo, useRef } from "react";
@@ -46,7 +47,6 @@ export function ScrollSwapText({
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     offset: offset as any,
     target: ref,
   });

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-17",
+  "description": "Priority labels in a task list",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-17.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\ntype Priority = \"urgent\" | \"high\" | \"medium\" | \"low\";\r\n\r\nconst priorityVariant: Record<\r\n  Priority,\r\n  \"destructive\" | \"warning\" | \"info\" | \"secondary\"\r\n> = {\r\n  high: \"warning\",\r\n  low: \"secondary\",\r\n  medium: \"info\",\r\n  urgent: \"destructive\",\r\n};\r\n\r\nconst tasks = [\r\n  {\r\n    assignee: \"Alex J.\",\r\n    priority: \"urgent\" as Priority,\r\n    title: \"Fix authentication token refresh race condition\",\r\n  },\r\n  {\r\n    assignee: \"Sarah C.\",\r\n    priority: \"high\" as Priority,\r\n    title: \"Migrate legacy REST endpoints to GraphQL\",\r\n  },\r\n  {\r\n    assignee: \"Marcus R.\",\r\n    priority: \"medium\" as Priority,\r\n    title: \"Add dark mode support to dashboard charts\",\r\n  },\r\n  {\r\n    assignee: \"Laura P.\",\r\n    priority: \"low\" as Priority,\r\n    title: \"Update onboarding copy for new signup flow\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-lg\">\r\n      <Frame>\r\n        {tasks.map((task) => (\r\n          <FramePanel\r\n            className=\"flex items-start justify-between gap-3\"\r\n            key={task.title}\r\n          >\r\n            <div className=\"flex flex-1 flex-col gap-1\">\r\n              <span className=\"font-medium text-sm\">{task.title}</span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                {task.assignee}\r\n              </span>\r\n            </div>\r\n            <Badge\r\n              className=\"shrink-0 capitalize\"\r\n              size=\"sm\"\r\n              variant={priorityVariant[task.priority]}\r\n            >\r\n              {task.priority}\r\n            </Badge>\r\n          </FramePanel>\r\n        ))}\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

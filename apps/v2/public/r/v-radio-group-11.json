@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-11",
+  "description": "Horizontal Layout",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-11.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\r\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <RadioGroup\r\n      className=\"flex-row flex-wrap gap-x-6 gap-y-2\"\r\n      defaultValue=\"react\"\r\n    >\r\n      <Label>\r\n        <Radio value=\"react\" /> React\r\n      </Label>\r\n      <Label>\r\n        <Radio value=\"vue\" /> Vue\r\n      </Label>\r\n      <Label>\r\n        <Radio value=\"angular\" /> Angular\r\n      </Label>\r\n      <Label>\r\n        <Radio value=\"svelte\" /> Svelte\r\n      </Label>\r\n      <Label>\r\n        <Radio value=\"solid\" /> Solid\r\n      </Label>\r\n    </RadioGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

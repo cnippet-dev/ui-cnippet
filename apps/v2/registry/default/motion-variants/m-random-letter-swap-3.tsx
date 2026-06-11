@@ -7,11 +7,11 @@ const tags = ["motion", "react", "tailwind", "typescript", "open-source"];
 export default function RandomLetterSwapTags() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-5 px-6">
-      <p className="text-sm text-muted-foreground">Hover a tag</p>
+      <p className="text-muted-foreground text-sm">Hover a tag</p>
       <div className="flex flex-wrap justify-center gap-2">
         {tags.map((tag) => (
           <div
-            className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium"
+            className="rounded-full border border-border bg-card px-4 py-1.5 font-medium text-sm"
             key={tag}
           >
             <RandomLetterSwap

@@ -110,6 +110,7 @@ function NavMenuItem({
     return (
       <Collapsible className="group/collapsible">
         <CollapsibleTrigger
+          nativeButton={false}
           render={
             <Item
               className="group/item cursor-pointer py-1.25 hover:bg-accent data-[state=open]:bg-accent"

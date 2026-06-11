@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-16",
+  "description": "Permissions matrix with role access details per cell",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-16.tsx",
+      "content": "import { CheckIcon, MinusIcon } from \"lucide-react\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\ntype Access = \"full\" | \"read\" | \"none\";\r\n\r\ntype Permission = {\r\n  resource: string;\r\n  admin: Access;\r\n  editor: Access;\r\n  viewer: Access;\r\n  detail: string;\r\n};\r\n\r\nconst permissions: Permission[] = [\r\n  {\r\n    admin: \"full\",\r\n    detail: \"Create, update, and delete workspace members and their roles.\",\r\n    editor: \"none\",\r\n    resource: \"Members\",\r\n    viewer: \"none\",\r\n  },\r\n  {\r\n    admin: \"full\",\r\n    detail: \"Publish, archive, and permanently remove documents.\",\r\n    editor: \"full\",\r\n    resource: \"Documents\",\r\n    viewer: \"read\",\r\n  },\r\n  {\r\n    admin: \"full\",\r\n    detail: \"Manage API keys, OAuth apps, and third-party connections.\",\r\n    editor: \"read\",\r\n    resource: \"Integrations\",\r\n    viewer: \"none\",\r\n  },\r\n  {\r\n    admin: \"full\",\r\n    detail: \"View and export activity logs for auditing.\",\r\n    editor: \"read\",\r\n    resource: \"Audit Logs\",\r\n    viewer: \"none\",\r\n  },\r\n];\r\n\r\nconst roles = [\"admin\", \"editor\", \"viewer\"] as const;\r\n\r\nfunction AccessCell({ access, detail }: { access: Access; detail: string }) {\r\n  const icon =\r\n    access === \"full\" ? (\r\n      <CheckIcon className=\"size-3.5 text-emerald-500\" />\r\n    ) : access === \"read\" ? (\r\n      <CheckIcon className=\"size-3.5 text-amber-500\" />\r\n    ) : (\r\n      <MinusIcon className=\"size-3.5 text-muted-foreground\" />\r\n    );\r\n\r\n  const label =\r\n    access === \"full\"\r\n      ? \"Full access\"\r\n      : access === \"read\"\r\n        ? \"Read only\"\r\n        : \"No access\";\r\n\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger className=\"flex cursor-default items-center justify-center\">\r\n        {icon}\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"p-2.5\">\r\n        <p className=\"font-medium\">{label}</p>\r\n        <p className=\"max-w-44 text-muted-foreground\">{detail}</p>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-sm overflow-hidden rounded-xl border bg-card\">\r\n      <TooltipProvider>\r\n        <table className=\"w-full text-sm\">\r\n          <thead>\r\n            <tr className=\"border-b bg-muted/40\">\r\n              <th className=\"px-4 py-2.5 text-left font-medium text-muted-foreground\">\r\n                Resource\r\n              </th>\r\n              {roles.map((role) => (\r\n                <th\r\n                  className=\"px-4 py-2.5 text-center font-medium text-muted-foreground capitalize\"\r\n                  key={role}\r\n                >\r\n                  {role}\r\n                </th>\r\n              ))}\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            {permissions.map(({ resource, admin, editor, viewer, detail }) => (\r\n              <tr className=\"border-b last:border-0\" key={resource}>\r\n                <td className=\"px-4 py-2.5 font-medium\">{resource}</td>\r\n                <td className=\"px-4 py-2.5 text-center\">\r\n                  <AccessCell access={admin} detail={detail} />\r\n                </td>\r\n                <td className=\"px-4 py-2.5 text-center\">\r\n                  <AccessCell access={editor} detail={detail} />\r\n                </td>\r\n                <td className=\"px-4 py-2.5 text-center\">\r\n                  <AccessCell access={viewer} detail={detail} />\r\n                </td>\r\n              </tr>\r\n            ))}\r\n          </tbody>\r\n        </table>\r\n      </TooltipProvider>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

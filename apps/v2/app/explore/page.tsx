@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
-
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
 import { SiteHeader } from "@/components/site-header";
 import { isPlaceholderVariant } from "@/lib/variants";
 import { variants } from "@/registry/registry-variants";
 
+const exploreDescription =
+  "Explore all Cnippet UI component variants with live previews. Copy source code or view it inline.";
+
 export const metadata: Metadata = {
-  description:
-    "Explore all Cnippet UI component variants with live previews. Copy source code or view it inline.",
+  description: exploreDescription,
+  openGraph: {
+    description: exploreDescription,
+    title: "Explore Components",
+    url: "https://ui.cnippet.dev/explore",
+  },
   title: "Explore Components",
+  twitter: {
+    description: exploreDescription,
+    title: "Explore Components",
+  },
 };
 
 export default function ExplorePage() {
@@ -49,10 +61,14 @@ export default function ExplorePage() {
           </div>
 
           <div className="px-0 pt-8 max-sm:px-0">
-            <ExploreShowcase
-              categories={categories}
-              variants={variantEntries}
-            />
+            <NuqsAdapter>
+              <Suspense>
+                <ExploreShowcase
+                  categories={categories}
+                  variants={variantEntries}
+                />
+              </Suspense>
+            </NuqsAdapter>
           </div>
         </main>
 

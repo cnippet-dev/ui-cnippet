@@ -15,10 +15,6 @@ const OTP_SLOT_KEYS = Array.from(
   (_, i) => `otp-slot-${i}`,
 );
 
-function sanitizeTierCode(value: string) {
-  return value.replace(/[^0-3]/g, "");
-}
-
 export default function Particle() {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [invalidPulse, setInvalidPulse] = useState(0);
@@ -75,7 +71,6 @@ export default function Particle() {
         length={OTP_LENGTH}
         onValueChange={handleValueChange}
         onValueInvalid={handleValueInvalid}
-        sanitizeValue={sanitizeTierCode}
         validationType="none"
       >
         {OTP_SLOT_KEYS.map((slotKey, index) => {

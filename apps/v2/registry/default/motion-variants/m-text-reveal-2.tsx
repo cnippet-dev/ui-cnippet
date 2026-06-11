@@ -5,7 +5,7 @@ export default function TextRevealCharScale() {
     <div className="flex min-h-50 items-center justify-center px-6">
       <TextReveal
         as="p"
-        className="max-w-sm text-center text-2xl font-semibold tracking-tight text-foreground"
+        className="max-w-sm text-center font-semibold text-2xl text-foreground tracking-tight"
         delay={0.1}
         per="char"
         preset="scale"

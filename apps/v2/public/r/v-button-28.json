@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-28",
+  "description": "File upload button with attachment preview and clear action",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-28.tsx",
+      "content": "\"use client\";\r\n\r\nimport { PaperclipIcon, XIcon } from \"lucide-react\";\r\nimport { useRef, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport function Pattern() {\r\n  const inputRef = useRef<HTMLInputElement>(null);\r\n  const [fileName, setFileName] = useState<string | null>(null);\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    const file = e.target.files?.[0];\r\n    setFileName(file?.name ?? null);\r\n  };\r\n\r\n  const handleClear = () => {\r\n    setFileName(null);\r\n    if (inputRef.current) inputRef.current.value = \"\";\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-3\">\r\n      <input\r\n        accept=\"image/*,.pdf,.doc,.docx\"\r\n        className=\"sr-only\"\r\n        id=\"file-upload\"\r\n        onChange={handleChange}\r\n        ref={inputRef}\r\n        type=\"file\"\r\n      />\r\n      <Button onClick={() => inputRef.current?.click()} variant=\"outline\">\r\n        <PaperclipIcon className=\"size-4\" />\r\n        {fileName ? \"Change file\" : \"Attach file\"}\r\n      </Button>\r\n      {fileName && (\r\n        <div className=\"flex items-center gap-2 rounded-lg border bg-muted/50 px-3 py-1.5 text-sm\">\r\n          <PaperclipIcon className=\"size-3.5 shrink-0 text-muted-foreground\" />\r\n          <span className=\"max-w-45 truncate\">{fileName}</span>\r\n          <button\r\n            aria-label=\"Remove file\"\r\n            className=\"ml-1 text-muted-foreground hover:text-foreground\"\r\n            onClick={handleClear}\r\n            type=\"button\"\r\n          >\r\n            <XIcon className=\"size-3.5\" />\r\n          </button>\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

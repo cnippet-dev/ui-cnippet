@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-11",
+  "description": "No team members — invite form empty state",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-11.tsx",
+      "content": "import { BellIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/registry/default/ui/empty\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-4\">\r\n      <Empty>\r\n        <EmptyHeader>\r\n          <EmptyMedia variant=\"icon\">\r\n            <BellIcon />\r\n          </EmptyMedia>\r\n          <EmptyTitle>All caught up</EmptyTitle>\r\n          <EmptyDescription>\r\n            No new notifications. We&apos;ll let you know when something\r\n            arrives.\r\n          </EmptyDescription>\r\n        </EmptyHeader>\r\n        <EmptyContent>\r\n          <Button size=\"sm\" variant=\"outline\">\r\n            Manage preferences\r\n          </Button>\r\n        </EmptyContent>\r\n      </Empty>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

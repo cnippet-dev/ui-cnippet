@@ -13,7 +13,7 @@ const features = [
 export default function TextRotateFeatures() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-3 px-6">
-      <p className="text-sm text-muted-foreground">Everything you need</p>
+      <p className="text-muted-foreground text-sm">Everything you need</p>
       <TextRotate
         animate={{ opacity: 1, y: 0 }}
         animatePresenceMode="wait"

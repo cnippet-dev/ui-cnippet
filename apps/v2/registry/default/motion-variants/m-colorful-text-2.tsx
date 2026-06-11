@@ -9,14 +9,14 @@ export default function ColorfulTextBrand() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-4 px-6">
       <ColorfulText
         as="h2"
-        className="text-6xl font-black tracking-tighter"
+        className="font-black text-6xl tracking-tighter"
         colors={palette}
         staggerDuration={0.06}
         transition={{ damping: 16, stiffness: 280, type: "spring" }}
       >
         CNIPPET
       </ColorfulText>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Custom brand palette — violet → teal
       </p>
     </div>

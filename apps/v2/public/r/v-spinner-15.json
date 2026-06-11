@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-spinner-15",
+  "description": "Spinner Sizes",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-15.tsx",
+      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\r\n\r\nconst sizes = [\r\n  { className: \"size-3\", label: \"xs\" },\r\n  { className: \"size-4\", label: \"sm\" },\r\n  { className: \"size-5\", label: \"md\" },\r\n  { className: \"size-6\", label: \"lg\" },\r\n  { className: \"size-8\", label: \"xl\" },\r\n  { className: \"size-10\", label: \"2xl\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-end justify-center gap-6\">\r\n      {sizes.map(({ label, className }) => (\r\n        <div className=\"flex flex-col items-center gap-2\" key={label}>\r\n          <Spinner className={`${className} text-primary`} />\r\n          <span className=\"text-muted-foreground text-xs\">{label}</span>\r\n        </div>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:block"
+}

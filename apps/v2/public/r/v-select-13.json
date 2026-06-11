@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-13",
+  "description": "Controlled with External Display",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\ntype PriorityItem = { label: string; value: string | null };\r\n\r\nconst priorities: PriorityItem[] = [\r\n  { label: \"Select priority\", value: null },\r\n  { label: \"Critical\", value: \"critical\" },\r\n  { label: \"High\", value: \"high\" },\r\n  { label: \"Medium\", value: \"medium\" },\r\n  { label: \"Low\", value: \"low\" },\r\n];\r\n\r\nconst badgeVariant: Record<string, \"destructive\" | \"secondary\" | \"outline\"> = {\r\n  critical: \"destructive\",\r\n  high: \"destructive\",\r\n  low: \"outline\",\r\n  medium: \"secondary\",\r\n};\r\n\r\nexport default function Particle() {\r\n  const [selected, setSelected] = useState<PriorityItem | null>(null);\r\n\r\n  return (\r\n    <div className=\"flex w-56 flex-col gap-3\">\r\n      <Select\r\n        items={priorities}\r\n        onValueChange={(v) => setSelected(v as PriorityItem)}\r\n      >\r\n        <SelectTrigger>\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n        <SelectPopup>\r\n          {priorities.slice(1).map((item) => (\r\n            <SelectItem key={item.value} value={item}>\r\n              {item.label}\r\n            </SelectItem>\r\n          ))}\r\n        </SelectPopup>\r\n      </Select>\r\n      <p className=\"text-muted-foreground text-sm\">\r\n        Priority:{\" \"}\r\n        {selected?.value ? (\r\n          <Badge\r\n            className=\"ms-1\"\r\n            variant={badgeVariant[selected.value] ?? \"outline\"}\r\n          >\r\n            {selected.label}\r\n          </Badge>\r\n        ) : (\r\n          <span>not set</span>\r\n        )}\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

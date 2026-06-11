@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-12",
+  "description": "No matching results — clear filters empty state",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-12.tsx",
+      "content": "import { UserPlusIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/registry/default/ui/empty\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-4\">\r\n      <Empty className=\"w-full max-w-sm border\">\r\n        <EmptyHeader>\r\n          <EmptyMedia variant=\"icon\">\r\n            <UserPlusIcon />\r\n          </EmptyMedia>\r\n          <EmptyTitle>No team members yet</EmptyTitle>\r\n          <EmptyDescription>\r\n            Invite your team to collaborate and get more done together.\r\n          </EmptyDescription>\r\n        </EmptyHeader>\r\n        <EmptyContent>\r\n          <InputGroup className=\"w-full\">\r\n            <InputGroupInput\r\n              aria-label=\"Email address\"\r\n              placeholder=\"colleague@company.com\"\r\n              type=\"email\"\r\n            />\r\n            <InputGroupAddon align=\"inline-end\">\r\n              <Button size=\"sm\" variant=\"ghost\">\r\n                Invite\r\n              </Button>\r\n            </InputGroupAddon>\r\n          </InputGroup>\r\n        </EmptyContent>\r\n      </Empty>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

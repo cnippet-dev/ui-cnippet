@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-spinner-14",
+  "description": "Auth Form With Spinner",
+  "registryDependencies": [
+    "@cnippet/spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-spinner-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Spinner } from \"@/registry/default/ui/spinner\";\r\n\r\nexport default function Particle() {\r\n  const [loading, setLoading] = useState(false);\r\n  const [done, setDone] = useState(false);\r\n\r\n  function handleSubmit(e: React.FormEvent) {\r\n    e.preventDefault();\r\n    setLoading(true);\r\n    setTimeout(() => {\r\n      setLoading(false);\r\n      setDone(true);\r\n    }, 2000);\r\n  }\r\n\r\n  return (\r\n    <form\r\n      className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\"\r\n      onSubmit={handleSubmit}\r\n    >\r\n      <p className=\"font-semibold\">Sign in</p>\r\n      <Field>\r\n        <FieldLabel>Email</FieldLabel>\r\n        <Input\r\n          defaultValue=\"user@example.com\"\r\n          disabled={loading || done}\r\n          type=\"email\"\r\n        />\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>Password</FieldLabel>\r\n        <Input\r\n          defaultValue=\"••••••••\"\r\n          disabled={loading || done}\r\n          type=\"password\"\r\n        />\r\n      </Field>\r\n      <Button className=\"w-full\" disabled={loading || done} type=\"submit\">\r\n        {loading && (\r\n          <Spinner\r\n            aria-hidden=\"true\"\r\n            className=\"size-4\"\r\n            data-icon=\"inline-start\"\r\n          />\r\n        )}\r\n        {done ? \"Signed in!\" : loading ? \"Signing in…\" : \"Sign in\"}\r\n      </Button>\r\n    </form>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:block"
+}

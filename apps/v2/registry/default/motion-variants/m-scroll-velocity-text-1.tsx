@@ -1,6 +1,4 @@
-import {
-  ScrollVelocityRow,
-} from "@/registry/default/motion/scroll-velocity-text";
+import { ScrollVelocityRow } from "@/registry/default/motion/scroll-velocity-text";
 
 const words = [
   "React",
@@ -19,7 +17,7 @@ export default function ScrollVelocityBasic() {
       <ScrollVelocityRow baseVelocity={3}>
         {words.map((word) => (
           <span
-            className="mx-6 text-base font-medium text-muted-foreground"
+            className="mx-6 font-medium text-base text-muted-foreground"
             key={word}
           >
             {word}

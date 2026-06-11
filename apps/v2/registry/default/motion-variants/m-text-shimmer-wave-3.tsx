@@ -7,7 +7,7 @@ export default function TextShimmerWaveExaggerated() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-6 px-6">
       <TextShimmerWave
         as="h2"
-        className="text-5xl font-black tracking-tighter"
+        className="font-black text-5xl tracking-tighter"
         duration={1.5}
         rotateYDistance={20}
         scaleDistance={1.2}
@@ -18,7 +18,7 @@ export default function TextShimmerWaveExaggerated() {
       >
         MOTION
       </TextShimmerWave>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-muted-foreground text-xs">
         Exaggerated scale + rotateY + z depth
       </p>
     </div>

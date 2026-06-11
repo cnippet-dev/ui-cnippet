@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-select-15",
+  "description": "Sort Order with Icons",
+  "registryDependencies": [
+    "@cnippet/select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-select-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport type { LucideIcon } from \"lucide-react\";\r\nimport {\r\n  ArrowDownAZIcon,\r\n  ArrowUpAZIcon,\r\n  CalendarArrowDownIcon,\r\n  CalendarArrowUpIcon,\r\n  SparklesIcon,\r\n} from \"lucide-react\";\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\ntype SortItem = { Icon: LucideIcon; label: string; value: string };\r\n\r\nconst sortOptions: SortItem[] = [\r\n  { Icon: SparklesIcon, label: \"Relevance\", value: \"relevance\" },\r\n  { Icon: ArrowDownAZIcon, label: \"Name A–Z\", value: \"name-asc\" },\r\n  { Icon: ArrowUpAZIcon, label: \"Name Z–A\", value: \"name-desc\" },\r\n  { Icon: CalendarArrowDownIcon, label: \"Newest first\", value: \"date-desc\" },\r\n  { Icon: CalendarArrowUpIcon, label: \"Oldest first\", value: \"date-asc\" },\r\n];\r\n\r\nconst placeholder = { label: \"Sort by\", value: null };\r\nconst allItems = [placeholder, ...sortOptions];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Select defaultValue={sortOptions[0]} items={allItems}>\r\n      <SelectTrigger className=\"w-44\">\r\n        <SelectValue />\r\n      </SelectTrigger>\r\n      <SelectPopup>\r\n        {sortOptions.map((item) => {\r\n          const { Icon, label, value } = item;\r\n          return (\r\n            <SelectItem key={value} value={item}>\r\n              <span className=\"flex items-center gap-2\">\r\n                <Icon aria-hidden=\"true\" className=\"size-4\" />\r\n                {label}\r\n              </span>\r\n            </SelectItem>\r\n          );\r\n        })}\r\n      </SelectPopup>\r\n    </Select>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "select"
+  ],
+  "type": "registry:block"
+}

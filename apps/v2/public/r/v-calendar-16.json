@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-16",
+  "description": "Habit tracker with completion indicators and monthly streak counter",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-16.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckIcon } from \"lucide-react\";\r\nimport type * as React from \"react\";\r\nimport type { CalendarDay, Modifiers } from \"react-day-picker\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\n\r\nconst today = new Date();\r\nconst y = today.getFullYear();\r\nconst m = today.getMonth();\r\n\r\nconst completedDays = new Set(\r\n  [1, 2, 3, 5, 6, 8, 9, 10, 12, 13, 15, 16, 17, 19, 20].map((d) =>\r\n    new Date(y, m, d).toDateString(),\r\n  ),\r\n);\r\n\r\ninterface DayButtonProps extends React.ComponentProps<\"button\"> {\r\n  day: CalendarDay;\r\n  modifiers: Modifiers;\r\n}\r\n\r\nfunction HabitDayButton({\r\n  day,\r\n  modifiers,\r\n  children,\r\n  ...props\r\n}: DayButtonProps) {\r\n  const done = completedDays.has(day.date.toDateString());\r\n  const isFuture = day.date > today;\r\n  return (\r\n    <button\r\n      {...props}\r\n      className={[\r\n        props.className,\r\n        done && !modifiers.selected\r\n          ? \"relative bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400\"\r\n          : \"\",\r\n      ]\r\n        .filter(Boolean)\r\n        .join(\" \")}\r\n    >\r\n      {children}\r\n      {done && !isFuture && (\r\n        <CheckIcon className=\"absolute right-0.5 bottom-0.5 size-2.5 text-emerald-500\" />\r\n      )}\r\n    </button>\r\n  );\r\n}\r\n\r\nexport default function Particle() {\r\n  const streak = [...completedDays].filter((d) => new Date(d) <= today).length;\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <Calendar\r\n        components={{ DayButton: HabitDayButton }}\r\n        disabled={{ after: today }}\r\n        mode=\"single\"\r\n        onSelect={() => {}}\r\n        selected={undefined}\r\n      />\r\n      <div className=\"flex items-center justify-between rounded-lg border px-4 py-2.5 text-sm\">\r\n        <span className=\"text-muted-foreground\">Days completed this month</span>\r\n        <span className=\"font-semibold\">\r\n          {streak} / {today.getDate()}\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

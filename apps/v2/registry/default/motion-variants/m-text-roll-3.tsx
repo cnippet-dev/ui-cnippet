@@ -10,7 +10,7 @@ export default function TextRollNav() {
       <nav className="flex items-center gap-6">
         {links.map((link, i) => (
           <a
-            className="group cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground"
+            className="group cursor-pointer font-medium text-muted-foreground text-sm hover:text-foreground"
             href="#"
             key={link}
             onClick={(e) => e.preventDefault()}

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-4",
-  "description": "Basic fieldset",
+  "description": "Notification preferences fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-4.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Switch } from \"@/registry/default/ui/switch\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"flex w-full max-w-sm flex-col gap-1\">\r\n      <FieldsetLegend className=\"mb-3\">Notification Preferences</FieldsetLegend>\r\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <FieldLabel className=\"cursor-pointer text-sm\">\r\n            Email notifications\r\n          </FieldLabel>\r\n          <FieldDescription className=\"text-xs\">\r\n            Receive updates and alerts by email.\r\n          </FieldDescription>\r\n        </div>\r\n        <Switch defaultChecked />\r\n      </Field>\r\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <FieldLabel className=\"cursor-pointer text-sm\">\r\n            Push notifications\r\n          </FieldLabel>\r\n          <FieldDescription className=\"text-xs\">\r\n            Get real-time alerts on your device.\r\n          </FieldDescription>\r\n        </div>\r\n        <Switch />\r\n      </Field>\r\n      <Field className=\"flex-row items-center justify-between rounded-lg border p-3\">\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          <FieldLabel className=\"cursor-pointer text-sm\">\r\n            Marketing emails\r\n          </FieldLabel>\r\n          <FieldDescription className=\"text-xs\">\r\n            News, promotions, and product updates.\r\n          </FieldDescription>\r\n        </div>\r\n        <Switch />\r\n      </Field>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

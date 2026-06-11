@@ -15,7 +15,7 @@ export default function RollingTextStacked() {
         {lines.map(({ text, delay }) => (
           <div key={text}>
             <RollingText
-              className="text-5xl font-black tracking-tighter text-foreground sm:text-6xl"
+              className="font-black text-5xl text-foreground tracking-tighter sm:text-6xl"
               delay={delay}
               direction="up"
               duration={0.55}

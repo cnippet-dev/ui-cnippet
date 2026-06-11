@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-command-15",
+  "description": "Quick-open palette with page list, notification badges, and a keyboard footer",
+  "registryDependencies": [
+    "@cnippet/command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-command-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  ArrowDownIcon,\r\n  ArrowUpIcon,\r\n  CornerDownLeftIcon,\r\n  HashIcon,\r\n  LayoutDashboardIcon,\r\n  SearchIcon,\r\n  UserCircleIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Command,\r\n  CommandCollection,\r\n  CommandDialog,\r\n  CommandDialogPopup,\r\n  CommandDialogTrigger,\r\n  CommandEmpty,\r\n  CommandFooter,\r\n  CommandGroup,\r\n  CommandGroupLabel,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n  CommandPanel,\r\n} from \"@/registry/default/ui/command\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\n\r\ntype Page = {\r\n  badge?: string;\r\n  icon: React.ReactNode;\r\n  label: string;\r\n  value: string;\r\n};\r\n\r\nconst pages: Page[] = [\r\n  {\r\n    badge: \"12\",\r\n    icon: <LayoutDashboardIcon className=\"size-4\" />,\r\n    label: \"Dashboard\",\r\n    value: \"dashboard\",\r\n  },\r\n  {\r\n    icon: <UserCircleIcon className=\"size-4\" />,\r\n    label: \"Profile\",\r\n    value: \"profile\",\r\n  },\r\n  {\r\n    badge: \"3\",\r\n    icon: <HashIcon className=\"size-4\" />,\r\n    label: \"Channels\",\r\n    value: \"channels\",\r\n  },\r\n  { icon: <SearchIcon className=\"size-4\" />, label: \"Search\", value: \"search\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  return (\r\n    <CommandDialog onOpenChange={setOpen} open={open}>\r\n      <CommandDialogTrigger render={<Button variant=\"outline\" />}>\r\n        Quick open\r\n        <KbdGroup>\r\n          <Kbd>⌘</Kbd>\r\n          <Kbd>P</Kbd>\r\n        </KbdGroup>\r\n      </CommandDialogTrigger>\r\n      <CommandDialogPopup>\r\n        <Command items={[{ items: pages, label: \"Pages\", value: \"pages\" }]}>\r\n          <CommandInput placeholder=\"Search pages and actions...\" />\r\n          <CommandPanel>\r\n            <CommandEmpty>No results found.</CommandEmpty>\r\n            <CommandList>\r\n              {(group: { items: Page[]; label: string; value: string }) => (\r\n                <CommandGroup items={group.items} key={group.value}>\r\n                  <CommandGroupLabel>{group.label}</CommandGroupLabel>\r\n                  <CommandCollection>\r\n                    {(page: Page) => (\r\n                      <CommandItem\r\n                        className=\"gap-2\"\r\n                        key={page.value}\r\n                        onSelect={() => setOpen(false)}\r\n                        value={page.value}\r\n                      >\r\n                        {page.icon}\r\n                        <span className=\"flex-1\">{page.label}</span>\r\n                        {page.badge && (\r\n                          <Badge size=\"sm\" variant=\"secondary\">\r\n                            {page.badge}\r\n                          </Badge>\r\n                        )}\r\n                      </CommandItem>\r\n                    )}\r\n                  </CommandCollection>\r\n                </CommandGroup>\r\n              )}\r\n            </CommandList>\r\n          </CommandPanel>\r\n          <CommandFooter>\r\n            <div className=\"flex items-center gap-3\">\r\n              <KbdGroup>\r\n                <Kbd>\r\n                  <ArrowUpIcon />\r\n                </Kbd>\r\n                <Kbd>\r\n                  <ArrowDownIcon />\r\n                </Kbd>\r\n              </KbdGroup>\r\n              <span>navigate</span>\r\n              <Kbd>\r\n                <CornerDownLeftIcon />\r\n              </Kbd>\r\n              <span>open</span>\r\n            </div>\r\n            <div className=\"flex items-center gap-2\">\r\n              <Kbd>Esc</Kbd>\r\n              <span>close</span>\r\n            </div>\r\n          </CommandFooter>\r\n        </Command>\r\n      </CommandDialogPopup>\r\n    </CommandDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "command"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-11",
+  "description": "Forgot password — reset email",
+  "registryDependencies": [
+    "@cnippet/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { MailIcon } from \"lucide-react\";\r\nimport { type FormEvent, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport function Pattern() {\r\n  const [loading, setLoading] = useState(false);\r\n  const [sent, setSent] = useState(false);\r\n  const [email, setEmail] = useState(\"\");\r\n\r\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    const data = new FormData(e.currentTarget);\r\n    setEmail(data.get(\"email\") as string);\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 900));\r\n    setLoading(false);\r\n    setSent(true);\r\n  };\r\n\r\n  if (sent) {\r\n    return (\r\n      <div className=\"flex w-full max-w-sm flex-col items-center gap-4 rounded-xl border bg-card px-6 py-8 text-center\">\r\n        <div className=\"flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary\">\r\n          <MailIcon className=\"size-5\" />\r\n        </div>\r\n        <div className=\"space-y-1\">\r\n          <p className=\"font-semibold\">Check your inbox</p>\r\n          <p className=\"text-muted-foreground text-sm\">\r\n            We sent a reset link to{\" \"}\r\n            <span className=\"font-medium text-foreground\">{email}</span>.\r\n          </p>\r\n        </div>\r\n        <Button\r\n          onClick={() => setSent(false)}\r\n          size=\"sm\"\r\n          type=\"button\"\r\n          variant=\"outline\"\r\n        >\r\n          Resend email\r\n        </Button>\r\n      </div>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-5\">\r\n      <div className=\"space-y-1\">\r\n        <h2 className=\"font-semibold text-lg\">Forgot your password?</h2>\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Enter your email and we&apos;ll send you a reset link.\r\n        </p>\r\n      </div>\r\n\r\n      <Form className=\"gap-4\" onSubmit={onSubmit}>\r\n        <Field name=\"email\">\r\n          <FieldLabel>Email address</FieldLabel>\r\n          <Input\r\n            autoComplete=\"email\"\r\n            placeholder=\"you@example.com\"\r\n            required\r\n            type=\"email\"\r\n          />\r\n          <FieldError />\r\n        </Field>\r\n\r\n        <Button className=\"w-full\" loading={loading} type=\"submit\">\r\n          Send reset link\r\n        </Button>\r\n\r\n        <p className=\"text-center text-muted-foreground text-sm\">\r\n          Remember your password?{\" \"}\r\n          <a className=\"text-foreground underline underline-offset-2\" href=\"#\">\r\n            Sign in\r\n          </a>\r\n        </p>\r\n      </Form>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ],
+  "type": "registry:block"
+}

@@ -1,4 +1,11 @@
 {
-  "pages": ["scroll-reveal", "scroll-progress", "scroll-velocity-text", "parallax-floating", "stacking-cards", "progressive-blur"],
+  "pages": [
+    "scroll-reveal",
+    "scroll-progress",
+    "scroll-velocity-text",
+    "parallax-floating",
+    "stacking-cards",
+    "progressive-blur"
+  ],
   "title": "Scroll Animations"
 }

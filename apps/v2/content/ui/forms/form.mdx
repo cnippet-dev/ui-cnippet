@@ -1,6 +1,6 @@
 ---
 title: Form
-description: A form wrapper component that simplifies validation and submission.
+description: A form wrapper component that simplifies validation and submission. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/form#api-reference
@@ -72,6 +72,19 @@ import { Input } from "@/components/ui/input"
 </Form>
 ```
 
+## API Reference
+
+### Form
+
+Styled wrapper around Base UI's `Form` primitive. Renders a `<form>` element and provides shared validation context to all `Field` children.
+
+Accepts all standard `<form>` HTML attributes. Key props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `onSubmit` | `React.FormEventHandler<HTMLFormElement>` | — | Called when the form is submitted (after validation passes) |
+| `errors` | `Record<string, string>` | — | Server-side error map keyed by field name; overrides client validation |
+
 ## Examples
 
 ### Using with Zod
@@ -79,3 +92,69 @@ import { Input } from "@/components/ui/input"
 Integrates the `Form` component with a Zod schema for type-safe client-side validation, showing inline field errors on submit.
 
 <ComponentPreview name="v-form-2" />
+
+### Sign In
+
+Email and password fields with a show/hide visibility toggle, a "Forgot password?" link, a "Remember me" checkbox, and a "Create account" fallback.
+
+<ComponentPreview name="v-form-3" />
+
+### Profile Settings
+
+A card-wrapped profile editor with first and last name, username (with field description), role select, bio textarea with character hint, and website URL. The save button shows "Saved!" for three seconds after submission.
+
+<ComponentPreview name="v-form-4" />
+
+### Contact Form
+
+Name grid, email, topic select, priority radio group, and message textarea. On submit, the form is replaced with a success confirmation state.
+
+<ComponentPreview name="v-form-5" />
+
+### Change Password
+
+A card-wrapped form with current password, then new and confirm password fields separated by a divider. Client-side validation checks minimum length and that both new fields match.
+
+<ComponentPreview name="v-form-6" />
+
+### Newsletter Signup
+
+A centered card with a mail icon, first/last name grid, email, a "weekly digest" checkbox pre-checked, and a subscribe button. Confirming shows a success state with the submitted email address echoed back.
+
+<ComponentPreview name="v-form-7" />
+
+### Multi-step Onboarding
+
+A three-step wizard with a numbered step indicator: step 1 collects name and email, step 2 presents a plan radio group and newsletter preference, step 3 shows a read-only summary before final account creation.
+
+<ComponentPreview name="v-form-8" />
+
+### Sign Up
+
+Email, password, and confirm-password fields with a terms checkbox. A minimal register form for new accounts.
+
+<ComponentPreview name="v-form-9" />
+
+### Feedback
+
+A rating select paired with a free-text textarea. On submit, the form is replaced with a thank-you confirmation.
+
+<ComponentPreview name="v-form-10" />
+
+### Forgot Password
+
+Email input that triggers a reset link. On success, the form swaps to a confirmation card echoing the submitted address with a resend option.
+
+<ComponentPreview name="v-form-11" />
+
+### Delete Account
+
+A danger zone confirmation form with a highlighted warning, requiring the user to type a specific phrase before the destructive submit button becomes active.
+
+<ComponentPreview name="v-form-12" />
+
+### Invite Team Member
+
+Email address and role select for adding a workspace collaborator, with a role description and cancel/invite action buttons.
+
+<ComponentPreview name="v-form-13" />

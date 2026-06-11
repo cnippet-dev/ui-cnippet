@@ -17,15 +17,15 @@ export default function ScrollSwapTextFeatureList() {
   return (
     <div className="flex min-h-50 items-center justify-center px-6">
       <div
-        ref={containerRef}
         className="h-48 w-full max-w-sm overflow-y-scroll rounded-lg border border-border"
+        ref={containerRef}
       >
         {features.map((feature) => (
           <ScrollSwapText
-            key={feature}
             as="div"
+            className="border-border border-b px-5 py-4 font-medium text-base last:border-0"
             containerRef={containerRef}
-            className="border-b border-border px-5 py-4 text-base font-medium last:border-0"
+            key={feature}
           >
             {feature}
           </ScrollSwapText>

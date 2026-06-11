@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-preview-card-15",
+  "description": "Basic preview card",
+  "registryDependencies": [
+    "@cnippet/preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-preview-card-15.tsx",
+      "content": "import { DownloadIcon, PackageIcon } from \"lucide-react\";\r\nimport {\r\n  PreviewCard,\r\n  PreviewCardPopup,\r\n  PreviewCardTrigger,\r\n} from \"@/registry/default/ui/preview-card\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <p className=\"text-sm\">\r\n      Install{\" \"}\r\n      <PreviewCard>\r\n        <PreviewCardTrigger className=\"cursor-pointer font-medium font-mono underline underline-offset-4\">\r\n          @base-ui/react\r\n        </PreviewCardTrigger>\r\n        <PreviewCardPopup>\r\n          <div className=\"flex flex-col gap-3\">\r\n            <div className=\"flex items-center gap-2.5\">\r\n              <div className=\"flex size-9 items-center justify-center rounded-lg bg-muted\">\r\n                <PackageIcon\r\n                  aria-hidden=\"true\"\r\n                  className=\"size-4 text-muted-foreground\"\r\n                />\r\n              </div>\r\n              <div>\r\n                <p className=\"font-semibold text-sm\">@base-ui/react</p>\r\n                <p className=\"text-muted-foreground text-xs\">v1.0.0</p>\r\n              </div>\r\n            </div>\r\n            <p className=\"text-muted-foreground text-xs\">\r\n              Unstyled, accessible UI components for React built with\r\n              accessibility in mind.\r\n            </p>\r\n            <div className=\"flex items-center gap-3 text-muted-foreground text-xs\">\r\n              <div className=\"flex items-center gap-1\">\r\n                <DownloadIcon aria-hidden=\"true\" className=\"size-3\" />\r\n                <span>124k / week</span>\r\n              </div>\r\n              <div className=\"flex items-center gap-1\">\r\n                <span\r\n                  aria-hidden=\"true\"\r\n                  className=\"size-2 rounded-full bg-blue-500\"\r\n                />\r\n                <span>TypeScript</span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </PreviewCardPopup>\r\n      </PreviewCard>{\" \"}\r\n      to get started with accessible primitives.\r\n    </p>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:block"
+}

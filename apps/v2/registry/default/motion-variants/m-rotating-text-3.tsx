@@ -8,7 +8,7 @@ export default function RotatingTextTestimonial() {
   return (
     <div className="flex min-h-50 items-center justify-center px-6">
       <div className="w-full max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
-        <p className="text-2xl font-semibold leading-snug text-foreground sm:text-3xl">
+        <p className="font-semibold text-2xl text-foreground leading-snug sm:text-3xl">
           Trusted by{" "}
           <RotatingText
             className="text-primary"
@@ -20,7 +20,7 @@ export default function RotatingTextTestimonial() {
           <br />
           around the world.
         </p>
-        <p className="mt-4 text-sm text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-sm">
           direction="down" — words enter from above
         </p>
       </div>

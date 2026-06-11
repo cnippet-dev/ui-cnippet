@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-empty-14",
+  "description": "Access restricted — permission request empty state",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/variants/v-empty-14.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/registry/default/ui/empty\";\r\n\r\nfunction InboxIllustration() {\r\n  return (\r\n    <svg\r\n      aria-hidden=\"true\"\r\n      fill=\"none\"\r\n      height=\"120\"\r\n      viewBox=\"0 0 180 120\"\r\n      width=\"180\"\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n    >\r\n      {/* Inbox tray */}\r\n      <rect\r\n        className=\"fill-background stroke-border\"\r\n        height=\"72\"\r\n        rx=\"8\"\r\n        strokeWidth=\"1.5\"\r\n        width=\"120\"\r\n        x=\"30\"\r\n        y=\"28\"\r\n      />\r\n      {/* Tray bottom shelf */}\r\n      <rect\r\n        className=\"fill-muted dark:fill-muted/50\"\r\n        height=\"20\"\r\n        rx=\"0\"\r\n        width=\"120\"\r\n        x=\"30\"\r\n        y=\"80\"\r\n      />\r\n      <rect\r\n        className=\"fill-muted dark:fill-muted/50\"\r\n        height=\"8\"\r\n        rx=\"0\"\r\n        width=\"120\"\r\n        x=\"30\"\r\n        y=\"92\"\r\n      />\r\n      <path\r\n        className=\"fill-muted dark:fill-muted/50\"\r\n        d=\"M30 92 Q30 100 38 100 H142 Q150 100 150 92\"\r\n      />\r\n\r\n      {/* Envelope 1 - back */}\r\n      <rect\r\n        className=\"fill-muted/60 stroke-border/60\"\r\n        height=\"30\"\r\n        rx=\"4\"\r\n        strokeWidth=\"1\"\r\n        width=\"80\"\r\n        x=\"50\"\r\n        y=\"38\"\r\n      />\r\n      <path\r\n        className=\"stroke-border/40\"\r\n        d=\"M50 42 L90 58 L130 42\"\r\n        fill=\"none\"\r\n        strokeWidth=\"1\"\r\n      />\r\n\r\n      {/* Envelope 2 - front */}\r\n      <rect\r\n        className=\"fill-background stroke-border\"\r\n        height=\"30\"\r\n        rx=\"4\"\r\n        strokeWidth=\"1.5\"\r\n        width=\"80\"\r\n        x=\"50\"\r\n        y=\"46\"\r\n      />\r\n      <path\r\n        className=\"stroke-muted-foreground/30\"\r\n        d=\"M50 50 L90 66 L130 50\"\r\n        fill=\"none\"\r\n        strokeWidth=\"1.5\"\r\n      />\r\n\r\n      {/* Decorative dots */}\r\n      <circle className=\"fill-primary/15\" cx=\"22\" cy=\"60\" r=\"3\" />\r\n      <circle className=\"fill-muted-foreground/10\" cx=\"160\" cy=\"44\" r=\"2\" />\r\n      <circle className=\"fill-muted-foreground/10\" cx=\"164\" cy=\"80\" r=\"2.5\" />\r\n    </svg>\r\n  );\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-4\">\r\n      <Empty className=\"py-12\">\r\n        <EmptyHeader>\r\n          <EmptyMedia>\r\n            <InboxIllustration />\r\n          </EmptyMedia>\r\n          <EmptyTitle>Inbox zero</EmptyTitle>\r\n          <EmptyDescription>\r\n            You&apos;re all caught up. No new messages waiting for you.\r\n          </EmptyDescription>\r\n        </EmptyHeader>\r\n        <EmptyContent>\r\n          <Button variant=\"outline\">Compose message</Button>\r\n        </EmptyContent>\r\n      </Empty>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "empty state"
+  ],
+  "type": "registry:block"
+}

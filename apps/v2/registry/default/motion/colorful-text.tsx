@@ -1,4 +1,5 @@
-﻿"use client";
+//biome-ignore-all lint/style/noNonNullAssertion: array index always in bounds
+"use client";
 
 import { motion, type Transition } from "motion/react";
 import { type ElementType, useMemo, useRef } from "react";

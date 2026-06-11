@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-14",
+  "description": "Birthday Picker with Age Validation",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { format, subYears } from \"date-fns\";\r\nimport { CalendarIcon, ChevronDownIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\nimport {\r\n  Popover,\r\n  PopoverPopup,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\n\r\nconst today = new Date();\r\nconst MIN_AGE = 18;\r\nconst MAX_AGE = 100;\r\n\r\nconst minDate = subYears(today, MAX_AGE);\r\nconst maxDate = subYears(today, MIN_AGE);\r\n\r\nexport default function Particle() {\r\n  const [dob, setDob] = useState<Date | undefined>();\r\n  const [open, setOpen] = useState(false);\r\n\r\n  const age = dob\r\n    ? Math.floor(\r\n        (today.getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365.25),\r\n      )\r\n    : null;\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <div className=\"space-y-1\">\r\n        <p className=\"font-medium text-sm\">Date of birth</p>\r\n        <p className=\"text-muted-foreground text-xs\">\r\n          You must be 18–100 years old to register.\r\n        </p>\r\n      </div>\r\n\r\n      <Popover onOpenChange={setOpen} open={open}>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button className=\"w-full justify-between\" variant=\"outline\" />\r\n          }\r\n        >\r\n          <span className=\"flex items-center gap-2\">\r\n            <CalendarIcon className=\"size-4 text-muted-foreground\" />\r\n            {dob ? format(dob, \"MMMM d, yyyy\") : \"Select your birthday\"}\r\n          </span>\r\n          <ChevronDownIcon className=\"size-4 text-muted-foreground\" />\r\n        </PopoverTrigger>\r\n        <PopoverPopup>\r\n          <Calendar\r\n            captionLayout=\"dropdown\"\r\n            disabled={[{ before: minDate }, { after: maxDate }]}\r\n            endMonth={maxDate}\r\n            mode=\"single\"\r\n            onSelect={(d) => {\r\n              setDob(d);\r\n              if (d) setOpen(false);\r\n            }}\r\n            selected={dob}\r\n            startMonth={minDate}\r\n          />\r\n        </PopoverPopup>\r\n      </Popover>\r\n\r\n      {age !== null && (\r\n        <p className=\"rounded-md border border-dashed px-3 py-2 text-muted-foreground text-xs\">\r\n          Age:{\" \"}\r\n          <span className=\"font-semibold text-foreground\">{age} years old</span>\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

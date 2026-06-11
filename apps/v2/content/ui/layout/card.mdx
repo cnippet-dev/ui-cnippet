@@ -1,6 +1,6 @@
 ---
 title: Card
-description: A content container for grouping related information.
+description: A content container for grouping related information. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-card-1" />
@@ -60,6 +60,46 @@ import {
   <CardFooter>Footer</CardFooter>
 </Card>
 ```
+
+## API Reference
+
+### Card
+
+Root container. Renders as a `<div>` by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+All standard `<div>` HTML attributes are forwarded.
+
+### CardFrame / CardFrameHeader / CardFrameTitle / CardFrameDescription / CardFrameAction / CardFrameFooter
+
+Structural sub-components for a frame-style card layout with a distinct header region and footer.
+
+### CardHeader
+
+Flex column container for `CardTitle`, `CardDescription`, and `CardAction`.
+
+### CardTitle
+
+Heading element for the card. Renders as `<div>` with heading styles.
+
+### CardDescription
+
+Muted secondary text below the title.
+
+### CardAction
+
+Trailing slot inside `CardHeader` for icon buttons or badges.
+
+### CardPanel
+
+Main content region of the card. Also exported as `CardContent`.
+
+### CardFooter
+
+Footer row at the bottom of the card.
 
 ## Examples
 
@@ -146,3 +186,33 @@ Combines a leading icon, a title, and a trailing "View" link in the card header 
 Pairs a category label with a navigation link in the header, useful for classification-style cards that need external navigation.
 
 <ComponentPreview name="v-card-15" />
+
+### Repository Cards
+
+A list of GitHub-style repository cards each showing the name, description, language badge with color dot, star count, and fork count.
+
+<ComponentPreview name="v-card-16" />
+
+### Settings Card
+
+A card split into a vertical sidebar nav and a content panel — clicking a nav item swaps the description panel without leaving the card.
+
+<ComponentPreview name="v-card-17" />
+
+### Pricing Plan
+
+A highlighted pricing plan card with a "Most Popular" badge, monthly price, feature checklist with check icons, and a primary CTA button.
+
+<ComponentPreview name="v-card-18" />
+
+### Event Card
+
+An event detail card with date, time, location, and attendee count displayed in a meta list, plus a "Reserve a Spot" button and remaining-spots warning.
+
+<ComponentPreview name="v-card-19" />
+
+### Stats Dashboard
+
+A 2×2 grid of metric tiles each showing a label, large value, and a trend indicator with up/down icon and percentage delta versus last month.
+
+<ComponentPreview name="v-card-20" />

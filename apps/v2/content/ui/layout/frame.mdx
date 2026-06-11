@@ -1,6 +1,6 @@
 ---
 title: Frame
-description: A framed container for grouping related information.
+description: A framed container for grouping related information. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-frame-1" />
@@ -61,6 +61,34 @@ import {
 </Frame>
 ```
 
+## API Reference
+
+### Frame
+
+Root container. Renders as `<div>` with `React.ComponentProps<"div">`.
+
+### FrameHeader
+
+Container for `FrameTitle` and `FrameDescription`.
+
+### FrameTitle
+
+Heading element for the frame.
+
+### FrameDescription
+
+Muted secondary text below the title.
+
+### FramePanel
+
+Main content region of the frame.
+
+### FrameFooter
+
+Footer row at the bottom of the frame.
+
+All sub-components accept standard HTML `<div>` attributes.
+
 ## Examples
 
 ### Separated Panels
@@ -80,3 +108,33 @@ Panels can be individually expanded or collapsed using `Collapsible`, useful for
 Use the `stackedPanels` prop to stack multiple panels together without gaps.
 
 <ComponentPreview name="v-frame-4" />
+
+### With Header Action
+
+Adds an icon button to the `FrameHeader` for a settings or overflow action, using a flex-row header layout.
+
+<ComponentPreview name="v-frame-5" />
+
+### Stats Display
+
+Three metric panels each showing a label, a large value, and a trend indicator — useful for summary dashboards and KPI cards.
+
+<ComponentPreview name="v-frame-6" />
+
+### With Status Badge
+
+Attaches a `Badge` to the header for live system status, with per-service indicators rendered inside the panel.
+
+<ComponentPreview name="v-frame-7" />
+
+### Key-Value Info
+
+A read-only `<dl>` list inside a single panel, displaying subscription or account details as label / value pairs.
+
+<ComponentPreview name="v-frame-8" />
+
+### With Footer Actions
+
+A `FrameFooter` with cancel and save buttons, demonstrating how to add CTA controls at the bottom of a settings block.
+
+<ComponentPreview name="v-frame-9" />

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-dialog-15",
+  "description": "Rate Limit Exceeded with live countdown timer",
+  "registryDependencies": [
+    "@cnippet/alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-dialog-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { TimerIcon, ZapIcon } from \"lucide-react\";\r\nimport { useEffect, useState } from \"react\";\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogClose,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/registry/default/ui/alert-dialog\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nfunction Countdown({ seconds }: { seconds: number }) {\r\n  const [left, setLeft] = useState(seconds);\r\n\r\n  useEffect(() => {\r\n    if (left <= 0) return;\r\n    const t = setTimeout(() => setLeft((l) => l - 1), 1000);\r\n    return () => clearTimeout(t);\r\n  }, [left]);\r\n\r\n  const m = Math.floor(left / 60)\r\n    .toString()\r\n    .padStart(2, \"0\");\r\n  const s = (left % 60).toString().padStart(2, \"0\");\r\n\r\n  return (\r\n    <span className=\"font-mono font-semibold text-foreground\">\r\n      {m}:{s}\r\n    </span>\r\n  );\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger render={<Button>Make API Request</Button>} />\r\n      <AlertDialogContent className=\"sm:max-w-sm\">\r\n        <div className=\"flex flex-col items-center gap-3 p-6 pb-4\">\r\n          <div className=\"flex size-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950\">\r\n            <ZapIcon className=\"size-5 text-amber-600 dark:text-amber-400\" />\r\n          </div>\r\n          <AlertDialogTitle className=\"text-center font-semibold text-base\">\r\n            Rate limit exceeded\r\n          </AlertDialogTitle>\r\n          <AlertDialogDescription className=\"text-center text-muted-foreground text-sm\">\r\n            You&apos;ve reached the limit of 100 requests per minute. Retry\r\n            automatically in:\r\n          </AlertDialogDescription>\r\n          <div className=\"flex items-center gap-2 rounded-lg border bg-muted/60 px-4 py-2 text-sm\">\r\n            <TimerIcon className=\"size-4 text-muted-foreground\" />\r\n            <Countdown seconds={90} />\r\n          </div>\r\n          <p className=\"text-center text-muted-foreground text-xs\">\r\n            Upgrade to Pro for a 10× higher rate limit.\r\n          </p>\r\n        </div>\r\n        <AlertDialogFooter className=\"px-6 pb-6\">\r\n          <AlertDialogClose\r\n            render={<Button className=\"flex-1\" variant=\"outline\" />}\r\n          >\r\n            Dismiss\r\n          </AlertDialogClose>\r\n          <AlertDialogClose render={<Button className=\"flex-1\" />}>\r\n            Upgrade to Pro\r\n          </AlertDialogClose>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert dialog"
+  ],
+  "type": "registry:block"
+}

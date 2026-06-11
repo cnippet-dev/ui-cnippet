@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-13",
+  "description": "Dark Mode Toggle Card",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { MoonIcon, SunIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Switch } from \"@/registry/default/ui/switch\";\r\n\r\nexport default function Particle() {\r\n  const [dark, setDark] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className={`flex w-full max-w-xs flex-col items-center gap-6 rounded-2xl border p-8 transition-colors duration-300 ${dark ? \"border-zinc-700 bg-zinc-900 text-white\" : \"bg-white text-zinc-900\"}`}\r\n    >\r\n      <div\r\n        className={`flex size-16 items-center justify-center rounded-full transition-colors duration-300 ${dark ? \"bg-zinc-800\" : \"bg-amber-50\"}`}\r\n      >\r\n        {dark ? (\r\n          <MoonIcon aria-hidden=\"true\" className=\"size-7 text-indigo-400\" />\r\n        ) : (\r\n          <SunIcon aria-hidden=\"true\" className=\"size-7 text-amber-500\" />\r\n        )}\r\n      </div>\r\n      <div className=\"text-center\">\r\n        <p className=\"font-semibold\">{dark ? \"Dark Mode\" : \"Light Mode\"}</p>\r\n        <p\r\n          className={`text-sm ${dark ? \"text-zinc-400\" : \"text-zinc-500\"} mt-1`}\r\n        >\r\n          {dark ? \"Easy on the eyes at night\" : \"Crisp and clear in daylight\"}\r\n        </p>\r\n      </div>\r\n      <div className=\"flex items-center gap-3\">\r\n        <SunIcon\r\n          aria-hidden=\"true\"\r\n          className={`size-4 ${dark ? \"text-zinc-500\" : \"text-amber-500\"}`}\r\n        />\r\n        <Switch\r\n          checked={dark}\r\n          className=\"data-checked:bg-indigo-600\"\r\n          onCheckedChange={setDark}\r\n        />\r\n        <MoonIcon\r\n          aria-hidden=\"true\"\r\n          className={`size-4 ${dark ? \"text-indigo-400\" : \"text-zinc-400\"}`}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-autocomplete-16",
+  "description": "Country picker with flag and ISO code",
+  "registryDependencies": [
+    "@cnippet/autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-autocomplete-16.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Autocomplete,\r\n  AutocompleteEmpty,\r\n  AutocompleteInput,\r\n  AutocompleteItem,\r\n  AutocompleteList,\r\n  AutocompletePopup,\r\n} from \"@/registry/default/ui/autocomplete\";\r\n\r\ntype Country = { id: string; label: string; code: string; flag: string };\r\n\r\nconst countries: Country[] = [\r\n  { code: \"US\", flag: \"🇺🇸\", id: \"us\", label: \"United States\" },\r\n  { code: \"GB\", flag: \"🇬🇧\", id: \"gb\", label: \"United Kingdom\" },\r\n  { code: \"DE\", flag: \"🇩🇪\", id: \"de\", label: \"Germany\" },\r\n  { code: \"FR\", flag: \"🇫🇷\", id: \"fr\", label: \"France\" },\r\n  { code: \"JP\", flag: \"🇯🇵\", id: \"jp\", label: \"Japan\" },\r\n  { code: \"IN\", flag: \"🇮🇳\", id: \"in\", label: \"India\" },\r\n  { code: \"CA\", flag: \"🇨🇦\", id: \"ca\", label: \"Canada\" },\r\n  { code: \"AU\", flag: \"🇦🇺\", id: \"au\", label: \"Australia\" },\r\n  { code: \"BR\", flag: \"🇧🇷\", id: \"br\", label: \"Brazil\" },\r\n  { code: \"SG\", flag: \"🇸🇬\", id: \"sg\", label: \"Singapore\" },\r\n  { code: \"NL\", flag: \"🇳🇱\", id: \"nl\", label: \"Netherlands\" },\r\n  { code: \"SE\", flag: \"🇸🇪\", id: \"se\", label: \"Sweden\" },\r\n  { code: \"NO\", flag: \"🇳🇴\", id: \"no\", label: \"Norway\" },\r\n  { code: \"CH\", flag: \"🇨🇭\", id: \"ch\", label: \"Switzerland\" },\r\n  { code: \"KR\", flag: \"🇰🇷\", id: \"kr\", label: \"South Korea\" },\r\n  { code: \"MX\", flag: \"🇲🇽\", id: \"mx\", label: \"Mexico\" },\r\n  { code: \"ES\", flag: \"🇪🇸\", id: \"es\", label: \"Spain\" },\r\n  { code: \"IT\", flag: \"🇮🇹\", id: \"it\", label: \"Italy\" },\r\n  { code: \"PL\", flag: \"🇵🇱\", id: \"pl\", label: \"Poland\" },\r\n  { code: \"ZA\", flag: \"🇿🇦\", id: \"za\", label: \"South Africa\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-1.5\">\r\n      <label className=\"font-medium text-sm\">Country</label>\r\n      <Autocomplete items={countries}>\r\n        <AutocompleteInput\r\n          placeholder=\"Search country…\"\r\n          showClear\r\n          showTrigger\r\n        />\r\n        <AutocompletePopup>\r\n          <AutocompleteEmpty>No country found.</AutocompleteEmpty>\r\n          <AutocompleteList>\r\n            {(country: Country) => (\r\n              <AutocompleteItem key={country.id} value={country}>\r\n                <div className=\"flex w-full items-center gap-2.5\">\r\n                  <span aria-hidden=\"true\" className=\"text-base leading-none\">\r\n                    {country.flag}\r\n                  </span>\r\n                  <span className=\"flex-1 font-medium text-sm\">\r\n                    {country.label}\r\n                  </span>\r\n                  <span className=\"font-mono text-muted-foreground text-xs\">\r\n                    {country.code}\r\n                  </span>\r\n                </div>\r\n              </AutocompleteItem>\r\n            )}\r\n          </AutocompleteList>\r\n        </AutocompletePopup>\r\n      </Autocomplete>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "autocomplete"
+  ],
+  "type": "registry:block"
+}

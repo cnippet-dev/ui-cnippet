@@ -1,6 +1,6 @@
 ---
 title: Table
-description: A simple table component for displaying tabular data.
+description: A simple table component for displaying tabular data. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/table#api-reference
@@ -73,6 +73,44 @@ import {
 </Table>
 ```
 
+## API Reference
+
+### Table
+
+Root wrapper that adds horizontal scrolling and sets the variant context.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "card"` | `"default"` | `"card"` wraps cells in a rounded bordered card style |
+
+### TableHeader
+
+`<thead>` wrapper. Children `<tr>` elements get a bottom border.
+
+### TableBody
+
+`<tbody>` wrapper. In `"card"` variant, applies the rounded card border treatment to cells.
+
+### TableRow
+
+`<tr>` wrapper. Hover and selected (`data-state="selected"`) states adapt per variant.
+
+### TableHead
+
+`<th>` wrapper. Muted foreground, medium font weight, 10-unit height.
+
+### TableCell
+
+`<td>` wrapper. Consistent padding across both variants.
+
+### TableFooter
+
+`<tfoot>` wrapper. Slightly elevated background and top border in `"default"` variant.
+
+### TableCaption
+
+`<caption>` wrapper. Muted, small text beneath the table.
+
 ## Examples
 
 ### Card-style table
@@ -83,13 +121,13 @@ Use `variant="card"` when the grid itself should look like a set of cards (for e
 
 ### Table in CardFrame
 
-Put the table in [CardFrame](/ui/docs/components/card) so the grid sits inside the card shell (border, radius, clipping). Use `variant="card"` on `Table`. The example below is static markup—no row selection or TanStack.
+Put the table in [CardFrame](/ui/layout/card) so the grid sits inside the card shell (border, radius, clipping). Use `variant="card"` on `Table`. The example below is static markup—no row selection or TanStack.
 
 <ComponentPreview name="v-table-3" />
 
 ### Table in Frame
 
-Wrap the table in a [Frame](/ui/docs/components/frame) for bordered app-surface framing. Use `variant="card"` on `Table` so rows keep the card-style treatment inside the frame.
+Wrap the table in a [Frame](/ui/layout/frame) for bordered app-surface framing. Use `variant="card"` on `Table` so rows keep the card-style treatment inside the frame.
 
 <ComponentPreview name="v-table-4" />
 
@@ -110,3 +148,51 @@ Shows team members with avatar initials, full name, role label, and an online/of
 Lists subscribers with their plan tier badge, billing cycle, renewal date, and monthly amount in a scannable layout.
 
 <ComponentPreview name="v-table-7" />
+
+### Sortable API Endpoints
+
+Click any column header to sort ascending or descending. Arrow icons reflect the current sort direction and error rates are contextually colored by severity.
+
+<ComponentPreview name="v-table-8" />
+
+### Storage Usage
+
+Each row shows a file-type storage bar with a color-coded fill. Members at or above 90% capacity display a "Storage almost full" warning alongside the bar.
+
+<ComponentPreview name="v-table-9" />
+
+### Audit Log
+
+A security audit log inside a Frame with actor avatar, action badges color-coded by type (create / update / delete / invite), resource, IP address in monospace, and relative timestamps.
+
+<ComponentPreview name="v-table-10" />
+
+### Product Inventory
+
+A product inventory table with SKU in monospace, category, price, and a stock-level badge that turns green for In Stock, amber for Low Stock, and red for Out of Stock.
+
+<ComponentPreview name="v-table-11" />
+
+### Invoice History
+
+Lists client invoices with issued and due dates, a colored status badge (Paid, Pending, Overdue, Draft), and a footer row showing the total outstanding balance.
+
+<ComponentPreview name="v-table-12" />
+
+### Feature Comparison
+
+A plan comparison table with features as rows and Free, Pro, and Enterprise as columns. String values show the tier limit; boolean values render a green check or a muted dash.
+
+<ComponentPreview name="v-table-13" />
+
+### Server Health
+
+Monitors server instances with region, a status badge, and inline progress bars for CPU and memory utilization alongside uptime percentage in monospace.
+
+<ComponentPreview name="v-table-14" />
+
+### Contributor Leaderboard
+
+A ranked contributor table with avatar, name, commit/PR/review counts, and a colored trend indicator that shows a TrendingUp or TrendingDown icon with the rank change value.
+
+<ComponentPreview name="v-table-15" />

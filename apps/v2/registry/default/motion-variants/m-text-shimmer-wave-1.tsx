@@ -7,7 +7,7 @@ export default function TextShimmerWaveHero() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-3 px-6">
       <TextShimmerWave
         as="h1"
-        className="text-4xl font-bold tracking-tight sm:text-5xl"
+        className="font-bold text-4xl tracking-tight sm:text-5xl"
         duration={1.2}
         spread={1.2}
         yDistance={-3}
@@ -15,7 +15,7 @@ export default function TextShimmerWaveHero() {
       >
         Animate with purpose
       </TextShimmerWave>
-      <p className="text-sm text-muted-foreground">Wave shimmer on a heading</p>
+      <p className="text-muted-foreground text-sm">Wave shimmer on a heading</p>
     </div>
   );
 }

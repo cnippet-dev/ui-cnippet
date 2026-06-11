@@ -5,10 +5,10 @@ import { VerticalCutReveal } from "@/registry/default/motion/vertical-cut-reveal
 export default function VerticalCutRevealHero() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-2 px-6">
-      <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+      <p className="font-medium text-muted-foreground text-sm uppercase tracking-widest">
         Announcing
       </p>
-      <h1 className="text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl">
         <VerticalCutReveal
           splitBy="words"
           staggerDuration={0.18}

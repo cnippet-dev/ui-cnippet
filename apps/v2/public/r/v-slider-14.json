@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-14",
+  "description": "Temperature Control",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ThermometerIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Slider } from \"@/registry/default/ui/slider\";\r\n\r\nexport default function Particle() {\r\n  const [temp, setTemp] = useState(22);\r\n\r\n  const color =\r\n    temp <= 18\r\n      ? \"text-blue-500\"\r\n      : temp <= 24\r\n        ? \"text-green-500\"\r\n        : \"text-orange-500\";\r\n\r\n  const label =\r\n    temp <= 18 ? \"Too cold\" : temp <= 24 ? \"Comfortable\" : \"Too warm\";\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border p-5\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <ThermometerIcon aria-hidden=\"true\" className={`size-5 ${color}`} />\r\n        <p className=\"font-medium text-sm\">Room Temperature</p>\r\n        <span className={`ml-auto font-semibold tabular-nums ${color}`}>\r\n          {temp}°C\r\n        </span>\r\n      </div>\r\n      <Slider\r\n        aria-label=\"Temperature\"\r\n        max={30}\r\n        min={10}\r\n        onValueChange={(v) => setTemp(Array.isArray(v) ? (v[0] ?? 22) : v)}\r\n        step={1}\r\n        value={[temp]}\r\n      />\r\n      <div className=\"flex justify-between text-muted-foreground text-xs\">\r\n        <span>10°C</span>\r\n        <span className=\"font-medium text-foreground\">{label}</span>\r\n        <span>30°C</span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

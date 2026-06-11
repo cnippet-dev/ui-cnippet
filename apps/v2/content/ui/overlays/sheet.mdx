@@ -1,6 +1,6 @@
 ---
 title: Sheet
-description: A flyout that opens from the side of the screen, based on the dialog component.
+description: A flyout that opens from the side of the screen, based on the dialog component. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/dialog#api-reference
@@ -126,6 +126,66 @@ The `SheetPopup` component supports the following props:
 </SheetPopup>
 ```
 
+## API Reference
+
+### Sheet
+
+Root provider. Wraps Base UI `Dialog.Root`.
+
+### SheetTrigger
+
+Button that opens the sheet.
+
+### SheetClose
+
+Button that closes the sheet.
+
+### SheetPopup
+
+The sliding panel. Also exported as `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"right" \| "left" \| "top" \| "bottom"` | `"right"` | Edge the sheet slides in from |
+| `variant` | `"default" \| "inset"` | `"default"` | `inset` adds screen-edge spacing on desktop |
+| `showCloseButton` | `boolean` | `true` | Renders an ✕ close button |
+| `closeProps` | `SheetPrimitive.Close.Props` | — | Props forwarded to the built-in close button |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### SheetHeader
+
+Container for `SheetTitle` and `SheetDescription`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### SheetFooter
+
+Action button row at the bottom of the sheet.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### SheetTitle
+
+Accessible title element.
+
+### SheetDescription
+
+Accessible description.
+
+### SheetPanel
+
+Scrollable content region. Automatically wrapped in `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `true` | Fades scroll edges |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
 ## Examples
 
 ### Sheet with Inset
@@ -177,3 +237,33 @@ A left-side sheet used as a mobile navigation drawer. Grouped nav links with a b
 A wide sheet that surfaces the full context of a task — status, priority, due date, description, and threaded comments — without navigating away from the current view.
 
 <ComponentPreview name="v-sheet-10" />
+
+### Export Data Panel
+
+Choose between CSV, JSON, and TXT formats, set a filename, and review what the export includes — all before hitting Download.
+
+<ComponentPreview name="v-sheet-11" />
+
+### User Profile Viewer
+
+A slide-over profile card showing an avatar, bio, repository stats, and social links — with a Follow action in the footer.
+
+<ComponentPreview name="v-sheet-12" />
+
+### Support Contact Form
+
+Category chip selector, subject input, and a message textarea. On submit the panel switches to a confirmation state without closing.
+
+<ComponentPreview name="v-sheet-13" />
+
+### Keyboard Shortcuts Reference
+
+A read-only cheat sheet grouping shortcuts by General, Editor, and View — each key rendered as a `Badge` in monospace style.
+
+<ComponentPreview name="v-sheet-14" />
+
+### API Key Manager
+
+Lists active API keys with their prefix, creation date, and last-used time. Each key has a rotate (with spinner) and revoke action.
+
+<ComponentPreview name="v-sheet-15" />

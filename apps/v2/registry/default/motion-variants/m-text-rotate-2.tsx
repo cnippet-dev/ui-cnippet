@@ -1,7 +1,10 @@
 "use client";
 
-import { TextRotate, type TextRotateRef } from "@/registry/default/motion/text-rotate";
 import { useRef } from "react";
+import {
+  TextRotate,
+  type TextRotateRef,
+} from "@/registry/default/motion/text-rotate";
 
 const steps = [
   "Pick a component",
@@ -16,7 +19,7 @@ export default function TextRotateManual() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-6 px-6">
       <div className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <p className="font-semibold text-muted-foreground text-xs uppercase tracking-widest">
           How it works
         </p>
         <TextRotate
@@ -33,14 +36,14 @@ export default function TextRotateManual() {
       </div>
       <div className="flex gap-2">
         <button
-          className="rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-foreground hover:bg-accent/80"
+          className="rounded-md bg-accent px-3 py-1.5 font-medium text-foreground text-sm hover:bg-accent/80"
           onClick={() => ref.current?.previous()}
           type="button"
         >
           ← Prev
         </button>
         <button
-          className="rounded-md bg-foreground px-3 py-1.5 text-sm font-medium text-background hover:bg-foreground/80"
+          className="rounded-md bg-foreground px-3 py-1.5 font-medium text-background text-sm hover:bg-foreground/80"
           onClick={() => ref.current?.next()}
           type="button"
         >

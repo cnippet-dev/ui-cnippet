@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-scroll-area-13",
+  "description": "Sidebar Navigation",
+  "registryDependencies": [
+    "@cnippet/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-scroll-area-13.tsx",
+      "content": "import {\r\n  BellIcon,\r\n  FolderIcon,\r\n  LayoutDashboardIcon,\r\n  SettingsIcon,\r\n  ShieldIcon,\r\n  UsersIcon,\r\n} from \"lucide-react\";\r\nimport { ScrollArea } from \"@/registry/default/ui/scroll-area\";\r\n\r\nconst sections = [\r\n  {\r\n    items: [\r\n      { Icon: LayoutDashboardIcon, label: \"Overview\" },\r\n      { Icon: FolderIcon, label: \"Projects\" },\r\n      { Icon: UsersIcon, label: \"Team\" },\r\n    ],\r\n    title: \"Workspace\",\r\n  },\r\n  {\r\n    items: [\r\n      { Icon: SettingsIcon, label: \"General\" },\r\n      { Icon: ShieldIcon, label: \"Security\" },\r\n      { Icon: UsersIcon, label: \"Members\" },\r\n    ],\r\n    title: \"Settings\",\r\n  },\r\n  {\r\n    items: [\r\n      { Icon: FolderIcon, label: \"Assets\" },\r\n      { Icon: LayoutDashboardIcon, label: \"Analytics\" },\r\n      { Icon: BellIcon, label: \"Alerts\" },\r\n    ],\r\n    title: \"Resources\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <ScrollArea className=\"h-72 w-48 rounded-lg border\">\r\n      <div className=\"flex flex-col gap-4 p-3\">\r\n        {sections.map(({ items, title }) => (\r\n          <div key={title}>\r\n            <p className=\"mb-1 px-2 font-medium text-muted-foreground text-xs uppercase tracking-wide\">\r\n              {title}\r\n            </p>\r\n            <div className=\"flex flex-col gap-0.5\">\r\n              {items.map(({ Icon, label }, idx) => (\r\n                <button\r\n                  className={`flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent ${title === \"Workspace\" && idx === 0 ? \"bg-accent\" : \"\"}`}\r\n                  key={label}\r\n                  type=\"button\"\r\n                >\r\n                  <Icon aria-hidden=\"true\" className=\"size-4 opacity-70\" />\r\n                  {label}\r\n                </button>\r\n              ))}\r\n            </div>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </ScrollArea>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:block"
+}

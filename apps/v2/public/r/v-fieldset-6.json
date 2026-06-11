@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-6",
-  "description": "Basic fieldset",
+  "description": "Payment information fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-6.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"flex w-full flex-col gap-5\">\r\n      <FieldsetLegend>Payment Information</FieldsetLegend>\r\n      <Field>\r\n        <FieldLabel>\r\n          Cardholder name <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input\r\n          autoComplete=\"cc-name\"\r\n          placeholder=\"Jane Smith\"\r\n          required\r\n          type=\"text\"\r\n        />\r\n        <FieldError>Cardholder name is required.</FieldError>\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>\r\n          Card number <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input\r\n          autoComplete=\"cc-number\"\r\n          inputMode=\"numeric\"\r\n          placeholder=\"1234 5678 9012 3456\"\r\n          required\r\n          type=\"text\"\r\n        />\r\n        <FieldError>Please enter a valid card number.</FieldError>\r\n      </Field>\r\n      <div className=\"grid grid-cols-2 gap-4\">\r\n        <Field>\r\n          <FieldLabel>\r\n            Expiry date <span className=\"text-destructive-foreground\">*</span>\r\n          </FieldLabel>\r\n          <Input\r\n            autoComplete=\"cc-exp\"\r\n            placeholder=\"MM / YY\"\r\n            required\r\n            type=\"text\"\r\n          />\r\n          <FieldError>Invalid expiry date.</FieldError>\r\n        </Field>\r\n        <Field>\r\n          <FieldLabel>\r\n            CVC <span className=\"text-destructive-foreground\">*</span>\r\n          </FieldLabel>\r\n          <Input\r\n            autoComplete=\"cc-csc\"\r\n            inputMode=\"numeric\"\r\n            placeholder=\"123\"\r\n            required\r\n            type=\"text\"\r\n          />\r\n          <FieldDescription>3 or 4 digits on your card.</FieldDescription>\r\n          <FieldError>Invalid CVC.</FieldError>\r\n        </Field>\r\n      </div>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

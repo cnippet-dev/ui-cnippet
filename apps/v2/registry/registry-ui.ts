@@ -449,7 +449,7 @@ export const ui: Registry["items"] = [
         "--animate-caret-blink": "1s ease-out infinite caret-blink",
       },
     },
-    dependencies: ["otp-field"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "ui/otp-field.tsx",

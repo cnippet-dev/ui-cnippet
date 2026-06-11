@@ -1,9 +1,189 @@
 ---
 title: Date Picker
-description: A date picker component built with Calendar and Popover.
+description: A date picker component built with Calendar and Popover. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/date-picker#api-reference
 ---
 
 <ComponentPreview name="v-date-picker-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/date-picker
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-day-picker date-fns
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar" title="components/ui/calendar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+A date picker is built by composing `Calendar` inside a `Popover`. There is no separate date-picker component file — copy the pieces you need.
+
+```tsx
+import { useState } from "react"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverPopup,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```tsx
+export function DatePicker() {
+  const [date, setDate] = useState<Date>()
+
+  return (
+    <Popover>
+      <PopoverTrigger render={<Button variant="outline" />}>
+        <CalendarIcon />
+        {date ? format(date, "PPP") : "Pick a date"}
+      </PopoverTrigger>
+      <PopoverPopup>
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </PopoverPopup>
+    </Popover>
+  )
+}
+```
+
+## API Reference
+
+A date picker is a composition of `Calendar` inside a `Popover` — there is no separate component file. The following props cover the pieces you'll combine.
+
+### Calendar (inside the popover)
+
+See the [Calendar API Reference](/ui/pickers/calendar#api-reference) for the full prop list. Common props when used inside a date picker:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `mode` | `"single" \| "multiple" \| "range"` | `"single"` | Date selection mode |
+| `selected` | `Date \| DateRange \| Date[]` | — | Controlled selected date(s) |
+| `onSelect` | `(date) => void` | — | Called when the user selects a date |
+| `disabled` | `Matcher \| Matcher[]` | — | Rules for disabling specific days |
+| `initialFocus` | `boolean` | — | Auto-focuses the calendar when it mounts inside a popover |
+
+### PopoverPopup (wrapping the Calendar)
+
+See the [Popover API Reference](/ui/overlays/popover#api-reference). The popover closes when the user selects a date if you call the popover's close handle in `onSelect`.
+
+## Examples
+
+### Date Range
+
+A range picker using `mode="range"` that highlights all days between the selected start and end date.
+
+<ComponentPreview name="v-date-picker-2" />
+
+### Dropdown Navigation
+
+Year and month selection via a searchable `Combobox` dropdown, spanning 1900 to today — useful for date-of-birth or historical date inputs.
+
+<ComponentPreview name="v-date-picker-3" />
+
+### With Presets
+
+Quick-select buttons for common offsets (Today, Tomorrow, In 3 days, In a week) alongside a full calendar so users can jump to frequent dates in one click.
+
+<ComponentPreview name="v-date-picker-4" />
+
+### With Input
+
+Combines a native `type="date"` text field with a popover calendar — users can type a date directly or open the picker, and both stay in sync.
+
+<ComponentPreview name="v-date-picker-5" />
+
+### Auto-close on Select
+
+Closes the popover immediately after a date is chosen, reducing the number of clicks needed for a simple selection task.
+
+<ComponentPreview name="v-date-picker-6" />
+
+### Appointment Booking
+
+Displays a specialist card with available time slots that update per selected date — booked slots are struck through and disabled, confirming only when both a date and slot are chosen.
+
+<ComponentPreview name="v-date-picker-7" />
+
+### Team Meeting Scheduler
+
+Pick a date to instantly see each team member's availability (Free / Busy) based on their schedule — weekends are disabled, and the invite button stays locked until a valid day is chosen.
+
+<ComponentPreview name="v-date-picker-8" />
+
+### Delivery Date Selector
+
+Choose between Standard and Express shipping — the calendar disables ineligible dates per method (no weekends for Standard), and the estimated delivery window updates live as the user picks a date.
+
+<ComponentPreview name="v-date-picker-9" />
+
+### Task Deadline Reschedule
+
+A project task card with assignee avatars and a protected date picker — the calendar requires explicit **Apply** before the deadline updates, preventing accidental changes; a **Rescheduled** badge and the original date appear once a new deadline is set.
+
+<ComponentPreview name="v-date-picker-10" />
+
+### Report Period Range with Presets
+
+Quick-select month and multi-month preset buttons (This month, Next month, Next 3 months, Next 6 months) paired with a 2-month range calendar and a day-count badge in the trigger.
+
+<ComponentPreview name="v-date-picker-11" />
+
+### Recurring Event Date Picker
+
+A single date picker combined with recurrence pill buttons (Does not repeat, Daily, Weekly, Monthly) that outputs a human-readable schedule summary below.
+
+<ComponentPreview name="v-date-picker-12" />
+
+### Hotel Stay Range with Duration Shortcuts
+
+Duration shortcut buttons (1 week, 2 weeks, 1 month) snap the range instantly; the trigger badge shows the night count and a Clear / Done footer controls the popover.
+
+<ComponentPreview name="v-date-picker-13" />
+
+### Birthday Picker with Age Validation
+
+A dropdown-navigation calendar scoped to the 18–100 year age window, auto-closing on selection and displaying the computed age below the input.
+
+<ComponentPreview name="v-date-picker-14" />
+
+### Multi-date Availability Selector
+
+A multiple-selection calendar for picking available days, with removable chip tags below the trigger and a night-count badge summarising the selection.
+
+<ComponentPreview name="v-date-picker-15" />

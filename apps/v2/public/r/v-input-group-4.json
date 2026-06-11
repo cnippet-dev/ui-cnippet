@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-4.tsx",
-      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n  InputGroupText,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Choose a username\"\r\n        placeholder=\"Choose a username\"\r\n        type=\"text\"\r\n      />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <InputGroupText>@coss.com</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
+      "content": "import {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n  InputGroupText,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Choose a username\"\r\n        placeholder=\"Choose a username\"\r\n        type=\"text\"\r\n      />\r\n      <InputGroupAddon align=\"inline-end\">\r\n        <InputGroupText>@ui.cnippet.dev</InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

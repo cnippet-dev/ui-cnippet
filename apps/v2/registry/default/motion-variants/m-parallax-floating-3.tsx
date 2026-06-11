@@ -25,7 +25,7 @@ export default function ParallaxFloatingSymbols() {
           </FloatingElement>
         ))}
       </ParallaxFloating>
-      <p className="relative z-10 text-center text-sm font-medium text-muted-foreground">
+      <p className="relative z-10 text-center font-medium text-muted-foreground text-sm">
         Cursor drives each symbol at a unique depth
       </p>
     </div>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-preview-card-11",
+  "description": "Basic preview card",
+  "registryDependencies": [
+    "@cnippet/preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-preview-card-11.tsx",
+      "content": "import { UserIcon } from \"lucide-react\";\r\nimport {\r\n  PreviewCard,\r\n  PreviewCardPopup,\r\n  PreviewCardTrigger,\r\n} from \"@/registry/default/ui/preview-card\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <p className=\"text-sm\">\r\n      Designed by{\" \"}\r\n      <PreviewCard>\r\n        <PreviewCardTrigger className=\"cursor-pointer font-medium underline decoration-dashed underline-offset-4\">\r\n          @sarah_designs\r\n        </PreviewCardTrigger>\r\n        <PreviewCardPopup>\r\n          <div className=\"flex flex-col gap-3\">\r\n            <div className=\"flex items-center gap-3\">\r\n              <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full bg-muted\">\r\n                <UserIcon\r\n                  aria-hidden=\"true\"\r\n                  className=\"size-5 text-muted-foreground\"\r\n                />\r\n              </div>\r\n              <div>\r\n                <p className=\"font-semibold text-sm\">Sarah Kim</p>\r\n                <p className=\"text-muted-foreground text-xs\">@sarah_designs</p>\r\n              </div>\r\n            </div>\r\n            <p className=\"text-muted-foreground text-sm\">\r\n              Senior product designer. Open to work. Based in San Francisco.\r\n            </p>\r\n            <div className=\"flex gap-4 text-muted-foreground text-xs\">\r\n              <span>\r\n                <strong className=\"text-foreground\">2.4k</strong> followers\r\n              </span>\r\n              <span>\r\n                <strong className=\"text-foreground\">312</strong> following\r\n              </span>\r\n            </div>\r\n          </div>\r\n        </PreviewCardPopup>\r\n      </PreviewCard>{\" \"}\r\n      for the launch.\r\n    </p>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:block"
+}

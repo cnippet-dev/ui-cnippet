@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tooltip-17",
+  "description": "Deployment pipeline steps with status and detail per stage",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tooltip-17.tsx",
+      "content": "import {\r\n  CheckCircle2Icon,\r\n  CircleIcon,\r\n  LoaderIcon,\r\n  XCircleIcon,\r\n} from \"lucide-react\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from \"@/registry/default/ui/tooltip\";\r\n\r\ntype StepStatus = \"done\" | \"running\" | \"pending\" | \"failed\";\r\n\r\ntype PipelineStep = {\r\n  name: string;\r\n  status: StepStatus;\r\n  duration: string;\r\n  detail: string;\r\n};\r\n\r\nconst steps: PipelineStep[] = [\r\n  {\r\n    detail: \"All 248 unit tests passed in 14 s.\",\r\n    duration: \"14 s\",\r\n    name: \"Test\",\r\n    status: \"done\",\r\n  },\r\n  {\r\n    detail: \"TypeScript compiled without errors; bundle size 142 kB.\",\r\n    duration: \"22 s\",\r\n    name: \"Build\",\r\n    status: \"done\",\r\n  },\r\n  {\r\n    detail: \"Docker image pushed to registry as v2.4.1.\",\r\n    duration: \"31 s\",\r\n    name: \"Publish\",\r\n    status: \"done\",\r\n  },\r\n  {\r\n    detail: \"Rolling update in progress — 3 of 5 pods updated.\",\r\n    duration: \"~45 s\",\r\n    name: \"Deploy\",\r\n    status: \"running\",\r\n  },\r\n  {\r\n    detail: \"Smoke tests will run once all pods are healthy.\",\r\n    duration: \"—\",\r\n    name: \"Verify\",\r\n    status: \"pending\",\r\n  },\r\n];\r\n\r\nconst statusIcon: Record<StepStatus, React.ReactElement> = {\r\n  done: <CheckCircle2Icon className=\"size-5 text-emerald-500\" />,\r\n  failed: <XCircleIcon className=\"size-5 text-red-500\" />,\r\n  pending: <CircleIcon className=\"size-5 text-muted-foreground\" />,\r\n  running: <LoaderIcon className=\"size-5 animate-spin text-blue-500\" />,\r\n};\r\n\r\nconst statusLabel: Record<StepStatus, string> = {\r\n  done: \"Completed\",\r\n  failed: \"Failed\",\r\n  pending: \"Waiting\",\r\n  running: \"In progress\",\r\n};\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex items-center gap-1 rounded-xl border bg-card px-5 py-4\">\r\n      <TooltipProvider>\r\n        {steps.map(({ name, status, duration, detail }, index) => (\r\n          <div className=\"flex items-center gap-1\" key={name}>\r\n            {index > 0 && (\r\n              <div\r\n                className={`h-px w-8 ${\r\n                  status === \"done\" ? \"bg-emerald-500\" : \"bg-border\"\r\n                }`}\r\n              />\r\n            )}\r\n            <Tooltip>\r\n              <TooltipTrigger className=\"flex cursor-default flex-col items-center gap-1\">\r\n                {statusIcon[status]}\r\n                <span className=\"text-muted-foreground text-xs\">{name}</span>\r\n              </TooltipTrigger>\r\n              <TooltipContent className=\"p-2.5\">\r\n                <p className=\"font-medium\">{name}</p>\r\n                <p className=\"text-muted-foreground\">{statusLabel[status]}</p>\r\n                <p className=\"text-muted-foreground\">Duration: {duration}</p>\r\n                <p className=\"mt-1 max-w-48 text-muted-foreground\">{detail}</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n          </div>\r\n        ))}\r\n      </TooltipProvider>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:block"
+}

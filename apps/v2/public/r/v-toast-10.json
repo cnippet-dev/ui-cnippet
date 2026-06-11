@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toast-10",
-  "description": "Basic toast",
+  "description": "Auto-progressing Deploy Pipeline",
   "registryDependencies": [
     "@cnippet/toast"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toast-10.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { useRef, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Spinner } from \"@/registry/default/ui/spinner\";\r\nimport { toastManager } from \"@/registry/default/ui/toast\";\r\n\r\ntype DeployState = \"idle\" | \"running\";\r\n\r\nconst steps = [\r\n  {\r\n    delay: 0,\r\n    description: \"Compiling and bundling your project…\",\r\n    timeout: 0,\r\n    title: \"Building\",\r\n    type: \"loading\" as const,\r\n  },\r\n  {\r\n    delay: 2500,\r\n    description: \"All 48 tests passed with no failures.\",\r\n    timeout: 3500,\r\n    title: \"Tests passed\",\r\n    type: \"success\" as const,\r\n  },\r\n  {\r\n    delay: 5000,\r\n    description: \"Live at https://acme.vercel.app\",\r\n    timeout: 6000,\r\n    title: \"Deployed to production\",\r\n    type: \"success\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [state, setState] = useState<DeployState>(\"idle\");\r\n  const activeIdRef = useRef<string | null>(null);\r\n\r\n  function deploy() {\r\n    if (state === \"running\") return;\r\n    setState(\"running\");\r\n\r\n    steps.forEach(({ delay, timeout, ...toast }, i) => {\r\n      setTimeout(() => {\r\n        if (activeIdRef.current) {\r\n          toastManager.close(activeIdRef.current);\r\n          activeIdRef.current = null;\r\n        }\r\n        activeIdRef.current = toastManager.add({ ...toast, timeout });\r\n        if (i === steps.length - 1) {\r\n          setTimeout(() => setState(\"idle\"), 1000);\r\n        }\r\n      }, delay);\r\n    });\r\n  }\r\n\r\n  return (\r\n    <Button disabled={state === \"running\"} onClick={deploy} variant=\"outline\">\r\n      {state === \"running\" ? (\r\n        <>\r\n          <Spinner />\r\n          Deploying…\r\n        </>\r\n      ) : (\r\n        \"Deploy to production\"\r\n      )}\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

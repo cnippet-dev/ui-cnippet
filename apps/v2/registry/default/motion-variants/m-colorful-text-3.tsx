@@ -1,7 +1,9 @@
+//biome-ignore-all lint/style/noNonNullAssertion:<>
+
 "use client";
 
-import { ColorfulText } from "@/registry/default/motion/colorful-text";
 import { useState } from "react";
+import { ColorfulText } from "@/registry/default/motion/colorful-text";
 
 const phrases = [
   "Animate with purpose",
@@ -26,7 +28,7 @@ export default function ColorfulTextCycle() {
       <div className="flex h-16 items-center justify-center">
         <ColorfulText
           as="h2"
-          className="text-center text-2xl font-bold sm:text-3xl"
+          className="text-center font-bold text-2xl sm:text-3xl"
           key={index}
           staggerDuration={0.035}
           trigger={trigger}
@@ -35,7 +37,7 @@ export default function ColorfulTextCycle() {
         </ColorfulText>
       </div>
       <button
-        className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background hover:bg-foreground/80"
+        className="rounded-full bg-foreground px-5 py-2 font-medium text-background text-sm hover:bg-foreground/80"
         onClick={next}
         type="button"
       >

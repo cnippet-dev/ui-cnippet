@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-date-picker-6",
-  "description": "Basic date picker",
+  "description": "Auto-close on Select",
   "registryDependencies": [
     "@cnippet/date-picker"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-date-picker-6.tsx",
-      "content": "export default function Component() {\r\n  return <div>Date Picker</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { format } from \"date-fns\";\r\nimport { CalendarIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Calendar } from \"@/registry/default/ui/calendar\";\r\nimport {\r\n  Popover,\r\n  PopoverPopup,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\n\r\nexport default function Particle() {\r\n  const [date, setDate] = useState<Date | undefined>();\r\n  const [open, setOpen] = useState(false);\r\n\r\n  const handleSelect = (selectedDate: Date | undefined) => {\r\n    setDate(selectedDate);\r\n    setOpen(false);\r\n  };\r\n\r\n  return (\r\n    <Popover onOpenChange={setOpen} open={open}>\r\n      <PopoverTrigger\r\n        render={<Button className=\"w-full justify-start\" variant=\"outline\" />}\r\n      >\r\n        <CalendarIcon />\r\n        {date ? format(date, \"PPP\") : \"Pick a date\"}\r\n      </PopoverTrigger>\r\n      <PopoverPopup>\r\n        <Calendar mode=\"single\" onSelect={handleSelect} selected={date} />\r\n      </PopoverPopup>\r\n    </Popover>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -10,7 +10,7 @@ export default function RandomLetterSwapNav() {
       <nav className="flex items-center gap-8">
         {links.map((link) => (
           <RandomLetterSwap
-            className="cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground"
+            className="cursor-pointer font-medium text-muted-foreground text-sm hover:text-foreground"
             key={link}
             label={link}
             staggerDuration={0.025}

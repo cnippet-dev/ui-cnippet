@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-12",
+  "description": "Sidebar filter panel with collapsible groups, checkboxes, and active count",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-12.tsx",
+      "content": "//biome-ignore-all lint/style/noNonNullAssertion:<>\r\n\"use client\";\r\n\r\nimport { ChevronDownIcon, FilterIcon, XIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\nimport {\r\n  Collapsible,\r\n  CollapsiblePanel,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/default/ui/collapsible\";\r\n\r\nconst FILTERS = [\r\n  {\r\n    id: \"category\",\r\n    label: \"Category\",\r\n    options: [\"Design\", \"Engineering\", \"Marketing\", \"Operations\"],\r\n  },\r\n  {\r\n    id: \"status\",\r\n    label: \"Status\",\r\n    options: [\"Active\", \"Paused\", \"Archived\"],\r\n  },\r\n  {\r\n    id: \"priority\",\r\n    label: \"Priority\",\r\n    options: [\"High\", \"Medium\", \"Low\"],\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [selected, setSelected] = useState<Record<string, Set<string>>>({});\r\n\r\n  const toggle = (group: string, opt: string) =>\r\n    setSelected((prev) => {\r\n      const next = { ...prev, [group]: new Set(prev[group] ?? []) };\r\n      next[group]!.has(opt) ? next[group]!.delete(opt) : next[group]!.add(opt);\r\n      return next;\r\n    });\r\n\r\n  const totalActive = Object.values(selected).reduce(\r\n    (sum, s) => sum + s.size,\r\n    0,\r\n  );\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <div className=\"flex items-center gap-2\">\r\n          <FilterIcon className=\"size-4 text-muted-foreground\" />\r\n          <p className=\"font-semibold text-sm\">Filters</p>\r\n          {totalActive > 0 && <Badge size=\"sm\">{totalActive}</Badge>}\r\n        </div>\r\n        {totalActive > 0 && (\r\n          <button\r\n            className=\"flex items-center gap-1 text-muted-foreground text-xs hover:text-foreground\"\r\n            onClick={() => setSelected({})}\r\n            type=\"button\"\r\n          >\r\n            <XIcon className=\"size-3\" />\r\n            Clear all\r\n          </button>\r\n        )}\r\n      </div>\r\n      {FILTERS.map((f) => (\r\n        <Collapsible defaultOpen key={f.id}>\r\n          <CollapsibleTrigger className=\"flex w-full items-center justify-between py-2 font-medium text-sm transition-colors hover:text-primary\">\r\n            <span className=\"flex items-center gap-2\">\r\n              {f.label}\r\n              {(selected[f.id]?.size ?? 0) > 0 && (\r\n                <Badge size=\"sm\" variant=\"secondary\">\r\n                  {selected[f.id]?.size}\r\n                </Badge>\r\n              )}\r\n            </span>\r\n            <ChevronDownIcon className=\"size-3.5 in-data-panel-open:rotate-180 text-muted-foreground transition-transform duration-200\" />\r\n          </CollapsibleTrigger>\r\n          <CollapsiblePanel>\r\n            <div className=\"space-y-1.5 pb-3\">\r\n              {f.options.map((opt) => (\r\n                <label\r\n                  className=\"flex cursor-pointer items-center gap-2 text-muted-foreground text-sm hover:text-foreground\"\r\n                  key={opt}\r\n                >\r\n                  <Checkbox\r\n                    checked={selected[f.id]?.has(opt) ?? false}\r\n                    onCheckedChange={() => toggle(f.id, opt)}\r\n                  />\r\n                  {opt}\r\n                </label>\r\n              ))}\r\n            </div>\r\n          </CollapsiblePanel>\r\n        </Collapsible>\r\n      ))}\r\n      <Button className=\"w-full\" size=\"sm\">\r\n        Apply filters\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

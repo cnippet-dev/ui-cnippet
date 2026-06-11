@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-alert-14",
+  "description": "Update available with async install feedback",
+  "registryDependencies": [
+    "@cnippet/alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-alert-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { DownloadIcon, PackageCheckIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Alert,\r\n  AlertAction,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/default/ui/alert\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nexport function Pattern() {\r\n  const [updating, setUpdating] = useState(false);\r\n  const [done, setDone] = useState(false);\r\n\r\n  const handleUpdate = () => {\r\n    setUpdating(true);\r\n    setTimeout(() => {\r\n      setUpdating(false);\r\n      setDone(true);\r\n    }, 2000);\r\n  };\r\n\r\n  return (\r\n    <div className=\"mx-auto mb-auto w-full max-w-lg\">\r\n      <Frame>\r\n        <FramePanel className=\"p-0!\">\r\n          <Alert\r\n            className=\"rounded-none border-0 shadow-none\"\r\n            variant={done ? \"success\" : \"info\"}\r\n          >\r\n            {done ? <PackageCheckIcon /> : <DownloadIcon />}\r\n            <AlertTitle>\r\n              {done ? \"You're up to date\" : \"Update available — v4.2.0\"}\r\n            </AlertTitle>\r\n            {!done && (\r\n              <AlertAction>\r\n                <Button disabled={updating} onClick={handleUpdate} size=\"xs\">\r\n                  {updating ? \"Updating…\" : \"Update now\"}\r\n                </Button>\r\n              </AlertAction>\r\n            )}\r\n            <AlertDescription>\r\n              {done\r\n                ? \"cnippet@4.2.0 is now installed. Restart your dev server to apply the changes.\"\r\n                : \"Includes performance improvements, 3 new components, and bug fixes.\"}\r\n            </AlertDescription>\r\n          </Alert>\r\n        </FramePanel>\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:block"
+}

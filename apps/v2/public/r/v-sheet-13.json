@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sheet-13",
+  "description": "Support Contact Form",
+  "registryDependencies": [
+    "@cnippet/sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sheet-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { HelpCircleIcon, SendIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetDescription,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetPanel,\r\n  SheetPopup,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/registry/default/ui/sheet\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\nconst categories = [\"Bug report\", \"Feature request\", \"Question\", \"Other\"];\r\n\r\nexport default function Particle() {\r\n  const [category, setCategory] = useState(\"Bug report\");\r\n  const [submitted, setSubmitted] = useState(false);\r\n\r\n  return (\r\n    <Sheet>\r\n      <SheetTrigger render={<Button variant=\"outline\" />}>\r\n        <HelpCircleIcon aria-hidden=\"true\" />\r\n        Get Support\r\n      </SheetTrigger>\r\n      <SheetPopup>\r\n        <SheetHeader>\r\n          <SheetTitle>Contact Support</SheetTitle>\r\n          <SheetDescription>\r\n            We typically respond within 24 hours.\r\n          </SheetDescription>\r\n        </SheetHeader>\r\n        {submitted ? (\r\n          <SheetPanel className=\"flex flex-col items-center justify-center gap-3 py-16 text-center\">\r\n            <div className=\"flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary\">\r\n              <SendIcon aria-hidden=\"true\" className=\"size-5\" />\r\n            </div>\r\n            <p className=\"font-medium\">Message sent!</p>\r\n            <p className=\"text-muted-foreground text-sm\">\r\n              Our team will get back to you shortly.\r\n            </p>\r\n          </SheetPanel>\r\n        ) : (\r\n          <SheetPanel className=\"space-y-4\">\r\n            <div className=\"space-y-2\">\r\n              <p className=\"font-medium text-sm\">Category</p>\r\n              <div className=\"flex flex-wrap gap-2\">\r\n                {categories.map((cat) => (\r\n                  <button\r\n                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${\r\n                      category === cat\r\n                        ? \"border-primary bg-primary text-primary-foreground\"\r\n                        : \"hover:bg-muted\"\r\n                    }`}\r\n                    key={cat}\r\n                    onClick={() => setCategory(cat)}\r\n                    type=\"button\"\r\n                  >\r\n                    {cat}\r\n                  </button>\r\n                ))}\r\n              </div>\r\n            </div>\r\n            <Field>\r\n              <FieldLabel>Subject</FieldLabel>\r\n              <Input\r\n                placeholder=\"Brief description of your issue\"\r\n                type=\"text\"\r\n              />\r\n            </Field>\r\n            <Field>\r\n              <FieldLabel>Message</FieldLabel>\r\n              <Textarea\r\n                className=\"min-h-28 resize-none\"\r\n                placeholder=\"Describe the problem in detail…\"\r\n              />\r\n            </Field>\r\n          </SheetPanel>\r\n        )}\r\n        <SheetFooter>\r\n          <SheetClose render={<Button variant=\"ghost\" />}>Cancel</SheetClose>\r\n          {!submitted && (\r\n            <Button onClick={() => setSubmitted(true)}>\r\n              <SendIcon aria-hidden=\"true\" />\r\n              Send Message\r\n            </Button>\r\n          )}\r\n        </SheetFooter>\r\n      </SheetPopup>\r\n    </Sheet>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sheet"
+  ],
+  "type": "registry:block"
+}

@@ -1,6 +1,8 @@
 ---
 title: Calendar
-description: A date field component that allows users to enter and edit date.
+description: A date field component that allows users to enter and edit date. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://daypicker.dev
 ---
 
 <ComponentPreview name="v-calendar-1" />
@@ -56,6 +58,22 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
   <AvatarFallback>JD</AvatarFallback>
 </Avatar>
 ``` */}
+
+## API Reference
+
+### Calendar
+
+A styled wrapper around [react-day-picker](https://daypicker.dev/)'s `DayPicker` component. All `DayPicker` props are forwarded.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `mode` | `"single" \| "multiple" \| "range"` | `"single"` | Date selection mode |
+| `showOutsideDays` | `boolean` | `true` | Shows days from adjacent months in the current view |
+| `selected` | `Date \| Date[] \| DateRange` | — | Controlled selected date(s) |
+| `onSelect` | `(date) => void` | — | Callback when the selection changes |
+| `disabled` | `Matcher \| Matcher[]` | — | Dates or rules for disabling specific days |
+| `components` | `CustomComponents` | — | Override internal sub-components (e.g. `DayButton`, `Chevron`) |
+| `classNames` | `ClassNames` | — | Override CSS class names for any internal element |
 
 ## Examples
 
@@ -130,3 +148,33 @@ Dropdown navigation spanning 1900 to today with future dates disabled and live a
 Clicking any day snaps the selection to its full ISO Monday–Sunday week, with week numbers shown.
 
 <ComponentPreview name="v-calendar-13" />
+
+### Habit Tracker
+
+A custom `DayButton` overlays a check icon on completed days with emerald styling, and a footer row shows the monthly streak count.
+
+<ComponentPreview name="v-calendar-16" />
+
+### Sprint Planner
+
+A two-month range picker for sprint planning that displays start date, end date, and total duration alongside an auto-calculated sprint number badge.
+
+<ComponentPreview name="v-calendar-17" />
+
+### Time Off Request
+
+A range picker paired with leave type pill selectors (Vacation, Sick Leave, Personal, WFH) and a submit button that clears the form on success.
+
+<ComponentPreview name="v-calendar-18" />
+
+### Mini Year View
+
+All twelve months of the current year rendered as compact calendar grids side by side, allowing a full year at a glance with single-date selection.
+
+<ComponentPreview name="v-calendar-19" />
+
+### Time Slot Booking
+
+Selecting a date reveals a grid of available and booked time slots; choosing a free slot enables a confirm button that resets the form on success.
+
+<ComponentPreview name="v-calendar-20" />

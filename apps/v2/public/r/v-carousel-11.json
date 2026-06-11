@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-carousel-11",
+  "description": "Testimonial carousel with avatar, quote, and dot indicators",
+  "registryDependencies": [
+    "@cnippet/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-11.tsx",
+      "content": "//biome-ignore-all lint/suspicious/noArrayIndexKey:<>\r\n\"use client\";\r\n\r\nimport useEmblaCarousel from \"embla-carousel-react\";\r\nimport { QuoteIcon } from \"lucide-react\";\r\nimport * as React from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst TESTIMONIALS = [\r\n  {\r\n    avatar: \"AK\",\r\n    name: \"Alex Kim\",\r\n    quote:\r\n      \"Dropped ui-cnippet into our Next.js app in under an hour. The components are polished and the DX is excellent.\",\r\n    role: \"CTO, Launchpad\",\r\n  },\r\n  {\r\n    avatar: \"SR\",\r\n    name: \"Sara Reyes\",\r\n    quote:\r\n      \"Finally a library that treats accessibility as a first-class feature, not an afterthought.\",\r\n    role: \"Lead Designer, Craft\",\r\n  },\r\n  {\r\n    avatar: \"MN\",\r\n    name: \"Marcus Ng\",\r\n    quote:\r\n      \"The Tailwind integration is seamless. I was able to match our brand without touching any source files.\",\r\n    role: \"Frontend Engineer, Orbit\",\r\n  },\r\n  {\r\n    avatar: \"JP\",\r\n    name: \"Jade Park\",\r\n    quote:\r\n      \"Honestly the best component library I've used. Shadcn-compatible and actively maintained.\",\r\n    role: \"Indie Developer\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });\r\n  const [current, setCurrent] = React.useState(0);\r\n\r\n  React.useEffect(() => {\r\n    if (!emblaApi) return;\r\n    const onSelect = () => setCurrent(emblaApi.selectedScrollSnap());\r\n    emblaApi.on(\"select\", onSelect);\r\n    return () => {\r\n      emblaApi.off(\"select\", onSelect);\r\n    };\r\n  }, [emblaApi]);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4\">\r\n      <div className=\"overflow-hidden rounded-xl\" ref={emblaRef}>\r\n        <div className=\"flex\">\r\n          {TESTIMONIALS.map((t, i) => (\r\n            <div className=\"min-w-0 shrink-0 grow-0 basis-full\" key={i}>\r\n              <div className=\"flex flex-col gap-4 rounded-xl border bg-card p-6\">\r\n                <QuoteIcon className=\"size-5 text-primary\" />\r\n                <p className=\"text-sm leading-relaxed\">{t.quote}</p>\r\n                <div className=\"flex items-center gap-3\">\r\n                  <div className=\"flex size-9 items-center justify-center rounded-full bg-primary font-bold text-[11px] text-primary-foreground\">\r\n                    {t.avatar}\r\n                  </div>\r\n                  <div>\r\n                    <p className=\"font-semibold text-sm\">{t.name}</p>\r\n                    <p className=\"text-muted-foreground text-xs\">{t.role}</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          ))}\r\n        </div>\r\n      </div>\r\n      <div className=\"flex justify-center gap-1.5\">\r\n        {TESTIMONIALS.map((_, i) => (\r\n          <button\r\n            aria-label={`Go to slide ${i + 1}`}\r\n            className={cn(\r\n              \"h-1.5 rounded-full transition-all duration-300\",\r\n              i === current ? \"w-6 bg-primary\" : \"w-1.5 bg-muted-foreground/30\",\r\n            )}\r\n            key={i}\r\n            onClick={() => emblaApi?.scrollTo(i)}\r\n            type=\"button\"\r\n          />\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "carousel"
+  ],
+  "type": "registry:block"
+}

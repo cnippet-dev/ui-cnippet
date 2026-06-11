@@ -33,10 +33,7 @@ export default function StackingCardsSteps() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      className="relative h-56 overflow-y-auto px-6"
-      ref={containerRef}
-    >
+    <div className="relative h-56 overflow-y-auto px-6" ref={containerRef}>
       <StackingCards
         className="mx-auto h-[600px] w-full max-w-sm"
         scaleMultiplier={0.04}
@@ -46,12 +43,12 @@ export default function StackingCardsSteps() {
         {steps.map((s, i) => (
           <StackingCardItem index={i} key={s.step} topPosition={`${i * 14}px`}>
             <div className="flex h-32 items-start gap-4 rounded-2xl border border-border bg-card p-5">
-              <span className="text-3xl font-black text-primary/20">
+              <span className="font-black text-3xl text-primary/20">
                 {s.step}
               </span>
               <div>
                 <h3 className="font-bold text-foreground">{s.title}</h3>
-                <p className="mt-0.5 text-xs text-muted-foreground">
+                <p className="mt-0.5 text-muted-foreground text-xs">
                   {s.description}
                 </p>
               </div>

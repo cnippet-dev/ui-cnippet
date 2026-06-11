@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-18",
+  "description": "Pull request comment thread",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-18.tsx",
+      "content": "import { HeartIcon, MessageCircleIcon } from \"lucide-react\";\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/default/ui/avatar\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nconst comments = [\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&dpr=2&q=80\",\r\n    body: \"This is a great addition! The implementation looks clean. One suggestion — could we add a `size` variant for compact use cases as well?\",\r\n    initials: \"AJ\",\r\n    likes: 4,\r\n    name: \"Alex Johnson\",\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    avatar:\r\n      \"https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=96&h=96&dpr=2&q=80\",\r\n    body: \"Agreed on the size variants. Also, the aria-label is missing on the icon-only button — should be easy to fix before merging.\",\r\n    initials: \"SC\",\r\n    likes: 2,\r\n    name: \"Sarah Chen\",\r\n    time: \"1h ago\",\r\n  },\r\n  {\r\n    avatar: \"https://github.com/shadcn.png\",\r\n    body: \"Good catches, both addressed in the latest commit. Marking as ready for review.\",\r\n    initials: \"SH\",\r\n    likes: 7,\r\n    name: \"shadcn\",\r\n    time: \"45m ago\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-lg\">\r\n      <Frame>\r\n        <FramePanel className=\"flex items-center gap-2 px-4 py-2.5!\">\r\n          <MessageCircleIcon className=\"size-4 text-muted-foreground\" />\r\n          <span className=\"font-medium text-sm\">\r\n            {comments.length} comments\r\n          </span>\r\n        </FramePanel>\r\n        {comments.map((c, i) => (\r\n          <FramePanel\r\n            className={i === comments.length - 1 ? \"rounded-b-xl\" : \"\"}\r\n            key={c.initials}\r\n          >\r\n            <div className=\"flex gap-3\">\r\n              <Avatar className=\"mt-0.5 size-7 shrink-0\">\r\n                <AvatarImage alt={c.name} src={c.avatar} />\r\n                <AvatarFallback className=\"text-xs\">\r\n                  {c.initials}\r\n                </AvatarFallback>\r\n              </Avatar>\r\n              <div className=\"flex flex-1 flex-col gap-1.5\">\r\n                <div className=\"flex items-center gap-2\">\r\n                  <span className=\"font-semibold text-sm\">{c.name}</span>\r\n                  <span className=\"text-muted-foreground text-xs\">\r\n                    {c.time}\r\n                  </span>\r\n                </div>\r\n                <p className=\"text-muted-foreground text-sm leading-relaxed\">\r\n                  {c.body}\r\n                </p>\r\n                <Button\r\n                  className=\"h-auto w-fit gap-1 p-0 text-muted-foreground\"\r\n                  size=\"xs\"\r\n                  variant=\"ghost\"\r\n                >\r\n                  <HeartIcon className=\"size-3.5\" />\r\n                  <span className=\"text-xs\">{c.likes}</span>\r\n                </Button>\r\n              </div>\r\n            </div>\r\n          </FramePanel>\r\n        ))}\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

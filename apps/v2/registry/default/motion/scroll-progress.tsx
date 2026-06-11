@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export type ScrollProgressProps = {
   className?: string;
   springOptions?: SpringOptions;
-  containerRef?: RefObject<HTMLDivElement>;
+  containerRef?: RefObject<HTMLDivElement | null>;
 };
 
 const DEFAULT_SPRING_OPTIONS: SpringOptions = {
@@ -23,7 +23,6 @@ export function ScrollProgress({
 }: ScrollProgressProps) {
   const { scrollYProgress } = useScroll({
     container: containerRef,
-    layoutEffect: Boolean(containerRef?.current),
   });
 
   const scaleX = useSpring(scrollYProgress, {

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-separator-11",
+  "description": "Social Stats Bar",
+  "registryDependencies": [
+    "@cnippet/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-separator-11.tsx",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex items-center gap-3 text-sm\">\r\n      <div className=\"flex items-center gap-1.5\">\r\n        <span className=\"font-semibold\">2.4k</span>\r\n        <span className=\"text-muted-foreground\">Followers</span>\r\n      </div>\r\n      <Separator className=\"h-4\" orientation=\"vertical\" />\r\n      <div className=\"flex items-center gap-1.5\">\r\n        <span className=\"font-semibold\">148</span>\r\n        <span className=\"text-muted-foreground\">Following</span>\r\n      </div>\r\n      <Separator className=\"h-4\" orientation=\"vertical\" />\r\n      <div className=\"flex items-center gap-1.5\">\r\n        <span className=\"font-semibold\">37</span>\r\n        <span className=\"text-muted-foreground\">Posts</span>\r\n      </div>\r\n      <Separator className=\"h-4\" orientation=\"vertical\" />\r\n      <div className=\"flex items-center gap-1.5\">\r\n        <span className=\"font-semibold\">9.1k</span>\r\n        <span className=\"text-muted-foreground\">Likes</span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "separator"
+  ],
+  "type": "registry:block"
+}

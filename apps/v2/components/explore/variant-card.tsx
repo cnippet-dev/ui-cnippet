@@ -37,7 +37,7 @@ function CopyRawButton({ raw }: { raw: string }) {
       aria-label="Copy code"
       className={cn(
         "absolute top-2 right-2 z-10 size-7 opacity-0 transition-opacity group-hover:opacity-100",
-        isCopied && "text-green-400 opacity-100",
+        isCopied && "text-green-600 opacity-100 dark:text-green-400",
       )}
       onClick={() => copyToClipboard(raw)}
       size="icon-sm"
@@ -65,7 +65,7 @@ function CodeBlock({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-lg bg-(--color-code)",
+        "group relative overflow-hidden rounded-lg border bg-(--color-code) dark:border-none",
         className,
       )}
     >
@@ -86,7 +86,7 @@ function CodeBlock({
         )}
       </Button>
       <div
-        className="overflow-auto text-[.8125rem] [&_pre]:p-4"
+        className="overflow-auto text-[.8125rem] [&_pre]:bg-transparent! [&_pre]:p-4"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>
@@ -96,15 +96,15 @@ function CodeBlock({
 function InlineCommand({ command }: { command: string }) {
   const { isCopied, copyToClipboard } = useCopyToClipboard();
   return (
-    <div className="group flex items-center justify-between gap-3 rounded-lg bg-(--color-code) px-4 py-3">
-      <code className="select-all font-mono text-[.8125rem] text-white/80">
+    <div className="group flex items-center justify-between gap-3 rounded-lg bg-gray-100 px-4 py-3 dark:bg-neutral-900">
+      <code className="select-all font-mono text-[.8125rem] text-gray-900 dark:text-white/80">
         {command}
       </code>
       <Button
         aria-label="Copy command"
         className={cn(
-          "size-7 shrink-0 text-white/40 transition-colors hover:text-white/80",
-          isCopied && "text-green-400",
+          "size-7 shrink-0 text-gray-400 transition-colors hover:text-gray-900 dark:text-white/40 dark:hover:text-white/80",
+          isCopied && "text-green-600 dark:text-green-400",
         )}
         onClick={() => copyToClipboard(command)}
         size="icon-sm"

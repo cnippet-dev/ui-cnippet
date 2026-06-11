@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-15",
+  "description": "Subscription plan tiers with pricing",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-15.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\n\r\nconst tiers = [\r\n  {\r\n    description: \"For individuals getting started\",\r\n    label: \"Free\",\r\n    price: \"$0/mo\",\r\n    variant: \"secondary\" as const,\r\n  },\r\n  {\r\n    description: \"For small teams and projects\",\r\n    label: \"Starter\",\r\n    price: \"$12/mo\",\r\n    variant: \"info\" as const,\r\n  },\r\n  {\r\n    description: \"Advanced features for growing teams\",\r\n    label: \"Pro\",\r\n    price: \"$49/mo\",\r\n    variant: \"default\" as const,\r\n  },\r\n  {\r\n    description: \"Custom pricing for large organisations\",\r\n    label: \"Enterprise\",\r\n    price: \"Custom\",\r\n    variant: \"success\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-sm\">\r\n      <Frame>\r\n        {tiers.map((tier) => (\r\n          <FramePanel\r\n            className=\"flex items-center justify-between gap-3\"\r\n            key={tier.label}\r\n          >\r\n            <div className=\"flex items-center gap-2.5\">\r\n              <Badge size=\"sm\" variant={tier.variant}>\r\n                {tier.label}\r\n              </Badge>\r\n              <span className=\"text-muted-foreground text-sm\">\r\n                {tier.description}\r\n              </span>\r\n            </div>\r\n            <span className=\"shrink-0 font-semibold text-sm\">{tier.price}</span>\r\n          </FramePanel>\r\n        ))}\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

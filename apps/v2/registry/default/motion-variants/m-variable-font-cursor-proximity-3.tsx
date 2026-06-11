@@ -9,18 +9,18 @@ export default function VariableFontCursorProximityNav() {
 
   return (
     <nav
-      ref={containerRef}
       className="flex min-h-50 flex-wrap items-center justify-center gap-10 px-6"
+      ref={containerRef}
     >
       {navItems.map((item) => (
         <VariableFontCursorProximity
-          key={item}
+          className="cursor-pointer text-muted-foreground text-xl"
           containerRef={containerRef}
-          fromFontVariationSettings="'wght' 300"
-          toFontVariationSettings="'wght' 800"
-          radius={60}
           falloff="exponential"
-          className="cursor-pointer text-xl text-muted-foreground"
+          fromFontVariationSettings="'wght' 300"
+          key={item}
+          radius={60}
+          toFontVariationSettings="'wght' 800"
         >
           {item}
         </VariableFontCursorProximity>

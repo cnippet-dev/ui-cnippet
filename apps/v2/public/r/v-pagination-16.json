@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-16",
+  "description": "Controlled with smart ellipsis",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-16.tsx",
+      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from \"@/registry/default/ui/pagination\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-0 overflow-hidden rounded-full border\">\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            aria-label=\"Go to previous page\"\r\n            className=\"rounded-none border-0 border-e\"\r\n            href=\"#\"\r\n            size=\"icon\"\r\n          >\r\n            <ChevronLeftIcon className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <span className=\"flex items-center px-4 text-muted-foreground text-sm\">\r\n            <span className=\"font-medium text-foreground\">3</span>&nbsp;of 12\r\n          </span>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            aria-label=\"Go to next page\"\r\n            className=\"rounded-none border-0 border-s\"\r\n            href=\"#\"\r\n            size=\"icon\"\r\n          >\r\n            <ChevronRightIcon className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

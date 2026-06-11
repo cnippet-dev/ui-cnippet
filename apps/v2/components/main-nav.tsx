@@ -18,11 +18,19 @@ export function MainNav({
     <nav className={cn("items-center gap-2", className)} {...props}>
       {items.map((item) => (
         <Button
-          data-pressed={pathname.includes(item.href) || undefined}
+          data-pressed={
+            pathname === item.href ||
+            pathname.startsWith(`${item.href}/`) ||
+            undefined
+          }
           key={item.href}
           render={
             <Link
-              className={cn(pathname.includes(item.href) && "text-primary")}
+              className={cn(
+                (pathname === item.href ||
+                  pathname.startsWith(`${item.href}/`)) &&
+                  "text-primary",
+              )}
               href={item.href}
             />
           }

@@ -1,7 +1,7 @@
 "use client";
 
-import { SplittingText } from "@/registry/default/motion/splitting-text";
 import { useState } from "react";
+import { SplittingText } from "@/registry/default/motion/splitting-text";
 
 const presets = ["fade", "slide-up", "slide-down", "blur", "scale"] as const;
 
@@ -11,10 +11,10 @@ export default function SplittingTextPresets() {
 
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-6 px-6">
-      <div className="h-14 flex items-center justify-center">
+      <div className="flex h-14 items-center justify-center">
         <SplittingText
           as="p"
-          className="text-center text-2xl font-bold text-foreground"
+          className="text-center font-bold text-2xl text-foreground"
           key={key}
           preset={preset}
           splitBy="chars"
@@ -26,7 +26,7 @@ export default function SplittingTextPresets() {
       <div className="flex flex-wrap justify-center gap-2">
         {presets.map((p) => (
           <button
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 font-medium text-xs transition-colors ${
               p === preset
                 ? "bg-foreground text-background"
                 : "bg-accent text-muted-foreground hover:text-foreground"

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-12",
+  "description": "Settings sidebar navigation with icon sections",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-12.tsx",
+      "content": "import { BellIcon, CreditCardIcon, ShieldIcon, UserIcon } from \"lucide-react\";\r\nimport {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/default/ui/accordion\";\r\n\r\nconst sections = [\r\n  {\r\n    icon: UserIcon,\r\n    label: \"Account\",\r\n    links: [\"Profile\", \"Display Name\", \"Email Address\", \"Language & Region\"],\r\n    value: \"account\",\r\n  },\r\n  {\r\n    icon: ShieldIcon,\r\n    label: \"Security\",\r\n    links: [\"Password\", \"Two-Factor Auth\", \"Active Sessions\", \"Login History\"],\r\n    value: \"security\",\r\n  },\r\n  {\r\n    icon: BellIcon,\r\n    label: \"Notifications\",\r\n    links: [\r\n      \"Email Alerts\",\r\n      \"Push Notifications\",\r\n      \"Digest Frequency\",\r\n      \"Do Not Disturb\",\r\n    ],\r\n    value: \"notifications\",\r\n  },\r\n  {\r\n    icon: CreditCardIcon,\r\n    label: \"Billing\",\r\n    links: [\r\n      \"Subscription Plan\",\r\n      \"Payment Methods\",\r\n      \"Invoices\",\r\n      \"Usage & Limits\",\r\n    ],\r\n    value: \"billing\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-xs\">\r\n      <p className=\"mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-widest\">\r\n        Settings\r\n      </p>\r\n      <Accordion defaultValue={[\"account\"]} multiple>\r\n        {sections.map(({ icon: Icon, label, value, links }) => (\r\n          <AccordionItem className=\"border-none\" key={value} value={value}>\r\n            <AccordionTrigger className=\"rounded-md px-2 py-2 hover:bg-accent hover:no-underline\">\r\n              <div className=\"flex items-center gap-2.5\">\r\n                <Icon className=\"size-4 text-muted-foreground\" />\r\n                <span className=\"font-medium text-sm\">{label}</span>\r\n              </div>\r\n            </AccordionTrigger>\r\n            <AccordionContent className=\"pb-1\">\r\n              <ul className=\"ml-6 flex flex-col gap-0.5 border-l pl-3\">\r\n                {links.map((link) => (\r\n                  <li key={link}>\r\n                    <a\r\n                      className=\"block rounded-sm py-1.5 text-muted-foreground text-sm transition-colors hover:text-foreground\"\r\n                      href=\"#\"\r\n                    >\r\n                      {link}\r\n                    </a>\r\n                  </li>\r\n                ))}\r\n              </ul>\r\n            </AccordionContent>\r\n          </AccordionItem>\r\n        ))}\r\n      </Accordion>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

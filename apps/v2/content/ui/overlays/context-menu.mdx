@@ -1,6 +1,8 @@
 ---
 title: Context Menu
-description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button. Built with Base UI and Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://base-ui.com/react/components/context-menu#api-reference
 ---
 
 <ComponentPreview name="v-context-menu-1" />
@@ -44,6 +46,73 @@ npm install @base-ui/react
 </CodeTabs>
 
 
+
+## API Reference
+
+### ContextMenu
+
+Root provider. Wraps Base UI `ContextMenu.Root`.
+
+### ContextMenuTrigger
+
+The area that the user right-clicks to open the menu.
+
+### ContextMenuContent
+
+The floating popup panel.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | Side to open from the pointer position |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the pointer |
+| `sideOffset` | `number` | `0` | Gap in pixels from the pointer |
+| `alignOffset` | `number` | `4` | Offset along the alignment axis |
+
+### ContextMenuGroup / ContextMenuLabel
+
+Groups related items with an optional label.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `ContextMenuLabel` |
+
+### ContextMenuItem
+
+Standard action item.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding to align with icon items |
+| `variant` | `"default" \| "destructive"` | `"default"` | Styles the item for destructive actions |
+
+### ContextMenuCheckboxItem
+
+Toggleable item with a checkmark indicator.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | — | Controlled checked state |
+| `inset` | `boolean` | `false` | Adds start padding |
+
+### ContextMenuRadioGroup / ContextMenuRadioItem
+
+Single-selection group inside the context menu.
+
+### ContextMenuSub / ContextMenuSubTrigger / ContextMenuSubContent
+
+Nested submenu.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | Adds start padding on `ContextMenuSubTrigger` |
+
+### ContextMenuSeparator
+
+Horizontal divider between item groups.
+
+### ContextMenuShortcut
+
+Right-aligned keyboard shortcut hint.
 
 ## Examples
 
@@ -100,3 +169,33 @@ Demonstrates the available alignment positions and side placements for the conte
 Opens the context menu within a dialog to demonstrate correct overlay stacking and focus management.
 
 <ComponentPreview name="v-context-menu-10" />
+
+### Bookmark List
+
+A list of bookmark rows where right-clicking reveals open, copy link, star/unstar, share, duplicate, and destructive delete actions.
+
+<ComponentPreview name="v-context-menu-11" />
+
+### Rich Text Formatting
+
+Right-clicking a text area reveals Bold, Italic, and Underline checkbox items that toggle styles live, plus an alignment submenu and an insert-link action.
+
+<ComponentPreview name="v-context-menu-12" />
+
+### File Explorer
+
+A file list with per-row extension badges. Right-clicking any row opens open, rename, download, get-info, and delete actions for that specific file.
+
+<ComponentPreview name="v-context-menu-13" />
+
+### Social Feed
+
+Post cards with upvote/downvote controls that update the count live. A Report submenu with reason options and a mute-author destructive action complete the menu.
+
+<ComponentPreview name="v-context-menu-14" />
+
+### Task Board
+
+Task rows with priority badges and status icons. The context menu exposes a status radio group, a priority submenu, reassign, archive, and delete — all updating the row in place.
+
+<ComponentPreview name="v-context-menu-15" />

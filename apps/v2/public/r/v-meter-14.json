@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-meter-14",
+  "description": "Basic meter",
+  "registryDependencies": [
+    "@cnippet/meter"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-meter-14.tsx",
+      "content": "import { UploadCloudIcon } from \"lucide-react\";\r\nimport {\r\n  Meter,\r\n  MeterIndicator,\r\n  MeterLabel,\r\n  MeterTrack,\r\n  MeterValue,\r\n} from \"@/registry/default/ui/meter\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"w-full max-w-xs rounded-lg border p-4\">\r\n      <div className=\"mb-3 flex items-center gap-2\">\r\n        <UploadCloudIcon\r\n          aria-hidden=\"true\"\r\n          className=\"size-4 text-muted-foreground\"\r\n        />\r\n        <span className=\"font-medium text-sm\">Uploading files…</span>\r\n      </div>\r\n      <Meter value={63}>\r\n        <div className=\"flex items-center justify-between gap-2\">\r\n          <MeterLabel className=\"text-muted-foreground text-xs\">\r\n            3 of 5 files complete\r\n          </MeterLabel>\r\n          <MeterValue />\r\n        </div>\r\n        <MeterTrack>\r\n          <MeterIndicator />\r\n        </MeterTrack>\r\n      </Meter>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:block"
+}

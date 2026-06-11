@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-20",
+  "description": "Font picker grouped by category with live preview sentence",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-20.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ChevronsUpDownIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Combobox,\r\n  ComboboxEmpty,\r\n  ComboboxGroup,\r\n  ComboboxGroupLabel,\r\n  ComboboxInput,\r\n  ComboboxItem,\r\n  ComboboxList,\r\n  ComboboxPopup,\r\n  ComboboxSeparator,\r\n  ComboboxTrigger,\r\n  ComboboxValue,\r\n} from \"@/registry/default/ui/combobox\";\r\n\r\ninterface Font {\r\n  label: string;\r\n  value: string;\r\n  category: \"sans\" | \"serif\" | \"mono\";\r\n}\r\n\r\nconst fonts: Font[] = [\r\n  { category: \"sans\", label: \"Inter\", value: \"inter\" },\r\n  { category: \"sans\", label: \"Geist\", value: \"geist\" },\r\n  { category: \"sans\", label: \"DM Sans\", value: \"dm-sans\" },\r\n  { category: \"serif\", label: \"Lora\", value: \"lora\" },\r\n  { category: \"serif\", label: \"Playfair Display\", value: \"playfair\" },\r\n  { category: \"mono\", label: \"Geist Mono\", value: \"geist-mono\" },\r\n  { category: \"mono\", label: \"JetBrains Mono\", value: \"jetbrains\" },\r\n  { category: \"mono\", label: \"Fira Code\", value: \"fira-code\" },\r\n];\r\n\r\nconst groups = [\r\n  {\r\n    id: \"sans\",\r\n    items: fonts.filter((f) => f.category === \"sans\"),\r\n    label: \"Sans-serif\",\r\n  },\r\n  {\r\n    id: \"serif\",\r\n    items: fonts.filter((f) => f.category === \"serif\"),\r\n    label: \"Serif\",\r\n  },\r\n  {\r\n    id: \"mono\",\r\n    items: fonts.filter((f) => f.category === \"mono\"),\r\n    label: \"Monospace\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  const [value, setValue] = useState<Font | null>(fonts[0] ?? null);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-3\">\r\n      <Combobox\r\n        items={fonts}\r\n        onValueChange={(v) => setValue(v as Font | null)}\r\n        value={value}\r\n      >\r\n        <ComboboxTrigger\r\n          render={\r\n            <Button\r\n              className=\"w-full justify-between font-normal\"\r\n              variant=\"outline\"\r\n            />\r\n          }\r\n        >\r\n          <ComboboxValue placeholder=\"Select font...\" />\r\n          <ChevronsUpDownIcon className=\"-me-1!\" />\r\n        </ComboboxTrigger>\r\n        <ComboboxPopup>\r\n          <ComboboxInput placeholder=\"Search fonts...\" showTrigger={false} />\r\n          <ComboboxEmpty>No fonts found.</ComboboxEmpty>\r\n          <ComboboxList>\r\n            {groups.map((group, i) => (\r\n              <ComboboxGroup key={group.id}>\r\n                {i > 0 && <ComboboxSeparator />}\r\n                <ComboboxGroupLabel>{group.label}</ComboboxGroupLabel>\r\n                {group.items.map((font) => (\r\n                  <ComboboxItem key={font.value} value={font}>\r\n                    <span\r\n                      className={\r\n                        font.category === \"mono\"\r\n                          ? \"font-mono text-sm\"\r\n                          : \"text-sm\"\r\n                      }\r\n                    >\r\n                      {font.label}\r\n                    </span>\r\n                  </ComboboxItem>\r\n                ))}\r\n              </ComboboxGroup>\r\n            ))}\r\n          </ComboboxList>\r\n        </ComboboxPopup>\r\n      </Combobox>\r\n      {value && (\r\n        <p\r\n          className={`text-muted-foreground text-sm ${value.category === \"mono\" ? \"font-mono\" : \"\"}`}\r\n        >\r\n          The quick brown fox jumps over the lazy dog.\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

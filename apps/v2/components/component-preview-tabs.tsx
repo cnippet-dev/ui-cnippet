@@ -71,8 +71,10 @@ export function ComponentPreviewTabs({
         </div>
       </Tabs>
       <div
+        aria-label="Component preview"
         className="relative rounded-xl border not-dark:bg-card"
         data-tab={tab}
+        role="region"
       >
         <div
           className="invisible data-[active=true]:visible"
@@ -84,9 +86,7 @@ export function ComponentPreviewTabs({
             )}
             data-align={align}
           >
-            <PreviewSlot key={reloadKey}>
-              {component}
-            </PreviewSlot>
+            <PreviewSlot key={reloadKey}>{component}</PreviewSlot>
           </div>
         </div>
         <div

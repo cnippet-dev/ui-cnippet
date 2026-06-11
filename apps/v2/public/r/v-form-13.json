@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-13",
+  "description": "Invite team member",
+  "registryDependencies": [
+    "@cnippet/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { type FormEvent, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nexport function Pattern() {\r\n  const [loading, setLoading] = useState(false);\r\n  const [sent, setSent] = useState(false);\r\n\r\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 900));\r\n    setLoading(false);\r\n    setSent(true);\r\n    setTimeout(() => setSent(false), 3000);\r\n  };\r\n\r\n  return (\r\n    <Form className=\"w-full max-w-sm gap-4\" onSubmit={onSubmit}>\r\n      <div className=\"space-y-1\">\r\n        <h2 className=\"font-semibold\">Invite team member</h2>\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Send an invitation to join your workspace.\r\n        </p>\r\n      </div>\r\n\r\n      <Field name=\"email\">\r\n        <FieldLabel>\r\n          Email address <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input\r\n          autoComplete=\"email\"\r\n          placeholder=\"colleague@company.com\"\r\n          required\r\n          type=\"email\"\r\n        />\r\n        <FieldError />\r\n      </Field>\r\n\r\n      <Field name=\"role\">\r\n        <FieldLabel>Role</FieldLabel>\r\n        <Select\r\n          defaultValue=\"member\"\r\n          items={[\r\n            { label: \"Admin\", value: \"admin\" },\r\n            { label: \"Member\", value: \"member\" },\r\n            { label: \"Viewer\", value: \"viewer\" },\r\n          ]}\r\n        >\r\n          <SelectTrigger>\r\n            <SelectValue />\r\n          </SelectTrigger>\r\n          <SelectPopup>\r\n            <SelectItem value=\"admin\">Admin</SelectItem>\r\n            <SelectItem value=\"member\">Member</SelectItem>\r\n            <SelectItem value=\"viewer\">Viewer</SelectItem>\r\n          </SelectPopup>\r\n        </Select>\r\n        <FieldDescription>\r\n          Admins can manage members and billing.\r\n        </FieldDescription>\r\n      </Field>\r\n\r\n      <div className=\"flex gap-3\">\r\n        <Button className=\"flex-1\" type=\"reset\" variant=\"outline\">\r\n          Cancel\r\n        </Button>\r\n        <Button className=\"flex-1\" loading={loading} type=\"submit\">\r\n          {sent ? \"Invitation sent!\" : \"Send invitation\"}\r\n        </Button>\r\n      </div>\r\n    </Form>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ],
+  "type": "registry:block"
+}

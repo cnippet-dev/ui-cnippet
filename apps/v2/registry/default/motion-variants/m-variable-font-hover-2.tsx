@@ -4,24 +4,24 @@ import { VariableFontHover } from "@/registry/default/motion/variable-font-hover
 export default function VariableFontHoverHero() {
   return (
     <div className="flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center">
-      <p className="text-sm text-muted-foreground">Hover the headline</p>
+      <p className="text-muted-foreground text-sm">Hover the headline</p>
       <VariableFontHover
-        label="Build faster."
+        className="cursor-default text-5xl tracking-tight"
         fromFontVariationSettings="'wght' 100, 'slnt' 0"
-        toFontVariationSettings="'wght' 900, 'slnt' -10"
-        transition={{ type: "spring", duration: 0.5 }}
+        label="Build faster."
         staggerDuration={0.02}
         staggerFrom="first"
-        className="cursor-default text-5xl tracking-tight"
+        toFontVariationSettings="'wght' 900, 'slnt' -10"
+        transition={{ duration: 0.5, type: "spring" }}
       />
       <VariableFontHover
-        label="Ship with confidence."
+        className="cursor-default text-5xl text-muted-foreground tracking-tight"
         fromFontVariationSettings="'wght' 900, 'slnt' -10"
-        toFontVariationSettings="'wght' 100, 'slnt' 0"
-        transition={{ type: "spring", duration: 0.5 }}
+        label="Ship with confidence."
         staggerDuration={0.02}
         staggerFrom="last"
-        className="cursor-default text-5xl tracking-tight text-muted-foreground"
+        toFontVariationSettings="'wght' 100, 'slnt' 0"
+        transition={{ duration: 0.5, type: "spring" }}
       />
     </div>
   );

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toast-8",
-  "description": "Basic toast",
+  "description": "Staggered Notification Burst",
   "registryDependencies": [
     "@cnippet/toast"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-toast-8.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { toastManager } from \"@/registry/default/ui/toast\";\r\n\r\nconst notifications = [\r\n  {\r\n    delay: 0,\r\n    description: \"Alex Rivera started following you.\",\r\n    title: \"New follower\",\r\n    type: \"info\" as const,\r\n  },\r\n  {\r\n    delay: 800,\r\n    description: 'Your post \"Building with Base UI\" got 142 likes.',\r\n    title: \"Post liked\",\r\n    type: \"success\" as const,\r\n  },\r\n  {\r\n    delay: 1600,\r\n    description: 'Sarah replied to your comment: \"Great point!\"',\r\n    title: \"New reply\",\r\n    type: \"info\" as const,\r\n  },\r\n  {\r\n    delay: 2400,\r\n    description: \"You were mentioned in a thread by @devmark.\",\r\n    title: \"Mentioned\",\r\n    type: \"warning\" as const,\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [firing, setFiring] = useState(false);\r\n\r\n  function fireAll() {\r\n    if (firing) return;\r\n    setFiring(true);\r\n    notifications.forEach(({ delay, ...toast }) => {\r\n      setTimeout(() => toastManager.add(toast), delay);\r\n    });\r\n    setTimeout(\r\n      () => setFiring(false),\r\n      (notifications.at(-1)?.delay ?? 0) + 500,\r\n    );\r\n  }\r\n\r\n  return (\r\n    <Button disabled={firing} onClick={fireAll} variant=\"outline\">\r\n      {firing ? \"Incoming…\" : \"Simulate notifications\"}\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

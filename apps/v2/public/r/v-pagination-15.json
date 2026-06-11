@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-15",
-  "description": "Basic pagination",
+  "description": "Older/newer cursor navigation",
   "registryDependencies": [
     "@cnippet/pagination"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-pagination-15.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
       "type": "registry:block"
     }
   ],

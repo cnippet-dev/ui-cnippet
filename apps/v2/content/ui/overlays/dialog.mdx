@@ -1,6 +1,6 @@
 ---
 title: Dialog
-description: A popup that opens on top of the entire page.
+description: A popup that opens on top of the entire page. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/dialog#api-reference
@@ -109,6 +109,65 @@ The `DialogPanel` component automatically wraps its content in a `ScrollArea` co
 </DialogPanel>
 ```
 
+## API Reference
+
+### Dialog
+
+Root provider. Wraps Base UI `Dialog.Root`.
+
+### DialogTrigger
+
+Button that opens the dialog.
+
+### DialogClose
+
+Button that closes the dialog.
+
+### DialogPopup
+
+The modal popup. Also exported as `DialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showCloseButton` | `boolean` | `true` | Renders an ✕ close button in the top-right corner |
+| `bottomStickOnMobile` | `boolean` | `true` | On mobile the popup slides up from the bottom |
+| `closeProps` | `DialogPrimitive.Close.Props` | — | Props forwarded to the built-in close button |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### DialogHeader
+
+Flex column container for `DialogTitle` and `DialogDescription`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### DialogFooter
+
+Action button row at the bottom of the dialog.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
+### DialogTitle
+
+Accessible title element.
+
+### DialogDescription
+
+Accessible description providing additional context.
+
+### DialogPanel
+
+Scrollable content region. Automatically wrapped in `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `true` | Fades edges of the scroll area |
+| `render` | `React.ReactElement` | — | Renders a different element in place of `<div>` |
+
 ## Examples
 
 ### Open from a Menu
@@ -164,3 +223,33 @@ A dialog form for updating a user profile that includes an avatar upload area an
 A dialog for inviting users by email with a role selector and a scrollable list of pending invites.
 
 <ComponentPreview name="v-dialog-10" />
+
+### Share Document
+
+A share dialog with a copyable link field, a one-click copy button that switches to a checkmark on success, and permission-level selector tiles.
+
+<ComponentPreview name="v-dialog-11" />
+
+### Two-Factor Authentication Setup
+
+A 2FA setup dialog displaying a simulated QR code placeholder and a six-digit code entry — verifying the code locks the input and shows a success state.
+
+<ComponentPreview name="v-dialog-12" />
+
+### Subscription Cancellation
+
+A cancellation dialog prompting the user to choose a reason before confirming — the destructive action stays disabled until a reason is selected.
+
+<ComponentPreview name="v-dialog-13" />
+
+### API Key Generation
+
+Generates a new secret API key with mask/reveal toggle, one-click copy with confirmation feedback, and a regenerate button — all within a secure disclosure flow.
+
+<ComponentPreview name="v-dialog-14" />
+
+### Product Feedback Rating
+
+A star-rating feedback form for multiple product aspects (Ease of use, Performance, Design, Support) with an optional comment textarea — Submit stays disabled until every category is rated.
+
+<ComponentPreview name="v-dialog-15" />

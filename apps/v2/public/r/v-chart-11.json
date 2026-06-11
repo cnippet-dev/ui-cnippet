@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-chart-11",
+  "description": "Stacked area chart with two revenue series and a Y-axis legend",
+  "registryDependencies": [
+    "@cnippet/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-chart-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Area, AreaChart, CartesianGrid, XAxis, YAxis } from \"recharts\";\r\nimport {\r\n  type ChartConfig,\r\n  ChartContainer,\r\n  ChartLegend,\r\n  ChartLegendContent,\r\n  ChartTooltip,\r\n  ChartTooltipContent,\r\n} from \"@/registry/default/ui/chart\";\r\n\r\nconst chartData = [\r\n  { month: \"Jan\", oneTime: 1800, recurring: 4200 },\r\n  { month: \"Feb\", oneTime: 2100, recurring: 5100 },\r\n  { month: \"Mar\", oneTime: 3200, recurring: 4800 },\r\n  { month: \"Apr\", oneTime: 2600, recurring: 6200 },\r\n  { month: \"May\", oneTime: 3100, recurring: 7100 },\r\n  { month: \"Jun\", oneTime: 2900, recurring: 8400 },\r\n];\r\n\r\nconst chartConfig = {\r\n  oneTime: { color: \"var(--chart-2)\", label: \"One-time\" },\r\n  recurring: { color: \"var(--chart-1)\", label: \"Recurring\" },\r\n} satisfies ChartConfig;\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <ChartContainer className=\"min-h-52 w-full\" config={chartConfig}>\r\n      <AreaChart\r\n        accessibilityLayer\r\n        data={chartData}\r\n        margin={{ left: 8, right: 8 }}\r\n      >\r\n        <CartesianGrid vertical={false} />\r\n        <XAxis\r\n          axisLine={false}\r\n          dataKey=\"month\"\r\n          tickLine={false}\r\n          tickMargin={8}\r\n        />\r\n        <YAxis\r\n          axisLine={false}\r\n          tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}\r\n          tickLine={false}\r\n          width={40}\r\n        />\r\n        <ChartTooltip content={<ChartTooltipContent />} cursor={false} />\r\n        <ChartLegend content={<ChartLegendContent />} />\r\n        <Area\r\n          dataKey=\"oneTime\"\r\n          fill=\"var(--color-oneTime)\"\r\n          fillOpacity={0.3}\r\n          stackId=\"a\"\r\n          stroke=\"var(--color-oneTime)\"\r\n          type=\"natural\"\r\n        />\r\n        <Area\r\n          dataKey=\"recurring\"\r\n          fill=\"var(--color-recurring)\"\r\n          fillOpacity={0.5}\r\n          stackId=\"a\"\r\n          stroke=\"var(--color-recurring)\"\r\n          type=\"natural\"\r\n        />\r\n      </AreaChart>\r\n    </ChartContainer>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart"
+  ],
+  "type": "registry:block"
+}

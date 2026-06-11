@@ -1,7 +1,7 @@
 "use client";
 
-import { EncryptedText } from "@/registry/default/motion/encrypted-text";
 import { useState } from "react";
+import { EncryptedText } from "@/registry/default/motion/encrypted-text";
 
 export default function EncryptedTextTerminal() {
   const [step, setStep] = useState(0);
@@ -38,7 +38,7 @@ export default function EncryptedTextTerminal() {
         </div>
         {step < commands.length - 1 && (
           <button
-            className="mt-4 text-xs text-neutral-500 hover:text-neutral-300"
+            className="mt-4 text-neutral-500 text-xs hover:text-neutral-300"
             onClick={() => setStep((s) => s + 1)}
             type="button"
           >

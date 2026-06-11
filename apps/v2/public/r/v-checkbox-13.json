@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-13",
+  "description": "Notification preferences matrix with event rows and channel columns",
+  "registryDependencies": [
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\r\n\r\nconst COLUMNS = [\r\n  { id: \"email\", label: \"Email\" },\r\n  { id: \"push\", label: \"Push\" },\r\n  { id: \"sms\", label: \"SMS\" },\r\n];\r\n\r\nconst EVENTS = [\r\n  { id: \"new-message\", label: \"New message\" },\r\n  { id: \"mention\", label: \"Mention\" },\r\n  { id: \"task-assigned\", label: \"Task assigned\" },\r\n  { id: \"comment\", label: \"Comment\" },\r\n  { id: \"status-change\", label: \"Status change\" },\r\n];\r\n\r\ntype Prefs = Record<string, boolean>;\r\n\r\nfunction cellKey(event: string, channel: string) {\r\n  return `${event}__${channel}`;\r\n}\r\n\r\nexport function Pattern() {\r\n  const id = useId();\r\n  const [prefs, setPrefs] = useState<Prefs>(() =>\r\n    Object.fromEntries(\r\n      EVENTS.flatMap((e) =>\r\n        COLUMNS.map((c) => [cellKey(e.id, c.id), c.id === \"email\"]),\r\n      ),\r\n    ),\r\n  );\r\n\r\n  const toggle = (k: string) => setPrefs((p) => ({ ...p, [k]: !p[k] }));\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-3\">\r\n      <p className=\"font-semibold text-sm\">Notification Preferences</p>\r\n      <div className=\"overflow-x-auto rounded-lg border\">\r\n        <table className=\"w-full text-xs\">\r\n          <thead>\r\n            <tr className=\"border-b bg-muted/40\">\r\n              <th className=\"py-2 pr-4 pl-3 text-left font-medium text-muted-foreground\">\r\n                Event\r\n              </th>\r\n              {COLUMNS.map((c) => (\r\n                <th\r\n                  className=\"px-3 py-2 text-center font-medium text-muted-foreground\"\r\n                  key={c.id}\r\n                >\r\n                  {c.label}\r\n                </th>\r\n              ))}\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            {EVENTS.map((evt, i) => (\r\n              <tr\r\n                className={i < EVENTS.length - 1 ? \"border-b\" : \"\"}\r\n                key={evt.id}\r\n              >\r\n                <td className=\"py-2.5 pr-4 pl-3 text-foreground\">\r\n                  {evt.label}\r\n                </td>\r\n                {COLUMNS.map((ch) => {\r\n                  const k = cellKey(evt.id, ch.id);\r\n                  return (\r\n                    <td className=\"px-3 py-2.5 text-center\" key={ch.id}>\r\n                      <Checkbox\r\n                        checked={prefs[k]}\r\n                        id={`${id}-${k}`}\r\n                        onCheckedChange={() => toggle(k)}\r\n                      />\r\n                    </td>\r\n                  );\r\n                })}\r\n              </tr>\r\n            ))}\r\n          </tbody>\r\n        </table>\r\n      </div>\r\n      <Button className=\"w-full\" size=\"sm\">\r\n        Save preferences\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:block"
+}

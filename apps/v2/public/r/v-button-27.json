@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-27",
+  "description": "Loading and success state button with animated icon swap",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-27.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CheckIcon, CloudUploadIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\ntype State = \"idle\" | \"loading\" | \"success\";\r\n\r\nexport function Pattern() {\r\n  const [state, setState] = useState<State>(\"idle\");\r\n\r\n  const handleClick = () => {\r\n    if (state !== \"idle\") return;\r\n    setState(\"loading\");\r\n    setTimeout(() => {\r\n      setState(\"success\");\r\n      setTimeout(() => setState(\"idle\"), 2000);\r\n    }, 1800);\r\n  };\r\n\r\n  return (\r\n    <Button\r\n      disabled={state === \"loading\"}\r\n      loading={state === \"loading\"}\r\n      onClick={handleClick}\r\n      variant={state === \"success\" ? \"outline\" : \"default\"}\r\n    >\r\n      {state === \"success\" ? (\r\n        <>\r\n          <CheckIcon className=\"size-4 text-emerald-500\" />\r\n          Saved\r\n        </>\r\n      ) : (\r\n        <>\r\n          <CloudUploadIcon className=\"size-4\" />\r\n          {state === \"loading\" ? \"Saving…\" : \"Save Changes\"}\r\n        </>\r\n      )}\r\n    </Button>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

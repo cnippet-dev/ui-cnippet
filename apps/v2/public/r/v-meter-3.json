@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-meter-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport {\r\n  Meter,\r\n  MeterIndicator,\r\n  MeterLabel,\r\n  MeterTrack,\r\n  MeterValue,\r\n} from \"@/registry/default/ui/meter\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Meter max={5} value={3}>\r\n      <div className=\"flex items-center justify-between gap-2\">\r\n        <MeterLabel>Rating</MeterLabel>\r\n        <MeterValue>{(_formatted, value) => `${value} / 5`}</MeterValue>\r\n      </div>\r\n      <MeterTrack>\r\n        <MeterIndicator />\r\n      </MeterTrack>\r\n    </Meter>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter max={5} value={3}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <MeterLabel>Rating</MeterLabel>\n        <MeterValue>{(_formatted, value) => `${value} / 5`}</MeterValue>\n      </div>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

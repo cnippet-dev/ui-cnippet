@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-form-12",
+  "description": "Delete account — danger zone confirmation",
+  "registryDependencies": [
+    "@cnippet/form"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-form-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { TriangleAlertIcon } from \"lucide-react\";\r\nimport { type FormEvent, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Form } from \"@/registry/default/ui/form\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nconst CONFIRM_PHRASE = \"delete my account\";\r\n\r\nexport function Pattern() {\r\n  const [value, setValue] = useState(\"\");\r\n  const [loading, setLoading] = useState(false);\r\n  const isConfirmed = value.toLowerCase() === CONFIRM_PHRASE;\r\n\r\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    if (!isConfirmed) return;\r\n    setLoading(true);\r\n    await new Promise((r) => setTimeout(r, 1200));\r\n    setLoading(false);\r\n    alert(\"Account deleted.\");\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-4 rounded-xl border border-destructive/30 bg-destructive/5 p-5\">\r\n      <div className=\"flex items-start gap-3\">\r\n        <TriangleAlertIcon className=\"mt-0.5 size-5 shrink-0 text-destructive\" />\r\n        <div className=\"space-y-1\">\r\n          <p className=\"font-semibold text-sm\">Delete your account</p>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            This action is permanent and cannot be undone. All your data,\r\n            projects, and settings will be deleted.\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <Form className=\"gap-3\" onSubmit={onSubmit}>\r\n        <Field name=\"confirm\">\r\n          <FieldLabel className=\"text-sm\">\r\n            Type{\" \"}\r\n            <code className=\"rounded bg-muted px-1 py-0.5 font-mono text-xs\">\r\n              {CONFIRM_PHRASE}\r\n            </code>{\" \"}\r\n            to confirm\r\n          </FieldLabel>\r\n          <Input\r\n            onChange={(e) => setValue(e.target.value)}\r\n            placeholder={CONFIRM_PHRASE}\r\n            type=\"text\"\r\n            value={value}\r\n          />\r\n          <FieldDescription className=\"text-xs\">\r\n            This cannot be undone. Please be certain.\r\n          </FieldDescription>\r\n        </Field>\r\n\r\n        <Button\r\n          className=\"w-full\"\r\n          disabled={!isConfirmed}\r\n          loading={loading}\r\n          type=\"submit\"\r\n          variant=\"destructive\"\r\n        >\r\n          Permanently delete account\r\n        </Button>\r\n      </Form>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "form"
+  ],
+  "type": "registry:block"
+}

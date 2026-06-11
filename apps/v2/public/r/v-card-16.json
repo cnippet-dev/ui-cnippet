@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-card-16",
+  "description": "GitHub repository list cards with language, star, and fork counts",
+  "registryDependencies": [
+    "@cnippet/card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-card-16.tsx",
+      "content": "import { GitBranch, GitForkIcon, StarIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Card, CardContent } from \"@/registry/default/ui/card\";\r\n\r\nconst repos = [\r\n  {\r\n    description: \"A UI component library built with Base UI and Tailwind CSS.\",\r\n    forks: 248,\r\n    langColor: \"bg-blue-500\",\r\n    language: \"TypeScript\",\r\n    name: \"ui-cnippet\",\r\n    stars: 1_420,\r\n  },\r\n  {\r\n    description: \"Minimal blogging starter with MDX, Tailwind, and Next.js.\",\r\n    forks: 91,\r\n    langColor: \"bg-blue-500\",\r\n    language: \"TypeScript\",\r\n    name: \"next-blog-starter\",\r\n    stars: 673,\r\n  },\r\n  {\r\n    description: \"Lightweight state manager for React with zero boilerplate.\",\r\n    forks: 57,\r\n    langColor: \"bg-yellow-400\",\r\n    language: \"JavaScript\",\r\n    name: \"micro-store\",\r\n    stars: 312,\r\n  },\r\n];\r\n\r\nfunction fmt(n: number) {\r\n  return n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);\r\n}\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\r\n      {repos.map((repo) => (\r\n        <Card className=\"w-full\" key={repo.name}>\r\n          <CardContent className=\"flex flex-col gap-2.5\">\r\n            <div className=\"flex items-start justify-between gap-2\">\r\n              <div className=\"flex items-center gap-2\">\r\n                <GitBranch className=\"size-4 shrink-0 text-muted-foreground\" />\r\n                <span className=\"font-semibold text-sm\">{repo.name}</span>\r\n              </div>\r\n              <Badge size=\"sm\" variant=\"secondary\">\r\n                Public\r\n              </Badge>\r\n            </div>\r\n            <p className=\"text-muted-foreground text-xs leading-relaxed\">\r\n              {repo.description}\r\n            </p>\r\n            <div className=\"flex items-center gap-4 text-muted-foreground text-xs\">\r\n              <span className=\"flex items-center gap-1\">\r\n                <span className={`size-2.5 rounded-full ${repo.langColor}`} />\r\n                {repo.language}\r\n              </span>\r\n              <span className=\"flex items-center gap-1\">\r\n                <StarIcon className=\"size-3\" />\r\n                {fmt(repo.stars)}\r\n              </span>\r\n              <span className=\"flex items-center gap-1\">\r\n                <GitForkIcon className=\"size-3\" />\r\n                {fmt(repo.forks)}\r\n              </span>\r\n            </div>\r\n          </CardContent>\r\n        </Card>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "card"
+  ],
+  "type": "registry:block"
+}

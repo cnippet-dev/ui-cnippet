@@ -10,7 +10,7 @@ export default function RollingTextNav() {
       <nav className="flex items-center gap-8">
         {navItems.map((item, i) => (
           <a
-            className="cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground"
+            className="cursor-pointer font-medium text-muted-foreground text-sm hover:text-foreground"
             href="#"
             key={item}
             onClick={(e) => e.preventDefault()}
@@ -27,7 +27,7 @@ export default function RollingTextNav() {
           </a>
         ))}
       </nav>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-muted-foreground text-xs">
         direction="down" — letters roll in from above
       </p>
     </div>

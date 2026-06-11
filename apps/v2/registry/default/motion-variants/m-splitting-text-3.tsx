@@ -7,7 +7,7 @@ export default function SplittingTextStacked() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-1 px-6">
       <SplittingText
         as="p"
-        className="text-xs font-semibold uppercase tracking-widest text-primary"
+        className="font-semibold text-primary text-xs uppercase tracking-widest"
         preset="fade"
         splitBy="chars"
         staggerDuration={0.04}
@@ -17,7 +17,7 @@ export default function SplittingTextStacked() {
       </SplittingText>
       <SplittingText
         as="h1"
-        className="text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+        className="text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl"
         preset="slide-up"
         splitBy="words"
         staggerDuration={0.08}
@@ -27,7 +27,7 @@ export default function SplittingTextStacked() {
       </SplittingText>
       <SplittingText
         as="p"
-        className="mt-2 max-w-sm text-center text-sm text-muted-foreground"
+        className="mt-2 max-w-sm text-center text-muted-foreground text-sm"
         preset="blur"
         splitBy="words"
         staggerDuration={0.04}

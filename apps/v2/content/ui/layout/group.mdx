@@ -1,6 +1,6 @@
 ---
 title: Group
-description: A component for visually grouping a series of controls.
+description: A component for visually grouping a series of controls. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-group-1" />
@@ -57,6 +57,32 @@ import { Group, GroupSeparator } from "@/components/ui/group"
   <Button>Button</Button>
 </Group>
 ```
+
+## API Reference
+
+### Group
+
+Root container that collapses borders between adjacent children into a single shared border. Also exported as `ButtonGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+### GroupText
+
+Static text or label element inside the group. Also exported as `ButtonGroupText`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement` | — | Renders a different element in place of the default wrapper |
+
+### GroupSeparator
+
+Visual divider between group items. Also exported as `ButtonGroupSeparator`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Orientation of the separator |
 
 ## Examples
 
@@ -131,3 +157,33 @@ Embeds a `Menu` trigger inside the group to create a split-button or action grou
 Attaches a `Select` dropdown to the group so users can choose between options alongside an adjacent action button.
 
 <ComponentPreview name="v-group-13" />
+
+### Text Formatting Toolbar
+
+Four icon-toggle buttons (bold, italic, underline, strikethrough) that track active state with `aria-pressed` — useful for rich-text editors.
+
+<ComponentPreview name="v-group-14" />
+
+### Thumbs Up / Down Vote
+
+Two reaction buttons with live counts using `Badge`. Clicking toggles the vote and updates the count in real time.
+
+<ComponentPreview name="v-group-15" />
+
+### Media Player Controls
+
+Previous, play/pause (stateful), and next icon buttons in a grouped row for compact audio or video playback interfaces.
+
+<ComponentPreview name="v-group-16" />
+
+### Price Range Input
+
+Dual numeric inputs with a currency prefix (`$`), a text separator (`–`), and an apply button — all connected in a single `Group`.
+
+<ComponentPreview name="v-group-17" />
+
+### Search with Category Filter
+
+A `Select` for category, a text search input, and a search icon button composed into one compound search bar.
+
+<ComponentPreview name="v-group-18" />

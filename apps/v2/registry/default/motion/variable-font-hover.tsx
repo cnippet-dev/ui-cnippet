@@ -34,10 +34,13 @@ export function VariableFontHover({
   const [scope, animate] = useAnimate();
   const [isHovered, setIsHovered] = useState(false);
 
-  const mergeTransition = (base: AnimationOptions): AnimationOptions => ({
-    ...base,
-    delay: stagger(staggerDuration, { from: staggerFrom }),
-  });
+  const mergeTransition = useCallback(
+    (base: AnimationOptions): AnimationOptions => ({
+      ...base,
+      delay: stagger(staggerDuration, { from: staggerFrom }),
+    }),
+    [staggerDuration, staggerFrom],
+  );
 
   const hoverStart = useCallback(() => {
     if (isHovered) return;

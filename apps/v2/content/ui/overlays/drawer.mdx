@@ -1,6 +1,6 @@
 ---
 title: Drawer
-description: A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support.
+description: A panel that slides in from the edge of the screen with swipe gestures, snap points, and nested drawer support. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/drawer#api-reference
@@ -121,6 +121,92 @@ Pass `showBar` to `DrawerPopup` to render a visible drag handle bar.
 <DrawerPopup showBar>...</DrawerPopup>
 ```
 
+## API Reference
+
+### Drawer
+
+Root provider. Wraps Base UI `Drawer.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `position` | `"bottom" \| "top" \| "left" \| "right"` | `"bottom"` | Edge the drawer slides in from |
+
+### DrawerTrigger
+
+Button that opens the drawer.
+
+### DrawerClose
+
+Button that closes the drawer.
+
+### DrawerPopup
+
+The sliding panel.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `position` | `DrawerPosition` | — | Overrides the root `position` for this popup |
+| `variant` | `"default" \| "straight" \| "inset"` | `"default"` | `default` adds rounded corners; `straight` removes them; `inset` adds screen-edge spacing on desktop |
+| `showCloseButton` | `boolean` | `false` | Renders an ✕ close button |
+| `showBar` | `boolean` | `false` | Renders a visible drag handle bar |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### DrawerHeader
+
+Container for `DrawerTitle` and `DrawerDescription`.
+
+### DrawerFooter
+
+Action row at the bottom of the drawer.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+| `allowSelection` | `boolean` | `true` | Wraps content in `DrawerContent` to allow text selection |
+
+### DrawerTitle
+
+Accessible title element.
+
+### DrawerDescription
+
+Accessible description.
+
+### DrawerPanel
+
+Scrollable content region. Automatically wrapped in `ScrollArea`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `scrollFade` | `boolean` | `true` | Fades scroll edges |
+| `scrollable` | `boolean` | `true` | Disables the `ScrollArea` wrapper when `false` |
+| `allowSelection` | `boolean` | `true` | Wraps content in `DrawerContent` for text selection |
+
+### DrawerMenu / DrawerMenuItem / DrawerMenuSeparator / DrawerMenuGroup / DrawerMenuGroupLabel / DrawerMenuTrigger
+
+Navigation menu sub-components for drawer nav patterns.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive"` | `"default"` | Styles a `DrawerMenuItem` for destructive actions |
+
+### DrawerMenuCheckboxItem
+
+Toggleable checkbox item inside a drawer menu.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | — | Controlled checked state |
+| `variant` | `"default" \| "switch"` | `"default"` | Shows a switch indicator instead of a checkmark |
+
+### DrawerMenuRadioGroup / DrawerMenuRadioItem
+
+Single-selection radio group inside a drawer menu.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | The value this radio item represents (required on `DrawerMenuRadioItem`) |
+
 ## Examples
 
 ### Multiple Positions — Inset
@@ -164,3 +250,33 @@ A right-side drawer showing cart items, quantities, subtotal, and a checkout but
 A drawer listing recent notifications with timestamps and mark-as-read actions.
 
 <ComponentPreview name="v-drawer-8" />
+
+### User Preferences & Theme Settings
+
+A right-side straight drawer with theme switcher tiles (Light / Dark / System), a language select, and a push-notification toggle switch.
+
+<ComponentPreview name="v-drawer-11" />
+
+### File Attachments with Upload
+
+A bottom drawer with a drag-and-drop upload zone and an existing attachments list — individual files can be removed before confirming the selection.
+
+<ComponentPreview name="v-drawer-12" />
+
+### Activity Log with Status Timeline
+
+A right-side straight drawer rendering a vertical timeline of deployment and build events, each tagged with Completed, In progress, or Pending status badges.
+
+<ComponentPreview name="v-drawer-13" />
+
+### Help Center with FAQ Search
+
+A bottom drawer with a live-filtered FAQ accordion — typing in the search field narrows the list and individual questions expand inline.
+
+<ComponentPreview name="v-drawer-14" />
+
+### Quick Actions Grid
+
+A bottom drawer triggered by a contextual ellipsis button that presents an icon grid of actions (Edit, Share, Bookmark, Archive, Delete, etc.), each closing the drawer and reporting the chosen action.
+
+<ComponentPreview name="v-drawer-15" />

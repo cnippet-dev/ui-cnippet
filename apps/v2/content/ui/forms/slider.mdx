@@ -1,6 +1,6 @@
 ---
 title: Slider
-description: An input where the user selects a value from within a given range.
+description: An input where the user selects a value from within a given range. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/slider#api-reference
@@ -19,7 +19,7 @@ links:
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @coss/slider
+npx shadcn@latest add @cnippet/slider
 ```
 
 </TabsPanel>
@@ -75,7 +75,7 @@ Displays the current value. Styled wrapper for `Slider.Value` from Base UI.
 
 ## Examples
 
-For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Slider field](/ui/docs/components/field#slider-field).
+For accessible labelling and validation, prefer using the `Field` component to wrap checkboxes. See the related example: [Slider field](/ui/forms/field#slider-field).
 
 ### With Label and Value
 
@@ -112,3 +112,33 @@ A tooltip appears above the thumb as the user drags, displaying the exact curren
 A 1–5 rating slider where the emoji and label below change to reflect the selected sentiment as the thumb moves.
 
 <ComponentPreview name="v-slider-7" />
+
+### Volume Control
+
+A media-player-style volume slider with a muted/low/high icon that updates as the level changes. Clicking the icon toggles mute on and off.
+
+<ComponentPreview name="v-slider-11" />
+
+### Price Range
+
+A dual-thumb slider that lets users set a minimum and maximum price. The selected range is shown above the track and updates live as either thumb is dragged.
+
+<ComponentPreview name="v-slider-12" />
+
+### Hue Color Picker
+
+A full-spectrum hue slider with a gradient track. A color swatch previews the selected `hsl()` value and updates in real time as the thumb moves.
+
+<ComponentPreview name="v-slider-13" />
+
+### Temperature Control
+
+A room-temperature slider that colors the label green, blue, or orange to reflect the comfort level, with a text hint that updates as the value changes.
+
+<ComponentPreview name="v-slider-14" />
+
+### Display Settings
+
+Three sliders — brightness, contrast, and saturation — each displaying a live `SliderValue`. A Reset button restores all three to their defaults.
+
+<ComponentPreview name="v-slider-15" />

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-breadcrumb-14",
+  "description": "Page header breadcrumb with edit and share action buttons",
+  "registryDependencies": [
+    "@cnippet/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-breadcrumb-14.tsx",
+      "content": "import { PencilIcon, ShareIcon } from \"lucide-react\";\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from \"@/registry/default/ui/breadcrumb\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Frame, FramePanel } from \"@/registry/default/ui/frame\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-2xl\">\r\n      <Frame>\r\n        <FramePanel className=\"flex items-center justify-between gap-4 px-4 py-2.5!\">\r\n          <Breadcrumb>\r\n            <BreadcrumbList className=\"sm:gap-1.5\">\r\n              <BreadcrumbItem>\r\n                <BreadcrumbLink\r\n                  className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n                  href=\"#\"\r\n                >\r\n                  Docs\r\n                </BreadcrumbLink>\r\n              </BreadcrumbItem>\r\n              <BreadcrumbSeparator />\r\n              <BreadcrumbItem>\r\n                <BreadcrumbLink\r\n                  className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n                  href=\"#\"\r\n                >\r\n                  Components\r\n                </BreadcrumbLink>\r\n              </BreadcrumbItem>\r\n              <BreadcrumbSeparator />\r\n              <BreadcrumbItem>\r\n                <BreadcrumbPage className=\"font-medium text-sm\">\r\n                  Breadcrumb\r\n                </BreadcrumbPage>\r\n              </BreadcrumbItem>\r\n            </BreadcrumbList>\r\n          </Breadcrumb>\r\n\r\n          <div className=\"flex shrink-0 items-center gap-1\">\r\n            <Button size=\"xs\" variant=\"ghost\">\r\n              <ShareIcon className=\"size-3.5\" />\r\n              Share\r\n            </Button>\r\n            <Separator className=\"h-4\" orientation=\"vertical\" />\r\n            <Button size=\"xs\" variant=\"ghost\">\r\n              <PencilIcon className=\"size-3.5\" />\r\n              Edit\r\n            </Button>\r\n          </div>\r\n        </FramePanel>\r\n\r\n        <FramePanel className=\"flex h-32 items-center justify-center text-muted-foreground text-sm\">\r\n          Page content\r\n        </FramePanel>\r\n      </Frame>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "breadcrumb"
+  ],
+  "type": "registry:block"
+}

@@ -26,13 +26,13 @@ export default function ScrollRevealFeatureSection() {
           viewOptions={{ amount: 0.4 }}
         >
           <div className="flex-1">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+            <p className="font-semibold text-primary text-xs uppercase tracking-widest">
               New
             </p>
-            <h2 className="mt-1 text-2xl font-bold text-foreground">
+            <h2 className="mt-1 font-bold text-2xl text-foreground">
               Motion-first design system
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
               164 animated components built on Motion and Tailwind — ready to
               drop into your next project and customise in seconds.
             </p>

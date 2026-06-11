@@ -1,6 +1,6 @@
 ---
 title: Collapsible
-description: A collapsible panel controlled by a button.
+description: A collapsible panel controlled by a button. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/collapsible#api-reference
@@ -65,6 +65,25 @@ import {
 </Collapsible>
 ```
 
+## API Reference
+
+### Collapsible
+
+Root container. Thin wrapper around Base UI's `Collapsible.Root`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Initial open state for uncontrolled usage |
+| `onOpenChange` | `(open: boolean) => void` | — | Callback when open state changes |
+
+### CollapsibleTrigger
+
+The element that toggles the panel open and closed.
+
+### CollapsiblePanel
+
+The collapsible content area. Also exported as `CollapsibleContent`. Animates height via CSS transition.
 
 ## Examples
 
@@ -103,3 +122,51 @@ A sidebar-style navigation where each section header is a collapsible trigger th
 A file-tree implementation where directories are collapsible nodes and each item exposes hover actions for rename, copy, and delete.
 
 <ComponentPreview name="v-collapsible-7" align="start" />
+
+### Read More
+
+A product description card with truncated text and a gradient fade overlay. A "Read more" / "Show less" trigger with a rotating chevron expands and collapses the full content.
+
+<ComponentPreview name="v-collapsible-8" align="start" />
+
+### Build Log
+
+Three pipeline step cards (install / typecheck / build) showing a status badge. Clicking a completed step expands a syntax-colored pre log panel. Pending steps are disabled.
+
+<ComponentPreview name="v-collapsible-9" align="start" />
+
+### Incident Timeline
+
+An always-visible incident summary with a "View incident timeline" trigger that expands a vertical dot-and-line timeline with status badges and timestamps.
+
+<ComponentPreview name="v-collapsible-10" align="start" />
+
+### FAQ Accordion
+
+Four questions rendered as individual `Collapsible` components with single-open behavior — opening one automatically closes the others. A badge shows total question count.
+
+<ComponentPreview name="v-collapsible-11" align="start" />
+
+### Filter Panel
+
+A sidebar filter panel where each filter group (Category, Status, Priority) is a collapsible section with checkboxes. An active-count badge and a clear-all button update as filters are toggled.
+
+<ComponentPreview name="v-collapsible-12" align="start" />
+
+### Package Dependencies
+
+Three package groups (Middleware, Security, UI) rendered as cards with a version badge trigger. Expanding a card reveals a description and a list of package names in monospace.
+
+<ComponentPreview name="v-collapsible-13" align="start" />
+
+### Team Directory
+
+A sidebar-style list of teams where each section is collapsible. Members show a colored presence dot, their name, and role beneath the team header.
+
+<ComponentPreview name="v-collapsible-14" align="start" />
+
+### Privacy Policy
+
+A card with four policy sections rendered as accordion-style collapsibles. Only one section is open at a time, driven by controlled open state.
+
+<ComponentPreview name="v-collapsible-15" align="start" />

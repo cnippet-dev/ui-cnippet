@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-preview-card-5",
-  "description": "Basic preview card",
+  "description": "GitHub-style issue preview",
   "registryDependencies": [
     "@cnippet/preview-card"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-preview-card-5.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
       "type": "registry:block"
     }
   ],

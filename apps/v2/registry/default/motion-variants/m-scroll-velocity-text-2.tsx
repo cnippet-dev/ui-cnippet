@@ -20,7 +20,7 @@ export default function ScrollVelocityOpposing() {
         <ScrollVelocityRow baseVelocity={4} direction={1}>
           {row1.map((word) => (
             <span
-              className="mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10"
+              className="mx-8 font-extrabold text-3xl text-foreground/10 uppercase tracking-tight"
               key={word}
             >
               {word}
@@ -30,7 +30,7 @@ export default function ScrollVelocityOpposing() {
         <ScrollVelocityRow baseVelocity={4} direction={-1}>
           {row2.map((word) => (
             <span
-              className="mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10"
+              className="mx-8 font-extrabold text-3xl text-foreground/10 uppercase tracking-tight"
               key={word}
             >
               {word}

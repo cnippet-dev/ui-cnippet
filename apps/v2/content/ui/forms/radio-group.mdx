@@ -1,6 +1,6 @@
 ---
 title: Radio Group
-description: A set of checkable buttons where no more than one of the buttons can be checked at a time.
+description: A set of checkable buttons where no more than one of the buttons can be checked at a time. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/radio-group#api-reference
@@ -67,9 +67,33 @@ import { Radio, RadioGroup } from "@/components/ui/radio-group"
 </RadioGroup>
 ```
 
+## API Reference
+
+### RadioGroup
+
+Root container providing shared state to all `Radio` items.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Controlled selected value |
+| `defaultValue` | `string` | — | Initial selected value for uncontrolled usage |
+| `onValueChange` | `(value: string) => void` | — | Callback when the selection changes |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Layout direction |
+| `disabled` | `boolean` | `false` | Disables all radio items in the group |
+
+### Radio
+
+Individual radio button. Also exported as `RadioGroupItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | The value this radio represents (required) |
+| `disabled` | `boolean` | `false` | Disables this specific item |
+| `required` | `boolean` | `false` | Marks the field as required |
+
 ## Examples
 
-For accessible labelling and validation, prefer using the `Field` component to wrap radio buttons. See the related example: [Radio Group field](/ui/docs/components/field#radio-group-field).
+For accessible labelling and validation, prefer using the `Field` component to wrap radio buttons. See the related example: [Radio Group field](/ui/forms/field#radio-group-field).
 
 ### Disabled
 
@@ -118,3 +142,33 @@ Radio cards that include an icon alongside the label, making visual scanning eas
 Wraps the radio group in `Form` and `Field` for required-state validation and visible error messaging on submit.
 
 <ComponentPreview name="v-radio-group-9" />
+
+### Horizontal Layout
+
+Displays radio options inline in a horizontal flex row — useful for short option sets like framework or size pickers.
+
+<ComponentPreview name="v-radio-group-11" />
+
+### Shipping Options
+
+Each delivery method is a card row with label, estimated timing, and price — selecting one highlights the card border.
+
+<ComponentPreview name="v-radio-group-12" />
+
+### Theme Selector
+
+Icon-centric radio cards for light, dark, and system theme — the radio indicator sits at the top-right of each card.
+
+<ComponentPreview name="v-radio-group-13" />
+
+### Availability Status
+
+A status-picker radio group with colored dots and short descriptions for online, away, busy, and offline states.
+
+<ComponentPreview name="v-radio-group-14" />
+
+### Billing Frequency
+
+Three billing cycles (monthly, quarterly, annually) with savings badges on the discounted options.
+
+<ComponentPreview name="v-radio-group-15" />

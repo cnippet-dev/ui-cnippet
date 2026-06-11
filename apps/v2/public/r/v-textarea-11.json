@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-textarea-11",
+  "description": "Chat message composer with bubble thread and send on Enter",
+  "registryDependencies": [
+    "@cnippet/textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-textarea-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { PaperclipIcon, SendIcon, SmileIcon } from \"lucide-react\";\r\nimport type { KeyboardEvent } from \"react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Textarea } from \"@/registry/default/ui/textarea\";\r\n\r\ntype Message = {\r\n  id: number;\r\n  own: boolean;\r\n  text: string;\r\n  time: string;\r\n};\r\n\r\nconst INITIAL_MESSAGES: Message[] = [\r\n  {\r\n    id: 1,\r\n    own: false,\r\n    text: \"Hey! Can you review the PR I just opened?\",\r\n    time: \"2:30 PM\",\r\n  },\r\n  {\r\n    id: 2,\r\n    own: true,\r\n    text: \"Sure, I'll take a look this afternoon.\",\r\n    time: \"2:31 PM\",\r\n  },\r\n  {\r\n    id: 3,\r\n    own: false,\r\n    text: \"Thanks! No rush, just want fresh eyes on it.\",\r\n    time: \"2:32 PM\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [message, setMessage] = useState(\"\");\r\n  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);\r\n\r\n  const send = () => {\r\n    if (!message.trim()) return;\r\n    const now = new Date().toLocaleTimeString(\"en-US\", {\r\n      hour: \"2-digit\",\r\n      minute: \"2-digit\",\r\n    });\r\n    setMessages((prev) => [\r\n      ...prev,\r\n      { id: Date.now(), own: true, text: message.trim(), time: now },\r\n    ]);\r\n    setMessage(\"\");\r\n  };\r\n\r\n  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {\r\n    if (e.key === \"Enter\" && !e.shiftKey) {\r\n      e.preventDefault();\r\n      send();\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col overflow-hidden rounded-xl border border-border\">\r\n      <div className=\"border-border border-b bg-muted/30 px-3 py-2\">\r\n        <p className=\"font-medium text-sm\">Alice Chen</p>\r\n        <p className=\"text-emerald-500 text-xs\">Online</p>\r\n      </div>\r\n\r\n      <div className=\"flex min-h-48 flex-col justify-end gap-2 bg-muted/10 p-3\">\r\n        {messages.map((m) => (\r\n          <div\r\n            className={`flex flex-col gap-0.5 ${m.own ? \"items-end\" : \"items-start\"}`}\r\n            key={m.id}\r\n          >\r\n            <div\r\n              className={`max-w-[80%] rounded-xl px-3 py-1.5 text-xs ${\r\n                m.own\r\n                  ? \"rounded-tr-sm bg-primary text-primary-foreground\"\r\n                  : \"rounded-tl-sm border border-border bg-background\"\r\n              }`}\r\n            >\r\n              {m.text}\r\n            </div>\r\n            <span className=\"text-[10px] text-muted-foreground\">{m.time}</span>\r\n          </div>\r\n        ))}\r\n      </div>\r\n\r\n      <div className=\"border-border border-t bg-background p-2\">\r\n        <div className=\"flex items-end gap-1.5\">\r\n          <Textarea\r\n            onChange={(e) => setMessage(e.target.value)}\r\n            onKeyDown={handleKeyDown}\r\n            placeholder=\"Type a message… (↵ to send)\"\r\n            size=\"sm\"\r\n            style={{ minHeight: \"2.5rem\", resize: \"none\" }}\r\n            value={message}\r\n          />\r\n          <div className=\"flex items-center gap-0.5\">\r\n            <Button className=\"size-8 p-0\" size=\"sm\" variant=\"ghost\">\r\n              <PaperclipIcon className=\"size-3.5\" />\r\n            </Button>\r\n            <Button className=\"size-8 p-0\" size=\"sm\" variant=\"ghost\">\r\n              <SmileIcon className=\"size-3.5\" />\r\n            </Button>\r\n            <Button\r\n              className=\"size-8 p-0\"\r\n              disabled={!message.trim()}\r\n              onClick={send}\r\n              size=\"sm\"\r\n            >\r\n              <SendIcon className=\"size-3.5\" />\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:block"
+}

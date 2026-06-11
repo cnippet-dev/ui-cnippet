@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-progress-12",
+  "description": "Download with speed stats",
+  "registryDependencies": [
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-progress-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { DownloadIcon } from \"lucide-react\";\r\nimport { useEffect, useState } from \"react\";\r\nimport {\r\n  Progress,\r\n  ProgressIndicator,\r\n  ProgressTrack,\r\n} from \"@/registry/default/ui/progress\";\r\n\r\nexport function Pattern() {\r\n  const [progress, setProgress] = useState(34);\r\n\r\n  useEffect(() => {\r\n    const id = setInterval(() => {\r\n      setProgress((p) => {\r\n        if (p >= 100) return 0;\r\n        return Math.min(p + Math.random() * 4, 100);\r\n      });\r\n    }, 300);\r\n    return () => clearInterval(id);\r\n  }, []);\r\n\r\n  const pct = Math.round(progress);\r\n  const remaining = Math.max(0, Math.ceil(((100 - progress) / 100) * 38));\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <DownloadIcon\r\n          aria-hidden=\"true\"\r\n          className=\"size-4 text-muted-foreground\"\r\n        />\r\n        <span className=\"font-medium text-sm\">Downloading update…</span>\r\n        <span className=\"ml-auto text-muted-foreground text-xs tabular-nums\">\r\n          {pct}%\r\n        </span>\r\n      </div>\r\n      <Progress value={progress}>\r\n        <ProgressTrack>\r\n          <ProgressIndicator />\r\n        </ProgressTrack>\r\n      </Progress>\r\n      <div className=\"flex justify-between text-muted-foreground text-xs tabular-nums\">\r\n        <span>2.4 MB/s</span>\r\n        <span>\r\n          {remaining > 0 ? `~${remaining}s remaining` : \"Finalizing…\"}\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress"
+  ],
+  "type": "registry:block"
+}

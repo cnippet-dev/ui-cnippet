@@ -1,6 +1,6 @@
 ---
 title: Tooltip
-description: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+description: A popup that appears when an element is hovered or focused, showing a hint for sighted users. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/tooltip#api-reference
@@ -95,6 +95,32 @@ Wrap multiple tooltips in `TooltipProvider` so that once one becomes visible, ad
 </TooltipContent>
 ```
 
+## API Reference
+
+### TooltipProvider
+
+Wrap multiple tooltips in `TooltipProvider` so they share the same open delay. Once one tooltip opens, the rest appear instantly.
+
+### Tooltip
+
+Root provider for a single tooltip. Wraps Base UI `Tooltip.Root`.
+
+### TooltipTrigger
+
+The element that triggers the tooltip on hover or focus.
+
+### TooltipPopup / TooltipContent
+
+The floating popup label.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"top"` | Side to open relative to the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment relative to the trigger |
+| `sideOffset` | `number` | `4` | Gap in pixels from the trigger |
+| `anchor` | `Element \| VirtualElement` | — | Custom anchor element for positioning |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
 ## Examples
 
 ### Grouped Tooltips
@@ -169,3 +195,33 @@ A credentials panel where each field has a copy icon button. The tooltip content
 Pro-only toolbar buttons render at reduced opacity and show a rich upgrade tooltip with a feature description and a direct upgrade link. Free-tier buttons fall back to a plain label tooltip.
 
 <ComponentPreview name="v-tooltip-12" />
+
+### Form Validation Hints
+
+Info icons next to field labels reveal format requirements on hover — username rules, password strength criteria, and email usage policy — without cluttering the form layout.
+
+<ComponentPreview name="v-tooltip-13" />
+
+### System Status Indicators
+
+A status bar where colored dots represent live service health. Hovering any dot reveals the service name, current status, uptime percentage, and average latency.
+
+<ComponentPreview name="v-tooltip-14" />
+
+### Sidebar Navigation
+
+Icon-only nav buttons with tooltips anchored to the right side, showing the destination label and a one-line description. The active item is highlighted so the icon alone conveys context.
+
+<ComponentPreview name="v-tooltip-15" />
+
+### Permissions Matrix
+
+A role-by-resource access table where each cell icon (full / read / none) reveals a tooltip explaining what that access level means for that specific resource.
+
+<ComponentPreview name="v-tooltip-16" />
+
+### Deployment Pipeline
+
+A linear pipeline view with step icons (done, running, pending) connected by lines. Hovering each step reveals its name, status, duration, and a one-line detail message.
+
+<ComponentPreview name="v-tooltip-17" />

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-3",
-  "description": "Basic fieldset",
+  "description": "Shipping address fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-3.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Select,\r\n  SelectItem,\r\n  SelectPopup,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\";\r\n\r\nconst countries = [\r\n  { label: \"Select a country\", value: null },\r\n  { label: \"United States\", value: \"us\" },\r\n  { label: \"United Kingdom\", value: \"uk\" },\r\n  { label: \"Canada\", value: \"ca\" },\r\n  { label: \"Australia\", value: \"au\" },\r\n  { label: \"Germany\", value: \"de\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"flex w-full flex-col gap-4\">\r\n      <FieldsetLegend>Shipping Address</FieldsetLegend>\r\n      <Field>\r\n        <FieldLabel>\r\n          Street address <span className=\"text-destructive-foreground\">*</span>\r\n        </FieldLabel>\r\n        <Input placeholder=\"123 Main St\" required type=\"text\" />\r\n        <FieldError>Street address is required.</FieldError>\r\n      </Field>\r\n      <div className=\"grid grid-cols-2 gap-4\">\r\n        <Field>\r\n          <FieldLabel>\r\n            City <span className=\"text-destructive-foreground\">*</span>\r\n          </FieldLabel>\r\n          <Input placeholder=\"San Francisco\" required type=\"text\" />\r\n          <FieldError>City is required.</FieldError>\r\n        </Field>\r\n        <Field>\r\n          <FieldLabel>\r\n            ZIP / Postal code{\" \"}\r\n            <span className=\"text-destructive-foreground\">*</span>\r\n          </FieldLabel>\r\n          <Input placeholder=\"94103\" required type=\"text\" />\r\n          <FieldError>ZIP code is required.</FieldError>\r\n        </Field>\r\n      </div>\r\n      <Field>\r\n        <FieldLabel>Country</FieldLabel>\r\n        <Select items={countries}>\r\n          <SelectTrigger>\r\n            <SelectValue />\r\n          </SelectTrigger>\r\n          <SelectPopup>\r\n            {countries.map(({ label, value }) => (\r\n              <SelectItem key={value} value={value}>\r\n                {label}\r\n              </SelectItem>\r\n            ))}\r\n          </SelectPopup>\r\n        </Select>\r\n      </Field>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

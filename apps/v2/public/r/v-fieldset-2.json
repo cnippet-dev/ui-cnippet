@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-2",
-  "description": "Basic fieldset",
+  "description": "Personal information fieldset",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-2.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/default/ui/field\";\r\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Fieldset className=\"flex w-full flex-col gap-6\">\r\n      <FieldsetLegend>Personal Information</FieldsetLegend>\r\n      <div className=\"grid grid-cols-2 gap-4\">\r\n        <Field>\r\n          <FieldLabel>First name</FieldLabel>\r\n          <Input placeholder=\"Jane\" type=\"text\" />\r\n        </Field>\r\n        <Field>\r\n          <FieldLabel>Last name</FieldLabel>\r\n          <Input placeholder=\"Smith\" type=\"text\" />\r\n        </Field>\r\n      </div>\r\n      <Field>\r\n        <FieldLabel>Email address</FieldLabel>\r\n        <Input placeholder=\"jane@example.com\" type=\"email\" />\r\n        <FieldDescription>\r\n          We&apos;ll send account-related emails here.\r\n        </FieldDescription>\r\n      </Field>\r\n      <Field>\r\n        <FieldLabel>Phone number</FieldLabel>\r\n        <Input placeholder=\"+1 (555) 000-0000\" type=\"tel\" />\r\n        <FieldDescription>\r\n          Optional. Used for SMS notifications.\r\n        </FieldDescription>\r\n      </Field>\r\n    </Fieldset>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

@@ -1,6 +1,6 @@
 ---
 title: Progress
-description: Displays the status of a task that takes a long time.
+description: Displays the status of a task that takes a long time. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/progress#api-reference
@@ -62,6 +62,34 @@ import {
 
 Note: If you render children inside `Progress`, you must also include `ProgressTrack` and `ProgressIndicator` inside it. Without them, the bar will not display. When no children are provided, a default track and indicator are rendered for you.
 
+## API Reference
+
+### Progress
+
+Root container. Renders a default track and indicator when no children are provided.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number \| null` | `null` | Current progress value; `null` renders an indeterminate state |
+| `max` | `number` | `100` | Maximum value |
+| `min` | `number` | `0` | Minimum value |
+
+### ProgressLabel
+
+`<label>` element associated with the progress bar for screen readers.
+
+### ProgressTrack
+
+The background bar track. Rendered automatically inside `Progress` when no children are provided.
+
+### ProgressIndicator
+
+The filled portion of the bar. Width is driven by the `value`/`max`/`min` of the root.
+
+### ProgressValue
+
+Displays the current value as formatted text (e.g. `"40%"`).
+
 ## Examples
 
 ### With Formatted Value
@@ -93,3 +121,57 @@ Renders a segmented step indicator with labeled stages — each segment fills as
 Overrides the indicator color based on the current value — green for healthy, amber for warning, red for critical.
 
 <ComponentPreview name="v-progress-6" />
+
+### Skills Meter
+
+Six technology skills each displayed with a labeled progress bar and a percentage readout — a static competency or proficiency display.
+
+<ComponentPreview name="v-progress-7" />
+
+### File Upload Queue
+
+Four files with live simulated upload progress. Each row shows a file icon, status icon (spinner / check / error), and a progress bar whose color and icon change based on upload state.
+
+<ComponentPreview name="v-progress-8" />
+
+### Budget Breakdown
+
+A monthly budget card with six spending categories. When a category exceeds its limit the indicator flips to destructive red and a warning line appears below the bar.
+
+<ComponentPreview name="v-progress-9" />
+
+### API Usage Tiers
+
+A thick progress bar with floating threshold markers at Free, Pro, and Team limits. A callout below the bar shows how many requests remain until the next tier is reached.
+
+<ComponentPreview name="v-progress-10" />
+
+### Survey Completion
+
+A labeled bar with a "4 of 10" counter replacing the percentage — the natural format for multi-question surveys and quizzes.
+
+<ComponentPreview name="v-progress-11" />
+
+### Download with Speed
+
+A simulated download bar with a filename header and an animated MB/s + "~Xs remaining" readout beneath, driven by `setInterval`.
+
+<ComponentPreview name="v-progress-12" />
+
+### Fundraiser Goal
+
+A fundraising card with a red-tinted bar and raised/goal currency breakdown — indicator color overridden with `className` on `ProgressIndicator`.
+
+<ComponentPreview name="v-progress-13" />
+
+### Reading Progress
+
+A 1px-tall bar pinned to the top of a scrollable article container that tracks scroll position via a `useEffect` scroll listener.
+
+<ComponentPreview name="v-progress-14" />
+
+### Build Pipeline
+
+A progress bar paired with a per-stage checklist — `CheckIcon` for done, an animated `CircleDotIcon` for the active stage, and `ClockIcon` for pending ones.
+
+<ComponentPreview name="v-progress-15" />

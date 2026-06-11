@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-30",
+  "description": "Segmented view toggle with list, table, and kanban options",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-30.tsx",
+      "content": "\"use client\";\r\n\r\nimport { KanbanIcon, LayoutListIcon, TableIcon } from \"lucide-react\";\r\nimport { Fragment, useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\r\n\r\ntype View = \"list\" | \"table\" | \"board\";\r\n\r\nconst views: { id: View; icon: typeof LayoutListIcon; label: string }[] = [\r\n  { icon: LayoutListIcon, id: \"list\", label: \"List\" },\r\n  { icon: TableIcon, id: \"table\", label: \"Table\" },\r\n  { icon: KanbanIcon, id: \"board\", label: \"Board\" },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [view, setView] = useState<View>(\"list\");\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <Group aria-label=\"View mode\">\r\n        {views.map((v, i) => (\r\n          <Fragment key={v.id}>\r\n            {i > 0 && <GroupSeparator />}\r\n            <Button\r\n              aria-pressed={view === v.id}\r\n              onClick={() => setView(v.id)}\r\n              size=\"sm\"\r\n              variant={view === v.id ? \"default\" : \"ghost\"}\r\n            >\r\n              <v.icon className=\"size-4\" />\r\n              {v.label}\r\n            </Button>\r\n          </Fragment>\r\n        ))}\r\n      </Group>\r\n      <p className=\"text-muted-foreground text-sm\">\r\n        Viewing as:{\" \"}\r\n        <span className=\"font-medium text-foreground capitalize\">{view}</span>\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

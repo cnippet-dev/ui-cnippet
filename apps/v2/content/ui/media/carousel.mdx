@@ -1,6 +1,8 @@
 ---
 title: Carousel
-description: A carousel with motion and swipe built using Embla.
+description: A carousel with motion and swipe built using Embla. Built with Tailwind CSS. Copy-paste ready.
+links:
+  doc: https://www.embla-carousel.com/api/
 ---
 
 <ComponentPreview name="v-carousel-1" />
@@ -44,29 +46,122 @@ npm install embla-carousel-react
 
 </CodeTabs>
 
-{/* ## Usage
+## API Reference
 
-```tsx
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-```
+### Carousel
 
-```tsx
-<Avatar>
-  <AvatarImage src="/avatars/01.png" alt="User avatar" />
-  <AvatarFallback>JD</AvatarFallback>
-</Avatar>
-``` */}
+Root carousel container powered by [Embla Carousel](https://www.embla-carousel.com/).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Scroll axis |
+| `opts` | `EmblaOptionsType` | — | Embla options object (loop, align, dragFree, etc.) |
+| `plugins` | `EmblaPluginType[]` | — | Embla plugins (autoplay, autoScroll, etc.) |
+| `setApi` | `(api: CarouselApi) => void` | — | Callback to receive the Embla API instance for programmatic control |
+
+### CarouselContent
+
+Scroll container holding all `CarouselItem` children.
+
+### CarouselItem
+
+Individual slide. Use Tailwind `basis-*` utilities to control how many slides are visible at once.
+
+### CarouselPrevious
+
+Previous-slide button.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `ButtonVariant` | `"outline"` | Button visual style |
+| `size` | `ButtonSize` | `"icon"` | Button size |
+
+### CarouselNext
+
+Next-slide button. Accepts the same `variant` and `size` props as `CarouselPrevious`.
 
 ## Examples
 
-### Fallback Only
+### Multiple Items
 
-Reserved for an upcoming carousel variant.
+Shows multiple slides at once using fractional `basis` — each item takes half or a third of the track width, letting users see what's coming next.
 
 <ComponentPreview name="v-carousel-2" />
 
-### Different Sizes
+### Custom Spacing
 
-Reserved for an upcoming carousel variant.
+Reduces the gap between slides by overriding the default padding, useful for tighter layouts where breathing room should be minimal.
 
 <ComponentPreview name="v-carousel-3" />
+
+### Vertical Orientation
+
+Switches the scroll axis to vertical via `orientation="vertical"` — suited for feeds, timelines, or any layout that naturally flows top-to-bottom.
+
+<ComponentPreview name="v-carousel-4" />
+
+### Autoplay with Indicators
+
+Auto-advances every 2.5 s using the Embla API directly via `setInterval`, with pill-shaped dot indicators below that expand to show the active slide and allow manual jump.
+
+<ComponentPreview name="v-carousel-5" />
+
+### Testimonials
+
+Single-slide carousel for customer quotes — each card shows a star rating, a pull quote, and an avatar with name and role; loops infinitely with arrow controls.
+
+<ComponentPreview name="v-carousel-6" />
+
+### Product Showcase
+
+Multi-item carousel showing product cards with an image area, name, price, badge, and an Add to Cart button — aligned to `start` so partial next-slide is always visible.
+
+<ComponentPreview name="v-carousel-7" />
+
+### Onboarding Steps
+
+Step-by-step wizard built on raw Embla with drag disabled — a progress bar and "Step N of M" label update as the user moves through each step using labeled Back / Next buttons.
+
+<ComponentPreview name="v-carousel-8" />
+
+### Team Members
+
+Peek-style multi-item carousel for team cards — each card shows an avatar, name, role, department badge, and links; the partial next card signals more to explore.
+
+<ComponentPreview name="v-carousel-9" />
+
+### Gallery with Thumbnails
+
+Main carousel controlled programmatically via `setApi` — clicking a thumbnail scrolls the main view to that image, and the thumbnail strip stays in sync as the user swipes.
+
+<ComponentPreview name="v-carousel-10" />
+
+### Testimonials
+
+A looping testimonial carousel with a quote icon, reviewer name, role, and avatar initials. Dot indicators sync to the current slide and act as navigation buttons.
+
+<ComponentPreview name="v-carousel-11" />
+
+### Pricing Plans
+
+A single-item carousel through Free, Pro, and Enterprise plans with arrow navigation. The Pro plan card is visually highlighted with a primary ring.
+
+<ComponentPreview name="v-carousel-12" />
+
+### Media Gallery
+
+A carousel of labeled gradient slides with a slide counter and dot progress bar below, using the built-in `CarouselPrevious` / `CarouselNext` controls.
+
+<ComponentPreview name="v-carousel-13" />
+
+### Changelog
+
+A drag-free multi-card carousel scrolling through release notes — each card shows a version tag, date, and a bullet list of changes.
+
+<ComponentPreview name="v-carousel-14" />
+
+### Feature Highlights
+
+A slide-by-slide feature tour with an emoji icon, title, and description per slide. Dot indicators and Prev / Next buttons control navigation, with the last slide showing a "Done" checkmark.
+
+<ComponentPreview name="v-carousel-15" />

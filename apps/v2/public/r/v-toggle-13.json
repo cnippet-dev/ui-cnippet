@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toggle-13",
+  "description": "Social post interactions with live like and repost counts",
+  "registryDependencies": [
+    "@cnippet/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toggle-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  HeartIcon,\r\n  MessageCircleIcon,\r\n  RepeatIcon,\r\n  Share2Icon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Toggle } from \"@/registry/default/ui/toggle\";\r\n\r\nconst initialCounts = { hearts: 142, replies: 24, reposts: 38 };\r\n\r\nexport function Pattern() {\r\n  const [liked, setLiked] = useState(false);\r\n  const [reposted, setReposted] = useState(false);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs rounded-xl border border-border p-4\">\r\n      <div className=\"mb-3 flex items-center gap-2.5\">\r\n        <div className=\"flex size-8 items-center justify-center rounded-full bg-muted font-medium text-xs\">\r\n          JL\r\n        </div>\r\n        <div>\r\n          <p className=\"font-medium text-sm leading-none\">Jackson Lee</p>\r\n          <p className=\"text-muted-foreground text-xs\">@jacksonlee · 2h</p>\r\n        </div>\r\n      </div>\r\n      <p className=\"mb-4 text-sm leading-relaxed\">\r\n        Just shipped the new component library update. 15 new variants, dark\r\n        mode support, and zero breaking changes. 🚀\r\n      </p>\r\n      <div className=\"flex items-center gap-1\">\r\n        <Toggle\r\n          aria-label=\"Reply\"\r\n          className=\"gap-1.5 text-muted-foreground\"\r\n          size=\"sm\"\r\n        >\r\n          <MessageCircleIcon className=\"size-4\" />\r\n          <span className=\"text-xs tabular-nums\">{initialCounts.replies}</span>\r\n        </Toggle>\r\n\r\n        <Toggle\r\n          aria-label={reposted ? \"Undo repost\" : \"Repost\"}\r\n          className={`gap-1.5 transition-colors ${reposted ? \"text-emerald-500\" : \"text-muted-foreground\"}`}\r\n          onPressedChange={setReposted}\r\n          pressed={reposted}\r\n          size=\"sm\"\r\n        >\r\n          <RepeatIcon className=\"size-4\" />\r\n          <span className=\"text-xs tabular-nums\">\r\n            {initialCounts.reposts + (reposted ? 1 : 0)}\r\n          </span>\r\n        </Toggle>\r\n\r\n        <Toggle\r\n          aria-label={liked ? \"Unlike\" : \"Like\"}\r\n          className={`gap-1.5 transition-colors ${liked ? \"text-rose-500\" : \"text-muted-foreground\"}`}\r\n          onPressedChange={setLiked}\r\n          pressed={liked}\r\n          size=\"sm\"\r\n        >\r\n          <HeartIcon\r\n            className={`size-4 transition-colors ${liked ? \"fill-rose-500\" : \"\"}`}\r\n          />\r\n          <span className=\"text-xs tabular-nums\">\r\n            {initialCounts.hearts + (liked ? 1 : 0)}\r\n          </span>\r\n        </Toggle>\r\n\r\n        <Toggle\r\n          aria-label=\"Share\"\r\n          className=\"ml-auto text-muted-foreground\"\r\n          size=\"sm\"\r\n        >\r\n          <Share2Icon className=\"size-4\" />\r\n        </Toggle>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-11",
+  "description": "Searchable FAQ with live keyword filter",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { SearchIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/default/ui/accordion\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\n\r\nconst faqs = [\r\n  {\r\n    content:\r\n      'Go to the login page and click \"Forgot password\". You\\'ll receive a reset link within a few minutes. The link expires after 24 hours.',\r\n    trigger: \"How do I reset my password?\",\r\n    value: \"q1\",\r\n  },\r\n  {\r\n    content:\r\n      \"Yes, you can upgrade or downgrade at any time from account settings. Changes take effect at the start of your next billing cycle.\",\r\n    trigger: \"Can I change my subscription plan?\",\r\n    value: \"q2\",\r\n  },\r\n  {\r\n    content:\r\n      \"All new accounts start with a 14-day free trial on the Pro plan. No credit card is required to start.\",\r\n    trigger: \"Is there a free trial available?\",\r\n    value: \"q3\",\r\n  },\r\n  {\r\n    content:\r\n      \"Navigate to Settings > Data & Privacy > Export. You can export in CSV or JSON format. Large exports may take a few minutes.\",\r\n    trigger: \"How do I export my data?\",\r\n    value: \"q4\",\r\n  },\r\n  {\r\n    content:\r\n      \"We accept all major credit cards (Visa, Mastercard, AmEx), PayPal, and bank transfers for annual enterprise plans.\",\r\n    trigger: \"What payment methods do you accept?\",\r\n    value: \"q5\",\r\n  },\r\n  {\r\n    content:\r\n      'From your dashboard, go to Settings > Team, then click \"Invite Member\". Enter their email and select a role. They\\'ll receive an invite within minutes.',\r\n    trigger: \"How do I invite team members?\",\r\n    value: \"q6\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [query, setQuery] = useState(\"\");\r\n  const filtered = faqs.filter(\r\n    (f) =>\r\n      f.trigger.toLowerCase().includes(query.toLowerCase()) ||\r\n      f.content.toLowerCase().includes(query.toLowerCase()),\r\n  );\r\n\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-lg\">\r\n      <div className=\"mb-4 flex flex-col gap-1\">\r\n        <h2 className=\"font-semibold text-lg\">Frequently Asked Questions</h2>\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Search or browse answers below.\r\n        </p>\r\n      </div>\r\n      <div className=\"relative mb-4\">\r\n        <SearchIcon className=\"absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\" />\r\n        <Input\r\n          className=\"pl-9\"\r\n          onChange={(e) => setQuery(e.target.value)}\r\n          placeholder=\"Search questions…\"\r\n          value={query}\r\n        />\r\n      </div>\r\n      {filtered.length === 0 ? (\r\n        <p className=\"py-8 text-center text-muted-foreground text-sm\">\r\n          No results for &quot;{query}&quot;\r\n        </p>\r\n      ) : (\r\n        <Accordion className=\"w-full\" multiple>\r\n          {filtered.map((faq) => (\r\n            <AccordionItem key={faq.value} value={faq.value}>\r\n              <AccordionTrigger>{faq.trigger}</AccordionTrigger>\r\n              <AccordionContent className=\"text-muted-foreground\">\r\n                {faq.content}\r\n              </AccordionContent>\r\n            </AccordionItem>\r\n          ))}\r\n        </Accordion>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

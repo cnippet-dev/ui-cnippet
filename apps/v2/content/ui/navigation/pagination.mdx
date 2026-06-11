@@ -1,6 +1,6 @@
 ---
 title: Pagination
-description: A pagination with page navigation, next and previous links.
+description: A pagination with page navigation, next and previous links. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-pagination-1" />
@@ -69,6 +69,42 @@ import {
   </PaginationContent>
 </Pagination>
 ```
+
+## API Reference
+
+### Pagination
+
+Root `<nav>` element with `aria-label="pagination"`.
+
+### PaginationContent
+
+`<ul>` flex row holding all pagination items.
+
+### PaginationItem
+
+`<li>` wrapper for each pagination element.
+
+### PaginationLink
+
+Navigable page link.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isActive` | `boolean` | `false` | Marks this link as the current page (`aria-current="page"`, outline style) |
+| `size` | `ButtonSize` | `"icon"` | Size of the link button |
+| `render` | `React.ReactElement` | — | Renders a different element (e.g. `next/link`) |
+
+### PaginationPrevious
+
+Pre-built previous-page link with a `ChevronLeft` icon and "Previous" label.
+
+### PaginationNext
+
+Pre-built next-page link with a `ChevronRight` icon and "Next" label.
+
+### PaginationEllipsis
+
+`<span>` placeholder for collapsed page ranges. Renders a `MoreHorizontal` icon.
 
 ## Examples
 
@@ -143,3 +179,33 @@ Combines numbered page links with an inline jump-to input field for large pagina
 A full-featured pagination bar including total count, ellipsis collapse, and a rows-per-page select dropdown.
 
 <ComponentPreview name="v-pagination-14" />
+
+### Mini Pill
+
+A compact rounded-full border wrapping previous/next arrows around a centered "X of Y" counter — minimal footprint for tight layouts.
+
+<ComponentPreview name="v-pagination-16" />
+
+### Older / Newer Navigation
+
+Blog-style cursor navigation with "← Newer posts" and "Older posts →" links instead of numbered pages — ideal for chronological feeds.
+
+<ComponentPreview name="v-pagination-17" />
+
+### Controlled with Smart Ellipsis
+
+A `useState`-driven pagination that recomputes the visible page window on every click, collapsing distant pages into `PaginationEllipsis` automatically.
+
+<ComponentPreview name="v-pagination-18" />
+
+### Results Summary
+
+A two-column bar with "Showing 41–60 of 230 results" on the left and compact prev/next arrows flanking a "3 / 12" counter on the right.
+
+<ComponentPreview name="v-pagination-19" />
+
+### Loading State
+
+The entire pagination bar is dimmed with `pointer-events-none opacity-40` and overlaid with a spinning `Loader2Icon` to communicate that results are being fetched.
+
+<ComponentPreview name="v-pagination-20" />

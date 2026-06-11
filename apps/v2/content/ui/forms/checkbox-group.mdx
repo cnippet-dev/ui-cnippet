@@ -1,6 +1,6 @@
 ---
 title: Checkbox Group
-description: Provides shared state to a series of checkboxes.
+description: Provides shared state to a series of checkboxes. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/checkbox-group#api-reference
@@ -73,9 +73,23 @@ import { CheckboxGroup } from "@/components/ui/checkbox-group"
 </CheckboxGroup>
 ```
 
+## API Reference
+
+### CheckboxGroup
+
+Provides shared state to a set of `Checkbox` components. Thin wrapper around Base UI's `CheckboxGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string[]` | — | Controlled array of checked values |
+| `defaultValue` | `string[]` | `[]` | Initial checked values for uncontrolled usage |
+| `onValueChange` | `(value: string[]) => void` | — | Callback when the selection changes |
+| `allValues` | `string[]` | — | Full list of possible values; enables parent checkbox indeterminate state |
+| `disabled` | `boolean` | `false` | Disables all checkboxes in the group |
+
 ## Examples
 
-For accessible group labelling and validation, prefer wrapping checkbox groups with `Field` and `Fieldset`. See the related example: [Checkbox group field](/ui/docs/components/field#checkbox-group-field).
+For accessible group labelling and validation, prefer wrapping checkbox groups with `Field` and `Fieldset`. See the related example: [Checkbox group field](/ui/forms/field#checkbox-group-field).
 
 
 ### With Disabled Item
@@ -101,3 +115,33 @@ Multi-level parent/child checkboxes where each parent controls a subset, and a r
 Wraps the checkbox group in `Field` and `Form` for built-in validation and required-state support.
 
 <ComponentPreview name="v-checkbox-group-5" />
+
+### Two-Level Tech Stack Picker
+
+Two `CheckboxGroup` parent checkboxes (Frontend, Backend) each controlling a subset of items, inside a shared outer group that handles the select-all root.
+
+<ComponentPreview name="v-checkbox-group-11" />
+
+### Recurring Schedule
+
+A day-of-week selector with separate parent checkboxes for Weekdays and Weekend, and a day count badge that reflects the current selection.
+
+<ComponentPreview name="v-checkbox-group-12" />
+
+### Integration Enablement
+
+Integration options rendered as card rows with an "Enable all" parent checkbox at the top, and a Save button showing the active count.
+
+<ComponentPreview name="v-checkbox-group-13" />
+
+### Data Export Selector
+
+Two section groups (Content, Settings) with nested items under each parent checkbox, plus an item count summary line below the list.
+
+<ComponentPreview name="v-checkbox-group-14" />
+
+### Food Preferences
+
+Two independent `CheckboxGroup` instances — one for cuisines and one for dietary options — each with a select-all parent and a two-column item grid.
+
+<ComponentPreview name="v-checkbox-group-15" />

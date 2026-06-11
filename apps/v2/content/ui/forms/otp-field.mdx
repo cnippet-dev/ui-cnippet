@@ -1,6 +1,6 @@
 ---
 title: OTP Field
-description: A segmented input for one-time passwords and verification codes.
+description: A segmented input for one-time passwords and verification codes. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/otp-field
@@ -21,7 +21,7 @@ links:
 <TabsPanel value="cli">
 
 ```bash
-npx shadcn@latest add @coss/otp-field
+npx shadcn@latest add @cnippet/otp-field
 ```
 
 </TabsPanel>
@@ -70,6 +70,29 @@ import {
   <OTPFieldInput aria-label="Character 6 of 6" />
 </OTPField>
 ```
+
+## API Reference
+
+### OTPField
+
+Root container that manages focus and input across all slots.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "lg"` | `"default"` | Size of each input slot |
+| `length` | `number` | — | Total number of input slots (required) |
+| `aria-label` | `string` | — | Accessible label for the whole field (required) |
+| `value` | `string` | — | Controlled value of the entire OTP string |
+| `defaultValue` | `string` | — | Initial value for uncontrolled usage |
+| `onValueChange` | `(value: string) => void` | — | Callback when the OTP value changes |
+
+### OTPFieldInput
+
+An individual character slot. Each slot needs its own `aria-label` (e.g. `"Character 1 of 6"`).
+
+### OTPFieldSeparator
+
+Visual separator between groups of digits (e.g. between slots 3 and 4 in a 6-digit code).
 
 ## Examples
 
@@ -120,3 +143,33 @@ Each slot is a real `<input>`, so `placeholder` and CSS behave as usual. Hide th
 Pass `mask` on the root when the code should be obscured while it is typed (e.g. shared screens).
 
 <ComponentPreview name="v-otp-field-9" />
+
+### Email Verification Card
+
+A bordered card with a mail icon header, recipient email display, the OTP slots, and an inline "Resend code" button — ready to drop into an email verification flow.
+
+<ComponentPreview name="v-otp-field-11" />
+
+### 2FA Authenticator App
+
+A compact card with an authenticator app icon, contextual description, OTP input with `inputMode="numeric"`, and a "Verify" submit button.
+
+<ComponentPreview name="v-otp-field-12" />
+
+### 8-Character Invite Code
+
+A two-group `XXXX-XXXX` layout using `OTPFieldSeparator` with `validationType="alphanumeric"` — suitable for invite, license, or access codes.
+
+<ComponentPreview name="v-otp-field-13" />
+
+### Success State
+
+A controlled field that swaps the OTP slots for a green "Identity verified" confirmation once the correct code is entered, and shows a `FieldError` for wrong attempts.
+
+<ComponentPreview name="v-otp-field-14" />
+
+### Resend Countdown Timer
+
+A `useEffect`-driven countdown shows "Resend code in Xs" while the timer runs, then reveals a clickable "Resend code" link that resets the clock.
+
+<ComponentPreview name="v-otp-field-15" />

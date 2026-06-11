@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-21",
+  "description": "Textarea with character countdown",
+  "registryDependencies": [
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-21.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupText,\r\n  InputGroupTextarea,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nconst MAX = 280;\r\n\r\nexport default function Particle() {\r\n  const [value, setValue] = useState(\"\");\r\n  const remaining = MAX - value.length;\r\n  const isNear = remaining <= 20;\r\n  const isOver = remaining < 0;\r\n\r\n  return (\r\n    <InputGroup className=\"w-full max-w-sm\">\r\n      <InputGroupTextarea\r\n        aria-label=\"Post content\"\r\n        maxLength={MAX + 20}\r\n        onChange={(e) => setValue(e.target.value)}\r\n        placeholder=\"What's on your mind?\"\r\n        rows={3}\r\n        value={value}\r\n      />\r\n      <InputGroupAddon align=\"block-end\">\r\n        <InputGroupText\r\n          className={\r\n            isOver\r\n              ? \"text-destructive-foreground\"\r\n              : isNear\r\n                ? \"text-warning\"\r\n                : \"text-muted-foreground\"\r\n          }\r\n        >\r\n          {remaining}\r\n        </InputGroupText>\r\n      </InputGroupAddon>\r\n    </InputGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

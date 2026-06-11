@@ -1,6 +1,6 @@
 ---
 title: Skeleton
-description: A loading state skeleton for your components.
+description: A loading state skeleton for your components. Built with Base UI and Tailwind CSS. Copy-paste ready.
 ---
 
 <ComponentPreview name="v-skeleton-1" />
@@ -47,6 +47,17 @@ import { Skeleton } from "@/components/ui/skeleton"
 <Skeleton className="size-10 rounded-full" />
 ```
 
+## API Reference
+
+### Skeleton
+
+A `<div>` with an animated shimmer. Size and shape are controlled entirely via `className`. Accepts all standard `<div>` HTML attributes.
+
+```tsx
+<Skeleton className="h-4 w-48" />          {/* text line */}
+<Skeleton className="size-10 rounded-full" /> {/* avatar */}
+```
+
 ## Examples
 
 ### Skeleton only
@@ -72,3 +83,63 @@ A row of metric cards each containing a skeleton title and a large number area, 
 A list skeleton with a circular avatar, two text lines, and a trailing action area — suitable for people lists or activity feeds.
 
 <ComponentPreview name="v-skeleton-5" />
+
+### Blog Article
+
+A full article skeleton with a hero image placeholder, tag pills, a wide title line, author row, and multiple body paragraphs.
+
+<ComponentPreview name="v-skeleton-6" />
+
+### Data Table
+
+A table skeleton with a header row, six data rows each containing an avatar, badge, text cells, and a trailing button, plus a pagination footer.
+
+<ComponentPreview name="v-skeleton-7" />
+
+### Sidebar Dashboard
+
+A two-panel layout skeleton: a sidebar with nav items and a main area with a stats grid and list rows — mirrors a full dashboard loading state.
+
+<ComponentPreview name="v-skeleton-8" />
+
+### Chat Thread
+
+Alternating left and right message bubble skeletons with an avatar on the left side and an input bar at the bottom — suitable for chat or messaging interfaces.
+
+<ComponentPreview name="v-skeleton-9" />
+
+### Settings Page
+
+A settings page skeleton with a header, a tab bar, and two settings sections each containing toggle and button rows.
+
+<ComponentPreview name="v-skeleton-10" />
+
+### Product Grid
+
+A 2×2 grid of e-commerce product card skeletons, each with a square image placeholder, title, star rating, price, and an add-to-cart button.
+
+<ComponentPreview name="v-skeleton-11" />
+
+### Form Fields
+
+A multi-field form skeleton with a title/description header, a two-column field grid, a full-width textarea, and a footer action row.
+
+<ComponentPreview name="v-skeleton-12" />
+
+### Email Inbox
+
+An inbox list skeleton with a header toolbar and rows showing a sender avatar, name, subject, preview line, and timestamp — unread rows subtly highlighted.
+
+<ComponentPreview name="v-skeleton-13" />
+
+### Kanban Board
+
+Three columns (To Do, In Progress, Done) each containing stacked card skeletons with title, assignee avatars, and a status pill — plus an add-card button.
+
+<ComponentPreview name="v-skeleton-14" />
+
+### Profile Hero Page
+
+A social profile skeleton: a banner image, an overlapping circular avatar, name/handle, bio text, a stats bar, and a six-item post image grid.
+
+<ComponentPreview name="v-skeleton-15" />

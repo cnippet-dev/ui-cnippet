@@ -7,7 +7,7 @@ export default function TextGenerateEffectStacked() {
     <div className="flex min-h-50 flex-col items-center justify-center gap-2 px-6">
       <TextGenerateEffect
         as="p"
-        className="text-xs font-semibold uppercase tracking-widest text-primary"
+        className="font-semibold text-primary text-xs uppercase tracking-widest"
         filter={false}
         staggerDuration={0.08}
         transition={{ duration: 0.3 }}
@@ -16,7 +16,7 @@ export default function TextGenerateEffectStacked() {
       </TextGenerateEffect>
       <TextGenerateEffect
         as="h1"
-        className="max-w-lg text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+        className="max-w-lg text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl"
         filter
         staggerDuration={0.09}
         transition={{ duration: 0.55 }}
@@ -25,7 +25,7 @@ export default function TextGenerateEffectStacked() {
       </TextGenerateEffect>
       <TextGenerateEffect
         as="p"
-        className="max-w-sm text-center text-sm text-muted-foreground"
+        className="max-w-sm text-center text-muted-foreground text-sm"
         filter
         staggerDuration={0.05}
         transition={{ duration: 0.45 }}

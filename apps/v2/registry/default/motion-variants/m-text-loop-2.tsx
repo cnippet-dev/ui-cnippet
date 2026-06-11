@@ -22,7 +22,9 @@ export default function TextLoopStatus() {
           {statuses.map(({ color, label }) => (
             <span className="flex items-center gap-2" key={label}>
               <span className={`h-2 w-2 rounded-full ${color}`} />
-              <span className="text-sm font-medium text-foreground">{label}</span>
+              <span className="font-medium text-foreground text-sm">
+                {label}
+              </span>
             </span>
           ))}
         </TextLoop>

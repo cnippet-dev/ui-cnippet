@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-15",
-  "description": "Basic group",
+  "description": "Text formatting toolbar",
   "registryDependencies": [
     "@cnippet/group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-group-15.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { ThumbsDownIcon, ThumbsUpIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Group, GroupSeparator } from \"@/registry/default/ui/group\";\r\n\r\nexport default function Particle() {\r\n  const [votes, setVotes] = useState({ down: 4, up: 42 });\r\n  const [voted, setVoted] = useState<\"up\" | \"down\" | null>(null);\r\n\r\n  const vote = (dir: \"up\" | \"down\") => {\r\n    setVotes((v) => {\r\n      if (voted === dir) return { ...v, [dir]: v[dir] - 1 };\r\n      const next = { ...v, [dir]: v[dir] + 1 };\r\n      if (voted) next[voted] = v[voted] - 1;\r\n      return next;\r\n    });\r\n    setVoted((prev) => (prev === dir ? null : dir));\r\n  };\r\n\r\n  return (\r\n    <Group aria-label=\"Helpfulness vote\">\r\n      <Button\r\n        aria-label=\"Helpful\"\r\n        aria-pressed={voted === \"up\"}\r\n        onClick={() => vote(\"up\")}\r\n        variant={voted === \"up\" ? \"secondary\" : \"outline\"}\r\n      >\r\n        <ThumbsUpIcon aria-hidden=\"true\" />\r\n        Helpful\r\n        <Badge className=\"-me-1\" variant=\"secondary\">\r\n          {votes.up}\r\n        </Badge>\r\n      </Button>\r\n      <GroupSeparator />\r\n      <Button\r\n        aria-label=\"Not helpful\"\r\n        aria-pressed={voted === \"down\"}\r\n        onClick={() => vote(\"down\")}\r\n        variant={voted === \"down\" ? \"secondary\" : \"outline\"}\r\n      >\r\n        <ThumbsDownIcon aria-hidden=\"true\" />\r\n        Not helpful\r\n        <Badge className=\"-me-1\" variant=\"secondary\">\r\n          {votes.down}\r\n        </Badge>\r\n      </Button>\r\n    </Group>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

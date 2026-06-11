@@ -9,7 +9,7 @@ export default function TextShimmerWaveLoading() {
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-foreground" />
         <TextShimmerWave
           as="p"
-          className="text-sm font-medium"
+          className="font-medium text-sm"
           duration={0.8}
           spread={1.5}
           yDistance={-1.5}
@@ -23,7 +23,7 @@ export default function TextShimmerWaveLoading() {
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-violet-500" />
         <TextShimmerWave
           as="span"
-          className="text-xs font-medium"
+          className="font-medium text-xs"
           duration={0.9}
           spread={1.8}
           yDistance={-1}

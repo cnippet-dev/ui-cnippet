@@ -34,13 +34,13 @@ export default function TextGradientPricing() {
           >
             <TextGradient
               as="p"
-              className="text-3xl font-bold"
+              className="font-bold text-3xl"
               colors={tier.colors}
               duration={tier.duration}
             >
               {tier.price}
             </TextGradient>
-            <p className="text-xs text-muted-foreground">{tier.label}</p>
+            <p className="text-muted-foreground text-xs">{tier.label}</p>
           </div>
         ))}
       </div>

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-kbd-10",
-  "description": "Basic kbd",
+  "description": "Shortcuts in menu items",
   "registryDependencies": [
     "@cnippet/kbd"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-kbd-10.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "import { CopyIcon, DownloadIcon, PencilIcon, TrashIcon } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\r\nimport {\r\n  Menu,\r\n  MenuItem,\r\n  MenuPopup,\r\n  MenuTrigger,\r\n} from \"@/registry/default/ui/menu\";\r\n\r\nexport function Pattern() {\r\n  return (\r\n    <Menu>\r\n      <MenuTrigger render={<Button variant=\"outline\" />}>\r\n        Edit document\r\n      </MenuTrigger>\r\n      <MenuPopup>\r\n        <MenuItem>\r\n          <PencilIcon aria-hidden=\"true\" />\r\n          Rename\r\n          <KbdGroup className=\"ms-auto\">\r\n            <Kbd>⌘</Kbd>\r\n            <Kbd>R</Kbd>\r\n          </KbdGroup>\r\n        </MenuItem>\r\n        <MenuItem>\r\n          <CopyIcon aria-hidden=\"true\" />\r\n          Duplicate\r\n          <KbdGroup className=\"ms-auto\">\r\n            <Kbd>⌘</Kbd>\r\n            <Kbd>D</Kbd>\r\n          </KbdGroup>\r\n        </MenuItem>\r\n        <MenuItem>\r\n          <DownloadIcon aria-hidden=\"true\" />\r\n          Export\r\n          <KbdGroup className=\"ms-auto\">\r\n            <Kbd>⌘</Kbd>\r\n            <Kbd>E</Kbd>\r\n          </KbdGroup>\r\n        </MenuItem>\r\n        <MenuItem variant=\"destructive\">\r\n          <TrashIcon aria-hidden=\"true\" />\r\n          Delete\r\n          <Kbd className=\"ms-auto\">⌫</Kbd>\r\n        </MenuItem>\r\n      </MenuPopup>\r\n    </Menu>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

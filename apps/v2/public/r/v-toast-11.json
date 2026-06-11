@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-toast-11",
+  "description": "Anchored clipboard copy with tooltip-style toast",
+  "registryDependencies": [
+    "@cnippet/toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-toast-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { CopyIcon } from \"lucide-react\";\r\nimport { useRef } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { anchoredToastManager } from \"@/registry/default/ui/toast\";\r\n\r\nconst SNIPPET = \"npx shadcn@latest add @cnippet/ui\";\r\n\r\nexport function Pattern() {\r\n  const btnRef = useRef<HTMLButtonElement>(null);\r\n\r\n  const copy = () => {\r\n    void navigator.clipboard.writeText(SNIPPET);\r\n    anchoredToastManager.add({\r\n      data: { tooltipStyle: true },\r\n      positionerProps: { anchor: btnRef.current },\r\n      title: \"Copied!\",\r\n    });\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-0 overflow-hidden rounded-lg border border-input bg-muted/40 py-1 pr-1 pl-3\">\r\n      <code className=\"flex-1 font-mono text-foreground/80 text-sm\">\r\n        {SNIPPET}\r\n      </code>\r\n      <Button\r\n        className=\"ml-2 shrink-0\"\r\n        onClick={copy}\r\n        ref={btnRef}\r\n        size=\"sm\"\r\n        variant=\"ghost\"\r\n      >\r\n        <CopyIcon className=\"size-3.5\" />\r\n        Copy\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:block"
+}

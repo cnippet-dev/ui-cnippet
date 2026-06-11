@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-group-19",
-  "description": "Basic input group",
+  "description": "With inline clear button",
   "registryDependencies": [
     "@cnippet/input-group"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-group-19.tsx",
-      "content": "export default function Component() {\r\n  return <div>Component</div>;\r\n}\r\n",
+      "content": "\"use client\";\r\n\r\nimport { XIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/registry/default/ui/input-group\";\r\n\r\nexport default function Particle() {\r\n  const [value, setValue] = useState(\"design-system\");\r\n\r\n  return (\r\n    <InputGroup>\r\n      <InputGroupInput\r\n        aria-label=\"Tag name\"\r\n        onChange={(e) => setValue(e.target.value)}\r\n        placeholder=\"Enter a tag…\"\r\n        type=\"text\"\r\n        value={value}\r\n      />\r\n      {value && (\r\n        <InputGroupAddon align=\"inline-end\">\r\n          <Button\r\n            aria-label=\"Clear\"\r\n            onClick={() => setValue(\"\")}\r\n            size=\"icon-xs\"\r\n            variant=\"ghost\"\r\n          >\r\n            <XIcon aria-hidden=\"true\" />\r\n          </Button>\r\n        </InputGroupAddon>\r\n      )}\r\n    </InputGroup>\r\n  );\r\n}\r\n",
       "type": "registry:block"
     }
   ],

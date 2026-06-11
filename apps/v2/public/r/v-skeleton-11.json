@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-skeleton-11",
+  "description": "Product Grid",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-skeleton-11.tsx",
+      "content": "import { Skeleton } from \"@/registry/default/ui/skeleton\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"grid w-full max-w-lg grid-cols-2 gap-4\">\r\n      {Array.from({ length: 4 }).map((_, i) => (\r\n        <div className=\"overflow-hidden rounded-xl border\" key={String(i)}>\r\n          <Skeleton className=\"aspect-square w-full rounded-none\" />\r\n          <div className=\"space-y-2 p-3\">\r\n            <Skeleton className=\"h-4 w-3/4\" />\r\n            <div className=\"flex items-center gap-1\">\r\n              {Array.from({ length: 5 }).map((_, j) => (\r\n                <Skeleton className=\"size-3 rounded-sm\" key={String(j)} />\r\n              ))}\r\n              <Skeleton className=\"ms-1 h-3 w-8\" />\r\n            </div>\r\n            <div className=\"flex items-center justify-between pt-1\">\r\n              <Skeleton className=\"h-5 w-16\" />\r\n              <Skeleton className=\"h-7 w-20 rounded-md\" />\r\n            </div>\r\n          </div>\r\n        </div>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:block"
+}

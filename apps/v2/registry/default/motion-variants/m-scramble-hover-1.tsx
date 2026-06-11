@@ -8,10 +8,10 @@ export default function ScrambleHoverNav() {
       <nav className="flex items-center gap-6">
         {links.map((link) => (
           <ScrambleHover
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
             key={link}
-            scrambleSpeed={40}
             maxIterations={8}
+            scrambleSpeed={40}
           >
             {link}
           </ScrambleHover>

@@ -1,6 +1,6 @@
 ---
 title: Field
-description: A component that provides labelling and validation for form controls.
+description: A component that provides labelling and validation for form controls. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/field#api-reference
@@ -90,6 +90,47 @@ import { Input } from "@/components/ui/input"
     )}
   </FieldValidity>
 </Field>
+```
+
+## API Reference
+
+### Field
+
+Root container that propagates label/description/error associations to child controls.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `disabled` | `boolean` | `false` | Disables the field and all interactive children |
+| `validate` | `(value: unknown) => string \| null` | — | Custom validation function; return an error string or `null` |
+
+### FieldLabel
+
+Styled `<label>` that automatically associates with the field's control.
+
+### FieldDescription
+
+Muted helper text linked to the control via `aria-describedby`.
+
+### FieldError
+
+Validation error text. Only visible when the field is invalid.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `match` | `string \| string[]` | — | Validity constraint(s) that trigger this error message |
+
+### FieldControl
+
+Invisible proxy that connects arbitrary controls to the field's validation context. Use when the control is not a native input.
+
+### FieldValidity
+
+Render-prop component exposing the field's current validity state.
+
+```tsx
+<FieldValidity>
+  {({ error }) => error && <p className="text-destructive">{error}</p>}
+</FieldValidity>
 ```
 
 ## Examples
@@ -191,3 +232,33 @@ A `NumberField` inside `Field` with a label and error message for validated nume
 A multi-field form showcasing how `Field` composes with various input types, all wired up with labels, descriptions, and error messages.
 
 <ComponentPreview name="v-field-17" />
+
+### Switch Field
+
+An inline `Switch` toggle with a label and description, laid out side-by-side using `flex-row` for compact preference controls.
+
+<ComponentPreview name="v-field-18" />
+
+### Date Field
+
+A native date `Input` wrapped in `Field` to provide an accessible label, description, and inline error for date-of-birth or deadline inputs.
+
+<ComponentPreview name="v-field-19" />
+
+### OTP Field
+
+An `OtpField` inside `Field` for verification-code entry, with label, description, and an error message when the code is invalid.
+
+<ComponentPreview name="v-field-20" />
+
+### File Upload Field
+
+A `type="file"` input inside `Field` with an accept attribute, description of allowed formats, and an error message for invalid uploads.
+
+<ComponentPreview name="v-field-21" />
+
+### Password Strength
+
+Uses `FieldValidity` to render a live strength meter — four coloured bars and a label that update as the user types their new password.
+
+<ComponentPreview name="v-field-22" />

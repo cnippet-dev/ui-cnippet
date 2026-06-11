@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-collapsible-15",
+  "description": "Privacy policy card with accordion sections and single-panel-open behavior",
+  "registryDependencies": [
+    "@cnippet/collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-collapsible-15.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ChevronDownIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport {\r\n  Card,\r\n  CardHeader,\r\n  CardPanel,\r\n  CardTitle,\r\n} from \"@/registry/default/ui/card\";\r\nimport {\r\n  Collapsible,\r\n  CollapsiblePanel,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/default/ui/collapsible\";\r\n\r\nconst SECTIONS = [\r\n  {\r\n    description:\r\n      \"We collect information you provide directly to us, such as when you create an account, make a purchase, or contact support. This includes name, email address, payment information, and any other information you choose to provide.\",\r\n    id: \"collection\",\r\n    title: \"What data we collect\",\r\n  },\r\n  {\r\n    description:\r\n      \"We use your information to operate and improve our services, process transactions, send service-related emails, and comply with legal obligations. We do not sell your personal data to third parties.\",\r\n    id: \"usage\",\r\n    title: \"How we use your data\",\r\n  },\r\n  {\r\n    description:\r\n      \"We share your information with service providers who assist us in operating our business, subject to confidentiality agreements. We may also disclose information when required by law.\",\r\n    id: \"sharing\",\r\n    title: \"Data sharing\",\r\n  },\r\n  {\r\n    description:\r\n      \"You may access, update, or delete your personal information at any time via your account settings. You may also opt out of marketing communications by clicking 'Unsubscribe' in any email.\",\r\n    id: \"rights\",\r\n    title: \"Your rights\",\r\n  },\r\n];\r\n\r\nexport function Pattern() {\r\n  const [open, setOpen] = useState<string | null>(\"collection\");\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md\">\r\n      <Card>\r\n        <CardHeader className=\"border-b pb-3\">\r\n          <CardTitle className=\"text-sm\">Privacy Policy</CardTitle>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            Last updated June 3, 2026\r\n          </p>\r\n        </CardHeader>\r\n        <CardPanel className=\"space-y-0 divide-y py-0\">\r\n          {SECTIONS.map((s) => (\r\n            <Collapsible\r\n              key={s.id}\r\n              onOpenChange={(o) => setOpen(o ? s.id : null)}\r\n              open={open === s.id}\r\n            >\r\n              <CollapsibleTrigger className=\"flex w-full items-center justify-between py-3 text-left font-medium text-sm transition-colors hover:text-primary\">\r\n                {s.title}\r\n                <ChevronDownIcon className=\"size-3.5 shrink-0 in-data-panel-open:rotate-180 text-muted-foreground transition-transform duration-200\" />\r\n              </CollapsibleTrigger>\r\n              <CollapsiblePanel>\r\n                <p className=\"pb-3 text-muted-foreground text-xs leading-relaxed\">\r\n                  {s.description}\r\n                </p>\r\n              </CollapsiblePanel>\r\n            </Collapsible>\r\n          ))}\r\n        </CardPanel>\r\n      </Card>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:block"
+}

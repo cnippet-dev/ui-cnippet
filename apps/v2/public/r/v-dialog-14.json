@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-dialog-14",
+  "description": "API Key Generation and Reveal",
+  "registryDependencies": [
+    "@cnippet/dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-dialog-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  CopyIcon,\r\n  EyeIcon,\r\n  EyeOffIcon,\r\n  KeyIcon,\r\n  RefreshCwIcon,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport {\r\n  Dialog,\r\n  DialogClose,\r\n  DialogDescription,\r\n  DialogFooter,\r\n  DialogHeader,\r\n  DialogPanel,\r\n  DialogPopup,\r\n  DialogTitle,\r\n  DialogTrigger,\r\n} from \"@/registry/default/ui/dialog\";\r\n\r\nfunction generateKey() {\r\n  return `sk_live_${Array.from({ length: 32 }, () =>\r\n    \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\".charAt(\r\n      Math.floor(Math.random() * 62),\r\n    ),\r\n  ).join(\"\")}`;\r\n}\r\n\r\nexport default function Particle() {\r\n  const [apiKey, setApiKey] = useState(generateKey);\r\n  const [revealed, setRevealed] = useState(false);\r\n  const [copied, setCopied] = useState(false);\r\n\r\n  const masked = apiKey.slice(0, 7) + \"•\".repeat(32) + apiKey.slice(-4);\r\n\r\n  const handleCopy = () => {\r\n    navigator.clipboard.writeText(apiKey).catch(() => {});\r\n    setCopied(true);\r\n    setTimeout(() => setCopied(false), 2000);\r\n  };\r\n\r\n  return (\r\n    <Dialog\r\n      onOpenChange={() => {\r\n        setRevealed(false);\r\n        setCopied(false);\r\n      }}\r\n    >\r\n      <DialogTrigger render={<Button variant=\"outline\" />}>\r\n        <KeyIcon className=\"size-4\" />\r\n        Generate API key\r\n      </DialogTrigger>\r\n      <DialogPopup className=\"sm:max-w-md\">\r\n        <DialogHeader>\r\n          <DialogTitle>Your new API key</DialogTitle>\r\n          <DialogDescription>\r\n            Copy and store it now — you won&apos;t be able to see it again after\r\n            closing this dialog.\r\n          </DialogDescription>\r\n        </DialogHeader>\r\n        <DialogPanel className=\"space-y-4\">\r\n          <div className=\"rounded-lg border bg-muted/40 p-4\">\r\n            <p className=\"break-all font-mono text-muted-foreground text-xs\">\r\n              {revealed ? apiKey : masked}\r\n            </p>\r\n          </div>\r\n          <div className=\"flex gap-2\">\r\n            <Button className=\"flex-1\" onClick={handleCopy} variant=\"outline\">\r\n              <CopyIcon className=\"size-4\" />\r\n              {copied ? \"Copied!\" : \"Copy key\"}\r\n            </Button>\r\n            <Button\r\n              onClick={() => setRevealed((v) => !v)}\r\n              size=\"icon\"\r\n              variant=\"outline\"\r\n            >\r\n              {revealed ? (\r\n                <EyeOffIcon className=\"size-4\" />\r\n              ) : (\r\n                <EyeIcon className=\"size-4\" />\r\n              )}\r\n            </Button>\r\n            <Button\r\n              onClick={() => {\r\n                setApiKey(generateKey());\r\n                setRevealed(false);\r\n                setCopied(false);\r\n              }}\r\n              size=\"icon\"\r\n              variant=\"outline\"\r\n            >\r\n              <RefreshCwIcon className=\"size-4\" />\r\n            </Button>\r\n          </div>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            This key grants full API access. Never share it in public\r\n            repositories or client-side code.\r\n          </p>\r\n        </DialogPanel>\r\n        <DialogFooter>\r\n          <DialogClose render={<Button />}>Done</DialogClose>\r\n        </DialogFooter>\r\n      </DialogPopup>\r\n    </Dialog>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:block"
+}

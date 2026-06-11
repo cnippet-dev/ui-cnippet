@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-15",
+  "description": "Billing Frequency",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-15.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\r\n\r\nconst frequencies = [\r\n  {\r\n    badge: null,\r\n    description: \"Pay each month\",\r\n    label: \"Monthly\",\r\n    value: \"monthly\",\r\n  },\r\n  {\r\n    badge: \"Save 10%\",\r\n    description: \"Billed every quarter\",\r\n    label: \"Quarterly\",\r\n    value: \"quarterly\",\r\n  },\r\n  {\r\n    badge: \"Save 25%\",\r\n    description: \"Billed once a year\",\r\n    label: \"Annually\",\r\n    value: \"annually\",\r\n  },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\r\n      <p className=\"font-medium text-sm\">Billing frequency</p>\r\n      <RadioGroup defaultValue=\"monthly\">\r\n        {frequencies.map(({ badge, description, label, value }) => (\r\n          <Label\r\n            className=\"flex cursor-pointer items-center justify-between rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50\"\r\n            key={value}\r\n          >\r\n            <div className=\"flex items-center gap-3\">\r\n              <Radio value={value} />\r\n              <div className=\"flex flex-col gap-0.5\">\r\n                <span className=\"font-medium text-sm\">{label}</span>\r\n                <span className=\"text-muted-foreground text-xs\">\r\n                  {description}\r\n                </span>\r\n              </div>\r\n            </div>\r\n            {badge && <Badge variant=\"secondary\">{badge}</Badge>}\r\n          </Label>\r\n        ))}\r\n      </RadioGroup>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

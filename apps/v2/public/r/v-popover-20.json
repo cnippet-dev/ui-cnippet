@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-popover-20",
+  "description": "Notification panel",
+  "registryDependencies": [
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-popover-20.tsx",
+      "content": "\"use client\";\r\n\r\nimport { PencilIcon } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport {\r\n  Popover,\r\n  PopoverClose,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\";\r\n\r\nexport function Pattern() {\r\n  const [name, setName] = useState(\"Acme Corporation\");\r\n  const [draft, setDraft] = useState(name);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-2\">\r\n      <p className=\"text-sm\">\r\n        Team: <span className=\"font-medium\">{name}</span>\r\n      </p>\r\n      <Popover\r\n        onOpenChange={(open) => {\r\n          if (open) setDraft(name);\r\n        }}\r\n      >\r\n        <PopoverTrigger\r\n          aria-label=\"Edit team name\"\r\n          render={<Button className=\"size-6\" size=\"icon\" variant=\"ghost\" />}\r\n        >\r\n          <PencilIcon className=\"size-3.5\" />\r\n        </PopoverTrigger>\r\n        <PopoverContent className=\"w-64 gap-3\">\r\n          <p className=\"font-medium text-sm\">Edit team name</p>\r\n          <Input onChange={(e) => setDraft(e.target.value)} value={draft} />\r\n          <div className=\"flex gap-2\">\r\n            <PopoverClose\r\n              render={<Button className=\"flex-1\" size=\"sm\" variant=\"outline\" />}\r\n            >\r\n              Cancel\r\n            </PopoverClose>\r\n            <PopoverClose\r\n              render={\r\n                <Button\r\n                  className=\"flex-1\"\r\n                  onClick={() => setName(draft)}\r\n                  size=\"sm\"\r\n                />\r\n              }\r\n            >\r\n              Save\r\n            </PopoverClose>\r\n          </div>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "popover"
+  ],
+  "type": "registry:block"
+}

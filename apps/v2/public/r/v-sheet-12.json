@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sheet-12",
+  "description": "User Profile Viewer",
+  "registryDependencies": [
+    "@cnippet/sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sheet-12.tsx",
+      "content": "import { BoxIcon, CircuitBoardIcon, GlobeIcon, LinkIcon } from \"lucide-react\";\r\nimport {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/default/ui/avatar\";\r\nimport { Badge } from \"@/registry/default/ui/badge\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport { Separator } from \"@/registry/default/ui/separator\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetPanel,\r\n  SheetPopup,\r\n  SheetTrigger,\r\n} from \"@/registry/default/ui/sheet\";\r\n\r\nconst stats = [\r\n  { label: \"Repos\", value: \"42\" },\r\n  { label: \"Followers\", value: \"1.2k\" },\r\n  { label: \"Stars\", value: \"8.4k\" },\r\n];\r\n\r\nconst links = [\r\n  { Icon: GlobeIcon, label: \"example.com\" },\r\n  { Icon: BoxIcon, label: \"@margaret_dev\" },\r\n  { Icon: CircuitBoardIcon, label: \"margaret-welsh\" },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Sheet>\r\n      <SheetTrigger render={<Button variant=\"outline\" />}>\r\n        <LinkIcon aria-hidden=\"true\" />\r\n        View Profile\r\n      </SheetTrigger>\r\n      <SheetPopup>\r\n        <SheetPanel className=\"space-y-5\">\r\n          <div className=\"flex items-start gap-4 pt-2\">\r\n            <Avatar className=\"size-16\">\r\n              <AvatarImage\r\n                alt=\"Margaret Welsh\"\r\n                src=\"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=128&h=128&dpr=2&q=80\"\r\n              />\r\n              <AvatarFallback>MW</AvatarFallback>\r\n            </Avatar>\r\n            <div className=\"flex-1\">\r\n              <p className=\"font-semibold\">Margaret Welsh</p>\r\n              <p className=\"text-muted-foreground text-sm\">@margaret-welsh</p>\r\n              <div className=\"mt-2 flex flex-wrap gap-1.5\">\r\n                <Badge variant=\"secondary\">Design Engineer</Badge>\r\n                <Badge variant=\"outline\">Open Source</Badge>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <p className=\"text-muted-foreground text-sm leading-relaxed\">\r\n            Building design systems and component libraries. Passionate about\r\n            accessibility and developer experience. Previously at Vercel.\r\n          </p>\r\n\r\n          <Separator />\r\n\r\n          <div className=\"flex items-center justify-around text-center\">\r\n            {stats.map(({ label, value }) => (\r\n              <div key={label}>\r\n                <p className=\"font-semibold\">{value}</p>\r\n                <p className=\"text-muted-foreground text-xs\">{label}</p>\r\n              </div>\r\n            ))}\r\n          </div>\r\n\r\n          <Separator />\r\n\r\n          <div className=\"space-y-2\">\r\n            {links.map(({ Icon, label }) => (\r\n              <div\r\n                className=\"flex items-center gap-2 text-muted-foreground text-sm\"\r\n                key={label}\r\n              >\r\n                <Icon aria-hidden=\"true\" className=\"size-3.5 shrink-0\" />\r\n                <span>{label}</span>\r\n              </div>\r\n            ))}\r\n          </div>\r\n        </SheetPanel>\r\n        <div className=\"border-t p-4\">\r\n          <div className=\"flex gap-2\">\r\n            <Button className=\"flex-1\">Follow</Button>\r\n            <SheetClose\r\n              render={<Button className=\"flex-1\" variant=\"outline\" />}\r\n            >\r\n              Close\r\n            </SheetClose>\r\n          </div>\r\n        </div>\r\n      </SheetPopup>\r\n    </Sheet>\r\n  );\r\n}\r\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sheet"
+  ],
+  "type": "registry:block"
+}

@@ -1,6 +1,6 @@
 ---
 title: Alert Dialog
-description: A dialog that requires user response to proceed.
+description: A dialog that requires user response to proceed. Built with Base UI and Tailwind CSS. Copy-paste ready.
 
 links:
   doc: https://base-ui.com/react/components/alert-dialog#api-reference
@@ -104,7 +104,50 @@ The `AlertDialogFooter` component supports a `variant` prop to control its styli
 </AlertDialogFooter>
 ```
 
- ## Examples
+## API Reference
+
+### AlertDialog
+
+Root provider. Wraps Base UI `AlertDialog.Root`.
+
+### AlertDialogTrigger
+
+Button that opens the alert dialog.
+
+### AlertDialogPopup
+
+The modal popup. Also exported as `AlertDialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `bottomStickOnMobile` | `boolean` | `true` | On mobile the popup slides up from the bottom instead of centering |
+| `portalProps` | `Portal.Props` | — | Props forwarded to the portal container |
+
+### AlertDialogHeader
+
+Flex column container for `AlertDialogTitle` and `AlertDialogDescription`.
+
+### AlertDialogFooter
+
+Action button row at the bottom of the dialog.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "bare"` | `"default"` | `default` adds a border-top and background; `bare` removes them |
+
+### AlertDialogTitle
+
+Accessible title element. Announced by screen readers when the dialog opens.
+
+### AlertDialogDescription
+
+Accessible description providing additional context.
+
+### AlertDialogClose
+
+Button that closes the alert dialog.
+
+## Examples
 
 ### Small Size
 
@@ -159,3 +202,33 @@ An alert informing the user that their subscription has expired, with a direct l
 Asks the user to confirm their intent to log out before the session is ended.
 
 <ComponentPreview name="v-alert-dialog-10" />
+
+### File Overwrite Confirmation
+
+A three-button dialog that appears when uploading a file that already exists — letting the user choose to keep both copies, skip the upload, or replace the existing file.
+
+<ComponentPreview name="v-alert-dialog-11" />
+
+### Subscription Downgrade Warning
+
+Displays a bulleted list of Pro features the user will lose if they confirm the downgrade, making the consequence of the action explicit before they proceed.
+
+<ComponentPreview name="v-alert-dialog-12" />
+
+### Transfer Ownership
+
+A typed-confirmation dialog that requires the user to enter the word "transfer" before the destructive button becomes enabled, preventing accidental ownership changes.
+
+<ComponentPreview name="v-alert-dialog-13" />
+
+### Clear All Data
+
+A checkbox consent gate that must be checked before the Delete button activates. The checkbox and button state both reset when the dialog is dismissed without confirming.
+
+<ComponentPreview name="v-alert-dialog-14" />
+
+### Rate Limit Exceeded
+
+Shows a live countdown timer indicating when the user may retry. Uses a nested `Countdown` component driven by `useEffect` to decrement the displayed time each second.
+
+<ComponentPreview name="v-alert-dialog-15" />
