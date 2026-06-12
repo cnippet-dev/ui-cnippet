@@ -35,7 +35,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-reveal ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text reveal",
       dependencies: ["text-reveal"],
       description: [
         "Hero headline — word-by-word fade-in-blur reveal",
@@ -49,7 +49,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-scramble ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text scramble",
       dependencies: ["text-scramble"],
       description: [
         "Hero headline — auto-scramble on mount resolving left-to-right",
@@ -63,7 +63,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- scramble-hover ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "scramble hover",
       dependencies: ["scramble-hover"],
       description: [
         "Navigation links — each link scrambles independently on hover",
@@ -77,7 +77,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- typewriter ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "typewriter",
       dependencies: ["typewriter"],
       description: [
         "Hero headline — types once with a block-underscore cursor",
@@ -91,7 +91,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-loop ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text loop",
       dependencies: ["text-loop"],
       description: [
         "Looping adjectives — cycles benefit words inline in a heading",
@@ -105,7 +105,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-morph ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text morph",
       dependencies: ["text-morph"],
       description: [
         "Word cycler — button group drives character-level morphing between words",
@@ -119,7 +119,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-rotate ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text rotate",
       dependencies: ["text-rotate"],
       description: [
         "Hero inline — audience descriptor cycles in a heading with character stagger",
@@ -133,7 +133,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- vertical-cut-reveal ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "vertical cut reveal",
       dependencies: ["vertical-cut-reveal"],
       description: [
         "Hero headline — word-by-word upward clip reveal with left-to-right stagger",
@@ -147,7 +147,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- letter-swap-hover ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "letter swap hover",
       dependencies: ["letter-swap-hover"],
       description: [
         "Navigation links — each link swaps independently on hover",
@@ -161,7 +161,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-shimmer ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text shimmer",
       dependencies: ["text-shimmer"],
       description: [
         "Hero headline — slow sweep on a large heading",
@@ -175,7 +175,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-shimmer-wave ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text shimmer wave",
       dependencies: ["text-shimmer-wave"],
       description: [
         "Hero heading — gentle wave with moderate z and y distance",
@@ -189,7 +189,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-gradient ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text gradient",
       dependencies: ["text-gradient"],
       description: [
         "Hero heading — violet to cyan looping gradient sweep",
@@ -203,7 +203,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-highlight ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text highlight",
       dependencies: ["text-highlight"],
       description: [
         "Scroll triggered — key phrase highlights ltr on viewport entry",
@@ -217,7 +217,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- sliding-number ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "sliding number",
       dependencies: ["sliding-number"],
       description: [
         "Increment/decrement — +/- buttons drive a single odometer display",
@@ -231,7 +231,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- animated-number ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "animated number",
       dependencies: ["animated-number"],
       description: [
         "Stepper — +10/-10 buttons spring the figure through intermediate values",
@@ -245,7 +245,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- breathing-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "breathing text",
       dependencies: ["breathing-text"],
       description: [
         "Weight + width wave — wght and wdth axes breathe left to right",
@@ -259,7 +259,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- splitting-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "splitting text",
       dependencies: ["splitting-text"],
       description: [
         "Hero headline — word-level slide-up with spring transition",
@@ -273,7 +273,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- rolling-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "rolling text",
       dependencies: ["rolling-text"],
       description: [
         "Hero headline — letters roll up with tight stagger on mount",
@@ -287,7 +287,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- rotating-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "rotating text",
       dependencies: ["rotating-text"],
       description: [
         "Hero inline — adjectives rotate inside a heading with stable width",
@@ -301,7 +301,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- morphing-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "morphing text",
       dependencies: ["morphing-text"],
       description: [
         "Auto-cycling hero words — four short action words blur-dissolve in sequence",
@@ -315,7 +315,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- spinning-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "spinning text",
       dependencies: ["spinning-text"],
       description: [
         "Badge ring — spinning label orbits a centered icon",
@@ -329,7 +329,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-roll ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text roll",
       dependencies: ["text-roll"],
       description: [
         "Hero headline — letter-by-letter 3D roll reveal for a landing page heading",
@@ -343,7 +343,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- flip-words ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "flip words",
       dependencies: ["flip-words"],
       description: [
         "Hero inline — adjectives flip inside a heading with primary colour accent",
@@ -357,7 +357,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- counting-number ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "counting number",
       dependencies: ["counting-number"],
       description: [
         "Stats section — four counters animate a social-proof grid on mount",
@@ -371,7 +371,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- colorful-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "colorful text",
       dependencies: ["colorful-text"],
       description: [
         "Hero headline — full sentence reveals character-by-character with random vibrant colours",
@@ -385,7 +385,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- encrypted-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "encrypted text",
       dependencies: ["encrypted-text"],
       description: [
         "Hero headline — large heading decrypts left-to-right on mount",
@@ -399,7 +399,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-generate-effect ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text generate effect",
       dependencies: ["text-generate-effect"],
       description: [
         "Hero headline — word-by-word blur-fade reveal for landing page headings",
@@ -413,7 +413,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- letter-3d-swap ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "letter 3d swap",
       dependencies: ["letter-3d-swap"],
       description: [
         "Navigation links — letters rotate upward on hover with colour change between faces",
@@ -427,7 +427,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- random-letter-swap ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "random letter swap",
       dependencies: ["random-letter-swap"],
       description: [
         "Navigation links — each link shuffles independently on hover",
@@ -441,7 +441,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- scroll-swap-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "scroll swap text",
       dependencies: ["scroll-swap-text"],
       description: [
         "Feature list — each item slides in as the scrollable container is scrolled",
@@ -455,7 +455,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- variable-font-hover ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "variable font hover",
       dependencies: ["variable-font-hover"],
       description: [
         "Navigation links — letters bold from center outward on hover",
@@ -469,7 +469,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- variable-font-cursor-proximity ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "variable font cursor proximity",
       dependencies: ["variable-font-cursor-proximity"],
       description: [
         "Hero headline — characters grow from ultra-light to black near cursor",
@@ -483,7 +483,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-cursor-proximity ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text cursor proximity",
       dependencies: ["text-cursor-proximity"],
       description: [
         "Scale — characters grow as cursor approaches with linear falloff",
@@ -497,7 +497,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- text-along-path ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "text animation",
+      category: "text along path",
       dependencies: ["text-along-path"],
       description: [
         "Circular badge — text loops continuously around a circular path",
@@ -511,7 +511,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- scroll-reveal ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "scroll reveal",
       dependencies: ["scroll-reveal"],
       description: [
         "Feature cards — three cards slide up and fade in with staggered delays on scroll",
@@ -525,7 +525,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- scroll-progress ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "scroll progress",
       dependencies: ["scroll-progress"],
       description: [
         "Fixed reading bar — 1px bar pinned to viewport top tracks window scroll",
@@ -539,7 +539,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- scroll-velocity-text ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "scroll velocity text",
       dependencies: ["scroll-velocity-text"],
       description: [
         "Word marquee — continuous horizontal scroll of tech-stack words, speeds up on scroll",
@@ -553,7 +553,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- parallax-floating ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "parallax floating",
       dependencies: ["parallax-floating"],
       description: [
         "Floating shapes — geometric shapes at different depths follow the cursor",
@@ -567,7 +567,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- stacking-cards ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "stacking cards",
       dependencies: ["stacking-cards"],
       description: [
         "Feature cards — three feature cards stack as you scroll through the section",
@@ -581,7 +581,7 @@ export const motionVariants: MotionVariantItem[] = [
   // --- progressive-blur ---
   ...Array.from({ length: 3 }, (_, i) =>
     createMotionVariant({
-      category: "scroll animation",
+      category: "progressive blur",
       dependencies: ["progressive-blur"],
       description: [
         "List fade — content list with progressive blur fade at the bottom",

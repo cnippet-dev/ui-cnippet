@@ -2,11 +2,16 @@ import { Separator } from "@cnippet/ui/components/separator";
 import { SiteHeader as WorkspaceSiteHeader } from "@cnippet/ui/shared/site-header";
 import Link from "next/link";
 import { CommandMenu } from "@/components/command-menu";
+import { ExploreNav } from "@/components/explore-nav";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { appConfig } from "@/lib/config";
 import { source } from "@/lib/source";
 import { Button } from "@/registry/default/ui/button";
+
+const desktopNavItems = appConfig.navItems.filter(
+  (item) => item.href !== "/explore",
+);
 
 export function SiteHeader() {
   const pageTree = source.pageTree;
@@ -22,7 +27,11 @@ export function SiteHeader() {
         />
       }
     >
-      <MainNav className="hidden lg:flex" items={appConfig.navItems} />
+      <nav className="hidden items-center gap-1 lg:flex">
+        <MainNav items={desktopNavItems.slice(0, 1)} />
+        <ExploreNav />
+        <MainNav items={desktopNavItems.slice(1)} />
+      </nav>
       <div className="mx-2 hidden w-full flex-1 md:flex md:w-auto md:flex-none">
         <CommandMenu navItems={appConfig.navItems} tree={pageTree} />
       </div>

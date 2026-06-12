@@ -11,22 +11,64 @@ export interface VariantEntry {
   category: string;
 }
 
+const SECTIONS = [
+  { id: "core", label: "Core" },
+  { id: "text animations", label: "Text Animations" },
+  { id: "scroll animations", label: "Scroll Animations" },
+] as const;
+
 interface ExploreShowcaseProps {
   variants: VariantEntry[];
   categories: string[];
+  textAnimVariants: VariantEntry[];
+  textAnimCategories: string[];
+  scrollAnimVariants: VariantEntry[];
+  scrollAnimCategories: string[];
 }
 
 export function ExploreShowcase({
   variants,
   categories,
+  textAnimVariants,
+  textAnimCategories,
+  scrollAnimVariants,
+  scrollAnimCategories,
 }: ExploreShowcaseProps) {
+  const [section, setSection] = useQueryState(
+    "section",
+    parseAsString.withDefault("core"),
+  );
   const [activeCategory, setActiveCategory] = useQueryState(
     "category",
-    parseAsString.withDefault(categories[0] ?? ""),
+    parseAsString.withDefault(""),
   );
   const [search, setSearch] = useQueryState("q", parseAsString.withDefault(""));
   const [debouncedQuery, setDebouncedQuery] = React.useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
+
+  const activeVariants =
+    section === "text animations"
+      ? textAnimVariants
+      : section === "scroll animations"
+        ? scrollAnimVariants
+        : variants;
+
+  const activeCategories =
+    section === "text animations"
+      ? textAnimCategories
+      : section === "scroll animations"
+        ? scrollAnimCategories
+        : categories;
+
+  const handleSectionChange = (next: string) => {
+    setSection(next);
+    setActiveCategory("");
+  };
+
+  const resolvedCategory =
+    activeCategory && activeCategories.includes(activeCategory)
+      ? activeCategory
+      : (activeCategories[0] ?? "");
 
   React.useEffect(() => {
     const id = setTimeout(
@@ -37,7 +79,7 @@ export function ExploreShowcase({
   }, [search]);
 
   const query = debouncedQuery;
-  const filtered = variants.filter((v) => {
+  const filtered = activeVariants.filter((v) => {
     if (query) {
       return (
         v.name.toLowerCase().includes(query) ||
@@ -45,12 +87,30 @@ export function ExploreShowcase({
         v.category.toLowerCase().includes(query)
       );
     }
-    return v.category === activeCategory;
+    return v.category === resolvedCategory;
   });
 
   return (
     <div className="space-y-0">
-      {/* Search bar — full width with border lines matching page style */}
+      {/* Section tabs — Core / Text Animations / Scroll Animations */}
+      <div className="relative flex border-gray-950/5 border-b dark:border-white/10">
+        {SECTIONS.map((s) => (
+          <button
+            className={
+              section === s.id
+                ? "border-gray-950 border-b-2 px-4 py-3 font-mono text-gray-950 text-xs dark:border-white dark:text-white"
+                : "cursor-pointer px-4 py-3 font-mono text-gray-950/40 text-xs transition-colors hover:text-gray-950 dark:text-white/40 dark:hover:text-white"
+            }
+            key={s.id}
+            onClick={() => handleSectionChange(s.id)}
+            type="button"
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Search bar */}
       <div className="relative flex items-center gap-2 border-gray-950/5 border-b py-3 dark:border-white/10">
         <SearchIcon className="size-3.5 shrink-0 text-black/30 dark:text-white/30" />
         <input
@@ -77,16 +137,19 @@ export function ExploreShowcase({
         )}
       </div>
 
-      {/* Tab strip */}
+      {/* Component category tab strip */}
       {!search && (
         <div className="relative flex flex-wrap">
-          {categories.map((cat) => (
+          {activeCategories.map((cat) => (
             <TabButton
-              active={activeCategory === cat}
+              active={resolvedCategory === cat}
               key={cat}
               onClick={() => setActiveCategory(cat)}
             >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat
+                .split(" ")
+                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(" ")}
             </TabButton>
           ))}
         </div>
@@ -101,6 +164,7 @@ export function ExploreShowcase({
               description={variant.description}
               key={variant.name}
               name={variant.name}
+              reloadable={section !== "core"}
             />
           ))
         ) : (

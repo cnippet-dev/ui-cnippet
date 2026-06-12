@@ -1,7 +1,7 @@
 "use client";
 
 import { useCopyToClipboard } from "@cnippet/ui/hooks/use-copy-to-clipboard";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, RotateCcwIcon } from "lucide-react";
 import * as React from "react";
 import { getVariantSource } from "@/lib/get-variant-source";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,7 @@ interface VariantCardProps {
   name: string;
   description: string;
   category: string;
+  reloadable?: boolean;
 }
 
 type PackageManager = "pnpm" | "npm" | "yarn";
@@ -131,8 +132,13 @@ function Skeleton() {
   );
 }
 
-export function VariantCard({ name, description }: VariantCardProps) {
+export function VariantCard({
+  name,
+  description,
+  reloadable,
+}: VariantCardProps) {
   const [visible, setVisible] = React.useState(false);
+  const [reloadKey, setReloadKey] = React.useState(0);
   const [sheetOpen, setSheetOpen] = React.useState(false);
   const [code, setCode] = React.useState<string | null>(null);
   const [highlightedHtml, setHighlightedHtml] = React.useState<string | null>(
@@ -214,6 +220,7 @@ export function VariantCard({ name, description }: VariantCardProps) {
               fallback={
                 <div className="h-8 w-24 animate-pulse rounded-md bg-white/8" />
               }
+              key={reloadKey}
             >
               <Component />
             </React.Suspense>
@@ -228,6 +235,17 @@ export function VariantCard({ name, description }: VariantCardProps) {
             {description || name.replace("v-", "")}
           </span>
           <div className="flex items-center gap-1">
+            {reloadable && (
+              <Button
+                aria-label="Reload preview"
+                className="size-7 text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+                onClick={() => setReloadKey((k) => k + 1)}
+                size="icon-sm"
+                variant="ghost"
+              >
+                <RotateCcwIcon className="size-3.5" />
+              </Button>
+            )}
             <Button
               aria-label="Copy source code"
               className={cn(

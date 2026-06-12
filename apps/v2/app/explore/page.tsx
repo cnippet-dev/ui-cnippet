@@ -3,7 +3,11 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
 import { SiteHeader } from "@/components/site-header";
-import { isPlaceholderVariant } from "@/lib/variants";
+import {
+  isPlaceholderMotionVariant,
+  isPlaceholderVariant,
+} from "@/lib/variants";
+import { motionVariants } from "@/registry/registry-motion-variants";
 import { variants } from "@/registry/registry-variants";
 
 const exploreDescription =
@@ -24,7 +28,6 @@ export const metadata: Metadata = {
 };
 
 export default function ExplorePage() {
-  // Flatten variants into VariantEntry list, skipping placeholders
   const variantEntries = variants
     .filter((v) => !isPlaceholderVariant(v.name))
     .map((v) => ({
@@ -33,10 +36,43 @@ export default function ExplorePage() {
       name: v.name,
     }));
 
-  // Unique categories in the order they appear
   const categories = Array.from(new Set(variantEntries.map((v) => v.category)));
 
-  const total = variantEntries.length;
+  const SCROLL_ANIM_CATEGORIES = new Set([
+    "scroll reveal",
+    "scroll progress",
+    "scroll velocity text",
+    "parallax floating",
+    "stacking cards",
+    "progressive blur",
+  ]);
+
+  const allMotionEntries = motionVariants
+    .filter((v) => !isPlaceholderMotionVariant(v.name))
+    .map((v) => ({
+      category: v.categories?.[0] ?? "other",
+      description: v.description ?? v.name,
+      name: v.name,
+    }));
+
+  const textAnimEntries = allMotionEntries.filter(
+    (v) => !SCROLL_ANIM_CATEGORIES.has(v.category),
+  );
+  const scrollAnimEntries = allMotionEntries.filter((v) =>
+    SCROLL_ANIM_CATEGORIES.has(v.category),
+  );
+
+  const textAnimCategories = Array.from(
+    new Set(textAnimEntries.map((v) => v.category)),
+  );
+  const scrollAnimCategories = Array.from(
+    new Set(scrollAnimEntries.map((v) => v.category)),
+  );
+
+  const total =
+    variantEntries.length + textAnimEntries.length + scrollAnimEntries.length;
+  const componentCount =
+    categories.length + textAnimCategories.length + scrollAnimCategories.length;
 
   return (
     <>
@@ -46,7 +82,7 @@ export default function ExplorePage() {
 
         <main className="min-w-0 pb-24">
           <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-            {total} variants · {categories.length} components
+            {total} variants · {componentCount} components
           </div>
 
           <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
@@ -65,6 +101,10 @@ export default function ExplorePage() {
               <Suspense>
                 <ExploreShowcase
                   categories={categories}
+                  scrollAnimCategories={scrollAnimCategories}
+                  scrollAnimVariants={scrollAnimEntries}
+                  textAnimCategories={textAnimCategories}
+                  textAnimVariants={textAnimEntries}
                   variants={variantEntries}
                 />
               </Suspense>

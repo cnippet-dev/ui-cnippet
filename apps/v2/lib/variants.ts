@@ -14,6 +14,20 @@ export function isPlaceholderVariant(name: string): boolean {
     const source = readFileSync(filePath, "utf-8").replace(/\r\n/g, "\n");
     return source.includes(PLACEHOLDER);
   } catch {
-    return true; // file missing — treat as placeholder
+    return true;
+  }
+}
+
+export function isPlaceholderMotionVariant(name: string): boolean {
+  try {
+    const filePath = join(
+      process.cwd(),
+      "registry/default/motion-variants",
+      `${name}.tsx`,
+    );
+    const source = readFileSync(filePath, "utf-8").replace(/\r\n/g, "\n");
+    return source.includes(PLACEHOLDER);
+  } catch {
+    return true;
   }
 }
