@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <SiteHeader />
-     <div className="grid min-h-screen grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center [--gutter-width:2rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-4">
+      <div className="grid min-h-screen grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center [--gutter-width:2rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-4">
         <VerticalSeparatorLeft />
 
         <main className="flex min-h-[calc(50svh-var(--header-height))] flex-col items-center justify-center gap-6 px-4 text-center text-gray-950 dark:text-white">
