@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-counting-number-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { CountingNumber, type CountingNumberRef } from \"@/registry/default/motion/counting-number\";\r\nimport { useRef } from \"react\";\r\n\r\nexport default function CountingNumberHero() {\r\n  const ref = useRef<CountingNumberRef>(null);\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\r\n      <div className=\"text-center\">\r\n        <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\r\n          Total revenue processed\r\n        </p>\r\n        <p className=\"mt-2 text-6xl font-bold tracking-tight text-foreground sm:text-7xl\">\r\n          $\r\n          <CountingNumber\r\n            autoStart={true}\r\n            from={0}\r\n            ref={ref}\r\n            target={2847593}\r\n            transition={{ duration: 2.5, ease: \"easeOut\", type: \"tween\" }}\r\n          />\r\n        </p>\r\n      </div>\r\n      <button\r\n        className=\"rounded-full bg-accent px-5 py-2 text-sm font-medium text-foreground hover:bg-accent/80\"\r\n        onClick={() => ref.current?.startAnimation()}\r\n        type=\"button\"\r\n      >\r\n        Replay\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport {\n  CountingNumber,\n  type CountingNumberRef,\n} from \"@/registry/default/motion/counting-number\";\n\nexport default function CountingNumberHero() {\n  const ref = useRef<CountingNumberRef>(null);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"text-center\">\n        <p className=\"font-medium text-muted-foreground text-sm uppercase tracking-widest\">\n          Total revenue processed\n        </p>\n        <p className=\"mt-2 font-bold text-6xl text-foreground tracking-tight sm:text-7xl\">\n          $\n          <CountingNumber\n            autoStart={true}\n            from={0}\n            ref={ref}\n            target={2847593}\n            transition={{ duration: 2.5, ease: \"easeOut\", type: \"tween\" }}\n          />\n        </p>\n      </div>\n      <button\n        className=\"rounded-full bg-accent px-5 py-2 font-medium text-foreground text-sm hover:bg-accent/80\"\n        onClick={() => ref.current?.startAnimation()}\n        type=\"button\"\n      >\n        Replay\n      </button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "counting number"
   ],
   "type": "registry:block"
 }

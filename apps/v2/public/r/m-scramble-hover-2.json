@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scramble-hover-2.tsx",
-      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\r\n\r\nexport default function ScrambleHoverHeading() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\r\n        Hover to reveal\r\n      </p>\r\n      <ScrambleHover\r\n        as=\"h2\"\r\n        className=\"cursor-pointer text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        maxIterations={14}\r\n        revealDirection=\"center\"\r\n        scrambleSpeed={35}\r\n      >\r\n        Motion-driven design\r\n      </ScrambleHover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\n\nexport default function ScrambleHoverHeading() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"font-medium text-muted-foreground text-sm uppercase tracking-widest\">\n        Hover to reveal\n      </p>\n      <ScrambleHover\n        className=\"cursor-pointer text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        maxIterations={14}\n        revealDirection=\"center\"\n        scrambleSpeed={35}\n      >\n        Motion-driven design\n      </ScrambleHover>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "scramble hover"
   ],
   "type": "registry:block"
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-1.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\r\n\r\nexport default function VariableFontCursorProximityHero() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div\r\n      ref={containerRef}\r\n      className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6 text-center\"\r\n    >\r\n      <p className=\"mb-3 text-sm text-muted-foreground\">\r\n        Move your cursor over the text\r\n      </p>\r\n      <VariableFontCursorProximity\r\n        containerRef={containerRef}\r\n        fromFontVariationSettings=\"'wght' 100\"\r\n        toFontVariationSettings=\"'wght' 900\"\r\n        radius={80}\r\n        className=\"text-4xl leading-snug tracking-tight\"\r\n      >\r\n        Animate with proximity\r\n      </VariableFontCursorProximity>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\n\nexport default function VariableFontCursorProximityHero() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6 text-center\"\n      ref={containerRef}\n    >\n      <p className=\"mb-3 text-muted-foreground text-sm\">\n        Move your cursor over the text\n      </p>\n      <VariableFontCursorProximity\n        className=\"text-4xl leading-snug tracking-tight\"\n        containerRef={containerRef}\n        fromFontVariationSettings=\"'wght' 100\"\n        radius={80}\n        toFontVariationSettings=\"'wght' 900\"\n      >\n        Animate with proximity\n      </VariableFontCursorProximity>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "variable font cursor proximity"
   ],
   "type": "registry:block"
 }

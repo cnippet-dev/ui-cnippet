@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-xs rounded-xl border p-4 shadow-sm\">\n      <div className=\"flex items-center gap-3\">\n        <div className=\"flex size-10 shrink-0 items-center justify-center rounded-full bg-muted font-semibold text-sm\">\n          JD\n        </div>\n        <div>\n          <p className=\"font-medium text-sm\">Jane Doe</p>\n          <p className=\"text-muted-foreground text-xs\">\n            @janedoe · Product Designer\n          </p>\n        </div>\n      </div>\n      <Separator className=\"my-3\" />\n      <p className=\"text-muted-foreground text-sm leading-relaxed\">\n        Building interfaces that get out of the way. Focused on clarity, speed,\n        and things that actually ship.\n      </p>\n      <Separator className=\"my-3\" />\n      <div className=\"flex items-center justify-between text-xs\">\n        <span className=\"text-muted-foreground\">San Francisco, CA</span>\n        <a className=\"text-primary hover:underline\" href=\"#\">\n          janedoe.design\n        </a>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-letter-3d-swap-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { Letter3DSwap } from \"@/registry/default/motion/letter-3d-swap\";\r\n\r\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\r\n\r\nexport default function Letter3DSwapNav() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <nav className=\"flex items-center gap-8\">\r\n        {links.map((link) => (\r\n          <Letter3DSwap\r\n            as=\"a\"\r\n            frontFaceClassName=\"text-muted-foreground\"\r\n            key={link}\r\n            mainClassName=\"cursor-pointer text-sm font-medium hover:text-foreground\"\r\n            rotateDirection=\"top\"\r\n            secondFaceClassName=\"text-foreground\"\r\n            staggerDuration={0.04}\r\n            transition={{ damping: 28, stiffness: 320, type: \"spring\" }}\r\n          >\r\n            {link}\r\n          </Letter3DSwap>\r\n        ))}\r\n      </nav>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { Letter3DSwap } from \"@/registry/default/motion/letter-3d-swap\";\n\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\n\nexport default function Letter3DSwapNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-8\">\n        {links.map((link) => (\n          <Letter3DSwap\n            as=\"a\"\n            frontFaceClassName=\"text-muted-foreground\"\n            key={link}\n            mainClassName=\"cursor-pointer text-sm font-medium hover:text-foreground\"\n            rotateDirection=\"top\"\n            secondFaceClassName=\"text-foreground\"\n            staggerDuration={0.04}\n            transition={{ damping: 28, stiffness: 320, type: \"spring\" }}\n          >\n            {link}\n          </Letter3DSwap>\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "letter 3d swap"
   ],
   "type": "registry:block"
 }

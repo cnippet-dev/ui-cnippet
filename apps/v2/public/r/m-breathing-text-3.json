@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-breathing-text-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\r\n\r\nexport default function BreathingTextSubtitle() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <BreathingText\r\n        as=\"h1\"\r\n        className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        duration={3}\r\n        fromFontVariationSettings=\"'wght' 700\"\r\n        staggerDuration={0.06}\r\n        staggerFrom=\"last\"\r\n        toFontVariationSettings=\"'wght' 300\"\r\n      >\r\n        Motion primitives\r\n      </BreathingText>\r\n      <BreathingText\r\n        as=\"p\"\r\n        className=\"text-base text-muted-foreground\"\r\n        duration={2.8}\r\n        fromFontVariationSettings=\"'wght' 300\"\r\n        staggerDuration={0.04}\r\n        staggerFrom=\"last\"\r\n        toFontVariationSettings=\"'wght' 700\"\r\n      >\r\n        Copy-paste animated components for modern web apps\r\n      </BreathingText>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\n\nexport default function BreathingTextSubtitle() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <BreathingText\n        as=\"h1\"\n        className=\"font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        duration={3}\n        fromFontVariationSettings=\"'wght' 700\"\n        staggerDuration={0.06}\n        staggerFrom=\"last\"\n        toFontVariationSettings=\"'wght' 300\"\n      >\n        Motion primitives\n      </BreathingText>\n      <BreathingText\n        as=\"p\"\n        className=\"text-base text-muted-foreground\"\n        duration={2.8}\n        fromFontVariationSettings=\"'wght' 300\"\n        staggerDuration={0.04}\n        staggerFrom=\"last\"\n        toFontVariationSettings=\"'wght' 700\"\n      >\n        Copy-paste animated components for modern web apps\n      </BreathingText>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "breathing text"
   ],
   "type": "registry:block"
 }

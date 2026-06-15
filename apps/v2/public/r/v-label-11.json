@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-11.tsx",
-      "content": "import { useId } from \"react\";\r\nimport { Field } from \"@/registry/default/ui/field\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Kbd } from \"@/registry/default/ui/kbd\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport function Pattern() {\r\n  const id = useId();\r\n  return (\r\n    <Field className=\"w-full max-w-xs\">\r\n      <Label className=\"justify-between\" htmlFor={id}>\r\n        Quick search\r\n        <Kbd className=\"font-normal text-muted-foreground\">⌘K</Kbd>\r\n      </Label>\r\n      <Input id={id} placeholder=\"Type to search…\" type=\"search\" />\r\n    </Field>\r\n  );\r\n}\r\n",
+      "content": "import { useId } from \"react\";\nimport { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  const id = useId();\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label className=\"justify-between\" htmlFor={id}>\n        Quick search\n        <Kbd className=\"font-normal text-muted-foreground\">⌘K</Kbd>\n      </Label>\n      <Input id={id} placeholder=\"Type to search…\" type=\"search\" />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

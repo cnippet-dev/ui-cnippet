@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-gradient-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\r\n\r\nexport default function TextGradientHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <TextGradient\r\n        as=\"h1\"\r\n        className=\"text-4xl font-bold tracking-tight sm:text-5xl\"\r\n        colors={[\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#a855f7\"]}\r\n        duration={5}\r\n      >\r\n        Build with motion\r\n      </TextGradient>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Looping violet → indigo → blue gradient\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { TextGradient } from \"@/registry/default/motion/text-gradient\";\n\nexport default function TextGradientHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <TextGradient\n        as=\"h1\"\n        className=\"font-bold text-4xl tracking-tight sm:text-5xl\"\n        colors={[\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#a855f7\"]}\n        duration={5}\n      >\n        Build with motion\n      </TextGradient>\n      <p className=\"text-muted-foreground text-sm\">\n        Looping violet → indigo → blue gradient\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text gradient"
   ],
   "type": "registry:block"
 }

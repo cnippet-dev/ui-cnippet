@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-group-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst languages = [\n  { id: \"typescript\", label: \"TypeScript\" },\n  { id: \"python\", label: \"Python\" },\n  { id: \"go\", label: \"Go\" },\n  { id: \"rust\", label: \"Rust\" },\n  { id: \"java\", label: \"Java\" },\n];\n\nexport default function Component() {\n  const [value, setValue] = useState<string[]>([\"typescript\"]);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <div className=\"flex items-center gap-2\">\n        <span className=\"font-medium text-sm\">Languages</span>\n        {value.length > 0 && (\n          <Badge size=\"sm\" variant=\"secondary\">\n            {value.length} selected\n          </Badge>\n        )}\n      </div>\n      <CheckboxGroup onValueChange={setValue} value={value}>\n        {languages.map((lang) => (\n          <Label key={lang.id}>\n            <Checkbox value={lang.id} />\n            {lang.label}\n          </Label>\n        ))}\n      </CheckboxGroup>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

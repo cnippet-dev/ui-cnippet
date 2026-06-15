@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-shimmer-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextShimmer } from \"@/registry/default/motion/text-shimmer\";\r\n\r\nconst features = [\r\n  \"Copy-paste components\",\r\n  \"Accessible animations\",\r\n  \"Zero runtime overhead\",\r\n];\r\n\r\nexport default function TextShimmerList() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\r\n      <TextShimmer\r\n        as=\"h2\"\r\n        className=\"text-3xl font-bold tracking-tight\"\r\n        duration={3}\r\n        spread={4}\r\n      >\r\n        Why Cnippet Motion?\r\n      </TextShimmer>\r\n      <ul className=\"space-y-2 text-center\">\r\n        {features.map((f, i) => (\r\n          <li key={f}>\r\n            <TextShimmer\r\n              as=\"span\"\r\n              className=\"text-base font-medium\"\r\n              duration={2 + i * 0.4}\r\n              spread={2}\r\n            >\r\n              {f}\r\n            </TextShimmer>\r\n          </li>\r\n        ))}\r\n      </ul>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { TextShimmer } from \"@/registry/default/motion/text-shimmer\";\n\nconst features = [\n  \"Copy-paste components\",\n  \"Accessible animations\",\n  \"Zero runtime overhead\",\n];\n\nexport default function TextShimmerList() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      <TextShimmer\n        as=\"h2\"\n        className=\"font-bold text-3xl tracking-tight\"\n        duration={3}\n        spread={4}\n      >\n        Why Cnippet Motion?\n      </TextShimmer>\n      <ul className=\"space-y-2 text-center\">\n        {features.map((f, i) => (\n          <li key={f}>\n            <TextShimmer\n              as=\"span\"\n              className=\"font-medium text-base\"\n              duration={2 + i * 0.4}\n              spread={2}\n            >\n              {f}\n            </TextShimmer>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text shimmer"
   ],
   "type": "registry:block"
 }

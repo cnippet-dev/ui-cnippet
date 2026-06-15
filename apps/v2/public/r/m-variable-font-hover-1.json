@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-variable-font-hover-1.tsx",
-      "content": "\"use client\";\r\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\r\n\r\nconst navLinks = [\"Products\", \"Solutions\", \"Pricing\", \"Company\", \"Blog\"];\r\n\r\nexport default function VariableFontHoverNav() {\r\n  return (\r\n    <nav className=\"flex min-h-50 flex-wrap items-center justify-center gap-8 px-6\">\r\n      {navLinks.map((link) => (\r\n        <VariableFontHover\r\n          key={link}\r\n          label={link}\r\n          fromFontVariationSettings=\"'wght' 400\"\r\n          toFontVariationSettings=\"'wght' 700\"\r\n          staggerFrom=\"center\"\r\n          staggerDuration={0.03}\r\n          className=\"cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground\"\r\n        />\r\n      ))}\r\n    </nav>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\n\nconst navLinks = [\"Products\", \"Solutions\", \"Pricing\", \"Company\", \"Blog\"];\n\nexport default function VariableFontHoverNav() {\n  return (\n    <nav className=\"flex min-h-50 flex-wrap items-center justify-center gap-8 px-6\">\n      {navLinks.map((link) => (\n        <VariableFontHover\n          className=\"cursor-pointer text-base text-muted-foreground transition-colors hover:text-foreground\"\n          fromFontVariationSettings=\"'wght' 400\"\n          key={link}\n          label={link}\n          staggerDuration={0.03}\n          staggerFrom=\"center\"\n          toFontVariationSettings=\"'wght' 700\"\n        />\n      ))}\n    </nav>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "variable font hover"
   ],
   "type": "registry:block"
 }

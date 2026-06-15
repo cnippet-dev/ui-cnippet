@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nconst breadcrumbs = [\"Home\", \"Products\", \"Electronics\", \"Headphones\"];\n\nexport function Pattern() {\n  return (\n    <nav aria-label=\"Breadcrumb\">\n      <ol className=\"flex items-center gap-2 text-sm\">\n        {breadcrumbs.map((crumb, i) => (\n          <li className=\"flex items-center gap-2\" key={crumb}>\n            {i < breadcrumbs.length - 1 ? (\n              <>\n                <a\n                  className=\"text-muted-foreground hover:text-foreground\"\n                  href=\"#\"\n                >\n                  {crumb}\n                </a>\n                <Separator className=\"h-4\" orientation=\"vertical\" />\n              </>\n            ) : (\n              <span className=\"font-medium\">{crumb}</span>\n            )}\n          </li>\n        ))}\n      </ol>\n    </nav>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

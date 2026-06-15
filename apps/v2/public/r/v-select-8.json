@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-select-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst availablePlans = [\n  { label: \"Free\", value: \"free\" },\n  { label: \"Pro\", value: \"pro\" },\n  { label: \"Team\", value: \"team\" },\n];\n\nconst unavailablePlans = [\n  { label: \"Enterprise\", value: \"enterprise\" },\n  { label: \"Custom\", value: \"custom\" },\n];\n\nconst placeholder = { label: \"Select a plan\", value: null };\nconst allItems = [placeholder, ...availablePlans, ...unavailablePlans];\n\nexport default function Component() {\n  return (\n    <Select items={allItems}>\n      <SelectTrigger className=\"w-48\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {availablePlans.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            {item.label}\n          </SelectItem>\n        ))}\n        <SelectSeparator />\n        {unavailablePlans.map((item) => (\n          <SelectItem disabled key={item.value} value={item}>\n            {item.label}\n            <span className=\"ms-auto text-muted-foreground text-xs\">\n              Contact us\n            </span>\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-meter-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  const [value, setValue] = useState(12);\n  const [running, setRunning] = useState(true);\n\n  useEffect(() => {\n    if (!running) return;\n    const id = setInterval(() => {\n      setValue((v) => {\n        if (v >= 100) {\n          setRunning(false);\n          return 100;\n        }\n        return v + Math.floor(Math.random() * 8) + 2;\n      });\n    }, 600);\n    return () => clearInterval(id);\n  }, [running]);\n\n  function reset() {\n    setValue(12);\n    setRunning(true);\n  }\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <Meter value={Math.min(value, 100)}>\n        <div className=\"flex items-center justify-between gap-2\">\n          <MeterLabel>Deploying…</MeterLabel>\n          <MeterValue />\n        </div>\n        <MeterTrack>\n          <MeterIndicator />\n        </MeterTrack>\n      </Meter>\n      <Button disabled={running} onClick={reset} size=\"sm\" variant=\"outline\">\n        {running ? \"Running…\" : \"Restart\"}\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

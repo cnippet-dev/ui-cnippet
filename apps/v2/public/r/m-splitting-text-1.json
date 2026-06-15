@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-splitting-text-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\r\n\r\nexport default function SplittingTextHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <SplittingText\r\n        as=\"h1\"\r\n        className=\"max-w-xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        preset=\"slide-up\"\r\n        splitBy=\"words\"\r\n        staggerDuration={0.07}\r\n        transition={{ damping: 22, stiffness: 220, type: \"spring\" }}\r\n      >\r\n        Motion components for modern web apps\r\n      </SplittingText>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\n\nexport default function SplittingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <SplittingText\n        as=\"h1\"\n        className=\"max-w-xl text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        preset=\"slide-up\"\n        splitBy=\"words\"\n        staggerDuration={0.07}\n        transition={{ damping: 22, stiffness: 220, type: \"spring\" }}\n      >\n        Motion components for modern web apps\n      </SplittingText>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "splitting text"
   ],
   "type": "registry:block"
 }

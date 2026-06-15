@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-reveal-2.tsx",
-      "content": "import { TextReveal } from \"@/registry/default/motion/text-reveal\";\r\n\r\nexport default function TextRevealCharScale() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <TextReveal\r\n        as=\"p\"\r\n        className=\"max-w-sm text-center text-2xl font-semibold tracking-tight text-foreground\"\r\n        delay={0.1}\r\n        per=\"char\"\r\n        preset=\"scale\"\r\n        speedReveal={2}\r\n        speedSegment={1.5}\r\n      >\r\n        Every pixel. Every frame. Crafted.\r\n      </TextReveal>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { TextReveal } from \"@/registry/default/motion/text-reveal\";\n\nexport default function TextRevealCharScale() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <TextReveal\n        as=\"p\"\n        className=\"max-w-sm text-center font-semibold text-2xl text-foreground tracking-tight\"\n        delay={0.1}\n        per=\"char\"\n        preset=\"scale\"\n        speedReveal={2}\n        speedSegment={1.5}\n      >\n        Every pixel. Every frame. Crafted.\n      </TextReveal>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text reveal"
   ],
   "type": "registry:block"
 }

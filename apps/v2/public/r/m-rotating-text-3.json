@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-rotating-text-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { RotatingText } from \"@/registry/default/motion/rotating-text\";\r\n\r\nconst roles = [\"engineers\", \"designers\", \"founders\", \"startups\", \"agencies\"];\r\n\r\nexport default function RotatingTextTestimonial() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"w-full max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-sm\">\r\n        <p className=\"text-2xl font-semibold leading-snug text-foreground sm:text-3xl\">\r\n          Trusted by{\" \"}\r\n          <RotatingText\r\n            className=\"text-primary\"\r\n            direction=\"down\"\r\n            interval={2200}\r\n            transition={{ damping: 22, stiffness: 140, type: \"spring\" }}\r\n            words={roles}\r\n          />\r\n          <br />\r\n          around the world.\r\n        </p>\r\n        <p className=\"mt-4 text-sm text-muted-foreground\">\r\n          direction=\"down\" — words enter from above\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/motion/rotating-text\";\n\nconst roles = [\"engineers\", \"designers\", \"founders\", \"startups\", \"agencies\"];\n\nexport default function RotatingTextTestimonial() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"w-full max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-sm\">\n        <p className=\"font-semibold text-2xl text-foreground leading-snug sm:text-3xl\">\n          Trusted by{\" \"}\n          <RotatingText\n            className=\"text-primary\"\n            direction=\"down\"\n            interval={2200}\n            transition={{ damping: 22, stiffness: 140, type: \"spring\" }}\n            words={roles}\n          />\n          <br />\n          around the world.\n        </p>\n        <p className=\"mt-4 text-muted-foreground text-sm\">\n          direction=\"down\" — words enter from above\n        </p>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "rotating text"
   ],
   "type": "registry:block"
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-typewriter-1.tsx",
-      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\r\n\r\nexport default function TypewriterHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\r\n      <p className=\"text-sm font-medium uppercase tracking-widest text-muted-foreground\">\r\n        Now available\r\n      </p>\r\n      <h1 className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        <Typewriter\r\n          cursorChar=\"_\"\r\n          cursorClassName=\"ml-0.5 text-primary\"\r\n          loop={false}\r\n          speed={60}\r\n          text=\"Build. Ship. Animate.\"\r\n        />\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Typewriter } from \"@/registry/default/motion/typewriter\";\n\nexport default function TypewriterHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\n      <p className=\"font-medium text-muted-foreground text-sm uppercase tracking-widest\">\n        Now available\n      </p>\n      <h1 className=\"text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\">\n        <Typewriter\n          cursorChar=\"_\"\n          cursorClassName=\"ml-0.5 text-primary\"\n          loop={false}\n          speed={60}\n          text=\"Build. Ship. Animate.\"\n        />\n      </h1>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "typewriter"
   ],
   "type": "registry:block"
 }

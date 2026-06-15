@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-reveal-1.tsx",
-      "content": "import { ScrollReveal } from \"@/registry/default/motion/scroll-reveal\";\r\n\r\nconst cards = [\r\n  {\r\n    description: \"Composable components that snap together cleanly.\",\r\n    icon: \"◈\",\r\n    title: \"Composable\",\r\n  },\r\n  {\r\n    description: \"Every animation respects prefers-reduced-motion.\",\r\n    icon: \"⬡\",\r\n    title: \"Accessible\",\r\n  },\r\n  {\r\n    description: \"Zero runtime overhead — pure CSS where possible.\",\r\n    icon: \"◎\",\r\n    title: \"Performant\",\r\n  },\r\n];\r\n\r\nexport default function ScrollRevealCards() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3\">\r\n        {cards.map((card, i) => (\r\n          <ScrollReveal\r\n            key={card.title}\r\n            transition={{ delay: i * 0.12, duration: 0.5, ease: \"easeOut\" }}\r\n            variants={{\r\n              hidden: { opacity: 0, y: 24 },\r\n              visible: { opacity: 1, y: 0 },\r\n            }}\r\n            viewOptions={{ amount: 0.3 }}\r\n          >\r\n            <div className=\"rounded-xl border border-border bg-card p-5\">\r\n              <p className=\"mb-2 text-2xl\">{card.icon}</p>\r\n              <h3 className=\"font-semibold text-foreground\">{card.title}</h3>\r\n              <p className=\"mt-1 text-sm text-muted-foreground\">\r\n                {card.description}\r\n              </p>\r\n            </div>\r\n          </ScrollReveal>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { ScrollReveal } from \"@/registry/default/motion/scroll-reveal\";\n\nconst cards = [\n  {\n    description: \"Composable components that snap together cleanly.\",\n    icon: \"◈\",\n    title: \"Composable\",\n  },\n  {\n    description: \"Every animation respects prefers-reduced-motion.\",\n    icon: \"⬡\",\n    title: \"Accessible\",\n  },\n  {\n    description: \"Zero runtime overhead — pure CSS where possible.\",\n    icon: \"◎\",\n    title: \"Performant\",\n  },\n];\n\nexport default function ScrollRevealCards() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3\">\n        {cards.map((card, i) => (\n          <ScrollReveal\n            key={card.title}\n            transition={{ delay: i * 0.12, duration: 0.5, ease: \"easeOut\" }}\n            variants={{\n              hidden: { opacity: 0, y: 24 },\n              visible: { opacity: 1, y: 0 },\n            }}\n            viewOptions={{ amount: 0.3 }}\n          >\n            <div className=\"rounded-xl border border-border bg-card p-5\">\n              <p className=\"mb-2 text-2xl\">{card.icon}</p>\n              <h3 className=\"font-semibold text-foreground\">{card.title}</h3>\n              <p className=\"mt-1 text-muted-foreground text-sm\">\n                {card.description}\n              </p>\n            </div>\n          </ScrollReveal>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "scroll animation"
+    "scroll reveal"
   ],
   "type": "registry:block"
 }

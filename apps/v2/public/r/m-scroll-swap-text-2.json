@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-swap-text-2.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\r\n\r\nconst steps = [\r\n  { num: \"01\", label: \"Install the package\" },\r\n  { num: \"02\", label: \"Add the component\" },\r\n  { num: \"03\", label: \"Configure your theme\" },\r\n  { num: \"04\", label: \"Deploy to production\" },\r\n  { num: \"05\", label: \"Measure the impact\" },\r\n  { num: \"06\", label: \"Iterate and improve\" },\r\n];\r\n\r\nexport default function ScrollSwapTextSteps() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div\r\n        ref={containerRef}\r\n        className=\"h-48 w-full max-w-sm overflow-y-scroll\"\r\n      >\r\n        {steps.map((step) => (\r\n          <div\r\n            key={step.num}\r\n            className=\"flex items-center gap-4 border-b border-border py-5 last:border-0\"\r\n          >\r\n            <span className=\"w-8 shrink-0 text-sm font-mono text-muted-foreground\">\r\n              {step.num}\r\n            </span>\r\n            <ScrollSwapText\r\n              containerRef={containerRef}\r\n              className=\"text-base font-medium\"\r\n            >\r\n              {step.label}\r\n            </ScrollSwapText>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\n\nconst steps = [\n  { label: \"Install the package\", num: \"01\" },\n  { label: \"Add the component\", num: \"02\" },\n  { label: \"Configure your theme\", num: \"03\" },\n  { label: \"Deploy to production\", num: \"04\" },\n  { label: \"Measure the impact\", num: \"05\" },\n  { label: \"Iterate and improve\", num: \"06\" },\n];\n\nexport default function ScrollSwapTextSteps() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div\n        className=\"h-48 w-full max-w-sm overflow-y-scroll\"\n        ref={containerRef}\n      >\n        {steps.map((step) => (\n          <div\n            className=\"flex items-center gap-4 border-border border-b py-5 last:border-0\"\n            key={step.num}\n          >\n            <span className=\"w-8 shrink-0 font-mono text-muted-foreground text-sm\">\n              {step.num}\n            </span>\n            <ScrollSwapText\n              className=\"font-medium text-base\"\n              containerRef={containerRef}\n            >\n              {step.label}\n            </ScrollSwapText>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "scroll swap text"
   ],
   "type": "registry:block"
 }

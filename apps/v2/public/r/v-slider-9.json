@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-slider-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nconst channels = [\n  { id: \"bass\", label: \"Bass\", max: 12, min: -12 },\n  { id: \"mid\", label: \"Mid\", max: 12, min: -12 },\n  { id: \"treble\", label: \"Treble\", max: 12, min: -12 },\n] as const;\n\ntype ChannelId = (typeof channels)[number][\"id\"];\n\nexport function Pattern() {\n  const [values, setValues] = useState<Record<ChannelId, number>>({\n    bass: 3,\n    mid: -2,\n    treble: 5,\n  });\n\n  return (\n    <div className=\"mx-auto w-full max-w-xs space-y-5\">\n      <p className=\"font-medium text-sm\">Equalizer</p>\n      {channels.map(({ id, label, min, max }) => (\n        <div\n          className=\"grid grid-cols-[4rem_1fr_2rem] items-center gap-3\"\n          key={id}\n        >\n          <Label className=\"text-right text-muted-foreground text-xs\">\n            {label}\n          </Label>\n          <Slider\n            max={max}\n            min={min}\n            onValueChange={([v]) =>\n              setValues((prev) => ({ ...prev, [id]: v ?? 0 }))\n            }\n            step={1}\n            value={[values[id]]}\n          />\n          <span className=\"text-right text-muted-foreground text-xs tabular-nums\">\n            {values[id] > 0 ? `+${values[id]}` : values[id]}\n          </span>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

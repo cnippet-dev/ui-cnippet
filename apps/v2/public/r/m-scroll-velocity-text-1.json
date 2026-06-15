@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-velocity-text-1.tsx",
-      "content": "import {\r\n  ScrollVelocityRow,\r\n} from \"@/registry/default/motion/scroll-velocity-text\";\r\n\r\nconst words = [\r\n  \"React\",\r\n  \"TypeScript\",\r\n  \"Tailwind CSS\",\r\n  \"Motion\",\r\n  \"Next.js\",\r\n  \"shadcn/ui\",\r\n  \"Vite\",\r\n  \"Radix UI\",\r\n];\r\n\r\nexport default function ScrollVelocityBasic() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center overflow-hidden\">\r\n      <ScrollVelocityRow baseVelocity={3}>\r\n        {words.map((word) => (\r\n          <span\r\n            className=\"mx-6 text-base font-medium text-muted-foreground\"\r\n            key={word}\r\n          >\r\n            {word}\r\n            <span className=\"mx-6 text-muted-foreground/30\">•</span>\r\n          </span>\r\n        ))}\r\n      </ScrollVelocityRow>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { ScrollVelocityRow } from \"@/registry/default/motion/scroll-velocity-text\";\n\nconst words = [\n  \"React\",\n  \"TypeScript\",\n  \"Tailwind CSS\",\n  \"Motion\",\n  \"Next.js\",\n  \"shadcn/ui\",\n  \"Vite\",\n  \"Radix UI\",\n];\n\nexport default function ScrollVelocityBasic() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center overflow-hidden\">\n      <ScrollVelocityRow baseVelocity={3}>\n        {words.map((word) => (\n          <span\n            className=\"mx-6 font-medium text-base text-muted-foreground\"\n            key={word}\n          >\n            {word}\n            <span className=\"mx-6 text-muted-foreground/30\">•</span>\n          </span>\n        ))}\n      </ScrollVelocityRow>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "scroll animation"
+    "scroll velocity text"
   ],
   "type": "registry:block"
 }

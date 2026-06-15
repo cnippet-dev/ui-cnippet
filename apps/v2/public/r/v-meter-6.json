@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-meter-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nconst skills = [\n  { label: \"TypeScript\", value: 90 },\n  { label: \"React\", value: 85 },\n  { label: \"Node.js\", value: 72 },\n  { label: \"Python\", value: 60 },\n  { label: \"Go\", value: 38 },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      {skills.map(({ label, value }) => (\n        <Meter key={label} value={value}>\n          <div className=\"flex items-center justify-between gap-2\">\n            <MeterLabel>{label}</MeterLabel>\n            <MeterValue />\n          </div>\n          <MeterTrack className=\"h-1.5\">\n            <MeterIndicator />\n          </MeterTrack>\n        </Meter>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

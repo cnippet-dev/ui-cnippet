@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-3.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\r\n\r\nconst navItems = [\"Home\", \"Work\", \"About\", \"Contact\"];\r\n\r\nexport default function VariableFontCursorProximityNav() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <nav\r\n      ref={containerRef}\r\n      className=\"flex min-h-50 flex-wrap items-center justify-center gap-10 px-6\"\r\n    >\r\n      {navItems.map((item) => (\r\n        <VariableFontCursorProximity\r\n          key={item}\r\n          containerRef={containerRef}\r\n          fromFontVariationSettings=\"'wght' 300\"\r\n          toFontVariationSettings=\"'wght' 800\"\r\n          radius={60}\r\n          falloff=\"exponential\"\r\n          className=\"cursor-pointer text-xl text-muted-foreground\"\r\n        >\r\n          {item}\r\n        </VariableFontCursorProximity>\r\n      ))}\r\n    </nav>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\n\nconst navItems = [\"Home\", \"Work\", \"About\", \"Contact\"];\n\nexport default function VariableFontCursorProximityNav() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <nav\n      className=\"flex min-h-50 flex-wrap items-center justify-center gap-10 px-6\"\n      ref={containerRef}\n    >\n      {navItems.map((item) => (\n        <VariableFontCursorProximity\n          className=\"cursor-pointer text-muted-foreground text-xl\"\n          containerRef={containerRef}\n          falloff=\"exponential\"\n          fromFontVariationSettings=\"'wght' 300\"\n          key={item}\n          radius={60}\n          toFontVariationSettings=\"'wght' 800\"\n        >\n          {item}\n        </VariableFontCursorProximity>\n      ))}\n    </nav>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "variable font cursor proximity"
   ],
   "type": "registry:block"
 }

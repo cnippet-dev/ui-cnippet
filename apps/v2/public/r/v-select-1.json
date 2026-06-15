@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-select-1.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\nconst timezones = [\n  { label: \"Select timezone\", value: null },\n  { label: \"Pacific Time (PT)\", value: \"america/los_angeles\" },\n  { label: \"Mountain Time (MT)\", value: \"america/denver\" },\n  { label: \"Central Time (CT)\", value: \"america/chicago\" },\n  { label: \"Eastern Time (ET)\", value: \"america/new_york\" },\n  { label: \"Greenwich Mean Time (GMT)\", value: \"europe/london\" },\n  { label: \"Central European Time (CET)\", value: \"europe/paris\" },\n  { label: \"India Standard Time (IST)\", value: \"asia/kolkata\" },\n  { label: \"Japan Standard Time (JST)\", value: \"asia/tokyo\" },\n];\n\nexport default function Component() {\n  return (\n    <Select items={timezones}>\n      <SelectTrigger className=\"w-64\">\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {timezones.slice(1).map((tz) => (\n          <SelectItem key={tz.value} value={tz}>\n            {tz.label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

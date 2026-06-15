@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-colorful-text-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ColorfulText } from \"@/registry/default/motion/colorful-text\";\r\n\r\nconst palette = [\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#10b981\"];\r\n\r\nexport default function ColorfulTextBrand() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <ColorfulText\r\n        as=\"h2\"\r\n        className=\"text-6xl font-black tracking-tighter\"\r\n        colors={palette}\r\n        staggerDuration={0.06}\r\n        transition={{ damping: 16, stiffness: 280, type: \"spring\" }}\r\n      >\r\n        CNIPPET\r\n      </ColorfulText>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Custom brand palette — violet → teal\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { ColorfulText } from \"@/registry/default/motion/colorful-text\";\n\nconst palette = [\"#a855f7\", \"#6366f1\", \"#3b82f6\", \"#06b6d4\", \"#10b981\"];\n\nexport default function ColorfulTextBrand() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <ColorfulText\n        as=\"h2\"\n        className=\"font-black text-6xl tracking-tighter\"\n        colors={palette}\n        staggerDuration={0.06}\n        transition={{ damping: 16, stiffness: 280, type: \"spring\" }}\n      >\n        CNIPPET\n      </ColorfulText>\n      <p className=\"text-muted-foreground text-sm\">\n        Custom brand palette — violet → teal\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "colorful text"
   ],
   "type": "registry:block"
 }

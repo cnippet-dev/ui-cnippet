@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-group-6.tsx",
-      "content": "import { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\r\nimport { Input } from \"@/registry/default/ui/input\";\r\nimport { Label } from \"@/registry/default/ui/label\";\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <Group aria-label=\"Domain input\">\r\n      <GroupText render={<Label aria-label=\"Domain\" htmlFor=\"domain\" />}>\r\n        https://\r\n      </GroupText>\r\n      <GroupSeparator />\r\n      <Input\r\n        aria-label=\"Domain\"\r\n        defaultValue=\"ui.cnippet.dev\"\r\n        id=\"domain\"\r\n        type=\"text\"\r\n      />\r\n    </Group>\r\n  );\r\n}\r\n",
+      "content": "import { Group, GroupSeparator, GroupText } from \"@/registry/default/ui/group\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Domain input\">\n      <GroupText render={<Label aria-label=\"Domain\" htmlFor=\"domain\" />}>\n        https://\n      </GroupText>\n      <GroupSeparator />\n      <Input\n        aria-label=\"Domain\"\n        defaultValue=\"ui.cnippet.dev\"\n        id=\"domain\"\n        type=\"text\"\n      />\n    </Group>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

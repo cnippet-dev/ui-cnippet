@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-shimmer-wave-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextShimmerWave } from \"@/registry/default/motion/text-shimmer-wave\";\r\n\r\nexport default function TextShimmerWaveExaggerated() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\r\n      <TextShimmerWave\r\n        as=\"h2\"\r\n        className=\"text-5xl font-black tracking-tighter\"\r\n        duration={1.5}\r\n        rotateYDistance={20}\r\n        scaleDistance={1.2}\r\n        spread={0.8}\r\n        xDistance={3}\r\n        yDistance={-4}\r\n        zDistance={20}\r\n      >\r\n        MOTION\r\n      </TextShimmerWave>\r\n      <p className=\"text-xs text-muted-foreground\">\r\n        Exaggerated scale + rotateY + z depth\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { TextShimmerWave } from \"@/registry/default/motion/text-shimmer-wave\";\n\nexport default function TextShimmerWaveExaggerated() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <TextShimmerWave\n        as=\"h2\"\n        className=\"font-black text-5xl tracking-tighter\"\n        duration={1.5}\n        rotateYDistance={20}\n        scaleDistance={1.2}\n        spread={0.8}\n        xDistance={3}\n        yDistance={-4}\n        zDistance={20}\n      >\n        MOTION\n      </TextShimmerWave>\n      <p className=\"text-muted-foreground text-xs\">\n        Exaggerated scale + rotateY + z depth\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text shimmer wave"
   ],
   "type": "registry:block"
 }

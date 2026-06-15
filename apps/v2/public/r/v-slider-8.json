@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-slider-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nconst MIN = 0;\nconst MAX = 200000;\nconst STEP = 5000;\n\nfunction formatPrice(value: number) {\n  return value === MAX ? \"$200k+\" : `$${(value / 1000).toFixed(0)}k`;\n}\n\nexport function Pattern() {\n  const [range, setRange] = useState([40000, 120000]);\n  const [low = MIN, high = MAX] = range;\n\n  return (\n    <div className=\"mx-auto w-full max-w-sm space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <Label className=\"font-medium text-sm\">Price range</Label>\n        <span className=\"text-muted-foreground text-sm tabular-nums\">\n          {formatPrice(low)} — {formatPrice(high)}\n        </span>\n      </div>\n      <Slider\n        max={MAX}\n        min={MIN}\n        onValueChange={setRange}\n        step={STEP}\n        value={range}\n      />\n      <div className=\"flex justify-between text-muted-foreground text-xs\">\n        <span>{formatPrice(MIN)}</span>\n        <span>{formatPrice(MAX)}</span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

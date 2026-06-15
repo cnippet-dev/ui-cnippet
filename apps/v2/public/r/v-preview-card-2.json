@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-preview-card-2.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { MapPinIcon } from \"lucide-react\";\nimport {\n  PreviewCard,\n  PreviewCardPopup,\n  PreviewCardTrigger,\n} from \"@/registry/default/ui/preview-card\";\n\nexport default function Particle() {\n  return (\n    <p className=\"text-sm\">\n      Join us at{\" \"}\n      <PreviewCard>\n        <PreviewCardTrigger className=\"cursor-pointer font-medium text-primary underline underline-offset-4\">\n          The Grand Pavilion\n        </PreviewCardTrigger>\n        <PreviewCardPopup>\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"h-24 w-full overflow-hidden rounded-md bg-muted\" />\n            <div>\n              <h4 className=\"font-semibold text-sm\">The Grand Pavilion</h4>\n              <p className=\"mt-0.5 text-muted-foreground text-xs\">\n                Conference & Events Center\n              </p>\n            </div>\n            <div className=\"flex items-center gap-1.5 text-muted-foreground text-xs\">\n              <MapPinIcon aria-hidden=\"true\" className=\"size-3 shrink-0\" />\n              <span>1200 Market St, San Francisco, CA 94102</span>\n            </div>\n          </div>\n        </PreviewCardPopup>\n      </PreviewCard>{\" \"}\n      for the annual summit.\n    </p>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

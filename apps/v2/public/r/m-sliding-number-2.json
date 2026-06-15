@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-sliding-number-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { SlidingNumber } from \"@/registry/default/motion/sliding-number\";\r\nimport { useEffect, useState } from \"react\";\r\n\r\nfunction pad(n: number) {\r\n  return n;\r\n}\r\n\r\nexport default function SlidingNumberClock() {\r\n  const [time, setTime] = useState(new Date());\r\n\r\n  useEffect(() => {\r\n    const id = setInterval(() => setTime(new Date()), 1000);\r\n    return () => clearInterval(id);\r\n  }, []);\r\n\r\n  const h = time.getHours();\r\n  const m = time.getMinutes();\r\n  const s = time.getSeconds();\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"flex items-center gap-1 font-mono text-5xl font-bold tabular-nums text-foreground\">\r\n        <SlidingNumber padStart value={h} />\r\n        <span className=\"mb-1 text-muted-foreground\">:</span>\r\n        <SlidingNumber padStart value={m} />\r\n        <span className=\"mb-1 text-muted-foreground\">:</span>\r\n        <SlidingNumber padStart value={s} />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { SlidingNumber } from \"@/registry/default/motion/sliding-number\";\n\nfunction _pad(n: number) {\n  return n;\n}\n\nexport default function SlidingNumberClock() {\n  const [time, setTime] = useState(new Date());\n\n  useEffect(() => {\n    const id = setInterval(() => setTime(new Date()), 1000);\n    return () => clearInterval(id);\n  }, []);\n\n  const h = time.getHours();\n  const m = time.getMinutes();\n  const s = time.getSeconds();\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"flex items-center gap-1 font-bold font-mono text-5xl text-foreground tabular-nums\">\n        <SlidingNumber padStart value={h} />\n        <span className=\"mb-1 text-muted-foreground\">:</span>\n        <SlidingNumber padStart value={m} />\n        <span className=\"mb-1 text-muted-foreground\">:</span>\n        <SlidingNumber padStart value={s} />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "sliding number"
   ],
   "type": "registry:block"
 }

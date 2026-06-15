@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-group-6.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst days = [\n  { id: \"mon\", label: \"Mon\" },\n  { id: \"tue\", label: \"Tue\" },\n  { id: \"wed\", label: \"Wed\" },\n  { id: \"thu\", label: \"Thu\" },\n  { id: \"fri\", label: \"Fri\" },\n  { id: \"sat\", label: \"Sat\" },\n  { id: \"sun\", label: \"Sun\" },\n];\n\nexport default function Component() {\n  return (\n    <CheckboxGroup\n      aria-label=\"Select days\"\n      className=\"flex-row flex-wrap gap-x-5 gap-y-3\"\n      defaultValue={[\"mon\", \"tue\", \"wed\", \"thu\", \"fri\"]}\n    >\n      {days.map((day) => (\n        <Label key={day.id}>\n          <Checkbox value={day.id} />\n          {day.label}\n        </Label>\n      ))}\n    </CheckboxGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

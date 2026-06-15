@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-random-letter-swap-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\r\n\r\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\r\n\r\nexport default function RandomLetterSwapNav() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <nav className=\"flex items-center gap-8\">\r\n        {links.map((link) => (\r\n          <RandomLetterSwap\r\n            className=\"cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground\"\r\n            key={link}\r\n            label={link}\r\n            staggerDuration={0.025}\r\n            transition={{ duration: 0.6, type: \"spring\" }}\r\n          />\r\n        ))}\r\n      </nav>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\n\nconst links = [\"Home\", \"Work\", \"About\", \"Blog\", \"Contact\"];\n\nexport default function RandomLetterSwapNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-8\">\n        {links.map((link) => (\n          <RandomLetterSwap\n            className=\"cursor-pointer font-medium text-muted-foreground text-sm hover:text-foreground\"\n            key={link}\n            label={link}\n            staggerDuration={0.025}\n            transition={{ duration: 0.6, type: \"spring\" }}\n          />\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "random letter swap"
   ],
   "type": "registry:block"
 }

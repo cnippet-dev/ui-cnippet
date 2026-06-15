@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-along-path-2.tsx",
-      "content": "\"use client\";\r\nimport { TextAlongPath } from \"@/registry/default/motion/text-along-path\";\r\n\r\nexport default function TextAlongPathWave() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-4\">\r\n      <div className=\"w-full max-w-md\">\r\n        <TextAlongPath\r\n          path=\"M 0,50 Q 25,10 50,50 Q 75,90 100,50\"\r\n          text=\"Text flowing along a wave path • animated • \"\r\n          viewBox=\"0 0 100 100\"\r\n          width=\"100%\"\r\n          height=\"80px\"\r\n          animationType=\"auto\"\r\n          duration={6}\r\n          textClassName=\"text-[5.5px] fill-primary font-semibold\"\r\n          showPath={false}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { TextAlongPath } from \"@/registry/default/motion/text-along-path\";\n\nexport default function TextAlongPathWave() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-4\">\n      <div className=\"w-full max-w-md\">\n        <TextAlongPath\n          animationType=\"auto\"\n          duration={6}\n          height=\"80px\"\n          path=\"M 0,50 Q 25,10 50,50 Q 75,90 100,50\"\n          showPath={false}\n          text=\"Text flowing along a wave path • animated • \"\n          textClassName=\"text-[5.5px] fill-primary font-semibold\"\n          viewBox=\"0 0 100 100\"\n          width=\"100%\"\n        />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text along path"
   ],
   "type": "registry:block"
 }

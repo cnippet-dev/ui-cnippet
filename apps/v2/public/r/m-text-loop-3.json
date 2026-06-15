@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-loop-3.tsx",
-      "content": "import { TextLoop } from \"@/registry/default/motion/text-loop\";\r\n\r\nexport default function TextLoopSlide() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <div className=\"flex items-baseline gap-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl\">\r\n        <span>Made for</span>\r\n        <TextLoop\r\n          className=\"overflow-hidden\"\r\n          interval={2}\r\n          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}\r\n          variants={{\r\n            animate: { opacity: 1, x: 0 },\r\n            exit: { opacity: 0, x: 40 },\r\n            initial: { opacity: 0, x: -40 },\r\n          }}\r\n        >\r\n          <span className=\"text-violet-500\">founders</span>\r\n          <span className=\"text-blue-500\">designers</span>\r\n          <span className=\"text-emerald-500\">developers</span>\r\n        </TextLoop>\r\n      </div>\r\n      <p className=\"max-w-sm text-center text-base text-muted-foreground\">\r\n        Production-ready animated components you can drop into any project.\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { TextLoop } from \"@/registry/default/motion/text-loop\";\n\nexport default function TextLoopSlide() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <div className=\"flex items-baseline gap-2 font-bold text-4xl text-foreground tracking-tight sm:text-5xl\">\n        <span>Made for</span>\n        <TextLoop\n          className=\"overflow-hidden\"\n          interval={2}\n          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}\n          variants={{\n            animate: { opacity: 1, x: 0 },\n            exit: { opacity: 0, x: 40 },\n            initial: { opacity: 0, x: -40 },\n          }}\n        >\n          <span className=\"text-violet-500\">founders</span>\n          <span className=\"text-blue-500\">designers</span>\n          <span className=\"text-emerald-500\">developers</span>\n        </TextLoop>\n      </div>\n      <p className=\"max-w-sm text-center text-base text-muted-foreground\">\n        Production-ready animated components you can drop into any project.\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text loop"
   ],
   "type": "registry:block"
 }

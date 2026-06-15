@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-encrypted-text-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\r\nimport { useState } from \"react\";\r\n\r\nconst directions = [\"ltr\", \"rtl\", \"center\", \"random\"] as const;\r\n\r\nexport default function EncryptedTextDirections() {\r\n  const [dir, setDir] = useState<(typeof directions)[number]>(\"ltr\");\r\n  const [key, setKey] = useState(0);\r\n\r\n  const replay = (d: (typeof directions)[number]) => {\r\n    setDir(d);\r\n    setKey((k) => k + 1);\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\r\n      <div className=\"flex h-12 items-center justify-center\">\r\n        <EncryptedText\r\n          className=\"text-2xl font-bold text-foreground\"\r\n          key={key}\r\n          maxIterations={14}\r\n          revealDirection={dir}\r\n          speed={45}\r\n        >\r\n          Cnippet Motion\r\n        </EncryptedText>\r\n      </div>\r\n      <div className=\"flex gap-2\">\r\n        {directions.map((d) => (\r\n          <button\r\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\r\n              d === dir\r\n                ? \"bg-foreground text-background\"\r\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\r\n            }`}\r\n            key={d}\r\n            onClick={() => replay(d)}\r\n            type=\"button\"\r\n          >\r\n            {d}\r\n          </button>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\n\nconst directions = [\"ltr\", \"rtl\", \"center\", \"random\"] as const;\n\nexport default function EncryptedTextDirections() {\n  const [dir, setDir] = useState<(typeof directions)[number]>(\"ltr\");\n  const [key, setKey] = useState(0);\n\n  const replay = (d: (typeof directions)[number]) => {\n    setDir(d);\n    setKey((k) => k + 1);\n  };\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"flex h-12 items-center justify-center\">\n        <EncryptedText\n          className=\"font-bold text-2xl text-foreground\"\n          key={key}\n          maxIterations={14}\n          revealDirection={dir}\n          speed={45}\n        >\n          Cnippet Motion\n        </EncryptedText>\n      </div>\n      <div className=\"flex gap-2\">\n        {directions.map((d) => (\n          <button\n            className={`rounded-md px-3 py-1.5 font-medium text-xs transition-colors ${\n              d === dir\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={d}\n            onClick={() => replay(d)}\n            type=\"button\"\n          >\n            {d}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "encrypted text"
   ],
   "type": "registry:block"
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-velocity-text-2.tsx",
-      "content": "import {\r\n  ScrollVelocityContainer,\r\n  ScrollVelocityRow,\r\n} from \"@/registry/default/motion/scroll-velocity-text\";\r\n\r\nconst row1 = [\"Build\", \"Design\", \"Ship\", \"Scale\", \"Iterate\", \"Launch\"];\r\nconst row2 = [\r\n  \"Accessible\",\r\n  \"Animated\",\r\n  \"Composable\",\r\n  \"Fast\",\r\n  \"Type-safe\",\r\n  \"Open Source\",\r\n];\r\n\r\nexport default function ScrollVelocityOpposing() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 overflow-hidden py-6\">\r\n      <ScrollVelocityContainer className=\"space-y-4\">\r\n        <ScrollVelocityRow baseVelocity={4} direction={1}>\r\n          {row1.map((word) => (\r\n            <span\r\n              className=\"mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10\"\r\n              key={word}\r\n            >\r\n              {word}\r\n            </span>\r\n          ))}\r\n        </ScrollVelocityRow>\r\n        <ScrollVelocityRow baseVelocity={4} direction={-1}>\r\n          {row2.map((word) => (\r\n            <span\r\n              className=\"mx-8 text-3xl font-extrabold uppercase tracking-tight text-foreground/10\"\r\n              key={word}\r\n            >\r\n              {word}\r\n            </span>\r\n          ))}\r\n        </ScrollVelocityRow>\r\n      </ScrollVelocityContainer>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import {\n  ScrollVelocityContainer,\n  ScrollVelocityRow,\n} from \"@/registry/default/motion/scroll-velocity-text\";\n\nconst row1 = [\"Build\", \"Design\", \"Ship\", \"Scale\", \"Iterate\", \"Launch\"];\nconst row2 = [\n  \"Accessible\",\n  \"Animated\",\n  \"Composable\",\n  \"Fast\",\n  \"Type-safe\",\n  \"Open Source\",\n];\n\nexport default function ScrollVelocityOpposing() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 overflow-hidden py-6\">\n      <ScrollVelocityContainer className=\"space-y-4\">\n        <ScrollVelocityRow baseVelocity={4} direction={1}>\n          {row1.map((word) => (\n            <span\n              className=\"mx-8 font-extrabold text-3xl text-foreground/10 uppercase tracking-tight\"\n              key={word}\n            >\n              {word}\n            </span>\n          ))}\n        </ScrollVelocityRow>\n        <ScrollVelocityRow baseVelocity={4} direction={-1}>\n          {row2.map((word) => (\n            <span\n              className=\"mx-8 font-extrabold text-3xl text-foreground/10 uppercase tracking-tight\"\n              key={word}\n            >\n              {word}\n            </span>\n          ))}\n        </ScrollVelocityRow>\n      </ScrollVelocityContainer>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "scroll animation"
+    "scroll velocity text"
   ],
   "type": "registry:block"
 }

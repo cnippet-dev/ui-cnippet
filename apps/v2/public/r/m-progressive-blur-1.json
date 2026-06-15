@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-progressive-blur-1.tsx",
-      "content": "import { ProgressiveBlur } from \"@/registry/default/motion/progressive-blur\";\r\n\r\nconst items = [\r\n  \"Scroll Reveal\",\r\n  \"Scroll Progress\",\r\n  \"Scroll Velocity Text\",\r\n  \"Parallax Floating\",\r\n  \"Stacking Cards\",\r\n  \"Progressive Blur\",\r\n  \"Horizontal Scroll\",\r\n  \"Scroll Direction Header\",\r\n];\r\n\r\nexport default function ProgressiveBlurList() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"relative h-52 w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card\">\r\n        <ul className=\"space-y-1 p-4\">\r\n          {items.map((item) => (\r\n            <li\r\n              className=\"rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted\"\r\n              key={item}\r\n            >\r\n              {item}\r\n            </li>\r\n          ))}\r\n        </ul>\r\n        <ProgressiveBlur\r\n          blurIntensity={0.3}\r\n          blurLayers={6}\r\n          className=\"absolute inset-x-0 bottom-0 h-24\"\r\n          direction=\"bottom\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { ProgressiveBlur } from \"@/registry/default/motion/progressive-blur\";\n\nconst items = [\n  \"Scroll Reveal\",\n  \"Scroll Progress\",\n  \"Scroll Velocity Text\",\n  \"Parallax Floating\",\n  \"Stacking Cards\",\n  \"Progressive Blur\",\n  \"Horizontal Scroll\",\n  \"Scroll Direction Header\",\n];\n\nexport default function ProgressiveBlurList() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"relative h-52 w-full max-w-xs overflow-hidden rounded-xl border border-border bg-card\">\n        <ul className=\"space-y-1 p-4\">\n          {items.map((item) => (\n            <li\n              className=\"rounded-md px-3 py-2 text-foreground/80 text-sm hover:bg-muted\"\n              key={item}\n            >\n              {item}\n            </li>\n          ))}\n        </ul>\n        <ProgressiveBlur\n          blurIntensity={0.3}\n          blurLayers={6}\n          className=\"absolute inset-x-0 bottom-0 h-24\"\n          direction=\"bottom\"\n        />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "scroll animation"
+    "progressive blur"
   ],
   "type": "registry:block"
 }

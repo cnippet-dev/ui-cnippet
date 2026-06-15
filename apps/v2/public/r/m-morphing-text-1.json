@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-morphing-text-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { MorphingText } from \"@/registry/default/motion/morphing-text\";\r\n\r\nexport default function MorphingTextHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <MorphingText\r\n        className=\"text-foreground\"\r\n        texts={[\"Innovate\", \"Create\", \"Inspire\", \"Deliver\"]}\r\n      />\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Blur-dissolve morphing between words\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/motion/morphing-text\";\n\nexport default function MorphingTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <MorphingText\n        className=\"text-foreground\"\n        texts={[\"Innovate\", \"Create\", \"Inspire\", \"Deliver\"]}\n      />\n      <p className=\"text-muted-foreground text-sm\">\n        Blur-dissolve morphing between words\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "morphing text"
   ],
   "type": "registry:block"
 }

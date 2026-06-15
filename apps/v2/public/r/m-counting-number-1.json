@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-counting-number-1.tsx",
-      "content": "import { CountingNumber } from \"@/registry/default/motion/counting-number\";\r\n\r\nconst stats = [\r\n  { label: \"Components shipped\", suffix: \"+\", value: 164 },\r\n  { label: \"GitHub stars\", suffix: \"K\", value: 4.2 },\r\n  { label: \"Monthly downloads\", suffix: \"K\", value: 98 },\r\n  { label: \"Contributors\", suffix: \"\", value: 37 },\r\n];\r\n\r\nexport default function CountingNumberStats() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"grid grid-cols-2 gap-8 sm:grid-cols-4\">\r\n        {stats.map((stat) => (\r\n          <div className=\"text-center\" key={stat.label}>\r\n            <p className=\"text-4xl font-bold tracking-tight text-foreground\">\r\n              <CountingNumber\r\n                target={stat.value}\r\n                transition={{ duration: 2, ease: \"easeOut\", type: \"tween\" }}\r\n              />\r\n              {stat.suffix}\r\n            </p>\r\n            <p className=\"mt-1 text-xs text-muted-foreground\">{stat.label}</p>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { CountingNumber } from \"@/registry/default/motion/counting-number\";\n\nconst stats = [\n  { label: \"Components shipped\", suffix: \"+\", value: 164 },\n  { label: \"GitHub stars\", suffix: \"K\", value: 4.2 },\n  { label: \"Monthly downloads\", suffix: \"K\", value: 98 },\n  { label: \"Contributors\", suffix: \"\", value: 37 },\n];\n\nexport default function CountingNumberStats() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"grid grid-cols-2 gap-8 sm:grid-cols-4\">\n        {stats.map((stat) => (\n          <div className=\"text-center\" key={stat.label}>\n            <p className=\"font-bold text-4xl text-foreground tracking-tight\">\n              <CountingNumber\n                target={stat.value}\n                transition={{ duration: 2, ease: \"easeOut\", type: \"tween\" }}\n              />\n              {stat.suffix}\n            </p>\n            <p className=\"mt-1 text-muted-foreground text-xs\">{stat.label}</p>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "counting number"
   ],
   "type": "registry:block"
 }

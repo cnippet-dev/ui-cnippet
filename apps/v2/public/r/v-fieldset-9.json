@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-9.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <Fieldset className=\"flex w-full max-w-sm flex-col gap-5\">\n      <FieldsetLegend>Support Request</FieldsetLegend>\n      <Field>\n        <FieldLabel>Subject</FieldLabel>\n        <Input placeholder=\"Brief summary of your issue\" type=\"text\" />\n      </Field>\n      <Field>\n        <FieldLabel>Description</FieldLabel>\n        <Textarea\n          className=\"min-h-24 resize-y\"\n          placeholder=\"Describe what happened and steps to reproduce…\"\n        />\n        <FieldDescription>\n          Include any error messages or screenshots if relevant.\n        </FieldDescription>\n      </Field>\n      <Field>\n        <FieldLabel>Your email</FieldLabel>\n        <Input placeholder=\"you@example.com\" type=\"email\" />\n        <FieldDescription>We'll reply to this address.</FieldDescription>\n      </Field>\n    </Fieldset>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

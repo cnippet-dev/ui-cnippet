@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-scramble-1.tsx",
-      "content": "import { TextScramble } from \"@/registry/default/motion/text-scramble\";\r\n\r\nexport default function TextScrambleHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <TextScramble\r\n        as=\"h1\"\r\n        className=\"max-w-2xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        duration={1.2}\r\n        speed={0.03}\r\n      >\r\n        The future of UI is in motion\r\n      </TextScramble>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { TextScramble } from \"@/registry/default/motion/text-scramble\";\n\nexport default function TextScrambleHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <TextScramble\n        as=\"h1\"\n        className=\"max-w-2xl text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        duration={1.2}\n        speed={0.03}\n      >\n        The future of UI is in motion\n      </TextScramble>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text scramble"
   ],
   "type": "registry:block"
 }

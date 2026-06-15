@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-splitting-text-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\r\nimport { useState } from \"react\";\r\n\r\nconst presets = [\"fade\", \"slide-up\", \"slide-down\", \"blur\", \"scale\"] as const;\r\n\r\nexport default function SplittingTextPresets() {\r\n  const [preset, setPreset] = useState<(typeof presets)[number]>(\"fade\");\r\n  const [key, setKey] = useState(0);\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\r\n      <div className=\"h-14 flex items-center justify-center\">\r\n        <SplittingText\r\n          as=\"p\"\r\n          className=\"text-center text-2xl font-bold text-foreground\"\r\n          key={key}\r\n          preset={preset}\r\n          splitBy=\"chars\"\r\n          staggerDuration={0.03}\r\n        >\r\n          Cnippet Motion\r\n        </SplittingText>\r\n      </div>\r\n      <div className=\"flex flex-wrap justify-center gap-2\">\r\n        {presets.map((p) => (\r\n          <button\r\n            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${\r\n              p === preset\r\n                ? \"bg-foreground text-background\"\r\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\r\n            }`}\r\n            key={p}\r\n            onClick={() => {\r\n              setPreset(p);\r\n              setKey((k) => k + 1);\r\n            }}\r\n            type=\"button\"\r\n          >\r\n            {p}\r\n          </button>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\n\nconst presets = [\"fade\", \"slide-up\", \"slide-down\", \"blur\", \"scale\"] as const;\n\nexport default function SplittingTextPresets() {\n  const [preset, setPreset] = useState<(typeof presets)[number]>(\"fade\");\n  const [key, setKey] = useState(0);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 px-6\">\n      <div className=\"flex h-14 items-center justify-center\">\n        <SplittingText\n          as=\"p\"\n          className=\"text-center font-bold text-2xl text-foreground\"\n          key={key}\n          preset={preset}\n          splitBy=\"chars\"\n          staggerDuration={0.03}\n        >\n          Cnippet Motion\n        </SplittingText>\n      </div>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {presets.map((p) => (\n          <button\n            className={`rounded-md px-3 py-1.5 font-medium text-xs transition-colors ${\n              p === preset\n                ? \"bg-foreground text-background\"\n                : \"bg-accent text-muted-foreground hover:text-foreground\"\n            }`}\n            key={p}\n            onClick={() => {\n              setPreset(p);\n              setKey((k) => k + 1);\n            }}\n            type=\"button\"\n          >\n            {p}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "splitting text"
   ],
   "type": "registry:block"
 }

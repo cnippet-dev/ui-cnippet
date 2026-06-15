@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-fieldset-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Fieldset, FieldsetLegend } from \"@/registry/default/ui/fieldset\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Fieldset className=\"flex w-full max-w-sm flex-col gap-5\">\n      <FieldsetLegend>Team Member</FieldsetLegend>\n      <div className=\"grid grid-cols-2 gap-4\">\n        <Field>\n          <FieldLabel>First name</FieldLabel>\n          <Input placeholder=\"Jane\" type=\"text\" />\n        </Field>\n        <Field>\n          <FieldLabel>Last name</FieldLabel>\n          <Input placeholder=\"Smith\" type=\"text\" />\n        </Field>\n      </div>\n      <Field>\n        <FieldLabel>Work email</FieldLabel>\n        <Input placeholder=\"jane@company.com\" type=\"email\" />\n        <FieldDescription>\n          An invite will be sent to this address.\n        </FieldDescription>\n      </Field>\n      <Field>\n        <FieldLabel>Job title</FieldLabel>\n        <Input placeholder=\"e.g. Product Designer\" type=\"text\" />\n      </Field>\n    </Fieldset>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-variable-font-cursor-proximity-2.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\r\n\r\nexport default function VariableFontCursorProximityDual() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div\r\n      ref={containerRef}\r\n      className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\"\r\n    >\r\n      <VariableFontCursorProximity\r\n        containerRef={containerRef}\r\n        fromFontVariationSettings=\"'wght' 100, 'slnt' 0\"\r\n        toFontVariationSettings=\"'wght' 900, 'slnt' -15\"\r\n        radius={100}\r\n        falloff=\"gaussian\"\r\n        className=\"text-5xl leading-tight\"\r\n      >\r\n        Hover around\r\n      </VariableFontCursorProximity>\r\n      <VariableFontCursorProximity\r\n        containerRef={containerRef}\r\n        fromFontVariationSettings=\"'wght' 900, 'slnt' -15\"\r\n        toFontVariationSettings=\"'wght' 100, 'slnt' 0\"\r\n        radius={100}\r\n        falloff=\"gaussian\"\r\n        className=\"text-5xl leading-tight text-muted-foreground\"\r\n      >\r\n        to see axes flip\r\n      </VariableFontCursorProximity>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { VariableFontCursorProximity } from \"@/registry/default/motion/variable-font-cursor-proximity\";\n\nexport default function VariableFontCursorProximityDual() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\"\n      ref={containerRef}\n    >\n      <VariableFontCursorProximity\n        className=\"text-5xl leading-tight\"\n        containerRef={containerRef}\n        falloff=\"gaussian\"\n        fromFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n        radius={100}\n        toFontVariationSettings=\"'wght' 900, 'slnt' -15\"\n      >\n        Hover around\n      </VariableFontCursorProximity>\n      <VariableFontCursorProximity\n        className=\"text-5xl text-muted-foreground leading-tight\"\n        containerRef={containerRef}\n        falloff=\"gaussian\"\n        fromFontVariationSettings=\"'wght' 900, 'slnt' -15\"\n        radius={100}\n        toFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n      >\n        to see axes flip\n      </VariableFontCursorProximity>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "variable font cursor proximity"
   ],
   "type": "registry:block"
 }

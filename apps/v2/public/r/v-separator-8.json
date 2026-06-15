@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nconst steps = [\n  { description: \"Your email address is confirmed\", label: \"Email verified\" },\n  { description: \"Payment method saved securely\", label: \"Billing set up\" },\n  {\n    description: \"Configure how your team works together\",\n    label: \"Team preferences\",\n  },\n];\n\nexport function Pattern() {\n  return (\n    <div className=\"w-full max-w-xs space-y-0\">\n      {steps.map((step, i) => (\n        <div key={step.label}>\n          <div className=\"flex items-start gap-3 py-3\">\n            <span className=\"flex size-5 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground text-xs\">\n              {i + 1}\n            </span>\n            <div>\n              <p className=\"font-medium text-sm\">{step.label}</p>\n              <p className=\"text-muted-foreground text-xs\">\n                {step.description}\n              </p>\n            </div>\n          </div>\n          {i < steps.length - 1 && <Separator />}\n        </div>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-group-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\n\nconst notifications = [\n  {\n    description: \"Get notified when someone @mentions you.\",\n    id: \"mentions\",\n    label: \"Mentions\",\n  },\n  {\n    description: \"Receive a summary of your team's activity.\",\n    id: \"digest\",\n    label: \"Weekly digest\",\n  },\n  {\n    description: \"Security alerts and login notifications.\",\n    id: \"security\",\n    label: \"Security alerts\",\n  },\n  {\n    description: \"Product updates and new feature announcements.\",\n    id: \"product\",\n    label: \"Product updates\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <CheckboxGroup\n      aria-label=\"Notification preferences\"\n      className=\"gap-0 divide-y\"\n      defaultValue={[\"mentions\", \"security\"]}\n    >\n      {notifications.map((item) => (\n        <label\n          className=\"flex cursor-pointer items-start gap-3 py-3 first:pt-0 last:pb-0\"\n          htmlFor={item.id}\n          key={item.id}\n        >\n          <Checkbox className=\"mt-0.5\" id={item.id} value={item.id} />\n          <div className=\"flex flex-col gap-0.5\">\n            <span className=\"font-medium text-sm\">{item.label}</span>\n            <span className=\"text-muted-foreground text-xs\">\n              {item.description}\n            </span>\n          </div>\n        </label>\n      ))}\n    </CheckboxGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

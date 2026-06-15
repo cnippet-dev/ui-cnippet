@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-random-letter-swap-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\r\n\r\nexport default function RandomLetterSwapButtons() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <button\r\n        className=\"inline-flex rounded-full bg-foreground px-7 py-3 text-base font-semibold\"\r\n        type=\"button\"\r\n      >\r\n        <RandomLetterSwap\r\n          className=\"text-background\"\r\n          label=\"Get started\"\r\n          reverse={false}\r\n          staggerDuration={0.02}\r\n          transition={{ duration: 0.65, type: \"spring\" }}\r\n        />\r\n      </button>\r\n      <button\r\n        className=\"inline-flex rounded-full border border-border px-7 py-3 text-base font-semibold text-foreground\"\r\n        type=\"button\"\r\n      >\r\n        <RandomLetterSwap\r\n          className=\"text-foreground\"\r\n          label=\"View source\"\r\n          staggerDuration={0.02}\r\n          transition={{ duration: 0.65, type: \"spring\" }}\r\n        />\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\n\nexport default function RandomLetterSwapButtons() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <button\n        className=\"inline-flex rounded-full bg-foreground px-7 py-3 font-semibold text-base\"\n        type=\"button\"\n      >\n        <RandomLetterSwap\n          className=\"text-background\"\n          label=\"Get started\"\n          reverse={false}\n          staggerDuration={0.02}\n          transition={{ duration: 0.65, type: \"spring\" }}\n        />\n      </button>\n      <button\n        className=\"inline-flex rounded-full border border-border px-7 py-3 font-semibold text-base text-foreground\"\n        type=\"button\"\n      >\n        <RandomLetterSwap\n          className=\"text-foreground\"\n          label=\"View source\"\n          staggerDuration={0.02}\n          transition={{ duration: 0.65, type: \"spring\" }}\n        />\n      </button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "random letter swap"
   ],
   "type": "registry:block"
 }

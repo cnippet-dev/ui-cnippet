@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-preview-card-7.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { PlayIcon } from \"lucide-react\";\nimport {\n  PreviewCard,\n  PreviewCardPopup,\n  PreviewCardTrigger,\n} from \"@/registry/default/ui/preview-card\";\n\nexport default function Particle() {\n  return (\n    <p className=\"text-sm\">\n      Watch the full demo in{\" \"}\n      <PreviewCard>\n        <PreviewCardTrigger className=\"cursor-pointer font-medium text-primary underline underline-offset-4\">\n          Building a design system from scratch\n        </PreviewCardTrigger>\n        <PreviewCardPopup>\n          <div className=\"flex flex-col gap-3\">\n            <div className=\"relative flex h-28 w-full items-center justify-center overflow-hidden rounded-md bg-muted\">\n              <div className=\"flex size-10 items-center justify-center rounded-full bg-background/80 shadow\">\n                <PlayIcon className=\"size-4 fill-foreground text-foreground\" />\n              </div>\n            </div>\n            <div>\n              <h4 className=\"font-semibold text-sm leading-snug\">\n                Building a design system from scratch\n              </h4>\n              <p className=\"mt-0.5 text-muted-foreground text-xs\">\n                42:18 · Design Systems Conf 2025\n              </p>\n            </div>\n          </div>\n        </PreviewCardPopup>\n      </PreviewCard>\n      .\n    </p>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

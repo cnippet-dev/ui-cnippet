@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-progress-11.tsx",
-      "content": "\"use client\";\r\n\r\nimport {\r\n  Progress,\r\n  ProgressIndicator,\r\n  ProgressLabel,\r\n  ProgressTrack,\r\n  ProgressValue,\r\n} from \"@/registry/default/ui/progress\";\r\n\r\nconst TOTAL = 10;\r\nconst CURRENT = 4;\r\n\r\nexport function Pattern() {\r\n  const value = (CURRENT / TOTAL) * 100;\r\n  return (\r\n    <div className=\"w-full max-w-sm\">\r\n      <Progress value={value}>\r\n        <div className=\"flex items-center justify-between gap-2\">\r\n          <ProgressLabel>Survey progress</ProgressLabel>\r\n          <ProgressValue>{() => `${CURRENT} of ${TOTAL}`}</ProgressValue>\r\n        </div>\r\n        <ProgressTrack>\r\n          <ProgressIndicator />\r\n        </ProgressTrack>\r\n      </Progress>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from \"@/registry/default/ui/progress\";\n\nconst TOTAL = 10;\nconst CURRENT = 4;\n\nexport function Pattern() {\n  const value = (CURRENT / TOTAL) * 100;\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Progress value={value}>\n        <div className=\"flex items-center justify-between gap-2\">\n          <ProgressLabel>Survey progress</ProgressLabel>\n          <ProgressValue>{() => `${CURRENT} of ${TOTAL}`}</ProgressValue>\n        </div>\n        <ProgressTrack>\n          <ProgressIndicator />\n        </ProgressTrack>\n      </Progress>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

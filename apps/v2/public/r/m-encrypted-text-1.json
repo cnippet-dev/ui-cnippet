@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-encrypted-text-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\r\n\r\nexport default function EncryptedTextHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <p className=\"text-xs font-semibold uppercase tracking-widest text-muted-foreground\">\r\n        Decrypting\r\n      </p>\r\n      <EncryptedText\r\n        className=\"text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        maxIterations={18}\r\n        revealDirection=\"ltr\"\r\n        speed={40}\r\n      >\r\n        Build with motion\r\n      </EncryptedText>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { EncryptedText } from \"@/registry/default/motion/encrypted-text\";\n\nexport default function EncryptedTextHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"font-semibold text-muted-foreground text-xs uppercase tracking-widest\">\n        Decrypting\n      </p>\n      <EncryptedText\n        className=\"font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        maxIterations={18}\n        revealDirection=\"ltr\"\n        speed={40}\n      >\n        Build with motion\n      </EncryptedText>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "encrypted text"
   ],
   "type": "registry:block"
 }

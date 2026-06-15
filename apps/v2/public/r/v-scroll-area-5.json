@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-scroll-area-5.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst COLS = 12;\nconst ROWS = 20;\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"h-56 max-w-sm rounded-lg border\" type=\"always\">\n      <div\n        className=\"grid gap-2 p-3\"\n        style={{\n          gridTemplateColumns: `repeat(${COLS}, 3rem)`,\n          width: \"max-content\",\n        }}\n      >\n        {Array.from({ length: ROWS * COLS }).map((_, i) => (\n          <div\n            className=\"flex h-10 w-12 items-center justify-center rounded bg-muted text-muted-foreground text-xs tabular-nums\"\n            key={i}\n          >\n            {i + 1}\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

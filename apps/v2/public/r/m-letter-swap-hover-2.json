@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-letter-swap-hover-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\r\n\r\nexport default function LetterSwapHoverButton() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\r\n      <button\r\n        className=\"group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background\"\r\n        type=\"button\"\r\n      >\r\n        <LetterSwapHover\r\n          label=\"Get started\"\r\n          reverse={false}\r\n          staggerDuration={0.025}\r\n          transition={{ duration: 0.55, type: \"spring\" }}\r\n        />\r\n        <span aria-hidden=\"true\">→</span>\r\n      </button>\r\n      <button\r\n        className=\"group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground\"\r\n        type=\"button\"\r\n      >\r\n        <LetterSwapHover\r\n          label=\"View docs\"\r\n          staggerDuration={0.025}\r\n          transition={{ duration: 0.55, type: \"spring\" }}\r\n        />\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\n\nexport default function LetterSwapHoverButton() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-4 px-6\">\n      <button\n        className=\"group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 font-semibold text-background text-base\"\n        type=\"button\"\n      >\n        <LetterSwapHover\n          label=\"Get started\"\n          reverse={false}\n          staggerDuration={0.025}\n          transition={{ duration: 0.55, type: \"spring\" }}\n        />\n        <span aria-hidden=\"true\">→</span>\n      </button>\n      <button\n        className=\"group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold text-base text-foreground\"\n        type=\"button\"\n      >\n        <LetterSwapHover\n          label=\"View docs\"\n          staggerDuration={0.025}\n          transition={{ duration: 0.55, type: \"spring\" }}\n        />\n      </button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "letter swap hover"
   ],
   "type": "registry:block"
 }

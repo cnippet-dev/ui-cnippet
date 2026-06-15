@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-swap-text-3.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\r\n\r\nconst quotes = [\r\n  { text: \"The animation quality is exceptional.\", author: \"Sarah K.\" },\r\n  { text: \"Saved us weeks of development time.\", author: \"Marco R.\" },\r\n  { text: \"Our conversion rate jumped 30%.\", author: \"Priya M.\" },\r\n  { text: \"Best component library we have used.\", author: \"Tom B.\" },\r\n  { text: \"The docs are incredibly clear.\", author: \"Yuki T.\" },\r\n];\r\n\r\nexport default function ScrollSwapTextTestimonials() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div\r\n        ref={containerRef}\r\n        className=\"h-48 w-full max-w-sm overflow-y-scroll\"\r\n      >\r\n        {quotes.map((q, i) => (\r\n          <div key={i} className=\"border-b border-border px-1 py-5 last:border-0\">\r\n            <ScrollSwapText\r\n              as=\"p\"\r\n              containerRef={containerRef}\r\n              className=\"text-base italic text-foreground\"\r\n            >\r\n              {`\"${q.text}\"`}\r\n            </ScrollSwapText>\r\n            <p className=\"mt-1 text-sm text-muted-foreground\">{q.author}</p>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { ScrollSwapText } from \"@/registry/default/motion/scroll-swap-text\";\n\nconst quotes = [\n  { author: \"Sarah K.\", text: \"The animation quality is exceptional.\" },\n  { author: \"Marco R.\", text: \"Saved us weeks of development time.\" },\n  { author: \"Priya M.\", text: \"Our conversion rate jumped 30%.\" },\n  { author: \"Tom B.\", text: \"Best component library we have used.\" },\n  { author: \"Yuki T.\", text: \"The docs are incredibly clear.\" },\n];\n\nexport default function ScrollSwapTextTestimonials() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div\n        className=\"h-48 w-full max-w-sm overflow-y-scroll\"\n        ref={containerRef}\n      >\n        {quotes.map((q, i) => (\n          <div\n            className=\"border-border border-b px-1 py-5 last:border-0\"\n            key={i}\n          >\n            <ScrollSwapText\n              as=\"p\"\n              className=\"text-base text-foreground italic\"\n              containerRef={containerRef}\n            >\n              {`\"${q.text}\"`}\n            </ScrollSwapText>\n            <p className=\"mt-1 text-muted-foreground text-sm\">{q.author}</p>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "scroll swap text"
   ],
   "type": "registry:block"
 }

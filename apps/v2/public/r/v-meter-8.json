@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-meter-8.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n  MeterValue,\n} from \"@/registry/default/ui/meter\";\n\nconst PLAN_LIMIT = 10000;\n\nconst seats = [\n  { label: \"Alice Chen\", used: 8240 },\n  { label: \"Bob Kim\", used: 3100 },\n  { label: \"Carol Day\", used: 9870 },\n  { label: \"Dave Osei\", used: 1500 },\n];\n\nfunction fmt(n: number) {\n  return n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      <p className=\"font-medium text-sm\">API usage by member</p>\n      {seats.map(({ label, used }) => (\n        <Meter key={label} max={PLAN_LIMIT} value={used}>\n          <div className=\"flex items-center justify-between gap-2\">\n            <MeterLabel>{label}</MeterLabel>\n            <MeterValue>{() => `${fmt(used)} / ${fmt(PLAN_LIMIT)}`}</MeterValue>\n          </div>\n          <MeterTrack>\n            <MeterIndicator />\n          </MeterTrack>\n        </Meter>\n      ))}\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

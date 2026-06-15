@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-letter-swap-hover-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\r\n\r\nconst items = [\r\n  { label: \"Components\", count: \"164\" },\r\n  { label: \"Downloads\", count: \"98K\" },\r\n  { label: \"Stars\", count: \"4.2K\" },\r\n];\r\n\r\nexport default function LetterSwapHoverStats() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"flex divide-x divide-border\">\r\n        {items.map((item) => (\r\n          <div className=\"px-8 text-center first:pl-0 last:pr-0\" key={item.label}>\r\n            <p className=\"text-3xl font-bold tabular-nums text-foreground\">\r\n              {item.count}\r\n            </p>\r\n            <LetterSwapHover\r\n              className=\"mt-1 cursor-default text-xs text-muted-foreground\"\r\n              label={item.label}\r\n              staggerFrom=\"center\"\r\n              staggerDuration={0.035}\r\n              transition={{ duration: 0.6, type: \"spring\" }}\r\n            />\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { LetterSwapHover } from \"@/registry/default/motion/letter-swap-hover\";\n\nconst items = [\n  { count: \"164\", label: \"Components\" },\n  { count: \"98K\", label: \"Downloads\" },\n  { count: \"4.2K\", label: \"Stars\" },\n];\n\nexport default function LetterSwapHoverStats() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"flex divide-x divide-border\">\n        {items.map((item) => (\n          <div\n            className=\"px-8 text-center first:pl-0 last:pr-0\"\n            key={item.label}\n          >\n            <p className=\"font-bold text-3xl text-foreground tabular-nums\">\n              {item.count}\n            </p>\n            <LetterSwapHover\n              className=\"mt-1 cursor-default text-muted-foreground text-xs\"\n              label={item.label}\n              staggerDuration={0.035}\n              staggerFrom=\"center\"\n              transition={{ duration: 0.6, type: \"spring\" }}\n            />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "letter swap hover"
   ],
   "type": "registry:block"
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-breathing-text-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\r\n\r\nexport default function BreathingTextCenter() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <BreathingText\r\n        as=\"h2\"\r\n        className=\"text-5xl font-black tracking-tighter text-foreground sm:text-6xl\"\r\n        duration={3}\r\n        fromFontVariationSettings=\"'wght' 300\"\r\n        staggerDuration={0.12}\r\n        staggerFrom=\"center\"\r\n        toFontVariationSettings=\"'wght' 700\"\r\n      >\r\n        CNIPPET\r\n      </BreathingText>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Weight pulse expanding from center\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { BreathingText } from \"@/registry/default/motion/breathing-text\";\n\nexport default function BreathingTextCenter() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <BreathingText\n        as=\"h2\"\n        className=\"font-black text-5xl text-foreground tracking-tighter sm:text-6xl\"\n        duration={3}\n        fromFontVariationSettings=\"'wght' 300\"\n        staggerDuration={0.12}\n        staggerFrom=\"center\"\n        toFontVariationSettings=\"'wght' 700\"\n      >\n        CNIPPET\n      </BreathingText>\n      <p className=\"text-muted-foreground text-sm\">\n        Weight pulse expanding from center\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "breathing text"
   ],
   "type": "registry:block"
 }

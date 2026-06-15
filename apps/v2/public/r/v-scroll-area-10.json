@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-scroll-area-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ScrollArea } from \"@/registry/default/ui/scroll-area\";\n\nconst code = `import { useState, useEffect, useCallback } from \"react\";\n\ntype FetchState<T> =\n  | { status: \"idle\" }\n  | { status: \"loading\" }\n  | { status: \"success\"; data: T }\n  | { status: \"error\"; error: Error };\n\nexport function useFetch<T>(url: string) {\n  const [state, setState] = useState<FetchState<T>>({\n    status: \"idle\",\n  });\n\n  const fetch_ = useCallback(async () => {\n    setState({ status: \"loading\" });\n    try {\n      const res = await fetch(url);\n      if (!res.ok) {\n        throw new Error(\\`HTTP \\${res.status}: \\${res.statusText}\\`);\n      }\n      const data: T = await res.json();\n      setState({ status: \"success\", data });\n    } catch (err) {\n      setState({\n        error: err instanceof Error ? err : new Error(String(err)),\n        status: \"error\",\n      });\n    }\n  }, [url]);\n\n  useEffect(() => {\n    fetch_();\n  }, [fetch_]);\n\n  return state;\n}`;\n\nexport default function Particle() {\n  return (\n    <ScrollArea\n      className=\"h-64 max-w-sm rounded-lg border bg-muted/30\"\n      type=\"always\"\n    >\n      <pre className=\"p-4 font-mono text-foreground text-xs leading-relaxed\">\n        <code>{code}</code>\n      </pre>\n    </ScrollArea>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

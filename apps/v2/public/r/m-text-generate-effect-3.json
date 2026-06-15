@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-generate-effect-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\r\n\r\nexport default function TextGenerateEffectStacked() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\r\n      <TextGenerateEffect\r\n        as=\"p\"\r\n        className=\"text-xs font-semibold uppercase tracking-widest text-primary\"\r\n        filter={false}\r\n        staggerDuration={0.08}\r\n        transition={{ duration: 0.3 }}\r\n      >\r\n        What we offer\r\n      </TextGenerateEffect>\r\n      <TextGenerateEffect\r\n        as=\"h1\"\r\n        className=\"max-w-lg text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        filter\r\n        staggerDuration={0.09}\r\n        transition={{ duration: 0.55 }}\r\n      >\r\n        Animate anything effortlessly\r\n      </TextGenerateEffect>\r\n      <TextGenerateEffect\r\n        as=\"p\"\r\n        className=\"max-w-sm text-center text-sm text-muted-foreground\"\r\n        filter\r\n        staggerDuration={0.05}\r\n        transition={{ duration: 0.45 }}\r\n      >\r\n        Copy paste animated components built on Motion and Tailwind\r\n      </TextGenerateEffect>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { TextGenerateEffect } from \"@/registry/default/motion/text-generate-effect\";\n\nexport default function TextGenerateEffectStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6\">\n      <TextGenerateEffect\n        as=\"p\"\n        className=\"font-semibold text-primary text-xs uppercase tracking-widest\"\n        filter={false}\n        staggerDuration={0.08}\n        transition={{ duration: 0.3 }}\n      >\n        What we offer\n      </TextGenerateEffect>\n      <TextGenerateEffect\n        as=\"h1\"\n        className=\"max-w-lg text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        filter\n        staggerDuration={0.09}\n        transition={{ duration: 0.55 }}\n      >\n        Animate anything effortlessly\n      </TextGenerateEffect>\n      <TextGenerateEffect\n        as=\"p\"\n        className=\"max-w-sm text-center text-muted-foreground text-sm\"\n        filter\n        staggerDuration={0.05}\n        transition={{ duration: 0.45 }}\n      >\n        Copy paste animated components built on Motion and Tailwind\n      </TextGenerateEffect>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text generate effect"
   ],
   "type": "registry:block"
 }

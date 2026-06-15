@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scramble-hover-1.tsx",
-      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\r\n\r\nconst links = [\"Features\", \"Pricing\", \"Changelog\", \"Docs\", \"Blog\"];\r\n\r\nexport default function ScrambleHoverNav() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <nav className=\"flex items-center gap-6\">\r\n        {links.map((link) => (\r\n          <ScrambleHover\r\n            className=\"text-sm font-medium text-muted-foreground transition-colors hover:text-foreground\"\r\n            key={link}\r\n            scrambleSpeed={40}\r\n            maxIterations={8}\r\n          >\r\n            {link}\r\n          </ScrambleHover>\r\n        ))}\r\n      </nav>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { ScrambleHover } from \"@/registry/default/motion/scramble-hover\";\n\nconst links = [\"Features\", \"Pricing\", \"Changelog\", \"Docs\", \"Blog\"];\n\nexport default function ScrambleHoverNav() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <nav className=\"flex items-center gap-6\">\n        {links.map((link) => (\n          <ScrambleHover\n            className=\"font-medium text-muted-foreground text-sm transition-colors hover:text-foreground\"\n            key={link}\n            maxIterations={8}\n            scrambleSpeed={40}\n          >\n            {link}\n          </ScrambleHover>\n        ))}\n      </nav>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "scramble hover"
   ],
   "type": "registry:block"
 }

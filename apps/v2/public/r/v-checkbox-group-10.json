@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-checkbox-group-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport {\n  BellIcon,\n  MailIcon,\n  MessageSquareIcon,\n  SmartphoneIcon,\n} from \"lucide-react\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxGroup } from \"@/registry/default/ui/checkbox-group\";\nimport { Label } from \"@/registry/default/ui/label\";\n\ntype Channel = { Icon: LucideIcon; id: string; label: string };\n\nconst channels: Channel[] = [\n  { Icon: MailIcon, id: \"email\", label: \"Email\" },\n  { Icon: BellIcon, id: \"push\", label: \"Push\" },\n  { Icon: SmartphoneIcon, id: \"sms\", label: \"SMS\" },\n  { Icon: MessageSquareIcon, id: \"in-app\", label: \"In-app\" },\n];\n\nexport default function Component() {\n  return (\n    <CheckboxGroup\n      aria-label=\"Notification channels\"\n      className=\"flex-row gap-x-5\"\n      defaultValue={[\"email\", \"in-app\"]}\n    >\n      {channels.map(({ Icon, id, label }) => (\n        <Label key={id}>\n          <Checkbox value={id} />\n          <Icon aria-hidden=\"true\" className=\"size-4 opacity-70\" />\n          {label}\n        </Label>\n      ))}\n    </CheckboxGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

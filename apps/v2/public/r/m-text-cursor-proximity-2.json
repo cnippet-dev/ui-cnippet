@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-cursor-proximity-2.tsx",
-      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\r\n\r\nexport default function TextCursorProximityOpacity() {\r\n  const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n  return (\r\n    <div\r\n      ref={containerRef}\r\n      className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6 text-center\"\r\n    >\r\n      <TextCursorProximity\r\n        containerRef={containerRef}\r\n        styles={{ opacity: { from: 0.15, to: 1 } }}\r\n        radius={80}\r\n        falloff=\"gaussian\"\r\n        className=\"text-3xl font-semibold\"\r\n      >\r\n        Move cursor to reveal\r\n      </TextCursorProximity>\r\n      <TextCursorProximity\r\n        containerRef={containerRef}\r\n        styles={{ opacity: { from: 0.15, to: 1 } }}\r\n        radius={80}\r\n        falloff=\"gaussian\"\r\n        className=\"text-3xl font-semibold text-muted-foreground\"\r\n      >\r\n        the hidden message\r\n      </TextCursorProximity>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { useRef } from \"react\";\nimport { TextCursorProximity } from \"@/registry/default/motion/text-cursor-proximity\";\n\nexport default function TextCursorProximityOpacity() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6 text-center\"\n      ref={containerRef}\n    >\n      <TextCursorProximity\n        className=\"font-semibold text-3xl\"\n        containerRef={containerRef}\n        falloff=\"gaussian\"\n        radius={80}\n        styles={{ opacity: { from: 0.15, to: 1 } }}\n      >\n        Move cursor to reveal\n      </TextCursorProximity>\n      <TextCursorProximity\n        className=\"font-semibold text-3xl text-muted-foreground\"\n        containerRef={containerRef}\n        falloff=\"gaussian\"\n        radius={80}\n        styles={{ opacity: { from: 0.15, to: 1 } }}\n      >\n        the hidden message\n      </TextCursorProximity>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text cursor proximity"
   ],
   "type": "registry:block"
 }

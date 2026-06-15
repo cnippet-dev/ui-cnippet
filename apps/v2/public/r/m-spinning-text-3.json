@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-spinning-text-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { SpinningText } from \"@/registry/default/motion/spinning-text\";\r\n\r\nexport default function SpinningTextDuo() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"relative flex items-center justify-center\">\r\n        <SpinningText\r\n          className=\"absolute h-52 w-52 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground\"\r\n          duration={20}\r\n          fontSize={0.55}\r\n          radius={6.5}\r\n        >\r\n          {\"open source • free to use • copy paste • \"}\r\n        </SpinningText>\r\n        <SpinningText\r\n          className=\"h-32 w-32 text-[10px] font-semibold uppercase tracking-widest text-primary\"\r\n          duration={8}\r\n          fontSize={0.6}\r\n          radius={4}\r\n          reverse\r\n        >\r\n          {\"motion ui • \"}\r\n        </SpinningText>\r\n        <div className=\"absolute h-8 w-8 rounded-full bg-primary\" />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { SpinningText } from \"@/registry/default/motion/spinning-text\";\n\nexport default function SpinningTextDuo() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"relative flex items-center justify-center\">\n        <SpinningText\n          className=\"absolute h-52 w-52 font-semibold text-[10px] text-muted-foreground uppercase tracking-widest\"\n          duration={20}\n          fontSize={0.55}\n          radius={6.5}\n        >\n          {\"open source • free to use • copy paste • \"}\n        </SpinningText>\n        <SpinningText\n          className=\"h-32 w-32 font-semibold text-[10px] text-primary uppercase tracking-widest\"\n          duration={8}\n          fontSize={0.6}\n          radius={4}\n          reverse\n        >\n          {\"motion ui • \"}\n        </SpinningText>\n        <div className=\"absolute h-8 w-8 rounded-full bg-primary\" />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "spinning text"
   ],
   "type": "registry:block"
 }

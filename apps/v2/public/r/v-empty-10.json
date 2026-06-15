@@ -6,7 +6,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-empty-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "import { ActivityIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center p-4\">\n      <Empty>\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <ActivityIcon />\n          </EmptyMedia>\n          <EmptyTitle>No recent activity</EmptyTitle>\n          <EmptyDescription>\n            Actions taken by you and your team will appear here.\n          </EmptyDescription>\n        </EmptyHeader>\n        <EmptyContent>\n          <Button size=\"sm\" variant=\"outline\">\n            View all activity\n          </Button>\n        </EmptyContent>\n      </Empty>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

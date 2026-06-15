@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-rotate-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextRotate } from \"@/registry/default/motion/text-rotate\";\r\n\r\nconst features = [\r\n  \"Zero config setup\",\r\n  \"Accessible by default\",\r\n  \"Fully tree-shakeable\",\r\n  \"Dark mode ready\",\r\n  \"TypeScript first\",\r\n];\r\n\r\nexport default function TextRotateFeatures() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\r\n      <p className=\"text-sm text-muted-foreground\">Everything you need</p>\r\n      <TextRotate\r\n        animate={{ opacity: 1, y: 0 }}\r\n        animatePresenceMode=\"wait\"\r\n        as=\"p\"\r\n        exit={{ opacity: 0, y: -16 }}\r\n        initial={{ opacity: 0, y: 16 }}\r\n        mainClassName=\"text-xl font-semibold text-foreground justify-center\"\r\n        rotationInterval={1800}\r\n        splitBy=\"words\"\r\n        staggerDuration={0.05}\r\n        staggerFrom=\"center\"\r\n        texts={features}\r\n        transition={{ duration: 0.35, ease: \"easeOut\" }}\r\n      />\r\n      <div className=\"mt-1 flex gap-1\">\r\n        {features.map((_, i) => (\r\n          <span\r\n            className=\"h-1 w-1 rounded-full bg-muted-foreground/40\"\r\n            key={i}\r\n          />\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { TextRotate } from \"@/registry/default/motion/text-rotate\";\n\nconst features = [\n  \"Zero config setup\",\n  \"Accessible by default\",\n  \"Fully tree-shakeable\",\n  \"Dark mode ready\",\n  \"TypeScript first\",\n];\n\nexport default function TextRotateFeatures() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 px-6\">\n      <p className=\"text-muted-foreground text-sm\">Everything you need</p>\n      <TextRotate\n        animate={{ opacity: 1, y: 0 }}\n        animatePresenceMode=\"wait\"\n        as=\"p\"\n        exit={{ opacity: 0, y: -16 }}\n        initial={{ opacity: 0, y: 16 }}\n        mainClassName=\"text-xl font-semibold text-foreground justify-center\"\n        rotationInterval={1800}\n        splitBy=\"words\"\n        staggerDuration={0.05}\n        staggerFrom=\"center\"\n        texts={features}\n        transition={{ duration: 0.35, ease: \"easeOut\" }}\n      />\n      <div className=\"mt-1 flex gap-1\">\n        {features.map((_, i) => (\n          <span\n            className=\"h-1 w-1 rounded-full bg-muted-foreground/40\"\n            key={i}\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text rotate"
   ],
   "type": "registry:block"
 }

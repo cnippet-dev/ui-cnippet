@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-scroll-progress-1.tsx",
-      "content": "\"use client\";\r\n\r\nimport { ScrollProgress } from \"@/registry/default/motion/scroll-progress\";\r\n\r\nexport default function ScrollProgressFixed() {\r\n  return (\r\n    <div className=\"relative flex min-h-50 flex-col items-center justify-start overflow-y-auto px-6\">\r\n      <div className=\"sticky top-0 z-10 w-full\">\r\n        <ScrollProgress className=\"fixed left-0 right-0 top-0 h-1 bg-primary\" />\r\n      </div>\r\n      <div className=\"w-full max-w-lg space-y-4 py-6\">\r\n        <h2 className=\"text-xl font-bold text-foreground\">\r\n          Scroll to see progress\r\n        </h2>\r\n        {Array.from({ length: 6 }).map((_, i) => (\r\n          <p className=\"text-sm leading-relaxed text-muted-foreground\" key={i}>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\r\n            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\r\n            ad minim veniam, quis nostrud exercitation ullamco laboris.\r\n          </p>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { ScrollProgress } from \"@/registry/default/motion/scroll-progress\";\n\nexport default function ScrollProgressFixed() {\n  return (\n    <div className=\"relative flex min-h-50 flex-col items-center justify-start overflow-y-auto px-6\">\n      <div className=\"sticky top-0 z-10 w-full\">\n        <ScrollProgress className=\"fixed top-0 right-0 left-0 h-1 bg-primary\" />\n      </div>\n      <div className=\"w-full max-w-lg space-y-4 py-6\">\n        <h2 className=\"font-bold text-foreground text-xl\">\n          Scroll to see progress\n        </h2>\n        {Array.from({ length: 6 }).map((_, i) => (\n          <p className=\"text-muted-foreground text-sm leading-relaxed\" key={i}>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\n            ad minim veniam, quis nostrud exercitation ullamco laboris.\n          </p>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "scroll animation"
+    "scroll progress"
   ],
   "type": "registry:block"
 }

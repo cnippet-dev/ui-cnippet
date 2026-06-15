@@ -19615,7 +19615,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text reveal"
       ],
       "description": "Hero headline — word-by-word fade-in-blur reveal",
       "files": [
@@ -19635,7 +19635,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text reveal"
       ],
       "description": "Character scale — letter-level scale reveal for short taglines",
       "files": [
@@ -19655,7 +19655,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text reveal"
       ],
       "description": "Stacked content block — eyebrow, headline, and body with sequential delays",
       "files": [
@@ -19675,7 +19675,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text scramble"
       ],
       "description": "Hero headline — auto-scramble on mount resolving left-to-right",
       "files": [
@@ -19695,7 +19695,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text scramble"
       ],
       "description": "Click to retrigger — manually replays the scramble via trigger prop",
       "files": [
@@ -19715,7 +19715,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text scramble"
       ],
       "description": "Scrambled stats — staggered duration across a metric row",
       "files": [
@@ -19735,7 +19735,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scramble hover"
       ],
       "description": "Navigation links — each link scrambles independently on hover",
       "files": [
@@ -19755,7 +19755,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scramble hover"
       ],
       "description": "Hero heading — center reveal direction for a symmetric decode",
       "files": [
@@ -19775,7 +19775,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scramble hover"
       ],
       "description": "Repository card — title and metadata scramble with different settings",
       "files": [
@@ -19795,7 +19795,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "typewriter"
       ],
       "description": "Hero headline — types once with a block-underscore cursor",
       "files": [
@@ -19815,7 +19815,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "typewriter"
       ],
       "description": "Looping phrases — cycles through strings with delete animation",
       "files": [
@@ -19835,7 +19835,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "typewriter"
       ],
       "description": "Terminal prompt — monospace CLI-style with block cursor",
       "files": [
@@ -19855,7 +19855,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text loop"
       ],
       "description": "Looping adjectives — cycles benefit words inline in a heading",
       "files": [
@@ -19875,7 +19875,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text loop"
       ],
       "description": "Animated status badge — rich content items in a pill with slide transition",
       "files": [
@@ -19895,7 +19895,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text loop"
       ],
       "description": "Horizontal slide — custom variants swap fade+y for a left-to-right slide",
       "files": [
@@ -19915,7 +19915,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text morph"
       ],
       "description": "Word cycler — button group drives character-level morphing between words",
       "files": [
@@ -19935,7 +19935,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text morph"
       ],
       "description": "Auto-cycling plan name — interval advances through strings in a card",
       "files": [
@@ -19955,7 +19955,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text morph"
       ],
       "description": "Morphing placeholder — placeholder morphs character-by-character as user types",
       "files": [
@@ -19975,7 +19975,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text rotate"
       ],
       "description": "Hero inline — audience descriptor cycles in a heading with character stagger",
       "files": [
@@ -19995,7 +19995,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text rotate"
       ],
       "description": "Manual step control — prev/next buttons drive word-by-word rotation via ref",
       "files": [
@@ -20015,7 +20015,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text rotate"
       ],
       "description": "Feature ticker — short feature strings rotate with fade+y tween and dot indicators",
       "files": [
@@ -20035,7 +20035,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "vertical cut reveal"
       ],
       "description": "Hero headline — word-by-word upward clip reveal with left-to-right stagger",
       "files": [
@@ -20055,7 +20055,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "vertical cut reveal"
       ],
       "description": "Character logotype — center-out stagger on a short brand name",
       "files": [
@@ -20075,7 +20075,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "vertical cut reveal"
       ],
       "description": "Stacked lines — alternating reverse direction per line with sequential delays",
       "files": [
@@ -20095,7 +20095,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter swap hover"
       ],
       "description": "Navigation links — each link swaps independently on hover",
       "files": [
@@ -20115,7 +20115,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter swap hover"
       ],
       "description": "CTA buttons — filled and outlined buttons with opposite swap directions",
       "files": [
@@ -20135,7 +20135,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter swap hover"
       ],
       "description": "Stats row — labels use center-out stagger beneath stat figures",
       "files": [
@@ -20155,7 +20155,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer"
       ],
       "description": "Hero headline — slow sweep on a large heading",
       "files": [
@@ -20175,7 +20175,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer"
       ],
       "description": "Status badges — system-state and AI-processing badges with active shimmer loop",
       "files": [
@@ -20195,7 +20195,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer"
       ],
       "description": "Feature list — heading and three feature strings shimmer at different speeds",
       "files": [
@@ -20215,7 +20215,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer wave"
       ],
       "description": "Hero heading — gentle wave with moderate z and y distance",
       "files": [
@@ -20235,7 +20235,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer wave"
       ],
       "description": "Loading states — fast wave on short strings alongside spinners and pulse indicators",
       "files": [
@@ -20255,7 +20255,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text shimmer wave"
       ],
       "description": "Exaggerated logotype — pushed scale, rotateY, and zDistance on a short all-caps word",
       "files": [
@@ -20275,7 +20275,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text gradient"
       ],
       "description": "Hero heading — violet to cyan looping gradient sweep",
       "files": [
@@ -20295,7 +20295,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text gradient"
       ],
       "description": "Inline word accent — single word with fast orange-to-green sweep inside static heading",
       "files": [
@@ -20315,7 +20315,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text gradient"
       ],
       "description": "Pricing cards — each tier has its own palette and speed",
       "files": [
@@ -20335,7 +20335,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text highlight"
       ],
       "description": "Scroll triggered — key phrase highlights ltr on viewport entry",
       "files": [
@@ -20355,7 +20355,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text highlight"
       ],
       "description": "Hover triggered — highlight fills in on mouse enter and resets on leave",
       "files": [
@@ -20375,7 +20375,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text highlight"
       ],
       "description": "Direction picker — buttons call ref to demonstrate all four sweep directions",
       "files": [
@@ -20395,7 +20395,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "sliding number"
       ],
       "description": "Increment/decrement — +/- buttons drive a single odometer display",
       "files": [
@@ -20415,7 +20415,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "sliding number"
       ],
       "description": "Live clock — hours, minutes, seconds as separate padded sliding numbers",
       "files": [
@@ -20435,7 +20435,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "sliding number"
       ],
       "description": "Pricing plan switcher — price and seat count animate on tier change",
       "files": [
@@ -20455,7 +20455,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "animated number"
       ],
       "description": "Stepper — +10/-10 buttons spring the figure through intermediate values",
       "files": [
@@ -20475,7 +20475,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "animated number"
       ],
       "description": "Upload progress — percentage label animates alongside a CSS progress bar",
       "files": [
@@ -20495,7 +20495,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "animated number"
       ],
       "description": "Dashboard metrics — three KPI cards spring on multiplier toggle",
       "files": [
@@ -20515,7 +20515,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "breathing text"
       ],
       "description": "Weight + width wave — wght and wdth axes breathe left to right",
       "files": [
@@ -20535,7 +20535,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "breathing text"
       ],
       "description": "Center pulse — short logotype word pulses outward from center",
       "files": [
@@ -20555,7 +20555,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "breathing text"
       ],
       "description": "Heading + subtitle pair — two instances with opposite stagger directions",
       "files": [
@@ -20575,7 +20575,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "splitting text"
       ],
       "description": "Hero headline — word-level slide-up with spring transition",
       "files": [
@@ -20595,7 +20595,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "splitting text"
       ],
       "description": "Preset explorer — buttons switch all five presets on character-level split",
       "files": [
@@ -20615,7 +20615,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "splitting text"
       ],
       "description": "Stacked content block — eyebrow, headline, body with different presets",
       "files": [
@@ -20635,7 +20635,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rolling text"
       ],
       "description": "Hero headline — letters roll up with tight stagger on mount",
       "files": [
@@ -20655,7 +20655,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rolling text"
       ],
       "description": "Stacked display lines — three lines with incremental delay offsets",
       "files": [
@@ -20675,7 +20675,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rolling text"
       ],
       "description": "Navigation links — roll down from above with per-item delay",
       "files": [
@@ -20695,7 +20695,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rotating text"
       ],
       "description": "Hero inline — adjectives rotate inside a heading with stable width",
       "files": [
@@ -20715,7 +20715,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rotating text"
       ],
       "description": "Framed CTA — action phrases rotate inside a bordered card",
       "files": [
@@ -20735,7 +20735,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "rotating text"
       ],
       "description": "Testimonial audience — direction down cycles target audience descriptor",
       "files": [
@@ -20755,7 +20755,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "morphing text"
       ],
       "description": "Auto-cycling hero words — four short action words blur-dissolve in sequence",
       "files": [
@@ -20775,7 +20775,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "morphing text"
       ],
       "description": "Tech stack card — stack names morph inside a product card",
       "files": [
@@ -20795,7 +20795,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "morphing text"
       ],
       "description": "Hero section — morphing headline anchored by static eyebrow and body copy",
       "files": [
@@ -20815,7 +20815,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "spinning text"
       ],
       "description": "Badge ring — spinning label orbits a centered icon",
       "files": [
@@ -20835,7 +20835,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "spinning text"
       ],
       "description": "CTA orbit — reversed ring around a clickable arrow button",
       "files": [
@@ -20855,7 +20855,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "spinning text"
       ],
       "description": "Concentric rings — two rings at different radii, speeds, and directions",
       "files": [
@@ -20875,7 +20875,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text roll"
       ],
       "description": "Hero headline — letter-by-letter 3D roll reveal for a landing page heading",
       "files": [
@@ -20895,7 +20895,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text roll"
       ],
       "description": "Stats row — three TextRoll instances with offset delays animate key metrics with replay",
       "files": [
@@ -20915,7 +20915,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text roll"
       ],
       "description": "Navigation links — staggered roll-in across nav items on mount",
       "files": [
@@ -20935,7 +20935,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "flip words"
       ],
       "description": "Hero inline — adjectives flip inside a heading with primary colour accent",
       "files": [
@@ -20955,7 +20955,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "flip words"
       ],
       "description": "CTA button — action verbs flip inside a full-width button for a sense of urgency",
       "files": [
@@ -20975,7 +20975,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "flip words"
       ],
       "description": "Testimonial card — audience descriptor cycles in a pull-quote layout",
       "files": [
@@ -20995,7 +20995,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "counting number"
       ],
       "description": "Stats section — four counters animate a social-proof grid on mount",
       "files": [
@@ -21015,7 +21015,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "counting number"
       ],
       "description": "Large hero metric — single full-width counter with imperative replay via ref",
       "files": [
@@ -21035,7 +21035,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "counting number"
       ],
       "description": "Dashboard metrics — three gradient counters inside bordered cards with different durations",
       "files": [
@@ -21055,7 +21055,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "colorful text"
       ],
       "description": "Hero headline — full sentence reveals character-by-character with random vibrant colours",
       "files": [
@@ -21075,7 +21075,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "colorful text"
       ],
       "description": "Brand logotype — short all-caps word with custom violet-to-teal palette",
       "files": [
@@ -21095,7 +21095,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "colorful text"
       ],
       "description": "Cycling phrases — button replays the colour animation across multiple phrases",
       "files": [
@@ -21115,7 +21115,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "encrypted text"
       ],
       "description": "Hero headline — large heading decrypts left-to-right on mount",
       "files": [
@@ -21135,7 +21135,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "encrypted text"
       ],
       "description": "Terminal session — CLI commands decrypt sequentially on Enter",
       "files": [
@@ -21155,7 +21155,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "encrypted text"
       ],
       "description": "Direction picker — buttons replay with each of four revealDirection values",
       "files": [
@@ -21175,7 +21175,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text generate effect"
       ],
       "description": "Hero headline — word-by-word blur-fade reveal for landing page headings",
       "files": [
@@ -21195,7 +21195,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text generate effect"
       ],
       "description": "AI chat response — assistant card regenerates text on demand via trigger",
       "files": [
@@ -21215,7 +21215,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text generate effect"
       ],
       "description": "Stacked content block — eyebrow, headline, and body with different stagger settings",
       "files": [
@@ -21235,7 +21235,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter 3d swap"
       ],
       "description": "Navigation links — letters rotate upward on hover with colour change between faces",
       "files": [
@@ -21255,7 +21255,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter 3d swap"
       ],
       "description": "CTA buttons — filled and outlined buttons with opposite rotateDirection values",
       "files": [
@@ -21275,7 +21275,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "letter 3d swap"
       ],
       "description": "Direction showcase — four rows compare top, right, bottom, and left rotations",
       "files": [
@@ -21295,7 +21295,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "random letter swap"
       ],
       "description": "Navigation links — each link shuffles independently on hover",
       "files": [
@@ -21315,7 +21315,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "random letter swap"
       ],
       "description": "CTA buttons — two buttons with reverse prop contrast for visual distinction",
       "files": [
@@ -21335,7 +21335,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "random letter swap"
       ],
       "description": "Tag chips — technology tags inside pill badges shuffle on hover",
       "files": [
@@ -21355,7 +21355,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scroll swap text"
       ],
       "description": "Feature list — each item slides in as the scrollable container is scrolled",
       "files": [
@@ -21375,7 +21375,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scroll swap text"
       ],
       "description": "Step-by-step process — numbered steps swap in as they cross the scroll threshold",
       "files": [
@@ -21395,7 +21395,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "scroll swap text"
       ],
       "description": "Testimonial quotes — pull quotes scroll into view one at a time",
       "files": [
@@ -21415,7 +21415,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font hover"
       ],
       "description": "Navigation links — letters bold from center outward on hover",
       "files": [
@@ -21435,7 +21435,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font hover"
       ],
       "description": "Hero headline — two lines with inverted weight axes contrast on hover",
       "files": [
@@ -21455,7 +21455,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font hover"
       ],
       "description": "CTA links — three links each using a different staggerFrom origin",
       "files": [
@@ -21475,7 +21475,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font cursor proximity"
       ],
       "description": "Hero headline — characters grow from ultra-light to black near cursor",
       "files": [
@@ -21495,7 +21495,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font cursor proximity"
       ],
       "description": "Dual lines — mirrored inverted axes with gaussian falloff",
       "files": [
@@ -21515,7 +21515,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "variable font cursor proximity"
       ],
       "description": "Navigation — nav items respond to proximity with exponential falloff",
       "files": [
@@ -21535,7 +21535,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text cursor proximity"
       ],
       "description": "Scale — characters grow as cursor approaches with linear falloff",
       "files": [
@@ -21555,7 +21555,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text cursor proximity"
       ],
       "description": "Opacity reveal — two hidden lines appear as cursor sweeps with gaussian falloff",
       "files": [
@@ -21575,7 +21575,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text cursor proximity"
       ],
       "description": "Scale and color — characters grow and shift colour with exponential falloff",
       "files": [
@@ -21595,7 +21595,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text along path"
       ],
       "description": "Circular badge — text loops continuously around a circular path",
       "files": [
@@ -21615,7 +21615,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text along path"
       ],
       "description": "Wave path — text flows along a sinusoidal wave in auto mode",
       "files": [
@@ -21635,7 +21635,7 @@
     },
     {
       "categories": [
-        "text animation"
+        "text along path"
       ],
       "description": "Curved path with visible stroke — cubic Bézier with showPath for debugging",
       "files": [
@@ -21655,7 +21655,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll reveal"
       ],
       "description": "Feature cards — three cards slide up and fade in with staggered delays on scroll",
       "files": [
@@ -21675,7 +21675,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll reveal"
       ],
       "description": "Feature section — image slides from left, text from right in a split layout",
       "files": [
@@ -21695,7 +21695,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll reveal"
       ],
       "description": "Stepped list — each item slides in from the left with incrementing delay",
       "files": [
@@ -21715,7 +21715,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll progress"
       ],
       "description": "Fixed reading bar — 1px bar pinned to viewport top tracks window scroll",
       "files": [
@@ -21735,7 +21735,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll progress"
       ],
       "description": "In-container progress — gradient bar in card header scoped to a scrollable div",
       "files": [
@@ -21755,7 +21755,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll progress"
       ],
       "description": "Styled bar with percentage — rounded gradient bar with live percentage label",
       "files": [
@@ -21775,7 +21775,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll velocity text"
       ],
       "description": "Word marquee — continuous horizontal scroll of tech-stack words, speeds up on scroll",
       "files": [
@@ -21795,7 +21795,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll velocity text"
       ],
       "description": "Opposing rows — two rows scrolling in opposite directions, velocity-reactive",
       "files": [
@@ -21815,7 +21815,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "scroll velocity text"
       ],
       "description": "Pill marquee — badge-style items scrolling continuously at a fixed speed",
       "files": [
@@ -21835,7 +21835,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "parallax floating"
       ],
       "description": "Floating shapes — geometric shapes at different depths follow the cursor",
       "files": [
@@ -21855,7 +21855,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "parallax floating"
       ],
       "description": "Floating card — card with glow blobs and dot accents at independent depth layers",
       "files": [
@@ -21875,7 +21875,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "parallax floating"
       ],
       "description": "Floating symbols — abstract symbols drift at different depths following cursor",
       "files": [
@@ -21895,7 +21895,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "stacking cards"
       ],
       "description": "Feature cards — three feature cards stack as you scroll through the section",
       "files": [
@@ -21915,7 +21915,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "stacking cards"
       ],
       "description": "Testimonial cards — customer quotes stack on scroll with subtle scaling",
       "files": [
@@ -21935,7 +21935,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "stacking cards"
       ],
       "description": "Process steps — numbered steps stack sequentially on scroll",
       "files": [
@@ -21955,7 +21955,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "progressive blur"
       ],
       "description": "List fade — content list with progressive blur fade at the bottom",
       "files": [
@@ -21975,7 +21975,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "progressive blur"
       ],
       "description": "Gallery edges — horizontal row of cards with left and right edge blur",
       "files": [
@@ -21995,7 +21995,7 @@
     },
     {
       "categories": [
-        "scroll animation"
+        "progressive blur"
       ],
       "description": "Nav overflow — horizontal nav bar with right-edge blur for overflow indication",
       "files": [

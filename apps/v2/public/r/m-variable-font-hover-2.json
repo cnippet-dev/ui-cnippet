@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-variable-font-hover-2.tsx",
-      "content": "\"use client\";\r\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\r\n\r\nexport default function VariableFontHoverHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\">\r\n      <p className=\"text-sm text-muted-foreground\">Hover the headline</p>\r\n      <VariableFontHover\r\n        label=\"Build faster.\"\r\n        fromFontVariationSettings=\"'wght' 100, 'slnt' 0\"\r\n        toFontVariationSettings=\"'wght' 900, 'slnt' -10\"\r\n        transition={{ type: \"spring\", duration: 0.5 }}\r\n        staggerDuration={0.02}\r\n        staggerFrom=\"first\"\r\n        className=\"cursor-default text-5xl tracking-tight\"\r\n      />\r\n      <VariableFontHover\r\n        label=\"Ship with confidence.\"\r\n        fromFontVariationSettings=\"'wght' 900, 'slnt' -10\"\r\n        toFontVariationSettings=\"'wght' 100, 'slnt' 0\"\r\n        transition={{ type: \"spring\", duration: 0.5 }}\r\n        staggerDuration={0.02}\r\n        staggerFrom=\"last\"\r\n        className=\"cursor-default text-5xl tracking-tight text-muted-foreground\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { VariableFontHover } from \"@/registry/default/motion/variable-font-hover\";\n\nexport default function VariableFontHoverHero() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-2 px-6 text-center\">\n      <p className=\"text-muted-foreground text-sm\">Hover the headline</p>\n      <VariableFontHover\n        className=\"cursor-default text-5xl tracking-tight\"\n        fromFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n        label=\"Build faster.\"\n        staggerDuration={0.02}\n        staggerFrom=\"first\"\n        toFontVariationSettings=\"'wght' 900, 'slnt' -10\"\n        transition={{ duration: 0.5, type: \"spring\" }}\n      />\n      <VariableFontHover\n        className=\"cursor-default text-5xl text-muted-foreground tracking-tight\"\n        fromFontVariationSettings=\"'wght' 900, 'slnt' -10\"\n        label=\"Ship with confidence.\"\n        staggerDuration={0.02}\n        staggerFrom=\"last\"\n        toFontVariationSettings=\"'wght' 100, 'slnt' 0\"\n        transition={{ duration: 0.5, type: \"spring\" }}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "variable font hover"
   ],
   "type": "registry:block"
 }

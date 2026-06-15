@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-along-path-3.tsx",
-      "content": "\"use client\";\r\nimport { TextAlongPath } from \"@/registry/default/motion/text-along-path\";\r\n\r\nexport default function TextAlongPathCurve() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <div className=\"h-36 w-72\">\r\n        <TextAlongPath\r\n          path=\"M 10,80 C 30,10 70,10 90,80\"\r\n          text=\"Follow the curve • animated path text • \"\r\n          viewBox=\"0 0 100 100\"\r\n          animationType=\"auto\"\r\n          duration={5}\r\n          showPath={true}\r\n          pathClassName=\"stroke-muted-foreground/30\"\r\n          textClassName=\"text-[5px] fill-foreground font-medium\"\r\n          textAnchor=\"start\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\nimport { TextAlongPath } from \"@/registry/default/motion/text-along-path\";\n\nexport default function TextAlongPathCurve() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <div className=\"h-36 w-72\">\n        <TextAlongPath\n          animationType=\"auto\"\n          duration={5}\n          path=\"M 10,80 C 30,10 70,10 90,80\"\n          pathClassName=\"stroke-muted-foreground/30\"\n          showPath={true}\n          text=\"Follow the curve • animated path text • \"\n          textAnchor=\"start\"\n          textClassName=\"text-[5px] fill-foreground font-medium\"\n          viewBox=\"0 0 100 100\"\n        />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text along path"
   ],
   "type": "registry:block"
 }

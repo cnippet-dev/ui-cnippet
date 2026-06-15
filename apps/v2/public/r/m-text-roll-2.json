@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-roll-2.tsx",
-      "content": "\"use client\";\r\n\r\nimport { TextRoll } from \"@/registry/default/motion/text-roll\";\r\nimport { useState } from \"react\";\r\n\r\nconst metrics = [\r\n  { label: \"Components\", value: \"164+\" },\r\n  { label: \"Downloads\", value: \"98K\" },\r\n  { label: \"Stars\", value: \"4.2K\" },\r\n];\r\n\r\nexport default function TextRollStats() {\r\n  const [key, setKey] = useState(0);\r\n\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-8 px-6\">\r\n      <div className=\"grid grid-cols-3 gap-10 text-center\">\r\n        {metrics.map((metric, i) => (\r\n          <div key={metric.label}>\r\n            <p className=\"text-3xl font-bold tabular-nums text-foreground sm:text-4xl\">\r\n              <TextRoll\r\n                duration={0.4}\r\n                getEnterDelay={(j) => i * 0.15 + j * 0.04}\r\n                key={key}\r\n              >\r\n                {metric.value}\r\n              </TextRoll>\r\n            </p>\r\n            <p className=\"mt-1 text-sm text-muted-foreground\">{metric.label}</p>\r\n          </div>\r\n        ))}\r\n      </div>\r\n      <button\r\n        className=\"rounded-md bg-accent px-4 py-1.5 text-sm font-medium text-foreground hover:bg-accent/80\"\r\n        onClick={() => setKey((k) => k + 1)}\r\n        type=\"button\"\r\n      >\r\n        Replay\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { TextRoll } from \"@/registry/default/motion/text-roll\";\n\nconst metrics = [\n  { label: \"Components\", value: \"164+\" },\n  { label: \"Downloads\", value: \"98K\" },\n  { label: \"Stars\", value: \"4.2K\" },\n];\n\nexport default function TextRollStats() {\n  const [key, setKey] = useState(0);\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-8 px-6\">\n      <div className=\"grid grid-cols-3 gap-10 text-center\">\n        {metrics.map((metric, i) => (\n          <div key={metric.label}>\n            <p className=\"font-bold text-3xl text-foreground tabular-nums sm:text-4xl\">\n              <TextRoll\n                duration={0.4}\n                getEnterDelay={(j) => i * 0.15 + j * 0.04}\n                key={key}\n              >\n                {metric.value}\n              </TextRoll>\n            </p>\n            <p className=\"mt-1 text-muted-foreground text-sm\">{metric.label}</p>\n          </div>\n        ))}\n      </div>\n      <button\n        className=\"rounded-md bg-accent px-4 py-1.5 font-medium text-foreground text-sm hover:bg-accent/80\"\n        onClick={() => setKey((k) => k + 1)}\n        type=\"button\"\n      >\n        Replay\n      </button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text roll"
   ],
   "type": "registry:block"
 }

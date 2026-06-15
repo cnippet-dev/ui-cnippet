@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-random-letter-swap-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\r\n\r\nconst tags = [\"motion\", \"react\", \"tailwind\", \"typescript\", \"open-source\"];\r\n\r\nexport default function RandomLetterSwapTags() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\r\n      <p className=\"text-sm text-muted-foreground\">Hover a tag</p>\r\n      <div className=\"flex flex-wrap justify-center gap-2\">\r\n        {tags.map((tag) => (\r\n          <div\r\n            className=\"rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium\"\r\n            key={tag}\r\n          >\r\n            <RandomLetterSwap\r\n              className=\"text-foreground\"\r\n              label={tag}\r\n              staggerDuration={0.018}\r\n              transition={{ duration: 0.55, type: \"spring\" }}\r\n            />\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { RandomLetterSwap } from \"@/registry/default/motion/random-letter-swap\";\n\nconst tags = [\"motion\", \"react\", \"tailwind\", \"typescript\", \"open-source\"];\n\nexport default function RandomLetterSwapTags() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-5 px-6\">\n      <p className=\"text-muted-foreground text-sm\">Hover a tag</p>\n      <div className=\"flex flex-wrap justify-center gap-2\">\n        {tags.map((tag) => (\n          <div\n            className=\"rounded-full border border-border bg-card px-4 py-1.5 font-medium text-sm\"\n            key={tag}\n          >\n            <RandomLetterSwap\n              className=\"text-foreground\"\n              label={tag}\n              staggerDuration={0.018}\n              transition={{ duration: 0.55, type: \"spring\" }}\n            />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "random letter swap"
   ],
   "type": "registry:block"
 }

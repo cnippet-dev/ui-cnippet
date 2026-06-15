@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-badge-14.tsx",
-      "content": "import { Badge } from \"@/registry/default/ui/badge\";\r\n\r\nconst channels = [\r\n  { label: \"Stable\", variant: \"success\" as const },\r\n  { label: \"Beta\", variant: \"info\" as const },\r\n  { label: \"Experimental\", variant: \"warning\" as const },\r\n  { label: \"Deprecated\", variant: \"destructive\" as const },\r\n];\r\n\r\nexport default function Particle() {\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <p className=\"text-muted-foreground text-sm\">Release channels</p>\r\n      <div className=\"flex flex-wrap items-center gap-2\">\r\n        {channels.map((c) => (\r\n          <Badge key={c.label} variant={c.variant}>\r\n            {c.label}\r\n          </Badge>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nconst channels = [\n  { label: \"Stable\", variant: \"success\" as const },\n  { label: \"Beta\", variant: \"info\" as const },\n  { label: \"Experimental\", variant: \"warning\" as const },\n  { label: \"Deprecated\", variant: \"destructive\" as const },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <p className=\"text-muted-foreground text-sm\">Release channels</p>\n      <div className=\"flex flex-wrap items-center gap-2\">\n        {channels.map((c) => (\n          <Badge key={c.label} variant={c.variant}>\n            {c.label}\n          </Badge>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

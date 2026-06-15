@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-splitting-text-3.tsx",
-      "content": "\"use client\";\r\n\r\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\r\n\r\nexport default function SplittingTextStacked() {\r\n  return (\r\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6\">\r\n      <SplittingText\r\n        as=\"p\"\r\n        className=\"text-xs font-semibold uppercase tracking-widest text-primary\"\r\n        preset=\"fade\"\r\n        splitBy=\"chars\"\r\n        staggerDuration={0.04}\r\n        transition={{ duration: 0.4, ease: \"easeOut\" }}\r\n      >\r\n        New release\r\n      </SplittingText>\r\n      <SplittingText\r\n        as=\"h1\"\r\n        className=\"text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        preset=\"slide-up\"\r\n        splitBy=\"words\"\r\n        staggerDuration={0.08}\r\n        transition={{ damping: 20, stiffness: 200, type: \"spring\" }}\r\n      >\r\n        Animate anything, effortlessly\r\n      </SplittingText>\r\n      <SplittingText\r\n        as=\"p\"\r\n        className=\"mt-2 max-w-sm text-center text-sm text-muted-foreground\"\r\n        preset=\"blur\"\r\n        splitBy=\"words\"\r\n        staggerDuration={0.04}\r\n        transition={{ duration: 0.5, ease: \"easeOut\" }}\r\n      >\r\n        164 motion components built on Framer Motion and Tailwind CSS\r\n      </SplittingText>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\n\nimport { SplittingText } from \"@/registry/default/motion/splitting-text\";\n\nexport default function SplittingTextStacked() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-1 px-6\">\n      <SplittingText\n        as=\"p\"\n        className=\"font-semibold text-primary text-xs uppercase tracking-widest\"\n        preset=\"fade\"\n        splitBy=\"chars\"\n        staggerDuration={0.04}\n        transition={{ duration: 0.4, ease: \"easeOut\" }}\n      >\n        New release\n      </SplittingText>\n      <SplittingText\n        as=\"h1\"\n        className=\"text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        preset=\"slide-up\"\n        splitBy=\"words\"\n        staggerDuration={0.08}\n        transition={{ damping: 20, stiffness: 200, type: \"spring\" }}\n      >\n        Animate anything, effortlessly\n      </SplittingText>\n      <SplittingText\n        as=\"p\"\n        className=\"mt-2 max-w-sm text-center text-muted-foreground text-sm\"\n        preset=\"blur\"\n        splitBy=\"words\"\n        staggerDuration={0.04}\n        transition={{ duration: 0.5, ease: \"easeOut\" }}\n      >\n        164 motion components built on Framer Motion and Tailwind CSS\n      </SplittingText>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "splitting text"
   ],
   "type": "registry:block"
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/motion-variants/m-text-reveal-1.tsx",
-      "content": "import { TextReveal } from \"@/registry/default/motion/text-reveal\";\r\n\r\nexport default function TextRevealHero() {\r\n  return (\r\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\r\n      <TextReveal\r\n        as=\"h1\"\r\n        className=\"max-w-2xl text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl\"\r\n        per=\"word\"\r\n        preset=\"fade-in-blur\"\r\n        speedReveal={1.2}\r\n      >\r\n        Build beautiful interfaces that move with purpose\r\n      </TextReveal>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { TextReveal } from \"@/registry/default/motion/text-reveal\";\n\nexport default function TextRevealHero() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <TextReveal\n        as=\"h1\"\n        className=\"max-w-2xl text-center font-bold text-4xl text-foreground tracking-tight sm:text-5xl\"\n        per=\"word\"\n        preset=\"fade-in-blur\"\n        speedReveal={1.2}\n      >\n        Build beautiful interfaces that move with purpose\n      </TextReveal>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
@@ -16,7 +16,7 @@
     "className": ""
   },
   "categories": [
-    "text animation"
+    "text reveal"
   ],
   "type": "registry:block"
 }

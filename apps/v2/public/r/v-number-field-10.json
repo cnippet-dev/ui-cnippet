@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-number-field-10.tsx",
-      "content": "export default function Component() {\n  return <div>Component</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  const [fontSize, setFontSize] = useState(16);\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4\">\n      <NumberField\n        max={48}\n        min={8}\n        onValueChange={setFontSize}\n        step={1}\n        value={fontSize}\n      >\n        <NumberFieldScrubArea label=\"Font size (px)\" />\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n      <div className=\"rounded-lg border bg-muted/30 px-4 py-3\">\n        <p className=\"text-foreground leading-snug\" style={{ fontSize }}>\n          The quick brown fox jumps over the lazy dog.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
