@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
-import { SiteHeader } from "@/components/site-header";
+import { Footer } from "@/components/layout/footer";
+import { TopBar } from "@/components/layout/topbar";
+import { Background } from "@/components/ui/background";
 import {
   isPlaceholderMotionVariant,
   isPlaceholderVariant,
@@ -75,28 +78,104 @@ export default function ExplorePage() {
     categories.length + textAnimCategories.length + scrollAnimCategories.length;
 
   return (
-    <>
-      <SiteHeader />
-      <div className="grid grid-cols-1 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-xl))_var(--gutter-width)] lg:mx-auto">
-        <div className="col-start-1 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
+    <div className="relative flex min-h-svh flex-col overflow-clip">
+      <TopBar>
+        <Link
+          className="inline-flex h-8 items-center justify-center rounded-[2px] border border-transparent bg-primary px-3 font-medium text-primary-foreground text-sm transition-colors hover:bg-primary/90"
+          href="/docs/introduction"
+        >
+          Get started
+        </Link>
+      </TopBar>
 
-        <main className="min-w-0 pb-24">
-          <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-            {total} variants · {componentCount} components
+      <main className="flex flex-1 flex-col">
+        <div className="container-wrapper mx-auto">
+          {/* Hero section */}
+          <div className="relative overflow-hidden border-b border-dashed pt-16">
+            {/* Bottom fade */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-background to-transparent" />
+
+            {/* Background */}
+            <div className="absolute inset-0 z-0">
+              <Background
+                accentColorVar="--cnippet-blue"
+                className="absolute inset-0 z-0"
+                fieldOpacity={0.1}
+                interactive={true}
+                pointerTrail={true}
+                pointerTrailIntensity={0.4}
+                pointerTrailRadius={0.2}
+                speed={0.75}
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-20 px-8 pb-16 pt-14 lg:px-12 lg:pt-16">
+              {/* Label pill */}
+              <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-[2px] border border-dashed border-cnippet-blue/40 bg-cnippet-blue/5 px-3 py-1.5">
+                <span className="size-1.5 animate-pulse rounded-full bg-cnippet-blue" />
+                <span className="font-medium font-mono text-cnippet-blue text-xs tracking-wide">
+                  {total} variants · {componentCount} components
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h1 className="font-f37-stout text-[40px] leading-[1.0] tracking-tight sm:text-[52px] lg:text-[60px]">
+                Explore
+                <br />
+                <span className="text-cnippet-blue">Components.</span>
+              </h1>
+
+              {/* Description */}
+              <p className="mt-5 max-w-md text-balance font-mono text-muted-foreground text-sm leading-relaxed">
+                Browse every component variant. Copy the source or open it in
+                the code viewer.
+              </p>
+            </div>
+
+            {/* Stat strip */}
+            <div className="relative z-20 grid grid-cols-2 divide-x divide-dashed border-t border-dashed sm:grid-cols-4">
+              <div className="group relative flex flex-col gap-1 px-6 py-5 transition-colors duration-200 hover:bg-cnippet-orange/5">
+                <span className="absolute inset-x-0 top-0 h-px bg-cnippet-orange opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                <span className="font-f37-stout text-3xl text-cnippet-orange leading-none">
+                  {variantEntries.length}
+                </span>
+                <span className="mt-1 font-mono text-muted-foreground text-xs">
+                  core variants
+                </span>
+              </div>
+              <div className="group relative flex flex-col gap-1 px-6 py-5 transition-colors duration-200 hover:bg-cnippet-blue/5">
+                <span className="absolute inset-x-0 top-0 h-px bg-cnippet-blue opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                <span className="font-f37-stout text-3xl text-cnippet-blue leading-none">
+                  {textAnimEntries.length + scrollAnimEntries.length}
+                </span>
+                <span className="mt-1 font-mono text-muted-foreground text-xs">
+                  motion variants
+                </span>
+              </div>
+              <div className="group relative flex flex-col gap-1 px-6 py-5 transition-colors duration-200 hover:bg-cnippet-green/5">
+                <span className="absolute inset-x-0 top-0 h-px bg-cnippet-green opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                <span className="font-f37-stout text-3xl text-cnippet-green leading-none">
+                  {componentCount}
+                </span>
+                <span className="mt-1 font-mono text-muted-foreground text-xs">
+                  components
+                </span>
+              </div>
+              <div className="group relative flex flex-col gap-1 px-6 py-5 transition-colors duration-200 hover:bg-cnippet-yellow/5">
+                <span className="absolute inset-x-0 top-0 h-px bg-cnippet-yellow opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                <span className="font-f37-stout text-3xl text-cnippet-yellow leading-none">
+                  {total}
+                </span>
+                <span className="mt-1 font-mono text-muted-foreground text-xs">
+                  total variants
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-            <h1 className="px-2 text-4xl tracking-tighter max-sm:px-4 sm:text-5xl lg:text-6xl">
-              Explore
-            </h1>
-          </div>
-
-          <div className="relative px-2 py-3 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:text-white/40 dark:after:bg-white/10">
-            Browse every component variant. Copy the source or open it in the
-            code viewer.
-          </div>
-
-          <div className="px-0 pt-8 max-sm:px-0">
+          {/* Showcase */}
+          <div className="px-8 py-10 lg:px-12">
             <NuqsAdapter>
               <Suspense>
                 <ExploreShowcase
@@ -110,10 +189,10 @@ export default function ExplorePage() {
               </Suspense>
             </NuqsAdapter>
           </div>
-        </main>
+        </div>
+      </main>
 
-        <div className="col-start-3 row-span-full hidden border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/7 md:block dark:[--pattern-fg:var(--color-white)]/8" />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 }

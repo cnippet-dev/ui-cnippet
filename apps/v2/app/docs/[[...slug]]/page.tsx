@@ -1,14 +1,13 @@
-import { LinkSquare02Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { findNeighbour } from "fumadocs-core/page-tree";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { DocsCopyPage } from "@/components/docs-copy-page";
-import { DocsTableOfContents } from "@/components/docs-toc";
+import { DocsSidebar } from "@/components/docs-sidebar";
+import { DocsToc } from "@/components/docs-toc";
+import { DocsTopBar } from "@/components/docs-topbar";
 import { docSource } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
-import { Button } from "@/registry/default/ui/button";
-import { Card, CardFrame, CardPanel } from "@/registry/default/ui/card";
-import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export const revalidate = false;
 export const dynamic = "force-static";
@@ -20,40 +19,31 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
   const page = docSource.getPage(params.slug);
-
-  if (!page) {
-    notFound();
-  }
-
-  const doc = page.data;
-
-  if (!doc.title || !doc.description) {
-    notFound();
-  }
+  if (!page) notFound();
 
   const slug = params.slug?.join("/") ?? "";
   const url = `https://ui.cnippet.dev/docs/${slug}`;
 
   return {
     alternates: { canonical: url },
-    description: doc.description,
+    description: page.data.description,
     openGraph: {
-      description: doc.description,
-      title: `${doc.title} - Cnippet UI`,
+      description: page.data.description,
+      title: `${page.data.title} — Cnippet UI`,
       url,
     },
-    title: doc.title,
+    title: page.data.title,
     twitter: {
-      description: doc.description,
-      title: `${doc.title} - Cnippet UI`,
+      description: page.data.description,
+      title: `${page.data.title} — Cnippet UI`,
     },
   };
 }
 
-export default async function Page(props: {
+export default async function DocsPage(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
@@ -63,77 +53,77 @@ export default async function Page(props: {
   }
 
   const page = docSource.getPage(params.slug);
-  if (!page) {
-    notFound();
-  }
+  if (!page) notFound();
 
-  const doc = page.data;
-  const rawContent = await page.data.getText("raw");
-  const MDX = doc.body;
-
-  const links = doc.links;
+  const MDX = page.data.body;
+  const toc = page.data.toc;
+  const neighbours = await findNeighbour(docSource.pageTree, page.url);
 
   return (
-    <div className="flex items-stretch xl:w-full" data-slot="docs">
-      <div className="relative flex w-full min-w-0 flex-1 flex-col lg:mt-8 lg:mr-4 lg:mb-8">
-        <CardFrame className="border-none shadow-none max-lg:border-none dark:bg-neutral-950 dark:before:shadow-none">
-          <Card className="max-lg:rounded-none! dark:bg-neutral-950 max-lg:[clip-path:none]!">
-            <CardPanel className="px-4 py-6 sm:px-6 lg:p-8">
-              <div className="mx-auto w-full max-w-3xl">
-                <div className="flex min-w-0 flex-col gap-8">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex flex-col gap-2">
-                      <h1 className="scroll-m-20 font-heading font-semibold text-3xl xl:text-4xl">
-                        {doc.title}
-                      </h1>
-                      {doc.description && (
-                        <p className="text-muted-foreground sm:text-lg">
-                          {doc.description}
-                        </p>
-                      )}
-                    </div>
-                    <div className="flex items-center space-x-2 pt-4">
-                      {links?.doc && (
-                        <Button
-                          render={
-                            <Link
-                              href={links.doc}
-                              rel="noreferrer"
-                              target="_blank"
-                            >
-                              <HugeiconsIcon
-                                icon={LinkSquare02Icon}
-                                strokeWidth={2.5}
-                              />
-                              API Reference
-                            </Link>
-                          }
-                          size="xs"
-                          variant="outline"
-                        />
-                      )}
-                      <DocsCopyPage page={rawContent} />
-                    </div>
-                  </div>
-                  <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-                    <MDX components={mdxComponents} />
-                  </div>
-                </div>
-              </div>
-            </CardPanel>
-          </Card>
-        </CardFrame>
-      </div>
-      <div className="sticky top-(--header-height) z-30 ms-auto hidden h-[calc(100svh-var(--header-height))] w-72 flex-col overflow-hidden overscroll-none xl:flex">
-        <ScrollArea
-          className="**:data-[slot=scroll-area-scrollbar]:hidden"
-          scrollFade
-        >
-          <div className="flex min-h-0 flex-col gap-2 py-2">
+    <div
+      className="flex flex-col text-[1.05rem] sm:text-[15px] xl:w-full"
+      data-slot="docs"
+    >
+      <DocsTopBar next={neighbours.next} previous={neighbours.previous} />
+
+      <div className="container-wrapper">
+        <div className="grid min-w-0 items-start px-2 pt-(--docs-topbar-height) lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--sidebar-width)_minmax(0,1fr)_18rem]">
+          {/* Sidebar — col 1 */}
+          <DocsSidebar tree={docSource.pageTree} />
+
+          {/* Content — col 2 */}
+          <div className="flex min-w-0 flex-1 flex-col xl:col-start-2">
             <div className="h-(--top-spacing) shrink-0" />
-            {doc.toc?.length ? <DocsTableOfContents toc={doc.toc} /> : null}
+            <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+              <div className="flex flex-col gap-2">
+                <h1 className="scroll-m-20 font-medium text-4xl tracking-tight sm:text-3xl xl:text-4xl">
+                  {page.data.title}
+                </h1>
+                {page.data.description && (
+                  <p className="text-balance text-[1.05rem] text-muted-foreground sm:text-base">
+                    {page.data.description}
+                  </p>
+                )}
+              </div>
+
+              <div className="w-full flex-1">
+                <MDX components={mdxComponents} />
+              </div>
+            </div>
+
+            {/* Prev / next */}
+            <div className="mx-auto flex h-16 w-full max-w-2xl items-center gap-2 border-t border-dashed px-4 md:px-0">
+              {neighbours.previous && (
+                <Link
+                  className="inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
+                  href={neighbours.previous.url}
+                >
+                  <ArrowLeft className="size-3.5" />
+                  {neighbours.previous.name}
+                </Link>
+              )}
+              {neighbours.next && (
+                <Link
+                  className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
+                  href={neighbours.next.url}
+                >
+                  {neighbours.next.name}
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              )}
+            </div>
           </div>
-        </ScrollArea>
+
+          {/* TOC — col 3 (xl only) */}
+          <div className="sticky top-[calc(var(--header-height)+var(--docs-topbar-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--docs-topbar-height)-var(--footer-height))] flex-col gap-4 self-start overflow-hidden overscroll-none pb-8 xl:col-start-3 xl:flex">
+            <div className="h-(--top-spacing) shrink-0" />
+            {toc && toc.length > 0 && (
+              <div className="no-scrollbar overflow-y-auto px-4">
+                <DocsToc toc={toc} />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

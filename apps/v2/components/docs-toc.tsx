@@ -3,89 +3,70 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-function useActiveItem(itemIds: string[]) {
+type TocEntry = {
+  title?: React.ReactNode;
+  url: string;
+  depth: number;
+};
+
+function useActiveHeading(ids: string[]) {
   const [activeId, setActiveId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    // Default to first item on mount if nothing is active yet
-    if (!activeId && itemIds?.length) {
-      setActiveId(itemIds[0] ?? null);
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveId(entry.target.id);
         }
       },
       { rootMargin: "0% 0% -80% 0%" },
     );
-
-    for (const id of itemIds ?? []) {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     }
-
     return () => {
-      for (const id of itemIds ?? []) {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
       }
     };
-  }, [itemIds, activeId]);
+  }, [ids]);
 
   return activeId;
 }
 
-export function DocsTableOfContents({
+export function DocsToc({
   toc,
   className,
 }: {
-  toc: {
-    title?: React.ReactNode;
-    url: string;
-    depth: number;
-  }[];
+  toc: TocEntry[];
   className?: string;
 }) {
-  const itemIds = React.useMemo(
+  const ids = React.useMemo(
     () => toc.map((item) => item.url.replace("#", "")),
     [toc],
   );
-  const activeHeading = useActiveItem(itemIds);
+  const activeId = useActiveHeading(ids);
 
-  if (!toc?.length) {
-    return null;
-  }
+  if (!toc.length) return null;
 
   return (
-    <nav
-      aria-label="On this page"
-      className={cn(
-        "z-10 flex flex-col gap-1 py-2 ps-6 pe-4 text-sm",
-        className,
-      )}
-    >
-      <p className="flex h-7 items-center font-medium text-xs">On This Page</p>
-      <div className="relative ms-3.5 flex flex-col gap-0.5 before:absolute before:inset-y-0 before:-left-3.25 before:w-px before:bg-border">
-        {toc.map((item) => (
-          <a
-            className="relative py-1 text-[.8125rem] text-sidebar-foreground leading-4.5 no-underline transition-colors before:absolute before:inset-y-px before:-left-3.25 before:w-px before:rounded-full hover:bg-transparent hover:text-foreground data-[active=true]:bg-transparent data-[depth=3]:ps-3.5 data-[depth=4]:ps-5.5 data-[active=true]:text-foreground data-[active=true]:before:w-0.5 data-[active=true]:before:bg-primary"
-            data-active={item.url === `#${activeHeading}`}
-            data-depth={item.depth}
-            href={item.url}
-            key={item.url}
-          >
-            {item.title}
-          </a>
-        ))}
-      </div>
-    </nav>
+    <div className={cn("flex flex-col gap-2 p-4 pt-0 text-sm", className)}>
+      <p className="sticky top-0 h-6 bg-background font-medium text-primary/80 text-xs">
+        On this page
+      </p>
+      {toc.map((item) => (
+        <a
+          className="relative text-[0.8rem] text-muted-foreground no-underline transition-colors hover:text-foreground data-[depth=3]:pl-4 data-[depth=4]:pl-6 data-[active=true]:text-foreground"
+          data-active={item.url === `#${activeId}`}
+          data-depth={item.depth}
+          href={item.url}
+          key={item.url}
+        >
+          {item.title}
+        </a>
+      ))}
+    </div>
   );
 }

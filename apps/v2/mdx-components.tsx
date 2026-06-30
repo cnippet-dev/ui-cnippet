@@ -80,7 +80,7 @@ export const mdxComponents = {
       return (
         <code
           className={cn(
-            "relative rounded-md bg-muted px-[0.3rem] py-[0.2rem] font-mono text-[.8125rem] text-muted-foreground outline-none",
+            "relative border border-dashed bg-background-300 px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] outline-none",
             className,
           )}
           {...props}
@@ -133,7 +133,12 @@ export const mdxComponents = {
     );
   },
   figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
-    return <figure className={cn(className)} {...props} />;
+    return (
+      <figure
+        className={cn("border border-dashed bg-muted/30", className)}
+        {...props}
+      />
+    );
   },
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
     <h1

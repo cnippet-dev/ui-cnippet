@@ -1,6 +1,7 @@
 import "./globals.css";
 
-import { fontHeading, fontMono, fontSans } from "@cnippet/ui/fonts";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@cnippet/ui/shared/theme-provider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
@@ -10,8 +11,32 @@ import {
   ToastProvider,
 } from "@/registry/default/ui/toast";
 
+const geistSans = Geist({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
+const F37Stout = localFont({
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/F37Stout-Regular.woff2",
+      style: "normal",
+      weight: "400",
+    },
+  ],
+  variable: "--font-f37-stout",
+});
+
 const description =
-  "Cnippet UI - the new component library for React and Next.js";
+  "Cnippet UI - accessible, composable React components with Base UI and Tailwind CSS.";
 const siteUrl = "https://ui.cnippet.dev";
 
 export const metadata: Metadata = {
@@ -47,15 +72,11 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-KHM7SVKH" />
 
       <body
-        className={`${fontHeading.variable} ${fontSans.variable} ${fontMono.variable} relative font-sans text-foreground antialiased dark:bg-neutral-950`}
+        className={`${geistSans.variable} ${geistMono.variable} ${F37Stout.variable} group/body antialiased`}
       >
         <ThemeProvider>
           <ToastProvider position="bottom-center">
-            <AnchoredToastProvider>
-              <div className="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">
-                {children}
-              </div>
-            </AnchoredToastProvider>
+            <AnchoredToastProvider>{children}</AnchoredToastProvider>
           </ToastProvider>
         </ThemeProvider>
       </body>
