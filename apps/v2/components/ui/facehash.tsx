@@ -47,7 +47,8 @@ export function Facehash({
 }: FacehashProps) {
   const hash = hashStr(name);
   const colorClass = COLOR_CLASSES[hash % COLOR_CLASSES.length];
-  const eyePair = EYE_PAIRS[(hash >>> 3) % EYE_PAIRS.length];
+  // biome-ignore lint/style/noNonNullAssertion: modulo index is always in range
+  const eyePair = EYE_PAIRS[(hash >>> 3) % EYE_PAIRS.length]!;
   const initial = name.trim().charAt(0).toUpperCase();
 
   const [blinking, setBlinking] = useState(false);
@@ -130,7 +131,7 @@ export function Facehash({
       }}
     >
       <div
-        className="absolute top-[33%] right-0 left-0 flex justify-center gap-[3px] font-mono text-black/70 leading-none dark:text-black/80"
+        className="absolute top-[33%] right-0 left-0 flex justify-center gap-0.75 font-mono text-black/70 leading-none dark:text-black/80"
         style={{ fontSize: "clamp(7px, 30%, 11px)" }}
       >
         <span className="transition-none">{blinking ? BLINK : eyePair[0]}</span>

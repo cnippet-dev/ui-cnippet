@@ -81,7 +81,8 @@ export function WhyUs() {
         <FullWidthBorder className="top-0" />
         {reasons.map((reason, index) => {
           const { accent, bg, border } =
-            accentCycle[index % accentCycle.length];
+            // biome-ignore lint/style/noNonNullAssertion: modulo index is always in range
+            accentCycle[index % accentCycle.length]!;
           return (
             <div
               className={`group flex flex-col gap-3 border-b border-dashed p-6 transition-colors hover:bg-accent/30 sm:p-8 ${
