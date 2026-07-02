@@ -477,18 +477,18 @@ export function ThemesShowcase() {
   }
 
   return (
-    <div className="px-2 max-sm:px-4" suppressHydrationWarning>
+    <div suppressHydrationWarning>
       {/* Controls */}
-      <div className="flex flex-wrap gap-10 py-8">
+      <div className="flex flex-wrap gap-10 border-b border-dashed py-8">
         <div>
-          <div className="mb-3 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+          <div className="mb-3 font-mono text-muted-foreground text-xs tracking-wide">
             Color
           </div>
           <div className="flex flex-wrap gap-1.5">
             {PRESETS.map((p) => (
               <button
                 className={cn(
-                  "flex h-8 cursor-pointer items-center gap-2 rounded-full border px-3 text-sm transition-all",
+                  "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
                   preset.name === p.name
                     ? "border-foreground/20 bg-foreground/5 font-medium"
                     : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
@@ -498,7 +498,7 @@ export function ThemesShowcase() {
                 title={p.name}
               >
                 <span
-                  className="block size-3 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
+                  className="block size-2.5 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
                   style={{ backgroundColor: p.swatch }}
                 />
                 {p.name}
@@ -508,14 +508,14 @@ export function ThemesShowcase() {
         </div>
 
         <div>
-          <div className="mb-3 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+          <div className="mb-3 font-mono text-muted-foreground text-xs tracking-wide">
             Radius
           </div>
           <div className="flex gap-1.5">
             {RADIUS_OPTIONS.map((r) => (
               <button
                 className={cn(
-                  "flex h-8 cursor-pointer items-center rounded-full border px-3 text-sm transition-all",
+                  "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
                   radius === r.value
                     ? "border-foreground/20 bg-foreground/5 font-medium"
                     : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
@@ -531,8 +531,13 @@ export function ThemesShowcase() {
       </div>
 
       {/* Actions row */}
-      <div className="relative flex flex-wrap items-center gap-2 pb-8 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-        <Button onClick={handleCopy} size="sm" variant="outline">
+      <div className="flex flex-wrap items-center gap-2 border-b border-dashed py-4">
+        <Button
+          className="rounded-[2px]"
+          onClick={handleCopy}
+          size="sm"
+          variant="outline"
+        >
           {copied ? (
             <Check className="size-3.5" />
           ) : (
@@ -541,7 +546,12 @@ export function ThemesShowcase() {
           {copied ? "Copied!" : "Copy CSS"}
         </Button>
 
-        <Button onClick={() => setCssOpen((v) => !v)} size="sm" variant="ghost">
+        <Button
+          className="rounded-[2px]"
+          onClick={() => setCssOpen((v) => !v)}
+          size="sm"
+          variant="ghost"
+        >
           <ChevronDown
             className={cn(
               "size-3.5 transition-transform",
@@ -552,7 +562,7 @@ export function ThemesShowcase() {
         </Button>
 
         <Button
-          className="ml-auto"
+          className="ml-auto rounded-[2px]"
           disabled={isDefault}
           onClick={handleReset}
           size="sm"
@@ -564,7 +574,7 @@ export function ThemesShowcase() {
 
         <button
           aria-label="Toggle dark mode"
-          className="flex size-8 cursor-pointer items-center justify-center rounded-full border border-transparent text-muted-foreground transition-all hover:border-foreground/10 hover:bg-foreground/4"
+          className="flex size-8 cursor-pointer items-center justify-center rounded-[2px] border border-dashed text-muted-foreground transition-colors hover:bg-accent"
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         >
           {resolvedTheme === "dark" ? (
@@ -577,8 +587,8 @@ export function ThemesShowcase() {
 
       {/* CSS preview panel */}
       {cssOpen && (
-        <div className="relative mb-4 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-          <pre className="max-h-72 overflow-auto bg-foreground/3 p-4 font-mono text-foreground/70 text-xs/5 tracking-tight">
+        <div className="border-b border-dashed py-4">
+          <pre className="max-h-72 overflow-auto rounded-[2px] border border-dashed bg-foreground/3 p-4 font-mono text-foreground/70 text-xs/5 tracking-tight">
             {buildExportCSS(preset, chartPalette, radius)}
           </pre>
         </div>
@@ -641,14 +651,14 @@ export function ThemesShowcase() {
 
           <TabsPanel value="charts">
             {/* Chart palette control */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-8 pb-6">
-              <span className="mr-2 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+            <div className="flex flex-wrap items-center gap-1.5 border-b border-dashed pt-8 pb-6">
+              <span className="mr-2 font-mono text-muted-foreground text-xs tracking-wide">
                 Palette
               </span>
               {CHART_PALETTES.map((p) => (
                 <button
                   className={cn(
-                    "flex h-8 cursor-pointer items-center gap-2 rounded-full border px-3 text-sm transition-all",
+                    "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
                     chartPalette.name === p.name
                       ? "border-foreground/20 bg-foreground/5 font-medium"
                       : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",

@@ -1,9 +1,9 @@
 # GitHub PR Labeler configuration
 # Docs: https://github.com/actions/labeler
 
-"app:ui":
+"app:v2":
   - changed-files:
-      - any-glob-to-any-file: "apps/ui/**"
+      - any-glob-to-any-file: "apps/v2/**"
 
 "package:ui":
   - changed-files:

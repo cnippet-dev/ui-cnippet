@@ -1,6 +1,8 @@
-import { Button } from "@cnippet/ui/components/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { CornerPlus } from "@/components/layout/corner-plus";
+import { FullWidthBorder } from "@/components/layout/full-width-border";
+import { SectionKicker } from "@/components/layout/section-kicker";
 import { cn } from "@/lib/utils";
 import { AccordionPreview } from "./preview/accordion";
 import AlertPreview from "./preview/alert";
@@ -11,7 +13,7 @@ import ButtonPreview from "./preview/button";
 import CheckboxPreview from "./preview/checkbox";
 import DialogPreview from "./preview/dialog";
 
-const items2 = [
+const items = [
   {
     number: "3",
     preview: <AccordionPreview />,
@@ -64,76 +66,79 @@ const items2 = [
 
 export default function Components() {
   return (
-    <div className="relative mt-20 max-w-full">
-      <div>
-        <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-          Components
-        </div>
+    <section className="relative pt-12">
+      <FullWidthBorder className="top-0" />
+      <CornerPlus className="left-0 -translate-x-1/2" />
+      <CornerPlus className="right-0 translate-x-1/2" />
 
-        <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-          <h2 className="text-balance px-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl lg:text-6xl">
-            Production-ready components
+      <div className="flex items-end justify-between gap-4 px-4 pb-10">
+        <div className="flex flex-col gap-3">
+          <SectionKicker color="orange">components · 57+</SectionKicker>
+          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+            Production-ready
+            <br />
+            components.
           </h2>
         </div>
-
-        <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 dark:text-white/40">
-          Build React interfaces faster with accessible, composable UI
-          components. Copy, paste, and make it yours.
-        </div>
-
-        <Separator />
+        <Link
+          className="hidden shrink-0 items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:border-cnippet-orange/40 hover:text-cnippet-orange md:inline-flex"
+          href="/explore"
+        >
+          View all components <ArrowRight className="size-3" />
+        </Link>
       </div>
 
-      <div className="relative mt-10 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {items2.map((item, _index) => (
+      <div className="relative grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+        <FullWidthBorder className="top-0" />
+        {items.map((item, index) => (
+          <Link
+            className={cn(
+              "group relative flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-orange/5",
+              index % 4 !== 3 && "lg:border-r",
+              index % 2 === 0 && "sm:border-r lg:border-r-0",
+              index % 2 === 0 && index % 4 !== 3 && "lg:border-r",
+              index >= items.length - 4 && "lg:border-b-0",
+              index >= items.length - 2 && "sm:border-b-0",
+            )}
+            href={item.url}
+            key={item.title}
+          >
             <div
-              className="group relative cursor-pointer"
-              key={`${item.title}`}
+              className="relative flex h-52 items-center justify-center overflow-hidden bg-background-100 p-6 dark:bg-background-200"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)",
+                backgroundSize: "18px 18px",
+              }}
             >
-              <div className="m-4 flex h-60 items-center justify-center bg-neutral-100 p-4 dark:bg-neutral-900">
+              <span className="absolute top-3 left-3 font-mono text-[10px] text-muted-foreground/40">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="transition-transform duration-300 ease-out group-hover:scale-[1.05]">
                 {item.preview}
               </div>
-              <div className="mt-3 flex items-center justify-between px-4 [&_a]:peer-hover:underline">
-                <h3>
-                  <Link
-                    className="text-lg capitalize hover:underline"
-                    href={item.url}
-                  >
-                    {item.title}
-                  </Link>
-                </h3>
-                <p className="font-mono text-black/40 text-xs dark:text-white/40">
-                  {item.number} components
-                </p>
-              </div>
             </div>
-          ))}
-        </div>
+            <div className="flex items-center justify-between border-t border-dashed px-4 py-3">
+              <span className="font-medium text-sm capitalize transition-colors duration-200 group-hover:text-cnippet-orange">
+                {item.title}
+              </span>
+              <span className="flex items-center gap-1.5 font-mono text-muted-foreground text-xs">
+                {item.number} variants
+                <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-cnippet-orange group-hover:opacity-100" />
+              </span>
+            </div>
+          </Link>
+        ))}
       </div>
 
-      <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
-        <Button
-          className="text-balance rounded-none py-5 tracking-tight"
-          render={<Link href="/explore" />}
+      <div className="flex items-center border-t border-dashed px-4 py-4">
+        <Link
+          className="inline-flex h-9 items-center gap-2 rounded-[2px] border border-dashed px-4 font-medium text-sm transition-colors duration-200 hover:border-cnippet-orange/40 hover:bg-cnippet-orange/5 hover:text-cnippet-orange"
+          href="/explore"
         >
-          View all components <ArrowRight />
-        </Button>
+          View all components <ArrowRight className="size-3.5" />
+        </Link>
       </div>
-    </div>
-  );
-}
-
-function Separator({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-7 w-full border-edge border-y lg:h-10",
-        "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
-        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border/50! before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
-        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border/50! after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
-        className,
-      )}
-    />
+    </section>
   );
 }

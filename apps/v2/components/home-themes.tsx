@@ -3,6 +3,7 @@
 
 import { SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
+import { FullWidthBorder } from "@/components/layout/full-width-border";
 import { cn } from "@/lib/utils";
 import {
   Popover,
@@ -194,50 +195,40 @@ export function HomeThemes() {
   }, [preset, radius]);
 
   return (
-    <div className="px-2 max-sm:px-4" suppressHydrationWarning>
-      {/* Label bar */}
-      <div className="relative flex h-16 items-end whitespace-pre font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-        Themes · color & radius
-      </div>
+    <section className="relative pt-12" suppressHydrationWarning>
+      <FullWidthBorder className="top-0" />
 
-      {/* Heading */}
-      <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-        <h2 className="text-balance text-4xl tracking-tighter max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-7xl">
-          Make it yours.
-        </h2>
-      </div>
-
-      {/* Subtitle */}
-      <div className="relative mt-5 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:text-white/40 dark:after:bg-white/10">
-        Switch colors and border radius to preview how every component adapts in
-        real time.
-      </div>
-
-      {/* Controls row */}
-      <div className="relative mt-10 flex items-center justify-between py-3 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10 dark:before:bg-white/10">
-        <span className="font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
-          {colorName} ·{" "}
-          {RADIUS_OPTIONS.find((r) => r.value === radius)?.label ?? "LG"} radius
-        </span>
+      <div className="flex items-end justify-between gap-4 px-4 pb-10">
+        <div className="flex flex-col gap-2">
+          <p className="font-medium font-mono text-cnippet-green text-sm">
+            [themes · color & radius]
+          </p>
+          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+            Make it yours.
+          </h2>
+          <p className="max-w-sm text-muted-foreground text-sm leading-relaxed">
+            Switch colors and border radius to preview how every component
+            adapts in real time.
+          </p>
+        </div>
 
         <Popover>
-          <PopoverTrigger className="flex cursor-pointer items-center gap-1.5 rounded-full border border-gray-950/10 bg-transparent px-3 py-1.5 font-mono text-black/60 text-xs transition-colors hover:border-gray-950/20 hover:text-black dark:border-white/10 dark:text-white/50 dark:hover:border-white/20 dark:hover:text-white">
+          <PopoverTrigger className="hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green md:flex">
             <SlidersHorizontal className="size-3" />
-            Customize
+            Customize · <span className="text-foreground">{colorName}</span>
           </PopoverTrigger>
 
           <PopoverContent align="end" className="w-72" sideOffset={8}>
             <div className="space-y-5">
-              {/* Color */}
               <div>
-                <p className="mb-2.5 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
                   Color
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {PRESETS.map((p) => (
                     <button
                       className={cn(
-                        "flex h-7 cursor-pointer items-center gap-1.5 rounded-full border px-2.5 font-mono text-xs transition-all",
+                        "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
                         colorName === p.name
                           ? "border-foreground/20 bg-foreground/5 font-medium"
                           : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
@@ -256,16 +247,15 @@ export function HomeThemes() {
                 </div>
               </div>
 
-              {/* Radius */}
               <div>
-                <p className="mb-2.5 font-mono text-black/40 text-xs tracking-tighter dark:text-white/40">
+                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
                   Radius
                 </p>
                 <div className="flex gap-1.5">
                   {RADIUS_OPTIONS.map((r) => (
                     <button
                       className={cn(
-                        "flex h-7 cursor-pointer items-center rounded-full border px-2.5 font-mono text-xs transition-all",
+                        "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
                         radius === r.value
                           ? "border-foreground/20 bg-foreground/5 font-medium"
                           : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
@@ -284,15 +274,77 @@ export function HomeThemes() {
         </Popover>
       </div>
 
-      {/* Component grid */}
-      <div className="grid grid-cols-2 items-start gap-6 py-10 lg:grid-cols-4">
+      {/* Mobile customize button */}
+      <div className="flex px-4 pb-6 md:hidden">
+        <Popover>
+          <PopoverTrigger className="flex cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green">
+            <SlidersHorizontal className="size-3" />
+            Customize · <span className="text-foreground">{colorName}</span>
+          </PopoverTrigger>
+          <PopoverContent align="start" className="w-72" sideOffset={8}>
+            <div className="space-y-5">
+              <div>
+                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
+                  Color
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {PRESETS.map((p) => (
+                    <button
+                      className={cn(
+                        "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
+                        colorName === p.name
+                          ? "border-foreground/20 bg-foreground/5 font-medium"
+                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
+                      )}
+                      key={p.name}
+                      onClick={() => setColorName(p.name)}
+                      type="button"
+                    >
+                      <span
+                        className="block size-2.5 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
+                        style={{ backgroundColor: p.swatch }}
+                      />
+                      {p.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
+                  Radius
+                </p>
+                <div className="flex gap-1.5">
+                  {RADIUS_OPTIONS.map((r) => (
+                    <button
+                      className={cn(
+                        "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
+                        radius === r.value
+                          ? "border-foreground/20 bg-foreground/5 font-medium"
+                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
+                      )}
+                      key={r.label}
+                      onClick={() => setRadius(r.value)}
+                      type="button"
+                    >
+                      {r.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+      </div>
+
+      <FullWidthBorder className="relative" />
+
+      <div className="grid grid-cols-2 items-start gap-6 p-4 py-10 lg:grid-cols-4">
         <div className="grid grid-cols-1 gap-10">
           <SettingsCard />
           <CalendarRange />
         </div>
         <div className="space-y-10">
           <StatsGrid />
-
           <SystemMeters />
           <NewsletterInline />
         </div>
@@ -306,6 +358,6 @@ export function HomeThemes() {
           <FeedbackForm />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

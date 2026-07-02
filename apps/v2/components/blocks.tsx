@@ -1,7 +1,9 @@
-import { Button } from "@cnippet/ui/components/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { CornerPlus } from "@/components/layout/corner-plus";
+import { FullWidthBorder } from "@/components/layout/full-width-border";
+import { SectionKicker } from "@/components/layout/section-kicker";
 import { cn } from "@/lib/utils";
 
 const blocks = [
@@ -29,97 +31,87 @@ const blocks = [
 
 export default function Blocks() {
   return (
-    <div className="relative mt-20 max-w-full">
-      <div>
-        <div className="relative flex h-16 items-end whitespace-pre px-2 font-mono text-black/40 text-xs/6 tracking-tighter after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 sm:h-24 dark:text-white/40 dark:after:bg-white/10">
-          Blocks
-        </div>
+    <section className="relative pt-12">
+      <FullWidthBorder className="top-0" />
+      <CornerPlus className="left-0 -translate-x-1/2" />
+      <CornerPlus className="right-0 translate-x-1/2" />
 
-        <div className="relative before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10">
-          <h2 className="text-balance px-2 text-4xl tracking-tighter max-sm:px-4 max-lg:font-medium sm:text-5xl lg:text-6xl">
-            From components to complete pages
+      <div className="flex items-end justify-between gap-4 px-4 pb-10">
+        <div className="flex flex-col gap-3">
+          <SectionKicker color="yellow">
+            blocks · sections & pages
+          </SectionKicker>
+          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+            From components
+            <br />
+            to complete pages.
           </h2>
         </div>
-
-        <div className="relative mt-5 px-2 font-mono text-black/40 tracking-tighter before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] after:absolute after:bottom-0 after:h-px max-sm:px-4 dark:text-white/40">
-          Hero sections, pricing tables, dashboards, authentication flows, and
-          more — all customizable with Tailwind.
-        </div>
-
-        <Separator />
-      </div>
-
-      <div className="relative mt-10 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {blocks.map((item, index) => {
-            const k = `${item.title}-${index}`;
-            return (
-              <div
-                className="relative border-gray-950/5 border-r border-b px-2 py-4 max-sm:px-4 dark:border-white/10"
-                key={k}
-              >
-                <Link
-                  className="peer relative inline-flex w-full overflow-hidden"
-                  href={item.url}
-                  target="_blank"
-                >
-                  <Image
-                    alt={`${item.title} block preview`}
-                    className="aspect-video h-52 w-full object-cover"
-                    height={1080}
-                    loading="lazy"
-                    src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
-                    width={1920}
-                  />
-                </Link>
-
-                <div className="mt-3 flex items-center justify-between [&_a]:peer-hover:underline">
-                  <h3>
-                    <Link
-                      className="text-lg capitalize hover:underline"
-                      href={item.url}
-                      target="_blank"
-                    >
-                      {item.title}
-                    </Link>
-                  </h3>
-                  <p className="font-mono text-black/40 text-xs dark:text-white/40">
-                    {item.number} blocks
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="relative mt-10 flex gap-2 px-2 before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:left-[-100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 max-sm:px-4 dark:after:bg-white/10 dark:before:bg-white/10">
-        <Button
-          className="text-balance rounded-none py-2 tracking-tight"
-          render={
-            <Link
-              href="https://blocks.cnippet.dev/?ref=ui.cnippet.dev"
-              target="_blank"
-            />
-          }
+        <Link
+          className="hidden shrink-0 items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:border-cnippet-yellow/40 hover:text-cnippet-yellow md:inline-flex"
+          href="https://blocks.cnippet.dev/?ref=ui.cnippet.dev"
+          rel="noopener"
+          target="_blank"
         >
-          Explore Blocks <ArrowRight />
-        </Button>
+          Explore Blocks <ArrowRight className="size-3" />
+        </Link>
       </div>
-    </div>
-  );
-}
 
-function Separator({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-7 w-full border-edge border-y lg:h-10",
-        "bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 dark:[--pattern-fg:var(--color-white)]/10",
-        "before:absolute before:right-[calc(100%+var(--gutter-width))] before:-z-1 before:h-7 before:w-screen before:border-border/50! before:border-edge before:border-y lg:before:h-10 dark:before:border-border",
-        "after:absolute after:left-[calc(100%+var(--gutter-width))] after:-z-1 after:h-7 after:w-screen after:border-border/50! after:border-edge after:border-y lg:after:h-10 dark:after:border-border",
-        className,
-      )}
-    />
+      <div className="relative grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+        <FullWidthBorder className="top-0" />
+        {blocks.map((item, index) => (
+          <Link
+            className={cn(
+              "group flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-yellow/5 lg:border-b-0",
+              index < blocks.length - 1 && "lg:border-r",
+              index % 2 === 0 && "sm:border-r lg:border-r-0",
+              index % 2 === 0 && index < blocks.length - 1 && "lg:border-r",
+              index >= blocks.length - 2 && "sm:border-b-0",
+            )}
+            href={item.url}
+            key={item.title}
+            rel="noopener"
+            target="_blank"
+          >
+            <div className="relative overflow-hidden bg-background-100 dark:bg-background-200">
+              <span className="absolute top-3 left-3 z-10 rounded-[2px] border border-dashed bg-background/70 px-1.5 py-px font-mono text-[10px] text-muted-foreground uppercase backdrop-blur-sm">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <Image
+                alt={`${item.title} block preview`}
+                className="aspect-video w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                height={1080}
+                loading="lazy"
+                src={`https://res.cloudinary.com/dcxm3ccir/image/upload/v1770126024/${item.title}.png`}
+                width={1920}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <ArrowUpRight className="translate-2 group-hover:translate-0 pointer-events-none absolute right-3 bottom-3 size-4 text-foreground opacity-0 transition-all duration-300 group-hover:opacity-100" />
+            </div>
+            <div className="flex items-center justify-between border-t border-dashed px-4 py-3">
+              <span className="font-medium text-sm capitalize transition-colors duration-200 group-hover:text-cnippet-yellow">
+                {item.title}
+              </span>
+              <span className="font-mono text-muted-foreground text-xs">
+                {item.number} blocks
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="flex items-center border-t border-dashed px-4 py-4">
+        <Link
+          className="inline-flex h-9 items-center gap-2 rounded-[2px] border border-dashed px-4 font-medium text-sm transition-colors duration-200 hover:border-cnippet-yellow/40 hover:bg-cnippet-yellow/5 hover:text-cnippet-yellow"
+          href="https://blocks.cnippet.dev/?ref=ui.cnippet.dev"
+          rel="noopener"
+          target="_blank"
+        >
+          Explore Blocks <ArrowRight className="size-3.5" />
+        </Link>
+      </div>
+      <CornerPlus className="bottom-0 left-0 -translate-x-1/2 translate-y-1/2" />
+      <CornerPlus className="right-0 bottom-0 translate-x-1/2 translate-y-1/2" />
+    </section>
   );
 }

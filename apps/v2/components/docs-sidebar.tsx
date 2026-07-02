@@ -2,70 +2,79 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PAGES_NEW } from "@/lib/docs";
-import type { source } from "@/lib/source";
-import { Badge } from "@/registry/default/ui/badge";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/registry/default/ui/sidebar";
+import { cn } from "@/lib/utils";
 
-export function DocsSidebar({
-  tree,
-  ...props
-}: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
+type PageNode = {
+  type: "page";
+  name: React.ReactNode;
+  url: string;
+};
+
+type FolderNode = {
+  type: "folder";
+  name?: React.ReactNode;
+  children?: (PageNode | FolderNode | SeparatorNode)[];
+};
+
+type SeparatorNode = {
+  type: "separator";
+};
+
+type PageTree = {
+  children: (PageNode | FolderNode | SeparatorNode)[];
+};
+
+function isFolder(
+  node: PageNode | FolderNode | SeparatorNode,
+): node is FolderNode {
+  return node.type === "folder";
+}
+
+function isPage(node: PageNode | FolderNode | SeparatorNode): node is PageNode {
+  return node.type === "page";
+}
+
+export function DocsSidebar({ tree }: { tree: PageTree }) {
   const pathname = usePathname();
 
   return (
-    <Sidebar
-      aria-label="Documentation navigation"
-      className="sticky top-(--header-height) z-30 hidden h-[calc(100svh-var(--header-height))] bg-transparent lg:flex"
-      collapsible="none"
-      role="navigation"
-      {...props}
-    >
-      <SidebarContent className="px-4 py-2">
+    <aside className="no-scrollbar sticky top-[calc(var(--header-height)+var(--docs-topbar-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--docs-topbar-height)-var(--footer-height))] self-start overflow-y-auto border-r border-dashed bg-transparent pb-12 lg:block">
+      <nav className="px-2">
         <div className="h-(--top-spacing) shrink-0" />
-        {tree.children.map((item) => (
-          <SidebarGroup className="gap-1" key={item.$id}>
-            <SidebarGroupLabel className="h-7 px-0 text-sidebar-accent-foreground">
-              {item.name}
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
-              {item.type === "folder" && (
-                <SidebarMenu className="gap-0.5">
-                  {item.children.map((item) => {
-                    return (
-                      item.type === "page" && (
-                        <SidebarMenuItem key={item.url}>
-                          <SidebarMenuButton
-                            className="ps-3.5 hover:bg-transparent active:bg-transparent"
-                            isActive={item.url === pathname}
-                            render={<Link href={item.url} />}
-                          >
-                            {item.name}
-                            {PAGES_NEW.length > 0 &&
-                              PAGES_NEW.includes(item.url as never) && (
-                                <Badge variant="info">New</Badge>
-                              )}
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      )
-                    );
-                  })}
-                </SidebarMenu>
+        {tree.children.map((node, i) => {
+          if (!isFolder(node)) return null;
+          return (
+            <div className="mb-4" key={i}>
+              {node.name && (
+                <p className="mb-1 px-2 py-1 font-medium text-muted-foreground/60 text-xs uppercase tracking-wider">
+                  {node.name}
+                </p>
               )}
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
-      </SidebarContent>
-      <div className="absolute top-12 right-2 bottom-0 z-20 hidden h-screen w-px bg-linear-to-b from-transparent via-border to-transparent lg:flex" />
-    </Sidebar>
+              <ul className="flex flex-col gap-0.5">
+                {node.children?.map((child, j) => {
+                  if (!isPage(child)) return null;
+                  const active = pathname === child.url;
+                  return (
+                    <li key={j}>
+                      <Link
+                        className={cn(
+                          "block rounded-[2px] px-2 py-[5px] font-medium text-[0.8rem] transition-colors",
+                          active
+                            ? "bg-background-300 text-foreground"
+                            : "text-muted-foreground hover:bg-background-200 hover:text-foreground",
+                        )}
+                        href={child.url}
+                      >
+                        {child.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
+      </nav>
+    </aside>
   );
 }
