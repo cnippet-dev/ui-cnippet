@@ -1,6 +1,9 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { CornerPlus } from "@/components/layout/corner-plus";
 import { FullWidthBorder } from "@/components/layout/full-width-border";
+import { SectionKicker } from "@/components/layout/section-kicker";
+import { cn } from "@/lib/utils";
 import { AccordionPreview } from "./preview/accordion";
 import AlertPreview from "./preview/alert";
 import AvatarPreview from "./preview/avatar";
@@ -65,12 +68,12 @@ export default function Components() {
   return (
     <section className="relative pt-12">
       <FullWidthBorder className="top-0" />
+      <CornerPlus className="left-0 -translate-x-1/2" />
+      <CornerPlus className="right-0 translate-x-1/2" />
 
       <div className="flex items-end justify-between gap-4 px-4 pb-10">
-        <div className="flex flex-col gap-2">
-          <p className="font-medium font-mono text-cnippet-orange text-sm">
-            [components · 57+]
-          </p>
+        <div className="flex flex-col gap-3">
+          <SectionKicker color="orange">components · 57+</SectionKicker>
           <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
             Production-ready
             <br />
@@ -78,10 +81,10 @@ export default function Components() {
           </h2>
         </div>
         <Link
-          className="hidden shrink-0 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-orange md:inline-flex"
+          className="hidden shrink-0 items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:border-cnippet-orange/40 hover:text-cnippet-orange md:inline-flex"
           href="/explore"
         >
-          View all components →
+          View all components <ArrowRight className="size-3" />
         </Link>
       </div>
 
@@ -89,23 +92,39 @@ export default function Components() {
         <FullWidthBorder className="top-0" />
         {items.map((item, index) => (
           <Link
-            className={`group flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-orange/5 ${
-              index % 4 !== 3 ? "lg:border-r" : ""
-            } ${index % 2 === 0 ? "sm:border-r lg:border-r-0" : ""} ${
-              index % 2 === 0 && index % 4 !== 3 ? "lg:border-r" : ""
-            } ${index >= items.length - 4 ? "lg:border-b-0" : ""} ${
-              index >= items.length - 2 ? "sm:border-b-0" : ""
-            }`}
+            className={cn(
+              "group relative flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-orange/5",
+              index % 4 !== 3 && "lg:border-r",
+              index % 2 === 0 && "sm:border-r lg:border-r-0",
+              index % 2 === 0 && index % 4 !== 3 && "lg:border-r",
+              index >= items.length - 4 && "lg:border-b-0",
+              index >= items.length - 2 && "sm:border-b-0",
+            )}
             href={item.url}
             key={item.title}
           >
-            <div className="flex h-52 items-center justify-center bg-background-100 p-6 dark:bg-background-200">
-              {item.preview}
+            <div
+              className="relative flex h-52 items-center justify-center overflow-hidden bg-background-100 p-6 dark:bg-background-200"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)",
+                backgroundSize: "18px 18px",
+              }}
+            >
+              <span className="absolute top-3 left-3 font-mono text-[10px] text-muted-foreground/40">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="transition-transform duration-300 ease-out group-hover:scale-[1.05]">
+                {item.preview}
+              </div>
             </div>
             <div className="flex items-center justify-between border-t border-dashed px-4 py-3">
-              <span className="font-medium capitalize text-sm transition-colors duration-200 group-hover:text-cnippet-orange">{item.title}</span>
-              <span className="font-mono text-muted-foreground text-xs">
+              <span className="font-medium text-sm capitalize transition-colors duration-200 group-hover:text-cnippet-orange">
+                {item.title}
+              </span>
+              <span className="flex items-center gap-1.5 font-mono text-muted-foreground text-xs">
                 {item.number} variants
+                <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-cnippet-orange group-hover:opacity-100" />
               </span>
             </div>
           </Link>

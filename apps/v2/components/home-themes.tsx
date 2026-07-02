@@ -215,8 +215,7 @@ export function HomeThemes() {
         <Popover>
           <PopoverTrigger className="hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green md:flex">
             <SlidersHorizontal className="size-3" />
-            Customize ·{" "}
-            <span className="text-foreground">{colorName}</span>
+            Customize · <span className="text-foreground">{colorName}</span>
           </PopoverTrigger>
 
           <PopoverContent align="end" className="w-72" sideOffset={8}>

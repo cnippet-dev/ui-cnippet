@@ -1,6 +1,6 @@
-import { findNeighbour } from "fumadocs-core/page-tree";
 import { LinkSquare02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { findNeighbour } from "fumadocs-core/page-tree";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";

@@ -1,11 +1,10 @@
 import "./globals.css";
 
-import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
 import { ThemeProvider } from "@cnippet/ui/shared/theme-provider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import {
   AnchoredToastProvider,
   ToastProvider,

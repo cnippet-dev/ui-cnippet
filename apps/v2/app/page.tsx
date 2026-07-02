@@ -4,6 +4,7 @@ import Link from "next/link";
 import Blocks from "@/components/blocks";
 import Components from "@/components/components";
 import { HomeThemes } from "@/components/home-themes";
+import { CornerPlus } from "@/components/layout/corner-plus";
 import { Footer } from "@/components/layout/footer";
 import { TopBar } from "@/components/layout/topbar";
 import MotionComponents from "@/components/motion-components";
@@ -49,6 +50,8 @@ export default function HomePage() {
         <div className="container-wrapper mx-auto">
           {/* Hero — terminal layout */}
           <div className="relative min-h-svh overflow-hidden border-b border-dashed">
+            <CornerPlus className="left-0 -translate-x-1/2" />
+            <CornerPlus className="right-0 translate-x-1/2" />
             {/* Top fade */}
             <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-linear-to-b from-background to-transparent" />
             {/* Bottom fade */}
@@ -60,8 +63,8 @@ export default function HomePage() {
 
               <div className="grid flex-1 grid-cols-1 lg:grid-cols-2">
                 {/* Left — terminal window */}
-                <div className="flex relative items-center justify-center border-b border-dashed px-8 py-16 lg:border-b-0 lg:border-r lg:px-12 lg:py-20">
-                  <div className=" absolute inset-0 z-0 overflow-hidden">
+                <div className="relative flex items-center justify-center border-b border-dashed px-8 py-16 lg:border-r lg:border-b-0 lg:px-12 lg:py-20">
+                  <div className="absolute inset-0 z-0 overflow-hidden">
                     <Background
                       accentColorVar="--cnippet-blue"
                       className="absolute inset-0 z-0"
@@ -73,7 +76,7 @@ export default function HomePage() {
                       speed={0.85}
                     />
                   </div>
-                  <div className="w-full max-w-[420px] rounded-[2px] border border-dashed bg-background/70 backdrop-blur-sm ring-1 ring-cnippet-blue/10">
+                  <div className="w-full max-w-105 rounded-[2px] border border-dashed bg-background/70 ring-1 ring-cnippet-blue/10 backdrop-blur-sm">
                     {/* Title bar */}
                     <div className="flex items-center gap-3 border-b border-dashed px-4 py-3">
                       <div className="flex gap-1.5">
@@ -182,7 +185,7 @@ export default function HomePage() {
                         <span className="select-none text-cnippet-blue">$</span>
                         <span
                           aria-hidden
-                          className="inline-block h-4 w-[7px] animate-pulse bg-cnippet-blue/60"
+                          className="inline-block h-4 w-1.75 animate-pulse bg-cnippet-blue/60"
                         />
                       </div>
                     </div>
@@ -192,7 +195,7 @@ export default function HomePage() {
                 {/* Right — label + heading + CTAs */}
                 <div className="flex flex-col justify-center gap-7 px-8 py-16 lg:px-12 lg:py-20">
                   {/* Label pill */}
-                  <div className="inline-flex w-fit items-center gap-2 rounded-[2px] border border-dashed border-cnippet-blue/40 bg-cnippet-blue/5 px-3 py-1.5">
+                  <div className="inline-flex w-fit items-center gap-2 rounded-[2px] border border-cnippet-blue/40 border-dashed bg-cnippet-blue/5 px-3 py-1.5">
                     <span className="size-1.5 animate-pulse rounded-full bg-cnippet-blue" />
                     <span className="font-medium font-mono text-cnippet-blue text-xs tracking-wide">
                       component library · base ui · tailwind css
@@ -200,7 +203,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Heading */}
-                  <h1 className="font-f37-stout text-[48px] leading-[1.0] tracking-tight sm:text-[56px] lg:text-[60px] xl:text-[72px]">
+                  <h1 className="font-f37-stout text-[48px] leading-none tracking-tight sm:text-[56px] lg:text-[60px] xl:text-[72px]">
                     Ship stunning
                     <br />
                     interfaces faster.

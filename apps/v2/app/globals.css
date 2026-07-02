@@ -123,7 +123,6 @@
 }
 
 @layer base {
-  /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: font here is a @supports feature query, not a property declaration */
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
     [data-wrapper] {
       @apply min-[1800px]:border-t;
@@ -189,4 +188,3 @@
     animation: spin-once 0.4s ease-in-out;
   }
 }
-

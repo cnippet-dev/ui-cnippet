@@ -29,7 +29,7 @@ export const AnimatedBeam = ({
   containerRef,
   fromRef,
   toRef,
-  curvature = 0,
+  // curvature = 0,
   reverse = false,
   duration = Math.random() * 3 + 4,
   delay = 0,

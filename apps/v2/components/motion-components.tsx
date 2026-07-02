@@ -1,6 +1,8 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { CornerPlus } from "@/components/layout/corner-plus";
 import { FullWidthBorder } from "@/components/layout/full-width-border";
+import { SectionKicker } from "@/components/layout/section-kicker";
 import { cn } from "@/lib/utils";
 import FlipWordsHero from "@/registry/default/motion-variants/m-flip-words-1";
 import MorphingTextHero from "@/registry/default/motion-variants/m-morphing-text-1";
@@ -94,12 +96,12 @@ export default function MotionComponents() {
   return (
     <section className="relative pt-12">
       <FullWidthBorder className="top-0" />
+      <CornerPlus className="left-0 -translate-x-1/2" />
+      <CornerPlus className="right-0 translate-x-1/2" />
 
       <div className="flex items-end justify-between gap-4 px-4 pb-10">
-        <div className="flex flex-col gap-2">
-          <p className="font-medium font-mono text-cnippet-blue text-sm">
-            [motion · 40+ animations]
-          </p>
+        <div className="flex flex-col gap-3">
+          <SectionKicker color="blue">motion · 40+ animations</SectionKicker>
           <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
             Interfaces
             <br />
@@ -107,10 +109,10 @@ export default function MotionComponents() {
           </h2>
         </div>
         <Link
-          className="hidden shrink-0 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-blue md:inline-flex"
+          className="hidden shrink-0 items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:border-cnippet-blue/40 hover:text-cnippet-blue md:inline-flex"
           href="/explore?tab=motion"
         >
-          View all motion →
+          View all motion <ArrowRight className="size-3" />
         </Link>
       </div>
 
@@ -130,27 +132,33 @@ export default function MotionComponents() {
               className={cn(
                 "relative overflow-hidden",
                 item.featured
-                  ? "h-64 bg-background-100 dark:bg-background-200 md:h-72"
+                  ? "h-64 bg-background-100 md:h-72 dark:bg-background-200"
                   : "h-48 bg-background-100 dark:bg-background-200",
               )}
             >
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.03]">
                 {item.preview}
               </div>
+              <span className="pointer-events-none absolute top-3 left-3 font-mono text-[10px] text-muted-foreground/40">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-background-100 to-transparent dark:from-background-200" />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-linear-to-b from-background-100 to-transparent dark:from-background-200" />
+              <span className="pointer-events-none absolute inset-0 opacity-0 ring-1 ring-cnippet-blue/20 ring-inset transition-opacity duration-300 group-hover:opacity-100" />
             </div>
 
             <div className="flex items-center justify-between border-t border-dashed px-4 py-3">
               <div className="flex items-center gap-2">
                 <span className="size-1.5 shrink-0 rounded-full bg-cnippet-blue/40 transition-colors duration-200 group-hover:bg-cnippet-blue" />
-                <span className="font-mono text-sm capitalize transition-colors duration-200 group-hover:text-cnippet-blue">{item.title}</span>
+                <span className="font-mono text-sm capitalize transition-colors duration-200 group-hover:text-cnippet-blue">
+                  {item.title}
+                </span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="rounded-[2px] border border-dashed px-1.5 py-px font-mono text-[10px] text-muted-foreground uppercase">
+                <span className="rounded-[2px] border border-dashed px-1.5 py-px font-mono text-[10px] text-muted-foreground uppercase transition-colors duration-200 group-hover:border-cnippet-blue/40 group-hover:text-cnippet-blue">
                   {item.tag}
                 </span>
-                <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:opacity-100" />
+                <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </div>
             </div>
           </Link>

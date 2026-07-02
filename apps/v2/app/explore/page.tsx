@@ -110,9 +110,9 @@ export default function ExplorePage() {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 px-8 pb-16 pt-14 lg:px-12 lg:pt-16">
+            <div className="relative z-20 px-8 pt-14 pb-16 lg:px-12 lg:pt-16">
               {/* Label pill */}
-              <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-[2px] border border-dashed border-cnippet-blue/40 bg-cnippet-blue/5 px-3 py-1.5">
+              <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-[2px] border border-cnippet-blue/40 border-dashed bg-cnippet-blue/5 px-3 py-1.5">
                 <span className="size-1.5 animate-pulse rounded-full bg-cnippet-blue" />
                 <span className="font-medium font-mono text-cnippet-blue text-xs tracking-wide">
                   {total} variants · {componentCount} components
