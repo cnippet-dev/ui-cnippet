@@ -172,7 +172,8 @@
         }
       },
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
