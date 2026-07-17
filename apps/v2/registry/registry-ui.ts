@@ -160,7 +160,7 @@ export const ui: Registry["items"] = [
         "warning-foreground": "var(--color-amber-700)",
       },
     },
-    dependencies: ["@base-ui/react"],
+    dependencies: ["@base-ui/react", "class-variance-authority"],
     files: [
       {
         path: "ui/badge.tsx",
