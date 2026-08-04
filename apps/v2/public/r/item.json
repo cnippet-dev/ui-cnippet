@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "item",
   "dependencies": [
-    "@base-ui/react"
+    "@base-ui/react",
+    "class-variance-authority"
   ],
   "files": [
     {
