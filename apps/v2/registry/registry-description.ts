@@ -253,7 +253,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Dismissible announcement banner with custom violet/purple theming (border/background/text all tinted), a MegaphoneIcon, close (X) button that unmounts the alert via useState, and an inline 'Learn more' link with a trailing arrow icon. Use for marketing/promo banners (e.g. 'Introducing Pro') that the user can permanently dismiss for the session.",
     file: "variants/v-alert-11.tsx",
-    keywords: ["announcement banner", "promo banner", "custom color theme", "dismissible"],
+    keywords: [
+      "announcement banner",
+      "promo banner",
+      "custom color theme",
+      "dismissible",
+    ],
     name: "v-alert-11",
   },
   {
@@ -319,7 +324,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Success-confirmation alert dialog: green circular CheckIcon badge next to 'Task successful' title/description, plus a 'Don't show again' checkbox+label in the footer alongside 'Cancel'/'Confirm' buttons. Use for confirming a completed task while giving the user a persistent opt-out checkbox.",
     file: "variants/v-alert-dialog-4.tsx",
-    keywords: ["success confirmation", "task complete", "dont show again checkbox"],
+    keywords: [
+      "success confirmation",
+      "task complete",
+      "dont show again checkbox",
+    ],
     name: "v-alert-dialog-4",
   },
   {
@@ -343,7 +352,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Centered success/receipt-style dialog for e-ticket registration: large centered CheckIcon badge, centered title/description, then a muted key-value summary card (Order Number, Order Date, Event Name, Event Date, Register Date), and a single full-width 'Back to Home' button (no cancel). Use for post-purchase/registration confirmation screens showing order details.",
     file: "variants/v-alert-dialog-7.tsx",
-    keywords: ["order confirmation", "e-ticket", "receipt summary", "registration success"],
+    keywords: [
+      "order confirmation",
+      "e-ticket",
+      "receipt summary",
+      "registration success",
+    ],
     name: "v-alert-dialog-7",
   },
   {
@@ -367,7 +381,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Logout confirmation dialog styled like a native mobile alert: centered violet ShieldQuestionMarkIcon badge, 'Are you sure?' title, and a full-width two-column footer with a vertical divider ('No' / 'Yes, Logout' as borderless ghost buttons filling equal halves). Use for a compact, mobile-alert-style logout or sign-out confirmation.",
     file: "variants/v-alert-dialog-10.tsx",
-    keywords: ["logout confirmation", "sign out", "mobile alert style", "two column footer"],
+    keywords: [
+      "logout confirmation",
+      "sign out",
+      "mobile alert style",
+      "two column footer",
+    ],
     name: "v-alert-dialog-10",
   },
   {
@@ -375,7 +394,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-overwrite conflict dialog: FileIcon badge, 'File already exists' title, description naming the specific file/size/path, and a three-way choice footer ('Keep Both' / 'Skip' / 'Replace') instead of the usual two-button confirm/cancel. Use for file-upload or save conflicts needing more than a binary choice.",
     file: "variants/v-alert-dialog-11.tsx",
-    keywords: ["file conflict", "overwrite confirmation", "three way choice", "keep both skip replace"],
+    keywords: [
+      "file conflict",
+      "overwrite confirmation",
+      "three way choice",
+      "keep both skip replace",
+    ],
     name: "v-alert-dialog-11",
   },
   {
@@ -391,7 +415,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Typed-confirmation ownership-transfer dialog: amber KeyRoundIcon badge, description warning of immediate admin-privilege loss, an Input requiring the user to type the literal word 'transfer' to match a constant before the destructive 'Transfer Ownership' button becomes enabled; input resets when the dialog closes. Use for the highest-risk destructive actions that need explicit typed confirmation, not just a click.",
     file: "variants/v-alert-dialog-13.tsx",
-    keywords: ["typed confirmation", "type to confirm", "ownership transfer", "high risk action"],
+    keywords: [
+      "typed confirmation",
+      "type to confirm",
+      "ownership transfer",
+      "high risk action",
+    ],
     name: "v-alert-dialog-13",
   },
   {
@@ -399,7 +428,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Data-wipe confirmation gated by an explicit checkbox: centered Trash2Icon badge, 'Clear all workspace data?' title/description, a bordered destructive-tinted checkbox+label box reading 'I understand this will permanently delete all data...', and a 'Delete Everything' button that stays disabled until the checkbox is checked (resets on close). Use for irreversible bulk-delete actions that require explicit acknowledgment before the confirm button activates.",
     file: "variants/v-alert-dialog-14.tsx",
-    keywords: ["checkbox gate", "consent checkbox", "clear all data", "disabled until confirmed"],
+    keywords: [
+      "checkbox gate",
+      "consent checkbox",
+      "clear all data",
+      "disabled until confirmed",
+    ],
     name: "v-alert-dialog-14",
   },
   {
@@ -407,7 +441,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Rate-limit-exceeded dialog with a live MM:SS countdown timer (useEffect + setTimeout ticking every second) showing time until automatic retry, an amber ZapIcon badge, an upsell line about upgrading for higher limits, and 'Dismiss' / 'Upgrade to Pro' equal-width buttons. Use for API/usage rate-limit errors that need a visible live countdown before the user can retry.",
     file: "variants/v-alert-dialog-15.tsx",
-    keywords: ["rate limit", "live countdown timer", "retry timer", "api limit exceeded"],
+    keywords: [
+      "rate limit",
+      "live countdown timer",
+      "retry timer",
+      "api limit exceeded",
+    ],
     name: "v-alert-dialog-15",
   },
 
@@ -504,7 +543,13 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Async-search autocomplete: debounced (300ms) simulated network search over a movies dataset, with a Spinner + 'Searching...' status while loading, an error state ('Failed to fetch movies...') on simulated failure, a 'no results' message, and result count status text; popup only renders once the user has typed something. Use as the template for a real server-backed/async-fetched autocomplete search.",
     file: "variants/v-autocomplete-12.tsx",
-    keywords: ["async search", "debounced search", "loading spinner", "server search", "error state"],
+    keywords: [
+      "async search",
+      "debounced search",
+      "loading spinner",
+      "server search",
+      "error state",
+    ],
     name: "v-autocomplete-12",
   },
   {
@@ -512,7 +557,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Autocomplete wired into a Field + Form (required, with FieldError shown on invalid submit) that submits via FormData, resolves the selected label back to its value, shows a loading state on the submit Button, and alerts the chosen value. Use as the pattern for a required, form-validated autocomplete field.",
     file: "variants/v-autocomplete-13.tsx",
-    keywords: ["form integration", "required field", "field error", "validation"],
+    keywords: [
+      "form integration",
+      "required field",
+      "field error",
+      "validation",
+    ],
     name: "v-autocomplete-13",
   },
   {
@@ -528,7 +578,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Assign to' team-member picker autocomplete: start icon, showClear/showTrigger, each item rendered as a colored initials avatar circle plus name/email (truncating) and a role badge on the right. Use for assignee/user pickers in task or project management UIs.",
     file: "variants/v-autocomplete-15.tsx",
-    keywords: ["person picker", "assignee picker", "user search", "avatar initials"],
+    keywords: [
+      "person picker",
+      "assignee picker",
+      "user search",
+      "avatar initials",
+    ],
     name: "v-autocomplete-15",
   },
   {
@@ -544,7 +599,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Link repository' GitHub-style picker: each item shows org/repo name in monospace, a star count with icon, a colored language dot, the language name, and a truncated description line beneath. Use for repository/package pickers that need rich multi-line metadata per row.",
     file: "variants/v-autocomplete-17.tsx",
-    keywords: ["repository picker", "github style", "star count", "language dot"],
+    keywords: [
+      "repository picker",
+      "github style",
+      "star count",
+      "language dot",
+    ],
     name: "v-autocomplete-17",
   },
   {
@@ -665,7 +725,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Empty-state illustration for a team/collaborators list: grayscale overlapping avatars plus a dashed-looking 'add' circular button (UserPlusIcon), under a heading 'No active collaborators' and a prompt to invite teammates. Use for empty collaborator/team lists that still want to visually hint at the avatar-group UI.",
     file: "variants/v-avatar-12.tsx",
-    keywords: ["empty state", "no collaborators", "invite teammates", "grayscale avatars"],
+    keywords: [
+      "empty state",
+      "no collaborators",
+      "invite teammates",
+      "grayscale avatars",
+    ],
     name: "v-avatar-12",
   },
   {
@@ -689,7 +754,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single avatar with an animated pulsing green ring (animate-pulse + ring-offset) plus a small solid green dot in the bottom-right corner, together reading as a live/active/online status indicator. Use for a single user's live presence indicator with an animated cue.",
     file: "variants/v-avatar-15.tsx",
-    keywords: ["online status", "animated ring", "presence indicator", "live indicator"],
+    keywords: [
+      "online status",
+      "animated ring",
+      "presence indicator",
+      "live indicator",
+    ],
     name: "v-avatar-15",
   },
   {
@@ -697,7 +767,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Small avatar embedded inside a pill-shaped outline Button that also shows the user's name and a chevron-up-down icon, acting as a DropdownMenu trigger; the menu has grouped items (Profile, Settings / Teams, Invite) and a destructive 'Log out' item. Use for an account-switcher / user-menu trigger in a navbar or sidebar.",
     file: "variants/v-avatar-16.tsx",
-    keywords: ["account menu", "user dropdown", "profile menu trigger", "navbar avatar"],
+    keywords: [
+      "account menu",
+      "user dropdown",
+      "profile menu trigger",
+      "navbar avatar",
+    ],
     name: "v-avatar-16",
   },
   {
@@ -705,7 +780,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Team grid inside a Frame: header shows 'Team · N online' count, then a 3-column grid of member avatars each with a colored presence-status dot (online/busy/away/offline, color-coded) in the bottom-right corner and first name below. Use for a team roster view that needs per-member online/busy/away/offline status at a glance.",
     file: "variants/v-avatar-17.tsx",
-    keywords: ["team grid", "presence status dots", "online busy away offline", "team roster"],
+    keywords: [
+      "team grid",
+      "presence status dots",
+      "online busy away offline",
+      "team roster",
+    ],
     name: "v-avatar-17",
   },
   {
@@ -713,7 +793,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pull-request/issue-style comment thread inside a Frame: a header showing comment count, then each comment row with a small avatar, name, relative timestamp, comment body text, and a like Button with a heart icon and count. Use for rendering a threaded comments/discussion list (PR reviews, blog comments, etc.).",
     file: "variants/v-avatar-18.tsx",
-    keywords: ["comment thread", "pull request comments", "discussion list", "like button"],
+    keywords: [
+      "comment thread",
+      "pull request comments",
+      "discussion list",
+      "like button",
+    ],
     name: "v-avatar-18",
   },
   {
@@ -721,7 +806,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Interactive assignee-picker list inside a Frame: each candidate is a full-width clickable row (avatar, name, role) that toggles a selected/highlighted state (tinted background/border) and shows a checkmark icon when selected; multiple selection supported via local state. Use for multi-select assignee/reviewer pickers rendered as a list rather than a dropdown.",
     file: "variants/v-avatar-19.tsx",
-    keywords: ["assignee picker", "selectable list", "multi select", "toggle selection"],
+    keywords: [
+      "assignee picker",
+      "selectable list",
+      "multi select",
+      "toggle selection",
+    ],
     name: "v-avatar-19",
   },
   {
@@ -729,7 +819,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Contributor leaderboard inside a Frame: header with trophy icon, title, and a 'This month' Badge; each ranked row shows a medal emoji (🥇🥈🥉) or plain rank number, avatar, name, and a commit count with a git-commit icon. Use for a contributor/leaderboard ranking list ordered by an activity metric.",
     file: "variants/v-avatar-20.tsx",
-    keywords: ["leaderboard", "contributor ranking", "commit count", "medal rank"],
+    keywords: [
+      "leaderboard",
+      "contributor ranking",
+      "commit count",
+      "medal rank",
+    ],
     name: "v-avatar-20",
   },
   {
@@ -737,7 +832,13 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "GitHub-style profile card inside a Frame: large avatar with ring-offset, name + 'Pro' Badge, @handle, bio text, location/website meta line with icons, a divider, a 3-column stats row (Repos/Followers/Following), and 'Follow' / 'Message' action buttons. Use for a full user profile summary card (developer/social profile view).",
     file: "variants/v-avatar-21.tsx",
-    keywords: ["profile card", "github profile", "stats row", "follow button", "bio"],
+    keywords: [
+      "profile card",
+      "github profile",
+      "stats row",
+      "follow button",
+      "bio",
+    ],
     name: "v-avatar-21",
   },
 
@@ -826,7 +927,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Badge rendered as a Next.js Link via the `render` prop, making the whole badge a clickable navigational element instead of static text. Use when a badge/tag itself needs to be a link (e.g. clickable category tag).",
     file: "variants/v-badge-11.tsx",
-    keywords: ["badge as link", "clickable badge", "render prop", "next.js link"],
+    keywords: [
+      "badge as link",
+      "clickable badge",
+      "render prop",
+      "next.js link",
+    ],
     name: "v-badge-11",
   },
   {
@@ -834,7 +940,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single circular ('rounded-full') Badge showing just a number ('7'). Use as a compact numeric count indicator (e.g. unread count) rather than a text label.",
     file: "variants/v-badge-12.tsx",
-    keywords: ["count badge", "numeric badge", "circular badge", "notification count"],
+    keywords: [
+      "count badge",
+      "numeric badge",
+      "circular badge",
+      "notification count",
+    ],
     name: "v-badge-12",
   },
   {
@@ -850,7 +961,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Row of release-channel badges (Stable/success, Beta/info, Experimental/warning, Deprecated/destructive) under a 'Release channels' label. Use for tagging feature/version maturity levels.",
     file: "variants/v-badge-14.tsx",
-    keywords: ["release channel", "stable beta experimental deprecated", "version tag"],
+    keywords: [
+      "release channel",
+      "stable beta experimental deprecated",
+      "version tag",
+    ],
     name: "v-badge-14",
   },
   {
@@ -956,7 +1071,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Rich breadcrumb inside a Frame: first segment is just an org Avatar icon, second segment is an avatar plus two-line name/email block, and the current page is a colored icon-badge (file icon) plus a two-line title/filename block, all separated by plain '/' text. Use for document/project breadcrumbs that need multi-line metadata (name + email, title + filename) per segment, not just single labels.",
     file: "variants/v-breadcrumb-10.tsx",
-    keywords: ["project user document info", "multi-line breadcrumb", "rich metadata"],
+    keywords: [
+      "project user document info",
+      "multi-line breadcrumb",
+      "rich metadata",
+    ],
     name: "v-breadcrumb-10",
   },
   {
@@ -964,7 +1083,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-path style breadcrumb inside a horizontally-scrollable Frame: each folder segment shows a FolderIcon plus monospace lowercase label, current file segment shows a FileIcon in accent color, joined by plain '/' separators, and the whole list is `flex-nowrap` with `overflow-x-auto` for long paths. Use for rendering a filesystem/repo file path (e.g. a code file's directory breadcrumb).",
     file: "variants/v-breadcrumb-11.tsx",
-    keywords: ["file path breadcrumb", "folder icons", "monospace path", "scrollable breadcrumb"],
+    keywords: [
+      "file path breadcrumb",
+      "folder icons",
+      "monospace path",
+      "scrollable breadcrumb",
+    ],
     name: "v-breadcrumb-11",
   },
   {
@@ -972,7 +1096,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Checkout-style step-progress breadcrumb (Cart / Shipping / Payment / Review) built on Breadcrumb primitives but acting as a stepper: completed steps show a green checkmark circle and are clickable to go back, the current step shows a primary-colored numbered circle as BreadcrumbPage, future steps are disabled/dimmed, plus 'Back'/'Continue'/'Place Order' buttons drive the `current` step state. Use for multi-step checkout or wizard progress indicators built on breadcrumb styling.",
     file: "variants/v-breadcrumb-12.tsx",
-    keywords: ["checkout steps", "step progress", "wizard stepper", "numbered circles"],
+    keywords: [
+      "checkout steps",
+      "step progress",
+      "wizard stepper",
+      "numbered circles",
+    ],
     name: "v-breadcrumb-12",
   },
   {
@@ -996,7 +1125,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Compact breadcrumb (Home icon / collapsed-count Menu / current 'Notifications' page) where the collapsed segment shows a BreadcrumbEllipsis plus a small secondary Badge with the hidden-item count, opening a Menu listing the hidden links (Dashboard, Settings, Integrations) via Next.js Link. Use when you want the ellipsis collapse indicator to also show exactly how many items are hidden.",
     file: "variants/v-breadcrumb-15.tsx",
-    keywords: ["ellipsis with count badge", "hidden items count", "compact breadcrumb"],
+    keywords: [
+      "ellipsis with count badge",
+      "hidden items count",
+      "compact breadcrumb",
+    ],
     name: "v-breadcrumb-15",
   },
 
@@ -1149,7 +1282,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Link-variant button reading 'View Documentation' with a trailing ArrowUpRightIcon that rotates 45° on hover (group-hover transition). Use for external/documentation links styled as text with an animated 'opens externally' icon cue.",
     file: "variants/v-button-19.tsx",
-    keywords: ["link button with icon", "external link", "hover rotate animation"],
+    keywords: [
+      "link button with icon",
+      "external link",
+      "hover rotate animation",
+    ],
     name: "v-button-19",
   },
   {
@@ -1165,7 +1302,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Outline button reading 'Inbox' with a MailIcon and a small destructive-variant circular count Badge ('8') absolutely positioned at the top-right corner, plus an aria-label announcing the unread count. Use for a notification/inbox button that needs an unread-count badge overlay.",
     file: "variants/v-button-21.tsx",
-    keywords: ["unread badge", "notification button", "inbox button", "badge overlay"],
+    keywords: [
+      "unread badge",
+      "notification button",
+      "inbox button",
+      "badge overlay",
+    ],
     name: "v-button-21",
   },
   {
@@ -1189,7 +1331,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Icon-only outline button that animates between a MenuIcon (hamburger) and an XIcon (close) using rotate/scale/opacity transitions based on toggled open state, with aria-expanded/aria-label reflecting the state. Use as an animated hamburger-to-close toggle for mobile nav menus or sidebars.",
     file: "variants/v-button-24.tsx",
-    keywords: ["hamburger menu button", "animated toggle", "menu close icon swap"],
+    keywords: [
+      "hamburger menu button",
+      "animated toggle",
+      "menu close icon swap",
+    ],
     name: "v-button-24",
   },
   {
@@ -1197,7 +1343,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pill-shaped ('rounded-full') button reading 'Get Started' where, on hover, the text slides left and a trailing ArrowRightIcon slides in from the right and fades in (group-hover transitions on both). Use for a CTA button with a 'sliding reveal' hover animation.",
     file: "variants/v-button-25.tsx",
-    keywords: ["sliding icon button", "hover reveal animation", "cta hover effect"],
+    keywords: [
+      "sliding icon button",
+      "hover reveal animation",
+      "cta hover effect",
+    ],
     name: "v-button-25",
   },
   {
@@ -1205,7 +1355,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Social-login button stack: full-width outline 'Continue with GitHub' (GitBranch icon) and 'Continue with Google' (custom multi-color Google SVG logo) buttons, an 'or' divider with Separators on each side, then a full-width default 'Continue with email' button. Use for an auth/login screen's social sign-in options block.",
     file: "variants/v-button-26.tsx",
-    keywords: ["social login buttons", "github google oauth", "sign in options", "auth buttons"],
+    keywords: [
+      "social login buttons",
+      "github google oauth",
+      "sign in options",
+      "auth buttons",
+    ],
     name: "v-button-26",
   },
   {
@@ -1213,7 +1368,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stateful 'Save Changes' button cycling through idle → loading (spinner via `loading` prop, disabled, 'Saving…') → success (outline variant, green CheckIcon, 'Saved' text) → back to idle after a timed sequence (setTimeout chain). Use for save/submit buttons that need to visually confirm a completed async action before resetting.",
     file: "variants/v-button-27.tsx",
-    keywords: ["loading state button", "success state button", "animated icon swap", "save button"],
+    keywords: [
+      "loading state button",
+      "success state button",
+      "animated icon swap",
+      "save button",
+    ],
     name: "v-button-27",
   },
   {
@@ -1229,7 +1389,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Split button built with Group: a primary 'Deploy' button (RocketIcon) joined via GroupSeparator to a small icon-only chevron button that opens a Menu with additional deploy options (Staging, Preview, custom env, and a destructive 'Force deploy'). Use for a primary action plus a menu of secondary/related actions joined into one visual control.",
     file: "variants/v-button-29.tsx",
-    keywords: ["split button", "primary action with dropdown", "group button", "deploy menu"],
+    keywords: [
+      "split button",
+      "primary action with dropdown",
+      "group button",
+      "deploy menu",
+    ],
     name: "v-button-29",
   },
   {
@@ -1237,7 +1402,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Segmented view-toggle control built with Group: three buttons (List/Table/Board, each with its own icon) separated by GroupSeparators, where the active view is highlighted (default variant) and others are ghost; a status line below reads 'Viewing as: <view>'. Use for switching between list/table/kanban (or similar) view modes.",
     file: "variants/v-button-30.tsx",
-    keywords: ["segmented control", "view mode toggle", "list table kanban switch"],
+    keywords: [
+      "segmented control",
+      "view mode toggle",
+      "list table kanban switch",
+    ],
     name: "v-button-30",
   },
 
@@ -1270,7 +1439,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single-date calendar with `captionLayout='dropdown'` plus `startMonth`/`endMonth` bounds (1930–2030), rendering native month/year dropdown selectors in the header for fast long-range navigation. Use when users need to jump far back/forward in time (e.g. birthdates) via dropdowns instead of paging month-by-month.",
     file: "variants/v-calendar-4.tsx",
-    keywords: ["dropdown navigation", "month year dropdown", "long range date picker"],
+    keywords: [
+      "dropdown navigation",
+      "month year dropdown",
+      "long range date picker",
+    ],
     name: "v-calendar-4",
   },
   {
@@ -1294,7 +1467,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multiple-date-selection calendar (mode='multiple') where clicking days toggles them individually (not a range); selected dates are listed below as a sorted set of small pill tags with a count. Use for picking several independent, non-contiguous dates (e.g. multi-day event scheduling).",
     file: "variants/v-calendar-7.tsx",
-    keywords: ["multiple selection", "multi date picker", "non-contiguous dates"],
+    keywords: [
+      "multiple selection",
+      "multi date picker",
+      "non-contiguous dates",
+    ],
     name: "v-calendar-7",
   },
   {
@@ -1302,7 +1479,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Appointment-booking calendar: past dates, weekends, and a hardcoded list of 'fully booked' dates are all disabled/greyed out via the `disabled` prop (array of matchers), and selecting a valid date shows a confirmation line below. Use for booking flows that need to block out weekends and pre-filled unavailable dates.",
     file: "variants/v-calendar-8.tsx",
-    keywords: ["appointment booking", "disabled dates", "weekends blocked", "fully booked"],
+    keywords: [
+      "appointment booking",
+      "disabled dates",
+      "weekends blocked",
+      "fully booked",
+    ],
     name: "v-calendar-8",
   },
   {
@@ -1310,7 +1492,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Two-month side-by-side range-picker calendar (`numberOfMonths={2}`, mode='range') with a summary line below showing the formatted start → end dates and a computed 'N nights' pill badge. Use for hotel/stay-style date-range pickers that benefit from seeing two months at once.",
     file: "variants/v-calendar-9.tsx",
-    keywords: ["two month calendar", "range picker with nights", "stay duration"],
+    keywords: [
+      "two month calendar",
+      "range picker with nights",
+      "stay duration",
+    ],
     name: "v-calendar-9",
   },
   {
@@ -1318,7 +1504,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single-date calendar with a custom DayButton override that renders a small colored dot under any day that has an associated event (meeting=blue, deadline=red, holiday=amber), plus a legend below explaining each dot color. Use for calendars that need to visually flag which days have scheduled events.",
     file: "variants/v-calendar-10.tsx",
-    keywords: ["event indicators", "calendar dots", "event legend", "scheduled events"],
+    keywords: [
+      "event indicators",
+      "calendar dots",
+      "event legend",
+      "scheduled events",
+    ],
     name: "v-calendar-10",
   },
   {
@@ -1326,7 +1517,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single-date calendar preceded by a row of quick-select preset buttons (Today, Tomorrow, Next Monday, In 1/2 weeks, In 1 month) that jump the selected date; the active preset/date is highlighted, and the full formatted date shows below the calendar. Use for date pickers that want fast common-choice shortcuts above the grid.",
     file: "variants/v-calendar-11.tsx",
-    keywords: ["date picker presets", "quick select shortcuts", "today tomorrow buttons"],
+    keywords: [
+      "date picker presets",
+      "quick select shortcuts",
+      "today tomorrow buttons",
+    ],
     name: "v-calendar-11",
   },
   {
@@ -1350,7 +1545,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Read-only holiday calendar: weekends are disabled, a fixed set of US holidays are highlighted in a distinct rose color via `modifiers`/`modifiersClassNames`, and clicking a highlighted date reveals its holiday name below. Use for holiday/company-calendar reference views (not really for picking a value, more for display + lookup).",
     file: "variants/v-calendar-14.tsx",
-    keywords: ["holiday calendar", "highlighted dates", "us holidays", "reference calendar"],
+    keywords: [
+      "holiday calendar",
+      "highlighted dates",
+      "us holidays",
+      "reference calendar",
+    ],
     name: "v-calendar-14",
   },
   {
@@ -1374,7 +1574,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Sprint-planner two-month range calendar: disables past dates, computes duration in days and a 'sprint number' (based on 14-day sprints since Jan 1) shown as a badge, with a 3-column Start/End/Duration stats grid below. Use for engineering sprint-planning date-range selection with derived sprint metadata.",
     file: "variants/v-calendar-17.tsx",
-    keywords: ["sprint planner", "two month range", "duration stats", "sprint number badge"],
+    keywords: [
+      "sprint planner",
+      "two month range",
+      "duration stats",
+      "sprint number badge",
+    ],
     name: "v-calendar-17",
   },
   {
@@ -1382,7 +1587,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Time-off-request calendar: a row of selectable leave-type pill buttons (Vacation, Sick Leave, Personal, Work From Home) above a range calendar (past dates disabled), showing computed day count and type, plus a 'Request Time Off' submit button that shows a temporary 'Submitted!' confirmation and resets. Use for HR/leave-request forms combining a type selector with a date range picker.",
     file: "variants/v-calendar-18.tsx",
-    keywords: ["time off request", "leave type selector", "hr leave form", "vacation request"],
+    keywords: [
+      "time off request",
+      "leave type selector",
+      "hr leave form",
+      "vacation request",
+    ],
     name: "v-calendar-18",
   },
   {
@@ -1398,7 +1608,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Time-slot booking flow: a single-date calendar (past disabled) followed by a grid of hourly time-slot buttons that are marked booked/disabled per a hardcoded schedule per date, a selected-slot Badge summary, and a 'Book Slot' confirm button showing a temporary 'Booked!' state before resetting. Use for appointment-booking UIs that need both a date calendar and a same-day available/booked time-slot grid.",
     file: "variants/v-calendar-20.tsx",
-    keywords: ["time slot booking", "available booked slots", "appointment scheduling", "hourly slots"],
+    keywords: [
+      "time slot booking",
+      "available booked slots",
+      "appointment scheduling",
+      "hourly slots",
+    ],
     name: "v-calendar-20",
   },
 
@@ -1440,7 +1655,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Same help-card layout as v-card-4, but the header includes a DropdownMenu (triggered by a MoreHorizontalIcon button) with grouped items (Manage members, Team preferences, Open dashboard), and the footer shows a small avatar + '@shadcn' Button instead of a link. Use for a help/info card that also needs an overflow menu and an attributed footer action.",
     file: "variants/v-card-5.tsx",
-    keywords: ["overflow menu card", "dropdown menu in header", "avatar footer button"],
+    keywords: [
+      "overflow menu card",
+      "dropdown menu in header",
+      "avatar footer button",
+    ],
     name: "v-card-5",
   },
   {
@@ -1456,7 +1675,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Full-bleed background-image card (borderless, no padding) with a dark gradient overlay fading from the bottom, a title and description positioned at the bottom, and a smooth image zoom-in (`scale-110`) plus stronger overlay on hover. Use for a cinematic hover-interactive image/content card, e.g. a blog or article teaser.",
     file: "variants/v-card-7.tsx",
-    keywords: ["image scale hover effect", "gradient overlay card", "hero image card"],
+    keywords: [
+      "image scale hover effect",
+      "gradient overlay card",
+      "hero image card",
+    ],
     name: "v-card-7",
   },
   {
@@ -1464,7 +1687,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Full-bleed background-image author-profile card with the same image-scale hover effect as v-card-7, plus a header overlay (avatar with a custom verified-badge SVG, name link, email, and a 'New' success Badge) and bottom overlay text ('Author Profile' title + description). Use for author/profile teaser cards over a background image with layered header and footer overlays.",
     file: "variants/v-card-8.tsx",
-    keywords: ["author profile card", "image shadow fade effect", "avatar overlay"],
+    keywords: [
+      "author profile card",
+      "image shadow fade effect",
+      "avatar overlay",
+    ],
     name: "v-card-8",
   },
   {
@@ -1480,7 +1707,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Sign in' auth form card: header (title + description), CardContent with email Field, a password Field with a show/hide toggle (InputGroup + Eye/EyeOff icon button) and a 'Forgot password?' link, a full-width 'Sign in' submit Button, an 'Or continue with' divider, an outline GitHub-style OAuth button, and a footer ToS disclaimer line. Use as a complete login form card.",
     file: "variants/v-card-10.tsx",
-    keywords: ["login form card", "sign in card", "password visibility toggle", "oauth button"],
+    keywords: [
+      "login form card",
+      "sign in card",
+      "password visibility toggle",
+      "oauth button",
+    ],
     name: "v-card-10",
   },
   {
@@ -1488,7 +1720,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Billing-usage card that expands/collapses its content: header shows 'N days remaining in cycle' plus a 'Billing' outline Button (CardAction), content shows a credit-usage summary block with a Progress bar and a list of usage line items whose max-height animates between collapsed and expanded, with a floating chevron toggle button anchored at the bottom-center and a fade-out gradient when collapsed. Use for an expandable usage/billing summary card.",
     file: "variants/v-card-11.tsx",
-    keywords: ["expandable content card", "billing usage card", "collapsible card", "progress bar"],
+    keywords: [
+      "expandable content card",
+      "billing usage card",
+      "collapsible card",
+      "progress bar",
+    ],
     name: "v-card-11",
   },
   {
@@ -1496,7 +1733,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Analytics stat card: label ('Revenue') with an overflow DropdownMenu (Settings, Add Alert, Pin to Dashboard, Share, destructive Remove), a large current value with a color-coded up/down trend Badge, a Separator, and a 'Vs last month' comparison line. Use for a single KPI/metric card with an overflow actions menu and trend indicator.",
     file: "variants/v-card-12.tsx",
-    keywords: ["stat card with menu", "kpi card", "trend badge", "overflow menu"],
+    keywords: [
+      "stat card with menu",
+      "kpi card",
+      "trend badge",
+      "overflow menu",
+    ],
     name: "v-card-12",
   },
   {
@@ -1504,7 +1746,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Integration listing card (no outer padding): top bar with a 'Live' secondary Badge and a DropdownMenu (Edit, Copy link), body with integration name, an 'Installed' success Badge, description text, and an overlapping avatar stack with a '+3' overflow indicator, and a footer with a full-width outline 'Open' button. Use for third-party integration/marketplace listing cards.",
     file: "variants/v-card-13.tsx",
-    keywords: ["integration card", "installed badge", "marketplace listing", "overflow menu"],
+    keywords: [
+      "integration card",
+      "installed badge",
+      "marketplace listing",
+      "overflow menu",
+    ],
     name: "v-card-13",
   },
   {
@@ -1528,7 +1775,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "GitHub-style repository list rendered as a stack of individual cards: each card shows repo name with a branch icon, a 'Public' secondary Badge, a description, and a metadata row (colored language dot + language name, star count, fork count). Use for a repository listing/dashboard where each repo is its own card rather than table rows.",
     file: "variants/v-card-16.tsx",
-    keywords: ["github repository cards", "repo list", "language star fork counts"],
+    keywords: [
+      "github repository cards",
+      "repo list",
+      "language star fork counts",
+    ],
     name: "v-card-16",
   },
   {
@@ -1536,7 +1787,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Settings card with an internal sidebar: a left nav column (Profile, Notifications, Billing, Security, each with an icon) inside the card switches the right-hand content panel's title/description via local state, without any external routing. Use for a self-contained settings/preferences card with swappable content sections navigated by an inline sidebar.",
     file: "variants/v-card-17.tsx",
-    keywords: ["settings card sidebar", "swappable content panels", "internal navigation"],
+    keywords: [
+      "settings card sidebar",
+      "swappable content panels",
+      "internal navigation",
+    ],
     name: "v-card-17",
   },
   {
@@ -1544,7 +1799,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pricing plan card with a highlighted ring border (`ring-2 ring-primary`) marking it as the emphasized plan: plan name + 'Most Popular' Badge, large price with period, a Separator, a checklist of included features (checkmarks), and a full-width 'Start free trial' CTA button. Use for a single featured pricing-tier card in a pricing page/table.",
     file: "variants/v-card-18.tsx",
-    keywords: ["pricing plan card", "highlighted ring", "feature checklist", "most popular"],
+    keywords: [
+      "pricing plan card",
+      "highlighted ring",
+      "feature checklist",
+      "most popular",
+    ],
     name: "v-card-18",
   },
   {
@@ -1560,7 +1820,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stats dashboard grid: a 2-column grid of four small metric cards (Total Users, Monthly Revenue, Churn Rate, Active Sessions), each showing a label, a large value, and a color-coded (green/red) trend line with an up/down icon and percentage delta vs last month. Use for a compact KPI dashboard grid of independent metric tiles.",
     file: "variants/v-card-20.tsx",
-    keywords: ["stats dashboard grid", "metric tiles", "kpi grid", "trend indicators"],
+    keywords: [
+      "stats dashboard grid",
+      "metric tiles",
+      "kpi grid",
+      "trend indicators",
+    ],
     name: "v-card-20",
   },
 
@@ -1601,7 +1866,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Autoplay carousel built directly on embla-carousel-react (not this library's Carousel wrapper): loops automatically every 2.5s via setInterval, colorful gradient slides with a headline/subline, and small pill-style dot indicators below that highlight the active slide and are clickable to jump. Use for auto-advancing marketing/hero carousels with dot navigation.",
     file: "variants/v-carousel-5.tsx",
-    keywords: ["autoplay carousel", "dot indicators", "auto advance", "embla carousel"],
+    keywords: [
+      "autoplay carousel",
+      "dot indicators",
+      "auto advance",
+      "embla carousel",
+    ],
     name: "v-carousel-5",
   },
   {
@@ -1617,7 +1887,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Product-showcase carousel using the Carousel API (`setApi`) to drive external custom circular Previous/Next buttons below (disabled at the ends via `canScrollPrev`/`canScrollNext`): each slide is a product Card with a colored icon panel, badge (Bestseller/New/Sale/Popular), name, price, and 'Add to Cart' button, showing ~1.3 items per view. Use for an e-commerce product carousel with external nav controls and per-item purchase actions.",
     file: "variants/v-carousel-7.tsx",
-    keywords: ["product showcase", "e-commerce carousel", "add to cart", "external nav buttons"],
+    keywords: [
+      "product showcase",
+      "e-commerce carousel",
+      "add to cart",
+      "external nav buttons",
+    ],
     name: "v-carousel-7",
   },
   {
@@ -1625,7 +1900,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Onboarding-steps carousel built directly on embla-carousel-react (`watchDrag:false` to disable manual swipe): a progress bar and 'Step X of N' label above, each slide showing a centered icon, title, and description, and 'Back'/'Next' buttons below that advance via the embla API, with the last step's button becoming 'Finish' with a checkmark. Use for a linear onboarding/setup wizard driven by carousel slides instead of separate pages.",
     file: "variants/v-carousel-8.tsx",
-    keywords: ["onboarding steps", "setup wizard", "progress bar", "step by step"],
+    keywords: [
+      "onboarding steps",
+      "setup wizard",
+      "progress bar",
+      "step by step",
+    ],
     name: "v-carousel-8",
   },
   {
@@ -1641,7 +1921,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Gallery-with-thumbnails carousel: a main large-image Carousel synced to a secondary drag-free thumbnail strip (two separate embla instances) — clicking a thumbnail or advancing the main carousel keeps both in sync, with the active thumbnail highlighted via a ring. Use for image/media galleries needing a main view plus a scrollable thumbnail strip.",
     file: "variants/v-carousel-10.tsx",
-    keywords: ["gallery with thumbnails", "synced carousels", "thumbnail strip"],
+    keywords: [
+      "gallery with thumbnails",
+      "synced carousels",
+      "thumbnail strip",
+    ],
     name: "v-carousel-10",
   },
   {
@@ -1657,7 +1941,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pricing-plan carousel built on embla-carousel-react, starting on the middle 'Pro' slide (`startIndex:1`) which is visually highlighted with a ring and 'Popular' badge; each slide is a full plan card (name, price, feature list, CTA button), with round Prev/Next arrow buttons and a 'current / total' counter below. Use for a swipeable pricing comparison carousel that highlights a recommended/active plan.",
     file: "variants/v-carousel-12.tsx",
-    keywords: ["pricing plan carousel", "highlighted active plan", "arrow navigation"],
+    keywords: [
+      "pricing plan carousel",
+      "highlighted active plan",
+      "arrow navigation",
+    ],
     name: "v-carousel-12",
   },
   {
@@ -1665,7 +1953,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Media-gallery carousel using this library's Carousel with Previous/Next arrows: each slide is a gradient placeholder tile with a small 'Image'/'Video' type badge and a caption, plus a 'current of total' counter and progress-dot row below that track the active slide. Use for a media asset gallery carousel that needs a type badge per item and a progress indicator.",
     file: "variants/v-carousel-13.tsx",
-    keywords: ["media gallery", "caption badge", "progress dots", "image video type"],
+    keywords: [
+      "media gallery",
+      "caption badge",
+      "progress dots",
+      "image video type",
+    ],
     name: "v-carousel-13",
   },
   {
@@ -1673,7 +1966,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Changelog carousel built directly on embla-carousel-react with `dragFree:true` and `align:'start'` so cards can be freely dragged/scrolled rather than snapping one at a time: each card shows a colored version-tag pill (e.g. v2.4.0), release date, and a bulleted list of changes, with dot indicators below. Use for a horizontally-scrollable release-notes/changelog carousel with free-drag multi-card scrolling.",
     file: "variants/v-carousel-14.tsx",
-    keywords: ["changelog carousel", "drag free scrolling", "version tags", "release notes"],
+    keywords: [
+      "changelog carousel",
+      "drag free scrolling",
+      "version tags",
+      "release notes",
+    ],
     name: "v-carousel-14",
   },
   {
@@ -1681,7 +1979,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Feature-highlight carousel built directly on embla-carousel-react (no loop): each slide is a large emoji icon plus a feature title/description on a soft colored background, with dot indicators and 'Prev'/'Next' pill buttons below (last slide's 'Next' becomes a 'Done' button with a checkmark). Use for a product feature-tour carousel with a definitive end state.",
     file: "variants/v-carousel-15.tsx",
-    keywords: ["feature highlight carousel", "product tour", "prev next controls", "done state"],
+    keywords: [
+      "feature highlight carousel",
+      "product tour",
+      "prev next controls",
+      "done state",
+    ],
     name: "v-carousel-15",
   },
 
@@ -1747,7 +2050,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stacked bar chart with a legend: monthly Housing/Food/Transport expense values stacked into single bars per month (shared `stackId`), with rounded top corners on the topmost segment, cartesian grid, and a full tooltip + ChartLegend. Use for expense/budget breakdowns where multiple categories sum to a total per period.",
     file: "variants/v-chart-8.tsx",
-    keywords: ["stacked bar chart", "expense breakdown", "budget chart", "legend"],
+    keywords: [
+      "stacked bar chart",
+      "expense breakdown",
+      "budget chart",
+      "legend",
+    ],
     name: "v-chart-8",
   },
   {
@@ -1771,7 +2079,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stacked area chart comparing 'One-time' vs 'Recurring' revenue per month (shared `stackId`, two fill opacities), with a currency-formatted Y-axis and a ChartLegend. Use for showing how two revenue/value series compose a combined total over time.",
     file: "variants/v-chart-11.tsx",
-    keywords: ["stacked area chart", "revenue breakdown", "recurring vs one-time"],
+    keywords: [
+      "stacked area chart",
+      "revenue breakdown",
+      "recurring vs one-time",
+    ],
     name: "v-chart-11",
   },
   {
@@ -1795,7 +2107,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-series line chart comparing API latency percentiles (p50 solid, p90 dashed, p99 finer-dashed) per month, with a ms-formatted Y-axis, full tooltip, and ChartLegend distinguishing the three lines by stroke pattern as well as color. Use for latency/percentile monitoring charts or any multi-line comparison needing dash-pattern differentiation.",
     file: "variants/v-chart-14.tsx",
-    keywords: ["multi series line chart", "latency percentiles", "p50 p90 p99", "api monitoring"],
+    keywords: [
+      "multi series line chart",
+      "latency percentiles",
+      "p50 p90 p99",
+      "api monitoring",
+    ],
     name: "v-chart-14",
   },
   {
@@ -1803,7 +2120,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Composed chart overlaying monthly revenue Bars (left Y-axis, currency-formatted) with a growth-rate Line (right Y-axis, percentage-formatted, with dots) on dual independent axes, plus full tooltip and ChartLegend. Use when two related metrics with different units/scales (e.g. absolute revenue and percentage growth) need to share one chart via dual axes.",
     file: "variants/v-chart-15.tsx",
-    keywords: ["composed chart", "dual axis chart", "revenue and growth rate", "bar and line combo"],
+    keywords: [
+      "composed chart",
+      "dual axis chart",
+      "revenue and growth rate",
+      "bar and line combo",
+    ],
     name: "v-chart-15",
   },
 
@@ -1852,7 +2174,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Payment-method selection card: a Frame/FramePanel row showing a card-brand icon (custom Mastercard SVG), masked card number, and expiry, with a circular checkbox absolutely positioned in the top-right corner to mark it as the selected/default payment method. Use for a saved-payment-method picker UI.",
     file: "variants/v-checkbox-6.tsx",
-    keywords: ["payment method card", "select default card", "circular checkbox"],
+    keywords: [
+      "payment method card",
+      "select default card",
+      "circular checkbox",
+    ],
     name: "v-checkbox-6",
   },
   {
@@ -1860,7 +2186,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Permission list with a parent 'Select all permissions' checkbox that shows an indeterminate state when only some child permissions (Read/Write/Delete/Admin) are checked, and toggles all children when clicked. Use for the classic 'select all / indeterminate / individual items' checkbox pattern.",
     file: "variants/v-checkbox-7.tsx",
-    keywords: ["select all indeterminate", "parent child checkboxes", "indeterminate state"],
+    keywords: [
+      "select all indeterminate",
+      "parent child checkboxes",
+      "indeterminate state",
+    ],
     name: "v-checkbox-7",
   },
   {
@@ -1884,7 +2214,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-consent registration gate: several required checkboxes (Terms, Privacy Policy, age confirmation) plus one optional marketing-consent checkbox, each with label + description; a 'Create account' Button stays disabled and shows a 'N required items remaining' message until all required consents are checked. Use for signup/registration flows needing multiple gated legal consents before allowing submission.",
     file: "variants/v-checkbox-10.tsx",
-    keywords: ["multi consent gate", "registration checkboxes", "required agreements", "signup consent"],
+    keywords: [
+      "multi consent gate",
+      "registration checkboxes",
+      "required agreements",
+      "signup consent",
+    ],
     name: "v-checkbox-10",
   },
   {
@@ -1892,7 +2227,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Weekly-availability grid: a table with days of the week as columns and time-of-day (Morning/Afternoon/Evening) as rows, each cell containing an independent checkbox to mark availability, with a live 'N slots selected' counter. Use for scheduling/availability pickers needing a day-by-timeslot grid of checkboxes.",
     file: "variants/v-checkbox-11.tsx",
-    keywords: ["weekly availability grid", "schedule picker", "day time slot checkboxes"],
+    keywords: [
+      "weekly availability grid",
+      "schedule picker",
+      "day time slot checkboxes",
+    ],
     name: "v-checkbox-11",
   },
   {
@@ -1900,7 +2239,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Role-permissions picker: each permission (Read/Write/Delete/Admin) is a bordered row with a checkbox, label, and a color-coded Badge matching its access-level severity (secondary/info/warning/destructive), plus a description. Use for an access-control/role-permission selector where each permission's risk level should be visually distinct via badge color.",
     file: "variants/v-checkbox-12.tsx",
-    keywords: ["role permissions picker", "access level badges", "colored badge per permission"],
+    keywords: [
+      "role permissions picker",
+      "access level badges",
+      "colored badge per permission",
+    ],
     name: "v-checkbox-12",
   },
   {
@@ -1908,7 +2251,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Notification-preferences matrix: a table with notification events as rows (New message, Mention, Task assigned, etc.) and channels (Email/Push/SMS) as columns, each cell an independent checkbox, defaulting to email-only enabled, plus a 'Save preferences' button. Use for a full notification-settings matrix combining event rows with channel columns.",
     file: "variants/v-checkbox-13.tsx",
-    keywords: ["notification preferences matrix", "event rows channel columns", "settings table"],
+    keywords: [
+      "notification preferences matrix",
+      "event rows channel columns",
+      "settings table",
+    ],
     name: "v-checkbox-13",
   },
   {
@@ -1916,7 +2263,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Plan add-on selector: a list of feature checkboxes (High Availability, Data Encryption, Advanced Monitoring, SSO & SAML, Priority Support) each in a bordered card row with label+description, a live-computed 'Estimated total' price band that increases per add-on beyond the first two included, and a 'Confirm selection' button. Use for a pricing add-on/feature customizer with a dynamically updating price total.",
     file: "variants/v-checkbox-14.tsx",
-    keywords: ["plan add-on selector", "dynamic price total", "feature toggles pricing"],
+    keywords: [
+      "plan add-on selector",
+      "dynamic price total",
+      "feature toggles pricing",
+    ],
     name: "v-checkbox-14",
   },
   {
@@ -1924,7 +2275,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Sprint task checklist: each task row has a checkbox, a priority Badge (high/medium/low, color-coded), and strikethrough+dimmed styling once checked off; shows a live 'N remaining' counter, a celebratory 'All tasks complete! 🎉' banner when everything is done, and a 'Reset' button to clear all completions. Use for a sprint/todo checklist with priority tags and a completion celebration state.",
     file: "variants/v-checkbox-15.tsx",
-    keywords: ["sprint task checklist", "priority badges", "completion celebration", "todo list"],
+    keywords: [
+      "sprint task checklist",
+      "priority badges",
+      "completion celebration",
+      "todo list",
+    ],
     name: "v-checkbox-15",
   },
 
@@ -1957,7 +2313,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Nested CheckboxGroup: an outer 'User Permissions' group contains a 'Manage Users' parent checkbox that is itself the label for an inner nested CheckboxGroup ('Create/Edit/Delete User', 'Assign Roles'), with manual indeterminate-state wiring between the two levels via React state. Use for two-level permission trees where checking a sub-group should also toggle its parent item in the outer group.",
     file: "variants/v-checkbox-group-4.tsx",
-    keywords: ["nested parent checkbox", "two level permissions", "indeterminate sync"],
+    keywords: [
+      "nested parent checkbox",
+      "two level permissions",
+      "indeterminate sync",
+    ],
     name: "v-checkbox-group-4",
   },
   {
@@ -1989,7 +2349,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Notification-preferences CheckboxGroup rendered as a divided list (`divide-y`) where each item is a clickable row with checkbox, bold label, and a description line beneath (Mentions, Weekly digest, Security alerts, Product updates), two pre-checked. Use for a preferences list where each checkbox option needs its own explanatory subtext.",
     file: "variants/v-checkbox-group-8.tsx",
-    keywords: ["notification preferences list", "divided rows", "label with description"],
+    keywords: [
+      "notification preferences list",
+      "divided rows",
+      "label with description",
+    ],
     name: "v-checkbox-group-8",
   },
   {
@@ -2005,7 +2369,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Notification-channel CheckboxGroup laid out horizontally with an icon next to each label (Email, Push, SMS, In-app), two channels pre-checked. Use for a compact inline channel selector that pairs each option with a recognizable icon.",
     file: "variants/v-checkbox-group-10.tsx",
-    keywords: ["notification channels", "icon labels", "horizontal checkbox group"],
+    keywords: [
+      "notification channels",
+      "icon labels",
+      "horizontal checkbox group",
+    ],
     name: "v-checkbox-group-10",
   },
   {
@@ -2013,7 +2381,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Two-level nested checkbox groups for tech-stack interests: separate 'Frontend' (React/Vue/Svelte) and 'Backend' (Node.js/Python/Go) category groups, each with its own 'parent' select-all checkbox, plus a combined 'Selected: ...' summary line listing all chosen items across both categories. Use for grouping selectable options into independent labeled categories with per-category select-all and a combined summary.",
     file: "variants/v-checkbox-group-11.tsx",
-    keywords: ["tech stack picker", "category groups", "frontend backend", "per category select all"],
+    keywords: [
+      "tech stack picker",
+      "category groups",
+      "frontend backend",
+      "per category select all",
+    ],
     name: "v-checkbox-group-11",
   },
   {
@@ -2021,7 +2394,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Recurring-schedule picker with a top-level 'Select all' parent group wrapping two nested sub-groups (Weekdays, Weekend), each with its own parent checkbox, and a live 'N days/wk' Badge summarizing total selected days; defaults to weekdays selected. Use for a recurring day-of-week scheduler needing weekday/weekend sub-grouping and a day-count summary.",
     file: "variants/v-checkbox-group-12.tsx",
-    keywords: ["recurring schedule picker", "weekday weekend groups", "day count badge"],
+    keywords: [
+      "recurring schedule picker",
+      "weekday weekend groups",
+      "day count badge",
+    ],
     name: "v-checkbox-group-12",
   },
   {
@@ -2029,7 +2406,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Integration-enablement list: a top-level 'Enable all' parent checkbox above a set of card-style rows (GitHub, Jira, Slack, Figma, Notion), each with its own checkbox, name, and description, plus a 'Save integrations (N)' button reflecting the current selection count. Use for a third-party integrations settings page with a master enable-all toggle.",
     file: "variants/v-checkbox-group-13.tsx",
-    keywords: ["integration enablement list", "enable all parent checkbox", "integrations settings"],
+    keywords: [
+      "integration enablement list",
+      "enable all parent checkbox",
+      "integrations settings",
+    ],
     name: "v-checkbox-group-13",
   },
   {
@@ -2037,7 +2418,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Data-export selector with a top-level 'Select everything' parent group containing two nested section groups (Content: posts/pages/media; Settings: general/users/plugins), each with its own section-level parent checkbox, plus an item-count summary ('N of M items selected'). Use for an export/backup configuration UI needing hierarchical section selection and a running total.",
     file: "variants/v-checkbox-group-14.tsx",
-    keywords: ["data export selector", "two section groups", "item count summary", "export configuration"],
+    keywords: [
+      "data export selector",
+      "two section groups",
+      "item count summary",
+      "export configuration",
+    ],
     name: "v-checkbox-group-14",
   },
   {
@@ -2045,7 +2431,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Food-preference picker with two fully independent CheckboxGroup sections (Cuisines: Italian/Japanese/Mexican/Indian/Thai/American in a 2-column grid; Dietary: Vegetarian/Vegan/Gluten-free/Halal), each with its own 'select all' parent checkbox, and a combined summary line of all selected items across both. Use for onboarding/preference forms with multiple independent, unrelated checkbox categories shown together.",
     file: "variants/v-checkbox-group-15.tsx",
-    keywords: ["food preference picker", "cuisine dietary groups", "independent checkbox categories"],
+    keywords: [
+      "food preference picker",
+      "cuisine dietary groups",
+      "independent checkbox categories",
+    ],
     name: "v-checkbox-group-15",
   },
 
@@ -2078,7 +2468,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Billing-usage Card with an always-visible credit-usage summary and Progress bar, a floating circular chevron toggle button anchored below the card's bottom edge, and CollapsibleContent revealing a detailed cost breakdown (Requests, Active CPU, Events, Storage) when expanded. Use for a usage/billing summary card with a floating expand affordance (compare with v-card-11's near-identical layout built on Card alone).",
     file: "variants/v-collapsible-4.tsx",
-    keywords: ["billing usage card", "floating toggle button", "cost breakdown"],
+    keywords: [
+      "billing usage card",
+      "floating toggle button",
+      "cost breakdown",
+    ],
     name: "v-collapsible-4",
   },
   {
@@ -2086,7 +2480,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Unit-pricing Card: a base-price input is always visible with a settings-gear icon-button trigger; expanding reveals additional Tax Rate and Discount percentage input fields via CollapsibleContent (controlled open state). Use for progressively-disclosed advanced/optional form fields hidden behind a settings icon.",
     file: "variants/v-collapsible-5.tsx",
-    keywords: ["collapsible form fields", "advanced settings toggle", "pricing calculator"],
+    keywords: [
+      "collapsible form fields",
+      "advanced settings toggle",
+      "pricing calculator",
+    ],
     name: "v-collapsible-5",
   },
   {
@@ -2094,7 +2492,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-level collapsible sidebar navigation menu: recursively nested Collapsible groups (Dashboard > Analytics > Real-time/Historical, Team > Members/Permissions, etc.) rendered via a recursive NavMenuItem component with indentation per level, chevron rotation, and a selectable leaf-item highlight state. Use for a deeply-nested sidebar/tree navigation menu with arbitrary folder depth.",
     file: "variants/v-collapsible-6.tsx",
-    keywords: ["multi level nested menu", "sidebar navigation tree", "recursive collapsible"],
+    keywords: [
+      "multi level nested menu",
+      "sidebar navigation tree",
+      "recursive collapsible",
+    ],
     name: "v-collapsible-6",
   },
   {
@@ -2102,7 +2504,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "VS Code-style file explorer tree: recursive folder/file Collapsible tree with folder chevron+icon rows, file rows showing hover-revealed Download/Trash action buttons, a selectable active-file highlight, and an Explorer/Outline Tabs header above the tree. Use for a code-editor-like file tree component with per-file inline actions.",
     file: "variants/v-collapsible-7.tsx",
-    keywords: ["file explorer tree", "vscode style", "folder file icons", "hover actions"],
+    keywords: [
+      "file explorer tree",
+      "vscode style",
+      "folder file icons",
+      "hover actions",
+    ],
     name: "v-collapsible-7",
   },
   {
@@ -2110,7 +2517,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Read more' text-expander inside a Card: shows a truncated product description with a bottom fade-out gradient when collapsed, and a 'Read more'/'Show less' trigger with rotating chevron that reveals the full text. Use for long product/article descriptions that should be truncated by default with a manual expand control.",
     file: "variants/v-collapsible-8.tsx",
-    keywords: ["read more expander", "truncated text", "fade gradient", "show less"],
+    keywords: [
+      "read more expander",
+      "truncated text",
+      "fade gradient",
+      "show less",
+    ],
     name: "v-collapsible-8",
   },
   {
@@ -2118,7 +2530,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "CI/CD build-step log viewer: a stack of Cards, one per pipeline step (Install dependencies, Type check, Build), each with a status Badge (success/failed/pending, color-coded), duration, and a chevron toggle (disabled entirely for pending steps with no log); expanding reveals a monospace terminal-style log block with error lines highlighted in red. Use for build/CI pipeline step viewers with expandable per-step logs.",
     file: "variants/v-collapsible-9.tsx",
-    keywords: ["ci cd build log", "pipeline steps", "terminal log viewer", "build status"],
+    keywords: [
+      "ci cd build log",
+      "pipeline steps",
+      "terminal log viewer",
+      "build status",
+    ],
     name: "v-collapsible-9",
   },
   {
@@ -2126,7 +2543,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Incident-status Card defaulting open: header shows an alert icon, incident title, start time, and a status Badge ('Monitoring'), with a 'View incident timeline' trigger; expanding reveals a vertical timeline of status updates (each with a colored dot, status badge, timestamp, and message) plus a 'Next update in N minutes' footer line. Use for status-page/incident-report components with an expandable timeline history.",
     file: "variants/v-collapsible-10.tsx",
-    keywords: ["incident status", "status timeline", "status page", "monitoring badge"],
+    keywords: [
+      "incident status",
+      "status timeline",
+      "status page",
+      "monitoring badge",
+    ],
     name: "v-collapsible-10",
   },
   {
@@ -2134,7 +2556,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Accordion-style FAQ list built from independent Collapsibles with single-open behavior (opening one closes any other via shared `open` state keyed by id), rounded bordered trigger/panel per question, and a question-count Badge in the header. Use for an FAQ section needing exclusive single-panel-open behavior without using the Accordion component directly.",
     file: "variants/v-collapsible-11.tsx",
-    keywords: ["faq single open accordion", "question count badge", "exclusive open collapsible"],
+    keywords: [
+      "faq single open accordion",
+      "question count badge",
+      "exclusive open collapsible",
+    ],
     name: "v-collapsible-11",
   },
   {
@@ -2142,7 +2568,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Sidebar filter panel: three collapsible filter groups (Category, Status, Priority), each defaulting open, containing checkbox option lists; a header shows a total-active-filters Badge and a 'Clear all' button, each group header also shows its own per-group active-count badge, and an 'Apply filters' button sits at the bottom. Use for a faceted search/filter sidebar with collapsible filter groups and running active-filter counts.",
     file: "variants/v-collapsible-12.tsx",
-    keywords: ["filter sidebar", "faceted filters", "active filter count", "checkbox filter groups"],
+    keywords: [
+      "filter sidebar",
+      "faceted filters",
+      "active filter count",
+      "checkbox filter groups",
+    ],
     name: "v-collapsible-12",
   },
   {
@@ -2150,7 +2581,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Package-dependency list: a stack of Cards, one per package group (Middleware, Security, UI), each header showing an icon, name, and version Badge with a chevron toggle; expanding reveals the description and a monospace list of individual package names within that group. Use for a dependency/package-manifest browser with expandable per-group package lists.",
     file: "variants/v-collapsible-13.tsx",
-    keywords: ["package dependency list", "version badges", "expandable package names"],
+    keywords: [
+      "package dependency list",
+      "version badges",
+      "expandable package names",
+    ],
     name: "v-collapsible-13",
   },
   {
@@ -2158,7 +2593,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Team directory: one collapsible section per team (Design, Engineering, Marketing), each defaulting open, with a member-count Badge in the header and a member list showing a color-coded presence-status dot (active/away/offline), name, and role per person. Use for an org/team directory with per-team collapsible sections and per-member status dots.",
     file: "variants/v-collapsible-14.tsx",
-    keywords: ["team directory", "presence status dots", "org chart", "per team sections"],
+    keywords: [
+      "team directory",
+      "presence status dots",
+      "org chart",
+      "per team sections",
+    ],
     name: "v-collapsible-14",
   },
   {
@@ -2166,7 +2606,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Privacy-policy Card with accordion-style single-panel-open sections (What data we collect, How we use your data, Data sharing, Your rights), divided by borders, one section open by default. Use for legal/policy documents needing expandable sections with exclusive single-open behavior.",
     file: "variants/v-collapsible-15.tsx",
-    keywords: ["privacy policy sections", "legal document collapsible", "single panel open"],
+    keywords: [
+      "privacy policy sections",
+      "legal document collapsible",
+      "single panel open",
+    ],
     name: "v-collapsible-15",
   },
 
@@ -2247,7 +2691,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Country-picker combobox using a button-style ComboboxTrigger (ComboboxValue + chevron) that opens a popup with its own embedded search input at the top (separate from the trigger); full list of ~150 countries with `defaultValue` preselected. Use for a select-like combobox where the trigger looks like a button/select and the search input lives inside the popup.",
     file: "variants/v-combobox-10.tsx",
-    keywords: ["country picker", "trigger button popup search", "select style combobox"],
+    keywords: [
+      "country picker",
+      "trigger button popup search",
+      "select style combobox",
+    ],
     name: "v-combobox-10",
   },
   {
@@ -2255,7 +2703,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Combobox using this library's `SelectButton` component as the ComboboxTrigger render target (so it visually matches the Select component) with a search input inside the popup and a placeholder-driven ComboboxValue. Use when a combobox needs to visually look exactly like a Select trigger but retain search/filter behavior.",
     file: "variants/v-combobox-11.tsx",
-    keywords: ["select button trigger", "select style combobox", "with select button"],
+    keywords: [
+      "select button trigger",
+      "select style combobox",
+      "with select button",
+    ],
     name: "v-combobox-11",
   },
   {
@@ -2271,7 +2723,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-select combobox (chips) integrated into a Field + Form (required, FieldError), reading all selected values via `formData.getAll('items')` on submit with a loading Button. Use as the pattern for a required, form-validated multi-select chip combobox.",
     file: "variants/v-combobox-13.tsx",
-    keywords: ["form integration multiple", "multi-select form field", "chips form validation"],
+    keywords: [
+      "form integration multiple",
+      "multi-select form field",
+      "chips form validation",
+    ],
     name: "v-combobox-13",
   },
   {
@@ -2279,7 +2735,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Async-search combobox: debounced (300ms) simulated repository search with a loading spinner swapped into the start-icon slot while fetching, each result row showing repo name, language, and star count. Use as the template for a real server-backed/async-fetched combobox search.",
     file: "variants/v-combobox-14.tsx",
-    keywords: ["async search", "debounced search", "loading spinner", "server search"],
+    keywords: [
+      "async search",
+      "debounced search",
+      "loading spinner",
+      "server search",
+    ],
     name: "v-combobox-14",
   },
   {
@@ -2295,7 +2756,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Status-picker combobox: button-style trigger showing a colored dot + current status label (or 'Set status...' placeholder) plus an outside Badge summary line and a separate clear (X) button next to the trigger. Use for an issue/task status selector where the current status should also be reflected as a badge outside the control.",
     file: "variants/v-combobox-16.tsx",
-    keywords: ["status selector", "colored status dot", "external clear button"],
+    keywords: [
+      "status selector",
+      "colored status dot",
+      "external clear button",
+    ],
     name: "v-combobox-16",
   },
   {
@@ -2311,7 +2776,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "City-picker combobox with a MapPinIcon start addon; each item row shows the city name and a trailing 'Country · Timezone' meta string, plus a 'Selected: ...' summary line below showing the chosen city's timezone. Use for city/timezone selection fields needing per-item country and offset metadata.",
     file: "variants/v-combobox-18.tsx",
-    keywords: ["city picker", "timezone metadata", "country code trailing text"],
+    keywords: [
+      "city picker",
+      "timezone metadata",
+      "country code trailing text",
+    ],
     name: "v-combobox-18",
   },
   {
@@ -2335,7 +2804,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Timezone-picker combobox: button-style trigger shows a UTC-offset Badge plus the selected label, each item row shows label and offset, a separate clear (X) button next to the trigger, and a summary line below showing region and full timezone identifier. Use for timezone fields needing an offset badge in the trigger and an external clear control.",
     file: "variants/v-combobox-21.tsx",
-    keywords: ["timezone picker", "utc offset badge in trigger", "external clear button"],
+    keywords: [
+      "timezone picker",
+      "utc offset badge in trigger",
+      "external clear button",
+    ],
     name: "v-combobox-21",
   },
   {
@@ -2343,7 +2816,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Currency-picker combobox: button-style trigger shows a small symbol-in-box icon (e.g. '$') plus the selected currency name, each item row shows the symbol, name, and trailing currency code, and a summary line below confirms 'Displaying prices in ... (CODE)'. Use for currency-selection fields needing a symbol icon in both the trigger and each option row.",
     file: "variants/v-combobox-22.tsx",
-    keywords: ["currency picker", "symbol icon trigger", "currency code trailing"],
+    keywords: [
+      "currency picker",
+      "symbol icon trigger",
+      "currency code trailing",
+    ],
     name: "v-combobox-22",
   },
 
@@ -2409,7 +2886,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Switch project' command dialog: single 'All Projects' group where starred projects show a yellow star icon (others a plain folder icon), selecting sets the active project and closes, and the currently active project shows a 'Current' label. Use for a project/workspace switcher command palette.",
     file: "variants/v-command-8.tsx",
-    keywords: ["switch project", "workspace switcher", "starred projects", "current indicator"],
+    keywords: [
+      "switch project",
+      "workspace switcher",
+      "starred projects",
+      "current indicator",
+    ],
     name: "v-command-8",
   },
   {
@@ -2417,7 +2899,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Invite members' command dialog: a 'Teammates' group listing colleagues with avatar initials, name, and email; selecting a row toggles it into an 'invited' state (checkmark shown) without closing the dialog, and a footer bar appears once at least one is selected showing 'N invites pending' plus a 'Send invites' button that clears selection and closes. Use for a multi-select team-invite command palette with a pending-invite summary footer.",
     file: "variants/v-command-9.tsx",
-    keywords: ["invite team member", "multi select command", "pending invites footer"],
+    keywords: [
+      "invite team member",
+      "multi select command",
+      "pending invites footer",
+    ],
     name: "v-command-9",
   },
   {
@@ -2425,7 +2911,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Apply labels' command dialog (small outline trigger button) with a 'Labels' group of colored-dot tags (bug, feature, enhancement, etc.); selecting toggles a tag in/out of a locally-tracked selected set (checkmark shown, dialog stays open for multi-select), and selected tags render as outlined Badge pills below the trigger once chosen. Use for a GitHub-style multi-select label picker driven by a command palette.",
     file: "variants/v-command-10.tsx",
-    keywords: ["issue label picker", "multi select tags", "selected badges outside dialog"],
+    keywords: [
+      "issue label picker",
+      "multi select tags",
+      "selected badges outside dialog",
+    ],
     name: "v-command-10",
   },
   {
@@ -2449,7 +2939,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Go to page' navigation command dialog (trigger shows a 'G' Kbd hint) grouped into Navigation / Admin sections; items with a shortcut show it via CommandShortcut, items without one show a trailing arrow icon instead. Use for a site/app navigation command palette ('go to X') with optional per-item keyboard shortcuts.",
     file: "variants/v-command-13.tsx",
-    keywords: ["go to page palette", "navigation shortcuts", "arrow icon fallback"],
+    keywords: [
+      "go to page palette",
+      "navigation shortcuts",
+      "arrow icon fallback",
+    ],
     name: "v-command-13",
   },
   {
@@ -2457,7 +2951,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Appearance-picker command dialog grouped into Theme (Light/Dark/System) and Accent Color (colored dot options); selecting an item marks it active with a checkmark and updates local state, closing via onSelect. Use for a theme/accent-color quick-switcher command palette with active-selection checkmarks.",
     file: "variants/v-command-14.tsx",
-    keywords: ["appearance picker", "theme switcher", "accent color", "active check marks"],
+    keywords: [
+      "appearance picker",
+      "theme switcher",
+      "accent color",
+      "active check marks",
+    ],
     name: "v-command-14",
   },
   {
@@ -2465,7 +2964,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Quick open' command dialog (trigger shows a ⌘P hint) with a single 'Pages' group where some items show a numeric Badge (e.g. unread channel count) and a footer with Navigate/Open/Close key hints. Use for an IDE-style 'quick open' palette listing pages with optional notification-count badges.",
     file: "variants/v-command-15.tsx",
-    keywords: ["quick open palette", "page list with badges", "footer key hints"],
+    keywords: [
+      "quick open palette",
+      "page list with badges",
+      "footer key hints",
+    ],
     name: "v-command-15",
   },
 
@@ -2523,7 +3026,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Context menu with two independent controlled radio groups (People: Pedro/Colm; Theme: Light/Dark/System), each with its own label and separated by a divider. Use as a reference for multiple mutually-exclusive option groups within one context menu.",
     file: "variants/v-context-menu-7.tsx",
-    keywords: ["radio group menu", "multiple radio groups", "mutually exclusive options"],
+    keywords: [
+      "radio group menu",
+      "multiple radio groups",
+      "mutually exclusive options",
+    ],
     name: "v-context-menu-7",
   },
   {
@@ -2563,7 +3070,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Rich-text-editor-style context menu: a live-formatted text sample above, with Bold/Italic/Underline as controlled checkbox items (toggling actual text styling), an 'Alignment' submenu (Left/Center/Right radio-like selection updating state), and an 'Insert link' item. Use for a text-formatting right-click menu in an editor.",
     file: "variants/v-context-menu-12.tsx",
-    keywords: ["rich text editor menu", "formatting checkboxes", "alignment submenu"],
+    keywords: [
+      "rich text editor menu",
+      "formatting checkboxes",
+      "alignment submenu",
+    ],
     name: "v-context-menu-12",
   },
   {
@@ -2571,7 +3082,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-explorer rows each with a colored file-extension badge, name, and last-modified time, and a per-file context menu (Open/Rename/Download, Get Info showing file size, Refresh, destructive Delete); clicking a row also sets a local 'selected' highlight state. Use for a file-manager list needing per-file right-click actions and extension-color-coding.",
     file: "variants/v-context-menu-13.tsx",
-    keywords: ["file explorer rows", "extension badge", "file manager context menu"],
+    keywords: [
+      "file explorer rows",
+      "extension badge",
+      "file manager context menu",
+    ],
     name: "v-context-menu-13",
   },
   {
@@ -2587,7 +3102,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Task-board rows (status icon, title, priority Badge, assignee initials circle) each with a per-task context menu: a Status radio group (To Do/In Progress/Done) updating the row's icon live, a nested 'Priority' submenu with its own radio group (High/Medium/Low updating the badge), Reassign/Archive items, and a destructive Delete that removes the task from local state. Use for a kanban/task-list needing inline status and priority changes plus destructive actions via right-click.",
     file: "variants/v-context-menu-15.tsx",
-    keywords: ["task board context menu", "inline status radio", "priority submenu", "reassign delete"],
+    keywords: [
+      "task board context menu",
+      "inline status radio",
+      "priority submenu",
+      "reassign delete",
+    ],
     name: "v-context-menu-15",
   },
 
@@ -2652,7 +3172,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Team-meeting-scheduler widget: a date-picker popover restricted to weekdays/future dates; once a date is picked, shows each team member's avatar, role, and a Free/Busy Badge computed from a hardcoded weekly busy schedule, plus a free-count summary and a 'Send Invite' button disabled when nobody's free. Use for scheduling a meeting against team member availability.",
     file: "variants/v-date-picker-8.tsx",
-    keywords: ["team meeting scheduler", "availability check", "free busy badges"],
+    keywords: [
+      "team meeting scheduler",
+      "availability check",
+      "free busy badges",
+    ],
     name: "v-date-picker-8",
   },
   {
@@ -2660,7 +3184,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Delivery-date-selector widget: a Standard vs Express shipping-method toggle (price/description cards) that changes the earliest selectable delivery date and whether weekends are disabled, a date-picker popover for choosing the delivery day, and an estimated-delivery-range summary line plus 'Confirm Delivery' button. Use for e-commerce checkout delivery-date selection tied to a shipping-method choice.",
     file: "variants/v-date-picker-9.tsx",
-    keywords: ["delivery date selector", "shipping method", "earliest delivery date"],
+    keywords: [
+      "delivery date selector",
+      "shipping method",
+      "earliest delivery date",
+    ],
     name: "v-date-picker-9",
   },
   {
@@ -2668,7 +3196,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Task-deadline-reschedule widget: shows a task card with assignees and a 'Rescheduled' badge that appears once the due date changes; the date popover has its own internal Cancel/Apply footer buttons (staging a pending date before committing), and a 'Save Changes' button that's disabled until a reschedule is applied. Use for reassigning/rescheduling a task deadline with an explicit apply/cancel step inside the picker.",
     file: "variants/v-date-picker-10.tsx",
-    keywords: ["task deadline reschedule", "apply cancel footer", "rescheduled badge"],
+    keywords: [
+      "task deadline reschedule",
+      "apply cancel footer",
+      "rescheduled badge",
+    ],
     name: "v-date-picker-10",
   },
   {
@@ -2684,7 +3216,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Recurring-event date picker: a single-date popover (auto-closes on select, future dates only) paired with a row of recurrence pill buttons (Does not repeat / Daily / Weekly / Monthly) and a summary line combining the chosen date and recurrence pattern. Use for scheduling recurring events/reminders needing both a start date and a repeat frequency.",
     file: "variants/v-date-picker-12.tsx",
-    keywords: ["recurring event picker", "repeat frequency", "daily weekly monthly"],
+    keywords: [
+      "recurring event picker",
+      "repeat frequency",
+      "daily weekly monthly",
+    ],
     name: "v-date-picker-12",
   },
   {
@@ -2700,7 +3236,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Birthday picker with age validation: dropdown month/year Calendar navigation bounded to ages 18–100 (dates outside that window disabled), auto-closes on selection, and shows a computed 'Age: N years old' line below once a date is chosen. Use for signup/registration birthdate fields that must enforce a minimum/maximum age.",
     file: "variants/v-date-picker-14.tsx",
-    keywords: ["birthday picker", "age validation", "min max age", "date of birth"],
+    keywords: [
+      "birthday picker",
+      "age validation",
+      "min max age",
+      "date of birth",
+    ],
     name: "v-date-picker-14",
   },
   {
@@ -2708,7 +3249,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-date availability selector: a multiple-selection Calendar in a popover (future dates only) with a live count Badge in the trigger and Clear/Done footer buttons; selected dates also render below as removable pill chips with an X button per date. Use for picking several independent available days (e.g. availability for meetings) with a chip-based summary of the selection.",
     file: "variants/v-date-picker-15.tsx",
-    keywords: ["multi date availability", "removable date chips", "multiple day selection"],
+    keywords: [
+      "multi date availability",
+      "removable date chips",
+      "multiple day selection",
+    ],
     name: "v-date-picker-15",
   },
 
@@ -2742,7 +3287,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Terms & Conditions' dialog with no close (X) button and a long multi-section legal text body that scrolls inside the dialog panel, ending in Cancel/'I agree' footer buttons. Use for lengthy legal/ToS content that needs internal scroll rather than resizing the whole dialog.",
     file: "variants/v-dialog-4.tsx",
-    keywords: ["scroll inside dialog", "terms and conditions", "long content dialog"],
+    keywords: [
+      "scroll inside dialog",
+      "terms and conditions",
+      "long content dialog",
+    ],
     name: "v-dialog-4",
   },
   {
@@ -2766,7 +3315,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Cookie Preferences' dialog: three toggle rows (Essential — locked on and disabled, Analytics, Marketing) each with a Label/description and a Switch, plus 'Save Preferences'/'Accept All' footer buttons. Use for a cookie-consent preferences dialog with per-category toggles.",
     file: "variants/v-dialog-7.tsx",
-    keywords: ["cookie preferences", "consent toggles", "switch settings dialog"],
+    keywords: [
+      "cookie preferences",
+      "consent toggles",
+      "switch settings dialog",
+    ],
     name: "v-dialog-7",
   },
   {
@@ -2782,7 +3335,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "User row (avatar, name, email) with a trailing ellipsis icon-button that opens an 'Edit profile' dialog pre-filled with Name/Email/Bio fields (including the same avatar in the dialog header) and Cancel/Save footer. Use for inline user-list rows that open a rich profile-edit dialog with an avatar, matching the pattern of editing a specific list row.",
     file: "variants/v-dialog-9.tsx",
-    keywords: ["edit profile with avatar", "user row edit", "inline list edit dialog"],
+    keywords: [
+      "edit profile with avatar",
+      "user row edit",
+      "inline list edit dialog",
+    ],
     name: "v-dialog-9",
   },
   {
@@ -2814,7 +3371,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Cancel your plan' subscription-cancellation dialog: a destructive warning icon, a required single-select list of cancellation reasons (radio-style buttons), and Cancel(Keep plan)/destructive-'Confirm cancellation' footer, the confirm button disabled until a reason is chosen. Use for subscription/account cancellation flows that require capturing a reason before confirming.",
     file: "variants/v-dialog-13.tsx",
-    keywords: ["subscription cancellation", "cancellation reason", "required reason select"],
+    keywords: [
+      "subscription cancellation",
+      "cancellation reason",
+      "required reason select",
+    ],
     name: "v-dialog-13",
   },
   {
@@ -2830,7 +3391,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Rate your experience' product-feedback dialog: independent 5-star ratings per aspect (Ease of use, Performance, Design, Support) with hover preview, an optional comment Textarea, a 'Submit feedback' button disabled until every aspect is rated, and submitting swaps the whole dialog body to a 'Thank you!' confirmation screen with a single Close button. Use for a multi-aspect star-rating feedback dialog with a post-submit thank-you state.",
     file: "variants/v-dialog-15.tsx",
-    keywords: ["product feedback", "star rating dialog", "thank you confirmation"],
+    keywords: [
+      "product feedback",
+      "star rating dialog",
+      "thank you confirmation",
+    ],
     name: "v-dialog-15",
   },
 
@@ -2880,7 +3445,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Filter & sort right-side drawer using DrawerMenu primitives: grouped checkbox filters (Category, Status) and a radio group (Sort by: Newest/Oldest/Name/Popular), with Reset/'Apply filters' footer buttons. Use for a mobile-friendly filter/sort panel implemented as a drawer with built-in menu-style controls.",
     file: "variants/v-drawer-6.tsx",
-    keywords: ["filter and sort panel", "drawer menu checkboxes", "radio group sort"],
+    keywords: [
+      "filter and sort panel",
+      "drawer menu checkboxes",
+      "radio group sort",
+    ],
     name: "v-drawer-6",
   },
   {
@@ -2904,7 +3473,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Delete account?' destructive confirmation drawer: destructive-variant trigger button, warning description, a destructive 'Yes, delete my account' button and outline Cancel, and confirming swaps the trigger area's content to a 'Account deleted.' message with an 'Undo' button. Use for account-deletion confirmation flows implemented as a drawer with an inline undo state.",
     file: "variants/v-drawer-9.tsx",
-    keywords: ["delete account confirmation", "destructive drawer", "undo action"],
+    keywords: [
+      "delete account confirmation",
+      "destructive drawer",
+      "undo action",
+    ],
     name: "v-drawer-9",
   },
   {
@@ -2920,7 +3493,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "User-preferences right-side drawer (icon-only settings trigger): appearance picker (Light/Dark/System icon buttons), a native language <select>, and a push-notifications toggle switch, with a full-width 'Close' footer. Use for an app settings/preferences drawer combining several distinct control types.",
     file: "variants/v-drawer-11.tsx",
-    keywords: ["user preferences drawer", "theme settings", "language select", "notification toggle"],
+    keywords: [
+      "user preferences drawer",
+      "theme settings",
+      "language select",
+      "notification toggle",
+    ],
     name: "v-drawer-11",
   },
   {
@@ -2928,7 +3506,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-attachments drawer: a dashed drop-zone/upload area (hidden file input) above a removable list of already-attached files (icon by type, name, size, delete button), with Cancel/'Attach N files' footer buttons. Use for a file-upload-and-manage drawer, e.g. attaching files to a task or message.",
     file: "variants/v-drawer-12.tsx",
-    keywords: ["file attachments drawer", "upload dropzone", "attached files list"],
+    keywords: [
+      "file attachments drawer",
+      "upload dropzone",
+      "attached files list",
+    ],
     name: "v-drawer-12",
   },
   {
@@ -2978,7 +3560,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'404 — Not Found' empty state bordered box with a search InputGroup (icon + '/' Kbd shortcut hint) inviting the user to search for a page, plus a 'Contact support' link below. Use for 404/not-found pages that want to redirect users into a search flow.",
     file: "variants/v-empty-3.tsx",
-    keywords: ["404 not found", "empty state with search input", "page not found"],
+    keywords: [
+      "404 not found",
+      "empty state with search input",
+      "page not found",
+    ],
     name: "v-empty-3",
   },
   {
@@ -2994,7 +3580,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Dashed-border 'Upload files' empty state (CloudUploadIcon) describing drag-and-drop or click-to-browse upload, an outline 'Browse Files' button, and a small file-type/size hint line. Use as a file-upload dropzone empty state.",
     file: "variants/v-empty-5.tsx",
-    keywords: ["dashed upload empty state", "drag and drop", "file upload placeholder"],
+    keywords: [
+      "dashed upload empty state",
+      "drag and drop",
+      "file upload placeholder",
+    ],
     name: "v-empty-5",
   },
   {
@@ -3018,7 +3608,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'No payment methods' empty state with a custom SVG credit-card illustration (chip, contactless icon, masked digits), title/description, and an 'Add payment method' button. Use for empty billing/payment-method lists needing a card-themed illustration.",
     file: "variants/v-empty-8.tsx",
-    keywords: ["no payment methods", "credit card illustration", "billing empty state"],
+    keywords: [
+      "no payment methods",
+      "credit card illustration",
+      "billing empty state",
+    ],
     name: "v-empty-8",
   },
   {
@@ -3074,7 +3668,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Access restricted' empty state (LockIcon) on a muted bordered background, explaining a permissions issue, with 'Request access' and outline 'Go back' buttons side by side. Use for permission-denied/restricted-content states needing a request-access flow.",
     file: "variants/v-empty-15.tsx",
-    keywords: ["access restricted", "permission denied", "request access empty state"],
+    keywords: [
+      "access restricted",
+      "permission denied",
+      "request access empty state",
+    ],
     name: "v-empty-15",
   },
 
@@ -3116,7 +3714,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Field using FieldValidity's render-prop to inspect and display the live native validity state object (error message plus full JSON dump of the ValidityState) for a required email input. Use as a debugging/reference pattern for building custom validation UI off the input's validity state.",
     file: "variants/v-field-5.tsx",
-    keywords: ["validity state inspector", "custom validation ui", "debug validity"],
+    keywords: [
+      "validity state inspector",
+      "custom validation ui",
+      "debug validity",
+    ],
     name: "v-field-5",
   },
   {
@@ -3124,7 +3726,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Field wrapping an InputGroup (email input plus an inline 'Subscribe' icon-button) with a FieldError below. Use for a field whose input is a composite InputGroup rather than a plain Input.",
     file: "variants/v-field-6.tsx",
-    keywords: ["field wrapping input group", "subscribe field", "compound input"],
+    keywords: [
+      "field wrapping input group",
+      "subscribe field",
+      "compound input",
+    ],
     name: "v-field-6",
   },
   {
@@ -3188,7 +3794,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Field rendered as a Fieldset wrapping a RadioGroup of plan options (Free/Pro/Enterprise), each option as a FieldItem+FieldLabel+Radio, with a description below. Use when a field represents a mutually-exclusive radio-group choice under one fieldset legend.",
     file: "variants/v-field-14.tsx",
-    keywords: ["field with radio group", "fieldset radio", "plan selector field"],
+    keywords: [
+      "field with radio group",
+      "fieldset radio",
+      "plan selector field",
+    ],
     name: "v-field-14",
   },
   {
@@ -3310,7 +3920,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Account Settings' fieldset: Display name Input, a Username field with a fixed '@' prefix rendered as a custom bordered input group, a Timezone Select, and a 'Save changes' Button that briefly shows 'Saved!' on click. Use for a general account-settings form section with a custom-prefixed username field.",
     file: "variants/v-fieldset-7.tsx",
-    keywords: ["account settings form", "username prefix field", "save changes feedback"],
+    keywords: [
+      "account settings form",
+      "username prefix field",
+      "save changes feedback",
+    ],
     name: "v-fieldset-7",
   },
   {
@@ -3334,7 +3948,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Social Links' fieldset: GitHub and X/Twitter fields each with a fixed domain prefix ('github.com/', 'x.com/') rendered as custom bordered input groups, plus a Website URL field with a FieldError for invalid URLs. Use for a profile social-links form section with prefixed username inputs.",
     file: "variants/v-fieldset-10.tsx",
-    keywords: ["social links form", "prefixed username input", "github twitter website"],
+    keywords: [
+      "social links form",
+      "prefixed username input",
+      "github twitter website",
+    ],
     name: "v-fieldset-10",
   },
 
@@ -3352,7 +3970,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Form with Zod schema validation: Name and Age fields validated via `schema.safeParse` on submit, errors passed into the Form's `errors` prop and rendered by bare `<FieldError />` components per field. Use as the reference pattern for schema-based (Zod) form validation with server/client-side error mapping.",
     file: "variants/v-form-2.tsx",
-    keywords: ["zod validation", "schema validation form", "multi-field validation"],
+    keywords: [
+      "zod validation",
+      "schema validation form",
+      "multi-field validation",
+    ],
     name: "v-form-2",
   },
   {
@@ -3384,7 +4006,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Change password' form in a Card: Current/New/Confirm password fields with client-side validation (min length, matching confirmation) computed in the submit handler and passed via the Form's `errors` prop; submit button flips to 'Password updated!' briefly on success. Use for account password-change forms with custom (non-schema-library) validation logic.",
     file: "variants/v-form-6.tsx",
-    keywords: ["change password form", "custom validation", "password match check"],
+    keywords: [
+      "change password form",
+      "custom validation",
+      "password match check",
+    ],
     name: "v-form-6",
   },
   {
@@ -3400,7 +4026,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "3-step onboarding wizard with a step-progress indicator (Account → Plan → Confirm, numbered circles connected by lines): step 1 collects name/email, step 2 picks a plan (radio cards) and a newsletter checkbox, step 3 shows a read-only summary with Back/'Create account' buttons, ending in an 'Account created!' success screen. Use for multi-step signup/onboarding flows that need a visible step tracker.",
     file: "variants/v-form-8.tsx",
-    keywords: ["3 step onboarding wizard", "step progress indicator", "account creation flow"],
+    keywords: [
+      "3 step onboarding wizard",
+      "step progress indicator",
+      "account creation flow",
+    ],
     name: "v-form-8",
   },
   {
@@ -3416,7 +4046,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Feedback form with a star-rating Select (⭐ to ⭐⭐⭐⭐⭐ options) and a required comment Textarea; submitting swaps the form to a 'Thanks for your feedback!' confirmation. Use for a product-feedback form combining a rating scale with free-text comments.",
     file: "variants/v-form-10.tsx",
-    keywords: ["feedback form with rating", "star rating select", "thank you confirmation"],
+    keywords: [
+      "feedback form with rating",
+      "star rating select",
+      "thank you confirmation",
+    ],
     name: "v-form-10",
   },
   {
@@ -3432,7 +4066,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Danger-zone account-deletion form on a destructive-tinted bordered card: a warning icon/message, a text field requiring the user to type an exact confirmation phrase ('delete my account') before the destructive 'Permanently delete account' submit button becomes enabled. Use for the highest-risk destructive account actions needing typed confirmation (compare with v-alert-dialog-13's dialog version of the same pattern).",
     file: "variants/v-form-12.tsx",
-    keywords: ["delete account danger zone", "typed confirmation phrase", "destructive form"],
+    keywords: [
+      "delete account danger zone",
+      "typed confirmation phrase",
+      "destructive form",
+    ],
     name: "v-form-12",
   },
   {
@@ -3440,7 +4078,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Invite team member' form: required Email field, a Role Select (Admin/Member/Viewer) with a description explaining admin permissions, and Cancel(reset)/'Send invitation' buttons where the submit label briefly flips to 'Invitation sent!' on success. Use for a team/workspace member-invite form.",
     file: "variants/v-form-13.tsx",
-    keywords: ["invite team member form", "role select with description", "invitation sent feedback"],
+    keywords: [
+      "invite team member form",
+      "role select with description",
+      "invitation sent feedback",
+    ],
     name: "v-form-13",
   },
 
@@ -3498,7 +4140,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'API Status' Frame with a header showing a status Badge ('Operational') next to the title, and a panel listing individual services (Authentication API, Storage API, Webhooks) each with a colored status dot (green=operational, amber=degraded). Use for a system-status/uptime dashboard panel.",
     file: "variants/v-frame-7.tsx",
-    keywords: ["badge status indicator", "system status panel", "service health dots"],
+    keywords: [
+      "badge status indicator",
+      "system status panel",
+      "service health dots",
+    ],
     name: "v-frame-7",
   },
   {
@@ -3506,7 +4152,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Subscription details' Frame with a read-only key-value definition list (Plan, Billing cycle, Next renewal, Seats used) in the panel. Use for displaying static account/subscription info as label-value rows inside a Frame.",
     file: "variants/v-frame-8.tsx",
-    keywords: ["read only key value info", "subscription details", "definition list"],
+    keywords: [
+      "read only key value info",
+      "subscription details",
+      "definition list",
+    ],
     name: "v-frame-8",
   },
   {
@@ -3514,7 +4164,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Display name' settings Frame: header, a panel with a labeled name Input, and a footer with Cancel/'Save changes' buttons. Use for a single-field settings-update Frame with header/panel/footer CTA buttons.",
     file: "variants/v-frame-9.tsx",
-    keywords: ["footer cta buttons", "settings update frame", "save changes footer"],
+    keywords: [
+      "footer cta buttons",
+      "settings update frame",
+      "save changes footer",
+    ],
     name: "v-frame-9",
   },
   {
@@ -3596,7 +4250,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Nested Groups: an outer pagination Group containing two inner Groups — numbered page buttons (1–5) and Previous/Next icon-button navigation — visually separated as two clusters within one pagination control. Use for pagination controls that need distinct numbered and prev/next sub-groups.",
     file: "variants/v-group-9.tsx",
-    keywords: ["nested groups", "pagination group", "numbered pages and navigation"],
+    keywords: [
+      "nested groups",
+      "pagination group",
+      "numbered pages and navigation",
+    ],
     name: "v-group-9",
   },
   {
@@ -3620,7 +4278,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Subscribe' split-button Group: a primary 'Subscribe' button joined to a chevron-down icon button opening a Menu (Share link/Download/Duplicate). Use for a primary action plus a menu of secondary related actions joined into one control (compare with v-button-29's near-identical deploy-button pattern).",
     file: "variants/v-group-12.tsx",
-    keywords: ["with menu", "split button subscribe", "primary action with menu"],
+    keywords: [
+      "with menu",
+      "split button subscribe",
+      "primary action with menu",
+    ],
     name: "v-group-12",
   },
   {
@@ -3636,7 +4298,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Text-formatting toolbar Group: Bold/Italic/Underline/Strikethrough icon buttons, each independently toggleable (pressed state switches to secondary variant), separated by GroupSeparators. Use for a rich-text-editor formatting toolbar with independent toggle buttons.",
     file: "variants/v-group-14.tsx",
-    keywords: ["text formatting toolbar", "toggle buttons group", "rich text controls"],
+    keywords: [
+      "text formatting toolbar",
+      "toggle buttons group",
+      "rich text controls",
+    ],
     name: "v-group-14",
   },
   {
@@ -3644,7 +4310,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Helpfulness-vote Group: 'Helpful'/'Not helpful' buttons each with a thumbs icon and a live vote-count Badge, mutually exclusive selection (voting one un-votes the other), separated by a GroupSeparator. Use for a thumbs up/down feedback-voting control on articles or answers.",
     file: "variants/v-group-15.tsx",
-    keywords: ["thumbs up down vote", "helpfulness voting", "mutually exclusive vote buttons"],
+    keywords: [
+      "thumbs up down vote",
+      "helpfulness voting",
+      "mutually exclusive vote buttons",
+    ],
     name: "v-group-15",
   },
   {
@@ -3814,7 +4484,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Password field with a 'Forgot password?' link in the label row, plus an eye/eye-off icon button positioned inside the input to toggle text/password visibility. Use for login-style password fields needing both a forgot-password link and a visibility toggle.",
     file: "variants/v-input-18.tsx",
-    keywords: ["with link and visibility toggle", "forgot password link", "show hide password"],
+    keywords: [
+      "with link and visibility toggle",
+      "forgot password link",
+      "show hide password",
+    ],
     name: "v-input-18",
   },
   {
@@ -3846,7 +4520,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Referral link' Input rendered `readOnly` with an adjacent copy-to-clipboard icon Button (swaps to a checkmark briefly on copy) and a description explaining the link's purpose. Use for a read-only shareable-link field with a copy action.",
     file: "variants/v-input-22.tsx",
-    keywords: ["readonly with copy button", "referral link field", "copy to clipboard"],
+    keywords: [
+      "readonly with copy button",
+      "referral link field",
+      "copy to clipboard",
+    ],
     name: "v-input-22",
   },
   {
@@ -3960,7 +4638,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Email InputGroup with a block-start addon containing an inner Label ('Email') plus a hover info-icon Popover explaining the field's use, positioned above the input inside the same bordered group. Use when a field's label and a help tooltip need to be visually merged into the input group itself rather than a separate FieldLabel.",
     file: "variants/v-input-group-11.tsx",
-    keywords: ["with inner label", "label inside input group", "block start addon"],
+    keywords: [
+      "with inner label",
+      "label inside input group",
+      "block start addon",
+    ],
     name: "v-input-group-11",
   },
   {
@@ -3992,7 +4674,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Currency-amount InputGroup combining a NumberField with a leading '€' symbol addon and a trailing 'EUR' code addon. Use for monetary amount fields needing both a currency symbol and code displayed around a numeric stepper input.",
     file: "variants/v-input-group-15.tsx",
-    keywords: ["with number field", "currency amount", "symbol and code addons"],
+    keywords: [
+      "with number field",
+      "currency amount",
+      "symbol and code addons",
+    ],
     name: "v-input-group-15",
   },
   {
@@ -4000,7 +4686,12 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Chat-composer InputGroupTextarea (ChatGPT-style): a multi-line growable textarea with a block-end addon row containing a '+' Menu button (Add photos/Create image/Thinking/Deep research) wrapped in a tooltip, a '78% used' quota text, and a round primary 'Send' icon button. Use for an AI chat/prompt composer combining a textarea with an attachment menu and send button.",
     file: "variants/v-input-group-16.tsx",
-    keywords: ["with textarea", "chat composer", "ai prompt input", "attachment menu"],
+    keywords: [
+      "with textarea",
+      "chat composer",
+      "ai prompt input",
+      "attachment menu",
+    ],
     name: "v-input-group-16",
   },
   {
@@ -4040,7 +4731,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Social-post composer using InputGroupTextarea with a live remaining-character countdown addon (turns warning color near the limit, destructive color when over 280). Use for tweet/post-style composers needing a character-limit countdown display.",
     file: "variants/v-input-group-21.tsx",
-    keywords: ["textarea character countdown", "post composer", "character limit"],
+    keywords: [
+      "textarea character countdown",
+      "post composer",
+      "character limit",
+    ],
     name: "v-input-group-21",
   },
 
@@ -4244,7 +4939,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Horizontal-layout labeled fields: First name/Last name/Email each rendered via a shared HorizontalField helper using a `grid-cols-[100px_1fr]` Field so the right-aligned label sits beside (not above) its input. Use for form layouts needing side-by-side label+input rows instead of the default stacked layout.",
     file: "variants/v-label-14.tsx",
-    keywords: ["horizontal layout", "side by side label input", "grid form layout"],
+    keywords: [
+      "horizontal layout",
+      "side by side label input",
+      "grid form layout",
+    ],
     name: "v-label-14",
   },
   {
@@ -4252,7 +4951,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Required email Label+Input where typing a value containing 'taken' triggers a live error state: red border, `aria-invalid`, and a destructive-colored FieldDescription ('This email is already registered.') linked via `aria-describedby`. Use for a labeled field demonstrating live client-side error styling tied accessibly to the input.",
     file: "variants/v-label-15.tsx",
-    keywords: ["with error state", "live validation error", "aria invalid label"],
+    keywords: [
+      "with error state",
+      "live validation error",
+      "aria invalid label",
+    ],
     name: "v-label-15",
   },
 
@@ -4416,7 +5119,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Deploying…' meter that animates from 12 to 100 via a repeating randomized interval, stopping automatically at 100 and offering a 'Restart' button once done. Use for simulating a live deploy/build progress meter that completes and can be replayed.",
     file: "variants/v-meter-5.tsx",
-    keywords: ["multi-step progress indicator", "simulated deploy progress", "restart button"],
+    keywords: [
+      "multi-step progress indicator",
+      "simulated deploy progress",
+      "restart button",
+    ],
     name: "v-meter-5",
   },
   {
@@ -4432,7 +5139,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Live password-strength meter: typing into a password Input computes a score (length, uppercase, digit, symbol) that drives both the meter's value and a color-coded indicator (red/orange/yellow/blue/green) plus a text label (Weak/Fair/Good/Strong/Very strong). Use for a password-strength meter tied directly to a password input (compare with v-field-22 and v-input-20's bar/text-only variants).",
     file: "variants/v-meter-7.tsx",
-    keywords: ["password strength meter", "color coded strength", "live input driven meter"],
+    keywords: [
+      "password strength meter",
+      "color coded strength",
+      "live input driven meter",
+    ],
     name: "v-meter-7",
   },
   {
@@ -4448,7 +5159,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Q2 Budget' breakdown: an overall spend-vs-budget Meter (thicker track) followed by per-category meters (Engineering/Marketing/Design/Operations) each with a colored dot matching its indicator color and dollar-formatted values. Use for a budget/spend breakdown combining a total meter with categorized sub-meters.",
     file: "variants/v-meter-9.tsx",
-    keywords: ["budget breakdown", "spend by category", "color coded categories"],
+    keywords: [
+      "budget breakdown",
+      "spend by category",
+      "color coded categories",
+    ],
     name: "v-meter-9",
   },
   {
@@ -4472,7 +5187,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stack of monitoring metrics (Error rate, Latency, Memory) whose indicator color changes based on severity thresholds (green under 50, amber 50-79, red 80+). Use for an alerting/monitoring dashboard where meter color should reflect how concerning each value is.",
     file: "variants/v-meter-12.tsx",
-    keywords: ["color-coded by severity", "monitoring thresholds", "alert colors"],
+    keywords: [
+      "color-coded by severity",
+      "monitoring thresholds",
+      "alert colors",
+    ],
     name: "v-meter-12",
   },
   {
@@ -4496,7 +5215,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Profile strength' card: a Meter showing completed/total onboarding steps (e.g. '3/5') plus a checklist below listing each step with a colored dot (green=done, muted=pending) and strikethrough styling for completed items. Use for an account/profile-completeness widget combining a meter with a task checklist.",
     file: "variants/v-meter-15.tsx",
-    keywords: ["profile strength checklist", "onboarding completeness", "completed steps list"],
+    keywords: [
+      "profile strength checklist",
+      "onboarding completeness",
+      "completed steps list",
+    ],
     name: "v-meter-15",
   },
 
@@ -4578,7 +5301,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Font size (px)' NumberField (controlled, 8–48, scrub area) with a live preview paragraph below that renders text at the currently selected font size. Use for a live-preview numeric control (e.g. typography/design settings).",
     file: "variants/v-number-field-10.tsx",
-    keywords: ["percentage with scrub", "live preview stepper", "font size control"],
+    keywords: [
+      "percentage with scrub",
+      "live preview stepper",
+      "font size control",
+    ],
     name: "v-number-field-10",
   },
   {
@@ -4618,7 +5345,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled 'Volume' NumberField (scrub area) with an adjacent reset icon-Button that restores the value to its default (50). Use for a numeric control that needs an explicit reset-to-default action.",
     file: "variants/v-number-field-15.tsx",
-    keywords: ["controlled with reset", "volume control", "reset to default button"],
+    keywords: [
+      "controlled with reset",
+      "volume control",
+      "reset to default button",
+    ],
     name: "v-number-field-15",
   },
 
@@ -4660,7 +5391,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Tier code' OTPField using `validationType='none'` with custom sanitization feedback: entering unsupported characters triggers a brief invalid-pulse highlight on the focused slot and an sr-only live-region status message. Use as a reference for custom input sanitization/invalid-character handling beyond the built-in validation types.",
     file: "variants/v-otp-field-5.tsx",
-    keywords: ["custom sanitization", "invalid character feedback", "aria live status"],
+    keywords: [
+      "custom sanitization",
+      "invalid character feedback",
+      "aria live status",
+    ],
     name: "v-otp-field-5",
   },
   {
@@ -4668,7 +5403,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled OTPField that auto-validates against a hardcoded correct code ('123456') as soon as all 6 digits are entered, showing either a 'Code verified' description, an error state, or a hint to enter the test code. Use for an OTP field with automatic full-code validation feedback (no separate submit step).",
     file: "variants/v-otp-field-6.tsx",
-    keywords: ["auto validation", "instant code check", "otp verified feedback"],
+    keywords: [
+      "auto validation",
+      "instant code check",
+      "otp verified feedback",
+    ],
     name: "v-otp-field-6",
   },
   {
@@ -4732,7 +5471,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled OTPField that swaps to a green checkmark 'Identity verified' message once the correct 6-digit code ('246810') is entered, otherwise shows an error or hint describing the test code. Use for an OTP field whose success state replaces the input entirely with a confirmation message (compare with v-otp-field-6's inline-description-only success state).",
     file: "variants/v-otp-field-14.tsx",
-    keywords: ["success state replaces input", "identity verified", "completion swap"],
+    keywords: [
+      "success state replaces input",
+      "identity verified",
+      "completion swap",
+    ],
     name: "v-otp-field-14",
   },
   {
@@ -4830,7 +5573,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pagination combining a 'Rows per page' native select (10/25/50/100) on the left with a '1-25 of 100' count and first/prev/next/last icon buttons on the right. Use for a data-table-style pagination footer needing a page-size selector alongside navigation.",
     file: "variants/v-pagination-11.tsx",
-    keywords: ["page select dropdown", "first last navigation", "rows per page"],
+    keywords: [
+      "page select dropdown",
+      "first last navigation",
+      "rows per page",
+    ],
     name: "v-pagination-11",
   },
   {
@@ -4838,7 +5585,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pagination with first/prev/next/last icon buttons flanking a native 'Page N' select dropdown (1 through 10) in the middle instead of individual numbered links. Use when jumping to any page should be done via a select dropdown rather than tapping numbered links.",
     file: "variants/v-pagination-12.tsx",
-    keywords: ["numbered pagination with go-to-page input", "page select dropdown"],
+    keywords: [
+      "numbered pagination with go-to-page input",
+      "page select dropdown",
+    ],
     name: "v-pagination-12",
   },
   {
@@ -4854,7 +5604,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Full-featured pagination row: 'Page 1 of 10' text on the left, numbered links with prev/next and ellipsis in the middle, and a page-size select (10/20/50/100 per page) on the right — combining all three common pagination elements in one bar. Use for the most complete data-table pagination footer (page info + numbered nav + page-size select).",
     file: "variants/v-pagination-14.tsx",
-    keywords: ["page info numbered pages ellipsis per-page select", "complete pagination bar"],
+    keywords: [
+      "page info numbered pages ellipsis per-page select",
+      "complete pagination bar",
+    ],
     name: "v-pagination-14",
   },
   {
@@ -4878,7 +5631,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled numbered pagination (20 total pages) with a smart sliding window algorithm showing first/last page plus an ellipsis and a window of pages around the current one, updating on click; prev/next disable at the boundaries. Use as the reference implementation for real client-side controlled pagination with intelligent ellipsis placement.",
     file: "variants/v-pagination-18.tsx",
-    keywords: ["controlled with smart ellipsis", "sliding window pagination", "client side state"],
+    keywords: [
+      "controlled with smart ellipsis",
+      "sliding window pagination",
+      "client side state",
+    ],
     name: "v-pagination-18",
   },
   {
@@ -4952,7 +5709,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Last deployed' timestamp popover: trigger is a dashed-underlined relative-time text ('2 hours ago') that live-updates; popup shows a table with UTC and local time rows (date + time), both ticking live via a 1-second interval. Use for timestamp/tooltip-detail popovers that show absolute time on demand for a relative-time display.",
     file: "variants/v-popover-7.tsx",
-    keywords: ["timestamp detail", "relative time popover", "utc local time table"],
+    keywords: [
+      "timestamp detail",
+      "relative time popover",
+      "utc local time table",
+    ],
     name: "v-popover-7",
   },
   {
@@ -5082,7 +5843,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Inline-text PreviewCard for an npm package mention ('@base-ui/react'): reveals a popup with package icon, name, description, star count, version, and license. Use for referencing an npm/package name in documentation with a rich preview (compare with v-preview-card-14's download-stats variant).",
     file: "variants/v-preview-card-3.tsx",
-    keywords: ["npm package preview", "package mention", "install instructions"],
+    keywords: [
+      "npm package preview",
+      "package mention",
+      "install instructions",
+    ],
     name: "v-preview-card-3",
   },
   {
@@ -5106,7 +5871,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Inline-text PreviewCard for a GitHub repo mention ('GitHub'): reveals a popup with repo name, description, language/star/fork stats, and a 'View repository' button. Use for referencing a GitHub repository inline with a rich preview and a direct action button (compare with v-preview-card-1's simpler stats-only version).",
     file: "variants/v-preview-card-6.tsx",
-    keywords: ["github repository preview", "issue style preview", "view repository button"],
+    keywords: [
+      "github repository preview",
+      "issue style preview",
+      "view repository button",
+    ],
     name: "v-preview-card-6",
   },
   {
@@ -5138,7 +5907,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'References' list of link PreviewCards, each trigger showing a link icon, truncated URL label, and external-link icon; the popup shows the URL and a short description of what the link is. Use for a documentation/citation reference list where each external link gets a hover preview of its purpose.",
     file: "variants/v-preview-card-10.tsx",
-    keywords: ["reference links list", "citation preview", "external link hover"],
+    keywords: [
+      "reference links list",
+      "citation preview",
+      "external link hover",
+    ],
     name: "v-preview-card-10",
   },
   {
@@ -5178,7 +5951,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Inline monospace PreviewCard for an npm package mention ('@base-ui/react'): reveals a popup with package icon, name/version, description, weekly download count, and language dot. Use as an alternate npm-package preview emphasizing download stats (compare with v-preview-card-3's star/license-focused version).",
     file: "variants/v-preview-card-15.tsx",
-    keywords: ["npm package preview", "weekly downloads", "package install mention"],
+    keywords: [
+      "npm package preview",
+      "weekly downloads",
+      "package install mention",
+    ],
     name: "v-preview-card-15",
   },
 
@@ -5204,7 +5981,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Workspace Setup' progress bar with a dynamic status-message line beneath it that changes text based on the current percentage (Initializing → Connecting → Downloading → Finalizing → Complete), looping via a randomized interval. Use for install/setup progress bars needing contextual status messages tied to progress ranges.",
     file: "variants/v-progress-3.tsx",
-    keywords: ["with status messages", "dynamic status text", "install progress"],
+    keywords: [
+      "with status messages",
+      "dynamic status text",
+      "install progress",
+    ],
     name: "v-progress-3",
   },
   {
@@ -5220,7 +6001,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-step setup progress: a 'Setup Progress' bar computed from completed/total steps, plus a checklist below (Account/Profile/Preferences/Review) each with a checkmark or empty-circle icon reflecting completion. Use for an onboarding/wizard progress indicator combining a bar with a step checklist.",
     file: "variants/v-progress-5.tsx",
-    keywords: ["multi-step progress indicator", "step checklist", "onboarding progress"],
+    keywords: [
+      "multi-step progress indicator",
+      "step checklist",
+      "onboarding progress",
+    ],
     name: "v-progress-5",
   },
   {
@@ -5252,7 +6037,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'May Budget' breakdown Card: header shows remaining/over-budget summary and total spent, then one progress bar per category (Housing, Groceries, Transport, Dining out, Entertainment, Health) each with its own color, spent/budget values, and an 'over limit' warning line when exceeded. Use for a monthly budget-breakdown dashboard combining a header summary with per-category progress bars.",
     file: "variants/v-progress-9.tsx",
-    keywords: ["monthly budget breakdown", "per category spend", "over budget warning"],
+    keywords: [
+      "monthly budget breakdown",
+      "per category spend",
+      "over budget warning",
+    ],
     name: "v-progress-9",
   },
   {
@@ -5260,7 +6049,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'API Usage' Card: a current-tier Badge, a progress bar with tick-mark milestones for Free/Pro/Team plan thresholds overlaid on the track, labeled milestone values below, and a note on how many requests remain until the next tier. Use for a usage-based billing dashboard showing progress toward plan-tier limits with visual milestones.",
     file: "variants/v-progress-10.tsx",
-    keywords: ["api usage with tier milestones", "plan threshold markers", "usage billing"],
+    keywords: [
+      "api usage with tier milestones",
+      "plan threshold markers",
+      "usage billing",
+    ],
     name: "v-progress-10",
   },
   {
@@ -5284,7 +6077,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Community Fund Drive' fundraiser progress bar (heart icon, red indicator) showing dollars raised vs. goal and the percentage, in a bordered card. Use for a crowdfunding/donation-goal progress widget.",
     file: "variants/v-progress-13.tsx",
-    keywords: ["fundraiser goal tracker", "donation progress", "raised of goal"],
+    keywords: [
+      "fundraiser goal tracker",
+      "donation progress",
+      "raised of goal",
+    ],
     name: "v-progress-13",
   },
   {
@@ -5292,7 +6089,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Reading Progress' bar: a thin, transition-less progress bar pinned above a scrollable article content area, updating live as the user scrolls the content div (tracked via a scroll event listener computing percentage). Use for an article/blog reading-progress indicator tied to scroll position.",
     file: "variants/v-progress-14.tsx",
-    keywords: ["reading progress bar", "scroll tracked progress", "article scroll indicator"],
+    keywords: [
+      "reading progress bar",
+      "scroll tracked progress",
+      "article scroll indicator",
+    ],
     name: "v-progress-14",
   },
   {
@@ -5414,7 +6215,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Availability Status' RadioGroup: Online/Away/Busy/Offline options each with a colored presence dot, label, and description of who can see it. Use for a user-presence/availability-status selector.",
     file: "variants/v-radio-group-14.tsx",
-    keywords: ["availability status", "presence selector", "online away busy offline"],
+    keywords: [
+      "availability status",
+      "presence selector",
+      "online away busy offline",
+    ],
     name: "v-radio-group-14",
   },
   {
@@ -5422,7 +6227,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Billing Frequency' RadioGroup: Monthly/Quarterly/Annually options each with a description and a 'Save X%' Badge on the discounted tiers. Use for a billing-cycle selector highlighting savings on longer commitments.",
     file: "variants/v-radio-group-15.tsx",
-    keywords: ["billing frequency", "save percent badge", "monthly quarterly annually"],
+    keywords: [
+      "billing frequency",
+      "save percent badge",
+      "monthly quarterly annually",
+    ],
     name: "v-radio-group-15",
   },
 
@@ -5536,7 +6345,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Server/application log viewer inside a monospace ScrollArea: each line shows a timestamp, color-coded level (info/warn/error), and message. Use for a scrollable terminal-style log output panel.",
     file: "variants/v-scroll-area-14.tsx",
-    keywords: ["activity log viewer", "terminal log lines", "info warn error levels"],
+    keywords: [
+      "activity log viewer",
+      "terminal log lines",
+      "info warn error levels",
+    ],
     name: "v-scroll-area-14",
   },
   {
@@ -5618,7 +6431,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Country Select grouped by region (North America, Europe, Asia Pacific, Latin America) with flag-emoji-prefixed country names, popup capped at max-height with internal scroll. Use for a large country-selection dropdown needing regional grouping (compare with v-select-3's simpler grouped example).",
     file: "variants/v-select-9.tsx",
-    keywords: ["country selector with groups", "flag emoji options", "scrollable popup"],
+    keywords: [
+      "country selector with groups",
+      "flag emoji options",
+      "scrollable popup",
+    ],
     name: "v-select-9",
   },
   {
@@ -5846,7 +6663,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Invite Team Members' Sheet: email input with Enter-to-send, a role picker (Admin/Editor/Viewer segmented buttons), a 'Send Invitation' button, and a live 'Pending (N)' list of sent invites each with avatar, email, role badge, and a remove button. Use for a team-invite sheet with an inline pending-invites list.",
     file: "variants/v-sheet-7.tsx",
-    keywords: ["invite team members sheet", "pending invites list", "role picker"],
+    keywords: [
+      "invite team members sheet",
+      "pending invites list",
+      "role picker",
+    ],
     name: "v-sheet-7",
   },
   {
@@ -5862,7 +6683,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Left-side navigation-menu Sheet (hamburger icon trigger, no close button): a brand header, grouped nav sections (Main, General) with icon-labeled items (one with a notification-count Badge) each closing the sheet on click via SheetClose, and a footer user-profile row with a settings button. Use for a full mobile app navigation drawer.",
     file: "variants/v-sheet-9.tsx",
-    keywords: ["navigation menu sheet", "mobile nav drawer", "grouped nav sections"],
+    keywords: [
+      "navigation menu sheet",
+      "mobile nav drawer",
+      "grouped nav sections",
+    ],
     name: "v-sheet-9",
   },
   {
@@ -5878,7 +6703,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Export Data' Sheet: a 3-option file-format picker (CSV/JSON/TXT icon buttons), a filename input with a live `.ext` suffix reflecting the chosen format, an 'Export includes' bullet-point summary box, and Cancel/Download footer buttons. Use for a data-export configuration sheet.",
     file: "variants/v-sheet-11.tsx",
-    keywords: ["export data panel", "file format picker", "filename with extension"],
+    keywords: [
+      "export data panel",
+      "file format picker",
+      "filename with extension",
+    ],
     name: "v-sheet-11",
   },
   {
@@ -5894,7 +6723,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Contact Support' Sheet: a category-tag picker (Bug report/Feature request/Question/Other), Subject and Message fields; submitting swaps the panel to a 'Message sent!' confirmation with an icon. Use for a support/contact-form sheet with a post-submit confirmation state.",
     file: "variants/v-sheet-13.tsx",
-    keywords: ["support contact form sheet", "category picker", "message sent confirmation"],
+    keywords: [
+      "support contact form sheet",
+      "category picker",
+      "message sent confirmation",
+    ],
     name: "v-sheet-13",
   },
   {
@@ -5910,7 +6743,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'API Keys' management Sheet: each key shown in a bordered row with label, Live/Test badge, masked key prefix, created/last-used metadata, and Rotate (spinning icon while rotating) / Revoke (delete) actions, plus a 'Create New Key' footer button. Use for an API-key management sheet with rotate/revoke actions per key.",
     file: "variants/v-sheet-15.tsx",
-    keywords: ["api key manager sheet", "rotate revoke key", "masked key prefix"],
+    keywords: [
+      "api key manager sheet",
+      "rotate revoke key",
+      "masked key prefix",
+    ],
     name: "v-sheet-15",
   },
 
@@ -5920,7 +6757,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Baseline user-card Skeleton: each of 3 user rows starts as a skeleton (avatar circle, name/role/follower lines, follow-button block) and swaps to the real Avatar/text/Button content after a staggered per-user delay via setTimeout. Use as the default pattern for a loading-to-loaded skeleton transition on a list of user cards.",
     file: "variants/v-skeleton-1.tsx",
-    keywords: ["default skeleton", "loading to loaded transition", "user card skeleton"],
+    keywords: [
+      "default skeleton",
+      "loading to loaded transition",
+      "user card skeleton",
+    ],
     name: "v-skeleton-1",
   },
   {
@@ -5952,7 +6793,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "List-with-actions skeleton: a header row (title + button placeholder), a separator, then 3 rows each with an avatar circle, two text lines, and a trailing action-button placeholder. Use for a settings/list page loading placeholder with per-row actions.",
     file: "variants/v-skeleton-5.tsx",
-    keywords: ["list with actions skeleton", "row with action button placeholder"],
+    keywords: [
+      "list with actions skeleton",
+      "row with action button placeholder",
+    ],
     name: "v-skeleton-5",
   },
   {
@@ -6016,7 +6860,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Email-inbox skeleton: a toolbar row (count + action buttons) and 6 message rows each with an avatar, sender/time line, subject line, and preview-text line of varying width, unread rows tinted. Use for an email/inbox-list loading placeholder.",
     file: "variants/v-skeleton-13.tsx",
-    keywords: ["email inbox skeleton", "message list placeholder", "unread row tint"],
+    keywords: [
+      "email inbox skeleton",
+      "message list placeholder",
+      "unread row tint",
+    ],
     name: "v-skeleton-13",
   },
   {
@@ -6032,7 +6880,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Profile-hero-page skeleton: a wide cover-image placeholder, an overlapping avatar-circle placeholder with an action-button placeholder, name/handle lines, a 3-line bio, a stats row (3 label+value pairs), and a 2×3 grid of media/gallery-tile placeholders. Use for a full profile-page loading placeholder with cover photo and gallery.",
     file: "variants/v-skeleton-15.tsx",
-    keywords: ["profile hero page skeleton", "cover image and gallery placeholder"],
+    keywords: [
+      "profile hero page skeleton",
+      "cover image and gallery placeholder",
+    ],
     name: "v-skeleton-15",
   },
 
@@ -6130,7 +6981,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Session timeout' slider (5-1440 minutes) with a formatted duration readout (e.g. '2h') and quick-select preset buttons (1h/4h/8h/24h) that jump the slider to common durations. Use for a duration/timeout picker combining a slider with quick preset shortcuts.",
     file: "variants/v-slider-12.tsx",
-    keywords: ["display settings sliders", "session timeout", "duration presets"],
+    keywords: [
+      "display settings sliders",
+      "session timeout",
+      "duration presets",
+    ],
     name: "v-slider-12",
   },
   {
@@ -6146,7 +7001,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Room Temperature' slider (10-30°C) with a thermometer icon and value that change color based on range (blue=cold, green=comfortable, orange=warm), plus a status label ('Too cold'/'Comfortable'/'Too warm') between the min/max labels. Use for a thermostat/temperature-control slider with comfort-zone feedback.",
     file: "variants/v-slider-14.tsx",
-    keywords: ["temperature control", "thermostat slider", "comfort zone feedback"],
+    keywords: [
+      "temperature control",
+      "thermostat slider",
+      "comfort zone feedback",
+    ],
     name: "v-slider-14",
   },
   {
@@ -6154,7 +7013,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Display Settings' panel with three sliders (Brightness/Contrast/Saturation) each with a label and live SliderValue, plus Reset/Apply buttons at the bottom. Use for an image/display-adjustment settings panel with multiple related sliders.",
     file: "variants/v-slider-15.tsx",
-    keywords: ["display settings sliders", "brightness contrast saturation", "reset apply buttons"],
+    keywords: [
+      "display settings sliders",
+      "brightness contrast saturation",
+      "reset apply buttons",
+    ],
     name: "v-slider-15",
   },
 
@@ -6180,7 +7043,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Three buttons demonstrating spinners inside buttons: a default button with an inline-start Spinner and 'Processing…' label, a disabled outline button with an inline-start Spinner and 'Loading…' label, and a disabled icon-only button containing just a Spinner. Use as reference patterns for loading states on buttons.",
     file: "variants/v-spinner-3.tsx",
-    keywords: ["spinner in buttons", "loading button states", "icon-only loading button"],
+    keywords: [
+      "spinner in buttons",
+      "loading button states",
+      "icon-only loading button",
+    ],
     name: "v-spinner-3",
   },
   {
@@ -6196,7 +7063,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Overlay on card' pattern: a real Card with data (Monthly Report: Revenue/Growth/Users) sits behind an absolutely-positioned second Card overlay using bg-background/80 backdrop-blur-xs, containing a Spinner and 'Refreshing data...' text. Use to show a card is being refreshed while still displaying its stale content dimmed underneath.",
     file: "variants/v-spinner-5.tsx",
-    keywords: ["refresh overlay on card", "backdrop blur loading overlay", "stale data refreshing"],
+    keywords: [
+      "refresh overlay on card",
+      "backdrop blur loading overlay",
+      "stale data refreshing",
+    ],
     name: "v-spinner-5",
   },
   {
@@ -6212,7 +7083,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Stacked list of three status rows, each pairing a small colored Spinner with a status message: neutral 'Checking availability...', success-colored 'Connected — syncing data', and warning-colored 'Reconnecting — attempt 3 of 5'. Use for showing multiple simultaneous async connection/status states with color-coded spinners.",
     file: "variants/v-spinner-7.tsx",
-    keywords: ["connection status list", "color coded spinners", "reconnecting status"],
+    keywords: [
+      "connection status list",
+      "color coded spinners",
+      "reconnecting status",
+    ],
     name: "v-spinner-7",
   },
   {
@@ -6220,7 +7095,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Dashboard overview Card showing revenue/user stats behind a semi-transparent 'Overlay' Card (bg-background/80 backdrop-blur-xs) containing only a small dimmed Spinner with no text. Use for a minimal, text-free loading overlay on top of dashboard-style stat cards.",
     file: "variants/v-spinner-8.tsx",
-    keywords: ["dashboard overlay spinner", "minimal loading overlay", "stat card refreshing"],
+    keywords: [
+      "dashboard overlay spinner",
+      "minimal loading overlay",
+      "stat card refreshing",
+    ],
     name: "v-spinner-8",
   },
   {
@@ -6228,7 +7107,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Row of five Spinners each tinted a different Tailwind color (blue/green/red/yellow/purple) side by side. Use as a quick visual reference for applying custom colors to the Spinner via className.",
     file: "variants/v-spinner-9.tsx",
-    keywords: ["colored spinners", "spinner color variants", "multi-color loading indicators"],
+    keywords: [
+      "colored spinners",
+      "spinner color variants",
+      "multi-color loading indicators",
+    ],
     name: "v-spinner-9",
   },
   {
@@ -6236,7 +7119,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-step workspace launch sequence: clicking 'Launch workspace' starts a timed sequence cycling through step messages ('Connecting to server…', 'Authenticating…', 'Loading workspace…', 'Almost there…') shown next to a Spinner inside a bordered panel, with the trigger Button disabled and relabeled 'Starting…' while running, reverting to 'Workspace ready' text when done. Use for a multi-stage async process with sequential status messages.",
     file: "variants/v-spinner-10.tsx",
-    keywords: ["multi step loading sequence", "workspace launch steps", "sequential status messages"],
+    keywords: [
+      "multi step loading sequence",
+      "workspace launch steps",
+      "sequential status messages",
+    ],
     name: "v-spinner-10",
   },
   {
@@ -6244,7 +7131,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Simulated page-navigation loading overlay: clicking 'Navigate' shows a full-panel backdrop-blurred overlay with a large Spinner and 'Loading page…' text for 2 seconds over a 'Dashboard' placeholder panel, then reverts. Use to demonstrate a page-transition/route-change loading overlay.",
     file: "variants/v-spinner-11.tsx",
-    keywords: ["page navigation loading", "route transition overlay", "simulated navigation"],
+    keywords: [
+      "page navigation loading",
+      "route transition overlay",
+      "simulated navigation",
+    ],
     name: "v-spinner-11",
   },
   {
@@ -6252,7 +7143,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-upload status card: an icon tile swaps between an UploadCloud icon and a Spinner depending on upload status (idle/uploading/done), with matching status text ('Ready to upload' / 'Uploading report.pdf…' / 'Upload complete') and a submit Button that also shows an inline-start Spinner and changes label while uploading. Use for a file-upload widget with combined icon-tile and button loading states.",
     file: "variants/v-spinner-12.tsx",
-    keywords: ["file upload spinner", "upload progress card", "upload status icon"],
+    keywords: [
+      "file upload spinner",
+      "upload progress card",
+      "upload status icon",
+    ],
     name: "v-spinner-12",
   },
   {
@@ -6260,7 +7155,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Invoices list panel with a header 'Refresh' Button (icon toggles between RefreshCw and Spinner while loading) that, when clicked, temporarily replaces the row list with three skeleton-like 'Loading…' rows (each with a small Spinner) before restoring the real invoice rows (customer, id, amount, paid/pending status). Use for a refreshable data table/list with a refresh-button spinner and per-row loading placeholders.",
     file: "variants/v-spinner-13.tsx",
-    keywords: ["refreshable invoice list", "table refresh spinner", "loading rows"],
+    keywords: [
+      "refreshable invoice list",
+      "table refresh spinner",
+      "loading rows",
+    ],
     name: "v-spinner-13",
   },
   {
@@ -6268,7 +7167,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Sign-in form: submitting shows an inline-start Spinner inside the submit Button with label 'Signing in…' (inputs and button disabled), then flips to a disabled 'Signed in!' state after a timed delay. Use for a login/sign-in form submit button with a loading-then-success sequence.",
     file: "variants/v-spinner-14.tsx",
-    keywords: ["sign in form loading", "submit button spinner", "login success state"],
+    keywords: [
+      "sign in form loading",
+      "submit button spinner",
+      "login success state",
+    ],
     name: "v-spinner-14",
   },
   {
@@ -6318,7 +7221,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Three defaultChecked Switches each recolored via data-checked:bg-{color} className (blue/green/yellow) paired with matching color-named labels. Use as a reference for customizing the Switch's checked-state color per instance.",
     file: "variants/v-switch-5.tsx",
-    keywords: ["colored switches", "custom switch color", "data-checked styling"],
+    keywords: [
+      "colored switches",
+      "custom switch color",
+      "data-checked styling",
+    ],
     name: "v-switch-5",
   },
   {
@@ -6326,7 +7233,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Single destructive-styled Switch ('Delete all data on sign out') recolored via data-checked:bg-destructive, paired with a destructive-colored FieldLabel and a FieldDescription warning the action cannot be undone. Use for a dangerous/irreversible settings toggle that needs visual warning emphasis.",
     file: "variants/v-switch-6.tsx",
-    keywords: ["destructive switch", "dangerous setting toggle", "delete data warning"],
+    keywords: [
+      "destructive switch",
+      "dangerous setting toggle",
+      "delete data warning",
+    ],
     name: "v-switch-6",
   },
   {
@@ -6334,7 +7245,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Editor Preferences' list: a title, a Separator, then a column of label rows (Auto-save/Spell check/Line numbers) each with a title, description text, and a small Switch on the right, separated by border-b except the last. Use for a settings list of labeled preference toggles with divider lines.",
     file: "variants/v-switch-7.tsx",
-    keywords: ["settings list switches", "editor preferences toggles", "divided list"],
+    keywords: [
+      "settings list switches",
+      "editor preferences toggles",
+      "divided list",
+    ],
     name: "v-switch-7",
   },
   {
@@ -6342,7 +7257,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "2-column grid of four feature-toggle cards (Analytics/Error Logging/CDN Caching/Auto Backup), each a clickable FieldLabel card with an icon tile, title, description, and a controlled Switch, with the card's border/background changing color when checked. Use for a feature-flag/settings grid where each card visually highlights its active state.",
     file: "variants/v-switch-8.tsx",
-    keywords: ["feature toggle cards", "settings grid switches", "highlighted active card"],
+    keywords: [
+      "feature toggle cards",
+      "settings grid switches",
+      "highlighted active card",
+    ],
     name: "v-switch-8",
   },
   {
@@ -6350,7 +7269,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Cookie-consent Card: a header with icon, title, and a live 'N of M categories enabled' count, then a CardPanel list of four cookie-category rows (Strictly Necessary disabled/always-on, Analytics, Marketing, Personalization) each with a status Badge (Always On/Active/Off) and a controlled small Switch, separated by Separators, with a footer note. Use for a full cookie/consent-preferences panel with per-category status badges.",
     file: "variants/v-switch-9.tsx",
-    keywords: ["cookie consent panel", "cookie preferences card", "consent categories with badges"],
+    keywords: [
+      "cookie consent panel",
+      "cookie preferences card",
+      "consent categories with badges",
+    ],
     name: "v-switch-9",
   },
   {
@@ -6358,7 +7281,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Notifications Card with a master Switch in the header (icon and description change between Bell/BellOff and 'Receiving alerts'/'All alerts paused') that, when off, visually dims and disables a CardPanel list of four delivery-channel rows (Email/SMS/In-app/Push), each with its own icon, label, description, and small Switch. Use for a master-toggle-with-dependent-sub-toggles notification settings panel.",
     file: "variants/v-switch-10.tsx",
-    keywords: ["master switch with sub toggles", "notification channels panel", "dependent disabled switches"],
+    keywords: [
+      "master switch with sub toggles",
+      "notification channels panel",
+      "dependent disabled switches",
+    ],
     name: "v-switch-10",
   },
   {
@@ -6366,7 +7293,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Compact list of six pricing-tier feature rows (Advanced Analytics, API Access, Data Export, SSO, Audit Logs, Priority Support), each with a controlled Switch that is disabled (and shows an 'Enterprise' Badge) for non-pro features. Use for a plan/feature-gating list where some toggles are locked behind a higher tier.",
     file: "variants/v-switch-11.tsx",
-    keywords: ["plan gated switches", "enterprise feature toggle", "locked switch with badge"],
+    keywords: [
+      "plan gated switches",
+      "enterprise feature toggle",
+      "locked switch with badge",
+    ],
     name: "v-switch-11",
   },
   {
@@ -6374,7 +7305,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Privacy Settings' bordered panel with a header and a divided list of five icon-labeled rows (Location Services, Camera & Microphone, Microphone Only, Activity Tracking, Personalised Ads), each with a description and a small controlled Switch, with an extra Separator inserted after the third row. Use for a privacy/permissions settings list with icon-tile rows.",
     file: "variants/v-switch-12.tsx",
-    keywords: ["privacy settings list", "permission toggles", "icon labeled switch rows"],
+    keywords: [
+      "privacy settings list",
+      "permission toggles",
+      "icon labeled switch rows",
+    ],
     name: "v-switch-12",
   },
   {
@@ -6382,7 +7317,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Standalone light/dark mode preview card: background, text color, icon (Sun/Moon), title, and description all transition together based on a single Switch's checked state, with a Sun/Moon icon pair flanking the indigo-tinted Switch. Use for a live theme-preview toggle demonstrating an immediate visual mode switch.",
     file: "variants/v-switch-13.tsx",
-    keywords: ["dark mode toggle preview", "theme switch demo", "light dark mode card"],
+    keywords: [
+      "dark mode toggle preview",
+      "theme switch demo",
+      "light dark mode card",
+    ],
     name: "v-switch-13",
   },
   {
@@ -6390,7 +7329,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Create Account' form with name/email Inputs and a required agree-to-terms row combining a Switch with a Terms & Conditions FieldLabel/FieldDescription; the submit Button stays disabled until the Switch is checked. Use for a signup form gating submission on a terms-acceptance switch.",
     file: "variants/v-switch-14.tsx",
-    keywords: ["terms acceptance switch", "signup form toggle", "required switch gating submit"],
+    keywords: [
+      "terms acceptance switch",
+      "signup form toggle",
+      "required switch gating submit",
+    ],
     name: "v-switch-14",
   },
   {
@@ -6398,7 +7341,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Do Not Disturb' card: a header row with icon (BellOff/Moon), title, live status text, and a master Switch; when enabled, a 'Duration' section with a 2×2 grid of preset duration buttons (1 hour/2 hours/4 hours/Until tomorrow) appears for picking how long DND stays active. Use for a do-not-disturb/snooze toggle with a conditional duration picker.",
     file: "variants/v-switch-15.tsx",
-    keywords: ["do not disturb toggle", "snooze switch with duration picker", "conditional options on toggle"],
+    keywords: [
+      "do not disturb toggle",
+      "snooze switch with duration picker",
+      "conditional options on toggle",
+    ],
     name: "v-switch-15",
   },
 
@@ -6408,13 +7355,17 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Baseline data Table with a TableCaption, a 4-column header (Project/Status/Team/Budget), six project rows each with a dot-badge status (Paid/Unpaid/Pending/Failed), and a TableFooter row showing colSpan-merged 'Total Budget' with the summed amount. Use as the plainest full-featured table with caption, badges, and a footer total.",
     file: "variants/v-table-1.tsx",
-    keywords: ["default table with footer total", "table caption", "status badge table"],
+    keywords: [
+      "default table with footer total",
+      "table caption",
+      "status badge table",
+    ],
     name: "v-table-1",
   },
   {
     category: "table",
     description:
-      "Same project/status/team/budget data as v-table-1 but rendered with Table variant=\"card\" (no caption) for a card-styled bordered table look. Use when you want the same tabular data with a card-like visual container instead of a plain table.",
+      'Same project/status/team/budget data as v-table-1 but rendered with Table variant="card" (no caption) for a card-styled bordered table look. Use when you want the same tabular data with a card-like visual container instead of a plain table.',
     file: "variants/v-table-2.tsx",
     keywords: ["card variant table", "bordered table style"],
     name: "v-table-2",
@@ -6422,7 +7373,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "table",
     description:
-      "Same project/status/team/budget table wrapped inside a CardFrame with Table variant=\"card\". Use when you want the table nested inside an explicit CardFrame wrapper component rather than relying on the table's own card variant styling alone.",
+      'Same project/status/team/budget table wrapped inside a CardFrame with Table variant="card". Use when you want the table nested inside an explicit CardFrame wrapper component rather than relying on the table\'s own card variant styling alone.',
     file: "variants/v-table-3.tsx",
     keywords: ["table inside card frame", "CardFrame wrapped table"],
     name: "v-table-3",
@@ -6430,7 +7381,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "table",
     description:
-      "Same project/status/team/budget table wrapped inside a Frame component with Table variant=\"card\". Use when you want the table nested inside the generic Frame primitive rather than CardFrame.",
+      'Same project/status/team/budget table wrapped inside a Frame component with Table variant="card". Use when you want the table nested inside the generic Frame primitive rather than CardFrame.',
     file: "variants/v-table-4.tsx",
     keywords: ["table inside frame", "Frame wrapped table"],
     name: "v-table-4",
@@ -6440,7 +7391,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Recent-orders table: 4-column header (Order/Customer/Status/Amount), each row combining a monospace order id, an Avatar+name+date customer cell, a colored status Badge (Paid/Pending/Refunded), and a right-aligned amount. Use for an orders/transactions list with avatar customer identity and status badges.",
     file: "variants/v-table-5.tsx",
-    keywords: ["orders table with avatars", "transaction list table", "customer order history"],
+    keywords: [
+      "orders table with avatars",
+      "transaction list table",
+      "customer order history",
+    ],
     name: "v-table-5",
   },
   {
@@ -6448,7 +7403,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Team-members table (Member/Role/Status columns) with Avatar+name+email cells and Role/Status Badges, wrapped in a Frame+FramePanel with padding removed so the table fills the panel edge-to-edge. Use for a members/roster table cleanly inset inside a Frame container.",
     file: "variants/v-table-6.tsx",
-    keywords: ["team members table", "roster table in frame", "role and status badges"],
+    keywords: [
+      "team members table",
+      "roster table in frame",
+      "role and status badges",
+    ],
     name: "v-table-6",
   },
   {
@@ -6456,7 +7415,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Subscriptions table (Service/Plan/Billing/Status/Actions columns) listing five SaaS subscriptions each with a plan Badge, billing text with next-billing-date subtext, status Badge (Active/Cancelled/Trial), and a per-row 'Manage' ghost Button with a settings icon. Use for a billing/subscriptions management table with per-row action buttons.",
     file: "variants/v-table-7.tsx",
-    keywords: ["subscriptions management table", "billing table with actions", "manage button per row"],
+    keywords: [
+      "subscriptions management table",
+      "billing table with actions",
+      "manage button per row",
+    ],
     name: "v-table-7",
   },
   {
@@ -6464,7 +7427,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Client-side sortable API-metrics table: clickable column headers (Endpoint/Avg latency/Req per day/Error %) toggle sort direction with animated up/down/neutral icons, HTTP Method shown as a colored Badge, and error-rate text colored by severity threshold. Use for an interactive, sortable API/analytics metrics table.",
     file: "variants/v-table-8.tsx",
-    keywords: ["sortable table", "interactive column sort", "API metrics dashboard table"],
+    keywords: [
+      "sortable table",
+      "interactive column sort",
+      "API metrics dashboard table",
+    ],
     name: "v-table-8",
   },
   {
@@ -6472,7 +7439,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Storage-usage table inside a Card with a header title and live 'X GB of Y GB used' description; each row shows Avatar+name+email, a plan Badge, and a custom inline StorageBar (colored by usage percentage) with a 'Storage almost full' warning label when usage is ≥90%. Use for an account/team storage-quota table with visual usage bars.",
     file: "variants/v-table-9.tsx",
-    keywords: ["storage usage table", "usage progress bar in table", "quota warning table"],
+    keywords: [
+      "storage usage table",
+      "usage progress bar in table",
+      "quota warning table",
+    ],
     name: "v-table-9",
   },
   {
@@ -6480,7 +7451,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Audit-log table (Actor/Action/Resource/IP Address/Time columns) wrapped in a Frame+FramePanel, with a header row showing 'Audit Log' title and event count; each row has Avatar+name/email actor, a colored action-type Badge (login/export/delete/invite/update/create), monospace IP, and relative time. Use for a security/audit-log activity table.",
     file: "variants/v-table-10.tsx",
-    keywords: ["audit log table", "activity log with actor avatars", "security events table"],
+    keywords: [
+      "audit log table",
+      "activity log with actor avatars",
+      "security events table",
+    ],
     name: "v-table-10",
   },
   {
@@ -6496,7 +7471,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Invoices table (Invoice/Client/Issued/Due/Status/Amount/blank-actions columns) with a status Badge (Paid/Overdue/Pending/Draft) per row, a per-row ghost 'View' Button in an unlabeled trailing column, and a TableFooter summing 'Total outstanding'. Use for an invoicing/billing table with per-row view actions and a totals footer.",
     file: "variants/v-table-12.tsx",
-    keywords: ["invoices table with footer total", "billing table view action", "outstanding balance table"],
+    keywords: [
+      "invoices table with footer total",
+      "billing table view action",
+      "outstanding balance table",
+    ],
     name: "v-table-12",
   },
   {
@@ -6504,7 +7483,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pricing/feature-comparison table (Feature row-header plus Free/Pro/Enterprise centered columns); each cell renders either a checkmark/dash icon for booleans or plain text for string values (e.g. 'Unlimited', '1 TB'). Use for a plans/feature-comparison matrix table.",
     file: "variants/v-table-13.tsx",
-    keywords: ["pricing comparison table", "feature matrix table", "plan comparison checkmarks"],
+    keywords: [
+      "pricing comparison table",
+      "feature matrix table",
+      "plan comparison checkmarks",
+    ],
     name: "v-table-13",
   },
   {
@@ -6512,7 +7495,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Server-fleet monitoring table (Server/Region/Status/CPU/Memory/Uptime columns) with a health status Badge (Healthy/Warning/Critical) and inline Progress bars with percentage labels for CPU and Memory usage per row. Use for an infrastructure/server-monitoring dashboard table with embedded progress bars.",
     file: "variants/v-table-14.tsx",
-    keywords: ["server monitoring table", "infrastructure dashboard", "cpu memory progress bars"],
+    keywords: [
+      "server monitoring table",
+      "infrastructure dashboard",
+      "cpu memory progress bars",
+    ],
     name: "v-table-14",
   },
   {
@@ -6520,7 +7507,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Contributor-leaderboard table (Rank/Contributor/Commits/PRs/Reviews/Change columns) with numbered rank, Avatar+name+optional 'Top Contributor' Badge, tabular-nums stat columns, and a trend indicator (up/down arrow icon, colored, or an em-dash) showing rank change. Use for a leaderboard/ranking table with trend-change indicators.",
     file: "variants/v-table-15.tsx",
-    keywords: ["leaderboard table", "contributor ranking", "trend change indicator"],
+    keywords: [
+      "leaderboard table",
+      "contributor ranking",
+      "trend change indicator",
+    ],
     name: "v-table-15",
   },
 
@@ -6536,7 +7527,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "tabs",
     description:
-      "Same three-tab structure as v-tabs-1 but with TabsList variant=\"underline\" wrapped in a bordered-bottom div, giving an underline-indicator tab style instead of the default pill/box style. Use when you want an underline-style tab bar.",
+      'Same three-tab structure as v-tabs-1 but with TabsList variant="underline" wrapped in a bordered-bottom div, giving an underline-indicator tab style instead of the default pill/box style. Use when you want an underline-style tab bar.',
     file: "variants/v-tabs-2.tsx",
     keywords: ["underline tabs", "underline variant tab bar"],
     name: "v-tabs-2",
@@ -6544,7 +7535,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "tabs",
     description:
-      "Same three-tab structure as v-tabs-1 but with orientation=\"vertical\", stacking the TabsList above/beside panels vertically instead of horizontally. Use for a vertical tab layout with the default (non-underline) tab style.",
+      'Same three-tab structure as v-tabs-1 but with orientation="vertical", stacking the TabsList above/beside panels vertically instead of horizontally. Use for a vertical tab layout with the default (non-underline) tab style.',
     file: "variants/v-tabs-3.tsx",
     keywords: ["vertical tabs", "vertical orientation default style"],
     name: "v-tabs-3",
@@ -6552,7 +7543,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "tabs",
     description:
-      "Vertical-orientation Tabs combining flex-row layout with TabsList variant=\"underline\" (bordered on the start/left side) so tab labels sit in a vertical underline-style sidebar next to the content panels. Use for a vertical underline-style tab sidebar.",
+      'Vertical-orientation Tabs combining flex-row layout with TabsList variant="underline" (bordered on the start/left side) so tab labels sit in a vertical underline-style sidebar next to the content panels. Use for a vertical underline-style tab sidebar.',
     file: "variants/v-tabs-4.tsx",
     keywords: ["vertical underline tabs", "sidebar tab navigation"],
     name: "v-tabs-4",
@@ -6562,7 +7553,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Account'/'Password' settings tabs (TabsTrigger/TabsContent API) where each tab's content is a full Card with header (title+description), form Inputs with Labels, and a footer Save/Update Button. Use for a classic two-tab account-settings panel pattern.",
     file: "variants/v-tabs-5.tsx",
-    keywords: ["account settings tabs", "two tab settings panel", "card content per tab"],
+    keywords: [
+      "account settings tabs",
+      "two tab settings panel",
+      "card content per tab",
+    ],
     name: "v-tabs-5",
   },
   {
@@ -6584,7 +7579,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "tabs",
     description:
-      "Same vertical three-tab settings panel as v-tabs-7 but with TabsList variant=\"underline\" for the sidebar tabs instead of the default style. Use for a vertical settings sidebar with underline-style tab indicators.",
+      'Same vertical three-tab settings panel as v-tabs-7 but with TabsList variant="underline" for the sidebar tabs instead of the default style. Use for a vertical settings sidebar with underline-style tab indicators.',
     file: "variants/v-tabs-8.tsx",
     keywords: ["vertical underline settings tabs", "sidebar underline tabs"],
     name: "v-tabs-8",
@@ -6594,7 +7589,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Overview'/'Analytics'/'Settings' full-width Tabs where each TabsTrigger pairs an icon (LayoutDashboard/BarChart3/Settings) with its label, and each panel is a simple Card with a one-line description. Use for a dashboard-style tab bar with icon+label triggers.",
     file: "variants/v-tabs-9.tsx",
-    keywords: ["icon tabs", "dashboard tabs with icons", "labeled icon tab triggers"],
+    keywords: [
+      "icon tabs",
+      "dashboard tabs with icons",
+      "labeled icon tab triggers",
+    ],
     name: "v-tabs-9",
   },
   {
@@ -6602,7 +7601,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Vertical sidebar Tabs (Projects/Tasks/Team/Reports) with left-aligned icon+label TabsTriggers, some carrying a trailing count Badge (8, 24), each panel a Card with a heading and descriptive paragraph. Use for a vertical navigation-style tab sidebar with icons and count badges.",
     file: "variants/v-tabs-10.tsx",
-    keywords: ["sidebar navigation tabs", "tabs with count badges", "icon label vertical tabs"],
+    keywords: [
+      "sidebar navigation tabs",
+      "tabs with count badges",
+      "icon label vertical tabs",
+    ],
     name: "v-tabs-10",
   },
   {
@@ -6610,7 +7613,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Inbox'/'Drafts'/'Sent'/'Spam' full-width underline TabsList where triggers carry trailing count Badges (12, 3, none, 24 in varying colors), each panel a Card with a one-line summary. Use for an email/mailbox-style tab bar with unread-count badges.",
     file: "variants/v-tabs-11.tsx",
-    keywords: ["mailbox tabs", "inbox tabs with unread count", "email folder tabs"],
+    keywords: [
+      "mailbox tabs",
+      "inbox tabs with unread count",
+      "email folder tabs",
+    ],
     name: "v-tabs-11",
   },
   {
@@ -6618,7 +7625,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled Daily/Weekly/Monthly/Yearly analytics period-selector Tabs (value/onValueChange, icon+label triggers) where each panel is a Card showing a large stat number and 'Visitors this X' caption. Use for a time-period switcher driving a single changing stat display.",
     file: "variants/v-tabs-12.tsx",
-    keywords: ["period selector tabs", "analytics time range tabs", "controlled tabs stat display"],
+    keywords: [
+      "period selector tabs",
+      "analytics time range tabs",
+      "controlled tabs stat display",
+    ],
     name: "v-tabs-12",
   },
   {
@@ -6626,7 +7637,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Full account-settings page using vertical underline TabsList (Profile/Security/Notifications/Integrations, each icon-labeled) where each TabsPanel renders a distinct detailed content block: profile fields, password+2FA status, notification preference rows with fake switches, and integration connection statuses, separated by Separators. Use for a comprehensive multi-section settings page with a vertical icon tab sidebar.",
     file: "variants/v-tabs-13.tsx",
-    keywords: ["full settings page tabs", "profile security notifications integrations", "multi section vertical tabs"],
+    keywords: [
+      "full settings page tabs",
+      "profile security notifications integrations",
+      "multi section vertical tabs",
+    ],
     name: "v-tabs-13",
   },
   {
@@ -6634,7 +7649,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Code-editor-style file tabs: a controlled Tabs (value/onValueChange) with underline TabsList showing file names (index.tsx/package.json/styles.css) as flat top-rounded tabs in a toolbar row alongside a 'Copy' Button (with copied-state feedback), each panel rendering the file's content in a <pre><code> block. Use for a multi-file code-snippet viewer with copy-to-clipboard.",
     file: "variants/v-tabs-14.tsx",
-    keywords: ["code file tabs", "code snippet viewer with copy", "multi file tab viewer"],
+    keywords: [
+      "code file tabs",
+      "code snippet viewer with copy",
+      "multi file tab viewer",
+    ],
     name: "v-tabs-14",
   },
   {
@@ -6642,7 +7661,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "GitHub-profile-style underline Tabs (Overview/Repositories with count Badge/Stars with count Badge/Activity) where the Repositories panel lists repos with name, Public Badge, description, language dot+name, and star count. Use for a profile/repository-browsing tab interface.",
     file: "variants/v-tabs-15.tsx",
-    keywords: ["profile repository tabs", "github style tabs", "repo list with stars"],
+    keywords: [
+      "profile repository tabs",
+      "github style tabs",
+      "repo list with stars",
+    ],
     name: "v-tabs-15",
   },
   {
@@ -6650,7 +7673,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Pricing-page billing-toggle Tabs (Monthly/Yearly, the Yearly tab carrying a 'Save 20%' success Badge, empty content panels used only as a controlled toggle) paired with a 3-column pricing grid below that reads the tab's value to switch each plan's displayed price and highlights the 'Pro' plan. Use for a monthly/yearly pricing toggle implemented via Tabs used purely as a segmented control.",
     file: "variants/v-tabs-16.tsx",
-    keywords: ["pricing toggle tabs", "monthly yearly billing switch", "tabs as segmented control"],
+    keywords: [
+      "pricing toggle tabs",
+      "monthly yearly billing switch",
+      "tabs as segmented control",
+    ],
     name: "v-tabs-16",
   },
   {
@@ -6658,7 +7685,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Analytics-dashboard Tabs (Analytics/Reports/Exports/Activity, each icon+label) where the Analytics panel shows a 2×2 grid of metric Cards (value + trend change), Reports panel lists downloadable report rows, and Exports/Activity panels show simple descriptive Cards. Use for a full analytics/reporting dashboard tab interface.",
     file: "variants/v-tabs-17.tsx",
-    keywords: ["analytics dashboard tabs", "reports and exports tabs", "metric grid tab panel"],
+    keywords: [
+      "analytics dashboard tabs",
+      "reports and exports tabs",
+      "metric grid tab panel",
+    ],
     name: "v-tabs-17",
   },
 
@@ -6682,7 +7713,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "textarea",
     description:
-      "Single disabled Textarea with placeholder \"Can't type here\". Use to show a non-editable/disabled textarea state.",
+      'Single disabled Textarea with placeholder "Can\'t type here". Use to show a non-editable/disabled textarea state.',
     file: "variants/v-textarea-3.tsx",
     keywords: ["disabled textarea"],
     name: "v-textarea-3",
@@ -6708,7 +7739,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Bio' Field with a live character counter (0/280) in the label row that turns warning-colored near the limit and destructive-colored at the limit, paired with a controlled Textarea that auto-resizes its height to fit content via a ref and enforces the max-length by truncating input. Use for a character-limited, auto-growing bio/comment field with live count feedback.",
     file: "variants/v-textarea-6.tsx",
-    keywords: ["character counter textarea", "auto resize textarea", "bio field with limit"],
+    keywords: [
+      "character counter textarea",
+      "auto resize textarea",
+      "bio field with limit",
+    ],
     name: "v-textarea-6",
   },
   {
@@ -6716,7 +7751,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Form-validated 'Message' Textarea (required, name=\"message\") inside a Form with a FieldError shown ('This field is required.') and a submit Button showing a loading state during a simulated async submit that alerts the entered message. Use for a required-field textarea form with validation error and loading submit.",
     file: "variants/v-textarea-7.tsx",
-    keywords: ["required textarea form", "textarea validation error", "loading submit button"],
+    keywords: [
+      "required textarea form",
+      "textarea validation error",
+      "loading submit button",
+    ],
     name: "v-textarea-7",
   },
   {
@@ -6724,7 +7763,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled Textarea with a live word-count and character-count row displayed beneath it, updating as the user types. Use for a writing/editor field that shows word and character counts.",
     file: "variants/v-textarea-8.tsx",
-    keywords: ["word count textarea", "character count display", "writing stats"],
+    keywords: [
+      "word count textarea",
+      "character count display",
+      "writing stats",
+    ],
     name: "v-textarea-8",
   },
   {
@@ -6732,7 +7775,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Markdown editor with 'Write'/'Preview' underline Tabs: the Write panel is a tall Textarea bound to markdown source, the Preview panel renders the raw text (as plain whitespace-preserved text, not actually parsed markdown) inside a bordered box. Use for a simple write/preview markdown-editing pattern combining Tabs and Textarea.",
     file: "variants/v-textarea-9.tsx",
-    keywords: ["markdown editor write preview", "tabs with textarea", "content editor preview toggle"],
+    keywords: [
+      "markdown editor write preview",
+      "tabs with textarea",
+      "content editor preview toggle",
+    ],
     name: "v-textarea-9",
   },
   {
@@ -6740,7 +7787,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Support-ticket form: a 'Category' Field of selectable pill buttons (Bug Report/Feature Request/Billing/Account/Other) plus a required, min-length 'Message' Textarea with a live 'N / 500' character counter, a submit Button disabled until a category is chosen, and a success confirmation screen (checkmark, message, 'Submit another' reset Button) shown after simulated submission. Use for a full support/contact-ticket form with category selection and post-submit success state.",
     file: "variants/v-textarea-10.tsx",
-    keywords: ["support ticket form", "contact form with category pills", "success state after submit"],
+    keywords: [
+      "support ticket form",
+      "contact form with category pills",
+      "success state after submit",
+    ],
     name: "v-textarea-10",
   },
   {
@@ -6748,7 +7799,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Chat-message composer inside a mock messaging UI: a header showing the contact's name and online status, a scrollable message-bubble history (own vs. other messages styled differently, each with a timestamp), and a bottom input row with a small non-resizable Textarea (Enter-to-send, Shift+Enter for newline) plus attachment/emoji/send icon Buttons. Use for a chat/messenger-style composer with message history.",
     file: "variants/v-textarea-11.tsx",
-    keywords: ["chat message composer", "messenger textarea input", "enter to send chat"],
+    keywords: [
+      "chat message composer",
+      "messenger textarea input",
+      "enter to send chat",
+    ],
     name: "v-textarea-11",
   },
   {
@@ -6756,7 +7811,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Release Notes' editor panel: a status Badge (Draft/Published) in the header, a 'Version title' Input, a markdown 'Release notes' Textarea with maxLength and a live 'N / 2000' character counter (turning amber near the limit) plus a 'Markdown supported' hint, and Save Draft / Publish Buttons that toggle the status Badge. Use for a changelog/release-notes authoring panel with draft/publish workflow.",
     file: "variants/v-textarea-12.tsx",
-    keywords: ["release notes editor", "changelog authoring panel", "draft publish workflow"],
+    keywords: [
+      "release notes editor",
+      "changelog authoring panel",
+      "draft publish workflow",
+    ],
     name: "v-textarea-12",
   },
 
@@ -6798,7 +7857,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Button that calls toastManager.promise() on a randomly succeeding/failing Promise, automatically showing a loading toast that morphs into a success or error toast depending on the outcome. Use for wiring toast state directly to an async operation's lifecycle.",
     file: "variants/v-toast-5.tsx",
-    keywords: ["promise toast", "async loading success error toast", "toastManager.promise"],
+    keywords: [
+      "promise toast",
+      "async loading success error toast",
+      "toastManager.promise",
+    ],
     name: "v-toast-5",
   },
   {
@@ -6806,7 +7869,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Button that on each click adds a new toast with a randomly-selected description of varying length (short to very long), incrementing a counter in the title. Use for testing/demonstrating toast stacking behavior with mixed content heights.",
     file: "variants/v-toast-6.tsx",
-    keywords: ["stacked toasts varying height", "multiple toasts test", "toast stack demo"],
+    keywords: [
+      "stacked toasts varying height",
+      "multiple toasts test",
+      "toast stack demo",
+    ],
     name: "v-toast-6",
   },
   {
@@ -6814,7 +7881,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Submit Button using anchoredToastManager (not the default global manager) to show an error toast anchored directly to the button itself (positionerProps.anchor) after a simulated failed async submit, with a Spinner shown in the button while pending. Use for a toast that appears attached to its triggering element rather than a fixed corner.",
     file: "variants/v-toast-7.tsx",
-    keywords: ["anchored toast", "toast attached to button", "inline error toast"],
+    keywords: [
+      "anchored toast",
+      "toast attached to button",
+      "inline error toast",
+    ],
     name: "v-toast-7",
   },
   {
@@ -6822,7 +7893,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Button that fires a sequence of four different social-style notification toasts (new follower, post liked, new reply, mentioned) at staggered delays, disabling itself while 'Incoming…' is in progress. Use to simulate a burst of real-time notification toasts.",
     file: "variants/v-toast-8.tsx",
-    keywords: ["notification burst simulation", "social notifications toast sequence"],
+    keywords: [
+      "notification burst simulation",
+      "social notifications toast sequence",
+    ],
     name: "v-toast-8",
   },
   {
@@ -6830,7 +7904,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Three Buttons demonstrating toast timeout control: a 3-second auto-dismiss toast, an 8-second auto-dismiss toast, and a persistent (timeout: 0) toast with a manual 'Dismiss' action button that clears a ref-tracked id. Use as a reference for controlling toast auto-dismiss duration versus persistent toasts.",
     file: "variants/v-toast-9.tsx",
-    keywords: ["toast timeout duration", "persistent toast", "auto dismiss toast"],
+    keywords: [
+      "toast timeout duration",
+      "persistent toast",
+      "auto dismiss toast",
+    ],
     name: "v-toast-9",
   },
   {
@@ -6838,7 +7916,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Deploy to production' Button that fires a sequence of three toasts representing pipeline stages (Building/loading, Tests passed/success, Deployed to production/success), each replacing the previous one, with a Spinner shown on the button while running. Use for a CI/CD-style multi-stage deployment progress toast flow.",
     file: "variants/v-toast-10.tsx",
-    keywords: ["deployment progress toast", "ci cd pipeline toast", "multi stage toast sequence"],
+    keywords: [
+      "deployment progress toast",
+      "ci cd pipeline toast",
+      "multi stage toast sequence",
+    ],
     name: "v-toast-10",
   },
   {
@@ -6846,7 +7928,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "A copy-command UI (monospace snippet in a bordered pill with a 'Copy' ghost Button) that on click copies to clipboard and shows a minimal anchoredToastManager toast (data: { tooltipStyle: true }) anchored to the button, styled like a tooltip rather than a standard toast card. Use for a lightweight 'Copied!' tooltip-style confirmation anchored to a copy button.",
     file: "variants/v-toast-11.tsx",
-    keywords: ["copy to clipboard toast", "tooltip style toast", "copied confirmation"],
+    keywords: [
+      "copy to clipboard toast",
+      "tooltip style toast",
+      "copied confirmation",
+    ],
     name: "v-toast-11",
   },
   {
@@ -6854,7 +7940,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Invite team members' card listing three members with Invite Buttons; clicking Invite disables that row's button and shows a success toast with an 'Undo' action that reverts the invited state and shows a follow-up 'Invite revoked' info toast. Use for a list-driven invite workflow with undoable toast confirmations.",
     file: "variants/v-toast-12.tsx",
-    keywords: ["invite team members toast", "undoable invite action", "member list with toast feedback"],
+    keywords: [
+      "invite team members toast",
+      "undoable invite action",
+      "member list with toast feedback",
+    ],
     name: "v-toast-12",
   },
   {
@@ -6862,7 +7952,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Export to CSV' Button that shows a persistent loading toast, then after a delay closes it and shows a success toast with a 'Download' action button that itself triggers a final 'File saved' success toast. Use for a multi-step export workflow chaining loading → success → download-action toasts.",
     file: "variants/v-toast-13.tsx",
-    keywords: ["export csv toast flow", "chained toast actions", "download action toast"],
+    keywords: [
+      "export csv toast flow",
+      "chained toast actions",
+      "download action toast",
+    ],
     name: "v-toast-13",
   },
   {
@@ -6870,7 +7964,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Session-expiry simulation: a Button starts a persistent countdown warning toast with a 'Renew session' action and a live 'expires in Ns' countdown both in the toast description and the trigger button label, ending in an error toast ('Session expired') if not renewed in time, or a success toast if renewed. Use for a session-timeout warning/renewal UX built entirely on toasts with a live countdown.",
     file: "variants/v-toast-14.tsx",
-    keywords: ["session expiry toast", "countdown warning toast", "renew session action"],
+    keywords: [
+      "session expiry toast",
+      "countdown warning toast",
+      "renew session action",
+    ],
     name: "v-toast-14",
   },
   {
@@ -6878,7 +7976,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Document-editor mock: an 'Edit document' Button dirties the content and shows a persistent 'Unsaved changes' warning toast with a 'Save now' action; a separate 'Save' Button (loading-aware) closes that toast and shows a 'Document saved' success toast after a delay. Use for an unsaved-changes/save-workflow pattern driven by toast state.",
     file: "variants/v-toast-15.tsx",
-    keywords: ["unsaved changes toast", "save document workflow", "dirty state toast warning"],
+    keywords: [
+      "unsaved changes toast",
+      "save document workflow",
+      "dirty state toast warning",
+    ],
     name: "v-toast-15",
   },
 
@@ -6902,7 +8004,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "toggle",
     description:
-      "Three outline Toggles (Small/Default/Large) demonstrating the size=\"sm\"/\"default\"/\"lg\" props side by side. Use as a quick visual reference for Toggle sizes.",
+      'Three outline Toggles (Small/Default/Large) demonstrating the size="sm"/"default"/"lg" props side by side. Use as a quick visual reference for Toggle sizes.',
     file: "variants/v-toggle-3.tsx",
     keywords: ["toggle sizes", "small default large toggle"],
     name: "v-toggle-3",
@@ -6928,7 +8030,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled bell-icon Toggle for notifications where an unread-count Badge (3) overlays the bell only while the toggle is unpressed (i.e. notifications not yet 'cleared'), disappearing once pressed. Use for a notification-bell toggle with a dismissible unread-count badge.",
     file: "variants/v-toggle-6.tsx",
-    keywords: ["notification bell toggle", "unread count badge toggle", "dismissible badge"],
+    keywords: [
+      "notification bell toggle",
+      "unread count badge toggle",
+      "dismissible badge",
+    ],
     name: "v-toggle-6",
   },
   {
@@ -6944,7 +8050,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Controlled outline 'Bookmark'/'Bookmarked' Toggle that swaps both its icon (Bookmark ↔ BookmarkCheck, filled when pressed) and its text label based on pressed state. Use for a bookmark toggle with icon and label both reflecting the current state.",
     file: "variants/v-toggle-8.tsx",
-    keywords: ["bookmark toggle with label swap", "stateful icon and text toggle"],
+    keywords: [
+      "bookmark toggle with label swap",
+      "stateful icon and text toggle",
+    ],
     name: "v-toggle-8",
   },
   {
@@ -6952,7 +8061,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Video-call control bar: a bordered card showing a live 'In call' pulsing-dot indicator and timer, with large outline Toggles for microphone (mute, destructive-styled when muted), camera (video on/off, destructive-styled when off), and screen-share (icon swap only), plus a separate non-toggle red 'Leave' round button. Use for a video-conferencing control toolbar with mute/camera/share toggles.",
     file: "variants/v-toggle-9.tsx",
-    keywords: ["video call controls", "mute camera screen share toggle", "conferencing toolbar"],
+    keywords: [
+      "video call controls",
+      "mute camera screen share toggle",
+      "conferencing toolbar",
+    ],
     name: "v-toggle-9",
   },
   {
@@ -6960,7 +8073,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Multi-select 'Filter by role' toggle chips (Design/Engineering/Product/Marketing/Leadership/Research), each a rounded-full outline Toggle with a trailing count Badge that recolors when active; a live 'N results' summary updates based on selected filters' summed counts, with a 'Clear' link appearing once any filter is active. Use for a multi-select filter-chip bar with live result-count aggregation.",
     file: "variants/v-toggle-10.tsx",
-    keywords: ["filter chips multi select", "toggle filter with count badge", "clear filters"],
+    keywords: [
+      "filter chips multi select",
+      "toggle filter with count badge",
+      "clear filters",
+    ],
     name: "v-toggle-10",
   },
   {
@@ -6968,7 +8085,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "List of article rows each with title/author and a per-row small outline bookmark Toggle (icon fills when active) tracked in a Set state, with a 'N of M saved' summary footer. Use for a bookmarkable article/reading-list pattern with a saved-count summary.",
     file: "variants/v-toggle-11.tsx",
-    keywords: ["bookmark article list", "saved items toggle list", "reading list toggle"],
+    keywords: [
+      "bookmark article list",
+      "saved items toggle list",
+      "reading list toggle",
+    ],
     name: "v-toggle-11",
   },
   {
@@ -6976,7 +8097,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Mini rich-text toolbar of four icon Toggles (Strikethrough/Inline code/Blockquote/Link) tracked in a Set, live-transforming a preview line of text ('The quick brown fox') by wrapping it in the corresponding markdown syntax for each active toggle, with an 'Active: ...' status line. Use for a live markdown-formatting toolbar with a text preview.",
     file: "variants/v-toggle-12.tsx",
-    keywords: ["markdown formatting toolbar", "live text preview toggle", "rich text toggle group"],
+    keywords: [
+      "markdown formatting toolbar",
+      "live text preview toggle",
+      "rich text toggle group",
+    ],
     name: "v-toggle-12",
   },
   {
@@ -6984,7 +8109,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Social-post action bar (reply/repost/like/share) built from Toggles: reply and share are non-interactive count displays, while repost and like are pressed-state Toggles that recolor (emerald/rose) and increment their displayed count when active, with the like heart also filling in. Use for a Twitter/X-style post-engagement action row.",
     file: "variants/v-toggle-13.tsx",
-    keywords: ["social post action bar", "like repost toggle counts", "twitter style engagement"],
+    keywords: [
+      "social post action bar",
+      "like repost toggle counts",
+      "twitter style engagement",
+    ],
     name: "v-toggle-13",
   },
   {
@@ -6992,7 +8121,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "'Server settings' list of three security-style toggles (Secure mode/Insecure, Network access/Offline, Debug visible/hidden), each row swapping its label, description-adjacent icon (Lock/Unlock, Wifi/WifiOff, Eye/EyeOff), and toggle color (emerald when 'on') based on pressed state. Use for a server/security settings panel with icon-and-label-swapping toggles.",
     file: "variants/v-toggle-14.tsx",
-    keywords: ["server security settings toggle", "icon label swap settings", "secure network debug toggle"],
+    keywords: [
+      "server security settings toggle",
+      "icon label swap settings",
+      "secure network debug toggle",
+    ],
     name: "v-toggle-14",
   },
   {
@@ -7000,7 +8133,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Task-list panel where each task has a checkmark-icon 'mark complete' Toggle (strikes through and dims the task when done) plus a row of four priority Toggles (Low/Medium/High/Urgent, each with a Flag icon and its own active color) allowing exactly one priority to be selected per task. Use for a task manager combining a completion toggle with an exclusive priority-selector toggle group per row.",
     file: "variants/v-toggle-15.tsx",
-    keywords: ["task list completion toggle", "priority selector toggles", "task manager pattern"],
+    keywords: [
+      "task list completion toggle",
+      "priority selector toggles",
+      "task manager pattern",
+    ],
     name: "v-toggle-15",
   },
 
@@ -7016,7 +8153,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "toggle-group",
     description:
-      "Two stacked outline ToggleGroups (Top/Bottom text items) comparing size=\"sm\" vs default size. Use as a quick visual reference for ToggleGroup sizes.",
+      'Two stacked outline ToggleGroups (Top/Bottom text items) comparing size="sm" vs default size. Use as a quick visual reference for ToggleGroup sizes.',
     file: "variants/v-toggle-group-2.tsx",
     keywords: ["toggle group sizes", "small default size comparison"],
     name: "v-toggle-group-2",
@@ -7032,9 +8169,12 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "toggle-group",
     description:
-      "Same Bold/Italic/Underline outline ToggleGroup as v-toggle-group-3 but with orientation=\"vertical\" and horizontal ToggleGroupSeparators between items, stacking the buttons top-to-bottom. Use for a vertically-stacked formatting toggle group with dividers.",
+      'Same Bold/Italic/Underline outline ToggleGroup as v-toggle-group-3 but with orientation="vertical" and horizontal ToggleGroupSeparators between items, stacking the buttons top-to-bottom. Use for a vertically-stacked formatting toggle group with dividers.',
     file: "variants/v-toggle-group-4.tsx",
-    keywords: ["vertical toggle group", "stacked formatting toggles with separators"],
+    keywords: [
+      "vertical toggle group",
+      "stacked formatting toggles with separators",
+    ],
     name: "v-toggle-group-4",
   },
   {
@@ -7042,7 +8182,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Bold/Italic/Underline ToggleGroup with the `multiple` prop enabled, allowing more than one formatting item to be pressed simultaneously (unlike the default single-select behavior). Use for a multi-select text-formatting toggle group.",
     file: "variants/v-toggle-group-5.tsx",
-    keywords: ["multi select toggle group", "multiple pressed formatting toggles"],
+    keywords: [
+      "multi select toggle group",
+      "multiple pressed formatting toggles",
+    ],
     name: "v-toggle-group-5",
   },
   {
@@ -7050,7 +8193,10 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Four-icon text-alignment ToggleGroup (Left/Center/Right/Justify), defaultValue left. Use for a paragraph/text-alignment control.",
     file: "variants/v-toggle-group-6.tsx",
-    keywords: ["text alignment toggle group", "align left center right justify"],
+    keywords: [
+      "text alignment toggle group",
+      "align left center right justify",
+    ],
     name: "v-toggle-group-6",
   },
   {
@@ -7090,7 +8236,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Per-column sort-direction control: four table-style rows (Name/Status/Date/Amount) each with its own small two-item ToggleGroup (ascending/descending arrow icons) whose value can also be deselected back to 'none'. Use for a multi-column, per-column ascending/descending sort-direction UI.",
     file: "variants/v-toggle-group-11.tsx",
-    keywords: ["per column sort toggle", "table sort direction control", "deselectable toggle group"],
+    keywords: [
+      "per column sort toggle",
+      "table sort direction control",
+      "deselectable toggle group",
+    ],
     name: "v-toggle-group-11",
   },
   {
@@ -7098,7 +8248,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Issue-tracker priority selector: a list of three issues each showing its id, a colored priority dot+label, title, and a controlled outline ToggleGroup (Low/Medium/High/Critical, each with a matching colored dot) for setting that issue's priority. Use for a per-row priority-selection control in an issue/ticket list.",
     file: "variants/v-toggle-group-12.tsx",
-    keywords: ["issue priority selector", "ticket priority toggle group", "colored priority dots"],
+    keywords: [
+      "issue priority selector",
+      "ticket priority toggle group",
+      "colored priority dots",
+    ],
     name: "v-toggle-group-12",
   },
   {
@@ -7106,7 +8260,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Full-width date-range ToggleGroup (Today/Week/Month/Quarter/Year, each item showing a label plus a sublabel date range) that drives a 3-stat summary grid (Revenue/Sessions/Conversions) below, updating values per selected range. Use for an analytics-dashboard date-range selector with live stat updates.",
     file: "variants/v-toggle-group-13.tsx",
-    keywords: ["date range selector toggle", "analytics stats by range", "dashboard time period toggle"],
+    keywords: [
+      "date range selector toggle",
+      "analytics stats by range",
+      "dashboard time period toggle",
+    ],
     name: "v-toggle-group-13",
   },
   {
@@ -7114,7 +8272,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Code-editor-toolbar-style multi-select ToggleGroup (word wrap/case-sensitive/filter/sort icons) inside a bordered panel with a file list below and a live 'N active' counter plus a status summary line describing which options are on. Use for a compact multi-toggle toolbar controlling view/search options over a file list.",
     file: "variants/v-toggle-group-14.tsx",
-    keywords: ["editor toolbar toggle group", "multi select view options", "file list options toggle"],
+    keywords: [
+      "editor toolbar toggle group",
+      "multi select view options",
+      "file list options toggle",
+    ],
     name: "v-toggle-group-14",
   },
   {
@@ -7122,7 +8284,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Zoom-level ToggleGroup (50/75/100/125/150%) driving a live CSS transform: scale() preview box showing 'Hello, world!' text at the selected zoom, with a status line showing current zoom percentage. Use for a zoom-level control with a live scaled preview.",
     file: "variants/v-toggle-group-15.tsx",
-    keywords: ["zoom level toggle group", "scale preview control", "zoom percentage selector"],
+    keywords: [
+      "zoom level toggle group",
+      "scale preview control",
+      "zoom percentage selector",
+    ],
     name: "v-toggle-group-15",
   },
 
@@ -7132,7 +8298,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Rich text-formatting Toolbar combining an alignment ToggleGroup (left/center/right, each wrapped in a Tooltip via ToolbarButton render-prop), a currency/percent formatting ToolbarGroup, a font-family Select embedded as a ToolbarButton, and a trailing 'Save' ToolbarButton, separated by ToolbarSeparators, all within a TooltipProvider. Use as a comprehensive reference for composing Toolbar with ToggleGroup, Select, and tooltips together.",
     file: "variants/v-toolbar-1.tsx",
-    keywords: ["rich toolbar with select and toggles", "toolbar tooltip composition", "font format toolbar"],
+    keywords: [
+      "rich toolbar with select and toggles",
+      "toolbar tooltip composition",
+      "font format toolbar",
+    ],
     name: "v-toolbar-1",
   },
   {
@@ -7140,7 +8310,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Document-editor-style Toolbar: an Undo/Redo ToolbarGroup, a multi-select formatting ToggleGroup (Bold/Italic/Underline/Strikethrough with keyboard-shortcut tooltips), a single-select alignment ToggleGroup, and a bullet/numbered-list ToolbarGroup, all icon buttons with TooltipContent showing labels and shortcuts. Use for a full rich-text-editor formatting toolbar with keyboard shortcut hints.",
     file: "variants/v-toolbar-2.tsx",
-    keywords: ["rich text editor toolbar", "undo redo format toolbar", "keyboard shortcut tooltips"],
+    keywords: [
+      "rich text editor toolbar",
+      "undo redo format toolbar",
+      "keyboard shortcut tooltips",
+    ],
     name: "v-toolbar-2",
   },
   {
@@ -7148,7 +8322,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Image-editor Toolbar: a transform ToolbarGroup (Crop/Rotate left/Rotate right), a zoom ToolbarGroup (Zoom out/in/Fit to screen), an Adjustments icon button, and a trailing 'Export' text+icon ToolbarButton, each icon wrapped in a Tooltip. Use for an image-editing application's top toolbar.",
     file: "variants/v-toolbar-3.tsx",
-    keywords: ["image editor toolbar", "crop rotate zoom toolbar", "export button toolbar"],
+    keywords: [
+      "image editor toolbar",
+      "crop rotate zoom toolbar",
+      "export button toolbar",
+    ],
     name: "v-toolbar-3",
   },
   {
@@ -7156,7 +8334,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Data-table Toolbar: a flexible search ToolbarInput with a leading search icon filling available space, a row-action icon ToolbarGroup (Filter/Manage columns/Export CSV/Delete selected), and a trailing 'Add row' ToolbarButton. Use for a table/grid management toolbar with search and row actions.",
     file: "variants/v-toolbar-4.tsx",
-    keywords: ["table toolbar with search", "row actions toolbar", "add row export delete"],
+    keywords: [
+      "table toolbar with search",
+      "row actions toolbar",
+      "add row export delete",
+    ],
     name: "v-toolbar-4",
   },
   {
@@ -7164,7 +8346,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Code-snippet Toolbar: a language Select embedded as a ToolbarButton, a word-wrap ToggleGroup item, a copy-code icon button (with copied-state check icon and tooltip text swap), and a 'Run' ToolbarButton showing a loading state while a simulated run executes. Use for a code-playground/snippet-runner toolbar.",
     file: "variants/v-toolbar-5.tsx",
-    keywords: ["code snippet toolbar", "run code button", "copy code toolbar with language select"],
+    keywords: [
+      "code snippet toolbar",
+      "run code button",
+      "copy code toolbar with language select",
+    ],
     name: "v-toolbar-5",
   },
   {
@@ -7172,7 +8358,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Document-header Toolbar with justify-between layout: a document title on the left, and on the right an Edit/Preview mode ToggleGroup (icon+label items), a Comments/Version history/More-options icon ToolbarGroup, and a trailing 'Share' ToolbarButton. Use for a Google-Docs-style document toolbar with a title and mode switcher.",
     file: "variants/v-toolbar-6.tsx",
-    keywords: ["document header toolbar", "edit preview mode toggle", "share document toolbar"],
+    keywords: [
+      "document header toolbar",
+      "edit preview mode toggle",
+      "share document toolbar",
+    ],
     name: "v-toolbar-6",
   },
   {
@@ -7180,7 +8370,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "File-browser Toolbar: a plain search input, a sort-order Select embedded as a ToolbarButton (with a sort icon), a Filter icon button, and a Grid/List view ToggleGroup, wrapped to a new line on small widths (flex-wrap). Use for a file-manager/gallery toolbar with search, sort, filter, and view-mode controls.",
     file: "variants/v-toolbar-7.tsx",
-    keywords: ["file browser toolbar", "search sort filter view toggle", "gallery toolbar"],
+    keywords: [
+      "file browser toolbar",
+      "search sort filter view toggle",
+      "gallery toolbar",
+    ],
     name: "v-toolbar-7",
   },
   {
@@ -7188,7 +8382,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Canvas/design-tool Toolbar: a Light/Dark mode ToggleGroup, a zoom control ToolbarGroup (zoom out/live percentage label/zoom in/reset-to-100%, with min/max disabled states), and a 'Reset canvas' icon button. Use for a design-canvas toolbar with theme switching and stepped zoom controls.",
     file: "variants/v-toolbar-8.tsx",
-    keywords: ["canvas zoom toolbar", "design tool toolbar", "stepped zoom control"],
+    keywords: [
+      "canvas zoom toolbar",
+      "design tool toolbar",
+      "stepped zoom control",
+    ],
     name: "v-toolbar-8",
   },
   {
@@ -7196,7 +8394,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Video-call control Toolbar: microphone and camera ToolbarButtons that switch to destructive variant/icon when muted/off, a screen-share ToolbarButton switching to secondary variant when active, and a destructive 'Leave' text+icon ToolbarButton, each with state-aware tooltip labels. Use for a video-conferencing call-control bar built on the Toolbar primitive.",
     file: "variants/v-toolbar-9.tsx",
-    keywords: ["video call toolbar controls", "mute camera share leave toolbar", "conferencing control bar"],
+    keywords: [
+      "video call toolbar controls",
+      "mute camera share leave toolbar",
+      "conferencing control bar",
+    ],
     name: "v-toolbar-9",
   },
   {
@@ -7204,7 +8406,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Markdown/rich-text editor Toolbar: a block-type Select (Paragraph/Heading 1/Heading 2/Quote/Code block) embedded as a ToolbarButton, a multi-select inline-format ToggleGroup (Bold/Italic/Underline/Inline code), a block-format icon ToolbarGroup (H1/H2/bullet/numbered/blockquote), and an Insert-link icon button, wrapping to multiple lines on narrow widths. Use for a full markdown-style editor toolbar combining a block-type selector with inline and block formatting controls.",
     file: "variants/v-toolbar-10.tsx",
-    keywords: ["markdown editor toolbar", "block type select toolbar", "inline and block formatting"],
+    keywords: [
+      "markdown editor toolbar",
+      "block type select toolbar",
+      "inline and block formatting",
+    ],
     name: "v-toolbar-10",
   },
 
@@ -7222,7 +8428,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Three icon ToggleGroupItems (Bold/Italic/Underline) inside a TooltipProvider, each individually wrapped in its own Tooltip showing the formatting label via TooltipTrigger's render-prop composition with ToggleGroupItem. Use as a reference for composing Tooltip + TooltipTrigger render-prop with ToggleGroup items.",
     file: "variants/v-tooltip-2.tsx",
-    keywords: ["tooltip with toggle group", "render prop tooltip composition", "icon toggle tooltips"],
+    keywords: [
+      "tooltip with toggle group",
+      "render prop tooltip composition",
+      "icon toggle tooltips",
+    ],
     name: "v-tooltip-2",
   },
   {
@@ -7230,7 +8440,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Advanced pattern using TooltipCreateHandle to share a single Tooltip instance across three ToggleGroupItems (Bold/Italic/Underline), where each trigger passes a different `payload` (a small content component) rendered by the shared Tooltip's render-function. Use for an optimized single-tooltip-instance pattern across many triggers with per-trigger dynamic content via a shared handle.",
     file: "variants/v-tooltip-3.tsx",
-    keywords: ["shared tooltip handle", "tooltip payload pattern", "single instance multiple triggers"],
+    keywords: [
+      "shared tooltip handle",
+      "tooltip payload pattern",
+      "single instance multiple triggers",
+    ],
     name: "v-tooltip-3",
   },
   {
@@ -7238,7 +8452,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "3×2 grid of six outline Buttons demonstrating every TooltipContent `side` value (inline-start/left/top/bottom/right/inline-end), each showing 'Add to library'. Use as a visual reference for all available tooltip placement sides.",
     file: "variants/v-tooltip-4.tsx",
-    keywords: ["tooltip placement sides", "tooltip side reference", "all tooltip directions"],
+    keywords: [
+      "tooltip placement sides",
+      "tooltip side reference",
+      "all tooltip directions",
+    ],
     name: "v-tooltip-4",
   },
   {
@@ -7254,7 +8472,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Notification-bell-style icon Button with an unread-count Badge overlay, whose TooltipContent expands into a rich mini-panel: a 'Notifications'/'3 new' header row, a short bulleted list of recent notifications, and a 'View all' link with an arrow icon. Use for a rich notifications-preview tooltip triggered from an icon button.",
     file: "variants/v-tooltip-6.tsx",
-    keywords: ["notifications preview tooltip", "rich tooltip panel", "unread badge tooltip"],
+    keywords: [
+      "notifications preview tooltip",
+      "rich tooltip panel",
+      "unread badge tooltip",
+    ],
     name: "v-tooltip-6",
   },
   {
@@ -7262,7 +8484,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Compact formatting+alignment icon toolbar (Bold/Italic/Underline/Strikethrough plus Align left/center/right/justify) where each icon button's TooltipContent shows the label alongside its keyboard shortcut rendered with Kbd components, separated by a vertical divider between the two tool groups. Use for an icon toolbar with keyboard-shortcut tooltips using the Kbd component.",
     file: "variants/v-tooltip-7.tsx",
-    keywords: ["toolbar tooltip with kbd shortcuts", "keyboard shortcut hint tooltip", "formatting icon toolbar"],
+    keywords: [
+      "toolbar tooltip with kbd shortcuts",
+      "keyboard shortcut hint tooltip",
+      "formatting icon toolbar",
+    ],
     name: "v-tooltip-7",
   },
   {
@@ -7270,7 +8496,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Overlapping avatar-stack ('facepile') of team members with ring borders and hover-lift animation, each Avatar wrapped in a Tooltip showing name+role, plus a trailing '+N' overflow avatar whose tooltip lists the extra member names, and a final dashed 'add member' circle button with its own tooltip. Use for a team-member facepile/avatar-stack with per-avatar and overflow tooltips.",
     file: "variants/v-tooltip-8.tsx",
-    keywords: ["avatar facepile tooltip", "team member stack", "overflow avatar tooltip"],
+    keywords: [
+      "avatar facepile tooltip",
+      "team member stack",
+      "overflow avatar tooltip",
+    ],
     name: "v-tooltip-8",
   },
   {
@@ -7278,7 +8508,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Row of three analytics metric cards (Page Views/Bounce Rate/Conversions) each showing a trend icon+percentage as the trigger, with a detailed TooltipContent breaking down Current/Previous/period-change values. Use for compact stat cards that reveal a detailed comparison breakdown on hover.",
     file: "variants/v-tooltip-9.tsx",
-    keywords: ["metric card tooltip breakdown", "stat comparison tooltip", "analytics tooltip detail"],
+    keywords: [
+      "metric card tooltip breakdown",
+      "stat comparison tooltip",
+      "analytics tooltip detail",
+    ],
     name: "v-tooltip-9",
   },
   {
@@ -7294,7 +8528,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "API-credentials panel: three labeled rows (API Key/Endpoint/Webhook) each showing a monospace value and a per-row copy icon button whose Tooltip text swaps between 'Copy to clipboard' and 'Copied!' (with a matching check icon) after clicking. Use for a credentials/secrets display panel with per-field copy-to-clipboard tooltips.",
     file: "variants/v-tooltip-11.tsx",
-    keywords: ["copy to clipboard tooltip", "api credentials panel", "copied feedback tooltip"],
+    keywords: [
+      "copy to clipboard tooltip",
+      "api credentials panel",
+      "copied feedback tooltip",
+    ],
     name: "v-tooltip-11",
   },
   {
@@ -7302,7 +8540,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Feature-icon toolbar where free features show a plain label tooltip, but Pro-gated features (dimmed icon) show a rich TooltipContent with the feature name, a 'Pro' crown Badge, a description, and an 'Upgrade to Pro' link with an arrow icon. Use for a feature toolbar that upsells locked Pro features via rich tooltips.",
     file: "variants/v-tooltip-12.tsx",
-    keywords: ["pro feature upsell tooltip", "locked feature tooltip", "upgrade to pro link"],
+    keywords: [
+      "pro feature upsell tooltip",
+      "locked feature tooltip",
+      "upgrade to pro link",
+    ],
     name: "v-tooltip-12",
   },
   {
@@ -7310,7 +8552,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Form-field-hint pattern: three labeled Inputs (Username/Password/Email) each with a small info-icon Tooltip next to the label showing format/validation requirements text (max-width constrained). Use for inline field-level help tooltips explaining input format requirements.",
     file: "variants/v-tooltip-13.tsx",
-    keywords: ["field hint tooltip", "input format requirements", "inline form help"],
+    keywords: [
+      "field hint tooltip",
+      "input format requirements",
+      "inline form help",
+    ],
     name: "v-tooltip-13",
   },
   {
@@ -7318,7 +8564,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Compact status-dashboard strip ('Services' label plus a row of colored status dots for API Gateway/Auth/Image CDN/Database/Email Worker/Search Index), each dot a Tooltip trigger showing the service name, status label, uptime, and latency. Use for a system-status/uptime indicator row with per-service detail tooltips.",
     file: "variants/v-tooltip-14.tsx",
-    keywords: ["service status dots tooltip", "uptime monitoring indicator", "system health dashboard"],
+    keywords: [
+      "service status dots tooltip",
+      "uptime monitoring indicator",
+      "system health dashboard",
+    ],
     name: "v-tooltip-14",
   },
   {
@@ -7326,7 +8576,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Vertical icon sidebar navigation (Home/Analytics/Team/Docs/Settings, Home marked active) where each icon button's Tooltip appears on the right side and shows the nav label plus a short description. Use for an icon-only sidebar nav with right-side descriptive tooltips.",
     file: "variants/v-tooltip-15.tsx",
-    keywords: ["icon sidebar navigation tooltip", "right side tooltip nav", "nav icon descriptions"],
+    keywords: [
+      "icon sidebar navigation tooltip",
+      "right side tooltip nav",
+      "nav icon descriptions",
+    ],
     name: "v-tooltip-15",
   },
   {
@@ -7334,7 +8588,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Permissions-matrix table (Resource rows × Admin/Editor/Viewer columns) where each access cell is an icon (full/read/none, color-coded) wrapped in a Tooltip revealing the access level name and a detailed explanation of what that permission covers. Use for a roles/permissions matrix with per-cell explanatory tooltips.",
     file: "variants/v-tooltip-16.tsx",
-    keywords: ["permissions matrix tooltip", "roles table access icons", "access level explanation tooltip"],
+    keywords: [
+      "permissions matrix tooltip",
+      "roles table access icons",
+      "access level explanation tooltip",
+    ],
     name: "v-tooltip-16",
   },
   {
@@ -7342,7 +8600,11 @@ export const variantDescriptions: VariantDescription[] = [
     description:
       "Horizontal CI/CD pipeline-stage tracker (Test → Build → Publish → Deploy → Verify) with connecting lines that color when a stage is done, each stage showing a status icon (check/spinner/circle/x) and name, and a Tooltip revealing the stage name, status label, duration, and a detail sentence. Use for a build/deploy pipeline visualization with per-stage status tooltips.",
     file: "variants/v-tooltip-17.tsx",
-    keywords: ["ci cd pipeline tooltip", "deploy stage tracker", "build status tooltip steps"],
+    keywords: [
+      "ci cd pipeline tooltip",
+      "deploy stage tracker",
+      "build status tooltip steps",
+    ],
     name: "v-tooltip-17",
   },
 ];
