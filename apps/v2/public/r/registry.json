@@ -98,6 +98,9 @@
           "warning-foreground": "var(--color-amber-700)"
         }
       },
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/default/ui/alert.tsx",
@@ -207,7 +210,8 @@
         }
       },
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
@@ -396,6 +400,9 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/default/ui/empty.tsx",
@@ -464,7 +471,8 @@
     },
     {
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
@@ -493,7 +501,8 @@
     },
     {
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
@@ -536,6 +545,9 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/default/ui/input-group.tsx",
@@ -702,7 +714,8 @@
     },
     {
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
@@ -744,6 +757,9 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": [
         {
           "path": "registry/default/ui/sidebar.tsx",
@@ -876,7 +892,8 @@
     },
     {
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {
@@ -889,7 +906,8 @@
     },
     {
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "files": [
         {

@@ -1,6 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group",
+  "dependencies": [
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "@cnippet/input",
     "@cnippet/textarea"

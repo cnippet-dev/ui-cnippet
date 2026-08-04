@@ -1,6 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar",
+  "dependencies": [
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "@cnippet/button",
     "@cnippet/input",
