@@ -4,8 +4,8 @@
 
 import { Button } from "@cnippet/ui/components/button";
 import { cn } from "@cnippet/ui/lib/utils";
+import { useTheme } from "@cnippet/ui/shared/theme-provider";
 import { Check, ChevronDown, Copy, Moon, RotateCcw, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import { parseAsFloat, parseAsString, useQueryState } from "nuqs";
 import { Suspense, useEffect, useState } from "react";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
