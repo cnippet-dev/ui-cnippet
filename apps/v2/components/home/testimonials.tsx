@@ -86,7 +86,6 @@ export function Testimonials() {
                   enableBlink={false}
                   interactive={false}
                   name={t.name}
-                  size={32}
                 />
               </div>
               <div className="flex flex-col">

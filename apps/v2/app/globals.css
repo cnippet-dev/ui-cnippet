@@ -5,7 +5,9 @@
   --font-mono: "Geist Mono", monospace;
   --font-f37-stout: var(--font-f37-stout);
 
+  --color-cnippet-accent: var(--cnippet-accent);
   --color-cnippet-orange: var(--cnippet-orange);
+  --color-cnippet-indigo: var(--cnippet-indigo);
   --color-cnippet-green: var(--cnippet-green);
   --color-cnippet-blue: var(--cnippet-blue);
   --color-cnippet-yellow: var(--cnippet-yellow);
@@ -61,6 +63,8 @@
   --background-700: oklch(86% 0 0);
 
   --cnippet-orange: hsla(19, 99%, 44%, 1);
+  --cnippet-indigo: hsla(243, 75%, 59%, 1);
+  --cnippet-accent: var(--cnippet-indigo);
   --cnippet-green: hsla(156, 86%, 40%, 1);
   --cnippet-blue: hsla(218, 91%, 58%, 1);
   --cnippet-yellow: hsla(58, 93%, 72%, 1);
@@ -89,6 +93,8 @@
   --background-700: oklch(34.5% 0 0);
 
   --cnippet-orange: hsla(19, 99%, 50%, 1);
+  --cnippet-indigo: hsla(243, 80%, 70%, 1);
+  --cnippet-accent: var(--cnippet-indigo);
   --cnippet-green: hsla(156, 86%, 64%, 1);
   --cnippet-blue: hsla(218, 91%, 58%, 1);
   --cnippet-yellow: hsla(58, 92%, 79%, 1);
@@ -145,18 +151,18 @@
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--border);
+    background: var(--primary);
     border-radius: 5px;
   }
   * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
+    scrollbar-width: 10px;
+    scrollbar-color: var(--primary) transparent;
   }
 }
 

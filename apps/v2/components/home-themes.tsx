@@ -3,7 +3,7 @@
 
 import { SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
-import { FullWidthBorder } from "@/components/layout/full-width-border";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 import {
   Popover,
@@ -13,7 +13,6 @@ import {
 import { Pattern as SettingsCard } from "@/registry/default/variants/v-accordion-9";
 import CalendarRange from "@/registry/default/variants/v-calendar-3";
 import { Pattern as StatsGrid } from "@/registry/default/variants/v-card-20";
-import { Pattern as ReadMore } from "@/registry/default/variants/v-collapsible-8";
 import { Pattern as IncidentTimeline } from "@/registry/default/variants/v-collapsible-10";
 import MultiCombobox from "@/registry/default/variants/v-combobox-8";
 import { Pattern as FeedbackForm } from "@/registry/default/variants/v-form-10";
@@ -195,22 +194,14 @@ export function HomeThemes() {
   }, [preset, radius]);
 
   return (
-    <section className="relative pt-12" suppressHydrationWarning>
-      <FullWidthBorder className="top-0" />
+    <Section id="themes">
+      <SectionHeader index="05" meta="[color · radius]" title="Make it yours" />
 
-      <div className="flex items-end justify-between gap-4 px-4 pb-10">
-        <div className="flex flex-col gap-2">
-          <p className="font-medium font-mono text-cnippet-green text-sm">
-            [themes · color & radius]
-          </p>
-          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
-            Make it yours.
-          </h2>
-          <p className="max-w-sm text-muted-foreground text-sm leading-relaxed">
-            Switch colors and border radius to preview how every component
-            adapts in real time.
-          </p>
-        </div>
+      <div className="flex items-center justify-between gap-4 border-b border-dashed px-5 py-6 sm:px-8">
+        <p className="max-w-sm text-[14px] text-muted-foreground leading-relaxed">
+          Switch colors and border radius to preview how every component adapts
+          in real time.
+        </p>
 
         <Popover>
           <PopoverTrigger className="hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green md:flex">
@@ -275,7 +266,7 @@ export function HomeThemes() {
       </div>
 
       {/* Mobile customize button */}
-      <div className="flex px-4 pb-6 md:hidden">
+      <div className="flex border-b border-dashed px-5 py-4 md:hidden">
         <Popover>
           <PopoverTrigger className="flex cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green">
             <SlidersHorizontal className="size-3" />
@@ -336,28 +327,25 @@ export function HomeThemes() {
         </Popover>
       </div>
 
-      <FullWidthBorder className="relative" />
-
-      <div className="grid grid-cols-2 items-start gap-6 p-4 py-10 lg:grid-cols-4">
-        <div className="grid grid-cols-1 gap-10">
+      <SectionBody className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-10">
           <SettingsCard />
           <CalendarRange />
-        </div>
-        <div className="space-y-10">
-          <StatsGrid />
-          <SystemMeters />
           <NewsletterInline />
+          {/* <ReadMore /> */}
         </div>
-        <div className="space-y-10">
-          <IncidentTimeline />
-          <ForgotPassword />
-        </div>
-        <div className="space-y-10">
-          <ReadMore />
+        <div className="min-w-0 space-y-10">
+          <StatsGrid />
           <MultiCombobox />
+          <ForgotPassword />
+
+          <SystemMeters />
+        </div>
+        <div className="min-w-0 space-y-10">
+          <IncidentTimeline />
           <FeedbackForm />
         </div>
-      </div>
-    </section>
+      </SectionBody>
+    </Section>
   );
 }
