@@ -3,11 +3,7 @@
 
 import { SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
-import {
-  Section,
-  SectionBody,
-  SectionHeader,
-} from "@/components/home/section";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 import {
   Popover,
@@ -17,7 +13,6 @@ import {
 import { Pattern as SettingsCard } from "@/registry/default/variants/v-accordion-9";
 import CalendarRange from "@/registry/default/variants/v-calendar-3";
 import { Pattern as StatsGrid } from "@/registry/default/variants/v-card-20";
-import { Pattern as ReadMore } from "@/registry/default/variants/v-collapsible-8";
 import { Pattern as IncidentTimeline } from "@/registry/default/variants/v-collapsible-10";
 import MultiCombobox from "@/registry/default/variants/v-combobox-8";
 import { Pattern as FeedbackForm } from "@/registry/default/variants/v-form-10";
@@ -200,16 +195,12 @@ export function HomeThemes() {
 
   return (
     <Section id="themes">
-      <SectionHeader
-        index="05"
-        meta="[color · radius]"
-        title="Make it yours"
-      />
+      <SectionHeader index="05" meta="[color · radius]" title="Make it yours" />
 
       <div className="flex items-center justify-between gap-4 border-b border-dashed px-5 py-6 sm:px-8">
         <p className="max-w-sm text-[14px] text-muted-foreground leading-relaxed">
-          Switch colors and border radius to preview how every component
-          adapts in real time.
+          Switch colors and border radius to preview how every component adapts
+          in real time.
         </p>
 
         <Popover>
@@ -336,23 +327,22 @@ export function HomeThemes() {
         </Popover>
       </div>
 
-      <SectionBody className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <SectionBody className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="grid min-w-0 grid-cols-1 gap-10">
           <SettingsCard />
           <CalendarRange />
+          <NewsletterInline />
+          {/* <ReadMore /> */}
         </div>
         <div className="min-w-0 space-y-10">
           <StatsGrid />
+          <MultiCombobox />
+          <ForgotPassword />
+
           <SystemMeters />
-          <NewsletterInline />
         </div>
         <div className="min-w-0 space-y-10">
           <IncidentTimeline />
-          <ForgotPassword />
-        </div>
-        <div className="min-w-0 space-y-10">
-          <ReadMore />
-          <MultiCombobox />
           <FeedbackForm />
         </div>
       </SectionBody>

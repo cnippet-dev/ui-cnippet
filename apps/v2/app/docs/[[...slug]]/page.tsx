@@ -66,63 +66,61 @@ export default async function DocsPage(props: {
     >
       <DocsTopBar next={neighbours.next} previous={neighbours.previous} />
 
-      <div className="container-wrapper">
-        <div className="grid min-w-0 items-start px-2 pt-(--docs-topbar-height) lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--sidebar-width)_minmax(0,1fr)_18rem]">
-          {/* Sidebar — col 1 */}
-          <DocsSidebar tree={docSource.pageTree} />
+      <div className="grid min-w-0 items-start px-2 lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--sidebar-width)_minmax(0,1fr)_18rem]">
+        {/* Sidebar — col 1 */}
+        <DocsSidebar tree={docSource.pageTree} />
 
-          {/* Content — col 2 */}
-          <div className="flex min-w-0 flex-1 flex-col xl:col-start-2">
-            <div className="h-(--top-spacing) shrink-0" />
-            <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
-              <div className="flex flex-col gap-2">
-                <h1 className="scroll-m-20 font-medium text-4xl tracking-tight sm:text-3xl xl:text-4xl">
-                  {page.data.title}
-                </h1>
-                {page.data.description && (
-                  <p className="text-balance text-[1.05rem] text-muted-foreground sm:text-base">
-                    {page.data.description}
-                  </p>
-                )}
-              </div>
-
-              <div className="w-full flex-1">
-                <MDX components={mdxComponents} />
-              </div>
+        {/* Content — col 2 */}
+        <div className="flex min-w-0 flex-1 flex-col xl:col-start-2">
+          <div className="h-(--top-spacing) shrink-0" />
+          <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+            <div className="flex flex-col gap-2">
+              <h1 className="scroll-m-20 font-medium text-4xl tracking-tight sm:text-3xl xl:text-4xl">
+                {page.data.title}
+              </h1>
+              {page.data.description && (
+                <p className="text-balance text-[1.05rem] text-muted-foreground sm:text-base">
+                  {page.data.description}
+                </p>
+              )}
             </div>
 
-            {/* Prev / next */}
-            <div className="mx-auto flex h-16 w-full max-w-2xl items-center gap-2 border-t border-dashed px-4 md:px-0">
-              {neighbours.previous && (
-                <Link
-                  className="inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
-                  href={neighbours.previous.url}
-                >
-                  <ArrowLeft className="size-3.5" />
-                  {neighbours.previous.name}
-                </Link>
-              )}
-              {neighbours.next && (
-                <Link
-                  className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
-                  href={neighbours.next.url}
-                >
-                  {neighbours.next.name}
-                  <ArrowRight className="size-3.5" />
-                </Link>
-              )}
+            <div className="w-full flex-1">
+              <MDX components={mdxComponents} />
             </div>
           </div>
 
-          {/* TOC — col 3 (xl only) */}
-          <div className="sticky top-[calc(var(--header-height)+var(--docs-topbar-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--docs-topbar-height)-var(--footer-height))] flex-col gap-4 self-start overflow-hidden overscroll-none pb-8 xl:col-start-3 xl:flex">
-            <div className="h-(--top-spacing) shrink-0" />
-            {toc && toc.length > 0 && (
-              <div className="no-scrollbar overflow-y-auto px-4">
-                <DocsToc toc={toc} />
-              </div>
+          {/* Prev / next */}
+          <div className="mx-auto flex h-16 w-full max-w-2xl items-center gap-2 border-t border-dashed px-4 md:px-0">
+            {neighbours.previous && (
+              <Link
+                className="inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
+                href={neighbours.previous.url}
+              >
+                <ArrowLeft className="size-3.5" />
+                {neighbours.previous.name}
+              </Link>
+            )}
+            {neighbours.next && (
+              <Link
+                className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
+                href={neighbours.next.url}
+              >
+                {neighbours.next.name}
+                <ArrowRight className="size-3.5" />
+              </Link>
             )}
           </div>
+        </div>
+
+        {/* TOC — col 3 (xl only) */}
+        <div className="sticky top-[calc(var(--header-height)+var(--docs-topbar-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--docs-topbar-height)-var(--footer-height))] flex-col gap-4 self-start overflow-hidden overscroll-none pb-8 xl:col-start-3 xl:flex">
+          <div className="h-(--top-spacing) shrink-0" />
+          {toc && toc.length > 0 && (
+            <div className="no-scrollbar overflow-y-auto px-4">
+              <DocsToc toc={toc} />
+            </div>
+          )}
         </div>
       </div>
     </div>

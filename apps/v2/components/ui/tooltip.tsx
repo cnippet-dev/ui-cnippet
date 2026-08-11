@@ -1,9 +1,11 @@
+//biome-ignore-all lint/correctness/noUnusedFunctionParameters:<>
+
 "use client";
 
 import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
 import type * as React from "react";
-import { CommandShortcut } from "@/registry/default/ui/command";
 import { cn } from "@/lib/utils";
+import { CommandShortcut } from "@/registry/default/ui/command";
 
 const TooltipCreateHandle = TooltipPrimitive.createHandle;
 

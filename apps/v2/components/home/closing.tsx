@@ -60,7 +60,7 @@ export function Closing() {
               className="mt-6 w-fit"
               render={
                 path.external ? (
-                  <a href={path.href} rel="noreferrer" target="_blank" />
+                  <Link href={path.href} rel="noreferrer" target="_blank" />
                 ) : (
                   <Link href={path.href} />
                 )

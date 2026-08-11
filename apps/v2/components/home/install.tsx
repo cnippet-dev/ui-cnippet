@@ -4,13 +4,13 @@ import { useState } from "react";
 import { CopyCommand } from "@/components/home/copy-command";
 import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { Facehash } from "@/components/ui/avatar";
+import { cn } from "@/lib/utils";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 import { Skeleton } from "@/registry/default/ui/skeleton";
 import { Switch } from "@/registry/default/ui/switch";
-import { cn } from "@/lib/utils";
 
 const TABS = [
   {

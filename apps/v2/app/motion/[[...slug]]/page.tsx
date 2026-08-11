@@ -74,8 +74,8 @@ export default async function MotionPage(props: {
     >
       <DocsTopBar next={neighbours.next} previous={neighbours.previous} />
 
-      <div className="container-wrapper">
-        <div className="grid min-w-0 items-start px-2 pt-(--docs-topbar-height) lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--sidebar-width)_minmax(0,1fr)_18rem]">
+      <div>
+        <div className="grid min-w-0 items-start px-2 lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--sidebar-width)_minmax(0,1fr)_18rem]">
           {/* Sidebar — col 1 */}
           <DocsSidebar tree={motionSource.pageTree} />
 

@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
   },
   /* config options here */
   reactCompiler: true,
+  redirects: async () => [
+    {
+      destination: "/motion/text-animations/text-reveal",
+      permanent: false,
+      source: "/motion",
+    },
+  ],
 };
 
 export default withMDX(nextConfig);

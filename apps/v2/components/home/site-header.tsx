@@ -22,7 +22,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-dashed bg-background/90 backdrop-blur-sm">
       <div className="flex h-14 items-center gap-5 px-5 sm:gap-8 sm:px-8">
         <Link className="flex items-center gap-2" href="/">
-          <Logo className="size-4 text-foreground" />
+          <Logo className="size-7 text-foreground" />
           <span className="font-mono text-[13px] text-foreground tracking-tight">
             cnippet
             <span className="text-cnippet-accent">.</span>

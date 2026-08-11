@@ -1,10 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import {
-  Section,
-  SectionBody,
-  SectionHeader,
-} from "@/components/home/section";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 import { AccordionPreview } from "./preview/accordion";
 import AlertPreview from "./preview/alert";

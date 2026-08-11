@@ -22,12 +22,13 @@ interface VariantCardProps {
   reloadable?: boolean;
 }
 
-type PackageManager = "pnpm" | "npm" | "yarn";
+type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
 
 function installCommand(pm: PackageManager, name: string): string {
   const pkg = `@cnippet/${name}`;
   if (pm === "pnpm") return `pnpm dlx shadcn@latest add ${pkg}`;
   if (pm === "yarn") return `yarn dlx shadcn@latest add ${pkg}`;
+  if (pm === "bun") return `bunx --bun shadcn@latest add ${pkg}`;
   return `npx shadcn@latest add ${pkg}`;
 }
 
@@ -97,15 +98,15 @@ function CodeBlock({
 function InlineCommand({ command }: { command: string }) {
   const { isCopied, copyToClipboard } = useCopyToClipboard();
   return (
-    <div className="group flex items-center justify-between gap-3 rounded-lg bg-gray-100 px-4 py-3 dark:bg-neutral-900">
-      <code className="select-all font-mono text-[.8125rem] text-gray-900 dark:text-white/80">
+    <div className="group flex items-center justify-between gap-3 rounded-[2px] border border-dashed bg-muted/40 px-4 py-3">
+      <code className="select-all font-mono text-[.8125rem] text-foreground/80">
         {command}
       </code>
       <Button
         aria-label="Copy command"
         className={cn(
-          "size-7 shrink-0 text-gray-400 transition-colors hover:text-gray-900 dark:text-white/40 dark:hover:text-white/80",
-          isCopied && "text-green-600 dark:text-green-400",
+          "size-7 shrink-0 text-muted-foreground transition-colors hover:text-foreground",
+          isCopied && "text-cnippet-green",
         )}
         onClick={() => copyToClipboard(command)}
         size="icon-sm"
@@ -145,7 +146,7 @@ export function VariantCard({
     null,
   );
   const [loadingCode, setLoadingCode] = React.useState(false);
-  const [pm, setPm] = React.useState<PackageManager>("pnpm");
+  const [pm, setPm] = React.useState<PackageManager>("npm");
   const { isCopied, copyToClipboard } = useCopyToClipboard();
   const cardRef = React.useRef<HTMLDivElement>(null);
 
@@ -203,42 +204,44 @@ export function VariantCard({
     }
   }
 
-  const PMS: PackageManager[] = ["pnpm", "npm", "yarn"];
+  const PMS: PackageManager[] = ["npm", "bun", "pnpm", "yarn"];
 
   return (
     <>
       <div
-        className="flex flex-col overflow-hidden rounded-xl border border-gray-950/8 bg-white dark:border-white/10 dark:bg-neutral-900"
+        className="flex flex-col overflow-hidden rounded-[2px] border border-dashed bg-background transition-colors hover:border-cnippet-blue/40"
         ref={cardRef}
       >
         {/* Preview area */}
-        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden p-6 dark:bg-neutral-950">
+        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden p-6">
           {!visible ? (
-            <div className="h-8 w-24 animate-pulse rounded-md bg-white/8" />
+            <div className="h-8 w-24 animate-pulse rounded-md bg-muted" />
           ) : Component ? (
             <React.Suspense
               fallback={
-                <div className="h-8 w-24 animate-pulse rounded-md bg-white/8" />
+                <div className="h-8 w-24 animate-pulse rounded-md bg-muted" />
               }
               key={reloadKey}
             >
               <Component />
             </React.Suspense>
           ) : (
-            <p className="font-mono text-white/30 text-xs">No preview</p>
+            <p className="font-mono text-muted-foreground text-xs">
+              No preview
+            </p>
           )}
         </div>
 
         {/* Bottom bar */}
-        <div className="flex items-center justify-between gap-2 border-gray-950/8 border-t px-4 py-2.5 dark:border-white/10">
-          <span className="font-mono text-black/50 text-xs capitalize tracking-tight dark:text-white/50">
+        <div className="flex items-center justify-between gap-2 border-t border-dashed px-4 py-2.5">
+          <span className="font-mono text-[11px] text-muted-foreground capitalize tracking-tight">
             {description || name.replace("v-", "")}
           </span>
           <div className="flex items-center gap-1">
             {reloadable && (
               <Button
                 aria-label="Reload preview"
-                className="size-7 text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+                className="size-7 text-muted-foreground hover:text-foreground"
                 onClick={() => setReloadKey((k) => k + 1)}
                 size="icon-sm"
                 variant="ghost"
@@ -249,8 +252,8 @@ export function VariantCard({
             <Button
               aria-label="Copy source code"
               className={cn(
-                "size-7 text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white",
-                isCopied && "text-green-500 dark:text-green-400",
+                "size-7 text-muted-foreground hover:text-foreground",
+                isCopied && "text-cnippet-green",
               )}
               onClick={handleCopy}
               size="icon-sm"
@@ -259,7 +262,7 @@ export function VariantCard({
               <CopyIcon className="size-3.5" />
             </Button>
             <Button
-              className="h-7 rounded-lg px-3 py-4 font-medium"
+              className="h-7 rounded-[2px] px-3 py-4 font-mono text-xs"
               onClick={handleViewCode}
               size="xs"
               variant="outline"
@@ -286,11 +289,11 @@ export function VariantCard({
                     Installation
                   </p>
                   {/* Package manager tabs */}
-                  <div className="flex gap-1 border-muted border-b pb-2">
+                  <div className="flex gap-1 border-b border-dashed pb-2">
                     {PMS.map((p) => (
                       <button
                         className={cn(
-                          "rounded-md px-3 py-1 font-mono text-xs transition-colors",
+                          "rounded-[2px] px-3 py-1 font-mono text-xs transition-colors",
                           pm === p
                             ? "bg-muted text-foreground"
                             : "text-muted-foreground hover:text-foreground",

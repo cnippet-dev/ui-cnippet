@@ -1,10 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import {
-  Section,
-  SectionBody,
-  SectionHeader,
-} from "@/components/home/section";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 import FlipWordsHero from "@/registry/default/motion-variants/m-flip-words-1";
 import MorphingTextHero from "@/registry/default/motion-variants/m-morphing-text-1";
@@ -106,8 +102,8 @@ export default function MotionComponents() {
       <SectionBody className="p-0 sm:p-0">
         <div className="border-b border-dashed px-5 py-6 sm:px-8">
           <p className="max-w-md text-[14px] text-muted-foreground leading-relaxed">
-            Text and scroll animations for headlines, badges, and status —
-            drop in and go. Ten of forty-plus, live below.
+            Text and scroll animations for headlines, badges, and status — drop
+            in and go. Ten of forty-plus, live below.
           </p>
         </div>
 

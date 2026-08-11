@@ -70,18 +70,20 @@ function Facehash({
   className,
   name,
   interactive = true,
+  enableBlink = true,
   onRenderMouth,
 }: {
   className?: string;
   name: string;
   interactive?: boolean;
+  enableBlink?: boolean;
   onRenderMouth?: () => React.ReactNode;
 }) {
   return (
     <FacehashComponent
       className={cn(className)}
       colorClasses={COSSISTANT_FACEHASH_COLOR_CLASSES}
-      enableBlink
+      enableBlink={enableBlink}
       intensity3d="dramatic"
       interactive={interactive}
       name={name}

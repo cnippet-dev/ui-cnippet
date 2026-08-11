@@ -1,11 +1,7 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Section,
-  SectionBody,
-  SectionHeader,
-} from "@/components/home/section";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 
 const blocks = [
