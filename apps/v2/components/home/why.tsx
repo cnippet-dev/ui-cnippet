@@ -1,5 +1,5 @@
-import { Accessibility, Blocks, Unlock } from "lucide-react";
 import { Section, SectionBody, SectionHeader } from "@/components/home/section";
+import { CodeAnalyseIcon, CommandIcon, PrototypeIcon } from "../icons";
 
 const ARGUMENTS = [
   {
@@ -9,7 +9,7 @@ const ARGUMENTS = [
       "No breaking change you didn't see coming",
       "Every component ships as readable source, not a black box",
     ],
-    icon: Unlock,
+    icon: CodeAnalyseIcon,
     title: "Own the code",
   },
   {
@@ -18,7 +18,7 @@ const ARGUMENTS = [
       "Full keyboard and screen-reader support out of the box",
       "Style with your own Tailwind classes",
     ],
-    icon: Accessibility,
+    icon: CommandIcon,
     title: "Accessible by default",
   },
   {
@@ -27,7 +27,7 @@ const ARGUMENTS = [
       "A growing library of copy-paste blocks",
       "MIT licensed, free forever",
     ],
-    icon: Blocks,
+    icon: PrototypeIcon,
     title: "A full toolkit",
   },
 ];
@@ -45,7 +45,7 @@ export function Why() {
         <div className="grid divide-y divide-dashed lg:grid-cols-3 lg:divide-x lg:divide-y-0">
           {ARGUMENTS.map((argument) => (
             <div className="px-5 py-10 sm:px-8 sm:py-12" key={argument.title}>
-              <argument.icon className="size-5 text-cnippet-accent" />
+              <argument.icon className="size-6 text-cnippet-accent" />
               <h3 className="mt-4 mb-4 font-f37-stout text-xl leading-tight">
                 {argument.title}
               </h3>

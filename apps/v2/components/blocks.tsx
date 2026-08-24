@@ -29,11 +29,13 @@ const blocks = [
 
 export default function Blocks() {
   return (
-    <Section id="blocks">
+    <Section id="blocks" tone="orbit">
       <SectionHeader
+        className="border-t-0"
         index="06"
         meta="[sections & pages]"
         title="From components to complete pages"
+        tone="orbit"
       />
 
       <SectionBody className="p-0 sm:p-0">

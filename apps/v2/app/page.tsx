@@ -8,7 +8,6 @@ import { SiteFooter } from "@/components/home/site-footer";
 import { SiteHeader } from "@/components/home/site-header";
 import { Why } from "@/components/home/why";
 import { HomeThemes } from "@/components/home-themes";
-import MotionComponents from "@/components/motion-components";
 
 export const metadata: Metadata = {
   description:
@@ -39,7 +38,7 @@ export default function HomePage() {
 
           {/* Component showcase sections */}
           <Components />
-          <MotionComponents />
+          {/* <MotionComponents /> */}
           <HomeThemes />
           <Blocks />
 

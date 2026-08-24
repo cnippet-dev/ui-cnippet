@@ -30,7 +30,7 @@
   --radius: 2px;
   --header-height: 64px;
   --footer-height: 0px;
-  --docs-topbar-height: 56px;
+  --docs-topbar-height: 40px;
   --sidebar-width: 240px;
 
   --card: oklch(1 0 0);
@@ -78,6 +78,26 @@
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /*
+    Section identity. The body of every section stays white — the colour lives
+    only at the edges, so each numbered section gets a pair: the sticky rail
+    that sits above it, and the hairline that separates it from its neighbours.
+    Same lightness across the three families, different hue only, so no rail
+    looks heavier than another.
+
+      core  — indigo. The design-system spine.
+      wire  — green. The wiring layer.
+      orbit — amber. Tier 2, so rail and hairline but no left bar.
+  */
+  --surface-core-rail: oklch(0.918 0.045 292);
+  --border-core: oklch(0.88 0.05 292);
+
+  --surface-wire-rail: oklch(0.918 0.05 165);
+  --border-wire: oklch(0.88 0.055 165);
+
+  --surface-orbit-rail: oklch(0.918 0.055 75);
+  --border-orbit: oklch(0.88 0.06 75);
 }
 
 .dark {
@@ -126,6 +146,15 @@
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --surface-core-rail: oklch(0.305 0.05 292);
+  --border-core: oklch(0.38 0.06 292);
+
+  --surface-wire-rail: oklch(0.305 0.052 165);
+  --border-wire: oklch(0.38 0.062 165);
+
+  --surface-orbit-rail: oklch(0.305 0.055 75);
+  --border-orbit: oklch(0.38 0.065 75);
 }
 
 @layer base {

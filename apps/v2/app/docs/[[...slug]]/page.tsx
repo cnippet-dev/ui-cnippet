@@ -61,7 +61,7 @@ export default async function DocsPage(props: {
 
   return (
     <div
-      className="flex flex-col text-[1.05rem] sm:text-[15px] xl:w-full"
+      className="flex flex-col border-dashed text-[1.05rem] sm:text-[15px] xl:w-full"
       data-slot="docs"
     >
       <DocsTopBar next={neighbours.next} previous={neighbours.previous} />

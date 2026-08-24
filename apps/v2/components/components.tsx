@@ -68,6 +68,7 @@ export default function Components() {
   return (
     <Section id="components">
       <SectionHeader
+        className="border-t-0"
         index="03"
         meta="[97 components]"
         title="Production-ready components"

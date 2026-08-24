@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
+import { Section, SectionBody, SectionHeader } from "@/components/home/section";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteHeader } from "@/components/home/site-header";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
     title: "Explore Components",
   },
 };
+
+/** The explore page numbers its own two sections; it is not the homepage. */
+const EXPLORE_SECTION_TOTAL = "02";
 
 export default function ExplorePage() {
   const variantEntries = variants
@@ -111,16 +115,12 @@ export default function ExplorePage() {
 
         <main className="flex flex-1 flex-col">
           {/* Hero section — centered index statement, intentionally minimal */}
-          <div className="border-b border-dashed">
-            {/* Eyebrow rail — sticks just below the navbar while the hero is in view */}
-            <div className="sticky top-14 z-40 flex items-center justify-start gap-3 border-b border-dashed bg-background px-5 py-4 sm:gap-4 sm:px-8">
-              <span className="font-mono text-[11px] text-cnippet-blue tracking-[0.18em]">
-                01
-              </span>
-              <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]">
-                component explorer · live previews
-              </span>
-            </div>
+          <Section id="explorer-index">
+            <SectionHeader
+              index="01"
+              title="component explorer · live previews"
+              total={EXPLORE_SECTION_TOTAL}
+            />
 
             {/* Centered statement */}
             <div className="flex flex-col items-center px-5 py-20 text-center sm:py-24 lg:py-28">
@@ -166,24 +166,18 @@ export default function ExplorePage() {
                 </div>
               ))}
             </div>
-          </div>
+          </Section>
 
           {/* Showcase */}
-          <div>
-            {/* Eyebrow rail — sticks just below the navbar while the showcase is in view */}
-            <div className="sticky top-14 z-40 flex items-center gap-3 border-b border-dashed bg-background px-5 py-4 sm:gap-4 sm:px-8">
-              <span className="font-mono text-[11px] text-cnippet-blue tabular-nums tracking-[0.18em]">
-                02
-              </span>
-              <h2 className="font-mono text-[11px] text-foreground uppercase tracking-[0.18em]">
-                browse the library
-              </h2>
-              <span className="ml-auto hidden font-mono text-[11px] text-muted-foreground tracking-[0.18em] sm:inline">
-                [filter · search · copy]
-              </span>
-            </div>
+          <Section className="border-b-0" id="browse">
+            <SectionHeader
+              index="02"
+              meta="[filter · search · copy]"
+              title="browse the library"
+              total={EXPLORE_SECTION_TOTAL}
+            />
 
-            <div className="px-5 pb-14 sm:px-8">
+            <SectionBody className="pt-0 pb-14 sm:pt-0 sm:pb-14">
               <NuqsAdapter>
                 <Suspense>
                   <ExploreShowcase
@@ -196,8 +190,8 @@ export default function ExplorePage() {
                   />
                 </Suspense>
               </NuqsAdapter>
-            </div>
-          </div>
+            </SectionBody>
+          </Section>
         </main>
 
         <SiteFooter />
