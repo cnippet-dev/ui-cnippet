@@ -16,13 +16,13 @@ export function DocsTopBar({ previous, next }: DocsTopBarProps) {
 
   return (
     <div
-      className="sticky top-14 z-40 h-(--docs-topbar-height) border-b border-dashed bg-background/95 backdrop-blur-sm"
+      className="sticky top-14 z-40 border-y border-dashed bg-muted/95 backdrop-blur-md dark:bg-muted/60"
       data-slot="docs-topbar"
     >
-      <div className="flex h-full min-w-0 items-center justify-between gap-3 px-4 lg:px-6">
-        <div className="flex min-w-0 items-center gap-1 font-mono text-muted-foreground text-xs">
+      <div className="flex h-full min-w-0 items-center justify-between gap-3 px-5 py-2 sm:px-8">
+        <div className="flex min-w-0 items-center gap-1.5 font-mono text-[12px] text-muted-foreground uppercase tracking-[0.14em]">
           {segments.map((seg, i) => (
-            <span className="flex items-center gap-1" key={i}>
+            <span className="flex items-center gap-1.5" key={i}>
               {i > 0 && <span className="text-muted-foreground/40">/</span>}
               <span
                 className={cn(
@@ -34,7 +34,11 @@ export function DocsTopBar({ previous, next }: DocsTopBarProps) {
             </span>
           ))}
         </div>
-        <div className="flex shrink-0 items-center gap-1">
+        <div className="flex shrink-0 items-center gap-2">
+          <span
+            aria-hidden="true"
+            className="hidden h-3 w-px bg-border sm:inline-block"
+          />
           {previous && (
             <Link
               className="inline-flex size-7 items-center justify-center rounded-[2px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"

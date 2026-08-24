@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "actions",
+    "data",
+    "feedback",
+    "forms",
+    "layout",
+    "media",
+    "navigation",
+    "overlays",
+    "pickers"
+  ],
+  "title": "Core Components"
+}

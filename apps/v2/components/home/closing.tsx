@@ -30,6 +30,7 @@ export function Closing() {
   return (
     <Section className="border-b-0" id="start">
       <SectionHeader
+        className="border-t-0"
         index="07"
         meta="three ways in"
         title="Ready to stop rebuilding?"

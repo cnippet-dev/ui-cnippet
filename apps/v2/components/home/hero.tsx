@@ -8,6 +8,7 @@ import {
 import Link from "next/link";
 import { CopyCommand } from "@/components/home/copy-command";
 import { MovingUsersFacehashes } from "@/components/home/moving-users-facehashes";
+import { SectionHeader } from "@/components/home/section";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 
@@ -48,20 +49,16 @@ const FACTS = [
 
 export function Hero() {
   return (
-    <section className="border-b border-dashed">
-      {/* Eyebrow rail — sticks just below the navbar while the hero is in view */}
-      <div className="sticky top-14 z-40 flex items-center justify-start gap-3 border-b border-dashed bg-background px-5 py-4 sm:gap-4 sm:px-8">
-        <span className="font-mono text-[11px] text-cnippet-accent tracking-[0.18em]">
-          00
-        </span>
-        <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]">
-          component library · base ui · tailwind css
-        </span>
-      </div>
+    <section>
+      <SectionHeader
+        index="00"
+        title="component library · base ui · tailwind css"
+      />
 
-      <div className="grid lg:grid-cols-12">
-        <div className="col-span-8 flex flex-col justify-center px-5 py-20 sm:px-8 sm:py-28 lg:border-r lg:border-dashed">
-          <h1 className="max-w-2xl font-f37-stout text-[38px] leading-[1.05] tracking-tight sm:text-[52px] lg:text-[58px]">
+      <div className="flex flex-col items-center">
+        {/* Main content — centered */}
+        <div className="flex w-full max-w-3xl flex-col items-center px-5 py-20 text-center sm:px-8 sm:py-28">
+          <h1 className="font-f37-stout text-[38px] leading-[1.05] tracking-tight sm:text-[52px] lg:text-[58px]">
             Stop rebuilding UI.
             <br />
             <span className="text-cnippet-accent">Start shipping.</span>
@@ -72,7 +69,7 @@ export function Hero() {
             Base UI, styled with Tailwind CSS. MIT licensed, free forever.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button
               className={cn("group")}
               render={<Link href="/explore" />}
@@ -98,7 +95,7 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-10 flex items-center gap-3">
+          <div className="mt-10 flex items-center justify-center gap-3">
             <MovingUsersFacehashes />
             <span className="font-mono text-[12px] text-muted-foreground">
               Open source and built in public — no vendor lock-in, ever.
@@ -106,39 +103,43 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Fact panel */}
-        <div className="col-span-4 grid grid-cols-2 border-t border-dashed lg:border-t-0">
-          {FACTS.map((fact, index) => (
-            <div
-              className={cn(
-                "group flex flex-col justify-center gap-4 border-dashed px-5 py-10 transition-colors hover:bg-accent/30 sm:px-8 lg:py-0",
-                index % 2 === 0 && "border-r",
-                index < FACTS.length - 2 && "border-b",
-              )}
-              key={fact.label}
-            >
-              <span
+        {/* Facts panel — full width row, centered */}
+        <div className="w-full border-t border-dashed">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {FACTS.map((fact, index) => (
+              <div
                 className={cn(
-                  "inline-flex size-9 w-fit items-center justify-center rounded-lg border px-3",
-                  fact.bg,
-                  fact.border,
+                  "group flex items-center justify-center gap-4 border-dashed px-5 py-10 text-center transition-colors hover:bg-accent/30 sm:px-8",
+                  index % 2 === 0 && "border-r",
+                  index < FACTS.length - 2 && "border-b",
+                  "md:border-b-0",
+                  index !== FACTS.length - 1 && "md:border-r",
                 )}
+                key={fact.label}
               >
-                <fact.icon
-                  aria-hidden="true"
-                  className={cn("size-4", fact.accent)}
-                />
-              </span>
-              <div>
-                <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]">
-                  {fact.label}
-                </div>
-                <div className="mt-1.5 font-f37-stout text-3xl tabular-nums sm:text-4xl">
-                  {fact.value}
+                <span
+                  className={cn(
+                    "inline-flex size-9 w-fit items-center justify-center rounded-lg border px-3",
+                    fact.bg,
+                    fact.border,
+                  )}
+                >
+                  <fact.icon
+                    aria-hidden="true"
+                    className={cn("size-4", fact.accent)}
+                  />
+                </span>
+                <div className="flex items-center justify-center gap-2.5">
+                  <div className="mt-1.5 font-f37-stout text-3xl tabular-nums sm:text-4xl">
+                    {fact.value}
+                  </div>
+                  <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]">
+                    {fact.label}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -195,7 +195,12 @@ export function HomeThemes() {
 
   return (
     <Section id="themes">
-      <SectionHeader index="05" meta="[color · radius]" title="Make it yours" />
+      <SectionHeader
+        className="border-t-0"
+        index="05"
+        meta="[color · radius]"
+        title="Make it yours"
+      />
 
       <div className="flex items-center justify-between gap-4 border-b border-dashed px-5 py-6 sm:px-8">
         <p className="max-w-sm text-[14px] text-muted-foreground leading-relaxed">

@@ -155,11 +155,13 @@ export function Install() {
   const tab = TABS.find((entry) => entry.id === activeTab) ?? TABS[0];
 
   return (
-    <Section id="install">
+    <Section id="install" tone="core">
       <SectionHeader
+        className="border-t-0"
         index="02"
         meta="[for developers]"
         title="Install it in one command"
+        tone="core"
       />
 
       <SectionBody className="grid grid-cols-1 p-0 sm:p-0 lg:grid-cols-2">
@@ -223,7 +225,7 @@ export function Install() {
           <div className="grid flex-1 grid-cols-2 [&>*:nth-child(2n)]:border-r-0 [&>*:nth-last-child(-n+2)]:border-b-0">
             {PREVIEWS.map((preview) => (
               <div
-                className="flex min-h-[7.5rem] flex-col justify-between gap-4 border-r border-b border-dashed p-5 transition-colors hover:bg-accent/40"
+                className="flex min-h-30 flex-col justify-between gap-4 border-r border-b border-dashed p-5 transition-colors hover:bg-accent/40"
                 key={preview.name}
               >
                 <span className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.18em]">
