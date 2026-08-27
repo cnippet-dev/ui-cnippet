@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
 
 type DocsTopBarProps = {
@@ -40,22 +40,22 @@ export function DocsTopBar({ previous, next }: DocsTopBarProps) {
             className="hidden h-3 w-px bg-border sm:inline-block"
           />
           {previous && (
-            <Link
+            <PrefetchLink
               className="inline-flex size-7 items-center justify-center rounded-[2px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               href={previous.url}
             >
               <ArrowLeft className="size-3.5" />
               <span className="sr-only">Previous</span>
-            </Link>
+            </PrefetchLink>
           )}
           {next && (
-            <Link
+            <PrefetchLink
               className="inline-flex size-7 items-center justify-center rounded-[2px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               href={next.url}
             >
               <ArrowRight className="size-3.5" />
               <span className="sr-only">Next</span>
-            </Link>
+            </PrefetchLink>
           )}
         </div>
       </div>

@@ -13,6 +13,49 @@ function PreviewSlot({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Mounts once the element gets near the viewport.
+ *
+ * Every demo on a docs page is otherwise drawn into the prerendered HTML, even
+ * though a visitor only ever sees the first one or two: the calendar page bakes
+ * in 20 fully-rendered month grids (430 KB) and the table page 15 (376 KB),
+ * all of it read back out of the ISR cache on every page view. Deferring costs
+ * nothing visually because the preview frame is a fixed `h-112.5`, so the box
+ * occupies its final size whether or not the demo inside it has mounted.
+ */
+function useNearViewport(ref: React.RefObject<HTMLElement | null>) {
+  const [near, setNear] = React.useState(false);
+
+  React.useEffect(() => {
+    if (near) return;
+    const el = ref.current;
+    if (!el) return;
+
+    // Without IntersectionObserver, fall back to rendering everything.
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      // Generous margin so demos are ready well before they are scrolled to,
+      // and so anything in the first screen mounts immediately on hydration.
+      { rootMargin: "600px" },
+    );
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, [near, ref]);
+
+  return near;
+}
+
 export function ComponentPreviewTabs({
   className,
   align = "center",
@@ -29,6 +72,8 @@ export function ComponentPreviewTabs({
   const [tab, setTab] = React.useState("preview");
   const [reloadKey, setReloadKey] = React.useState(0);
   const [spinning, setSpinning] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const mounted = useNearViewport(containerRef);
 
   function handleReload() {
     setReloadKey((k) => k + 1);
@@ -38,6 +83,7 @@ export function ComponentPreviewTabs({
   return (
     <div
       className={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}
+      ref={containerRef}
       {...props}
     >
       <Tabs onValueChange={setTab} value={tab}>
@@ -86,7 +132,9 @@ export function ComponentPreviewTabs({
             )}
             data-align={align}
           >
-            <PreviewSlot key={reloadKey}>{component}</PreviewSlot>
+            <PreviewSlot key={reloadKey}>
+              {mounted ? component : null}
+            </PreviewSlot>
           </div>
         </div>
         <div

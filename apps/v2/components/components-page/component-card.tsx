@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
 import { Index } from "@/registry/__index__";
 import type { ComponentDef } from "./registry";
@@ -31,12 +31,12 @@ export function ComponentCard({ name, href, variants }: ComponentDef) {
     >
       {/* Header */}
       <div className="flex min-h-10 flex-wrap items-center justify-between gap-2 border-gray-950/8 border-b px-4 py-2 dark:border-white/10">
-        <Link
+        <PrefetchLink
           className="font-mono text-gray-950/70 text-xs tracking-tight transition-colors hover:text-gray-950 dark:text-white/60 dark:hover:text-white"
           href={href}
         >
           {name}
-        </Link>
+        </PrefetchLink>
 
         {variants.length > 1 &&
           (useDropdown ? (

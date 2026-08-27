@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
 
 type PageNode = {
@@ -56,7 +56,7 @@ export function DocsSidebar({ tree }: { tree: PageTree }) {
                   const active = pathname === child.url;
                   return (
                     <li key={j}>
-                      <Link
+                      <PrefetchLink
                         className={cn(
                           "block rounded-[2px] px-2 py-[5px] font-medium text-[0.8rem] transition-colors",
                           active
@@ -66,7 +66,7 @@ export function DocsSidebar({ tree }: { tree: PageTree }) {
                         href={child.url}
                       >
                         {child.name}
-                      </Link>
+                      </PrefetchLink>
                     </li>
                   );
                 })}
