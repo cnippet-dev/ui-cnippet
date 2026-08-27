@@ -2,8 +2,8 @@
 
 import { useTheme } from "@cnippet/ui/shared/theme-provider";
 import { ChevronDown, Menu as MenuIcon, Moon, Sun, X } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 import {
@@ -98,7 +98,9 @@ function NavDropdown({ item }: { item: NavGroup }) {
           <MenuItem
             className="flex-col items-start gap-0.5 py-2"
             key={link.href}
-            render={<Link className="cursor-pointer" href={link.href} />}
+            render={
+              <PrefetchLink className="cursor-pointer" href={link.href} />
+            }
           >
             <span className="font-mono text-[12px] text-foreground">
               {link.label}
@@ -121,27 +123,27 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
       <div className="flex h-14 items-center gap-5 px-5 sm:gap-8 sm:px-8">
-        <Link className="flex items-center gap-2" href="/">
+        <PrefetchLink className="flex items-center gap-2" href="/">
           <Logo className="size-7 text-foreground" />
           <span className="font-mono text-[13px] text-foreground tracking-tight">
             cnippet
             <span className="text-cnippet-accent">.</span>
             ui
           </span>
-        </Link>
+        </PrefetchLink>
 
         <nav className="ml-auto hidden items-center gap-5 sm:flex sm:gap-6">
           {NAV_ITEMS.map((item) =>
             "items" in item ? (
               <NavDropdown item={item} key={item.label} />
             ) : (
-              <Link
+              <PrefetchLink
                 className="cursor-pointer font-mono text-[12px] text-muted-foreground transition-colors hover:text-foreground"
                 href={item.href}
                 key={item.href}
               >
                 {item.label}
-              </Link>
+              </PrefetchLink>
             ),
           )}
           <a
@@ -154,12 +156,12 @@ export function SiteHeader() {
             <GitHubIcon className="size-5" />
           </a>
           <ThemeToggle />
-          <Link
+          <PrefetchLink
             className="rounded-xs border border-cnippet-accent/40 border-dashed bg-cnippet-accent/10 px-3 py-1.5 font-mono text-[11px] text-cnippet-accent transition-colors hover:bg-cnippet-accent/20"
             href="/docs/get-started"
           >
             Get Started
-          </Link>
+          </PrefetchLink>
         </nav>
 
         <button
@@ -191,26 +193,26 @@ export function SiteHeader() {
                 </span>
                 <div className="mt-2 flex flex-col gap-2 pl-3">
                   {item.items.map((link) => (
-                    <Link
+                    <PrefetchLink
                       className="cursor-pointer font-mono text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                       href={link.href}
                       key={link.href}
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.label}
-                    </Link>
+                    </PrefetchLink>
                   ))}
                 </div>
               </div>
             ) : (
-              <Link
+              <PrefetchLink
                 className="border-b border-dashed py-3 font-mono text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                 href={item.href}
                 key={item.href}
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
-              </Link>
+              </PrefetchLink>
             ),
           )}
           <a
@@ -229,13 +231,13 @@ export function SiteHeader() {
             </span>
             <ThemeToggle />
           </div>
-          <Link
+          <PrefetchLink
             className="mt-4 rounded-xs border border-cnippet-accent/40 border-dashed bg-cnippet-accent/10 px-3 py-2.5 text-center font-mono text-[12px] text-cnippet-accent transition-colors hover:bg-cnippet-accent/20"
             href="/docs/get-started"
             onClick={() => setMenuOpen(false)}
           >
             Get Started
-          </Link>
+          </PrefetchLink>
         </nav>
       ) : null}
     </header>

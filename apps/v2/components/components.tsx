@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { Section, SectionBody, SectionHeader } from "@/components/home/section";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
 import { AccordionPreview } from "./preview/accordion";
 import AlertPreview from "./preview/alert";
@@ -84,7 +84,7 @@ export default function Components() {
 
         <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
-            <Link
+            <PrefetchLink
               className={cn(
                 "group relative flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-orange/5",
                 index % 4 !== 3 && "lg:border-r",
@@ -120,17 +120,17 @@ export default function Components() {
                   <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-cnippet-orange group-hover:opacity-100" />
                 </span>
               </div>
-            </Link>
+            </PrefetchLink>
           ))}
         </div>
 
         <div className="flex items-center border-t border-dashed px-5 py-4 sm:px-8">
-          <Link
+          <PrefetchLink
             className="inline-flex h-9 items-center gap-2 rounded-xs border border-dashed px-4 font-medium text-sm transition-colors duration-200 hover:border-cnippet-orange/40 hover:bg-cnippet-orange/5 hover:text-cnippet-orange"
             href="/explore"
           >
             View all components <ArrowRight className="size-3.5" />
-          </Link>
+          </PrefetchLink>
         </div>
       </SectionBody>
     </Section>

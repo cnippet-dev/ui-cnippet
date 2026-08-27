@@ -9,8 +9,10 @@ import type * as React from "react";
 import { DayPicker } from "react-day-picker";
 import { cn } from "@/registry/default/lib/utils";
 
-const buttonClassNames =
-  "relative flex size-(--cell-size) text-base sm:text-sm items-center justify-center rounded-lg text-foreground not-in-data-selected:hover:bg-accent disabled:pointer-events-none disabled:opacity-64 [&_svg:not([class*='opacity-'])]:opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0";
+// Defined in the stylesheet installed alongside this component. Kept as class
+// names rather than inline utilities because the day button's utility list is
+// repeated on every cell of every rendered month.
+const buttonClassNames = "calendar-button";
 
 export function Calendar({
   className,
@@ -26,10 +28,7 @@ export function Calendar({
     caption_label:
       "text-base sm:text-sm font-medium flex items-center gap-2 h-full",
     day: "size-(--cell-size) text-sm py-px",
-    day_button: cn(
-      buttonClassNames,
-      "in-data-disabled:pointer-events-none in-[.range-middle]:rounded-none in-[.range-end:not(.range-start)]:rounded-s-none in-[.range-start:not(.range-end)]:rounded-e-none in-[.range-middle]:in-data-selected:bg-accent in-data-selected:bg-primary in-[.range-middle]:in-data-selected:text-foreground in-data-disabled:text-muted-foreground/72 in-data-outside:text-muted-foreground/72 in-data-selected:in-data-outside:text-primary-foreground in-data-selected:text-primary-foreground in-data-disabled:line-through outline-none in-[[data-selected]:not(.range-middle)]:transition-[color,background-color,border-radius,box-shadow] focus-visible:z-1 focus-visible:ring-[3px] focus-visible:ring-ring/50",
-    ),
+    day_button: "calendar-day-button",
     dropdown: "absolute bg-popover inset-0 opacity-0",
     dropdown_root:
       "relative has-focus:border-ring has-focus:ring-ring/50 has-focus:ring-[3px] border border-input shadow-xs/5 rounded-lg px-[calc(--spacing(3)-1px)] h-9 sm:h-8 [&_svg:not([class*='opacity-'])]:opacity-80 [&_svg:not([class*='size-'])]:size-4.5 sm:[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:-me-1",

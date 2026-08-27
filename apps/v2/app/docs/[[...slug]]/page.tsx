@@ -1,11 +1,11 @@
 import { findNeighbour } from "fumadocs-core/page-tree";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { DocsSidebar } from "@/components/docs-sidebar";
 import { DocsToc } from "@/components/docs-toc";
 import { DocsTopBar } from "@/components/docs-topbar";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { docSource } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
 
@@ -93,22 +93,22 @@ export default async function DocsPage(props: {
           {/* Prev / next */}
           <div className="mx-auto flex h-16 w-full max-w-2xl items-center gap-2 border-t border-dashed px-4 md:px-0">
             {neighbours.previous && (
-              <Link
+              <PrefetchLink
                 className="inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
                 href={neighbours.previous.url}
               >
                 <ArrowLeft className="size-3.5" />
                 {neighbours.previous.name}
-              </Link>
+              </PrefetchLink>
             )}
             {neighbours.next && (
-              <Link
+              <PrefetchLink
                 className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-[2px] border border-dashed px-3 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-foreground"
                 href={neighbours.next.url}
               >
                 {neighbours.next.name}
                 <ArrowRight className="size-3.5" />
-              </Link>
+              </PrefetchLink>
             )}
           </div>
         </div>

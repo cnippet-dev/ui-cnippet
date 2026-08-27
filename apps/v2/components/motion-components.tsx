@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { Section, SectionBody, SectionHeader } from "@/components/home/section";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
 import FlipWordsHero from "@/registry/default/motion-variants/m-flip-words-1";
 import MorphingTextHero from "@/registry/default/motion-variants/m-morphing-text-1";
@@ -109,7 +109,7 @@ export default function MotionComponents() {
 
         <div className="grid gap-0 md:grid-cols-4">
           {items.map((item, index) => (
-            <Link
+            <PrefetchLink
               className={cn(
                 "group relative flex flex-col border-b border-dashed transition-colors hover:bg-cnippet-blue/5",
                 item.featured && "md:col-span-2",
@@ -151,17 +151,17 @@ export default function MotionComponents() {
                   <ArrowUpRight className="size-3 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
                 </div>
               </div>
-            </Link>
+            </PrefetchLink>
           ))}
         </div>
 
         <div className="flex items-center border-t border-dashed px-5 py-4 sm:px-8">
-          <Link
+          <PrefetchLink
             className="inline-flex h-9 items-center gap-2 rounded-xs border border-dashed px-4 font-medium text-sm transition-colors duration-200 hover:border-cnippet-blue/40 hover:bg-cnippet-blue/5 hover:text-cnippet-blue"
             href="/explore?tab=motion"
           >
             View all motion components <ArrowRight className="size-3.5" />
-          </Link>
+          </PrefetchLink>
         </div>
       </SectionBody>
     </Section>

@@ -2,7 +2,7 @@
 
 import { useTheme } from "@cnippet/ui/shared/theme-provider";
 import { Moon, Sun } from "lucide-react";
-import Link from "next/link";
+import { PrefetchLink } from "@/components/prefetch-link";
 import { Logo } from "@/components/ui/logo";
 
 function ThemeToggle() {
@@ -78,7 +78,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <PrefetchLink
                     className="font-mono text-[12px] text-muted-foreground transition-colors hover:text-foreground"
                     href={link.href}
                     {...(link.href.startsWith("http")
@@ -86,7 +86,7 @@ export function SiteFooter() {
                       : {})}
                   >
                     {link.label}
-                  </Link>
+                  </PrefetchLink>
                 </li>
               ))}
             </ul>
@@ -99,18 +99,18 @@ export function SiteFooter() {
           © {new Date().getFullYear()} Cnippet · MIT licensed core
         </p>
         <div className="flex items-center gap-5 sm:ml-auto">
-          <Link
+          <PrefetchLink
             className="font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
             href="/legal/privacy"
           >
             Privacy
-          </Link>
-          <Link
+          </PrefetchLink>
+          <PrefetchLink
             className="font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
             href="/legal/terms"
           >
             Terms
-          </Link>
+          </PrefetchLink>
           <ThemeToggle />
         </div>
       </div>
