@@ -56,11 +56,11 @@ export function ComponentBrowser({
   }
 
   return (
-    <div className="flex h-full flex-col border-gray-950/8 border-r dark:border-white/10">
+    <div className="flex h-full flex-col border-border border-r">
       {/* Search */}
-      <div className="border-gray-950/8 border-b px-3 py-2 dark:border-white/10">
+      <div className="border-border border-b px-3 py-2">
         <input
-          className="w-full rounded-md border border-gray-950/10 bg-transparent px-2.5 py-1.5 font-mono text-xs outline-none placeholder:text-gray-950/30 focus:border-gray-950/20 dark:border-white/10 dark:focus:border-white/20 dark:placeholder:text-white/30"
+          className="w-full rounded-md border border-border bg-transparent px-2.5 py-1.5 font-mono text-xs outline-none placeholder:text-faint focus:border-border-strong"
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search..."
           type="search"
@@ -74,7 +74,7 @@ export function ComponentBrowser({
           return (
             <div key={cat.label}>
               <button
-                className="flex w-full items-center justify-between px-3 py-1.5 font-mono font-semibold text-[10px] text-gray-950/40 uppercase tracking-widest hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
+                className="flex w-full items-center justify-between px-3 py-1.5 font-mono font-semibold text-[10px] text-faint uppercase tracking-widest hover:text-foreground"
                 onClick={() => toggle(cat.label)}
                 type="button"
               >
@@ -93,8 +93,8 @@ export function ComponentBrowser({
                           className={cn(
                             "flex items-center px-3 py-1 font-mono text-xs",
                             isActive
-                              ? "text-gray-950 dark:text-white"
-                              : "text-gray-950/60 dark:text-white/50",
+                              ? "text-foreground"
+                              : "text-muted-foreground",
                           )}
                         >
                           <span className="flex-1 truncate">{comp.name}</span>
@@ -109,8 +109,8 @@ export function ComponentBrowser({
                                 className={cn(
                                   "flex w-full items-center gap-2 rounded px-4 py-1 text-left font-mono text-[11px] transition-colors",
                                   isVariantActive
-                                    ? "bg-gray-950/5 text-gray-950 dark:bg-white/8 dark:text-white"
-                                    : "text-gray-950/50 hover:bg-gray-950/3 hover:text-gray-950/80 dark:text-white/40 dark:hover:bg-white/5 dark:hover:text-white/70",
+                                    ? "bg-muted text-foreground"
+                                    : "text-muted-foreground hover:bg-accent hover:text-foreground",
                                 )}
                                 key={v.key}
                                 onClick={() =>
@@ -119,7 +119,7 @@ export function ComponentBrowser({
                                 type="button"
                               >
                                 {isVariantActive && (
-                                  <span className="size-1 shrink-0 rounded-full bg-gray-950 dark:bg-white" />
+                                  <span className="size-1 shrink-0 rounded-full bg-signal" />
                                 )}
                                 <span
                                   className={cn(

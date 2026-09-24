@@ -4,10 +4,9 @@ import Components from "@/components/components";
 import { Closing } from "@/components/home/closing";
 import { Hero } from "@/components/home/hero";
 import { Install } from "@/components/home/install";
-import { SiteFooter } from "@/components/home/site-footer";
-import { SiteHeader } from "@/components/home/site-header";
 import { Why } from "@/components/home/why";
 import { HomeThemes } from "@/components/home-themes";
+import { SiteShell } from "@/components/site/site-shell";
 
 export const metadata: Metadata = {
   description:
@@ -28,24 +27,14 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-svh">
-      <div className="mx-auto w-full max-w-6xl border-x border-dashed bg-background">
-        <SiteHeader />
-        <main>
-          <Hero />
-          <Why />
-          <Install />
-
-          {/* Component showcase sections */}
-          <Components />
-          {/* <MotionComponents /> */}
-          <HomeThemes />
-          <Blocks />
-
-          <Closing />
-        </main>
-        <SiteFooter />
-      </div>
-    </div>
+    <SiteShell>
+      <Hero />
+      <Why />
+      <Install />
+      <Components />
+      <HomeThemes />
+      <Blocks />
+      <Closing />
+    </SiteShell>
   );
 }

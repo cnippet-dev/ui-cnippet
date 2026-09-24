@@ -32,7 +32,7 @@ export function Process() {
         <p className="font-medium font-mono text-cnippet-orange text-sm">
           [how we work]
         </p>
-        <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+        <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
           From first call
           <br />
           to shipped product.
@@ -50,7 +50,7 @@ export function Process() {
                 </span>
               </div>
               <div className="flex flex-col gap-3 md:col-span-4">
-                <h3 className="font-f37-stout text-xl md:text-2xl">
+                <h3 className="font-display text-xl md:text-2xl">
                   {step.title}
                 </h3>
                 <div className="rounded-[2px] border border-dashed bg-muted/50 px-3 py-2.5 font-mono text-muted-foreground text-xs">

@@ -6,8 +6,6 @@ export default function PlaygroundLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="h-dvh w-full overflow-hidden bg-white dark:bg-neutral-950">
-      {children}
-    </div>
+    <div className="h-dvh w-full overflow-hidden bg-chrome">{children}</div>
   );
 }

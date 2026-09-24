@@ -4,7 +4,7 @@ import { MovingUsersFacehashes } from "./moving-users-facehashes";
 function CnippetIs() {
   return (
     <section className="flex flex-col gap-6 px-4 py-40">
-      <h2 className="mx-auto max-w-2xl text-pretty text-center font-f37-stout text-2xl text-primary/70 leading-relaxed md:text-left md:text-[34px]">
+      <h2 className="mx-auto max-w-2xl text-pretty text-center font-display text-2xl text-primary/70 leading-relaxed md:text-left md:text-[34px]">
         <span className="text-primary">Cnippet UI started as a question: </span>
         why are the component libraries developers use so rarely both accessible
         and beautiful?{" "}

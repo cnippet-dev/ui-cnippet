@@ -56,7 +56,7 @@ export function FAQ() {
           <p className="font-medium font-mono text-cnippet-orange text-sm">
             [faq]
           </p>
-          <h2 className="mt-2 w-full font-f37-stout text-4xl sm:text-3xl md:text-4xl">
+          <h2 className="mt-2 w-full font-display text-4xl sm:text-3xl md:text-4xl">
             Questions
             <br />
             people

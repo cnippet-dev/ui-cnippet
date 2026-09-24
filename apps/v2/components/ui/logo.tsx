@@ -28,7 +28,7 @@ export function LogoText({ className }: Props) {
   return (
     <span
       className={cn(
-        "flex items-center gap-1 pb-0.75 font-f37-stout text-[24px] text-primary leading-6",
+        "flex items-center gap-1 pb-0.75 font-display text-[24px] text-primary leading-6",
         className,
       )}
     >
@@ -43,7 +43,7 @@ export function LogoTextSVG({ className }: Props) {
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none flex items-end justify-center font-f37-stout text-[120px] leading-none tracking-tight",
+        "pointer-events-none flex items-end justify-center font-display text-[120px] leading-none tracking-tight",
         className,
       )}
     >
