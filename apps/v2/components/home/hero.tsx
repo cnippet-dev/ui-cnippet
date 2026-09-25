@@ -70,13 +70,13 @@ export function Hero() {
 
           <h1
             className={cn(
-              "mt-7 text-balance font-display font-semibold text-[clamp(2.6rem,6.4vw,4.5rem)] pb-2 text-ink leading-none tracking-tighter",
+              "mt-7 text-balance pb-2 font-display font-semibold text-[clamp(2.6rem,6.4vw,4.5rem)] text-ink leading-none tracking-tighter",
               rise(1),
             )}
           >
             <span className="lg:whitespace-nowrap">Stop rebuilding UI.</span>
             <br />
-            <em className="font-normal font-serif tracking-[-0.015em] ">
+            <em className="font-normal font-serif tracking-[-0.015em]">
               Start shipping.
             </em>
           </h1>

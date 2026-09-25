@@ -268,7 +268,7 @@ export function Install() {
           <FramePanel className="grid grid-cols-2">
             {PREVIEWS.map((preview, i) => (
               <div
-                className="flex min-h-32 min-w-0 flex-col justify-between gap-4 border-border p-4 transition-colors duration-150 hover:bg-frame/60 sm:p-5 not-nth-last-[-n+2]:border-b odd:border-e"
+                className="flex min-h-32 min-w-0 flex-col justify-between gap-4 border-border not-nth-last-[-n+2]:border-b p-4 transition-colors duration-150 odd:border-e hover:bg-frame/60 sm:p-5"
                 key={preview.name}
               >
                 <div className="flex items-center justify-between gap-2 font-mono text-[11px] text-faint">

@@ -220,7 +220,7 @@ export function HeroStage({
               className={cn(
                 "flex min-h-0 flex-1 items-center justify-center bg-dots p-6",
                 themed &&
-                  "[--primary:var(--hero-primary)] [--ring:var(--hero-ring)] dark:[--primary:var(--hero-primary-dark)] dark:[--ring:var(--hero-ring-dark)] [--primary-foreground:var(--color-white)]",
+                  "[--primary-foreground:var(--color-white)] [--primary:var(--hero-primary)] [--ring:var(--hero-ring)] dark:[--primary:var(--hero-primary-dark)] dark:[--ring:var(--hero-ring-dark)]",
               )}
               style={themeStyle(accent, radius)}
             >
@@ -234,13 +234,12 @@ export function HeroStage({
           ) : (
             <div
               className="min-h-0 flex-1 overflow-auto bg-(--color-code) py-1 text-[12.5px] [&_pre]:text-[12.5px]"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: shiki output, built at render from local strings
               dangerouslySetInnerHTML={{ __html: active.html }}
             />
           )}
 
           {/* Component picker — the file tab strip of the preview. */}
-          <div className="flex items-center gap-1 overflow-x-auto border-t bg-card px-2 py-1.5 no-scrollbar">
+          <div className="no-scrollbar flex items-center gap-1 overflow-x-auto border-t bg-card px-2 py-1.5">
             {snippets.map((snippet, i) => (
               <button
                 aria-pressed={i === index}

@@ -95,7 +95,7 @@ export function ExploreShowcase({
     <div>
       {/* Toolbar — sticky under the header while browsing (md+; on phones the
           wrapped category list is too tall to pin). */}
-      <div className="relative z-20 -mx-2 mb-6 md:sticky md:top-[calc(var(--header-height)+0.75rem+1px)] rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl">
+      <div className="relative z-20 -mx-2 mb-6 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:sticky md:top-[calc(var(--header-height)+0.75rem+1px)]">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
           <div className="no-scrollbar flex gap-0.5 overflow-x-auto">
             {SECTIONS.map((s) => (
