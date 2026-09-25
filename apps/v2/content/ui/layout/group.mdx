@@ -58,6 +58,26 @@ import { Group, GroupSeparator } from "@/components/ui/group"
 </Group>
 ```
 
+## Anatomy
+
+```tsx
+<Group> {/* <div role="group"> · data-slot="group" */}
+  <GroupText>https://</GroupText> {/* static text segment · data-slot="group-text" */}
+  <Input placeholder="example.com" />
+  <GroupSeparator /> {/* divider between items */}
+  <Button variant="outline">Go</Button>
+</Group>
+```
+
+## Good to know
+
+- `Group` joins neighboring controls into one piece: shared borders and only the outer corners rounded. It works with `Button`, `Input`, `Select`, `NumberField`, menus and similar controls.
+- `ButtonGroup`, `ButtonGroupSeparator` and `ButtonGroupText` are aliases of `Group`, `GroupSeparator` and `GroupText`.
+- Put a `GroupSeparator` between items that would otherwise share a border, such as two filled buttons.
+- `orientation="vertical"` stacks the items and rounds the top and bottom corners instead.
+- Nest `Group`s to create separate clusters with a gap between them.
+- Add an `aria-label` so screen readers can name the group.
+
 ## API Reference
 
 ### Group

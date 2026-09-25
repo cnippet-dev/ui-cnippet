@@ -34,7 +34,7 @@ export function DocsTopBar({ next, previous, tree }: DocsTopBarProps) {
 
   return (
     <div
-      className="sticky top-(--header-height) z-30 flex h-(--docs-topbar-height) items-center gap-2 border-b bg-background/85 px-3 backdrop-blur-xl md:rounded-t-canvas md:px-4"
+      className="sticky top-(--header-height) z-30 flex h-(--docs-topbar-height) items-center gap-2 border-b bg-background px-3 md:rounded-t-canvas md:px-4 md:shadow-[0_0_0_1px_var(--canvas-edge),0_0_0_12px_var(--chrome)] md:[clip-path:inset(-12px_-12px_0_-8px)]"
       data-slot="docs-topbar"
     >
       <Sheet onOpenChange={setOpen} open={open}>

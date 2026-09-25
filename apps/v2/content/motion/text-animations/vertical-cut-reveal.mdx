@@ -55,6 +55,22 @@ import { VerticalCutReveal } from "@/components/motion/vertical-cut-reveal";
 </VerticalCutReveal>
 ```
 
+## Anatomy
+
+```tsx
+<VerticalCutReveal splitBy="words"> {/* pieces slide up from behind a mask */}
+  Motion components for modern web
+</VerticalCutReveal>
+```
+
+## Good to know
+
+- `splitBy` is `"words"` (default), `"characters"`, `"lines"` or any separator string.
+- It plays as soon as it mounts. Set `autoStart={false}` and call `ref.current.startAnimation()` to start it yourself; `reset()` puts it back.
+- `reverse` slides the pieces down instead of up.
+- Screen readers read the full text once; the pieces are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

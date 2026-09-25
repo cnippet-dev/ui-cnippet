@@ -55,6 +55,22 @@ import { TextReveal } from "@/components/motion/text-reveal";
 </TextReveal>
 ```
 
+## Anatomy
+
+```tsx
+<TextReveal per="word" preset="fade-in-blur"> {/* <p> of segments that animate in */}
+  Your headline text goes here
+</TextReveal>
+```
+
+## Good to know
+
+- `children` must be a plain string. `per` splits it into `"word"`, `"char"` or `"line"` segments.
+- `preset` is `"fade"`, `"fade-in-blur"`, `"blur"`, `"scale"` or `"slide"`.
+- It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to start it later, for example with `useInView`.
+- `speedReveal` and `speedSegment` speed up (above `1`) or slow down (below `1`) the stagger and each segment.
+- Screen readers read the full text once; the segments are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

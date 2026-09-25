@@ -3,7 +3,7 @@
 import { MenuIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/registry/default/ui//button";
+import { Button } from "@/registry/default/ui/button";
 
 export function Pattern() {
   const [open, setOpen] = useState(false);

@@ -47,6 +47,62 @@ npm install @base-ui/react
 
 
 
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger className="flex h-40 items-center justify-center rounded-xl border">
+    Right-click here
+  </ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Copy</ContextMenuItem>
+    <ContextMenuItem>Paste</ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+## Anatomy
+
+```tsx
+<ContextMenu> {/* root, owns the open state · data-slot="context-menu" */}
+  <ContextMenuTrigger>…</ContextMenuTrigger> {/* the area that opens the menu · data-slot="context-menu-trigger" */}
+  <ContextMenuContent> {/* portal + positioner + popup, placed at the pointer */}
+    <ContextMenuGroup> {/* data-slot="context-menu-group" */}
+      <ContextMenuLabel>Edit</ContextMenuLabel> {/* data-slot="context-menu-label" */}
+      <ContextMenuItem onClick={copy}> {/* data-slot="context-menu-item" */}
+        Copy <ContextMenuShortcut>⌘C</ContextMenuShortcut>
+      </ContextMenuItem>
+    </ContextMenuGroup>
+    <ContextMenuSeparator />
+    <ContextMenuSub> {/* nested menu */}
+      <ContextMenuSubTrigger>Share</ContextMenuSubTrigger>
+      <ContextMenuSubContent>…</ContextMenuSubContent>
+    </ContextMenuSub>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+## Good to know
+
+- The menu opens on right-click, or a long press on touch screens, anywhere inside `ContextMenuTrigger`. Size and style the trigger as the area you want.
+- The popup part is `ContextMenuContent`. There is no `ContextMenuPopup`, unlike `Menu`.
+- Built on Base UI, not Radix. Handle item actions with `onClick`. There is no `onSelect`.
+- `ContextMenuLabel` must be inside a `ContextMenuGroup` or `ContextMenuRadioGroup`.
+- Every `ContextMenuRadioItem` needs a `value`. The selection lives on `ContextMenuRadioGroup`.
+- The items work the same way as in `Menu`: `variant="destructive"`, `inset`, checkbox items and submenus.
+
 ## API Reference
 
 ### ContextMenu

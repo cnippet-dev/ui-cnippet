@@ -79,6 +79,29 @@ const items = [
 </Autocomplete>
 ```
 
+## Anatomy
+
+```tsx
+<Autocomplete items={items}> {/* root, owns the input text */}
+  <AutocompleteInput placeholder="Search…" /> {/* text input */}
+  <AutocompletePopup> {/* portal + positioner + popup */}
+    <AutocompleteEmpty>No results.</AutocompleteEmpty> {/* data-slot="autocomplete-empty" */}
+    <AutocompleteList> {/* scrollable list · data-slot="autocomplete-list" */}
+      {(item) => (
+        <AutocompleteItem key={item.value} value={item}>{item.label}</AutocompleteItem>
+      )}
+    </AutocompleteList>
+  </AutocompletePopup>
+</Autocomplete>
+```
+
+## Good to know
+
+- The value is the text in the input. Picking a suggestion fills the input, but the user can also type something that isn't in the list. When the value must come from the list, use `Combobox`.
+- Pass your data through `items` and render each suggestion with a function inside `AutocompleteList`. Filtering is automatic. With `{ value, label }` objects, the search matches `label`.
+- `mode` controls filtering and inline completion: `"list"` (default, filters the list), `"both"`, `"inline"` or `"none"`.
+- `AutocompleteInput` has no dropdown button by default. Add `showTrigger` or `showClear` if you need them.
+
 ## API Reference
 
 The `AutocompleteInput` component extends the original Base UI component with a few extra props:

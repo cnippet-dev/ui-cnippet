@@ -53,6 +53,19 @@ import { ColorfulText } from "@/components/motion/colorful-text";
 <ColorfulText>Build beautiful interfaces</ColorfulText>
 ```
 
+## Anatomy
+
+```tsx
+<ColorfulText>Build beautiful interfaces</ColorfulText> {/* <p> of colored letters */}
+```
+
+## Good to know
+
+- `children` must be a plain string. It's split into letters, each given a color from `colors`.
+- It plays as soon as it mounts, even off screen. To start it when it scrolls into view, pass `trigger={isInView}` using `useInView` from `motion/react`.
+- Screen readers read the full text once; the individual letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

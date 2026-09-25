@@ -62,6 +62,25 @@ import {
 </ScrollVelocityContainer>
 ```
 
+## Anatomy
+
+```tsx
+<ScrollVelocityContainer> {/* shares scroll velocity with its rows */}
+  <ScrollVelocityRow baseVelocity={3} direction={1}> {/* one looping marquee row */}
+    <span>React</span>
+    <span>Next.js</span>
+  </ScrollVelocityRow>
+</ScrollVelocityContainer>
+```
+
+## Good to know
+
+- Each row scrolls on its own at `baseVelocity` and speeds up while the page is scrolled. Set `scrollReactivity={false}` to ignore scrolling.
+- Use `direction={-1}` on alternate rows to scroll them the other way.
+- The row repeats its children as often as needed to fill the width.
+- It pauses while it's off screen or the browser tab is in the background.
+- When the user has turned on reduced motion, it keeps moving at `baseVelocity` but no longer speeds up with scrolling. To stop it completely, check `useReducedMotion()` from `motion/react` and render static content.
+
 ## Props
 
 ### ScrollVelocityContainer

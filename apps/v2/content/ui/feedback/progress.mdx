@@ -62,6 +62,26 @@ import {
 
 Note: If you render children inside `Progress`, you must also include `ProgressTrack` and `ProgressIndicator` inside it. Without them, the bar will not display. When no children are provided, a default track and indicator are rendered for you.
 
+## Anatomy
+
+```tsx
+<Progress value={40}> {/* <div role="progressbar"> · data-slot="progress" */}
+  <ProgressLabel>Uploading</ProgressLabel> {/* data-slot="progress-label" */}
+  <ProgressValue /> {/* formatted value, e.g. "40%" · data-slot="progress-value" */}
+  <ProgressTrack> {/* data-slot="progress-track" */}
+    <ProgressIndicator /> {/* filled part · data-slot="progress-indicator" */}
+  </ProgressTrack>
+</Progress>
+```
+
+## Good to know
+
+- `<Progress value={40} />` with no children renders the track and indicator for you.
+- If you pass any children, `Progress` no longer adds the track. Include `ProgressTrack` and `ProgressIndicator` yourself, or the bar disappears.
+- `value={null}` shows an indeterminate (unknown progress) state.
+- Use `format` (`Intl.NumberFormatOptions`) to change how `ProgressValue` displays the number.
+- For a static measurement such as disk usage or a score, use `Meter` instead. `Progress` is for tasks that move toward completion.
+
 ## API Reference
 
 ### Progress

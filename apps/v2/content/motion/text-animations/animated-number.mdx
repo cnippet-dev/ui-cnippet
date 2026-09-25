@@ -53,6 +53,20 @@ import { AnimatedNumber } from "@/components/motion/animated-number";
 <AnimatedNumber value={score} />
 ```
 
+## Anatomy
+
+```tsx
+<AnimatedNumber value={count} /> {/* <span> that springs to the new value */}
+```
+
+## Good to know
+
+- It animates whenever `value` changes, starting from the previous value. Update `value` from state.
+- Change the feel with `springOptions` (Motion spring settings such as `stiffness` and `damping`).
+- The displayed number is rounded to a whole number and formatted with `toLocaleString()` (e.g. `1,234`). It can't show decimals.
+- For a one-time count-up from a start number, use `CountingNumber`.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

@@ -53,6 +53,19 @@ import { LetterSwapHover } from "@/components/motion/letter-swap-hover";
 <LetterSwapHover label="Get started" />
 ```
 
+## Anatomy
+
+```tsx
+<LetterSwapHover label="Get started" /> {/* <span> whose letters roll on hover */}
+```
+
+## Good to know
+
+- The text goes in the `label` prop, not in `children`.
+- The effect plays on hover, so there's nothing to see on touch screens.
+- `reverse` (default `true`) sets the roll direction. `staggerFrom` sets which letter starts.
+- Screen readers get the text through `aria-label`; the animated letters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

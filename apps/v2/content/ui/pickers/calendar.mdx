@@ -58,6 +58,21 @@ const [date, setDate] = React.useState<Date | undefined>(new Date())
 <Calendar mode="single" selected={date} onSelect={setDate} />
 ```
 
+## Anatomy
+
+```tsx
+<Calendar mode="single" selected={date} onSelect={setDate} /> {/* react-day-picker <DayPicker> · data-slot="calendar" */}
+```
+
+## Good to know
+
+- `Calendar` is a styled wrapper around react-day-picker v10, not Base UI. Every `DayPicker` prop works.
+- `mode` is `"single"` (default), `"multiple"` or `"range"`. The type of `selected` and `onSelect` follows it: a `Date`, a `Date[]` or a `DateRange` (import `DateRange` from `react-day-picker`).
+- `disabled` takes matchers, e.g. `disabled={{ before: new Date() }}` to block past dates.
+- To focus the calendar when it opens in a popover, use `autoFocus`. The old `initialFocus` prop no longer exists.
+- Days from the previous and next months are shown by default. Hide them with `showOutsideDays={false}`.
+- To change the styling of individual parts, pass `classNames`. It's merged with the built-in classes.
+
 ## API Reference
 
 ### Calendar

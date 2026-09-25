@@ -69,6 +69,31 @@ import {
 </Accordion>
 ```
 
+## Anatomy
+
+```tsx
+<Accordion> {/* root, owns the open state · data-slot="accordion" */}
+  <AccordionItem value="item-1"> {/* one section, repeat 1..n · data-slot="accordion-item" */}
+    <AccordionTrigger> {/* <button> inside an <h3> · data-slot="accordion-trigger" */}
+      Title
+    </AccordionTrigger>
+    <AccordionPanel> {/* animated body · data-slot="accordion-panel" */}
+      Content
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
+
+## Good to know
+
+- Built on Base UI, not Radix. Use `multiple` to allow several open items. There is no `type="single"`, `type="multiple"` or `collapsible` prop.
+- `value`, `defaultValue` and `onValueChange` always use an array, even when only one item can be open: `defaultValue={["item-1"]}`.
+- Every item can be closed, including the last open one. No extra prop is needed.
+- `AccordionContent` is an alias of `AccordionPanel`. Prefer `AccordionPanel`.
+- `className` on `AccordionPanel` styles the inner wrapper `<div>` (padding lives there), not the animated element.
+- The open/close animation uses the `--accordion-panel-height` CSS variable. Don't add your own height transition.
+- The trigger's heading level is fixed at `<h3>`. Edit `components/ui/accordion.tsx` if you need a different level.
+
 ## API Reference
 
 ### Accordion
@@ -88,7 +113,7 @@ A single accordion entry.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `value` | `string` | — | Unique identifier for this item (required) |
+| `value` | `string` | auto-generated | Unique identifier for this item. Set it when you use `value` or `defaultValue` on the root |
 | `disabled` | `boolean` | `false` | Prevents the item from being opened |
 
 ### AccordionTrigger

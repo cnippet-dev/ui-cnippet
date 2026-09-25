@@ -56,6 +56,22 @@ import { Checkbox } from "@/components/ui/checkbox"
 <Checkbox />
 ```
 
+## Anatomy
+
+```tsx
+<Checkbox /> {/* <span role="checkbox"> + hidden <input> · data-slot="checkbox" */}
+{/* renders its own check / dash icon · data-slot="checkbox-indicator" */}
+```
+
+## Good to know
+
+- The state props are `checked`, `defaultChecked` and `onCheckedChange`. There is no `onChange` for the checked state.
+- `indeterminate` shows a dash instead of a check, for "some selected" states.
+- To make the label text clickable, wrap both in a `Label`: `<Label><Checkbox /> Accept terms</Label>`.
+- Set `name` to include it in form submissions. A checked box submits `value` (or `"on"` without one). Use `uncheckedValue` if the form also needs a value when it's unchecked.
+- Inside a `CheckboxGroup`, give each checkbox a `value` and manage the state on the group, not on the checkboxes.
+- Style states with the `data-checked`, `data-unchecked` and `data-indeterminate` attributes.
+
 ## API Reference
 
 ### Checkbox

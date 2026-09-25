@@ -53,6 +53,20 @@ import { TextRoll } from "@/components/motion/text-roll";
 <TextRoll>Design with motion</TextRoll>
 ```
 
+## Anatomy
+
+```tsx
+<TextRoll>Design with motion</TextRoll> {/* <span> of letters that roll up and back */}
+```
+
+## Good to know
+
+- `children` must be a plain string. It's split into letters.
+- It plays once when it mounts. `getEnterDelay` and `getExitDelay` set each letter's delay from its index.
+- `onAnimationComplete` fires when the last letter finishes.
+- Screen readers read the full text once; the individual letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

@@ -49,14 +49,14 @@ npm install @base-ui/react
 ## Usage
 
 ```tsx
-import { Button } from "@/registry/default/ui/button"
-import { Toggle } from "@/registry/default/ui/toggle"
+import { Button } from "@/components/ui/button"
+import { Toggle } from "@/components/ui/toggle"
 import {
   Toolbar,
   ToolbarButton,
   ToolbarGroup,
   ToolbarSeparator,
-} from "@/registry/default/ui/toolbar"
+} from "@/components/ui/toolbar"
 ```
 
 ```tsx
@@ -69,6 +69,26 @@ import {
   <ToolbarButton render={<Button />}>Save</ToolbarButton>
 </Toolbar>
 ```
+
+## Anatomy
+
+```tsx
+<Toolbar> {/* <div role="toolbar"> · data-slot="toolbar" */}
+  <ToolbarGroup> {/* groups related controls · data-slot="toolbar-group" */}
+    <ToolbarButton render={<Toggle />}>Bold</ToolbarButton> {/* data-slot="toolbar-button" */}
+  </ToolbarGroup>
+  <ToolbarSeparator /> {/* data-slot="toolbar-separator" */}
+  <ToolbarLink href="/help">Help</ToolbarLink> {/* <a> · data-slot="toolbar-link" */}
+  <ToolbarInput /> {/* <input> · data-slot="toolbar-input" */}
+</Toolbar>
+```
+
+## Good to know
+
+- `ToolbarButton`, `ToolbarLink` and `ToolbarInput` are unstyled. Style them with the `render` prop, for example `render={<Button variant="ghost" />}` or `render={<Toggle />}`.
+- The whole toolbar is a single Tab stop. Arrow keys move between items and wrap around at the ends (`loopFocus`, on by default).
+- Disabled toolbar buttons stay focusable by default, so keyboard users can still find them. Set `focusableWhenDisabled={false}` to skip them.
+- `orientation="vertical"` switches arrow-key navigation to up and down.
 
 ## API Reference
 

@@ -59,6 +59,29 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs"
 </Tabs>
 ```
 
+## Anatomy
+
+```tsx
+<Tabs defaultValue="account"> {/* root, owns the selected tab · data-slot="tabs" */}
+  <TabsList variant="underline"> {/* tab row + animated indicator · data-slot="tabs-list" */}
+    <TabsTab value="account">Account</TabsTab> {/* <button role="tab"> · data-slot="tabs-tab" */}
+    <TabsTab value="password">Password</TabsTab>
+  </TabsList>
+  <TabsPanel value="account">…</TabsPanel> {/* data-slot="tabs-content" */}
+  <TabsPanel value="password">…</TabsPanel>
+</Tabs>
+```
+
+## Good to know
+
+- `TabsTrigger` and `TabsContent` are aliases of `TabsTab` and `TabsPanel`. Prefer `TabsTab` and `TabsPanel`.
+- Every `TabsTab` needs a `value`, and each `TabsPanel` uses the same `value` as its tab.
+- Always set `defaultValue` (or `value`) on `Tabs` to one of your tab values. Base UI's default is `0`, which doesn't match string values, so no tab would be selected.
+- `TabsList` accepts `variant="default"` (pill) or `"underline"`. The moving indicator is rendered for you.
+- Arrow keys move focus between tabs; Enter or Space selects one. To select on focus, set `activateOnFocus` on `TabsList`.
+- Inactive panels are removed from the DOM. Set `keepMounted` on a `TabsPanel` to keep it rendered, for example to preserve form input.
+- `orientation="vertical"` on `Tabs` stacks the tabs and switches to up and down arrow keys.
+
 ## API Reference
 
 ### Tabs

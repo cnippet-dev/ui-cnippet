@@ -66,6 +66,23 @@ import {
 </div>
 ```
 
+## Anatomy
+
+```tsx
+<div className="relative h-96 overflow-hidden"> {/* your sized, positioned container */}
+  <ParallaxFloating sensitivity={1}> {/* fills the container, tracks the cursor */}
+    <FloatingElement depth={2} className="left-[10%] top-[20%]">…</FloatingElement> {/* absolutely positioned */}
+  </ParallaxFloating>
+</div>
+```
+
+## Good to know
+
+- `ParallaxFloating` fills its parent (`absolute inset-0`), so put it inside a sized container with `position: relative`.
+- Position each `FloatingElement` with `className` (`left-*`, `top-*`). Higher `depth` values move further with the cursor.
+- It reacts to the mouse, so there's no effect on touch screens.
+- It keeps animating when the user has turned on reduced motion in their system settings. If that matters, check `useReducedMotion()` from `motion/react` and render the elements without it.
+
 ## Props
 
 ### ParallaxFloating

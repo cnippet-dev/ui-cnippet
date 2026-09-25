@@ -59,6 +59,24 @@ import { Meter, MeterLabel, MeterValue } from "@/components/ui/meter"
 </Meter>
 ```
 
+## Anatomy
+
+```tsx
+<Meter value={72}> {/* <div role="meter"> */}
+  <MeterLabel>Storage used</MeterLabel> {/* data-slot="meter-label" */}
+  <MeterValue /> {/* formatted value, e.g. "72%" · data-slot="meter-value" */}
+  <MeterTrack> {/* data-slot="meter-track" */}
+    <MeterIndicator /> {/* filled part · data-slot="meter-indicator" */}
+  </MeterTrack>
+</Meter>
+```
+
+## Good to know
+
+- Use `Meter` for a measurement within a known range, like disk usage or a password strength score. For a task moving toward completion, use `Progress`.
+- `<Meter value={72} />` with no children renders the track and indicator for you. If you pass any children, add `MeterTrack` and `MeterIndicator` yourself, or the bar disappears.
+- `min` and `max` default to `0` and `100`. Use `format` (`Intl.NumberFormatOptions`) to change how `MeterValue` displays the number.
+
 ## API Reference
 
 ### Meter

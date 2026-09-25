@@ -70,6 +70,35 @@ import {
 </Pagination>
 ```
 
+## Anatomy
+
+```tsx
+<Pagination> {/* <nav aria-label="pagination"> · data-slot="pagination" */}
+  <PaginationContent> {/* <ul> · data-slot="pagination-content" */}
+    <PaginationItem> {/* <li> · data-slot="pagination-item" */}
+      <PaginationPrevious href="?page=1" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="?page=2" isActive>2</PaginationLink> {/* <a> · data-slot="pagination-link" */}
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis /> {/* data-slot="pagination-ellipsis" */}
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="?page=3" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Good to know
+
+- This is markup and styling only. It doesn't track the current page or calculate page numbers; your code decides which links to render.
+- Mark the current page with `isActive`. It sets `aria-current="page"` and the outline style.
+- Links are plain `<a>` elements. For client-side routing, use `render={<Link href="?page=2" />}` on `PaginationLink`, `PaginationPrevious` or `PaginationNext`.
+- Below the `sm` breakpoint, Previous and Next show only their arrow icons.
+- `PaginationEllipsis` is hidden from screen readers but includes "More pages" as screen-reader text.
+
 ## API Reference
 
 ### Pagination

@@ -54,18 +54,20 @@ import {
   AlertDialog,
   AlertDialogClose,
   AlertDialogDescription,
-  AlertDialogPanel,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogPopup,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import { Button } from "@/components/ui/button"
 ```
 
 ```tsx
 <AlertDialog>
-  <AlertDialogTrigger>Delete Account</AlertDialogTrigger>
+  <AlertDialogTrigger render={<Button variant="destructive-outline" />}>
+    Delete Account
+  </AlertDialogTrigger>
   <AlertDialogPopup>
     <AlertDialogHeader>
       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -74,10 +76,11 @@ import {
         and remove your data from our servers.
       </AlertDialogDescription>
     </AlertDialogHeader>
-    <AlertDialogPanel>Content</AlertDialogPanel>
     <AlertDialogFooter>
-      <AlertDialogClose>Cancel</AlertDialogClose>
-      <AlertDialogClose>Delete Account</AlertDialogClose>
+      <AlertDialogClose render={<Button variant="ghost" />}>Cancel</AlertDialogClose>
+      <AlertDialogClose render={<Button variant="destructive" />}>
+        Delete Account
+      </AlertDialogClose>
     </AlertDialogFooter>
   </AlertDialogPopup>
 </AlertDialog>
@@ -103,6 +106,33 @@ The `AlertDialogFooter` component supports a `variant` prop to control its styli
   <AlertDialogClose>Delete</AlertDialogClose>
 </AlertDialogFooter>
 ```
+
+## Anatomy
+
+```tsx
+<AlertDialog> {/* root, owns the open state */}
+  <AlertDialogTrigger render={<Button variant="destructive-outline" />}>Delete</AlertDialogTrigger> {/* data-slot="alert-dialog-trigger" */}
+  <AlertDialogPopup> {/* portal + backdrop + popup · data-slot="alert-dialog-popup" */}
+    <AlertDialogHeader> {/* data-slot="alert-dialog-header" */}
+      <AlertDialogTitle>Delete project?</AlertDialogTitle>
+      <AlertDialogDescription>This can't be undone.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter> {/* data-slot="alert-dialog-footer" */}
+      <AlertDialogClose render={<Button variant="ghost" />}>Cancel</AlertDialogClose>
+      <AlertDialogClose render={<Button variant="destructive" />}>Delete</AlertDialogClose>
+    </AlertDialogFooter>
+  </AlertDialogPopup>
+</AlertDialog>
+```
+
+## Good to know
+
+- Use an alert dialog when the user must make a choice, such as confirming a deletion. Clicking outside doesn't close it; the user has to pick a button (or press Escape).
+- There is no close (X) button and no `AlertDialogPanel`. Keep the content short: a title, a description and the actions.
+- There are no `AlertDialogAction` or `AlertDialogCancel` parts. Use `AlertDialogClose` for both buttons and style them with `render={<Button />}`.
+- To run code on confirm, add `onClick` to the confirm `AlertDialogClose`. To keep the dialog open while it runs, control `open` yourself and use a normal `Button`.
+- `AlertDialogContent` and `AlertDialogOverlay` are aliases of `AlertDialogPopup` and `AlertDialogBackdrop`.
+- On small screens it becomes a bottom sheet. Turn this off with `bottomStickOnMobile={false}`.
 
 ## API Reference
 

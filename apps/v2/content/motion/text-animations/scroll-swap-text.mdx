@@ -59,6 +59,21 @@ const containerRef = useRef<HTMLDivElement>(null);
 </div>
 ```
 
+## Anatomy
+
+```tsx
+<div ref={containerRef} className="h-64 overflow-y-scroll"> {/* the element that scrolls */}
+  <ScrollSwapText containerRef={containerRef}>Scrollable text</ScrollSwapText> {/* text that swaps with scroll */}
+</div>
+```
+
+## Good to know
+
+- `containerRef` is required. Pass a ref to the element that scrolls, not to the page.
+- `children` should be plain text.
+- `offset` sets which part of the scroll range drives the swap (Motion `useScroll` offsets).
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

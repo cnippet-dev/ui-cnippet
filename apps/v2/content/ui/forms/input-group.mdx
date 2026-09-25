@@ -48,7 +48,6 @@ npm install @base-ui/react
 ## Usage
 
 ```tsx
-import { Input } from "@/components/ui/input"
 import {
   InputGroup,
   InputGroupAddon,
@@ -65,6 +64,24 @@ import {
   </InputGroupAddon>
 </InputGroup>
 ```
+
+## Anatomy
+
+```tsx
+<InputGroup> {/* <div role="group">, draws the shared border · data-slot="input-group" */}
+  <InputGroupInput placeholder="example" /> {/* Input without its own border */}
+  <InputGroupAddon align="inline-end"> {/* icon, text or button · data-slot="input-group-addon" */}
+    <InputGroupText>.com</InputGroupText> {/* muted text */}
+  </InputGroupAddon>
+</InputGroup>
+```
+
+## Good to know
+
+- Use `InputGroupInput` and `InputGroupTextarea` inside the group, not `Input` or `Textarea`, or you'll get a double border.
+- `align` sets where an addon goes: `inline-start` (default, left), `inline-end` (right), `block-start` (above) or `block-end` (below). The position comes from `align`, not from the order you write the elements in.
+- Clicking an addon's text or icon focuses the input. Buttons and links inside the addon still work normally.
+- Use small buttons in addons, e.g. `<Button size="icon-xs" variant="ghost">`, so they fit inside the input's height.
 
 ## API Reference
 

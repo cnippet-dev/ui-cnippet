@@ -53,6 +53,20 @@ import { TextGenerateEffect } from "@/components/motion/text-generate-effect";
 <TextGenerateEffect>Motion components for modern web apps</TextGenerateEffect>
 ```
 
+## Anatomy
+
+```tsx
+<TextGenerateEffect>Motion components for modern web apps</TextGenerateEffect> {/* <p> of words that fade in */}
+```
+
+## Good to know
+
+- `children` must be a plain string. It's split into words.
+- `filter` (default `true`) adds a blur to the fade.
+- It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to start it later, for example with `useInView`.
+- Screen readers read the full text once; the individual words are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

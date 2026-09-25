@@ -55,6 +55,22 @@ import { Letter3DSwap } from "@/components/motion/letter-3d-swap";
 </Letter3DSwap>
 ```
 
+## Anatomy
+
+```tsx
+<Letter3DSwap rotateDirection="top"> {/* <p> of letter cubes that rotate on hover */}
+  Get started
+</Letter3DSwap>
+```
+
+## Good to know
+
+- The effect plays on hover, so there's nothing to see on touch screens.
+- `children` should be plain text. It's split into letters.
+- Style the two faces separately with `frontFaceClassName` and `secondFaceClassName`.
+- `rotateDirection` is `"top"`, `"bottom"`, `"left"` or `"right"`.
+- Screen readers read the full text once; the letter cubes are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

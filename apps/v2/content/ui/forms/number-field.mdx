@@ -73,6 +73,27 @@ import {
 </NumberField>
 ```
 
+## Anatomy
+
+```tsx
+<NumberField defaultValue={1} min={0}> {/* root · data-slot="number-field" */}
+  <NumberFieldScrubArea label="Quantity" /> {/* label you can drag to change the value · data-slot="number-field-scrub-area" */}
+  <NumberFieldGroup> {/* data-slot="number-field-group" */}
+    <NumberFieldDecrement /> {/* − button · data-slot="number-field-decrement" */}
+    <NumberFieldInput /> {/* <input> · data-slot="number-field-input" */}
+    <NumberFieldIncrement /> {/* + button · data-slot="number-field-increment" */}
+  </NumberFieldGroup>
+</NumberField>
+```
+
+## Good to know
+
+- The value is a `number`, or `null` when the input is empty. `onValueChange` receives `number | null`, not an event.
+- Arrow keys change the value by `step`. Hold Shift to use `largeStep` (default `10`) or Alt to use `smallStep` (default `0.1`).
+- Use `format` (`Intl.NumberFormatOptions`) for currency, percentages or units, e.g. `format={{ style: "currency", currency: "USD" }}`.
+- `NumberFieldScrubArea` requires a `label`. It renders the label, and dragging across it changes the value.
+- `size` (`"sm"`, `"default"` or `"lg"`) goes on `NumberField`.
+
 ## API Reference
 
 ### NumberField

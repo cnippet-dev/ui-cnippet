@@ -51,7 +51,7 @@ npm install @base-ui/react
 ```tsx
 import {
   Sheet,
-  SheetContent,
+  SheetClose,
   SheetDescription,
   SheetFooter,
   SheetHeader,
@@ -125,6 +125,34 @@ The `SheetPopup` component supports the following props:
   ...
 </SheetPopup>
 ```
+
+## Anatomy
+
+```tsx
+<Sheet> {/* root, owns the open state */}
+  <SheetTrigger render={<Button variant="outline" />}>Open</SheetTrigger> {/* data-slot="sheet-trigger" */}
+  <SheetPopup side="right"> {/* portal + backdrop + panel + close (X) button · data-slot="sheet-popup" */}
+    <SheetHeader> {/* data-slot="sheet-header" */}
+      <SheetTitle>Settings</SheetTitle>
+      <SheetDescription>Manage your preferences.</SheetDescription>
+    </SheetHeader>
+    <SheetPanel>…</SheetPanel> {/* scrollable body · data-slot="sheet-panel" */}
+    <SheetFooter> {/* data-slot="sheet-footer" */}
+      <SheetClose render={<Button variant="ghost" />}>Close</SheetClose>
+    </SheetFooter>
+  </SheetPopup>
+</Sheet>
+```
+
+## Good to know
+
+- A sheet is a dialog that slides in from an edge. It uses the same state props as `Dialog`: `open`, `defaultOpen` and `onOpenChange`.
+- Set the edge with `side` on `SheetPopup`: `"right"` (default), `"left"`, `"top"` or `"bottom"`. `variant="inset"` adds space around it on larger screens.
+- `SheetContent` and `SheetOverlay` are aliases of `SheetPopup` and `SheetBackdrop`. Prefer the `Popup` names.
+- `SheetPopup` already renders the portal, backdrop and a close (X) button. Hide the X with `showCloseButton={false}`.
+- `SheetTrigger` and `SheetClose` are unstyled. Style them with `render={<Button />}`.
+- Put long content in `SheetPanel`, which scrolls while the header and footer stay in place.
+- For a panel users can drag or swipe to dismiss, use `Drawer` instead.
 
 ## API Reference
 

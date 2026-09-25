@@ -41,7 +41,9 @@ export function DocsPage({
     <>
       <DocsSidebar tree={tree} />
 
-      <Canvas className="overflow-clip" data-slot="docs">
+      {/* No overflow clip: the sticky topbar paints a chrome mask just
+          outside the canvas to keep the rounded top while scrolling. */}
+      <Canvas data-slot="docs">
         <DocsTopBar
           next={neighbours.next}
           previous={neighbours.previous}

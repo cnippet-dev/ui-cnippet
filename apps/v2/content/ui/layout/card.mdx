@@ -61,6 +61,28 @@ import {
 </Card>
 ```
 
+## Anatomy
+
+```tsx
+<Card> {/* <div> surface · data-slot="card" */}
+  <CardHeader> {/* data-slot="card-header" */}
+    <CardTitle>Plan</CardTitle> {/* data-slot="card-title" */}
+    <CardDescription>Billed monthly</CardDescription> {/* data-slot="card-description" */}
+    <CardAction><Button size="sm">Edit</Button></CardAction> {/* top-right slot · data-slot="card-action" */}
+  </CardHeader>
+  <CardPanel>Content</CardPanel> {/* main area · data-slot="card-panel" */}
+  <CardFooter>Footer</CardFooter> {/* data-slot="card-footer" */}
+</Card>
+```
+
+## Good to know
+
+- `CardContent` is an alias of `CardPanel`. Prefer `CardPanel`.
+- Every part has a `render` prop, e.g. `<Card render={<a href="/plans" />}>` for a clickable card or `<CardTitle render={<h2 />}>` for a real heading. There is no `asChild`.
+- `CardTitle` renders a `<div>` by default, not a heading.
+- `CardFrame` (with `CardFrameHeader`, `CardFrameTitle`, `CardFrameDescription`, `CardFrameAction` and `CardFrameFooter`) is a separate outer frame for full-width content such as a `Table variant="card"`. Don't mix its parts with the regular `Card` parts.
+- Spacing is built in between the header, panel and footer. Leave out any part you don't need.
+
 ## API Reference
 
 ### Card

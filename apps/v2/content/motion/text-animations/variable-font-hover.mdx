@@ -59,6 +59,19 @@ import { VariableFontHover } from "@/components/motion/variable-font-hover";
 
 > **Variable font required.** This component animates `font-variation-settings` — your project must load a variable font that supports the axes you specify (e.g. Inter Variable for `wght` and `slnt`).
 
+## Anatomy
+
+```tsx
+<VariableFontHover label="Get started" fromFontVariationSettings="'wght' 400" toFontVariationSettings="'wght' 800" />
+```
+
+## Good to know
+
+- The text goes in the `label` prop, not in `children`.
+- It needs a variable font that supports the axes you animate. With a normal font nothing changes.
+- The effect plays on hover, so there's nothing to see on touch screens.
+- Screen readers get the text through `aria-label`; the animated letters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

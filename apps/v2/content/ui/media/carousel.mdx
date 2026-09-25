@@ -46,6 +46,51 @@ npm install embla-carousel-react
 
 </CodeTabs>
 
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+```
+
+```tsx
+<Carousel className="mx-12">
+  <CarouselContent>
+    <CarouselItem>Slide 1</CarouselItem>
+    <CarouselItem>Slide 2</CarouselItem>
+    <CarouselItem>Slide 3</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Anatomy
+
+```tsx
+<Carousel opts={{ loop: true }}> {/* <div role="region" aria-roledescription="carousel"> · data-slot="carousel" */}
+  <CarouselContent> {/* scroll track · data-slot="carousel-content" */}
+    <CarouselItem>…</CarouselItem> {/* one slide, repeat 1..n · data-slot="carousel-item" */}
+  </CarouselContent>
+  <CarouselPrevious /> {/* data-slot="carousel-previous" */}
+  <CarouselNext /> {/* data-slot="carousel-next" */}
+</Carousel>
+```
+
+## Good to know
+
+- Built on Embla Carousel. Pass Embla options through `opts` and plugins through `plugins`. Plugins such as autoplay are separate packages (`embla-carousel-autoplay`) that you install yourself.
+- `CarouselPrevious` and `CarouselNext` sit outside the carousel: 3rem to the left and right, or above and below when vertical. Leave room for them, e.g. `className="mx-12"` on `Carousel`, or reposition them with `className`.
+- Each slide is full width by default. Show several at once with `basis-*` classes on `CarouselItem`, e.g. `basis-1/3`.
+- To change the gap, change both sides: `-ml-4` on `CarouselContent` and `pl-4` on each `CarouselItem` (use `-mt-*` and `pt-*` when vertical).
+- For programmatic control (current slide, dots, autoplay state), get the Embla API with `setApi`.
+- The left and right arrow keys move between slides, even when `orientation="vertical"`.
+
 ## API Reference
 
 ### Carousel

@@ -56,6 +56,18 @@ import { Separator } from "@/components/ui/separator"
 <Separator />
 ```
 
+## Anatomy
+
+```tsx
+<Separator orientation="vertical" /> {/* <div role="separator"> · data-slot="separator" */}
+```
+
+## Good to know
+
+- `orientation` defaults to `"horizontal"`, which fills the width.
+- A vertical separator stretches to the height of its flex parent. If the parent isn't a flex container, give the separator a height class such as `h-4`.
+- It uses `role="separator"`. For a purely visual line that screen readers should skip, add `aria-hidden`.
+
 ## API Reference
 
 ### Separator

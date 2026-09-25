@@ -71,6 +71,29 @@ import {
 </OTPField>
 ```
 
+## Anatomy
+
+```tsx
+<OTPField length={6} aria-label="Verification code"> {/* root · data-slot="otp-field" */}
+  <OTPFieldInput aria-label="Character 1 of 6" /> {/* one per character · data-slot="otp-field-input" */}
+  <OTPFieldInput aria-label="Character 2 of 6" />
+  <OTPFieldInput aria-label="Character 3 of 6" />
+  <OTPFieldSeparator /> {/* optional visual divider */}
+  <OTPFieldInput aria-label="Character 4 of 6" />
+  <OTPFieldInput aria-label="Character 5 of 6" />
+  <OTPFieldInput aria-label="Character 6 of 6" />
+</OTPField>
+```
+
+## Good to know
+
+- `length` is required. Render exactly that many `OTPFieldInput`s.
+- Give each input its own `aria-label`, such as "Character 1 of 6".
+- Only digits are accepted by default. Change it with `validationType` (`"alpha"`, `"alphanumeric"` or `"none"`).
+- Pasting a full code fills every input at once.
+- `onValueComplete(value)` fires when the last character is entered. Add `autoSubmit` to submit the surrounding form at that point.
+- This wraps Base UI's OTP Field, which is still in preview, so its API may change.
+
 ## API Reference
 
 ### OTPField

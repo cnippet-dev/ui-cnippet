@@ -56,6 +56,21 @@ import { Input } from "@/components/ui/input"
 <Input />
 ```
 
+## Anatomy
+
+```tsx
+<Input type="email" placeholder="you@example.com" /> {/* <span data-slot="input-control"> wrapper + <input data-slot="input"> */}
+```
+
+## Good to know
+
+- `className` goes on the wrapper `<span>`, which draws the border, background and focus ring. To style the `<input>` itself, target it from the wrapper, e.g. `className="[&_input]:text-right"`.
+- `size` is `"sm"`, `"default"` or `"lg"`. A number sets the native `size` attribute instead.
+- Besides `onChange`, you can use `onValueChange(value)`, which gives you the string directly.
+- Inside a `Field`, the input is connected to the label, description and validation automatically.
+- Inside an `InputGroup`, use `InputGroupInput` instead of `Input` to avoid a double border.
+- `unstyled` removes the wrapper styles. `nativeInput` renders a plain `<input>` instead of the Base UI one.
+
 ## API Reference
 
 ### Input

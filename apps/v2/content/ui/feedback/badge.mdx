@@ -104,6 +104,21 @@ export function LinkAsBadge() {
 }
 ```
 
+## Anatomy
+
+```tsx
+<Badge variant="success" size="sm"> {/* <span> · data-slot="badge" */}
+  <CheckIcon /> {/* optional icon */}
+  Active
+</Badge>
+```
+
+## Good to know
+
+- Built on Base UI, not Radix. To render a link, use the `render` prop: `<Badge render={<Link href="/pricing" />}>New</Badge>`. There is no `asChild`.
+- The variants are `default`, `secondary`, `outline`, `destructive`, `error`, `info`, `success` and `warning`.
+- A badge is a plain `<span>` with no behavior. For a removable tag or a clickable filter, put a `Button` inside it or render it as a button.
+
 ## API Reference
 
 ### Badge

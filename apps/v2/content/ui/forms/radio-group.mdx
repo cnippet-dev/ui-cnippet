@@ -67,6 +67,26 @@ import { Radio, RadioGroup } from "@/components/ui/radio-group"
 </RadioGroup>
 ```
 
+## Anatomy
+
+```tsx
+<RadioGroup defaultValue="next"> {/* <div role="radiogroup"> · data-slot="radio-group" */}
+  <Label>
+    <Radio value="next" /> {/* <span role="radio"> + hidden <input> · data-slot="radio" */}
+    Next.js
+  </Label>
+</RadioGroup>
+```
+
+## Good to know
+
+- `value`, `defaultValue` and `onValueChange` hold a single value, not an array.
+- Give every `Radio` a unique `value`.
+- `RadioGroupItem` is an alias of `Radio`. Prefer `Radio`.
+- There is no `orientation` prop. The group stacks vertically by default; for a row, use `className="flex-row"`.
+- Arrow keys move between options, and the whole group is a single Tab stop.
+- Name the group for screen readers with `aria-label`, or wrap it in a `Fieldset` with a `FieldsetLegend`.
+
 ## API Reference
 
 ### RadioGroup

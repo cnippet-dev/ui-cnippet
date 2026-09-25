@@ -152,6 +152,30 @@ anchoredToastManager.add({
 })
 ```
 
+## Anatomy
+
+```tsx
+// Mount once, usually in the root layout
+<ToastProvider position="bottom-right"> {/* renders the toast viewport · data-slot="toast-viewport" */}
+  <AnchoredToastProvider> {/* optional, for toasts attached to an element */}
+    {children}
+  </AnchoredToastProvider>
+</ToastProvider>
+
+// Then call from anywhere
+toastManager.add({ title: "Saved", type: "success" })
+```
+
+## Good to know
+
+- There is no `toast()` function or `<Toaster />`. Mount `ToastProvider` once and call `toastManager.add({...})`. Without the provider, nothing appears.
+- `toastManager` is a plain object, so you can call it from event handlers, helper functions and other code outside components.
+- The auto-dismiss option is `timeout` in milliseconds (default `5000`), not `duration`. `timeout: 0` keeps the toast open until it's dismissed.
+- `type` (`"success"`, `"error"`, `"warning"`, `"info"` or `"loading"`) picks the icon.
+- `add` returns an id. Use `toastManager.update(id, {...})` to change a toast and `toastManager.close(id)` to dismiss it.
+- `toastManager.promise(promise, { loading, success, error })` shows a loading toast and updates it when the promise settles.
+- Anchored toasts need `AnchoredToastProvider` and `anchoredToastManager.add({ positionerProps: { anchor: element } })`.
+
 ## API Reference
 
 ### toastManager.add() / anchoredToastManager.add()

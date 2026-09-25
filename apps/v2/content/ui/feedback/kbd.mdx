@@ -58,6 +58,21 @@ Multiple keys (key combination):
 </KbdGroup>
 ```
 
+## Anatomy
+
+```tsx
+<KbdGroup> {/* <kbd> wrapper for a key combination · data-slot="kbd-group" */}
+  <Kbd>⌘</Kbd> {/* <kbd> key cap · data-slot="kbd" */}
+  <Kbd>K</Kbd>
+</KbdGroup>
+```
+
+## Good to know
+
+- `Kbd` only displays a key. It doesn't listen for key presses; add your own keyboard handler.
+- Use `KbdGroup` for combinations so the keys sit together with an even gap.
+- Show the right modifier for each platform yourself, for example `⌘` on macOS and `Ctrl` on Windows.
+
 ## API Reference
 
 ### Kbd

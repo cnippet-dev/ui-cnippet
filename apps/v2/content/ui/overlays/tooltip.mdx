@@ -95,6 +95,27 @@ Wrap multiple tooltips in `TooltipProvider` so that once one becomes visible, ad
 </TooltipContent>
 ```
 
+## Anatomy
+
+```tsx
+<Tooltip> {/* root, owns the open state */}
+  <TooltipTrigger render={<Button size="icon" variant="ghost" aria-label="Copy" />}> {/* <button> · data-slot="tooltip-trigger" */}
+    <CopyIcon />
+  </TooltipTrigger>
+  <TooltipPopup>Copy to clipboard</TooltipPopup> {/* portal + positioner + popup · data-slot="tooltip-popup" */}
+</Tooltip>
+```
+
+## Good to know
+
+- `TooltipContent` is an alias of `TooltipPopup`. Prefer `TooltipPopup`.
+- `TooltipTrigger` is unstyled. Style it with `render={<Button />}`. There is no `asChild`.
+- `TooltipProvider` is optional. Wrap a group of tooltips in it so that, once one is open, the others open instantly.
+- The tooltip opens after `600`ms on hover or on keyboard focus. Change it with `delay` on `TooltipTrigger`.
+- Tooltips don't open on touch screens, and their content can't be clicked. Don't put essential information or buttons in them; use `Popover` instead.
+- It opens above the trigger by default. Change it with `side`, `align` and `sideOffset` on `TooltipPopup`.
+- An icon-only trigger still needs its own `aria-label`. The tooltip text doesn't replace it.
+
 ## API Reference
 
 ### TooltipProvider

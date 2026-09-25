@@ -58,11 +58,22 @@ import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset"
 </Fieldset>
 ```
 
-## Notes
+## Anatomy
 
-- **When to use** — wrap a group of related inputs (radio buttons, checkboxes, or multiple fields for the same concept) inside a `Fieldset`. The `FieldsetLegend` names the group for screen readers.
-- **Accessibility** — screen readers announce the legend text before reading each input inside the fieldset, giving users context for each field without extra labels.
-- **Disabled state** — setting `disabled` on `<Fieldset>` disables all interactive elements inside it at the browser level. No JavaScript needed.
+```tsx
+<Fieldset> {/* <fieldset> · data-slot="fieldset" */}
+  <FieldsetLegend>Shipping address</FieldsetLegend> {/* names the group · data-slot="fieldset-legend" */}
+  <Field>…</Field>
+  <Field>…</Field>
+</Fieldset>
+```
+
+## Good to know
+
+- Use a `Fieldset` to group related controls, such as a set of radio buttons or several fields for one address. Screen readers announce the legend before each control inside.
+- `FieldsetLegend` renders a `<div>` that labels the fieldset through `aria-labelledby`, not a native `<legend>`. It can go anywhere inside the `Fieldset`.
+- `disabled` on `Fieldset` disables every control inside it.
+- `Fieldset` has a built-in `max-w-64` width limit. Override it with `className="max-w-none"` or another width.
 
 ## API Reference
 

@@ -55,6 +55,19 @@ import { Textarea } from "@/components/ui/textarea"
 <Textarea />
 ```
 
+## Anatomy
+
+```tsx
+<Textarea placeholder="Write a message" /> {/* <span data-slot="textarea-control"> wrapper + <textarea data-slot="textarea"> */}
+```
+
+## Good to know
+
+- `className` goes on the wrapper `<span>`, which draws the border and focus ring. To style the `<textarea>` itself, target it from the wrapper, e.g. `className="[&_textarea]:min-h-40"`.
+- `size` is `"sm"`, `"default"` or `"lg"`.
+- Inside a `Field`, the textarea is connected to the label, description and validation automatically.
+- Inside an `InputGroup`, use `InputGroupTextarea` instead to avoid a double border.
+
 ## API Reference
 
 ### Textarea

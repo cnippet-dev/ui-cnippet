@@ -73,6 +73,33 @@ import {
 </Table>
 ```
 
+## Anatomy
+
+```tsx
+<Table> {/* scroll wrapper <div data-slot="table-container"> + <table data-slot="table"> */}
+  <TableCaption>Recent invoices</TableCaption> {/* <caption> */}
+  <TableHeader> {/* <thead> */}
+    <TableRow> {/* <tr> */}
+      <TableHead>Invoice</TableHead> {/* <th> */}
+    </TableRow>
+  </TableHeader>
+  <TableBody> {/* <tbody> */}
+    <TableRow>
+      <TableCell>INV001</TableCell> {/* <td> */}
+    </TableRow>
+  </TableBody>
+  <TableFooter /> {/* <tfoot> */}
+</Table>
+```
+
+## Good to know
+
+- These are styled native table elements with no state. For sorting, filtering or pagination, pair them with a data library such as TanStack Table.
+- `Table` wraps the `<table>` in a `<div>` that scrolls horizontally. `className` goes on the `<table>`, not on the wrapper.
+- `variant="card"` gives the body a rounded, bordered card look.
+- Rows don't track selection themselves. To highlight a selected row, set `data-state="selected"` on `TableRow`.
+- Put `TableCaption` first inside `Table`. It still appears below the table, and screen readers announce it as the table's name.
+
 ## API Reference
 
 ### Table

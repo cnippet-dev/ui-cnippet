@@ -124,10 +124,9 @@ export function SiteHeaderClient({
                 ? "bg-background md:shadow-[0_0_0_1px_var(--canvas-edge),0_0_0_13px_var(--chrome)] md:[clip-path:inset(-13px_-13px_0_-13px)]"
                 : "border-transparent bg-transparent",
             )
-          : cn(
-              "top-0 bg-chrome/80 backdrop-blur-xl",
-              scrolled && "shadow-[0_1px_0_var(--border)]",
-            ),
+          : // No scroll rule: the docs topbar sticks right below and draws
+            // the canvas's rounded top against the chrome.
+            "top-0 bg-chrome/80 backdrop-blur-xl",
       )}
     >
       <div

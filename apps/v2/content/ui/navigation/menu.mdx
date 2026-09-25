@@ -105,10 +105,10 @@ import {
 
     <MenuGroup>
       <MenuGroupLabel>Sort by</MenuGroupLabel>
-      <MenuRadioGroup>
-        <MenuRadioItem>Artist</MenuRadioItem>
-        <MenuRadioItem>Album</MenuRadioItem>
-        <MenuRadioItem>Title</MenuRadioItem>
+      <MenuRadioGroup defaultValue="artist">
+        <MenuRadioItem value="artist">Artist</MenuRadioItem>
+        <MenuRadioItem value="album">Album</MenuRadioItem>
+        <MenuRadioItem value="title">Title</MenuRadioItem>
       </MenuRadioGroup>
     </MenuGroup>
 
@@ -124,6 +124,42 @@ import {
   </MenuPopup>
 </Menu>
 ```
+
+## Anatomy
+
+```tsx
+<Menu> {/* root, owns the open state */}
+  <MenuTrigger render={<Button variant="outline" />}>Options</MenuTrigger> {/* <button> · data-slot="menu-trigger" */}
+  <MenuPopup align="start"> {/* portal + positioner + popup · data-slot="menu-popup" */}
+    <MenuGroup> {/* data-slot="menu-group" */}
+      <MenuGroupLabel>Account</MenuGroupLabel> {/* data-slot="menu-label" */}
+      <MenuItem onClick={openProfile}> {/* data-slot="menu-item" */}
+        Profile <MenuShortcut>⌘P</MenuShortcut>
+      </MenuItem>
+    </MenuGroup>
+    <MenuSeparator />
+    <MenuCheckboxItem checked={toolbar} onCheckedChange={setToolbar}>Toolbar</MenuCheckboxItem>
+    <MenuRadioGroup value={sort} onValueChange={setSort}>
+      <MenuRadioItem value="name">Name</MenuRadioItem>
+    </MenuRadioGroup>
+    <MenuSub> {/* nested menu */}
+      <MenuSubTrigger>More</MenuSubTrigger>
+      <MenuSubPopup>…</MenuSubPopup>
+    </MenuSub>
+  </MenuPopup>
+</Menu>
+```
+
+## Good to know
+
+- Built on Base UI, not Radix. Handle item actions with `onClick`. There is no `onSelect`.
+- The `DropdownMenu*` names are aliases (`DropdownMenuContent` is `MenuPopup`, `DropdownMenuLabel` is `MenuGroupLabel`). Prefer the `Menu*` names.
+- `MenuTrigger` is unstyled. Style it with `render={<Button variant="outline" />}`. There is no `asChild`.
+- Clicking a `MenuItem` closes the menu. Checkbox and radio items keep it open. Change this per item with `closeOnClick`.
+- `MenuGroupLabel` must be inside a `MenuGroup` or `MenuRadioGroup`; otherwise it throws an error.
+- Every `MenuRadioItem` needs a `value`. The selection lives on `MenuRadioGroup` (`value`, `defaultValue`, `onValueChange`).
+- For links, use `render` on the item: `<MenuItem render={<Link href="/settings" />}>Settings</MenuItem>`.
+- `variant="destructive"` styles an item in red. `inset` indents an item without an icon so it lines up with items that have one. `MenuCheckboxItem variant="switch"` shows a switch instead of a check mark.
 
 ## API Reference
 

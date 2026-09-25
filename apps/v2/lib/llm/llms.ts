@@ -35,10 +35,11 @@ const INTRO = `# cnippet ui
 Notes for AI assistants:
 
 - Built on Base UI (\`@base-ui/react\`), not Radix. Compose with the \`render\` prop, e.g. \`<Button render={<a href="/docs" />} />\`. There is no \`asChild\`.
-- Install with \`npx shadcn@latest add @cnippet/<name>\`. Components are written to \`components/ui/<name>.tsx\` and imported from \`@/components/ui/<name>\`.
+- Install with \`npx shadcn@latest add @cnippet/<name>\`. UI components are written to \`components/ui/<name>.tsx\` and imported from \`@/components/ui/<name>\`. Motion components go to \`components/motion/<name>.tsx\`.
 - Always use the \`@cnippet/\` prefix. A bare name such as \`dialog\` installs the Radix-based shadcn/ui component instead.
 - Styling uses Tailwind CSS v4 and shadcn/ui-compatible CSS variables. Every part has a \`data-slot\` attribute for targeting styles.
-- Every docs page is available as markdown by adding \`.md\` to its URL.`;
+- Every docs page is available as markdown by adding \`.md\` to its URL.
+- Each component page has an "Anatomy" section (the parts and how they nest) and a "Good to know" section (correct prop names, defaults and common mistakes). Follow them over patterns from other libraries.`;
 
 /** Strips boilerplate that repeats on every component description. */
 export function cleanDescription(description = ""): string {

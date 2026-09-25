@@ -340,7 +340,7 @@ export const mdxComponents = {
     <TabsTab className={cn("rounded-lg", className)} {...props} />
   ),
   table: ({ className, ...props }: React.ComponentProps<"table">) => (
-    <ScrollArea className="my-6" scrollbarGutter>
+    <ScrollArea className="my-6 h-auto!" scrollbarGutter>
       <table
         className={cn("relative w-full border-none text-sm", className)}
         {...props}

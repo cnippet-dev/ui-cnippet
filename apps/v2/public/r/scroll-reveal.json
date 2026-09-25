@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-reveal",
+  "description": "Elements animate into view when they enter the viewport, with any Motion variant",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/scroll-reveal.tsx",
+      "content": "\"use client\";\n\nimport {\n  motion,\n  type Transition,\n  type UseInViewOptions,\n  useInView,\n  type Variant,\n} from \"motion/react\";\nimport { type ReactNode, useRef, useState } from \"react\";\n\nexport type ScrollRevealProps = {\n  children: ReactNode;\n  variants?: {\n    hidden: Variant;\n    visible: Variant;\n  };\n  transition?: Transition;\n  viewOptions?: UseInViewOptions;\n  as?: React.ElementType;\n  once?: boolean;\n};\n\nconst defaultVariants = {\n  hidden: { opacity: 0 },\n  visible: { opacity: 1 },\n};\n\nexport function ScrollReveal({\n  children,\n  variants = defaultVariants,\n  transition,\n  viewOptions,\n  as = \"div\",\n  once,\n}: ScrollRevealProps) {\n  const ref = useRef(null);\n  const isInView = useInView(ref, viewOptions);\n  const [isViewed, setIsViewed] = useState(false);\n\n  const MotionComponent = motion[\n    as as keyof typeof motion\n  ] as typeof motion.div;\n\n  return (\n    <MotionComponent\n      animate={isInView || isViewed ? \"visible\" : \"hidden\"}\n      initial=\"hidden\"\n      onAnimationComplete={() => {\n        if (once) setIsViewed(true);\n      }}\n      ref={ref}\n      transition={transition}\n      variants={variants}\n    >\n      {children}\n    </MotionComponent>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/scroll-reveal.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

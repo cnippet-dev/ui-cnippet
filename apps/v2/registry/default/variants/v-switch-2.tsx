@@ -1,6 +1,6 @@
 import { useId } from "react";
-import { Label } from "@/registry/default/ui//label";
-import { Switch } from "@/registry/default/ui//switch";
+import { Label } from "@/registry/default/ui/label";
+import { Switch } from "@/registry/default/ui/switch";
 
 export default function Particle() {
   const id = useId();

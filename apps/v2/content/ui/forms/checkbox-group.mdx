@@ -54,24 +54,43 @@ npm install @base-ui/react
 ```tsx
 import { Checkbox } from "@/components/ui/checkbox"
 import { CheckboxGroup } from "@/components/ui/checkbox-group"
+import { Label } from "@/components/ui/label"
 ```
 
 ```tsx
-<CheckboxGroup>
+<CheckboxGroup aria-label="Select frameworks" defaultValue={["next"]}>
   <Label>
-    <Checkbox defaultChecked />
+    <Checkbox value="next" />
     Next.js
   </Label>
   <Label>
-    <Checkbox />
+    <Checkbox value="vite" />
     Vite
   </Label>
   <Label>
-    <Checkbox />
+    <Checkbox value="astro" />
     Astro
   </Label>
 </CheckboxGroup>
 ```
+
+## Anatomy
+
+```tsx
+<CheckboxGroup aria-label="Frameworks" defaultValue={["next"]}> {/* <div role="group"> */}
+  <Label>
+    <Checkbox value="next" /> {/* identified by its value */}
+    Next.js
+  </Label>
+</CheckboxGroup>
+```
+
+## Good to know
+
+- Give every `Checkbox` a `value`. The group uses it to track which boxes are checked (it falls back to `name` if there's no `value`).
+- The state lives on the group: `value`, `defaultValue` and `onValueChange` use an array of checked values. Don't set `checked` or `defaultChecked` on the checkboxes inside.
+- For a "select all" checkbox, pass every value to `allValues` on the group and add `<Checkbox parent />`. It turns indeterminate when only some are checked.
+- Name the group for screen readers with `aria-label`, or wrap it in a `Fieldset` with a `FieldsetLegend`.
 
 ## API Reference
 

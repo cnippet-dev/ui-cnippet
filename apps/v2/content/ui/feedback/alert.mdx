@@ -86,6 +86,27 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 </Alert>
 ```
 
+## Anatomy
+
+```tsx
+<Alert variant="warning"> {/* <div role="alert"> · data-slot="alert" */}
+  <TriangleAlertIcon /> {/* optional icon, placed in its own column */}
+  <AlertTitle>Heads up</AlertTitle> {/* data-slot="alert-title" */}
+  <AlertDescription>Your trial ends in 3 days.</AlertDescription> {/* data-slot="alert-description" */}
+  <AlertAction> {/* optional buttons · data-slot="alert-action" */}
+    <Button size="xs">Upgrade</Button>
+  </AlertAction>
+</Alert>
+```
+
+## Good to know
+
+- The variants are `default`, `info`, `success`, `warning` and `error`. There is no `destructive` variant; use `error`.
+- Put an icon as the first child, directly inside `Alert`. The layout gives it its own column automatically.
+- `Alert` always has `role="alert"`, so screen readers announce it as soon as it appears. For static information that isn't urgent, override it with `role="status"` or `role={undefined}`.
+- `AlertAction` sits on the right on wider screens and moves below the text on small screens.
+- For temporary messages that disappear on their own, use `toastManager` from Toast instead.
+
 ## API Reference
 
 ### Alert
