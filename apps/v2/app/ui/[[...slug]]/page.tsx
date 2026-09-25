@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPage } from "@/components/docs-page";
+import { hasRegistryItem } from "@/lib/llm/page-to-markdown";
 import { source } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
 import { Button } from "@/registry/default/ui/button";
@@ -34,7 +35,7 @@ export async function generateMetadata(props: {
   const fullTitle = `${doc.title} Component — Cnippet UI`;
 
   return {
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: { "text/markdown": `${url}.md` } },
     description: doc.description,
     openGraph: {
       description: doc.description,
@@ -62,10 +63,12 @@ export default async function UIPage(props: {
   if (!page) notFound();
 
   const doc = page.data;
-  const rawContent = await page.data.getText("raw");
   const MDX = doc.body;
   const links = doc.links;
   const neighbours = await findNeighbour(source.pageTree, page.url);
+  const itemName = params.slug.at(-1);
+  const registryName =
+    itemName && hasRegistryItem(itemName) ? itemName : undefined;
 
   return (
     <DocsPage
@@ -83,7 +86,7 @@ export default async function UIPage(props: {
               variant="outline"
             />
           ) : null}
-          {rawContent ? <DocsCopyPage page={rawContent} /> : null}
+          <DocsCopyPage pageUrl={page.url} registryName={registryName} />
         </>
       }
       description={doc.description}

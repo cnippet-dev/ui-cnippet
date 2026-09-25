@@ -164,7 +164,7 @@ The primary way to trigger a toast. Call from any component without prop drillin
 | `description` | `string` | — | Secondary text below the title |
 | `type` | `"success" \| "error" \| "warning" \| "info" \| "loading"` | — | Renders a matching colored icon |
 | `actionProps` | `{ children: ReactNode }` | — | Adds an action button inside the toast |
-| `duration` | `number` | `5000` | Auto-dismiss delay in milliseconds |
+| `timeout` | `number` | `5000` | Auto-dismiss delay in milliseconds. `0` keeps the toast open until dismissed |
 | `positionerProps` | `{ anchor: Element; sideOffset?: number }` | — | For `anchoredToastManager` — positions the toast relative to an element |
 | `data` | `{ tooltipStyle?: boolean }` | — | Pass `{ tooltipStyle: true }` to render an anchored toast as a tooltip |
 

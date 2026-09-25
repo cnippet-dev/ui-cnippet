@@ -97,7 +97,7 @@ The `SheetPanel` component automatically wraps its content in a `ScrollArea` com
 The `SheetPopup` component supports the following props:
 
 - `side`: Controls which side of the screen the sheet opens from. Options: `"top"`, `"bottom"`, `"left"`, `"right"` (default: `"right"`)
-- `inset`: When `true`, adds spacing around the sheet on desktop screens (default: `false`)
+- `variant`: Set to `"inset"` to add spacing around the sheet on desktop screens. Options: `"default"`, `"inset"` (default: `"default"`)
 
 ```tsx
 // Right side sheet (default)
@@ -121,7 +121,7 @@ The `SheetPopup` component supports the following props:
 </SheetPopup>
 
 // Sheet with inset spacing
-<SheetPopup side="right" inset>
+<SheetPopup side="right" variant="inset">
   ...
 </SheetPopup>
 ```

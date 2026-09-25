@@ -1,6 +1,7 @@
 import { findNeighbour } from "fumadocs-core/page-tree";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
+import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPage } from "@/components/docs-page";
 import { docSource } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
@@ -24,7 +25,7 @@ export async function generateMetadata(props: {
   const url = `https://ui.cnippet.dev/docs/${slug}`;
 
   return {
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: { "text/markdown": `${url}.md` } },
     description: page.data.description,
     openGraph: {
       description: page.data.description,
@@ -56,6 +57,7 @@ export default async function DocsRoute(props: {
 
   return (
     <DocsPage
+      actions={<DocsCopyPage pageUrl={page.url} />}
       description={page.data.description}
       kicker="guides"
       neighbours={neighbours}

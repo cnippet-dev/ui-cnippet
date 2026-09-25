@@ -77,7 +77,7 @@ Root container. Thin wrapper around Base UI's `Accordion.Root`.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `openMultiple` | `boolean` | `true` | Whether multiple items can be open simultaneously |
+| `multiple` | `boolean` | `false` | Whether multiple items can be open simultaneously |
 | `value` | `string[]` | — | Controlled array of open item values |
 | `defaultValue` | `string[]` | `[]` | Initial open values for uncontrolled usage |
 | `onValueChange` | `(value: string[]) => void` | — | Callback when open items change |
@@ -113,7 +113,7 @@ Only one panel can be open at a time. Opening a new item automatically closes th
 
 ### Multiple Accordion
 
-Set `type="multiple"` to allow any number of panels to be open simultaneously.
+Set `multiple` to allow any number of panels to be open simultaneously.
 
 <ComponentPreview name="v-accordion-3" align="start" />
 

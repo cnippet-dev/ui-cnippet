@@ -46,18 +46,17 @@ npm install react-day-picker date-fns
 
 </CodeTabs>
 
-{/* ## Usage
+## Usage
 
 ```tsx
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Calendar } from "@/components/ui/calendar"
 ```
 
 ```tsx
-<Avatar>
-  <AvatarImage src="/avatars/01.png" alt="User avatar" />
-  <AvatarFallback>JD</AvatarFallback>
-</Avatar>
-``` */}
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar mode="single" selected={date} onSelect={setDate} />
+```
 
 ## API Reference
 

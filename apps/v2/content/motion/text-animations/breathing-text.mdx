@@ -67,10 +67,9 @@ import { BreathingText } from "@/components/motion/breathing-text";
 | `children` | `ReactNode` | — | Text content to animate |
 | `fromFontVariationSettings` | `string` | — | Starting CSS `font-variation-settings` value |
 | `toFontVariationSettings` | `string` | — | Peak CSS `font-variation-settings` value |
-| `transition` | `Transition` | `{ duration: 1.5, ease: "easeInOut" }` | Transition for the breath cycle |
+| `duration` | `number` | `3` | Seconds for one full breath cycle |
 | `staggerDuration` | `number` | `0.1` | Seconds between each letter's cycle offset |
 | `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Wave origin |
-| `repeatDelay` | `number` | `0.1` | Pause between each repeat cycle |
 | `as` | `ElementType` | `"span"` | HTML element rendered as the container |
 | `className` | `string` | — | Class applied to the container |
 

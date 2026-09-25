@@ -8,7 +8,7 @@ links:
 
 <ComponentPreview name="v-otp-field-1" />
 
-> **Note:** This component wraps [Base UI OTP Field](https://base-ui.com/react/components/otp-field) (`OTPFieldPreview`), which is currently in **preview** and may change before it becomes stable.
+> **Note:** This component wraps [Base UI OTP Field](https://base-ui.com/react/components/otp-field) (`OTPField`), which is currently in **preview** and may change before it becomes stable.
 
 ## Installation
 
@@ -116,7 +116,7 @@ Associates a `Label` with the OTP field for accessible identification without re
 
 ### Custom sanitization
 
-Set `validationType="none"` with `sanitizeValue` when you need to normalize pasted input before it reaches state, or to enforce custom character rules. Use `inputMode` for the virtual keyboard hint, and `onValueInvalid` when you want to react to characters that were rejected after sanitization.
+Set `validationType="none"` with `normalizeValue` when you need to normalize pasted input before it reaches state, or to enforce custom character rules. Use `inputMode` for the virtual keyboard hint, and `onValueInvalid` when you want to react to characters that were rejected after sanitization.
 
 <ComponentPreview name="v-otp-field-5" />
 

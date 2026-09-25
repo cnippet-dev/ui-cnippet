@@ -73,7 +73,7 @@ Root container that provides shared `variant` and `size` context to all child `T
 | `value` | `string[]` | — | Controlled array of pressed item values |
 | `defaultValue` | `string[]` | `[]` | Initial pressed values for uncontrolled usage |
 | `onValueChange` | `(value: string[]) => void` | — | Callback when the selection changes |
-| `toggleMultiple` | `boolean` | `true` | Whether multiple items can be active simultaneously |
+| `multiple` | `boolean` | `false` | Whether multiple items can be active simultaneously |
 
 ### ToggleGroupItem
 
@@ -116,7 +116,7 @@ Set `orientation="vertical"` to stack toggles top-to-bottom — common in side-p
 
 ### Multiple selection
 
-With `type="multiple"`, users can activate more than one toggle at a time — suitable for text formatting options like bold + italic.
+With `multiple`, users can activate more than one toggle at a time — suitable for text formatting options like bold + italic.
 
 <ComponentPreview name="v-toggle-group-5" />
 
