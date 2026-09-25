@@ -80,6 +80,33 @@ const items = [
   </Select>
 ```
 
+## Anatomy
+
+```tsx
+<Select items={items} defaultValue="next"> {/* root, owns the value */}
+  <SelectTrigger> {/* <button> with a chevron · data-slot="select-trigger" */}
+    <SelectValue placeholder="Framework" /> {/* shows the selected label · data-slot="select-value" */}
+  </SelectTrigger>
+  <SelectPopup> {/* portal + positioner + list · data-slot="select-popup" */}
+    <SelectGroup> {/* optional · data-slot="select-group" */}
+      <SelectGroupLabel>Frameworks</SelectGroupLabel>
+      <SelectItem value="next">Next.js</SelectItem> {/* data-slot="select-item" */}
+    </SelectGroup>
+  </SelectPopup>
+</Select>
+```
+
+## Good to know
+
+- Built on Base UI, not Radix. Pass `items` (an array of `{ label, value }` or a `{ value: label }` object) to `Select` so `SelectValue` can show the selected item's label instead of its raw value.
+- `SelectContent` is an alias of `SelectPopup`. Prefer `SelectPopup`.
+- For placeholder text, use `placeholder` on `SelectValue`, or add an item with `value: null` to `items`.
+- `SelectItem value` can be a string or an object. With `{ value, label }` objects, the label is shown automatically.
+- The state props are `value`, `defaultValue` and `onValueChange`. Add `multiple` to allow several selections; the value becomes an array.
+- When opened with a mouse, the list covers the trigger with the selected item lined up on it, like a native select (if there's room). Set `alignItemWithTrigger={false}` on `SelectPopup` to open it below the trigger instead.
+- Inside a `Field`, the select is connected to the label and validation automatically. Give it a `name` for form submissions.
+- For a searchable list, use `Combobox`.
+
 ## API Reference
 
 ### Select

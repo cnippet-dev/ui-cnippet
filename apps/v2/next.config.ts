@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
       source: "/motion",
     },
   ],
+  // `/ui/data/accordion.md` → markdown version of the page for LLMs.
+  rewrites: async () =>
+    ["ui", "docs", "motion"].map((section) => ({
+      destination: `/llms.mdx/${section}/:path*`,
+      source: `/${section}/:path*.md`,
+    })),
 };
 
 export default withMDX(nextConfig);

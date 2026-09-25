@@ -53,6 +53,19 @@ import { TextShimmer } from "@/components/motion/text-shimmer";
 <TextShimmer>Build beautiful interfaces</TextShimmer>
 ```
 
+## Anatomy
+
+```tsx
+<TextShimmer>Loading your workspace…</TextShimmer> {/* <p> with a light sweep across the text */}
+```
+
+## Good to know
+
+- `children` must be a plain string.
+- A common use is loading or "thinking" text. `duration` is the seconds per sweep and `spread` sets the width of the light.
+- It sets its own gray text and highlight colors, with separate dark-mode values. Change them with the `--base-color` and `--base-gradient-color` CSS variables.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

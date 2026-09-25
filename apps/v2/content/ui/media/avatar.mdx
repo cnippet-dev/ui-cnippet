@@ -60,6 +60,22 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 </Avatar>
 ```
 
+## Anatomy
+
+```tsx
+<Avatar> {/* <span> · data-slot="avatar" */}
+  <AvatarImage src="/ada.png" alt="Ada Lovelace" /> {/* shown once it loads · data-slot="avatar-image" */}
+  <AvatarFallback>AL</AvatarFallback> {/* shown while loading or if the image fails · data-slot="avatar-fallback" */}
+</Avatar>
+```
+
+## Good to know
+
+- The image only appears after it has loaded. Until then, or if it fails, the fallback shows.
+- Add `delay` (in ms) to `AvatarFallback` to avoid a flash of initials when the image loads quickly.
+- Set the size on `Avatar` with `className`, e.g. `size-10`. The image and fallback fill it.
+- Always give `AvatarImage` an `alt`, or `alt=""` if a name is shown next to it.
+
 ## API Reference
 
 ### Avatar

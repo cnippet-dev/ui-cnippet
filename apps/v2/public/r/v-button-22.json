@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-22.tsx",
-      "content": "import { SearchIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui//button\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui//kbd\";\n\nexport function Pattern() {\n  return (\n    <Button aria-label=\"Search (Command K)\" variant=\"outline\">\n      <SearchIcon aria-hidden=\"true\" />\n      <span>Search</span>\n      <KbdGroup aria-hidden=\"true\">\n        <Kbd>⌘</Kbd>\n        <Kbd>K</Kbd>\n      </KbdGroup>\n    </Button>\n  );\n}\n",
+      "content": "import { SearchIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Kbd, KbdGroup } from \"@/registry/default/ui/kbd\";\n\nexport function Pattern() {\n  return (\n    <Button aria-label=\"Search (Command K)\" variant=\"outline\">\n      <SearchIcon aria-hidden=\"true\" />\n      <span>Search</span>\n      <KbdGroup aria-hidden=\"true\">\n        <Kbd>⌘</Kbd>\n        <Kbd>K</Kbd>\n      </KbdGroup>\n    </Button>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

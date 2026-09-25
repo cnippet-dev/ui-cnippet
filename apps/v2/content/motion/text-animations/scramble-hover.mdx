@@ -53,6 +53,19 @@ import { ScrambleHover } from "@/components/motion/scramble-hover";
 <ScrambleHover>Hover over me</ScrambleHover>
 ```
 
+## Anatomy
+
+```tsx
+<ScrambleHover>Hover over me</ScrambleHover> {/* <span> that scrambles on hover */}
+```
+
+## Good to know
+
+- `children` must be a plain string.
+- The effect plays on hover, so there's nothing to see on touch screens.
+- Set `useOriginalCharsOnly` to scramble with the text's own letters instead of `characterSet`.
+- Screen readers get the text through `aria-label`; the scrambled characters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

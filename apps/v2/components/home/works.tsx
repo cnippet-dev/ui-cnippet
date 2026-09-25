@@ -70,7 +70,7 @@ export function Works() {
           <p className="font-medium font-mono text-cnippet-orange text-sm">
             [our products]
           </p>
-          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+          <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
             Tools we build with.
             <br />
             Shared with developers.
@@ -98,7 +98,7 @@ export function Works() {
               className={`flex items-end justify-between rounded-[2px] border p-4 ${product.bg} ${product.border}`}
             >
               <span
-                className={`font-f37-stout text-4xl leading-none ${product.accent}`}
+                className={`font-display text-4xl leading-none ${product.accent}`}
               >
                 {product.count}
               </span>
@@ -108,7 +108,7 @@ export function Works() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <h3 className="font-f37-stout text-xl">{product.title}</h3>
+              <h3 className="font-display text-xl">{product.title}</h3>
               <p className="text-balance text-muted-foreground text-sm leading-relaxed">
                 {product.description}
               </p>

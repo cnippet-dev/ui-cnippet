@@ -53,6 +53,19 @@ import { FlipWords } from "@/components/motion/flip-words";
 <FlipWords words={["beautiful", "accessible", "composable"]} />
 ```
 
+## Anatomy
+
+```tsx
+<FlipWords words={["beautiful", "accessible", "composable"]} /> {/* <span> showing one word at a time */}
+```
+
+## Good to know
+
+- It cycles through `words` forever, changing every `duration` milliseconds (default `3000`).
+- Screen readers only hear the word that's showing when they reach it.
+- Because the words have different widths, surrounding text can shift. Give it a fixed width or place it at the end of a line.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

@@ -132,6 +132,31 @@ const items = [
 </Combobox>
 ```
 
+## Anatomy
+
+```tsx
+<Combobox items={items}> {/* root, owns the selected value and the search text */}
+  <ComboboxInput placeholder="Select a fruit" /> {/* search input + trigger button */}
+  <ComboboxPopup> {/* portal + positioner + popup */}
+    <ComboboxEmpty>No results.</ComboboxEmpty> {/* shown when nothing matches · data-slot="combobox-empty" */}
+    <ComboboxList> {/* scrollable list · data-slot="combobox-list" */}
+      {(item) => (
+        <ComboboxItem key={item.value} value={item}>{item.label}</ComboboxItem>
+      )}
+    </ComboboxList>
+  </ComboboxPopup>
+</Combobox>
+```
+
+## Good to know
+
+- Pass your data to `Combobox` through `items`, and render each option with a function inside `ComboboxList`. Filtering is automatic. With `{ value, label }` objects, the search matches `label`.
+- The value is the selected item (or an array of items with `multiple`), not the text typed into the input. Use `onValueChange` for the selection and `onInputValueChange` for the search text.
+- For multiple selection, add `multiple` and render `ComboboxChips` containing a `ComboboxChip` per selected item plus a `ComboboxInput`.
+- `ComboboxInput` shows a dropdown button by default (`showTrigger`). Add `showClear` for a clear button.
+- For groups, pass groups as `items` and render `ComboboxGroup`, `ComboboxGroupLabel` and `ComboboxCollection` inside the list.
+- Use `Combobox` when the user must pick from the list. When they can also type any value, use `Autocomplete`.
+
 ## API Reference
 
 The `ComboboxInput` component extends the original Base UI component with a few extra props:

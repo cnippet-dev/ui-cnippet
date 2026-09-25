@@ -70,7 +70,7 @@ export function WhyUs() {
         <p className="font-medium font-mono text-cnippet-orange text-sm">
           [why cnippet]
         </p>
-        <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+        <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
           What makes us
           <br />
           different.
@@ -99,7 +99,7 @@ export function WhyUs() {
               >
                 {reason.number}
               </span>
-              <h3 className="font-f37-stout text-xl">{reason.title}</h3>
+              <h3 className="font-display text-xl">{reason.title}</h3>
               <p className="max-w-xs text-balance text-muted-foreground text-sm leading-relaxed">
                 {reason.description}
               </p>

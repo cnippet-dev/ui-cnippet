@@ -61,6 +61,26 @@ import {
 </Frame>
 ```
 
+## Anatomy
+
+```tsx
+<Frame> {/* tinted outer shell · data-slot="frame" */}
+  <FrameHeader> {/* <header> · data-slot="frame-panel-header" */}
+    <FrameTitle>Notifications</FrameTitle> {/* data-slot="frame-panel-title" */}
+    <FrameDescription>Choose what you hear about.</FrameDescription> {/* data-slot="frame-panel-description" */}
+  </FrameHeader>
+  <FramePanel>…</FramePanel> {/* raised inner surface, repeat 1..n · data-slot="frame-panel" */}
+  <FrameFooter>…</FrameFooter> {/* <footer> · data-slot="frame-panel-footer" */}
+</Frame>
+```
+
+## Good to know
+
+- A `Frame` is a two-layer surface: a tinted shell with one or more raised `FramePanel`s inside. Use it to group related panels, such as sections of a settings page. For a single self-contained box, use `Card`.
+- Several `FramePanel`s inside one `Frame` stack with a small gap automatically.
+- `FrameHeader` and `FrameFooter` sit on the tinted shell, outside the panels.
+- All parts are plain styled elements with no state.
+
 ## API Reference
 
 ### Frame
@@ -105,7 +125,7 @@ Panels can be individually expanded or collapsed using `Collapsible`, useful for
 
 ### With Dense Layout
 
-Use the `stackedPanels` prop to stack multiple panels together without gaps.
+A compact frame with a header and a single panel. Multiple `FramePanel`s inside one `Frame` stack automatically with a small gap, so no extra prop is needed.
 
 <ComponentPreview name="v-frame-4" />
 

@@ -56,6 +56,22 @@ import { Toggle } from "@/components/ui/toggle"
 <Toggle>Toggle</Toggle>
 ```
 
+## Anatomy
+
+```tsx
+<Toggle aria-label="Bold"> {/* <button> with aria-pressed · data-slot="toggle" */}
+  <BoldIcon />
+</Toggle>
+```
+
+## Good to know
+
+- The state props are `pressed`, `defaultPressed` and `onPressedChange`.
+- For a set of related toggles, use `ToggleGroup` instead. It adds shared state and arrow-key navigation.
+- Icon-only toggles need an `aria-label`.
+- Style the pressed state with the `data-pressed` attribute.
+- `toggleVariants({ variant, size })` returns the class names, for styling an element that isn't a `Toggle`.
+
 ## API Reference
 
 ### Toggle

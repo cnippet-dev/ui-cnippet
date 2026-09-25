@@ -41,7 +41,7 @@ export function InspectCanvas({
         style={previewWidth ? { maxWidth: previewWidth } : undefined}
       >
         {!mounted ? (
-          <div className="h-10 w-32 animate-pulse rounded-lg bg-gray-950/5 dark:bg-white/8" />
+          <div className="h-10 w-32 animate-pulse rounded-lg bg-muted" />
         ) : (
           <AnimatePresence initial={false} mode="wait">
             {mode === "customize" && variantKey && !isPlaceholder ? (
@@ -58,7 +58,7 @@ export function InspectCanvas({
               ) : (
                 <motion.p
                   animate={{ opacity: 1 }}
-                  className="font-mono text-gray-950/30 text-xs dark:text-white/30"
+                  className="font-mono text-faint text-xs"
                   initial={{ opacity: 0 }}
                   key="no-catalog"
                 >
@@ -75,7 +75,7 @@ export function InspectCanvas({
               >
                 <Suspense
                   fallback={
-                    <div className="h-10 w-32 animate-pulse rounded-lg bg-gray-950/5 dark:bg-white/8" />
+                    <div className="h-10 w-32 animate-pulse rounded-lg bg-muted" />
                   }
                 >
                   <Component />
@@ -84,7 +84,7 @@ export function InspectCanvas({
             ) : (
               <motion.p
                 animate={{ opacity: 1 }}
-                className="font-mono text-gray-950/30 text-xs dark:text-white/30"
+                className="font-mono text-faint text-xs"
                 initial={{ opacity: 0 }}
                 key="empty"
               >

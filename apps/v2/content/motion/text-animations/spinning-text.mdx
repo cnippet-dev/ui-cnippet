@@ -55,6 +55,22 @@ import { SpinningText } from "@/components/motion/spinning-text";
 </SpinningText>
 ```
 
+## Anatomy
+
+```tsx
+<SpinningText className="size-32" radius={4.5} fontSize={0.6}> {/* letters placed on a circle that rotates */}
+  {"cnippet ui • motion • "}
+</SpinningText>
+```
+
+## Good to know
+
+- `children` must be a plain string. End it with a separator such as `" • "` so the start and end don't touch.
+- Give it a size with `className`. `fontSize` is in `rem` and `radius` in `ch` units.
+- `duration` is the seconds per full turn. `reverse` spins counter-clockwise.
+- Screen readers read the full text once; the individual letters are hidden from them.
+- It keeps spinning when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

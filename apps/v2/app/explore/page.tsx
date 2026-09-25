@@ -1,11 +1,11 @@
-import { Blocks, Component, Hash, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import { ExploreShowcase } from "@/components/explore/explore-showcase";
-import { Section, SectionBody, SectionHeader } from "@/components/home/section";
-import { SiteFooter } from "@/components/home/site-footer";
-import { SiteHeader } from "@/components/home/site-header";
+import { PageHero } from "@/components/signal/page-hero";
+import { Rule } from "@/components/signal/rule";
+import { CONTAINER } from "@/components/signal/section";
+import { SiteShell } from "@/components/site/site-shell";
 import { cn } from "@/lib/utils";
 import {
   isPlaceholderMotionVariant,
@@ -30,9 +30,6 @@ export const metadata: Metadata = {
     title: "Explore Components",
   },
 };
-
-/** The explore page numbers its own two sections; it is not the homepage. */
-const EXPLORE_SECTION_TOTAL = "02";
 
 export default function ExplorePage() {
   const variantEntries = variants
@@ -81,121 +78,44 @@ export default function ExplorePage() {
   const componentCount =
     categories.length + textAnimCategories.length + scrollAnimCategories.length;
 
-  const STATS = [
-    {
-      accent: "text-cnippet-orange",
-      icon: Blocks,
-      label: "core variants",
-      value: variantEntries.length,
-    },
-    {
-      accent: "text-cnippet-blue",
-      icon: Sparkles,
-      label: "motion variants",
-      value: textAnimEntries.length + scrollAnimEntries.length,
-    },
-    {
-      accent: "text-cnippet-green",
-      icon: Component,
-      label: "components",
-      value: componentCount,
-    },
-    {
-      accent: "text-cnippet-yellow",
-      icon: Hash,
-      label: "total variants",
-      value: total,
-    },
-  ];
-
   return (
-    <div className="min-h-svh">
-      <div className="mx-auto w-full max-w-7xl border-x border-dashed bg-background">
-        <SiteHeader />
+    <SiteShell>
+      <PageHero
+        kicker="explore"
+        lead="Every variant in the library, rendered live. Scan, preview and copy the source — nothing hidden behind docs."
+        stats={[
+          { label: "core variants", value: variantEntries.length },
+          {
+            label: "motion variants",
+            value: textAnimEntries.length + scrollAnimEntries.length,
+          },
+          { label: "components", value: componentCount },
+          { label: "total variants", value: total },
+        ]}
+        title={
+          <>
+            The full index, <em>live.</em>
+          </>
+        }
+      />
 
-        <main className="flex flex-1 flex-col">
-          {/* Hero section — centered index statement, intentionally minimal */}
-          <Section id="explorer-index">
-            <SectionHeader
-              index="01"
-              title="component explorer · live previews"
-              total={EXPLORE_SECTION_TOTAL}
-            />
-
-            {/* Centered statement */}
-            <div className="flex flex-col items-center px-5 py-20 text-center sm:py-24 lg:py-28">
-              <span className="rounded-[2px] border border-dashed px-3 py-1 font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em]">
-                {total} variants · {componentCount} components
-              </span>
-              <h1 className="mt-8 font-f37-stout text-[44px] leading-[1.02] tracking-tight sm:text-[64px] lg:text-[76px]">
-                The full <span className="text-cnippet-blue">index.</span>
-              </h1>
-              <p className="mt-6 max-w-md text-[15px] text-muted-foreground leading-relaxed">
-                Every variant in the library, rendered live below. Scan,
-                preview, and copy the source — nothing hidden behind docs.
-              </p>
-            </div>
-
-            {/* Stat ticker strip */}
-            <div className="grid grid-cols-2 border-t border-dashed sm:grid-cols-4">
-              {STATS.map((stat, index) => (
-                <div
-                  className={cn(
-                    "flex items-baseline justify-center gap-2.5 border-dashed px-4 py-4",
-                    index % 2 === 1 && "border-l",
-                    index > 1 && "border-t sm:border-t-0",
-                    index === 2 && "sm:border-l",
-                  )}
-                  key={stat.label}
-                >
-                  <stat.icon
-                    aria-hidden="true"
-                    className={cn("size-3.5 self-center", stat.accent)}
-                  />
-                  <span
-                    className={cn(
-                      "font-f37-stout text-xl tabular-nums",
-                      stat.accent,
-                    )}
-                  >
-                    {stat.value}
-                  </span>
-                  <span className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.14em]">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          {/* Showcase */}
-          <Section className="border-b-0" id="browse">
-            <SectionHeader
-              index="02"
-              meta="[filter · search · copy]"
-              title="browse the library"
-              total={EXPLORE_SECTION_TOTAL}
-            />
-
-            <SectionBody className="pt-0 pb-14 sm:pt-0 sm:pb-14">
-              <NuqsAdapter>
-                <Suspense>
-                  <ExploreShowcase
-                    categories={categories}
-                    scrollAnimCategories={scrollAnimCategories}
-                    scrollAnimVariants={scrollAnimEntries}
-                    textAnimCategories={textAnimCategories}
-                    textAnimVariants={textAnimEntries}
-                    variants={variantEntries}
-                  />
-                </Suspense>
-              </NuqsAdapter>
-            </SectionBody>
-          </Section>
-        </main>
-
-        <SiteFooter />
-      </div>
-    </div>
+      <section className="scroll-mt-(--header-height)" id="browse">
+        <Rule />
+        <div className={cn(CONTAINER, "pt-10 pb-16 md:pb-24")}>
+          <NuqsAdapter>
+            <Suspense>
+              <ExploreShowcase
+                categories={categories}
+                scrollAnimCategories={scrollAnimCategories}
+                scrollAnimVariants={scrollAnimEntries}
+                textAnimCategories={textAnimCategories}
+                textAnimVariants={textAnimEntries}
+                variants={variantEntries}
+              />
+            </Suspense>
+          </NuqsAdapter>
+        </div>
+      </section>
+    </SiteShell>
   );
 }

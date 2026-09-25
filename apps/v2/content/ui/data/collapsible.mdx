@@ -65,6 +65,23 @@ import {
 </Collapsible>
 ```
 
+## Anatomy
+
+```tsx
+<Collapsible> {/* root, owns the open state · data-slot="collapsible" */}
+  <CollapsibleTrigger>Show more</CollapsibleTrigger> {/* <button> · data-slot="collapsible-trigger" */}
+  <CollapsiblePanel>Content</CollapsiblePanel> {/* animated body · data-slot="collapsible-panel" */}
+</Collapsible>
+```
+
+## Good to know
+
+- The state props are `open`, `defaultOpen` and `onOpenChange`.
+- `CollapsibleTrigger` only adds `cursor-pointer`. To make it look like a button, use `render={<Button variant="ghost" />}`. There is no `asChild`.
+- `CollapsibleContent` is an alias of `CollapsiblePanel`. Prefer `CollapsiblePanel`.
+- The open/close animation uses the `--collapsible-panel-height` CSS variable. Don't add your own height transition.
+- For several sections where the open state is managed together, use `Accordion` instead.
+
 ## API Reference
 
 ### Collapsible

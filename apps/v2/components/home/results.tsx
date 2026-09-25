@@ -43,7 +43,7 @@ export function Results() {
         <p className="font-medium font-mono text-cnippet-orange text-sm">
           [the numbers]
         </p>
-        <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+        <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
           A studio that ships —
           <br />
           for clients and developers alike.
@@ -60,7 +60,7 @@ export function Results() {
             key={stat.label}
           >
             <span
-              className={`font-f37-stout text-6xl leading-none tracking-tight xl:text-7xl ${stat.accent}`}
+              className={`font-display text-6xl leading-none tracking-tight xl:text-7xl ${stat.accent}`}
             >
               {stat.value}
             </span>

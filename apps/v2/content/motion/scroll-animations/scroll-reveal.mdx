@@ -58,6 +58,21 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 </ScrollReveal>
 ```
 
+## Anatomy
+
+```tsx
+<ScrollReveal once> {/* motion element that animates from "hidden" to "visible" */}
+  <YourContent />
+</ScrollReveal>
+```
+
+## Good to know
+
+- The animation plays when the element enters the viewport. Tune when that happens with `viewOptions` (Motion's `useInView` options, e.g. `{ amount: 0.5 }`).
+- Without `once`, it animates out again when it leaves the viewport and back in on return.
+- `variants` needs both a `hidden` and a `visible` state. The default is a simple fade.
+- It keeps animating when the user has turned on reduced motion in their system settings. If that matters, check `useReducedMotion()` from `motion/react` and skip the animation.
+
 ## Props
 
 | Prop | Type | Default | Description |

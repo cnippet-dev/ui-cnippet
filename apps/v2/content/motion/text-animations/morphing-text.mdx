@@ -53,6 +53,19 @@ import { MorphingText } from "@/components/motion/morphing-text";
 <MorphingText texts={["Innovate", "Create", "Inspire", "Deliver"]} />
 ```
 
+## Anatomy
+
+```tsx
+<MorphingText texts={["Innovate", "Create", "Inspire"]} /> {/* two overlapping texts blended with an SVG filter */}
+```
+
+## Good to know
+
+- It loops through `texts` forever with a blur-and-merge effect.
+- The morph uses an SVG filter, so it looks best on large, bold headings.
+- Screen readers read both overlapping texts, which can be confusing. Add an `aria-label` on a wrapper and `aria-hidden` on the component if that matters.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

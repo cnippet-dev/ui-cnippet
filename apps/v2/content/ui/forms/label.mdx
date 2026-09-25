@@ -50,6 +50,18 @@ import { Label } from "@/components/ui/label"
 ```
 
 
+## Anatomy
+
+```tsx
+<Label htmlFor="email">Email</Label> {/* <label> · data-slot="label" */}
+```
+
+## Good to know
+
+- Link a label to its control with `htmlFor` and a matching `id`, or wrap the control: `<Label><Checkbox /> Remember me</Label>`.
+- Inside a `Field`, use `FieldLabel` instead. It links to the control automatically.
+- Use the `render` prop to render a different element with label styling, e.g. `render={<span />}` for a visual-only label.
+
 ## API Reference
 
 ### Label

@@ -121,6 +121,34 @@ Pass `showBar` to `DrawerPopup` to render a visible drag handle bar.
 <DrawerPopup showBar>...</DrawerPopup>
 ```
 
+## Anatomy
+
+```tsx
+<Drawer position="bottom"> {/* root; position sets the edge and swipe direction */}
+  <DrawerTrigger render={<Button variant="outline" />}>Open</DrawerTrigger> {/* data-slot="drawer-trigger" */}
+  <DrawerPopup showBar> {/* portal + backdrop + panel · data-slot="drawer-popup" */}
+    <DrawerHeader> {/* data-slot="drawer-header" */}
+      <DrawerTitle>Move goal</DrawerTitle>
+      <DrawerDescription>Set your daily target.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerPanel>…</DrawerPanel> {/* scrollable body · data-slot="drawer-panel" */}
+    <DrawerFooter> {/* data-slot="drawer-footer" */}
+      <DrawerClose render={<Button variant="ghost" />}>Cancel</DrawerClose>
+    </DrawerFooter>
+  </DrawerPopup>
+</Drawer>
+```
+
+## Good to know
+
+- Set `position` on `Drawer`, not on the popup: `"bottom"` (default), `"top"`, `"left"` or `"right"`. The swipe-to-dismiss direction follows it.
+- Users can drag or swipe the drawer to close it. For a panel that only closes with buttons, use `Sheet`.
+- Unlike `Dialog` and `Sheet`, there's no close (X) button by default. Add one with `showCloseButton`, or show a drag handle with `showBar`.
+- `snapPoints` on `Drawer` lets a bottom drawer rest at partial heights, such as half the screen.
+- `DrawerPopup variant` is `"default"` (rounded inner corners), `"inset"` (space around it on larger screens) or `"straight"` (flush with the edge).
+- The `DrawerMenu*` parts build a mobile menu inside a drawer. They're separate from the `Menu` component.
+- The state props are `open`, `defaultOpen` and `onOpenChange`.
+
 ## API Reference
 
 ### Drawer

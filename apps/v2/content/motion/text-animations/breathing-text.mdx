@@ -60,6 +60,22 @@ import { BreathingText } from "@/components/motion/breathing-text";
 
 > **Variable font required** — `BreathingText` animates `font-variation-settings`. The effect is only visible when the active font supports the axes used (e.g. `wght`, `wdth`). Inter Variable, Geist, and most Google Fonts variable fonts work out of the box.
 
+## Anatomy
+
+```tsx
+<BreathingText fromFontVariationSettings="'wght' 300" toFontVariationSettings="'wght' 900"> {/* <span> of letters */}
+  Build with motion
+</BreathingText>
+```
+
+## Good to know
+
+- It needs a variable font that supports the axes you animate, such as `wght` or `wdth`. With a normal font nothing moves.
+- `children` must be plain text. It's split into letters.
+- This uses a CSS animation, not Motion, so it works without the `motion` package.
+- Screen readers read the full text once; the individual letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |
@@ -67,10 +83,9 @@ import { BreathingText } from "@/components/motion/breathing-text";
 | `children` | `ReactNode` | — | Text content to animate |
 | `fromFontVariationSettings` | `string` | — | Starting CSS `font-variation-settings` value |
 | `toFontVariationSettings` | `string` | — | Peak CSS `font-variation-settings` value |
-| `transition` | `Transition` | `{ duration: 1.5, ease: "easeInOut" }` | Transition for the breath cycle |
+| `duration` | `number` | `3` | Seconds for one full breath cycle |
 | `staggerDuration` | `number` | `0.1` | Seconds between each letter's cycle offset |
 | `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Wave origin |
-| `repeatDelay` | `number` | `0.1` | Pause between each repeat cycle |
 | `as` | `ElementType` | `"span"` | HTML element rendered as the container |
 | `className` | `string` | — | Class applied to the container |
 

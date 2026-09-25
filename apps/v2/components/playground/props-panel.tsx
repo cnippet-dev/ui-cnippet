@@ -13,8 +13,8 @@ export function PropsPanel({ variantKey }: { variantKey: string }) {
 
   if (!variantKey) {
     return (
-      <div className="flex h-full items-center justify-center border-gray-950/8 border-l dark:border-white/10">
-        <p className="px-4 text-center font-mono text-[11px] text-gray-950/25 dark:text-white/20">
+      <div className="flex h-full items-center justify-center border-border border-l">
+        <p className="px-4 text-center font-mono text-[11px] text-faint">
           Select a component to edit its props
         </p>
       </div>
@@ -26,13 +26,13 @@ export function PropsPanel({ variantKey }: { variantKey: string }) {
   const currentProps = propsMap[category] ?? {};
 
   return (
-    <div className="flex h-full flex-col border-gray-950/8 border-l dark:border-white/10">
+    <div className="flex h-full flex-col border-border border-l">
       {/* Header */}
-      <div className="border-gray-950/8 border-b px-4 py-2.5 dark:border-white/10">
-        <p className="font-mono font-semibold text-[10px] text-gray-950/40 uppercase tracking-widest dark:text-white/30">
+      <div className="border-border border-b px-4 py-2.5">
+        <p className="font-mono font-semibold text-[10px] text-faint uppercase tracking-widest">
           Props
         </p>
-        <p className="mt-0.5 font-mono text-gray-950/60 text-xs dark:text-white/50">
+        <p className="mt-0.5 font-mono text-muted-foreground text-xs">
           {variantKey}
         </p>
       </div>
@@ -40,7 +40,7 @@ export function PropsPanel({ variantKey }: { variantKey: string }) {
       {/* Controls */}
       <div className="flex-1 overflow-y-auto p-4">
         {!entry || entry.propsSchema.length === 0 ? (
-          <p className="font-mono text-[11px] text-gray-950/30 dark:text-white/25">
+          <p className="font-mono text-[11px] text-faint">
             {entry
               ? "No configurable props for this component."
               : "Prop editing is not available for this component."}
@@ -77,10 +77,9 @@ function PropControl({
   value: unknown;
   onChange: (v: unknown) => void;
 }) {
-  const labelClass =
-    "mb-1 block font-mono text-[11px] text-gray-950/50 dark:text-white/40";
+  const labelClass = "mb-1 block font-mono text-[11px] text-muted-foreground";
   const inputClass =
-    "w-full rounded-md border border-gray-950/10 bg-transparent px-2 py-1 font-mono text-xs text-gray-950/80 outline-none focus:border-gray-950/20 dark:border-white/10 dark:text-white/70 dark:focus:border-white/20";
+    "w-full rounded-md border border-border bg-transparent px-2 py-1 font-mono text-xs text-foreground/80 outline-none focus:border-border-strong  ";
 
   switch (schema.type) {
     case "enum":
@@ -110,7 +109,7 @@ function PropControl({
             onChange={(e) => onChange(e.target.checked)}
             type="checkbox"
           />
-          <span className="font-mono text-[11px] text-gray-950/60 dark:text-white/50">
+          <span className="font-mono text-[11px] text-muted-foreground">
             {schema.label}
           </span>
         </label>

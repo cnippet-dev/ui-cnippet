@@ -51,6 +51,7 @@ npm install @base-ui/react
 ```tsx
 import {
   Dialog,
+  DialogClose,
   DialogDescription,
   DialogPanel,
   DialogFooter,
@@ -108,6 +109,36 @@ The `DialogPanel` component automatically wraps its content in a `ScrollArea` co
   <div>...</div>
 </DialogPanel>
 ```
+
+## Anatomy
+
+```tsx
+<Dialog> {/* root, owns the open state */}
+  <DialogTrigger render={<Button variant="outline" />}>Edit profile</DialogTrigger> {/* <button> · data-slot="dialog-trigger" */}
+  <DialogPopup> {/* portal + backdrop + popup + close (X) button · data-slot="dialog-popup" */}
+    <DialogHeader> {/* data-slot="dialog-header" */}
+      <DialogTitle>Edit profile</DialogTitle> {/* data-slot="dialog-title" */}
+      <DialogDescription>Update your details.</DialogDescription> {/* data-slot="dialog-description" */}
+    </DialogHeader>
+    <DialogPanel>…</DialogPanel> {/* scrollable body · data-slot="dialog-panel" */}
+    <DialogFooter> {/* data-slot="dialog-footer" */}
+      <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
+      <Button>Save</Button>
+    </DialogFooter>
+  </DialogPopup>
+</Dialog>
+```
+
+## Good to know
+
+- `DialogContent` and `DialogOverlay` are aliases of `DialogPopup` and `DialogBackdrop`. Prefer the `Popup` names.
+- `DialogPopup` already renders the portal, backdrop and a close (X) button. Don't add them yourself. Hide the X with `showCloseButton={false}`.
+- `DialogTrigger` and `DialogClose` are unstyled. Style them with `render={<Button />}`. There is no `asChild`.
+- Put long content in `DialogPanel`. It scrolls when the dialog reaches the screen height, while the header and footer stay in place.
+- On small screens the dialog becomes a bottom sheet. Turn this off with `bottomStickOnMobile={false}`.
+- The state props are `open`, `defaultOpen` and `onOpenChange`. To close after saving, control `open` yourself.
+- Always include a `DialogTitle`. It gives the dialog its accessible name.
+- For destructive confirmations, use `AlertDialog`. Clicking outside it doesn't close it.
 
 ## API Reference
 

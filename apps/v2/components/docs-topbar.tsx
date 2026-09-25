@@ -1,63 +1,86 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, PanelLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { DocsNav, type PageTree } from "@/components/docs-sidebar";
 import { PrefetchLink } from "@/components/prefetch-link";
 import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetPanel,
+  SheetPopup,
+  SheetTitle,
+  SheetTrigger,
+} from "@/registry/default/ui/sheet";
 
 type DocsTopBarProps = {
-  previous?: { url: string; name?: React.ReactNode } | null;
   next?: { url: string; name?: React.ReactNode } | null;
+  previous?: { url: string; name?: React.ReactNode } | null;
+  tree: PageTree;
 };
 
-export function DocsTopBar({ previous, next }: DocsTopBarProps) {
+const iconButton =
+  "inline-flex size-7 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground";
+
+/**
+ * Sticky bar at the top of the docs canvas: mobile nav trigger, the path as a
+ * mono breadcrumb, and prev/next.
+ */
+export function DocsTopBar({ next, previous, tree }: DocsTopBarProps) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
+  const [open, setOpen] = useState(false);
 
   return (
     <div
-      className="sticky top-14 z-40 border-y border-dashed bg-muted/95 backdrop-blur-md dark:bg-muted/60"
+      className="sticky top-(--header-height) z-30 flex h-(--docs-topbar-height) items-center gap-2 border-b bg-background px-3 md:rounded-t-canvas md:px-4 md:shadow-[0_0_0_1px_var(--canvas-edge),0_0_0_12px_var(--chrome)] md:[clip-path:inset(-12px_-12px_0_-8px)]"
       data-slot="docs-topbar"
     >
-      <div className="flex h-full min-w-0 items-center justify-between gap-3 px-5 py-2 sm:px-8">
-        <div className="flex min-w-0 items-center gap-1.5 font-mono text-[12px] text-muted-foreground uppercase tracking-[0.14em]">
-          {segments.map((seg, i) => (
-            <span className="flex items-center gap-1.5" key={i}>
-              {i > 0 && <span className="text-muted-foreground/40">/</span>}
-              <span
-                className={cn(
-                  i === segments.length - 1 ? "text-foreground" : "",
-                )}
-              >
-                {seg.replace(/-/g, " ")}
-              </span>
+      <Sheet onOpenChange={setOpen} open={open}>
+        <SheetTrigger
+          aria-label="Open docs navigation"
+          className={cn(iconButton, "lg:hidden")}
+        >
+          <PanelLeft className="size-4" />
+        </SheetTrigger>
+        <SheetPopup className="max-w-72" side="left">
+          <SheetTitle className="sr-only">Docs navigation</SheetTitle>
+          <SheetPanel className="pt-6">
+            <DocsNav onNavigate={() => setOpen(false)} tree={tree} />
+          </SheetPanel>
+        </SheetPopup>
+      </Sheet>
+
+      <ol className="flex min-w-0 items-center gap-1.5 font-mono text-[12px] text-faint lowercase">
+        {segments.map((seg, i) => (
+          <li className="flex min-w-0 items-center gap-1.5" key={`${i}-${seg}`}>
+            {i > 0 ? <span aria-hidden="true">/</span> : null}
+            <span
+              className={cn(
+                "truncate",
+                i === segments.length - 1 && "text-foreground",
+              )}
+            >
+              {seg.replace(/-/g, " ")}
             </span>
-          ))}
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <span
-            aria-hidden="true"
-            className="hidden h-3 w-px bg-border sm:inline-block"
-          />
-          {previous && (
-            <PrefetchLink
-              className="inline-flex size-7 items-center justify-center rounded-[2px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              href={previous.url}
-            >
-              <ArrowLeft className="size-3.5" />
-              <span className="sr-only">Previous</span>
-            </PrefetchLink>
-          )}
-          {next && (
-            <PrefetchLink
-              className="inline-flex size-7 items-center justify-center rounded-[2px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              href={next.url}
-            >
-              <ArrowRight className="size-3.5" />
-              <span className="sr-only">Next</span>
-            </PrefetchLink>
-          )}
-        </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="ms-auto flex shrink-0 items-center gap-0.5">
+        {previous ? (
+          <PrefetchLink className={iconButton} href={previous.url}>
+            <ArrowLeft className="size-3.5" />
+            <span className="sr-only">Previous</span>
+          </PrefetchLink>
+        ) : null}
+        {next ? (
+          <PrefetchLink className={iconButton} href={next.url}>
+            <ArrowRight className="size-3.5" />
+            <span className="sr-only">Next</span>
+          </PrefetchLink>
+        ) : null}
       </div>
     </div>
   );

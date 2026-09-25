@@ -17809,6 +17809,42 @@ export const Index: Record<string, any> = {
     categories: ["text animation","scroll animation"],
     meta: undefined,
   },
+  "scroll-reveal": {
+    name: "scroll-reveal",
+    description: "Elements animate into view when they enter the viewport, with any Motion variant",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/scroll-reveal.tsx",
+      type: "registry:ui",
+      target: "components/motion/scroll-reveal.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/scroll-reveal.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: undefined,
+  },
+  "scroll-progress": {
+    name: "scroll-progress",
+    description: "A spring-animated progress bar that tracks page or container scroll position",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/default/motion/scroll-progress.tsx",
+      type: "registry:ui",
+      target: "components/motion/scroll-progress.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/motion/scroll-progress.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["scroll animation"],
+    meta: undefined,
+  },
   "scroll-velocity-text": {
     name: "scroll-velocity-text",
     description: "Text marquee speed reacts to scroll velocity — faster scrolling spins it faster",

@@ -56,6 +56,21 @@ import { Switch } from "@/components/ui/switch"
 <Switch />
 ```
 
+## Anatomy
+
+```tsx
+<Switch /> {/* <span role="switch"> track + hidden <input> · data-slot="switch" */}
+{/* renders its own thumb · data-slot="switch-thumb" */}
+```
+
+## Good to know
+
+- The state props are `checked`, `defaultChecked` and `onCheckedChange`. There is no `onChange` or `value` for the on/off state.
+- To make the label text clickable, wrap both in a `Label`: `<Label><Switch /> Marketing emails</Label>`.
+- Use `size="sm"` for a smaller switch.
+- Set `name` to include the switch in form submissions. Use `uncheckedValue` if the form also needs a value when it's off.
+- Style the on and off states with the `data-checked` and `data-unchecked` attributes.
+
 ## API Reference
 
 ### Switch

@@ -98,7 +98,7 @@ function CodeBlock({
 function InlineCommand({ command }: { command: string }) {
   const { isCopied, copyToClipboard } = useCopyToClipboard();
   return (
-    <div className="group flex items-center justify-between gap-3 rounded-[2px] border border-dashed bg-muted/40 px-4 py-3">
+    <div className="group flex items-center justify-between gap-3 rounded-xl border bg-frame py-2 ps-4 pe-2">
       <code className="select-all font-mono text-[.8125rem] text-foreground/80">
         {command}
       </code>
@@ -106,7 +106,7 @@ function InlineCommand({ command }: { command: string }) {
         aria-label="Copy command"
         className={cn(
           "size-7 shrink-0 text-muted-foreground transition-colors hover:text-foreground",
-          isCopied && "text-cnippet-green",
+          isCopied && "text-success-foreground",
         )}
         onClick={() => copyToClipboard(command)}
         size="icon-sm"
@@ -209,11 +209,11 @@ export function VariantCard({
   return (
     <>
       <div
-        className="flex flex-col overflow-hidden rounded-[2px] border border-dashed bg-background transition-colors hover:border-cnippet-blue/40"
+        className="flex flex-col rounded-2xl border bg-frame p-1 transition-colors duration-150 hover:border-border-strong"
         ref={cardRef}
       >
         {/* Preview area */}
-        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden p-6">
+        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden rounded-xl border bg-card p-6">
           {!visible ? (
             <div className="h-8 w-24 animate-pulse rounded-md bg-muted" />
           ) : Component ? (
@@ -233,8 +233,8 @@ export function VariantCard({
         </div>
 
         {/* Bottom bar */}
-        <div className="flex items-center justify-between gap-2 border-t border-dashed px-4 py-2.5">
-          <span className="font-mono text-[11px] text-muted-foreground capitalize tracking-tight">
+        <div className="flex items-center justify-between gap-2 ps-3 pe-0.5 pt-1">
+          <span className="truncate font-medium text-[13px] text-foreground capitalize">
             {description || name.replace("v-", "")}
           </span>
           <div className="flex items-center gap-1">
@@ -253,7 +253,7 @@ export function VariantCard({
               aria-label="Copy source code"
               className={cn(
                 "size-7 text-muted-foreground hover:text-foreground",
-                isCopied && "text-cnippet-green",
+                isCopied && "text-success-foreground",
               )}
               onClick={handleCopy}
               size="icon-sm"
@@ -262,7 +262,7 @@ export function VariantCard({
               <CopyIcon className="size-3.5" />
             </Button>
             <Button
-              className="h-7 rounded-[2px] px-3 py-4 font-mono text-xs"
+              className="h-7"
               onClick={handleViewCode}
               size="xs"
               variant="outline"
@@ -285,15 +285,15 @@ export function VariantCard({
               <div className="space-y-6">
                 {/* Installation */}
                 <div className="space-y-2">
-                  <p className="font-mono text-muted-foreground text-xs uppercase tracking-widest">
+                  <p className="font-mono text-[11px] text-faint lowercase">
                     Installation
                   </p>
                   {/* Package manager tabs */}
-                  <div className="flex gap-1 border-b border-dashed pb-2">
+                  <div className="flex gap-1 border-b pb-2">
                     {PMS.map((p) => (
                       <button
                         className={cn(
-                          "rounded-[2px] px-3 py-1 font-mono text-xs transition-colors",
+                          "rounded-md px-3 py-1 font-mono text-xs transition-colors",
                           pm === p
                             ? "bg-muted text-foreground"
                             : "text-muted-foreground hover:text-foreground",
@@ -311,7 +311,7 @@ export function VariantCard({
 
                 {/* Code */}
                 <div className="space-y-2">
-                  <p className="font-mono text-muted-foreground text-xs uppercase tracking-widest">
+                  <p className="font-mono text-[11px] text-faint lowercase">
                     Code
                   </p>
                   {highlightedHtml && code ? (

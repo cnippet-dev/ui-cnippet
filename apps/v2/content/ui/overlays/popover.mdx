@@ -70,6 +70,29 @@ import {
 </Popover>
 ```
 
+## Anatomy
+
+```tsx
+<Popover> {/* root, owns the open state */}
+  <PopoverTrigger render={<Button variant="outline" />}>Filters</PopoverTrigger> {/* <button> · data-slot="popover-trigger" */}
+  <PopoverPopup side="bottom" align="start"> {/* portal + positioner + popup · data-slot="popover-popup" */}
+    <PopoverTitle>Filters</PopoverTitle> {/* data-slot="popover-title" */}
+    <PopoverDescription>Narrow the results.</PopoverDescription> {/* data-slot="popover-description" */}
+    <PopoverClose render={<Button size="sm" />}>Apply</PopoverClose> {/* data-slot="popover-close" */}
+  </PopoverPopup>
+</Popover>
+```
+
+## Good to know
+
+- `PopoverContent` is an alias of `PopoverPopup`. Prefer `PopoverPopup`.
+- `PopoverTrigger` and `PopoverClose` are unstyled. Style them with `render={<Button />}`. There is no `asChild`.
+- Position it with `side`, `align`, `sideOffset` and `alignOffset` on `PopoverPopup`. It opens below the trigger by default.
+- The popover isn't modal by default: the page behind stays scrollable and interactive. Set `modal` on `Popover` to change that.
+- To open on hover as well as click, set `openOnHover` on `PopoverTrigger`.
+- `tooltipStyle` on `PopoverPopup` gives it compact tooltip styling, for interactive tooltips.
+- For short, non-interactive hints, use `Tooltip`. For a list of actions, use `Menu`.
+
 ## API Reference
 
 ### Popover

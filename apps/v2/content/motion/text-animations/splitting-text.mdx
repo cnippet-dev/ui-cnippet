@@ -55,6 +55,22 @@ import { SplittingText } from "@/components/motion/splitting-text";
 </SplittingText>
 ```
 
+## Anatomy
+
+```tsx
+<SplittingText splitBy="words" preset="slide-up"> {/* <p> of pieces that animate in */}
+  Motion components for modern web apps
+</SplittingText>
+```
+
+## Good to know
+
+- `children` must be a plain string. `splitBy` is `"chars"`, `"words"` or `"lines"`.
+- `preset` is `"fade"`, `"slide-up"`, `"slide-down"`, `"blur"` or `"scale"`.
+- It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to start it later, for example with `useInView`.
+- Screen readers read the full text once; the pieces are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

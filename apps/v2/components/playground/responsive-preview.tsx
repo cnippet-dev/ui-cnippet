@@ -40,14 +40,14 @@ interface ResponsivePreviewProps {
 
 export function ResponsivePreview({ value, onChange }: ResponsivePreviewProps) {
   return (
-    <div className="flex items-center gap-0.5 rounded-md border border-gray-950/8 p-0.5 dark:border-white/10">
+    <div className="flex items-center gap-0.5 rounded-md border border-border p-0.5">
       {OPTIONS.map((opt) => (
         <button
           className={cn(
             "flex items-center justify-center rounded p-1 transition-colors",
             value === opt.id
-              ? "bg-gray-950/6 text-gray-950 dark:bg-white/10 dark:text-white"
-              : "text-gray-950/30 hover:text-gray-950/60 dark:text-white/25 dark:hover:text-white/50",
+              ? "bg-muted text-foreground"
+              : "text-faint hover:text-foreground",
           )}
           key={opt.id}
           onClick={() => onChange(opt.id)}

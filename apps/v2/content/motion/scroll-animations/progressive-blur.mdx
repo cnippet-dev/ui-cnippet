@@ -61,6 +61,22 @@ import { ProgressiveBlur } from "@/components/motion/progressive-blur";
 </div>
 ```
 
+## Anatomy
+
+```tsx
+<div className="relative overflow-hidden">
+  <YourContent />
+  <ProgressiveBlur direction="bottom" className="absolute inset-x-0 bottom-0 h-24" /> {/* stacked blur layers */}
+</div>
+```
+
+## Good to know
+
+- It's an overlay with no size or position of its own. Place it with `className` over the edge you want to blur.
+- `direction` is the side where the blur is strongest: `"bottom"` (default), `"top"`, `"left"` or `"right"`.
+- More `blurLayers` give a smoother fade but cost more to render. `blurIntensity` sets the strength.
+- It has `pointer-events-none`, so the content underneath stays clickable.
+
 ## Props
 
 | Prop | Type | Default | Description |

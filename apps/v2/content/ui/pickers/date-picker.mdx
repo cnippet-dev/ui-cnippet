@@ -82,6 +82,27 @@ export function DatePicker() {
 }
 ```
 
+## Anatomy
+
+```tsx
+<Popover> {/* opens and closes the picker */}
+  <PopoverTrigger render={<Button variant="outline" />}> {/* shows the chosen date */}
+    <CalendarIcon />
+    {date ? format(date, "PPP") : "Pick a date"}
+  </PopoverTrigger>
+  <PopoverPopup> {/* the floating panel */}
+    <Calendar mode="single" selected={date} onSelect={setDate} autoFocus />
+  </PopoverPopup>
+</Popover>
+```
+
+## Good to know
+
+- There is no `DatePicker` component to install. It's a pattern: a `Calendar` inside a `Popover`. Install both (`@cnippet/calendar` and `@cnippet/popover`).
+- The examples format dates with `date-fns`, which isn't installed with the calendar. Run `npm install date-fns`, or format dates another way.
+- The popover doesn't close when a date is picked. To close it, control `open` on `Popover` and set it to `false` in `onSelect`.
+- For a date range, use `mode="range"` and store a `DateRange` (`{ from, to }`).
+
 ## API Reference
 
 A date picker is a composition of `Calendar` inside a `Popover` — there is no separate component file. The following props cover the pieces you'll combine.
@@ -96,7 +117,7 @@ See the [Calendar API Reference](/ui/pickers/calendar#api-reference) for the ful
 | `selected` | `Date \| DateRange \| Date[]` | — | Controlled selected date(s) |
 | `onSelect` | `(date) => void` | — | Called when the user selects a date |
 | `disabled` | `Matcher \| Matcher[]` | — | Rules for disabling specific days |
-| `initialFocus` | `boolean` | — | Auto-focuses the calendar when it mounts inside a popover |
+| `autoFocus` | `boolean` | — | Auto-focuses the calendar when it mounts inside a popover |
 
 ### PopoverPopup (wrapping the Calendar)
 

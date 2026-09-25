@@ -72,6 +72,27 @@ import { Input } from "@/components/ui/input"
 </Form>
 ```
 
+## Anatomy
+
+```tsx
+<Form onFormSubmit={(values) => save(values)} errors={serverErrors}> {/* <form> · data-slot="form" */}
+  <Field name="email"> {/* one per input */}
+    <FieldLabel>Email</FieldLabel>
+    <Input type="email" required />
+    <FieldError />
+  </Field>
+  <Button type="submit">Save</Button>
+</Form>
+```
+
+## Good to know
+
+- `onFormSubmit(values)` receives an object keyed by each `Field`'s `name`, and it calls `preventDefault()` for you. The native `onSubmit` still works if you need the raw event.
+- Every `Field` needs a `name`, or its value won't appear in `values`.
+- Show server-side errors by passing `errors`, an object keyed by field name, e.g. `{ email: "Already taken" }`. They appear in each field's `FieldError`.
+- Fields validate on submit by default, then again on each change. Set `validationMode="onBlur"` or `"onChange"` on the `Form` to change it for every field.
+- `Button` defaults to `type="button"`, so the submit button needs `type="submit"`.
+
 ## API Reference
 
 ### Form

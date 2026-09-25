@@ -53,6 +53,19 @@ import { TextMorph } from "@/components/motion/text-morph";
 <TextMorph>{currentWord}</TextMorph>
 ```
 
+## Anatomy
+
+```tsx
+<TextMorph>{currentWord}</TextMorph> {/* <p> whose letters morph when the text changes */}
+```
+
+## Good to know
+
+- It animates when `children` changes. Pass a string from state and update it.
+- Letters shared between the old and new text move into place; the others fade out and in.
+- Screen readers get the current text through `aria-label`; the animated letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

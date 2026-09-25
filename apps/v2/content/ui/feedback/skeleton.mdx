@@ -47,6 +47,18 @@ import { Skeleton } from "@/components/ui/skeleton"
 <Skeleton className="size-10 rounded-full" />
 ```
 
+## Anatomy
+
+```tsx
+<Skeleton className="h-4 w-48" /> {/* <div> with a shimmer · data-slot="skeleton" */}
+```
+
+## Good to know
+
+- A skeleton has no size of its own. Set the width, height and shape with `className`, matching the content it stands in for, e.g. `size-10 rounded-full` for an avatar.
+- The shimmer uses the `animate-skeleton` utility and a `skeleton` keyframe. The CLI adds both to your CSS; add them by hand if you copy the file manually.
+- Skeletons are decorative. Mark the loading region for screen readers yourself, for example with `aria-busy="true"` on its container.
+
 ## API Reference
 
 ### Skeleton

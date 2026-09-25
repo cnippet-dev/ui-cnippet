@@ -20,7 +20,7 @@ type SeparatorNode = {
   type: "separator";
 };
 
-type PageTree = {
+export type PageTree = {
   children: (PageNode | FolderNode | SeparatorNode)[];
 };
 
@@ -34,47 +34,67 @@ function isPage(node: PageNode | FolderNode | SeparatorNode): node is PageNode {
   return node.type === "page";
 }
 
-export function DocsSidebar({ tree }: { tree: PageTree }) {
+/**
+ * The navigation list itself — rendered in the desktop sidebar and inside the
+ * mobile sheet. Groups are labelled like comments; the active page is lifted
+ * onto a canvas-coloured pill with a signal bar.
+ */
+export function DocsNav({
+  onNavigate,
+  tree,
+}: {
+  onNavigate?: () => void;
+  tree: PageTree;
+}) {
   const pathname = usePathname();
 
   return (
-    <aside className="no-scrollbar sticky top-[calc(var(--header-height)+var(--docs-topbar-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--docs-topbar-height)-var(--footer-height))] self-start overflow-y-auto border-r border-dashed bg-transparent pb-12 lg:block">
-      <nav className="px-2">
-        <div className="h-(--top-spacing) shrink-0" />
-        {tree.children.map((node, i) => {
-          if (!isFolder(node)) return null;
-          return (
-            <div className="mb-4" key={i}>
-              {node.name && (
-                <p className="mb-1 px-2 py-1 font-medium text-muted-foreground/60 text-xs uppercase tracking-wider">
-                  {node.name}
-                </p>
-              )}
-              <ul className="flex flex-col gap-0.5">
-                {node.children?.map((child, j) => {
-                  if (!isPage(child)) return null;
-                  const active = pathname === child.url;
-                  return (
-                    <li key={j}>
-                      <PrefetchLink
-                        className={cn(
-                          "block rounded-[2px] px-2 py-[5px] font-medium text-[0.8rem] transition-colors",
-                          active
-                            ? "bg-background-300 text-foreground"
-                            : "text-muted-foreground hover:bg-background-200 hover:text-foreground",
-                        )}
-                        href={child.url}
-                      >
-                        {child.name}
-                      </PrefetchLink>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          );
-        })}
-      </nav>
+    <nav aria-label="Docs" className="flex flex-col gap-6">
+      {tree.children.map((node, i) => {
+        if (!isFolder(node)) return null;
+        return (
+          <div key={i}>
+            {node.name ? (
+              <p className="mb-1.5 px-3 font-mono text-[11px] text-faint lowercase">
+                {"// "}
+                {node.name}
+              </p>
+            ) : null}
+            <ul className="flex flex-col gap-px">
+              {node.children?.map((child, j) => {
+                if (!isPage(child)) return null;
+                const active = pathname === child.url;
+                return (
+                  <li key={j}>
+                    <PrefetchLink
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "relative flex h-8 items-center rounded-lg px-3 text-[13.5px] outline-none transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-ring",
+                        active
+                          ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border before:absolute before:inset-y-2 before:-left-px before:w-0.5 before:rounded-full before:bg-signal"
+                          : "text-muted-foreground hover:bg-foreground/4 hover:text-foreground",
+                      )}
+                      href={child.url}
+                      onClick={onNavigate}
+                    >
+                      {child.name}
+                    </PrefetchLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
+    </nav>
+  );
+}
+
+/** Desktop sidebar — sits on the chrome beside the canvas, no border. */
+export function DocsSidebar({ tree }: { tree: PageTree }) {
+  return (
+    <aside className="no-scrollbar sticky top-(--header-height) hidden h-[calc(100svh-var(--header-height))] w-(--sidebar-width) shrink-0 self-start overflow-y-auto overscroll-contain ps-1 pe-3 pt-4 pb-12 lg:block">
+      <DocsNav tree={tree} />
     </aside>
   );
 }

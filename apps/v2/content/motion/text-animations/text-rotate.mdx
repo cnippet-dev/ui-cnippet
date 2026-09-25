@@ -53,6 +53,20 @@ import { TextRotate } from "@/components/motion/text-rotate";
 <TextRotate texts={["engineers", "designers", "founders"]} />
 ```
 
+## Anatomy
+
+```tsx
+<TextRotate texts={["engineers", "designers", "founders"]} /> {/* <p> cycling through texts letter by letter */}
+```
+
+## Good to know
+
+- It cycles through `texts` automatically. `rotationInterval` is in milliseconds (default `2000`).
+- Set `auto={false}` to control it yourself with `ref.current.next()`, `previous()`, `jumpTo(index)` and `reset()`.
+- `loop={false}` stops on the last text.
+- Screen readers read the current text once; the animated letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

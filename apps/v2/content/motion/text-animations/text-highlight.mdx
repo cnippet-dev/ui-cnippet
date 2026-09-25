@@ -55,6 +55,21 @@ import { TextHighlight } from "@/components/motion/text-highlight";
 </TextHighlight>
 ```
 
+## Anatomy
+
+```tsx
+<TextHighlight triggerType="inView" highlightColor="hsl(262 80% 85%)"> {/* <span> with an animated background */}
+  production-ready
+</TextHighlight>
+```
+
+## Good to know
+
+- `triggerType` decides when the highlight draws: `"inView"` (default), `"auto"` (on mount), `"hover"` or `"ref"`.
+- With `triggerType="ref"`, call `ref.current.animate()` and `ref.current.reset()` yourself.
+- `direction` is `"ltr"`, `"rtl"`, `"ttb"` or `"btt"`.
+- Pick a `highlightColor` with enough contrast against the text color.
+
 ## Props
 
 | Prop | Type | Default | Description |

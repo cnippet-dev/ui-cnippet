@@ -82,32 +82,45 @@ export function ComponentPreviewTabs({
 
   return (
     <div
-      className={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}
+      className={cn(
+        "group relative mt-6 mb-12 flex flex-col rounded-2xl border bg-frame p-1",
+        className,
+      )}
       ref={containerRef}
       {...props}
     >
       <Tabs onValueChange={setTab} value={tab}>
-        <div className="flex items-center justify-between">
-          {!hideCode && (
-            <TabsList className="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-accent *:data-[slot=tab-indicator]:shadow-none">
-              <TabsTab className="rounded-lg" value="preview">
+        <div className="flex h-9 items-center justify-between ps-1 pe-1">
+          {hideCode ? (
+            <span className="ps-2 font-mono text-[11px] text-faint">
+              {"// preview"}
+            </span>
+          ) : (
+            <TabsList className="bg-transparent p-0 *:data-[slot=tab-indicator]:rounded-lg *:data-[slot=tab-indicator]:bg-background *:data-[slot=tab-indicator]:shadow-xs/5 *:data-[slot=tab-indicator]:ring-1 *:data-[slot=tab-indicator]:ring-border">
+              <TabsTab
+                className="h-7 rounded-lg px-2.5 text-[13px]"
+                value="preview"
+              >
                 Preview
               </TabsTab>
-              <TabsTab className="rounded-lg" value="code">
+              <TabsTab
+                className="h-7 rounded-lg px-2.5 text-[13px]"
+                value="code"
+              >
                 Code
               </TabsTab>
             </TabsList>
           )}
           {tab === "preview" && (
             <button
-              aria-label="Reload animation"
-              className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              aria-label="Replay preview"
+              className="flex size-7 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 hover:bg-background hover:text-foreground"
               onClick={handleReload}
               type="button"
             >
               <RotateCcw
                 className={cn(
-                  "h-3.5 w-3.5 transition-transform",
+                  "size-3.5 transition-transform",
                   spinning && "animate-spin-once",
                 )}
                 onAnimationEnd={() => setSpinning(false)}
@@ -118,12 +131,12 @@ export function ComponentPreviewTabs({
       </Tabs>
       <div
         aria-label="Component preview"
-        className="relative rounded-xl border not-dark:bg-card"
+        className="relative overflow-hidden rounded-xl border bg-card"
         data-tab={tab}
         role="region"
       >
         <div
-          className="invisible data-[active=true]:visible"
+          className="invisible bg-dots data-[active=true]:visible"
           data-active={tab === "preview"}
         >
           <div
@@ -138,7 +151,7 @@ export function ComponentPreviewTabs({
           </div>
         </div>
         <div
-          className="absolute inset-0 hidden overflow-hidden data-[active=true]:block **:[figure]:m-0! **:[pre]:h-112.5"
+          className="absolute inset-0 hidden overflow-hidden data-[active=true]:block **:[figure]:m-0! **:[figure]:rounded-none! **:[figure]:border-0! **:[pre]:h-112.5"
           data-active={tab === "code"}
           data-slot="code"
         >

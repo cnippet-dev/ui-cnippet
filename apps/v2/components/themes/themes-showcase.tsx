@@ -476,123 +476,116 @@ export function ThemesShowcase() {
     setRadius(DEFAULT_RADIUS);
   }
 
+  const chip = (active: boolean) =>
+    cn(
+      "flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[13px] transition-colors duration-150",
+      active
+        ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border"
+        : "text-muted-foreground hover:text-foreground",
+    );
+
   return (
     <div suppressHydrationWarning>
-      {/* Controls */}
-      <div className="flex flex-wrap gap-10 border-b border-dashed py-8">
-        <div>
-          <div className="mb-3 font-mono text-muted-foreground text-xs tracking-wide">
-            Color
-          </div>
-          <div className="flex flex-wrap gap-1.5">
+      {/* Toolbar — sticky under the header while previewing. */}
+      <div className="sticky top-[calc(var(--header-height)+1px)] z-20 -mx-2 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:top-[calc(var(--header-height)+0.75rem+1px)]">
+        <div className="flex flex-col gap-1 xl:flex-row xl:items-center">
+          <div className="no-scrollbar flex items-center gap-0.5 overflow-x-auto">
+            <span className="shrink-0 ps-2 pe-1.5 font-mono text-[11px] text-faint">
+              {"// color"}
+            </span>
             {PRESETS.map((p) => (
               <button
-                className={cn(
-                  "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                  preset.name === p.name
-                    ? "border-foreground/20 bg-foreground/5 font-medium"
-                    : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                )}
+                aria-pressed={preset.name === p.name}
+                className={chip(preset.name === p.name)}
                 key={p.name}
                 onClick={() => setColorName(p.name)}
                 title={p.name}
+                type="button"
               >
                 <span
-                  className="block size-2.5 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
+                  className="block size-3 shrink-0 rounded-full ring-1 ring-black/10 ring-inset dark:ring-white/15"
                   style={{ backgroundColor: p.swatch }}
                 />
                 {p.name}
               </button>
             ))}
           </div>
-        </div>
 
-        <div>
-          <div className="mb-3 font-mono text-muted-foreground text-xs tracking-wide">
-            Radius
-          </div>
-          <div className="flex gap-1.5">
+          <div className="flex items-center gap-0.5 xl:ms-auto">
+            <span className="shrink-0 ps-2 pe-1.5 font-mono text-[11px] text-faint">
+              {"// radius"}
+            </span>
             {RADIUS_OPTIONS.map((r) => (
               <button
+                aria-pressed={radius === r.value}
                 className={cn(
-                  "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                  radius === r.value
-                    ? "border-foreground/20 bg-foreground/5 font-medium"
-                    : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
+                  chip(radius === r.value),
+                  "font-mono text-[12px]",
                 )}
                 key={r.label}
                 onClick={() => setRadius(r.value)}
+                type="button"
               >
                 {r.label}
               </button>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Actions row */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-dashed py-4">
-        <Button
-          className="rounded-[2px]"
-          onClick={handleCopy}
-          size="sm"
-          variant="outline"
-        >
-          {copied ? (
-            <Check className="size-3.5" />
-          ) : (
-            <Copy className="size-3.5" />
-          )}
-          {copied ? "Copied!" : "Copy CSS"}
-        </Button>
-
-        <Button
-          className="rounded-[2px]"
-          onClick={() => setCssOpen((v) => !v)}
-          size="sm"
-          variant="ghost"
-        >
-          <ChevronDown
-            className={cn(
-              "size-3.5 transition-transform",
-              cssOpen && "rotate-180",
+        <div className="mt-1 flex flex-wrap items-center gap-1 border-t px-1 pt-1.5 pb-0.5">
+          <Button onClick={handleCopy} size="sm" variant="outline">
+            {copied ? (
+              <Check className="size-3.5" />
+            ) : (
+              <Copy className="size-3.5" />
             )}
-          />
-          {cssOpen ? "Hide CSS" : "Preview CSS"}
-        </Button>
+            {copied ? "Copied" : "Copy CSS"}
+          </Button>
+          <Button
+            onClick={() => setCssOpen((v) => !v)}
+            size="sm"
+            variant="ghost"
+          >
+            <ChevronDown
+              className={cn(
+                "size-3.5 transition-transform duration-250 ease-out-expo",
+                cssOpen && "rotate-180",
+              )}
+            />
+            {cssOpen ? "Hide CSS" : "Preview CSS"}
+          </Button>
+          <Button
+            className="ms-auto"
+            disabled={isDefault}
+            onClick={handleReset}
+            size="sm"
+            variant="ghost"
+          >
+            <RotateCcw className="size-3.5" />
+            Reset
+          </Button>
+          <Button
+            aria-label="Toggle dark mode"
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            size="icon-sm"
+            variant="ghost"
+          >
+            {resolvedTheme === "dark" ? (
+              <Sun className="size-3.5" />
+            ) : (
+              <Moon className="size-3.5" />
+            )}
+          </Button>
+        </div>
 
-        <Button
-          className="ml-auto rounded-[2px]"
-          disabled={isDefault}
-          onClick={handleReset}
-          size="sm"
-          variant="ghost"
-        >
-          <RotateCcw className="size-3.5" />
-          Reset
-        </Button>
-
-        <button
-          aria-label="Toggle dark mode"
-          className="flex size-8 cursor-pointer items-center justify-center rounded-[2px] border border-dashed text-muted-foreground transition-colors hover:bg-accent"
-          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-        >
-          {resolvedTheme === "dark" ? (
-            <Sun className="size-3.5" />
-          ) : (
-            <Moon className="size-3.5" />
-          )}
-        </button>
-      </div>
-
-      {/* CSS preview panel */}
-      {cssOpen && (
-        <div className="border-b border-dashed py-4">
-          <pre className="max-h-72 overflow-auto rounded-[2px] border border-dashed bg-foreground/3 p-4 font-mono text-foreground/70 text-xs/5 tracking-tight">
+        {cssOpen ? (
+          <pre className="mx-1 mt-1.5 mb-1 max-h-72 overflow-auto rounded-xl border bg-background p-4 font-mono text-foreground/75 text-xs/5">
             {buildExportCSS(preset, chartPalette, radius)}
           </pre>
-        </div>
-      )}
+        ) : null}
+      </div>
 
       {/* Tabbed showcase */}
       <Suspense>
@@ -600,14 +593,14 @@ export function ThemesShowcase() {
           onValueChange={(v) => setActiveTab(v as string)}
           value={activeTab}
         >
-          <TabsList className="mt-6" variant="underline">
+          <TabsList className="mt-8" variant="underline">
             <TabsTab value="components">Components</TabsTab>
             <TabsTab value="charts">Charts</TabsTab>
           </TabsList>
 
           <TabsPanel value="components">
-            <div className="grid grid-cols-12 items-start gap-6 py-10">
-              <div className="col-span-3 space-y-6">
+            <div className="grid grid-cols-1 items-start gap-6 py-8 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="min-w-0 space-y-6">
                 <CardCreate />
                 <div className="pb-4">
                   <CardDepth />
@@ -615,7 +608,7 @@ export function ThemesShowcase() {
                 <SkeletonUsers />
                 <AvatarGroup />
               </div>
-              <div className="col-span-3 space-y-6">
+              <div className="min-w-0 space-y-6">
                 <RevenueCard />
                 <CardSignIn />
                 <div className="flex w-full max-w-xs flex-col gap-5">
@@ -625,7 +618,7 @@ export function ThemesShowcase() {
                 </div>
                 <BadgeSizes />
               </div>
-              <div className="col-span-3 space-y-6">
+              <div className="min-w-0 space-y-6">
                 <IconCard />
                 <BillingCard />
                 <ProgressDownload />
@@ -634,7 +627,7 @@ export function ThemesShowcase() {
                 </div>
                 <AccordionBasic />
               </div>
-              <div className="col-span-3 space-y-6">
+              <div className="min-w-0 space-y-6">
                 <CardIntegration />
                 <div className="flex w-full max-w-sm flex-col gap-3">
                   <AlertWithAction />
@@ -650,21 +643,17 @@ export function ThemesShowcase() {
           </TabsPanel>
 
           <TabsPanel value="charts">
-            {/* Chart palette control */}
-            <div className="flex flex-wrap items-center gap-1.5 border-b border-dashed pt-8 pb-6">
-              <span className="mr-2 font-mono text-muted-foreground text-xs tracking-wide">
-                Palette
+            <div className="no-scrollbar flex items-center gap-0.5 overflow-x-auto pt-6 pb-6">
+              <span className="shrink-0 pe-2 font-mono text-[11px] text-faint">
+                {"// palette"}
               </span>
               {CHART_PALETTES.map((p) => (
                 <button
-                  className={cn(
-                    "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                    chartPalette.name === p.name
-                      ? "border-foreground/20 bg-foreground/5 font-medium"
-                      : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                  )}
+                  aria-pressed={chartPalette.name === p.name}
+                  className={chip(chartPalette.name === p.name)}
                   key={p.name}
                   onClick={() => setChartName(p.name)}
+                  type="button"
                 >
                   <span className="flex gap-0.5">
                     {p.swatches.map((s, i) => (
@@ -680,16 +669,16 @@ export function ThemesShowcase() {
               ))}
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pb-10">
-              <div className="space-y-6">
+            <div className="grid grid-cols-1 gap-6 pb-10 md:grid-cols-2 xl:grid-cols-3">
+              <div className="min-w-0 space-y-6">
                 <ChartBarDefault />
                 <ChartRadialSimple />
               </div>
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <ChartAreaDefault />
                 <ChartPieSimple />
               </div>
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <ChartLineDefault />
                 <ChartRadarDefault />
               </div>

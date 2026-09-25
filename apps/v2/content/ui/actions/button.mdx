@@ -86,6 +86,24 @@ export function LinkAsButton() {
 ```
 
 
+## Anatomy
+
+```tsx
+<Button variant="outline" size="sm"> {/* <button type="button"> · data-slot="button" */}
+  <PlusIcon /> {/* optional icon, sized automatically */}
+  Label
+</Button>
+```
+
+## Good to know
+
+- Built on Base UI, not Radix. To render a link or another component, use the `render` prop: `<Button render={<Link href="/login" />}>Login</Button>`. There is no `asChild`.
+- The default `type` is `"button"`, not `"submit"`. Pass `type="submit"` inside forms. When you use `render`, no `type` is set.
+- `loading` disables the button, hides the label and shows a spinner in its place, so the width doesn't change.
+- For icon-only buttons, use one of the `icon` sizes (`icon-xs` to `icon-xl`) and add an `aria-label`.
+- `buttonVariants({ variant, size })` returns the class names, for styling an element that isn't a `Button`.
+- Sizes are one step taller below the `sm` breakpoint, for easier tapping on touch screens.
+
 ## API Reference
 
 ### Button

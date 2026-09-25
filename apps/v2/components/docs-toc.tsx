@@ -25,17 +25,16 @@ function useActiveHeading(ids: string[]) {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     }
-    return () => {
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el) observer.unobserve(el);
-      }
-    };
+    return () => observer.disconnect();
   }, [ids]);
 
   return activeId;
 }
 
+/**
+ * A hairline rail with the active heading marked by a signal segment sitting
+ * on the rail itself.
+ */
 export function DocsToc({
   toc,
   className,
@@ -52,21 +51,32 @@ export function DocsToc({
   if (!toc.length) return null;
 
   return (
-    <div className={cn("flex flex-col gap-2 p-4 pt-0 text-sm", className)}>
-      <p className="sticky top-0 h-6 bg-background font-medium text-primary/80 text-xs">
-        On this page
+    <div className={cn("flex flex-col gap-3", className)}>
+      <p className="font-mono text-[11px] text-faint lowercase">
+        {"// on this page"}
       </p>
-      {toc.map((item) => (
-        <a
-          className="relative text-[0.8rem] text-muted-foreground no-underline transition-colors hover:text-foreground data-[depth=3]:pl-4 data-[depth=4]:pl-6 data-[active=true]:text-foreground"
-          data-active={item.url === `#${activeId}`}
-          data-depth={item.depth}
-          href={item.url}
-          key={item.url}
-        >
-          {item.title}
-        </a>
-      ))}
+      <ul className="relative flex flex-col border-s">
+        {toc.map((item) => {
+          const active = item.url === `#${activeId}`;
+          return (
+            <li key={item.url}>
+              <a
+                className={cn(
+                  "relative -ms-px block border-transparent border-s py-1 ps-3 text-[13px] leading-snug transition-colors duration-150 data-[depth=3]:ps-6 data-[depth=4]:ps-9",
+                  active
+                    ? "border-signal text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+                data-active={active}
+                data-depth={item.depth}
+                href={item.url}
+              >
+                {item.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

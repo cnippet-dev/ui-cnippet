@@ -51,7 +51,7 @@ export function Services() {
         <p className="font-medium font-mono text-cnippet-orange text-sm">
           [for clients]
         </p>
-        <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+        <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
           We design and build
           <br />
           what ambitious teams need.
@@ -72,7 +72,7 @@ export function Services() {
             >
               {feature.number}
             </span>
-            <h3 className="font-f37-stout text-xl">{feature.title}</h3>
+            <h3 className="font-display text-xl">{feature.title}</h3>
             <p className="max-w-md text-balance text-muted-foreground text-sm leading-relaxed">
               {feature.description}
             </p>

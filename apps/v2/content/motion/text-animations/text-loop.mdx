@@ -57,6 +57,23 @@ import { TextLoop } from "@/components/motion/text-loop";
 </TextLoop>
 ```
 
+## Anatomy
+
+```tsx
+<TextLoop interval={2}> {/* shows one child at a time */}
+  <span>First</span>
+  <span>Second</span>
+</TextLoop>
+```
+
+## Good to know
+
+- Each child is one item. Unlike `RotatingText`, the items can be any elements, not just strings.
+- `interval` is in seconds (default `2`). `trigger={false}` pauses the loop.
+- `onIndexChange` reports which item is showing.
+- Screen readers only hear the item that's showing when they reach it.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

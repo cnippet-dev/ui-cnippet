@@ -53,6 +53,19 @@ import { TextShimmerWave } from "@/components/motion/text-shimmer-wave";
 <TextShimmerWave>Animate with purpose</TextShimmerWave>
 ```
 
+## Anatomy
+
+```tsx
+<TextShimmerWave>Animate with purpose</TextShimmerWave> {/* <p> of letters lifting in a wave */}
+```
+
+## Good to know
+
+- `children` must be a plain string. It's split into letters.
+- `xDistance`, `yDistance`, `zDistance`, `scaleDistance` and `rotateYDistance` set how far each letter moves in the wave.
+- Screen readers may read the text letter by letter. Add an `aria-label` on a wrapper if that matters.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

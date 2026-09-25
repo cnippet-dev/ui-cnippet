@@ -53,6 +53,20 @@ import { RotatingText } from "@/components/motion/rotating-text";
 <RotatingText words={["beautiful", "accessible", "composable"]} />
 ```
 
+## Anatomy
+
+```tsx
+<RotatingText words={["beautiful", "accessible", "composable"]} /> {/* <span> showing one word at a time */}
+```
+
+## Good to know
+
+- It cycles through `words` forever. `interval` is in milliseconds (default `2500`).
+- `direction` is `"up"` or `"down"`.
+- Screen readers only hear the word that's showing when they reach it.
+- For more control (letter staggering, manual next/previous), use `TextRotate`.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

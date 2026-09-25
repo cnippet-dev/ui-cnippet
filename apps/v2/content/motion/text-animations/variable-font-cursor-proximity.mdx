@@ -66,6 +66,24 @@ const containerRef = useRef<HTMLDivElement>(null);
 
 > **Variable font required.** This component animates `font-variation-settings` directly. Your project must load a variable font that supports the axes you specify (e.g. Inter Variable for `wght` and `slnt`).
 
+## Anatomy
+
+```tsx
+<div ref={containerRef}> {/* area where the cursor is tracked */}
+  <VariableFontCursorProximity containerRef={containerRef} fromFontVariationSettings="'wght' 100" toFontVariationSettings="'wght' 900">
+    Hover me
+  </VariableFontCursorProximity>
+</div>
+```
+
+## Good to know
+
+- It needs a variable font that supports the axes you animate. With a normal font nothing changes.
+- `containerRef` is required. It's the area where the cursor position is tracked.
+- Letters closer to the cursor move toward the `to` settings. `radius` sets the reach and `falloff` the curve.
+- It follows the mouse, so there's no effect on touch screens.
+- Screen readers read the full text once; the individual letters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

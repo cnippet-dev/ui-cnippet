@@ -5,6 +5,7 @@ import Link from "next/link";
 import { parseAsString, useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
 import { getVariantSource } from "@/app/playground/actions";
+import { Logo } from "@/components/ui/logo";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { InspectCanvas } from "./canvas";
 import { CodePanel } from "./code-panel";
@@ -57,25 +58,26 @@ export function PlaygroundShell() {
   return (
     <div className="flex h-full flex-col">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <header className="flex h-11 shrink-0 items-center justify-between border-gray-950/8 border-b px-4 dark:border-white/10">
+      <header className="flex h-12 shrink-0 items-center justify-between px-4">
         <div className="flex items-center gap-3">
           <Link
-            className="font-mono text-gray-950/50 text-xs transition-colors hover:text-gray-950 dark:text-white/40 dark:hover:text-white"
+            className="flex items-center gap-2 font-semibold text-[14px] text-foreground tracking-[-0.03em]"
             href="/"
           >
+            <Logo className="size-4.5" />
             cnippet
           </Link>
-          <span className="text-gray-950/20 dark:text-white/15">/</span>
-          <span className="font-mono text-gray-950/50 text-xs dark:text-white/40">
+          <span className="text-faint">/</span>
+          <span className="font-mono text-muted-foreground text-xs">
             playground
           </span>
-          <span className="rounded-full bg-blue-500/10 px-1.5 py-0.5 font-mono text-[10px] text-blue-600 dark:bg-blue-400/10 dark:text-blue-400">
+          <span className="rounded-full bg-signal-soft px-1.5 py-0.5 font-mono text-[10px] text-signal">
             beta
           </span>
           {variant && (
             <>
-              <span className="text-gray-950/20 dark:text-white/15">/</span>
-              <span className="font-mono text-gray-950/50 text-xs dark:text-white/40">
+              <span className="text-faint">/</span>
+              <span className="font-mono text-muted-foreground text-xs">
                 {variant}
               </span>
             </>
@@ -83,24 +85,24 @@ export function PlaygroundShell() {
         </div>
 
         <div className="flex items-center gap-1">
-          <div className="flex items-center overflow-hidden rounded-md border border-gray-950/10 dark:border-white/10">
+          <div className="flex items-center overflow-hidden rounded-md border border-border">
             <button
               className={
                 mode === "preview"
-                  ? "bg-gray-950/8 px-2.5 py-1 font-mono text-[11px] text-gray-950/80 dark:bg-white/10 dark:text-white/70"
-                  : "px-2.5 py-1 font-mono text-[11px] text-gray-950/40 transition-colors hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
+                  ? "bg-muted px-2.5 py-1 font-mono text-[11px] text-foreground/80"
+                  : "px-2.5 py-1 font-mono text-[11px] text-faint transition-colors hover:text-foreground"
               }
               onClick={() => setMode("preview")}
               type="button"
             >
               Preview
             </button>
-            <span className="h-4 w-px bg-gray-950/10 dark:bg-white/10" />
+            <span className="h-4 w-px bg-border" />
             <button
               className={
                 mode === "customize"
-                  ? "bg-gray-950/8 px-2.5 py-1 font-mono text-[11px] text-gray-950/80 dark:bg-white/10 dark:text-white/70"
-                  : "px-2.5 py-1 font-mono text-[11px] text-gray-950/40 transition-colors hover:text-gray-950/70 dark:text-white/30 dark:hover:text-white/60"
+                  ? "bg-muted px-2.5 py-1 font-mono text-[11px] text-foreground/80"
+                  : "px-2.5 py-1 font-mono text-[11px] text-faint transition-colors hover:text-foreground"
               }
               onClick={() => setMode("customize")}
               type="button"
@@ -108,13 +110,13 @@ export function PlaygroundShell() {
               Customize
             </button>
           </div>
-          <span className="mx-1 h-4 w-px bg-gray-950/10 dark:bg-white/10" />
+          <span className="mx-1 h-4 w-px bg-border" />
           <ResponsivePreview onChange={setPreviewWidth} value={previewWidth} />
-          <span className="mx-1 h-4 w-px bg-gray-950/10 dark:bg-white/10" />
+          <span className="mx-1 h-4 w-px bg-border" />
 
           {cliCommand && !isPlaceholder && (
             <button
-              className="flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] text-gray-950/50 transition-colors hover:bg-gray-950/5 hover:text-gray-950/80 dark:text-white/40 dark:hover:bg-white/8 dark:hover:text-white/70"
+              className="flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               onClick={() => copyCli(cliCommand)}
               title={cliCommand}
               type="button"
@@ -130,7 +132,7 @@ export function PlaygroundShell() {
 
           {inspectSource && (
             <button
-              className="flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] text-gray-950/50 transition-colors hover:bg-gray-950/5 hover:text-gray-950/80 dark:text-white/40 dark:hover:bg-white/8 dark:hover:text-white/70"
+              className="flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               onClick={() => copyCode(inspectSource)}
               type="button"
             >
@@ -146,7 +148,7 @@ export function PlaygroundShell() {
       </header>
 
       {/* ── Body ───────────────────────────────────────────────────────────── */}
-      <div className="flex min-h-0 flex-1">
+      <div className="flex min-h-0 flex-1 gap-2 px-2 pb-2">
         <aside className="w-60 shrink-0 overflow-hidden">
           <ComponentBrowser
             selectedComponent={component}
@@ -154,7 +156,7 @@ export function PlaygroundShell() {
           />
         </aside>
 
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="flex min-w-0 flex-1 flex-col overflow-hidden rounded-canvas bg-background shadow-canvas">
           <InspectCanvas
             isPlaceholder={isPlaceholder}
             mode={mode}

@@ -56,6 +56,24 @@ import { Slider, SliderValue } from "@/components/ui/slider"
 <Slider />
 ```
 
+## Anatomy
+
+```tsx
+<Slider defaultValue={50}> {/* root */}
+  <SliderValue /> {/* optional, shown above the track · data-slot="slider-value" */}
+  {/* track, filled indicator and thumbs are rendered for you:
+      data-slot="slider-control" / "slider-track" / "slider-indicator" / "slider-thumb" */}
+</Slider>
+```
+
+## Good to know
+
+- Pass a single number for one thumb, or an array for a range: `defaultValue={[20, 80]}` renders two thumbs. The number of thumbs follows the array length.
+- `onValueChange` gives a number for a single thumb and an array for a range.
+- `min` and `max` default to `0` and `100`. Use `step` for larger increments.
+- Don't render your own thumbs or track. Only add extra content such as `SliderValue` or a label; it appears above the track.
+- Thumbs stay inside the track at both ends (`thumbAlignment="edge"`).
+
 ## API Reference
 
 ### Slider

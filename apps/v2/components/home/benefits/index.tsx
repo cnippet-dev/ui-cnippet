@@ -43,7 +43,7 @@ export const Benefits = () => (
       <p className="font-medium font-mono text-cnippet-orange text-sm">
         [for developers]
       </p>
-      <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+      <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
         {HEADLINE}
       </h2>
     </div>

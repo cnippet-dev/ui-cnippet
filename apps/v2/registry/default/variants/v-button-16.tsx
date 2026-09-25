@@ -1,5 +1,5 @@
 import { PlusIcon } from "lucide-react";
-import { Button } from "@/registry/default/ui//button";
+import { Button } from "@/registry/default/ui/button";
 
 export function Pattern() {
   return (

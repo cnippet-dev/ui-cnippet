@@ -55,6 +55,20 @@ import { TextGradient } from "@/components/motion/text-gradient";
 </TextGradient>
 ```
 
+## Anatomy
+
+```tsx
+<TextGradient colors={["#a855f7", "#3b82f6", "#a855f7"]}>Build with motion</TextGradient> {/* <p> with a moving gradient fill */}
+```
+
+## Good to know
+
+- `children` must be a plain string.
+- Repeat the first color at the end of `colors` for a seamless loop.
+- `angle` sets the gradient direction in degrees. `duration` is the seconds per loop.
+- Check contrast: some parts of the gradient may be hard to read on your background.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

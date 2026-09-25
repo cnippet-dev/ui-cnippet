@@ -1,0 +1,52 @@
+---
+title: LLMs
+description: Give AI assistants the cnippet ui docs as plain markdown with llms.txt, per-page markdown and one-click copy.
+---
+
+AI assistants often confuse **cnippet ui** with shadcn/ui or Radix. For example, they write `asChild` where cnippet ui uses the `render` prop, or install `dialog` instead of `@cnippet/dialog`. To avoid this, every page on this site is also available as plain markdown that you can give to an LLM.
+
+## llms.txt
+
+[`/llms.txt`](/llms.txt) is an index of the whole site that follows the [llms.txt](https://llmstxt.org/) convention. It starts with notes for AI assistants, then lists every docs, component and motion page with a one-line description and a link to that page's markdown.
+
+```txt
+https://ui.cnippet.dev/llms.txt
+```
+
+Use it when the assistant can fetch URLs on its own. It reads the index, then opens only the pages it needs.
+
+## llms-full.txt
+
+[`/llms-full.txt`](/llms-full.txt) puts every page in one file, including the first example for each component.
+
+```txt
+https://ui.cnippet.dev/llms-full.txt
+```
+
+Use it when you want the assistant to have all the docs at once, for example in a project knowledge base or a long-context chat. The file is large, so use `llms.txt` or single pages when you only need a few components.
+
+## Markdown for any page
+
+Add `.md` to the URL of any docs, component or motion page to get its markdown:
+
+| Page | Markdown |
+|------|----------|
+| `/docs/get-started` | [`/docs/get-started.md`](/docs/get-started.md) |
+| `/ui/overlays/dialog` | [`/ui/overlays/dialog.md`](/ui/overlays/dialog.md) |
+| `/motion/text-animations/text-reveal` | [`/motion/text-animations/text-reveal.md`](/motion/text-animations/text-reveal.md) |
+
+Component pages include the install command, usage, the **Anatomy** and **Good to know** sections, the API reference and the example code.
+
+## Copy page
+
+Every page has a **Copy page** button next to its title. It copies the page's markdown to your clipboard, ready to paste into a chat. Its menu has more options:
+
+- **View as Markdown** — opens the `.md` version of the page.
+- **Open in ChatGPT** / **Open in Claude** — starts a new chat that reads the page, so you can ask questions about it.
+- **Open in v0** — on component pages, opens the component in [v0](https://v0.dev).
+
+## Tips for better results
+
+- **Point the assistant at the docs first.** For example: "Use cnippet ui. Read https://ui.cnippet.dev/llms.txt before writing any code."
+- **Keep the `@cnippet/` prefix.** `npx shadcn@latest add @cnippet/dialog` installs the Base UI version. A bare `dialog` installs the Radix-based shadcn/ui component.
+- **Follow Anatomy and Good to know.** These sections list the correct part names, prop names and defaults. When they differ from what the assistant expects from other libraries, the docs are right.

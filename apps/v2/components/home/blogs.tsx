@@ -37,7 +37,7 @@ export function Blogs() {
           <p className="font-medium font-mono text-cnippet-orange text-sm">
             [from the blog]
           </p>
-          <h2 className="w-full max-w-4xl text-pretty font-f37-stout text-4xl sm:text-3xl md:text-balance md:text-4xl">
+          <h2 className="w-full max-w-4xl text-pretty font-display text-4xl sm:text-3xl md:text-balance md:text-4xl">
             Thinking out loud
             <br />
             about building for the web.
@@ -69,9 +69,7 @@ export function Blogs() {
                 {post.date}
               </span>
             </div>
-            <h3 className="font-f37-stout text-lg leading-snug">
-              {post.title}
-            </h3>
+            <h3 className="font-display text-lg leading-snug">{post.title}</h3>
             <p className="text-balance text-muted-foreground text-sm leading-relaxed">
               {post.description}
             </p>

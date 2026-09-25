@@ -98,6 +98,39 @@ const items = [
 </CommandDialog>
 ```
 
+## Anatomy
+
+```tsx
+<CommandDialog open={open} onOpenChange={setOpen}> {/* dialog root, optional */}
+  <CommandDialogTrigger render={<Button variant="outline" />}>Search</CommandDialogTrigger>
+  <CommandDialogPopup> {/* portal + backdrop + popup · data-slot="command-dialog-popup" */}
+    <Command items={items}> {/* search state + filtering (Base UI Autocomplete) */}
+      <CommandInput placeholder="Search…" /> {/* search box */}
+      <CommandPanel> {/* raised surface around the results */}
+        <CommandEmpty>No results.</CommandEmpty> {/* shown when nothing matches · data-slot="command-empty" */}
+        <CommandList> {/* data-slot="command-list" */}
+          {(item) => (
+            <CommandItem key={item.value} value={item.value} onClick={() => run(item)}> {/* data-slot="command-item" */}
+              {item.label}
+            </CommandItem>
+          )}
+        </CommandList>
+      </CommandPanel>
+      <CommandFooter>…</CommandFooter> {/* optional hints · data-slot="command-footer" */}
+    </Command>
+  </CommandDialogPopup>
+</CommandDialog>
+```
+
+## Good to know
+
+- This is built on Base UI's Autocomplete, not on `cmdk`. Pass your data to `Command` through `items`, and render each result with a function inside `CommandList`. Don't write `CommandItem`s by hand for every entry.
+- Filtering is automatic. With `{ value, label }` objects, the search matches `label`. For other shapes, pass `itemToStringValue`.
+- For groups, pass an array of groups as `items`. Render each with `<CommandGroup items={group.items}>`, a `CommandGroupLabel` and a `CommandCollection` with its own render function.
+- Handle a choice with `onClick` on `CommandItem`. There is no `onSelect`. To close the dialog afterwards, control `open` on `CommandDialog`.
+- There is no built-in ⌘K shortcut. Add a `keydown` listener that toggles `open`.
+- `Command` also works without `CommandDialog`, as an inline search list.
+
 ## API Reference
 
 ### CommandDialog

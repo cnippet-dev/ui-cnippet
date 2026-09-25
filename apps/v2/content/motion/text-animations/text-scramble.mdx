@@ -53,6 +53,19 @@ import { TextScramble } from "@/components/motion/text-scramble";
 <TextScramble duration={0.8}>Your text here</TextScramble>
 ```
 
+## Anatomy
+
+```tsx
+<TextScramble duration={0.8}>Your text here</TextScramble> {/* <p> that scrambles, then settles */}
+```
+
+## Good to know
+
+- `children` must be a plain string.
+- It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to replay or delay it.
+- `duration` and `speed` are in seconds. `onScrambleComplete` fires when the text settles.
+- Screen readers may read the scrambled characters. Add an `aria-label` with the final text if that matters.
+
 ## Props
 
 | Prop | Type | Default | Description |

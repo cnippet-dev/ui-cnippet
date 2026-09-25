@@ -19519,6 +19519,42 @@
       "dependencies": [
         "motion"
       ],
+      "description": "Elements animate into view when they enter the viewport, with any Motion variant",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-reveal.tsx",
+          "target": "components/motion/scroll-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-reveal",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "A spring-animated progress bar that tracks page or container scroll position",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-progress.tsx",
+          "target": "components/motion/scroll-progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-progress",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
       "description": "Text marquee speed reacts to scroll velocity — faster scrolling spins it faster",
       "files": [
         {

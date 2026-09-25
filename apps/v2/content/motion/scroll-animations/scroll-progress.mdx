@@ -53,6 +53,18 @@ import { ScrollProgress } from "@/components/motion/scroll-progress";
 <ScrollProgress className="fixed inset-x-0 top-0 h-1 bg-primary" />
 ```
 
+## Anatomy
+
+```tsx
+<ScrollProgress className="fixed inset-x-0 top-0 h-1 bg-primary" /> {/* bar scaled by scroll progress */}
+```
+
+## Good to know
+
+- It has no position or color of its own. Place it with `className`, for example `fixed inset-x-0 top-0`, and give it a background color.
+- By default it tracks the whole page. To track a scrollable element instead, pass that element's ref as `containerRef`.
+- Change how smoothly it follows scrolling with `springOptions` (Motion spring settings).
+
 ## Props
 
 | Prop | Type | Default | Description |

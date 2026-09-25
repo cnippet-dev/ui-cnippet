@@ -1,15 +1,10 @@
 //biome-ignore-all lint/style/noNonNullAssertion:<>
 "use client";
 
-import { SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Section, SectionBody, SectionHeader } from "@/components/home/section";
+import { Frame } from "@/components/signal/frame";
+import { SignalSection } from "@/components/signal/section";
 import { cn } from "@/lib/utils";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover";
 import { Pattern as SettingsCard } from "@/registry/default/variants/v-accordion-9";
 import CalendarRange from "@/registry/default/variants/v-calendar-3";
 import { Pattern as StatsGrid } from "@/registry/default/variants/v-card-20";
@@ -194,163 +189,90 @@ export function HomeThemes() {
   }, [preset, radius]);
 
   return (
-    <Section id="themes">
-      <SectionHeader
-        className="border-t-0"
-        index="05"
-        meta="[color · radius]"
-        title="Make it yours"
-      />
-
-      <div className="flex items-center justify-between gap-4 border-b border-dashed px-5 py-6 sm:px-8">
-        <p className="max-w-sm text-[14px] text-muted-foreground leading-relaxed">
-          Switch colors and border radius to preview how every component adapts
-          in real time.
-        </p>
-
-        <Popover>
-          <PopoverTrigger className="hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green md:flex">
-            <SlidersHorizontal className="size-3" />
-            Customize · <span className="text-foreground">{colorName}</span>
-          </PopoverTrigger>
-
-          <PopoverContent align="end" className="w-72" sideOffset={8}>
-            <div className="space-y-5">
-              <div>
-                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
-                  Color
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {PRESETS.map((p) => (
-                    <button
-                      className={cn(
-                        "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                        colorName === p.name
-                          ? "border-foreground/20 bg-foreground/5 font-medium"
-                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                      )}
-                      key={p.name}
-                      onClick={() => setColorName(p.name)}
-                      type="button"
-                    >
-                      <span
-                        className="block size-2.5 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
-                        style={{ backgroundColor: p.swatch }}
-                      />
-                      {p.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
-                  Radius
-                </p>
-                <div className="flex gap-1.5">
-                  {RADIUS_OPTIONS.map((r) => (
-                    <button
-                      className={cn(
-                        "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                        radius === r.value
-                          ? "border-foreground/20 bg-foreground/5 font-medium"
-                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                      )}
-                      key={r.label}
-                      onClick={() => setRadius(r.value)}
-                      type="button"
-                    >
-                      {r.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+    <SignalSection
+      id="themes"
+      index="04"
+      kicker="theming"
+      lead="Every component reads the same handful of CSS variables. Change the colour and radius here — the whole page follows, live."
+      title={
+        <>
+          Make it <em>unmistakably yours.</em>
+        </>
+      }
+    >
+      {/* Toolbar — inline controls instead of a hidden popover. */}
+      <Frame className="mb-6">
+        <div className="flex flex-col gap-3 px-3 py-2 md:flex-row md:items-center md:justify-between">
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="shrink-0 font-mono text-[11px] text-faint">
+              {"// color"}
+            </span>
+            <div className="no-scrollbar flex gap-1 overflow-x-auto">
+              {PRESETS.map((p) => (
+                <button
+                  aria-pressed={colorName === p.name}
+                  className={cn(
+                    "flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[13px] transition-colors duration-150",
+                    colorName === p.name
+                      ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                  key={p.name}
+                  onClick={() => setColorName(p.name)}
+                  type="button"
+                >
+                  <span
+                    className="block size-3 shrink-0 rounded-full ring-1 ring-black/10 ring-inset dark:ring-white/15"
+                    style={{ backgroundColor: p.swatch }}
+                  />
+                  {p.name}
+                </button>
+              ))}
             </div>
-          </PopoverContent>
-        </Popover>
-      </div>
-
-      {/* Mobile customize button */}
-      <div className="flex border-b border-dashed px-5 py-4 md:hidden">
-        <Popover>
-          <PopoverTrigger className="flex cursor-pointer items-center gap-1.5 rounded-[2px] border border-dashed px-3 py-1.5 font-mono text-muted-foreground text-xs transition-colors hover:text-cnippet-green">
-            <SlidersHorizontal className="size-3" />
-            Customize · <span className="text-foreground">{colorName}</span>
-          </PopoverTrigger>
-          <PopoverContent align="start" className="w-72" sideOffset={8}>
-            <div className="space-y-5">
-              <div>
-                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
-                  Color
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {PRESETS.map((p) => (
-                    <button
-                      className={cn(
-                        "flex h-7 cursor-pointer items-center gap-1.5 rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                        colorName === p.name
-                          ? "border-foreground/20 bg-foreground/5 font-medium"
-                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                      )}
-                      key={p.name}
-                      onClick={() => setColorName(p.name)}
-                      type="button"
-                    >
-                      <span
-                        className="block size-2.5 shrink-0 rounded-full ring-1 ring-black/10 dark:ring-white/10"
-                        style={{ backgroundColor: p.swatch }}
-                      />
-                      {p.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="mb-2.5 font-mono text-muted-foreground text-xs">
-                  Radius
-                </p>
-                <div className="flex gap-1.5">
-                  {RADIUS_OPTIONS.map((r) => (
-                    <button
-                      className={cn(
-                        "flex h-7 cursor-pointer items-center rounded-[2px] border px-2.5 font-mono text-xs transition-all",
-                        radius === r.value
-                          ? "border-foreground/20 bg-foreground/5 font-medium"
-                          : "border-transparent text-muted-foreground hover:border-foreground/10 hover:bg-foreground/4",
-                      )}
-                      key={r.label}
-                      onClick={() => setRadius(r.value)}
-                      type="button"
-                    >
-                      {r.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="shrink-0 font-mono text-[11px] text-faint">
+              {"// radius"}
+            </span>
+            <div className="flex gap-1">
+              {RADIUS_OPTIONS.map((r) => (
+                <button
+                  aria-pressed={radius === r.value}
+                  className={cn(
+                    "flex h-8 cursor-pointer items-center rounded-lg px-2.5 font-mono text-[12px] transition-colors duration-150",
+                    radius === r.value
+                      ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                  key={r.label}
+                  onClick={() => setRadius(r.value)}
+                  type="button"
+                >
+                  {r.label}
+                </button>
+              ))}
             </div>
-          </PopoverContent>
-        </Popover>
-      </div>
+          </div>
+        </div>
+      </Frame>
 
-      <SectionBody className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="grid min-w-0 grid-cols-1 gap-10">
+      <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-6">
           <SettingsCard />
           <CalendarRange />
           <NewsletterInline />
-          {/* <ReadMore /> */}
         </div>
-        <div className="min-w-0 space-y-10">
+        <div className="min-w-0 space-y-6">
+          <ForgotPassword />
           <StatsGrid />
           <MultiCombobox />
-          <ForgotPassword />
-
           <SystemMeters />
         </div>
-        <div className="min-w-0 space-y-10">
-          <IncidentTimeline />
+        <div className="min-w-0 space-y-6">
           <FeedbackForm />
+          <IncidentTimeline />
         </div>
-      </SectionBody>
-    </Section>
+      </div>
+    </SignalSection>
   );
 }

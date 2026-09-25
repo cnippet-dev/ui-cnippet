@@ -3,8 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@cnippet/ui/shared/theme-provider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { SpotlightTracker } from "@/components/signal/spotlight-tracker";
 import {
   AnchoredToastProvider,
   ToastProvider,
@@ -19,19 +19,16 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-geist-mono",
 });
 
-const F37Stout = localFont({
+// The Signal "voice" face — one italic phrase per display heading, no more.
+const instrumentSerif = Instrument_Serif({
   display: "swap",
-  src: [
-    {
-      path: "../public/fonts/F37Stout-Regular.woff2",
-      style: "normal",
-      weight: "400",
-    },
-  ],
-  variable: "--font-f37-stout",
+  style: ["italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+  weight: "400",
 });
 
 const description =
@@ -71,13 +68,14 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-KHM7SVKH" />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${F37Stout.variable} group/body antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} group/body antialiased`}
       >
         <ThemeProvider>
           <ToastProvider position="bottom-center">
             <AnchoredToastProvider>{children}</AnchoredToastProvider>
           </ToastProvider>
         </ThemeProvider>
+        <SpotlightTracker />
       </body>
       <GoogleAnalytics gaId="G-5BFT497ZZ2" />
     </html>

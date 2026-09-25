@@ -49,6 +49,18 @@ import { Spinner } from "@/components/ui/spinner"
 <Spinner />
 ```
 
+## Anatomy
+
+```tsx
+<Spinner className="size-4" /> {/* spinning Lucide Loader2 <svg role="status" aria-label="Loading"> */}
+```
+
+## Good to know
+
+- `Spinner` is a Lucide icon, so it accepts any icon prop. Change its size with `className` (`size-4`) or the `size` prop.
+- It has `role="status"` and `aria-label="Loading"`. Pass a more specific `aria-label`, such as `"Saving changes"`, when that helps.
+- For a loading button, use `<Button loading>` instead of adding a spinner yourself. It keeps the button's width and disables it.
+
 ## API Reference
 
 ### Spinner

@@ -1,6 +1,6 @@
 import { SearchIcon } from "lucide-react";
-import { Button } from "@/registry/default/ui//button";
-import { Kbd, KbdGroup } from "@/registry/default/ui//kbd";
+import { Button } from "@/registry/default/ui/button";
+import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 
 export function Pattern() {
   return (

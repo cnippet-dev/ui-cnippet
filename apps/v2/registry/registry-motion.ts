@@ -199,6 +199,18 @@ export const motionComponents: MotionItem[] = [
   createMotion({
     categories: ["scroll animation"],
     description:
+      "Elements animate into view when they enter the viewport, with any Motion variant",
+    name: "scroll-reveal",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "A spring-animated progress bar that tracks page or container scroll position",
+    name: "scroll-progress",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
       "Text marquee speed reacts to scroll velocity — faster scrolling spins it faster",
     name: "scroll-velocity-text",
   }),

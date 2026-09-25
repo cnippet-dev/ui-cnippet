@@ -15,7 +15,6 @@ import { useConfig } from "@/hooks/use-config";
 import { useIsMac } from "@/hooks/use-is-mac";
 import type { source } from "@/lib/source";
 import { useCopyToClipboard } from "@/registry/default/hooks/use-copy-to-clipboard";
-import { Button } from "@/registry/default/ui/button";
 import {
   Command,
   CommandCollection,
@@ -170,9 +169,17 @@ export function CommandMenu({
 
   return (
     <CommandDialog onOpenChange={setOpen} open={open} {...props}>
-      <CommandDialogTrigger render={<Button variant="outline" />}>
-        <HugeiconsIcon icon={Search01Icon} strokeWidth={2} />
-        <KbdGroup className="gap-1">
+      <CommandDialogTrigger
+        className="group/search inline-flex h-8 w-full items-center gap-2 rounded-lg border bg-background ps-2.5 pe-1 text-[13px] text-muted-foreground shadow-xs/4 outline-none transition-colors duration-150 hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring md:w-56"
+        render={<button type="button" />}
+      >
+        <HugeiconsIcon
+          className="size-3.5 shrink-0"
+          icon={Search01Icon}
+          strokeWidth={2}
+        />
+        <span className="flex-1 text-left">Search docs…</span>
+        <KbdGroup className="gap-0.5">
           <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
           <Kbd className="aspect-square">K</Kbd>
         </KbdGroup>

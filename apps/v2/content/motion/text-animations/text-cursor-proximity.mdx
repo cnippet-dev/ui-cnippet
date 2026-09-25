@@ -63,6 +63,23 @@ const containerRef = useRef<HTMLDivElement>(null);
 </div>
 ```
 
+## Anatomy
+
+```tsx
+<div ref={containerRef}> {/* area where the cursor is tracked */}
+  <TextCursorProximity containerRef={containerRef} styles={{ scale: { from: 1, to: 1.5 } }}>
+    Hover over me
+  </TextCursorProximity>
+</div>
+```
+
+## Good to know
+
+- `containerRef` and `styles` are required. `styles` maps each CSS property to a `from` and `to` value.
+- Letters closer to the cursor move further toward the `to` values. `radius` sets the reach and `falloff` the curve.
+- It follows the mouse, so there's no effect on touch screens.
+- Screen readers read the full text once; the individual letters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

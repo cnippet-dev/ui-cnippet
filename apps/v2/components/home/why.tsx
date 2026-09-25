@@ -1,4 +1,6 @@
-import { Section, SectionBody, SectionHeader } from "@/components/home/section";
+import { Check } from "lucide-react";
+import { Frame, FramePanel } from "@/components/signal/frame";
+import { SignalSection } from "@/components/signal/section";
 import { CodeAnalyseIcon, CommandIcon, PrototypeIcon } from "../icons";
 
 const ARGUMENTS = [
@@ -6,19 +8,20 @@ const ARGUMENTS = [
     bullets: [
       "No compiled bundle, no version to upgrade around",
       "Edit, rename, or delete any component freely",
-      "No breaking change you didn't see coming",
-      "Every component ships as readable source, not a black box",
+      "Every component ships as readable source",
     ],
     icon: CodeAnalyseIcon,
+    meta: "source",
     title: "Own the code",
   },
   {
     bullets: [
-      "Base UI primitives for correct ARIA and keyboard behavior",
-      "Full keyboard and screen-reader support out of the box",
+      "Base UI primitives for correct ARIA and focus",
+      "Full keyboard and screen-reader support",
       "Style with your own Tailwind classes",
     ],
     icon: CommandIcon,
+    meta: "a11y",
     title: "Accessible by default",
   },
   {
@@ -28,42 +31,54 @@ const ARGUMENTS = [
       "MIT licensed, free forever",
     ],
     icon: PrototypeIcon,
-    title: "A full toolkit",
+    meta: "scope",
+    title: "A complete toolkit",
   },
 ];
 
 export function Why() {
   return (
-    <Section id="why">
-      <SectionHeader
-        index="01"
-        meta="[for developers]"
-        title="Three reasons to build here"
-      />
-
-      <SectionBody className="p-0 sm:p-0">
-        <div className="grid divide-y divide-dashed lg:grid-cols-3 lg:divide-x lg:divide-y-0">
-          {ARGUMENTS.map((argument) => (
-            <div className="px-5 py-10 sm:px-8 sm:py-12" key={argument.title}>
-              <argument.icon className="size-6 text-cnippet-accent" />
-              <h3 className="mt-4 mb-4 font-f37-stout text-xl leading-tight">
+    <SignalSection
+      id="why"
+      index="01"
+      kicker="principles"
+      lead="No package to install, no runtime to fight. Just well-built source that drops into your project and stays out of your way."
+      title={
+        <>
+          Built to be <em>yours,</em> not rented.
+        </>
+      }
+    >
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {ARGUMENTS.map((argument) => (
+          <Frame key={argument.title} spotlight>
+            <FramePanel className="flex flex-col p-6">
+              <div className="flex items-center justify-between">
+                <span className="flex size-10 items-center justify-center rounded-xl border bg-frame text-foreground shadow-xs/4">
+                  <argument.icon className="size-5" />
+                </span>
+                <span className="font-mono text-[11px] text-faint">
+                  {`// ${argument.meta}`}
+                </span>
+              </div>
+              <h3 className="mt-8 font-display font-semibold text-[20px] tracking-[-0.03em]">
                 {argument.title}
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="mt-4 flex flex-col gap-2.5">
                 {argument.bullets.map((bullet) => (
                   <li
-                    className="flex gap-2 text-[14px] text-muted-foreground leading-relaxed"
+                    className="flex gap-2.5 text-[14px] text-muted-foreground leading-relaxed"
                     key={bullet}
                   >
-                    <span className="text-cnippet-accent">·</span>
+                    <Check className="mt-1 size-3.5 shrink-0 text-signal" />
                     {bullet}
                   </li>
                 ))}
               </ul>
-            </div>
-          ))}
-        </div>
-      </SectionBody>
-    </Section>
+            </FramePanel>
+          </Frame>
+        ))}
+      </div>
+    </SignalSection>
   );
 }

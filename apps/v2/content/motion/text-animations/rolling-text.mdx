@@ -53,6 +53,20 @@ import { RollingText } from "@/components/motion/rolling-text";
 <RollingText>Design with purpose</RollingText>
 ```
 
+## Anatomy
+
+```tsx
+<RollingText direction="up">Design with purpose</RollingText> {/* <span> of letters that roll into place */}
+```
+
+## Good to know
+
+- `children` must be a plain string. It's split into letters.
+- It plays once when it mounts. `delay` and `duration` are in seconds.
+- `direction` is `"up"` or `"down"`.
+- Screen readers read the full text once; the individual letters are hidden from them.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

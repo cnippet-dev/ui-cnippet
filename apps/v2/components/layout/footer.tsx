@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 px-2 md:grid-cols-4 md:px-4">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="mb-4 font-f37-stout text-2xl text-primary">
+            <div className="mb-4 font-display text-2xl text-primary">
               cnippet ui
             </div>
             <p className="mb-6 max-w-md font-mono text-foreground/60 text-sm">

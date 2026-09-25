@@ -53,6 +53,19 @@ import { Typewriter } from "@/components/motion/typewriter";
 <Typewriter text="Hello, world!" />
 ```
 
+## Anatomy
+
+```tsx
+<Typewriter text={["Hello, world!", "Welcome back."]} /> {/* types, waits, deletes, repeats */}
+```
+
+## Good to know
+
+- `text` can be one string or an array. With an array, it types each one in turn.
+- `speed` and `deleteSpeed` are milliseconds per character. `waitTime` is the pause before deleting.
+- `loop` (default `true`) repeats forever. Set `loop={false}` to stop after the last text.
+- Screen readers may read the text while it's half typed. Add an `aria-label` with the full text on a wrapper if that matters.
+
 ## Props
 
 | Prop | Type | Default | Description |

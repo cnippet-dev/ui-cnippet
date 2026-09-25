@@ -64,6 +64,25 @@ import {
 </PreviewCard>
 ```
 
+## Anatomy
+
+```tsx
+<PreviewCard> {/* root, owns the open state */}
+  <PreviewCardTrigger href="/users/ada">@ada</PreviewCardTrigger> {/* <a> · data-slot="preview-card-trigger" */}
+  <PreviewCardPopup> {/* portal + positioner + popup · data-slot="preview-card-content" */}
+    Profile preview
+  </PreviewCardPopup>
+</PreviewCard>
+```
+
+## Good to know
+
+- `HoverCard`, `HoverCardTrigger` and `HoverCardContent` are aliases. Prefer the `PreviewCard` names.
+- `PreviewCardTrigger` renders an `<a>`, so give it an `href`. It's meant for links that also show a preview.
+- The card opens on hover or keyboard focus, never on tap, so touch-screen users can't open it. Don't put anything essential in it; use `Popover` for that.
+- Change the timing with `delay` (default `600`ms) and `closeDelay` (default `300`ms) on `PreviewCardTrigger`, not on the root.
+- The card opens below the trigger. `PreviewCardPopup` accepts `align` and `sideOffset`, but not `side`; to open it on another side, pass `side` through to the positioner in `components/ui/preview-card.tsx`.
+
 ## API Reference
 
 ### PreviewCard

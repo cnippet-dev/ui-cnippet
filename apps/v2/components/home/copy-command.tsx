@@ -47,22 +47,26 @@ export function CopyCommand({ className, command }: CopyCommandProps) {
   return (
     <button
       className={cn(
-        "group flex w-full items-center gap-3 border border-dashed bg-background-100 px-4 py-3 text-left font-mono text-[13px] transition-colors hover:border-cnippet-accent dark:bg-background-200",
+        "group flex h-10 w-full min-w-0 items-center gap-3 rounded-xl border bg-frame ps-3.5 pe-1.5 text-left font-mono text-[13px] outline-none transition-colors duration-150 hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring",
         className,
       )}
       onClick={copy}
       type="button"
     >
-      <span aria-hidden="true" className="select-none text-cnippet-accent">
+      <span aria-hidden="true" className="select-none text-signal">
         $
       </span>
-      <span className="truncate text-foreground">{command}</span>
+      {/* Clip from the start on narrow screens so the package name — the
+          part that matters — stays visible: "…add @cnippet/button". */}
+      <span className="truncate text-left text-foreground [direction:rtl]">
+        <bdi>{command}</bdi>
+      </span>
       <span
         aria-hidden="true"
-        className="ml-auto text-muted-foreground transition-colors group-hover:text-foreground"
+        className="ms-auto inline-flex size-7 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 group-hover:bg-background group-hover:text-foreground group-hover:shadow-xs/5"
       >
         {copied ? (
-          <Check className="size-3.5 text-cnippet-green" />
+          <Check className="size-3.5 text-success-foreground" />
         ) : (
           <Copy className="size-3.5" />
         )}

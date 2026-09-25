@@ -2,12 +2,12 @@
 
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-import { Button } from "@/registry/default/ui//button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/registry/default/ui//tooltip";
+} from "@/registry/default/ui/tooltip";
 
 export function Pattern() {
   const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 1500 });

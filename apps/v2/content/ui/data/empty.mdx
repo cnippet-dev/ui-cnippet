@@ -65,6 +65,28 @@ import {
 </Empty>
 ```
 
+## Anatomy
+
+```tsx
+<Empty> {/* centered container · data-slot="empty" */}
+  <EmptyHeader> {/* data-slot="empty-header" */}
+    <EmptyMedia variant="icon"><InboxIcon /></EmptyMedia> {/* data-slot="empty-media" */}
+    <EmptyTitle>No messages</EmptyTitle> {/* data-slot="empty-title" */}
+    <EmptyDescription>You're all caught up.</EmptyDescription> {/* data-slot="empty-description" */}
+  </EmptyHeader>
+  <EmptyContent> {/* actions · data-slot="empty-content" */}
+    <Button>Refresh</Button>
+  </EmptyContent>
+</Empty>
+```
+
+## Good to know
+
+- Every part is a styled `<div>` with no state or behavior. Compose them freely and leave out the parts you don't need.
+- `EmptyMedia variant="icon"` puts the icon on a small card with stacked shadows. Use the default variant for larger images or illustrations.
+- `EmptyTitle` renders a `<div>`, not a heading. If the page needs a real heading for its outline, put one inside: `<EmptyTitle><h2>No messages</h2></EmptyTitle>`.
+- Links inside `EmptyDescription` are underlined automatically.
+
 ## API Reference
 
 ### Empty

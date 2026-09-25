@@ -64,6 +64,24 @@ import {
 </StackingCards>
 ```
 
+## Anatomy
+
+```tsx
+<StackingCards totalCards={3} className="h-[300vh]"> {/* tall scroll track */}
+  <StackingCardItem index={0} topPosition="5%">…</StackingCardItem> {/* sticky card */}
+  <StackingCardItem index={1} topPosition="10%">…</StackingCardItem>
+  <StackingCardItem index={2} topPosition="15%">…</StackingCardItem>
+</StackingCards>
+```
+
+## Good to know
+
+- `totalCards` must match the number of `StackingCardItem`s, and each item needs its `index` (starting at `0`).
+- The container needs enough height to scroll through, e.g. `h-[300vh]` for three cards.
+- Give each card a slightly larger `topPosition` so the stacked edges stay visible.
+- Cards stick with `position: sticky`, so no parent between them and the scrolling element may use `overflow: hidden`.
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 ### StackingCards

@@ -109,7 +109,7 @@ export const Install = () => (
             [React · Next.js · Vite · Remix · Astro]
           </p>
         </div>
-        <h2 className="w-full max-w-3xl text-pretty font-f37-stout text-4xl md:text-balance md:text-4xl">
+        <h2 className="w-full max-w-3xl text-pretty font-display text-4xl md:text-balance md:text-4xl">
           Add any component to your app in one command.
         </h2>
         <p className="w-5/6 max-w-3xl text-pretty text-primary/70">

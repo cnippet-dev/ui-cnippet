@@ -72,6 +72,30 @@ import {
 </Breadcrumb>
 ```
 
+## Anatomy
+
+```tsx
+<Breadcrumb> {/* <nav aria-label="breadcrumb"> · data-slot="breadcrumb" */}
+  <BreadcrumbList> {/* <ol> · data-slot="breadcrumb-list" */}
+    <BreadcrumbItem> {/* <li> · data-slot="breadcrumb-item" */}
+      <BreadcrumbLink href="/docs">Docs</BreadcrumbLink> {/* <a> · data-slot="breadcrumb-link" */}
+    </BreadcrumbItem>
+    <BreadcrumbSeparator /> {/* its own <li> · data-slot="breadcrumb-separator" */}
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage> {/* current page · data-slot="breadcrumb-page" */}
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Good to know
+
+- `BreadcrumbSeparator` is its own `<li>`. Put it between `BreadcrumbItem`s, not inside one.
+- Use `BreadcrumbPage` (not a link) for the last item. It sets `aria-current="page"`.
+- For client-side routing, use the `render` prop: `<BreadcrumbLink render={<Link href="/docs" />}>Docs</BreadcrumbLink>`. There is no `asChild`.
+- The separator is a chevron by default. Pass children to replace it, e.g. `<BreadcrumbSeparator>/</BreadcrumbSeparator>`.
+- Use `BreadcrumbEllipsis` to shorten long trails. Wrap it in a `Menu` to list the hidden items.
+
 ## API Reference
 
 ### Breadcrumb

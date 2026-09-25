@@ -53,6 +53,19 @@ import { EncryptedText } from "@/components/motion/encrypted-text";
 <EncryptedText revealDirection="ltr">Build with motion</EncryptedText>
 ```
 
+## Anatomy
+
+```tsx
+<EncryptedText revealDirection="ltr">Build with motion</EncryptedText> {/* <span> that decodes random characters into the text */}
+```
+
+## Good to know
+
+- `children` must be a plain string.
+- It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to start it later, for example when it scrolls into view.
+- `revealDirection` is `"ltr"`, `"rtl"`, `"center"` or `"random"`. `speed` and `maxIterations` control how long it takes.
+- Screen readers get the final text through `aria-label`; the changing characters are hidden from them.
+
 ## Props
 
 | Prop | Type | Default | Description |

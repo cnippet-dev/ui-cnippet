@@ -41,7 +41,7 @@ export const mdxComponents = {
   a: ({ className, ...props }: React.ComponentProps<"a">) => (
     <a
       className={cn(
-        "font-medium text-foreground underline underline-offset-4",
+        "font-medium text-foreground underline decoration-border-strong underline-offset-4 transition-colors hover:decoration-signal",
         className,
       )}
       {...props}
@@ -80,7 +80,7 @@ export const mdxComponents = {
       return (
         <code
           className={cn(
-            "relative border border-dashed bg-background-300 px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] outline-none",
+            "relative rounded-md border bg-muted px-[0.35rem] py-[0.15rem] font-mono text-[0.82em] text-foreground outline-none",
             className,
           )}
           {...props}
@@ -133,17 +133,12 @@ export const mdxComponents = {
     );
   },
   figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
-    return (
-      <figure
-        className={cn("border border-dashed bg-muted/30", className)}
-        {...props}
-      />
-    );
+    return <figure className={cn(className)} {...props} />;
   },
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
     <h1
       className={cn(
-        "mt-2 scroll-m-20 font-heading font-semibold text-3xl",
+        "mt-2 scroll-m-20 font-heading font-semibold text-3xl tracking-[-0.03em]",
         className,
       )}
       {...props}
@@ -163,7 +158,7 @@ export const mdxComponents = {
       <h2
         {...props}
         className={cn(
-          "mt-12 scroll-m-20 font-heading font-semibold text-2xl first:mt-0 lg:mt-16 [&+p]:mt-4! *:[code]:text-2xl",
+          "mt-14 scroll-m-28 font-heading font-semibold text-[24px] tracking-[-0.03em] first:mt-0 lg:mt-16 [&+p]:mt-4! *:[code]:text-2xl",
           className,
         )}
         id={id}
@@ -191,7 +186,7 @@ export const mdxComponents = {
       <h3
         {...props}
         className={cn(
-          "mt-8 scroll-m-20 font-semibold text-lg *:[code]:text-lg",
+          "mt-10 scroll-m-28 font-semibold text-[18px] tracking-[-0.02em] *:[code]:text-lg",
           className,
         )}
         id={id}
@@ -242,7 +237,7 @@ export const mdxComponents = {
   }: React.ComponentProps<"img">) => (
     <Image
       alt={alt || ""}
-      className={cn("mt-6 rounded-md border", className)}
+      className={cn("mt-6 rounded-xl border", className)}
       height={Number(height)}
       src={typeof src === "string" ? src : ""}
       width={Number(width)}
@@ -345,7 +340,7 @@ export const mdxComponents = {
     <TabsTab className={cn("rounded-lg", className)} {...props} />
   ),
   table: ({ className, ...props }: React.ComponentProps<"table">) => (
-    <ScrollArea className="my-6" scrollbarGutter>
+    <ScrollArea className="my-6 h-auto!" scrollbarGutter>
       <table
         className={cn("relative w-full border-none text-sm", className)}
         {...props}

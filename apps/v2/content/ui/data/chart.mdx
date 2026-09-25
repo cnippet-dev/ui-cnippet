@@ -69,6 +69,26 @@ export function MyChart() {
 }
 ```
 
+## Anatomy
+
+```tsx
+<ChartContainer config={chartConfig} className="min-h-50 w-full"> {/* sized wrapper + Recharts ResponsiveContainer · data-slot="chart" */}
+  <BarChart data={data}> {/* any Recharts chart */}
+    <Bar dataKey="desktop" fill="var(--color-desktop)" />
+    <ChartTooltip content={<ChartTooltipContent />} /> {/* Recharts <Tooltip> with styled content */}
+    <ChartLegend content={<ChartLegendContent />} /> {/* Recharts <Legend> with styled content */}
+  </BarChart>
+</ChartContainer>
+```
+
+## Good to know
+
+- This is a thin styling layer over Recharts, not a chart library of its own. Build the chart with Recharts components (`BarChart`, `Line`, `Area`, and so on) inside `ChartContainer`.
+- Each key in `config` becomes a CSS variable named `--color-<key>`. Use it in Recharts props: `fill="var(--color-desktop)"`. The keys should match the `dataKey`s in your data.
+- Give each config entry either `color` or `theme: { light, dark }`, not both.
+- `ChartContainer` needs a size. It defaults to a 16:9 aspect ratio; set a height or `min-h-*` class to change it.
+- Pass `ChartTooltipContent` and `ChartLegendContent` through the `content` prop of `ChartTooltip` and `ChartLegend`. They read labels and icons from `config`.
+
 ## API Reference
 
 ### ChartContainer

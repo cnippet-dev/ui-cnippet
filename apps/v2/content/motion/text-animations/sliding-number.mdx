@@ -53,6 +53,19 @@ import { SlidingNumber } from "@/components/motion/sliding-number";
 <SlidingNumber value={count} />
 ```
 
+## Anatomy
+
+```tsx
+<SlidingNumber value={count} /> {/* each digit slides to its new value */}
+```
+
+## Good to know
+
+- It animates whenever `value` changes. Update `value` from state.
+- `padStart` adds a leading zero to single-digit numbers, useful for clocks and timers.
+- `decimalSeparator` sets the character used for decimals (default `"."`).
+- It keeps animating when the user has turned on reduced motion in their system settings.
+
 ## Props
 
 | Prop | Type | Default | Description |

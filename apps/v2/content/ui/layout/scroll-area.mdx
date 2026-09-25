@@ -67,6 +67,23 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 </ScrollArea>
 ```
 
+## Anatomy
+
+```tsx
+<ScrollArea className="h-72"> {/* root with a fixed size */}
+  {/* your content goes inside the viewport · data-slot="scroll-area-viewport" */}
+  {/* vertical and horizontal scrollbars are rendered for you · data-slot="scroll-area-scrollbar" */}
+</ScrollArea>
+```
+
+## Good to know
+
+- Give `ScrollArea` a fixed height (or width). Without one it grows with its content and never scrolls.
+- Both scrollbars are included and only appear when the content overflows in that direction. Don't add your own `ScrollBar`.
+- `scrollFade` fades the content out at the edges that can still scroll.
+- `scrollbarGutter` reserves space for the scrollbar, so content doesn't sit underneath it.
+- Base UI's scroll area has no `type` prop (such as Radix's `type="always"`).
+
 ## API Reference
 
 ### ScrollArea
@@ -108,7 +125,7 @@ Enable `scrollbarGutter` to reserve space for the scrollbar when overflow appear
 
 ### Two-Axis Grid
 
-A grid of cells that overflows both vertically and horizontally, demonstrating simultaneous x- and y-axis scrolling with `type="always"` to keep both scrollbars visible.
+A grid of cells that overflows both vertically and horizontally, demonstrating simultaneous x- and y-axis scrolling.
 
 <ComponentPreview name="v-scroll-area-5" />
 
@@ -126,7 +143,7 @@ A tall card column with status badge labels, showing how `ScrollArea` wraps a ve
 
 ### Wide Data Table
 
-A horizontally scrollable table with `type="always"` to keep the scrollbar permanently visible — appropriate for data-dense views where column count exceeds viewport width.
+A horizontally scrollable table, appropriate for data-dense views where column count exceeds viewport width.
 
 <ComponentPreview name="v-scroll-area-8" />
 

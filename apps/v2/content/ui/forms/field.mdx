@@ -85,12 +85,31 @@ import { Input } from "@/components/ui/input"
   <FieldDescription>Visible on your profile</FieldDescription>
   <FieldError>Please enter a valid name</FieldError>
   <FieldValidity>
-    {(validity) => (
-      {validity.error && <p>{validity.error}</p>}
-    )}
+    {(state) => (state.error ? <p>{state.error}</p> : null)}
   </FieldValidity>
 </Field>
 ```
+
+## Anatomy
+
+```tsx
+<Field name="email"> {/* <div> · data-slot="field" */}
+  <FieldLabel>Email</FieldLabel> {/* <label>, linked to the control · data-slot="field-label" */}
+  <Input type="email" required /> {/* any cnippet form control */}
+  <FieldDescription>We never share it.</FieldDescription> {/* data-slot="field-description" */}
+  <FieldError>Enter a valid email.</FieldError> {/* only shown when invalid · data-slot="field-error" */}
+</Field>
+```
+
+## Good to know
+
+- `Field` connects the label, description and error to the control for you. Don't add `id`, `htmlFor` or `aria-describedby` yourself.
+- It works with the cnippet controls (`Input`, `Textarea`, `Select`, `Checkbox`, `NumberField` and others). For a plain element, wrap it in `FieldControl`.
+- `FieldError` only appears when the field is invalid. Use `match` to show a message for one specific problem, e.g. `<FieldError match="valueMissing">Required</FieldError>`.
+- Validate with native attributes (`required`, `type`, `minLength`, `pattern`) or a `validate={(value) => "message" | null}` function.
+- By default, validation runs when the form is submitted and again on each change after that. Change this with `validationMode` (`"onBlur"` or `"onChange"`).
+- Give the `Field` a `name` when it's inside a `Form`. The name keys its submitted value and any server `errors`.
+- For each option in a checkbox or radio group inside a `Field`, use `FieldItem`.
 
 ## API Reference
 
