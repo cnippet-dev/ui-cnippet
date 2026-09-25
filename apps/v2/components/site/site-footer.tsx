@@ -119,10 +119,10 @@ export function SiteFooter({
       {/* The wordmark — cropped by the canvas edge, fading into it. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none relative -mb-[0.24em] select-none overflow-hidden text-center font-display font-semibold text-[clamp(5rem,22vw,19rem)] leading-[0.8] tracking-[-0.07em]"
+        className="pointer-events-none relative mb-[-0.24em] select-none overflow-hidden text-center font-display font-semibold text-[clamp(4rem,18vw,17rem)] leading-[0.8] tracking-[-0.07em]"
       >
         <span className="bg-linear-to-b from-foreground/10 to-transparent bg-clip-text text-transparent">
-          cnippet
+          cnippet-ui
         </span>
       </div>
     </footer>

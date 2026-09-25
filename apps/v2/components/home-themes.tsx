@@ -263,14 +263,14 @@ export function HomeThemes() {
           <NewsletterInline />
         </div>
         <div className="min-w-0 space-y-6">
+          <ForgotPassword />
           <StatsGrid />
           <MultiCombobox />
-          <ForgotPassword />
           <SystemMeters />
         </div>
         <div className="min-w-0 space-y-6">
-          <IncidentTimeline />
           <FeedbackForm />
+          <IncidentTimeline />
         </div>
       </div>
     </SignalSection>

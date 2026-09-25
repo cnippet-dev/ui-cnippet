@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { CopyCommand } from "@/components/home/copy-command";
 import { PrefetchLink } from "@/components/prefetch-link";
@@ -13,13 +13,21 @@ import {
 } from "@/components/signal/frame";
 import { SignalSection } from "@/components/signal/section";
 import { SignalDot } from "@/components/signal/signal-dot";
-import { Facehash } from "@/components/ui/avatar";
-import { Badge } from "@/registry/default/ui/badge";
+import { FlipWords } from "@/registry/default/motion/flip-words";
+import { LetterSwapHover } from "@/registry/default/motion/letter-swap-hover";
+import { ScrambleHover } from "@/registry/default/motion/scramble-hover";
+import { SlidingNumber } from "@/registry/default/motion/sliding-number";
+import { TextShimmer } from "@/registry/default/motion/text-shimmer";
+import { Typewriter } from "@/registry/default/motion/typewriter";
 import { Button } from "@/registry/default/ui/button";
-import { Input } from "@/registry/default/ui/input";
-import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
-import { Skeleton } from "@/registry/default/ui/skeleton";
-import { Switch } from "@/registry/default/ui/switch";
+import {
+  Meter,
+  MeterIndicator,
+  MeterLabel,
+  MeterTrack,
+  MeterValue,
+} from "@/registry/default/ui/meter";
+import { OTPField, OTPFieldInput } from "@/registry/default/ui/otp-field";
 import { Tabs, TabsList, TabsTab } from "@/registry/default/ui/tabs";
 
 const TABS = [
@@ -65,87 +73,124 @@ type TabId = (typeof TABS)[number]["id"];
 
 const FRAMEWORKS = ["Next.js", "React", "Vite", "Remix", "Astro", "Laravel"];
 
-// Every preview below is the real component from registry/default/ui — the
-// same source the CLI copies.
+const OTP_SLOTS = ["otp-1", "otp-2", "otp-3", "otp-4"];
+
+function CounterPreview() {
+  const [count, setCount] = useState(1284);
+  return (
+    <div className="flex items-center gap-2.5">
+      <Button
+        aria-label="Decrease"
+        onClick={() => setCount((n) => n - 1)}
+        size="icon-xs"
+        variant="outline"
+      >
+        <Minus />
+      </Button>
+      <span className="min-w-14 text-center font-display font-semibold text-[20px] tabular-nums tracking-[-0.03em]">
+        <SlidingNumber value={count} />
+      </span>
+      <Button
+        aria-label="Increase"
+        onClick={() => setCount((n) => n + 1)}
+        size="icon-xs"
+        variant="outline"
+      >
+        <Plus />
+      </Button>
+    </div>
+  );
+}
+
+// Components you won't find in a stock shadcn/ui install: cnippet's motion
+// set, plus primitives only Base UI ships. Every preview is the real
+// registry source — the same file the CLI copies.
 const PREVIEWS = [
   {
-    name: "button",
+    kind: "motion",
+    name: "text-shimmer",
     render: (
-      <div className="flex flex-wrap items-center gap-2">
-        <Button size="sm">Deploy</Button>
-        <Button size="sm" variant="outline">
-          Cancel
-        </Button>
-      </div>
+      <TextShimmer className="font-medium text-[15px]" duration={1.6}>
+        Generating preview…
+      </TextShimmer>
     ),
   },
   {
-    name: "badge",
+    kind: "motion",
+    name: "sliding-number",
+    render: <CounterPreview />,
+  },
+  {
+    kind: "motion",
+    name: "flip-words",
     render: (
-      <div className="flex flex-wrap items-center gap-1.5">
-        <Badge variant="success">Passing</Badge>
-        <Badge variant="outline">v2.0</Badge>
-      </div>
+      <p className="font-medium text-[15px]">
+        Ship it{" "}
+        <FlipWords
+          className="font-serif text-[17px] text-signal italic"
+          words={["faster", "cleaner", "today"]}
+        />
+      </p>
     ),
   },
   {
-    name: "input",
+    kind: "motion",
+    name: "scramble-hover",
     render: (
-      <Input aria-label="Email" placeholder="you@example.com" size="sm" />
+      <ScrambleHover className="cursor-default font-mono text-[13px]">
+        hover to decrypt
+      </ScrambleHover>
     ),
   },
   {
-    name: "switch",
+    kind: "motion",
+    name: "typewriter",
     render: (
-      <div className="flex items-center gap-2.5">
-        <Switch aria-label="Dark mode" defaultChecked />
-        <span className="text-[13px] text-muted-foreground">Dark mode</span>
-      </div>
+      <Typewriter
+        className="font-mono text-[13px]"
+        loop
+        text={["copy.", "paste.", "own it."]}
+        waitTime={1400}
+      />
     ),
   },
   {
-    name: "kbd",
+    kind: "motion",
+    name: "letter-swap-hover",
     render: (
-      <KbdGroup>
-        <Kbd>⌘</Kbd>
-        <Kbd>K</Kbd>
-      </KbdGroup>
+      <LetterSwapHover
+        className="w-fit cursor-default justify-start font-medium text-[15px]"
+        label="Hover me"
+      />
     ),
   },
   {
-    name: "avatar",
+    kind: "base ui",
+    name: "meter",
     render: (
-      <div className="flex -space-x-2">
-        {["UU", "AAAk", "I"].map((seed) => (
-          <span
-            className="inline-block size-7 overflow-hidden rounded-full ring-2 ring-card"
-            key={seed}
-          >
-            <Facehash name={seed} />
-          </span>
-        ))}
-      </div>
-    ),
-  },
-  {
-    name: "skeleton",
-    render: (
-      <div className="flex w-full items-center gap-2.5">
-        <Skeleton className="size-7 rounded-full" />
-        <div className="flex-1 space-y-1.5">
-          <Skeleton className="h-2.5 w-full" />
-          <Skeleton className="h-2.5 w-2/3" />
+      <Meter className="w-full" value={62}>
+        <div className="flex items-center justify-between gap-2">
+          <MeterLabel className="text-[13px]">Storage</MeterLabel>
+          <MeterValue className="font-mono text-[12px]" />
         </div>
-      </div>
+        <MeterTrack>
+          <MeterIndicator />
+        </MeterTrack>
+      </Meter>
     ),
   },
   {
-    name: "status",
+    kind: "base ui",
+    name: "otp-field",
     render: (
-      <span className="inline-flex items-center gap-2 text-[13px] text-muted-foreground">
-        <SignalDot pulse />
-        Live preview
-      </span>
+      <OTPField aria-label="One-time code" length={OTP_SLOTS.length}>
+        {OTP_SLOTS.map((slot, i) => (
+          <OTPFieldInput
+            aria-label={`Digit ${i + 1} of ${OTP_SLOTS.length}`}
+            key={slot}
+          />
+        ))}
+      </OTPField>
     ),
   },
 ];
@@ -166,7 +211,7 @@ export function Install() {
         </>
       }
     >
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Frame>
           <FrameHeader className="py-1.5">
             <Tabs
@@ -216,32 +261,37 @@ export function Install() {
           <FrameHeader>
             <FrameTitle className="flex items-center gap-2">
               <SignalDot />
-              Rendered live
+              Only in cnippet
             </FrameTitle>
-            <FrameMeta>registry/default/ui</FrameMeta>
+            <FrameMeta>motion · base ui</FrameMeta>
           </FrameHeader>
           <FramePanel className="grid grid-cols-2">
             {PREVIEWS.map((preview, i) => (
               <div
-                className="flex min-h-32 flex-col justify-between gap-4 border-border p-4 transition-colors duration-150 hover:bg-frame/60 sm:p-5 [&:not(:nth-last-child(-n+2))]:border-b [&:nth-child(odd)]:border-e"
+                className="flex min-h-32 min-w-0 flex-col justify-between gap-4 border-border p-4 transition-colors duration-150 hover:bg-frame/60 sm:p-5 not-nth-last-[-n+2]:border-b odd:border-e"
                 key={preview.name}
               >
-                <span className="font-mono text-[11px] text-faint">
-                  {String(i + 1).padStart(2, "0")} · {preview.name}
-                </span>
+                <div className="flex items-center justify-between gap-2 font-mono text-[11px] text-faint">
+                  <span className="truncate">
+                    {String(i + 1).padStart(2, "0")} · {preview.name}
+                  </span>
+                  <span className="hidden shrink-0 sm:inline">
+                    {preview.kind}
+                  </span>
+                </div>
                 <div>{preview.render}</div>
               </div>
             ))}
           </FramePanel>
-          <div className="flex items-center justify-between px-3 pt-2.5 pb-1.5">
+          <div className="flex items-center justify-between gap-3 px-3 pt-2.5 pb-1.5">
             <span className="text-[13px] text-muted-foreground">
-              8 of 97, from the same source the CLI copies.
+              Originals — not in a stock shadcn/ui install.
             </span>
             <PrefetchLink
-              className="group/more inline-flex items-center gap-1 font-medium text-[13px] text-foreground"
-              href="/explore"
+              className="group/more inline-flex shrink-0 items-center gap-1 font-medium text-[13px] text-foreground"
+              href="/motion"
             >
-              See all
+              All motion
               <ArrowRight className="size-3.5 transition-transform duration-250 ease-out-expo group-hover/more:translate-x-0.5" />
             </PrefetchLink>
           </div>

@@ -6,7 +6,6 @@ import { DocsTopBar } from "@/components/docs-topbar";
 import { PrefetchLink } from "@/components/prefetch-link";
 import { Canvas } from "@/components/signal/canvas";
 import { Kicker } from "@/components/signal/kicker";
-import { SiteFooter } from "@/components/site/site-footer";
 
 type Neighbour = { url: string; name?: ReactNode } | null | undefined;
 
@@ -83,8 +82,6 @@ export function DocsPage({
             </aside>
           ) : null}
         </div>
-
-        <SiteFooter />
       </Canvas>
     </>
   );

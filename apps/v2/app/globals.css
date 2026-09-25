@@ -11,7 +11,8 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-geist-sans), ui-sans-serif, sans-serif;
   --font-display: var(--font-geist-sans), ui-sans-serif, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, "Cascadia Code", Consolas, monospace;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
   --color-chrome: var(--chrome);
@@ -225,6 +226,15 @@
     @apply bg-chrome font-sans text-foreground;
   }
 
+  /* The shared base sets these to var(--font-mono), which `@theme inline`
+     never defines at runtime, so highlighted code fell back to sans. */
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-mono;
+  }
+
   ::selection {
     background: var(--signal-soft);
     color: var(--foreground);
@@ -297,8 +307,8 @@
     );
   }
 
-  /* Hero texture: a dot grid that fades out from the top-centre. Pair with
-     .bg-grain. */
+  /* Hero texture: a dot grid that fades out from the top-centre. Set
+     --dot-field-w / --dot-field-h to resize the visible ellipse. */
   .bg-dot-field {
     background-image: radial-gradient(
       circle at 1px 1px,
@@ -308,7 +318,7 @@
     background-size: 20px 20px;
     background-position: center top;
     mask-image: radial-gradient(
-      ellipse 75% 70% at 50% 0%,
+      ellipse var(--dot-field-w, 75%) var(--dot-field-h, 70%) at 50% 0%,
       black 25%,
       transparent 80%
     );

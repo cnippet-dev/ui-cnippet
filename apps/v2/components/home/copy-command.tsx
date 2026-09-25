@@ -56,7 +56,11 @@ export function CopyCommand({ className, command }: CopyCommandProps) {
       <span aria-hidden="true" className="select-none text-signal">
         $
       </span>
-      <span className="truncate text-foreground">{command}</span>
+      {/* Clip from the start on narrow screens so the package name — the
+          part that matters — stays visible: "…add @cnippet/button". */}
+      <span className="truncate text-left text-foreground [direction:rtl]">
+        <bdi>{command}</bdi>
+      </span>
       <span
         aria-hidden="true"
         className="ms-auto inline-flex size-7 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 group-hover:bg-background group-hover:text-foreground group-hover:shadow-xs/5"

@@ -50,7 +50,7 @@ export function Closing() {
             <SectionTitle className="mt-5 text-[40px] md:text-[60px]">
               Ready to <em>stop rebuilding?</em>
             </SectionTitle>
-            <p className="mt-5 max-w-md text-[16px] text-muted-foreground leading-relaxed md:text-[17px]">
+            <p className="mt-5 max-w-md text-balance text-[16px] text-muted-foreground leading-relaxed md:text-[17px]">
               97 components, 40+ motion variants — MIT licensed, $0 forever.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-2.5">

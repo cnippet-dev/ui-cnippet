@@ -13,11 +13,17 @@ import { Button } from "@/registry/default/ui/button";
 
 const BLOCKS_URL = "https://blocks.cnippet.dev/?ref=ui.cnippet.dev";
 
+// Mirrors the section list (and counts) on blocks.cnippet.dev — each title
+// has a matching preview image on Cloudinary.
 const blocks = [
   { number: "8", title: "hero" },
   { number: "5", title: "feature" },
+  { number: "4", title: "pricing" },
+  { number: "4", title: "testimonial" },
   { number: "6", title: "blog" },
+  { label: "FAQ", number: "5", title: "faq" },
   { number: "4", title: "contact" },
+  { number: "7", title: "footer" },
 ];
 
 export default function Blocks() {
@@ -49,7 +55,7 @@ export default function Blocks() {
         </>
       }
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {blocks.map((item) => (
           <Frame
             className="group transition-transform duration-250 ease-out-expo hover:-translate-y-px"
@@ -64,7 +70,7 @@ export default function Blocks() {
                   rel="noopener"
                   target="_blank"
                 >
-                  {item.title}
+                  {item.label ?? item.title}
                 </a>
               </FrameTitle>
               <FrameMeta>{item.number} blocks</FrameMeta>

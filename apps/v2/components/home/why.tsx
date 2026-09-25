@@ -49,7 +49,7 @@ export function Why() {
         </>
       }
     >
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {ARGUMENTS.map((argument) => (
           <Frame key={argument.title} spotlight>
             <FramePanel className="flex flex-col p-6">

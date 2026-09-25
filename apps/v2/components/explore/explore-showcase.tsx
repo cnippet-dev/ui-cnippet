@@ -93,8 +93,9 @@ export function ExploreShowcase({
 
   return (
     <div>
-      {/* Toolbar — sticky under the header while browsing. */}
-      <div className="sticky top-[calc(var(--header-height)+1px)] z-20 -mx-2 mb-6 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:top-[calc(var(--header-height)+0.75rem+1px)]">
+      {/* Toolbar — sticky under the header while browsing (md+; on phones the
+          wrapped category list is too tall to pin). */}
+      <div className="relative z-20 -mx-2 mb-6 md:sticky md:top-[calc(var(--header-height)+0.75rem+1px)] rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
           <div className="no-scrollbar flex gap-0.5 overflow-x-auto">
             {SECTIONS.map((s) => (
@@ -144,8 +145,9 @@ export function ExploreShowcase({
         </div>
 
         {!search ? (
-          <div className="no-scrollbar mt-1 flex gap-1 overflow-x-auto border-t px-1 pt-1.5 pb-0.5">
-            <span className="shrink-0 self-center ps-1 pe-1.5 font-mono text-[11px] text-faint">
+          // Wraps so every category is visible at once.
+          <div className="mt-1 flex flex-wrap gap-x-1 gap-y-0.5 border-t px-1 pt-1.5 pb-0.5">
+            <span className="flex h-7 shrink-0 items-center ps-1 pe-1.5 font-mono text-[11px] text-faint">
               {"//"}
             </span>
             {activeCategories.map((cat) => (

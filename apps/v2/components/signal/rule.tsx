@@ -26,8 +26,8 @@ export function Nodes({ className }: { className?: string }) {
       )}
     >
       <div className="relative mx-auto max-w-(--container)">
-        <span className="absolute top-0 left-0 size-[7px] -translate-x-1/2 -translate-y-1/2 rounded-[2px] border border-border-strong bg-background" />
-        <span className="absolute top-0 right-0 size-[7px] translate-x-1/2 -translate-y-1/2 rounded-[2px] border border-border-strong bg-background" />
+        <span className="absolute top-0 left-0 size-1.75 -translate-x-1/2 -translate-y-1/2 rounded-[2px] border border-border-strong bg-background" />
+        <span className="absolute top-0 right-0 size-1.75 translate-x-1/2 -translate-y-1/2 rounded-[2px] border border-border-strong bg-background" />
       </div>
     </div>
   );
