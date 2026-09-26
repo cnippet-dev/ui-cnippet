@@ -1,0 +1,88 @@
+---
+title: Next.js
+description: Install and configure cnippet ui in a Next.js project.
+---
+
+cnippet ui is installed with the [shadcn CLI](https://ui.shadcn.com/docs/cli). The `@cnippet` registry is built in, so there is nothing to configure before you add components.
+
+<Steps>
+
+### Create a project
+
+If you already have a Next.js app, skip this step.
+
+```bash
+npx create-next-app@latest my-app
+```
+
+Choose the recommended defaults. They set up Tailwind CSS v4, the App Router and the `@/*` import alias. If you choose a `src/` directory, the alias points to `./src/*` instead.
+
+### Check the import alias
+
+If you're adding cnippet ui to an older or custom app, make sure Tailwind CSS v4 is installed ([guide](https://tailwindcss.com/docs/installation/framework-guides/nextjs)) and `tsconfig.json` has the `@/*` alias:
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+### Run the CLI
+
+```bash
+npx shadcn@latest init
+```
+
+This creates `components.json`, adds `lib/utils.ts` and sets up the CSS variables in `app/globals.css`. Accept the defaults when prompted.
+
+### Add the cnippet ui theme
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces the default colors with the cnippet ui tokens and adds the `info`, `success` and `warning` colors that components like Alert, Badge and Toast use. See [Colors](/docs/colors) for every token.
+
+### Add components
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+The component is added to `components/ui/button.tsx`. Import it like this:
+
+```tsx title="app/page.tsx"
+import { Button } from "@/components/ui/button";
+
+export default function Home() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
+
+## Install everything at once
+
+To set up the full theme (colors, fonts, sidebar and chart tokens, base styles) and every component in one command, run `init` with the cnippet ui style instead of the steps above:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+## Server Components
+
+Every component file starts with `"use client"`, so you can import them from Server Components without adding the directive yourself. Pass only serializable props (strings, numbers, JSX) from a Server Component. Event handlers like `onClick` need a Client Component.
+
+## Next steps
+
+- Set up [Dark Mode](/docs/dark-mode) with `next-themes`.
+- Customize the look in [Theming](/docs/theming).
+- Browse all [Components](/explore).

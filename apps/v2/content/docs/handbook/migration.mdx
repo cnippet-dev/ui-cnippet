@@ -1,0 +1,193 @@
+---
+title: Migrating from shadcn/ui
+description: Move a shadcn/ui (Radix) project to cnippet ui one component at a time — renamed parts, changed props, data attributes and CSS variables.
+---
+
+cnippet ui uses the same CLI, the same `components/ui/` folder, the same `cn` helper and the same token names as shadcn/ui. What changes is the layer underneath: components are built on [Base UI](https://base-ui.com/) instead of Radix, so some parts and props have different names.
+
+You don't have to switch everything at once. Both libraries read the same CSS variables, so shadcn/ui and cnippet ui components can live side by side while you migrate.
+
+## Before you start
+
+- **Tailwind CSS v4.** cnippet ui doesn't support v3. Upgrade first with the [Tailwind CSS upgrade guide](https://tailwindcss.com/docs/upgrade-guide).
+- **Commit your work.** Replacing a component overwrites its file. If you edited shadcn/ui components, you'll want to see those edits in the diff.
+- **Run the type checker.** Most breaking changes are prop renames, and `tsc` points to each call site you need to fix.
+
+## Step by step
+
+<Steps>
+
+### Add the cnippet ui tokens
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces your color variables with the cnippet ui values and adds `info`, `success` and `warning`. The shadcn/ui token names (`--primary`, `--muted`, `--border`, …) stay the same, so existing components keep working.
+
+### Replace one component
+
+Pick a component and overwrite it with the cnippet ui version:
+
+```bash
+npx shadcn@latest add @cnippet/dialog --overwrite
+```
+
+Start with a simple one that's used a lot, such as Button or Badge, then move to overlays and form controls.
+
+### Fix the call sites
+
+Run `tsc --noEmit`, then fix each error with the tables below. Many shadcn/ui part names still work as aliases, so a lot of code needs no changes at all.
+
+### Repeat, then remove Radix
+
+When no file imports `@radix-ui/*` any more, uninstall those packages and anything else only the old components used, such as `cmdk`, `sonner`, `vaul` and `input-otp`.
+
+</Steps>
+
+## asChild becomes render
+
+This is the change you'll make most often. Move the child element into `render`, and keep its content as the children of the outer component:
+
+```tsx
+// shadcn/ui
+<DialogTrigger asChild>
+  <Button variant="outline">Edit</Button>
+</DialogTrigger>
+
+// cnippet ui
+<DialogTrigger render={<Button variant="outline" />}>Edit</DialogTrigger>
+```
+
+```tsx
+// shadcn/ui
+<Button asChild>
+  <Link href="/docs">Docs</Link>
+</Button>
+
+// cnippet ui
+<Button render={<Link href="/docs" />}>Docs</Button>
+```
+
+See [Composition](/docs/handbook/composition) for everything `render` can do.
+
+## Component names
+
+### Names that still work
+
+These shadcn/ui names are exported as aliases, so imports keep working. Switch to the new name when you touch the code.
+
+| shadcn/ui | cnippet ui |
+|-----------|------------|
+| `DialogContent`, `DialogOverlay` | `DialogPopup`, `DialogBackdrop` |
+| `AlertDialogContent`, `AlertDialogOverlay` | `AlertDialogPopup`, `AlertDialogBackdrop` |
+| `SheetContent`, `SheetOverlay` | `SheetPopup`, `SheetBackdrop` |
+| `PopoverContent` | `PopoverPopup` |
+| `TooltipContent` | `TooltipPopup` |
+| `SelectContent` | `SelectPopup` |
+| `AccordionContent` | `AccordionPanel` |
+| `CollapsibleContent` | `CollapsiblePanel` |
+| `TabsTrigger`, `TabsContent` | `TabsTab`, `TabsPanel` |
+| `CardContent` | `CardPanel` |
+| `RadioGroupItem` | `Radio` |
+| `DropdownMenu`, `DropdownMenuContent`, `DropdownMenuItem`, … | `Menu`, `MenuPopup`, `MenuItem`, … |
+| `DropdownMenuLabel` | `MenuGroupLabel` |
+| `HoverCard`, `HoverCardTrigger`, `HoverCardContent` | `PreviewCard`, `PreviewCardTrigger`, `PreviewCardPopup` |
+| `ButtonGroup`, `ButtonGroupSeparator`, `ButtonGroupText` | `Group`, `GroupSeparator`, `GroupText` |
+
+The `DropdownMenu*` aliases live in `@/components/ui/menu`, `HoverCard*` in `@/components/ui/preview-card`, and `ButtonGroup*` in `@/components/ui/group`. Update the import paths when you replace those files.
+
+### Components that changed
+
+| shadcn/ui | cnippet ui | What to change |
+|-----------|------------|----------------|
+| `sonner` (`toast()`, `<Toaster />`) | `toast` | Mount `<ToastProvider>` once and call `toastManager.add({ title, description, type })`. `duration` becomes `timeout` |
+| `command` (cmdk) | `command` | Pass data as `items` and render results with a function inside `CommandList`. `onSelect` becomes `onClick` |
+| `form` (`FormField`, `FormItem`, `FormControl`, `FormMessage`) | `form` + `field` | Use `Field`, `FieldLabel` and `FieldError`. With React Hook Form, wrap them in a `Controller`. See [Forms](/docs/handbook/forms) |
+| `input-otp` (`InputOTP`, `InputOTPSlot`) | `otp-field` | `<OTPField length={6}>` with one `OTPFieldInput` per character |
+| `drawer` (vaul) | `drawer` | `direction` becomes `position` on `Drawer` |
+| `AlertDialogAction`, `AlertDialogCancel` | `AlertDialogClose` | Use `AlertDialogClose render={<Button />}` for both buttons |
+
+### Not available yet
+
+`aspect-ratio`, `menubar`, `navigation-menu`, `resizable` and `native-select` have no cnippet ui version. Keep the shadcn/ui ones. They work next to cnippet ui components.
+
+## Props that changed
+
+| Component | shadcn/ui (Radix) | cnippet ui (Base UI) |
+|-----------|-------------------|----------------------|
+| Accordion | `type="single" collapsible`, `type="multiple"` | No `type`. Add `multiple` to allow several open items. Every item can close |
+| Accordion | `value="a"` | Always an array: `value={["a"]}` |
+| Toggle Group | `type="single"` / `type="multiple"` | `multiple`, and the value is always an array |
+| Menu item | `onSelect` | `onClick` |
+| Menu label | Can be anywhere | `MenuGroupLabel` must be inside a `MenuGroup` or `MenuRadioGroup` |
+| Checkbox | `checked="indeterminate"` | `indeterminate` prop |
+| Select | `<SelectValue placeholder="…" />` shows the raw value | Pass `items` to `Select` so `SelectValue` shows the label |
+| Slider | Value is always an array | A number for one thumb, an array for a range |
+| Radio Group | `orientation` | No `orientation`. Use `className="flex-row"` |
+| Tooltip | `delayDuration` on `TooltipProvider` or `Tooltip` | `delay` on `TooltipTrigger` |
+| Scroll Area | `type="always"`, `<ScrollBar />` | No `type`. Both scrollbars are built in |
+| Calendar | `initialFocus` | `autoFocus` (react-day-picker v10) |
+| Tabs | Works without `defaultValue` | Always set `defaultValue` or `value` |
+| Card | `CardTitle` | Still a `<div>`. Use `render={<h2 />}` for a heading |
+
+`onOpenChange`, `onValueChange` and `onCheckedChange` keep their names. They get a second `eventDetails` argument, which you can ignore.
+
+## Data attributes
+
+Radix puts most state in `data-state`. Base UI uses one attribute per state. Update custom classes that target them:
+
+| Radix | Base UI |
+|-------|---------|
+| `data-[state=open]:` | `data-open:` |
+| `data-[state=closed]:` | `data-closed:` |
+| `data-[state=checked]:` | `data-checked:` |
+| `data-[state=unchecked]:` | `data-unchecked:` |
+| `data-[state=active]:` (Tabs) | `data-active:` |
+| `data-[state=on]:` (Toggle) | `data-pressed:` |
+| `data-[highlighted]:` | `data-highlighted:` |
+| `data-[disabled]:` | `data-disabled:` |
+| `data-[side=top]:` | `data-[side=top]:` (unchanged) |
+
+### Animations
+
+shadcn/ui animates popups with `tw-animate-css` classes like `data-[state=open]:animate-in data-[state=closed]:fade-out-0`. Base UI uses transitions between `data-starting-style` and `data-ending-style`:
+
+```tsx
+// shadcn/ui
+className="data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0"
+
+// cnippet ui
+className="transition-opacity data-starting-style:opacity-0 data-ending-style:opacity-0"
+```
+
+## CSS variables
+
+| Radix | Base UI |
+|-------|---------|
+| `--radix-popover-trigger-width`, `--radix-select-trigger-width` | `--anchor-width` |
+| `--radix-popper-available-height` | `--available-height` |
+| `--radix-*-content-transform-origin` | `--transform-origin` |
+| `--radix-accordion-content-height` | `--accordion-panel-height` |
+| `--radix-collapsible-content-height` | `--collapsible-panel-height` |
+
+## Things that work differently
+
+- **Dialogs include more.** `DialogPopup` and `SheetPopup` render the portal, backdrop and close button for you. Remove your own `DialogPortal`, `DialogOverlay` and close buttons, or pass `showCloseButton={false}`.
+- **Dialogs become bottom sheets on phones.** Turn it off with `bottomStickOnMobile={false}`.
+- **Buttons default to `type="button"`.** Add `type="submit"` to submit buttons.
+- **Triggers are unstyled.** A bare `DialogTrigger` or `PopoverTrigger` is a plain `<button>`. Use `render={<Button />}` to style it.
+- **Popovers aren't modal.** The page stays interactive. Set `modal` on `Popover` for the Radix behavior.
+
+## Asking an AI assistant to migrate
+
+Assistants know shadcn/ui better than cnippet ui, so give them the docs first. For example:
+
+```txt
+Migrate components/settings-dialog.tsx from shadcn/ui to cnippet ui.
+Read https://ui.cnippet.dev/docs/handbook/migration.md and
+https://ui.cnippet.dev/ui/overlays/dialog.md first. Replace asChild with
+the render prop and use the cnippet ui part names.
+```
+
+Add the [project rules](/docs/llms#project-rules) to your repo so the assistant keeps following them.

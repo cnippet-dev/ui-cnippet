@@ -1,0 +1,134 @@
+---
+title: Astro
+description: Install and configure cnippet ui in an Astro project with the React integration.
+---
+
+cnippet ui components are React components, so Astro needs the React integration. Install them with the [shadcn CLI](https://ui.shadcn.com/docs/cli).
+
+<Steps>
+
+### Create a project
+
+If you already have an Astro app, skip this step. This command sets up Tailwind CSS and the React integration:
+
+```bash
+npm create astro@latest astro-app -- --template with-tailwindcss --install --add react --git
+```
+
+The Tailwind starter loads the global stylesheet in `src/layouts/main.astro`. Keep that layout, or import `@/styles/global.css` in your pages.
+
+For an existing app, add React with `npx astro add react` and make sure Tailwind CSS v4 is set up.
+
+### Edit tsconfig.json
+
+Add the `@/*` alias so the CLI and your editor can resolve imports:
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+### Run the CLI
+
+```bash
+npx shadcn@latest init
+```
+
+This creates `components.json`, adds `src/lib/utils.ts` and sets up the CSS variables in `src/styles/global.css`.
+
+### Add the cnippet ui theme
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces the default colors with the cnippet ui tokens, including `info`, `success` and `warning`. See [Colors](/docs/colors).
+
+### Add components
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+```astro title="src/pages/index.astro"
+---
+import Layout from "@/layouts/main.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout>
+  <div class="grid h-screen place-items-center">
+    <Button>Click me</Button>
+  </div>
+</Layout>
+```
+
+</Steps>
+
+## Interactive components need a client directive
+
+Astro renders React components to static HTML by default, with no JavaScript. That's fine for a Button that only shows text, but anything that opens, toggles or reacts to input (Dialog, Menu, Tabs, Select, Toast) must be hydrated.
+
+Build the interactive part as its own React component and render it with a `client:*` directive:
+
+```tsx title="src/components/confirm-dialog.tsx"
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+export function ConfirmDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger render={<Button variant="outline" />}>Delete</DialogTrigger>
+      <DialogPopup>
+        <DialogHeader>
+          <DialogTitle>Are you sure?</DialogTitle>
+          <DialogDescription>This can't be undone.</DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose render={<Button variant="ghost" />}>Cancel</DialogClose>
+          <Button variant="destructive">Delete</Button>
+        </DialogFooter>
+      </DialogPopup>
+    </Dialog>
+  );
+}
+```
+
+```astro title="src/pages/index.astro"
+---
+import { ConfirmDialog } from "@/components/confirm-dialog";
+---
+
+<ConfirmDialog client:load />
+```
+
+Passing children from an `.astro` file into a hydrated component turns them into static HTML, so keep a component's parts (trigger, popup, items) inside the same React file.
+
+## Install everything at once
+
+To add the full theme and every component in one command, run `init` with the cnippet ui style:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+## Next steps
+
+- Set up [Dark Mode](/docs/dark-mode) and use the inline script from that guide in your layout's `<head>`.
+- Browse all [Components](/explore).

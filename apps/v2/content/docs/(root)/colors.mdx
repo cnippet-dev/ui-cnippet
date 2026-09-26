@@ -1,0 +1,145 @@
+---
+title: Colors
+description: Every color token in the cnippet ui theme, in light and dark, with the Tailwind class and CSS variable to use.
+---
+
+cnippet ui colors are CSS variables built on the Tailwind CSS palette. Each token has a light value in `:root` and a dark value in `.dark`. Tailwind turns each one into utilities, so `--primary` becomes `bg-primary`, `text-primary`, `border-primary` and so on.
+
+Each swatch shows the light value on the left and the dark value on the right. The copy button copies the CSS variable, for example `var(--primary)`.
+
+<ColorTokens />
+
+## Using tokens
+
+Use the Tailwind utilities in your components. Pair every surface token with its `-foreground` token so text stays readable in both themes:
+
+```tsx
+<div className="rounded-lg border bg-card p-4 text-card-foreground">
+  <p className="text-muted-foreground">Last updated 2 minutes ago</p>
+  <span className="text-success-foreground">Deployed</span>
+</div>
+```
+
+Opacity modifiers work on every token, for example `bg-primary/10` or `border-destructive/32`.
+
+In plain CSS or inline styles, use the variable:
+
+```css
+.chart-tooltip {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+}
+```
+
+## Status colors
+
+`info`, `success` and `warning` are extra tokens that shadcn/ui doesn't have. Each has two values:
+
+- **The base token** (`--success`) is a strong color for fills, borders, icons and dots.
+- **The `-foreground` token** (`--success-foreground`) is a darker shade in light mode and a lighter one in dark mode, for text on the page background or on a light tint such as `bg-success/8`.
+
+`destructive` works the same way. Alert, Badge and Toast use these tokens for their `info`, `success`, `warning` and `error` variants.
+
+## Changing colors
+
+To change a color, edit its value in both `:root` and `.dark` in your global stylesheet. Anything you don't override keeps the default. See [Theming](/docs/theming) for custom palettes and [Dark Mode](/docs/dark-mode) for switching themes.
+
+## Full CSS
+
+This is the `:root` and `.dark` CSS that `npx shadcn@latest init @cnippet/style` adds. `--alpha()` is a Tailwind CSS v4 function, so this CSS must be processed by Tailwind.
+
+<CodeCollapsibleWrapper>
+
+```css title="app/globals.css"
+:root {
+  --radius: 0.625rem;
+  --accent: --alpha(var(--color-black) / 4%);
+  --accent-foreground: var(--color-neutral-800);
+  --background: var(--color-white);
+  --border: --alpha(var(--color-black) / 8%);
+  --card: var(--color-white);
+  --card-foreground: var(--color-neutral-800);
+  --destructive: var(--color-red-500);
+  --destructive-foreground: var(--color-red-700);
+  --foreground: var(--color-neutral-800);
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-blue-700);
+  --input: --alpha(var(--color-black) / 10%);
+  --muted: --alpha(var(--color-black) / 4%);
+  --muted-foreground: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-black));
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-neutral-800);
+  --primary: var(--color-neutral-800);
+  --primary-foreground: var(--color-neutral-50);
+  --ring: var(--color-neutral-400);
+  --secondary: --alpha(var(--color-black) / 4%);
+  --secondary-foreground: var(--color-neutral-800);
+  --success: var(--color-emerald-500);
+  --success-foreground: var(--color-emerald-700);
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-amber-700);
+  --chart-1: var(--color-orange-600);
+  --chart-2: var(--color-teal-600);
+  --chart-3: var(--color-cyan-900);
+  --chart-4: var(--color-amber-400);
+  --chart-5: var(--color-amber-500);
+  --code: var(--color-white);
+  --code-foreground: var(--foreground);
+  --code-highlight: --alpha(var(--color-black) / 4%);
+  --sidebar: var(--color-neutral-50);
+  --sidebar-accent: --alpha(var(--color-black) / 4%);
+  --sidebar-accent-foreground: var(--color-neutral-800);
+  --sidebar-border: --alpha(var(--color-black) / 6%);
+  --sidebar-foreground: color-mix(in srgb, var(--color-neutral-800) 64%, var(--sidebar));
+  --sidebar-primary: var(--color-neutral-800);
+  --sidebar-primary-foreground: var(--color-neutral-50);
+  --sidebar-ring: var(--color-neutral-400);
+}
+
+.dark {
+  --accent: --alpha(var(--color-white) / 4%);
+  --accent-foreground: var(--color-neutral-100);
+  --background: color-mix(in srgb, var(--color-neutral-950) 95%, var(--color-white));
+  --border: --alpha(var(--color-white) / 6%);
+  --card: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --card-foreground: var(--color-neutral-100);
+  --destructive: color-mix(in srgb, var(--color-red-500) 90%, var(--color-white));
+  --destructive-foreground: var(--color-red-400);
+  --foreground: var(--color-neutral-100);
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-blue-400);
+  --input: --alpha(var(--color-white) / 8%);
+  --muted: --alpha(var(--color-white) / 4%);
+  --muted-foreground: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-white));
+  --popover: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --popover-foreground: var(--color-neutral-100);
+  --primary: var(--color-neutral-100);
+  --primary-foreground: var(--color-neutral-800);
+  --ring: var(--color-neutral-500);
+  --secondary: --alpha(var(--color-white) / 4%);
+  --secondary-foreground: var(--color-neutral-100);
+  --success: var(--color-emerald-500);
+  --success-foreground: var(--color-emerald-400);
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-amber-400);
+  --chart-1: var(--color-blue-700);
+  --chart-2: var(--color-emerald-500);
+  --chart-3: var(--color-amber-500);
+  --chart-4: var(--color-purple-500);
+  --chart-5: var(--color-rose-500);
+  --code: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --code-foreground: var(--foreground);
+  --code-highlight: --alpha(var(--color-white) / 4%);
+  --sidebar: color-mix(in srgb, var(--color-neutral-950) 97%, var(--color-white));
+  --sidebar-accent: --alpha(var(--color-white) / 4%);
+  --sidebar-accent-foreground: var(--color-neutral-100);
+  --sidebar-border: --alpha(var(--color-white) / 5%);
+  --sidebar-foreground: color-mix(in srgb, var(--color-neutral-100) 64%, var(--sidebar));
+  --sidebar-primary: var(--color-neutral-100);
+  --sidebar-primary-foreground: var(--color-neutral-800);
+  --sidebar-ring: var(--color-neutral-400);
+}
+```
+
+</CodeCollapsibleWrapper>

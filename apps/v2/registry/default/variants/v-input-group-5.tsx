@@ -11,7 +11,7 @@ export default function Particle() {
       <InputGroupInput
         aria-label="Enter your domain"
         className="*:[input]:px-0!"
-        placeholder="coss"
+        placeholder="cnippet"
         type="text"
       />
       <InputGroupAddon>

@@ -1,0 +1,79 @@
+---
+title: TanStack Start
+description: Install and configure cnippet ui in a TanStack Start project.
+---
+
+cnippet ui is installed with the [shadcn CLI](https://ui.shadcn.com/docs/cli). The TanStack CLI already sets up Tailwind CSS v4 and the `@/*` import alias.
+
+<Steps>
+
+### Create a project
+
+If you already have a TanStack Start app, skip this step.
+
+```bash
+npx @tanstack/cli@latest create
+```
+
+Choose **TanStack Start**, the **React** framework and the recommended defaults.
+
+<Alert>
+  <AlertTitle>Skip the shadcn add-on</AlertTitle>
+  <AlertDescription>
+    Don't add the `shadcn` add-on when the TanStack CLI asks. You'll run the shadcn CLI yourself in the next step.
+  </AlertDescription>
+</Alert>
+
+### Run the CLI
+
+```bash
+npx shadcn@latest init
+```
+
+This creates `components.json`, adds `src/lib/utils.ts` and sets up the CSS variables in your stylesheet.
+
+### Add the cnippet ui theme
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces the default colors with the cnippet ui tokens, including `info`, `success` and `warning`. See [Colors](/docs/colors).
+
+### Add components
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+```tsx title="src/routes/index.tsx"
+import { createFileRoute } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+
+export const Route = createFileRoute("/")({
+  component: App,
+});
+
+function App() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
+
+## Install everything at once
+
+To add the full theme and every component in one command, run `init` with the cnippet ui style:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+## Next steps
+
+- Set up [Dark Mode](/docs/dark-mode). TanStack Start renders on the server, so follow the section on preventing a flash of the wrong theme.
+- Browse all [Components](/explore).

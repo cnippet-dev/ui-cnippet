@@ -104,7 +104,7 @@ export function DocsCopyPage({
     ...(registryName
       ? [
           {
-            href: `https://v0.dev/chat/api/open?url=${encodeURIComponent(`${SITE_URL}/r/${registryName}.json`)}`,
+            href: `https://v0.app/chat/api/open?url=${encodeURIComponent(`${SITE_URL}/r/${registryName}.json`)}`,
             icon: AiChat02Icon,
             label: V0_LABEL,
           },

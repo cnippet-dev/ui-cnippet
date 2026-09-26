@@ -1,0 +1,373 @@
+---
+title: Forms
+description: Build forms with Field and Form, validate with native rules or Zod, show server errors, and connect React Hook Form or TanStack Form.
+---
+
+cnippet ui forms are built from two components:
+
+- **[Field](/ui/forms/field)** wraps one control with its label, description and error. It links them with the right `id`, `htmlFor` and `aria-describedby` attributes and tracks whether the value is valid, touched or changed.
+- **[Form](/ui/forms/form)** wraps the fields. It collects their values, runs validation on submit and shows server errors.
+
+Every cnippet ui control works inside a Field: `Input`, `Textarea`, `Select`, `Combobox`, `Checkbox`, `CheckboxGroup`, `RadioGroup`, `Switch`, `Slider`, `NumberField` and `OTPField`.
+
+```bash
+npx shadcn@latest add @cnippet/form @cnippet/field @cnippet/input @cnippet/button
+```
+
+## A basic form
+
+```tsx
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Field, FieldDescription, FieldError, FieldLabel } from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+export function ProfileForm() {
+  return (
+    <Form
+      className="max-w-sm"
+      onFormSubmit={(values) => {
+        // { name: "Ada", email: "ada@example.com" }
+        console.log(values);
+      }}
+    >
+      <Field name="name">
+        <FieldLabel>Name</FieldLabel>
+        <Input required />
+        <FieldError />
+      </Field>
+      <Field name="email">
+        <FieldLabel>Email</FieldLabel>
+        <Input required type="email" />
+        <FieldDescription>We'll never share it.</FieldDescription>
+        <FieldError />
+      </Field>
+      <Button type="submit">Save</Button>
+    </Form>
+  );
+}
+```
+
+- `onFormSubmit` receives the values as an object keyed by each Field's `name`, and it calls `preventDefault()` for you. It only runs when every field is valid.
+- Each Field needs a `name`, or its value won't be in `values`.
+- Button defaults to `type="button"`, so the submit button needs `type="submit"`.
+
+## Validation
+
+### Native rules
+
+Use HTML validation attributes on the control: `required`, `type="email"`, `minLength`, `maxLength`, `min`, `max` and `pattern`. `FieldError` shows the browser's message when the value breaks a rule.
+
+To write your own message, use `match` with the name of the rule:
+
+```tsx
+<Field name="username">
+  <FieldLabel>Username</FieldLabel>
+  <Input minLength={3} required />
+  <FieldError match="valueMissing">Choose a username.</FieldError>
+  <FieldError match="tooShort">Use at least 3 characters.</FieldError>
+</Field>
+```
+
+The names come from the browser's [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState): `valueMissing`, `typeMismatch`, `tooShort`, `tooLong`, `rangeUnderflow`, `rangeOverflow`, `patternMismatch` and `customError`.
+
+### Custom rules
+
+Pass a `validate` function to the Field. Return an error message, or `null` when the value is valid. It runs after the native rules pass, and it can be async:
+
+```tsx
+<Field
+  name="username"
+  validate={async (value) => {
+    if (value === "admin") return "This name is reserved.";
+    const taken = await isUsernameTaken(String(value));
+    return taken ? "This name is taken." : null;
+  }}
+  validationDebounceTime={300}
+  validationMode="onChange"
+>
+  <FieldLabel>Username</FieldLabel>
+  <Input required />
+  <FieldError />
+</Field>
+```
+
+The second argument of `validate` has the values of the whole form, which is useful for fields that depend on each other, such as "confirm password".
+
+### When validation runs
+
+| `validationMode` | Validates |
+|------------------|-----------|
+| `onSubmit` (default) | On submit, then again on each change for fields that were invalid |
+| `onBlur` | When the control loses focus |
+| `onChange` | On every change. Add `validationDebounceTime` for async checks |
+
+Set it on the `Form` for every field, or on a single `Field` to override it.
+
+## Validating with Zod
+
+Validate the submitted values with a schema, then pass the messages to the Form's `errors` prop. Each message appears in the `FieldError` of the field with the same `name`:
+
+```tsx
+"use client";
+
+import { useState } from "react";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const schema = z.object({
+  age: z.coerce.number({ message: "Enter a number." }).min(18, "You must be 18 or older."),
+  name: z.string().min(1, "Enter your name."),
+});
+
+export function SignUpForm() {
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
+
+  return (
+    <Form
+      errors={errors}
+      onFormSubmit={(values) => {
+        const result = schema.safeParse(values);
+        if (!result.success) {
+          setErrors(z.flattenError(result.error).fieldErrors);
+          return;
+        }
+        setErrors({});
+        // result.data is typed: { name: string; age: number }
+      }}
+    >
+      <Field name="name">
+        <FieldLabel>Name</FieldLabel>
+        <Input />
+        <FieldError />
+      </Field>
+      <Field name="age">
+        <FieldLabel>Age</FieldLabel>
+        <Input inputMode="numeric" />
+        <FieldError />
+      </Field>
+      <Button type="submit">Sign up</Button>
+    </Form>
+  );
+}
+```
+
+An error in `errors` is cleared as soon as the user changes that field's value.
+
+## Server errors
+
+Errors from your server work the same way. With a [Server Function](https://react.dev/reference/rsc/server-functions) and `useActionState`, return an `errors` object and pass it to the Form:
+
+```ts title="app/actions.ts"
+"use server";
+
+import { redirect } from "next/navigation";
+
+export async function signIn(_state: { errors?: Record<string, string> }, formData: FormData) {
+  const user = await authenticate(formData.get("email"), formData.get("password"));
+  if (!user) {
+    return { errors: { password: "Wrong email or password." } };
+  }
+  redirect("/dashboard");
+}
+```
+
+```tsx title="app/sign-in-form.tsx"
+"use client";
+
+import { useActionState } from "react";
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { signIn } from "./actions";
+
+export function SignInForm() {
+  const [state, action, pending] = useActionState(signIn, {});
+
+  return (
+    <Form action={action} errors={state.errors}>
+      <Field name="email">
+        <FieldLabel>Email</FieldLabel>
+        <Input required type="email" />
+        <FieldError />
+      </Field>
+      <Field name="password">
+        <FieldLabel>Password</FieldLabel>
+        <Input required type="password" />
+        <FieldError />
+      </Field>
+      <Button loading={pending} type="submit">
+        Sign in
+      </Button>
+    </Form>
+  );
+}
+```
+
+## React Hook Form
+
+Use a `Controller` for each field and pass its state to the `Field`. `invalid`, `touched` and `dirty` let React Hook Form control what the Field shows. `match={!!error}` shows the `FieldError` whenever React Hook Form has an error for that field.
+
+```bash
+npm install react-hook-form @hookform/resolvers zod
+```
+
+```tsx
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const schema = z.object({
+  email: z.email("Enter a valid email."),
+  username: z.string().min(3, "Use at least 3 characters."),
+});
+
+type Values = z.infer<typeof schema>;
+
+export function AccountForm() {
+  const { control, handleSubmit } = useForm<Values>({
+    defaultValues: { email: "", username: "" },
+    resolver: zodResolver(schema),
+  });
+
+  return (
+    <Form onSubmit={handleSubmit((values) => console.log(values))}>
+      <Controller
+        control={control}
+        name="username"
+        render={({ field, fieldState }) => (
+          <Field
+            dirty={fieldState.isDirty}
+            invalid={fieldState.invalid}
+            name={field.name}
+            touched={fieldState.isTouched}
+          >
+            <FieldLabel>Username</FieldLabel>
+            <Input
+              onBlur={field.onBlur}
+              onValueChange={field.onChange}
+              ref={field.ref}
+              value={field.value}
+            />
+            <FieldError match={!!fieldState.error}>
+              {fieldState.error?.message}
+            </FieldError>
+          </Field>
+        )}
+      />
+      {/* Repeat for "email" */}
+      <Button type="submit">Save</Button>
+    </Form>
+  );
+}
+```
+
+- Pass `handleSubmit(...)` to `onSubmit`, not `onFormSubmit`. React Hook Form does the validation, so don't also add `required` or `validate` to the Field.
+- Pass `field.ref` to the control so React Hook Form can focus the first invalid field. For Select, Combobox and NumberField, pass it to the part that renders the input (for Select, the `inputRef` prop).
+- Controls that pick a value (Select, Combobox, Checkbox, Switch, Slider, NumberField) take `value` and `onValueChange` in the same way.
+
+## TanStack Form
+
+Use `form.Field` and pass its state to the cnippet `Field`. TanStack Form handles submission, so you don't need the cnippet `Form` component. Use a plain `<form>`.
+
+```bash
+npm install @tanstack/react-form zod
+```
+
+```tsx
+"use client";
+
+import { useForm } from "@tanstack/react-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+
+const schema = z.object({
+  username: z.string().min(3, "Use at least 3 characters."),
+});
+
+export function UsernameForm() {
+  const form = useForm({
+    defaultValues: { username: "" },
+    onSubmit: async ({ value }) => console.log(value),
+    validators: { onSubmit: schema },
+  });
+
+  return (
+    <form
+      className="flex flex-col gap-4"
+      onSubmit={(event) => {
+        event.preventDefault();
+        form.handleSubmit();
+      }}
+    >
+      <form.Field name="username">
+        {(field) => (
+          <Field
+            dirty={field.state.meta.isDirty}
+            invalid={!field.state.meta.isValid}
+            name={field.name}
+            touched={field.state.meta.isTouched}
+          >
+            <FieldLabel>Username</FieldLabel>
+            <Input
+              onBlur={field.handleBlur}
+              onValueChange={field.handleChange}
+              value={field.state.value}
+            />
+            <FieldError match={!field.state.meta.isValid}>
+              {field.state.meta.errors.map((error) => error?.message).join(", ")}
+            </FieldError>
+          </Field>
+        )}
+      </form.Field>
+      <Button type="submit">Save</Button>
+    </form>
+  );
+}
+```
+
+With a Zod schema as the validator, `errors` holds issue objects, so read their `message`. With a function that returns a string, the errors are plain strings.
+
+## Grouping fields
+
+Use [Fieldset](/ui/forms/fieldset) to group related fields under a legend, such as an address. For a group of checkboxes or radio buttons, wrap each option in `FieldItem`:
+
+```tsx
+<Field name="plan">
+  <FieldLabel>Plan</FieldLabel>
+  <RadioGroup defaultValue="free">
+    <FieldItem>
+      <Label>
+        <Radio value="free" /> Free
+      </Label>
+    </FieldItem>
+    <FieldItem>
+      <Label>
+        <Radio value="pro" /> Pro
+      </Label>
+    </FieldItem>
+  </RadioGroup>
+</Field>
+```
+
+## Good to know
+
+- Don't add `id`, `htmlFor` or `aria-describedby` yourself. Field links the label, description and error for you.
+- `FieldError` only renders when the field is invalid, so you can leave it in place.
+- To wire a plain `<input>` or another library's control to a Field, wrap it in `FieldControl`.
+- To style invalid controls, use the `data-invalid` attribute that Field sets, for example `data-invalid:border-destructive`. The cnippet controls already have invalid styles.
+- The [Form](/ui/forms/form) page has more examples: sign in, sign up, change password, multi-step onboarding and more.

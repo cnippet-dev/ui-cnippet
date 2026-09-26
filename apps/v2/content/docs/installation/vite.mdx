@@ -1,0 +1,139 @@
+---
+title: Vite
+description: Install and configure cnippet ui in a Vite + React project.
+---
+
+cnippet ui is installed with the [shadcn CLI](https://ui.shadcn.com/docs/cli). A new Vite project needs Tailwind CSS and an `@` import alias first.
+
+<Steps>
+
+### Create a project
+
+If you already have a Vite app, skip this step. Choose the **React** framework and the **TypeScript** variant.
+
+```bash
+npm create vite@latest my-app -- --template react-ts
+```
+
+### Add Tailwind CSS
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+Replace everything in `src/index.css` with:
+
+```css title="src/index.css"
+@import "tailwindcss";
+```
+
+### Edit tsconfig.json
+
+Vite splits the TypeScript config across several files. Add `baseUrl` and `paths` to the `compilerOptions` of `tsconfig.json`:
+
+```json title="tsconfig.json"
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+### Edit tsconfig.app.json
+
+Add the same alias so your editor resolves the imports:
+
+```json title="tsconfig.app.json"
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+### Update vite.config.ts
+
+Install the Node types, then add the Tailwind plugin and the `@` alias:
+
+```bash
+npm install -D @types/node
+```
+
+```ts title="vite.config.ts"
+import path from "node:path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+});
+```
+
+### Run the CLI
+
+```bash
+npx shadcn@latest init
+```
+
+This creates `components.json`, adds `src/lib/utils.ts` and sets up the CSS variables in `src/index.css`.
+
+### Add the cnippet ui theme
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces the default colors with the cnippet ui tokens, including `info`, `success` and `warning`. See [Colors](/docs/colors).
+
+### Add components
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+```tsx title="src/App.tsx"
+import { Button } from "@/components/ui/button";
+
+function App() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+</Steps>
+
+## Install everything at once
+
+To add the full theme and every component in one command, run `init` with the cnippet ui style after the **Update vite.config.ts** step:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+## Next steps
+
+- Set up [Dark Mode](/docs/dark-mode). Vite has no `next-themes`, so the guide includes a small theme provider and a script that prevents a flash of the wrong theme.
+- Browse all [Components](/explore).

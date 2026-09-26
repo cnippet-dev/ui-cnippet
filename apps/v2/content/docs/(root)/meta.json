@@ -1,4 +1,15 @@
 {
-  "pages": ["introduction", "get-started", "theming", "llms", "changelog"],
+  "pages": [
+    "introduction",
+    "get-started",
+    "cli",
+    "components-json",
+    "theming",
+    "colors",
+    "dark-mode",
+    "llms",
+    "faq",
+    "changelog"
+  ],
   "title": "Overview"
 }

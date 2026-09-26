@@ -1,0 +1,179 @@
+---
+title: Composition
+description: Use the render prop to change the element a component renders, combine components, and build your own composable parts.
+---
+
+Every cnippet ui component can render a different element or component in place of its default one. This is how you turn a Button into a link, open a Dialog from your own button, or put a Tooltip and a Menu on the same trigger.
+
+cnippet ui is built on [Base UI](https://base-ui.com/), which does this with the `render` prop. If you're coming from shadcn/ui or Radix, `render` replaces `asChild`.
+
+## The render prop
+
+Pass an element to `render`. The component merges its own props (class names, event handlers, ARIA attributes, `ref`) into that element and renders it instead of its default tag:
+
+```tsx
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+<Button render={<Link href="/pricing" />} variant="outline">
+  See pricing
+</Button>
+```
+
+This renders a single `<a>` element with the Button's styles. The `children` go inside the rendered element.
+
+### Coming from asChild
+
+| shadcn/ui (Radix) | cnippet ui (Base UI) |
+|-------------------|----------------------|
+| `<Button asChild><Link href="/">Home</Link></Button>` | `<Button render={<Link href="/" />}>Home</Button>` |
+| `<DialogTrigger asChild><Button>Open</Button></DialogTrigger>` | `<DialogTrigger render={<Button />}>Open</DialogTrigger>` |
+| `<TooltipTrigger asChild><Button size="icon">…</Button></TooltipTrigger>` | `<TooltipTrigger render={<Button size="icon" />}>…</TooltipTrigger>` |
+
+The difference: with `render`, the children stay on the outer component, and the element you pass has no children of its own.
+
+## Triggers
+
+Triggers render a plain `<button>` by default. To use a styled Button, pass it to `render`:
+
+```tsx
+<Dialog>
+  <DialogTrigger render={<Button variant="outline" />}>Edit profile</DialogTrigger>
+  <DialogPopup>...</DialogPopup>
+</Dialog>
+```
+
+The same works for `PopoverTrigger`, `MenuTrigger`, `TooltipTrigger`, `SheetTrigger`, `AlertDialogTrigger`, `DialogClose` and the other trigger and close parts.
+
+### Triggers that aren't buttons
+
+Triggers expect to render a real `<button>`, which gives them keyboard support for free. If you render something else, such as a link or a `<div>`, set `nativeButton={false}` so Base UI adds `role="button"` and the keyboard handling itself:
+
+```tsx
+<PopoverTrigger nativeButton={false} render={<span />}>
+  @deepak
+</PopoverTrigger>
+```
+
+Items such as `MenuItem` and `SelectItem` work the other way round. They render a `<div>` by default, so set `nativeButton` to `true` only when you render them as a `<button>`.
+
+## Combining triggers
+
+A trigger's `render` can be another trigger. This lets one button open a Dialog and show a Tooltip:
+
+```tsx
+<Dialog>
+  <Tooltip>
+    <TooltipTrigger
+      render={<DialogTrigger render={<Button size="icon" variant="ghost" />} />}
+    >
+      <SettingsIcon />
+    </TooltipTrigger>
+    <TooltipPopup>Settings</TooltipPopup>
+  </Tooltip>
+  <DialogPopup>...</DialogPopup>
+</Dialog>
+```
+
+The props are merged from the outside in, so the final `<button>` has the Tooltip's hover handlers, the Dialog's click handler and the Button's styles.
+
+## Links in menus
+
+Render a menu item as a link with `render`. It keeps the item's styles and the menu's keyboard navigation:
+
+```tsx
+import Link from "next/link";
+import { Menu, MenuItem, MenuPopup, MenuTrigger } from "@/components/ui/menu";
+
+<Menu>
+  <MenuTrigger render={<Button variant="outline" />}>Account</MenuTrigger>
+  <MenuPopup>
+    <MenuItem render={<Link href="/settings" />}>Settings</MenuItem>
+  </MenuPopup>
+</Menu>
+```
+
+Base UI also has a dedicated `LinkItem` part (`MenuPrimitive.LinkItem`), which cnippet ui doesn't style. Use it if you need the menu to stay open after the link is clicked (`closeOnClick={false}`), and copy the class names from `MenuItem`.
+
+## Using state with a render function
+
+`render` also accepts a function. It receives the merged props and the component's current state, so you can render based on whether the part is open, checked, disabled and so on:
+
+```tsx
+<CollapsibleTrigger
+  render={(props, state) => (
+    <button {...props}>
+      {state.open ? "Hide details" : "Show details"}
+    </button>
+  )}
+/>
+```
+
+Always spread `props` onto the element you return. They carry the event handlers, ARIA attributes and `ref` that make the component work.
+
+For styling, you usually don't need the function. Every part sets data attributes for its state, which you can target with Tailwind:
+
+```tsx
+<CollapsibleTrigger className="data-panel-open:font-medium">Details</CollapsibleTrigger>
+```
+
+Each component page lists its data attributes in the **API Reference**.
+
+## Rendering your own components
+
+The element you pass to `render` receives props, including a `ref`. Your component must pass them on to the DOM element:
+
+```tsx
+function UserChip(props: React.ComponentProps<"div">) {
+  return <div {...props} className={cn("flex items-center gap-2", props.className)} />;
+}
+
+<PopoverTrigger nativeButton={false} render={<UserChip />}>...</PopoverTrigger>
+```
+
+In React 19, `ref` is a normal prop, so spreading `props` passes it too. In React 18, wrap the component in `forwardRef`.
+
+A component that doesn't spread its props breaks silently: the popover won't open, focus won't move and screen readers won't announce the state.
+
+## Making your own components composable
+
+Use Base UI's `useRender` and `mergeProps` to give your own components a `render` prop. This is how the cnippet ui Button is built:
+
+```tsx title="components/ui/tag.tsx"
+"use client";
+
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
+import { cn } from "@/lib/utils";
+
+export function Tag({
+  className,
+  render,
+  ...props
+}: useRender.ComponentProps<"span">) {
+  return useRender({
+    defaultTagName: "span",
+    props: mergeProps<"span">(
+      {
+        className: cn(
+          "inline-flex h-6 items-center rounded-md border px-2 text-xs",
+          className,
+        ),
+        "data-slot": "tag",
+      },
+      props,
+    ),
+    render,
+  });
+}
+```
+
+Now `<Tag render={<a href="/tags/react" />}>react</Tag>` renders an `<a>` with the tag's styles. `mergeProps` joins class names and chains event handlers, so both yours and the caller's run.
+
+## Good to know
+
+- Pass one element to `render`, without children. Put the content inside the outer component.
+- `className`, `style` and event handlers from both sides are merged, so nothing you pass is lost.
+- A Button rendered as a link ignores `disabled`, because `<a>` has no disabled state. Remove the link or use `aria-disabled` and prevent the click yourself.
+- `nativeButton={false}` is only needed on triggers, and only when the rendered element isn't a `<button>`.
+- Read the **Anatomy** section of a component page for the names of its parts, and the Base UI docs for its [composition guide](https://base-ui.com/react/handbook/composition).
