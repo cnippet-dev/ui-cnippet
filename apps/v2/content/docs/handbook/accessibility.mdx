@@ -1,0 +1,117 @@
+---
+title: Accessibility
+description: What cnippet ui handles for you — keyboard support, ARIA and focus — and what you still need to do in your app.
+---
+
+cnippet ui components are built on [Base UI](https://base-ui.com/react/overview/accessibility), which follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/). Most of the hard work is done for you, but some of it depends on how you use the components: labels, headings, content and motion are up to you.
+
+## What the components handle
+
+- **Roles and ARIA attributes.** Components set `role`, `aria-expanded`, `aria-controls`, `aria-selected`, `aria-checked` and the other attributes their pattern needs, and keep them in sync with the state.
+- **Keyboard support.** Every interactive component works without a mouse. See [Keyboard support](#keyboard-support).
+- **Focus management.** Dialogs, sheets and drawers move focus inside when they open, keep Tab from leaving, and return focus to the trigger when they close. Menus, selects and comboboxes move focus between items with the arrow keys.
+- **Label linking.** `Field` connects `FieldLabel`, `FieldDescription` and `FieldError` to the control with `id`, `htmlFor` and `aria-describedby`.
+- **Scroll locking and outside clicks.** Modal popups lock page scroll and make the rest of the page inert, so screen readers stay inside.
+- **Visible focus.** Controls show a focus ring for keyboard users (`focus-visible`), using the `--ring` token, but not on mouse clicks.
+- **Built-in labels.** Parts with icons only, such as the dialog close button, the pagination arrows and the spinner, already have an `aria-label`.
+
+## Keyboard support
+
+| Component | Keys |
+|-----------|------|
+| Dialog, Sheet, Drawer, Alert Dialog | <kbd>Esc</kbd> closes. <kbd>Tab</kbd> stays inside. Focus returns to the trigger on close |
+| Menu, Context Menu | <kbd>↑</kbd> <kbd>↓</kbd> move, <kbd>Enter</kbd> / <kbd>Space</kbd> select, <kbd>→</kbd> opens a submenu, <kbd>←</kbd> closes it, <kbd>Home</kbd> / <kbd>End</kbd> jump, typing a letter jumps to a matching item, <kbd>Esc</kbd> closes |
+| Select | <kbd>Enter</kbd>, <kbd>Space</kbd> or <kbd>↓</kbd> open. Arrows move, typing a letter jumps to a match, <kbd>Enter</kbd> selects |
+| Combobox, Autocomplete, Command | Type to filter, <kbd>↑</kbd> <kbd>↓</kbd> move, <kbd>Enter</kbd> selects, <kbd>Esc</kbd> closes |
+| Tabs, Toggle Group, Toolbar | Arrow keys move between items. The group is a single <kbd>Tab</kbd> stop |
+| Radio Group | Arrow keys move and select. The group is a single <kbd>Tab</kbd> stop |
+| Accordion | <kbd>Enter</kbd> / <kbd>Space</kbd> toggle. <kbd>↑</kbd> <kbd>↓</kbd> move between triggers, <kbd>Home</kbd> / <kbd>End</kbd> jump |
+| Checkbox, Switch, Toggle | <kbd>Space</kbd> toggles |
+| Slider | Arrows change the value by `step`, <kbd>Page Up</kbd> / <kbd>Page Down</kbd> by a larger step, <kbd>Home</kbd> / <kbd>End</kbd> go to min / max |
+| Number Field | <kbd>↑</kbd> <kbd>↓</kbd> change the value |
+| Tooltip, Preview Card | Open on keyboard focus. <kbd>Esc</kbd> closes |
+
+Arrow keys follow the component's `orientation`, and left and right swap in right-to-left layouts.
+
+## What you need to do
+
+### Give everything a name
+
+Screen readers announce a control by its accessible name. Components can't guess it:
+
+- **Dialogs need a title.** Always include `DialogTitle` (or `SheetTitle`, `AlertDialogTitle`, `DrawerTitle`). It names the dialog. If the design has no visible title, add one with `className="sr-only"`.
+- **Icon-only buttons need a label.** A tooltip doesn't count.
+
+  ```tsx
+  <Button aria-label="Delete file" size="icon" variant="ghost">
+    <TrashIcon />
+  </Button>
+  ```
+
+- **Inputs need a label.** Use `Field` with `FieldLabel`. Placeholder text isn't a label. When there's no room for a visible label, use `aria-label`.
+- **Groups need a label.** Name a `RadioGroup` or `CheckboxGroup` with `aria-label`, or wrap it in a `Fieldset` with a `FieldsetLegend`.
+- **Decorative icons** inside a labeled button need nothing. Lucide icons are `aria-hidden` by default.
+
+### Use real headings
+
+`CardTitle` renders a `<div>`, so the page outline doesn't include it. Render the heading level that fits the page:
+
+```tsx
+<CardTitle render={<h2 />}>Billing</CardTitle>
+```
+
+Screen reader users jump between headings to scan a page, so keep the levels in order.
+
+### Don't hide essential content in hover popups
+
+Tooltips and preview cards open on hover and focus, but never on touch, and their content can't be clicked. Use them for hints only. Put anything the user needs, such as an error, a link or a button, in the page, a `Popover` or a `Dialog`.
+
+### Use toasts for updates, not for errors
+
+Toasts are announced to screen readers, but they disappear after 5 seconds. Show form errors next to the field with `FieldError`. For an important message, keep the toast open with `timeout: 0` so users have time to read it.
+
+### Keep color contrast
+
+The default tokens meet WCAG AA contrast for text. When you [change colors](/docs/theming), check that each `-foreground` token still has 4.5:1 contrast on its background (3:1 for large text and icons). For text on a tinted status background such as `bg-success/8`, use `text-success-foreground`, not `text-success`.
+
+Don't use color as the only signal. An invalid field has a red border and a `FieldError` message. A status badge has a label, not only a color.
+
+### Don't remove focus rings
+
+If you restyle a control, keep a visible `focus-visible` style. Removing `outline` or `ring` without a replacement leaves keyboard users unable to see where they are.
+
+## Reduced motion
+
+The components don't check `prefers-reduced-motion` on their own. Their animations are short opacity, scale and slide transitions. To turn them off for users who ask for less motion, add this to your global CSS:
+
+```css title="app/globals.css"
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+The duration is `0.01ms`, not `0`, so animation and transition events still fire. Base UI waits for them before it unmounts a closing popup.
+
+For the [Motion components](/motion), wrap your app in Motion's `MotionConfig` so they follow the same setting:
+
+```tsx
+import { MotionConfig } from "motion/react";
+
+<MotionConfig reducedMotion="user">{children}</MotionConfig>
+```
+
+In your own components, use Tailwind's `motion-safe:` and `motion-reduce:` variants, e.g. `motion-safe:animate-pulse`.
+
+## Testing
+
+- **Use the keyboard only.** Tab through the page, open and close every popup, and check that focus is always visible and never gets lost.
+- **Use a screen reader.** VoiceOver on macOS and iOS, NVDA on Windows, TalkBack on Android. Listen for missing names and unclear announcements.
+- **Run an automated check** with [axe DevTools](https://www.deque.com/axe/devtools/) or Lighthouse. It catches missing labels and low contrast, but not everything.
+- **Query by role in tests.** [Testing Library](https://testing-library.com/docs/queries/byrole/)'s `getByRole("button", { name: "Delete file" })` fails when a name is missing, which catches regressions early.

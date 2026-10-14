@@ -95,7 +95,7 @@ export function SiteHeaderClient({
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
+    const onScroll = () => setScrolled(window.scrollY > 1);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -111,24 +111,30 @@ export function SiteHeaderClient({
   return (
     <header
       className={cn(
-        "sticky z-50 transition-[background-color,box-shadow,border-color] duration-250",
+        "sticky z-50",
         inCanvas
-          ? cn(
-              // Sticks at the canvas inset so the panel keeps its rounded top
-              // while scrolling. The chrome-coloured spread shadow (clipped at
-              // the bottom) masks content passing through the gap above it and
-              // behind the rounded corners. The fill is opaque so the canvas edge lines
-              // do not show through while content scrolls underneath.
-              "top-0 border-b md:top-3 md:rounded-t-canvas",
-              scrolled
-                ? "bg-background md:shadow-[0_0_0_1px_var(--canvas-edge),0_0_0_13px_var(--chrome)] md:[clip-path:inset(-13px_-13px_0_-13px)]"
-                : "border-transparent bg-transparent",
-            )
+          ? // Sticks at the canvas inset so the panel keeps its rounded top
+            // while scrolling. The border is reserved (transparent) so the
+            // height never changes; the visible fill lives on the layer below.
+            "top-0 border-transparent border-b md:top-3"
           : // No scroll rule: the docs topbar sticks right below and draws
             // the canvas's rounded top against the chrome.
             "top-0 bg-chrome/80 backdrop-blur-xl",
       )}
     >
+      {inCanvas ? (
+        // Opaque fill, border and the chrome-coloured spread shadow (clipped
+        // at the bottom) that masks content passing through the gap above
+        // and behind the rounded corners. All of it is static; only opacity
+        // animates, so the fade stays on the compositor and does not jitter.
+        <div
+          aria-hidden
+          className={cn(
+            "pointer-events-none absolute inset-x-0 top-0 -bottom-px -z-10 border-b bg-background transition-opacity duration-300 ease-out md:rounded-t-canvas md:shadow-[0_0_0_1px_var(--canvas-edge),0_0_0_13px_var(--chrome)] md:[clip-path:inset(-13px_-13px_0_-13px)]",
+            scrolled ? "opacity-100" : "opacity-0",
+          )}
+        />
+      ) : null}
       <div
         className={cn(
           "flex h-(--header-height) items-center gap-4",

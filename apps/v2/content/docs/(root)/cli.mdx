@@ -1,0 +1,158 @@
+---
+title: CLI
+description: Every shadcn CLI command and flag you need to install, update and browse cnippet ui components.
+---
+
+cnippet ui doesn't have its own CLI. You use the [shadcn CLI](https://ui.shadcn.com/docs/cli) with the `@cnippet` namespace, which is listed in the shadcn registry index, so it works without any setup.
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+Always run `shadcn@latest`. Older versions don't know the `@cnippet` namespace. With pnpm use `pnpm dlx shadcn@latest`, and with Bun use `bunx --bun shadcn@latest`.
+
+## init
+
+Sets up a project: creates `components.json`, adds `lib/utils.ts`, installs the base dependencies and writes the CSS variables into your global stylesheet.
+
+```bash
+npx shadcn@latest init
+```
+
+To set up the full cnippet ui theme and every component in one step, pass the style:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+When `init` asks which component library to use, choose **Base UI** (`--base base`). cnippet ui components are built on Base UI, so any shadcn/ui components you add later will match them.
+
+`init` can also scaffold a new project:
+
+```bash
+npx shadcn@latest init -t next
+```
+
+| Option | Description |
+|--------|-------------|
+| `-t, --template <template>` | Create a new project: `next`, `vite`, `start`, `react-router`, `astro` or `laravel` |
+| `-b, --base <base>` | Component library for shadcn/ui components: `base`, `radix` or `aria` |
+| `-n, --name <name>` | Name of the new project |
+| `--monorepo` | Scaffold a monorepo |
+| `-d, --defaults` | Use the defaults without asking |
+| `-f, --force` | Overwrite an existing `components.json` |
+| `--rtl` | Set up right-to-left support |
+| `--no-css-variables` | Use inline Tailwind colors instead of CSS variables. cnippet ui needs CSS variables, so don't use this |
+| `-c, --cwd <cwd>` | Run in another folder |
+| `-s, --silent` | Hide the output |
+
+## add
+
+Adds components, and any components and npm packages they depend on, to your project.
+
+```bash
+npx shadcn@latest add @cnippet/dialog @cnippet/field @cnippet/input
+```
+
+Add every cnippet ui component, or only the color tokens:
+
+```bash
+npx shadcn@latest add @cnippet/ui
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+Without the `@cnippet/` prefix, `add` installs the shadcn/ui component of the same name instead.
+
+| Option | Description |
+|--------|-------------|
+| `-o, --overwrite` | Replace files that already exist without asking |
+| `--dry-run` | Show what would change without writing any files |
+| `--diff [path]` | Show how the registry version differs from your file |
+| `--view [path]` | Print the registry version of a file |
+| `-p, --path <path>` | Put the component in a different folder |
+| `-y, --yes` | Skip the confirmation prompt |
+| `-c, --cwd <cwd>` | Run in another folder, for example `-c apps/web` in a monorepo |
+| `-s, --silent` | Hide the output |
+
+### Updating a component
+
+Components are copied into your project, so updates are up to you. Check what changed, then overwrite:
+
+```bash
+npx shadcn@latest add @cnippet/button --diff
+npx shadcn@latest add @cnippet/button --overwrite
+```
+
+`--overwrite` replaces your file, including your own edits. Commit first so you can bring them back.
+
+## view
+
+Prints a registry item as JSON (its files, dependencies and CSS) without installing it.
+
+```bash
+npx shadcn@latest view @cnippet/button
+```
+
+## search
+
+Lists or searches the items in a registry. `list` is an alias.
+
+```bash
+npx shadcn@latest search @cnippet -q date
+```
+
+| Option | Description |
+|--------|-------------|
+| `-q, --query <query>` | Search text |
+| `-t, --type <type>` | Filter by type, e.g. `ui`, `block`, `hook`, `lib`. Comma-separated for several |
+| `-l, --limit <number>` | Maximum number of results (default `100`) |
+| `-o, --offset <number>` | Number of results to skip |
+| `--json` | Output JSON |
+
+The cnippet ui registry has 55+ components (`ui`), 1,000+ variants and motion components (`block`), hooks (`hook`) and helpers (`lib`).
+
+## info
+
+Prints how the CLI sees your project: framework, Tailwind CSS version, aliases and installed components. Add its output when you report a bug.
+
+```bash
+npx shadcn@latest info
+```
+
+## registry add
+
+Adds a registry to `components.json`, so you can refer to it by namespace:
+
+```bash
+npx shadcn@latest registry add @cnippet
+```
+
+You only need this if your CLI can't reach the shadcn registry index, or you want the entry written down in your project. It adds:
+
+```json title="components.json"
+{
+  "registries": {
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+  }
+}
+```
+
+## mcp
+
+Sets up the shadcn MCP server for an AI editor, so the assistant can search and install cnippet ui components. See [LLMs](/docs/llms#mcp-server).
+
+```bash
+npx shadcn@latest mcp init --client claude
+```
+
+`--client` accepts `claude`, `cursor`, `vscode`, `codex` and `opencode`.
+
+## Installing by URL
+
+Every item is also available as a URL, which works with any version of the CLI and without `components.json` registries:
+
+```bash
+npx shadcn@latest add https://ui.cnippet.dev/r/button.json
+```
+
+The **Open in v0** button on component pages uses the same URL.

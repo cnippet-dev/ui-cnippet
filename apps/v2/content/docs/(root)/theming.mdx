@@ -3,65 +3,37 @@ title: Theming
 description: Customize colors, radius, and dark mode with CSS variables and Tailwind CSS v4.
 ---
 
-cnippet ui uses a CSS variables-based theming system built on Tailwind CSS v4. Every color, radius, and shadow is a design token you can override — globally or scoped to a single component.
+cnippet ui uses a CSS variables-based theming system built on Tailwind CSS v4. Every color and the radius are design tokens you can override — globally or scoped to a single component.
 
 ## How It Works
 
 Components reference semantic CSS variables (`--primary`, `--muted`, `--border`, etc.) rather than hard-coded values. Changing a variable updates every component that references it.
 
-```css
-/* globals.css */
+```css title="app/globals.css"
 :root {
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  --primary: var(--color-neutral-800);
+  --primary-foreground: var(--color-neutral-50);
 }
 ```
 
-All values use HSL format (`hue saturation% lightness%`) so Tailwind's opacity modifier utilities work automatically — `text-primary/50`, `bg-primary/10`, etc.
+Tokens point at the [Tailwind CSS palette](https://tailwindcss.com/docs/colors), mixes of it (`color-mix()`) or translucent black and white (`--alpha()`). An `@theme inline` block turns each token into Tailwind utilities, so `--primary` gives you `bg-primary`, `text-primary` and opacity modifiers like `bg-primary/10`:
 
-## Default Color Scale (Zinc)
+```css title="app/globals.css"
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+}
+```
 
-The default palette is zinc-based. Install it with the CLI:
+## Default Colors
+
+The default palette is neutral-based. Install it with the CLI:
 
 ```bash
-npx shadcn@latest add @cnippet/colors-zinc
+npx shadcn@latest add @cnippet/colors-neutral
 ```
 
-Or add it manually to your `globals.css`:
-
-```css
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-
-  --radius: 0.5rem;
-}
-```
+[Colors](/docs/colors) shows every token with its light and dark value, and has the full CSS to copy. [Manual Installation](/docs/installation/manual) has the complete stylesheet, including the `@theme inline` mappings.
 
 ## Extended Tokens
 
@@ -69,14 +41,14 @@ cnippet ui adds semantic tokens for feedback states not covered by the base shad
 
 ```css
 :root {
-  --info: 201 96% 32%;
-  --info-foreground: 210 40% 98%;
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-blue-700);
 
-  --success: 142 76% 36%;
-  --success-foreground: 210 40% 98%;
+  --success: var(--color-emerald-500);
+  --success-foreground: var(--color-emerald-700);
 
-  --warning: 38 92% 50%;
-  --warning-foreground: 210 40% 98%;
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-amber-700);
 }
 ```
 
@@ -84,95 +56,57 @@ These are consumed by `<Alert>`, `<Badge>`, and `<Toast>` when using `variant="i
 
 ## Dark Mode
 
-Add a `.dark` class to your `<html>` element and define the dark-mode values:
+Every token has a second value in a `.dark` block. Adding the `dark` class to `<html>` switches every component to those values.
 
 ```css
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
+  --primary: var(--color-neutral-100);
+  --primary-foreground: var(--color-neutral-800);
 }
 ```
 
-### Using next-themes
-
-For Next.js, `next-themes` handles system preference detection and toggling:
-
-```bash
-npm install next-themes
-```
-
-Wrap your root layout:
-
-```tsx
-import { ThemeProvider } from "next-themes"
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
-}
-```
+[Dark Mode](/docs/dark-mode) covers setup for Next.js, Vite, React Router, TanStack Start and Astro, a theme toggle, and how to avoid a flash of the wrong theme.
 
 ## Custom Themes
 
-Override any subset of variables to create a custom palette. Here's a blue-focused theme:
+Override any subset of variables to create a custom palette. Set both the light and the dark value. Here's a blue-focused theme:
 
 ```css
 :root {
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
+  --primary: var(--color-blue-600);
+  --primary-foreground: var(--color-white);
+  --ring: var(--color-blue-400);
+}
 
-  --accent: 214 95% 93%;
-  --accent-foreground: 217 91% 60%;
-
-  --ring: 217 91% 60%;
+.dark {
+  --primary: var(--color-blue-500);
+  --primary-foreground: var(--color-white);
+  --ring: var(--color-blue-500);
 }
 ```
 
-Everything you don't override falls back to the zinc defaults.
+Everything you don't override falls back to the defaults. You can also use any CSS color, such as `oklch(0.55 0.2 260)` or `#2563eb`.
 
 ## Border Radius
 
-The `--radius` variable drives the global radius scale. Components use calculated offsets (`calc(var(--radius) - 2px)` for inner elements) so the whole UI scales together:
+The `--radius` variable drives the global radius scale. The `rounded-sm`, `rounded-md`, `rounded-lg` and `rounded-xl` utilities are calculated from it, so the whole UI scales together:
 
 ```css
 :root {
-  --radius: 0.5rem;  /* default — try 0.25rem for sharp, 0.75rem for rounder */
+  --radius: 0.625rem; /* default — try 0.25rem for sharp, 0.875rem for rounder */
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 ```
 
 ## Per-Component Overrides
+
+For variants, data attributes and wrapper components, see [Customization](/docs/handbook/customization).
 
 Because components are copied into your project, you can scope token overrides with inline styles:
 
@@ -182,20 +116,15 @@ Because components are copied into your project, you can scope token overrides w
 </Card>
 ```
 
+Or set tokens on a class and apply it to a section:
+
+```css
+.brand {
+  --primary: var(--color-violet-600);
+  --primary-foreground: var(--color-white);
+}
+```
+
 ## Variable Reference
 
-| Variable | Purpose | Zinc Default |
-|----------|---------|--------------|
-| `--background` | Page background | `0 0% 100%` |
-| `--foreground` | Body text | `222.2 84% 4.9%` |
-| `--primary` | Buttons, active states | `222.2 47.4% 11.2%` |
-| `--secondary` | Secondary actions | `210 40% 96.1%` |
-| `--muted` | Disabled, placeholder | `210 40% 96.1%` |
-| `--accent` | Hover highlights | `210 40% 96.1%` |
-| `--destructive` | Delete, error states | `0 84.2% 60.2%` |
-| `--border` | Dividers, outlines | `214.3 31.8% 91.4%` |
-| `--ring` | Focus rings | `222.2 84% 4.9%` |
-| `--radius` | Border radius scale | `0.5rem` |
-| `--info` | Info badges/alerts | `201 96% 32%` |
-| `--success` | Success states | `142 76% 36%` |
-| `--warning` | Warning states | `38 92% 50%` |
+[Colors](/docs/colors) lists every color token with its light and dark value, grouped by purpose: surfaces, actions, status, lines, charts, sidebar and code.

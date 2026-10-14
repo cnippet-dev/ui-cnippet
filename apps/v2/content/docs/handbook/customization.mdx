@@ -1,0 +1,186 @@
+---
+title: Customization
+description: Change how components look and behave — with className, data attributes, new variants, edited defaults and wrapper components.
+---
+
+cnippet ui components are copied into your project, so you can change anything. Start with the lightest option that does the job:
+
+| You want to | Do this |
+|-------------|---------|
+| Change one instance | Pass `className` |
+| Style a part or a state | Target its `data-slot` or state attribute |
+| Change colors or radius everywhere | Edit the [theme tokens](/docs/theming) |
+| Add a variant or size | Edit the component's `cva` config |
+| Change a default, or add behavior | Edit the component file, or wrap it |
+
+## className
+
+Every part accepts `className`. Classes are merged with [`tailwind-merge`](https://github.com/dcastil/tailwind-merge), so yours win when they conflict with the built-in ones:
+
+```tsx
+<Button className="h-11 rounded-full px-6">Get started</Button>
+```
+
+`h-11` replaces the Button's own height instead of fighting it. Classes that don't conflict are added.
+
+Use `cn` from `@/lib/utils` to merge classes in your own components the same way:
+
+```tsx
+import { cn } from "@/lib/utils";
+
+<Card className={cn("w-full", highlighted && "ring-2 ring-primary")} />
+```
+
+## Styling parts and states
+
+### data-slot
+
+Every part has a `data-slot` attribute, such as `data-slot="card-title"` or `data-slot="button"`. Use it to style a part from a parent without passing `className` to each one:
+
+```tsx
+<Card className="**:data-[slot=card-title]:text-lg **:data-[slot=card-description]:text-balance">
+  <CardHeader>
+    <CardTitle>Usage</CardTitle>
+    <CardDescription>Your usage this month.</CardDescription>
+  </CardHeader>
+</Card>
+```
+
+`**:` targets any descendant, and `*:` targets direct children only. Each component page lists its slots in the **Anatomy** section.
+
+### State attributes
+
+Parts expose their state as data attributes. Style them with Tailwind's `data-*` variants instead of conditional classes:
+
+```tsx
+<Switch className="data-checked:bg-success" />
+<AccordionTrigger className="data-panel-open:text-foreground" />
+<MenuItem className="data-highlighted:bg-primary data-highlighted:text-primary-foreground" />
+```
+
+Common attributes:
+
+| Attribute | Present when |
+|-----------|--------------|
+| `data-open` / `data-closed` | A popup is open or closed |
+| `data-panel-open` | A trigger's panel is open (Accordion, Collapsible) |
+| `data-checked` / `data-unchecked` | A Checkbox, Switch, Radio or checkbox item is on or off |
+| `data-pressed` | A Toggle is pressed |
+| `data-highlighted` | A menu, select or combobox item has keyboard or pointer focus |
+| `data-disabled` | The part is disabled |
+| `data-invalid` | A field failed validation |
+| `data-side` | Which side of the trigger a popup opened on |
+| `data-starting-style` / `data-ending-style` | A popup is animating in or out |
+
+The **API Reference** on each component page lists every attribute that part supports.
+
+### Enter and exit animations
+
+Popups animate with `data-starting-style` and `data-ending-style`. They are set for one frame when the popup mounts and while it unmounts, so a CSS transition runs between them and the normal style. To change an animation, edit those classes:
+
+```tsx
+<PopoverPopup className="transition-[opacity,translate] duration-300 data-ending-style:opacity-0 data-starting-style:-translate-y-2 data-starting-style:opacity-0" />
+```
+
+Base UI waits for the transition to finish before removing the popup, so you don't need extra state.
+
+## Adding a variant
+
+Components with variants, such as Button, Badge, Alert, Toggle and Group, define them with [`cva`](https://cva.style/docs). Open the component file and add an entry:
+
+```tsx title="components/ui/button.tsx" {7-8}
+export const buttonVariants = cva(
+  "relative inline-flex shrink-0 items-center justify-center ...",
+  {
+    variants: {
+      variant: {
+        default: "...",
+        brand:
+          "border-transparent bg-violet-600 text-white hover:bg-violet-600/90",
+        // ...
+      },
+    },
+  },
+);
+```
+
+The `variant` prop type comes from `VariantProps<typeof buttonVariants>`, so TypeScript picks up the new value right away:
+
+```tsx
+<Button variant="brand">Upgrade</Button>
+```
+
+Sizes work the same way under `size`. To change what you get without a prop, edit `defaultVariants`.
+
+### Using variants on other elements
+
+The variant functions are exported, so you can give any element a component's styles:
+
+```tsx
+import { buttonVariants } from "@/components/ui/button";
+
+<a className={buttonVariants({ size: "sm", variant: "outline" })} href="/docs">
+  Read the docs
+</a>
+```
+
+For another React component, prefer the [`render` prop](/docs/handbook/composition): `<Button render={<Link href="/docs" />}>`. It keeps the Button's props and behavior, not only its classes.
+
+## Changing defaults
+
+Default props live in the component function, so you can change them in one place. For example, to open every popover above its trigger:
+
+```tsx title="components/ui/popover.tsx"
+export function PopoverPopup({
+  side = "top", // was "bottom"
+  align = "center",
+  sideOffset = 4,
+  // ...
+```
+
+For behavior that isn't a prop yet, add one. Keep the rest of the props flowing through with `...props` so nothing else breaks.
+
+## Wrapping components
+
+When you use the same combination in many places, build a component on top instead of editing the original. Your changes then survive when you [update the component](/docs/cli#updating-a-component).
+
+```tsx title="components/submit-button.tsx"
+"use client";
+
+import { useFormStatus } from "react-dom";
+import { Button } from "@/components/ui/button";
+
+export function SubmitButton(props: React.ComponentProps<typeof Button>) {
+  const { pending } = useFormStatus();
+  return <Button loading={pending} type="submit" {...props} />;
+}
+```
+
+```tsx title="components/icon-button.tsx"
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipPopup, TooltipTrigger } from "@/components/ui/tooltip";
+
+export function IconButton({
+  label,
+  ...props
+}: React.ComponentProps<typeof Button> & { label: string }) {
+  return (
+    <Tooltip>
+      <TooltipTrigger render={<Button aria-label={label} size="icon" variant="ghost" {...props} />} />
+      <TooltipPopup>{label}</TooltipPopup>
+    </Tooltip>
+  );
+}
+```
+
+Keep wrappers outside `components/ui/`. That folder stays a copy of the registry, which makes updates a clean overwrite.
+
+## Editing vs. wrapping
+
+| Edit the file in `components/ui/` when | Wrap it when |
+|----------------------------------------|--------------|
+| The change should apply everywhere, such as a new variant or a different default | Only some screens need it |
+| You're changing the component's markup or styles | You're combining components or adding app logic |
+| You're fine re-applying the change after an update | You want updates to be a plain `--overwrite` |
+
+Before you update an edited component, run `npx shadcn@latest add @cnippet/<name> --diff` to see what changed upstream, then merge by hand or overwrite and re-apply your edit.

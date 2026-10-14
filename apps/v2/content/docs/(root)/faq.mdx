@@ -1,0 +1,159 @@
+---
+title: FAQ
+description: Answers to common questions and fixes for common problems when installing and using cnippet ui.
+---
+
+## Installation
+
+### "Cannot find module '@/components/ui/button'"
+
+Your project doesn't have the `@` import alias. Add it to `tsconfig.json`:
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+Use `["./src/*"]` if your code lives in `src/`. Vite also needs the alias in `vite.config.ts` (see the [Vite guide](/docs/installation/vite)). React Router uses `~` instead of `@`, which the CLI detects from your `tsconfig.json`.
+
+### The CLI says it can't find the `@cnippet` registry
+
+`@cnippet` is listed in the shadcn registry index, which older versions of the CLI don't read. Run the CLI with `@latest`:
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+If you pinned an older version, or your network blocks the index, add the registry to `components.json` yourself:
+
+```json title="components.json"
+{
+  "registries": {
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+  }
+}
+```
+
+### The CLI fails before it installs anything
+
+- Use a current LTS release of Node.js.
+- Run the command from the folder that has `package.json` and `components.json`. In a monorepo, pass the workspace with `-c`, for example `npx shadcn@latest add @cnippet/button -c apps/web`.
+- With pnpm, use `pnpm dlx shadcn@latest add @cnippet/button`. With Bun, use `bunx --bun shadcn@latest add @cnippet/button`.
+
+### I installed the wrong component
+
+`npx shadcn@latest add dialog` installs the **shadcn/ui** Dialog, which is built on Radix. Keep the `@cnippet/` prefix to get the Base UI version:
+
+```bash
+npx shadcn@latest add @cnippet/dialog --overwrite
+```
+
+`--overwrite` replaces the existing `components/ui/dialog.tsx` without asking.
+
+### Does cnippet ui work with Tailwind CSS v3?
+
+No. The components and theme use Tailwind CSS v4 features such as `@theme`, `@custom-variant` and the `--alpha()` function. Upgrade with the [Tailwind CSS upgrade guide](https://tailwindcss.com/docs/upgrade-guide) first.
+
+### Which React versions are supported?
+
+Base UI supports React 17, 18 and 19. The docs and examples are written for React 19.
+
+## Styling
+
+### Components have no borders or the colors look wrong
+
+The CSS variables are missing, or your global stylesheet isn't loaded. Check that:
+
+1. Your global CSS file starts with `@import "tailwindcss";` and is imported once at the root of your app.
+2. It has the `:root` and `.dark` token blocks. To add them, run:
+
+   ```bash
+   npx shadcn@latest add @cnippet/colors-neutral
+   ```
+
+3. `components.json` points `tailwind.css` at that same file.
+
+### `bg-success`, `text-info-foreground` or `bg-sidebar` do nothing
+
+The variable exists, but Tailwind doesn't know about it. Every token needs a mapping in `@theme inline`:
+
+```css title="app/globals.css"
+@theme inline {
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+}
+```
+
+The CLI adds these mappings when it adds the tokens. If you copied the CSS by hand, use the full stylesheet from [Manual Installation](/docs/installation/manual).
+
+### The page flashes white before turning dark
+
+The `dark` class is being added after the first paint. Set it with a blocking script in `<head>`. See [Avoiding a flash of the wrong theme](/docs/dark-mode#avoiding-a-flash-of-the-wrong-theme).
+
+### "Prop `className` did not match" on `<html>`
+
+The theme script changes the `<html>` class before React hydrates. Add `suppressHydrationWarning` to the `<html>` element. It only affects that one element, not its children.
+
+## Components
+
+### `asChild` doesn't work
+
+cnippet ui is built on Base UI, which uses the `render` prop instead of Radix's `asChild`. To render a trigger as another component, pass it to `render`:
+
+```tsx
+<DialogTrigger render={<Button variant="outline" />}>Open</DialogTrigger>
+```
+
+To render a Button as a Next.js link:
+
+```tsx
+<Button render={<Link href="/pricing" />}>Pricing</Button>
+```
+
+See [Composition](/docs/handbook/composition) for more.
+
+### Can I use cnippet ui and shadcn/ui components together?
+
+Yes. Both read the same CSS variables, so they share one theme. They install to the same paths, though, so `@cnippet/button` and shadcn's `button` both write `components/ui/button.tsx`. Keep one of each component, or change the `ui` alias in `components.json` to install one set into a different folder. To switch a project over, follow [Migrating from shadcn/ui](/docs/handbook/migration).
+
+### How do I use cnippet ui with React Hook Form or Zod?
+
+See [Forms](/docs/handbook/forms). It covers Zod, server errors, React Hook Form and TanStack Form.
+
+### How do I update a component?
+
+Components are copied into your project, so they don't update on their own. To get the latest version, add it again with `--overwrite`:
+
+```bash
+npx shadcn@latest add @cnippet/button --overwrite
+```
+
+This replaces your file, including any changes you made. Commit first so you can compare the two versions and keep your edits.
+
+### How do I remove a component?
+
+Delete its file and the imports that use it. If nothing else uses its npm dependencies, you can uninstall them too.
+
+### Do components work in React Server Components?
+
+Yes. Every component file starts with `"use client"`, so you can import them into Server Components. Event handlers such as `onClick` must be passed from a Client Component.
+
+## General
+
+### Is cnippet ui free?
+
+Yes. It's open source under the MIT license, so you can use it in personal and commercial projects.
+
+### How do I get help or report a bug?
+
+Open an issue on [GitHub](https://github.com/cnippet-dev/ui-cnippet/issues). Include the component, your framework and the steps to reproduce the problem.
+
+### How do I give my AI assistant the docs?
+
+See [LLMs](/docs/llms). Every page is available as markdown, and `/llms.txt` indexes the whole site.

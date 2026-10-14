@@ -11,11 +11,11 @@ export default function Particle() {
       <InputGroupInput
         aria-label="Set your URL"
         className="*:[input]:ps-0!"
-        placeholder="coss"
-        type="search"
+        placeholder="cnippet"
+        type="text"
       />
       <InputGroupAddon>
-        <InputGroupText>i.cal.com/</InputGroupText>
+        <InputGroupText>cnippet.dev/</InputGroupText>
       </InputGroupAddon>
     </InputGroup>
   );

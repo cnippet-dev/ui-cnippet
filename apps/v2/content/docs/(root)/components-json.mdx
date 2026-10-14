@@ -1,0 +1,142 @@
+---
+title: components.json
+description: What each field in components.json does, and which ones matter for cnippet ui.
+---
+
+`components.json` tells the [shadcn CLI](/docs/cli) how your project is set up: where your CSS lives, which import aliases to use and which registries to install from. The CLI reads it every time you run `add`.
+
+You only need it if you use the CLI. If you copy components by hand, you can skip it.
+
+`npx shadcn@latest init` creates it for you. A typical file for cnippet ui looks like this:
+
+```json title="components.json"
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+  }
+}
+```
+
+## $schema
+
+Points to the [JSON Schema](https://ui.shadcn.com/schema.json), so your editor autocompletes and checks the file.
+
+## style
+
+The shadcn/ui style, for example `new-york` or `base-nova`. **It can't be changed after `init`.**
+
+It only changes shadcn/ui components. cnippet ui components are the same whatever style you choose. If you pick a style during `init`, choose a `base-*` one so shadcn/ui components are built on Base UI too.
+
+## tailwind
+
+How Tailwind CSS is set up in your project.
+
+| Field | Description |
+|-------|-------------|
+| `tailwind.config` | Path to `tailwind.config.js`. **Leave it empty for Tailwind CSS v4**, which cnippet ui requires |
+| `tailwind.css` | Path to the CSS file that imports Tailwind CSS. The CLI writes color tokens here, e.g. when you add `@cnippet/colors-neutral` |
+| `tailwind.baseColor` | The gray scale shadcn/ui generates its default tokens from. **Can't be changed after `init`.** cnippet ui uses `neutral`, and `@cnippet/colors-neutral` replaces these tokens anyway |
+| `tailwind.cssVariables` | Must be `true`. cnippet ui components use tokens like `bg-background` and `text-muted-foreground`, which are CSS variables. **Can't be changed after `init`** |
+| `tailwind.prefix` | A prefix for Tailwind classes, e.g. `tw-`. The CLI adds it to the classes of components it installs |
+
+## rsc
+
+Set to `true` if you use React Server Components (Next.js App Router), and `false` for Vite, React Router in SPA mode and other client-only setups.
+
+When it's `true`, the CLI keeps the `"use client"` line at the top of components. When it's `false`, it removes it. Every cnippet ui component that needs it already has the directive.
+
+## tsx
+
+Set to `false` to get JavaScript (`.jsx`) files instead of TypeScript. The CLI strips the types when it writes each component.
+
+## iconLibrary
+
+The icon library for shadcn/ui components. Keep it as `lucide`. cnippet ui components import their icons from `lucide-react`.
+
+## aliases
+
+The import paths for each kind of file. The CLI uses them to decide where to write files and to rewrite imports inside the components it installs.
+
+| Alias | Used for | Default |
+|-------|----------|---------|
+| `components` | Your components folder | `@/components` |
+| `ui` | Where cnippet ui components are written | `@/components/ui` |
+| `utils` | The `cn` helper | `@/lib/utils` |
+| `lib` | Helpers like `use-render` or `merge-props` | `@/lib` |
+| `hooks` | Hooks like `use-media-query` | `@/hooks` |
+
+The aliases must also resolve in TypeScript and your bundler, usually through `paths` in `tsconfig.json`:
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+To put cnippet ui components somewhere else, change `ui`. For example, `"ui": "@/components/cnippet"` writes them to `components/cnippet/` and imports them from there. This is also how you keep cnippet ui and shadcn/ui components apart: both would otherwise write `components/ui/button.tsx`.
+
+Instead of `paths`, you can use [`package.json` imports](https://ui.shadcn.com/docs/package-imports) (`#components/*`). Set the aliases to match, for example `"ui": "#components/ui"`.
+
+## registries
+
+Named registries you can install from with `@name/item`:
+
+```json title="components.json"
+{
+  "registries": {
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+  }
+}
+```
+
+`{name}` is replaced by the item name, so `@cnippet/button` loads `https://ui.cnippet.dev/r/button.json`.
+
+`@cnippet` is in the shadcn registry index, so it works without this entry in current versions of the CLI. Add it if you use the [MCP server](/docs/llms#mcp-server), pin an older CLI, or want the setup written down in your project. `npx shadcn@latest registry add @cnippet` adds it for you.
+
+A registry can also be an object with request headers, for a private registry:
+
+```json title="components.json"
+{
+  "registries": {
+    "@acme": {
+      "url": "https://registry.acme.com/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${ACME_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+`${VAR}` values are read from your environment variables.
+
+## Other fields
+
+| Field | Description |
+|-------|-------------|
+| `rtl` | Set by `init --rtl` for right-to-left projects |
+| `menuColor`, `menuAccent` | Menu styles for shadcn/ui components. They don't change cnippet ui components |

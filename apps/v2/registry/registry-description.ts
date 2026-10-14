@@ -1160,15 +1160,15 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "button",
     description:
-      "Button with the 'destructive-outline' variant reading 'Delete' (bordered red outline, not solid fill). Use for destructive actions that should be visually present but not the loudest element on the page.",
+      "Button with the 'destructive' variant reading 'Delete' (solid red fill). Use for irreversible or dangerous actions such as deleting data.",
     file: "variants/v-button-4.tsx",
-    keywords: ["destructive outline", "delete button"],
+    keywords: ["destructive button", "delete button"],
     name: "v-button-4",
   },
   {
     category: "button",
     description:
-      "Duplicate of v-button-4: destructive-outline 'Delete' button. Use interchangeably with v-button-4 for a bordered destructive action button.",
+      "Button with the 'destructive-outline' variant reading 'Delete' (bordered red outline, not solid fill). Use for destructive actions that should be visually present but not the loudest element on the page.",
     file: "variants/v-button-5.tsx",
     keywords: ["destructive outline", "delete button"],
     name: "v-button-5",
@@ -4572,7 +4572,7 @@ export const variantDescriptions: VariantDescription[] = [
   {
     category: "input group",
     description:
-      "Custom-URL InputGroup with a fixed 'i.cal.com/' text prefix (InputGroupText) before the editable slug input. Use for handle/slug fields needing a fixed domain/path prefix at the start.",
+      "Custom-URL InputGroup with a fixed 'cnippet.dev/' text prefix (InputGroupText) before the editable slug input. Use for handle/slug fields needing a fixed domain/path prefix at the start.",
     file: "variants/v-input-group-3.tsx",
     keywords: ["with start text", "domain prefix"],
     name: "v-input-group-3",

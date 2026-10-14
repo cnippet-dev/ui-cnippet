@@ -9,19 +9,20 @@ This guide walks you through adding **cnippet ui** components to your React proj
 
 Make sure your project meets these requirements:
 
-- **React 18+** (Next.js App Router, Remix, Vite — all work)
+- **React 18+** (Next.js, Vite, React Router, TanStack Start, Astro — all work)
 - **Tailwind CSS v4** – [Install Tailwind](https://tailwindcss.com/docs/installation)
-- **Node.js 18+** – for the CLI
+- **Node.js** (a current LTS release) – for the CLI
 
-> No existing Tailwind project? Create one quickly:
-> ```bash
-> # Next.js
-> npx create-next-app@latest my-app --typescript --tailwind
->
-> # Vite
-> npm create vite@latest my-app -- --template react-ts
-> cd my-app && npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
-> ```
+Starting a new project, or not sure your setup is ready? Follow the guide for your framework:
+
+| Framework | Guide |
+|-----------|-------|
+| Next.js | [Install with Next.js](/docs/installation/next) |
+| Vite | [Install with Vite](/docs/installation/vite) |
+| React Router | [Install with React Router](/docs/installation/react-router) |
+| TanStack Start | [Install with TanStack Start](/docs/installation/tanstack-start) |
+| Astro | [Install with Astro](/docs/installation/astro) |
+| Anything else | [Manual Installation](/docs/installation/manual) |
 
 ## Two ways to add components
 
@@ -29,7 +30,7 @@ You can add components **automatically with the CLI** (recommended) or **manuall
 
 ### Option 1: CLI (fast & automated)
 
-The CLI creates component files, installs dependencies, and sets up CSS variables for you.
+The CLI creates component files, installs dependencies, and sets up CSS variables for you. If your project doesn't have a `components.json` yet, run `npx shadcn@latest init` first.
 
 #### Add a single component
 
@@ -53,13 +54,21 @@ npx shadcn@latest add @cnippet/ui
 
 Adds all 55+ core components – perfect for starting a new project.
 
-#### Add with color tokens (recommended)
+#### Add the color tokens (recommended)
 
 ```bash
-npx shadcn@latest add @cnippet/ui @cnippet/colors-zinc
+npx shadcn@latest add @cnippet/colors-neutral
 ```
 
-This installs both the components and our default zinc-based color system. The CSS variables are automatically added to your `globals.css`. See the [Styling](/docs/theming) guide for details.
+This replaces the default colors in your global CSS with the cnippet ui tokens, including the `info`, `success` and `warning` colors. See [Colors](/docs/colors) for every token.
+
+#### Set up everything in one command
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+Sets up `components.json`, the color tokens, fonts, base styles and every component.
 
 **What the CLI does for you:**
 
@@ -67,17 +76,18 @@ This installs both the components and our default zinc-based color system. The C
 - Adds the component file with correct imports
 - Installs npm dependencies
 - Updates your CSS with required variables (when using color tokens)
-- No extra config files – your project stays clean
+
+See the [CLI reference](/docs/cli) for every command and option, and [components.json](/docs/components-json) for the config file.
 
 ### Option 2: Manual copy (full control)
 
 Prefer to copy-paste manually? Here's how:
 
-1. Browse the [Components](/explore) page and pick one (e.g., Button).
-2. Click the **Code** tab to see the source.
-3. Copy the entire component code.
+1. Set up the dependencies, the `cn` helper and the CSS tokens from [Manual Installation](/docs/installation/manual).
+2. Browse the [Components](/explore) page and pick one (e.g., Button).
+3. In the **Installation** section, choose **Manual** and copy the code.
 4. Create a new file in your project, e.g., `components/ui/button.tsx`, and paste the code.
-5. Check the component's page for any required dependencies – install them with npm/yarn/pnpm.
+5. Install the dependencies listed on the component's page.
 6. Import and use the component:
 
 ```tsx
@@ -88,63 +98,13 @@ export default function MyComponent() {
 }
 ```
 
-> **Note:** If you install manually, you must also add the CSS variables (explained below). The CLI does this automatically.
+## Styling and dark mode
 
-## Styling and CSS variables
+Components are styled with Tailwind CSS classes and a set of CSS variables for colors and radius. Every token has a light and a dark value, so dark mode works as soon as a `dark` class is on `<html>`.
 
-Components use Tailwind CSS classes plus a set of CSS variables for theming (colors, borders, shadows, etc.).
-
-### Base variables (compatible with shadcn/ui)
-
-Add these to your `globals.css`:
-
-```css
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-  --radius: 0.5rem;
-}
-```
-
-### Extra tokens unique to cnippet ui
-
-For richer feedback states (badges, toasts, alerts):
-
-```css
---info: 201 96% 32%;
---info-foreground: 210 40% 98%;
---success: 142 76% 36%;
---success-foreground: 210 40% 98%;
---warning: 38 92% 50%;
---warning-foreground: 210 40% 98%;
-```
-
-### Dark mode support
-
-Add a `.dark` class to your root element (or use `next-themes`) and define dark variables:
-
-```css
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  /* ... copy other variables with dark values ... */
-}
-```
-
-All components include `dark:` modifiers out of the box.
+- [Colors](/docs/colors) lists every token with its light and dark value.
+- [Theming](/docs/theming) shows how to change colors and radius.
+- [Dark Mode](/docs/dark-mode) sets up theme switching for your framework.
 
 ## Verify your setup
 
@@ -164,58 +124,17 @@ export default function TestPage() {
 }
 ```
 
-If you see styled buttons, everything works. If styles are missing, double-check your CSS variables and Tailwind configuration.
-
-## Troubleshooting
-
-### "Cannot find module '@/components/ui/button'"
-
-Make sure your `tsconfig.json` has the path alias:
-
-```json
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
-}
-```
-
-For Next.js, also add to `next.config.js` (if using Turbopack):
-
-```js
-experimental: {
-  turbo: {
-    resolveAlias: { '@': './' }
-  }
-}
-```
-
-### Styles look broken (no borders, weird colors)
-
-You likely missed the CSS variables. Either:
-
-- Run `npx shadcn@latest add @cnippet/ui @cnippet/colors-zinc` to auto-add them, or
-- Manually copy the `:root` and `.dark` variable blocks into your `globals.css`
-
-### CLI command fails
-
-Ensure you're using Node.js 18+. If you use pnpm, try `pnpm dlx cnippet@latest` instead of `npx`.
-
-### I want to remove a component
-
-Simply delete the component file and remove its imports. No package to uninstall – that's the beauty of copy-paste.
+If you see styled buttons, everything works. If something is wrong, see the [FAQ](/docs/faq) for fixes to common problems, like a missing import alias or unstyled components.
 
 ## Next steps
 
 - Browse all [Components](/explore)
-- Learn about [Styling](/docs/theming) – custom themes, dark mode, and more
+- Learn about [Theming](/docs/theming) – custom colors and radius
 - See [Blocks](https://blocks.cnippet.dev/sections) for full page examples built with cnippet ui
 
 ## Need help?
 
+- Check the [FAQ](/docs/faq)
 - Open an issue on [GitHub](https://github.com/cnippet-dev/ui-cnippet/issues)
-- Join the discussion – we're responsive
 
 Happy building!

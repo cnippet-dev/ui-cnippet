@@ -480,7 +480,7 @@ export function ThemesShowcase() {
     cn(
       "flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[13px] transition-colors duration-150",
       active
-        ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border"
+        ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border dark:bg-card dark:ring-border-strong"
         : "text-muted-foreground hover:text-foreground",
     );
 
@@ -489,7 +489,7 @@ export function ThemesShowcase() {
       {/* Toolbar — sticky under the header while previewing. */}
       <div className="sticky top-[calc(var(--header-height)+1px)] z-20 -mx-2 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:top-[calc(var(--header-height)+0.75rem+1px)]">
         <div className="flex flex-col gap-1 xl:flex-row xl:items-center">
-          <div className="no-scrollbar flex items-center gap-0.5 overflow-x-auto">
+          <div className="no-scrollbar -my-1 flex items-center gap-0.5 overflow-x-auto py-1">
             <span className="shrink-0 ps-2 pe-1.5 font-mono text-[11px] text-faint">
               {"// color"}
             </span>

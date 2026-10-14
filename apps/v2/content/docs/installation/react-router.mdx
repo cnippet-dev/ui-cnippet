@@ -1,0 +1,69 @@
+---
+title: React Router
+description: Install and configure cnippet ui in a React Router (framework mode) project.
+---
+
+cnippet ui is installed with the [shadcn CLI](https://ui.shadcn.com/docs/cli). React Router's starter already sets up Tailwind CSS v4 and a `~/*` import alias, and the CLI picks up that alias automatically.
+
+<Steps>
+
+### Create a project
+
+If you already have a React Router app, skip this step.
+
+```bash
+npx create-react-router@latest my-app
+```
+
+If you're adding cnippet ui to an older or custom app, make sure Tailwind CSS v4 and an import alias are configured before you continue.
+
+### Run the CLI
+
+```bash
+npx shadcn@latest init
+```
+
+This creates `components.json`, adds `app/lib/utils.ts` and sets up the CSS variables in `app/app.css`.
+
+### Add the cnippet ui theme
+
+```bash
+npx shadcn@latest add @cnippet/colors-neutral
+```
+
+This replaces the default colors with the cnippet ui tokens, including `info`, `success` and `warning`. See [Colors](/docs/colors).
+
+### Add components
+
+```bash
+npx shadcn@latest add @cnippet/button
+```
+
+Components use the `~` alias from your project:
+
+```tsx title="app/routes/home.tsx"
+import { Button } from "~/components/ui/button";
+
+export default function Home() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
+
+## Install everything at once
+
+To add the full theme and every component in one command, run `init` with the cnippet ui style:
+
+```bash
+npx shadcn@latest init @cnippet/style
+```
+
+## Next steps
+
+- Set up [Dark Mode](/docs/dark-mode). React Router renders on the server, so follow the section on preventing a flash of the wrong theme.
+- Browse all [Components](/explore).

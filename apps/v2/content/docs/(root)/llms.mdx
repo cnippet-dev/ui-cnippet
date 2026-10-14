@@ -1,6 +1,6 @@
 ---
 title: LLMs
-description: Give AI assistants the cnippet ui docs as plain markdown with llms.txt, per-page markdown and one-click copy.
+description: Give AI assistants the cnippet ui docs with llms.txt, per-page markdown, the shadcn MCP server and a project rules file.
 ---
 
 AI assistants often confuse **cnippet ui** with shadcn/ui or Radix. For example, they write `asChild` where cnippet ui uses the `render` prop, or install `dialog` instead of `@cnippet/dialog`. To avoid this, every page on this site is also available as plain markdown that you can give to an LLM.
@@ -43,7 +43,57 @@ Every page has a **Copy page** button next to its title. It copies the page's ma
 
 - **View as Markdown** — opens the `.md` version of the page.
 - **Open in ChatGPT** / **Open in Claude** — starts a new chat that reads the page, so you can ask questions about it.
-- **Open in v0** — on component pages, opens the component in [v0](https://v0.dev).
+- **Open in v0** — on component pages, opens the component in [v0](https://v0.app).
+
+## MCP server
+
+The [shadcn MCP server](https://ui.shadcn.com/docs/mcp) lets AI editors browse, search and install cnippet ui components for you. Add the registry to your project's `components.json`:
+
+```json title="components.json"
+{
+  "registries": {
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
+  }
+}
+```
+
+Then set up the server for your editor:
+
+```bash
+npx shadcn@latest mcp init --client claude
+```
+
+Use `--client cursor`, `--client vscode`, `--client codex` or `--client opencode` for other editors, then restart the editor. Try prompts like these:
+
+- "Show me all components in the @cnippet registry."
+- "Add @cnippet/dialog and @cnippet/field to my project."
+- "Build a sign-up form using components from @cnippet."
+
+## Project rules
+
+AI editors read a rules file from your project on every request. Add the rules below so the assistant uses cnippet ui correctly without being reminded. Save them as `AGENTS.md` (Codex, Cursor, VS Code and most other editors), `CLAUDE.md` (Claude Code) or `.github/copilot-instructions.md` (GitHub Copilot).
+
+```md title="AGENTS.md"
+## UI components
+
+This project uses cnippet ui (https://ui.cnippet.dev): React components built on
+Base UI and styled with Tailwind CSS v4. They live in `components/ui/`.
+
+- Before using a component, read its docs as markdown:
+  https://ui.cnippet.dev/llms.txt lists every page. Add `.md` to any page URL.
+- Install components with the `@cnippet/` prefix:
+  `npx shadcn@latest add @cnippet/<name>`. A bare name installs the shadcn/ui
+  (Radix) version instead.
+- Use the `render` prop to change the rendered element. Never use `asChild`.
+  Example: `<DialogTrigger render={<Button variant="outline" />}>Open</DialogTrigger>`
+- Use the part names from each page's Anatomy section, e.g. `DialogPopup`,
+  `MenuPopup`, `SelectPopup`.
+- Style with the theme tokens (`bg-background`, `text-muted-foreground`,
+  `border-border`, `bg-success/8 text-success-foreground`), not raw colors like
+  `bg-white` or `text-gray-500`, so dark mode keeps working.
+- Don't edit files in `components/ui/` unless asked. Compose them in your own
+  components and pass `className` for one-off changes.
+```
 
 ## Tips for better results
 

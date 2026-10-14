@@ -7,6 +7,7 @@ import type * as React from "react";
 import { CodeBlockCommand } from "@/components/code-block-command";
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { CodeTabs } from "@/components/code-tabs";
+import { ColorTokens } from "@/components/color-tokens";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import { MediaQueryDemo } from "@/components/media-query-demo";
@@ -56,6 +57,7 @@ export const mdxComponents = {
   ),
   CodeCollapsibleWrapper,
   CodeTabs,
+  ColorTokens,
   ComponentPreview,
   ComponentSource,
   code: ({

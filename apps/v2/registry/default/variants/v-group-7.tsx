@@ -7,7 +7,7 @@ export default function Particle() {
     <Group aria-label="Domain input">
       <Input
         aria-label="Domain"
-        defaultValue="coss"
+        defaultValue="cnippet"
         id="domain-suffix"
         type="text"
       />

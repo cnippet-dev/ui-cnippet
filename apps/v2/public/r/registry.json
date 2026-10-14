@@ -22191,7 +22191,7 @@
         "class-variance-authority",
         "lucide-react"
       ],
-      "description": "Complete coss theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @coss/style` for full project setup.",
+      "description": "Complete cnippet ui theme: colors, sidebar, fonts, base styles and every UI component. Use with `npx shadcn@latest init @cnippet/style` for full project setup.",
       "devDependencies": [
         "tw-animate-css"
       ],
@@ -22199,8 +22199,8 @@
       "name": "style",
       "registryDependencies": [
         "utils",
-        "@coss/ui",
-        "@coss/fonts"
+        "@cnippet/ui",
+        "@cnippet/fonts"
       ],
       "type": "registry:style"
     },
@@ -22268,9 +22268,9 @@
       "files": [],
       "name": "fonts",
       "registryDependencies": [
-        "@coss/font-sans",
-        "@coss/font-heading",
-        "@coss/font-mono"
+        "@cnippet/font-sans",
+        "@cnippet/font-heading",
+        "@cnippet/font-mono"
       ],
       "type": "registry:ui"
     },

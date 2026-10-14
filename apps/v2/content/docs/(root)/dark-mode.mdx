@@ -1,0 +1,332 @@
+---
+title: Dark Mode
+description: Add dark mode to Next.js, Vite, React Router, TanStack Start and Astro without a flash of the wrong theme.
+---
+
+cnippet ui switches themes with a `dark` class on the `<html>` element. The CSS defines every color token twice, once in `:root` and once in `.dark`, so adding or removing the class re-colors every component. There are no `dark:` color overrides to maintain.
+
+```css title="app/globals.css"
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: var(--color-white);
+  --foreground: var(--color-neutral-800);
+  /* ... */
+}
+
+.dark {
+  --background: color-mix(in srgb, var(--color-neutral-950) 95%, var(--color-white));
+  --foreground: var(--color-neutral-100);
+  /* ... */
+}
+```
+
+The CLI adds both blocks when you run `init`. [Colors](/docs/colors) lists every token in both themes.
+
+## Next.js
+
+[next-themes](https://github.com/pacocoursey/next-themes) stores the user's choice, follows the system setting and adds the class before the page paints.
+
+<Steps>
+
+### Install next-themes
+
+```bash
+npm install next-themes
+```
+
+### Create a theme provider
+
+```tsx title="components/theme-provider.tsx"
+"use client";
+
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import type * as React from "react";
+
+export function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+  return (
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="system"
+      disableTransitionOnChange
+      enableColorScheme
+      enableSystem
+      {...props}
+    >
+      {children}
+    </NextThemesProvider>
+  );
+}
+```
+
+### Wrap your root layout
+
+Add `suppressHydrationWarning` to `<html>`. next-themes changes its `class` before React hydrates, and the attribute only silences the warning for that one element.
+
+```tsx title="app/layout.tsx"
+import { ThemeProvider } from "@/components/theme-provider";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+### Add a toggle
+
+Use the [mode toggle](#mode-toggle) below. With next-themes, import `useTheme` from `next-themes`.
+
+</Steps>
+
+## Vite
+
+A Vite app has no server, so add a small script to `index.html` that sets the class before React loads, plus a provider that saves the user's choice.
+
+<Steps>
+
+### Add the script to index.html
+
+Put it in `<head>`, before any stylesheet or module script.
+
+```html title="index.html"
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem("theme") || "system";
+      var dark =
+        theme === "dark" ||
+        (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList.toggle("dark", dark);
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    } catch (e) {}
+  })();
+</script>
+```
+
+### Create a theme provider
+
+```tsx title="src/components/theme-provider.tsx"
+import { createContext, useContext, useEffect, useState } from "react";
+
+type Theme = "light" | "dark" | "system";
+
+const STORAGE_KEY = "theme";
+
+const ThemeContext = createContext<{
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+} | null>(null);
+
+function readTheme(): Theme {
+  if (typeof window === "undefined") return "system";
+  try {
+    return (localStorage.getItem(STORAGE_KEY) as Theme | null) ?? "system";
+  } catch {
+    return "system";
+  }
+}
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setThemeState] = useState<Theme>(readTheme);
+
+  useEffect(() => {
+    const media = matchMedia("(prefers-color-scheme: dark)");
+    const apply = () => {
+      const dark = theme === "dark" || (theme === "system" && media.matches);
+      document.documentElement.classList.toggle("dark", dark);
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    };
+
+    apply();
+    if (theme !== "system") return;
+    media.addEventListener("change", apply);
+    return () => media.removeEventListener("change", apply);
+  }, [theme]);
+
+  const setTheme = (next: Theme) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {}
+    setThemeState(next);
+  };
+
+  return (
+    <ThemeContext.Provider value={{ setTheme, theme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be used inside ThemeProvider");
+  return context;
+}
+```
+
+### Wrap your app
+
+```tsx title="src/main.tsx"
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import { ThemeProvider } from "./components/theme-provider";
+import "./index.css";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </StrictMode>,
+);
+```
+
+</Steps>
+
+## React Router and TanStack Start
+
+Both render on the server, which can't read `localStorage`. Use the same script and provider as the [Vite](#vite) setup, but render the script in the root route's `<head>` and add `suppressHydrationWarning` to `<html>`.
+
+```tsx title="app/root.tsx (React Router)"
+import { Links, Meta, Scripts, ScrollRestoration } from "react-router";
+import { ThemeProvider } from "~/components/theme-provider";
+
+const themeScript = `(function(){try{var t=localStorage.getItem("theme")||"system";var d=t==="dark"||(t==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d);document.documentElement.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: static script */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+```
+
+In TanStack Start, do the same in the `shellComponent` of `src/routes/__root.tsx`: put the script next to `<HeadContent />` and wrap `{children}` in `<ThemeProvider>`.
+
+## Astro
+
+Add the script to your layout's `<head>` with `is:inline` so Astro doesn't bundle or defer it:
+
+```astro title="src/layouts/main.astro"
+<html lang="en">
+  <head>
+    <script is:inline>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme") || "system";
+          var dark =
+            theme === "dark" ||
+            (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+```
+
+Astro islands don't share React context, so render the [mode toggle](#mode-toggle) with `client:load` and let it write to `localStorage` directly instead of using a provider:
+
+```tsx title="src/components/mode-toggle.tsx"
+import { MoonIcon, SunIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export function ModeToggle() {
+  const toggle = () => {
+    const dark = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  };
+
+  return (
+    <Button aria-label="Toggle theme" onClick={toggle} size="icon" variant="ghost">
+      <SunIcon className="dark:hidden" />
+      <MoonIcon className="not-dark:hidden" />
+    </Button>
+  );
+}
+```
+
+## Mode toggle
+
+This toggle works with next-themes and with the provider above. It reads the current theme from the `<html>` class, and both icons are rendered and hidden with CSS, so the server and client output match and there's no hydration warning.
+
+```tsx title="components/mode-toggle.tsx"
+"use client";
+
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes"; // or "@/components/theme-provider"
+import { Button } from "@/components/ui/button";
+
+export function ModeToggle() {
+  const { setTheme } = useTheme();
+
+  return (
+    <Button
+      aria-label="Toggle theme"
+      onClick={() =>
+        setTheme(
+          document.documentElement.classList.contains("dark") ? "light" : "dark",
+        )
+      }
+      size="icon"
+      variant="ghost"
+    >
+      <SunIcon className="dark:hidden" />
+      <MoonIcon className="not-dark:hidden" />
+    </Button>
+  );
+}
+```
+
+To offer **Light**, **Dark** and **System**, put the options in a [Menu](/ui/navigation/menu) with a `MenuRadioGroup` and call `setTheme` from `onValueChange`.
+
+## Avoiding a flash of the wrong theme
+
+The page flashes when the browser paints with the light tokens and the `dark` class is added afterwards by JavaScript. To avoid it:
+
+- **Set the class before the first paint.** The theme must be applied by a blocking script in `<head>`. next-themes injects one for you. For other frameworks, use the inline script above. Don't set the class in `useEffect` alone, because effects run after paint.
+- **Set `color-scheme`.** It makes native scrollbars, form controls and the page background match the theme. next-themes does this with `enableColorScheme`, and the script above sets it too.
+- **Disable transitions while switching.** Components have color transitions, so switching themes can animate every surface at once. next-themes' `disableTransitionOnChange` turns them off for one frame.
+- **Don't render the theme name on the server.** The server doesn't know the user's choice. Show icons with `dark:hidden` / `not-dark:hidden` as in the toggle, or render the theme name only after the component has mounted.
+
+## Force a theme on part of the page
+
+Add the `dark` class to any element to render its subtree with the dark tokens, even when the page is light:
+
+```tsx
+<section className="dark bg-background p-6 text-foreground">
+  <Button>Always dark</Button>
+</section>
+```
+
+The element needs `bg-background` and `text-foreground` because the page background comes from `<body>`, which is outside the section.
+
+To force light on part of a dark page, set the light values on a class of your own (for example `.light`) with the same variables as `:root`.

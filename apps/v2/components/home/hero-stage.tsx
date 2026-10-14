@@ -186,10 +186,10 @@ export function HeroStage({
       >
         <FrameHeader className="py-1.5">
           <div className="flex min-w-0 items-center gap-2">
-            <span className="flex shrink-0 gap-1">
-              <span className="size-2 rounded-full bg-border-strong" />
-              <span className="size-2 rounded-full bg-border-strong" />
-              <span className="size-2 rounded-full bg-border-strong" />
+            <span aria-hidden className="flex shrink-0 gap-1.5">
+              <span className="size-2.5 rounded-full bg-[#ff5f57] ring-1 ring-black/10 ring-inset" />
+              <span className="size-2.5 rounded-full bg-[#febc2e] ring-1 ring-black/10 ring-inset" />
+              <span className="size-2.5 rounded-full bg-[#28c840] ring-1 ring-black/10 ring-inset" />
             </span>
             <FrameTitle className="ms-1 truncate font-mono font-normal text-[12px] text-muted-foreground">
               @cnippet/
@@ -307,7 +307,7 @@ export function HeroStage({
                   className={cn(
                     "flex h-6 cursor-pointer items-center rounded-md px-1.5 font-mono text-[11px] tabular-nums transition-colors duration-150",
                     radius === entry.value
-                      ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border"
+                      ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border dark:bg-card dark:ring-border-strong"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                   key={entry.label}

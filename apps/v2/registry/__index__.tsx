@@ -20135,7 +20135,7 @@ export const Index: Record<string, any> = {
     name: "fonts",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@coss/font-sans","@coss/font-heading","@coss/font-mono"],
+    registryDependencies: ["@cnippet/font-sans","@cnippet/font-heading","@cnippet/font-mono"],
     files: [],
     component: null,
     categories: undefined,
