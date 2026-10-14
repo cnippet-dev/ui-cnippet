@@ -4,6 +4,9 @@ import type { NextConfig } from "next";
 const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
+  // Dev-only: streamed responses through Next's gzip trigger a
+  // MaxListenersExceededWarning. Production keeps compression.
+  compress: process.env.NODE_ENV === "production",
   images: {
     remotePatterns: [
       {

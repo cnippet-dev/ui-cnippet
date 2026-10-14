@@ -97,14 +97,14 @@ export function ExploreShowcase({
           wrapped category list is too tall to pin). */}
       <div className="relative z-20 -mx-2 mb-6 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:sticky md:top-[calc(var(--header-height)+0.75rem+1px)]">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
-          <div className="no-scrollbar flex gap-0.5 overflow-x-auto">
+          <div className="no-scrollbar -my-1 -ms-1 flex gap-0.5 overflow-x-auto py-1 ps-1">
             {SECTIONS.map((s) => (
               <button
                 aria-pressed={section === s.id}
                 className={cn(
                   "h-8 shrink-0 cursor-pointer rounded-lg px-3 font-medium text-[13px] transition-colors duration-150",
                   section === s.id
-                    ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border"
+                    ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border dark:bg-card dark:ring-border-strong"
                     : "text-muted-foreground hover:text-foreground",
                 )}
                 key={s.id}

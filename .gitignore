@@ -43,3 +43,5 @@ upgrade.md
 create-issues.sh
 playground.md
 vhSNm~JH.md
+# Signal migration kit (built by .claude/skills/cnippet-signal-migrate/scripts/export-kit.mjs)
+signal-kit/

@@ -20,6 +20,7 @@ import { SlidingNumber } from "@/registry/default/motion/sliding-number";
 import { TextShimmer } from "@/registry/default/motion/text-shimmer";
 import { Typewriter } from "@/registry/default/motion/typewriter";
 import { Button } from "@/registry/default/ui/button";
+import { Field, FieldLabel } from "@/registry/default/ui/field";
 import {
   Meter,
   MeterIndicator,
@@ -183,14 +184,14 @@ const PREVIEWS = [
     kind: "base ui",
     name: "otp-field",
     render: (
-      <OTPField aria-label="One-time code" length={OTP_SLOTS.length}>
-        {OTP_SLOTS.map((slot, i) => (
-          <OTPFieldInput
-            aria-label={`Digit ${i + 1} of ${OTP_SLOTS.length}`}
-            key={slot}
-          />
-        ))}
-      </OTPField>
+      <Field>
+        <FieldLabel className="sr-only">One-time code</FieldLabel>
+        <OTPField length={OTP_SLOTS.length}>
+          {OTP_SLOTS.map((slot) => (
+            <OTPFieldInput key={slot} />
+          ))}
+        </OTPField>
+      </Field>
     ),
   },
 ];

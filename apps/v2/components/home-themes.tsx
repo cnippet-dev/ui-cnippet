@@ -207,14 +207,14 @@ export function HomeThemes() {
             <span className="shrink-0 font-mono text-[11px] text-faint">
               {"// color"}
             </span>
-            <div className="no-scrollbar flex gap-1 overflow-x-auto">
+            <div className="no-scrollbar -my-1 -ms-1 flex gap-1 overflow-x-auto py-1 ps-1">
               {PRESETS.map((p) => (
                 <button
                   aria-pressed={colorName === p.name}
                   className={cn(
                     "flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[13px] transition-colors duration-150",
                     colorName === p.name
-                      ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border"
+                      ? "bg-background font-medium text-foreground shadow-xs/5 ring-1 ring-border dark:bg-card dark:ring-border-strong"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                   key={p.name}
@@ -241,7 +241,7 @@ export function HomeThemes() {
                   className={cn(
                     "flex h-8 cursor-pointer items-center rounded-lg px-2.5 font-mono text-[12px] transition-colors duration-150",
                     radius === r.value
-                      ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border"
+                      ? "bg-background text-foreground shadow-xs/5 ring-1 ring-border dark:bg-card dark:ring-border-strong"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                   key={r.label}
