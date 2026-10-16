@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-combobox-23",
+  "description": "Showcase: single, multiple chips, sizes and disabled",
+  "registryDependencies": [
+    "@cnippet/combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-combobox-23.tsx",
+      "content": "\"use client\";\n\nimport { UserIcon } from \"lucide-react\";\nimport {\n  Combobox,\n  ComboboxChip,\n  ComboboxChips,\n  ComboboxChipsInput,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxValue,\n} from \"@/registry/default/ui/combobox\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\n\ninterface Item {\n  label: string;\n  value: string;\n}\n\nconst people: Item[] = [\n  { label: \"Maya Patel\", value: \"maya\" },\n  { label: \"Jordan Lee\", value: \"jordan\" },\n  { label: \"Sarah Chen\", value: \"sarah\" },\n  { label: \"Marco Rossi\", value: \"marco\" },\n  { label: \"Emma Wilson\", value: \"emma\" },\n];\n\nconst labels: Item[] = [\n  { label: \"Bug\", value: \"bug\" },\n  { label: \"Feature\", value: \"feature\" },\n  { label: \"Design\", value: \"design\" },\n  { label: \"Docs\", value: \"docs\" },\n  { label: \"Performance\", value: \"performance\" },\n];\n\nfunction Options({ empty }: { empty: string }) {\n  return (\n    <ComboboxPopup>\n      <ComboboxEmpty>{empty}</ComboboxEmpty>\n      <ComboboxList>\n        {(item: Item) => (\n          <ComboboxItem key={item.value} value={item}>\n            {item.label}\n          </ComboboxItem>\n        )}\n      </ComboboxList>\n    </ComboboxPopup>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-xl gap-x-6 gap-y-5 sm:grid-cols-2\">\n      <Field>\n        <FieldLabel>Assignee</FieldLabel>\n        <Combobox defaultValue={people[0]} items={people}>\n          <ComboboxInput\n            aria-label=\"Assignee\"\n            placeholder=\"Search people…\"\n            showClear\n            startAddon={<UserIcon />}\n          />\n          <Options empty=\"No one found.\" />\n        </Combobox>\n      </Field>\n      <Field>\n        <FieldLabel>Labels</FieldLabel>\n        <Combobox defaultValue={[labels[0], labels[2]]} items={labels} multiple>\n          <ComboboxChips>\n            <ComboboxValue>\n              {(value: Item[]) => (\n                <>\n                  {value.map((item) => (\n                    <ComboboxChip aria-label={item.label} key={item.value}>\n                      {item.label}\n                    </ComboboxChip>\n                  ))}\n                  <ComboboxChipsInput\n                    aria-label=\"Labels\"\n                    placeholder={value.length > 0 ? undefined : \"Add labels…\"}\n                  />\n                </>\n              )}\n            </ComboboxValue>\n          </ComboboxChips>\n          <Options empty=\"No labels found.\" />\n        </Combobox>\n      </Field>\n      <Field>\n        <FieldLabel>Small</FieldLabel>\n        <Combobox items={people}>\n          <ComboboxInput\n            aria-label=\"Reviewer\"\n            placeholder=\"Reviewer\"\n            size=\"sm\"\n          />\n          <Options empty=\"No one found.\" />\n        </Combobox>\n      </Field>\n      <Field disabled>\n        <FieldLabel>Disabled</FieldLabel>\n        <Combobox defaultValue={people[1]} disabled items={people}>\n          <ComboboxInput aria-label=\"Owner\" />\n          <Options empty=\"No one found.\" />\n        </Combobox>\n      </Field>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "combobox"
+  ],
+  "type": "registry:block"
+}

@@ -11,6 +11,23 @@ function categories<T extends RegistryCategory[]>(...cats: T): T {
   return cats;
 }
 
+export type VariantRole = "demo" | "showcase";
+
+function range(from: number, to: number): number[] {
+  return Array.from({ length: to - from + 1 }, (_, i) => from + i);
+}
+
+// Single-prop API demos stay registered for docs and installs but are hidden
+// from Explore; the component's showcase variant stands in for them there.
+function variantRole(
+  n: number,
+  roles: { demos: number[]; showcase: number },
+): VariantRole | undefined {
+  if (n === roles.showcase) return "showcase";
+  if (roles.demos.includes(n)) return "demo";
+  return undefined;
+}
+
 // Utility function to create variants
 function createVariant(options: {
   category: RegistryCategory;
@@ -18,12 +35,16 @@ function createVariant(options: {
   description?: string;
   dependencies?: string[];
   meta?: { className: string };
+  role?: VariantRole;
 }): ParticleItem {
   return {
     categories: categories(options.category),
     description: options.description ?? `Basic ${options.category}`,
     files: [{ path: `variants/${options.name}.tsx`, type: "registry:block" }],
-    meta: options.meta ?? { className: "" },
+    meta: {
+      ...(options.meta ?? { className: "" }),
+      ...(options.role && { role: options.role }),
+    },
     name: options.name,
     registryDependencies: (options.dependencies ?? []).map(
       (d) => `@cnippet/${d}`,
@@ -34,7 +55,7 @@ function createVariant(options: {
 
 export const variants: ParticleItem[] = [
   // --- accordion ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "accordion",
       dependencies: ["accordion"],
@@ -54,12 +75,14 @@ export const variants: ParticleItem[] = [
         "Job board listings with requirements and apply action",
         "Onboarding step tracker with completion state",
         "Product specifications table by category",
+        "Showcase: single and multiple",
       ][i],
       meta: {
         className:
           "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
       },
       name: `v-accordion-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
@@ -116,7 +139,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- autocomplete ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 21 }, (_, i) =>
     createVariant({
       category: "autocomplete",
       dependencies: ["autocomplete"],
@@ -141,13 +164,15 @@ export const variants: ParticleItem[] = [
         "Multi-select tag input with dismissible chip pills",
         "Priority selector with icon and description",
         "Tech stack picker grouped by category",
+        "Showcase: clear, trigger, groups, sizes and disabled",
       ][i],
       name: `v-autocomplete-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 9), showcase: 21 }),
     }),
   ),
 
   // --- avatar ---
-  ...Array.from({ length: 21 }, (_, i) =>
+  ...Array.from({ length: 22 }, (_, i) =>
     createVariant({
       category: "avatar",
       dependencies: ["avatar"],
@@ -173,13 +198,15 @@ export const variants: ParticleItem[] = [
         "Interactive assignee picker with selection state",
         "Contributor leaderboard with rank and commit count",
         "Profile card with stats and action buttons",
+        "Showcase: sizes, radius, fallback and group",
       ][i],
       name: `v-avatar-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 6), showcase: 22 }),
     }),
   ),
 
   // --- badge ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...Array.from({ length: 18 }, (_, i) =>
     createVariant({
       category: "badge",
       dependencies: ["badge"],
@@ -201,13 +228,15 @@ export const variants: ParticleItem[] = [
         "Subscription plan tiers with pricing",
         "Notification category badges with unread counts",
         "Priority labels in a task list",
+        "Showcase: variants, sizes, icons and counts",
       ][i],
       name: `v-badge-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 12), showcase: 18 }),
     }),
   ),
 
   // --- breadcrumb ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "breadcrumb",
       dependencies: ["breadcrumb"],
@@ -227,13 +256,15 @@ export const variants: ParticleItem[] = [
         "Admin hierarchy breadcrumb with colored icon badges per level",
         "Page header breadcrumb with edit and share action buttons",
         "Compact breadcrumb with ellipsis and hidden-items count badge",
+        "Showcase: separators, home icon and ellipsis",
       ][i],
       name: `v-breadcrumb-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 5), 8], showcase: 16 }),
     }),
   ),
 
   // --- button ---
-  ...Array.from({ length: 30 }, (_, i) =>
+  ...Array.from({ length: 31 }, (_, i) =>
     createVariant({
       category: "button",
       dependencies: ["button"],
@@ -268,13 +299,15 @@ export const variants: ParticleItem[] = [
         "File upload button with attachment preview and clear action",
         "Split button with primary action and dropdown menu via Group",
         "Segmented view toggle with list, table, and kanban options",
+        "Showcase: variants, sizes, icons and states",
       ][i],
       name: `v-button-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 19), showcase: 31 }),
     }),
   ),
 
   // --- calendar ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 21 }, (_, i) =>
     createVariant({
       category: "calendar",
       dependencies: ["calendar"],
@@ -299,8 +332,10 @@ export const variants: ParticleItem[] = [
         "Time off request with leave type selector and range picker",
         "Mini year view with all 12 months in a compact grid",
         "Time slot booking with available/booked slot grid and confirmation",
+        "Showcase: single date and range with dropdowns",
       ][i],
       name: `v-calendar-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 6), showcase: 21 }),
     }),
   ),
 
@@ -336,7 +371,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- carousel ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "carousel",
       dependencies: ["carousel"],
@@ -356,8 +391,10 @@ export const variants: ParticleItem[] = [
         "Media gallery carousel with caption badge and progress dots",
         "Changelog carousel with drag-free multi-slide and version tags",
         "Feature highlight carousel with icon slides and Prev/Next controls",
+        "Showcase: horizontal and vertical",
       ][i],
       name: `v-carousel-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
@@ -388,7 +425,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- checkbox ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "checkbox",
       dependencies: ["checkbox"],
@@ -408,8 +445,10 @@ export const variants: ParticleItem[] = [
         "Notification preferences matrix with event rows and channel columns",
         "Plan add-on selector with dynamic price total as features are toggled",
         "Sprint task checklist with priority badges and completion celebration",
+        "Showcase: states and descriptions",
       ][i],
       name: `v-checkbox-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
@@ -466,7 +505,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- combobox ---
-  ...Array.from({ length: 22 }, (_, i) =>
+  ...Array.from({ length: 23 }, (_, i) =>
     createVariant({
       category: "combobox",
       dependencies: ["combobox"],
@@ -493,8 +532,10 @@ export const variants: ParticleItem[] = [
         "Font picker grouped by category with live preview sentence",
         "Timezone picker with UTC offset badge in trigger and region info below",
         "Currency picker with symbol icon in trigger and code trailing each item",
+        "Showcase: single, multiple chips, sizes and disabled",
       ][i],
       name: `v-combobox-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 13), 16], showcase: 23 }),
     }),
   ),
 
@@ -551,7 +592,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- date-picker ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "date picker",
       dependencies: ["date-picker"],
@@ -571,8 +612,10 @@ export const variants: ParticleItem[] = [
         "Hotel Stay Range with Duration Shortcuts",
         "Birthday Picker with Age Validation",
         "Multi-date Availability Selector",
+        "Showcase: single, range, birthday and disabled",
       ][i],
       name: `v-date-picker-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 2, 3, 6], showcase: 16 }),
     }),
   ),
 
@@ -680,7 +723,7 @@ export const variants: ParticleItem[] = [
         "Field with switch toggle",
         "Field with date picker",
         "Field with OTP verification input",
-        "Field with file upload",
+        "Resume dropzone with file validation",
         "Field with password strength indicator",
       ][i],
       name: `v-field-${i + 1}`,
@@ -754,7 +797,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- group ---
-  ...Array.from({ length: 18 }, (_, i) =>
+  ...Array.from({ length: 19 }, (_, i) =>
     createVariant({
       category: "group",
       dependencies: ["group"],
@@ -777,13 +820,15 @@ export const variants: ParticleItem[] = [
         "Media player controls",
         "Price range input with apply button",
         "Search with category filter select",
+        "Showcase: outline, small, primary and with input",
       ][i],
       name: `v-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 3, 4, 5], showcase: 19 }),
     }),
   ),
 
   // --- input ---
-  ...Array.from({ length: 25 }, (_, i) =>
+  ...Array.from({ length: 26 }, (_, i) =>
     createVariant({
       category: "input",
       dependencies: ["input"],
@@ -798,9 +843,9 @@ export const variants: ParticleItem[] = [
         "With URL Type",
         "With Number Type",
         "With Date Type",
-        "With File Type",
+        "File picker with clear button",
         "With Required Indicator",
-        "With Time Type",
+        "Time slot select",
         "With Multiple Fields",
         "Input label with tooltip",
         "With Badge",
@@ -811,15 +856,17 @@ export const variants: ParticleItem[] = [
         "Disabled input with masked value",
         "Readonly with copy-to-clipboard button",
         "Input with inline start icon",
-        "Color picker input",
+        "Color picker with swatches and hex input",
         "Input with inline clear button",
+        "Showcase: labels, required, error, disabled and sizes",
       ][i],
       name: `v-input-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 10), 12], showcase: 26 }),
     }),
   ),
 
   // --- input-group ---
-  ...Array.from({ length: 21 }, (_, i) =>
+  ...Array.from({ length: 22 }, (_, i) =>
     createVariant({
       category: "input group",
       dependencies: ["input-group"],
@@ -845,8 +892,10 @@ export const variants: ParticleItem[] = [
         "With inline clear button",
         "Chat input with async send",
         "Textarea with character countdown",
+        "Showcase: icons, text add-ons, shortcut and button",
       ][i],
       name: `v-input-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 10), showcase: 22 }),
     }),
   ),
 
@@ -925,7 +974,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- meter ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "meter",
       dependencies: ["meter"],
@@ -945,13 +994,15 @@ export const variants: ParticleItem[] = [
         "Storage breakdown with icons",
         "Upload progress card",
         "Profile strength checklist",
+        "Showcase: percentage, formatted value and custom range",
       ][i],
       name: `v-meter-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
   // --- number-field ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "number field",
       dependencies: ["number-field"],
@@ -971,13 +1022,15 @@ export const variants: ParticleItem[] = [
         "Typography settings",
         "Min/max budget range",
         "Controlled with reset",
+        "Showcase: label, scrub, sizes and disabled",
       ][i],
       name: `v-number-field-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 8), showcase: 16 }),
     }),
   ),
 
   // --- otp-field ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "input otp",
       dependencies: ["otp-field"],
@@ -997,13 +1050,15 @@ export const variants: ParticleItem[] = [
         "8-char invite code with separator",
         "Success state on completion",
         "Resend countdown timer",
+        "Showcase: separator, large and disabled",
       ][i],
       name: `v-otp-field-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
   // --- pagination ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...Array.from({ length: 21 }, (_, i) =>
     createVariant({
       category: "pagination",
       dependencies: ["pagination"],
@@ -1028,8 +1083,10 @@ export const variants: ParticleItem[] = [
         "Controlled with smart ellipsis",
         "Results summary with compact nav",
         "Loading/disabled state",
+        "Showcase: numbered, icon-only and page info",
       ][i],
       name: `v-pagination-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 21 }),
     }),
   ),
 
@@ -1091,7 +1148,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- progress ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "progress",
       dependencies: ["progress"],
@@ -1111,13 +1168,15 @@ export const variants: ParticleItem[] = [
         "Fundraiser goal tracker",
         "Reading progress bar",
         "Build pipeline stages",
+        "Showcase: plain, labelled and formatted value",
       ][i],
       name: `v-progress-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 2), showcase: 16 }),
     }),
   ),
 
   // --- radio-group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "radio group",
       dependencies: ["radio-group"],
@@ -1137,8 +1196,10 @@ export const variants: ParticleItem[] = [
         "Theme Selector",
         "Availability Status",
         "Billing Frequency",
+        "Showcase: simple, disabled and with descriptions",
       ][i],
       name: `v-radio-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
@@ -1195,7 +1256,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- separator ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "separator",
       dependencies: ["separator"],
@@ -1215,8 +1276,10 @@ export const variants: ParticleItem[] = [
         "Footer Links",
         "Settings list with descriptions",
         "Toolbar with Separator Groups",
+        "Showcase: horizontal and vertical",
       ][i],
       name: `v-separator-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 2), showcase: 16 }),
     }),
   ),
 
@@ -1273,7 +1336,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- slider ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "slider",
       dependencies: ["slider"],
@@ -1293,13 +1356,15 @@ export const variants: ParticleItem[] = [
         "Hue Color Picker",
         "Temperature Control",
         "Display Settings Sliders",
+        "Showcase: single, range and disabled",
       ][i],
       name: `v-slider-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
   // --- spinner ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "spinner",
       dependencies: ["spinner"],
@@ -1312,20 +1377,22 @@ export const variants: ParticleItem[] = [
         "Full page loading state",
         "Inline loading text with spinner",
         "overlay on card",
-        "Color variants",
+        "Semantic color variants",
         "Step-by-step workspace loading",
         "Page Transition Overlay",
         "File Upload Progress",
         "Table Row Loading State",
         "Auth Form With Spinner",
         "Spinner Sizes",
+        "Showcase: sizes, colors and in context",
       ][i],
       name: `v-spinner-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 9, 15], showcase: 16 }),
     }),
   ),
 
   // --- switch ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "switch",
       dependencies: ["switch"],
@@ -1345,8 +1412,10 @@ export const variants: ParticleItem[] = [
         "Dark Mode Toggle Card",
         "Required Agreement Switch",
         "Do Not Disturb Mode",
+        "Showcase: states, sizes and descriptions",
       ][i],
       name: `v-switch-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
@@ -1373,11 +1442,12 @@ export const variants: ParticleItem[] = [
         "Contributor leaderboard with rank, avatar, and change indicator",
       ][i],
       name: `v-table-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(2, 4), showcase: 1 }),
     }),
   ),
 
   // --- tabs ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...Array.from({ length: 18 }, (_, i) =>
     createVariant({
       category: "tabs",
       dependencies: ["tabs"],
@@ -1399,13 +1469,15 @@ export const variants: ParticleItem[] = [
         "Profile repository listing with badge counts per tab",
         "Pricing toggle between monthly and yearly billing with plan cards",
         "Dashboard metrics with icon tabs and stat card content panels",
+        "Showcase: default, underline and vertical",
       ][i],
       name: `v-tabs-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 4), 6, 8], showcase: 18 }),
     }),
   ),
 
   // --- textarea ---
-  ...Array.from({ length: 12 }, (_, i) =>
+  ...Array.from({ length: 13 }, (_, i) =>
     createVariant({
       category: "textarea",
       dependencies: ["textarea"],
@@ -1422,8 +1494,10 @@ export const variants: ParticleItem[] = [
         "Support ticket with category chips and message field",
         "Chat message composer with bubble thread and send on Enter",
         "Release notes editor with title input and publish action",
+        "Showcase: description, error, disabled and sizes",
       ][i],
       name: `v-textarea-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 7), showcase: 13 }),
     }),
   ),
 
@@ -1454,7 +1528,7 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- toggle ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "toggle",
       dependencies: ["toggle"],
@@ -1474,13 +1548,15 @@ export const variants: ParticleItem[] = [
         "Social post interactions with live like and repost counts",
         "Server settings toggles with icon swap and status color",
         "Task list with per-task priority flag toggles",
+        "Showcase: variants, sizes, icons and states",
       ][i],
       name: `v-toggle-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 8), showcase: 16 }),
     }),
   ),
 
   // --- toggle-group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "toggle group",
       dependencies: ["toggle-group"],
@@ -1500,8 +1576,10 @@ export const variants: ParticleItem[] = [
         "Date range quick-select with live stats grid",
         "Code viewer toolbar with multi-select options",
         "Zoom level control with live scale preview",
+        "Showcase: single, multiple, outline and vertical",
       ][i],
       name: `v-toggle-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 5), showcase: 16 }),
     }),
   ),
 

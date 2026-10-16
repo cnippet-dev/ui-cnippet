@@ -31,7 +31,7 @@ export function Pattern() {
   return (
     <Card className="w-full max-w-xs gap-2 pt-5">
       <CardHeader className="flex items-center justify-between">
-        <CardTitle>Need a help in Claim?</CardTitle>
+        <CardTitle>Need help with your claim?</CardTitle>
         <DropdownMenu>
           <DropdownMenuTrigger render={<Button size="icon" variant="ghost" />}>
             <MoreHorizontalIcon aria-hidden="true" />
@@ -59,17 +59,19 @@ export function Pattern() {
       </CardHeader>
       <CardContent className="mb-2">
         <p>
-          Go to this step by step guideline process on how to certify for your
-          weekly benefits:
+          Follow our step-by-step guide to certify for your weekly benefits.
         </p>
       </CardContent>
       <CardFooter>
         <Button size="sm">
           <Avatar className="size-5">
-            <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
-            <AvatarFallback>CH</AvatarFallback>
+            <AvatarImage
+              alt="Maya Patel"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&dpr=2&q=80"
+            />
+            <AvatarFallback>MP</AvatarFallback>
           </Avatar>
-          <span className="text-xs">@shadcn</span>
+          <span className="text-xs">Message your case worker</span>
         </Button>
       </CardFooter>
     </Card>

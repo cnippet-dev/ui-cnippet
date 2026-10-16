@@ -12,31 +12,31 @@ export default function Particle() {
             const shouldSucceed = Math.random() > 0.3;
             setTimeout(() => {
               if (shouldSucceed) {
-                resolve("Data loaded successfully");
+                resolve("248 contacts imported from Google.");
               } else {
-                reject(new Error("Failed to load data"));
+                reject(new Error("Couldn't reach Google"));
               }
             }, 2000);
           }),
           {
             error: () => ({
-              description: "Please try again.",
-              title: "Something went wrong",
+              description: "Couldn't reach Google. Please try again.",
+              title: "Sync failed",
             }),
             loading: {
-              description: "The promise is loading.",
-              title: "Loading…",
+              description: "Importing your Google contacts.",
+              title: "Syncing contacts…",
             },
             success: (data: string) => ({
-              description: `Success: ${data}`,
-              title: "This is a success toast!",
+              description: data,
+              title: "Contacts synced",
             }),
           },
         );
       }}
       variant="outline"
     >
-      Run Promise
+      Sync contacts
     </Button>
   );
 }

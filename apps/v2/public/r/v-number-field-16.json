@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-number-field-16",
+  "description": "Showcase: label, scrub, sizes and disabled",
+  "registryDependencies": [
+    "@cnippet/number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-number-field-16.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from \"@/registry/default/ui/number-field\";\n\nfunction Stepper() {\n  return (\n    <NumberFieldGroup>\n      <NumberFieldDecrement />\n      <NumberFieldInput />\n      <NumberFieldIncrement />\n    </NumberFieldGroup>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-md gap-x-6 gap-y-5 sm:grid-cols-2\">\n      <div className=\"flex flex-col items-start gap-2\">\n        <Label htmlFor=\"showcase-quantity\">Quantity</Label>\n        <NumberField\n          className=\"w-32\"\n          defaultValue={2}\n          id=\"showcase-quantity\"\n          max={10}\n          min={1}\n        >\n          <Stepper />\n        </NumberField>\n      </div>\n      <NumberField className=\"w-32\" defaultValue={16} max={72} min={8}>\n        <NumberFieldScrubArea label=\"Font size\" />\n        <Stepper />\n      </NumberField>\n      <div className=\"flex flex-col items-start gap-2\">\n        <span className=\"font-medium text-sm\">Sizes</span>\n        <NumberField className=\"w-28\" defaultValue={1} size=\"sm\">\n          <Stepper />\n        </NumberField>\n        <NumberField className=\"w-36\" defaultValue={1} size=\"lg\">\n          <Stepper />\n        </NumberField>\n      </div>\n      <div className=\"flex flex-col items-start gap-2\">\n        <Label htmlFor=\"showcase-seats\">Seats (disabled)</Label>\n        <NumberField\n          className=\"w-32\"\n          defaultValue={5}\n          disabled\n          id=\"showcase-seats\"\n        >\n          <Stepper />\n        </NumberField>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "number field"
+  ],
+  "type": "registry:block"
+}

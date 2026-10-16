@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-date-picker-16",
+  "description": "Showcase: single, range, birthday and disabled",
+  "registryDependencies": [
+    "@cnippet/date-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-date-picker-16.tsx",
+      "content": "\"use client\";\n\nimport { format } from \"date-fns\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nconst triggerClass =\n  \"w-full justify-start font-normal data-[empty=true]:text-muted-foreground\";\n\nfunction formatRange(range: DateRange | undefined) {\n  if (!range?.from) return \"Pick a date range\";\n  if (!range.to) return format(range.from, \"LLL d, y\");\n  return `${format(range.from, \"LLL d\")} – ${format(range.to, \"LLL d, y\")}`;\n}\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>();\n  const [range, setRange] = useState<DateRange | undefined>();\n  const [birthday, setBirthday] = useState<Date | undefined>();\n\n  return (\n    <div className=\"grid w-full max-w-xl gap-x-6 gap-y-5 sm:grid-cols-2\">\n      <Field>\n        <FieldLabel>Due date</FieldLabel>\n        <Popover>\n          <PopoverTrigger\n            render={\n              <Button\n                className={triggerClass}\n                data-empty={!date}\n                variant=\"outline\"\n              />\n            }\n          >\n            <CalendarIcon aria-hidden=\"true\" />\n            {date ? format(date, \"PPP\") : \"Pick a date\"}\n          </PopoverTrigger>\n          <PopoverPopup align=\"start\">\n            <Calendar mode=\"single\" onSelect={setDate} selected={date} />\n          </PopoverPopup>\n        </Popover>\n      </Field>\n      <Field>\n        <FieldLabel>Trip dates</FieldLabel>\n        <Popover>\n          <PopoverTrigger\n            render={\n              <Button\n                className={triggerClass}\n                data-empty={!range?.from}\n                variant=\"outline\"\n              />\n            }\n          >\n            <CalendarIcon aria-hidden=\"true\" />\n            {formatRange(range)}\n          </PopoverTrigger>\n          <PopoverPopup align=\"start\">\n            <Calendar\n              defaultMonth={range?.from}\n              mode=\"range\"\n              numberOfMonths={2}\n              onSelect={setRange}\n              selected={range}\n            />\n          </PopoverPopup>\n        </Popover>\n      </Field>\n      <Field>\n        <FieldLabel>Date of birth</FieldLabel>\n        <Popover>\n          <PopoverTrigger\n            render={\n              <Button\n                className={triggerClass}\n                data-empty={!birthday}\n                variant=\"outline\"\n              />\n            }\n          >\n            <CalendarIcon aria-hidden=\"true\" />\n            {birthday ? format(birthday, \"PPP\") : \"Select your birth date\"}\n          </PopoverTrigger>\n          <PopoverPopup align=\"start\">\n            <Calendar\n              captionLayout=\"dropdown\"\n              defaultMonth={birthday ?? new Date(1995, 0)}\n              endMonth={new Date()}\n              mode=\"single\"\n              onSelect={setBirthday}\n              selected={birthday}\n              startMonth={new Date(1920, 0)}\n            />\n          </PopoverPopup>\n        </Popover>\n      </Field>\n      <Field disabled>\n        <FieldLabel>Disabled</FieldLabel>\n        <Button className={triggerClass} disabled variant=\"outline\">\n          <CalendarIcon aria-hidden=\"true\" />\n          Mar 4, 2027\n        </Button>\n      </Field>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "date picker"
+  ],
+  "type": "registry:block"
+}

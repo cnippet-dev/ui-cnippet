@@ -27,11 +27,12 @@ const comments = [
     time: "1h ago",
   },
   {
-    avatar: "https://github.com/shadcn.png",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&dpr=2&q=80",
     body: "Good catches, both addressed in the latest commit. Marking as ready for review.",
-    initials: "SH",
+    initials: "JL",
     likes: 7,
-    name: "shadcn",
+    name: "Jordan Lee",
     time: "45m ago",
   },
 ];

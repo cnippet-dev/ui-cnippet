@@ -53,7 +53,10 @@ export default function Particle() {
     <div className="w-full max-w-sm space-y-4 rounded-xl border bg-background p-4 shadow-sm">
       <div className="flex items-center gap-3 border-b pb-4">
         <Avatar className="size-11">
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage
+            alt="Dr. Sarah Chen"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&dpr=2&q=80"
+          />
           <AvatarFallback>SC</AvatarFallback>
         </Avatar>
         <div className="min-w-0 flex-1">

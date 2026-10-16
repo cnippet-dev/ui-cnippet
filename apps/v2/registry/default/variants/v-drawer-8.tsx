@@ -18,7 +18,8 @@ import {
 
 const notifications = [
   {
-    avatar: "https://github.com/shadcn.png",
+    avatar:
+      "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80",
     id: 1,
     initials: "MW",
     message: "Commented on your pull request: 'looks good to me!'",

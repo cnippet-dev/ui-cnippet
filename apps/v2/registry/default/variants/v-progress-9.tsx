@@ -14,37 +14,37 @@ import {
 const categories = [
   {
     budget: 600,
-    color: "**:data-[slot=progress-indicator]:bg-blue-500",
+    color: "**:data-[slot=progress-indicator]:bg-chart-1",
     label: "Housing",
     spent: 600,
   },
   {
     budget: 400,
-    color: "**:data-[slot=progress-indicator]:bg-emerald-500",
+    color: "**:data-[slot=progress-indicator]:bg-chart-2",
     label: "Groceries",
     spent: 284,
   },
   {
     budget: 150,
-    color: "**:data-[slot=progress-indicator]:bg-violet-500",
+    color: "**:data-[slot=progress-indicator]:bg-chart-3",
     label: "Transport",
     spent: 137,
   },
   {
     budget: 200,
-    color: "**:data-[slot=progress-indicator]:bg-amber-500",
+    color: "**:data-[slot=progress-indicator]:bg-chart-4",
     label: "Dining out",
     spent: 198,
   },
   {
     budget: 100,
-    color: "**:data-[slot=progress-indicator]:bg-rose-500",
+    color: "**:data-[slot=progress-indicator]:bg-chart-5",
     label: "Entertainment",
     spent: 121,
   },
   {
     budget: 80,
-    color: "**:data-[slot=progress-indicator]:bg-cyan-500",
+    color: "**:data-[slot=progress-indicator]:bg-primary",
     label: "Health",
     spent: 42,
   },

@@ -41,16 +41,16 @@ export function Pattern() {
                 <Avatar className="size-6">
                   <AvatarImage
                     className="object-cover"
-                    src="https://github.com/shadcn.png"
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&dpr=2&q=80"
                   />
                   <AvatarFallback>MP</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col">
                   <span className="font-medium text-foreground leading-tight">
-                    shadcn
+                    Maya Patel
                   </span>
                   <span className="text-muted-foreground leading-tight">
-                    ui@shadcn.com
+                    maya@acme.com
                   </span>
                 </div>
               </BreadcrumbLink>

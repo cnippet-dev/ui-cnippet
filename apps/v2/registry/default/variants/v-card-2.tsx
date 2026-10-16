@@ -10,15 +10,15 @@ export function Pattern() {
   return (
     <Card className="w-full max-w-xs">
       <CardHeader className="border-b">
-        <CardTitle>Header with Border</CardTitle>
+        <CardTitle>Weekly digest</CardTitle>
         <CardDescription>
-          This is a card with a header that has a bottom border.
+          Activity in Acme Workspace, Oct 6 – 12.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <p>
-          The header has a border-b class applied, creating a visual separation
-          between the header and content sections.
+          14 pull requests merged, 3 incidents resolved and 2 new members joined
+          the team this week.
         </p>
       </CardContent>
     </Card>

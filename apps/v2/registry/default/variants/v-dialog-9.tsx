@@ -25,7 +25,10 @@ export default function Component() {
   return (
     <div className="flex items-center gap-3">
       <Avatar className="size-10">
-        <AvatarImage alt="Margaret Welsh" src="https://github.com/shadcn.png" />
+        <AvatarImage
+          alt="Margaret Welsh"
+          src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80"
+        />
         <AvatarFallback>MW</AvatarFallback>
       </Avatar>
       <div className="min-w-0 flex-1">
@@ -49,7 +52,7 @@ export default function Component() {
               <Avatar className="size-10">
                 <AvatarImage
                   alt="Margaret Welsh"
-                  src="https://github.com/shadcn.png"
+                  src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80"
                 />
                 <AvatarFallback>MW</AvatarFallback>
               </Avatar>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-checkbox-16",
+  "description": "Showcase: states and descriptions",
+  "registryDependencies": [
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-checkbox-16.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-md gap-6 sm:grid-cols-2\">\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">States</span>\n        <Label>\n          <Checkbox />\n          Unchecked\n        </Label>\n        <Label>\n          <Checkbox defaultChecked />\n          Checked\n        </Label>\n        <Label>\n          <Checkbox indeterminate />\n          Indeterminate\n        </Label>\n        <Label>\n          <Checkbox defaultChecked disabled />\n          Disabled\n        </Label>\n      </div>\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">With description</span>\n        <div className=\"flex items-start gap-2\">\n          <Checkbox defaultChecked id=\"showcase-terms\" />\n          <div className=\"flex flex-col gap-1\">\n            <Label htmlFor=\"showcase-terms\">Accept terms</Label>\n            <p className=\"text-muted-foreground text-xs\">\n              You agree to our Terms of Service and Privacy Policy.\n            </p>\n          </div>\n        </div>\n        <div className=\"flex items-start gap-2\">\n          <Checkbox id=\"showcase-updates\" />\n          <div className=\"flex flex-col gap-1\">\n            <Label htmlFor=\"showcase-updates\">Product updates</Label>\n            <p className=\"text-muted-foreground text-xs\">\n              One email a month about new features.\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:block"
+}

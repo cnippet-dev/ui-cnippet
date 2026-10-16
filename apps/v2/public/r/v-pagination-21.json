@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-pagination-21",
+  "description": "Showcase: numbered, icon-only and page info",
+  "registryDependencies": [
+    "@cnippet/pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-pagination-21.tsx",
+      "content": "import { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/default/ui/pagination\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col items-center gap-6\">\n      <Pagination>\n        <PaginationContent>\n          <PaginationItem>\n            <PaginationPrevious href=\"#\" />\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\">1</PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\" isActive>\n              2\n            </PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\">3</PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationEllipsis />\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\">12</PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationNext href=\"#\" />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n      <Pagination>\n        <PaginationContent>\n          <PaginationItem>\n            <PaginationLink\n              aria-label=\"Go to previous page\"\n              href=\"#\"\n              size=\"icon\"\n            >\n              <ChevronLeftIcon className=\"size-4\" />\n            </PaginationLink>\n          </PaginationItem>\n          {[1, 2, 3, 4, 5].map((page) => (\n            <PaginationItem key={page}>\n              <PaginationLink href=\"#\" isActive={page === 3}>\n                {page}\n              </PaginationLink>\n            </PaginationItem>\n          ))}\n          <PaginationItem>\n            <PaginationLink aria-label=\"Go to next page\" href=\"#\" size=\"icon\">\n              <ChevronRightIcon className=\"size-4\" />\n            </PaginationLink>\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n      <Pagination>\n        <PaginationContent className=\"w-full justify-between gap-6\">\n          <PaginationItem>\n            <PaginationPrevious href=\"#\" />\n          </PaginationItem>\n          <PaginationItem className=\"text-muted-foreground text-sm\">\n            Page 4 of 12\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationNext href=\"#\" />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:block"
+}

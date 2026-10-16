@@ -12,15 +12,18 @@ export function Pattern() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => setLoading((prev) => !prev), 2000); // Toggle loading state every 3 seconds
+    const interval = setInterval(() => setLoading((prev) => !prev), 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative">
       <Avatar>
-        <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
+        <AvatarImage
+          alt="Alex Johnson"
+          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&dpr=2&q=80"
+        />
+        <AvatarFallback>AJ</AvatarFallback>
       </Avatar>
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center rounded-full bg-background/60">

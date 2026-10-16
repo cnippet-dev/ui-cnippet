@@ -11,8 +11,11 @@ export function Pattern() {
       <FramePanel className="flex items-center gap-2 p-2!">
         <div className="flex space-x-[-0.6rem]">
           <Avatar className="size-7 ring-2 ring-background">
-            <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
-            <AvatarFallback>CH</AvatarFallback>
+            <AvatarImage
+              alt="Maya Patel"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&dpr=2&q=80"
+            />
+            <AvatarFallback>MP</AvatarFallback>
           </Avatar>
           <Avatar className="size-7 ring-2 ring-background">
             <AvatarImage

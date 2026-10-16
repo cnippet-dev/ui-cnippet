@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-26",
+  "description": "Showcase: labels, required, error, disabled and sizes",
+  "registryDependencies": [
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-26.tsx",
+      "content": "import {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-xl gap-x-6 gap-y-5 sm:grid-cols-2\">\n      <Field>\n        <FieldLabel htmlFor=\"showcase-name\">Full name</FieldLabel>\n        <Input id=\"showcase-name\" placeholder=\"Maya Patel\" />\n      </Field>\n      <Field>\n        <FieldLabel htmlFor=\"showcase-username\">Username</FieldLabel>\n        <Input id=\"showcase-username\" placeholder=\"mayapatel\" />\n        <FieldDescription>Shown on your public profile.</FieldDescription>\n      </Field>\n      <Field>\n        <FieldLabel htmlFor=\"showcase-company\">\n          Company <span className=\"text-destructive-foreground\">*</span>\n        </FieldLabel>\n        <Input id=\"showcase-company\" placeholder=\"Acme Inc.\" required />\n      </Field>\n      <Field invalid>\n        <FieldLabel htmlFor=\"showcase-email\">Email</FieldLabel>\n        <Input defaultValue=\"maya@acme\" id=\"showcase-email\" type=\"email\" />\n        <FieldError match>Enter a valid email address.</FieldError>\n      </Field>\n      <Field disabled>\n        <FieldLabel htmlFor=\"showcase-plan\">Plan</FieldLabel>\n        <Input defaultValue=\"Pro (annual)\" disabled id=\"showcase-plan\" />\n      </Field>\n      <Field>\n        <FieldLabel htmlFor=\"showcase-sizes\">Sizes</FieldLabel>\n        <div className=\"flex w-full flex-col gap-2\">\n          <Input\n            aria-label=\"Small\"\n            id=\"showcase-sizes\"\n            placeholder=\"Small\"\n            size=\"sm\"\n          />\n          <Input aria-label=\"Default\" placeholder=\"Default\" />\n          <Input aria-label=\"Large\" placeholder=\"Large\" size=\"lg\" />\n        </div>\n      </Field>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "input"
+  ],
+  "type": "registry:block"
+}

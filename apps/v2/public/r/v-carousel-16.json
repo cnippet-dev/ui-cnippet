@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-carousel-16",
+  "description": "Showcase: horizontal and vertical",
+  "registryDependencies": [
+    "@cnippet/carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-carousel-16.tsx",
+      "content": "import { Card, CardContent } from \"@/registry/default/ui/card\";\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@/registry/default/ui/carousel\";\n\nconst articles = [\n  { minutes: 6, tag: \"Design\", title: \"Designing calm interfaces\" },\n  {\n    minutes: 4,\n    tag: \"Engineering\",\n    title: \"Shipping a design system in a monorepo\",\n  },\n  {\n    minutes: 8,\n    tag: \"Accessibility\",\n    title: \"Keyboard support that just works\",\n  },\n  { minutes: 5, tag: \"Product\", title: \"Writing release notes people read\" },\n  { minutes: 7, tag: \"Engineering\", title: \"Theming with CSS variables\" },\n];\n\nfunction ArticleCard({ article }: { article: (typeof articles)[number] }) {\n  return (\n    <Card className=\"h-full\">\n      <CardContent className=\"flex h-full flex-col gap-3 p-4\">\n        <span className=\"text-muted-foreground text-xs\">{article.tag}</span>\n        <p className=\"font-medium text-sm leading-snug\">{article.title}</p>\n        <span className=\"mt-auto text-muted-foreground text-xs\">\n          {article.minutes} min read\n        </span>\n      </CardContent>\n    </Card>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full flex-col items-center gap-8 px-12\">\n      <div className=\"flex w-full max-w-sm flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">\n          Horizontal, two per view\n        </span>\n        <Carousel className=\"w-full\" opts={{ align: \"start\" }}>\n          <CarouselContent>\n            {articles.map((article) => (\n              <CarouselItem className=\"basis-1/2\" key={article.title}>\n                <ArticleCard article={article} />\n              </CarouselItem>\n            ))}\n          </CarouselContent>\n          <CarouselPrevious />\n          <CarouselNext />\n        </Carousel>\n      </div>\n      <div className=\"flex w-full max-w-xs flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">Vertical</span>\n        <Carousel\n          className=\"my-10 w-full\"\n          opts={{ align: \"start\" }}\n          orientation=\"vertical\"\n        >\n          <CarouselContent className=\"-mt-2 h-56\">\n            {articles.map((article) => (\n              <CarouselItem className=\"basis-1/2 pt-2\" key={article.title}>\n                <ArticleCard article={article} />\n              </CarouselItem>\n            ))}\n          </CarouselContent>\n          <CarouselPrevious />\n          <CarouselNext />\n        </Carousel>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "carousel"
+  ],
+  "type": "registry:block"
+}

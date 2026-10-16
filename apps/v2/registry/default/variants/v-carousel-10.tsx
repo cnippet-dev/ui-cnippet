@@ -11,12 +11,12 @@ import {
 } from "@/registry/default/ui/carousel";
 
 const GALLERY = [
-  { bg: "from-violet-400 to-purple-600", id: 1, label: "Mountain Sunset" },
-  { bg: "from-sky-400 to-blue-600", id: 2, label: "Ocean Waves" },
-  { bg: "from-emerald-400 to-teal-600", id: 3, label: "Forest Path" },
-  { bg: "from-rose-400 to-pink-600", id: 4, label: "City Lights" },
-  { bg: "from-amber-400 to-orange-500", id: 5, label: "Desert Dunes" },
-  { bg: "from-indigo-400 to-cyan-500", id: 6, label: "Northern Lights" },
+  { bg: "from-chart-1/32 to-chart-1/4", id: 1, label: "Mountain Sunset" },
+  { bg: "from-chart-2/32 to-chart-2/4", id: 2, label: "Ocean Waves" },
+  { bg: "from-chart-3/32 to-chart-3/4", id: 3, label: "Forest Path" },
+  { bg: "from-chart-4/32 to-chart-4/4", id: 4, label: "City Lights" },
+  { bg: "from-chart-5/32 to-chart-5/4", id: 5, label: "Desert Dunes" },
+  { bg: "from-chart-1/32 to-chart-1/4", id: 6, label: "Northern Lights" },
 ];
 
 export default function Particle() {
@@ -48,11 +48,11 @@ export default function Particle() {
             <CarouselItem key={item.id}>
               <div
                 className={cn(
-                  "relative flex h-52 flex-col items-center justify-end rounded-xl bg-linear-to-br pb-4 text-white",
+                  "relative flex h-52 flex-col items-center justify-end rounded-xl border bg-linear-to-br pb-4 text-foreground",
                   item.bg,
                 )}
               >
-                <p className="font-medium text-sm drop-shadow">{item.label}</p>
+                <p className="font-medium text-sm">{item.label}</p>
               </div>
             </CarouselItem>
           ))}

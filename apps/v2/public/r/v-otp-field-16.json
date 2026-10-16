@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-otp-field-16",
+  "description": "Showcase: separator, large and disabled",
+  "registryDependencies": [
+    "@cnippet/otp-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-otp-field-16.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  OTPField,\n  OTPFieldInput,\n  OTPFieldSeparator,\n} from \"@/registry/default/ui/otp-field\";\n\nfunction slots(from: number, count: number, total: number) {\n  return Array.from({ length: count }, (_, i) => (\n    <OTPFieldInput\n      aria-label={`Character ${from + i + 1} of ${total}`}\n      key={from + i}\n    />\n  ));\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col items-start gap-5\">\n      <div className=\"flex flex-col gap-2\">\n        <Label>Verification code</Label>\n        <OTPField aria-label=\"Verification code\" length={6}>\n          {slots(0, 3, 6)}\n          <OTPFieldSeparator />\n          {slots(3, 3, 6)}\n        </OTPField>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <Label>PIN (large)</Label>\n        <OTPField aria-label=\"PIN\" length={4} size=\"lg\">\n          {slots(0, 4, 4)}\n        </OTPField>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <Label>Disabled</Label>\n        <OTPField aria-label=\"Disabled code\" disabled length={6}>\n          {slots(0, 6, 6)}\n        </OTPField>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "input otp"
+  ],
+  "type": "registry:block"
+}

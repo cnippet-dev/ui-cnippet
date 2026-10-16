@@ -13,7 +13,8 @@
     }
   ],
   "meta": {
-    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+    "role": "demo"
   },
   "categories": [
     "accordion"

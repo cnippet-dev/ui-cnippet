@@ -14,26 +14,26 @@ import {
 
 const MEDIA = [
   {
-    bg: "from-violet-400 to-indigo-600",
+    bg: "from-chart-1/32 to-chart-1/4",
     caption: "Brand identity refresh",
     type: "Image",
   },
   {
-    bg: "from-sky-400 to-cyan-600",
+    bg: "from-chart-2/32 to-chart-2/4",
     caption: "Product launch 2026",
     type: "Video",
   },
   {
-    bg: "from-rose-400 to-pink-600",
+    bg: "from-chart-3/32 to-chart-3/4",
     caption: "Social media kit",
     type: "Image",
   },
   {
-    bg: "from-amber-400 to-orange-500",
+    bg: "from-chart-4/32 to-chart-4/4",
     caption: "Campaign assets",
     type: "Image",
   },
-  { bg: "from-emerald-400 to-teal-600", caption: "Demo reel", type: "Video" },
+  { bg: "from-chart-5/32 to-chart-5/4", caption: "Demo reel", type: "Video" },
 ];
 
 export default function Particle() {
@@ -61,10 +61,10 @@ export default function Particle() {
                 )}
               >
                 <div className="flex flex-col gap-0.5">
-                  <span className="w-fit rounded-md bg-black/30 px-2 py-0.5 font-medium text-[10px] text-white">
+                  <span className="w-fit rounded-md bg-background/80 px-2 py-0.5 font-medium text-[10px] text-foreground">
                     {item.type}
                   </span>
-                  <span className="font-semibold text-sm text-white drop-shadow">
+                  <span className="font-semibold text-foreground text-sm">
                     {item.caption}
                   </span>
                 </div>

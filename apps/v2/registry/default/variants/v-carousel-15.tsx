@@ -8,28 +8,28 @@ import { cn } from "@/lib/utils";
 
 const FEATURES = [
   {
-    bg: "bg-violet-50 dark:bg-violet-950/40",
+    bg: "bg-chart-1/8",
     description:
       "Browse, copy, and install 50+ production-ready components with a single command.",
     icon: "⚡",
     title: "Instant CLI install",
   },
   {
-    bg: "bg-sky-50 dark:bg-sky-950/40",
+    bg: "bg-chart-2/8",
     description:
       "Every component meets WCAG 2.1 AA, with full keyboard navigation built in.",
     icon: "♿",
     title: "Accessibility first",
   },
   {
-    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+    bg: "bg-chart-3/8",
     description:
       "Powered by Tailwind CSS — override any style without fighting specificity wars.",
     icon: "🎨",
     title: "Fully themeable",
   },
   {
-    bg: "bg-amber-50 dark:bg-amber-950/40",
+    bg: "bg-chart-4/8",
     description:
       "Built on Base UI primitives so unstyled logic stays separate from visual styles.",
     icon: "🧩",

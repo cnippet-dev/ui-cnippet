@@ -14,7 +14,7 @@ const CHANGELOG = [
       "Dark mode improvements",
     ],
     tag: "v2.4.0",
-    tagColor: "bg-emerald-500",
+    tagColor: "bg-primary text-primary-foreground",
   },
   {
     date: "Apr 2026",
@@ -24,7 +24,7 @@ const CHANGELOG = [
       "Bug fixes",
     ],
     tag: "v2.3.0",
-    tagColor: "bg-blue-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
   {
     date: "Feb 2026",
@@ -34,13 +34,13 @@ const CHANGELOG = [
       "Performance improvements",
     ],
     tag: "v2.2.0",
-    tagColor: "bg-violet-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
   {
     date: "Dec 2025",
     items: ["Initial stable release", "30+ components", "CLI installer"],
     tag: "v2.0.0",
-    tagColor: "bg-amber-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Particle() {
               <div className="mb-3 flex items-center justify-between">
                 <span
                   className={cn(
-                    "rounded-full px-2 py-0.5 font-bold text-[10px] text-white",
+                    "rounded-full px-2 py-0.5 font-bold text-[10px]",
                     release.tagColor,
                   )}
                 >

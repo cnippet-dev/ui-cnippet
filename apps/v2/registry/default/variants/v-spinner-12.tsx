@@ -24,7 +24,7 @@ export default function Particle() {
           ) : (
             <UploadCloudIcon
               aria-hidden="true"
-              className={`size-5 ${status === "done" ? "text-green-500" : "text-muted-foreground"}`}
+              className={`size-5 ${status === "done" ? "text-success" : "text-muted-foreground"}`}
             />
           )}
         </div>

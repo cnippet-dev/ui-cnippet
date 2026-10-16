@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-badge-18",
+  "description": "Showcase: variants, sizes, icons and counts",
+  "registryDependencies": [
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-badge-18.tsx",
+      "content": "import { CheckIcon, ClockIcon } from \"lucide-react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nconst variants = [\n  \"default\",\n  \"outline\",\n  \"secondary\",\n  \"destructive\",\n  \"info\",\n  \"success\",\n  \"warning\",\n  \"error\",\n] as const;\n\nfunction Row({\n  label,\n  children,\n}: {\n  label: string;\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"grid gap-2 sm:grid-cols-[5rem_1fr] sm:items-center\">\n      <span className=\"text-muted-foreground text-xs\">{label}</span>\n      <div className=\"flex flex-wrap items-center gap-2\">{children}</div>\n    </div>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-lg flex-col gap-4\">\n      <Row label=\"Variants\">\n        {variants.map((variant) => (\n          <Badge className=\"capitalize\" key={variant} variant={variant}>\n            {variant}\n          </Badge>\n        ))}\n      </Row>\n      <Row label=\"Sizes\">\n        <Badge size=\"sm\">Small</Badge>\n        <Badge>Default</Badge>\n        <Badge size=\"lg\">Large</Badge>\n      </Row>\n      <Row label=\"With icon\">\n        <Badge variant=\"success\">\n          <CheckIcon aria-hidden=\"true\" />\n          Verified\n        </Badge>\n        <Badge variant=\"warning\">\n          <ClockIcon aria-hidden=\"true\" />\n          Pending\n        </Badge>\n      </Row>\n      <Row label=\"Counts\">\n        <Badge className=\"rounded-full\">7</Badge>\n        <Badge className=\"rounded-full\" variant=\"secondary\">\n          24\n        </Badge>\n        <Badge className=\"rounded-full\" variant=\"error\">\n          99+\n        </Badge>\n      </Row>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:block"
+}

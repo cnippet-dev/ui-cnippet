@@ -28,7 +28,8 @@ import {
 
 const members = [
   {
-    avatar: "https://github.com/shadcn.png",
+    avatar:
+      "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80",
     email: "margaret@example.com",
     id: 1,
     initials: "MW",
