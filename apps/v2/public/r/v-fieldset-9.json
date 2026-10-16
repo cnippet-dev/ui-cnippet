@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-fieldset-9",
-  "description": "Basic fieldset",
+  "description": "Support request fieldset with textarea",
   "registryDependencies": [
     "@cnippet/fieldset"
   ],

@@ -44,7 +44,7 @@ export function Pattern() {
         </Field>
 
         <Field name="password">
-          <div className="flex items-center justify-between">
+          <div className="flex w-full items-center justify-between">
             <FieldLabel>Password</FieldLabel>
             <button
               className="text-muted-foreground text-xs underline-offset-2 transition-colors hover:text-foreground hover:underline"

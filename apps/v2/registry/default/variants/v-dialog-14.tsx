@@ -22,15 +22,18 @@ import {
 } from "@/registry/default/ui/dialog";
 
 function generateKey() {
-  return `sk_live_${Array.from({ length: 32 }, () =>
+  return `cnp_live_${Array.from({ length: 32 }, () =>
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".charAt(
       Math.floor(Math.random() * 62),
     ),
   ).join("")}`;
 }
 
+// Fixed first key so server and client render the same markup.
+const INITIAL_KEY = "cnp_live_4fT9qLx2Wm8RbZ3nVc7KpY1sHd6JgE0a";
+
 export default function Particle() {
-  const [apiKey, setApiKey] = useState(generateKey);
+  const [apiKey, setApiKey] = useState(INITIAL_KEY);
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
 

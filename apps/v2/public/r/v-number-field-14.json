@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-number-field-14",
-  "description": "Controlled with reset",
+  "description": "Min/max budget range",
   "registryDependencies": [
     "@cnippet/number-field"
   ],

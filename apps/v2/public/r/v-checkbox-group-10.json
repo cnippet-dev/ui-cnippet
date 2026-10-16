@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-checkbox-group-10",
-  "description": "Basic checkbox group",
+  "description": "Notification channels with icons",
   "registryDependencies": [
     "@cnippet/checkbox-group"
   ],

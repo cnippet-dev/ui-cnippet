@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-5",
-  "description": "With Disabled Button",
+  "description": "With Default Buttons",
   "registryDependencies": [
     "@cnippet/group"
   ],

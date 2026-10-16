@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-empty-14",
-  "description": "Access restricted — permission request empty state",
+  "description": "Inbox zero — illustration with compose action",
   "registryDependencies": [],
   "files": [
     {

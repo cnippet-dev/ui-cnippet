@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-empty-12",
-  "description": "No matching results — clear filters empty state",
+  "description": "No team members — invite form empty state",
   "registryDependencies": [],
   "files": [
     {

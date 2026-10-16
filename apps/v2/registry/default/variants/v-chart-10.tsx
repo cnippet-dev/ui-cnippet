@@ -62,12 +62,12 @@ export function Pattern() {
         />
         <ReferenceLine
           label={{
-            fill: "hsl(var(--muted-foreground))",
+            fill: "var(--muted-foreground)",
             fontSize: 11,
             position: "right",
             value: "Target",
           }}
-          stroke="hsl(var(--destructive))"
+          stroke="var(--destructive)"
           strokeDasharray="4 4"
           y={TARGET}
         />

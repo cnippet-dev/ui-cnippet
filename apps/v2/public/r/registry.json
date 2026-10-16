@@ -3942,7 +3942,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Fallback Only",
+      "description": "Larger cell size",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-2.tsx",
@@ -4182,7 +4182,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Holiday highlights with name on select",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-14.tsx",
@@ -4202,7 +4202,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Hotel stay check-in and check-out",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-15.tsx",
@@ -5162,7 +5162,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Stacked monthly expense bars",
       "files": [
         {
           "path": "registry/default/variants/v-chart-8.tsx",
@@ -5182,7 +5182,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Scatter plot of scores",
       "files": [
         {
           "path": "registry/default/variants/v-chart-9.tsx",
@@ -5202,7 +5202,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Revenue bars with target reference line",
       "files": [
         {
           "path": "registry/default/variants/v-chart-10.tsx",
@@ -5722,7 +5722,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Weekday picker",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-6.tsx",
@@ -5742,7 +5742,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Language picker with selection badges",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-7.tsx",
@@ -5762,7 +5762,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Notification preferences with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-8.tsx",
@@ -5782,7 +5782,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Feature flags",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-9.tsx",
@@ -5802,7 +5802,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Notification channels with icons",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-10.tsx",
@@ -6542,7 +6542,7 @@
       "categories": [
         "combobox"
       ],
-      "description": "Basic combobox",
+      "description": "Creatable option when nothing matches",
       "files": [
         {
           "path": "registry/default/variants/v-combobox-17.tsx",
@@ -6802,7 +6802,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Project switcher",
       "files": [
         {
           "path": "registry/default/variants/v-command-8.tsx",
@@ -6822,7 +6822,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Invite members with multi-select",
       "files": [
         {
           "path": "registry/default/variants/v-command-9.tsx",
@@ -6842,7 +6842,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Label picker with multi-select",
       "files": [
         {
           "path": "registry/default/variants/v-command-10.tsx",
@@ -6962,7 +6962,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Browser menu with submenu, checkboxes and radio items",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-1.tsx",
@@ -6982,7 +6982,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With submenu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-2.tsx",
@@ -7002,7 +7002,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With keyboard shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-3.tsx",
@@ -7022,7 +7022,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Grouped with section labels",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-4.tsx",
@@ -7042,7 +7042,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With icons",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-5.tsx",
@@ -7062,7 +7062,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With checkbox items",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-6.tsx",
@@ -7082,7 +7082,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With radio items",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-7.tsx",
@@ -7102,7 +7102,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "With destructive action",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-8.tsx",
@@ -7122,7 +7122,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Placement on each side",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-9.tsx",
@@ -7142,7 +7142,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Inside a dialog",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-10.tsx",
@@ -8022,7 +8022,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Delete account confirmation with undo",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-9.tsx",
@@ -8042,7 +8042,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Edit profile form",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-10.tsx",
@@ -8324,7 +8324,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "All caught up — no new notifications",
+      "description": "No recent activity empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-10.tsx",
@@ -8342,7 +8342,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "No team members — invite form empty state",
+      "description": "All caught up — no new notifications",
       "files": [
         {
           "path": "registry/default/variants/v-empty-11.tsx",
@@ -8360,7 +8360,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "No matching results — clear filters empty state",
+      "description": "No team members — invite form empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-12.tsx",
@@ -8378,7 +8378,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Inbox zero — illustration with compose action",
+      "description": "No matching results — clear filters empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-13.tsx",
@@ -8396,7 +8396,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Access restricted — permission request empty state",
+      "description": "Inbox zero — illustration with compose action",
       "files": [
         {
           "path": "registry/default/variants/v-empty-14.tsx",
@@ -8414,7 +8414,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Access restricted — permission request empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-15.tsx",
@@ -8792,7 +8792,7 @@
       "categories": [
         "field"
       ],
-      "description": "Field with date input",
+      "description": "Field with date picker",
       "files": [
         {
           "path": "registry/default/variants/v-field-19.tsx",
@@ -8992,7 +8992,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Account settings fieldset with timezone select",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-7.tsx",
@@ -9012,7 +9012,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Team member invite fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-8.tsx",
@@ -9032,7 +9032,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Support request fieldset with textarea",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-9.tsx",
@@ -9052,7 +9052,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Social links fieldset with URL prefixes",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-10.tsx",
@@ -9512,7 +9512,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Danger zone with typed delete confirmation",
       "files": [
         {
           "path": "registry/default/variants/v-frame-10.tsx",
@@ -9592,7 +9592,7 @@
       "categories": [
         "group"
       ],
-      "description": "Large Size",
+      "description": "With Disabled Button",
       "files": [
         {
           "path": "registry/default/variants/v-group-4.tsx",
@@ -9612,7 +9612,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Disabled Button",
+      "description": "With Default Buttons",
       "files": [
         {
           "path": "registry/default/variants/v-group-5.tsx",
@@ -9632,7 +9632,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Default Buttons",
+      "description": "With Start Labeled Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-6.tsx",
@@ -9652,7 +9652,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Start Labeled Text",
+      "description": "With End Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-7.tsx",
@@ -9672,7 +9672,7 @@
       "categories": [
         "group"
       ],
-      "description": "With End Text",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-group-8.tsx",
@@ -9692,7 +9692,7 @@
       "categories": [
         "group"
       ],
-      "description": "Vertical",
+      "description": "Nested Groups",
       "files": [
         {
           "path": "registry/default/variants/v-group-9.tsx",
@@ -9712,7 +9712,7 @@
       "categories": [
         "group"
       ],
-      "description": "Nested Groups",
+      "description": "With Popup",
       "files": [
         {
           "path": "registry/default/variants/v-group-10.tsx",
@@ -9732,7 +9732,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Popup",
+      "description": "With Input Group",
       "files": [
         {
           "path": "registry/default/variants/v-group-11.tsx",
@@ -9752,7 +9752,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Input Group",
+      "description": "With Menu",
       "files": [
         {
           "path": "registry/default/variants/v-group-12.tsx",
@@ -9772,7 +9772,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Menu",
+      "description": "With Select",
       "files": [
         {
           "path": "registry/default/variants/v-group-13.tsx",
@@ -9792,7 +9792,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Select",
+      "description": "Text formatting toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-group-14.tsx",
@@ -9812,7 +9812,7 @@
       "categories": [
         "group"
       ],
-      "description": "Text formatting toolbar",
+      "description": "Thumbs up / down vote buttons",
       "files": [
         {
           "path": "registry/default/variants/v-group-15.tsx",
@@ -9832,7 +9832,7 @@
       "categories": [
         "group"
       ],
-      "description": "Thumbs up / down vote buttons",
+      "description": "Media player controls",
       "files": [
         {
           "path": "registry/default/variants/v-group-16.tsx",
@@ -9852,7 +9852,7 @@
       "categories": [
         "group"
       ],
-      "description": "Media player controls",
+      "description": "Price range input with apply button",
       "files": [
         {
           "path": "registry/default/variants/v-group-17.tsx",
@@ -9872,7 +9872,7 @@
       "categories": [
         "group"
       ],
-      "description": "Price range input with apply button",
+      "description": "Search with category filter select",
       "files": [
         {
           "path": "registry/default/variants/v-group-18.tsx",
@@ -11652,7 +11652,7 @@
       "categories": [
         "meter"
       ],
-      "description": "With Label",
+      "description": "Without Value",
       "files": [
         {
           "path": "registry/default/variants/v-meter-2.tsx",
@@ -11692,7 +11692,7 @@
       "categories": [
         "meter"
       ],
-      "description": "With Range",
+      "description": "With Custom Range",
       "files": [
         {
           "path": "registry/default/variants/v-meter-4.tsx",
@@ -11712,7 +11712,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Stacked resource meters",
+      "description": "Live deployment meter with restart",
       "files": [
         {
           "path": "registry/default/variants/v-meter-5.tsx",
@@ -11732,7 +11732,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Color-coded by severity",
+      "description": "Language usage breakdown",
       "files": [
         {
           "path": "registry/default/variants/v-meter-6.tsx",
@@ -11752,7 +11752,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Storage breakdown with icons",
+      "description": "Password strength meter",
       "files": [
         {
           "path": "registry/default/variants/v-meter-7.tsx",
@@ -11772,7 +11772,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Upload progress card",
+      "description": "API usage by team member",
       "files": [
         {
           "path": "registry/default/variants/v-meter-8.tsx",
@@ -11792,7 +11792,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Profile strength checklist",
+      "description": "Quarterly budget by department",
       "files": [
         {
           "path": "registry/default/variants/v-meter-9.tsx",
@@ -11812,7 +11812,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Score card with letter grade",
       "files": [
         {
           "path": "registry/default/variants/v-meter-10.tsx",
@@ -11832,7 +11832,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Stacked resource meters",
       "files": [
         {
           "path": "registry/default/variants/v-meter-11.tsx",
@@ -11852,7 +11852,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Color-coded by severity",
       "files": [
         {
           "path": "registry/default/variants/v-meter-12.tsx",
@@ -11872,7 +11872,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Storage breakdown with icons",
       "files": [
         {
           "path": "registry/default/variants/v-meter-13.tsx",
@@ -11892,7 +11892,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Upload progress card",
       "files": [
         {
           "path": "registry/default/variants/v-meter-14.tsx",
@@ -11912,7 +11912,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Profile strength checklist",
       "files": [
         {
           "path": "registry/default/variants/v-meter-15.tsx",
@@ -12112,7 +12112,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Percentage with scrub",
+      "description": "Font size with live preview",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-10.tsx",
@@ -12132,7 +12132,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Shopping cart quantity row",
+      "description": "Percentage with scrub",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-11.tsx",
@@ -12152,7 +12152,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Typography settings",
+      "description": "Shopping cart quantity row",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-12.tsx",
@@ -12172,7 +12172,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Min/max budget range",
+      "description": "Typography settings",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-13.tsx",
@@ -12192,7 +12192,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Controlled with reset",
+      "description": "Min/max budget range",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-14.tsx",
@@ -12212,7 +12212,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Controlled with reset",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-15.tsx",
@@ -12412,7 +12412,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Email verification card",
+      "description": "4-digit PIN with confirm",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-10.tsx",
@@ -12432,7 +12432,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "2FA authenticator app",
+      "description": "Email verification card",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-11.tsx",
@@ -12452,7 +12452,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "8-char invite code with separator",
+      "description": "2FA authenticator app",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-12.tsx",
@@ -12472,7 +12472,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Success state on completion",
+      "description": "8-char invite code with separator",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-13.tsx",
@@ -12492,7 +12492,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Resend countdown timer",
+      "description": "Success state on completion",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-14.tsx",
@@ -12512,7 +12512,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Resend countdown timer",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-15.tsx",
@@ -12732,7 +12732,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "With Page Select Dropdown And First/Last Navigation",
+      "description": "Rows per page with first/last navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-11.tsx",
@@ -12752,7 +12752,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Numbered Pagination With Go-To-Page Input",
+      "description": "With Page Select Dropdown And First/Last Navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-12.tsx",
@@ -12772,7 +12772,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
+      "description": "Numbered Pagination With Go-To-Page Input",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-13.tsx",
@@ -12792,7 +12792,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Mini pill",
+      "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-14.tsx",
@@ -12812,7 +12812,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Older/newer cursor navigation",
+      "description": "Smart ellipsis with results count",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-15.tsx",
@@ -12832,7 +12832,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Controlled with smart ellipsis",
+      "description": "Mini pill",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-16.tsx",
@@ -12852,7 +12852,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Results summary with compact nav",
+      "description": "Older/newer cursor navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-17.tsx",
@@ -12872,7 +12872,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Loading/disabled state",
+      "description": "Controlled with smart ellipsis",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-18.tsx",
@@ -12892,7 +12892,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Results summary with compact nav",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-19.tsx",
@@ -12912,7 +12912,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Loading/disabled state",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-20.tsx",
@@ -12932,7 +12932,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Default",
+      "description": "Feedback form",
       "files": [
         {
           "path": "registry/default/variants/v-popover-1.tsx",
@@ -12992,7 +12992,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Animated Popovers",
+      "description": "Shared Popover with Multiple Triggers",
       "files": [
         {
           "path": "registry/default/variants/v-popover-4.tsx",
@@ -13012,7 +13012,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Shared Popover with Multiple Triggers",
+      "description": "Placement",
       "files": [
         {
           "path": "registry/default/variants/v-popover-5.tsx",
@@ -13032,7 +13032,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Placement",
+      "description": "User Profile Card",
       "files": [
         {
           "path": "registry/default/variants/v-popover-6.tsx",
@@ -13052,7 +13052,7 @@
       "categories": [
         "popover"
       ],
-      "description": "User Profile Card",
+      "description": "Timestamp Detail",
       "files": [
         {
           "path": "registry/default/variants/v-popover-7.tsx",
@@ -13072,7 +13072,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Timestamp Detail",
+      "description": "Quick Settings",
       "files": [
         {
           "path": "registry/default/variants/v-popover-8.tsx",
@@ -13092,7 +13092,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Quick Settings",
+      "description": "Feature Tour",
       "files": [
         {
           "path": "registry/default/variants/v-popover-9.tsx",
@@ -13112,7 +13112,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Feature Tour",
+      "description": "Share Link",
       "files": [
         {
           "path": "registry/default/variants/v-popover-10.tsx",
@@ -13132,7 +13132,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Share Link",
+      "description": "Accent Color Picker",
       "files": [
         {
           "path": "registry/default/variants/v-popover-11.tsx",
@@ -13152,7 +13152,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Accent Color Picker",
+      "description": "Keyboard Shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-popover-12.tsx",
@@ -13172,7 +13172,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Keyboard Shortcuts",
+      "description": "Filter Panel",
       "files": [
         {
           "path": "registry/default/variants/v-popover-13.tsx",
@@ -13192,7 +13192,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Filter Panel",
+      "description": "Set a Reminder",
       "files": [
         {
           "path": "registry/default/variants/v-popover-14.tsx",
@@ -13212,7 +13212,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Set a Reminder",
+      "description": "System Status",
       "files": [
         {
           "path": "registry/default/variants/v-popover-15.tsx",
@@ -13232,7 +13232,7 @@
       "categories": [
         "popover"
       ],
-      "description": "System Status",
+      "description": "Emoji picker",
       "files": [
         {
           "path": "registry/default/variants/v-popover-16.tsx",
@@ -13252,7 +13252,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Emoji picker",
+      "description": "Confirmation / delete",
       "files": [
         {
           "path": "registry/default/variants/v-popover-17.tsx",
@@ -13272,7 +13272,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Confirmation / delete",
+      "description": "Inline tag editor",
       "files": [
         {
           "path": "registry/default/variants/v-popover-18.tsx",
@@ -13292,7 +13292,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Inline tag editor",
+      "description": "Notification panel",
       "files": [
         {
           "path": "registry/default/variants/v-popover-19.tsx",
@@ -13312,7 +13312,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Notification panel",
+      "description": "Inline text edit",
       "files": [
         {
           "path": "registry/default/variants/v-popover-20.tsx",
@@ -13332,7 +13332,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Default",
+      "description": "Website link preview with stats",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-1.tsx",
@@ -13352,7 +13352,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "User mention profile card",
+      "description": "Venue location preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-2.tsx",
@@ -13372,7 +13372,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Article / blog post preview",
+      "description": "Package preview with license and version",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-3.tsx",
@@ -13392,7 +13392,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Product card",
+      "description": "Event preview with date and attendees",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-4.tsx",
@@ -13412,7 +13412,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "GitHub-style issue preview",
+      "description": "Company profile preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-5.tsx",
@@ -13432,7 +13432,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "NPM package preview",
+      "description": "GitHub repository preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-6.tsx",
@@ -13452,7 +13452,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Video preview with duration",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-7.tsx",
@@ -13472,7 +13472,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Hashtag previews with post counts",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-8.tsx",
@@ -13492,7 +13492,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Product preview with add to cart",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-9.tsx",
@@ -13512,7 +13512,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Reference links with URL previews",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-10.tsx",
@@ -13532,7 +13532,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "User mention profile card",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-11.tsx",
@@ -13552,7 +13552,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Article / blog post preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-12.tsx",
@@ -13572,7 +13572,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Product card with rating",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-13.tsx",
@@ -13592,7 +13592,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "GitHub-style issue preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-14.tsx",
@@ -13612,7 +13612,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "NPM package preview with weekly downloads",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-15.tsx",
@@ -14112,7 +14112,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Plan picker with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-10.tsx",
@@ -14232,7 +14232,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-1.tsx",
@@ -14252,7 +14252,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "With Scroll Fade",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-2.tsx",
@@ -14272,7 +14272,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Horizontal",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-3.tsx",
@@ -14292,7 +14292,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Horizontal with Scrollbar Gutter",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-4.tsx",
@@ -14312,7 +14312,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Both Directions",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-5.tsx",
@@ -14332,7 +14332,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Alphabetical contact list",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-6.tsx",
@@ -14352,7 +14352,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Task backlog list",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-7.tsx",
@@ -14372,7 +14372,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Wide data table",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-8.tsx",
@@ -14392,7 +14392,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Activity timeline",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-9.tsx",
@@ -14412,7 +14412,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Code viewer",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-10.tsx",
@@ -14492,7 +14492,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Activity Log",
+      "description": "Server log viewer",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-14.tsx",
@@ -14532,7 +14532,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Timezone select",
       "files": [
         {
           "path": "registry/default/variants/v-select-1.tsx",
@@ -14552,7 +14552,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-select-2.tsx",
@@ -14572,7 +14572,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Grouped framework select",
       "files": [
         {
           "path": "registry/default/variants/v-select-3.tsx",
@@ -14592,7 +14592,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Multiple selection for permissions",
       "files": [
         {
           "path": "registry/default/variants/v-select-4.tsx",
@@ -14612,7 +14612,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Settings navigation with icons",
       "files": [
         {
           "path": "registry/default/variants/v-select-5.tsx",
@@ -14632,7 +14632,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Currency select",
       "files": [
         {
           "path": "registry/default/variants/v-select-6.tsx",
@@ -14652,7 +14652,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Form field with description",
       "files": [
         {
           "path": "registry/default/variants/v-select-7.tsx",
@@ -14672,7 +14672,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Plan select with separator",
       "files": [
         {
           "path": "registry/default/variants/v-select-8.tsx",
@@ -14692,7 +14692,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Country select with flags",
       "files": [
         {
           "path": "registry/default/variants/v-select-9.tsx",
@@ -14712,7 +14712,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Theme select with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-select-10.tsx",
@@ -14752,7 +14752,7 @@
       "categories": [
         "select"
       ],
-      "description": "Country Selector with Groups",
+      "description": "Region select with groups",
       "files": [
         {
           "path": "registry/default/variants/v-select-12.tsx",
@@ -14772,7 +14772,7 @@
       "categories": [
         "select"
       ],
-      "description": "Controlled with External Display",
+      "description": "Priority with badges",
       "files": [
         {
           "path": "registry/default/variants/v-select-13.tsx",
@@ -14832,7 +14832,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-separator-1.tsx",
@@ -14852,7 +14852,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-separator-2.tsx",
@@ -14872,7 +14872,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Settings menu dividers",
       "files": [
         {
           "path": "registry/default/variants/v-separator-3.tsx",
@@ -14892,7 +14892,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Key-value list",
       "files": [
         {
           "path": "registry/default/variants/v-separator-4.tsx",
@@ -14912,7 +14912,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Divider with label",
       "files": [
         {
           "path": "registry/default/variants/v-separator-5.tsx",
@@ -14932,7 +14932,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Order summary",
       "files": [
         {
           "path": "registry/default/variants/v-separator-6.tsx",
@@ -14952,7 +14952,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Breadcrumb dividers",
       "files": [
         {
           "path": "registry/default/variants/v-separator-7.tsx",
@@ -14972,7 +14972,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Onboarding checklist",
       "files": [
         {
           "path": "registry/default/variants/v-separator-8.tsx",
@@ -14992,7 +14992,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Grouped navigation sections",
       "files": [
         {
           "path": "registry/default/variants/v-separator-9.tsx",
@@ -15012,7 +15012,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Profile card",
       "files": [
         {
           "path": "registry/default/variants/v-separator-10.tsx",
@@ -15052,7 +15052,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Section Heading with Line",
+      "description": "Activity sections",
       "files": [
         {
           "path": "registry/default/variants/v-separator-12.tsx",
@@ -15092,7 +15092,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Card Section Dividers",
+      "description": "Settings list with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-separator-14.tsx",
@@ -15872,7 +15872,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Price range with labels",
       "files": [
         {
           "path": "registry/default/variants/v-slider-8.tsx",
@@ -15892,7 +15892,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Three-band equalizer",
       "files": [
         {
           "path": "registry/default/variants/v-slider-9.tsx",
@@ -15912,7 +15912,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Session timeout with stops",
       "files": [
         {
           "path": "registry/default/variants/v-slider-10.tsx",
@@ -16212,7 +16212,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Step-by-step workspace loading",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-10.tsx",
@@ -17052,7 +17052,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Vertical Orientation",
+      "description": "Account settings tabs with card forms",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-7.tsx",
@@ -18412,7 +18412,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Default",
+      "description": "Spreadsheet toolbar with alignment, number format and font",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-1.tsx",
@@ -18532,7 +18532,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "File browser toolbar with search, sort and view toggle",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-7.tsx",
@@ -18552,7 +18552,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Canvas toolbar with theme toggle and zoom controls",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-8.tsx",
@@ -18572,7 +18572,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Video call controls toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-9.tsx",
@@ -18592,7 +18592,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Block editor toolbar with block type and inline marks",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-10.tsx",

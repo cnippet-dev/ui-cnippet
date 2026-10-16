@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-context-menu-9",
-  "description": "Basic context menu",
+  "description": "Placement on each side",
   "registryDependencies": [
     "@cnippet/menu"
   ],

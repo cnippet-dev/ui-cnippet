@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-calendar-14",
-  "description": "Basic calendar",
+  "description": "Holiday highlights with name on select",
   "registryDependencies": [
     "@cnippet/calendar"
   ],

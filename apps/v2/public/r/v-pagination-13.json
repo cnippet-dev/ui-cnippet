@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-13",
-  "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
+  "description": "Numbered Pagination With Go-To-Page Input",
   "registryDependencies": [
     "@cnippet/pagination"
   ],

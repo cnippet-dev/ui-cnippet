@@ -40,6 +40,7 @@ const notifications = [
     id: 3,
     initials: "SR",
     message: "Mentioned you in a comment: '@you can you take a look?'",
+    name: "Sofia Reyes",
     time: "1h ago",
     unread: false,
   },

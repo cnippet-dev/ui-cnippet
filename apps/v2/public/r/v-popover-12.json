@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-popover-12",
-  "description": "Accent Color Picker",
+  "description": "Keyboard Shortcuts",
   "registryDependencies": [
     "@cnippet/popover"
   ],

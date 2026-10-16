@@ -26,8 +26,8 @@ export default function Particle() {
     setInputValue(value);
 
     if (value) {
-      const parsedDate = parse(value, "yyyy-MM-dd", new Date());
-      if (isValid(parsedDate)) {
+      const parsedDate = parse(value, "MM/dd/yyyy", new Date());
+      if (value.length === 10 && isValid(parsedDate)) {
         setDate(parsedDate);
         setMonth(parsedDate);
       }
@@ -39,7 +39,7 @@ export default function Particle() {
   const handleSelect = (selectedDate: Date | undefined) => {
     setDate(selectedDate);
     if (selectedDate) {
-      setInputValue(format(selectedDate, "yyyy-MM-dd"));
+      setInputValue(format(selectedDate, "MM/dd/yyyy"));
       setMonth(selectedDate);
     } else {
       setInputValue("");
@@ -50,19 +50,17 @@ export default function Particle() {
     <Popover>
       <InputGroup>
         <InputGroupInput
-          aria-label="Select date"
-          className="*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none"
+          aria-label="Date"
+          inputMode="numeric"
+          maxLength={10}
           onChange={handleInputChange}
-          onClick={(e) => e.stopPropagation()}
-          type="date"
+          placeholder="MM/DD/YYYY"
           value={inputValue}
         />
         <InputGroupAddon>
           <PopoverTrigger
-            aria-label="Select date"
-            render={
-              <Button aria-label="Select date" size="icon-xs" variant="ghost" />
-            }
+            aria-label="Open calendar"
+            render={<Button size="icon-xs" variant="ghost" />}
           >
             <CalendarIcon aria-hidden="true" />
           </PopoverTrigger>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-11",
-  "description": "With Popup",
+  "description": "With Input Group",
   "registryDependencies": [
     "@cnippet/group"
   ],

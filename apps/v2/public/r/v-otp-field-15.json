@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-otp-field-15",
-  "description": "Basic input otp",
+  "description": "Resend countdown timer",
   "registryDependencies": [
     "@cnippet/otp-field"
   ],

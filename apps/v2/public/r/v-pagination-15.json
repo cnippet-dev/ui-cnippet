@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-15",
-  "description": "Older/newer cursor navigation",
+  "description": "Smart ellipsis with results count",
   "registryDependencies": [
     "@cnippet/pagination"
   ],

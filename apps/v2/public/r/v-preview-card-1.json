@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-preview-card-1",
-  "description": "Default",
+  "description": "Website link preview with stats",
   "registryDependencies": [
     "@cnippet/preview-card"
   ],

@@ -8,15 +8,15 @@ export function Pattern() {
   const id = useId();
   return (
     <Field className="w-full max-w-xs">
-      <Label className="justify-between" htmlFor={id}>
-        Password
+      <div className="flex w-full items-center justify-between">
+        <Label htmlFor={id}>Password</Label>
         <Link
-          className="font-normal text-muted-foreground text-xs underline-offset-4 hover:underline"
-          href="/forgot-password"
+          className="text-muted-foreground text-xs underline-offset-4 hover:underline"
+          href="#"
         >
           Forgot password?
         </Link>
-      </Label>
+      </div>
       <Input id={id} placeholder="••••••••" type="password" />
     </Field>
   );

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-empty-10",
-  "description": "All caught up — no new notifications",
+  "description": "No recent activity empty state",
   "registryDependencies": [],
   "files": [
     {

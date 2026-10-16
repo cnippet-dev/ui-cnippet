@@ -1,54 +1,109 @@
+"use client";
+
 import {
   ChevronFirstIcon,
   ChevronLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "lucide-react";
+import { useState } from "react";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
 } from "@/registry/default/ui/pagination";
+import {
+  Select,
+  SelectItem,
+  SelectPopup,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select";
+
+const TOTAL_PAGES = 10;
+
+const pages = Array.from({ length: TOTAL_PAGES }, (_, i) => ({
+  label: `Page ${i + 1}`,
+  value: i + 1,
+}));
 
 export function Pattern() {
+  const [page, setPage] = useState(1);
+  const isFirst = page === 1;
+  const isLast = page === TOTAL_PAGES;
+
+  const go = (next: number) => (event: React.MouseEvent) => {
+    event.preventDefault();
+    setPage(Math.min(Math.max(next, 1), TOTAL_PAGES));
+  };
+
   return (
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationLink aria-label="Go to first page" href="#" size="icon">
+          <PaginationLink
+            aria-disabled={isFirst}
+            aria-label="Go to first page"
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href="#"
+            onClick={go(1)}
+            size="icon"
+          >
             <ChevronFirstIcon className="size-4" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink aria-label="Go to previous page" href="#" size="icon">
+          <PaginationLink
+            aria-disabled={isFirst}
+            aria-label="Go to previous page"
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href="#"
+            onClick={go(page - 1)}
+            size="icon"
+          >
             <ChevronLeftIcon className="size-4" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <select
-            className="w-26 rounded-lg border border-input bg-background px-2 py-1 text-foreground text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/24"
-            defaultValue="1"
+          <Select
+            items={pages}
+            onValueChange={(value) => setPage(value as number)}
+            value={page}
           >
-            <option value="1">Page 1</option>
-            <option value="2">Page 2</option>
-            <option value="3">Page 3</option>
-            <option value="4">Page 4</option>
-            <option value="5">Page 5</option>
-            <option value="6">Page 6</option>
-            <option value="7">Page 7</option>
-            <option value="8">Page 8</option>
-            <option value="9">Page 9</option>
-            <option value="10">Page 10</option>
-          </select>
+            <SelectTrigger aria-label="Select page" className="w-28" size="sm">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectPopup>
+              {pages.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectPopup>
+          </Select>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink aria-label="Go to next page" href="#" size="icon">
+          <PaginationLink
+            aria-disabled={isLast}
+            aria-label="Go to next page"
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href="#"
+            onClick={go(page + 1)}
+            size="icon"
+          >
             <ChevronRightIcon className="size-4" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink aria-label="Go to last page" href="#" size="icon">
+          <PaginationLink
+            aria-disabled={isLast}
+            aria-label="Go to last page"
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href="#"
+            onClick={go(TOTAL_PAGES)}
+            size="icon"
+          >
             <ChevronLastIcon className="size-4" />
           </PaginationLink>
         </PaginationItem>

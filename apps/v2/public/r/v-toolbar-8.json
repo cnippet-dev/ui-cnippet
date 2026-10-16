@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-toolbar-8",
-  "description": "Basic toolbar",
+  "description": "Canvas toolbar with theme toggle and zoom controls",
   "registryDependencies": [
     "@cnippet/toolbar"
   ],

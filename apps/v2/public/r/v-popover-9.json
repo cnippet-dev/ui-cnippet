@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-popover-9",
-  "description": "Quick Settings",
+  "description": "Feature Tour",
   "registryDependencies": [
     "@cnippet/popover"
   ],

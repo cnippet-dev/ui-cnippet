@@ -11,10 +11,10 @@ import {
 } from "@/registry/default/ui/chart";
 
 const chartData = [
-  { fill: "var(--color-design)", label: "Design", value: 35 },
-  { fill: "var(--color-engineering)", label: "Engineering", value: 42 },
-  { fill: "var(--color-marketing)", label: "Marketing", value: 15 },
-  { fill: "var(--color-ops)", label: "Operations", value: 8 },
+  { dept: "design", fill: "var(--color-design)", value: 35 },
+  { dept: "engineering", fill: "var(--color-engineering)", value: 42 },
+  { dept: "marketing", fill: "var(--color-marketing)", value: 15 },
+  { dept: "ops", fill: "var(--color-ops)", value: 8 },
 ];
 
 const chartConfig = {
@@ -34,7 +34,7 @@ export function Pattern() {
     >
       <PieChart>
         <ChartTooltip
-          content={<ChartTooltipContent hideLabel />}
+          content={<ChartTooltipContent hideLabel nameKey="dept" />}
           cursor={false}
         />
         <Pie
@@ -43,12 +43,13 @@ export function Pattern() {
           data={chartData}
           dataKey="value"
           innerRadius="55%"
+          nameKey="dept"
           outerRadius="75%"
           paddingAngle={3}
           strokeWidth={0}
         >
           {chartData.map((entry) => (
-            <Cell fill={entry.fill} key={entry.label} />
+            <Cell fill={entry.fill} key={entry.dept} />
           ))}
         </Pie>
         <text dominantBaseline="central" textAnchor="middle" x="50%" y="42%">
@@ -63,7 +64,7 @@ export function Pattern() {
             headcount
           </tspan>
         </text>
-        <ChartLegend content={<ChartLegendContent nameKey="label" />} />
+        <ChartLegend content={<ChartLegendContent nameKey="dept" />} />
       </PieChart>
     </ChartContainer>
   );

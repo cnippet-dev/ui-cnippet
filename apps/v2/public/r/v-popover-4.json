@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-popover-4",
-  "description": "Animated Popovers",
+  "description": "Shared Popover with Multiple Triggers",
   "registryDependencies": [
     "@cnippet/popover"
   ],

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-11",
-  "description": "With Page Select Dropdown And First/Last Navigation",
+  "description": "Rows per page with first/last navigation",
   "registryDependencies": [
     "@cnippet/pagination"
   ],

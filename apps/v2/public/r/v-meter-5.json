@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-meter-5",
-  "description": "Stacked resource meters",
+  "description": "Live deployment meter with restart",
   "registryDependencies": [
     "@cnippet/meter"
   ],

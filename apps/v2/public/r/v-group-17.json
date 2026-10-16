@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-17",
-  "description": "Media player controls",
+  "description": "Price range input with apply button",
   "registryDependencies": [
     "@cnippet/group"
   ],

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-separator-2",
-  "description": "Basic separator",
+  "description": "Vertical",
   "registryDependencies": [
     "@cnippet/separator"
   ],

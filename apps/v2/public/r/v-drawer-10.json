@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-drawer-10",
-  "description": "Basic drawer",
+  "description": "Edit profile form",
   "registryDependencies": [
     "@cnippet/drawer"
   ],

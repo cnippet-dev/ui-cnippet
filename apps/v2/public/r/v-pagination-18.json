@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-pagination-18",
-  "description": "Loading/disabled state",
+  "description": "Controlled with smart ellipsis",
   "registryDependencies": [
     "@cnippet/pagination"
   ],

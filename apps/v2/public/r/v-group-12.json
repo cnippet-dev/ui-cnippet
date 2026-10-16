@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-group-12",
-  "description": "With Input Group",
+  "description": "With Menu",
   "registryDependencies": [
     "@cnippet/group"
   ],

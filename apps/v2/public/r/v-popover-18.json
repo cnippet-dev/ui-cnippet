@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-popover-18",
-  "description": "Confirmation / delete",
+  "description": "Inline tag editor",
   "registryDependencies": [
     "@cnippet/popover"
   ],

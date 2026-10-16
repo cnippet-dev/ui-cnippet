@@ -74,7 +74,7 @@ export function Pattern() {
           dot={{ fill: "var(--color-growth)", r: 3 }}
           stroke="var(--color-growth)"
           strokeWidth={2}
-          type="monotone"
+          type="linear"
           yAxisId="right"
         />
       </ComposedChart>

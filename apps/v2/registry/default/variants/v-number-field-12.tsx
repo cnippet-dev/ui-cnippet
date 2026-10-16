@@ -8,13 +8,13 @@ import {
 
 export function Pattern() {
   return (
-    <div className="flex w-full max-w-xs items-center gap-4 rounded-lg border p-3">
+    <div className="flex w-full max-w-sm items-center gap-4 rounded-lg border p-3">
       <div className="size-14 shrink-0 rounded-md bg-muted" />
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
         <span className="truncate font-medium text-sm">Wireless Earbuds</span>
         <span className="text-muted-foreground text-xs">$79.00</span>
       </div>
-      <NumberField defaultValue={1} max={99} min={1}>
+      <NumberField className="w-28 shrink-0" defaultValue={1} max={99} min={1}>
         <NumberFieldGroup>
           <NumberFieldDecrement />
           <NumberFieldInput className="w-10 text-center" />
