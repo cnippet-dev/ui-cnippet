@@ -571,16 +571,16 @@ export const variants: ParticleItem[] = [
       category: "context menu",
       dependencies: ["menu"],
       description: [
-        "Browser menu with submenu, checkboxes and radio items",
-        "With submenu",
-        "With keyboard shortcuts",
-        "Grouped with section labels",
-        "With icons",
-        "With checkbox items",
-        "With radio items",
-        "With destructive action",
-        "Placement on each side",
-        "Inside a dialog",
+        "Browser page with submenu, checkbox toggles and profile radio",
+        "Media library with Move to and Share submenus",
+        "Code editor with keyboard shortcuts",
+        "Calendar events with labelled action groups",
+        "Spreadsheet cells with icon actions",
+        "Data table with column visibility checkboxes",
+        "Folder view with Sort by and View radio groups",
+        "Inbox rows with destructive delete",
+        "Canvas layers opening on each side",
+        "Team members dialog with role submenu",
         "Bookmark list with per-item star toggle, open, copy, share, and delete actions",
         "Rich-text editor with checkbox formatting and alignment submenu",
         "File explorer rows with extension badge, rename, download, and delete per file",
@@ -922,7 +922,9 @@ export const variants: ParticleItem[] = [
   ),
 
   // --- label ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  // Each of 1–15 decorates a single field; the docs page explains them one by
+  // one, and Explore shows the showcase that combines them.
+  ...Array.from({ length: 16 }, (_, i) =>
     createVariant({
       category: "label",
       dependencies: ["label"],
@@ -942,8 +944,10 @@ export const variants: ParticleItem[] = [
         "With icon prefix",
         "Horizontal layout",
         "With error state",
+        "Showcase: markers, hints, links and errors",
       ][i],
       name: `v-label-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 15), showcase: 16 }),
     }),
   ),
 

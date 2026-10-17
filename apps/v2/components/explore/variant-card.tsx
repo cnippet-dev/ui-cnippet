@@ -4,6 +4,7 @@ import { useCopyToClipboard } from "@cnippet/ui/hooks/use-copy-to-clipboard";
 import { CheckIcon, CopyIcon, RotateCcwIcon } from "lucide-react";
 import * as React from "react";
 import { getVariantSource } from "@/lib/get-variant-source";
+import { isOverlayCategory, overlayPreviewUrl } from "@/lib/overlay-preview";
 import { cn } from "@/lib/utils";
 import { Index } from "@/registry/__index__";
 import { Button } from "@/registry/default/ui/button";
@@ -133,11 +134,55 @@ function Skeleton() {
   );
 }
 
+// Overlays switch to their mobile layout below `sm`, so the frame gets a
+// desktop-sized viewport and is scaled down to fit the card.
+const OVERLAY_VIEWPORT_WIDTH = 768;
+
+function OverlayPreview({ name, title }: { name: string; title: string }) {
+  const boxRef = React.useRef<HTMLDivElement>(null);
+  const [box, setBox] = React.useState<{ width: number; height: number }>();
+
+  React.useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => {
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
+      setBox({ height, width });
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const scale = box ? Math.min(1, box.width / OVERLAY_VIEWPORT_WIDTH) : 1;
+
+  return (
+    <div className="absolute inset-0" ref={boxRef}>
+      {box ? (
+        <iframe
+          className="origin-top-left border-0"
+          src={overlayPreviewUrl(name)}
+          style={{
+            height: box.height / scale,
+            transform: `scale(${scale})`,
+            width: box.width / scale,
+          }}
+          title={title}
+        />
+      ) : null}
+    </div>
+  );
+}
+
 export function VariantCard({
   name,
   description,
-  reloadable,
+  category,
+  reloadable: reloadableProp,
 }: VariantCardProps) {
+  const overlay = isOverlayCategory(category);
+  // Reloading an overlay frame replays the open, e.g. after it was dismissed.
+  const reloadable = reloadableProp || overlay;
   const [visible, setVisible] = React.useState(false);
   const [reloadKey, setReloadKey] = React.useState(0);
   const [sheetOpen, setSheetOpen] = React.useState(false);
@@ -166,7 +211,8 @@ export function VariantCard({
     return () => observer.disconnect();
   }, []);
 
-  const Component = visible ? (Index[name]?.component ?? null) : null;
+  const Component =
+    visible && !overlay ? (Index[name]?.component ?? null) : null;
 
   async function loadCode() {
     if (code !== null) return;
@@ -213,9 +259,21 @@ export function VariantCard({
         ref={cardRef}
       >
         {/* Preview area */}
-        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden rounded-xl border bg-card p-6">
+        <div
+          className={cn(
+            "relative flex flex-1 items-center justify-center overflow-hidden rounded-xl border bg-card",
+            // min-h, not h: flex-1's zero basis overrides a fixed height.
+            overlay ? "min-h-112" : "min-h-80 p-6",
+          )}
+        >
           {!visible ? (
             <div className="h-8 w-24 animate-pulse rounded-md bg-muted" />
+          ) : overlay ? (
+            <OverlayPreview
+              key={reloadKey}
+              name={name}
+              title={`${description || name} preview`}
+            />
           ) : Component ? (
             <React.Suspense
               fallback={

@@ -7255,7 +7255,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Browser menu with submenu, checkboxes and radio items",
+      "description": "Browser page with submenu, checkbox toggles and profile radio",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-1.tsx",
@@ -7275,7 +7275,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With submenu",
+      "description": "Media library with Move to and Share submenus",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-2.tsx",
@@ -7295,7 +7295,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With keyboard shortcuts",
+      "description": "Code editor with keyboard shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-3.tsx",
@@ -7315,7 +7315,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Grouped with section labels",
+      "description": "Calendar events with labelled action groups",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-4.tsx",
@@ -7335,7 +7335,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With icons",
+      "description": "Spreadsheet cells with icon actions",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-5.tsx",
@@ -7355,7 +7355,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With checkbox items",
+      "description": "Data table with column visibility checkboxes",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-6.tsx",
@@ -7375,7 +7375,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With radio items",
+      "description": "Folder view with Sort by and View radio groups",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-7.tsx",
@@ -7395,7 +7395,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "With destructive action",
+      "description": "Inbox rows with destructive delete",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-8.tsx",
@@ -7415,7 +7415,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Placement on each side",
+      "description": "Canvas layers opening on each side",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-9.tsx",
@@ -7435,7 +7435,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Inside a dialog",
+      "description": "Team members dialog with role submenu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-10.tsx",
@@ -11446,7 +11446,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-1",
       "registryDependencies": [
@@ -11466,7 +11467,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-2",
       "registryDependencies": [
@@ -11486,7 +11488,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-3",
       "registryDependencies": [
@@ -11506,7 +11509,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-4",
       "registryDependencies": [
@@ -11526,7 +11530,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-5",
       "registryDependencies": [
@@ -11546,7 +11551,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-6",
       "registryDependencies": [
@@ -11566,7 +11572,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-7",
       "registryDependencies": [
@@ -11586,7 +11593,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-8",
       "registryDependencies": [
@@ -11606,7 +11614,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-9",
       "registryDependencies": [
@@ -11626,7 +11635,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-10",
       "registryDependencies": [
@@ -11646,7 +11656,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-11",
       "registryDependencies": [
@@ -11666,7 +11677,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-12",
       "registryDependencies": [
@@ -11686,7 +11698,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-13",
       "registryDependencies": [
@@ -11706,7 +11719,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-14",
       "registryDependencies": [
@@ -11726,9 +11740,31 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-15",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "Showcase: markers, hints, links and errors",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-label-16",
       "registryDependencies": [
         "@cnippet/label"
       ],

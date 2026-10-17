@@ -1,6 +1,6 @@
 "use client";
 
-import { format } from "date-fns";
+import { addDays, format, isWeekend } from "date-fns";
 import { CalendarIcon, UsersIcon } from "lucide-react";
 import { useState } from "react";
 import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
@@ -27,8 +27,17 @@ function initials(name: string) {
     .join("");
 }
 
+function nextWeekday(from: Date) {
+  let day = addDays(from, 1);
+  while (isWeekend(day)) day = addDays(day, 1);
+  return day;
+}
+
 export default function Particle() {
-  const [date, setDate] = useState<Date | undefined>();
+  // Open with a date picked so the preview shows availability, not a dead CTA.
+  const [date, setDate] = useState<Date | undefined>(() =>
+    nextWeekday(new Date()),
+  );
 
   const freeCount = date
     ? TEAM.filter((m) => !m.busyOn.includes(date.getDay())).length

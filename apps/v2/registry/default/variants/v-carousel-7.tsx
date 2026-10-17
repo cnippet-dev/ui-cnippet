@@ -92,7 +92,15 @@ export default function Particle() {
 
   return (
     <div className="w-full max-w-xs space-y-3">
-      <Carousel className="w-full" opts={{ align: "start" }} setApi={setApi}>
+      <Carousel
+        // Fade the peeking next card so it reads as "more this way", not a clip.
+        className={cn(
+          "w-full",
+          canScrollNext && "mask-r-from-75% mask-r-to-100%",
+        )}
+        opts={{ align: "start" }}
+        setApi={setApi}
+      >
         <CarouselContent>
           {PRODUCTS.map((p) => (
             <CarouselItem className="basis-3/4 sm:basis-2/3" key={p.id}>

@@ -14,7 +14,7 @@ const PIN_SLOT_KEYS = Array.from(
 );
 
 export default function Particle() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(CORRECT_PIN);
   const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
 
   function handleVerify() {

@@ -50,19 +50,34 @@ export default function Particle() {
     dragFree: true,
   });
   const [selected, setSelected] = React.useState(0);
+  const [canScrollNext, setCanScrollNext] = React.useState(true);
 
   React.useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    // Drag-free scrolling rarely fires "select", so also track "scroll".
+    const onScroll = () => setCanScrollNext(emblaApi.canScrollNext());
     emblaApi.on("select", onSelect);
+    emblaApi.on("scroll", onScroll);
+    emblaApi.on("reInit", onScroll);
+    onScroll();
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("scroll", onScroll);
+      emblaApi.off("reInit", onScroll);
     };
   }, [emblaApi]);
 
   return (
     <div className="w-full max-w-sm space-y-3">
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div
+        // Fade the peeking next card so it reads as "more this way", not a clip.
+        className={cn(
+          "overflow-hidden",
+          canScrollNext && "mask-r-from-75% mask-r-to-100%",
+        )}
+        ref={emblaRef}
+      >
         <div className="flex gap-3">
           {CHANGELOG.map((release, i) => (
             <div

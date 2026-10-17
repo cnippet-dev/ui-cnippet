@@ -6615,7 +6615,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-1": {
     name: "v-context-menu-1",
-    description: "Browser menu with submenu, checkboxes and radio items",
+    description: "Browser page with submenu, checkbox toggles and profile radio",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6633,7 +6633,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-2": {
     name: "v-context-menu-2",
-    description: "With submenu",
+    description: "Media library with Move to and Share submenus",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6651,7 +6651,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-3": {
     name: "v-context-menu-3",
-    description: "With keyboard shortcuts",
+    description: "Code editor with keyboard shortcuts",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6669,7 +6669,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-4": {
     name: "v-context-menu-4",
-    description: "Grouped with section labels",
+    description: "Calendar events with labelled action groups",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6687,7 +6687,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-5": {
     name: "v-context-menu-5",
-    description: "With icons",
+    description: "Spreadsheet cells with icon actions",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6705,7 +6705,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-6": {
     name: "v-context-menu-6",
-    description: "With checkbox items",
+    description: "Data table with column visibility checkboxes",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6723,7 +6723,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-7": {
     name: "v-context-menu-7",
-    description: "With radio items",
+    description: "Folder view with Sort by and View radio groups",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6741,7 +6741,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-8": {
     name: "v-context-menu-8",
-    description: "With destructive action",
+    description: "Inbox rows with destructive delete",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6759,7 +6759,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-9": {
     name: "v-context-menu-9",
-    description: "Placement on each side",
+    description: "Canvas layers opening on each side",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -6777,7 +6777,7 @@ export const Index: Record<string, any> = {
   },
   "v-context-menu-10": {
     name: "v-context-menu-10",
-    description: "Inside a dialog",
+    description: "Team members dialog with role submenu",
     type: "registry:block",
     registryDependencies: ["@cnippet/menu"],
     files: [{
@@ -10391,7 +10391,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-2": {
     name: "v-label-2",
@@ -10409,7 +10409,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-3": {
     name: "v-label-3",
@@ -10427,7 +10427,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-4": {
     name: "v-label-4",
@@ -10445,7 +10445,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-5": {
     name: "v-label-5",
@@ -10463,7 +10463,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-6": {
     name: "v-label-6",
@@ -10481,7 +10481,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-7": {
     name: "v-label-7",
@@ -10499,7 +10499,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-8": {
     name: "v-label-8",
@@ -10517,7 +10517,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-9": {
     name: "v-label-9",
@@ -10535,7 +10535,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-10": {
     name: "v-label-10",
@@ -10553,7 +10553,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-11": {
     name: "v-label-11",
@@ -10571,7 +10571,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-12": {
     name: "v-label-12",
@@ -10589,7 +10589,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-13": {
     name: "v-label-13",
@@ -10607,7 +10607,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-14": {
     name: "v-label-14",
@@ -10625,7 +10625,7 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
   },
   "v-label-15": {
     name: "v-label-15",
@@ -10643,7 +10643,25 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["label"],
-    meta: {"className":""},
+    meta: {"className":"","role":"demo"},
+  },
+  "v-label-16": {
+    name: "v-label-16",
+    description: "Showcase: markers, hints, links and errors",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/label"],
+    files: [{
+      path: "registry/default/variants/v-label-16.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-label-16.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["label"],
+    meta: {"className":"","role":"showcase"},
   },
   "v-menu-1": {
     name: "v-menu-1",

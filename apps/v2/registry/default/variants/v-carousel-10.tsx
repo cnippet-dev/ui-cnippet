@@ -11,13 +11,17 @@ import {
 } from "@/registry/default/ui/carousel";
 
 const GALLERY = [
-  { bg: "from-chart-1/32 to-chart-1/4", id: 1, label: "Mountain Sunset" },
-  { bg: "from-chart-2/32 to-chart-2/4", id: 2, label: "Ocean Waves" },
-  { bg: "from-chart-3/32 to-chart-3/4", id: 3, label: "Forest Path" },
-  { bg: "from-chart-4/32 to-chart-4/4", id: 4, label: "City Lights" },
-  { bg: "from-chart-5/32 to-chart-5/4", id: 5, label: "Desert Dunes" },
-  { bg: "from-chart-1/32 to-chart-1/4", id: 6, label: "Northern Lights" },
+  { id: "1506905925346-21bda4d32df4", label: "Mountain Sunset" },
+  { id: "1505142468610-359e7d316be0", label: "Ocean Waves" },
+  { id: "1441974231531-c6227db76b6e", label: "Forest Path" },
+  { id: "1477959858617-67f85cf4f1df", label: "City Lights" },
+  { id: "1509316785289-025f5b846b35", label: "Desert Valley" },
+  { id: "1531366936337-7c912a4589a7", label: "Northern Lights" },
 ];
+
+function photo(id: string, width: number, height: number) {
+  return `https://images.unsplash.com/photo-${id}?w=${width}&h=${height}&fit=crop&dpr=2&q=80`;
+}
 
 export default function Particle() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -46,14 +50,17 @@ export default function Particle() {
         <CarouselContent>
           {GALLERY.map((item) => (
             <CarouselItem key={item.id}>
-              <div
-                className={cn(
-                  "relative flex h-52 flex-col items-center justify-end rounded-xl border bg-linear-to-br pb-4 text-foreground",
-                  item.bg,
-                )}
-              >
-                <p className="font-medium text-sm">{item.label}</p>
-              </div>
+              <figure className="relative h-52 overflow-hidden rounded-xl border bg-muted">
+                <img
+                  alt={item.label}
+                  className="size-full object-cover"
+                  src={photo(item.id, 400, 208)}
+                />
+                {/* Scrim keeps the caption legible on any photo. */}
+                <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 to-transparent px-4 pt-8 pb-3 font-medium text-sm text-white">
+                  {item.label}
+                </figcaption>
+              </figure>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -74,8 +81,10 @@ export default function Particle() {
               onClick={() => api?.scrollTo(i)}
               type="button"
             >
-              <div
-                className={cn("h-12 w-16 rounded-lg bg-linear-to-br", item.bg)}
+              <img
+                alt=""
+                className="h-12 w-16 rounded-lg bg-muted object-cover"
+                src={photo(item.id, 64, 48)}
               />
             </button>
           ))}

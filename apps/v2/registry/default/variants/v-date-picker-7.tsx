@@ -1,6 +1,6 @@
 "use client";
 
-import { format } from "date-fns";
+import { addDays, format, isWeekend } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -38,9 +38,24 @@ const BOOKED_BY_DOW: Record<number, string[]> = {
   5: ["10:00 AM"],
 };
 
+function nextWeekday(from: Date) {
+  let day = addDays(from, 1);
+  while (isWeekend(day)) day = addDays(day, 1);
+  return day;
+}
+
+// Open on the next bookable day with its first free slot picked, so the
+// preview shows a ready-to-book state instead of a disabled button.
+const INITIAL_DATE = nextWeekday(new Date());
+const INITIAL_SLOT = TIME_SLOTS.find(
+  (slot) => !BOOKED_BY_DOW[INITIAL_DATE.getDay()]?.includes(slot),
+);
+
 export default function Particle() {
-  const [date, setDate] = useState<Date | undefined>();
-  const [selectedSlot, setSelectedSlot] = useState<string | undefined>();
+  const [date, setDate] = useState<Date | undefined>(INITIAL_DATE);
+  const [selectedSlot, setSelectedSlot] = useState<string | undefined>(
+    INITIAL_SLOT,
+  );
 
   const handleDateSelect = (d: Date | undefined) => {
     setDate(d);

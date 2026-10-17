@@ -40,8 +40,8 @@ export function Pattern() {
         </p>
       </ContextMenuTrigger>
       <ContextMenuContent className="w-48">
-        <ContextMenuLabel>Formatting</ContextMenuLabel>
         <ContextMenuGroup>
+          <ContextMenuLabel>Formatting</ContextMenuLabel>
           <ContextMenuCheckboxItem checked={bold} onCheckedChange={setBold}>
             <BoldIcon />
             Bold

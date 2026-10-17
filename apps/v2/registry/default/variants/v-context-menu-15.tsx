@@ -100,13 +100,13 @@ export function Pattern() {
             </div>
           </ContextMenuTrigger>
           <ContextMenuContent className="w-48">
-            <ContextMenuLabel>Status</ContextMenuLabel>
             <ContextMenuRadioGroup
               onValueChange={(v) =>
                 updateTask(task.id, { status: v as Status })
               }
               value={task.status}
             >
+              <ContextMenuLabel>Status</ContextMenuLabel>
               <ContextMenuRadioItem value="todo">To Do</ContextMenuRadioItem>
               <ContextMenuRadioItem value="in-progress">
                 In Progress
