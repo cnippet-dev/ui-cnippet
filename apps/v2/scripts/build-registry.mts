@@ -133,7 +133,28 @@ async function buildRegistry() {
   });
 }
 
+// Variant counts come from each category's title list, so a variant file
+// without a title would silently drop out of the registry.
+async function checkVariantsRegistered() {
+  const registered = new Set(
+    registry.items.flatMap((item) => item.files?.map((f) => f.path) ?? []),
+  );
+  const files = await fs.readdir(
+    path.join(process.cwd(), "registry/default/variants"),
+  );
+  const missing = files
+    .filter((f) => f.endsWith(".tsx") && !registered.has(`variants/${f}`))
+    .sort();
+  if (missing.length) {
+    throw new Error(
+      `Variant files missing a title in registry/registry-variants.ts: ${missing.join(", ")}`,
+    );
+  }
+}
+
 try {
+  await checkVariantsRegistered();
+
   console.log("🗂️ Building registry/__index__.tsx...");
   await buildRegistryIndex();
 

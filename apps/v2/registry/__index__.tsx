@@ -12915,7 +12915,7 @@ export const Index: Record<string, any> = {
   },
   "v-preview-card-13": {
     name: "v-preview-card-13",
-    description: "Product card with rating",
+    description: "Glossary term definition with related terms",
     type: "registry:block",
     registryDependencies: ["@cnippet/preview-card"],
     files: [{
@@ -12951,7 +12951,7 @@ export const Index: Record<string, any> = {
   },
   "v-preview-card-15": {
     name: "v-preview-card-15",
-    description: "NPM package preview with weekly downloads",
+    description: "Stock ticker preview with sparkline and key stats",
     type: "registry:block",
     registryDependencies: ["@cnippet/preview-card"],
     files: [{

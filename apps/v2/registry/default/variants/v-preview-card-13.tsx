@@ -1,6 +1,3 @@
-// biome-ignore-all lint/suspicious/noArrayIndexKey:<>
-
-import { StarIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   PreviewCard,
@@ -8,42 +5,44 @@ import {
   PreviewCardTrigger,
 } from "@/registry/default/ui/preview-card";
 
+const relatedTerms = ["Retry", "Request key", "Side effect"];
+
 export function Pattern() {
   return (
-    <p className="text-sm">
-      We recommend the{" "}
+    <p className="max-w-sm text-sm">
+      Make every payment endpoint{" "}
       <PreviewCard>
-        <PreviewCardTrigger className="cursor-pointer font-medium underline decoration-dashed underline-offset-4">
-          Pro Wireless Headphones
+        <PreviewCardTrigger className="cursor-help font-medium underline decoration-dotted underline-offset-4">
+          idempotent
         </PreviewCardTrigger>
         <PreviewCardPopup>
           <div className="flex flex-col gap-3">
-            <div className="h-32 w-full rounded-md bg-muted" />
             <div>
-              <div className="flex items-start justify-between gap-2">
-                <h4 className="font-semibold text-sm">
-                  Pro Wireless Headphones
-                </h4>
-                <Badge size="sm" variant="secondary">
-                  New
-                </Badge>
+              <div className="flex items-baseline gap-2">
+                <h4 className="font-semibold text-sm">Idempotent</h4>
+                <span className="text-muted-foreground text-xs italic">
+                  adjective
+                </span>
               </div>
-              <div className="mt-1 flex items-center gap-0.5 text-muted-foreground text-xs">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon
-                    aria-hidden="true"
-                    className={`size-3 ${i < 4 ? "fill-amber-400 text-amber-400" : "text-muted-foreground"}`}
-                    key={i}
-                  />
-                ))}
-                <span className="ml-1">(128 reviews)</span>
-              </div>
+              <p className="font-mono text-muted-foreground text-xs">
+                /ˌaɪ.dəmˈpoʊ.tənt/
+              </p>
             </div>
-            <p className="font-semibold text-base">$149.00</p>
+            <p className="text-sm">
+              An operation that gives the same result no matter how many times
+              it runs. Retrying a request never charges a customer twice.
+            </p>
+            <div className="flex flex-wrap gap-1">
+              {relatedTerms.map((term) => (
+                <Badge key={term} size="sm" variant="outline">
+                  {term}
+                </Badge>
+              ))}
+            </div>
           </div>
         </PreviewCardPopup>
       </PreviewCard>{" "}
-      for remote work setups.
+      so a dropped connection can be retried safely.
     </p>
   );
 }

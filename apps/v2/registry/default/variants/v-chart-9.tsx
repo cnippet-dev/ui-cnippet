@@ -32,7 +32,7 @@ export function Pattern() {
     <ChartContainer className="min-h-52 w-full" config={chartConfig}>
       <ScatterChart
         accessibilityLayer
-        margin={{ bottom: 20, left: 8, right: 16, top: 8 }}
+        margin={{ bottom: 20, left: 20, right: 16, top: 8 }}
       >
         <CartesianGrid />
         <XAxis
@@ -54,8 +54,8 @@ export function Pattern() {
           domain={[40, 100]}
           label={{
             angle: -90,
-            offset: 12,
-            position: "insideLeft",
+            offset: 0,
+            position: "left",
             style: { fontSize: 11 },
             value: "Score",
           }}

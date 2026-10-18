@@ -14343,7 +14343,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Product card with rating",
+      "description": "Glossary term definition with related terms",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-13.tsx",
@@ -14383,7 +14383,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "NPM package preview with weekly downloads",
+      "description": "Stock ticker preview with sparkline and key stats",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-15.tsx",

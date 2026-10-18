@@ -11,9 +11,9 @@ import {
 export function Pattern() {
   return (
     <Pagination>
-      <PaginationContent className="w-full justify-between">
+      <PaginationContent className="w-full flex-wrap justify-between gap-y-2">
         <PaginationItem>
-          <span className="text-muted-foreground text-sm">
+          <span className="whitespace-nowrap text-muted-foreground text-sm">
             Page <span className="font-medium text-foreground">1</span> of{" "}
             <span className="font-medium text-foreground">10</span>
           </span>
