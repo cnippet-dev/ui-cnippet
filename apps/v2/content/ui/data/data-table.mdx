@@ -1,0 +1,239 @@
+---
+title: Data Table
+description: Sortable, filterable, paginated tables with row selection, built on TanStack Table v9 and the Cnippet Table. Copy-paste ready.
+
+links:
+  doc: https://tanstack.com/table/latest
+---
+
+<ComponentPreview name="v-data-table-8" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/data-table
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install @tanstack/react-table lucide-react
+```
+
+<Step>Add the components it builds on: [Table](/ui/data/table), [Button](/ui/actions/button), [Checkbox](/ui/forms/checkbox), [Input Group](/ui/forms/input-group), [Menu](/ui/navigation/menu), [Select](/ui/pickers/select) and [Badge](/ui/feedback/badge).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="data-table" title="components/ui/data-table.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+TanStack Table v9 only adds a feature's state and APIs when you register it, so start by listing the features this table uses. Keep `features`, `columns` and static `data` outside the component so they aren't rebuilt on every render.
+
+```tsx
+import {
+  createColumnHelper,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  rowPaginationFeature,
+  rowSortingFeature,
+  sortFn_alphanumeric,
+  tableFeatures,
+  useTable,
+} from "@tanstack/react-table"
+import {
+  DataTable,
+  DataTableColumnHeader,
+  DataTablePagination,
+} from "@/components/ui/data-table"
+
+type Invoice = { id: string; customer: string; amount: number }
+
+const features = tableFeatures({
+  rowSortingFeature,
+  sortedRowModel: createSortedRowModel(),
+  sortFns: { alphanumeric: sortFn_alphanumeric },
+  rowPaginationFeature,
+  paginatedRowModel: createPaginatedRowModel(),
+})
+
+const column = createColumnHelper<typeof features, Invoice>()
+
+const columns = column.columns([
+  column.accessor("id", { header: "Invoice" }),
+  column.accessor("customer", {
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Customer" />
+    ),
+  }),
+  column.accessor("amount", { header: "Amount" }),
+])
+
+export function Invoices({ data }: { data: Invoice[] }) {
+  const table = useTable({ features, columns, data })
+
+  return (
+    <div className="flex flex-col gap-3">
+      <DataTable table={table} />
+      <DataTablePagination table={table} />
+    </div>
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<DataTableSearch table={table} />            {/* global filter input */}
+<DataTableFacetedFilter column={column} />   {/* multi-select column filter */}
+<DataTableViewOptions table={table} />       {/* show/hide columns menu */}
+
+<DataTable table={table}>                    {/* <Table> with headers, rows and an empty state */}
+  {/* in column definitions: */}
+  <DataTableSelectAll table={table} />       {/* header checkbox */}
+  <DataTableColumnHeader column={column} />  {/* sortable header button */}
+  <DataTableRowCheckbox row={row} />         {/* row checkbox */}
+</DataTable>
+
+<DataTablePagination table={table} />        {/* count, rows per page, page controls */}
+```
+
+## Good to know
+
+- Each part checks its features at compile time. For example, passing a table without `rowPaginationFeature` to `DataTablePagination` is a type error, not a runtime crash.
+- `DataTable` renders whatever the table produces: visible columns, sorted, filtered and paginated rows, and expanded sub-rows. It doesn't add any behavior on its own.
+- The parts subscribe to their own state slice, so they stay current even if you pass a narrow selector to `useTable`, and they work with the React Compiler.
+- Give rows a stable id with `getRowId: (row) => row.id`. Selection is keyed by row id, and the default index-based ids change when rows are sorted, filtered or removed.
+- Selection is separate from data. After deleting selected rows, clear it with `table.resetRowSelection(true)`.
+- For a faceted filter, set the column's `filterFn: "arrHas"` and register `filterFn_arrHas`. It keeps rows whose value equals any selected option. Register `columnFacetingFeature` with `facetedRowModel` and `facetedUniqueValues` to show a count next to each option.
+- Shift-click a row checkbox to select a range.
+
+## API Reference
+
+### DataTable
+
+Renders the table's header groups and current rows using [Table](/ui/data/table). Rows that are selected get `data-state="selected"`, and sortable headers get `aria-sort`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `table` | `ReactTable` | — | The table returned by `useTable` |
+| `emptyMessage` | `ReactNode` | `"No results."` | Shown in a full-width row when there are no rows |
+| `variant` | `"default" \| "card"` | `"default"` | Passed to `Table` |
+
+Other props go on the `<table>` element.
+
+### DataTableColumnHeader
+
+A header button that cycles the column's sort and shows its direction. Renders plain text when the column can't sort. Requires `rowSortingFeature`.
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `column` | `Column` | The column from the header context |
+| `title` | `ReactNode` | Header label |
+
+### DataTableSelectAll / DataTableRowCheckbox
+
+Checkboxes for the header and for each row. The header checkbox selects every row on the current page and shows an indeterminate state when only some are selected. Requires `rowSelectionFeature`.
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `table` / `row` | `Table` / `Row` | From the header or cell context |
+| `label` | `string` | Accessible label |
+
+### DataTableSearch
+
+A search input bound to the global filter. Requires `columnFilteringFeature`, `globalFilteringFeature` and `filteredRowModel`, plus a `globalFilterFn` such as `"includesString"`.
+
+| Prop | Type | Default |
+|------|------|---------|
+| `table` | `Table` | — |
+| `placeholder` | `string` | `"Search…"` |
+
+### DataTableFacetedFilter
+
+A menu of checkbox options that filters one column, with the selection shown on the trigger. Requires `columnFilteringFeature` and the column's `filterFn: "arrHas"`.
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `column` | `Column` | From `table.getColumn(id)` |
+| `title` | `string` | Trigger and menu label |
+| `options` | `{ label, value, icon? }[]` | Values to filter by |
+
+### DataTableViewOptions
+
+A menu for showing and hiding columns that allow it. Labels come from string `header`s, falling back to the column id. Requires `columnVisibilityFeature`.
+
+### DataTablePagination
+
+Row count (or selected count when `rowSelectionFeature` is registered), a rows-per-page select, and first, previous, next and last page buttons. Requires `rowPaginationFeature` and `paginatedRowModel`.
+
+| Prop | Type | Default |
+|------|------|---------|
+| `table` | `Table` | — |
+| `pageSizeOptions` | `number[]` | `[10, 20, 50]` |
+
+## Examples
+
+### Sorting
+
+Click a header to sort; click again to reverse. The table starts sorted by issue date, newest first.
+
+<ComponentPreview name="v-data-table-1" />
+
+### Search and pagination
+
+A global search across customer name, email and company, with page size controls. The empty message appears when nothing matches.
+
+<ComponentPreview name="v-data-table-2" />
+
+### Row selection
+
+Select rows to reveal bulk actions, Shift-click to select a range, and remove the selected members. The owner's row can't be selected.
+
+<ComponentPreview name="v-data-table-3" />
+
+### Column visibility
+
+Secondary columns start hidden; the View menu shows or hides any column that allows it.
+
+<ComponentPreview name="v-data-table-4" />
+
+### Faceted filters
+
+Filter issues by status and priority, with a live count next to each option and a Reset button when any filter is active.
+
+<ComponentPreview name="v-data-table-5" />
+
+### Expandable rows
+
+Nested data via `getSubRows`, with a toggle per parent row and expand/collapse all.
+
+<ComponentPreview name="v-data-table-6" />
+
+### Row actions
+
+A card-style table with a menu of actions on each row. The actions update component state through the table's `meta` option.
+
+<ComponentPreview name="v-data-table-7" />

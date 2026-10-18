@@ -331,6 +331,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "data-table": {
+    name: "data-table",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/badge","@cnippet/button","@cnippet/checkbox","@cnippet/input-group","@cnippet/menu","@cnippet/select","@cnippet/table"],
+    files: [{
+      path: "registry/default/ui/data-table.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/data-table.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "dialog": {
     name: "dialog",
     description: "",
@@ -6882,6 +6900,150 @@ export const Index: Record<string, any> = {
     }),
     categories: ["context menu"],
     meta: {"className":""},
+  },
+  "v-data-table-1": {
+    name: "v-data-table-1",
+    description: "Sortable invoices",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-2": {
+    name: "v-data-table-2",
+    description: "Customer directory with search and pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-3": {
+    name: "v-data-table-3",
+    description: "Team members with row selection and bulk actions",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-4": {
+    name: "v-data-table-4",
+    description: "Orders with column visibility menu",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-4.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-5": {
+    name: "v-data-table-5",
+    description: "Issue tracker with faceted status and priority filters",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-5.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-5.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-6": {
+    name: "v-data-table-6",
+    description: "Department budgets with expandable sub-rows",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-6.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-6.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-7": {
+    name: "v-data-table-7",
+    description: "API keys card table with row actions",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-7.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-7.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"},
+  },
+  "v-data-table-8": {
+    name: "v-data-table-8",
+    description: "Showcase: search, filters, selection, sorting and pagination",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/data-table","@cnippet/badge","@cnippet/button","@cnippet/menu","@cnippet/avatar","@cnippet/progress"],
+    files: [{
+      path: "registry/default/variants/v-data-table-8.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/variants/v-data-table-8.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data table"],
+    meta: {"className":"**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]","role":"showcase"},
   },
   "v-date-picker-1": {
     name: "v-date-picker-1",

@@ -26,6 +26,7 @@ export const registryCategories = [
   "combobox",
   "command",
   "context menu",
+  "data table",
   "date picker",
   "dialog",
   "drawer",

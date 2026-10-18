@@ -93,7 +93,7 @@ const events: ActivityEvent[] = [
   {
     action: "invited",
     id: 4,
-    target: "priya@example.com as Editor",
+    target: "priya@acme.dev as Editor",
     time: "2 hr ago",
     type: "invite",
     user: { initials: "SC", name: "Sarah Chen" },

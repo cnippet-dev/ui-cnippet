@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-data-table-7",
+  "description": "API keys card table with row actions",
+  "registryDependencies": [
+    "@cnippet/data-table",
+    "@cnippet/badge",
+    "@cnippet/button",
+    "@cnippet/menu",
+    "@cnippet/avatar",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-data-table-7.tsx",
+      "content": "\"use client\";\n\nimport {\n  createColumnHelper,\n  tableFeatures,\n  useTable,\n} from \"@tanstack/react-table\";\nimport { CopyIcon, EllipsisIcon, RefreshCwIcon, TrashIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { DataTable } from \"@/registry/default/ui/data-table\";\nimport {\n  Menu,\n  MenuGroup,\n  MenuItem,\n  MenuPopup,\n  MenuSeparator,\n  MenuTrigger,\n} from \"@/registry/default/ui/menu\";\n\ntype ApiKey = {\n  created: string;\n  id: string;\n  lastUsed: string;\n  name: string;\n  prefix: string;\n  status: \"active\" | \"revoked\";\n};\n\nconst KEYS: ApiKey[] = [\n  {\n    created: \"Aug 4, 2026\",\n    id: \"k1\",\n    lastUsed: \"2 min ago\",\n    name: \"Production\",\n    prefix: \"sk_live_4f2a\",\n    status: \"active\",\n  },\n  {\n    created: \"Sep 12, 2026\",\n    id: \"k2\",\n    lastUsed: \"1 hr ago\",\n    name: \"Staging\",\n    prefix: \"sk_test_9c1d\",\n    status: \"active\",\n  },\n  {\n    created: \"Oct 1, 2026\",\n    id: \"k3\",\n    lastUsed: \"Never\",\n    name: \"CI pipeline\",\n    prefix: \"sk_test_77be\",\n    status: \"active\",\n  },\n  {\n    created: \"Mar 18, 2026\",\n    id: \"k4\",\n    lastUsed: \"Jun 2, 2026\",\n    name: \"Old mobile app\",\n    prefix: \"sk_live_0a93\",\n    status: \"revoked\",\n  },\n];\n\n// Row actions need to update data owned by the component, so they're passed\n// to the table through `meta` rather than captured by module-level columns.\ntype Actions = { revoke: (id: string) => void };\n\nconst features = tableFeatures({});\nconst column = createColumnHelper<typeof features, ApiKey>();\n\nconst columns = column.columns([\n  column.accessor(\"name\", {\n    cell: ({ row }) => (\n      <div className=\"flex flex-col gap-1\">\n        <span className=\"font-medium\">{row.original.name}</span>\n        <span className=\"font-mono text-muted-foreground text-xs\">\n          {row.original.prefix}••••••••\n        </span>\n      </div>\n    ),\n    header: \"Key\",\n  }),\n  column.accessor(\"status\", {\n    cell: (info) =>\n      info.getValue() === \"active\" ? (\n        <Badge variant=\"success\">Active</Badge>\n      ) : (\n        <Badge variant=\"outline\">Revoked</Badge>\n      ),\n    header: \"Status\",\n  }),\n  column.accessor(\"created\", { header: \"Created\" }),\n  column.accessor(\"lastUsed\", {\n    cell: (info) => (\n      <span className=\"text-muted-foreground\">{info.getValue()}</span>\n    ),\n    header: \"Last used\",\n  }),\n  column.display({\n    cell: ({ row, table }) => {\n      const actions = table.options.meta as Actions | undefined;\n      const revoked = row.original.status === \"revoked\";\n      return (\n        <div className=\"flex justify-end\">\n          <Menu>\n            <MenuTrigger\n              render={\n                <Button\n                  aria-label={`Actions for ${row.original.name}`}\n                  size=\"icon-sm\"\n                  variant=\"ghost\"\n                />\n              }\n            >\n              <EllipsisIcon aria-hidden=\"true\" />\n            </MenuTrigger>\n            <MenuPopup align=\"end\" className=\"min-w-40\">\n              <MenuGroup>\n                <MenuItem>\n                  <CopyIcon aria-hidden=\"true\" />\n                  Copy prefix\n                </MenuItem>\n                <MenuItem disabled={revoked}>\n                  <RefreshCwIcon aria-hidden=\"true\" />\n                  Rotate key\n                </MenuItem>\n              </MenuGroup>\n              <MenuSeparator />\n              <MenuItem\n                disabled={revoked}\n                onClick={() => actions?.revoke(row.original.id)}\n                variant=\"destructive\"\n              >\n                <TrashIcon aria-hidden=\"true\" />\n                Revoke\n              </MenuItem>\n            </MenuPopup>\n          </Menu>\n        </div>\n      );\n    },\n    header: () => <span className=\"sr-only\">Actions</span>,\n    id: \"actions\",\n  }),\n]);\n\nexport default function Particle() {\n  const [keys, setKeys] = useState(KEYS);\n  const actions: Actions = {\n    revoke: (id) =>\n      setKeys((prev) =>\n        prev.map((k) => (k.id === id ? { ...k, status: \"revoked\" } : k)),\n      ),\n  };\n\n  const table = useTable({\n    columns,\n    data: keys,\n    features,\n    getRowId: (row) => row.id,\n    meta: actions,\n  });\n\n  return (\n    <div className=\"w-full max-w-2xl\">\n      <DataTable table={table} variant=\"card\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+  },
+  "categories": [
+    "data table"
+  ],
+  "type": "registry:block"
+}

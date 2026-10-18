@@ -26,6 +26,7 @@ export const ui: Registry["items"] = [
       "@cnippet/combobox",
       "@cnippet/command",
       "@cnippet/context-menu",
+      "@cnippet/data-table",
       "@cnippet/dialog",
       "@cnippet/drawer",
       "@cnippet/empty",
@@ -329,6 +330,26 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "context-menu",
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["@tanstack/react-table", LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/data-table.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "data-table",
+    registryDependencies: [
+      "@cnippet/badge",
+      "@cnippet/button",
+      "@cnippet/checkbox",
+      "@cnippet/input-group",
+      "@cnippet/menu",
+      "@cnippet/select",
+      "@cnippet/table",
+    ],
     type: "registry:ui",
   },
   {

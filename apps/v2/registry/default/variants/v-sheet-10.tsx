@@ -73,7 +73,7 @@ const meta = [
   {
     icon: CalendarIcon,
     label: "Due date",
-    value: <span className="text-sm">Jun 15, 2025</span>,
+    value: <span className="text-sm">Nov 14, 2026</span>,
   },
   {
     icon: TagIcon,

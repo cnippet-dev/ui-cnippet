@@ -104,7 +104,7 @@ export function Pattern() {
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium text-sm">Margaret Welsh</p>
                   <p className="truncate text-muted-foreground text-xs">
-                    margaret@example.com
+                    margaret@acme.dev
                   </p>
                 </div>
                 <Button className="size-7 shrink-0" size="icon" variant="ghost">

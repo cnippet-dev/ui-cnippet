@@ -22,7 +22,7 @@ const stats = [
 ];
 
 const links = [
-  { Icon: GlobeIcon, label: "example.com" },
+  { Icon: GlobeIcon, label: "margaretwelsh.dev" },
   { Icon: BoxIcon, label: "@margaret_dev" },
   { Icon: CircuitBoardIcon, label: "margaret-welsh" },
 ];

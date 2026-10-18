@@ -40,7 +40,21 @@ export default function Component() {
         value={selected}
       >
         <SelectTrigger>
-          <SelectValue placeholder="Select permissions" />
+          {/* A multiple select's empty value is [], which never matches the
+              null placeholder item, so render the empty state explicitly. */}
+          <SelectValue>
+            {(value: Permission[]) =>
+              value.length === 0 ? (
+                <span className="text-muted-foreground">
+                  Select permissions
+                </span>
+              ) : value.length === 1 ? (
+                value[0]?.label
+              ) : (
+                `${value.length} permissions`
+              )
+            }
+          </SelectValue>
         </SelectTrigger>
         <SelectPopup>
           {permissions.map((item) => (

@@ -591,6 +591,37 @@ export const variants: ParticleItem[] = [
     }),
   ),
 
+  // --- data-table ---
+  ...Array.from({ length: 8 }, (_, i) =>
+    createVariant({
+      category: "data table",
+      dependencies: [
+        "data-table",
+        "badge",
+        "button",
+        "menu",
+        "avatar",
+        "progress",
+      ],
+      description: [
+        "Sortable invoices",
+        "Customer directory with search and pagination",
+        "Team members with row selection and bulk actions",
+        "Orders with column visibility menu",
+        "Issue tracker with faceted status and priority filters",
+        "Department budgets with expandable sub-rows",
+        "API keys card table with row actions",
+        "Showcase: search, filters, selection, sorting and pagination",
+      ][i],
+      meta: {
+        className:
+          "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+      },
+      name: `v-data-table-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 8 }),
+    }),
+  ),
+
   // --- date-picker ---
   ...Array.from({ length: 16 }, (_, i) =>
     createVariant({

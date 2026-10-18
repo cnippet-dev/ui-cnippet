@@ -36,9 +36,9 @@ export default function Component() {
         <SelectSeparator />
         {unavailablePlans.map((item) => (
           <SelectItem disabled key={item.value} value={item}>
-            {item.label}
-            <span className="ms-auto text-muted-foreground text-xs">
-              Contact us
+            <span className="flex w-full items-center justify-between gap-3">
+              {item.label}
+              <span className="text-muted-foreground text-xs">Contact us</span>
             </span>
           </SelectItem>
         ))}
