@@ -32,15 +32,27 @@ export const metadata: Metadata = {
 };
 
 export default function ExplorePage() {
-  const variantEntries = variants
-    .filter((v) => !isPlaceholderVariant(v.name))
+  // API demos stay in the docs; each component's showcase replaces them here.
+  const visibleVariants = variants.filter(
+    (v) => v.meta?.role !== "demo" && !isPlaceholderVariant(v.name),
+  );
+  const categories = Array.from(
+    new Set(visibleVariants.map((v) => v.categories?.[0] ?? "other")),
+  );
+  const order = new Map<string, number>(categories.map((c, i) => [c, i]));
+  const variantEntries = visibleVariants
     .map((v) => ({
       category: v.categories?.[0] ?? "other",
       description: v.description ?? v.name,
       name: v.name,
-    }));
-
-  const categories = Array.from(new Set(variantEntries.map((v) => v.category)));
+      showcase: v.meta?.role === "showcase",
+    }))
+    .sort(
+      (a, b) =>
+        (order.get(a.category) ?? 0) - (order.get(b.category) ?? 0) ||
+        Number(b.showcase) - Number(a.showcase),
+    )
+    .map(({ showcase: _, ...entry }) => entry);
 
   const SCROLL_ANIM_CATEGORIES = new Set([
     "scroll reveal",

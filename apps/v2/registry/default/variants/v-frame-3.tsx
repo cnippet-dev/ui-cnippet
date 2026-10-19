@@ -1,3 +1,4 @@
+// title: With collapsible panel
 import { ChevronRightIcon } from "lucide-react";
 
 import {
@@ -18,15 +19,15 @@ export function Pattern() {
       <Collapsible className="group/collapsible" defaultOpen>
         <CollapsibleTrigger className="w-full">
           <FrameHeader className="flex grow flex-row items-center justify-between gap-2">
-            <FrameTitle>Start</FrameTitle>
+            <FrameTitle>Agent instructions</FrameTitle>
             <ChevronRightIcon className="size-4 text-muted-foreground transition-transform duration-200 group-data-open/collapsible:rotate-90" />
           </FrameHeader>
         </CollapsibleTrigger>
         <CollapsibleContent>
           <FramePanel>
             <p className="text-muted-foreground text-sm">
-              Initialize run to answer a user question using uploaded files and
-              the knowledge base; cite sources when relevant.
+              Answer the question from the uploaded files and the knowledge
+              base. Cite a source for every claim.
             </p>
           </FramePanel>
         </CollapsibleContent>

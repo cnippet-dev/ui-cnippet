@@ -1,3 +1,4 @@
+// title: Auth Form With Spinner
 "use client";
 
 import { useState } from "react";

@@ -1,3 +1,4 @@
+// title: Nested accordion example with bordered items
 import {
   Accordion,
   AccordionContent,

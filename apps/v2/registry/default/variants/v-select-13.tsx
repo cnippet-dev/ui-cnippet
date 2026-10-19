@@ -1,3 +1,4 @@
+// title: Priority with badges
 "use client";
 
 import { useState } from "react";
@@ -20,9 +21,12 @@ const priorities: PriorityItem[] = [
   { label: "Low", value: "low" },
 ];
 
-const badgeVariant: Record<string, "destructive" | "secondary" | "outline"> = {
+const badgeVariant: Record<
+  string,
+  "destructive" | "warning" | "secondary" | "outline"
+> = {
   critical: "destructive",
-  high: "destructive",
+  high: "warning",
   low: "outline",
   medium: "secondary",
 };
@@ -42,7 +46,9 @@ export default function Particle() {
         <SelectPopup>
           {priorities.slice(1).map((item) => (
             <SelectItem key={item.value} value={item}>
-              {item.label}
+              <Badge variant={badgeVariant[item.value ?? ""] ?? "outline"}>
+                {item.label}
+              </Badge>
             </SelectItem>
           ))}
         </SelectPopup>

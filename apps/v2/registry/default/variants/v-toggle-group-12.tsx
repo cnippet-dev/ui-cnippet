@@ -1,3 +1,4 @@
+// title: Issue priority picker with color-coded labels
 // biome-ignore-all lint/style/noNonNullAssertion:<>
 
 "use client";
@@ -22,11 +23,21 @@ const priorities: {
     id: "low",
     label: "Low",
   },
-  { color: "text-blue-500", dot: "bg-blue-500", id: "medium", label: "Medium" },
-  { color: "text-amber-500", dot: "bg-amber-500", id: "high", label: "High" },
   {
-    color: "text-red-500",
-    dot: "bg-red-500",
+    color: "text-info-foreground",
+    dot: "bg-info",
+    id: "medium",
+    label: "Medium",
+  },
+  {
+    color: "text-warning-foreground",
+    dot: "bg-warning",
+    id: "high",
+    label: "High",
+  },
+  {
+    color: "text-destructive-foreground",
+    dot: "bg-destructive",
     id: "critical",
     label: "Critical",
   },

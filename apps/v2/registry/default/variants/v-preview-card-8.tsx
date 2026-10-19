@@ -1,3 +1,4 @@
+// title: Hashtag previews with post counts
 import { HashIcon } from "lucide-react";
 import {
   PreviewCard,
@@ -5,34 +6,40 @@ import {
   PreviewCardTrigger,
 } from "@/registry/default/ui/preview-card";
 
-const tags = ["design-systems", "tailwindcss", "accessibility", "react"];
+const tags = [
+  { followers: 4820, name: "design-systems", posts: 312 },
+  { followers: 3910, name: "tailwindcss", posts: 486 },
+  { followers: 2675, name: "accessibility", posts: 198 },
+  { followers: 5340, name: "react", posts: 741 },
+];
 
 export default function Particle() {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <PreviewCard key={tag}>
+        <PreviewCard key={tag.name}>
           <PreviewCardTrigger className="flex cursor-pointer items-center gap-1 rounded-full border bg-muted/50 px-2.5 py-1 text-muted-foreground text-xs hover:bg-muted">
             <HashIcon className="size-3" />
-            {tag}
+            {tag.name}
           </PreviewCardTrigger>
           <PreviewCardPopup>
             <div className="flex flex-col gap-2">
-              <p className="font-semibold text-sm">#{tag}</p>
+              <p className="font-semibold text-sm">#{tag.name}</p>
               <p className="text-muted-foreground text-xs">
                 Browse all posts tagged with{" "}
-                <span className="font-medium text-foreground">#{tag}</span>.
+                <span className="font-medium text-foreground">#{tag.name}</span>
+                .
               </p>
               <div className="flex gap-3 text-muted-foreground text-xs">
                 <span>
                   <strong className="text-foreground">
-                    {Math.floor(Math.random() * 900 + 100)}
+                    {tag.posts.toLocaleString("en-US")}
                   </strong>{" "}
                   posts
                 </span>
                 <span>
                   <strong className="text-foreground">
-                    {Math.floor(Math.random() * 5000 + 500)}
+                    {tag.followers.toLocaleString("en-US")}
                   </strong>{" "}
                   followers
                 </span>

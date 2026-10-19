@@ -1,3 +1,4 @@
+// title: Tree view with file actions
 "use client";
 
 import {

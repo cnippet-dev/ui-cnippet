@@ -31,6 +31,7 @@
     "react": "19.3.0",
     "react-day-picker": "^10.0.1",
     "react-dom": "19.3.0",
+    "react-resizable-panels": "^4.14.1",
     "recharts": "^3.10.1",
     "shadcn": "^4.21.0",
     "tailwind-merge": "^3.7.0",
@@ -73,7 +74,8 @@
     "postinstall": "fumadocs-mdx",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
     "start": "next start",
-    "variants:create": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/create-variants.mts"
+    "variants:create": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/create-variants.mts",
+    "variants:validate": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/validate-variants.mts"
   },
   "trustedDependencies": [
     "sharp",

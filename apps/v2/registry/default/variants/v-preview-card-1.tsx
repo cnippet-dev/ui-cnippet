@@ -1,3 +1,4 @@
+// title: Website link preview with stats
 import { CornerUpLeftIcon, StarIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -25,7 +26,7 @@ export default function Particle() {
             <div className="flex items-center gap-1">
               <span
                 aria-hidden="true"
-                className="size-2 rounded-full bg-blue-500"
+                className="size-2 rounded-full bg-info"
               />
               <span>TypeScript</span>
             </div>

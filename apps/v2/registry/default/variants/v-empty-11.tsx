@@ -1,3 +1,4 @@
+// title: All caught up — no new notifications
 import { BellIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

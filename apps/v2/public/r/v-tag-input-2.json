@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tag-input-2",
+  "description": "Skills with suggested tags",
+  "registryDependencies": [
+    "@cnippet/tag-input",
+    "@cnippet/button",
+    "@cnippet/field",
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tag-input-2.tsx",
+      "content": "// title: Skills with suggested tags\n\"use client\";\n\nimport { PlusIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { TagInput } from \"@/registry/default/ui/tag-input\";\n\nconst SUGGESTED = [\n  \"React\",\n  \"TypeScript\",\n  \"Figma\",\n  \"Accessibility\",\n  \"Design systems\",\n  \"Motion\",\n];\n\nexport default function Particle() {\n  const [skills, setSkills] = useState([\"React\", \"Tailwind CSS\"]);\n  const suggestions = SUGGESTED.filter(\n    (s) => !skills.some((k) => k.toLowerCase() === s.toLowerCase()),\n  );\n\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-2\">\n      <Label htmlFor=\"profile-skills\">Skills</Label>\n      <TagInput\n        id=\"profile-skills\"\n        onValueChange={setSkills}\n        placeholder=\"Add a skill\"\n        value={skills}\n      />\n      {suggestions.length > 0 && (\n        <div className=\"flex flex-wrap items-center gap-1.5 pt-1\">\n          <span className=\"me-1 text-muted-foreground text-xs\">Suggested</span>\n          {suggestions.map((s) => (\n            <Button\n              key={s}\n              onClick={() => setSkills([...skills, s])}\n              size=\"xs\"\n              variant=\"outline\"\n            >\n              <PlusIcon aria-hidden=\"true\" />\n              {s}\n            </Button>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tag input"
+  ],
+  "type": "registry:block"
+}

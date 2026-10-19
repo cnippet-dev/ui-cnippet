@@ -1,3 +1,4 @@
+// title: Feature discovery alert
 import { LightbulbIcon, XIcon } from "lucide-react";
 import {
   Alert,

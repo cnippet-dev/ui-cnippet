@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-color-picker-1",
+  "description": "Brand colour picker with area, hue, hex and presets",
+  "registryDependencies": [
+    "@cnippet/color-picker",
+    "@cnippet/button",
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-color-picker-1.tsx",
+      "content": "// title: Brand colour picker with area, hue, hex and presets\n\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ColorPicker,\n  ColorPickerArea,\n  ColorPickerHue,\n  ColorPickerInput,\n  ColorPickerSwatch,\n  ColorPickerSwatches,\n} from \"@/registry/default/ui/color-picker\";\n\nconst PRESETS = [\n  \"#0f172a\",\n  \"#ef4444\",\n  \"#f97316\",\n  \"#eab308\",\n  \"#22c55e\",\n  \"#14b8a6\",\n  \"#3b82f6\",\n  \"#8b5cf6\",\n  \"#ec4899\",\n];\n\nexport default function Particle() {\n  const [color, setColor] = useState(\"#3b82f6\");\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4 rounded-xl border p-4\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"font-medium text-sm\">Brand colour</p>\n        <span\n          className=\"h-6 w-10 rounded-md shadow-[inset_0_0_0_1px_rgb(0_0_0/0.12)]\"\n          style={{ backgroundColor: color }}\n        />\n      </div>\n      <ColorPicker onValueChange={setColor} value={color}>\n        <ColorPickerArea />\n        <ColorPickerHue />\n        <ColorPickerInput />\n        <ColorPickerSwatches>\n          {PRESETS.map((c) => (\n            <ColorPickerSwatch key={c} value={c} />\n          ))}\n        </ColorPickerSwatches>\n      </ColorPicker>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "color picker"
+  ],
+  "type": "registry:block"
+}

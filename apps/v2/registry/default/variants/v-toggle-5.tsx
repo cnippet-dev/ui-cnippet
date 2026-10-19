@@ -1,3 +1,4 @@
+// title: Toggle with icon
 import { BookmarkIcon } from "lucide-react";
 import { Toggle } from "@/registry/default/ui/toggle";
 

@@ -1,3 +1,4 @@
+// title: Multiple selection
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 import {
   ToggleGroup,

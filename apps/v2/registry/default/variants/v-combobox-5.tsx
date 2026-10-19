@@ -1,3 +1,4 @@
+// title: Auto Highlight
 "use client";
 
 import {

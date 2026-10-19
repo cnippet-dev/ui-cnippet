@@ -1,3 +1,4 @@
+// title: Link button with an icon on the right
 import { ArrowUpRightIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 

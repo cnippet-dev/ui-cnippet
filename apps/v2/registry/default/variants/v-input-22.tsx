@@ -1,3 +1,4 @@
+// title: Readonly with copy-to-clipboard button
 "use client";
 
 import { CheckIcon, CopyIcon } from "lucide-react";

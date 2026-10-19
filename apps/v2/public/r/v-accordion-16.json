@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-accordion-16",
+  "description": "Showcase: single and multiple",
+  "registryDependencies": [
+    "@cnippet/accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-accordion-16.tsx",
+      "content": "// title: Showcase: single and multiple\nimport {\n  Accordion,\n  AccordionItem,\n  AccordionPanel,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\n\nconst faqs = [\n  {\n    answer: \"Yes. Every plan starts with a 14-day trial, no card required.\",\n    question: \"Is there a free trial?\",\n  },\n  {\n    answer:\n      \"Upgrade or downgrade at any time from Billing. Changes are prorated.\",\n    question: \"Can I change plans later?\",\n  },\n  {\n    answer: \"Your data stays available to export for 30 days after you cancel.\",\n    question: \"What happens when I cancel?\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-2xl gap-8 sm:grid-cols-2\">\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">\n          Single (one open at a time)\n        </span>\n        <Accordion defaultValue={[\"single-0\"]}>\n          {faqs.map((faq, i) => (\n            <AccordionItem key={faq.question} value={`single-${i}`}>\n              <AccordionTrigger>{faq.question}</AccordionTrigger>\n              <AccordionPanel>{faq.answer}</AccordionPanel>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">\n          Multiple (any can be open)\n        </span>\n        <Accordion defaultValue={[\"multi-0\", \"multi-1\"]} multiple>\n          {faqs.map((faq, i) => (\n            <AccordionItem key={faq.question} value={`multi-${i}`}>\n              <AccordionTrigger>{faq.question}</AccordionTrigger>\n              <AccordionPanel>{faq.answer}</AccordionPanel>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+    "role": "showcase"
+  },
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Info Icon
 import { InfoIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

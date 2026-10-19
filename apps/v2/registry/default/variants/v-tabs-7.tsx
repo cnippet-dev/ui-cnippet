@@ -1,3 +1,4 @@
+// title: Account settings tabs with card forms
 import { Button } from "@/registry/default/ui/button";
 import {
   Card,

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-time-picker-3",
+  "description": "24-hour quiet hours with a switch",
+  "registryDependencies": [
+    "@cnippet/time-picker",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-time-picker-3.tsx",
+      "content": "// title: 24-hour quiet hours with a switch\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\nimport { TimePicker } from \"@/registry/default/ui/time-picker\";\n\nexport default function Particle() {\n  const [enabled, setEnabled] = useState(true);\n  const [from, setFrom] = useState<string | null>(\"22:00\");\n  const [to, setTo] = useState<string | null>(\"07:00\");\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border p-5\">\n      <div className=\"flex items-start justify-between gap-4\">\n        <div>\n          <Label htmlFor=\"quiet-hours\">Quiet hours</Label>\n          <p className=\"text-muted-foreground text-xs\">\n            Pause non-urgent alerts overnight. 24-hour time, server timezone.\n          </p>\n        </div>\n        <Switch\n          checked={enabled}\n          id=\"quiet-hours\"\n          onCheckedChange={setEnabled}\n        />\n      </div>\n      <div className=\"grid grid-cols-2 gap-3\">\n        <div className=\"flex flex-col gap-2\">\n          <Label htmlFor=\"quiet-from\">Starts</Label>\n          <TimePicker\n            className=\"w-full\"\n            disabled={!enabled}\n            hourCycle={24}\n            id=\"quiet-from\"\n            onValueChange={setFrom}\n            step={60}\n            value={from}\n          />\n        </div>\n        <div className=\"flex flex-col gap-2\">\n          <Label htmlFor=\"quiet-to\">Ends</Label>\n          <TimePicker\n            className=\"w-full\"\n            disabled={!enabled}\n            hourCycle={24}\n            id=\"quiet-to\"\n            onValueChange={setTo}\n            step={60}\n            value={to}\n          />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "time picker"
+  ],
+  "type": "registry:block"
+}

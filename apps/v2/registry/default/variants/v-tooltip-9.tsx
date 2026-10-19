@@ -1,3 +1,4 @@
+// title: Trend Metrics
 import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 import {
   Tooltip,
@@ -44,7 +45,7 @@ const metrics: Metric[] = [
 
 export function Pattern() {
   return (
-    <div className="flex min-h-[100px] items-center justify-center">
+    <div className="flex min-h-25 items-center justify-center">
       <TooltipProvider>
         <div className="flex gap-4">
           {metrics.map((metric) => {
@@ -59,10 +60,10 @@ export function Pattern() {
                   <div className="mt-1 flex items-center gap-1.5">
                     <TrendIcon
                       aria-hidden="true"
-                      className={`size-3.5 ${isUp ? "text-emerald-500" : "text-rose-500"}`}
+                      className={`size-3.5 ${isUp ? "text-success-foreground" : "text-destructive-foreground"}`}
                     />
                     <span
-                      className={`font-semibold text-sm tabular-nums ${isUp ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}
+                      className={`font-semibold text-sm tabular-nums ${isUp ? "text-success-foreground" : "text-destructive-foreground"}`}
                     >
                       {metric.value}
                     </span>
@@ -84,7 +85,7 @@ export function Pattern() {
                     <div className="mt-1 flex items-center justify-between gap-6 border-t pt-1">
                       <span>{metric.period}</span>
                       <span
-                        className={`font-semibold tabular-nums ${isUp ? "text-emerald-500" : "text-rose-500"}`}
+                        className={`font-semibold tabular-nums ${isUp ? "text-success-foreground" : "text-destructive-foreground"}`}
                       >
                         {metric.value}
                       </span>

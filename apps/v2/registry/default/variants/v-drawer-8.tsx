@@ -1,3 +1,4 @@
+// title: Notification Center
 import { BellIcon } from "lucide-react";
 import {
   Avatar,
@@ -18,7 +19,8 @@ import {
 
 const notifications = [
   {
-    avatar: "https://github.com/shadcn.png",
+    avatar:
+      "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80",
     id: 1,
     initials: "MW",
     message: "Commented on your pull request: 'looks good to me!'",
@@ -40,6 +42,7 @@ const notifications = [
     id: 3,
     initials: "SR",
     message: "Mentioned you in a comment: '@you can you take a look?'",
+    name: "Sofia Reyes",
     time: "1h ago",
     unread: false,
   },

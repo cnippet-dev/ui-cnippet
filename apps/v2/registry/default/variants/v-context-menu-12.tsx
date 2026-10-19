@@ -1,3 +1,4 @@
+// title: Rich-text editor with checkbox formatting and alignment submenu
 "use client";
 
 import {
@@ -40,8 +41,8 @@ export function Pattern() {
         </p>
       </ContextMenuTrigger>
       <ContextMenuContent className="w-48">
-        <ContextMenuLabel>Formatting</ContextMenuLabel>
         <ContextMenuGroup>
+          <ContextMenuLabel>Formatting</ContextMenuLabel>
           <ContextMenuCheckboxItem checked={bold} onCheckedChange={setBold}>
             <BoldIcon />
             Bold

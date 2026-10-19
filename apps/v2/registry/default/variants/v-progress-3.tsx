@@ -1,3 +1,4 @@
+// title: With status messages
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,7 +12,9 @@ import {
 } from "@/registry/default/ui/progress";
 
 export function BaseProgressStatus() {
-  const [downloadProgress, setDownloadProgress] = useState(0);
+  // Runs past 100 so "Download complete!" holds for about a second before looping.
+  const [tick, setTick] = useState(0);
+  const downloadProgress = Math.min(100, tick);
 
   // Get status message based on progress
   const getStatusMessage = (progress: number) => {
@@ -31,12 +34,7 @@ export function BaseProgressStatus() {
   useEffect(() => {
     // Download simulation
     const downloadTimer = setInterval(() => {
-      setDownloadProgress((prev) => {
-        if (prev >= 100) {
-          return 0; // Reset for continuous loop
-        }
-        return prev + Math.random() * 3 + 1; // Random increment 1-4
-      });
+      setTick((prev) => (prev >= 115 ? 0 : prev + Math.random() * 3 + 1));
     }, 150);
 
     return () => {
@@ -49,7 +47,12 @@ export function BaseProgressStatus() {
       <Progress value={downloadProgress}>
         <ProgressLabel>Workspace Setup</ProgressLabel>
         <ProgressTrack>
-          <ProgressIndicator />
+          {/* No transition on the loop reset, so the bar never slides back under "Initializing". */}
+          <ProgressIndicator
+            className={
+              downloadProgress === 0 ? "transition-none" : "duration-150"
+            }
+          />
         </ProgressTrack>
         <ProgressValue />
       </Progress>

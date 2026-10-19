@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-skeleton-3.tsx",
-      "content": "import { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"gap-2\">\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </CardHeader>\n      <CardContent>\n        <Skeleton className=\"aspect-video w-full rounded-md\" />\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "content": "// title: Card component\nimport { Card, CardContent, CardHeader } from \"@/registry/default/ui/card\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport function Pattern() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"gap-2\">\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </CardHeader>\n      <CardContent>\n        <Skeleton className=\"aspect-video w-full rounded-md\" />\n      </CardContent>\n    </Card>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

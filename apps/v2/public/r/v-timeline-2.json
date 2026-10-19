@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-timeline-2",
+  "description": "Deployment history with status indicators",
+  "registryDependencies": [
+    "@cnippet/timeline",
+    "@cnippet/avatar",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-timeline-2.tsx",
+      "content": "// title: Deployment history with status indicators\nimport { CheckIcon, LoaderIcon, XIcon } from \"lucide-react\";\nimport {\n  Timeline,\n  TimelineContent,\n  TimelineDescription,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineTime,\n  TimelineTitle,\n} from \"@/registry/default/ui/timeline\";\n\nconst DEPLOYS = [\n  {\n    commit: \"a41f2c9\",\n    message: \"Add saved views\",\n    status: \"building\",\n    time: \"Building · 1m 12s\",\n  },\n  {\n    commit: \"9be07d1\",\n    message: \"Fix timezone in exports\",\n    status: \"ready\",\n    time: \"Ready · 14 min ago\",\n  },\n  {\n    commit: \"3c5a8e0\",\n    message: \"Bump Next.js to 16.4\",\n    status: \"failed\",\n    time: \"Failed · 1 hour ago\",\n  },\n  {\n    commit: \"e20d4b7\",\n    message: \"Cache pricing page\",\n    status: \"ready\",\n    time: \"Ready · 3 hours ago\",\n  },\n] as const;\n\nconst INDICATOR = {\n  building: {\n    className: \"border-info/32 bg-info/8 text-info-foreground\",\n    icon: <LoaderIcon className=\"animate-spin\" />,\n  },\n  failed: {\n    className:\n      \"border-destructive/32 bg-destructive/8 text-destructive-foreground\",\n    icon: <XIcon />,\n  },\n  ready: {\n    className: \"border-success/32 bg-success/8 text-success-foreground\",\n    icon: <CheckIcon />,\n  },\n};\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm rounded-xl border p-5\">\n      <p className=\"mb-4 font-medium text-sm\">Deployments · production</p>\n      <Timeline>\n        {DEPLOYS.map((d) => (\n          <TimelineItem key={d.commit}>\n            <TimelineIndicator className={INDICATOR[d.status].className}>\n              {INDICATOR[d.status].icon}\n            </TimelineIndicator>\n            <TimelineContent className=\"gap-0.5\">\n              <TimelineTitle>{d.message}</TimelineTitle>\n              <TimelineDescription className=\"font-mono text-xs\">\n                {d.commit}\n              </TimelineDescription>\n              <TimelineTime>{d.time}</TimelineTime>\n            </TimelineContent>\n          </TimelineItem>\n        ))}\n      </Timeline>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "timeline"
+  ],
+  "type": "registry:block"
+}

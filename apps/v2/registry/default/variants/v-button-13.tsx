@@ -1,3 +1,4 @@
+// title: Icon
 import { SearchIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 

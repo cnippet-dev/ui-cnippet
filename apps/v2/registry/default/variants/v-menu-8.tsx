@@ -1,3 +1,4 @@
+// title: Nested Menu
 import { Button } from "@/registry/default/ui/button";
 import {
   Menu,

@@ -1,0 +1,114 @@
+---
+title: Resizable
+description: Panels that users resize by dragging a handle or with the keyboard, for editors, mail clients and split views, with nesting, collapsing and saved layouts. Copy-paste ready.
+---
+
+<ComponentPreview name="v-resizable-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/resizable
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install react-resizable-panels lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="resizable" title="components/ui/resizable.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+```
+
+```tsx
+<ResizablePanelGroup className="h-64 rounded-xl border">
+  <ResizablePanel defaultSize="30%" minSize="20%">Sidebar</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel>Content</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Good to know
+
+- Built on [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) v4. Every prop it takes passes through.
+- Sizes: a **string is a percentage** (`"30%"` or `"30"`) and a **number is pixels** (`200`). Other units such as `"16rem"` work too.
+- The group needs a height. Give it one with `className`, or let it fill a parent that has one.
+- Stack panels with `orientation="vertical"` on the group, and nest a group inside a panel for editor-style layouts.
+- Handles are focusable: the arrow keys resize, Home and End jump to the limits, and double-clicking a handle resets its panels to their default sizes.
+- Add `collapsible` (and optionally `collapsedSize`) to a panel to let it snap shut when dragged past `minSize`.
+- To remember the layout, pass `useDefaultLayout({ id, storage: localStorage })` to the group, and give each panel an `id`, as in the mail example.
+
+## API Reference
+
+### ResizablePanelGroup
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Direction panels are laid out |
+| `defaultLayout` | `Layout` | — | Saved sizes, e.g. from `useDefaultLayout` |
+| `onLayoutChanged` | `(layout: Layout) => void` | — | Called when a resize finishes |
+
+### ResizablePanel
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultSize` | `number \| string` | auto | Starting size |
+| `minSize` / `maxSize` | `number \| string` | — | Size limits |
+| `collapsible` | `boolean` | `false` | Snaps to `collapsedSize` past `minSize` |
+| `collapsedSize` | `number \| string` | `0%` | Size when collapsed |
+| `id` | `string` | — | Needed for saved layouts |
+
+### ResizableHandle
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `withHandle` | `boolean` | `false` | Shows a grip so the handle reads as draggable |
+
+## Examples
+
+### Horizontal
+
+<ComponentPreview name="v-resizable-2" />
+
+### Vertical
+
+<ComponentPreview name="v-resizable-3" />
+
+### Collapsible with saved layout
+
+The nav collapses to icons when dragged past its minimum, and the sizes survive a reload.
+
+<ComponentPreview name="v-resizable-4" />

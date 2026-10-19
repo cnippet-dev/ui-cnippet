@@ -1,3 +1,4 @@
+// title: Multi-date Availability Selector
 "use client";
 
 import { format, isSameDay } from "date-fns";

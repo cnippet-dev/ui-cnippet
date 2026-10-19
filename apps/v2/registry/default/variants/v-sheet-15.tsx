@@ -1,3 +1,4 @@
+// title: API Key Manager
 "use client";
 
 import { KeyRoundIcon, PlusIcon, RotateCcwIcon, TrashIcon } from "lucide-react";

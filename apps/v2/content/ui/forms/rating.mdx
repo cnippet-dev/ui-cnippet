@@ -1,0 +1,108 @@
+---
+title: Rating
+description: Star rating input for reviews and feedback, keyboard accessible, plus a read-only display that shows fractional averages. Copy-paste ready.
+---
+
+<ComponentPreview name="v-rating-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/rating
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="rating" title="components/ui/rating.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Rating, RatingDisplay } from "@/components/ui/rating"
+```
+
+```tsx
+const [rating, setRating] = useState(0)
+
+<Rating aria-label="Your rating" value={rating} onValueChange={setRating} />
+
+<RatingDisplay value={4.6} />
+```
+
+## Good to know
+
+- `Rating` is a radio group: Tab moves into it, the arrow keys change the value, and each star is announced as "3 stars" and so on. Give the group a name with `aria-label` or `aria-labelledby`.
+- Hovering previews the value; moving the pointer away shows the selected value again.
+- A value of `0` means nothing is selected yet. Once a star is picked it can't be cleared by clicking, since radios don't uncheck. Add a "Clear" button that sets the value back to `0` if you need one.
+- Pass `name` to submit the value with a native form.
+- `RatingDisplay` is for showing scores, not editing them. It fills stars partially, so `3.7` shows 70% of the fourth star, and screen readers hear "3.7 out of 5 stars".
+- The stars are amber in every theme on purpose, because that's what people expect from reviews.
+
+## API Reference
+
+### Rating
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Controlled rating, from 1 to `max`; `0` is none |
+| `defaultValue` | `number` | `0` | Initial rating when uncontrolled |
+| `onValueChange` | `(value: number) => void` | — | Called when a star is picked |
+| `max` | `number` | `5` | Number of stars |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Star size |
+| `disabled` | `boolean` | `false` | Disables the input |
+| `readOnly` | `boolean` | `false` | Shows the value without allowing changes |
+| `name` | `string` | — | Field name for form submission |
+
+### RatingDisplay
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Score to show; fractions fill part of a star |
+| `max` | `number` | `5` | Number of stars |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Star size |
+
+## Examples
+
+### Review summary
+
+The average with a fractional `RatingDisplay` and a breakdown per star.
+
+<ComponentPreview name="v-rating-2" />
+
+### Sizes and states
+
+<ComponentPreview name="v-rating-3" />
+
+### Ten-point scale
+
+Use `max` for longer scales, such as a survey.
+
+<ComponentPreview name="v-rating-4" />

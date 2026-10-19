@@ -174,55 +174,55 @@ Right-aligned keyboard shortcut hint.
 
 ### Submenu
 
-Demonstrates a nested submenu that opens from a parent item, revealing a secondary list of options without closing the parent.
+Media library tiles with "Move to" and "Share" submenus built from `ContextMenuSub`. Moving an asset updates the folder shown on its tile.
 
 <ComponentPreview name="v-context-menu-2" />
 
 ### Shortcuts
 
-Each menu item shows a keyboard shortcut hint aligned to the right of its label using `CommandShortcut`.
+A code editor menu where each item shows its keyboard shortcut, right-aligned with `ContextMenuShortcut`.
 
 <ComponentPreview name="v-context-menu-3" />
 
 ### Group
 
-Items are organized into named groups with visual separators using `MenuGroup` and `MenuGroupLabel`.
+Calendar events whose actions are split into labelled sections with `ContextMenuGroup` and `ContextMenuLabel`, divided by separators.
 
 <ComponentPreview name="v-context-menu-4" />
 
 ### Icons
 
-Each menu item includes a leading icon to aid quick visual scanning of the available actions.
+Spreadsheet cells where each action has a leading icon for quick scanning. Right-clicking a cell also selects it.
 
 <ComponentPreview name="v-context-menu-5" />
 
 ### Checkboxes
 
-Menu items can be toggled on or off using `MenuCheckboxItem`, persisting their checked state across menu opens.
+Right-click a table header to show or hide columns with `ContextMenuCheckboxItem`. The checked state is controlled, so the table updates as you toggle.
 
 <ComponentPreview name="v-context-menu-6" />
 
 ### Radio
 
-A `MenuRadioGroup` inside the menu enforces single selection among a set of mutually exclusive options.
+A folder view with "Sort by" and "View" options, each a `ContextMenuRadioGroup` that allows one choice and re-renders the files.
 
 <ComponentPreview name="v-context-menu-7" />
 
 ### Destructive
 
-Shows a destructive variant item styled in red for irreversible actions such as delete or remove.
+Inbox rows with a `variant="destructive"` Delete item, set apart from everyday actions like reply and archive.
 
 <ComponentPreview name="v-context-menu-8" />
 
 ### Sides
 
-Demonstrates the available alignment positions and side placements for the context menu popup relative to its trigger.
+Canvas layers placed against each edge; every menu sets `side` so it opens inward, toward the canvas.
 
 <ComponentPreview name="v-context-menu-9" />
 
 ### Inside Dialog
 
-Opens the context menu within a dialog to demonstrate correct overlay stacking and focus management.
+Member rows inside a dialog, each with its own context menu and a role submenu, showing that menus stack correctly above a modal.
 
 <ComponentPreview name="v-context-menu-10" />
 

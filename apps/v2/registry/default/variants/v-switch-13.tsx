@@ -1,3 +1,4 @@
+// title: Dark Mode Toggle Card
 "use client";
 
 import { MoonIcon, SunIcon } from "lucide-react";

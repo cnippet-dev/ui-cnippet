@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-resizable-1",
+  "description": "Code editor layout with nested resizable panels",
+  "registryDependencies": [
+    "@cnippet/resizable"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-resizable-1.tsx",
+      "content": "// title: Code editor layout with nested resizable panels\nimport { FileCodeIcon, FileIcon, FolderIcon } from \"lucide-react\";\nimport {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/registry/default/ui/resizable\";\n\nconst FILES = [\n  { depth: 0, icon: FolderIcon, name: \"app\" },\n  { depth: 1, icon: FileCodeIcon, name: \"layout.tsx\" },\n  { depth: 0, icon: FolderIcon, name: \"lib\" },\n  { active: true, depth: 1, icon: FileCodeIcon, name: \"retry.ts\" },\n  { depth: 1, icon: FileCodeIcon, name: \"retry.test.ts\" },\n  { depth: 0, icon: FileIcon, name: \"package.json\" },\n];\n\nconst CODE = `export async function retry<T>(fn: () => Promise<T>) {\n  for (let attempt = 0; ; attempt++) {\n    try {\n      return await fn();\n    } catch (error) {\n      if (attempt === 4) throw error;\n      await sleep(Math.min(2 ** attempt * 500, 30_000));\n    }\n  }\n}`;\n\nexport default function Particle() {\n  return (\n    <ResizablePanelGroup className=\"h-80 w-full max-w-2xl overflow-hidden rounded-xl border text-sm\">\n      <ResizablePanel collapsible defaultSize=\"26%\" minSize=\"18%\">\n        <div className=\"flex h-full flex-col gap-0.5 overflow-auto p-2\">\n          <p className=\"px-2 py-1 font-medium text-muted-foreground text-xs\">\n            Explorer\n          </p>\n          {FILES.map((f) => (\n            <div\n              className={`flex items-center gap-1.5 rounded-md py-1 pe-2 ${f.active ? \"bg-accent text-accent-foreground\" : \"text-muted-foreground\"}`}\n              key={f.name}\n              style={{ paddingInlineStart: `${0.5 + f.depth}rem` }}\n            >\n              <f.icon aria-hidden=\"true\" className=\"size-3.5 shrink-0\" />\n              <span className=\"truncate\">{f.name}</span>\n            </div>\n          ))}\n        </div>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel minSize=\"30%\">\n        <ResizablePanelGroup orientation=\"vertical\">\n          <ResizablePanel defaultSize=\"68%\" minSize=\"25%\">\n            <div className=\"flex h-full flex-col\">\n              <div className=\"border-b px-3 py-1.5 text-muted-foreground text-xs\">\n                lib/retry.ts\n              </div>\n              <pre className=\"flex-1 overflow-auto p-3 font-mono text-xs leading-relaxed\">\n                {CODE}\n              </pre>\n            </div>\n          </ResizablePanel>\n          <ResizableHandle withHandle />\n          <ResizablePanel minSize=\"15%\">\n            <div className=\"flex h-full flex-col overflow-auto bg-muted/40 p-3 font-mono text-muted-foreground text-xs leading-relaxed\">\n              <span>$ bun test lib/retry.test.ts</span>\n              <span className=\"text-success-foreground\">✓ 6 passed</span>\n              <span>Done in 412ms</span>\n            </div>\n          </ResizablePanel>\n        </ResizablePanelGroup>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "resizable"
+  ],
+  "type": "registry:block"
+}

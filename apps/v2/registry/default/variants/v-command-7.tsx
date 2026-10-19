@@ -1,3 +1,4 @@
+// title: With Recent And Favorites Sections
 "use client";
 
 import {

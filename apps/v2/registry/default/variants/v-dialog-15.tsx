@@ -1,3 +1,4 @@
+// title: Product Feedback Star Rating
 "use client";
 
 import { StarIcon } from "lucide-react";

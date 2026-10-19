@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-group-5.tsx",
-      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={[\"bold\"]} multiple>\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "content": "// title: Multiple selection\nimport { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={[\"bold\"]} multiple>\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n        <BoldIcon />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n        <ItalicIcon />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n        <UnderlineIcon />\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "toggle group"

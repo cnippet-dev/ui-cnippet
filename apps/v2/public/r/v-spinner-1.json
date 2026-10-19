@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-spinner-1.tsx",
-      "content": "import { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
+      "content": "// title: Default\nimport { Spinner } from \"@/registry/default/ui/spinner\";\n\nexport default function Particle() {\n  return <Spinner />;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "spinner"

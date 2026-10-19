@@ -1,3 +1,4 @@
+// title: Pricing toggle between monthly and yearly billing with plan cards
 "use client";
 
 import { CheckIcon } from "lucide-react";
@@ -83,7 +84,7 @@ export function Pattern() {
                   className="flex items-start gap-1.5 text-muted-foreground text-xs"
                   key={f}
                 >
-                  <CheckIcon className="mt-px size-3 shrink-0 text-emerald-500" />
+                  <CheckIcon className="mt-px size-3 shrink-0 text-success-foreground" />
                   {f}
                 </li>
               ))}

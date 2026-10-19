@@ -1,3 +1,4 @@
+// title: Danger zone with typed delete confirmation
 "use client";
 
 import { useState } from "react";

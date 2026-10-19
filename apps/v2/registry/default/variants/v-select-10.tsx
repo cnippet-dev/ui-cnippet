@@ -1,3 +1,4 @@
+// title: Theme select with descriptions
 "use client";
 
 import { useState } from "react";
@@ -50,8 +51,13 @@ export default function Component() {
         </SelectTrigger>
         <SelectPopup>
           {themes.slice(1).map((item) => (
-            <SelectItem key={item.value} value={item}>
-              {item.label}
+            <SelectItem className="py-1.5" key={item.value} value={item}>
+              <span className="flex flex-col">
+                {item.label}
+                <span className="text-muted-foreground text-xs">
+                  {item.description}
+                </span>
+              </span>
             </SelectItem>
           ))}
         </SelectPopup>

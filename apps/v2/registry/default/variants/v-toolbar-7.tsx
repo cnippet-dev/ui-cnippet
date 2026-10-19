@@ -1,3 +1,4 @@
+// title: File browser toolbar with search, sort and view toggle
 "use client";
 
 import {

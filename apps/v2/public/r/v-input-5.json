@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-5.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const maxLength = 50;\n\n  return (\n    <Field className=\"max-w-sm\">\n      <div className=\"flex w-full items-center justify-between\">\n        <FieldLabel htmlFor=\"bio\">Description</FieldLabel>\n        <span className=\"text-muted-foreground text-xs\">\n          {value.length}/{maxLength}\n        </span>\n      </div>\n      <Input\n        id=\"bio\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Description of your project\"\n        value={value}\n      />\n    </Field>\n  );\n}\n",
+      "content": "// title: With Character Counter\n\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  const [value, setValue] = useState(\"\");\n  const maxLength = 50;\n\n  return (\n    <Field className=\"max-w-sm\">\n      <div className=\"flex w-full items-center justify-between\">\n        <FieldLabel htmlFor=\"bio\">Description</FieldLabel>\n        <span className=\"text-muted-foreground text-xs\">\n          {value.length}/{maxLength}\n        </span>\n      </div>\n      <Input\n        id=\"bio\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Description of your project\"\n        value={value}\n      />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "input"

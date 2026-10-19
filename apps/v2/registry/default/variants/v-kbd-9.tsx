@@ -1,3 +1,4 @@
+// title: Cross-platform Mac vs Win shortcut table
 import { EditIcon, SearchIcon, UndoIcon } from "lucide-react";
 import { Fragment } from "react";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";

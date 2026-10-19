@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-15.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\nimport {\n  NumberField,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <NumberField aria-label=\"Enter the amount\" defaultValue={10}>\n        <NumberFieldInput className=\"text-left\" />\n      </NumberField>\n      <InputGroupAddon>\n        <InputGroupText>€</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>EUR</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "// title: With Number Field\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\nimport {\n  NumberField,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <NumberField aria-label=\"Enter the amount\" defaultValue={10}>\n        <NumberFieldInput className=\"text-left\" />\n      </NumberField>\n      <InputGroupAddon>\n        <InputGroupText>€</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>EUR</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

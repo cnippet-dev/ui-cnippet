@@ -1,3 +1,4 @@
+// title: Chat message composer with bubble thread and send on Enter
 "use client";
 
 import { PaperclipIcon, SendIcon, SmileIcon } from "lucide-react";
@@ -62,7 +63,7 @@ export function Pattern() {
     <div className="flex w-full max-w-xs flex-col overflow-hidden rounded-xl border border-border">
       <div className="border-border border-b bg-muted/30 px-3 py-2">
         <p className="font-medium text-sm">Alice Chen</p>
-        <p className="text-emerald-500 text-xs">Online</p>
+        <p className="text-success-foreground text-xs">Online</p>
       </div>
 
       <div className="flex min-h-48 flex-col justify-end gap-2 bg-muted/10 p-3">

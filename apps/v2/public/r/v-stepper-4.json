@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-stepper-4",
+  "description": "Jump back to finished steps",
+  "registryDependencies": [
+    "@cnippet/stepper",
+    "@cnippet/button",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-stepper-4.tsx",
+      "content": "// title: Jump back to finished steps\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  Stepper,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n  StepperTitle,\n  StepperTrigger,\n} from \"@/registry/default/ui/stepper\";\n\nconst steps = [\"Details\", \"Pricing\", \"Media\", \"Publish\"];\n\nexport default function Particle() {\n  const [step, setStep] = useState(2);\n  // Steps the user has already finished stay reachable after going back.\n  const [furthest, setFurthest] = useState(3);\n\n  return (\n    <div className=\"flex w-full max-w-lg flex-col gap-5\">\n      <Stepper\n        onValueChange={(next) => {\n          setStep(next);\n          setFurthest((f) => Math.max(f, next));\n        }}\n        value={step}\n      >\n        {steps.map((title, i) => (\n          <StepperItem\n            completed={i + 1 < furthest && i + 1 !== step}\n            disabled={i + 1 > furthest}\n            key={title}\n            step={i + 1}\n          >\n            <StepperTrigger className=\"flex-row gap-2\">\n              <StepperIndicator />\n              <StepperTitle className=\"max-sm:sr-only\">{title}</StepperTitle>\n            </StepperTrigger>\n            <StepperSeparator />\n          </StepperItem>\n        ))}\n      </Stepper>\n      <div className=\"flex items-center justify-between rounded-xl border p-4 text-sm\">\n        <span>\n          Editing <span className=\"font-medium\">{steps[step - 1]}</span>\n        </span>\n        <Badge variant=\"outline\">\n          {furthest - 1} of {steps.length} done\n        </Badge>\n      </div>\n      <p className=\"text-muted-foreground text-xs\">\n        Click any finished step to jump back to it.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "stepper"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Feature Tour
 "use client";
 
 import { ArrowLeftIcon, ArrowRightIcon, CompassIcon } from "lucide-react";

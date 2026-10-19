@@ -1,6 +1,7 @@
+// title: Appointment Booking
 "use client";
 
-import { format } from "date-fns";
+import { addDays, format, isWeekend } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -38,9 +39,24 @@ const BOOKED_BY_DOW: Record<number, string[]> = {
   5: ["10:00 AM"],
 };
 
+function nextWeekday(from: Date) {
+  let day = addDays(from, 1);
+  while (isWeekend(day)) day = addDays(day, 1);
+  return day;
+}
+
+// Open on the next bookable day with its first free slot picked, so the
+// preview shows a ready-to-book state instead of a disabled button.
+const INITIAL_DATE = nextWeekday(new Date());
+const INITIAL_SLOT = TIME_SLOTS.find(
+  (slot) => !BOOKED_BY_DOW[INITIAL_DATE.getDay()]?.includes(slot),
+);
+
 export default function Particle() {
-  const [date, setDate] = useState<Date | undefined>();
-  const [selectedSlot, setSelectedSlot] = useState<string | undefined>();
+  const [date, setDate] = useState<Date | undefined>(INITIAL_DATE);
+  const [selectedSlot, setSelectedSlot] = useState<string | undefined>(
+    INITIAL_SLOT,
+  );
 
   const handleDateSelect = (d: Date | undefined) => {
     setDate(d);
@@ -53,7 +69,10 @@ export default function Particle() {
     <div className="w-full max-w-sm space-y-4 rounded-xl border bg-background p-4 shadow-sm">
       <div className="flex items-center gap-3 border-b pb-4">
         <Avatar className="size-11">
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage
+            alt="Dr. Sarah Chen"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&dpr=2&q=80"
+          />
           <AvatarFallback>SC</AvatarFallback>
         </Avatar>
         <div className="min-w-0 flex-1">

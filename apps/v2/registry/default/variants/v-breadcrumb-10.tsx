@@ -1,3 +1,4 @@
+// title: With Project, Sser and Document Info
 import { FileTextIcon } from "lucide-react";
 import {
   Avatar,
@@ -41,16 +42,16 @@ export function Pattern() {
                 <Avatar className="size-6">
                   <AvatarImage
                     className="object-cover"
-                    src="https://github.com/shadcn.png"
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&dpr=2&q=80"
                   />
                   <AvatarFallback>MP</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col">
                   <span className="font-medium text-foreground leading-tight">
-                    shadcn
+                    Maya Patel
                   </span>
                   <span className="text-muted-foreground leading-tight">
-                    ui@shadcn.com
+                    maya@acme.com
                   </span>
                 </div>
               </BreadcrumbLink>
@@ -62,7 +63,7 @@ export function Pattern() {
 
             <BreadcrumbItem>
               <BreadcrumbPage className="flex items-center gap-2.5">
-                <span className="flex size-6 items-center justify-center rounded-md bg-sky-100 text-sky-500 dark:bg-sky-500/10 dark:text-sky-400">
+                <span className="flex size-6 items-center justify-center rounded-md bg-info/8 text-info-foreground dark:bg-info/16">
                   <FileTextIcon className="size-3.5" />
                 </span>
                 <div className="flex flex-col">

@@ -1,3 +1,4 @@
+// title: Share Link
 "use client";
 
 import {
@@ -69,7 +70,7 @@ export function Pattern() {
                 {copied ? (
                   <CheckIcon
                     aria-hidden="true"
-                    className="size-3.5 text-emerald-500"
+                    className="size-3.5 text-success-foreground"
                   />
                 ) : (
                   <CopyIcon aria-hidden="true" className="size-3.5" />

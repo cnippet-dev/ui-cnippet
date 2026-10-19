@@ -1,3 +1,4 @@
+// title: Account Deactivation Confirmation
 import { CircleAlertIcon } from "lucide-react";
 import {
   AlertDialog,

@@ -1,3 +1,4 @@
+// title: With Varying Heights
 "use client";
 
 import { useState } from "react";
@@ -5,10 +6,10 @@ import { Button } from "@/registry/default/ui/button";
 import { toastManager } from "@/registry/default/ui/toast";
 
 const TEXTS = [
-  "Short message.",
-  "A bit longer message that spans two lines.",
-  "This is a longer description that intentionally takes more vertical space to demonstrate stacking with varying heights.",
-  "An even longer description that should span multiple lines so we can verify the clamped collapsed height and smooth expansion animation when hovering or focusing the viewport.",
+  "Link copied.",
+  "Priya Shah mentioned you in Q4 launch plan.",
+  "Your export is ready. The download link expires in 24 hours, so save the file somewhere safe.",
+  "Scheduled maintenance on Oct 24 from 02:00 to 03:00 UTC. The dashboard will be read-only while we upgrade the database, and API requests may be slower than usual.",
 ];
 
 export default function Particle() {
@@ -19,7 +20,7 @@ export default function Particle() {
     const description = TEXTS[Math.floor(Math.random() * TEXTS.length)];
     toastManager.add({
       description,
-      title: `Toast ${count + 1} created`,
+      title: `Notification ${count + 1}`,
     });
   }
 

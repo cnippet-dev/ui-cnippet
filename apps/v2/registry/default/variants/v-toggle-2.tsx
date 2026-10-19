@@ -1,3 +1,4 @@
+// title: Toggle buttons with outline variant
 import { BoldIcon, ItalicIcon } from "lucide-react";
 import { Toggle } from "@/registry/default/ui/toggle";
 

@@ -1,3 +1,4 @@
+// title: Command With File Search
 "use client";
 
 import { FileIcon, SearchIcon } from "lucide-react";

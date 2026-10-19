@@ -1,3 +1,4 @@
+// title: Table Row Loading State
 "use client";
 
 import { RefreshCwIcon } from "lucide-react";
@@ -59,7 +60,7 @@ export default function Particle() {
                 <div className="text-right">
                   <p className="font-semibold text-sm">{row.amount}</p>
                   <p
-                    className={`text-xs ${row.status === "Paid" ? "text-green-600" : "text-muted-foreground"}`}
+                    className={`text-xs ${row.status === "Paid" ? "text-success-foreground" : "text-muted-foreground"}`}
                   >
                     {row.status}
                   </p>

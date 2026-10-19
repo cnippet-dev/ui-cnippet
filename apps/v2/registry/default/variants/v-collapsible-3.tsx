@@ -1,3 +1,4 @@
+// title: Collapsible animated card
 import { ChevronDownIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {

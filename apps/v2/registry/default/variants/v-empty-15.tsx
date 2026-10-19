@@ -1,3 +1,4 @@
+// title: Access restricted — permission request empty state
 import { LockIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

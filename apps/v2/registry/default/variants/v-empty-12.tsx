@@ -1,3 +1,4 @@
+// title: No team members — invite form empty state
 import { UserPlusIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

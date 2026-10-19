@@ -1,14 +1,11 @@
 import "./globals.css";
 
 import { ThemeProvider } from "@cnippet/ui/shared/theme-provider";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { SpotlightTracker } from "@/components/signal/spotlight-tracker";
-import {
-  AnchoredToastProvider,
-  ToastProvider,
-} from "@/registry/default/ui/toast";
+import { Analytics } from "@/components/site/analytics";
+import { ToastProviders } from "@/components/site/toast-providers";
 
 const geistSans = Geist({
   display: "swap",
@@ -65,19 +62,17 @@ export default function RootLayout({
 }>) {
   return (
     <html data-scroll-behavior="smooth" lang="en" suppressHydrationWarning>
-      <GoogleTagManager gtmId="GTM-KHM7SVKH" />
+      <Analytics position="head" />
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} group/body antialiased`}
       >
         <ThemeProvider>
-          <ToastProvider position="bottom-center">
-            <AnchoredToastProvider>{children}</AnchoredToastProvider>
-          </ToastProvider>
+          <ToastProviders>{children}</ToastProviders>
         </ThemeProvider>
         <SpotlightTracker />
       </body>
-      <GoogleAnalytics gaId="G-5BFT497ZZ2" />
+      <Analytics position="tail" />
     </html>
   );
 }

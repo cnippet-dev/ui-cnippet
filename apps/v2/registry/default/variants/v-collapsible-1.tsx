@@ -1,3 +1,4 @@
+// title: Default
 import { ChevronDownIcon } from "lucide-react";
 import {
   Collapsible,

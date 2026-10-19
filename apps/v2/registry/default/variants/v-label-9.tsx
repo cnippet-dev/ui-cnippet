@@ -1,3 +1,4 @@
+// title: With helper description text
 import { Field, FieldDescription } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";

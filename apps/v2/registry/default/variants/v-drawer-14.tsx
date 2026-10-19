@@ -1,3 +1,4 @@
+// title: Help Center with FAQ Search
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 
 "use client";

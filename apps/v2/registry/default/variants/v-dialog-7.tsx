@@ -1,3 +1,4 @@
+// title: Cookie Preferences
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
@@ -5,6 +6,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogPanel,
   DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
@@ -25,7 +27,7 @@ export function Pattern() {
               You can enable or disable different categories of cookies.
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4">
+          <DialogPanel className="space-y-4">
             <div className="flex items-center justify-between gap-4">
               <div className="space-y-0.75">
                 <Label className="font-medium text-sm">Essential Cookies</Label>
@@ -65,7 +67,7 @@ export function Pattern() {
               </div>
               <Switch id="cookie-marketing" />
             </div>
-          </div>
+          </DialogPanel>
           <DialogFooter>
             <Button variant="outline">Save Preferences</Button>
             <Button>Accept All</Button>

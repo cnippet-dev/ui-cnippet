@@ -1,3 +1,4 @@
+// title: Logout Confirmation Dialog
 import { ShieldQuestionMarkIcon } from "lucide-react";
 import {
   AlertDialog,
@@ -16,7 +17,7 @@ export function Pattern() {
       <AlertDialogTrigger render={<Button variant="outline">Logout</Button>} />
       <AlertDialogContent className="gap-0 overflow-hidden p-0 sm:max-w-sm">
         <div className="flex flex-col items-center justify-center gap-2 p-8">
-          <div className="flex size-12 items-center justify-center rounded-full bg-violet-50 text-violet-500 dark:bg-violet-950 dark:text-violet-400">
+          <div className="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
             <ShieldQuestionMarkIcon className="size-6" />
           </div>
           <AlertDialogTitle className="text-center font-semibold text-base">

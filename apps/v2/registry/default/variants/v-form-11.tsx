@@ -1,3 +1,4 @@
+// title: Forgot password — reset email
 "use client";
 
 import { MailIcon } from "lucide-react";

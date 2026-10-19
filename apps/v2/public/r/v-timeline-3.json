@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-timeline-3",
+  "description": "Order tracking with compact dots",
+  "registryDependencies": [
+    "@cnippet/timeline",
+    "@cnippet/avatar",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-timeline-3.tsx",
+      "content": "// title: Order tracking with compact dots\nimport {\n  Timeline,\n  TimelineContent,\n  TimelineDescription,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineTime,\n  TimelineTitle,\n} from \"@/registry/default/ui/timeline\";\n\nconst STEPS = [\n  {\n    place: \"San Francisco, CA\",\n    time: \"Oct 19, 8:02 AM\",\n    title: \"Out for delivery\",\n  },\n  {\n    place: \"Oakland, CA\",\n    time: \"Oct 18, 9:41 PM\",\n    title: \"Arrived at local facility\",\n  },\n  { place: \"Reno, NV\", time: \"Oct 17, 6:15 PM\", title: \"In transit\" },\n  { place: \"Denver, CO\", time: \"Oct 16, 10:30 AM\", title: \"Shipped\" },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm rounded-xl border p-5\">\n      <div className=\"mb-4\">\n        <p className=\"font-medium text-sm\">Order #10482</p>\n        <p className=\"text-muted-foreground text-xs\">Arrives today by 8 PM</p>\n      </div>\n      <Timeline className=\"[--timeline-indicator:--spacing(4)]\">\n        {STEPS.map((step, i) => (\n          <TimelineItem className=\"pb-5\" key={step.title}>\n            <TimelineIndicator\n              className={\n                i === 0\n                  ? \"before:bg-primary before:ring-4 before:ring-primary/16\"\n                  : undefined\n              }\n            />\n            <TimelineContent className=\"gap-0.5\">\n              <div className=\"flex items-baseline justify-between gap-3\">\n                <TimelineTitle className={i === 0 ? \"font-medium\" : undefined}>\n                  {step.title}\n                </TimelineTitle>\n                <TimelineTime className=\"shrink-0\">{step.time}</TimelineTime>\n              </div>\n              <TimelineDescription className=\"text-xs\">\n                {step.place}\n              </TimelineDescription>\n            </TimelineContent>\n          </TimelineItem>\n        ))}\n      </Timeline>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "timeline"
+  ],
+  "type": "registry:block"
+}

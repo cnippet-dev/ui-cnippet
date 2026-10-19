@@ -1,3 +1,4 @@
+// title: Page header breadcrumb with edit and share action buttons
 import { PencilIcon, ShareIcon } from "lucide-react";
 import {
   Breadcrumb,

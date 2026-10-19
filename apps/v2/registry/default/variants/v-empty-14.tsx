@@ -1,3 +1,4 @@
+// title: Inbox zero — illustration with compose action
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,

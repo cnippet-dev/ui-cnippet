@@ -1,3 +1,4 @@
+// title: GitHub repository list cards with language, star, and fork counts
 import { GitBranch, GitForkIcon, StarIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Card, CardContent } from "@/registry/default/ui/card";

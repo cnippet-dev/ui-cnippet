@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-rating-1",
+  "description": "Product review form with star rating",
+  "registryDependencies": [
+    "@cnippet/rating",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/textarea",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-rating-1.tsx",
+      "content": "// title: Product review form with star rating\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Rating } from \"@/registry/default/ui/rating\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nconst LABELS = [\"\", \"Poor\", \"Fair\", \"Good\", \"Great\", \"Excellent\"];\n\nexport default function Particle() {\n  const [rating, setRating] = useState(0);\n  const [sent, setSent] = useState(false);\n\n  if (sent) {\n    return (\n      <div className=\"flex w-full max-w-sm flex-col items-center gap-2 rounded-xl border p-6 text-center\">\n        <p className=\"font-medium text-sm\">Thanks for your review</p>\n        <p className=\"text-muted-foreground text-sm\">\n          You rated the Aero Wireless Headphones {rating} out of 5.\n        </p>\n        <Button\n          className=\"mt-2\"\n          onClick={() => {\n            setRating(0);\n            setSent(false);\n          }}\n          size=\"sm\"\n          variant=\"outline\"\n        >\n          Edit review\n        </Button>\n      </div>\n    );\n  }\n\n  return (\n    <form\n      className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border p-5\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        setSent(true);\n      }}\n    >\n      <div>\n        <p className=\"font-medium text-sm\">Rate your purchase</p>\n        <p className=\"text-muted-foreground text-xs\">\n          Aero Wireless Headphones · delivered Oct 14\n        </p>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Rating\n          aria-label=\"Your rating\"\n          onValueChange={setRating}\n          size=\"lg\"\n          value={rating}\n        />\n        <span className=\"text-muted-foreground text-sm\">\n          {LABELS[rating] || \"Tap a star\"}\n        </span>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <Label htmlFor=\"review-body\">Your review (optional)</Label>\n        <Textarea\n          id=\"review-body\"\n          placeholder=\"Battery life, comfort, sound…\"\n          rows={3}\n        />\n      </div>\n      <Button disabled={!rating} type=\"submit\">\n        Post review\n      </Button>\n    </form>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "rating"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-switch-16",
+  "description": "Showcase: states, sizes and descriptions",
+  "registryDependencies": [
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-switch-16.tsx",
+      "content": "// title: Showcase: states, sizes and descriptions\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-md gap-6 sm:grid-cols-2\">\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">States</span>\n        <Label>\n          <Switch />\n          Off\n        </Label>\n        <Label>\n          <Switch defaultChecked />\n          On\n        </Label>\n        <Label>\n          <Switch defaultChecked disabled />\n          Disabled\n        </Label>\n        <Label>\n          <Switch defaultChecked size=\"sm\" />\n          Small\n        </Label>\n      </div>\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">With description</span>\n        <div className=\"flex items-start justify-between gap-4\">\n          <div className=\"flex flex-col gap-1\">\n            <Label htmlFor=\"showcase-marketing\">Marketing emails</Label>\n            <p className=\"text-muted-foreground text-xs\">\n              News, offers and product tips.\n            </p>\n          </div>\n          <Switch id=\"showcase-marketing\" />\n        </div>\n        <div className=\"flex items-start justify-between gap-4\">\n          <div className=\"flex flex-col gap-1\">\n            <Label htmlFor=\"showcase-security\">Security alerts</Label>\n            <p className=\"text-muted-foreground text-xs\">\n              Sign-ins from new devices.\n            </p>\n          </div>\n          <Switch defaultChecked id=\"showcase-security\" />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:block"
+}

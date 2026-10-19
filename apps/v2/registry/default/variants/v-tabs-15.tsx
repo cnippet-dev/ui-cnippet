@@ -1,3 +1,4 @@
+// title: Profile repository listing with badge counts per tab
 import { StarIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
@@ -57,7 +58,8 @@ export function Pattern() {
 
         <TabsPanel className="pt-4" value="overview">
           <p className="text-muted-foreground text-sm">
-            Profile overview content goes here.
+            Design engineer at Acme. Building accessible UI components and the
+            tools around them.
           </p>
         </TabsPanel>
 
@@ -95,13 +97,13 @@ export function Pattern() {
 
         <TabsPanel className="pt-4" value="stars">
           <p className="text-muted-foreground text-sm">
-            Starred repositories appear here.
+            108 starred repositories, mostly design systems and dev tools.
           </p>
         </TabsPanel>
 
         <TabsPanel className="pt-4" value="activity">
           <p className="text-muted-foreground text-sm">
-            Recent activity feed goes here.
+            Opened 4 pull requests and reviewed 9 this week.
           </p>
         </TabsPanel>
       </Tabs>

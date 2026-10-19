@@ -1,3 +1,4 @@
+// title: Server health monitoring with CPU and memory progress bars
 import { Badge } from "@/registry/default/ui/badge";
 import { Progress } from "@/registry/default/ui/progress";
 import {

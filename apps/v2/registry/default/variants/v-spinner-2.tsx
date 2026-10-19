@@ -1,3 +1,4 @@
+// title: Input Group
 import {
   InputGroup,
   InputGroupAddon,

@@ -1,3 +1,4 @@
+// title: Cookie consent banner with accept and decline
 "use client";
 
 import { CookieIcon } from "lucide-react";
@@ -20,16 +21,18 @@ export function Pattern() {
       <Alert className="shadow-md">
         <CookieIcon />
         <AlertTitle>We use cookies</AlertTitle>
-        <AlertDescription className="inline-auto">
-          We use cookies to personalize content, analyze traffic, and improve
-          your experience. By continuing, you agree to our{" "}
-          <a
-            className="underline underline-offset-2 hover:text-foreground"
-            href="#"
-          >
-            cookie policy
-          </a>
-          .
+        <AlertDescription>
+          <p>
+            We use cookies to personalize content, analyze traffic, and improve
+            your experience. By continuing, you agree to our{" "}
+            <a
+              className="underline underline-offset-2 hover:text-foreground"
+              href="#"
+            >
+              cookie policy
+            </a>
+            .
+          </p>
         </AlertDescription>
         <AlertAction className="mt-1">
           <Button

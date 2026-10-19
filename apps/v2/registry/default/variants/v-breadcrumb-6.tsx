@@ -1,3 +1,4 @@
+// title: With Avatar
 import {
   Avatar,
   AvatarFallback,
@@ -29,10 +30,13 @@ export function Pattern() {
         <BreadcrumbItem>
           <BreadcrumbLink className="flex items-center gap-2" href="#">
             <Avatar className="size-5">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarImage
+                alt="Maya Patel"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&dpr=2&q=80"
+              />
+              <AvatarFallback>MP</AvatarFallback>
             </Avatar>
-            @shadcn
+            @mayapatel
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

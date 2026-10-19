@@ -1,3 +1,4 @@
+// title: Go-to-page palette with shortcut hints and arrow icon for unbound items
 "use client";
 
 import {

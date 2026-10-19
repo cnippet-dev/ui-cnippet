@@ -1,3 +1,4 @@
+// title: File actions
 import {
   CopyIcon,
   DownloadIcon,

@@ -1,3 +1,4 @@
+// title: Three-band equalizer
 "use client";
 
 import { useState } from "react";

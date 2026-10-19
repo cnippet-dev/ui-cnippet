@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-resizable-4",
+  "description": "Mail layout with collapsible nav and saved sizes",
+  "registryDependencies": [
+    "@cnippet/resizable"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-resizable-4.tsx",
+      "content": "// title: Mail layout with collapsible nav and saved sizes\n\"use client\";\n\nimport { InboxIcon, SendIcon, StarIcon } from \"lucide-react\";\nimport { useDefaultLayout } from \"react-resizable-panels\";\nimport {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/registry/default/ui/resizable\";\n\nconst NAV = [\n  { icon: InboxIcon, label: \"Inbox\" },\n  { icon: StarIcon, label: \"Starred\" },\n  { icon: SendIcon, label: \"Sent\" },\n];\n\nconst MAIL = [\n  { from: \"Stripe\", subject: \"Your October invoice\" },\n  { from: \"Maya Patel\", subject: \"Re: retry backoff\" },\n  { from: \"GitHub\", subject: \"[cnippet/ui] PR #482 merged\" },\n];\n\nexport default function Particle() {\n  // Saves the sizes to localStorage, so a reload keeps the layout.\n  const { defaultLayout, onLayoutChanged } = useDefaultLayout({\n    id: \"v-resizable-4\",\n    storage: typeof window === \"undefined\" ? undefined : localStorage,\n  });\n\n  return (\n    <ResizablePanelGroup\n      className=\"h-72 w-full max-w-2xl overflow-hidden rounded-xl border text-sm\"\n      defaultLayout={defaultLayout}\n      onLayoutChanged={onLayoutChanged}\n    >\n      <ResizablePanel\n        collapsedSize=\"52px\"\n        collapsible\n        defaultSize=\"24%\"\n        id=\"nav\"\n        minSize=\"18%\"\n      >\n        <nav className=\"flex h-full flex-col gap-0.5 overflow-hidden p-2\">\n          {NAV.map((item, i) => (\n            <span\n              className={`flex items-center gap-2 rounded-md px-2.5 py-1.5 ${i === 0 ? \"bg-accent text-accent-foreground\" : \"text-muted-foreground\"}`}\n              key={item.label}\n            >\n              <item.icon aria-hidden=\"true\" className=\"size-4 shrink-0\" />\n              <span className=\"truncate\">{item.label}</span>\n            </span>\n          ))}\n        </nav>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize=\"36%\" id=\"list\" minSize=\"24%\">\n        <ul className=\"flex h-full flex-col divide-y overflow-auto\">\n          {MAIL.map((m, i) => (\n            <li\n              className={`px-3 py-2.5 ${i === 1 ? \"bg-muted/60\" : \"\"}`}\n              key={m.subject}\n            >\n              <p className=\"truncate font-medium\">{m.from}</p>\n              <p className=\"truncate text-muted-foreground text-xs\">\n                {m.subject}\n              </p>\n            </li>\n          ))}\n        </ul>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel id=\"detail\" minSize=\"30%\">\n        <div className=\"flex h-full flex-col gap-2 p-4\">\n          <p className=\"font-medium\">Re: retry backoff</p>\n          <p className=\"text-muted-foreground\">\n            Capping at 30s works. Drag the nav past its minimum to collapse it\n            to icons; the sizes survive a reload.\n          </p>\n        </div>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "resizable"
+  ],
+  "type": "registry:block"
+}

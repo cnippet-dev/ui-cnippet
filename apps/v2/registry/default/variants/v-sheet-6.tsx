@@ -1,3 +1,4 @@
+// title: Notification Center
 "use client";
 
 import {
@@ -36,7 +37,7 @@ const initial: Notification[] = [
   {
     body: "Left a comment on your pull request #42.",
     icon: MessageSquareIcon,
-    iconBg: "bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400",
+    iconBg: "bg-info/8 text-info-foreground dark:bg-info/16",
     id: 1,
     read: false,
     time: "2 min ago",
@@ -45,8 +46,7 @@ const initial: Notification[] = [
   {
     body: "Mentioned you in the #design-review channel.",
     icon: AtSignIcon,
-    iconBg:
-      "bg-violet-100 text-violet-600 dark:bg-violet-950 dark:text-violet-400",
+    iconBg: "bg-muted text-foreground",
     id: 2,
     read: false,
     time: "14 min ago",
@@ -55,8 +55,7 @@ const initial: Notification[] = [
   {
     body: "Your PR #38 was approved and merged into main.",
     icon: GitPullRequestIcon,
-    iconBg:
-      "bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400",
+    iconBg: "bg-success/8 text-success-foreground dark:bg-success/16",
     id: 3,
     read: false,
     time: "1 hr ago",
@@ -65,7 +64,7 @@ const initial: Notification[] = [
   {
     body: "You've been assigned to issue #117: Dashboard redesign.",
     icon: BellIcon,
-    iconBg: "bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400",
+    iconBg: "bg-warning/8 text-warning-foreground dark:bg-warning/16",
     id: 4,
     read: true,
     time: "3 hr ago",

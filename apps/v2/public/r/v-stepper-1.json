@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-stepper-1",
+  "description": "Checkout steps with back and continue",
+  "registryDependencies": [
+    "@cnippet/stepper",
+    "@cnippet/button",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-stepper-1.tsx",
+      "content": "// title: Checkout steps with back and continue\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Stepper,\n  StepperDescription,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n  StepperTitle,\n  StepperTrigger,\n} from \"@/registry/default/ui/stepper\";\n\nconst steps = [\n  { body: \"3 items · $248.00\", description: \"Review items\", title: \"Cart\" },\n  {\n    body: \"Maya Patel, 221 Mission St, San Francisco, CA 94105\",\n    description: \"Where it's going\",\n    title: \"Shipping\",\n  },\n  {\n    body: \"Visa ending 4242 · billing address same as shipping\",\n    description: \"Card or wallet\",\n    title: \"Payment\",\n  },\n  {\n    body: \"Arrives Thu, Oct 22. We'll email the receipt to maya@acme.dev.\",\n    description: \"Place order\",\n    title: \"Confirm\",\n  },\n];\n\nexport default function Particle() {\n  const [step, setStep] = useState(2);\n  const current = steps[step - 1];\n\n  return (\n    <div className=\"flex w-full max-w-xl flex-col gap-6\">\n      <Stepper onValueChange={setStep} value={step}>\n        {steps.map((s, i) => (\n          <StepperItem key={s.title} step={i + 1}>\n            <StepperTrigger disabled={i + 1 > step}>\n              <StepperIndicator />\n              <div>\n                <StepperTitle>{s.title}</StepperTitle>\n                <StepperDescription className=\"max-sm:hidden\">\n                  {s.description}\n                </StepperDescription>\n              </div>\n            </StepperTrigger>\n            <StepperSeparator />\n          </StepperItem>\n        ))}\n      </Stepper>\n      <div className=\"rounded-xl border p-4\">\n        <p className=\"font-medium text-sm\">\n          {current ? current.title : \"Order placed\"}\n        </p>\n        <p className=\"mt-1 text-muted-foreground text-sm\">\n          {current ? current.body : \"Order #4821 is confirmed. Thanks, Maya!\"}\n        </p>\n      </div>\n      <div className=\"flex justify-between\">\n        <Button\n          disabled={step === 1}\n          onClick={() => setStep((s) => s - 1)}\n          variant=\"outline\"\n        >\n          Back\n        </Button>\n        <Button onClick={() => setStep((s) => (current ? s + 1 : 1))}>\n          {!current\n            ? \"Start over\"\n            : step === steps.length\n              ? \"Place order\"\n              : \"Continue\"}\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "stepper"
+  ],
+  "type": "registry:block"
+}

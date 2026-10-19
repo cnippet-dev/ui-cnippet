@@ -1,3 +1,4 @@
+// title: Horizontal bar chart ranking traffic channels by session count
 "use client";
 
 import { Bar, BarChart, XAxis, YAxis } from "recharts";

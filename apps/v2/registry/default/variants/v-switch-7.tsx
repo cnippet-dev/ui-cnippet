@@ -1,3 +1,4 @@
+// title: Compact settings table with switches
 import { Separator } from "@/registry/default/ui/separator";
 import { Switch } from "@/registry/default/ui/switch";
 

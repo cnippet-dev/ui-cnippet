@@ -1,3 +1,4 @@
+// title: Sign Up / Register
 "use client";
 
 import { type FormEvent, useState } from "react";

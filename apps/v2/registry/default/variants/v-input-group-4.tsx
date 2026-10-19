@@ -1,3 +1,4 @@
+// title: With End Text
 import {
   InputGroup,
   InputGroupAddon,

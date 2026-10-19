@@ -1,3 +1,4 @@
+// title: With Page Info On Left
 import {
   Pagination,
   PaginationContent,

@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-input-13",
-  "description": "With Time Type",
+  "description": "Time slot select",
   "registryDependencies": [
     "@cnippet/input"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-input-13.tsx",
-      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-time\">Time</FieldLabel>\n      <Input id=\"input-demo-time\" type=\"time\" />\n    </Field>\n  );\n}\n",
+      "content": "// title: Time slot select\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport {\n  Select,\n  SelectItem,\n  SelectPopup,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\n\n// 30-minute slots from 9:00 AM to 5:30 PM\nconst slots = Array.from({ length: 18 }, (_, i) => {\n  const minutes = 9 * 60 + i * 30;\n  const hour = Math.floor(minutes / 60);\n  const minute = minutes % 60;\n  const label = `${hour % 12 || 12}:${String(minute).padStart(2, \"0\")} ${hour < 12 ? \"AM\" : \"PM\"}`;\n  return {\n    label,\n    value: `${String(hour).padStart(2, \"0\")}:${String(minute).padStart(2, \"0\")}`,\n  };\n});\n\nconst items = [{ label: \"Select a time\", value: null }, ...slots];\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel>Meeting time</FieldLabel>\n      <Select items={items}>\n        <SelectTrigger className=\"w-full\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {slots.map((slot) => (\n            <SelectItem key={slot.value} value={slot.value}>\n              {slot.label}\n            </SelectItem>\n          ))}\n        </SelectPopup>\n      </Select>\n      <FieldDescription>\n        Times are shown in your local timezone.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

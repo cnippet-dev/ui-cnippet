@@ -1,0 +1,187 @@
+---
+title: Sidebar
+description: A collapsible app navigation panel with groups, menus, badges and sub-menus that turns into a sheet on mobile. Copy-paste ready.
+---
+
+<ComponentPreview name="v-sidebar-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/sidebar
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority lucide-react
+```
+
+<Step>Add the components it builds on: [Button](/ui/actions/button), [Input](/ui/forms/input), [Scroll Area](/ui/layout/scroll-area), [Separator](/ui/layout/separator), [Sheet](/ui/overlays/sheet), [Skeleton](/ui/feedback/skeleton) and [Tooltip](/ui/overlays/tooltip), plus the `use-media-query` hook.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sidebar" title="components/ui/sidebar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+Wrap your layout in `SidebarProvider`, then put the `Sidebar` and your page (`SidebarInset`) side by side.
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
+```
+
+```tsx
+export default function AppLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <SidebarProvider>
+      <Sidebar collapsible="icon">
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel>Workspace</SidebarGroupLabel>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton isActive tooltip="Inbox">
+                  <InboxIcon />
+                  <span>Inbox</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+      <SidebarInset>
+        <header>
+          <SidebarTrigger />
+        </header>
+        {children}
+      </SidebarInset>
+    </SidebarProvider>
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<SidebarProvider>                 {/* open state, keyboard shortcut, mobile detection */}
+  <Sidebar>
+    <SidebarHeader />
+    <SidebarContent>              {/* scrolls */}
+      <SidebarGroup>
+        <SidebarGroupLabel />
+        <SidebarGroupAction />    {/* e.g. a "+" next to the label */}
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton />
+              <SidebarMenuAction />
+              <SidebarMenuBadge />
+              <SidebarMenuSub>
+                <SidebarMenuSubItem>
+                  <SidebarMenuSubButton />
+                </SidebarMenuSubItem>
+              </SidebarMenuSub>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+    <SidebarFooter />
+    <SidebarRail />               {/* thin edge you can click to toggle */}
+  </Sidebar>
+  <SidebarInset>                  {/* your page */}
+    <SidebarTrigger />
+  </SidebarInset>
+</SidebarProvider>
+```
+
+## Good to know
+
+- Cmd+B (Ctrl+B on Windows and Linux) toggles the sidebar.
+- Below the `md` breakpoint the sidebar opens as a [Sheet](/ui/overlays/sheet) from `SidebarTrigger` instead of sitting beside the page.
+- The open state is saved in a `sidebar_state` cookie for a week. Read it on the server and pass it as `defaultOpen` so the first render matches what the user left it at.
+- With `collapsible="icon"`, the collapsed sidebar shows only icons. Give each `SidebarMenuButton` a `tooltip` so its label still appears on hover.
+- The sidebar is `position: fixed` to the viewport. The examples here sit in a box with `transform-gpu`, which makes that box the containing block so the demo stays inside it. You don't need that in a real app shell.
+- `useSidebar()` returns `state`, `open`, `setOpen`, `openMobile`, `setOpenMobile`, `isMobile` and `toggleSidebar` for custom controls.
+
+## API Reference
+
+### SidebarProvider
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultOpen` | `boolean` | `true` | Initial open state when uncontrolled |
+| `open` | `boolean` | — | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when the sidebar opens or closes |
+
+Set `--sidebar-width` and `--sidebar-width-icon` in `style` to change the widths (defaults `16rem` and `3rem`).
+
+### Sidebar
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"left" \| "right"` | `"left"` | Which edge it sits on |
+| `variant` | `"sidebar" \| "floating" \| "inset"` | `"sidebar"` | Flush panel, floating card, or panel with the page inset beside it |
+| `collapsible` | `"offcanvas" \| "icon" \| "none"` | `"offcanvas"` | Slide fully away, shrink to icons, or never collapse |
+
+### SidebarMenuButton
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isActive` | `boolean` | `false` | Marks the current page |
+| `tooltip` | `string \| TooltipPopup props` | — | Shown on hover while collapsed to icons |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Height |
+| `variant` | `"default" \| "outline"` | `"default"` | Plain or outlined |
+| `render` | `ReactElement` | — | Render as another element, such as a link |
+
+### SidebarMenuSubButton
+
+Renders an `<a>` by default. Takes `isActive`, `size` (`"sm" \| "md"`) and `render`.
+
+## Examples
+
+### Inset with sub-menus
+
+Docs-style navigation: each section is a [Collapsible](/ui/data/collapsible) with nested links, and the page sits inset beside the sidebar.
+
+<ComponentPreview name="v-sidebar-2" />
+
+### Floating, right side
+
+A details panel on the right with a search field that filters its menu.
+
+<ComponentPreview name="v-sidebar-3" />

@@ -1,3 +1,4 @@
+// title: Accordion-style FAQ with single-open behavior and question count badge
 "use client";
 
 import { ChevronDownIcon } from "lucide-react";

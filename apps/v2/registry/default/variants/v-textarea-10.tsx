@@ -1,3 +1,4 @@
+// title: Support ticket with category chips and message field
 "use client";
 
 import type { FormEvent } from "react";
@@ -31,8 +32,8 @@ export function Pattern() {
   if (sent) {
     return (
       <div className="flex w-full max-w-xs flex-col items-center gap-3 rounded-xl border border-border p-6 text-center">
-        <div className="flex size-10 items-center justify-center rounded-full bg-emerald-500/10">
-          <span className="text-emerald-500 text-xl">✓</span>
+        <div className="flex size-10 items-center justify-center rounded-full bg-success/10">
+          <span className="text-success-foreground text-xl">✓</span>
         </div>
         <p className="font-semibold text-sm">Ticket submitted!</p>
         <p className="text-muted-foreground text-xs">

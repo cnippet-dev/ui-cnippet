@@ -1,3 +1,4 @@
+// title: Input with inline clear button
 "use client";
 
 import { XIcon } from "lucide-react";

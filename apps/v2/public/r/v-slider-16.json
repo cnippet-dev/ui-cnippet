@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-slider-16",
+  "description": "Showcase: single, range and disabled",
+  "registryDependencies": [
+    "@cnippet/slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-slider-16.tsx",
+      "content": "// title: Showcase: single, range and disabled\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-6\">\n      <Field>\n        <Slider defaultValue={64}>\n          <div className=\"mb-2 flex items-center justify-between gap-1\">\n            <FieldLabel className=\"font-medium text-sm\">Volume</FieldLabel>\n            <SliderValue />\n          </div>\n        </Slider>\n      </Field>\n      <Field>\n        <Slider defaultValue={[20, 80]}>\n          <div className=\"mb-2 flex items-center justify-between gap-1\">\n            <FieldLabel className=\"font-medium text-sm\">Price range</FieldLabel>\n            <SliderValue />\n          </div>\n        </Slider>\n      </Field>\n      <Field>\n        <Slider defaultValue={40} disabled>\n          <div className=\"mb-2 flex items-center justify-between gap-1\">\n            <FieldLabel className=\"font-medium text-sm\">Disabled</FieldLabel>\n            <SliderValue />\n          </div>\n        </Slider>\n      </Field>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:block"
+}

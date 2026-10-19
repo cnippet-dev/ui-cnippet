@@ -1,3 +1,4 @@
+// title: Small Size
 import {
   ArchiveIcon,
   EditIcon,

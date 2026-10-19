@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-data-table-4",
+  "description": "Orders with column visibility menu",
+  "registryDependencies": [
+    "@cnippet/data-table",
+    "@cnippet/badge",
+    "@cnippet/button",
+    "@cnippet/menu",
+    "@cnippet/avatar",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-data-table-4.tsx",
+      "content": "// title: Orders with column visibility menu\n\"use client\";\n\nimport {\n  columnVisibilityFeature,\n  createColumnHelper,\n  createSortedRowModel,\n  rowSortingFeature,\n  sortFn_alphanumeric,\n  tableFeatures,\n  useTable,\n} from \"@tanstack/react-table\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  DataTable,\n  DataTableColumnHeader,\n  DataTableViewOptions,\n} from \"@/registry/default/ui/data-table\";\n\ntype Order = {\n  channel: \"Web\" | \"Mobile\" | \"Retail\";\n  customer: string;\n  id: string;\n  items: number;\n  region: string;\n  status: \"Fulfilled\" | \"Processing\" | \"Refunded\";\n  total: number;\n};\n\nconst ORDERS: Order[] = [\n  {\n    channel: \"Web\",\n    customer: \"Alice Park\",\n    id: \"#3210\",\n    items: 3,\n    region: \"US East\",\n    status: \"Fulfilled\",\n    total: 182,\n  },\n  {\n    channel: \"Mobile\",\n    customer: \"Ben Torres\",\n    id: \"#3211\",\n    items: 1,\n    region: \"EU West\",\n    status: \"Processing\",\n    total: 49,\n  },\n  {\n    channel: \"Retail\",\n    customer: \"Celia Kim\",\n    id: \"#3212\",\n    items: 5,\n    region: \"APAC\",\n    status: \"Fulfilled\",\n    total: 410,\n  },\n  {\n    channel: \"Web\",\n    customer: \"Dan Moss\",\n    id: \"#3213\",\n    items: 2,\n    region: \"US West\",\n    status: \"Refunded\",\n    total: 96,\n  },\n  {\n    channel: \"Mobile\",\n    customer: \"Sofia Reyes\",\n    id: \"#3214\",\n    items: 4,\n    region: \"EU West\",\n    status: \"Processing\",\n    total: 238,\n  },\n];\n\nconst STATUS_VARIANT = {\n  Fulfilled: \"success\",\n  Processing: \"warning\",\n  Refunded: \"outline\",\n} as const;\n\nconst features = tableFeatures({\n  columnVisibilityFeature,\n  rowSortingFeature,\n  sortedRowModel: createSortedRowModel(),\n  sortFns: { alphanumeric: sortFn_alphanumeric },\n});\n\nconst column = createColumnHelper<typeof features, Order>();\n\nconst columns = column.columns([\n  column.accessor(\"id\", {\n    cell: (info) => <span className=\"font-medium\">{info.getValue()}</span>,\n    enableHiding: false,\n    header: \"Order\",\n  }),\n  column.accessor(\"customer\", {\n    header: ({ column }) => (\n      <DataTableColumnHeader column={column} title=\"Customer\" />\n    ),\n  }),\n  column.accessor(\"channel\", { header: \"Channel\" }),\n  column.accessor(\"region\", { header: \"Region\" }),\n  column.accessor(\"items\", {\n    cell: (info) => (\n      <div className=\"text-end tabular-nums\">{info.getValue()}</div>\n    ),\n    header: () => <div className=\"text-end\">Items</div>,\n  }),\n  column.accessor(\"status\", {\n    cell: (info) => (\n      <Badge variant={STATUS_VARIANT[info.getValue()]}>{info.getValue()}</Badge>\n    ),\n    header: \"Status\",\n  }),\n  column.accessor(\"total\", {\n    cell: (info) => (\n      <div className=\"text-end tabular-nums\">${info.getValue()}</div>\n    ),\n    header: ({ column }) => (\n      <div className=\"flex justify-end\">\n        <DataTableColumnHeader column={column} title=\"Total\" />\n      </div>\n    ),\n  }),\n]);\n\nexport default function Particle() {\n  const table = useTable({\n    columns,\n    data: ORDERS,\n    features,\n    // Secondary columns start hidden; the View menu brings them back.\n    initialState: { columnVisibility: { channel: false, region: false } },\n  });\n\n  return (\n    <div className=\"flex w-full max-w-2xl flex-col gap-3\">\n      <div className=\"flex items-center justify-between gap-3\">\n        <p className=\"font-medium text-sm\">Recent orders</p>\n        <DataTableViewOptions table={table} />\n      </div>\n      <div className=\"rounded-xl border bg-background\">\n        <DataTable table={table} />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+  },
+  "categories": [
+    "data table"
+  ],
+  "type": "registry:block"
+}

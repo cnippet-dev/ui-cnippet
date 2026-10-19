@@ -1,3 +1,4 @@
+// title: Payment method card checkbox
 "use client";
 
 import type { SVGProps } from "react";
@@ -33,7 +34,7 @@ export function Pattern() {
             <span className="font-medium text-sm">
               Mastercard ending in 8888
             </span>
-            <span className="text-muted-foreground text-xs">Expires 09/25</span>
+            <span className="text-muted-foreground text-xs">Expires 09/29</span>
           </div>
         </FramePanel>
         <Checkbox

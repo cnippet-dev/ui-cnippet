@@ -14,6 +14,7 @@ export const ui: Registry["items"] = [
       "@cnippet/autocomplete",
       "@cnippet/avatar",
       "@cnippet/badge",
+      "@cnippet/banner",
       "@cnippet/breadcrumb",
       "@cnippet/button",
       "@cnippet/calendar",
@@ -23,14 +24,17 @@ export const ui: Registry["items"] = [
       "@cnippet/checkbox",
       "@cnippet/checkbox-group",
       "@cnippet/collapsible",
+      "@cnippet/color-picker",
       "@cnippet/combobox",
       "@cnippet/command",
       "@cnippet/context-menu",
+      "@cnippet/data-table",
       "@cnippet/dialog",
       "@cnippet/drawer",
       "@cnippet/empty",
       "@cnippet/field",
       "@cnippet/fieldset",
+      "@cnippet/file-upload",
       "@cnippet/form",
       "@cnippet/frame",
       "@cnippet/group",
@@ -42,12 +46,15 @@ export const ui: Registry["items"] = [
       "@cnippet/label",
       "@cnippet/menu",
       "@cnippet/meter",
+      "@cnippet/navigation-menu",
       "@cnippet/number-field",
       "@cnippet/pagination",
       "@cnippet/popover",
       "@cnippet/preview-card",
       "@cnippet/progress",
       "@cnippet/radio-group",
+      "@cnippet/rating",
+      "@cnippet/resizable",
       "@cnippet/scroll-area",
       "@cnippet/select",
       "@cnippet/separator",
@@ -55,11 +62,16 @@ export const ui: Registry["items"] = [
       "@cnippet/sidebar",
       "@cnippet/skeleton",
       "@cnippet/slider",
+      "@cnippet/sortable",
       "@cnippet/spinner",
+      "@cnippet/stepper",
       "@cnippet/switch",
       "@cnippet/table",
       "@cnippet/tabs",
+      "@cnippet/tag-input",
       "@cnippet/textarea",
+      "@cnippet/time-picker",
+      "@cnippet/timeline",
       "@cnippet/toast",
       "@cnippet/toggle",
       "@cnippet/toggle-group",
@@ -173,6 +185,17 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "badge",
+    type: "registry:ui",
+  },
+  {
+    dependencies: [CVA, LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/banner.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "banner",
     type: "registry:ui",
   },
   {
@@ -297,6 +320,17 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    files: [
+      {
+        path: "ui/color-picker.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "color-picker",
+    registryDependencies: ["@cnippet/input", "@cnippet/slider"],
+    type: "registry:ui",
+  },
+  {
     dependencies: [BASE_UI],
     files: [
       {
@@ -329,6 +363,26 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "context-menu",
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["@tanstack/react-table", LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/data-table.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "data-table",
+    registryDependencies: [
+      "@cnippet/badge",
+      "@cnippet/button",
+      "@cnippet/checkbox",
+      "@cnippet/input-group",
+      "@cnippet/menu",
+      "@cnippet/select",
+      "@cnippet/table",
+    ],
     type: "registry:ui",
   },
   {
@@ -394,6 +448,18 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "fieldset",
+    type: "registry:ui",
+  },
+  {
+    dependencies: [LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/file-upload.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "file-upload",
+    registryDependencies: ["@cnippet/button", "@cnippet/progress"],
     type: "registry:ui",
   },
   {
@@ -542,6 +608,17 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: [BASE_UI, LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/navigation-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "navigation-menu",
+    type: "registry:ui",
+  },
+  {
     dependencies: [BASE_UI],
     files: [
       {
@@ -609,6 +686,28 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: [BASE_UI, CVA, LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/rating.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "rating",
+    type: "registry:ui",
+  },
+  {
+    dependencies: ["react-resizable-panels", LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/resizable.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "resizable",
+    type: "registry:ui",
+  },
+  {
     dependencies: [BASE_UI],
     files: [
       {
@@ -654,7 +753,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
-    dependencies: [CVA],
+    dependencies: [BASE_UI, CVA, LUCIDE_REACT],
     files: [
       {
         path: "ui/sidebar.tsx",
@@ -709,6 +808,22 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: [
+      "@dnd-kit/core",
+      "@dnd-kit/sortable",
+      "@dnd-kit/utilities",
+      LUCIDE_REACT,
+    ],
+    files: [
+      {
+        path: "ui/sortable.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "sortable",
+    type: "registry:ui",
+  },
+  {
     files: [
       {
         path: "ui/spinner.tsx",
@@ -716,6 +831,17 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "spinner",
+    type: "registry:ui",
+  },
+  {
+    dependencies: [LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/stepper.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "stepper",
     type: "registry:ui",
   },
   {
@@ -751,6 +877,17 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
   },
   {
+    dependencies: [LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/tag-input.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "tag-input",
+    type: "registry:ui",
+  },
+  {
     dependencies: [BASE_UI],
     files: [
       {
@@ -759,6 +896,28 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "textarea",
+    type: "registry:ui",
+  },
+  {
+    dependencies: [LUCIDE_REACT],
+    files: [
+      {
+        path: "ui/time-picker.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "time-picker",
+    registryDependencies: ["@cnippet/select"],
+    type: "registry:ui",
+  },
+  {
+    files: [
+      {
+        path: "ui/timeline.tsx",
+        type: "registry:ui",
+      },
+    ],
+    name: "timeline",
     type: "registry:ui",
   },
   {

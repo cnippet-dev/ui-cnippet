@@ -1,3 +1,4 @@
+// title: Bookmark toggle per article row with saved count
 "use client";
 
 import { BookmarkIcon } from "lucide-react";

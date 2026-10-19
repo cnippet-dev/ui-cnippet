@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-data-table-6",
+  "description": "Department budgets with expandable sub-rows",
+  "registryDependencies": [
+    "@cnippet/data-table",
+    "@cnippet/badge",
+    "@cnippet/button",
+    "@cnippet/menu",
+    "@cnippet/avatar",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-data-table-6.tsx",
+      "content": "// title: Department budgets with expandable sub-rows\n\"use client\";\n\nimport {\n  createColumnHelper,\n  createExpandedRowModel,\n  rowExpandingFeature,\n  tableFeatures,\n  useTable,\n} from \"@tanstack/react-table\";\nimport { ChevronRightIcon } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { DataTable } from \"@/registry/default/ui/data-table\";\nimport { Progress } from \"@/registry/default/ui/progress\";\n\ntype Budget = {\n  budget: number;\n  name: string;\n  spent: number;\n  subRows?: Budget[];\n};\n\nconst BUDGETS: Budget[] = [\n  {\n    budget: 420_000,\n    name: \"Engineering\",\n    spent: 318_000,\n    subRows: [\n      { budget: 180_000, name: \"Platform\", spent: 152_000 },\n      { budget: 140_000, name: \"Web\", spent: 96_000 },\n      { budget: 100_000, name: \"Mobile\", spent: 70_000 },\n    ],\n  },\n  {\n    budget: 160_000,\n    name: \"Marketing\",\n    spent: 141_000,\n    subRows: [\n      { budget: 90_000, name: \"Campaigns\", spent: 88_500 },\n      { budget: 70_000, name: \"Events\", spent: 52_500 },\n    ],\n  },\n  {\n    budget: 95_000,\n    name: \"Design\",\n    spent: 61_000,\n    subRows: [\n      { budget: 55_000, name: \"Product design\", spent: 38_000 },\n      { budget: 40_000, name: \"Brand\", spent: 23_000 },\n    ],\n  },\n];\n\nconst currency = new Intl.NumberFormat(\"en-US\", {\n  currency: \"USD\",\n  maximumFractionDigits: 0,\n  notation: \"compact\",\n  style: \"currency\",\n});\n\nconst features = tableFeatures({\n  expandedRowModel: createExpandedRowModel(),\n  rowExpandingFeature,\n});\n\nconst column = createColumnHelper<typeof features, Budget>();\n\nconst columns = column.columns([\n  column.accessor(\"name\", {\n    cell: ({ row, getValue }) => (\n      <div\n        className=\"flex items-center gap-1.5\"\n        // Indent sub-rows under their parent team.\n        style={{ paddingInlineStart: `${row.depth * 1.75}rem` }}\n      >\n        {row.getCanExpand() ? (\n          <Button\n            aria-expanded={row.getIsExpanded()}\n            aria-label={`${row.getIsExpanded() ? \"Collapse\" : \"Expand\"} ${getValue()}`}\n            className=\"-ms-1.5\"\n            onClick={row.getToggleExpandedHandler()}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <ChevronRightIcon\n              aria-hidden=\"true\"\n              className={cn(\n                \"transition-transform\",\n                row.getIsExpanded() && \"rotate-90\",\n              )}\n            />\n          </Button>\n        ) : null}\n        <span className={cn(row.depth === 0 && \"font-medium\")}>\n          {getValue()}\n        </span>\n      </div>\n    ),\n    header: \"Department\",\n  }),\n  column.accessor(\"spent\", {\n    cell: ({ row }) => {\n      const used = Math.round((row.original.spent / row.original.budget) * 100);\n      return (\n        <div className=\"flex min-w-36 items-center gap-3\">\n          <Progress aria-label=\"Budget used\" className=\"w-24\" value={used} />\n          <span className=\"text-muted-foreground text-xs tabular-nums\">\n            {used}%\n          </span>\n        </div>\n      );\n    },\n    header: \"Used\",\n  }),\n  column.accessor(\"budget\", {\n    cell: ({ row }) => (\n      <div className=\"text-end tabular-nums\">\n        {currency.format(row.original.spent)}\n        <span className=\"text-muted-foreground\">\n          {\" \"}\n          / {currency.format(row.original.budget)}\n        </span>\n      </div>\n    ),\n    header: () => <div className=\"text-end\">Spent</div>,\n  }),\n]);\n\nexport default function Particle() {\n  const table = useTable({\n    columns,\n    data: BUDGETS,\n    features,\n    getSubRows: (row) => row.subRows,\n    initialState: { expanded: { \"0\": true } },\n  });\n\n  return (\n    <div className=\"flex w-full max-w-2xl flex-col gap-3\">\n      <div className=\"flex items-center justify-between gap-3\">\n        <p className=\"font-medium text-sm\">FY26 budget</p>\n        <div className=\"flex gap-1\">\n          <Button\n            onClick={() => table.toggleAllRowsExpanded(true)}\n            size=\"xs\"\n            variant=\"ghost\"\n          >\n            Expand all\n          </Button>\n          <Button\n            onClick={() => table.toggleAllRowsExpanded(false)}\n            size=\"xs\"\n            variant=\"ghost\"\n          >\n            Collapse all\n          </Button>\n        </div>\n      </div>\n      <div className=\"rounded-xl border bg-background\">\n        <DataTable table={table} />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+  },
+  "categories": [
+    "data table"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Server settings toggles with icon swap and status color
 "use client";
 
 import {
@@ -70,7 +71,9 @@ export function Pattern() {
             </div>
             <Toggle
               aria-label={on ? s.offLabel : s.onLabel}
-              className={on ? "text-emerald-500" : "text-muted-foreground"}
+              className={
+                on ? "text-success-foreground" : "text-muted-foreground"
+              }
               onPressedChange={() => toggle(s.id)}
               pressed={on}
               size="sm"

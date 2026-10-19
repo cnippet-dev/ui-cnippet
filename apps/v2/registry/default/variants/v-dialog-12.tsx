@@ -1,3 +1,4 @@
+// title: Two-Factor Authentication Setup
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 
@@ -15,6 +16,59 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
+
+const QR_SIZE = 25;
+
+// A fixed, QR-style pattern: three finder squares plus seeded data cells.
+function isFinder(x: number, y: number) {
+  const corners: [number, number][] = [
+    [0, 0],
+    [QR_SIZE - 7, 0],
+    [0, QR_SIZE - 7],
+  ];
+  return corners.some(([cx, cy]) => {
+    const dx = x - cx;
+    const dy = y - cy;
+    if (dx < 0 || dy < 0 || dx > 6 || dy > 6) return false;
+    const ring = Math.max(Math.abs(dx - 3), Math.abs(dy - 3));
+    return ring !== 2;
+  });
+}
+
+function isReserved(x: number, y: number) {
+  const near = (c: number) => c <= 7 || c >= QR_SIZE - 8;
+  return (x <= 7 && y <= 7) || (near(x) && y <= 7) || (x <= 7 && near(y));
+}
+
+const QR_CELLS = Array.from({ length: QR_SIZE * QR_SIZE }, (_, i) => {
+  const x = i % QR_SIZE;
+  const y = Math.floor(i / QR_SIZE);
+  if (isReserved(x, y)) return isFinder(x, y) ? [x, y] : null;
+  return (x * 7 + y * 13 + x * y * 3) % 5 < 2 ? [x, y] : null;
+}).filter((cell): cell is number[] => cell !== null);
+
+function QrCode({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-label="QR code for authenticator setup"
+      className={className}
+      role="img"
+      shapeRendering="crispEdges"
+      viewBox={`0 0 ${QR_SIZE} ${QR_SIZE}`}
+    >
+      {QR_CELLS.map(([x, y]) => (
+        <rect
+          fill="currentColor"
+          height="1"
+          key={`${x}-${y}`}
+          width="1"
+          x={x}
+          y={y}
+        />
+      ))}
+    </svg>
+  );
+}
 
 export default function Particle() {
   const [code, setCode] = useState("");
@@ -44,19 +98,12 @@ export default function Particle() {
           </DialogDescription>
         </DialogHeader>
         <DialogPanel className="space-y-5">
-          <div className="mx-auto flex size-40 items-center justify-center rounded-xl border bg-muted">
-            <div className="grid grid-cols-5 gap-1 p-3 opacity-40">
-              {Array.from({ length: 25 }).map((_, i) => (
-                <div
-                  className={`size-4 rounded-sm ${Math.random() > 0.5 ? "bg-foreground" : ""}`}
-                  key={i}
-                />
-              ))}
-            </div>
+          <div className="mx-auto flex size-40 items-center justify-center rounded-xl border bg-white p-3">
+            <QrCode className="size-full text-neutral-900" />
           </div>
           {verified ? (
-            <div className="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-center dark:border-green-800 dark:bg-green-950">
-              <p className="font-medium text-green-700 text-sm dark:text-green-300">
+            <div className="rounded-md border border-success/24 bg-success/8 px-4 py-3 text-center dark:bg-success/16">
+              <p className="font-medium text-sm text-success-foreground">
                 2FA enabled successfully!
               </p>
             </div>

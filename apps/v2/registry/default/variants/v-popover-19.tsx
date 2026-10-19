@@ -1,3 +1,4 @@
+// title: Notification panel
 "use client";
 
 import { BellIcon } from "lucide-react";

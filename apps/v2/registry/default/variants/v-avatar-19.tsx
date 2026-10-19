@@ -1,3 +1,4 @@
+// title: Interactive assignee picker with selection state
 "use client";
 
 import { CheckIcon } from "lucide-react";

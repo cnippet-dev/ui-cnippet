@@ -1,3 +1,4 @@
+// title: Chat Feed
 import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 

@@ -1,3 +1,4 @@
+// title: Button with icon, label, and shortcut keys
 import { SearchIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-time-picker-2",
+  "description": "Start and end time with duration",
+  "registryDependencies": [
+    "@cnippet/time-picker",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-time-picker-2.tsx",
+      "content": "// title: Start and end time with duration\n\"use client\";\n\nimport { ArrowRightIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { TimePicker } from \"@/registry/default/ui/time-picker\";\n\nconst STEP = 15;\n\nfunction addMinutes(time: string, minutes: number) {\n  const [h = 0, m = 0] = time.split(\":\").map(Number);\n  const total = Math.min(h * 60 + m + minutes, 23 * 60 + 45);\n  return `${String(Math.floor(total / 60)).padStart(2, \"0\")}:${String(total % 60).padStart(2, \"0\")}`;\n}\n\nfunction duration(start: string, end: string) {\n  const [sh = 0, sm = 0] = start.split(\":\").map(Number);\n  const [eh = 0, em = 0] = end.split(\":\").map(Number);\n  const mins = eh * 60 + em - (sh * 60 + sm);\n  const h = Math.floor(mins / 60);\n  return [h && `${h} h`, mins % 60 && `${mins % 60} min`]\n    .filter(Boolean)\n    .join(\" \");\n}\n\nexport default function Particle() {\n  const [start, setStart] = useState(\"09:00\");\n  const [end, setEnd] = useState(\"10:30\");\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <div className=\"flex items-end gap-2\">\n        <div className=\"flex flex-col gap-2\">\n          <Label htmlFor=\"shift-start\">From</Label>\n          <TimePicker\n            id=\"shift-start\"\n            onValueChange={(next) => {\n              if (!next) return;\n              setStart(next);\n              // Keep the end after the start.\n              if (end <= next) setEnd(addMinutes(next, 60));\n            }}\n            step={STEP}\n            value={start}\n          />\n        </div>\n        <ArrowRightIcon\n          aria-hidden=\"true\"\n          className=\"mb-2 size-4 text-muted-foreground\"\n        />\n        <div className=\"flex flex-col gap-2\">\n          <Label htmlFor=\"shift-end\">To</Label>\n          <TimePicker\n            id=\"shift-end\"\n            min={addMinutes(start, STEP)}\n            onValueChange={(next) => next && setEnd(next)}\n            step={STEP}\n            value={end}\n          />\n        </div>\n      </div>\n      <p className=\"text-muted-foreground text-xs\">\n        Duration:{\" \"}\n        <span className=\"text-foreground\">{duration(start, end)}</span>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "time picker"
+  ],
+  "type": "registry:block"
+}

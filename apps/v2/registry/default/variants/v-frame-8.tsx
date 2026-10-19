@@ -1,3 +1,4 @@
+// title: Read-only key-value info
 import {
   Frame,
   FrameDescription,

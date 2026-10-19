@@ -1,3 +1,4 @@
+// title: Auto-close on Select
 "use client";
 
 import { format } from "date-fns";

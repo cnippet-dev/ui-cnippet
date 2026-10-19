@@ -1,3 +1,4 @@
+// title: User Profile Viewer
 import { BoxIcon, CircuitBoardIcon, GlobeIcon, LinkIcon } from "lucide-react";
 import {
   Avatar,
@@ -22,7 +23,7 @@ const stats = [
 ];
 
 const links = [
-  { Icon: GlobeIcon, label: "example.com" },
+  { Icon: GlobeIcon, label: "margaretwelsh.dev" },
   { Icon: BoxIcon, label: "@margaret_dev" },
   { Icon: CircuitBoardIcon, label: "margaret-welsh" },
 ];

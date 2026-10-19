@@ -1,3 +1,4 @@
+// title: Confirmation / delete
 "use client";
 
 import { TrashIcon } from "lucide-react";

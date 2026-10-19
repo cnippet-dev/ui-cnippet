@@ -1,3 +1,4 @@
+// title: Feedback form
 "use client";
 
 import { Button } from "@/registry/default/ui/button";

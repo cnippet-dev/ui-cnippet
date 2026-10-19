@@ -1,3 +1,4 @@
+// title: CI/CD Build Step Log Viewer
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import { ChevronDownIcon } from "lucide-react";

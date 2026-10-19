@@ -1,3 +1,4 @@
+// title: Command palette result rows with navigation hints
 import { FileTextIcon, FolderIcon, SettingsIcon } from "lucide-react";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 

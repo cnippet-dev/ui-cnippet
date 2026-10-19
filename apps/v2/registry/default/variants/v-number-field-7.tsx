@@ -1,3 +1,4 @@
+// title: With Formatted Value
 import {
   NumberField,
   NumberFieldDecrement,

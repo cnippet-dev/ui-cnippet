@@ -1,3 +1,4 @@
+// title: Pricing plan card with feature checklist and highlighted ring
 import { CheckIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -35,7 +36,7 @@ export function Pattern() {
         <ul className="flex flex-col gap-2">
           {plan.features.map((f) => (
             <li className="flex items-center gap-2 text-sm" key={f}>
-              <CheckIcon className="size-4 shrink-0 text-emerald-500" />
+              <CheckIcon className="size-4 shrink-0 text-success-foreground" />
               {f}
             </li>
           ))}

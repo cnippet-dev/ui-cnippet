@@ -1,3 +1,4 @@
+// title: Toolbar with Separator Groups
 import {
   AlignCenterIcon,
   AlignLeftIcon,

@@ -1,3 +1,4 @@
+// title: Gallery with Thumbnails
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
@@ -11,13 +12,17 @@ import {
 } from "@/registry/default/ui/carousel";
 
 const GALLERY = [
-  { bg: "from-violet-400 to-purple-600", id: 1, label: "Mountain Sunset" },
-  { bg: "from-sky-400 to-blue-600", id: 2, label: "Ocean Waves" },
-  { bg: "from-emerald-400 to-teal-600", id: 3, label: "Forest Path" },
-  { bg: "from-rose-400 to-pink-600", id: 4, label: "City Lights" },
-  { bg: "from-amber-400 to-orange-500", id: 5, label: "Desert Dunes" },
-  { bg: "from-indigo-400 to-cyan-500", id: 6, label: "Northern Lights" },
+  { id: "1506905925346-21bda4d32df4", label: "Mountain Sunset" },
+  { id: "1505142468610-359e7d316be0", label: "Ocean Waves" },
+  { id: "1441974231531-c6227db76b6e", label: "Forest Path" },
+  { id: "1477959858617-67f85cf4f1df", label: "City Lights" },
+  { id: "1509316785289-025f5b846b35", label: "Desert Valley" },
+  { id: "1531366936337-7c912a4589a7", label: "Northern Lights" },
 ];
+
+function photo(id: string, width: number, height: number) {
+  return `https://images.unsplash.com/photo-${id}?w=${width}&h=${height}&fit=crop&dpr=2&q=80`;
+}
 
 export default function Particle() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -46,14 +51,17 @@ export default function Particle() {
         <CarouselContent>
           {GALLERY.map((item) => (
             <CarouselItem key={item.id}>
-              <div
-                className={cn(
-                  "relative flex h-52 flex-col items-center justify-end rounded-xl bg-linear-to-br pb-4 text-white",
-                  item.bg,
-                )}
-              >
-                <p className="font-medium text-sm drop-shadow">{item.label}</p>
-              </div>
+              <figure className="relative h-52 overflow-hidden rounded-xl border bg-muted">
+                <img
+                  alt={item.label}
+                  className="size-full object-cover"
+                  src={photo(item.id, 400, 208)}
+                />
+                {/* Scrim keeps the caption legible on any photo. */}
+                <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 to-transparent px-4 pt-8 pb-3 font-medium text-sm text-white">
+                  {item.label}
+                </figcaption>
+              </figure>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -74,8 +82,10 @@ export default function Particle() {
               onClick={() => api?.scrollTo(i)}
               type="button"
             >
-              <div
-                className={cn("h-12 w-16 rounded-lg bg-linear-to-br", item.bg)}
+              <img
+                alt=""
+                className="h-12 w-16 rounded-lg bg-muted object-cover"
+                src={photo(item.id, 64, 48)}
               />
             </button>
           ))}

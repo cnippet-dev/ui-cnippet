@@ -1,21 +1,22 @@
+// title: Availability Status
 import { Label } from "@/registry/default/ui/label";
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group";
 
 const statuses = [
   {
-    color: "bg-green-500",
+    color: "bg-success",
     description: "Visible to everyone",
     label: "Online",
     value: "online",
   },
   {
-    color: "bg-yellow-500",
+    color: "bg-warning",
     description: "Will reply when back",
     label: "Away",
     value: "away",
   },
   {
-    color: "bg-red-500",
+    color: "bg-destructive",
     description: "Minimizing interruptions",
     label: "Busy",
     value: "busy",

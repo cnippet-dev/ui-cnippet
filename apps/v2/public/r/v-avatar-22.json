@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-avatar-22",
+  "description": "Showcase: sizes, radius, fallback and group",
+  "registryDependencies": [
+    "@cnippet/avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-avatar-22.tsx",
+      "content": "// title: Showcase: sizes, radius, fallback and group\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\";\n\nconst photo = (id: string, size: number) =>\n  `https://images.unsplash.com/photo-${id}?w=${size}&h=${size}&dpr=2&q=80`;\n\nconst sarah = {\n  id: \"1519699047748-de8e457a634e\",\n  initials: \"SC\",\n  name: \"Sarah Chen\",\n};\n\nconst team = [\n  sarah,\n  { id: \"1584308972272-9e4e7685e80f\", initials: \"MR\", name: \"Marco Rossi\" },\n  { id: \"1485893086445-ed75865251e0\", initials: \"EW\", name: \"Emma Wilson\" },\n];\n\nfunction Row({\n  label,\n  children,\n}: {\n  label: string;\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"grid gap-2 sm:grid-cols-[5rem_1fr] sm:items-center\">\n      <span className=\"text-muted-foreground text-xs\">{label}</span>\n      <div className=\"flex flex-wrap items-center gap-3\">{children}</div>\n    </div>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <Row label=\"Sizes\">\n        {[24, 32, 48, 64].map((size) => (\n          <Avatar key={size} style={{ height: size, width: size }}>\n            <AvatarImage alt={sarah.name} src={photo(sarah.id, size * 2)} />\n            <AvatarFallback>{sarah.initials}</AvatarFallback>\n          </Avatar>\n        ))}\n      </Row>\n      <Row label=\"Radius\">\n        {[\"rounded-md\", \"rounded-xl\", \"rounded-full\"].map((radius) => (\n          <Avatar className={radius} key={radius}>\n            <AvatarImage alt={sarah.name} src={photo(sarah.id, 96)} />\n            <AvatarFallback>{sarah.initials}</AvatarFallback>\n          </Avatar>\n        ))}\n      </Row>\n      <Row label=\"Fallback\">\n        <Avatar>\n          <AvatarFallback>MP</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback>JL</AvatarFallback>\n        </Avatar>\n      </Row>\n      <Row label=\"Group\">\n        <div className=\"flex -space-x-2.5\">\n          {team.map((person) => (\n            <Avatar className=\"ring-2 ring-background\" key={person.id}>\n              <AvatarImage alt={person.name} src={photo(person.id, 96)} />\n              <AvatarFallback>{person.initials}</AvatarFallback>\n            </Avatar>\n          ))}\n          <Avatar className=\"ring-2 ring-background\">\n            <AvatarFallback>+3</AvatarFallback>\n          </Avatar>\n        </div>\n      </Row>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:block"
+}

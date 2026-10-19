@@ -1,3 +1,4 @@
+// title: Rich Item Rendering
 "use client";
 
 import {

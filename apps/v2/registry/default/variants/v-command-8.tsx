@@ -1,3 +1,4 @@
+// title: Project switcher
 "use client";
 
 import { FolderIcon, StarIcon } from "lucide-react";

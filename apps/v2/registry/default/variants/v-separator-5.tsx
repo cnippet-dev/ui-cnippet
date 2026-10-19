@@ -1,3 +1,4 @@
+// title: Divider with label
 import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {

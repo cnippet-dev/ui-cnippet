@@ -1,3 +1,4 @@
+// title: Appointment Booking
 "use client";
 
 import * as React from "react";

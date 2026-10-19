@@ -1,3 +1,4 @@
+// title: Default
 import { Button } from "@/registry/default/ui/button";
 import {
   Drawer,
@@ -20,7 +21,7 @@ export default function Particle() {
         <DrawerHeader className="text-center">
           <DrawerTitle>Notifications</DrawerTitle>
           <DrawerDescription>
-            This is the description of the drawer.
+            You're all caught up. New alerts will show here.
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter

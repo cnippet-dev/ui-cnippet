@@ -1,3 +1,4 @@
+// title: Changelog carousel with drag-free multi-slide and version tags
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 
@@ -14,7 +15,7 @@ const CHANGELOG = [
       "Dark mode improvements",
     ],
     tag: "v2.4.0",
-    tagColor: "bg-emerald-500",
+    tagColor: "bg-primary text-primary-foreground",
   },
   {
     date: "Apr 2026",
@@ -24,7 +25,7 @@ const CHANGELOG = [
       "Bug fixes",
     ],
     tag: "v2.3.0",
-    tagColor: "bg-blue-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
   {
     date: "Feb 2026",
@@ -34,13 +35,13 @@ const CHANGELOG = [
       "Performance improvements",
     ],
     tag: "v2.2.0",
-    tagColor: "bg-violet-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
   {
     date: "Dec 2025",
     items: ["Initial stable release", "30+ components", "CLI installer"],
     tag: "v2.0.0",
-    tagColor: "bg-amber-500",
+    tagColor: "bg-secondary text-secondary-foreground",
   },
 ];
 
@@ -50,19 +51,34 @@ export default function Particle() {
     dragFree: true,
   });
   const [selected, setSelected] = React.useState(0);
+  const [canScrollNext, setCanScrollNext] = React.useState(true);
 
   React.useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    // Drag-free scrolling rarely fires "select", so also track "scroll".
+    const onScroll = () => setCanScrollNext(emblaApi.canScrollNext());
     emblaApi.on("select", onSelect);
+    emblaApi.on("scroll", onScroll);
+    emblaApi.on("reInit", onScroll);
+    onScroll();
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("scroll", onScroll);
+      emblaApi.off("reInit", onScroll);
     };
   }, [emblaApi]);
 
   return (
     <div className="w-full max-w-sm space-y-3">
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div
+        // Fade the peeking next card so it reads as "more this way", not a clip.
+        className={cn(
+          "overflow-hidden",
+          canScrollNext && "mask-r-from-75% mask-r-to-100%",
+        )}
+        ref={emblaRef}
+      >
         <div className="flex gap-3">
           {CHANGELOG.map((release, i) => (
             <div
@@ -72,7 +88,7 @@ export default function Particle() {
               <div className="mb-3 flex items-center justify-between">
                 <span
                   className={cn(
-                    "rounded-full px-2 py-0.5 font-bold text-[10px] text-white",
+                    "rounded-full px-2 py-0.5 font-bold text-[10px]",
                     release.tagColor,
                   )}
                 >

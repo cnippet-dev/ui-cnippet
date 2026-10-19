@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-5.tsx",
-      "content": "import { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label htmlFor=\"label-optional\">\n        Phone number\n        <span className=\"text-muted-foreground\">(optional)</span>\n      </Label>\n      <Input id=\"label-optional\" placeholder=\"+1 (555) 000-0000\" type=\"tel\" />\n    </Field>\n  );\n}\n",
+      "content": "// title: With optional indicator\nimport { Field } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <Label htmlFor=\"label-optional\">\n        Phone number\n        <span className=\"text-muted-foreground\">(optional)</span>\n      </Label>\n      <Input id=\"label-optional\" placeholder=\"+1 (555) 000-0000\" type=\"tel\" />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "label"

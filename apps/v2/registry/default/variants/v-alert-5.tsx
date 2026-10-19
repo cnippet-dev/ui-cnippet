@@ -1,3 +1,4 @@
+// title: Success Alert
 import { CircleCheckIcon } from "lucide-react";
 import {
   Alert,

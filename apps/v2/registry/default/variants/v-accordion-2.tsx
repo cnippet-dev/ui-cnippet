@@ -1,3 +1,4 @@
+// title: Single Accordion
 import {
   Accordion,
   AccordionItem,

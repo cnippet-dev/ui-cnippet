@@ -1,3 +1,4 @@
+// title: With Image Scale Hover Effect
 import Image from "next/image";
 
 import { Card } from "@/registry/default/ui/card";
@@ -17,10 +18,11 @@ export function Pattern() {
 
       {/* Content */}
       <div className="relative flex h-full flex-col justify-end p-6">
-        <h3 className="font-bold text-white text-xl">Image Scale Effect</h3>
+        <h3 className="font-bold text-white text-xl">
+          A desk that works for you
+        </h3>
         <p className="mt-2 text-sm text-white/90">
-          This card features a smooth image scaling effect and background
-          overlay on hover.
+          Small changes to your setup that make long days easier. 4 min read.
         </p>
       </div>
     </Card>

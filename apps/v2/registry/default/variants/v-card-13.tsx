@@ -1,3 +1,4 @@
+// title: With Header Badge & Actions
 import { CheckIcon, MoreVerticalIcon } from "lucide-react";
 
 import {
@@ -48,34 +49,32 @@ export function Pattern() {
         </div>
         <div className="space-y-3 p-4">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="font-medium text-sm leading-tight">
-              Integration name
-            </h3>
+            <h3 className="font-medium text-sm leading-tight">Slack</h3>
             <Badge size="sm" variant="success">
               Installed
             </Badge>
           </div>
           <p className="text-muted-foreground text-sm">
-            Short description of the integration and what it does in one line.
+            Post deploy and incident alerts to your team's channels.
           </p>
           <div className="flex -space-x-2">
             <Avatar className="size-6 ring-2 ring-background">
               <AvatarImage
-                alt="User 1"
+                alt="Sarah Chen"
                 src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=96&h=96&dpr=2&q=80"
               />
               <AvatarFallback>SC</AvatarFallback>
             </Avatar>
             <Avatar className="size-6 ring-2 ring-background">
               <AvatarImage
-                alt="User 2"
+                alt="Marco Rossi"
                 src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=96&h=96&dpr=2&q=80"
               />
               <AvatarFallback>MR</AvatarFallback>
             </Avatar>
             <Avatar className="size-6 ring-2 ring-background">
               <AvatarImage
-                alt="User 3"
+                alt="Emma Wilson"
                 src="https://images.unsplash.com/photo-1485893086445-ed75865251e0?w=96&h=96&dpr=2&q=80"
               />
               <AvatarFallback>EW</AvatarFallback>

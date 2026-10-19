@@ -1,3 +1,4 @@
+// title: Team Invite
 "use client";
 
 import { SendIcon, UserPlusIcon, XIcon } from "lucide-react";
@@ -31,8 +32,8 @@ const roleBadge: Record<Role, string> = {
 };
 
 const pending: Invite[] = [
-  { email: "sarah@example.com", id: 1, initials: "SC", role: "Editor" },
-  { email: "marcus@example.com", id: 2, initials: "MK", role: "Viewer" },
+  { email: "sarah@acme.dev", id: 1, initials: "SC", role: "Editor" },
+  { email: "marcus@acme.dev", id: 2, initials: "MK", role: "Viewer" },
 ];
 
 export function Pattern() {

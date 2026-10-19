@@ -1,3 +1,4 @@
+// title: Package preview with license and version
 import { PackageIcon, StarIcon } from "lucide-react";
 import {
   PreviewCard,

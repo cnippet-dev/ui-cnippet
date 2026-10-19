@@ -1,3 +1,4 @@
+// title: With Character Counter
 "use client";
 
 import { useState } from "react";

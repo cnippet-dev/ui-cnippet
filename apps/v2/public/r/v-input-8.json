@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-8.tsx",
-      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-url\">URL</FieldLabel>\n      <Input id=\"input-demo-url\" placeholder=\"https://example.com\" type=\"url\" />\n    </Field>\n  );\n}\n",
+      "content": "// title: With URL Type\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-url\">URL</FieldLabel>\n      <Input id=\"input-demo-url\" placeholder=\"https://example.com\" type=\"url\" />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "input"

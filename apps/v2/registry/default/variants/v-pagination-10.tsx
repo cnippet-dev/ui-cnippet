@@ -1,3 +1,4 @@
+// title: With Outline Style Buttons
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";

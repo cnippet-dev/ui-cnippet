@@ -1,3 +1,4 @@
+// title: File upload button with attachment preview and clear action
 "use client";
 
 import { PaperclipIcon, XIcon } from "lucide-react";

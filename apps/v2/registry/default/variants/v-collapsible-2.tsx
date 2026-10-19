@@ -1,3 +1,4 @@
+// title: Collapsible
 import { ChevronsUpDownIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";

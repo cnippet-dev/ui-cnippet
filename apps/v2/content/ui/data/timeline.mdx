@@ -1,0 +1,105 @@
+---
+title: Timeline
+description: Vertical list of events joined by a line, for activity feeds, audit logs, deployment history and order tracking, with dot, icon or avatar markers. Copy-paste ready.
+---
+
+<ComponentPreview name="v-timeline-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/timeline
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="timeline" title="components/ui/timeline.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Timeline,
+  TimelineContent,
+  TimelineDescription,
+  TimelineIndicator,
+  TimelineItem,
+  TimelineTime,
+  TimelineTitle,
+} from "@/components/ui/timeline"
+```
+
+```tsx
+<Timeline>
+  <TimelineItem>
+    <TimelineIndicator />
+    <TimelineContent>
+      <TimelineTitle>Shipped</TimelineTitle>
+      <TimelineTime dateTime="2026-10-16T10:30">Oct 16, 10:30 AM</TimelineTime>
+    </TimelineContent>
+  </TimelineItem>
+</Timeline>
+```
+
+## Anatomy
+
+```tsx
+<Timeline>                 {/* <ol> */}
+  <TimelineItem>           {/* <li>; draws the line to the next item */}
+    <TimelineIndicator />  {/* a dot, or pass an icon or avatar */}
+    <TimelineContent>
+      <TimelineTitle />
+      <TimelineDescription />
+      <TimelineTime />     {/* <time>; pass dateTime */}
+    </TimelineContent>
+  </TimelineItem>
+</Timeline>
+```
+
+## Good to know
+
+- Every indicator fills the same square, set by `--timeline-indicator` on `Timeline` (default `--spacing(7)`), so dots, icons and avatars all sit on one line. Make it smaller for compact lists: `className="[--timeline-indicator:--spacing(4)]"`.
+- `TimelineIndicator` is hidden from screen readers. Put any status it shows (such as "Failed") in the text as well.
+- The last item has no line after it.
+- Give `TimelineTime` a machine-readable `dateTime` when the visible text is relative, such as "2 hours ago".
+- `<strong>` inside `TimelineTitle` is medium weight, for the actor's name in activity feeds.
+
+## API Reference
+
+All parts take the props of their HTML element. `TimelineIndicator` renders a dot when it has no children, and a bordered circle around them when it does.
+
+## Examples
+
+### Deployment history
+
+Status icons in tinted indicators.
+
+<ComponentPreview name="v-timeline-2" />
+
+### Order tracking
+
+Compact dots with the latest step highlighted.
+
+<ComponentPreview name="v-timeline-3" />

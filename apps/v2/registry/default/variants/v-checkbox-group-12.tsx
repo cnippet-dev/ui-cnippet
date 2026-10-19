@@ -1,3 +1,4 @@
+// title: Recurring schedule picker with weekday and weekend sub-groups and day count badge
 "use client";
 
 import { useState } from "react";

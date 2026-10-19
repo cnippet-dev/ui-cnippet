@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-input-group-22",
+  "description": "Showcase: icons, text add-ons, shortcut and button",
+  "registryDependencies": [
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-input-group-22.tsx",
+      "content": "// title: Showcase: icons, text add-ons, shortcut and button\nimport { ArrowRightIcon, MailIcon, SearchIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\nimport { Kbd } from \"@/registry/default/ui/kbd\";\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-xl gap-4 sm:grid-cols-2\">\n      <InputGroup>\n        <InputGroupInput\n          aria-label=\"Search\"\n          placeholder=\"Search\"\n          type=\"search\"\n        />\n        <InputGroupAddon>\n          <SearchIcon aria-hidden=\"true\" />\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <Kbd>⌘K</Kbd>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput\n          aria-label=\"Domain\"\n          className=\"*:[input]:px-0!\"\n          placeholder=\"acme\"\n        />\n        <InputGroupAddon>\n          <InputGroupText>https://</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>.com</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput aria-label=\"Amount\" placeholder=\"0.00\" />\n        <InputGroupAddon>\n          <InputGroupText>$</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>USD</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput\n          aria-label=\"Email\"\n          placeholder=\"you@acme.com\"\n          type=\"email\"\n        />\n        <InputGroupAddon>\n          <MailIcon aria-hidden=\"true\" />\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <Button aria-label=\"Subscribe\" size=\"icon-xs\" variant=\"ghost\">\n            <ArrowRightIcon aria-hidden=\"true\" />\n          </Button>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:block"
+}

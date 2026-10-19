@@ -1,3 +1,4 @@
+// title: Results summary with compact nav
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   Pagination,

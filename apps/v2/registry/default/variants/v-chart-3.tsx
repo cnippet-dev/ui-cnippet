@@ -1,3 +1,4 @@
+// title: Bar Chart
 "use client";
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";

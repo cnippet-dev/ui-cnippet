@@ -1,3 +1,4 @@
+// title: Field with validation error
 import { Field, FieldError, FieldLabel } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 

@@ -1,4 +1,13 @@
 {
-  "pages": ["accordion", "chart", "collapsible", "empty", "table"],
+  "pages": [
+    "accordion",
+    "chart",
+    "collapsible",
+    "data-table",
+    "empty",
+    "sortable",
+    "table",
+    "timeline"
+  ],
   "title": "Data Display"
 }

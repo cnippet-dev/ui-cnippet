@@ -1,3 +1,4 @@
+// title: Code editor toolbar with language select, word wrap, copy, and run
 "use client";
 
 import { CheckIcon, CopyIcon, PlayIcon, WrapTextIcon } from "lucide-react";
@@ -113,7 +114,7 @@ export function Pattern() {
                   render={<Button size="icon" variant="ghost" />}
                 >
                   {copied ? (
-                    <CheckIcon className="text-emerald-500" />
+                    <CheckIcon className="text-success-foreground" />
                   ) : (
                     <CopyIcon />
                   )}

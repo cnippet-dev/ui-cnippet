@@ -1,3 +1,4 @@
+// title: Destructive switch with confirmation text
 import {
   Field,
   FieldDescription,

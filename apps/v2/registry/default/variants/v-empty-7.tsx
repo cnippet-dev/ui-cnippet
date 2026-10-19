@@ -1,3 +1,4 @@
+// title: No products empty state with stacked cards and blur effect
 import {
   Empty,
   EmptyDescription,

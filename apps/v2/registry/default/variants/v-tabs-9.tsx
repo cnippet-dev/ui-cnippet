@@ -1,3 +1,4 @@
+// title: With Icons
 import { BarChart3Icon, LayoutDashboardIcon, SettingsIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {
@@ -27,17 +28,23 @@ export function Pattern() {
         </TabsList>
         <TabsContent value="overview">
           <Card>
-            <CardContent>Overview dashboard content goes here.</CardContent>
+            <CardContent>
+              12 active projects, 3 deploys today, 99.98% uptime.
+            </CardContent>
           </Card>
         </TabsContent>
         <TabsContent value="analytics">
           <Card>
-            <CardContent>Analytics charts and metrics.</CardContent>
+            <CardContent>
+              Traffic is up 18% compared with last week.
+            </CardContent>
           </Card>
         </TabsContent>
         <TabsContent value="settings">
           <Card>
-            <CardContent>Application settings and preferences.</CardContent>
+            <CardContent>
+              Manage your workspace name, members and billing.
+            </CardContent>
           </Card>
         </TabsContent>
       </Tabs>

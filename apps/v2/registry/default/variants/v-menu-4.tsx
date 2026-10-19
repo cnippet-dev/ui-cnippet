@@ -1,3 +1,4 @@
+// title: With Switch
 import { Button } from "@/registry/default/ui/button";
 import {
   Menu,

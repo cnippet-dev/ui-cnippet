@@ -1,3 +1,4 @@
+// title: Team Members
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 
 "use client";
@@ -9,6 +10,7 @@ import {
   GlobeIcon,
 } from "lucide-react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -85,7 +87,15 @@ export default function Particle() {
 
   return (
     <div className="w-full max-w-xs space-y-3">
-      <Carousel className="w-full" opts={{ align: "start" }} setApi={setApi}>
+      <Carousel
+        // Fade the peeking next card so it reads as "more this way", not a clip.
+        className={cn(
+          "w-full",
+          canScrollNext && "mask-r-from-75% mask-r-to-100%",
+        )}
+        opts={{ align: "start" }}
+        setApi={setApi}
+      >
         <CarouselContent>
           {TEAM.map((member, i) => (
             <CarouselItem className="basis-4/5 sm:basis-3/4" key={i}>

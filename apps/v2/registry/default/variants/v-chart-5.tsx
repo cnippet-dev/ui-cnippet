@@ -1,3 +1,4 @@
+// title: Pie Chart
 "use client";
 
 import { Pie, PieChart } from "recharts";

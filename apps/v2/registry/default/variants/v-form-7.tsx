@@ -1,3 +1,4 @@
+// title: Newsletter Signup
 "use client";
 
 import { CheckCircle2Icon, MailIcon } from "lucide-react";

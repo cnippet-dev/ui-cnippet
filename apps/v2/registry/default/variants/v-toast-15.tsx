@@ -1,3 +1,4 @@
+// title: Unsaved changes reminder with save and discard actions
 "use client";
 
 import { useState } from "react";
@@ -9,7 +10,7 @@ type SaveState = "clean" | "dirty" | "saving";
 export function Pattern() {
   const [saveState, setSaveState] = useState<SaveState>("clean");
   const [content, setContent] = useState(
-    "Project Alpha\n\nThis is the project description. Click below to make changes and see the unsaved changes toast appear.",
+    "Q4 launch plan\n\nShip the new onboarding flow by Nov 14. Design review is on Thursday.",
   );
   const toastIdRef = { current: null as string | null };
 

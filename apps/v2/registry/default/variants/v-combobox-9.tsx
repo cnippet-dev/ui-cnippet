@@ -1,3 +1,4 @@
+// title: With Search Icon
 "use client";
 
 import { SearchIcon } from "lucide-react";

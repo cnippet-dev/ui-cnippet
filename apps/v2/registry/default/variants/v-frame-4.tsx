@@ -1,3 +1,4 @@
+// title: Dense layout
 import {
   Frame,
   FrameDescription,

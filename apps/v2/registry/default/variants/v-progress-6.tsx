@@ -1,3 +1,4 @@
+// title: With custom colors
 "use client";
 
 import { useEffect, useState } from "react";
@@ -19,23 +20,23 @@ export function Pattern() {
       </div>
 
       <Progress
-        className="**:data-[slot=progress-indicator]:bg-green-500"
+        className="**:data-[slot=progress-indicator]:bg-chart-1"
         value={progress}
       />
       <Progress
-        className="**:data-[slot=progress-indicator]:bg-yellow-500"
+        className="**:data-[slot=progress-indicator]:bg-chart-2"
         value={progress}
       />
       <Progress
-        className="**:data-[slot=progress-indicator]:bg-fuchsia-500"
+        className="**:data-[slot=progress-indicator]:bg-chart-3"
         value={progress}
       />
       <Progress
-        className="**:data-[slot=progress-indicator]:bg-indigo-500"
+        className="**:data-[slot=progress-indicator]:bg-chart-4"
         value={progress}
       />
       <Progress
-        className="**:data-[slot=progress-indicator]:bg-violet-500"
+        className="**:data-[slot=progress-indicator]:bg-chart-5"
         value={progress}
       />
     </div>

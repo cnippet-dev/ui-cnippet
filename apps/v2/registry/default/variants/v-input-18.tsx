@@ -1,3 +1,4 @@
+// title: With Link and Visibility Toggle
 "use client";
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
@@ -12,7 +13,7 @@ export function Pattern() {
 
   return (
     <Field className="w-full max-w-xs">
-      <div className="flex items-center justify-between">
+      <div className="flex w-full items-center justify-between">
         <FieldLabel htmlFor="password-link">Password</FieldLabel>
         <a
           className="font-medium text-primary text-xs hover:underline"

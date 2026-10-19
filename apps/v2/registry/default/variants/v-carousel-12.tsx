@@ -1,3 +1,4 @@
+// title: Pricing plan carousel with arrow navigation and highlighted active plan
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 

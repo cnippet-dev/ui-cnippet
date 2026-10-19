@@ -1,3 +1,4 @@
+// title: Textarea with character countdown
 "use client";
 
 import { useState } from "react";

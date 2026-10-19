@@ -1,3 +1,4 @@
+// title: Privacy Settings With Icons
 "use client";
 
 import {

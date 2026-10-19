@@ -1,3 +1,4 @@
+// title: Settings navigation with icons
 "use client";
 
 import type { LucideIcon } from "lucide-react";

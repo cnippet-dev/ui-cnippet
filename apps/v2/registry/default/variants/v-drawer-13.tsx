@@ -1,3 +1,4 @@
+// title: Activity Log with Status Timeline
 "use client";
 
 import {
@@ -83,12 +84,12 @@ const STATUS_CONFIG: Record<
   { icon: typeof CheckCircle2Icon; color: string; label: string }
 > = {
   completed: {
-    color: "text-green-500",
+    color: "text-success-foreground",
     icon: CheckCircle2Icon,
     label: "Completed",
   },
   in_progress: {
-    color: "text-amber-500",
+    color: "text-warning-foreground",
     icon: ClockIcon,
     label: "In progress",
   },
@@ -132,9 +133,9 @@ export default function Particle() {
                       <span
                         className={`ml-auto rounded-full border px-1.5 py-0.5 font-medium text-[10px] ${
                           event.status === "completed"
-                            ? "border-green-200 text-green-600 dark:border-green-800 dark:text-green-400"
+                            ? "border-success/24 text-success-foreground"
                             : event.status === "in_progress"
-                              ? "border-amber-200 text-amber-600 dark:border-amber-800 dark:text-amber-400"
+                              ? "border-warning/24 text-warning-foreground"
                               : "border-border text-muted-foreground"
                         }`}
                       >

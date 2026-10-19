@@ -1,3 +1,4 @@
+// title: Date range quick-select with live stats grid
 "use client";
 
 import { useState } from "react";

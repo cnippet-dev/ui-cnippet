@@ -10,6 +10,7 @@
         "@cnippet/autocomplete",
         "@cnippet/avatar",
         "@cnippet/badge",
+        "@cnippet/banner",
         "@cnippet/breadcrumb",
         "@cnippet/button",
         "@cnippet/calendar",
@@ -19,14 +20,17 @@
         "@cnippet/checkbox",
         "@cnippet/checkbox-group",
         "@cnippet/collapsible",
+        "@cnippet/color-picker",
         "@cnippet/combobox",
         "@cnippet/command",
         "@cnippet/context-menu",
+        "@cnippet/data-table",
         "@cnippet/dialog",
         "@cnippet/drawer",
         "@cnippet/empty",
         "@cnippet/field",
         "@cnippet/fieldset",
+        "@cnippet/file-upload",
         "@cnippet/form",
         "@cnippet/frame",
         "@cnippet/group",
@@ -38,12 +42,15 @@
         "@cnippet/label",
         "@cnippet/menu",
         "@cnippet/meter",
+        "@cnippet/navigation-menu",
         "@cnippet/number-field",
         "@cnippet/pagination",
         "@cnippet/popover",
         "@cnippet/preview-card",
         "@cnippet/progress",
         "@cnippet/radio-group",
+        "@cnippet/rating",
+        "@cnippet/resizable",
         "@cnippet/scroll-area",
         "@cnippet/select",
         "@cnippet/separator",
@@ -51,11 +58,16 @@
         "@cnippet/sidebar",
         "@cnippet/skeleton",
         "@cnippet/slider",
+        "@cnippet/sortable",
         "@cnippet/spinner",
+        "@cnippet/stepper",
         "@cnippet/switch",
         "@cnippet/table",
         "@cnippet/tabs",
+        "@cnippet/tag-input",
         "@cnippet/textarea",
+        "@cnippet/time-picker",
+        "@cnippet/timeline",
         "@cnippet/toast",
         "@cnippet/toggle",
         "@cnippet/toggle-group",
@@ -185,6 +197,20 @@
         }
       ],
       "name": "badge",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/banner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "banner",
       "type": "registry:ui"
     },
     {
@@ -329,6 +355,20 @@
       "type": "registry:ui"
     },
     {
+      "files": [
+        {
+          "path": "registry/default/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "color-picker",
+      "registryDependencies": [
+        "@cnippet/input",
+        "@cnippet/slider"
+      ],
+      "type": "registry:ui"
+    },
+    {
       "dependencies": [
         "@base-ui/react"
       ],
@@ -373,6 +413,29 @@
         }
       ],
       "name": "context-menu",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "@tanstack/react-table",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "data-table",
+      "registryDependencies": [
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/checkbox",
+        "@cnippet/input-group",
+        "@cnippet/menu",
+        "@cnippet/select",
+        "@cnippet/table"
+      ],
       "type": "registry:ui"
     },
     {
@@ -454,6 +517,23 @@
         }
       ],
       "name": "fieldset",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "file-upload",
+      "registryDependencies": [
+        "@cnippet/button",
+        "@cnippet/progress"
+      ],
       "type": "registry:ui"
     },
     {
@@ -630,6 +710,20 @@
     },
     {
       "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "navigation-menu",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
         "@base-ui/react"
       ],
       "files": [
@@ -711,6 +805,35 @@
     },
     {
       "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/rating.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "rating",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "react-resizable-panels",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "resizable",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
         "@base-ui/react"
       ],
       "files": [
@@ -768,7 +891,9 @@
     },
     {
       "dependencies": [
-        "class-variance-authority"
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
       ],
       "files": [
         {
@@ -826,6 +951,22 @@
       "type": "registry:ui"
     },
     {
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sortable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sortable",
+      "type": "registry:ui"
+    },
+    {
       "files": [
         {
           "path": "registry/default/ui/spinner.tsx",
@@ -833,6 +974,19 @@
         }
       ],
       "name": "spinner",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/stepper.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "stepper",
       "type": "registry:ui"
     },
     {
@@ -873,6 +1027,19 @@
     },
     {
       "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tag-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "tag-input",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
         "@base-ui/react"
       ],
       "files": [
@@ -882,6 +1049,32 @@
         }
       ],
       "name": "textarea",
+      "type": "registry:ui"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/time-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "time-picker",
+      "registryDependencies": [
+        "@cnippet/select"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "files": [
+        {
+          "path": "registry/default/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "timeline",
       "type": "registry:ui"
     },
     {
@@ -970,7 +1163,8 @@
         }
       ],
       "meta": {
-        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+        "role": "demo"
       },
       "name": "v-accordion-1",
       "registryDependencies": [
@@ -990,7 +1184,8 @@
         }
       ],
       "meta": {
-        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+        "role": "demo"
       },
       "name": "v-accordion-2",
       "registryDependencies": [
@@ -1010,7 +1205,8 @@
         }
       ],
       "meta": {
-        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+        "role": "demo"
       },
       "name": "v-accordion-3",
       "registryDependencies": [
@@ -1030,7 +1226,8 @@
         }
       ],
       "meta": {
-        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+        "role": "demo"
       },
       "name": "v-accordion-4",
       "registryDependencies": [
@@ -1253,6 +1450,27 @@
         "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]"
       },
       "name": "v-accordion-15",
+      "registryDependencies": [
+        "@cnippet/accordion"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "accordion"
+      ],
+      "description": "Showcase: single and multiple",
+      "files": [
+        {
+          "path": "registry/default/variants/v-accordion-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
+        "role": "showcase"
+      },
+      "name": "v-accordion-16",
       "registryDependencies": [
         "@cnippet/accordion"
       ],
@@ -1870,7 +2088,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-1",
       "registryDependencies": [
@@ -1890,7 +2109,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-2",
       "registryDependencies": [
@@ -1910,7 +2130,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-3",
       "registryDependencies": [
@@ -1930,7 +2151,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-4",
       "registryDependencies": [
@@ -1950,7 +2172,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-5",
       "registryDependencies": [
@@ -1970,7 +2193,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-6",
       "registryDependencies": [
@@ -1990,7 +2214,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-7",
       "registryDependencies": [
@@ -2010,7 +2235,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-8",
       "registryDependencies": [
@@ -2030,7 +2256,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-9",
       "registryDependencies": [
@@ -2210,7 +2437,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-autocomplete-18",
       "registryDependencies": [
@@ -2260,6 +2488,27 @@
     },
     {
       "categories": [
+        "autocomplete"
+      ],
+      "description": "Showcase: clear, trigger, groups, sizes and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-autocomplete-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-autocomplete-21",
+      "registryDependencies": [
+        "@cnippet/autocomplete"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "avatar"
       ],
       "description": "Default",
@@ -2270,7 +2519,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-1",
       "registryDependencies": [
@@ -2290,7 +2540,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-2",
       "registryDependencies": [
@@ -2310,7 +2561,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-3",
       "registryDependencies": [
@@ -2330,7 +2582,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-4",
       "registryDependencies": [
@@ -2350,7 +2603,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-5",
       "registryDependencies": [
@@ -2370,7 +2624,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-avatar-6",
       "registryDependencies": [
@@ -2680,6 +2935,27 @@
     },
     {
       "categories": [
+        "avatar"
+      ],
+      "description": "Showcase: sizes, radius, fallback and group",
+      "files": [
+        {
+          "path": "registry/default/variants/v-avatar-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-avatar-22",
+      "registryDependencies": [
+        "@cnippet/avatar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "badge"
       ],
       "description": "Default",
@@ -2690,7 +2966,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-1",
       "registryDependencies": [
@@ -2710,7 +2987,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-2",
       "registryDependencies": [
@@ -2730,7 +3008,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-3",
       "registryDependencies": [
@@ -2750,7 +3029,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-4",
       "registryDependencies": [
@@ -2770,7 +3050,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-5",
       "registryDependencies": [
@@ -2790,7 +3071,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-6",
       "registryDependencies": [
@@ -2810,7 +3092,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-7",
       "registryDependencies": [
@@ -2830,7 +3113,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-8",
       "registryDependencies": [
@@ -2850,7 +3134,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-9",
       "registryDependencies": [
@@ -2870,7 +3155,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-10",
       "registryDependencies": [
@@ -2890,7 +3176,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-11",
       "registryDependencies": [
@@ -2910,7 +3197,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-badge-12",
       "registryDependencies": [
@@ -3020,6 +3308,91 @@
     },
     {
       "categories": [
+        "badge"
+      ],
+      "description": "Showcase: variants, sizes, icons and counts",
+      "files": [
+        {
+          "path": "registry/default/variants/v-badge-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-badge-18",
+      "registryDependencies": [
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "banner"
+      ],
+      "description": "Dismissible promo and maintenance banners above a page",
+      "files": [
+        {
+          "path": "registry/default/variants/v-banner-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-banner-1",
+      "registryDependencies": [
+        "@cnippet/banner",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "banner"
+      ],
+      "description": "Banner tones: default, info, success, warning, error",
+      "files": [
+        {
+          "path": "registry/default/variants/v-banner-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-banner-2",
+      "registryDependencies": [
+        "@cnippet/banner",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "banner"
+      ],
+      "description": "Cookie consent bar with two actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-banner-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-banner-3",
+      "registryDependencies": [
+        "@cnippet/banner",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "breadcrumb"
       ],
       "description": "Default",
@@ -3030,7 +3403,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-1",
       "registryDependencies": [
@@ -3050,7 +3424,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-2",
       "registryDependencies": [
@@ -3070,7 +3445,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-3",
       "registryDependencies": [
@@ -3090,7 +3466,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-4",
       "registryDependencies": [
@@ -3110,7 +3487,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-5",
       "registryDependencies": [
@@ -3170,7 +3548,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-breadcrumb-8",
       "registryDependencies": [
@@ -3320,6 +3699,27 @@
     },
     {
       "categories": [
+        "breadcrumb"
+      ],
+      "description": "Showcase: separators, home icon and ellipsis",
+      "files": [
+        {
+          "path": "registry/default/variants/v-breadcrumb-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-breadcrumb-16",
+      "registryDependencies": [
+        "@cnippet/breadcrumb"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "button"
       ],
       "description": "Default",
@@ -3330,7 +3730,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-1",
       "registryDependencies": [
@@ -3350,7 +3751,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-2",
       "registryDependencies": [
@@ -3370,7 +3772,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-3",
       "registryDependencies": [
@@ -3390,7 +3793,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-4",
       "registryDependencies": [
@@ -3410,7 +3814,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-5",
       "registryDependencies": [
@@ -3430,7 +3835,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-6",
       "registryDependencies": [
@@ -3450,7 +3856,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-7",
       "registryDependencies": [
@@ -3470,7 +3877,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-8",
       "registryDependencies": [
@@ -3490,7 +3898,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-9",
       "registryDependencies": [
@@ -3510,7 +3919,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-10",
       "registryDependencies": [
@@ -3530,7 +3940,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-11",
       "registryDependencies": [
@@ -3550,7 +3961,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-12",
       "registryDependencies": [
@@ -3570,7 +3982,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-13",
       "registryDependencies": [
@@ -3590,7 +4003,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-14",
       "registryDependencies": [
@@ -3610,7 +4024,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-15",
       "registryDependencies": [
@@ -3630,7 +4045,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-16",
       "registryDependencies": [
@@ -3650,7 +4066,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-17",
       "registryDependencies": [
@@ -3670,7 +4087,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-18",
       "registryDependencies": [
@@ -3690,7 +4108,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-button-19",
       "registryDependencies": [
@@ -3920,6 +4339,27 @@
     },
     {
       "categories": [
+        "button"
+      ],
+      "description": "Showcase: variants, sizes, icons and states",
+      "files": [
+        {
+          "path": "registry/default/variants/v-button-31.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-button-31",
+      "registryDependencies": [
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "calendar"
       ],
       "description": "Default",
@@ -3930,7 +4370,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-1",
       "registryDependencies": [
@@ -3942,7 +4383,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Fallback Only",
+      "description": "Larger cell size",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-2.tsx",
@@ -3950,7 +4391,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-2",
       "registryDependencies": [
@@ -3970,7 +4412,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-3",
       "registryDependencies": [
@@ -3990,7 +4433,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-4",
       "registryDependencies": [
@@ -4010,7 +4454,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-5",
       "registryDependencies": [
@@ -4030,7 +4475,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-calendar-6",
       "registryDependencies": [
@@ -4182,7 +4628,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Holiday highlights with name on select",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-14.tsx",
@@ -4202,7 +4648,7 @@
       "categories": [
         "calendar"
       ],
-      "description": "Basic calendar",
+      "description": "Hotel stay check-in and check-out",
       "files": [
         {
           "path": "registry/default/variants/v-calendar-15.tsx",
@@ -4313,6 +4759,27 @@
         "className": ""
       },
       "name": "v-calendar-20",
+      "registryDependencies": [
+        "@cnippet/calendar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar"
+      ],
+      "description": "Showcase: single date and range with dropdowns",
+      "files": [
+        {
+          "path": "registry/default/variants/v-calendar-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-calendar-21",
       "registryDependencies": [
         "@cnippet/calendar"
       ],
@@ -4730,7 +5197,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-carousel-1",
       "registryDependencies": [
@@ -4750,7 +5218,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-carousel-2",
       "registryDependencies": [
@@ -4770,7 +5239,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-carousel-3",
       "registryDependencies": [
@@ -4790,7 +5260,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-carousel-4",
       "registryDependencies": [
@@ -5020,6 +5491,27 @@
     },
     {
       "categories": [
+        "carousel"
+      ],
+      "description": "Showcase: horizontal and vertical",
+      "files": [
+        {
+          "path": "registry/default/variants/v-carousel-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-carousel-16",
+      "registryDependencies": [
+        "@cnippet/carousel"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "chart"
       ],
       "description": "Multi-Series Bar Chart",
@@ -5162,7 +5654,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Stacked monthly expense bars",
       "files": [
         {
           "path": "registry/default/variants/v-chart-8.tsx",
@@ -5182,7 +5674,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Scatter plot of scores",
       "files": [
         {
           "path": "registry/default/variants/v-chart-9.tsx",
@@ -5202,7 +5694,7 @@
       "categories": [
         "chart"
       ],
-      "description": "Basic chart",
+      "description": "Revenue bars with target reference line",
       "files": [
         {
           "path": "registry/default/variants/v-chart-10.tsx",
@@ -5330,7 +5822,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-checkbox-1",
       "registryDependencies": [
@@ -5350,7 +5843,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-checkbox-2",
       "registryDependencies": [
@@ -5370,7 +5864,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-checkbox-3",
       "registryDependencies": [
@@ -5620,6 +6115,27 @@
     },
     {
       "categories": [
+        "checkbox"
+      ],
+      "description": "Showcase: states and descriptions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-checkbox-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-checkbox-16",
+      "registryDependencies": [
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "checkbox group"
       ],
       "description": "Default",
@@ -5722,7 +6238,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Weekday picker",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-6.tsx",
@@ -5742,7 +6258,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Language picker with selection badges",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-7.tsx",
@@ -5762,7 +6278,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Notification preferences with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-8.tsx",
@@ -5782,7 +6298,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Feature flags",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-9.tsx",
@@ -5802,7 +6318,7 @@
       "categories": [
         "checkbox group"
       ],
-      "description": "Basic checkbox group",
+      "description": "Notification channels with icons",
       "files": [
         {
           "path": "registry/default/variants/v-checkbox-group-10.tsx",
@@ -5930,7 +6446,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-collapsible-1",
       "registryDependencies": [
@@ -5950,7 +6467,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-collapsible-2",
       "registryDependencies": [
@@ -5970,7 +6488,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-collapsible-3",
       "registryDependencies": [
@@ -5990,7 +6509,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-collapsible-4",
       "registryDependencies": [
@@ -6050,7 +6570,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-collapsible-7",
       "registryDependencies": [
@@ -6130,7 +6651,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-collapsible-11",
       "registryDependencies": [
@@ -6220,6 +6742,73 @@
     },
     {
       "categories": [
+        "color picker"
+      ],
+      "description": "Brand colour picker with area, hue, hex and presets",
+      "files": [
+        {
+          "path": "registry/default/variants/v-color-picker-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-color-picker-1",
+      "registryDependencies": [
+        "@cnippet/color-picker",
+        "@cnippet/button",
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "color picker"
+      ],
+      "description": "Colour picker in a popover behind a swatch button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-color-picker-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-color-picker-2",
+      "registryDependencies": [
+        "@cnippet/color-picker",
+        "@cnippet/button",
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "color picker"
+      ],
+      "description": "Label colour swatches with hex input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-color-picker-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-color-picker-3",
+      "registryDependencies": [
+        "@cnippet/color-picker",
+        "@cnippet/button",
+        "@cnippet/popover"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "combobox"
       ],
       "description": "Default",
@@ -6230,7 +6819,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-1",
       "registryDependencies": [
@@ -6250,7 +6840,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-2",
       "registryDependencies": [
@@ -6270,7 +6861,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-3",
       "registryDependencies": [
@@ -6290,7 +6882,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-4",
       "registryDependencies": [
@@ -6310,7 +6903,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-5",
       "registryDependencies": [
@@ -6330,7 +6924,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-6",
       "registryDependencies": [
@@ -6350,7 +6945,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-7",
       "registryDependencies": [
@@ -6370,7 +6966,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-8",
       "registryDependencies": [
@@ -6390,7 +6987,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-9",
       "registryDependencies": [
@@ -6410,7 +7008,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-10",
       "registryDependencies": [
@@ -6430,7 +7029,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-11",
       "registryDependencies": [
@@ -6450,7 +7050,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-12",
       "registryDependencies": [
@@ -6470,7 +7071,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-13",
       "registryDependencies": [
@@ -6530,7 +7132,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-combobox-16",
       "registryDependencies": [
@@ -6542,7 +7145,7 @@
       "categories": [
         "combobox"
       ],
-      "description": "Basic combobox",
+      "description": "Creatable option when nothing matches",
       "files": [
         {
           "path": "registry/default/variants/v-combobox-17.tsx",
@@ -6653,6 +7256,27 @@
         "className": ""
       },
       "name": "v-combobox-22",
+      "registryDependencies": [
+        "@cnippet/combobox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combobox"
+      ],
+      "description": "Showcase: single, multiple chips, sizes and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-combobox-23.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-combobox-23",
       "registryDependencies": [
         "@cnippet/combobox"
       ],
@@ -6802,7 +7426,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Project switcher",
       "files": [
         {
           "path": "registry/default/variants/v-command-8.tsx",
@@ -6822,7 +7446,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Invite members with multi-select",
       "files": [
         {
           "path": "registry/default/variants/v-command-9.tsx",
@@ -6842,7 +7466,7 @@
       "categories": [
         "command"
       ],
-      "description": "Basic command",
+      "description": "Label picker with multi-select",
       "files": [
         {
           "path": "registry/default/variants/v-command-10.tsx",
@@ -6962,7 +7586,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Browser page with submenu, checkbox toggles and profile radio",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-1.tsx",
@@ -6982,7 +7606,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Media library with Move to and Share submenus",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-2.tsx",
@@ -7002,7 +7626,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Code editor with keyboard shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-3.tsx",
@@ -7022,7 +7646,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Calendar events with labelled action groups",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-4.tsx",
@@ -7042,7 +7666,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Spreadsheet cells with icon actions",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-5.tsx",
@@ -7062,7 +7686,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Data table with column visibility checkboxes",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-6.tsx",
@@ -7082,7 +7706,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Folder view with Sort by and View radio groups",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-7.tsx",
@@ -7102,7 +7726,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Inbox rows with destructive delete",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-8.tsx",
@@ -7122,7 +7746,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Canvas layers opening on each side",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-9.tsx",
@@ -7142,7 +7766,7 @@
       "categories": [
         "context menu"
       ],
-      "description": "Basic context menu",
+      "description": "Team members dialog with role submenu",
       "files": [
         {
           "path": "registry/default/variants/v-context-menu-10.tsx",
@@ -7260,6 +7884,207 @@
     },
     {
       "categories": [
+        "data table"
+      ],
+      "description": "Sortable invoices",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-1",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Customer directory with search and pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-2",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Team members with row selection and bulk actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-3",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Orders with column visibility menu",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-4",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Issue tracker with faceted status and priority filters",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-5",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Department budgets with expandable sub-rows",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-6",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "API keys card table with row actions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-data-table-7",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "data table"
+      ],
+      "description": "Showcase: search, filters, selection, sorting and pagination",
+      "files": [
+        {
+          "path": "registry/default/variants/v-data-table-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+        "role": "showcase"
+      },
+      "name": "v-data-table-8",
+      "registryDependencies": [
+        "@cnippet/data-table",
+        "@cnippet/badge",
+        "@cnippet/button",
+        "@cnippet/menu",
+        "@cnippet/avatar",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "date picker"
       ],
       "description": "Default",
@@ -7270,7 +8095,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-date-picker-1",
       "registryDependencies": [
@@ -7290,7 +8116,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-date-picker-2",
       "registryDependencies": [
@@ -7310,7 +8137,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-date-picker-3",
       "registryDependencies": [
@@ -7370,7 +8198,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-date-picker-6",
       "registryDependencies": [
@@ -7560,6 +8389,27 @@
     },
     {
       "categories": [
+        "date picker"
+      ],
+      "description": "Showcase: single, range, birthday and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-date-picker-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-date-picker-16",
+      "registryDependencies": [
+        "@cnippet/date-picker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "dialog"
       ],
       "description": "Default",
@@ -7570,7 +8420,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-dialog-1",
       "registryDependencies": [
@@ -7610,7 +8461,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-dialog-3",
       "registryDependencies": [
@@ -7730,7 +8582,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-dialog-9",
       "registryDependencies": [
@@ -7870,7 +8723,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-drawer-1",
       "registryDependencies": [
@@ -7890,7 +8744,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-drawer-2",
       "registryDependencies": [
@@ -7910,7 +8765,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-drawer-3",
       "registryDependencies": [
@@ -7990,7 +8846,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-drawer-7",
       "registryDependencies": [
@@ -8022,7 +8879,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Delete account confirmation with undo",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-9.tsx",
@@ -8042,7 +8899,7 @@
       "categories": [
         "drawer"
       ],
-      "description": "Basic drawer",
+      "description": "Edit profile form",
       "files": [
         {
           "path": "registry/default/variants/v-drawer-10.tsx",
@@ -8324,7 +9181,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "All caught up — no new notifications",
+      "description": "No recent activity empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-10.tsx",
@@ -8342,7 +9199,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "No team members — invite form empty state",
+      "description": "All caught up — no new notifications",
       "files": [
         {
           "path": "registry/default/variants/v-empty-11.tsx",
@@ -8360,7 +9217,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "No matching results — clear filters empty state",
+      "description": "No team members — invite form empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-12.tsx",
@@ -8378,7 +9235,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Inbox zero — illustration with compose action",
+      "description": "No matching results — clear filters empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-13.tsx",
@@ -8396,7 +9253,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Access restricted — permission request empty state",
+      "description": "Inbox zero — illustration with compose action",
       "files": [
         {
           "path": "registry/default/variants/v-empty-14.tsx",
@@ -8414,7 +9271,7 @@
       "categories": [
         "empty state"
       ],
-      "description": "Basic empty state",
+      "description": "Access restricted — permission request empty state",
       "files": [
         {
           "path": "registry/default/variants/v-empty-15.tsx",
@@ -8440,7 +9297,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-1",
       "registryDependencies": [
@@ -8460,7 +9318,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-2",
       "registryDependencies": [
@@ -8480,7 +9339,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-3",
       "registryDependencies": [
@@ -8500,7 +9360,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-4",
       "registryDependencies": [
@@ -8520,7 +9381,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-5",
       "registryDependencies": [
@@ -8540,7 +9402,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-6",
       "registryDependencies": [
@@ -8560,7 +9423,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-7",
       "registryDependencies": [
@@ -8580,7 +9444,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-8",
       "registryDependencies": [
@@ -8600,7 +9465,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-9",
       "registryDependencies": [
@@ -8620,7 +9486,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-10",
       "registryDependencies": [
@@ -8640,7 +9507,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-11",
       "registryDependencies": [
@@ -8660,7 +9528,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-12",
       "registryDependencies": [
@@ -8680,7 +9549,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-13",
       "registryDependencies": [
@@ -8700,7 +9570,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-14",
       "registryDependencies": [
@@ -8720,7 +9591,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-15",
       "registryDependencies": [
@@ -8740,7 +9612,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-16",
       "registryDependencies": [
@@ -8760,7 +9633,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-field-17",
       "registryDependencies": [
@@ -8780,7 +9654,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-18",
       "registryDependencies": [
@@ -8792,7 +9667,7 @@
       "categories": [
         "field"
       ],
-      "description": "Field with date input",
+      "description": "Field with date picker",
       "files": [
         {
           "path": "registry/default/variants/v-field-19.tsx",
@@ -8800,7 +9675,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-19",
       "registryDependencies": [
@@ -8820,7 +9696,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-field-20",
       "registryDependencies": [
@@ -8832,7 +9709,7 @@
       "categories": [
         "field"
       ],
-      "description": "Field with file upload",
+      "description": "Resume dropzone with file validation",
       "files": [
         {
           "path": "registry/default/variants/v-field-21.tsx",
@@ -8992,7 +9869,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Account settings fieldset with timezone select",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-7.tsx",
@@ -9012,7 +9889,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Team member invite fieldset",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-8.tsx",
@@ -9032,7 +9909,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Support request fieldset with textarea",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-9.tsx",
@@ -9052,7 +9929,7 @@
       "categories": [
         "fieldset"
       ],
-      "description": "Basic fieldset",
+      "description": "Social links fieldset with URL prefixes",
       "files": [
         {
           "path": "registry/default/variants/v-fieldset-10.tsx",
@@ -9070,6 +9947,122 @@
     },
     {
       "categories": [
+        "file upload"
+      ],
+      "description": "Multi-file dropzone with type, size and count limits",
+      "files": [
+        {
+          "path": "registry/default/variants/v-file-upload-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-file-upload-1",
+      "registryDependencies": [
+        "@cnippet/file-upload",
+        "@cnippet/alert",
+        "@cnippet/button",
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "file upload"
+      ],
+      "description": "Avatar upload with preview",
+      "files": [
+        {
+          "path": "registry/default/variants/v-file-upload-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-file-upload-2",
+      "registryDependencies": [
+        "@cnippet/file-upload",
+        "@cnippet/alert",
+        "@cnippet/button",
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "file upload"
+      ],
+      "description": "Dropzone with per-file upload progress",
+      "files": [
+        {
+          "path": "registry/default/variants/v-file-upload-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-file-upload-3",
+      "registryDependencies": [
+        "@cnippet/file-upload",
+        "@cnippet/alert",
+        "@cnippet/button",
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "file upload"
+      ],
+      "description": "Message composer with attachments",
+      "files": [
+        {
+          "path": "registry/default/variants/v-file-upload-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-file-upload-4",
+      "registryDependencies": [
+        "@cnippet/file-upload",
+        "@cnippet/alert",
+        "@cnippet/button",
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "file upload"
+      ],
+      "description": "Photo gallery grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-file-upload-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-file-upload-5",
+      "registryDependencies": [
+        "@cnippet/file-upload",
+        "@cnippet/alert",
+        "@cnippet/button",
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "form"
       ],
       "description": "Default",
@@ -9080,7 +10073,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-form-1",
       "registryDependencies": [
@@ -9100,7 +10094,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-form-2",
       "registryDependencies": [
@@ -9240,7 +10235,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-form-9",
       "registryDependencies": [
@@ -9512,7 +10508,7 @@
       "categories": [
         "frame"
       ],
-      "description": "Basic frame",
+      "description": "Danger zone with typed delete confirmation",
       "files": [
         {
           "path": "registry/default/variants/v-frame-10.tsx",
@@ -9540,7 +10536,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-group-1",
       "registryDependencies": [
@@ -9580,29 +10577,10 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-group-3",
-      "registryDependencies": [
-        "@cnippet/group"
-      ],
-      "type": "registry:block"
-    },
-    {
-      "categories": [
-        "group"
-      ],
-      "description": "Large Size",
-      "files": [
-        {
-          "path": "registry/default/variants/v-group-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "className": ""
-      },
-      "name": "v-group-4",
       "registryDependencies": [
         "@cnippet/group"
       ],
@@ -9615,12 +10593,34 @@
       "description": "With Disabled Button",
       "files": [
         {
+          "path": "registry/default/variants/v-group-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "demo"
+      },
+      "name": "v-group-4",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "group"
+      ],
+      "description": "With Default Buttons",
+      "files": [
+        {
           "path": "registry/default/variants/v-group-5.tsx",
           "type": "registry:block"
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-group-5",
       "registryDependencies": [
@@ -9632,7 +10632,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Default Buttons",
+      "description": "With Start Labeled Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-6.tsx",
@@ -9652,7 +10652,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Start Labeled Text",
+      "description": "With End Text",
       "files": [
         {
           "path": "registry/default/variants/v-group-7.tsx",
@@ -9672,7 +10672,7 @@
       "categories": [
         "group"
       ],
-      "description": "With End Text",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-group-8.tsx",
@@ -9692,7 +10692,7 @@
       "categories": [
         "group"
       ],
-      "description": "Vertical",
+      "description": "Nested Groups",
       "files": [
         {
           "path": "registry/default/variants/v-group-9.tsx",
@@ -9712,7 +10712,7 @@
       "categories": [
         "group"
       ],
-      "description": "Nested Groups",
+      "description": "With Popup",
       "files": [
         {
           "path": "registry/default/variants/v-group-10.tsx",
@@ -9732,7 +10732,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Popup",
+      "description": "With Input Group",
       "files": [
         {
           "path": "registry/default/variants/v-group-11.tsx",
@@ -9752,7 +10752,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Input Group",
+      "description": "With Menu",
       "files": [
         {
           "path": "registry/default/variants/v-group-12.tsx",
@@ -9772,7 +10772,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Menu",
+      "description": "With Select",
       "files": [
         {
           "path": "registry/default/variants/v-group-13.tsx",
@@ -9792,7 +10792,7 @@
       "categories": [
         "group"
       ],
-      "description": "With Select",
+      "description": "Text formatting toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-group-14.tsx",
@@ -9812,7 +10812,7 @@
       "categories": [
         "group"
       ],
-      "description": "Text formatting toolbar",
+      "description": "Thumbs up / down vote buttons",
       "files": [
         {
           "path": "registry/default/variants/v-group-15.tsx",
@@ -9832,7 +10832,7 @@
       "categories": [
         "group"
       ],
-      "description": "Thumbs up / down vote buttons",
+      "description": "Media player controls",
       "files": [
         {
           "path": "registry/default/variants/v-group-16.tsx",
@@ -9852,7 +10852,7 @@
       "categories": [
         "group"
       ],
-      "description": "Media player controls",
+      "description": "Price range input with apply button",
       "files": [
         {
           "path": "registry/default/variants/v-group-17.tsx",
@@ -9872,7 +10872,7 @@
       "categories": [
         "group"
       ],
-      "description": "Price range input with apply button",
+      "description": "Search with category filter select",
       "files": [
         {
           "path": "registry/default/variants/v-group-18.tsx",
@@ -9890,6 +10890,27 @@
     },
     {
       "categories": [
+        "group"
+      ],
+      "description": "Showcase: outline, small, primary and with input",
+      "files": [
+        {
+          "path": "registry/default/variants/v-group-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-group-19",
+      "registryDependencies": [
+        "@cnippet/group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "input"
       ],
       "description": "Default",
@@ -9900,7 +10921,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-1",
       "registryDependencies": [
@@ -9920,7 +10942,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-2",
       "registryDependencies": [
@@ -9940,7 +10963,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-3",
       "registryDependencies": [
@@ -9960,7 +10984,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-4",
       "registryDependencies": [
@@ -9980,7 +11005,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-5",
       "registryDependencies": [
@@ -10000,7 +11026,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-6",
       "registryDependencies": [
@@ -10020,7 +11047,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-7",
       "registryDependencies": [
@@ -10040,7 +11068,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-8",
       "registryDependencies": [
@@ -10060,7 +11089,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-9",
       "registryDependencies": [
@@ -10080,7 +11110,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-10",
       "registryDependencies": [
@@ -10092,7 +11123,7 @@
       "categories": [
         "input"
       ],
-      "description": "With File Type",
+      "description": "File picker with clear button",
       "files": [
         {
           "path": "registry/default/variants/v-input-11.tsx",
@@ -10120,7 +11151,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-12",
       "registryDependencies": [
@@ -10132,7 +11164,7 @@
       "categories": [
         "input"
       ],
-      "description": "With Time Type",
+      "description": "Time slot select",
       "files": [
         {
           "path": "registry/default/variants/v-input-13.tsx",
@@ -10352,7 +11384,7 @@
       "categories": [
         "input"
       ],
-      "description": "Color picker input",
+      "description": "Color picker with swatches and hex input",
       "files": [
         {
           "path": "registry/default/variants/v-input-24.tsx",
@@ -10390,6 +11422,27 @@
     },
     {
       "categories": [
+        "input"
+      ],
+      "description": "Showcase: labels, required, error, disabled and sizes",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-26.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-input-26",
+      "registryDependencies": [
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "input group"
       ],
       "description": "Default",
@@ -10400,7 +11453,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-1",
       "registryDependencies": [
@@ -10420,7 +11474,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-2",
       "registryDependencies": [
@@ -10440,7 +11495,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-3",
       "registryDependencies": [
@@ -10460,7 +11516,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-4",
       "registryDependencies": [
@@ -10480,7 +11537,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-5",
       "registryDependencies": [
@@ -10500,7 +11558,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-6",
       "registryDependencies": [
@@ -10520,7 +11579,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-7",
       "registryDependencies": [
@@ -10540,7 +11600,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-8",
       "registryDependencies": [
@@ -10560,7 +11621,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-9",
       "registryDependencies": [
@@ -10580,7 +11642,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-input-group-10",
       "registryDependencies": [
@@ -10803,6 +11866,27 @@
         "className": ""
       },
       "name": "v-input-group-21",
+      "registryDependencies": [
+        "@cnippet/input-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "input group"
+      ],
+      "description": "Showcase: icons, text add-ons, shortcut and button",
+      "files": [
+        {
+          "path": "registry/default/variants/v-input-group-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-input-group-22",
       "registryDependencies": [
         "@cnippet/input-group"
       ],
@@ -11040,7 +12124,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-1",
       "registryDependencies": [
@@ -11060,7 +12145,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-2",
       "registryDependencies": [
@@ -11080,7 +12166,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-3",
       "registryDependencies": [
@@ -11100,7 +12187,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-4",
       "registryDependencies": [
@@ -11120,7 +12208,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-5",
       "registryDependencies": [
@@ -11140,7 +12229,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-6",
       "registryDependencies": [
@@ -11160,7 +12250,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-7",
       "registryDependencies": [
@@ -11180,7 +12271,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-8",
       "registryDependencies": [
@@ -11200,7 +12292,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-9",
       "registryDependencies": [
@@ -11220,7 +12313,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-10",
       "registryDependencies": [
@@ -11240,7 +12334,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-11",
       "registryDependencies": [
@@ -11260,7 +12355,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-12",
       "registryDependencies": [
@@ -11280,7 +12376,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-13",
       "registryDependencies": [
@@ -11300,7 +12397,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-14",
       "registryDependencies": [
@@ -11320,9 +12418,31 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-label-15",
+      "registryDependencies": [
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "label"
+      ],
+      "description": "Showcase: markers, hints, links and errors",
+      "files": [
+        {
+          "path": "registry/default/variants/v-label-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-label-16",
       "registryDependencies": [
         "@cnippet/label"
       ],
@@ -11340,7 +12460,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-menu-1",
       "registryDependencies": [
@@ -11360,7 +12481,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-2",
       "registryDependencies": [
@@ -11380,7 +12502,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-3",
       "registryDependencies": [
@@ -11400,7 +12523,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-4",
       "registryDependencies": [
@@ -11420,7 +12544,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-5",
       "registryDependencies": [
@@ -11440,7 +12565,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-6",
       "registryDependencies": [
@@ -11460,7 +12586,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-7",
       "registryDependencies": [
@@ -11480,7 +12607,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-8",
       "registryDependencies": [
@@ -11500,7 +12628,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-menu-9",
       "registryDependencies": [
@@ -11640,7 +12769,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-meter-1",
       "registryDependencies": [
@@ -11652,7 +12782,7 @@
       "categories": [
         "meter"
       ],
-      "description": "With Label",
+      "description": "Without Value",
       "files": [
         {
           "path": "registry/default/variants/v-meter-2.tsx",
@@ -11660,7 +12790,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-meter-2",
       "registryDependencies": [
@@ -11680,7 +12811,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-meter-3",
       "registryDependencies": [
@@ -11692,7 +12824,7 @@
       "categories": [
         "meter"
       ],
-      "description": "With Range",
+      "description": "With Custom Range",
       "files": [
         {
           "path": "registry/default/variants/v-meter-4.tsx",
@@ -11700,7 +12832,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-meter-4",
       "registryDependencies": [
@@ -11712,7 +12845,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Stacked resource meters",
+      "description": "Live CPU load meter with pause",
       "files": [
         {
           "path": "registry/default/variants/v-meter-5.tsx",
@@ -11732,7 +12865,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Color-coded by severity",
+      "description": "Language usage breakdown",
       "files": [
         {
           "path": "registry/default/variants/v-meter-6.tsx",
@@ -11752,7 +12885,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Storage breakdown with icons",
+      "description": "Password strength meter",
       "files": [
         {
           "path": "registry/default/variants/v-meter-7.tsx",
@@ -11772,7 +12905,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Upload progress card",
+      "description": "API usage by team member",
       "files": [
         {
           "path": "registry/default/variants/v-meter-8.tsx",
@@ -11792,7 +12925,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Profile strength checklist",
+      "description": "Quarterly budget by department",
       "files": [
         {
           "path": "registry/default/variants/v-meter-9.tsx",
@@ -11812,7 +12945,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Score card with letter grade",
       "files": [
         {
           "path": "registry/default/variants/v-meter-10.tsx",
@@ -11832,7 +12965,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Stacked resource meters",
       "files": [
         {
           "path": "registry/default/variants/v-meter-11.tsx",
@@ -11852,7 +12985,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Color-coded by severity",
       "files": [
         {
           "path": "registry/default/variants/v-meter-12.tsx",
@@ -11872,7 +13005,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Storage breakdown with icons",
       "files": [
         {
           "path": "registry/default/variants/v-meter-13.tsx",
@@ -11892,7 +13025,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Bandwidth quota card",
       "files": [
         {
           "path": "registry/default/variants/v-meter-14.tsx",
@@ -11912,7 +13045,7 @@
       "categories": [
         "meter"
       ],
-      "description": "Basic meter",
+      "description": "Profile strength checklist",
       "files": [
         {
           "path": "registry/default/variants/v-meter-15.tsx",
@@ -11930,6 +13063,68 @@
     },
     {
       "categories": [
+        "meter"
+      ],
+      "description": "Showcase: percentage, formatted value and custom range",
+      "files": [
+        {
+          "path": "registry/default/variants/v-meter-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-meter-16",
+      "registryDependencies": [
+        "@cnippet/meter"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "navigation menu"
+      ],
+      "description": "Marketing mega menu with icon cards and a featured link",
+      "files": [
+        {
+          "path": "registry/default/variants/v-navigation-menu-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-navigation-menu-1",
+      "registryDependencies": [
+        "@cnippet/navigation-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "navigation menu"
+      ],
+      "description": "Docs menu with sections and a plain link",
+      "files": [
+        {
+          "path": "registry/default/variants/v-navigation-menu-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-navigation-menu-2",
+      "registryDependencies": [
+        "@cnippet/navigation-menu"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "number field"
       ],
       "description": "Default",
@@ -11940,7 +13135,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-1",
       "registryDependencies": [
@@ -11960,7 +13156,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-2",
       "registryDependencies": [
@@ -11980,7 +13177,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-3",
       "registryDependencies": [
@@ -12000,7 +13198,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-4",
       "registryDependencies": [
@@ -12020,7 +13219,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-5",
       "registryDependencies": [
@@ -12040,7 +13240,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-6",
       "registryDependencies": [
@@ -12060,7 +13261,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-7",
       "registryDependencies": [
@@ -12080,7 +13282,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-number-field-8",
       "registryDependencies": [
@@ -12112,7 +13315,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Percentage with scrub",
+      "description": "Font size with live preview",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-10.tsx",
@@ -12132,7 +13335,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Shopping cart quantity row",
+      "description": "Percentage with scrub",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-11.tsx",
@@ -12152,7 +13355,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Typography settings",
+      "description": "Shopping cart quantity row",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-12.tsx",
@@ -12172,7 +13375,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Min/max budget range",
+      "description": "Typography settings",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-13.tsx",
@@ -12192,7 +13395,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Controlled with reset",
+      "description": "Min/max budget range",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-14.tsx",
@@ -12212,7 +13415,7 @@
       "categories": [
         "number field"
       ],
-      "description": "Basic number field",
+      "description": "Controlled with reset",
       "files": [
         {
           "path": "registry/default/variants/v-number-field-15.tsx",
@@ -12230,6 +13433,27 @@
     },
     {
       "categories": [
+        "number field"
+      ],
+      "description": "Showcase: label, scrub, sizes and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-number-field-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-number-field-16",
+      "registryDependencies": [
+        "@cnippet/number-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "input otp"
       ],
       "description": "Default",
@@ -12240,7 +13464,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-otp-field-1",
       "registryDependencies": [
@@ -12260,7 +13485,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-otp-field-2",
       "registryDependencies": [
@@ -12280,7 +13506,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-otp-field-3",
       "registryDependencies": [
@@ -12300,7 +13527,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-otp-field-4",
       "registryDependencies": [
@@ -12412,7 +13640,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Email verification card",
+      "description": "4-digit PIN with confirm",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-10.tsx",
@@ -12432,7 +13660,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "2FA authenticator app",
+      "description": "Email verification card",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-11.tsx",
@@ -12452,7 +13680,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "8-char invite code with separator",
+      "description": "2FA authenticator app",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-12.tsx",
@@ -12472,7 +13700,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Success state on completion",
+      "description": "8-char invite code with separator",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-13.tsx",
@@ -12492,7 +13720,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Resend countdown timer",
+      "description": "Success state on completion",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-14.tsx",
@@ -12512,7 +13740,7 @@
       "categories": [
         "input otp"
       ],
-      "description": "Basic input otp",
+      "description": "Resend countdown timer",
       "files": [
         {
           "path": "registry/default/variants/v-otp-field-15.tsx",
@@ -12530,6 +13758,27 @@
     },
     {
       "categories": [
+        "input otp"
+      ],
+      "description": "Showcase: separator, large and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-otp-field-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-otp-field-16",
+      "registryDependencies": [
+        "@cnippet/otp-field"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "pagination"
       ],
       "description": "Default",
@@ -12540,7 +13789,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-pagination-1",
       "registryDependencies": [
@@ -12560,7 +13810,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-pagination-2",
       "registryDependencies": [
@@ -12580,7 +13831,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-pagination-3",
       "registryDependencies": [
@@ -12600,7 +13852,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-pagination-4",
       "registryDependencies": [
@@ -12732,7 +13985,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "With Page Select Dropdown And First/Last Navigation",
+      "description": "Rows per page with first/last navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-11.tsx",
@@ -12752,7 +14005,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Numbered Pagination With Go-To-Page Input",
+      "description": "With Page Select Dropdown And First/Last Navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-12.tsx",
@@ -12772,7 +14025,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
+      "description": "Numbered Pagination With Go-To-Page Input",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-13.tsx",
@@ -12792,7 +14045,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Mini pill",
+      "description": "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-14.tsx",
@@ -12812,7 +14065,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Older/newer cursor navigation",
+      "description": "Smart ellipsis with results count",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-15.tsx",
@@ -12832,7 +14085,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Controlled with smart ellipsis",
+      "description": "Mini pill",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-16.tsx",
@@ -12852,7 +14105,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Results summary with compact nav",
+      "description": "Older/newer cursor navigation",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-17.tsx",
@@ -12872,7 +14125,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Loading/disabled state",
+      "description": "Controlled with smart ellipsis",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-18.tsx",
@@ -12892,7 +14145,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Results summary with compact nav",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-19.tsx",
@@ -12912,7 +14165,7 @@
       "categories": [
         "pagination"
       ],
-      "description": "Basic pagination",
+      "description": "Loading/disabled state",
       "files": [
         {
           "path": "registry/default/variants/v-pagination-20.tsx",
@@ -12930,9 +14183,30 @@
     },
     {
       "categories": [
+        "pagination"
+      ],
+      "description": "Showcase: numbered, icon-only and page info",
+      "files": [
+        {
+          "path": "registry/default/variants/v-pagination-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-pagination-21",
+      "registryDependencies": [
+        "@cnippet/pagination"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "popover"
       ],
-      "description": "Default",
+      "description": "Feedback form",
       "files": [
         {
           "path": "registry/default/variants/v-popover-1.tsx",
@@ -12940,7 +14214,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-popover-1",
       "registryDependencies": [
@@ -12992,7 +14267,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Animated Popovers",
+      "description": "Shared Popover with Multiple Triggers",
       "files": [
         {
           "path": "registry/default/variants/v-popover-4.tsx",
@@ -13012,7 +14287,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Shared Popover with Multiple Triggers",
+      "description": "Placement",
       "files": [
         {
           "path": "registry/default/variants/v-popover-5.tsx",
@@ -13020,7 +14295,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-popover-5",
       "registryDependencies": [
@@ -13032,7 +14308,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Placement",
+      "description": "User Profile Card",
       "files": [
         {
           "path": "registry/default/variants/v-popover-6.tsx",
@@ -13052,7 +14328,7 @@
       "categories": [
         "popover"
       ],
-      "description": "User Profile Card",
+      "description": "Timestamp Detail",
       "files": [
         {
           "path": "registry/default/variants/v-popover-7.tsx",
@@ -13072,7 +14348,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Timestamp Detail",
+      "description": "Quick Settings",
       "files": [
         {
           "path": "registry/default/variants/v-popover-8.tsx",
@@ -13092,7 +14368,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Quick Settings",
+      "description": "Feature Tour",
       "files": [
         {
           "path": "registry/default/variants/v-popover-9.tsx",
@@ -13112,7 +14388,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Feature Tour",
+      "description": "Share Link",
       "files": [
         {
           "path": "registry/default/variants/v-popover-10.tsx",
@@ -13132,7 +14408,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Share Link",
+      "description": "Accent Color Picker",
       "files": [
         {
           "path": "registry/default/variants/v-popover-11.tsx",
@@ -13152,7 +14428,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Accent Color Picker",
+      "description": "Keyboard Shortcuts",
       "files": [
         {
           "path": "registry/default/variants/v-popover-12.tsx",
@@ -13172,7 +14448,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Keyboard Shortcuts",
+      "description": "Filter Panel",
       "files": [
         {
           "path": "registry/default/variants/v-popover-13.tsx",
@@ -13192,7 +14468,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Filter Panel",
+      "description": "Set a Reminder",
       "files": [
         {
           "path": "registry/default/variants/v-popover-14.tsx",
@@ -13212,7 +14488,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Set a Reminder",
+      "description": "System Status",
       "files": [
         {
           "path": "registry/default/variants/v-popover-15.tsx",
@@ -13232,7 +14508,7 @@
       "categories": [
         "popover"
       ],
-      "description": "System Status",
+      "description": "Emoji picker",
       "files": [
         {
           "path": "registry/default/variants/v-popover-16.tsx",
@@ -13252,7 +14528,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Emoji picker",
+      "description": "Confirmation / delete",
       "files": [
         {
           "path": "registry/default/variants/v-popover-17.tsx",
@@ -13272,7 +14548,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Confirmation / delete",
+      "description": "Inline tag editor",
       "files": [
         {
           "path": "registry/default/variants/v-popover-18.tsx",
@@ -13292,7 +14568,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Inline tag editor",
+      "description": "Notification panel",
       "files": [
         {
           "path": "registry/default/variants/v-popover-19.tsx",
@@ -13312,7 +14588,7 @@
       "categories": [
         "popover"
       ],
-      "description": "Notification panel",
+      "description": "Inline text edit",
       "files": [
         {
           "path": "registry/default/variants/v-popover-20.tsx",
@@ -13332,7 +14608,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Default",
+      "description": "Website link preview with stats",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-1.tsx",
@@ -13352,7 +14628,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "User mention profile card",
+      "description": "Venue location preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-2.tsx",
@@ -13372,7 +14648,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Article / blog post preview",
+      "description": "Package preview with license and version",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-3.tsx",
@@ -13392,7 +14668,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Product card",
+      "description": "Event preview with date and attendees",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-4.tsx",
@@ -13412,7 +14688,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "GitHub-style issue preview",
+      "description": "Company profile preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-5.tsx",
@@ -13432,7 +14708,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "NPM package preview",
+      "description": "GitHub repository preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-6.tsx",
@@ -13452,7 +14728,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Video preview with duration",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-7.tsx",
@@ -13472,7 +14748,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Hashtag previews with post counts",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-8.tsx",
@@ -13492,7 +14768,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Product preview with add to cart",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-9.tsx",
@@ -13512,7 +14788,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Reference links with URL previews",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-10.tsx",
@@ -13532,7 +14808,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "User mention profile card",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-11.tsx",
@@ -13552,7 +14828,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Article / blog post preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-12.tsx",
@@ -13572,7 +14848,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Glossary term definition with related terms",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-13.tsx",
@@ -13592,7 +14868,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "GitHub-style issue preview",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-14.tsx",
@@ -13612,7 +14888,7 @@
       "categories": [
         "preview card"
       ],
-      "description": "Basic preview card",
+      "description": "Stock ticker preview with sparkline and key stats",
       "files": [
         {
           "path": "registry/default/variants/v-preview-card-15.tsx",
@@ -13640,7 +14916,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-progress-1",
       "registryDependencies": [
@@ -13660,7 +14937,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-progress-2",
       "registryDependencies": [
@@ -13930,6 +15208,27 @@
     },
     {
       "categories": [
+        "progress"
+      ],
+      "description": "Showcase: plain, labelled and formatted value",
+      "files": [
+        {
+          "path": "registry/default/variants/v-progress-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-progress-16",
+      "registryDependencies": [
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "radio group"
       ],
       "description": "Default",
@@ -13940,7 +15239,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-radio-group-1",
       "registryDependencies": [
@@ -13960,7 +15260,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-radio-group-2",
       "registryDependencies": [
@@ -13980,7 +15281,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-radio-group-3",
       "registryDependencies": [
@@ -14112,7 +15414,7 @@
       "categories": [
         "radio group"
       ],
-      "description": "Basic radio group",
+      "description": "Plan picker with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-radio-group-10.tsx",
@@ -14230,9 +15532,208 @@
     },
     {
       "categories": [
+        "radio group"
+      ],
+      "description": "Showcase: simple, disabled and with descriptions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-radio-group-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-radio-group-16",
+      "registryDependencies": [
+        "@cnippet/radio-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "rating"
+      ],
+      "description": "Product review form with star rating",
+      "files": [
+        {
+          "path": "registry/default/variants/v-rating-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-rating-1",
+      "registryDependencies": [
+        "@cnippet/rating",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/textarea",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "rating"
+      ],
+      "description": "Average rating with star breakdown bars",
+      "files": [
+        {
+          "path": "registry/default/variants/v-rating-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-rating-2",
+      "registryDependencies": [
+        "@cnippet/rating",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/textarea",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "rating"
+      ],
+      "description": "Rating sizes, disabled and fractional read-only",
+      "files": [
+        {
+          "path": "registry/default/variants/v-rating-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-rating-3",
+      "registryDependencies": [
+        "@cnippet/rating",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/textarea",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "rating"
+      ],
+      "description": "Ten-point survey ratings",
+      "files": [
+        {
+          "path": "registry/default/variants/v-rating-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-rating-4",
+      "registryDependencies": [
+        "@cnippet/rating",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/textarea",
+        "@cnippet/progress"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "resizable"
+      ],
+      "description": "Code editor layout with nested resizable panels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-resizable-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-resizable-1",
+      "registryDependencies": [
+        "@cnippet/resizable"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "resizable"
+      ],
+      "description": "Two horizontal panels",
+      "files": [
+        {
+          "path": "registry/default/variants/v-resizable-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-resizable-2",
+      "registryDependencies": [
+        "@cnippet/resizable"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "resizable"
+      ],
+      "description": "Vertical panels with grip handle",
+      "files": [
+        {
+          "path": "registry/default/variants/v-resizable-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-resizable-3",
+      "registryDependencies": [
+        "@cnippet/resizable"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "resizable"
+      ],
+      "description": "Mail layout with collapsible nav and saved sizes",
+      "files": [
+        {
+          "path": "registry/default/variants/v-resizable-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-resizable-4",
+      "registryDependencies": [
+        "@cnippet/resizable"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-1.tsx",
@@ -14252,7 +15753,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "With Scroll Fade",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-2.tsx",
@@ -14272,7 +15773,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Horizontal",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-3.tsx",
@@ -14292,7 +15793,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Horizontal with Scrollbar Gutter",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-4.tsx",
@@ -14312,7 +15813,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Both Directions",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-5.tsx",
@@ -14332,7 +15833,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Alphabetical contact list",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-6.tsx",
@@ -14352,7 +15853,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Task backlog list",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-7.tsx",
@@ -14372,7 +15873,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Wide data table",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-8.tsx",
@@ -14392,7 +15893,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Activity timeline",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-9.tsx",
@@ -14412,7 +15913,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Basic scroll area",
+      "description": "Code viewer",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-10.tsx",
@@ -14492,7 +15993,7 @@
       "categories": [
         "scroll area"
       ],
-      "description": "Activity Log",
+      "description": "Server log viewer",
       "files": [
         {
           "path": "registry/default/variants/v-scroll-area-14.tsx",
@@ -14532,7 +16033,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Timezone select",
       "files": [
         {
           "path": "registry/default/variants/v-select-1.tsx",
@@ -14552,7 +16053,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Sizes",
       "files": [
         {
           "path": "registry/default/variants/v-select-2.tsx",
@@ -14572,7 +16073,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Grouped framework select",
       "files": [
         {
           "path": "registry/default/variants/v-select-3.tsx",
@@ -14592,7 +16093,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Multiple selection for permissions",
       "files": [
         {
           "path": "registry/default/variants/v-select-4.tsx",
@@ -14612,7 +16113,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Settings navigation with icons",
       "files": [
         {
           "path": "registry/default/variants/v-select-5.tsx",
@@ -14632,7 +16133,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Currency select",
       "files": [
         {
           "path": "registry/default/variants/v-select-6.tsx",
@@ -14652,7 +16153,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Form field with description",
       "files": [
         {
           "path": "registry/default/variants/v-select-7.tsx",
@@ -14672,7 +16173,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Plan select with separator",
       "files": [
         {
           "path": "registry/default/variants/v-select-8.tsx",
@@ -14692,7 +16193,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Country select with flags",
       "files": [
         {
           "path": "registry/default/variants/v-select-9.tsx",
@@ -14712,7 +16213,7 @@
       "categories": [
         "select"
       ],
-      "description": "Basic select",
+      "description": "Theme select with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-select-10.tsx",
@@ -14752,7 +16253,7 @@
       "categories": [
         "select"
       ],
-      "description": "Country Selector with Groups",
+      "description": "Region select with groups",
       "files": [
         {
           "path": "registry/default/variants/v-select-12.tsx",
@@ -14772,7 +16273,7 @@
       "categories": [
         "select"
       ],
-      "description": "Controlled with External Display",
+      "description": "Priority with badges",
       "files": [
         {
           "path": "registry/default/variants/v-select-13.tsx",
@@ -14832,7 +16333,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Default",
       "files": [
         {
           "path": "registry/default/variants/v-separator-1.tsx",
@@ -14840,7 +16341,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-separator-1",
       "registryDependencies": [
@@ -14852,7 +16354,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Vertical",
       "files": [
         {
           "path": "registry/default/variants/v-separator-2.tsx",
@@ -14860,7 +16362,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-separator-2",
       "registryDependencies": [
@@ -14872,7 +16375,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Settings menu dividers",
       "files": [
         {
           "path": "registry/default/variants/v-separator-3.tsx",
@@ -14892,7 +16395,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Key-value list",
       "files": [
         {
           "path": "registry/default/variants/v-separator-4.tsx",
@@ -14912,7 +16415,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Divider with label",
       "files": [
         {
           "path": "registry/default/variants/v-separator-5.tsx",
@@ -14932,7 +16435,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Order summary",
       "files": [
         {
           "path": "registry/default/variants/v-separator-6.tsx",
@@ -14952,7 +16455,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Breadcrumb dividers",
       "files": [
         {
           "path": "registry/default/variants/v-separator-7.tsx",
@@ -14972,7 +16475,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Onboarding checklist",
       "files": [
         {
           "path": "registry/default/variants/v-separator-8.tsx",
@@ -14992,7 +16495,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Grouped navigation sections",
       "files": [
         {
           "path": "registry/default/variants/v-separator-9.tsx",
@@ -15012,7 +16515,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Basic separator",
+      "description": "Profile card",
       "files": [
         {
           "path": "registry/default/variants/v-separator-10.tsx",
@@ -15052,7 +16555,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Section Heading with Line",
+      "description": "Activity sections",
       "files": [
         {
           "path": "registry/default/variants/v-separator-12.tsx",
@@ -15092,7 +16595,7 @@
       "categories": [
         "separator"
       ],
-      "description": "Card Section Dividers",
+      "description": "Settings list with descriptions",
       "files": [
         {
           "path": "registry/default/variants/v-separator-14.tsx",
@@ -15123,6 +16626,27 @@
         "className": ""
       },
       "name": "v-separator-15",
+      "registryDependencies": [
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "separator"
+      ],
+      "description": "Showcase: horizontal and vertical",
+      "files": [
+        {
+          "path": "registry/default/variants/v-separator-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-separator-16",
       "registryDependencies": [
         "@cnippet/separator"
       ],
@@ -15425,6 +16949,79 @@
       "name": "v-sheet-15",
       "registryDependencies": [
         "@cnippet/sheet"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sidebar"
+      ],
+      "description": "App shell with icon collapse, groups, badges and user footer",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sidebar-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+        "role": "showcase"
+      },
+      "name": "v-sidebar-1",
+      "registryDependencies": [
+        "@cnippet/sidebar",
+        "@cnippet/avatar",
+        "@cnippet/collapsible",
+        "@cnippet/label",
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sidebar"
+      ],
+      "description": "Docs navigation with collapsible sections (inset)",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sidebar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-sidebar-2",
+      "registryDependencies": [
+        "@cnippet/sidebar",
+        "@cnippet/avatar",
+        "@cnippet/collapsible",
+        "@cnippet/label",
+        "@cnippet/separator"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sidebar"
+      ],
+      "description": "Floating right-side details panel with search",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sidebar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-sidebar-3",
+      "registryDependencies": [
+        "@cnippet/sidebar",
+        "@cnippet/avatar",
+        "@cnippet/collapsible",
+        "@cnippet/label",
+        "@cnippet/separator"
       ],
       "type": "registry:block"
     },
@@ -15740,7 +17337,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-slider-1",
       "registryDependencies": [
@@ -15760,7 +17358,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-slider-2",
       "registryDependencies": [
@@ -15780,7 +17379,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-slider-3",
       "registryDependencies": [
@@ -15872,7 +17472,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Price range with labels",
       "files": [
         {
           "path": "registry/default/variants/v-slider-8.tsx",
@@ -15892,7 +17492,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Three-band equalizer",
       "files": [
         {
           "path": "registry/default/variants/v-slider-9.tsx",
@@ -15912,7 +17512,7 @@
       "categories": [
         "slider"
       ],
-      "description": "Basic slider",
+      "description": "Session timeout with stops",
       "files": [
         {
           "path": "registry/default/variants/v-slider-10.tsx",
@@ -16030,6 +17630,143 @@
     },
     {
       "categories": [
+        "slider"
+      ],
+      "description": "Showcase: single, range and disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-slider-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-slider-16",
+      "registryDependencies": [
+        "@cnippet/slider"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sortable"
+      ],
+      "description": "Task list with drag handles",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sortable-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-sortable-1",
+      "registryDependencies": [
+        "@cnippet/sortable",
+        "@cnippet/avatar",
+        "@cnippet/badge",
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sortable"
+      ],
+      "description": "Drag-to-rank list",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sortable-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sortable-2",
+      "registryDependencies": [
+        "@cnippet/sortable",
+        "@cnippet/avatar",
+        "@cnippet/badge",
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sortable"
+      ],
+      "description": "Horizontal shortcut tabs",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sortable-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sortable-3",
+      "registryDependencies": [
+        "@cnippet/sortable",
+        "@cnippet/avatar",
+        "@cnippet/badge",
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sortable"
+      ],
+      "description": "Dashboard widget grid",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sortable-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-sortable-4",
+      "registryDependencies": [
+        "@cnippet/sortable",
+        "@cnippet/avatar",
+        "@cnippet/badge",
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sortable"
+      ],
+      "description": "Kanban board with cross-column moves",
+      "files": [
+        {
+          "path": "registry/default/variants/v-sortable-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+      },
+      "name": "v-sortable-5",
+      "registryDependencies": [
+        "@cnippet/sortable",
+        "@cnippet/avatar",
+        "@cnippet/badge",
+        "@cnippet/checkbox"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "spinner"
       ],
       "description": "Default",
@@ -16040,7 +17777,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-spinner-1",
       "registryDependencies": [
@@ -16192,7 +17930,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Color variants",
+      "description": "Semantic color variants",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-9.tsx",
@@ -16200,7 +17938,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-spinner-9",
       "registryDependencies": [
@@ -16212,7 +17951,7 @@
       "categories": [
         "spinner"
       ],
-      "description": "Basic spinner",
+      "description": "Step-by-step workspace loading",
       "files": [
         {
           "path": "registry/default/variants/v-spinner-10.tsx",
@@ -16320,11 +18059,122 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-spinner-15",
       "registryDependencies": [
         "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spinner"
+      ],
+      "description": "Showcase: sizes, colors and in context",
+      "files": [
+        {
+          "path": "registry/default/variants/v-spinner-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-spinner-16",
+      "registryDependencies": [
+        "@cnippet/spinner"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "stepper"
+      ],
+      "description": "Checkout steps with back and continue",
+      "files": [
+        {
+          "path": "registry/default/variants/v-stepper-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-stepper-1",
+      "registryDependencies": [
+        "@cnippet/stepper",
+        "@cnippet/button",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "stepper"
+      ],
+      "description": "Vertical onboarding checklist",
+      "files": [
+        {
+          "path": "registry/default/variants/v-stepper-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-stepper-2",
+      "registryDependencies": [
+        "@cnippet/stepper",
+        "@cnippet/button",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "stepper"
+      ],
+      "description": "Compact dot progress with step count",
+      "files": [
+        {
+          "path": "registry/default/variants/v-stepper-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-stepper-3",
+      "registryDependencies": [
+        "@cnippet/stepper",
+        "@cnippet/button",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "stepper"
+      ],
+      "description": "Jump back to finished steps",
+      "files": [
+        {
+          "path": "registry/default/variants/v-stepper-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-stepper-4",
+      "registryDependencies": [
+        "@cnippet/stepper",
+        "@cnippet/button",
+        "@cnippet/badge"
       ],
       "type": "registry:block"
     },
@@ -16340,7 +18190,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-switch-1",
       "registryDependencies": [
@@ -16360,7 +18211,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-switch-2",
       "registryDependencies": [
@@ -16380,7 +18232,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-switch-3",
       "registryDependencies": [
@@ -16630,6 +18483,27 @@
     },
     {
       "categories": [
+        "switch"
+      ],
+      "description": "Showcase: states, sizes and descriptions",
+      "files": [
+        {
+          "path": "registry/default/variants/v-switch-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-switch-16",
+      "registryDependencies": [
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "table"
       ],
       "description": "Default",
@@ -16640,7 +18514,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "showcase"
       },
       "name": "v-table-1",
       "registryDependencies": [
@@ -16660,7 +18535,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-table-2",
       "registryDependencies": [
@@ -16680,7 +18556,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-table-3",
       "registryDependencies": [
@@ -16700,7 +18577,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-table-4",
       "registryDependencies": [
@@ -16940,7 +18818,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-1",
       "registryDependencies": [
@@ -16960,7 +18839,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-2",
       "registryDependencies": [
@@ -16980,7 +18860,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-3",
       "registryDependencies": [
@@ -17000,7 +18881,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-4",
       "registryDependencies": [
@@ -17040,7 +18922,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-6",
       "registryDependencies": [
@@ -17052,7 +18935,7 @@
       "categories": [
         "tabs"
       ],
-      "description": "Vertical Orientation",
+      "description": "Account settings tabs with card forms",
       "files": [
         {
           "path": "registry/default/variants/v-tabs-7.tsx",
@@ -17080,7 +18963,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-tabs-8",
       "registryDependencies": [
@@ -17270,6 +19154,120 @@
     },
     {
       "categories": [
+        "tabs"
+      ],
+      "description": "Showcase: default, underline and vertical",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tabs-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-tabs-18",
+      "registryDependencies": [
+        "@cnippet/tabs"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tag input"
+      ],
+      "description": "Email invites with validation and paste support",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tag-input-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-tag-input-1",
+      "registryDependencies": [
+        "@cnippet/tag-input",
+        "@cnippet/button",
+        "@cnippet/field",
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tag input"
+      ],
+      "description": "Skills with suggested tags",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tag-input-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tag-input-2",
+      "registryDependencies": [
+        "@cnippet/tag-input",
+        "@cnippet/button",
+        "@cnippet/field",
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tag input"
+      ],
+      "description": "Repository topics with a limit and counter",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tag-input-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tag-input-3",
+      "registryDependencies": [
+        "@cnippet/tag-input",
+        "@cnippet/button",
+        "@cnippet/field",
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tag input"
+      ],
+      "description": "Small tag filter with icon",
+      "files": [
+        {
+          "path": "registry/default/variants/v-tag-input-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-tag-input-4",
+      "registryDependencies": [
+        "@cnippet/tag-input",
+        "@cnippet/button",
+        "@cnippet/field",
+        "@cnippet/label"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "textarea"
       ],
       "description": "Default",
@@ -17280,7 +19278,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-1",
       "registryDependencies": [
@@ -17300,7 +19299,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-2",
       "registryDependencies": [
@@ -17320,7 +19320,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-3",
       "registryDependencies": [
@@ -17340,7 +19341,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-4",
       "registryDependencies": [
@@ -17360,7 +19362,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-5",
       "registryDependencies": [
@@ -17380,7 +19383,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-6",
       "registryDependencies": [
@@ -17400,7 +19404,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-textarea-7",
       "registryDependencies": [
@@ -17505,6 +19510,164 @@
       "name": "v-textarea-12",
       "registryDependencies": [
         "@cnippet/textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "textarea"
+      ],
+      "description": "Showcase: description, error, disabled and sizes",
+      "files": [
+        {
+          "path": "registry/default/variants/v-textarea-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-textarea-13",
+      "registryDependencies": [
+        "@cnippet/textarea"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time picker"
+      ],
+      "description": "Appointment slot with booked times disabled",
+      "files": [
+        {
+          "path": "registry/default/variants/v-time-picker-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-time-picker-1",
+      "registryDependencies": [
+        "@cnippet/time-picker",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time picker"
+      ],
+      "description": "Start and end time with duration",
+      "files": [
+        {
+          "path": "registry/default/variants/v-time-picker-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-time-picker-2",
+      "registryDependencies": [
+        "@cnippet/time-picker",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time picker"
+      ],
+      "description": "24-hour quiet hours with a switch",
+      "files": [
+        {
+          "path": "registry/default/variants/v-time-picker-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-time-picker-3",
+      "registryDependencies": [
+        "@cnippet/time-picker",
+        "@cnippet/button",
+        "@cnippet/label",
+        "@cnippet/switch"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "timeline"
+      ],
+      "description": "Pull request activity feed with avatars and icons",
+      "files": [
+        {
+          "path": "registry/default/variants/v-timeline-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-timeline-1",
+      "registryDependencies": [
+        "@cnippet/timeline",
+        "@cnippet/avatar",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "timeline"
+      ],
+      "description": "Deployment history with status indicators",
+      "files": [
+        {
+          "path": "registry/default/variants/v-timeline-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-timeline-2",
+      "registryDependencies": [
+        "@cnippet/timeline",
+        "@cnippet/avatar",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "timeline"
+      ],
+      "description": "Order tracking with compact dots",
+      "files": [
+        {
+          "path": "registry/default/variants/v-timeline-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "v-timeline-3",
+      "registryDependencies": [
+        "@cnippet/timeline",
+        "@cnippet/avatar",
+        "@cnippet/badge"
       ],
       "type": "registry:block"
     },
@@ -17820,7 +19983,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-1",
       "registryDependencies": [
@@ -17840,7 +20004,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-2",
       "registryDependencies": [
@@ -17860,7 +20025,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-3",
       "registryDependencies": [
@@ -17880,7 +20046,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-4",
       "registryDependencies": [
@@ -17900,7 +20067,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-5",
       "registryDependencies": [
@@ -17920,7 +20088,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-6",
       "registryDependencies": [
@@ -17940,7 +20109,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-7",
       "registryDependencies": [
@@ -17960,7 +20130,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-8",
       "registryDependencies": [
@@ -18110,6 +20281,27 @@
     },
     {
       "categories": [
+        "toggle"
+      ],
+      "description": "Showcase: variants, sizes, icons and states",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-toggle-16",
+      "registryDependencies": [
+        "@cnippet/toggle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toggle group"
       ],
       "description": "Default",
@@ -18120,7 +20312,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-group-1",
       "registryDependencies": [
@@ -18140,7 +20333,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-group-2",
       "registryDependencies": [
@@ -18160,7 +20354,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-group-3",
       "registryDependencies": [
@@ -18180,7 +20375,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-group-4",
       "registryDependencies": [
@@ -18200,7 +20396,8 @@
         }
       ],
       "meta": {
-        "className": ""
+        "className": "",
+        "role": "demo"
       },
       "name": "v-toggle-group-5",
       "registryDependencies": [
@@ -18410,9 +20607,30 @@
     },
     {
       "categories": [
+        "toggle group"
+      ],
+      "description": "Showcase: single, multiple, outline and vertical",
+      "files": [
+        {
+          "path": "registry/default/variants/v-toggle-group-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": "",
+        "role": "showcase"
+      },
+      "name": "v-toggle-group-16",
+      "registryDependencies": [
+        "@cnippet/toggle-group"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "toolbar"
       ],
-      "description": "Default",
+      "description": "Spreadsheet toolbar with alignment, number format and font",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-1.tsx",
@@ -18532,7 +20750,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "File browser toolbar with search, sort and view toggle",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-7.tsx",
@@ -18552,7 +20770,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Canvas toolbar with theme toggle and zoom controls",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-8.tsx",
@@ -18572,7 +20790,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Video call controls toolbar",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-9.tsx",
@@ -18592,7 +20810,7 @@
       "categories": [
         "toolbar"
       ],
-      "description": "Basic toolbar",
+      "description": "Block editor toolbar with block type and inline marks",
       "files": [
         {
           "path": "registry/default/variants/v-toolbar-10.tsx",

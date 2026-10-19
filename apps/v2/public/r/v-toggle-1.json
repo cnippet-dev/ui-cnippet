@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-toggle-1.tsx",
-      "content": "import { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-2\">\n      <Toggle aria-label=\"Toggle bold\" defaultPressed>\n        <BoldIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle italic\">\n        <ItalicIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle underline\">\n        <UnderlineIcon />\n      </Toggle>\n    </div>\n  );\n}\n",
+      "content": "// title: Default\nimport { BoldIcon, ItalicIcon, UnderlineIcon } from \"lucide-react\";\nimport { Toggle } from \"@/registry/default/ui/toggle\";\n\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-2\">\n      <Toggle aria-label=\"Toggle bold\" defaultPressed>\n        <BoldIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle italic\">\n        <ItalicIcon />\n      </Toggle>\n      <Toggle aria-label=\"Toggle underline\">\n        <UnderlineIcon />\n      </Toggle>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "toggle"

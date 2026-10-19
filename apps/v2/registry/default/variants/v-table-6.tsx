@@ -1,3 +1,4 @@
+// title: Team members table with avatars, roles, and status
 import {
   Avatar,
   AvatarFallback,

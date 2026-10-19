@@ -1,3 +1,4 @@
+// title: Update available with async install feedback
 "use client";
 
 import { DownloadIcon, PackageCheckIcon } from "lucide-react";

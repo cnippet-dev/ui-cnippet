@@ -1,3 +1,4 @@
+// title: Spinner in empty state
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,

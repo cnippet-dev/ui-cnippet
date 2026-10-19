@@ -1,3 +1,4 @@
+// title: Team grid with online presence status dots
 import {
   Avatar,
   AvatarFallback,
@@ -8,10 +9,10 @@ import { Frame, FramePanel } from "@/registry/default/ui/frame";
 type Status = "online" | "busy" | "away" | "offline";
 
 const statusColor: Record<Status, string> = {
-  away: "bg-yellow-400",
-  busy: "bg-red-500",
+  away: "bg-warning",
+  busy: "bg-destructive",
   offline: "bg-muted-foreground/40",
-  online: "bg-emerald-500",
+  online: "bg-success",
 };
 
 const members = [

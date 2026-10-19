@@ -1,3 +1,4 @@
+// title: Extra-large Size
 import { Button } from "@/registry/default/ui/button";
 
 export default function Particle() {

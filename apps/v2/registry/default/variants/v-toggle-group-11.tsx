@@ -1,3 +1,4 @@
+// title: Per-column sort direction control
 "use client";
 
 import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon } from "lucide-react";

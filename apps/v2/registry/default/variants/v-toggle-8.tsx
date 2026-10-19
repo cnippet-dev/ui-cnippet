@@ -1,3 +1,4 @@
+// title: Toggle with text label that changes
 "use client";
 
 import { BookmarkCheckIcon, BookmarkIcon } from "lucide-react";

@@ -1,3 +1,4 @@
+// title: Product inventory with stock level badges and quantity
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Table,

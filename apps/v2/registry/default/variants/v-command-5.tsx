@@ -1,3 +1,4 @@
+// title: User Search Command With Avatars
 "use client";
 
 import { useState } from "react";

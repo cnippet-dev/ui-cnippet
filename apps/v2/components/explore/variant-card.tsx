@@ -18,7 +18,6 @@ import {
 interface VariantCardProps {
   name: string;
   description: string;
-  category: string;
   reloadable?: boolean;
 }
 
@@ -213,7 +212,13 @@ export function VariantCard({
         ref={cardRef}
       >
         {/* Preview area */}
-        <div className="relative flex min-h-80 flex-1 items-center justify-center overflow-hidden rounded-xl border bg-card p-6">
+        <div
+          className={cn(
+            "relative flex flex-1 items-center justify-center overflow-hidden rounded-xl border bg-card",
+            // min-h, not h: flex-1's zero basis overrides a fixed height.
+            "min-h-80 p-6",
+          )}
+        >
           {!visible ? (
             <div className="h-8 w-24 animate-pulse rounded-md bg-muted" />
           ) : Component ? (

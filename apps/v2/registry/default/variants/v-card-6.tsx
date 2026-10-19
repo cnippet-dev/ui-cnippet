@@ -1,3 +1,4 @@
+// title: With Image
 import { ArrowRightIcon, BellIcon, SparklesIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/registry/default/ui/badge";

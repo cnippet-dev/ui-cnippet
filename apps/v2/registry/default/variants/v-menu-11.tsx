@@ -1,3 +1,4 @@
+// title: Account menu
 import {
   CreditCardIcon,
   LogOutIcon,
@@ -35,7 +36,7 @@ export default function Particle() {
             <div className="flex flex-col gap-0.5">
               <span>Jane Smith</span>
               <span className="font-normal text-muted-foreground text-xs">
-                jane@example.com
+                jane@acme.dev
               </span>
             </div>
           </MenuGroupLabel>

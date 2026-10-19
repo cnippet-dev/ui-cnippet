@@ -1,3 +1,4 @@
+// title: Account settings palette with grouped profile, preferences, and sign-out actions
 "use client";
 
 import {
@@ -10,7 +11,7 @@ import {
   SunIcon,
   UserIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Command,
@@ -112,9 +113,9 @@ export default function Particle() {
             <CommandEmpty>No settings found.</CommandEmpty>
             <CommandList>
               {(section: Section, i: number) => (
-                <>
-                  {i > 0 && <CommandSeparator key={`sep-${section.value}`} />}
-                  <CommandGroup items={section.items} key={section.value}>
+                <Fragment key={section.value}>
+                  {i > 0 && <CommandSeparator />}
+                  <CommandGroup items={section.items}>
                     <CommandGroupLabel>{section.label}</CommandGroupLabel>
                     <CommandCollection>
                       {(action: Action) => (
@@ -130,7 +131,7 @@ export default function Particle() {
                       )}
                     </CommandCollection>
                   </CommandGroup>
-                </>
+                </Fragment>
               )}
             </CommandList>
           </CommandPanel>

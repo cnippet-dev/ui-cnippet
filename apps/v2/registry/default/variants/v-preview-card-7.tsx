@@ -1,3 +1,4 @@
+// title: Video preview with duration
 import { PlayIcon } from "lucide-react";
 import {
   PreviewCard,

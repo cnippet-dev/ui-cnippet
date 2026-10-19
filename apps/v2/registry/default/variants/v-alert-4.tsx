@@ -1,3 +1,4 @@
+// title: Info Alert
 import { InfoIcon } from "lucide-react";
 import {
   Alert,

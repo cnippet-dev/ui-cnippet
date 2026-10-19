@@ -1,3 +1,4 @@
+// title: Collapsible form fields
 "use client";
 
 import { Settings2Icon } from "lucide-react";

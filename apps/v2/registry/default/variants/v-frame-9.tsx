@@ -1,3 +1,4 @@
+// title: With footer CTA buttons
 import { Button } from "@/registry/default/ui/button";
 import {
   Frame,

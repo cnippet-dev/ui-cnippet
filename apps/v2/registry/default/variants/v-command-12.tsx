@@ -1,3 +1,4 @@
+// title: Repository search palette showing issues, pull requests, branches, and files
 "use client";
 
 import {

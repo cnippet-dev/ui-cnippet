@@ -1,3 +1,4 @@
+// title: Activity Log
 import { ActivityIcon } from "lucide-react";
 import {
   Avatar,
@@ -30,27 +31,23 @@ type ActivityEvent = {
 
 const typeBadge: Record<EventType, { label: string; className: string }> = {
   comment: {
-    className: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400",
+    className: "bg-info/8 text-info-foreground dark:bg-info/16",
     label: "Comment",
   },
   deploy: {
-    className:
-      "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400",
+    className: "bg-success/8 text-success-foreground dark:bg-success/16",
     label: "Deploy",
   },
   invite: {
-    className:
-      "bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-400",
+    className: "bg-muted text-foreground",
     label: "Invite",
   },
   merge: {
-    className:
-      "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-400",
+    className: "bg-warning/8 text-warning-foreground dark:bg-warning/16",
     label: "Merge",
   },
   update: {
-    className:
-      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+    className: "bg-muted text-muted-foreground",
     label: "Update",
   },
 };
@@ -93,7 +90,7 @@ const events: ActivityEvent[] = [
   {
     action: "invited",
     id: 4,
-    target: "priya@example.com as Editor",
+    target: "priya@acme.dev as Editor",
     time: "2 hr ago",
     type: "invite",
     user: { initials: "SC", name: "Sarah Chen" },

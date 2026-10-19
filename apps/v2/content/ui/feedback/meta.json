@@ -2,6 +2,7 @@
   "pages": [
     "alert",
     "badge",
+    "banner",
     "kbd",
     "progress",
     "skeleton",

@@ -1,3 +1,4 @@
+// title: With plus/minus indicators
 import { Minus, Plus } from "lucide-react";
 import {
   Accordion,

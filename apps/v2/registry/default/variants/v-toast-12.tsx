@@ -1,3 +1,4 @@
+// title: Team invite with per-row undo action
 "use client";
 
 import { useState } from "react";

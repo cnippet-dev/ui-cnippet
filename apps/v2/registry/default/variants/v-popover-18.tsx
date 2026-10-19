@@ -1,3 +1,4 @@
+// title: Inline tag editor
 "use client";
 
 import { PlusIcon, XIcon } from "lucide-react";

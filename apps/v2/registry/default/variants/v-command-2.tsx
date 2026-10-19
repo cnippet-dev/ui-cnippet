@@ -1,3 +1,4 @@
+// title: Simple Command
 "use client";
 
 import { CreditCardIcon, SettingsIcon, UserIcon } from "lucide-react";

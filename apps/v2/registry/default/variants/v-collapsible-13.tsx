@@ -1,3 +1,4 @@
+// title: Package dependency list with version badges and expandable package names
 "use client";
 
 import {

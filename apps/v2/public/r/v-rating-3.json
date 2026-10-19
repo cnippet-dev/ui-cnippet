@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-rating-3",
+  "description": "Rating sizes, disabled and fractional read-only",
+  "registryDependencies": [
+    "@cnippet/rating",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/textarea",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-rating-3.tsx",
+      "content": "// title: Rating sizes, disabled and fractional read-only\nimport { Rating, RatingDisplay } from \"@/registry/default/ui/rating\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-4 text-sm\">\n      <div className=\"flex items-center gap-3\">\n        <Rating aria-label=\"Small\" defaultValue={3} size=\"sm\" />\n        <span className=\"text-muted-foreground\">Small</span>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Rating aria-label=\"Default\" defaultValue={4} />\n        <span className=\"text-muted-foreground\">Default</span>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Rating aria-label=\"Large\" defaultValue={5} size=\"lg\" />\n        <span className=\"text-muted-foreground\">Large</span>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <Rating aria-label=\"Disabled\" defaultValue={2} disabled />\n        <span className=\"text-muted-foreground\">Disabled</span>\n      </div>\n      <div className=\"flex items-center gap-3\">\n        <RatingDisplay value={3.7} />\n        <span className=\"text-muted-foreground\">3.7, read-only</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "rating"
+  ],
+  "type": "registry:block"
+}

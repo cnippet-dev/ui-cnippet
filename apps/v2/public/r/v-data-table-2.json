@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-data-table-2",
+  "description": "Customer directory with search and pagination",
+  "registryDependencies": [
+    "@cnippet/data-table",
+    "@cnippet/badge",
+    "@cnippet/button",
+    "@cnippet/menu",
+    "@cnippet/avatar",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-data-table-2.tsx",
+      "content": "// title: Customer directory with search and pagination\n\"use client\";\n\nimport {\n  columnFilteringFeature,\n  createColumnHelper,\n  createFilteredRowModel,\n  createPaginatedRowModel,\n  createSortedRowModel,\n  filterFn_includesString,\n  globalFilteringFeature,\n  rowPaginationFeature,\n  rowSortingFeature,\n  sortFn_alphanumeric,\n  tableFeatures,\n  useTable,\n} from \"@tanstack/react-table\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport {\n  DataTable,\n  DataTableColumnHeader,\n  DataTablePagination,\n  DataTableSearch,\n} from \"@/registry/default/ui/data-table\";\n\ntype Customer = {\n  company: string;\n  email: string;\n  id: string;\n  mrr: number;\n  name: string;\n  plan: \"Free\" | \"Pro\" | \"Team\";\n};\n\nconst FIRST = [\n  \"Alice\",\n  \"Ben\",\n  \"Celia\",\n  \"Dan\",\n  \"Sofia\",\n  \"Margaret\",\n  \"Priya\",\n  \"Liam\",\n];\nconst LAST = [\n  \"Park\",\n  \"Torres\",\n  \"Kim\",\n  \"Moss\",\n  \"Reyes\",\n  \"Welsh\",\n  \"Shah\",\n  \"Rivera\",\n];\nconst COMPANIES = [\n  \"Northwind\",\n  \"Globex\",\n  \"Initech\",\n  \"Umbrella\",\n  \"Hooli\",\n  \"Stark\",\n];\nconst PLANS: Customer[\"plan\"][] = [\"Free\", \"Pro\", \"Team\"];\n\n// A deterministic directory so server and client render the same rows.\nconst CUSTOMERS: Customer[] = Array.from({ length: 24 }, (_, i) => {\n  const first = FIRST[i % FIRST.length] ?? \"Alex\";\n  const last = LAST[(i + Math.floor(i / 8)) % LAST.length] ?? \"Lee\";\n  const plan = PLANS[(i * 7) % PLANS.length] ?? \"Free\";\n  return {\n    company: COMPANIES[(i * 5) % COMPANIES.length] ?? \"Acme\",\n    email: `${first.toLowerCase()}.${last.toLowerCase()}@acme.dev`,\n    id: `cus_${String(i + 1).padStart(3, \"0\")}`,\n    mrr: plan === \"Free\" ? 0 : plan === \"Pro\" ? 29 + i : 99 + i * 4,\n    name: `${first} ${last}`,\n    plan,\n  };\n});\n\nconst PLAN_VARIANT = {\n  Free: \"outline\",\n  Pro: \"secondary\",\n  Team: \"info\",\n} as const;\n\nconst currency = new Intl.NumberFormat(\"en-US\", {\n  currency: \"USD\",\n  maximumFractionDigits: 0,\n  style: \"currency\",\n});\n\nconst features = tableFeatures({\n  columnFilteringFeature,\n  filteredRowModel: createFilteredRowModel(),\n  filterFns: { includesString: filterFn_includesString },\n  globalFilteringFeature,\n  paginatedRowModel: createPaginatedRowModel(),\n  rowPaginationFeature,\n  rowSortingFeature,\n  sortedRowModel: createSortedRowModel(),\n  sortFns: { alphanumeric: sortFn_alphanumeric },\n});\n\nconst column = createColumnHelper<typeof features, Customer>();\n\nconst columns = column.columns([\n  // One accessor for name + email, so search matches either; it still sorts\n  // by name first.\n  column.accessor((row) => `${row.name} ${row.email}`, {\n    cell: ({ row }) => (\n      <div className=\"flex flex-col gap-1\">\n        <span className=\"font-medium\">{row.original.name}</span>\n        <span className=\"text-muted-foreground text-xs\">\n          {row.original.email}\n        </span>\n      </div>\n    ),\n    header: ({ column }) => (\n      <DataTableColumnHeader column={column} title=\"Customer\" />\n    ),\n    id: \"customer\",\n  }),\n  column.accessor(\"company\", {\n    header: ({ column }) => (\n      <DataTableColumnHeader column={column} title=\"Company\" />\n    ),\n  }),\n  column.accessor(\"plan\", {\n    cell: (info) => (\n      <Badge variant={PLAN_VARIANT[info.getValue()]}>{info.getValue()}</Badge>\n    ),\n    header: \"Plan\",\n  }),\n  column.accessor(\"mrr\", {\n    cell: (info) => (\n      <div className=\"text-end tabular-nums\">\n        {currency.format(info.getValue())}\n      </div>\n    ),\n    header: ({ column }) => (\n      <div className=\"flex justify-end\">\n        <DataTableColumnHeader column={column} title=\"MRR\" />\n      </div>\n    ),\n  }),\n]);\n\nexport default function Particle() {\n  const table = useTable({\n    columns,\n    data: CUSTOMERS,\n    features,\n    getRowId: (row) => row.id,\n    globalFilterFn: \"includesString\",\n    initialState: { pagination: { pageIndex: 0, pageSize: 5 } },\n  });\n\n  return (\n    <div className=\"flex w-full max-w-2xl flex-col gap-3\">\n      <DataTableSearch placeholder=\"Search customers…\" table={table} />\n      <div className=\"rounded-xl border bg-background\">\n        <DataTable\n          emptyMessage=\"No customers match your search.\"\n          table={table}\n        />\n      </div>\n      <DataTablePagination pageSizeOptions={[5, 10, 20]} table={table} />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+  },
+  "categories": [
+    "data table"
+  ],
+  "type": "registry:block"
+}

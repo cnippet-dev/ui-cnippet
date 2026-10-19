@@ -1,3 +1,4 @@
+// title: Default
 import { Input } from "@/registry/default/ui/input";
 
 export default function Particle() {

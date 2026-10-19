@@ -4,8 +4,10 @@
     "frame",
     "group",
     "preview-card",
+    "resizable",
     "scroll-area",
-    "separator"
+    "separator",
+    "sidebar"
   ],
   "title": "Layout"
 }

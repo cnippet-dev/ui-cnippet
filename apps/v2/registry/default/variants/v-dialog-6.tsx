@@ -1,3 +1,4 @@
+// title: With Destructive Action
 import { AlertTriangleIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

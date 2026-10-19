@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-slider-2.tsx",
-      "content": "import { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <Slider defaultValue={50}>\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\n          <SliderValue />\n        </div>\n      </Slider>\n    </Field>\n  );\n}\n",
+      "content": "// title: With Label and Value\nimport { Field, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Slider, SliderValue } from \"@/registry/default/ui/slider\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <Slider defaultValue={50}>\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\n          <SliderValue />\n        </div>\n      </Slider>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "slider"

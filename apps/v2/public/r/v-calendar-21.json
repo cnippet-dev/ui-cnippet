@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-calendar-21",
+  "description": "Showcase: single date and range with dropdowns",
+  "registryDependencies": [
+    "@cnippet/calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-calendar-21.tsx",
+      "content": "// title: Showcase: single date and range with dropdowns\n\"use client\";\n\nimport { addDays } from \"date-fns\";\nimport * as React from \"react\";\nimport type { DateRange } from \"react-day-picker\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date());\n  const [range, setRange] = React.useState<DateRange | undefined>(() => {\n    const today = new Date();\n    return { from: addDays(today, 2), to: addDays(today, 6) };\n  });\n\n  return (\n    <div className=\"flex flex-wrap items-start justify-center gap-6\">\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">Single date</span>\n        <Calendar\n          className=\"rounded-lg border\"\n          mode=\"single\"\n          onSelect={setDate}\n          selected={date}\n        />\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <span className=\"text-muted-foreground text-xs\">\n          Range with month and year dropdowns\n        </span>\n        <Calendar\n          captionLayout=\"dropdown\"\n          className=\"rounded-lg border\"\n          endMonth={new Date(2030, 11)}\n          mode=\"range\"\n          onSelect={setRange}\n          selected={range}\n          startMonth={new Date(2020, 0)}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:block"
+}

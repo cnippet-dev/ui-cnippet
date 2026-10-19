@@ -1,3 +1,4 @@
+// title: GitHub-style issue preview
 import { CircleDotIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import {
@@ -19,7 +20,7 @@ export function Pattern() {
             <div className="flex items-start gap-2">
               <CircleDotIcon
                 aria-hidden="true"
-                className="mt-0.5 size-4 shrink-0 text-green-500"
+                className="mt-0.5 size-4 shrink-0 text-success-foreground"
               />
               <div>
                 <h4 className="font-semibold text-sm leading-snug">

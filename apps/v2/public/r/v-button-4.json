@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-4.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  return <Button variant=\"destructive\">Delete</Button>;\n}\n",
+      "content": "// title: Destructive\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  return <Button variant=\"destructive\">Delete</Button>;\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "button"

@@ -1,3 +1,4 @@
+// title: Incident Status with Timeline
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import { ChevronDownIcon, CircleAlertIcon } from "lucide-react";

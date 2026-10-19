@@ -1,3 +1,4 @@
+// title: Icon-only sidebar nav with label and description tooltips
 import {
   BarChart2Icon,
   FileTextIcon,

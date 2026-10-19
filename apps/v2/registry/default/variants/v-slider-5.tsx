@@ -1,3 +1,4 @@
+// title: With Tick Marks
 import { cn } from "@/lib/utils";
 import { Slider } from "@/registry/default/ui/slider";
 

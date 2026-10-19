@@ -1,3 +1,4 @@
+// title: Key-value list
 import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {

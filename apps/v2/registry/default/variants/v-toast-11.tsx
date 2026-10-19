@@ -1,3 +1,4 @@
+// title: Anchored clipboard copy with tooltip-style toast
 "use client";
 
 import { CopyIcon } from "lucide-react";
@@ -11,12 +12,16 @@ export function Pattern() {
   const btnRef = useRef<HTMLButtonElement>(null);
 
   const copy = () => {
-    void navigator.clipboard.writeText(SNIPPET);
-    anchoredToastManager.add({
-      data: { tooltipStyle: true },
-      positionerProps: { anchor: btnRef.current },
-      title: "Copied!",
-    });
+    navigator.clipboard.writeText(SNIPPET).then(
+      () =>
+        anchoredToastManager.add({
+          data: { tooltipStyle: true },
+          positionerProps: { anchor: btnRef.current },
+          title: "Copied!",
+        }),
+      // Clipboard access is denied when the page isn't focused.
+      () => {},
+    );
   };
 
   return (

@@ -1,3 +1,4 @@
+// title: Integration enablement list with card rows and a master enable-all parent checkbox
 "use client";
 
 import { useState } from "react";
@@ -36,12 +37,12 @@ export function Pattern() {
         </Label>
         {INTEGRATIONS.map((intg) => (
           <label
-            className="flex cursor-pointer items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-muted/50"
+            className="flex w-full cursor-pointer items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-muted/50"
             htmlFor={intg.id}
             key={intg.id}
           >
             <Checkbox className="mt-0.5" id={intg.id} value={intg.id} />
-            <div>
+            <div className="flex-1">
               <span className="font-medium text-sm">{intg.label}</span>
               <p className="mt-0.5 text-muted-foreground text-xs">
                 {intg.desc}

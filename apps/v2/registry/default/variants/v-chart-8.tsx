@@ -1,3 +1,4 @@
+// title: Stacked monthly expense bars
 "use client";
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";

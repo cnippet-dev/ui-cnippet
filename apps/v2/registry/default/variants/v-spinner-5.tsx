@@ -1,3 +1,4 @@
+// title: Overlay loading spinner
 import {
   Card,
   CardContent,

@@ -1,3 +1,4 @@
+// title: With Page Info, Numbered Pages, Ellipsis, and Per-Page Select
 import {
   Pagination,
   PaginationContent,
@@ -7,13 +8,25 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/registry/default/ui/pagination";
+import {
+  Select,
+  SelectItem,
+  SelectPopup,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select";
+
+const perPage = [10, 20, 50, 100].map((value) => ({
+  label: `${value} / page`,
+  value,
+}));
 
 export function Pattern() {
   return (
     <Pagination>
-      <PaginationContent className="w-full justify-between">
+      <PaginationContent className="w-full flex-wrap justify-between gap-y-2">
         <PaginationItem>
-          <span className="text-muted-foreground text-sm">
+          <span className="whitespace-nowrap text-muted-foreground text-sm">
             Page <span className="font-medium text-foreground">1</span> of{" "}
             <span className="font-medium text-foreground">10</span>
           </span>
@@ -30,12 +43,22 @@ export function Pattern() {
           <PaginationNext href="#" />
         </PaginationItem>
         <PaginationItem>
-          <select className="w-28 rounded-lg border border-input bg-background px-2 py-1 text-foreground text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/24">
-            <option value="10">10 / page</option>
-            <option value="20">20 / page</option>
-            <option value="50">50 / page</option>
-            <option value="100">100 / page</option>
-          </select>
+          <Select defaultValue={10} items={perPage}>
+            <SelectTrigger
+              aria-label="Rows per page"
+              className="w-28"
+              size="sm"
+            >
+              <SelectValue />
+            </SelectTrigger>
+            <SelectPopup>
+              {perPage.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectPopup>
+          </Select>
         </PaginationItem>
       </PaginationContent>
     </Pagination>

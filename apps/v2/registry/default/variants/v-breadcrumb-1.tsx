@@ -1,3 +1,4 @@
+// title: Default
 import Link from "next/link";
 import {
   Breadcrumb,

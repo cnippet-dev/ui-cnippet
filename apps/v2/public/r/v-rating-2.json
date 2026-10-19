@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-rating-2",
+  "description": "Average rating with star breakdown bars",
+  "registryDependencies": [
+    "@cnippet/rating",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/textarea",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-rating-2.tsx",
+      "content": "// title: Average rating with star breakdown bars\nimport {\n  Progress,\n  ProgressIndicator,\n  ProgressTrack,\n} from \"@/registry/default/ui/progress\";\nimport { RatingDisplay } from \"@/registry/default/ui/rating\";\n\nconst COUNTS = [\n  { count: 812, stars: 5 },\n  { count: 264, stars: 4 },\n  { count: 71, stars: 3 },\n  { count: 22, stars: 2 },\n  { count: 31, stars: 1 },\n];\nconst TOTAL = COUNTS.reduce((sum, row) => sum + row.count, 0);\nconst AVERAGE =\n  COUNTS.reduce((sum, row) => sum + row.stars * row.count, 0) / TOTAL;\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border p-5\">\n      <div className=\"flex items-end gap-3\">\n        <span className=\"font-semibold text-4xl tabular-nums leading-none\">\n          {AVERAGE.toFixed(1)}\n        </span>\n        <div className=\"flex flex-col gap-1\">\n          <RatingDisplay value={Math.round(AVERAGE * 10) / 10} />\n          <span className=\"text-muted-foreground text-xs\">\n            {TOTAL.toLocaleString(\"en-US\")} reviews\n          </span>\n        </div>\n      </div>\n      <ul className=\"flex flex-col gap-1.5\">\n        {COUNTS.map((row) => (\n          <li\n            className=\"grid grid-cols-[2.5rem_1fr_2.5rem] items-center gap-2 text-xs\"\n            key={row.stars}\n          >\n            <span className=\"text-muted-foreground\">{row.stars} star</span>\n            <Progress\n              aria-label={`${row.stars} star reviews`}\n              value={(row.count / TOTAL) * 100}\n            >\n              <ProgressTrack>\n                <ProgressIndicator />\n              </ProgressTrack>\n            </Progress>\n            <span className=\"text-end text-muted-foreground tabular-nums\">\n              {Math.round((row.count / TOTAL) * 100)}%\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "rating"
+  ],
+  "type": "registry:block"
+}

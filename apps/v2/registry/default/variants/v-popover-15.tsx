@@ -1,3 +1,4 @@
+// title: System Status
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -17,9 +18,9 @@ const services: { latency: string; name: string; status: Status }[] = [
 ];
 
 const statusConfig: Record<Status, { dot: string; label: string }> = {
-  degraded: { dot: "bg-amber-500", label: "Degraded" },
-  operational: { dot: "bg-emerald-500", label: "Operational" },
-  outage: { dot: "bg-red-500", label: "Outage" },
+  degraded: { dot: "bg-warning", label: "Degraded" },
+  operational: { dot: "bg-success", label: "Operational" },
+  outage: { dot: "bg-destructive", label: "Outage" },
 };
 
 const allOperational = services.every((s) => s.status === "operational");
@@ -30,7 +31,7 @@ export function Pattern() {
       <Popover>
         <PopoverTrigger render={<Button variant="outline" />}>
           <span
-            className={`size-2 animate-pulse rounded-full ${allOperational ? "bg-emerald-500" : "bg-amber-500"}`}
+            className={`size-2 animate-pulse rounded-full ${allOperational ? "bg-success" : "bg-warning"}`}
           />
           System Status
         </PopoverTrigger>

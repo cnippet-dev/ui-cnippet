@@ -1,3 +1,4 @@
+// title: Button with an unread badge
 import { MailIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";

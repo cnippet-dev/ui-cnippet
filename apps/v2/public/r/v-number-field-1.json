@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-number-field-1.tsx",
-      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
+      "content": "// title: Default\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"@/registry/default/ui/number-field\";\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "number field"

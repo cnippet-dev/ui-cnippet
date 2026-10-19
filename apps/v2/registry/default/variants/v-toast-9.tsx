@@ -1,3 +1,4 @@
+// title: Timeout Control
 "use client";
 
 import { useRef } from "react";

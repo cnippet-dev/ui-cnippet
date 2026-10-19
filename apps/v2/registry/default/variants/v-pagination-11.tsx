@@ -1,3 +1,4 @@
+// title: Rows per page with first/last navigation
 import {
   ChevronFirstIcon,
   ChevronLastIcon,
@@ -10,6 +11,18 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/registry/default/ui/pagination";
+import {
+  Select,
+  SelectItem,
+  SelectPopup,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select";
+
+const rows = [10, 25, 50, 100].map((value) => ({
+  label: String(value),
+  value,
+}));
 
 export function Pattern() {
   return (
@@ -19,15 +32,22 @@ export function Pattern() {
           <span className="whitespace-nowrap text-muted-foreground text-sm">
             Rows per page
           </span>
-          <select
-            className="w-18 rounded-lg border border-input bg-background px-2 py-1 text-foreground text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/24"
-            defaultValue="25"
-          >
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
+          <Select defaultValue={25} items={rows}>
+            <SelectTrigger
+              aria-label="Rows per page"
+              className="w-20"
+              size="sm"
+            >
+              <SelectValue />
+            </SelectTrigger>
+            <SelectPopup>
+              {rows.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectPopup>
+          </Select>
         </PaginationItem>
         <PaginationItem className="flex items-center gap-3">
           <span className="whitespace-nowrap text-muted-foreground text-sm">

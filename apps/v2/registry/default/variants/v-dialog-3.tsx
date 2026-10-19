@@ -1,3 +1,4 @@
+// title: Dialog with Bare Footer
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,

@@ -1,3 +1,4 @@
+// title: With End Icon
 import { MailIcon } from "lucide-react";
 import {
   InputGroup,

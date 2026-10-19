@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-textarea-5.tsx",
-      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"w-full\">\n        <FieldLabel htmlFor=\"textarea-with-desc\">Feedback</FieldLabel>\n        <Textarea\n          id=\"textarea-with-desc\"\n          placeholder=\"Type your message here…\"\n          rows={6}\n        />\n        <FieldDescription>\n          Type your message and press enter to send.\n        </FieldDescription>\n      </Field>\n    </div>\n  );\n}\n",
+      "content": "// title: With Description\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport function Pattern() {\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Field className=\"w-full\">\n        <FieldLabel htmlFor=\"textarea-with-desc\">Feedback</FieldLabel>\n        <Textarea\n          id=\"textarea-with-desc\"\n          placeholder=\"Type your message here…\"\n          rows={6}\n        />\n        <FieldDescription>\n          Type your message and press enter to send.\n        </FieldDescription>\n      </Field>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "textarea"

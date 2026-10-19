@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-group-3.tsx",
-      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Set your URL\"\n        className=\"*:[input]:ps-0!\"\n        placeholder=\"cnippet\"\n        type=\"text\"\n      />\n      <InputGroupAddon>\n        <InputGroupText>cnippet.dev/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
+      "content": "// title: With Start Text\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/registry/default/ui/input-group\";\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Set your URL\"\n        className=\"*:[input]:ps-0!\"\n        placeholder=\"cnippet\"\n        type=\"text\"\n      />\n      <InputGroupAddon>\n        <InputGroupText>cnippet.dev/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "input group"

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-breadcrumb-16",
+  "description": "Showcase: separators, home icon and ellipsis",
+  "registryDependencies": [
+    "@cnippet/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-breadcrumb-16.tsx",
+      "content": "// title: Showcase: separators, home icon and ellipsis\nimport { HouseIcon } from \"lucide-react\";\nimport {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-5\">\n      <Breadcrumb>\n        <BreadcrumbList>\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">Home</BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator />\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">Projects</BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator />\n          <BreadcrumbItem>\n            <BreadcrumbPage>Website redesign</BreadcrumbPage>\n          </BreadcrumbItem>\n        </BreadcrumbList>\n      </Breadcrumb>\n      <Breadcrumb>\n        <BreadcrumbList>\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">\n              <HouseIcon aria-hidden=\"true\" className=\"size-4\" />\n              <span className=\"sr-only\">Home</span>\n            </BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator> / </BreadcrumbSeparator>\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">Settings</BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator> / </BreadcrumbSeparator>\n          <BreadcrumbItem>\n            <BreadcrumbPage>Billing</BreadcrumbPage>\n          </BreadcrumbItem>\n        </BreadcrumbList>\n      </Breadcrumb>\n      <Breadcrumb>\n        <BreadcrumbList>\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">Docs</BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator />\n          <BreadcrumbItem>\n            <BreadcrumbEllipsis />\n          </BreadcrumbItem>\n          <BreadcrumbSeparator />\n          <BreadcrumbItem>\n            <BreadcrumbLink href=\"#\">Components</BreadcrumbLink>\n          </BreadcrumbItem>\n          <BreadcrumbSeparator />\n          <BreadcrumbItem>\n            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n          </BreadcrumbItem>\n        </BreadcrumbList>\n      </Breadcrumb>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "breadcrumb"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-stepper-3",
+  "description": "Compact dot progress with step count",
+  "registryDependencies": [
+    "@cnippet/stepper",
+    "@cnippet/button",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-stepper-3.tsx",
+      "content": "// title: Compact dot progress with step count\n\"use client\";\n\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Stepper,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n} from \"@/registry/default/ui/stepper\";\n\nconst TITLES = [\"Account\", \"Profile\", \"Preferences\", \"Review\", \"Done\"];\n\nexport default function Particle() {\n  const [step, setStep] = useState(3);\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <div className=\"flex items-baseline justify-between text-sm\">\n        <span className=\"font-medium\">{TITLES[step - 1]}</span>\n        <span className=\"text-muted-foreground tabular-nums\">\n          Step {step} of {TITLES.length}\n        </span>\n      </div>\n      <Stepper value={step}>\n        {TITLES.map((title, i) => (\n          <StepperItem key={title} step={i + 1}>\n            <StepperIndicator className=\"size-2.5 group-data-[state=active]/step:ring-2\">\n              <span className=\"sr-only\">{title}</span>\n            </StepperIndicator>\n            <StepperSeparator className=\"mx-1 mt-[4.5px]\" />\n          </StepperItem>\n        ))}\n      </Stepper>\n      <div className=\"flex justify-between\">\n        <Button\n          disabled={step === 1}\n          onClick={() => setStep((s) => s - 1)}\n          size=\"sm\"\n          variant=\"ghost\"\n        >\n          <ChevronLeftIcon aria-hidden=\"true\" />\n          Back\n        </Button>\n        <Button\n          disabled={step === TITLES.length}\n          onClick={() => setStep((s) => s + 1)}\n          size=\"sm\"\n          variant=\"ghost\"\n        >\n          Next\n          <ChevronRightIcon aria-hidden=\"true\" />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "stepper"
+  ],
+  "type": "registry:block"
+}

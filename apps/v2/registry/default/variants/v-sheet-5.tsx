@@ -1,6 +1,16 @@
+// title: Shopping Cart
 "use client";
 
-import { MinusIcon, PlusIcon, ShoppingCartIcon, TrashIcon } from "lucide-react";
+import {
+  HeadphonesIcon,
+  KeyboardIcon,
+  type LucideIcon,
+  MinusIcon,
+  PlusIcon,
+  ShoppingCartIcon,
+  TrashIcon,
+  UsbIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -21,25 +31,25 @@ type CartItem = {
   name: string;
   price: number;
   qty: number;
-  color: string;
+  icon: LucideIcon;
 };
 
 const initial: CartItem[] = [
   {
-    color: "bg-slate-400",
+    icon: HeadphonesIcon,
     id: 1,
     name: "Wireless Headphones",
     price: 79,
     qty: 1,
   },
   {
-    color: "bg-violet-400",
+    icon: KeyboardIcon,
     id: 2,
     name: "Mechanical Keyboard",
     price: 129,
     qty: 1,
   },
-  { color: "bg-rose-400", id: 3, name: "USB-C Hub", price: 49, qty: 2 },
+  { icon: UsbIcon, id: 3, name: "USB-C Hub", price: 49, qty: 2 },
 ];
 
 export function Pattern() {
@@ -86,9 +96,9 @@ export function Pattern() {
                   className="flex items-center gap-3 rounded-lg border p-3"
                   key={item.id}
                 >
-                  <span
-                    className={`size-10 shrink-0 rounded-md ${item.color}`}
-                  />
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
+                    <item.icon aria-hidden="true" className="size-5" />
+                  </span>
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-sm">{item.name}</p>
                     <p className="text-muted-foreground text-xs">

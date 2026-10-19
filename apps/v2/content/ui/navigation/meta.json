@@ -1,4 +1,11 @@
 {
-  "pages": ["breadcrumb", "menu", "pagination", "tabs"],
+  "pages": [
+    "breadcrumb",
+    "menu",
+    "navigation-menu",
+    "pagination",
+    "stepper",
+    "tabs"
+  ],
   "title": "Navigation"
 }

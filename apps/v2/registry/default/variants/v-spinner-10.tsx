@@ -1,3 +1,4 @@
+// title: Step-by-step workspace loading
 "use client";
 
 import { useState } from "react";

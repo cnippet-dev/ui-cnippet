@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sortable-2",
+  "description": "Drag-to-rank list",
+  "registryDependencies": [
+    "@cnippet/sortable",
+    "@cnippet/avatar",
+    "@cnippet/badge",
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sortable-2.tsx",
+      "content": "// title: Drag-to-rank list\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Sortable, SortableItem } from \"@/registry/default/ui/sortable\";\n\nconst initial = [\n  \"Faster page loads\",\n  \"Dark mode for email\",\n  \"Better search\",\n  \"Offline support\",\n  \"Two-factor login\",\n];\n\nexport default function Particle() {\n  const [items, setItems] = useState(initial);\n\n  return (\n    <div className=\"w-full max-w-xs\">\n      <p className=\"font-medium text-sm\">Rank what matters most</p>\n      <p className=\"mb-3 text-muted-foreground text-xs\">\n        Drag to reorder. #1 is your top pick.\n      </p>\n      <Sortable getItemValue={(i) => i} onValueChange={setItems} value={items}>\n        <ol className=\"flex flex-col gap-1.5\">\n          {items.map((item, index) => (\n            <li key={item}>\n              <SortableItem\n                asHandle\n                className=\"flex items-center gap-3 rounded-lg border bg-background px-3 py-2 text-sm\"\n                value={item}\n              >\n                <span className=\"flex size-6 shrink-0 items-center justify-center rounded-full bg-accent font-medium text-xs tabular-nums\">\n                  {index + 1}\n                </span>\n                {item}\n              </SortableItem>\n            </li>\n          ))}\n        </ol>\n      </Sortable>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sortable"
+  ],
+  "type": "registry:block"
+}

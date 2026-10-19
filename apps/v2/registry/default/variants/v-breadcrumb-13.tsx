@@ -1,3 +1,4 @@
+// title: Admin hierarchy breadcrumb with colored icon badges per level
 import { Building2Icon, UserIcon, UsersIcon } from "lucide-react";
 import {
   Breadcrumb,

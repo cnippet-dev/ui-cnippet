@@ -1,3 +1,4 @@
+// title: Fundraiser goal tracker
 import { HeartIcon } from "lucide-react";
 import {
   Progress,
@@ -13,12 +14,15 @@ export function Pattern() {
   return (
     <div className="w-full max-w-xs space-y-3 rounded-lg border p-4">
       <div className="flex items-center gap-2">
-        <HeartIcon aria-hidden="true" className="size-4 text-red-500" />
+        <HeartIcon
+          aria-hidden="true"
+          className="size-4 text-destructive-foreground"
+        />
         <span className="font-semibold text-sm">Community Fund Drive</span>
       </div>
       <Progress value={pct}>
         <ProgressTrack>
-          <ProgressIndicator className="bg-red-500" />
+          <ProgressIndicator />
         </ProgressTrack>
       </Progress>
       <div className="flex items-end justify-between gap-2">

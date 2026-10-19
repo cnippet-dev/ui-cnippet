@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-banner-2",
+  "description": "Banner tones: default, info, success, warning, error",
+  "registryDependencies": [
+    "@cnippet/banner",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-banner-2.tsx",
+      "content": "// title: Banner tones: default, info, success, warning, error\nimport {\n  CircleAlertIcon,\n  CircleCheckIcon,\n  InfoIcon,\n  MegaphoneIcon,\n  TriangleAlertIcon,\n} from \"lucide-react\";\nimport {\n  Banner,\n  BannerContent,\n  BannerDescription,\n  BannerTitle,\n} from \"@/registry/default/ui/banner\";\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-2xl flex-col overflow-hidden rounded-xl border [&>*:last-child]:border-b-0\">\n      <Banner>\n        <MegaphoneIcon aria-hidden=\"true\" />\n        <BannerContent>\n          <BannerTitle>New in v4.2</BannerTitle>\n          <BannerDescription>Saved views for every table.</BannerDescription>\n        </BannerContent>\n      </Banner>\n      <Banner variant=\"info\">\n        <InfoIcon aria-hidden=\"true\" />\n        <BannerContent>\n          <BannerTitle>You're viewing a shared workspace</BannerTitle>\n          <BannerDescription>\n            Changes are visible to 12 people.\n          </BannerDescription>\n        </BannerContent>\n      </Banner>\n      <Banner variant=\"success\">\n        <CircleCheckIcon aria-hidden=\"true\" />\n        <BannerContent>\n          <BannerTitle>All systems operational</BannerTitle>\n          <BannerDescription>Last incident 41 days ago.</BannerDescription>\n        </BannerContent>\n      </Banner>\n      <Banner variant=\"warning\">\n        <TriangleAlertIcon aria-hidden=\"true\" />\n        <BannerContent>\n          <BannerTitle>Your trial ends in 3 days</BannerTitle>\n          <BannerDescription>\n            Add a card to keep your projects.\n          </BannerDescription>\n        </BannerContent>\n      </Banner>\n      <Banner variant=\"error\">\n        <CircleAlertIcon aria-hidden=\"true\" />\n        <BannerContent>\n          <BannerTitle>Payment failed</BannerTitle>\n          <BannerDescription>We'll retry on Oct 21.</BannerDescription>\n        </BannerContent>\n      </Banner>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "banner"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Code viewer toolbar with multi-select options
 "use client";
 
 import {
@@ -72,7 +73,7 @@ export function Pattern() {
               className="flex items-center gap-2 text-muted-foreground text-xs"
               key={file}
             >
-              <span className="size-1.5 rounded-full bg-emerald-500" />
+              <span className="size-1.5 rounded-full bg-success" />
               {file}
             </div>
           ))}

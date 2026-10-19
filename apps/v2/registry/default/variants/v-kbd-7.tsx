@@ -1,3 +1,4 @@
+// title: Keyboard shortcut in button
 import { PrinterIcon, SaveIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";

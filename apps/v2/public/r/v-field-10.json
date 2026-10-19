@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-10.tsx",
-      "content": "\"use client\";\n\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Bio</FieldLabel>\n      <Textarea placeholder=\"Tell us about yourself…\" />\n      <FieldDescription>\n        Write a short bio. Maximum 500 characters.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "content": "// title: Field with textarea\n\"use client\";\n\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Bio</FieldLabel>\n      <Textarea placeholder=\"Tell us about yourself…\" />\n      <FieldDescription>\n        Write a short bio. Maximum 500 characters.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "field"

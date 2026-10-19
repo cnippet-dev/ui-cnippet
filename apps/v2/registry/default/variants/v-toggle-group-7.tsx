@@ -1,3 +1,4 @@
+// title: View mode switching
 import { Columns2Icon, LayoutGridIcon, ListIcon } from "lucide-react";
 import {
   ToggleGroup,

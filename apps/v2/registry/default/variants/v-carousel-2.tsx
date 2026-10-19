@@ -1,3 +1,4 @@
+// title: Multiple Items
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {

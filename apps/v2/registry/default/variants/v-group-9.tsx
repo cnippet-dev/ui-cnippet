@@ -1,3 +1,4 @@
+// title: Nested Groups
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator } from "@/registry/default/ui/group";

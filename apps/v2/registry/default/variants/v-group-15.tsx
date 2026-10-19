@@ -1,3 +1,4 @@
+// title: Thumbs up / down vote buttons
 "use client";
 
 import { ThumbsDownIcon, ThumbsUpIcon } from "lucide-react";

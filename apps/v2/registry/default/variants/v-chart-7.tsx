@@ -1,3 +1,4 @@
+// title: Radial Bar Chart
 "use client";
 
 import { RadialBar, RadialBarChart } from "recharts";

@@ -1,3 +1,4 @@
+// title: Task board with inline status radio, priority submenu, reassign, and delete
 "use client";
 
 import {
@@ -60,8 +61,8 @@ const INITIAL: Task[] = [
 ];
 
 const statusIcon: Record<Status, React.ReactNode> = {
-  done: <CheckCircle2Icon className="size-3.5 text-emerald-500" />,
-  "in-progress": <ClockIcon className="size-3.5 text-blue-500" />,
+  done: <CheckCircle2Icon className="size-3.5 text-success-foreground" />,
+  "in-progress": <ClockIcon className="size-3.5 text-info-foreground" />,
   todo: <CircleIcon className="size-3.5 text-muted-foreground" />,
 };
 
@@ -100,13 +101,13 @@ export function Pattern() {
             </div>
           </ContextMenuTrigger>
           <ContextMenuContent className="w-48">
-            <ContextMenuLabel>Status</ContextMenuLabel>
             <ContextMenuRadioGroup
               onValueChange={(v) =>
                 updateTask(task.id, { status: v as Status })
               }
               value={task.status}
             >
+              <ContextMenuLabel>Status</ContextMenuLabel>
               <ContextMenuRadioItem value="todo">To Do</ContextMenuRadioItem>
               <ContextMenuRadioItem value="in-progress">
                 In Progress

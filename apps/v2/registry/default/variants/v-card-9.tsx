@@ -1,3 +1,4 @@
+// title: With Stacked depth Effect
 import { Button } from "@/registry/default/ui/button";
 import {
   Card,
@@ -14,20 +15,17 @@ export function Pattern() {
       {/* Card */}
       <Card className="relative z-1 w-full max-w-xs">
         <CardHeader>
-          <CardTitle>Default Card</CardTitle>
-          <CardDescription>
-            This card uses the default size variant.
-          </CardDescription>
+          <CardTitle>3 pending invites</CardTitle>
+          <CardDescription>Join a team to start collaborating.</CardDescription>
         </CardHeader>
         <CardContent>
           <p>
-            The card component supports a size prop that defaults to
-            &quot;default&quot; for standard spacing and sizing.
+            Priya Shah invited you to Acme Design, along with 2 other teams.
           </p>
         </CardContent>
         <CardFooter>
           <Button className="w-full" variant="outline">
-            Action
+            View invites
           </Button>
         </CardFooter>
       </Card>

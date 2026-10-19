@@ -1,3 +1,4 @@
+// title: Temperature Control
 "use client";
 
 import { ThermometerIcon } from "lucide-react";

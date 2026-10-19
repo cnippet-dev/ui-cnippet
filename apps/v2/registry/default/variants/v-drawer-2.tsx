@@ -1,3 +1,4 @@
+// title: Multiple Positions — Inset
 import { Button } from "@/registry/default/ui/button";
 import {
   Drawer,

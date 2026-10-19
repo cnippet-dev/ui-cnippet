@@ -1,19 +1,20 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "v-meter-2",
-  "description": "With Label",
+  "description": "Without Value",
   "registryDependencies": [
     "@cnippet/meter"
   ],
   "files": [
     {
       "path": "registry/default/variants/v-meter-2.tsx",
-      "content": "import {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter value={50}>\n      <MeterLabel>Rating</MeterLabel>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
+      "content": "// title: Without Value\nimport {\n  Meter,\n  MeterIndicator,\n  MeterLabel,\n  MeterTrack,\n} from \"@/registry/default/ui/meter\";\n\nexport default function Particle() {\n  return (\n    <Meter value={50}>\n      <MeterLabel>Rating</MeterLabel>\n      <MeterTrack>\n        <MeterIndicator />\n      </MeterTrack>\n    </Meter>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "meter"

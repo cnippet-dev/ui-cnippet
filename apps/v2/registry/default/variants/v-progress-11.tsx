@@ -1,3 +1,4 @@
+// title: Survey completion counter
 "use client";
 
 import {

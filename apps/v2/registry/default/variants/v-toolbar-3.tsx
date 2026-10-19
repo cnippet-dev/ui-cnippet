@@ -1,3 +1,4 @@
+// title: Image editor toolbar with transform, zoom, and export actions
 "use client";
 
 import {

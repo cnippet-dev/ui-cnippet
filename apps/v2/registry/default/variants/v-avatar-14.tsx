@@ -1,3 +1,4 @@
+// title: With Custom Badge
 import {
   Avatar,
   AvatarFallback,

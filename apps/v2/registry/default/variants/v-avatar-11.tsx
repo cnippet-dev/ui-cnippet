@@ -1,3 +1,4 @@
+// title: With Hover Effect & Tooltips
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import { cn } from "@/lib/utils";
@@ -24,7 +25,7 @@ const avatars = [
     src: "https://github.com/maxleiter.png",
   },
   {
-    fallback: "ER",
+    fallback: "JB",
     name: "James Brown",
     src: "https://images.unsplash.com/photo-1543299750-19d1d6297053?w=96&h=96&dpr=2&q=80",
   },

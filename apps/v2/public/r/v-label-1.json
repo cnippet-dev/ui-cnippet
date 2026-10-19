@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-label-1.tsx",
-      "content": "import { useId } from \"react\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  const id = useId();\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input\n        aria-label=\"Email\"\n        id={id}\n        placeholder=\"you@example.com\"\n        type=\"email\"\n      />\n    </div>\n  );\n}\n",
+      "content": "// title: Default\nimport { useId } from \"react\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Particle() {\n  const id = useId();\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input\n        aria-label=\"Email\"\n        id={id}\n        placeholder=\"you@example.com\"\n        type=\"email\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "label"

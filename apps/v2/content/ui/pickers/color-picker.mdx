@@ -1,0 +1,120 @@
+---
+title: Color Picker
+description: Pick a colour from a saturation and brightness area, a hue slider, a hex field or preset swatches, inline or inside a popover. Copy-paste ready.
+---
+
+<ComponentPreview name="v-color-picker-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/color-picker
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Input](/ui/forms/input) and [Slider](/ui/forms/slider) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="color-picker" title="components/ui/color-picker.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  ColorPicker,
+  ColorPickerArea,
+  ColorPickerHue,
+  ColorPickerInput,
+  ColorPickerSwatch,
+  ColorPickerSwatches,
+} from "@/components/ui/color-picker"
+```
+
+```tsx
+const [color, setColor] = useState("#3b82f6")
+
+<ColorPicker value={color} onValueChange={setColor}>
+  <ColorPickerArea />
+  <ColorPickerHue />
+  <ColorPickerInput />
+  <ColorPickerSwatches>
+    <ColorPickerSwatch value="#ef4444" />
+    <ColorPickerSwatch value="#22c55e" />
+  </ColorPickerSwatches>
+</ColorPicker>
+```
+
+## Anatomy
+
+```tsx
+<ColorPicker>              {/* holds the colour; renders a column */}
+  <ColorPickerArea />      {/* saturation (x) and brightness (y) */}
+  <ColorPickerHue />       {/* hue slider */}
+  <ColorPickerInput />     {/* hex text field */}
+  <ColorPickerSwatches>
+    <ColorPickerSwatch />  {/* preset button */}
+  </ColorPickerSwatches>
+</ColorPicker>
+```
+
+Use any parts you need, in any order. For a compact field, put the picker in a [Popover](/ui/overlays/popover) as in the example below.
+
+## Good to know
+
+- Values are lowercase 6-digit hex strings, such as `"#3b82f6"`. The input also accepts 3-digit hex, with or without `#`. Alpha isn't supported.
+- The picker keeps its hue while you drag to grey, white or black, so dragging back brings the colour back.
+- The area is keyboard accessible: focus its thumb, use the arrow keys to move 1%, and hold Shift to move 10%. The hue slider uses the usual slider keys.
+- The hex field only applies a value once it's a complete colour, so half-typed text never jumps the picker. Enter applies 3-digit hex.
+- Swatches show `aria-pressed` when they match the current colour.
+- `hexToHsv` and `hsvToHex` are exported if you need the conversions elsewhere, and `useColorPicker()` gives custom parts access to the current colour.
+
+## API Reference
+
+### ColorPicker
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Controlled hex colour |
+| `defaultValue` | `string` | `"#3b82f6"` | Initial colour when uncontrolled |
+| `onValueChange` | `(value: string) => void` | — | Called with the new hex colour |
+| `disabled` | `boolean` | `false` | Disables every part |
+
+### ColorPickerSwatch
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Hex colour this swatch selects |
+
+## Examples
+
+### In a popover
+
+<ComponentPreview name="v-color-picker-2" />
+
+### Swatches only
+
+Fixed label colours with a hex field for custom ones.
+
+<ComponentPreview name="v-color-picker-3" />

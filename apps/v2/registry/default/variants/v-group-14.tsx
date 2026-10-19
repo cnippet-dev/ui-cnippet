@@ -1,3 +1,4 @@
+// title: Text formatting toolbar
 "use client";
 
 import {

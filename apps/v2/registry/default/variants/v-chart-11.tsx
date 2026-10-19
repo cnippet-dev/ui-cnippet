@@ -1,3 +1,4 @@
+// title: Stacked area chart with two revenue series and a Y-axis legend
 "use client";
 
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";

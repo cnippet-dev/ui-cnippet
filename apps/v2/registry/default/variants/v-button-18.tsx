@@ -1,3 +1,4 @@
+// title: Destructive button with an icon on the left
 import { Trash2Icon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 

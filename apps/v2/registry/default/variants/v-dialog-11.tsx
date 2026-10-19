@@ -1,3 +1,4 @@
+// title: Share Document with Link Copy
 "use client";
 
 import { CheckIcon, CopyIcon, LinkIcon } from "lucide-react";
@@ -54,7 +55,7 @@ export default function Particle() {
               variant="outline"
             >
               {copied ? (
-                <CheckIcon className="size-4 text-green-500" />
+                <CheckIcon className="size-4 text-success-foreground" />
               ) : (
                 <CopyIcon className="size-4" />
               )}

@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-button-17.tsx",
-      "content": "import { LogOutIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button variant=\"ghost\">\n      Logout\n      <LogOutIcon aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
+      "content": "// title: Ghost button with an icon on the right\nimport { LogOutIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport function Pattern() {\n  return (\n    <Button variant=\"ghost\">\n      Logout\n      <LogOutIcon aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "button"

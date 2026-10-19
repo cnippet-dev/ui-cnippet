@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-navigation-menu-2",
+  "description": "Docs menu with sections and a plain link",
+  "registryDependencies": [
+    "@cnippet/navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-navigation-menu-2.tsx",
+      "content": "// title: Docs menu with sections and a plain link\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n} from \"@/registry/default/ui/navigation-menu\";\n\nconst SECTIONS = {\n  Components: [\n    [\"Button\", \"Actions, links and icon buttons.\"],\n    [\"Dialog\", \"Modal windows for focused tasks.\"],\n    [\"Stepper\", \"Progress through multi-step flows.\"],\n    [\"Tag Input\", \"Free-form tags with validation.\"],\n    [\"Sidebar\", \"Collapsible app navigation.\"],\n    [\"File Upload\", \"Drag-and-drop with previews.\"],\n  ],\n  \"Getting started\": [\n    [\"Introduction\", \"What Cnippet is and how it works.\"],\n    [\"Installation\", \"Add it to a Next.js or Vite app.\"],\n    [\"Theming\", \"Tokens, dark mode and custom colors.\"],\n  ],\n} as const;\n\nexport default function Particle() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        {Object.entries(SECTIONS).map(([section, pages]) => (\n          <NavigationMenuItem key={section}>\n            <NavigationMenuTrigger>{section}</NavigationMenuTrigger>\n            <NavigationMenuContent>\n              <ul\n                className={\n                  pages.length > 3\n                    ? \"grid gap-1 sm:w-[28rem] sm:grid-cols-2\"\n                    : \"grid gap-1 sm:w-72\"\n                }\n              >\n                {pages.map(([title, description]) => (\n                  <li key={title}>\n                    <NavigationMenuLink\n                      href={`#${title.toLowerCase().replace(/\\s+/g, \"-\")}`}\n                    >\n                      <span className=\"font-medium\">{title}</span>\n                      <span className=\"text-muted-foreground text-xs\">\n                        {description}\n                      </span>\n                    </NavigationMenuLink>\n                  </li>\n                ))}\n              </ul>\n            </NavigationMenuContent>\n          </NavigationMenuItem>\n        ))}\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#github\" variant=\"trigger\">\n            GitHub\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "navigation menu"
+  ],
+  "type": "registry:block"
+}

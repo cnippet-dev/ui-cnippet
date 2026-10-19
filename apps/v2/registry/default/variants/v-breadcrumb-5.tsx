@@ -1,3 +1,4 @@
+// title: With Icons For Each Item
 import { HouseIcon, LayoutDashboardIcon, SettingsIcon } from "lucide-react";
 import {
   Breadcrumb,

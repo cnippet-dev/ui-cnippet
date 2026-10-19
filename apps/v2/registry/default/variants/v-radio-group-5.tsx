@@ -1,3 +1,4 @@
+// title: Colored Variants
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 

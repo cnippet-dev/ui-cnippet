@@ -1,3 +1,4 @@
+// title: Alphabetical contact list
 //biome-ignore-all lint/suspicious/noAssignInExpressions:<>
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 

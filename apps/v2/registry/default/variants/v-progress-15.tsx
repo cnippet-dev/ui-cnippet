@@ -1,3 +1,4 @@
+// title: Build pipeline stages
 import { CheckIcon, CircleDotIcon, ClockIcon } from "lucide-react";
 import {
   Progress,

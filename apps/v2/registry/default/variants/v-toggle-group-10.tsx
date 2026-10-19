@@ -1,3 +1,4 @@
+// title: Language picker with live code snippet preview
 // biome-ignore-all lint/suspicious/noTemplateCurlyInString:<>
 
 "use client";

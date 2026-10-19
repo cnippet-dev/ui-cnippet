@@ -1,3 +1,4 @@
+// title: Toggle with notification count badge
 "use client";
 
 import { BellIcon } from "lucide-react";

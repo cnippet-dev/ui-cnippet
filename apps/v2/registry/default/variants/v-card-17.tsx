@@ -1,3 +1,4 @@
+// title: Settings card with sidebar navigation and swappable content panels
 "use client";
 
 import { BellIcon, CreditCardIcon, ShieldIcon, UserIcon } from "lucide-react";

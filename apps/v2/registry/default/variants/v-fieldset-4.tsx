@@ -1,3 +1,4 @@
+// title: Notification preferences fieldset
 import {
   Field,
   FieldDescription,

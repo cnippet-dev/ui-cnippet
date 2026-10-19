@@ -1,3 +1,4 @@
+// title: Event Indicators
 "use client";
 
 import * as React from "react";

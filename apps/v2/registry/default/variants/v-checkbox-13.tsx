@@ -1,3 +1,4 @@
+// title: Notification preferences matrix with event rows and channel columns
 "use client";
 
 import { useId, useState } from "react";

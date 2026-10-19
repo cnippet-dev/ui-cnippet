@@ -1,3 +1,4 @@
+// title: With Close Button
 "use client";
 
 import { XIcon } from "lucide-react";

@@ -4,6 +4,7 @@
     "checkbox",
     "field",
     "fieldset",
+    "file-upload",
     "form",
     "input-group",
     "input",
@@ -12,7 +13,9 @@
     "number-field",
     "otp-field",
     "radio-group",
+    "rating",
     "slider",
+    "tag-input",
     "textarea"
   ],
   "title": "Forms"

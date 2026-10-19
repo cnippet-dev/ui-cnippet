@@ -1,3 +1,4 @@
+// title: Orders table with customer info and payment status
 import {
   Avatar,
   AvatarFallback,

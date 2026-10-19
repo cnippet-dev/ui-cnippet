@@ -1,3 +1,4 @@
+// title: 8-char invite code with separator
 import {
   Field,
   FieldDescription,

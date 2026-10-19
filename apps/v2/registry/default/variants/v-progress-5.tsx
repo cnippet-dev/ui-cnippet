@@ -1,3 +1,4 @@
+// title: Multi-step progress indicator
 import { CircleCheckIcon, CircleIcon } from "lucide-react";
 import { Progress } from "@/registry/default/ui/progress";
 

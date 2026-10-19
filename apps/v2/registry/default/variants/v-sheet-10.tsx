@@ -1,3 +1,4 @@
+// title: Issue Detail
 "use client";
 
 import {
@@ -55,25 +56,17 @@ const meta = [
   {
     icon: CircleDotIcon,
     label: "Status",
-    value: (
-      <Badge className="bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-400">
-        In Progress
-      </Badge>
-    ),
+    value: <Badge variant="warning">In Progress</Badge>,
   },
   {
     icon: FlagIcon,
     label: "Priority",
-    value: (
-      <Badge className="bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-400">
-        High
-      </Badge>
-    ),
+    value: <Badge variant="error">High</Badge>,
   },
   {
     icon: CalendarIcon,
     label: "Due date",
-    value: <span className="text-sm">Jun 15, 2025</span>,
+    value: <span className="text-sm">Nov 14, 2026</span>,
   },
   {
     icon: TagIcon,

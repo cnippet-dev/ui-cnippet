@@ -1,3 +1,4 @@
+// title: Invite team member
 "use client";
 
 import { type FormEvent, useState } from "react";

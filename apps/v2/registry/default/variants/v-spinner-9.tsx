@@ -1,13 +1,14 @@
+// title: Semantic color variants
 import { Spinner } from "@/registry/default/ui/spinner";
 
 export function Pattern() {
   return (
     <div className="flex items-center justify-center gap-4">
-      <Spinner className="size-4 text-blue-500" />
-      <Spinner className="size-4 text-green-500" />
-      <Spinner className="size-4 text-red-500" />
-      <Spinner className="size-4 text-yellow-500" />
-      <Spinner className="size-4 text-purple-500" />
+      <Spinner className="size-4 text-primary" />
+      <Spinner className="size-4 text-success" />
+      <Spinner className="size-4 text-destructive" />
+      <Spinner className="size-4 text-warning" />
+      <Spinner className="size-4 text-info" />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+// title: Stacked resource meters
 import {
   Meter,
   MeterIndicator,

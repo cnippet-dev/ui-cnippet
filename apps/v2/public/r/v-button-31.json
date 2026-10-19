@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-button-31",
+  "description": "Showcase: variants, sizes, icons and states",
+  "registryDependencies": [
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-button-31.tsx",
+      "content": "// title: Showcase: variants, sizes, icons and states\nimport {\n  ArrowRightIcon,\n  CloudDownloadIcon,\n  PlusIcon,\n  SearchIcon,\n  Trash2Icon,\n} from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nconst variants = [\n  \"default\",\n  \"outline\",\n  \"secondary\",\n  \"destructive\",\n  \"destructive-outline\",\n  \"ghost\",\n  \"link\",\n] as const;\n\nconst sizes = [\"xs\", \"sm\", \"default\", \"lg\", \"xl\"] as const;\n\nfunction Row({\n  label,\n  children,\n}: {\n  label: string;\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"grid gap-2 sm:grid-cols-[5rem_1fr] sm:items-center\">\n      <span className=\"text-muted-foreground text-xs\">{label}</span>\n      <div className=\"flex flex-wrap items-center gap-2\">{children}</div>\n    </div>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-2xl flex-col gap-4\">\n      <Row label=\"Variants\">\n        {variants.map((variant) => (\n          <Button className=\"capitalize\" key={variant} variant={variant}>\n            {variant.replace(\"-\", \" \")}\n          </Button>\n        ))}\n      </Row>\n      <Row label=\"Sizes\">\n        {sizes.map((size) => (\n          <Button key={size} size={size} variant=\"outline\">\n            {size === \"default\" ? \"Default\" : size.toUpperCase()}\n          </Button>\n        ))}\n      </Row>\n      <Row label=\"With icon\">\n        <Button>\n          <CloudDownloadIcon aria-hidden=\"true\" />\n          Download\n        </Button>\n        <Button variant=\"outline\">\n          <PlusIcon aria-hidden=\"true\" />\n          Add item\n        </Button>\n        <Button variant=\"destructive\">\n          <Trash2Icon aria-hidden=\"true\" />\n          Delete\n        </Button>\n        <Button variant=\"link\">\n          Learn more\n          <ArrowRightIcon aria-hidden=\"true\" />\n        </Button>\n      </Row>\n      <Row label=\"Icon only\">\n        <Button aria-label=\"Search\" size=\"icon\">\n          <SearchIcon aria-hidden=\"true\" />\n        </Button>\n        <Button aria-label=\"Add\" size=\"icon\" variant=\"outline\">\n          <PlusIcon aria-hidden=\"true\" />\n        </Button>\n        <Button aria-label=\"Delete\" size=\"icon\" variant=\"ghost\">\n          <Trash2Icon aria-hidden=\"true\" />\n        </Button>\n      </Row>\n      <Row label=\"States\">\n        <Button disabled>Disabled</Button>\n        <Button loading>Saving</Button>\n      </Row>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "button"
+  ],
+  "type": "registry:block"
+}

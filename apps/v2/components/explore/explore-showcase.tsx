@@ -12,6 +12,10 @@ export interface VariantEntry {
   category: string;
 }
 
+// Categories whose variants need the full row; two columns would leave each
+// one too narrow and force horizontal scrolling.
+const WIDE_CATEGORIES = new Set(["data table", "sidebar"]);
+
 const SECTIONS = [
   { id: "core", label: "Core" },
   { id: "text animations", label: "Text Animations" },
@@ -90,6 +94,8 @@ export function ExploreShowcase({
     }
     return v.category === resolvedCategory;
   });
+  // Search results mix categories, so they keep the two-column grid.
+  const wide = !query && WIDE_CATEGORIES.has(resolvedCategory);
 
   return (
     <div>
@@ -173,11 +179,10 @@ export function ExploreShowcase({
       </p>
 
       {/* Variant grid */}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className={cn("grid grid-cols-1 gap-4", !wide && "lg:grid-cols-2")}>
         {filtered.length > 0 ? (
           filtered.map((variant) => (
             <VariantCard
-              category={variant.category}
               description={variant.description}
               key={variant.name}
               name={variant.name}

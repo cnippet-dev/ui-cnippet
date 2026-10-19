@@ -1,3 +1,4 @@
+// title: Default
 import { Slider } from "@/registry/default/ui/slider";
 
 export default function Particle() {

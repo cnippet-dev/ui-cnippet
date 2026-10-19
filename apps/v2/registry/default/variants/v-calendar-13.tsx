@@ -1,5 +1,7 @@
+// title: Week Picker
 "use client";
 
+import { format } from "date-fns";
 import * as React from "react";
 import type { DateRange } from "react-day-picker";
 import { Calendar } from "@/registry/default/ui/calendar";
@@ -20,18 +22,10 @@ function isoWeekRange(date: Date): DateRange {
 function formatWeekLabel(range: DateRange): string {
   const { from, to } = range;
   if (!from || !to) return "";
-  const sameYear = from.getFullYear() === to.getFullYear();
-  const sameMonth = sameYear && from.getMonth() === to.getMonth();
-  const fromStr = from.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "short",
-  });
-  const toStr = to.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: sameMonth ? undefined : "short",
-    year: "numeric",
-  });
-  return `${fromStr} – ${toStr}`;
+  if (from.getFullYear() !== to.getFullYear()) {
+    return `${format(from, "MMM d, yyyy")} – ${format(to, "MMM d, yyyy")}`;
+  }
+  return `${format(from, "MMM d")} – ${format(to, "MMM d, yyyy")}`;
 }
 
 export default function Particle() {

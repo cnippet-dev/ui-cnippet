@@ -1,3 +1,4 @@
+// title: Delete account — danger zone confirmation
 "use client";
 
 import { TriangleAlertIcon } from "lucide-react";

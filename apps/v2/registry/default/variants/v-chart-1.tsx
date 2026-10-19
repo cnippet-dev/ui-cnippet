@@ -1,3 +1,4 @@
+// title: Multi-Series Bar Chart
 "use client";
 
 import { Bar, BarChart } from "recharts";

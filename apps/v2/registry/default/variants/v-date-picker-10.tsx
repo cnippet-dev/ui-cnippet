@@ -1,3 +1,4 @@
+// title: Task Deadline Reschedule
 "use client";
 
 import { addDays, format, isSameDay } from "date-fns";
@@ -20,9 +21,11 @@ const ASSIGNEES = [
 ];
 
 const ORIGINAL_DEADLINE = addDays(new Date(), 5);
+// Start with an unsaved reschedule so the preview shows the whole flow.
+const PROPOSED_DEADLINE = addDays(ORIGINAL_DEADLINE, 2);
 
 export default function Particle() {
-  const [deadline, setDeadline] = useState<Date>(ORIGINAL_DEADLINE);
+  const [deadline, setDeadline] = useState<Date>(PROPOSED_DEADLINE);
   const [pending, setPending] = useState<Date | undefined>();
   const [open, setOpen] = useState(false);
   const [saved, setSaved] = useState(false);

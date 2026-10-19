@@ -1,3 +1,4 @@
+// title: File Explorer
 import { FileIcon, FolderIcon } from "lucide-react";
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 

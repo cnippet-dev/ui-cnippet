@@ -1,3 +1,4 @@
+// title: Emoji picker
 "use client";
 
 import { SmileIcon } from "lucide-react";

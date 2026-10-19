@@ -1,3 +1,4 @@
+// title: Language picker with selection badges
 "use client";
 
 import { useState } from "react";

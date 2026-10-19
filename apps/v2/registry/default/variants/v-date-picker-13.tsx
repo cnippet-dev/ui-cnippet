@@ -1,3 +1,4 @@
+// title: Hotel Stay Range with Duration Shortcuts
 "use client";
 
 import { addDays, format } from "date-fns";

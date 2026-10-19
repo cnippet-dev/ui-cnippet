@@ -1,3 +1,4 @@
+// title: With Outline Toggles
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 import {
   ToggleGroup,

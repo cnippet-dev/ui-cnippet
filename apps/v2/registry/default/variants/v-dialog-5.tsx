@@ -1,3 +1,4 @@
+// title: Nested Dialogs
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,

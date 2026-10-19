@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-rating-4",
+  "description": "Ten-point survey ratings",
+  "registryDependencies": [
+    "@cnippet/rating",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/textarea",
+    "@cnippet/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-rating-4.tsx",
+      "content": "// title: Ten-point survey ratings\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Rating } from \"@/registry/default/ui/rating\";\n\nconst QUESTIONS = [\n  \"How easy was it to set up?\",\n  \"How fast did support reply?\",\n  \"How likely are you to renew?\",\n];\n\nexport default function Particle() {\n  const [scores, setScores] = useState<number[]>([4, 0, 0]);\n  const answered = scores.filter(Boolean).length;\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border p-5\">\n      <div className=\"flex items-baseline justify-between\">\n        <p className=\"font-medium text-sm\">Quarterly check-in</p>\n        <span className=\"text-muted-foreground text-xs tabular-nums\">\n          {answered} of {QUESTIONS.length} answered\n        </span>\n      </div>\n      {QUESTIONS.map((question, i) => (\n        <div className=\"flex flex-col gap-1.5\" key={question}>\n          <p className=\"text-sm\" id={`q-${i}`}>\n            {question}\n          </p>\n          <Rating\n            aria-labelledby={`q-${i}`}\n            max={10}\n            onValueChange={(value) =>\n              setScores((prev) => prev.map((s, j) => (j === i ? value : s)))\n            }\n            size=\"sm\"\n            value={scores[i]}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "rating"
+  ],
+  "type": "registry:block"
+}

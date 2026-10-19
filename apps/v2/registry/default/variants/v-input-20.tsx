@@ -1,3 +1,4 @@
+// title: Password strength with dynamic hint and icons
 "use client";
 
 import { AlertTriangleIcon, CircleCheckIcon, InfoIcon } from "lucide-react";
@@ -43,12 +44,12 @@ export function Pattern() {
       };
     if (metCount === 3)
       return {
-        color: "text-emerald-500",
+        color: "text-success-foreground",
         icon: <CircleCheckIcon className="size-3.5 shrink-0" />,
       };
     if (metCount === 2)
       return {
-        color: "text-amber-500",
+        color: "text-warning-foreground",
         icon: <AlertTriangleIcon className="size-3.5 shrink-0" />,
       };
     return {

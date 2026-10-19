@@ -1,3 +1,4 @@
+// title: Audit Log
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import {

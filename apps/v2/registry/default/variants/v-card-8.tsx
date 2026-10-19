@@ -1,3 +1,4 @@
+// title: With Image and Shadow Fade Effect
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -66,11 +67,10 @@ export function Pattern() {
           {/* Content */}
           <div className="absolute right-0 bottom-0 left-0 space-y-2 p-6">
             <h3 className="font-semibold text-2xl text-white">
-              Author Profile
+              Designing calm interfaces
             </h3>
             <p className="text-white">
-              Profile card showcasing the author’s avatar, name, and estimated
-              reading time for each post.
+              How we cut visual noise from the Acme dashboard. 6 min read.
             </p>
           </div>
         </div>

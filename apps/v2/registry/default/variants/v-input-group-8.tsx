@@ -1,3 +1,4 @@
+// title: With Button
 import { Button } from "@/registry/default/ui/button";
 import {
   InputGroup,

@@ -1,3 +1,4 @@
+// title: Read More Content Expander
 "use client";
 
 import { ChevronDownIcon } from "lucide-react";

@@ -1,0 +1,117 @@
+---
+title: Banner
+description: Full-width announcement bar for promos, maintenance notices, trial reminders and cookie consent, in neutral, primary and status tones. Copy-paste ready.
+---
+
+<ComponentPreview name="v-banner-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/banner
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install class-variance-authority lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="banner" title="components/ui/banner.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Banner,
+  BannerAction,
+  BannerClose,
+  BannerContent,
+  BannerDescription,
+  BannerTitle,
+} from "@/components/ui/banner"
+```
+
+```tsx
+const [open, setOpen] = useState(true)
+
+{open && (
+  <Banner variant="warning">
+    <WrenchIcon />
+    <BannerContent>
+      <BannerTitle>Scheduled maintenance</BannerTitle>
+      <BannerDescription>Sun, Oct 25 · 02:00–03:00 UTC.</BannerDescription>
+    </BannerContent>
+    <BannerClose onClick={() => setOpen(false)} />
+  </Banner>
+)}
+```
+
+## Anatomy
+
+```tsx
+<Banner>
+  <svg />                 {/* optional leading icon */}
+  <BannerContent>         {/* title and description, side by side when they fit */}
+    <BannerTitle />
+    <BannerDescription />
+  </BannerContent>
+  <BannerAction />        {/* buttons */}
+  <BannerClose />         {/* dismiss button */}
+</Banner>
+```
+
+## Good to know
+
+- Banner is for site-wide or page-wide messages that sit above the content. For a message about one form or section, use [Alert](/ui/feedback/alert); for something that comes and goes, use [Toast](/ui/feedback/toast).
+- The banner doesn't hide itself. `BannerClose` is a plain button, so you choose what dismissing means: for this visit (state), or for good (save it to a cookie or local storage).
+- It has no role by default. Add `role="status"` if it appears after the page loads and should be announced, or `role="region"` with an `aria-label` if users should be able to jump to it.
+- On narrow screens the actions wrap onto their own row.
+
+## API Reference
+
+### Banner
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "primary" \| "info" \| "success" \| "warning" \| "error"` | `"default"` | Colour tone |
+
+### BannerClose
+
+A `button` with `aria-label="Dismiss"` and an X icon. Pass children to replace the icon.
+
+## Examples
+
+### Tones
+
+<ComponentPreview name="v-banner-2" />
+
+### Cookie consent
+
+A bottom bar with two actions that goes away once the user picks one.
+
+<ComponentPreview name="v-banner-3" />

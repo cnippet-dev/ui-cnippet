@@ -1,3 +1,4 @@
+// title: Session timeout with stops
 "use client";
 
 import { useState } from "react";

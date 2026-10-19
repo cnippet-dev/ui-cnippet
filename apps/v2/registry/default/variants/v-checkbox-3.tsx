@@ -1,3 +1,4 @@
+// title: With Description
 import { useId } from "react";
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { Label } from "@/registry/default/ui/label";

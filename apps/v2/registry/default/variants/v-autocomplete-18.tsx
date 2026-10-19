@@ -1,3 +1,4 @@
+// title: Multi-select tag input with dismissible chip pills
 "use client";
 
 import { XIcon } from "lucide-react";

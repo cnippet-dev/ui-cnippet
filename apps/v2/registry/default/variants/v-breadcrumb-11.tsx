@@ -1,3 +1,4 @@
+// title: File path breadcrumb with folder and file icons in monospace
 import { FileIcon, FolderIcon } from "lucide-react";
 import { Fragment } from "react";
 import {
@@ -43,7 +44,7 @@ export function Pattern() {
             ))}
             <BreadcrumbItem>
               <BreadcrumbPage className="flex items-center gap-1 font-mono text-xs">
-                <current.icon className="size-3.5 shrink-0 text-sky-500" />
+                <current.icon className="size-3.5 shrink-0 text-info-foreground" />
                 {current.label}
               </BreadcrumbPage>
             </BreadcrumbItem>

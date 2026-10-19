@@ -1,3 +1,4 @@
+// title: GitHub repository preview
 import { GitForkIcon, StarIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -27,7 +28,7 @@ export default function Particle() {
               <span className="flex items-center gap-1">
                 <span
                   aria-hidden="true"
-                  className="size-2 rounded-full bg-blue-500"
+                  className="size-2 rounded-full bg-info"
                 />
                 TypeScript
               </span>

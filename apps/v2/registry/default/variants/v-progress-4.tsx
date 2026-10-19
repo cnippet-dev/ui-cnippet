@@ -1,3 +1,4 @@
+// title: With slider
 "use client";
 
 import { useState } from "react";

@@ -1,3 +1,4 @@
+// title: Task backlog list
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const statuses = ["To Do", "In Progress", "Done"] as const;
@@ -14,8 +15,8 @@ const cards: { id: number; title: string; tag: (typeof statuses)[number] }[] = [
 ];
 
 const tagColor: Record<(typeof statuses)[number], string> = {
-  Done: "bg-green-500/10 text-green-700 dark:text-green-400",
-  "In Progress": "bg-blue-500/10 text-blue-700 dark:text-blue-400",
+  Done: "bg-success/10 text-success-foreground",
+  "In Progress": "bg-info/10 text-info-foreground",
   "To Do": "bg-muted text-muted-foreground",
 };
 

@@ -1,3 +1,4 @@
+// title: 2FA authenticator app
 import { SmartphoneIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Field, FieldLabel } from "@/registry/default/ui/field";

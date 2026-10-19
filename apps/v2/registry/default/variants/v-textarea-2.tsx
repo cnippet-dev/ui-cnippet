@@ -1,3 +1,4 @@
+// title: Sizes
 import { Textarea } from "@/registry/default/ui/textarea";
 
 export default function Particle() {

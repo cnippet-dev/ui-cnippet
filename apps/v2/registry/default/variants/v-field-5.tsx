@@ -1,3 +1,4 @@
+// title: Field with validity state inspector
 "use client";
 
 import { Field, FieldLabel, FieldValidity } from "@/registry/default/ui/field";

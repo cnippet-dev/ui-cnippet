@@ -1,3 +1,4 @@
+// title: Profile strength checklist
 "use client";
 
 import {
@@ -37,7 +38,7 @@ export function Pattern() {
             key={label}
           >
             <span
-              className={`size-1.5 shrink-0 rounded-full ${done ? "bg-green-500" : "bg-muted-foreground/30"}`}
+              className={`size-1.5 shrink-0 rounded-full ${done ? "bg-success" : "bg-muted-foreground/30"}`}
             />
             {label}
           </li>

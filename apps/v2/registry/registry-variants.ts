@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { Registry } from "shadcn/schema";
 import type { RegistryCategory } from "./registry-categories";
 
@@ -11,6 +13,45 @@ function categories<T extends RegistryCategory[]>(...cats: T): T {
   return cats;
 }
 
+export type VariantRole = "demo" | "showcase";
+
+function range(from: number, to: number): number[] {
+  return Array.from({ length: to - from + 1 }, (_, i) => from + i);
+}
+
+// Single-prop API demos stay registered for docs and installs but are hidden
+// from Explore; the component's showcase variant stands in for them there.
+function variantRole(
+  n: number,
+  roles: { demos: number[]; showcase: number },
+): VariantRole | undefined {
+  if (n === roles.showcase) return "showcase";
+  if (roles.demos.includes(n)) return "demo";
+  return undefined;
+}
+
+const VARIANTS_DIR = join(process.cwd(), "registry/default/variants");
+const variantFiles = readdirSync(VARIANTS_DIR);
+
+// Each variant file starts with `// title: …`; returns `prefix-1…N` titles in
+// order and throws on a gap or a missing title so nothing shifts silently.
+function variantTitles(prefix: string): string[] {
+  const pattern = new RegExp(`^${prefix}-(\\d+)\\.tsx$`);
+  const numbers = variantFiles
+    .map((file) => Number(file.match(pattern)?.[1]))
+    .filter(Boolean)
+    .sort((a, b) => a - b);
+  return numbers.map((n, i) => {
+    const file = `${prefix}-${n}.tsx`;
+    if (n !== i + 1) throw new Error(`${file}: expected ${prefix}-${i + 1}`);
+    const title = readFileSync(join(VARIANTS_DIR, file), "utf-8").match(
+      /^\/\/ title: (.+)/,
+    )?.[1];
+    if (!title) throw new Error(`${file}: first line must be // title: …`);
+    return title.trim();
+  });
+}
+
 // Utility function to create variants
 function createVariant(options: {
   category: RegistryCategory;
@@ -18,12 +59,16 @@ function createVariant(options: {
   description?: string;
   dependencies?: string[];
   meta?: { className: string };
+  role?: VariantRole;
 }): ParticleItem {
   return {
     categories: categories(options.category),
     description: options.description ?? `Basic ${options.category}`,
     files: [{ path: `variants/${options.name}.tsx`, type: "registry:block" }],
-    meta: options.meta ?? { className: "" },
+    meta: {
+      ...(options.meta ?? { className: "" }),
+      ...(options.role && { role: options.role }),
+    },
     name: options.name,
     registryDependencies: (options.dependencies ?? []).map(
       (d) => `@cnippet/${d}`,
@@ -34,1471 +79,776 @@ function createVariant(options: {
 
 export const variants: ParticleItem[] = [
   // --- accordion ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-accordion").map((description, i) =>
     createVariant({
       category: "accordion",
       dependencies: ["accordion"],
-      description: [
-        "Default",
-        "Single Accordion",
-        "Multiple Accordion",
-        "Controlled Accordion",
-        "With plus/minus indicators",
-        "With borders and rounded corners",
-        "Embedded within a Card",
-        "Nested accordion example with bordered items",
-        "User list accordion with avatars and role indicators",
-        "Changelog / Release Notes with versioned entries",
-        "Searchable FAQ with live keyword filter",
-        "Settings sidebar navigation with icon sections",
-        "Job board listings with requirements and apply action",
-        "Onboarding step tracker with completion state",
-        "Product specifications table by category",
-      ][i],
+      description,
       meta: {
         className:
           "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[80%]",
       },
       name: `v-accordion-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
   // --- alert ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-alert").map((description, i) =>
     createVariant({
       category: "alert",
       dependencies: ["alert"],
-      description: [
-        "Default",
-        "With Icon",
-        "With Icon and Action Buttons",
-        "Info Alert",
-        "Success Alert",
-        "Warning Alert",
-        "Error Alert",
-        "Stacked alerts within a Frame",
-        "Alert with actions integrated within a Frame",
-        "Feature discovery alert",
-        "Dismissible announcement banner with CTA",
-        "Cookie consent banner with accept and decline",
-        "Storage limit warning with usage progress bar",
-        "Update available with async install feedback",
-        "Email verification with resend countdown",
-      ][i],
+      description,
       name: `v-alert-${i + 1}`,
     }),
   ),
 
   // --- alert-dialog ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-alert-dialog").map((description, i) =>
     createVariant({
       category: "alert dialog",
       dependencies: ["alert-dialog"],
-      description: [
-        "Default",
-        "Small Size Alert Dialog",
-        "Alert Dialog Within A Standard Dialog",
-        "Task Success Confirmation",
-        "Account Deactivation Confirmation",
-        "Warning For Unsaved Changes",
-        "Confirmation For Successful e-ticket Registration",
-        "System Update Notification",
-        "Billing Warning For Expired Subscriptions",
-        "Logout Confirmation Dialog",
-        "File Overwrite Confirmation with three-way choice",
-        "Subscription Downgrade Warning with feature loss list",
-        "Transfer Ownership with typed confirmation input",
-        "Clear All Data with checkbox consent gate",
-        "Rate Limit Exceeded with live countdown timer",
-      ][i],
+      description,
       name: `v-alert-dialog-${i + 1}`,
     }),
   ),
 
   // --- autocomplete ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...variantTitles("v-autocomplete").map((description, i) =>
     createVariant({
       category: "autocomplete",
       dependencies: ["autocomplete"],
-      description: [
-        "Default",
-        "Disabled",
-        "Sizes",
-        "With Label",
-        "Inline Autocomplete",
-        "Auto Highlight",
-        "With Clear Button",
-        "With Trigger and Clear Buttons",
-        "With Search Icon",
-        "Grouped Items",
-        "Limit Results",
-        "Async Search",
-        "Form Integration",
-        "Timezone Picker",
-        "Person Picker",
-        "Country picker with flag and ISO code",
-        "Repository picker with language and star count",
-        "Multi-select tag input with dismissible chip pills",
-        "Priority selector with icon and description",
-        "Tech stack picker grouped by category",
-      ][i],
+      description,
       name: `v-autocomplete-${i + 1}`,
+      // #18 fakes chips above the input; Combobox chips (#8, #13, #23) do it properly.
+      role: variantRole(i + 1, { demos: [...range(1, 9), 18], showcase: 21 }),
     }),
   ),
 
   // --- avatar ---
-  ...Array.from({ length: 21 }, (_, i) =>
+  ...variantTitles("v-avatar").map((description, i) =>
     createVariant({
       category: "avatar",
       dependencies: ["avatar"],
-      description: [
-        "Default",
-        "With Fallback",
-        "Different Sizes",
-        "Different Radius",
-        "Avatar Group",
-        "Avatar Group With Numeric Count",
-        "With Details and Badge",
-        "Avatar Social Proof With Text Label",
-        "Compact Social Proof With Initials",
-        "With Hover Effect",
-        "With Hover Effect & Tooltips",
-        "Avatar Inside An Empty State Example",
-        "With Loading State Demonstration",
-        "With Custom Badge",
-        "With Ring Animation",
-        "With Dropdown Menu",
-        "Team grid with online presence status dots",
-        "Pull request comment thread",
-        "Interactive assignee picker with selection state",
-        "Contributor leaderboard with rank and commit count",
-        "Profile card with stats and action buttons",
-      ][i],
+      description,
       name: `v-avatar-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 6), showcase: 22 }),
     }),
   ),
 
   // --- badge ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...variantTitles("v-badge").map((description, i) =>
     createVariant({
       category: "badge",
       dependencies: ["badge"],
-      description: [
-        "Default",
-        "Outline",
-        "Secondary",
-        "Destructive",
-        "Info",
-        "Success",
-        "Warning",
-        "Error",
-        "Size Variations",
-        "With Icon",
-        "With Link",
-        "With Count",
-        "Status dot indicators (Online, Busy, Away, Offline)",
-        "Release channel tags (Stable, Beta, Experimental, Deprecated)",
-        "Subscription plan tiers with pricing",
-        "Notification category badges with unread counts",
-        "Priority labels in a task list",
-      ][i],
+      description,
       name: `v-badge-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 12), showcase: 18 }),
+    }),
+  ),
+
+  // --- banner ---
+  ...variantTitles("v-banner").map((description, i) =>
+    createVariant({
+      category: "banner",
+      dependencies: ["banner", "button"],
+      description,
+      name: `v-banner-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- breadcrumb ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-breadcrumb").map((description, i) =>
     createVariant({
       category: "breadcrumb",
       dependencies: ["breadcrumb"],
-      description: [
-        "Default",
-        "With custom separator",
-        "With Dropdown Menu",
-        "With Next.js Link",
-        "With Icons For Each Item",
-        "With Avatar",
-        "Inside Card",
-        "Starting With Home Icon",
-        "Button-style",
-        "With Project, Sser and Document Info",
-        "File path breadcrumb with folder and file icons in monospace",
-        "Checkout step progress breadcrumb with numbered circles and navigation buttons",
-        "Admin hierarchy breadcrumb with colored icon badges per level",
-        "Page header breadcrumb with edit and share action buttons",
-        "Compact breadcrumb with ellipsis and hidden-items count badge",
-      ][i],
+      description,
       name: `v-breadcrumb-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 5), 8], showcase: 16 }),
     }),
   ),
 
   // --- button ---
-  ...Array.from({ length: 30 }, (_, i) =>
+  ...variantTitles("v-button").map((description, i) =>
     createVariant({
       category: "button",
       dependencies: ["button"],
-      description: [
-        "Default",
-        "Outline",
-        "Secondary",
-        "Destructive",
-        "Destructive Outline",
-        "Ghost",
-        "Link",
-        "Extra-small Size",
-        "Small Size",
-        "Large Size",
-        "Extra-large Size",
-        "Disabled",
-        "Icon",
-        "Button with an icon on the right",
-        "Button with an icon on the left",
-        "Outline button with an icon on the left",
-        "Ghost button with an icon on the right",
-        "Destructive button with an icon on the left",
-        "Link button with an icon on the right",
-        "Star button with count",
-        "Button with an unread badge",
-        "Button with icon, label, and shortcut keys",
-        "Icon-only copy button with feedback",
-        "Animated hamburger / close toggle button",
-        "Sliding Icon Button (Hover reveal)",
-        "Social login buttons with GitHub, Google, and email options",
-        "Loading and success state button with animated icon swap",
-        "File upload button with attachment preview and clear action",
-        "Split button with primary action and dropdown menu via Group",
-        "Segmented view toggle with list, table, and kanban options",
-      ][i],
+      description,
       name: `v-button-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 19), showcase: 31 }),
     }),
   ),
 
   // --- calendar ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...variantTitles("v-calendar").map((description, i) =>
     createVariant({
       category: "calendar",
       dependencies: ["calendar"],
-      description: [
-        "Default",
-        "Fallback Only",
-        "Different Sizes",
-        "Dropdown Navigation",
-        "Custom Select Dropdown",
-        "Custom Combobox Dropdown",
-        "Multiple Selection",
-        "Appointment Booking",
-        "Two-Month Range Picker",
-        "Event Indicators",
-        "Date Picker with Presets",
-        "Date of Birth",
-        "Week Picker",
-        undefined,
-        undefined,
-        "Habit tracker with completion indicators and monthly streak counter",
-        "Sprint planner with two-month range selection and duration stats",
-        "Time off request with leave type selector and range picker",
-        "Mini year view with all 12 months in a compact grid",
-        "Time slot booking with available/booked slot grid and confirmation",
-      ][i],
+      description,
       name: `v-calendar-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 6), showcase: 21 }),
     }),
   ),
 
   // --- card ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...variantTitles("v-card").map((description, i) =>
     createVariant({
       category: "card",
       dependencies: ["card"],
-      description: [
-        "Default",
-        "With Border",
-        "With Border Separation",
-        "With Link",
-        "With Dropdown Menu",
-        "With Image",
-        "With Image Scale Hover Effect",
-        "With Image and Shadow Fade Effect",
-        "With Stacked depth Effect",
-        "Login Form Card",
-        "Expandable Content Card",
-        "With Overflow Menu",
-        "With Header Badge & Actions",
-        "With Icon, Title and Link",
-        "With Header Label and Link",
-        "GitHub repository list cards with language, star, and fork counts",
-        "Settings card with sidebar navigation and swappable content panels",
-        "Pricing plan card with feature checklist and highlighted ring",
-        "Event card with date, time, location, attendee count, and RSVP button",
-        "Stats dashboard grid with four metric tiles and trend indicators",
-      ][i],
+      description,
       name: `v-card-${i + 1}`,
     }),
   ),
 
   // --- carousel ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-carousel").map((description, i) =>
     createVariant({
       category: "carousel",
       dependencies: ["carousel"],
-      description: [
-        "Default",
-        "Multiple Items",
-        "Custom Spacing",
-        "Vertical Orientation",
-        "Autoplay with Indicators",
-        "Testimonials",
-        "Product Showcase",
-        "Onboarding Steps",
-        "Team Members",
-        "Gallery with Thumbnails",
-        "Testimonial carousel with avatar, quote, and dot indicators",
-        "Pricing plan carousel with arrow navigation and highlighted active plan",
-        "Media gallery carousel with caption badge and progress dots",
-        "Changelog carousel with drag-free multi-slide and version tags",
-        "Feature highlight carousel with icon slides and Prev/Next controls",
-      ][i],
+      description,
       name: `v-carousel-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
   // --- chart ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-chart").map((description, i) =>
     createVariant({
       category: "chart",
       dependencies: ["chart"],
-      description: [
-        "Multi-Series Bar Chart",
-        "Area Chart",
-        "Bar Chart",
-        "Line Chart",
-        "Pie Chart",
-        "Radar Chart",
-        "Radial Bar Chart",
-        undefined,
-        undefined,
-        undefined,
-        "Stacked area chart with two revenue series and a Y-axis legend",
-        "Horizontal bar chart ranking traffic channels by session count",
-        "Donut chart with center label showing team headcount by department",
-        "Multi-series line chart comparing API response percentiles (p50/p90/p99)",
-        "Composed chart overlaying revenue bars with a growth-rate line on dual axes",
-      ][i],
+      description,
       name: `v-chart-${i + 1}`,
     }),
   ),
 
   // --- checkbox ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-checkbox").map((description, i) =>
     createVariant({
       category: "checkbox",
       dependencies: ["checkbox"],
-      description: [
-        "Default",
-        "Disabled",
-        "With Description",
-        "Card Style",
-        "Form Integration",
-        "Payment method card checkbox",
-        "Select All with Indeterminate State",
-        "Issue Label Picker",
-        "Notification Channel Selector",
-        "Multi-Consent Registration Gate",
-        "Weekly availability grid with checkboxes per day and time slot",
-        "Role permissions picker with colored badge per access level",
-        "Notification preferences matrix with event rows and channel columns",
-        "Plan add-on selector with dynamic price total as features are toggled",
-        "Sprint task checklist with priority badges and completion celebration",
-      ][i],
+      description,
       name: `v-checkbox-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
   // --- checkbox-group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-checkbox-group").map((description, i) =>
     createVariant({
       category: "checkbox group",
       dependencies: ["checkbox-group"],
-      description: [
-        "Default",
-        "With Disabled Item",
-        "Parent Checkbox",
-        "Nested Parent Checkbox",
-        "Form Integration",
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        "Two-level nested group for tech stack selection by frontend and backend category",
-        "Recurring schedule picker with weekday and weekend sub-groups and day count badge",
-        "Integration enablement list with card rows and a master enable-all parent checkbox",
-        "Data export selector with two section groups and an item count summary",
-        "Food preference picker with independent cuisine and dietary checkbox groups",
-      ][i],
+      description,
       name: `v-checkbox-group-${i + 1}`,
     }),
   ),
 
   // --- collapsible ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-collapsible").map((description, i) =>
     createVariant({
       category: "collapsible",
       dependencies: ["collapsible"],
-      description: [
-        "Default",
-        "Collapsible",
-        "Collapsible animated card",
-        "Collapsible card with bottom trigger",
-        "Collapsible form fields",
-        "Multi-level collapsible menu",
-        "Tree view with file actions",
-        "Read More Content Expander",
-        "CI/CD Build Step Log Viewer",
-        "Incident Status with Timeline",
-        "Accordion-style FAQ with single-open behavior and question count badge",
-        "Sidebar filter panel with collapsible groups, checkboxes, and active count",
-        "Package dependency list with version badges and expandable package names",
-        "Team directory with status dots, role labels, and per-team collapsible sections",
-        "Privacy policy card with accordion sections and single-panel-open behavior",
-      ][i],
+      description,
       name: `v-collapsible-${i + 1}`,
+      // #3 and #11 are FAQs (accordion's job); #4 duplicates card #11.
+      role: variantRole(i + 1, { demos: [1, 2, 3, 4, 11], showcase: 7 }),
+    }),
+  ),
+
+  // --- color-picker ---
+  ...variantTitles("v-color-picker").map((description, i) =>
+    createVariant({
+      category: "color picker",
+      dependencies: ["color-picker", "button", "popover"],
+      description,
+      name: `v-color-picker-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- combobox ---
-  ...Array.from({ length: 22 }, (_, i) =>
+  ...variantTitles("v-combobox").map((description, i) =>
     createVariant({
       category: "combobox",
       dependencies: ["combobox"],
-      description: [
-        "Default",
-        "Disabled",
-        "Sizes",
-        "With Label",
-        "Auto Highlight",
-        "With Clear Button",
-        "With Groups",
-        "Multiple Selection",
-        "With Search Icon",
-        "With Trigger Button",
-        "With Select Button",
-        "Form Integration",
-        "Form Integration - Multiple",
-        "Async Search",
-        "Rich Item Rendering",
-        "Controlled",
-        undefined,
-        "City picker with timezone and country code trailing metadata",
-        "Sprint selector with status badge and date range per item",
-        "Font picker grouped by category with live preview sentence",
-        "Timezone picker with UTC offset badge in trigger and region info below",
-        "Currency picker with symbol icon in trigger and code trailing each item",
-      ][i],
+      description,
       name: `v-combobox-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 13), 16], showcase: 23 }),
     }),
   ),
 
   // --- command ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-command").map((description, i) =>
     createVariant({
       category: "command",
       dependencies: ["command"],
-      description: [
-        "Default",
-        "Simple Command",
-        "Command With Groups",
-        "Command With File Search",
-        "User Search Command With Avatars",
-        "Action Palette With Keyboard Shortcuts",
-        "With Recent And Favorites Sections",
-        undefined,
-        undefined,
-        undefined,
-        "Account settings palette with grouped profile, preferences, and sign-out actions",
-        "Repository search palette showing issues, pull requests, branches, and files",
-        "Go-to-page palette with shortcut hints and arrow icon for unbound items",
-        "Appearance picker with theme and accent-color options and active check marks",
-        "Quick-open palette with page list, notification badges, and a keyboard footer",
-      ][i],
+      description,
       name: `v-command-${i + 1}`,
     }),
   ),
 
   // --- context-menu ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-context-menu").map((description, i) =>
     createVariant({
       category: "context menu",
       dependencies: ["menu"],
-      description: [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        "Bookmark list with per-item star toggle, open, copy, share, and delete actions",
-        "Rich-text editor with checkbox formatting and alignment submenu",
-        "File explorer rows with extension badge, rename, download, and delete per file",
-        "Social feed with upvote/downvote controls and a report submenu per post",
-        "Task board with inline status radio, priority submenu, reassign, and delete",
-      ][i],
+      description,
       name: `v-context-menu-${i + 1}`,
     }),
   ),
 
+  // --- data-table ---
+  ...variantTitles("v-data-table").map((description, i) =>
+    createVariant({
+      category: "data table",
+      dependencies: [
+        "data-table",
+        "badge",
+        "button",
+        "menu",
+        "avatar",
+        "progress",
+      ],
+      description,
+      meta: {
+        className:
+          "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+      },
+      name: `v-data-table-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 8 }),
+    }),
+  ),
+
   // --- date-picker ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-date-picker").map((description, i) =>
     createVariant({
       category: "date picker",
       dependencies: ["date-picker"],
-      description: [
-        "Default",
-        "Date Range",
-        "Dropdown Navigation",
-        "With Presets",
-        "With Input",
-        "Auto-close on Select",
-        "Appointment Booking",
-        "Team Meeting Scheduler",
-        "Delivery Date Selector",
-        "Task Deadline Reschedule",
-        "Report Period Range with Presets",
-        "Recurring Event Date Picker",
-        "Hotel Stay Range with Duration Shortcuts",
-        "Birthday Picker with Age Validation",
-        "Multi-date Availability Selector",
-      ][i],
+      description,
       name: `v-date-picker-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 2, 3, 6], showcase: 16 }),
     }),
   ),
 
   // --- dialog ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-dialog").map((description, i) =>
     createVariant({
       category: "dialog",
       dependencies: ["dialog"],
-      description: [
-        "Default",
-        "Open from a Menu",
-        "Dialog with Bare Footer",
-        "Dialog with scroll inside",
-        "Nested Dialogs",
-        "With Destructive Action",
-        "Cookie Preferences",
-        "Session Expired",
-        "Edit Profile with Avatar",
-        "Invite Team Members",
-        "Share Document with Link Copy",
-        "Two-Factor Authentication Setup",
-        "Subscription Cancellation with Reason",
-        "API Key Generation and Reveal",
-        "Product Feedback Star Rating",
-      ][i],
+      description,
       name: `v-dialog-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 3], showcase: 9 }),
     }),
   ),
 
   // --- drawer ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-drawer").map((description, i) =>
     createVariant({
       category: "drawer",
       dependencies: ["drawer"],
-      description: [
-        "Default",
-        "Multiple Positions — Inset",
-        "Multiple Positions — Straight",
-        "Multi-step Nested Drawers",
-        "Navigation Menu",
-        "Filter & Sort Panel",
-        "Shopping Cart",
-        "Notification Center",
-        undefined,
-        undefined,
-        "User Preferences & Theme Settings",
-        "File Attachments with Upload",
-        "Activity Log with Status Timeline",
-        "Help Center with FAQ Search",
-        "Quick Actions Grid",
-      ][i],
+      description,
       name: `v-drawer-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 2, 3], showcase: 7 }),
     }),
   ),
 
   // --- empty ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-empty").map((description, i) =>
     createVariant({
       category: "empty state",
       dependencies: [],
-      description: [
-        "Default",
-        "Search empty state",
-        "Empty state with search input",
-        "Empty state with add button",
-        "Dashed upload empty state",
-        "No automations empty state with toggle illustration",
-        "No products empty state with stacked cards and blur effect",
-        "No payments empty state with credit card illustration",
-        "No events empty state with calendar illustration",
-        "All caught up — no new notifications",
-        "No team members — invite form empty state",
-        "No matching results — clear filters empty state",
-        "Inbox zero — illustration with compose action",
-        "Access restricted — permission request empty state",
-      ][i],
+      description,
       name: `v-empty-${i + 1}`,
     }),
   ),
 
   // --- field ---
-  ...Array.from({ length: 22 }, (_, i) =>
+  ...variantTitles("v-field").map((description, i) =>
     createVariant({
       category: "field",
       dependencies: ["field"],
-      description: [
-        "Basic field with label and description",
-        "Required password field",
-        "Disabled field",
-        "Field with validation error",
-        "Field with validity state inspector",
-        "Field wrapping an input group",
-        "Field with autocomplete",
-        "Field with single-select combobox",
-        "Field with multi-select combobox chips",
-        "Field with textarea",
-        "Field with select dropdown",
-        "Field with checkbox",
-        "Field with checkbox group",
-        "Field with radio group",
-        "Field with slider",
-        "Field with number input",
-        "Complete multi-field form",
-        "Field with switch toggle",
-        "Field with date input",
-        "Field with OTP verification input",
-        "Field with file upload",
-        "Field with password strength indicator",
-      ][i],
+      description,
       name: `v-field-${i + 1}`,
+      // "Field with <X>" integrations stay in docs; #17 combines them.
+      role: variantRole(i + 1, {
+        demos: [...range(1, 16), 18, 19, 20],
+        showcase: 17,
+      }),
     }),
   ),
 
   // --- fieldset ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...variantTitles("v-fieldset").map((description, i) =>
     createVariant({
       category: "fieldset",
       dependencies: ["fieldset"],
-      description: [
-        "Billing details fieldset",
-        "Personal information fieldset",
-        "Shipping address fieldset",
-        "Notification preferences fieldset",
-        "Change password fieldset",
-        "Payment information fieldset",
-      ][i],
+      description,
       name: `v-fieldset-${i + 1}`,
     }),
   ),
 
+  // --- file-upload ---
+  ...variantTitles("v-file-upload").map((description, i) =>
+    createVariant({
+      category: "file upload",
+      dependencies: ["file-upload", "alert", "button", "input-group"],
+      description,
+      name: `v-file-upload-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 3 }),
+    }),
+  ),
+
   // --- form ---
-  ...Array.from({ length: 13 }, (_, i) =>
+  ...variantTitles("v-form").map((description, i) =>
     createVariant({
       category: "form",
       dependencies: ["form"],
-      description: [
-        "Default",
-        "Multi-field form with validation",
-        "Sign In",
-        "Profile Settings",
-        "Contact Form",
-        "Change Password",
-        "Newsletter Signup",
-        "3-Step Onboarding Wizard",
-        "Sign Up / Register",
-        "Feedback form with rating",
-        "Forgot password — reset email",
-        "Delete account — danger zone confirmation",
-        "Invite team member",
-      ][i],
+      description,
       name: `v-form-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 2], showcase: 9 }),
     }),
   ),
 
   // --- frame ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...variantTitles("v-frame").map((description, i) =>
     createVariant({
       category: "frame",
       dependencies: ["frame"],
-      description: [
-        "Default",
-        "Separated panels",
-        "With collapsible panel",
-        "Dense layout",
-        "With action button in header",
-        "Stats metrics display",
-        "With badge status indicator",
-        "Read-only key-value info",
-        "With footer CTA buttons",
-      ][i],
+      description,
       name: `v-frame-${i + 1}`,
     }),
   ),
 
   // --- group ---
-  ...Array.from({ length: 18 }, (_, i) =>
+  ...variantTitles("v-group").map((description, i) =>
     createVariant({
       category: "group",
       dependencies: ["group"],
-      description: [
-        "Default",
-        "With Input",
-        "Small Size",
-        "Large Size",
-        "With Disabled Button",
-        "With Default Buttons",
-        "With Start Labeled Text",
-        "With End Text",
-        "Vertical",
-        "Nested Groups",
-        "With Popup",
-        "With Input Group",
-        "With Menu",
-        "With Select",
-        "Text formatting toolbar",
-        "Thumbs up / down vote buttons",
-        "Media player controls",
-        "Price range input with apply button",
-        "Search with category filter select",
-      ][i],
+      description,
       name: `v-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 3, 4, 5], showcase: 19 }),
     }),
   ),
 
   // --- input ---
-  ...Array.from({ length: 25 }, (_, i) =>
+  ...variantTitles("v-input").map((description, i) =>
     createVariant({
       category: "input",
       dependencies: ["input"],
-      description: [
-        "Default",
-        "With Label",
-        "With Description",
-        "With Error Message",
-        "With Character Counter",
-        "With Password Type",
-        "With Phone Type",
-        "With URL Type",
-        "With Number Type",
-        "With Date Type",
-        "With File Type",
-        "With Required Indicator",
-        "With Time Type",
-        "With Multiple Fields",
-        "Input label with tooltip",
-        "With Badge",
-        "With Optional Badge",
-        "With Link and Visibility Toggle",
-        "With multiple error messages",
-        "Password strength with dynamic hint and icons",
-        "Disabled input with masked value",
-        "Readonly with copy-to-clipboard button",
-        "Input with inline start icon",
-        "Color picker input",
-        "Input with inline clear button",
-      ][i],
+      description,
       name: `v-input-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 10), 12], showcase: 26 }),
     }),
   ),
 
   // --- input-group ---
-  ...Array.from({ length: 21 }, (_, i) =>
+  ...variantTitles("v-input-group").map((description, i) =>
     createVariant({
       category: "input group",
       dependencies: ["input-group"],
-      description: [
-        "Default",
-        "With End Icon",
-        "With Start Text",
-        "With End Text",
-        "With Start and End Text",
-        "With Tooltip",
-        "With Icon Button",
-        "With Button",
-        "With Badge",
-        "With Keyboard Shortcut",
-        "With Inner Label",
-        "Sizes",
-        "Disabled",
-        "Loading",
-        "With Number Field",
-        "With Textarea",
-        "With currency select prefix",
-        "Newsletter subscribe with arrow button",
-        "With inline clear button",
-        "Chat input with async send",
-        "Textarea with character countdown",
-      ][i],
+      description,
       name: `v-input-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 10), showcase: 22 }),
     }),
   ),
 
   // --- kbd ---
-  ...Array.from({ length: 11 }, (_, i) =>
+  ...variantTitles("v-kbd").map((description, i) =>
     createVariant({
       category: "kbd",
       dependencies: ["kbd"],
-      description: [
-        "Default",
-        "Input group",
-        "Keys grouped together",
-        "With icons",
-        "In a tooltip",
-        "Reference list",
-        "Keyboard shortcut in button",
-        "Arrow key navigation display",
-        "Cross-platform Mac vs Win shortcut table",
-        "Shortcuts in menu items",
-        "Command palette result rows with navigation hints",
-      ][i],
+      description,
       name: `v-kbd-${i + 1}`,
     }),
   ),
 
   // --- label ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  // Each of 1–15 decorates a single field; the docs page explains them one by
+  // one, and Explore shows the showcase that combines them.
+  ...variantTitles("v-label").map((description, i) =>
     createVariant({
       category: "label",
       dependencies: ["label"],
-      description: [
-        "Default",
-        "With checkbox",
-        "With textarea field",
-        "With required indicator",
-        "With optional indicator",
-        "With tooltip info icon",
-        "With badge indicator",
-        "With character counter",
-        "With helper description text",
-        "With status indicator dot",
-        "With keyboard shortcut",
-        "With inline link",
-        "With icon prefix",
-        "Horizontal layout",
-        "With error state",
-      ][i],
+      description,
       name: `v-label-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 15), showcase: 16 }),
     }),
   ),
 
   // --- menu ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-menu").map((description, i) =>
     createVariant({
       category: "menu",
       dependencies: ["menu"],
-      description: [
-        "Default",
-        "Open on Hover",
-        "With Checkbox",
-        "With Switch",
-        "With Radio Group",
-        "With Link",
-        "With Group Label",
-        "Nested Menu",
-        "Close on Click",
-        "Open a Dialog",
-        "Account menu",
-        "File actions",
-        "Icon button trigger",
-        "Notification settings",
-        "Share with export sub-menu",
-      ][i],
+      description,
       name: `v-menu-${i + 1}`,
+      // #1 already combines groups, checkbox, radio, switch and submenus.
+      role: variantRole(i + 1, { demos: range(2, 9), showcase: 1 }),
     }),
   ),
 
   // --- meter ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-meter").map((description, i) =>
     createVariant({
       category: "meter",
       dependencies: ["meter"],
-      description: [
-        "Default",
-        "With Label",
-        "With Formatted Value",
-        "With Range",
-        "Stacked resource meters",
-        "Color-coded by severity",
-        "Storage breakdown with icons",
-        "Upload progress card",
-        "Profile strength checklist",
-      ][i],
+      description,
       name: `v-meter-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
+    }),
+  ),
+
+  // --- navigation-menu ---
+  ...variantTitles("v-navigation-menu").map((description, i) =>
+    createVariant({
+      category: "navigation menu",
+      dependencies: ["navigation-menu"],
+      description,
+      name: `v-navigation-menu-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- number-field ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-number-field").map((description, i) =>
     createVariant({
       category: "number field",
       dependencies: ["number-field"],
-      description: [
-        "Default",
-        "Sizes",
-        "Disabled",
-        "With External Label",
-        "With Scrub",
-        "With Range",
-        "With Formatted Value",
-        "With Step",
-        "Form Integration",
-        "Percentage with scrub",
-        "Shopping cart quantity row",
-        "Typography settings",
-        "Min/max budget range",
-        "Controlled with reset",
-      ][i],
+      description,
       name: `v-number-field-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 8), showcase: 16 }),
     }),
   ),
 
   // --- otp-field ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-otp-field").map((description, i) =>
     createVariant({
       category: "input otp",
       dependencies: ["otp-field"],
-      description: [
-        "Default",
-        "Large",
-        "With Separator",
-        "With Label",
-        "Custom sanitization",
-        "Auto Validation",
-        "Alphanumeric",
-        "Placeholder hints",
-        "Masked entry",
-        "Email verification card",
-        "2FA authenticator app",
-        "8-char invite code with separator",
-        "Success state on completion",
-        "Resend countdown timer",
-      ][i],
+      description,
       name: `v-otp-field-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 16 }),
     }),
   ),
 
   // --- pagination ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...variantTitles("v-pagination").map((description, i) =>
     createVariant({
       category: "pagination",
       dependencies: ["pagination"],
-      description: [
-        "Default",
-        "Without Labels",
-        "With Hover Effect",
-        "With Circle Buttons",
-        "With Go-To-Page Input",
-        "Numbered Pagination In Card",
-        "With Arrows Buttons",
-        "With Page Info On Center",
-        "With Page Info On Left",
-        "With Outline Style Buttons",
-        "With Page Select Dropdown And First/Last Navigation",
-        "Numbered Pagination With Go-To-Page Input",
-        "With Page Info, Numbered Pages, Ellipsis, and Per-Page Select",
-        "Mini pill",
-        "Older/newer cursor navigation",
-        "Controlled with smart ellipsis",
-        "Results summary with compact nav",
-        "Loading/disabled state",
-      ][i],
+      description,
       name: `v-pagination-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 4), showcase: 21 }),
     }),
   ),
 
   // --- popover ---
-  ...Array.from({ length: 20 }, (_, i) =>
+  ...variantTitles("v-popover").map((description, i) =>
     createVariant({
       category: "popover",
       dependencies: ["popover"],
-      description: [
-        "Default",
-        "With Close Button",
-        "Tooltip Style",
-        "Animated Popovers",
-        "Shared Popover with Multiple Triggers",
-        "Placement",
-        "User Profile Card",
-        "Timestamp Detail",
-        "Quick Settings",
-        "Feature Tour",
-        "Share Link",
-        "Accent Color Picker",
-        "Keyboard Shortcuts",
-        "Filter Panel",
-        "Set a Reminder",
-        "System Status",
-        "Emoji picker",
-        "Confirmation / delete",
-        "Inline tag editor",
-        "Notification panel",
-        "Inline text edit",
-      ][i],
+      description,
       name: `v-popover-${i + 1}`,
+      role: variantRole(i + 1, { demos: [5], showcase: 1 }),
     }),
   ),
 
   // --- preview-card ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-preview-card").map((description, i) =>
     createVariant({
       category: "preview card",
       dependencies: ["preview-card"],
-      description: [
-        "Default",
-        "User mention profile card",
-        "Article / blog post preview",
-        "Product card",
-        "GitHub-style issue preview",
-        "NPM package preview",
-      ][i],
+      description,
       name: `v-preview-card-${i + 1}`,
     }),
   ),
 
   // --- progress ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-progress").map((description, i) =>
     createVariant({
       category: "progress",
       dependencies: ["progress"],
-      description: [
-        "Default",
-        "With Formatted Value",
-        "With status messages",
-        "With slider",
-        "Multi-step progress indicator",
-        "With custom colors",
-        "Skills Meter",
-        "Multi-file Upload Queue",
-        "Monthly Budget Breakdown",
-        "API Usage with Tier Milestones",
-        "Survey completion counter",
-        "Download with speed stats",
-        "Fundraiser goal tracker",
-        "Reading progress bar",
-        "Build pipeline stages",
-      ][i],
+      description,
       name: `v-progress-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 2), showcase: 16 }),
     }),
   ),
 
   // --- radio-group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-radio-group").map((description, i) =>
     createVariant({
       category: "radio group",
       dependencies: ["radio-group"],
-      description: [
-        "Default",
-        "Disabled",
-        "With Description",
-        "Card Style",
-        "Colored Variants",
-        "With Legend",
-        "In Card With Description",
-        "In Card With Icons",
-        "Form Integration",
-        undefined,
-        "Horizontal Layout",
-        "Shipping Options",
-        "Theme Selector",
-        "Availability Status",
-        "Billing Frequency",
-      ][i],
+      description,
       name: `v-radio-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
+    }),
+  ),
+
+  // --- rating ---
+  ...variantTitles("v-rating").map((description, i) =>
+    createVariant({
+      category: "rating",
+      dependencies: ["rating", "button", "label", "textarea", "progress"],
+      description,
+      name: `v-rating-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
+    }),
+  ),
+
+  // --- resizable ---
+  ...variantTitles("v-resizable").map((description, i) =>
+    createVariant({
+      category: "resizable",
+      dependencies: ["resizable"],
+      description,
+      name: `v-resizable-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- scroll-area ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-scroll-area").map((description, i) =>
     createVariant({
       category: "scroll area",
       dependencies: ["scroll-area"],
-      ...(i >= 10 && {
-        description: [
-          "Chat Feed",
-          "Notification List",
-          "Sidebar Navigation",
-          "Activity Log",
-          "File Explorer",
-        ][i - 10],
-      }),
+      description,
       name: `v-scroll-area-${i + 1}`,
     }),
   ),
 
   // --- select ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-select").map((description, i) =>
     createVariant({
       category: "select",
       dependencies: ["select"],
-      ...(i >= 10 && {
-        description: [
-          "With Disabled Options",
-          "Country Selector with Groups",
-          "Controlled with External Display",
-          "Items with Description",
-          "Sort Order with Icons",
-        ][i - 10],
-      }),
+      description,
       name: `v-select-${i + 1}`,
     }),
   ),
 
   // --- separator ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-separator").map((description, i) =>
     createVariant({
       category: "separator",
       dependencies: ["separator"],
-      ...(i >= 10 && {
-        description: [
-          "Social Stats Bar",
-          "Section Heading with Line",
-          "Footer Links",
-          "Card Section Dividers",
-          "Toolbar with Separator Groups",
-        ][i - 10],
-      }),
+      description,
       name: `v-separator-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 2), showcase: 16 }),
     }),
   ),
 
   // --- sheet ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-sheet").map((description, i) =>
     createVariant({
       category: "sheet",
       dependencies: ["sheet"],
-      description: [
-        "Default",
-        "Sheet with Inset",
-        "Side Sheets",
-        "Scrollable Content",
-        "Shopping Cart",
-        "Notification Center",
-        "Team Invite",
-        "Activity Log",
-        "Navigation Menu",
-        "Issue Detail",
-        "Export Data Panel",
-        "User Profile Viewer",
-        "Support Contact Form",
-        "Keyboard Shortcuts Reference",
-        "API Key Manager",
-      ][i],
+      description,
       name: `v-sheet-${i + 1}`,
     }),
   ),
 
+  // --- sidebar ---
+  ...variantTitles("v-sidebar").map((description, i) =>
+    createVariant({
+      category: "sidebar",
+      dependencies: ["sidebar", "avatar", "collapsible", "label", "separator"],
+      description,
+      meta: {
+        className:
+          "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+      },
+      name: `v-sidebar-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
+    }),
+  ),
+
   // --- skeleton ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-skeleton").map((description, i) =>
     createVariant({
       category: "skeleton",
       dependencies: ["skeleton"],
-      description: [
-        "Default",
-        "Skeleton only",
-        "Card component",
-        "Dashboard stats row",
-        "List with actions",
-        "Blog Article",
-        "Data Table",
-        "Sidebar Dashboard Layout",
-        "Chat Thread",
-        "Settings Page",
-        "Product Grid",
-        "Form Fields",
-        "Email Inbox",
-        "Kanban Board",
-        "Profile Hero Page",
-      ][i],
+      description,
       name: `v-skeleton-${i + 1}`,
     }),
   ),
 
   // --- slider ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-slider").map((description, i) =>
     createVariant({
       category: "slider",
       dependencies: ["slider"],
-      description: [
-        "Default",
-        "With Label and Value",
-        "Disabled",
-        "With Reference Labels",
-        "With Tick Marks",
-        "With Dynamic Tooltip Indicator",
-        "Rating Slider With Emoji Feedback",
-        undefined,
-        undefined,
-        undefined,
-        "Volume Control With Mute Toggle",
-        "Dual-Thumb Price Range",
-        "Hue Color Picker",
-        "Temperature Control",
-        "Display Settings Sliders",
-      ][i],
+      description,
       name: `v-slider-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
+    }),
+  ),
+
+  // --- sortable ---
+  ...variantTitles("v-sortable").map((description, i) =>
+    createVariant({
+      category: "sortable",
+      dependencies: ["sortable", "avatar", "badge", "checkbox"],
+      description,
+      // The Kanban board needs the full preview width for three columns.
+      ...(i === 4 && {
+        meta: {
+          className:
+            "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]",
+        },
+      }),
+      name: `v-sortable-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- spinner ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-spinner").map((description, i) =>
     createVariant({
       category: "spinner",
       dependencies: ["spinner"],
-      description: [
-        "Default",
-        "Input Group",
-        "In buttons",
-        "Spinner in empty state",
-        "Overlay loading spinner",
-        "Full page loading state",
-        "Inline loading text with spinner",
-        "overlay on card",
-        "Color variants",
-        undefined,
-        "Page Transition Overlay",
-        "File Upload Progress",
-        "Table Row Loading State",
-        "Auth Form With Spinner",
-        "Spinner Sizes",
-      ][i],
+      description,
       name: `v-spinner-${i + 1}`,
+      role: variantRole(i + 1, { demos: [1, 9, 15], showcase: 16 }),
+    }),
+  ),
+
+  // --- stepper ---
+  ...variantTitles("v-stepper").map((description, i) =>
+    createVariant({
+      category: "stepper",
+      dependencies: ["stepper", "button", "badge"],
+      description,
+      name: `v-stepper-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- switch ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-switch").map((description, i) =>
     createVariant({
       category: "switch",
       dependencies: ["switch"],
-      description: [
-        "Default",
-        "Description",
-        "Switch in different sizes",
-        "Switch group",
-        "Switch list in card with icons",
-        "Destructive switch with confirmation text",
-        "Compact settings table with switches",
-        "Switch with descriptions in card grid",
-        "Cookie Preferences Manager",
-        "Notification Delivery Channels",
-        "Plan Feature Toggles",
-        "Privacy Settings With Icons",
-        "Dark Mode Toggle Card",
-        "Required Agreement Switch",
-        "Do Not Disturb Mode",
-      ][i],
+      description,
       name: `v-switch-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 3), showcase: 16 }),
     }),
   ),
 
   // --- table ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-table").map((description, i) =>
     createVariant({
       category: "table",
       dependencies: ["table"],
-      description: [
-        "Default",
-        "Card-style table",
-        "Table in CardFrame",
-        "Table in Frame",
-        "Orders table with customer info and payment status",
-        "Team members table with avatars, roles, and status",
-        "Subscriptions table with plan badges and billing info",
-        "Sortable API Endpoints",
-        "Storage Usage with Progress Bars",
-        "Audit Log",
-        "Product inventory with stock level badges and quantity",
-        "Invoice history with status badges and outstanding total",
-        "Feature comparison table with checkmarks across plan tiers",
-        "Server health monitoring with CPU and memory progress bars",
-        "Contributor leaderboard with rank, avatar, and change indicator",
-      ][i],
+      description,
       name: `v-table-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(2, 4), showcase: 1 }),
     }),
   ),
 
   // --- tabs ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...variantTitles("v-tabs").map((description, i) =>
     createVariant({
       category: "tabs",
       dependencies: ["tabs"],
-      description: [
-        "Default",
-        "Underline Variant",
-        "Vertical Orientation",
-        "Underline with Vertical Orientation",
-        "With Card and Input Element",
-        "Underline Style",
-        "Vertical Orientation",
-        "Underline and Vertical Orientation",
-        "With Icons",
-        "With Badge Counts",
-        "With Icons And Line Variant",
-        "Segmented Control Tabs",
-        "Settings navigation with vertical underline tabs and profile form",
-        "Code file viewer with per-file tabs and copy button",
-        "Profile repository listing with badge counts per tab",
-        "Pricing toggle between monthly and yearly billing with plan cards",
-        "Dashboard metrics with icon tabs and stat card content panels",
-      ][i],
+      description,
       name: `v-tabs-${i + 1}`,
+      role: variantRole(i + 1, { demos: [...range(1, 4), 6, 8], showcase: 18 }),
+    }),
+  ),
+
+  // --- tag-input ---
+  ...variantTitles("v-tag-input").map((description, i) =>
+    createVariant({
+      category: "tag input",
+      dependencies: ["tag-input", "button", "field", "label"],
+      description,
+      name: `v-tag-input-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- textarea ---
-  ...Array.from({ length: 12 }, (_, i) =>
+  ...variantTitles("v-textarea").map((description, i) =>
     createVariant({
       category: "textarea",
       dependencies: ["textarea"],
-      description: [
-        "Default",
-        "Sizes",
-        "Disabled",
-        "With Label",
-        "With Description",
-        "With Character Count",
-        "Form Integration",
-        "Auto-grow with live word and character count",
-        "Write / Preview markdown toggle",
-        "Support ticket with category chips and message field",
-        "Chat message composer with bubble thread and send on Enter",
-        "Release notes editor with title input and publish action",
-      ][i],
+      description,
       name: `v-textarea-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 7), showcase: 13 }),
+    }),
+  ),
+
+  // --- time-picker ---
+  ...variantTitles("v-time-picker").map((description, i) =>
+    createVariant({
+      category: "time picker",
+      dependencies: ["time-picker", "button", "label", "switch"],
+      description,
+      name: `v-time-picker-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
+    }),
+  ),
+
+  // --- timeline ---
+  ...variantTitles("v-timeline").map((description, i) =>
+    createVariant({
+      category: "timeline",
+      dependencies: ["timeline", "avatar", "badge"],
+      description,
+      name: `v-timeline-${i + 1}`,
+      role: variantRole(i + 1, { demos: [], showcase: 1 }),
     }),
   ),
 
   // --- toast ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-toast").map((description, i) =>
     createVariant({
       category: "toast",
       dependencies: ["toast"],
-      description: [
-        "Default",
-        "With Status",
-        "Loading",
-        "With Action",
-        "Promise",
-        "With Varying Heights",
-        "Submit Button with Error Toast",
-        "Staggered Notification Burst",
-        "Timeout Control",
-        "Auto-progressing Deploy Pipeline",
-        "Anchored clipboard copy with tooltip-style toast",
-        "Team invite with per-row undo action",
-        "Background CSV export with download action on complete",
-        "Session expiry warning with live countdown and renew action",
-        "Unsaved changes reminder with save and discard actions",
-      ][i],
+      description,
       name: `v-toast-${i + 1}`,
     }),
   ),
 
   // --- toggle ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-toggle").map((description, i) =>
     createVariant({
       category: "toggle",
       dependencies: ["toggle"],
-      description: [
-        "Default",
-        "Toggle buttons with outline variant",
-        "Toggle buttons in different sizes",
-        "Toggle with button and icon",
-        "Toggle with icon",
-        "Toggle with notification count badge",
-        "Toggle with icon swap on press",
-        "Toggle with text label that changes",
-        "Video Call Controls Bar",
-        "Role Filter Chips with Live Count",
-        "Bookmark toggle per article row with saved count",
-        "Rich-text formatting toolbar with markdown preview",
-        "Social post interactions with live like and repost counts",
-        "Server settings toggles with icon swap and status color",
-        "Task list with per-task priority flag toggles",
-      ][i],
+      description,
       name: `v-toggle-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 8), showcase: 16 }),
     }),
   ),
 
   // --- toggle-group ---
-  ...Array.from({ length: 15 }, (_, i) =>
+  ...variantTitles("v-toggle-group").map((description, i) =>
     createVariant({
       category: "toggle group",
       dependencies: ["toggle-group"],
-      description: [
-        "Default",
-        "Toggle groups in different sizes",
-        "With Outline Toggles",
-        "Vertical",
-        "Multiple selection",
-        "For text alignment",
-        "View mode switching",
-        "For color theme",
-        "For pricing tier",
-        "Language picker with live code snippet preview",
-        "Per-column sort direction control",
-        "Issue priority picker with color-coded labels",
-        "Date range quick-select with live stats grid",
-        "Code viewer toolbar with multi-select options",
-        "Zoom level control with live scale preview",
-      ][i],
+      description,
       name: `v-toggle-group-${i + 1}`,
+      role: variantRole(i + 1, { demos: range(1, 5), showcase: 16 }),
     }),
   ),
 
   // --- toolbar ---
-  ...Array.from({ length: 10 }, (_, i) =>
+  ...variantTitles("v-toolbar").map((description, i) =>
     createVariant({
       category: "toolbar",
       dependencies: ["toolbar"],
-      description: [
-        "Default",
-        "Rich text editor toolbar with formatting and alignment controls",
-        "Image editor toolbar with transform, zoom, and export actions",
-        "Data table toolbar with search input, filter controls, and add row",
-        "Code editor toolbar with language select, word wrap, copy, and run",
-        "Document collaboration toolbar with edit/preview toggle and share",
-      ][i],
+      description,
       name: `v-toolbar-${i + 1}`,
     }),
   ),
 
   // --- tooltip ---
-  ...Array.from({ length: 17 }, (_, i) =>
+  ...variantTitles("v-tooltip").map((description, i) =>
     createVariant({
       category: "tooltip",
       dependencies: ["tooltip"],
-      description: [
-        "Default",
-        "Grouped Tooltips",
-        "Animated Tooltips",
-        "Placement",
-        "Info Icon",
-        "Rich Tooltip",
-        "Keyboard Shortcut Toolbar",
-        "Avatar Stack",
-        "Trend Metrics",
-        "Color Palette Inspector",
-        "Copy to Clipboard",
-        "Feature Gate",
-        "Form field validation hints with info icon tooltips",
-        "System status dots revealing service name, uptime, and latency",
-        "Icon-only sidebar nav with label and description tooltips",
-        "Permissions matrix with role access details per cell",
-        "Deployment pipeline steps with status and detail per stage",
-      ][i],
+      description,
       name: `v-tooltip-${i + 1}`,
     }),
   ),

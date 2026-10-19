@@ -1,3 +1,4 @@
+// title: Async Search
 "use client";
 
 import { Loader2Icon, SearchIcon } from "lucide-react";

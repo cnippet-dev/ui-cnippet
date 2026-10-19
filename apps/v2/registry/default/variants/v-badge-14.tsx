@@ -1,3 +1,4 @@
+// title: Release channel tags (Stable, Beta, Experimental, Deprecated)
 import { Badge } from "@/registry/default/ui/badge";
 
 const channels = [

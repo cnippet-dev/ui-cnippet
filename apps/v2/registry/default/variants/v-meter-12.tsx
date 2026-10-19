@@ -1,3 +1,4 @@
+// title: Color-coded by severity
 import {
   Meter,
   MeterIndicator,
@@ -8,8 +9,8 @@ import {
 
 function indicatorColor(value: number) {
   if (value >= 80) return "bg-destructive";
-  if (value >= 50) return "bg-amber-500";
-  return "bg-green-500";
+  if (value >= 50) return "bg-warning";
+  return "bg-success";
 }
 
 const metrics = [

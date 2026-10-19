@@ -1,3 +1,4 @@
+// title: Inside Card
 import { HouseIcon } from "lucide-react";
 import {
   Breadcrumb,

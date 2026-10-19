@@ -1,3 +1,4 @@
+// title: Composed chart overlaying revenue bars with a growth-rate line on dual axes
 "use client";
 
 import {
@@ -74,7 +75,7 @@ export function Pattern() {
           dot={{ fill: "var(--color-growth)", r: 3 }}
           stroke="var(--color-growth)"
           strokeWidth={2}
-          type="monotone"
+          type="linear"
           yAxisId="right"
         />
       </ComposedChart>

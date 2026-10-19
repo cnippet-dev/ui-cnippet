@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-color-picker-2",
+  "description": "Colour picker in a popover behind a swatch button",
+  "registryDependencies": [
+    "@cnippet/color-picker",
+    "@cnippet/button",
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-color-picker-2.tsx",
+      "content": "// title: Colour picker in a popover behind a swatch button\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  ColorPicker,\n  ColorPickerArea,\n  ColorPickerHue,\n  ColorPickerInput,\n} from \"@/registry/default/ui/color-picker\";\nimport {\n  Popover,\n  PopoverPopup,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\";\n\nexport default function Particle() {\n  const [color, setColor] = useState(\"#14b8a6\");\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <p className=\"font-medium text-sm\">Accent colour</p>\n      <Popover>\n        <PopoverTrigger\n          render={<Button className=\"w-40 justify-start\" variant=\"outline\" />}\n        >\n          <span\n            className=\"size-4 rounded-sm shadow-[inset_0_0_0_1px_rgb(0_0_0/0.12)]\"\n            style={{ backgroundColor: color }}\n          />\n          <span className=\"font-mono\">{color}</span>\n        </PopoverTrigger>\n        <PopoverPopup className=\"w-64\">\n          <ColorPicker onValueChange={setColor} value={color}>\n            <ColorPickerArea />\n            <ColorPickerHue />\n            <ColorPickerInput />\n          </ColorPicker>\n        </PopoverPopup>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "color picker"
+  ],
+  "type": "registry:block"
+}

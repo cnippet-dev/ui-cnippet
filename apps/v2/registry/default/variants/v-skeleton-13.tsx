@@ -1,3 +1,4 @@
+// title: Email Inbox
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 const rows = [

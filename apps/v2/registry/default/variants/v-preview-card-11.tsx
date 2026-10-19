@@ -1,3 +1,4 @@
+// title: User mention profile card
 import { UserIcon } from "lucide-react";
 import {
   PreviewCard,

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-radio-group-16",
+  "description": "Showcase: simple, disabled and with descriptions",
+  "registryDependencies": [
+    "@cnippet/radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-radio-group-16.tsx",
+      "content": "// title: Showcase: simple, disabled and with descriptions\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Radio, RadioGroup } from \"@/registry/default/ui/radio-group\";\n\nconst plans = [\n  { description: \"For personal projects.\", label: \"Free\", value: \"free\" },\n  { description: \"For growing teams.\", label: \"Pro\", value: \"pro\" },\n  {\n    description: \"Contact sales to enable.\",\n    disabled: true,\n    label: \"Enterprise\",\n    value: \"enterprise\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"grid w-full max-w-md gap-6 sm:grid-cols-2\">\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">Simple</span>\n        <RadioGroup defaultValue=\"next\">\n          <Label>\n            <Radio value=\"next\" /> Next.js\n          </Label>\n          <Label>\n            <Radio value=\"vite\" /> Vite\n          </Label>\n          <Label>\n            <Radio disabled value=\"astro\" /> Astro (disabled)\n          </Label>\n        </RadioGroup>\n      </div>\n      <div className=\"flex flex-col gap-3\">\n        <span className=\"text-muted-foreground text-xs\">With description</span>\n        <RadioGroup defaultValue=\"pro\">\n          {plans.map((plan) => (\n            <div className=\"flex items-start gap-2\" key={plan.value}>\n              <Radio\n                disabled={plan.disabled}\n                id={`showcase-${plan.value}`}\n                value={plan.value}\n              />\n              <div className=\"flex flex-col gap-1\">\n                <Label htmlFor={`showcase-${plan.value}`}>{plan.label}</Label>\n                <p className=\"text-muted-foreground text-xs\">\n                  {plan.description}\n                </p>\n              </div>\n            </div>\n          ))}\n        </RadioGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "radio group"
+  ],
+  "type": "registry:block"
+}

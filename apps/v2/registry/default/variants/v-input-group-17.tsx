@@ -1,3 +1,4 @@
+// title: With currency select prefix
 import {
   InputGroup,
   InputGroupAddon,

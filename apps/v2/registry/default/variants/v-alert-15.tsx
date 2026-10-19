@@ -1,3 +1,4 @@
+// title: Email verification with resend countdown
 "use client";
 
 import { MailIcon } from "lucide-react";

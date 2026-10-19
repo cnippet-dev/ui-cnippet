@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-banner-3",
+  "description": "Cookie consent bar with two actions",
+  "registryDependencies": [
+    "@cnippet/banner",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-banner-3.tsx",
+      "content": "// title: Cookie consent bar with two actions\n\"use client\";\n\nimport { CookieIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Banner,\n  BannerAction,\n  BannerContent,\n  BannerDescription,\n} from \"@/registry/default/ui/banner\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  const [choice, setChoice] = useState<string | null>(null);\n\n  return (\n    <div className=\"w-full max-w-2xl overflow-hidden rounded-xl border\">\n      <div className=\"flex min-h-32 items-center justify-center p-6 text-muted-foreground text-sm\">\n        {choice ? `Saved: ${choice}.` : \"Page content\"}\n      </div>\n      {!choice && (\n        <Banner className=\"border-t border-b-0\">\n          <CookieIcon aria-hidden=\"true\" />\n          <BannerContent>\n            <BannerDescription className=\"text-foreground\">\n              We use cookies for analytics. You can change this any time in\n              settings.\n            </BannerDescription>\n          </BannerContent>\n          <BannerAction className=\"max-sm:w-full max-sm:*:flex-1\">\n            <Button\n              onClick={() => setChoice(\"essential cookies only\")}\n              size=\"sm\"\n              variant=\"outline\"\n            >\n              Essential only\n            </Button>\n            <Button onClick={() => setChoice(\"all cookies\")} size=\"sm\">\n              Accept all\n            </Button>\n          </BannerAction>\n        </Banner>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "banner"
+  ],
+  "type": "registry:block"
+}

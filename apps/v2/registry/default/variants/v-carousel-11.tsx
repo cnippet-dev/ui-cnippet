@@ -1,3 +1,4 @@
+// title: Testimonial carousel with avatar, quote, and dot indicators
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 

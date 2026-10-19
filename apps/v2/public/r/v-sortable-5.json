@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sortable-5",
+  "description": "Kanban board with cross-column moves",
+  "registryDependencies": [
+    "@cnippet/sortable",
+    "@cnippet/avatar",
+    "@cnippet/badge",
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sortable-5.tsx",
+      "content": "// title: Kanban board with cross-column moves\n\"use client\";\n\nimport {\n  closestCorners,\n  DndContext,\n  type DragOverEvent,\n  type UniqueIdentifier,\n  useDroppable,\n} from \"@dnd-kit/core\";\nimport {\n  SortableContext,\n  verticalListSortingStrategy,\n} from \"@dnd-kit/sortable\";\nimport { useState } from \"react\";\nimport { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\nimport {\n  arrayMove,\n  SortableItem,\n  useSortableSensors,\n} from \"@/registry/default/ui/sortable\";\n\ntype Card = { id: string; title: string; owner: string };\ntype ColumnId = \"todo\" | \"doing\" | \"done\";\n\nconst COLUMNS: { id: ColumnId; title: string }[] = [\n  { id: \"todo\", title: \"To do\" },\n  { id: \"doing\", title: \"In progress\" },\n  { id: \"done\", title: \"Done\" },\n];\n\nconst initial: Record<ColumnId, Card[]> = {\n  doing: [\n    { id: \"c3\", owner: \"JL\", title: \"Stepper keyboard support\" },\n    { id: \"c4\", owner: \"MP\", title: \"Tag Input docs\" },\n  ],\n  done: [{ id: \"c5\", owner: \"SK\", title: \"File Upload dropzone\" }],\n  todo: [\n    { id: \"c1\", owner: \"MP\", title: \"Color picker spike\" },\n    { id: \"c2\", owner: \"SK\", title: \"Audit chart tokens\" },\n  ],\n};\n\nfunction findColumn(\n  board: Record<ColumnId, Card[]>,\n  id: UniqueIdentifier,\n): ColumnId | undefined {\n  if (id in board) return id as ColumnId;\n  return COLUMNS.find((c) => board[c.id].some((card) => card.id === id))?.id;\n}\n\nfunction Column({\n  id,\n  title,\n  cards,\n}: {\n  id: ColumnId;\n  title: string;\n  cards: Card[];\n}) {\n  // Lets cards drop into an empty column.\n  const { setNodeRef } = useDroppable({ id });\n  return (\n    <div className=\"flex min-w-0 flex-col gap-2 rounded-xl bg-muted/40 p-2\">\n      <p className=\"flex items-center justify-between px-1 font-medium text-xs\">\n        {title}\n        <span className=\"text-muted-foreground tabular-nums\">\n          {cards.length}\n        </span>\n      </p>\n      <SortableContext\n        id={id}\n        items={cards.map((c) => c.id)}\n        strategy={verticalListSortingStrategy}\n      >\n        <div className=\"flex min-h-24 flex-col gap-2\" ref={setNodeRef}>\n          {cards.map((card) => (\n            <SortableItem\n              asHandle\n              className=\"flex flex-col gap-2 rounded-lg border bg-background p-2.5 text-sm\"\n              key={card.id}\n              value={card.id}\n            >\n              {card.title}\n              <Avatar className=\"size-5 self-end\">\n                <AvatarFallback className=\"text-[10px]\">\n                  {card.owner}\n                </AvatarFallback>\n              </Avatar>\n            </SortableItem>\n          ))}\n        </div>\n      </SortableContext>\n    </div>\n  );\n}\n\nexport default function Particle() {\n  const [board, setBoard] = useState(initial);\n  const sensors = useSortableSensors();\n\n  // Moves the card into whichever column or card it's over, live while dragging.\n  const handleDragOver = ({ active, over }: DragOverEvent) => {\n    if (!over) return;\n    const from = findColumn(board, active.id);\n    const to = findColumn(board, over.id);\n    if (!from || !to) return;\n\n    setBoard((prev) => {\n      const source = prev[from];\n      const target = prev[to];\n      const fromIndex = source.findIndex((c) => c.id === active.id);\n      const card = source[fromIndex];\n      if (!card) return prev;\n\n      if (from === to) {\n        const toIndex = target.findIndex((c) => c.id === over.id);\n        if (toIndex === -1 || toIndex === fromIndex) return prev;\n        return { ...prev, [to]: arrayMove(target, fromIndex, toIndex) };\n      }\n\n      const overIndex = target.findIndex((c) => c.id === over.id);\n      const insertAt = overIndex === -1 ? target.length : overIndex;\n      return {\n        ...prev,\n        [from]: source.filter((c) => c.id !== active.id),\n        [to]: [...target.slice(0, insertAt), card, ...target.slice(insertAt)],\n      };\n    });\n  };\n\n  return (\n    <DndContext\n      collisionDetection={closestCorners}\n      onDragOver={handleDragOver}\n      sensors={sensors}\n    >\n      <div className=\"grid w-full max-w-2xl grid-cols-3 gap-2 max-sm:grid-cols-1\">\n        {COLUMNS.map((col) => (\n          <Column\n            cards={board[col.id]}\n            id={col.id}\n            key={col.id}\n            title={col.title}\n          />\n        ))}\n      </div>\n    </DndContext>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "**:data-[slot=preview]:w-full sm:**:data-[slot=preview]:max-w-[90%]"
+  },
+  "categories": [
+    "sortable"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Feature comparison table with checkmarks across plan tiers
 import { CheckIcon, MinusIcon } from "lucide-react";
 import {
   Table,
@@ -36,7 +37,7 @@ function FeatureCell({ value }: { value: boolean | string }) {
     return <span className="text-muted-foreground text-sm">{value}</span>;
   }
   return value ? (
-    <CheckIcon className="size-4 text-emerald-500" />
+    <CheckIcon className="size-4 text-success-foreground" />
   ) : (
     <MinusIcon className="size-4 text-muted-foreground/40" />
   );

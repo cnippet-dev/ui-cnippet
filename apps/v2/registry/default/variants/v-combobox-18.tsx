@@ -1,3 +1,4 @@
+// title: City picker with timezone and country code trailing metadata
 "use client";
 
 import { MapPinIcon } from "lucide-react";
