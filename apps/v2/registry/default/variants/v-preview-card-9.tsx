@@ -1,3 +1,4 @@
+// title: Product preview with add to cart
 import { ShoppingCartIcon, StarIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

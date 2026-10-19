@@ -1,3 +1,4 @@
+// title: Cookie consent banner with accept and decline
 "use client";
 
 import { CookieIcon } from "lucide-react";

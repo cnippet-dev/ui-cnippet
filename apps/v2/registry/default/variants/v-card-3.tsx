@@ -1,3 +1,4 @@
+// title: With Border Separation
 import { Button } from "@/registry/default/ui/button";
 import {
   Card,

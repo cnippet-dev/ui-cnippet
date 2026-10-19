@@ -1,3 +1,4 @@
+// title: Toggle with button and icon
 import { BoldIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Toggle } from "@/registry/default/ui/toggle";

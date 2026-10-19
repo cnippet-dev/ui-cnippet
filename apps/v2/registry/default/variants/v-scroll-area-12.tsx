@@ -1,3 +1,4 @@
+// title: Notification List
 import {
   BellIcon,
   CheckCheckIcon,

@@ -1,3 +1,4 @@
+// title: Field with password strength indicator
 "use client";
 
 import { Field, FieldLabel, FieldValidity } from "@/registry/default/ui/field";

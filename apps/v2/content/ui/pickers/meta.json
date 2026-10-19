@@ -1,4 +1,12 @@
 {
-  "pages": ["autocomplete", "calendar", "combobox", "date-picker", "select"],
+  "pages": [
+    "autocomplete",
+    "calendar",
+    "color-picker",
+    "combobox",
+    "date-picker",
+    "select",
+    "time-picker"
+  ],
   "title": "Pickers"
 }

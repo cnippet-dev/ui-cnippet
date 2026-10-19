@@ -1,3 +1,4 @@
+// title: Currency picker with symbol icon in trigger and code trailing each item
 "use client";
 
 import { ChevronsUpDownIcon } from "lucide-react";

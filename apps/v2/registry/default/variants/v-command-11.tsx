@@ -1,3 +1,4 @@
+// title: Account settings palette with grouped profile, preferences, and sign-out actions
 "use client";
 
 import {

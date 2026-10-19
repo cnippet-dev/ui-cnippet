@@ -1,3 +1,4 @@
+// title: For text alignment
 import {
   AlignCenterIcon,
   AlignLeftIcon,

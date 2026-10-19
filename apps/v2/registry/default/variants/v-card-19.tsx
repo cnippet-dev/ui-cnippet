@@ -1,3 +1,4 @@
+// title: Event card with date, time, location, attendee count, and RSVP button
 import { CalendarIcon, ClockIcon, MapPinIcon, UsersIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -39,7 +40,7 @@ export function Pattern() {
           <span className="flex items-center gap-2">
             <UsersIcon className="size-3.5 shrink-0" />
             {event.attendees} attending ·{" "}
-            <span className="text-amber-600 dark:text-amber-400">
+            <span className="text-warning-foreground">
               {event.spots} spots left
             </span>
           </span>

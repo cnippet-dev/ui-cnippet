@@ -1,3 +1,4 @@
+// title: Quick-open palette with page list, notification badges, and a keyboard footer
 "use client";
 
 import {

@@ -1,23 +1,21 @@
-import { Badge } from "@/registry/default/ui/badge";
+// title: Status dot indicators (Online, Busy, Away, Offline)
+import { Badge, type BadgeProps } from "@/registry/default/ui/badge";
 
 type Status = {
   label: string;
   dotClass: string;
-  variant:
-    | "default"
-    | "outline"
-    | "secondary"
-    | "success"
-    | "warning"
-    | "destructive"
-    | "info";
+  variant: BadgeProps["variant"];
 };
 
 const statuses: Status[] = [
-  { dotClass: "bg-emerald-500", label: "Online", variant: "success" },
-  { dotClass: "bg-red-500", label: "Busy", variant: "destructive" },
-  { dotClass: "bg-yellow-400", label: "Away", variant: "warning" },
-  { dotClass: "bg-slate-400", label: "Offline", variant: "secondary" },
+  { dotClass: "bg-success", label: "Online", variant: "success" },
+  { dotClass: "bg-destructive", label: "Busy", variant: "error" },
+  { dotClass: "bg-warning", label: "Away", variant: "warning" },
+  {
+    dotClass: "bg-muted-foreground/48",
+    label: "Offline",
+    variant: "secondary",
+  },
 ];
 
 export default function Particle() {

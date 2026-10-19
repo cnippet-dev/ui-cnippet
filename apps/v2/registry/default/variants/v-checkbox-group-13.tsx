@@ -1,3 +1,4 @@
+// title: Integration enablement list with card rows and a master enable-all parent checkbox
 "use client";
 
 import { useState } from "react";

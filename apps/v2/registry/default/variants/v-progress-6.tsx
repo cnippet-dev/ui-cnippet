@@ -1,3 +1,4 @@
+// title: With custom colors
 "use client";
 
 import { useEffect, useState } from "react";

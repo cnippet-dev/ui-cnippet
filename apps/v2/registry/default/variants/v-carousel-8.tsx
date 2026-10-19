@@ -1,3 +1,4 @@
+// title: Onboarding Steps
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 

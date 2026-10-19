@@ -1,3 +1,4 @@
+// title: Stock ticker preview with sparkline and key stats
 import { TrendingUpIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import {

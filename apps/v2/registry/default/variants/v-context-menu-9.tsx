@@ -1,3 +1,4 @@
+// title: Canvas layers opening on each side
 import {
   ArrowDownIcon,
   ArrowUpIcon,

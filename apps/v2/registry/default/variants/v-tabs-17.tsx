@@ -1,3 +1,4 @@
+// title: Dashboard metrics with icon tabs and stat card content panels
 import {
   ActivityIcon,
   DownloadIcon,
@@ -66,7 +67,7 @@ export function Pattern() {
                   <p className="text-muted-foreground text-xs">{m.label}</p>
                   <p className="mt-1 font-bold text-xl">{m.value}</p>
                   <p
-                    className={`mt-0.5 text-xs ${m.positive ? "text-emerald-500" : "text-red-500"}`}
+                    className={`mt-0.5 text-xs ${m.positive ? "text-success-foreground" : "text-destructive-foreground"}`}
                   >
                     {m.change} vs last month
                   </p>

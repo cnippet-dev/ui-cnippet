@@ -1,3 +1,4 @@
+// title: Blog Article
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 export function Pattern() {

@@ -1,3 +1,4 @@
+// title: With Fallback
 import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
 
 export default function Particle() {

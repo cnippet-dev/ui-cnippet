@@ -1,3 +1,4 @@
+// title: Showcase: default, underline and vertical
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
 
 const tabs = [

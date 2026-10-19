@@ -1,3 +1,4 @@
+// title: Session expiry warning with live countdown and renew action
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";

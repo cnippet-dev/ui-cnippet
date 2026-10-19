@@ -1,3 +1,4 @@
+// title: Kanban Board
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 const columns = [

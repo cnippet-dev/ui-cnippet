@@ -1,3 +1,4 @@
+// title: Card-style table
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Table,
@@ -27,7 +28,7 @@ export default function Particle() {
             <Badge variant="outline">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-emerald-500"
+                className="size-1.5 rounded-full bg-success"
               />
               Paid
             </Badge>
@@ -55,7 +56,7 @@ export default function Particle() {
             <Badge variant="outline">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-amber-500"
+                className="size-1.5 rounded-full bg-warning"
               />
               Pending
             </Badge>
@@ -69,7 +70,7 @@ export default function Particle() {
             <Badge variant="outline">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-emerald-500"
+                className="size-1.5 rounded-full bg-success"
               />
               Paid
             </Badge>
@@ -83,7 +84,7 @@ export default function Particle() {
             <Badge variant="outline">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-emerald-500"
+                className="size-1.5 rounded-full bg-success"
               />
               Paid
             </Badge>
@@ -97,7 +98,7 @@ export default function Particle() {
             <Badge variant="outline">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-red-500"
+                className="size-1.5 rounded-full bg-destructive"
               />
               Failed
             </Badge>

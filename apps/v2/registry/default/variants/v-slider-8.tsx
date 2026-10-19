@@ -1,3 +1,4 @@
+// title: Price range with labels
 "use client";
 
 import { useState } from "react";

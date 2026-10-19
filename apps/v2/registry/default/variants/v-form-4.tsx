@@ -1,3 +1,4 @@
+// title: Profile Settings
 "use client";
 
 import { type FormEvent, useState } from "react";

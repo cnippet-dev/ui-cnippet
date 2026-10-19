@@ -1,3 +1,4 @@
+// title: System Update Notification
 import { ShieldAlertIcon } from "lucide-react";
 import {
   AlertDialog,

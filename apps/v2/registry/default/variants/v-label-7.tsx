@@ -1,3 +1,4 @@
+// title: With badge indicator
 import { Badge } from "@/registry/default/ui/badge";
 
 import { Field } from "@/registry/default/ui/field";

@@ -1,3 +1,4 @@
+// title: Mini pill
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   Pagination,

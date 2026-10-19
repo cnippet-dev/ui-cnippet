@@ -1,3 +1,4 @@
+// title: Account menu
 import {
   CreditCardIcon,
   LogOutIcon,

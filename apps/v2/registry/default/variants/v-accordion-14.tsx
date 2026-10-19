@@ -1,3 +1,4 @@
+// title: Onboarding step tracker with completion state
 "use client";
 
 import { CheckIcon } from "lucide-react";
@@ -66,9 +67,7 @@ export function Pattern() {
           return (
             <AccordionItem
               className={`rounded-lg border px-4 last:border-b ${
-                done
-                  ? "border-emerald-200 bg-emerald-50/50 dark:border-emerald-900 dark:bg-emerald-950/30"
-                  : ""
+                done ? "border-success/24 bg-success/8 dark:bg-success/16" : ""
               }`}
               key={step.value}
               value={step.value}
@@ -78,7 +77,7 @@ export function Pattern() {
                   <div
                     className={`flex size-6 shrink-0 items-center justify-center rounded-full font-semibold text-xs ${
                       done
-                        ? "bg-emerald-500 text-white"
+                        ? "bg-success text-white"
                         : "border-2 bg-background text-muted-foreground"
                     }`}
                   >

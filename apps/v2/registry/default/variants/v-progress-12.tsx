@@ -1,3 +1,4 @@
+// title: Download with speed stats
 "use client";
 
 import { DownloadIcon } from "lucide-react";

@@ -1,3 +1,4 @@
+// title: Spinner Sizes
 import { Spinner } from "@/registry/default/ui/spinner";
 
 const sizes = [

@@ -1,3 +1,4 @@
+// title: Animated hamburger / close toggle button
 "use client";
 
 import { MenuIcon, XIcon } from "lucide-react";

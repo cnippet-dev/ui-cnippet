@@ -1,3 +1,4 @@
+// title: Warning For Unsaved Changes
 import { CardSimIcon } from "lucide-react";
 import {
   AlertDialog,
@@ -23,7 +24,7 @@ export function Pattern() {
         <Frame className="p-px">
           <FramePanel className="p-0">
             <div className="flex items-start gap-3 p-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-amber-100 bg-amber-50 text-amber-500 dark:bg-amber-950 dark:text-amber-300">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-warning/24 bg-warning/8 text-warning-foreground dark:bg-warning/16">
                 <CardSimIcon className="size-5" />
               </div>
               <div className="flex flex-col justify-center gap-1">

@@ -1,3 +1,4 @@
+// title: Changelog carousel with drag-free multi-slide and version tags
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 

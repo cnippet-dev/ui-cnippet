@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-stepper-2",
+  "description": "Vertical onboarding checklist",
+  "registryDependencies": [
+    "@cnippet/stepper",
+    "@cnippet/button",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-stepper-2.tsx",
+      "content": "// title: Vertical onboarding checklist\nimport {\n  Stepper,\n  StepperDescription,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n  StepperTitle,\n  StepperTrigger,\n} from \"@/registry/default/ui/stepper\";\n\nconst steps = [\n  {\n    description: \"Name it and pick a region.\",\n    title: \"Create a workspace\",\n  },\n  {\n    description: \"Point app.acme.dev at us with a CNAME record.\",\n    title: \"Connect your domain\",\n  },\n  {\n    description: \"Send invites by email or share a join link.\",\n    title: \"Invite your team\",\n  },\n  {\n    description: \"Push to main and we'll build it.\",\n    title: \"Ship your first deploy\",\n  },\n];\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm rounded-xl border p-5\">\n      <p className=\"font-semibold\">Get started</p>\n      <p className=\"mb-5 text-muted-foreground text-sm\">2 of 4 complete</p>\n      <Stepper defaultValue={3} orientation=\"vertical\">\n        {steps.map((s, i) => (\n          <StepperItem key={s.title} step={i + 1}>\n            <StepperTrigger>\n              <StepperIndicator />\n              <div className=\"pt-0.5 pb-1\">\n                <StepperTitle>{s.title}</StepperTitle>\n                <StepperDescription>{s.description}</StepperDescription>\n              </div>\n            </StepperTrigger>\n            <StepperSeparator />\n          </StepperItem>\n        ))}\n      </Stepper>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "stepper"
+  ],
+  "type": "registry:block"
+}

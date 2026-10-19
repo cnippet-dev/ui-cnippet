@@ -1,3 +1,4 @@
+// title: Mini year view with all 12 months in a compact grid
 "use client";
 
 import * as React from "react";

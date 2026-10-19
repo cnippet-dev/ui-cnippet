@@ -1,3 +1,4 @@
+// title: Field with checkbox
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 

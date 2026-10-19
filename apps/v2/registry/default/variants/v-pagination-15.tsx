@@ -1,3 +1,4 @@
+// title: Smart ellipsis with results count
 "use client";
 
 import { useState } from "react";

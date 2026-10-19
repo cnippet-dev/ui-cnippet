@@ -1,3 +1,4 @@
+// title: Storage breakdown with icons
 "use client";
 
 import { DatabaseIcon, FileIcon, ImageIcon } from "lucide-react";

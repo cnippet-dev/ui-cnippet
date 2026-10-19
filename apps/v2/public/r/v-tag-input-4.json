@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tag-input-4",
+  "description": "Small tag filter with icon",
+  "registryDependencies": [
+    "@cnippet/tag-input",
+    "@cnippet/button",
+    "@cnippet/field",
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tag-input-4.tsx",
+      "content": "// title: Small tag filter with icon\n\"use client\";\n\nimport { HashIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { TagInput } from \"@/registry/default/ui/tag-input\";\n\nconst POSTS = [\n  { tags: [\"release\", \"ui\"], title: \"Cnippet 2.4 is out\" },\n  { tags: [\"guide\", \"forms\"], title: \"Validating forms without a library\" },\n  { tags: [\"ui\", \"motion\"], title: \"Spring animations that don't feel bouncy\" },\n  { tags: [\"guide\", \"ui\"], title: \"Building a command palette\" },\n];\n\nexport default function Particle() {\n  const [filters, setFilters] = useState([\"ui\"]);\n  const shown = POSTS.filter((p) => filters.every((f) => p.tags.includes(f)));\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <TagInput\n        aria-label=\"Filter posts by tag\"\n        onValueChange={(next) => setFilters(next.map((t) => t.toLowerCase()))}\n        placeholder=\"Filter by tag…\"\n        size=\"sm\"\n        startAddon={<HashIcon />}\n        value={filters}\n      />\n      <ul className=\"divide-y rounded-lg border text-sm\">\n        {shown.length === 0 && (\n          <li className=\"px-3 py-2 text-muted-foreground\">\n            No matching posts.\n          </li>\n        )}\n        {shown.map((p) => (\n          <li className=\"flex justify-between gap-3 px-3 py-2\" key={p.title}>\n            <span className=\"truncate\">{p.title}</span>\n            <span className=\"shrink-0 text-muted-foreground text-xs\">\n              {p.tags.map((t) => `#${t}`).join(\" \")}\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tag input"
+  ],
+  "type": "registry:block"
+}

@@ -1,3 +1,4 @@
+// title: Data table with column visibility checkboxes
 "use client";
 
 import { useState } from "react";

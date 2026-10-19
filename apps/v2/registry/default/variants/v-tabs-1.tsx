@@ -1,3 +1,4 @@
+// title: Default
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
 
 export default function Particle() {

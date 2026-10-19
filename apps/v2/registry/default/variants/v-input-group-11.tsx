@@ -1,3 +1,4 @@
+// title: With Inner Label
 "use client";
 
 import { InfoIcon } from "lucide-react";

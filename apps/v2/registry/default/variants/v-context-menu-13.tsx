@@ -1,3 +1,4 @@
+// title: File explorer rows with extension badge, rename, download, and delete per file
 "use client";
 
 import {

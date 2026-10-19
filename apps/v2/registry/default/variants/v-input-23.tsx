@@ -1,3 +1,4 @@
+// title: Input with inline start icon
 import { SearchIcon } from "lucide-react";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";

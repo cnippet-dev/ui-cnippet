@@ -1,3 +1,4 @@
+// title: Notification Center
 "use client";
 
 import {

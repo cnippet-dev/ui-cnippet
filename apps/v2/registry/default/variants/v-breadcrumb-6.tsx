@@ -1,3 +1,4 @@
+// title: With Avatar
 import {
   Avatar,
   AvatarFallback,

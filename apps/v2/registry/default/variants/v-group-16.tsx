@@ -1,3 +1,4 @@
+// title: Media player controls
 "use client";
 
 import {

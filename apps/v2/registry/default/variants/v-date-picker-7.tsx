@@ -1,3 +1,4 @@
+// title: Appointment Booking
 "use client";
 
 import { addDays, format, isWeekend } from "date-fns";

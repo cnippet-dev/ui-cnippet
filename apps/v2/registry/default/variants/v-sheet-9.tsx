@@ -1,3 +1,4 @@
+// title: Navigation Menu
 import {
   BookOpenIcon,
   BoxIcon,

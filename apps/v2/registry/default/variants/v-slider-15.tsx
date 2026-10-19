@@ -1,3 +1,4 @@
+// title: Display Settings Sliders
 "use client";
 
 import { useState } from "react";

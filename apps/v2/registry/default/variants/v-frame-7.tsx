@@ -1,3 +1,4 @@
+// title: With badge status indicator
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Frame,

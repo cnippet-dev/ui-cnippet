@@ -1,3 +1,4 @@
+// title: Task list with per-task priority flag toggles
 "use client";
 
 import { CalendarIcon, CheckIcon, FlagIcon } from "lucide-react";
@@ -12,9 +13,9 @@ const priorities: {
   label: string;
 }[] = [
   { color: "text-muted-foreground", id: "low", label: "Low" },
-  { color: "text-blue-500", id: "medium", label: "Medium" },
-  { color: "text-amber-500", id: "high", label: "High" },
-  { color: "text-red-500", id: "urgent", label: "Urgent" },
+  { color: "text-info-foreground", id: "medium", label: "Medium" },
+  { color: "text-warning-foreground", id: "high", label: "High" },
+  { color: "text-destructive-foreground", id: "urgent", label: "Urgent" },
 ];
 
 const tasks = [
@@ -45,7 +46,7 @@ export function Pattern() {
                 }
                 className={
                   done.has(task.id)
-                    ? "text-emerald-500"
+                    ? "text-success-foreground"
                     : "text-muted-foreground"
                 }
                 onPressedChange={() =>

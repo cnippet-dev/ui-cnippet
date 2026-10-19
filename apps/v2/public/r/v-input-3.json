@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-3.tsx",
-      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-username\">Username</FieldLabel>\n      <Input\n        id=\"input-demo-username\"\n        placeholder=\"Enter your username\"\n        type=\"text\"\n      />\n      <FieldDescription>\n        Choose a unique username for your account.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
+      "content": "// title: With Description\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport function Pattern() {\n  return (\n    <Field className=\"max-w-xs\">\n      <FieldLabel htmlFor=\"input-demo-username\">Username</FieldLabel>\n      <Input\n        id=\"input-demo-username\"\n        placeholder=\"Enter your username\"\n        type=\"text\"\n      />\n      <FieldDescription>\n        Choose a unique username for your account.\n      </FieldDescription>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

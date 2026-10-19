@@ -1,3 +1,4 @@
+// title: Time slot booking with available/booked slot grid and confirmation
 "use client";
 
 import * as React from "react";

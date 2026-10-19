@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-separator-16.tsx",
-      "content": "import { Separator } from \"@/registry/default/ui/separator\";\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"space-y-1\">\n        <h4 className=\"font-medium text-sm\">Cnippet UI</h4>\n        <p className=\"text-muted-foreground text-sm\">\n          Components for product teams.\n        </p>\n      </div>\n      <Separator className=\"my-4\" />\n      <div className=\"flex h-5 items-center gap-4 text-sm\">\n        <span>Blog</span>\n        <Separator orientation=\"vertical\" />\n        <span>Docs</span>\n        <Separator orientation=\"vertical\" />\n        <span>Source</span>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "// title: Showcase: horizontal and vertical\nimport { Separator } from \"@/registry/default/ui/separator\";\n\nexport default function Particle() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"space-y-1\">\n        <h4 className=\"font-medium text-sm\">Cnippet UI</h4>\n        <p className=\"text-muted-foreground text-sm\">\n          Components for product teams.\n        </p>\n      </div>\n      <Separator className=\"my-4\" />\n      <div className=\"flex h-5 items-center gap-4 text-sm\">\n        <span>Blog</span>\n        <Separator orientation=\"vertical\" />\n        <span>Docs</span>\n        <Separator orientation=\"vertical\" />\n        <span>Source</span>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

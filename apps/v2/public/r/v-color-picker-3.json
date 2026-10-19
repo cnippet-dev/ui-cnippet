@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-color-picker-3",
+  "description": "Label colour swatches with hex input",
+  "registryDependencies": [
+    "@cnippet/color-picker",
+    "@cnippet/button",
+    "@cnippet/popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-color-picker-3.tsx",
+      "content": "// title: Label colour swatches with hex input\n\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ColorPicker,\n  ColorPickerInput,\n  ColorPickerSwatch,\n  ColorPickerSwatches,\n} from \"@/registry/default/ui/color-picker\";\n\n// Label colours are deliberate, so they stay raw hex rather than theme tokens.\nconst LABEL_COLOURS = [\n  \"#6b7280\",\n  \"#ef4444\",\n  \"#f59e0b\",\n  \"#10b981\",\n  \"#0ea5e9\",\n  \"#6366f1\",\n  \"#a855f7\",\n  \"#ec4899\",\n];\n\nexport default function Particle() {\n  const [color, setColor] = useState(\"#6366f1\");\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4 rounded-xl border p-4\">\n      <div className=\"flex items-center gap-2\">\n        <span\n          className=\"rounded-full px-2 py-0.5 font-medium text-white text-xs\"\n          style={{ backgroundColor: color }}\n        >\n          design-review\n        </span>\n        <span className=\"text-muted-foreground text-xs\">Label preview</span>\n      </div>\n      <ColorPicker onValueChange={setColor} value={color}>\n        <ColorPickerSwatches className=\"gap-2\">\n          {LABEL_COLOURS.map((c) => (\n            <ColorPickerSwatch\n              className=\"size-7 rounded-full\"\n              key={c}\n              value={c}\n            />\n          ))}\n        </ColorPickerSwatches>\n        <ColorPickerInput className=\"w-28\" />\n      </ColorPicker>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "color picker"
+  ],
+  "type": "registry:block"
+}

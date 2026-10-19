@@ -1,3 +1,4 @@
+// title: Do Not Disturb Mode
 "use client";
 
 import { BellOffIcon, MoonIcon } from "lucide-react";

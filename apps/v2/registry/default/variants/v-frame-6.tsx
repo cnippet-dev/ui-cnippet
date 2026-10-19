@@ -1,3 +1,4 @@
+// title: Stats metrics display
 import {
   Frame,
   FrameDescription,

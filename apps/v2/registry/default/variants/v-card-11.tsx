@@ -1,3 +1,4 @@
+// title: Expandable Content Card
 "use client";
 
 import { ChevronDownIcon } from "lucide-react";

@@ -1,3 +1,4 @@
+// title: Segmented view toggle with list, table, and kanban options
 "use client";
 
 import { KanbanIcon, LayoutListIcon, TableIcon } from "lucide-react";

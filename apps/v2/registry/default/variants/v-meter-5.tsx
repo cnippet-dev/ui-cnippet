@@ -1,3 +1,4 @@
+// title: Live CPU load meter with pause
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,41 +12,33 @@ import {
 } from "@/registry/default/ui/meter";
 
 export default function Particle() {
-  const [value, setValue] = useState(12);
-  const [running, setRunning] = useState(true);
+  const [value, setValue] = useState(42);
+  const [live, setLive] = useState(true);
 
   useEffect(() => {
-    if (!running) return;
+    if (!live) return;
     const id = setInterval(() => {
-      setValue((v) => {
-        if (v >= 100) {
-          setRunning(false);
-          return 100;
-        }
-        return v + Math.floor(Math.random() * 8) + 2;
-      });
-    }, 600);
+      // Random walk clamped to 5–95% so the reading looks like real load.
+      setValue((v) =>
+        Math.min(95, Math.max(5, v + Math.round(Math.random() * 16 - 8))),
+      );
+    }, 1000);
     return () => clearInterval(id);
-  }, [running]);
-
-  function reset() {
-    setValue(12);
-    setRunning(true);
-  }
+  }, [live]);
 
   return (
     <div className="w-full max-w-sm space-y-3">
-      <Meter value={Math.min(value, 100)}>
+      <Meter value={value}>
         <div className="flex items-center justify-between gap-2">
-          <MeterLabel>Deploying…</MeterLabel>
+          <MeterLabel>CPU load · web-01</MeterLabel>
           <MeterValue />
         </div>
         <MeterTrack>
           <MeterIndicator />
         </MeterTrack>
       </Meter>
-      <Button disabled={running} onClick={reset} size="sm" variant="outline">
-        {running ? "Running…" : "Restart"}
+      <Button onClick={() => setLive((l) => !l)} size="sm" variant="outline">
+        {live ? "Pause" : "Resume"}
       </Button>
     </div>
   );

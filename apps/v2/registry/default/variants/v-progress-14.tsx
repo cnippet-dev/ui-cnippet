@@ -1,3 +1,4 @@
+// title: Reading progress bar
 "use client";
 
 import { useEffect, useState } from "react";

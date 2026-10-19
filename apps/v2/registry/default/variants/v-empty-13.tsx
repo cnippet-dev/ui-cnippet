@@ -1,3 +1,4 @@
+// title: No matching results — clear filters empty state
 import { FilterXIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

@@ -1,3 +1,4 @@
+// title: Radar Chart
 "use client";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import {

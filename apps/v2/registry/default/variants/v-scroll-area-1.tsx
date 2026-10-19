@@ -1,3 +1,4 @@
+// title: Default
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const tags = Array.from({ length: 50 }, (_, i) => `v1.0.0-alpha.${i}`);

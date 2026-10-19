@@ -1,3 +1,4 @@
+// title: Sidebar filter panel with collapsible groups, checkboxes, and active count
 //biome-ignore-all lint/style/noNonNullAssertion:<>
 "use client";
 

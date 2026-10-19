@@ -1,3 +1,4 @@
+// title: Browser page with submenu, checkbox toggles and profile radio
 "use client";
 
 import { LockIcon, StarIcon } from "lucide-react";

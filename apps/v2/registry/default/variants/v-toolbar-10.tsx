@@ -1,3 +1,4 @@
+// title: Block editor toolbar with block type and inline marks
 "use client";
 
 import {

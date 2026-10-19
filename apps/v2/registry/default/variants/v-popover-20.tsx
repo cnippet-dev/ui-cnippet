@@ -1,3 +1,4 @@
+// title: Inline text edit
 "use client";
 
 import { PencilIcon } from "lucide-react";

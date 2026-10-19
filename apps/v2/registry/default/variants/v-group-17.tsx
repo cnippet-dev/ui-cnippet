@@ -1,3 +1,4 @@
+// title: Price range input with apply button
 import { Button } from "@/registry/default/ui/button";
 import { Group, GroupSeparator, GroupText } from "@/registry/default/ui/group";
 import { Input } from "@/registry/default/ui/input";

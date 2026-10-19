@@ -1,3 +1,4 @@
+// title: Sidebar Navigation
 import {
   BellIcon,
   FolderIcon,

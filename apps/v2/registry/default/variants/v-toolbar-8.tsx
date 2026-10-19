@@ -1,3 +1,4 @@
+// title: Canvas toolbar with theme toggle and zoom controls
 "use client";
 
 import {

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-time-picker-1",
+  "description": "Appointment slot with booked times disabled",
+  "registryDependencies": [
+    "@cnippet/time-picker",
+    "@cnippet/button",
+    "@cnippet/label",
+    "@cnippet/switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-time-picker-1.tsx",
+      "content": "// title: Appointment slot with booked times disabled\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { formatTime, TimePicker } from \"@/registry/default/ui/time-picker\";\n\n// Slots already taken on the chosen day.\nconst BOOKED = new Set([\"10:00\", \"10:30\", \"13:00\", \"15:30\"]);\n\nexport default function Particle() {\n  const [time, setTime] = useState<string | null>(\"11:00\");\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-4 rounded-xl border p-5\">\n      <div>\n        <p className=\"font-medium text-sm\">Book a demo</p>\n        <p className=\"text-muted-foreground text-xs\">\n          Thursday, Oct 22 · 30 minutes · times in PT\n        </p>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <Label htmlFor=\"demo-time\">Start time</Label>\n        <TimePicker\n          className=\"w-full\"\n          id=\"demo-time\"\n          isTimeDisabled={(t) => BOOKED.has(t)}\n          max=\"16:30\"\n          min=\"09:00\"\n          onValueChange={setTime}\n          value={time}\n        />\n        <p className=\"text-muted-foreground text-xs\">\n          Greyed-out times are already booked.\n        </p>\n      </div>\n      <Button disabled={!time}>\n        {time ? `Confirm ${formatTime(time)}` : \"Pick a time\"}\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "time picker"
+  ],
+  "type": "registry:block"
+}

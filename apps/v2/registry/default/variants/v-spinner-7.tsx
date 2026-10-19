@@ -1,3 +1,4 @@
+// title: Inline loading text with spinner
 import { Spinner } from "@/registry/default/ui/spinner";
 
 export function Pattern() {

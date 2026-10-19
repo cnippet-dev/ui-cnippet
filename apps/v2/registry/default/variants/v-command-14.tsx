@@ -1,3 +1,4 @@
+// title: Appearance picker with theme and accent-color options and active check marks
 "use client";
 
 import { CheckIcon, MoonIcon, SunIcon, SunMediumIcon } from "lucide-react";

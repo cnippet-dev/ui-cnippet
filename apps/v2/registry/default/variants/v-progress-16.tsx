@@ -1,3 +1,4 @@
+// title: Showcase: plain, labelled and formatted value
 "use client";
 
 import {

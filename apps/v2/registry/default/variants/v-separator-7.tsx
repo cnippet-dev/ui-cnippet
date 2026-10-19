@@ -1,3 +1,4 @@
+// title: Breadcrumb dividers
 import { Separator } from "@/registry/default/ui/separator";
 
 const breadcrumbs = ["Home", "Products", "Electronics", "Headphones"];

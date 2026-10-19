@@ -1,3 +1,4 @@
+// title: Segmented Control Tabs
 "use client";
 
 import {

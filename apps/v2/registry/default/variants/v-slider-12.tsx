@@ -1,3 +1,4 @@
+// title: Dual-Thumb Price Range
 "use client";
 
 import { useState } from "react";

@@ -1,3 +1,4 @@
+// title: Media gallery carousel with caption badge and progress dots
 "use client";
 
 import { PlayIcon } from "lucide-react";

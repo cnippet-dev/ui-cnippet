@@ -1,3 +1,4 @@
+// title: Volume Control With Mute Toggle
 "use client";
 
 import { Volume1Icon, Volume2Icon, VolumeXIcon } from "lucide-react";

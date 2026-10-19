@@ -1,3 +1,4 @@
+// title: Transfer Ownership with typed confirmation input
 "use client";
 
 import { KeyRoundIcon } from "lucide-react";
@@ -30,8 +31,8 @@ export function Pattern() {
       />
       <AlertDialogContent className="sm:max-w-sm">
         <div className="flex items-start gap-3 p-4">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950">
-            <KeyRoundIcon className="size-5 text-amber-600 dark:text-amber-400" />
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-warning/8 dark:bg-warning/16">
+            <KeyRoundIcon className="size-5 text-warning-foreground" />
           </div>
           <div className="flex flex-col gap-1">
             <AlertDialogTitle className="font-semibold text-sm">

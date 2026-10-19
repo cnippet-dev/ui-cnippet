@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 // A stub renders nothing but a word, e.g. `return <div>Combobox</div>;`
 const PLACEHOLDER =
-  /^export default function \w+\(\) \{\s*return <div>[^<{]*<\/div>;?\s*\}\s*$/;
+  /^(?:\/\/ title: .*\n)?export default function \w+\(\) \{\s*return <div>[^<{]*<\/div>;?\s*\}\s*$/;
 
 function isPlaceholderFile(dir: string, name: string): boolean {
   try {

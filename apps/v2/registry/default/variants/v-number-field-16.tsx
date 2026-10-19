@@ -1,3 +1,4 @@
+// title: Showcase: label, scrub, sizes and disabled
 import { Label } from "@/registry/default/ui/label";
 import {
   NumberField,

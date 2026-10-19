@@ -1,3 +1,4 @@
+// title: User list accordion with avatars and role indicators
 import {
   Accordion,
   AccordionContent,

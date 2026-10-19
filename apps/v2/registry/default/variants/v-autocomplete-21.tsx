@@ -1,3 +1,4 @@
+// title: Showcase: clear, trigger, groups, sizes and disabled
 "use client";
 
 import { SearchIcon } from "lucide-react";

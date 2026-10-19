@@ -1,3 +1,4 @@
+// title: Hashtag previews with post counts
 import { HashIcon } from "lucide-react";
 import {
   PreviewCard,

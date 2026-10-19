@@ -1,3 +1,4 @@
+// title: Close on Click
 "use client";
 
 import { useState } from "react";

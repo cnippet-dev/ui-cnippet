@@ -1,3 +1,4 @@
+// title: Event preview with date and attendees
 import { CalendarIcon, UsersIcon } from "lucide-react";
 import {
   PreviewCard,

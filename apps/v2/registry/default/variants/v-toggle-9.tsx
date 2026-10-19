@@ -1,3 +1,4 @@
+// title: Video Call Controls Bar
 "use client";
 
 import {
@@ -23,8 +24,8 @@ export function Pattern() {
       <div className="flex w-full max-w-xs flex-col items-center gap-2 rounded-2xl border bg-card px-6 py-5 shadow-sm">
         <div className="mb-1 flex items-center gap-1.5">
           <span className="relative flex size-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-success" />
           </span>
           <span className="text-muted-foreground text-xs">In call · 12:34</span>
         </div>

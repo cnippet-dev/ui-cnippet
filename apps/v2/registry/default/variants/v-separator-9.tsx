@@ -1,3 +1,4 @@
+// title: Grouped navigation sections
 import { Separator } from "@/registry/default/ui/separator";
 
 const sections = [

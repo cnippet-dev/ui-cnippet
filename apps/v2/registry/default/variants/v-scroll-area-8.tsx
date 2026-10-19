@@ -1,3 +1,4 @@
+// title: Wide data table
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const rows = [
@@ -95,8 +96,8 @@ export default function Particle() {
                 <span
                   className={`rounded-full px-2 py-0.5 font-medium text-xs ${
                     row.status === "Active"
-                      ? "bg-green-500/10 text-green-700 dark:text-green-400"
-                      : "bg-yellow-500/10 text-yellow-700 dark:text-yellow-400"
+                      ? "bg-success/10 text-success-foreground"
+                      : "bg-warning/10 text-warning-foreground"
                   }`}
                 >
                   {row.status}

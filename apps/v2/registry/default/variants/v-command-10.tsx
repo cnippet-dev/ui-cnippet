@@ -1,3 +1,4 @@
+// title: Label picker with multi-select
 "use client";
 
 import { HashIcon, TagIcon } from "lucide-react";

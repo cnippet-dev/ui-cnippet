@@ -1,3 +1,4 @@
+// title: Video call controls toolbar
 "use client";
 
 import {

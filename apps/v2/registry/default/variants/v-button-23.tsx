@@ -1,3 +1,4 @@
+// title: Icon-only copy button with feedback
 "use client";
 
 import { CheckIcon, CopyIcon } from "lucide-react";

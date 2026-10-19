@@ -1,3 +1,4 @@
+// title: Color Palette Inspector
 import {
   Tooltip,
   TooltipContent,

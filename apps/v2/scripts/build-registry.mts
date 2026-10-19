@@ -133,8 +133,8 @@ async function buildRegistry() {
   });
 }
 
-// Variant counts come from each category's title list, so a variant file
-// without a title would silently drop out of the registry.
+// Variant counts come from the files of each registered prefix, so a file
+// with an unregistered prefix would silently drop out of the registry.
 async function checkVariantsRegistered() {
   const registered = new Set(
     registry.items.flatMap((item) => item.files?.map((f) => f.path) ?? []),
@@ -147,7 +147,7 @@ async function checkVariantsRegistered() {
     .sort();
   if (missing.length) {
     throw new Error(
-      `Variant files missing a title in registry/registry-variants.ts: ${missing.join(", ")}`,
+      `Variant files not registered in registry/registry-variants.ts: ${missing.join(", ")}`,
     );
   }
 }

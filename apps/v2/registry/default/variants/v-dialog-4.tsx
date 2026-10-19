@@ -1,3 +1,4 @@
+// title: Dialog with scroll inside
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,

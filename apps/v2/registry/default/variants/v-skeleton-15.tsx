@@ -1,3 +1,4 @@
+// title: Profile Hero Page
 import { Skeleton } from "@/registry/default/ui/skeleton";
 
 export default function Particle() {

@@ -1,3 +1,4 @@
+// title: Code viewer toolbar with multi-select options
 "use client";
 
 import {

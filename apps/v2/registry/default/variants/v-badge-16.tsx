@@ -1,3 +1,4 @@
+// title: Notification category badges with unread counts
 import { BellIcon, GitPullRequestIcon, MessageSquareIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";

@@ -1,3 +1,4 @@
+// title: Reference list
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 import { Separator } from "@/registry/default/ui/separator";
 

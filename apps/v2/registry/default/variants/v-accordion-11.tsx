@@ -1,3 +1,4 @@
+// title: Searchable FAQ with live keyword filter
 "use client";
 
 import { SearchIcon } from "lucide-react";

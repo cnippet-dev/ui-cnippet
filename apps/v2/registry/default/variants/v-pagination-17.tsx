@@ -1,3 +1,4 @@
+// title: Older/newer cursor navigation
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import {
   Pagination,

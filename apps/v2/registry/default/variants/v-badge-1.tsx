@@ -1,3 +1,4 @@
+// title: Default
 import { Badge } from "@/registry/default/ui/badge";
 
 export default function Particle() {

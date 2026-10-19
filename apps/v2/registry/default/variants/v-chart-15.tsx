@@ -1,3 +1,4 @@
+// title: Composed chart overlaying revenue bars with a growth-rate line on dual axes
 "use client";
 
 import {

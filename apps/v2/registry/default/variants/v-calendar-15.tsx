@@ -1,3 +1,4 @@
+// title: Hotel stay check-in and check-out
 "use client";
 
 import * as React from "react";

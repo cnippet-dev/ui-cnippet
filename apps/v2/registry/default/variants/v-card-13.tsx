@@ -1,3 +1,4 @@
+// title: With Header Badge & Actions
 import { CheckIcon, MoreVerticalIcon } from "lucide-react";
 
 import {

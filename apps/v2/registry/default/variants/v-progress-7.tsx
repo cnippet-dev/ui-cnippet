@@ -1,3 +1,4 @@
+// title: Skills Meter
 import {
   Progress,
   ProgressIndicator,

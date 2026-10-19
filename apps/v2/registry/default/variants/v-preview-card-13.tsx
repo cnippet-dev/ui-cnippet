@@ -1,3 +1,4 @@
+// title: Glossary term definition with related terms
 import { Badge } from "@/registry/default/ui/badge";
 import {
   PreviewCard,

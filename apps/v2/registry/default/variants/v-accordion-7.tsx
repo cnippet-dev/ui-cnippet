@@ -1,3 +1,4 @@
+// title: Embedded within a Card
 import { ArrowUpRightIcon } from "lucide-react";
 import {
   Accordion,

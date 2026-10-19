@@ -1,3 +1,4 @@
+// title: Department budgets with expandable sub-rows
 "use client";
 
 import {

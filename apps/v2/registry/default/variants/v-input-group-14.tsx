@@ -1,3 +1,4 @@
+// title: Loading
 import {
   InputGroup,
   InputGroupAddon,

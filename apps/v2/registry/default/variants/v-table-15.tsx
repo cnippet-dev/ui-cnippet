@@ -1,3 +1,4 @@
+// title: Contributor leaderboard with rank, avatar, and change indicator
 import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 import {
   Avatar,
@@ -124,9 +125,9 @@ export function Pattern() {
                 <span
                   className={`inline-flex items-center gap-0.5 text-xs tabular-nums ${
                     c.change > 0
-                      ? "text-emerald-500"
+                      ? "text-success-foreground"
                       : c.change < 0
-                        ? "text-red-500"
+                        ? "text-destructive-foreground"
                         : "text-muted-foreground"
                   }`}
                 >

@@ -1,3 +1,4 @@
+// title: Staggered Notification Burst
 "use client";
 
 import { useState } from "react";

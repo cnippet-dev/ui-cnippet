@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-file-upload-3",
+  "description": "Dropzone with per-file upload progress",
+  "registryDependencies": [
+    "@cnippet/file-upload",
+    "@cnippet/alert",
+    "@cnippet/button",
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-file-upload-3.tsx",
+      "content": "// title: Dropzone with per-file upload progress\n\"use client\";\n\nimport { CheckCircle2Icon } from \"lucide-react\";\nimport { useEffect, useState } from \"react\";\nimport {\n  FileUpload,\n  FileUploadDropzone,\n  FileUploadItem,\n  FileUploadItemDelete,\n  FileUploadItemMetadata,\n  FileUploadItemPreview,\n  FileUploadList,\n} from \"@/registry/default/ui/file-upload\";\n\nconst key = (file: File) => `${file.name}-${file.size}-${file.lastModified}`;\n\nexport default function Particle() {\n  const [files, setFiles] = useState<File[]>([]);\n  const [progress, setProgress] = useState<Record<string, number>>({});\n\n  // Fake upload: each new file climbs to 100% at its own pace.\n  useEffect(() => {\n    const pending = files.filter((f) => (progress[key(f)] ?? 0) < 100);\n    if (pending.length === 0) return;\n    const id = setTimeout(() => {\n      setProgress((prev) => {\n        const next = { ...prev };\n        for (const f of pending) {\n          next[key(f)] = Math.min(\n            100,\n            (next[key(f)] ?? 0) + 8 + Math.random() * 12,\n          );\n        }\n        return next;\n      });\n    }, 300);\n    return () => clearTimeout(id);\n  }, [files, progress]);\n\n  return (\n    <FileUpload\n      className=\"max-w-md\"\n      multiple\n      onValueChange={setFiles}\n      value={files}\n    >\n      <FileUploadDropzone />\n      <FileUploadList>\n        {(file) => {\n          const value = progress[key(file)] ?? 0;\n          const done = value >= 100;\n          return (\n            <FileUploadItem file={file} progress={done ? undefined : value}>\n              <FileUploadItemPreview file={file} />\n              <FileUploadItemMetadata file={file} />\n              {done ? (\n                <CheckCircle2Icon\n                  aria-label=\"Uploaded\"\n                  className=\"size-4 text-success-foreground\"\n                />\n              ) : (\n                <span className=\"text-muted-foreground text-xs tabular-nums\">\n                  {Math.round(value)}%\n                </span>\n              )}\n              <FileUploadItemDelete file={file} />\n            </FileUploadItem>\n          );\n        }}\n      </FileUploadList>\n    </FileUpload>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "file upload"
+  ],
+  "type": "registry:block"
+}

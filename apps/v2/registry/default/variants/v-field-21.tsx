@@ -1,3 +1,4 @@
+// title: Resume dropzone with file validation
 "use client";
 
 import { FileTextIcon, UploadIcon, XIcon } from "lucide-react";

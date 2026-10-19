@@ -1,3 +1,4 @@
+// title: Sliding Icon Button (Hover reveal)
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 

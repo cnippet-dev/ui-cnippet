@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-spinner-3.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <Button>\n        <Spinner data-icon=\"inline-start\" /> Processing…\n      </Button>\n      <Button disabled variant=\"outline\">\n        <Spinner data-icon=\"inline-start\" /> Loading…\n      </Button>\n      <Button aria-label=\"Loading\" disabled size=\"icon\" variant=\"outline\">\n        <Spinner />\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "// title: In buttons\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Spinner } from \"@/registry/default/ui/spinner\";\nexport function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <Button>\n        <Spinner data-icon=\"inline-start\" /> Processing…\n      </Button>\n      <Button disabled variant=\"outline\">\n        <Spinner data-icon=\"inline-start\" /> Loading…\n      </Button>\n      <Button aria-label=\"Loading\" disabled size=\"icon\" variant=\"outline\">\n        <Spinner />\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

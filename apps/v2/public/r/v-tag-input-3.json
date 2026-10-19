@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tag-input-3",
+  "description": "Repository topics with a limit and counter",
+  "registryDependencies": [
+    "@cnippet/tag-input",
+    "@cnippet/button",
+    "@cnippet/field",
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tag-input-3.tsx",
+      "content": "// title: Repository topics with a limit and counter\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { TagInput } from \"@/registry/default/ui/tag-input\";\n\nconst MAX = 5;\n\nexport default function Particle() {\n  const [topics, setTopics] = useState([\"design\", \"frontend\", \"react\"]);\n  const full = topics.length >= MAX;\n\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-2\">\n      <div className=\"flex items-baseline justify-between\">\n        <Label htmlFor=\"repo-topics\">Topics</Label>\n        <span\n          className={\n            full\n              ? \"text-warning-foreground text-xs tabular-nums\"\n              : \"text-muted-foreground text-xs tabular-nums\"\n          }\n        >\n          {topics.length}/{MAX}\n        </span>\n      </div>\n      <TagInput\n        id=\"repo-topics\"\n        max={MAX}\n        onValueChange={(next) =>\n          setTopics(next.map((t) => t.toLowerCase().replace(/\\s+/g, \"-\")))\n        }\n        placeholder={full ? undefined : \"Add a topic\"}\n        readOnly={full}\n        value={topics}\n      />\n      <p className=\"text-muted-foreground text-xs\">\n        {full\n          ? \"That's the limit. Remove a topic to add another.\"\n          : \"Topics are lowercase; spaces become hyphens.\"}\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tag input"
+  ],
+  "type": "registry:block"
+}

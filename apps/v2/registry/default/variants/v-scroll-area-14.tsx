@@ -1,3 +1,4 @@
+// title: Server log viewer
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const logs = [
@@ -64,9 +65,9 @@ const logs = [
 ];
 
 const levelClass: Record<string, string> = {
-  error: "text-red-500",
+  error: "text-destructive-foreground",
   info: "text-muted-foreground",
-  warn: "text-yellow-500",
+  warn: "text-warning-foreground",
 };
 
 export default function Particle() {

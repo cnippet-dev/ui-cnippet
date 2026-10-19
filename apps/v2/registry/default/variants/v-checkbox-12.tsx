@@ -1,3 +1,4 @@
+// title: Role permissions picker with colored badge per access level
 "use client";
 
 import { useId, useState } from "react";

@@ -1,3 +1,4 @@
+// title: Avatar Inside An Empty State Example
 import { UserPlusIcon } from "lucide-react";
 import {
   Avatar,

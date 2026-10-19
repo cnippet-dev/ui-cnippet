@@ -1,3 +1,4 @@
+// title: Default
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,

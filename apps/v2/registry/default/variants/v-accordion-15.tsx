@@ -1,3 +1,4 @@
+// title: Product specifications table by category
 import {
   Accordion,
   AccordionContent,

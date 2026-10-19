@@ -1,3 +1,4 @@
+// title: Compact breadcrumb with ellipsis and hidden-items count badge
 import { HouseIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/registry/default/ui/badge";

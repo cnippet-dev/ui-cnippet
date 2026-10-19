@@ -1,3 +1,4 @@
+// title: Action Palette With Keyboard Shortcuts
 "use client";
 
 import {

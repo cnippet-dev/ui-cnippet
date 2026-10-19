@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-tag-input-1",
+  "description": "Email invites with validation and paste support",
+  "registryDependencies": [
+    "@cnippet/tag-input",
+    "@cnippet/button",
+    "@cnippet/field",
+    "@cnippet/label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-tag-input-1.tsx",
+      "content": "// title: Email invites with validation and paste support\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { TagInput } from \"@/registry/default/ui/tag-input\";\n\nconst EMAIL = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n\nexport default function Particle() {\n  const [emails, setEmails] = useState([\"maya@acme.dev\", \"jordan@acme.dev\"]);\n  const [error, setError] = useState<string | null>(null);\n\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <Field invalid={!!error}>\n        <FieldLabel htmlFor=\"invite-emails\">Invite teammates</FieldLabel>\n        <TagInput\n          aria-invalid={!!error || undefined}\n          id=\"invite-emails\"\n          onTagReject={(tag, reason) =>\n            setError(\n              reason === \"duplicate\"\n                ? `${tag} is already on the list.`\n                : `${tag} isn't a valid email address.`,\n            )\n          }\n          onValueChange={(next) => {\n            setEmails(next);\n            setError(null);\n          }}\n          placeholder=\"name@company.com\"\n          validate={(tag) => EMAIL.test(tag)}\n          value={emails}\n        />\n        {error ? (\n          <FieldError match>{error}</FieldError>\n        ) : (\n          <FieldDescription>\n            Press Enter or comma after each address. You can paste a list.\n          </FieldDescription>\n        )}\n      </Field>\n      <Button className=\"self-end\" disabled={emails.length === 0}>\n        Send {emails.length} {emails.length === 1 ? \"invite\" : \"invites\"}\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "tag input"
+  ],
+  "type": "registry:block"
+}

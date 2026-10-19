@@ -1,0 +1,136 @@
+---
+title: Navigation Menu
+description: A site header menu whose panels open on hover or click and slide between each other, for product, docs and resource links. Copy-paste ready.
+
+links:
+  doc: https://base-ui.com/react/components/navigation-menu
+  api: https://base-ui.com/react/components/navigation-menu#api-reference
+---
+
+<ComponentPreview name="v-navigation-menu-1" align="start" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/navigation-menu
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install @base-ui/react lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="navigation-menu" title="components/ui/navigation-menu.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/analytics">
+          <span className="font-medium">Analytics</span>
+          <span className="text-muted-foreground text-xs">Dashboards in real time.</span>
+        </NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/pricing" variant="trigger">
+        Pricing
+      </NavigationMenuLink>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Anatomy
+
+```tsx
+<NavigationMenu>                    {/* root; also renders the shared popup */}
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger />     {/* opens this item's content; chevron included */}
+      <NavigationMenuContent>       {/* rendered inside the popup when open */}
+        <NavigationMenuLink />
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink variant="trigger" />  {/* a top-level link with no panel */}
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Good to know
+
+- All items share one popup. Moving between triggers resizes it and slides the content left or right, depending on which way you moved.
+- Triggers open on hover and on click. Arrow keys move between triggers, and Tab moves into the open panel.
+- Give each content panel a width from `sm:` up (the examples use `sm:w-[30rem]`). On small screens it fills the viewport minus 2rem.
+- `NavigationMenuLink` defaults to a block link for use inside a panel. Use `variant="trigger"` for a top-level link that matches the triggers. Pass `active` to mark the current page.
+- On phones, swap the menu for a [Sheet](/ui/overlays/sheet) or [Drawer](/ui/overlays/drawer) with the same links.
+
+## API Reference
+
+### NavigationMenu
+
+Takes all Base UI `NavigationMenu.Root` props (`value`, `defaultValue`, `onValueChange`, `delay`, `closeDelay`, `orientation`), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `sideOffset` | `number` | `8` | Gap between the triggers and the popup |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | How the popup lines up with the active trigger |
+
+### NavigationMenuLink
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"content" \| "trigger"` | `"content"` | Block link inside a panel, or a top-level link |
+| `active` | `boolean` | — | Marks the current page (`aria-current="page"`) |
+
+Other parts take their Base UI props. See the [Base UI docs](https://base-ui.com/react/components/navigation-menu#api-reference).
+
+## Examples
+
+### Docs menu
+
+Sections of a docs site, with a two-column panel for the longer list.
+
+<ComponentPreview name="v-navigation-menu-2" align="start" />

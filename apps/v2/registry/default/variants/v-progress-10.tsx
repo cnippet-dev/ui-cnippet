@@ -1,3 +1,4 @@
+// title: API Usage with Tier Milestones
 import { ZapIcon } from "lucide-react";
 
 import { Badge } from "@/registry/default/ui/badge";

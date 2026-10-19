@@ -1,3 +1,4 @@
+// title: Document collaboration toolbar with edit/preview toggle and share
 "use client";
 
 import {

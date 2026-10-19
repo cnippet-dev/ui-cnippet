@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-file-upload-2",
+  "description": "Avatar upload with preview",
+  "registryDependencies": [
+    "@cnippet/file-upload",
+    "@cnippet/alert",
+    "@cnippet/button",
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-file-upload-2.tsx",
+      "content": "// title: Avatar upload with preview\n\"use client\";\n\nimport { UserIcon } from \"lucide-react\";\nimport { useEffect, useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  FileUpload,\n  FileUploadTrigger,\n  useFileUpload,\n} from \"@/registry/default/ui/file-upload\";\n\nfunction AvatarPreview() {\n  const { files } = useFileUpload();\n  const [url, setUrl] = useState<string>();\n  const file = files[0];\n\n  useEffect(() => {\n    if (!file) {\n      setUrl(undefined);\n      return;\n    }\n    const objectUrl = URL.createObjectURL(file);\n    setUrl(objectUrl);\n    return () => URL.revokeObjectURL(objectUrl);\n  }, [file]);\n\n  return (\n    <div className=\"flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-full border bg-muted text-muted-foreground\">\n      {url ? (\n        <img alt=\"New avatar\" className=\"size-full object-cover\" src={url} />\n      ) : (\n        <UserIcon aria-hidden=\"true\" className=\"size-6\" />\n      )}\n    </div>\n  );\n}\n\nfunction RemoveButton() {\n  const { files, clearFiles } = useFileUpload();\n  if (files.length === 0) return null;\n  return (\n    <Button onClick={clearFiles} size=\"sm\" variant=\"ghost\">\n      Remove\n    </Button>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <FileUpload\n      accept=\"image/png,image/jpeg,image/webp\"\n      className=\"w-fit flex-row items-center gap-4\"\n      maxSize={1024 * 1024}\n    >\n      <AvatarPreview />\n      <div className=\"flex flex-col gap-2\">\n        <div className=\"flex gap-2\">\n          <FileUploadTrigger size=\"sm\">Upload photo</FileUploadTrigger>\n          <RemoveButton />\n        </div>\n        <p className=\"text-muted-foreground text-xs\">\n          PNG, JPG or WebP. Max 1 MB.\n        </p>\n      </div>\n    </FileUpload>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "file upload"
+  ],
+  "type": "registry:block"
+}

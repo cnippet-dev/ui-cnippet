@@ -1,3 +1,4 @@
+// title: Two-Factor Authentication Setup
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 
@@ -101,8 +102,8 @@ export default function Particle() {
             <QrCode className="size-full text-neutral-900" />
           </div>
           {verified ? (
-            <div className="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-center dark:border-green-800 dark:bg-green-950">
-              <p className="font-medium text-green-700 text-sm dark:text-green-300">
+            <div className="rounded-md border border-success/24 bg-success/8 px-4 py-3 text-center dark:bg-success/16">
+              <p className="font-medium text-sm text-success-foreground">
                 2FA enabled successfully!
               </p>
             </div>

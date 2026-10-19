@@ -1,3 +1,4 @@
+// title: Showcase: single, range and disabled
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Slider, SliderValue } from "@/registry/default/ui/slider";
 

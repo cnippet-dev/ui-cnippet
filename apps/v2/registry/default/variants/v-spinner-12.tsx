@@ -1,3 +1,4 @@
+// title: File Upload Progress
 "use client";
 
 import { UploadCloudIcon } from "lucide-react";

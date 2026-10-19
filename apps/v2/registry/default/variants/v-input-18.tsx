@@ -1,3 +1,4 @@
+// title: With Link and Visibility Toggle
 "use client";
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";

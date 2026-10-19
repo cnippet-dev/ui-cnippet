@@ -1,3 +1,4 @@
+// title: Company profile preview
 import { BuildingIcon, UsersIcon } from "lucide-react";
 import {
   PreviewCard,

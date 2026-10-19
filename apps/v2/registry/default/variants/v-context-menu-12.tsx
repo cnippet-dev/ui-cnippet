@@ -1,3 +1,4 @@
+// title: Rich-text editor with checkbox formatting and alignment submenu
 "use client";
 
 import {

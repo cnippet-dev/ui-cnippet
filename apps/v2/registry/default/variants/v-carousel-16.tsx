@@ -1,3 +1,4 @@
+// title: Showcase: horizontal and vertical
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {
   Carousel,

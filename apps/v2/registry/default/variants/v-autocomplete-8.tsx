@@ -1,3 +1,4 @@
+// title: With Trigger and Clear Buttons
 "use client";
 
 import {

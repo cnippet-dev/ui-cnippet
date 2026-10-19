@@ -1,3 +1,4 @@
+// title: Team Meeting Scheduler
 "use client";
 
 import { addDays, format, isWeekend } from "date-fns";

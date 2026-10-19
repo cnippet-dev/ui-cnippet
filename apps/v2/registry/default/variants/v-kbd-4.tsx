@@ -1,3 +1,4 @@
+// title: With icons
 import { ArrowLeftIcon, CircleDashedIcon } from "lucide-react";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 

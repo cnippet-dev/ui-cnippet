@@ -1,3 +1,4 @@
+// title: Profile repository listing with badge counts per tab
 import { StarIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";

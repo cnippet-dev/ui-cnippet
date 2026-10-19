@@ -1,3 +1,4 @@
+// title: Field with checkbox group
 "use client";
 
 import { Checkbox } from "@/registry/default/ui/checkbox";

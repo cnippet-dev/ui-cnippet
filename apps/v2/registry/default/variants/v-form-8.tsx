@@ -1,3 +1,4 @@
+// title: 3-Step Onboarding Wizard
 "use client";
 
 import { CheckCircle2Icon } from "lucide-react";

@@ -1,3 +1,4 @@
+// title: Calendar events with labelled action groups
 import {
   CalendarArrowUpIcon,
   CalendarClockIcon,

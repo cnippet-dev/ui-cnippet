@@ -1,3 +1,4 @@
+// title: Async Search
 "use client";
 
 import type { ReactNode } from "react";

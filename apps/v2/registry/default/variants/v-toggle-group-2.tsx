@@ -1,3 +1,4 @@
+// title: Toggle groups in different sizes
 import {
   ToggleGroup,
   ToggleGroupItem,

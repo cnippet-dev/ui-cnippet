@@ -1,3 +1,4 @@
+// title: Feature highlight carousel with icon slides and Prev/Next controls
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 "use client";
 

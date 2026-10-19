@@ -1,3 +1,4 @@
+// title: Folder view with Sort by and View radio groups
 "use client";
 
 import { FileIcon, FileTextIcon, FolderIcon, ImageIcon } from "lucide-react";

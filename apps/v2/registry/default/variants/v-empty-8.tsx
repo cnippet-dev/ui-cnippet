@@ -1,3 +1,4 @@
+// title: No payments empty state with credit card illustration
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,

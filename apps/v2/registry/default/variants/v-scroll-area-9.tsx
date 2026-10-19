@@ -1,3 +1,4 @@
+// title: Activity timeline
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const timeline = [

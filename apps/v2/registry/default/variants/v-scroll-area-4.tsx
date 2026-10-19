@@ -1,3 +1,4 @@
+// title: Horizontal with Scrollbar Gutter
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export default function Particle() {

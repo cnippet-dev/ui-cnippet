@@ -1,3 +1,4 @@
+// title: Showcase: states and descriptions
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { Label } from "@/registry/default/ui/label";
 

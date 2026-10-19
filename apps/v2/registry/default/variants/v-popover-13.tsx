@@ -1,3 +1,4 @@
+// title: Filter Panel
 "use client";
 
 import { SlidersHorizontalIcon } from "lucide-react";

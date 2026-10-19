@@ -1,3 +1,4 @@
+// title: Team Invite
 "use client";
 
 import { SendIcon, UserPlusIcon, XIcon } from "lucide-react";

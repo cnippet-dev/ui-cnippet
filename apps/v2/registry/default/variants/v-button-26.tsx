@@ -1,3 +1,4 @@
+// title: Social login buttons with GitHub, Google, and email options
 import { Button } from "@/registry/default/ui/button";
 import { Separator } from "@/registry/default/ui/separator";
 

@@ -1,3 +1,4 @@
+// title: Theme Selector
 import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { Label } from "@/registry/default/ui/label";
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group";

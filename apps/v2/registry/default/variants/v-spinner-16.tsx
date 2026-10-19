@@ -1,3 +1,4 @@
+// title: Showcase: sizes, colors and in context
 import { Button } from "@/registry/default/ui/button";
 import { Spinner } from "@/registry/default/ui/spinner";
 

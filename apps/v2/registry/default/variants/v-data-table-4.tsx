@@ -1,3 +1,4 @@
+// title: Orders with column visibility menu
 "use client";
 
 import {

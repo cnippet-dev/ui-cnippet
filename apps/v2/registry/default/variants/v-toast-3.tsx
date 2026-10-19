@@ -1,3 +1,4 @@
+// title: Loading
 "use client";
 
 import { Button } from "@/registry/default/ui/button";

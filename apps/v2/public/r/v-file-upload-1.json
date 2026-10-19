@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-file-upload-1",
+  "description": "Multi-file dropzone with type, size and count limits",
+  "registryDependencies": [
+    "@cnippet/file-upload",
+    "@cnippet/alert",
+    "@cnippet/button",
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-file-upload-1.tsx",
+      "content": "// title: Multi-file dropzone with type, size and count limits\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Alert, AlertDescription } from \"@/registry/default/ui/alert\";\nimport {\n  type FileRejectReason,\n  FileUpload,\n  FileUploadDropzone,\n  FileUploadList,\n} from \"@/registry/default/ui/file-upload\";\n\nconst MAX_SIZE = 2 * 1024 * 1024;\n\nconst REASONS: Record<FileRejectReason, string> = {\n  count: \"only 4 files are allowed\",\n  size: \"it's over 2 MB\",\n  type: \"only images and PDFs are allowed\",\n};\n\nexport default function Particle() {\n  const [error, setError] = useState<string | null>(null);\n\n  return (\n    <FileUpload\n      accept=\"image/*,.pdf\"\n      className=\"max-w-md\"\n      maxFiles={4}\n      maxSize={MAX_SIZE}\n      multiple\n      onFileReject={(file, reason) =>\n        setError(`${file.name} wasn't added: ${REASONS[reason]}.`)\n      }\n      onValueChange={() => setError(null)}\n    >\n      <FileUploadDropzone>\n        <p className=\"font-medium text-sm\">\n          Drop files here or{\" \"}\n          <span className=\"text-primary underline underline-offset-4\">\n            browse\n          </span>\n        </p>\n        <p className=\"text-muted-foreground text-xs\">\n          Images or PDF, up to 4 files, 2 MB each\n        </p>\n      </FileUploadDropzone>\n      {error && (\n        <Alert variant=\"error\">\n          <AlertDescription>{error}</AlertDescription>\n        </Alert>\n      )}\n      <FileUploadList />\n    </FileUpload>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "file upload"
+  ],
+  "type": "registry:block"
+}

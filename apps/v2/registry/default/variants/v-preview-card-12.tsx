@@ -1,3 +1,4 @@
+// title: Article / blog post preview
 import { ClockIcon } from "lucide-react";
 import {
   PreviewCard,

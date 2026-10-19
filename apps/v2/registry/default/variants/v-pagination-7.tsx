@@ -1,3 +1,4 @@
+// title: With Arrows Buttons
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import {
   Pagination,

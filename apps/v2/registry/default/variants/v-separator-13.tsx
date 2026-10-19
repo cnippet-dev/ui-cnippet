@@ -1,3 +1,4 @@
+// title: Footer Links
 import { Separator } from "@/registry/default/ui/separator";
 
 const links = ["Privacy", "Terms", "Cookies", "Status", "Contact"];

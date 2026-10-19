@@ -1,3 +1,4 @@
+// title: Newsletter subscribe with arrow button
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

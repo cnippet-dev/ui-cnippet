@@ -1,3 +1,4 @@
+// title: Loading and success state button with animated icon swap
 "use client";
 
 import { CheckIcon, CloudUploadIcon } from "lucide-react";
@@ -27,7 +28,7 @@ export function Pattern() {
     >
       {state === "success" ? (
         <>
-          <CheckIcon className="size-4 text-emerald-500" />
+          <CheckIcon className="size-4 text-success-foreground" />
           Saved
         </>
       ) : (

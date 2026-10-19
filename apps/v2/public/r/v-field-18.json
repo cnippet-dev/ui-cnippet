@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-18.tsx",
-      "content": "import {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  return (\n    <Field className=\"flex-row items-center justify-between rounded-lg border p-4\">\n      <div className=\"flex flex-col gap-1\">\n        <FieldLabel className=\"cursor-pointer\">Marketing emails</FieldLabel>\n        <FieldDescription>\n          Receive emails about new products, features, and updates.\n        </FieldDescription>\n      </div>\n      <Switch />\n    </Field>\n  );\n}\n",
+      "content": "// title: Field with switch toggle\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport { Switch } from \"@/registry/default/ui/switch\";\n\nexport default function Particle() {\n  return (\n    <Field className=\"flex-row items-center justify-between rounded-lg border p-4\">\n      <div className=\"flex flex-col gap-1\">\n        <FieldLabel className=\"cursor-pointer\">Marketing emails</FieldLabel>\n        <FieldDescription>\n          Receive emails about new products, features, and updates.\n        </FieldDescription>\n      </div>\n      <Switch />\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "field"

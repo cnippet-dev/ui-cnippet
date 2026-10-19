@@ -1,3 +1,4 @@
+// title: Quick Settings
 "use client";
 
 import { SettingsIcon } from "lucide-react";

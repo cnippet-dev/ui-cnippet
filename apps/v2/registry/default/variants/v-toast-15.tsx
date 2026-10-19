@@ -1,3 +1,4 @@
+// title: Unsaved changes reminder with save and discard actions
 "use client";
 
 import { useState } from "react";

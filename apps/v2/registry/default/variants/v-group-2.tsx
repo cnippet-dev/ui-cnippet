@@ -1,3 +1,4 @@
+// title: With Input
 "use client";
 
 import { CheckIcon, CopyIcon } from "lucide-react";

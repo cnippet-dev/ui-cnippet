@@ -1,3 +1,4 @@
+// title: Order summary
 import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {

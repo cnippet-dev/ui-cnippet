@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-textarea-1.tsx",
-      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" />;\n}\n",
+      "content": "// title: Default\nimport { Textarea } from \"@/registry/default/ui/textarea\";\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" />;\n}\n",
       "type": "registry:block"
     }
   ],

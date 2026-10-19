@@ -1,3 +1,4 @@
+// title: Auto-grow with live word and character count
 "use client";
 
 import { useState } from "react";

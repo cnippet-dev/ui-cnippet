@@ -1,0 +1,101 @@
+---
+title: Time Picker
+description: Pick a time from a list of slots with step, min and max limits, 12- or 24-hour display and blocked times. Copy-paste ready.
+---
+
+<ComponentPreview name="v-time-picker-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/time-picker
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Add [Select](/ui/pickers/select), which it builds on.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="time-picker" title="components/ui/time-picker.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TimePicker } from "@/components/ui/time-picker"
+```
+
+```tsx
+const [time, setTime] = useState<string | null>("09:00")
+
+<TimePicker value={time} onValueChange={setTime} step={15} min="08:00" max="18:00" />
+```
+
+## Good to know
+
+- Values are `"HH:mm"` strings in 24-hour time, the same format as `<input type="time">`, whatever `hourCycle` shows. That keeps them easy to compare, store and send.
+- Options run every `step` minutes from `min` to `max`, both included.
+- `isTimeDisabled` keeps a time visible but unpickable, which suits booked slots better than hiding them.
+- It's a [Select](/ui/pickers/select) underneath, so typing a number jumps to the matching time and arrow keys move through the list.
+- Pass `name` to submit the value with a form.
+- `formatTime(value, hourCycle)` and `getTimeSlots(step, min, max)` are exported for showing a picked time elsewhere, as the booking example's button does.
+
+## API Reference
+
+### TimePicker
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string \| null` | — | Controlled time, `"HH:mm"` |
+| `defaultValue` | `string \| null` | — | Initial time when uncontrolled |
+| `onValueChange` | `(value: string \| null) => void` | — | Called when a time is picked |
+| `step` | `number` | `30` | Minutes between options |
+| `min` | `string` | `"00:00"` | Earliest option |
+| `max` | `string` | `"23:59"` | Latest option |
+| `hourCycle` | `12 \| 24` | `12` | Show "2:30 PM" or "14:30" |
+| `isTimeDisabled` | `(time: string) => boolean` | — | Block specific times |
+| `placeholder` | `string` | `"Select a time"` | Shown when empty |
+| `disabled` | `boolean` | — | Disables the picker |
+| `name` | `string` | — | Form field name |
+
+Other props, such as `id` and `className`, go on the trigger button.
+
+## Examples
+
+### Start and end
+
+Two pickers in 15-minute steps. The end list starts after the chosen start time, and the duration updates as you pick.
+
+<ComponentPreview name="v-time-picker-2" />
+
+### 24-hour
+
+Hourly quiet-hours settings in 24-hour time, disabled while the switch is off.
+
+<ComponentPreview name="v-time-picker-3" />

@@ -1,0 +1,140 @@
+---
+title: Stepper
+description: Shows progress through a multi-step flow such as checkout or onboarding, with completed, active and upcoming steps. Copy-paste ready.
+---
+
+<ComponentPreview name="v-stepper-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/stepper
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="stepper" title="components/ui/stepper.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Stepper,
+  StepperDescription,
+  StepperIndicator,
+  StepperItem,
+  StepperSeparator,
+  StepperTitle,
+  StepperTrigger,
+} from "@/components/ui/stepper"
+```
+
+```tsx
+const [step, setStep] = useState(1)
+
+<Stepper value={step} onValueChange={setStep}>
+  {["Cart", "Shipping", "Payment"].map((title, i) => (
+    <StepperItem key={title} step={i + 1}>
+      <StepperTrigger>
+        <StepperIndicator />
+        <StepperTitle>{title}</StepperTitle>
+      </StepperTrigger>
+      <StepperSeparator />
+    </StepperItem>
+  ))}
+</Stepper>
+```
+
+## Anatomy
+
+```tsx
+<Stepper>                      {/* <ol>; holds the active step */}
+  <StepperItem step={1}>       {/* <li>; data-state is completed, active or inactive */}
+    <StepperTrigger>           {/* button that makes this step active */}
+      <StepperIndicator />     {/* number, or a check when completed */}
+      <StepperTitle />
+      <StepperDescription />
+    </StepperTrigger>
+    <StepperSeparator />       {/* line to the next step; hidden on the last one */}
+  </StepperItem>
+</Stepper>
+```
+
+## Good to know
+
+- Steps start at 1. Every step before `value` shows as completed, `value` is active, and later steps are upcoming. Use `completed` on a `StepperItem` to mark a step done out of order.
+- The active item gets `aria-current="step"`, so screen readers announce where the user is.
+- `StepperTrigger` is optional. Leave it out (as in the compact example) when users shouldn't click between steps, and use `disabled` on an item to block steps they haven't reached yet.
+- The stepper only shows progress. Render each step's content yourself, based on the same `value`.
+- Style by state with `group-data-[state=completed]/step:` and friends, since every part sits inside a `group/step` item.
+
+## API Reference
+
+### Stepper
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Controlled active step |
+| `defaultValue` | `number` | `1` | Initial active step when uncontrolled |
+| `onValueChange` | `(step: number) => void` | — | Called when a trigger is clicked |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction |
+
+### StepperItem
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `step` | `number` | — | This step's number, starting at 1 |
+| `completed` | `boolean` | — | Show as completed regardless of `value` |
+| `disabled` | `boolean` | `false` | Disables this step's trigger |
+
+### StepperIndicator
+
+Shows the step number, or a check when completed. Pass children to show something else, such as an icon.
+
+## Examples
+
+### Vertical
+
+An onboarding checklist with titles and descriptions stacked down the side.
+
+<ComponentPreview name="v-stepper-2" />
+
+### Compact
+
+Dots without triggers, with the current step's name and a count above.
+
+<ComponentPreview name="v-stepper-3" />
+
+### Revisiting finished steps
+
+Steps the user has finished stay clickable after they go back; later steps stay disabled.
+
+<ComponentPreview name="v-stepper-4" />

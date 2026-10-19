@@ -1,3 +1,4 @@
+// title: Settings menu dividers
 import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {

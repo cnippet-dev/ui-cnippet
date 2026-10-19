@@ -1,3 +1,4 @@
+// title: 4-digit PIN with confirm
 "use client";
 
 import { useState } from "react";

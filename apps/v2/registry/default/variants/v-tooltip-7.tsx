@@ -1,3 +1,4 @@
+// title: Keyboard Shortcut Toolbar
 import {
   AlignCenterIcon,
   AlignJustifyIcon,

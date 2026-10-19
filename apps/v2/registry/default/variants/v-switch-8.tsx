@@ -1,3 +1,4 @@
+// title: Switch with descriptions in card grid
 "use client";
 
 import { BarChart3Icon, BugIcon, DatabaseIcon, GlobeIcon } from "lucide-react";

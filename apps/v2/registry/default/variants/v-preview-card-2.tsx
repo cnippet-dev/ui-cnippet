@@ -1,3 +1,4 @@
+// title: Venue location preview
 import { MapPinIcon } from "lucide-react";
 import {
   PreviewCard,

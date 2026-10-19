@@ -1,3 +1,4 @@
+// title: Color picker with swatches and hex input
 "use client";
 
 import { CheckIcon } from "lucide-react";

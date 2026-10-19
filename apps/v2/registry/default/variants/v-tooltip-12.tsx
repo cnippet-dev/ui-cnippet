@@ -1,3 +1,4 @@
+// title: Feature Gate
 import {
   ArrowRightIcon,
   CrownIcon,

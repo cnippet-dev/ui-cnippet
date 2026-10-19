@@ -1,3 +1,4 @@
+// title: Both Directions
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const COLS = 12;

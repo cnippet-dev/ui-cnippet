@@ -1,3 +1,4 @@
+// title: Settings list with descriptions
 import { Separator } from "@/registry/default/ui/separator";
 
 const sections = [

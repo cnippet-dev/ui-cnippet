@@ -1,3 +1,4 @@
+// title: Rate Limit Exceeded with live countdown timer
 "use client";
 
 import { TimerIcon, ZapIcon } from "lucide-react";
@@ -40,8 +41,8 @@ export function Pattern() {
       <AlertDialogTrigger render={<Button>Make API Request</Button>} />
       <AlertDialogContent className="sm:max-w-sm">
         <div className="flex flex-col items-center gap-3 p-6 pb-4">
-          <div className="flex size-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950">
-            <ZapIcon className="size-5 text-amber-600 dark:text-amber-400" />
+          <div className="flex size-12 items-center justify-center rounded-full bg-warning/8 dark:bg-warning/16">
+            <ZapIcon className="size-5 text-warning-foreground" />
           </div>
           <AlertDialogTitle className="text-center font-semibold text-base">
             Rate limit exceeded

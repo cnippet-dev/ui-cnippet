@@ -1,3 +1,4 @@
+// title: Default
 import { Button } from "@/registry/default/ui/button";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Form } from "@/registry/default/ui/form";

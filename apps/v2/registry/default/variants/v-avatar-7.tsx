@@ -1,3 +1,4 @@
+// title: With Details and Badge
 import {
   Avatar,
   AvatarFallback,

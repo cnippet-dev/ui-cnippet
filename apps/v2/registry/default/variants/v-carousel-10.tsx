@@ -1,3 +1,4 @@
+// title: Gallery with Thumbnails
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";

@@ -1,3 +1,4 @@
+// title: Stacked alerts within a Frame
 import { AlertTriangleIcon, CircleCheckIcon } from "lucide-react";
 import {
   Alert,
@@ -30,7 +31,7 @@ export function Pattern() {
             className="rounded-none border-0 shadow-none"
             variant="warning"
           >
-            <AlertTriangleIcon className="text-yellow-500" />
+            <AlertTriangleIcon className="text-warning-foreground" />
             <AlertTitle>Resource Limit Reached</AlertTitle>
             <AlertAction>
               <Button size="xs">Verify</Button>

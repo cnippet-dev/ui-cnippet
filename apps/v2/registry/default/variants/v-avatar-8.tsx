@@ -1,3 +1,4 @@
+// title: Avatar Social Proof With Text Label
 import {
   Avatar,
   AvatarFallback,

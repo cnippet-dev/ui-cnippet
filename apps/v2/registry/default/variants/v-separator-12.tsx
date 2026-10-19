@@ -1,3 +1,4 @@
+// title: Activity sections
 import { Separator } from "@/registry/default/ui/separator";
 
 export default function Particle() {

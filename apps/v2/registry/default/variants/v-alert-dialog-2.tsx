@@ -1,3 +1,4 @@
+// title: Small Size Alert Dialog
 import { BluetoothIcon } from "lucide-react";
 import {
   AlertDialog,

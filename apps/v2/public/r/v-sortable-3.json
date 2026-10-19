@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sortable-3",
+  "description": "Horizontal shortcut tabs",
+  "registryDependencies": [
+    "@cnippet/sortable",
+    "@cnippet/avatar",
+    "@cnippet/badge",
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sortable-3.tsx",
+      "content": "// title: Horizontal shortcut tabs\n\"use client\";\n\nimport {\n  BarChart3Icon,\n  HomeIcon,\n  InboxIcon,\n  type LucideIcon,\n  SettingsIcon,\n  UsersIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Sortable, SortableItem } from \"@/registry/default/ui/sortable\";\n\ntype Tab = { id: string; label: string; icon: LucideIcon };\n\nconst initial: Tab[] = [\n  { icon: HomeIcon, id: \"home\", label: \"Home\" },\n  { icon: InboxIcon, id: \"inbox\", label: \"Inbox\" },\n  { icon: BarChart3Icon, id: \"reports\", label: \"Reports\" },\n  { icon: UsersIcon, id: \"team\", label: \"Team\" },\n  { icon: SettingsIcon, id: \"settings\", label: \"Settings\" },\n];\n\nexport default function Particle() {\n  const [tabs, setTabs] = useState(initial);\n\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <Sortable\n        getItemValue={(t) => t.id}\n        onValueChange={setTabs}\n        orientation=\"horizontal\"\n        value={tabs}\n      >\n        <div className=\"flex gap-1 rounded-xl border bg-muted/40 p-1\">\n          {tabs.map((tab) => (\n            <SortableItem\n              asHandle\n              className=\"flex items-center gap-1.5 rounded-lg bg-background px-3 py-1.5 font-medium text-sm shadow-xs/5\"\n              key={tab.id}\n              value={tab.id}\n            >\n              <tab.icon aria-hidden=\"true\" className=\"size-4 opacity-72\" />\n              {tab.label}\n            </SortableItem>\n          ))}\n        </div>\n      </Sortable>\n      <p className=\"text-muted-foreground text-xs\">\n        Drag the shortcuts into the order you use them.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sortable"
+  ],
+  "type": "registry:block"
+}

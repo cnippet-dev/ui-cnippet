@@ -1,3 +1,4 @@
+// title: With Project, Sser and Document Info
 import { FileTextIcon } from "lucide-react";
 import {
   Avatar,
@@ -62,7 +63,7 @@ export function Pattern() {
 
             <BreadcrumbItem>
               <BreadcrumbPage className="flex items-center gap-2.5">
-                <span className="flex size-6 items-center justify-center rounded-md bg-sky-100 text-sky-500 dark:bg-sky-500/10 dark:text-sky-400">
+                <span className="flex size-6 items-center justify-center rounded-md bg-info/8 text-info-foreground dark:bg-info/16">
                   <FileTextIcon className="size-3.5" />
                 </span>
                 <div className="flex flex-col">

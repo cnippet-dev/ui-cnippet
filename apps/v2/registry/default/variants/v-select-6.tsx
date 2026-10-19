@@ -1,3 +1,4 @@
+// title: Currency select
 import {
   Select,
   SelectItem,

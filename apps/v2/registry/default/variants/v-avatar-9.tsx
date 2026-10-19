@@ -1,3 +1,4 @@
+// title: Compact Social Proof With Initials
 import {
   Avatar,
   AvatarFallback,

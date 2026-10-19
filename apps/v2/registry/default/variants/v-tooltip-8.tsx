@@ -1,3 +1,4 @@
+// title: Avatar Stack
 import { PlusIcon } from "lucide-react";
 import {
   Avatar,

@@ -1,3 +1,4 @@
+// title: Food preference picker with independent cuisine and dietary checkbox groups
 "use client";
 
 import { useState } from "react";
@@ -26,7 +27,7 @@ export function Pattern() {
   const [dietary, setDietary] = useState<string[]>([]);
 
   return (
-    <div className="w-full max-w-xs space-y-5">
+    <div className="w-full max-w-xs space-y-4 rounded-xl border p-4">
       <p className="font-semibold text-sm">Food preferences</p>
       <div className="space-y-2">
         <p className="font-medium text-muted-foreground text-xs uppercase tracking-wide">
@@ -37,11 +38,11 @@ export function Pattern() {
           onValueChange={setCuisines}
           value={cuisines}
         >
-          <Label className="mb-1 text-muted-foreground text-sm">
+          <Label className="mb-2 text-muted-foreground text-sm">
             <Checkbox parent />
             All cuisines
           </Label>
-          <div className="ms-5 grid grid-cols-2 gap-x-4 gap-y-1">
+          <div className="ms-6 grid grid-cols-2 gap-x-6 gap-y-2.5">
             {CUISINES.map((c) => (
               <Label className="text-sm" key={c.id}>
                 <Checkbox value={c.id} />
@@ -60,11 +61,11 @@ export function Pattern() {
           onValueChange={setDietary}
           value={dietary}
         >
-          <Label className="mb-1 text-muted-foreground text-sm">
+          <Label className="mb-2 text-muted-foreground text-sm">
             <Checkbox parent />
             All dietary options
           </Label>
-          <div className="ms-5 grid grid-cols-2 gap-x-4 gap-y-1">
+          <div className="ms-6 grid grid-cols-2 gap-x-6 gap-y-2.5">
             {DIETARY.map((d) => (
               <Label className="text-sm" key={d.id}>
                 <Checkbox value={d.id} />

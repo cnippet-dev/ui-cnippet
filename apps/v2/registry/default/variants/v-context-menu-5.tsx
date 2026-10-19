@@ -1,3 +1,4 @@
+// title: Spreadsheet cells with icon actions
 "use client";
 
 import {

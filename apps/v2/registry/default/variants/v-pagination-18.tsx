@@ -1,3 +1,4 @@
+// title: Controlled with smart ellipsis
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";

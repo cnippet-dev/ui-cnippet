@@ -1,3 +1,4 @@
+// title: Showcase: icons, text add-ons, shortcut and button
 import { ArrowRightIcon, MailIcon, SearchIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

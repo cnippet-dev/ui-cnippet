@@ -1,3 +1,4 @@
+// title: Required Agreement Switch
 "use client";
 
 import { useState } from "react";

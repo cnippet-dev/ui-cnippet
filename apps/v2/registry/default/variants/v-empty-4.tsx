@@ -1,3 +1,4 @@
+// title: Empty state with add button
 import { FolderIcon, PlusIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

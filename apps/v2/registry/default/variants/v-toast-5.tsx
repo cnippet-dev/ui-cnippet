@@ -1,3 +1,4 @@
+// title: Promise
 "use client";
 
 import { Button } from "@/registry/default/ui/button";

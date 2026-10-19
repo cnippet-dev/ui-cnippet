@@ -1,3 +1,4 @@
+// title: Holiday highlights with name on select
 "use client";
 
 import * as React from "react";
@@ -27,7 +28,7 @@ export default function Particle() {
         mode="single"
         modifiers={{ holiday: holidayDates }}
         modifiersClassNames={{
-          holiday: "text-rose-600 font-semibold dark:text-rose-400",
+          holiday: "text-destructive-foreground font-semibold",
         }}
         onSelect={setSelected}
         selected={selected}
@@ -35,7 +36,7 @@ export default function Particle() {
       <div className="rounded-lg border px-4 py-2.5 text-sm">
         {label ? (
           <p>
-            <span className="font-semibold text-rose-600 dark:text-rose-400">
+            <span className="font-semibold text-destructive-foreground">
               {label}
             </span>{" "}
             —{" "}

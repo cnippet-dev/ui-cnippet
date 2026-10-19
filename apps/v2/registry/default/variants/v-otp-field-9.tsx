@@ -1,3 +1,4 @@
+// title: Masked entry
 import {
   Field,
   FieldDescription,

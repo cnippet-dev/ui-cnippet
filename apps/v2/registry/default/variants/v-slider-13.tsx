@@ -1,7 +1,12 @@
+// title: Hue Color Picker
 "use client";
 
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { Slider } from "@/registry/default/ui/slider";
+
+const HUE_GRADIENT =
+  "linear-gradient(to right, hsl(0,70%,55%), hsl(60,70%,55%), hsl(120,70%,55%), hsl(180,70%,55%), hsl(240,70%,55%), hsl(300,70%,55%), hsl(360,70%,55%))";
 
 export default function Particle() {
   const [hue, setHue] = useState(210);
@@ -15,18 +20,14 @@ export default function Particle() {
           style={{ backgroundColor: `hsl(${hue}, 70%, 55%)` }}
         />
       </div>
-      <div
-        className="h-2 rounded-full"
-        style={{
-          background:
-            "linear-gradient(to right, hsl(0,70%,55%), hsl(60,70%,55%), hsl(120,70%,55%), hsl(180,70%,55%), hsl(240,70%,55%), hsl(300,70%,55%), hsl(360,70%,55%))",
-        }}
-      />
+      {/* The hue spectrum is the track itself, so the thumb sits on the colour it picks. */}
       <Slider
         aria-label="Color hue"
+        className="**:data-[slot=slider-track]:before:bg-(image:--hue-gradient) **:data-[slot=slider-track]:h-2 **:data-[slot=slider-indicator]:bg-transparent"
         max={360}
         min={0}
         onValueChange={(v) => setHue(Array.isArray(v) ? (v[0] ?? 210) : v)}
+        style={{ "--hue-gradient": HUE_GRADIENT } as CSSProperties}
         value={[hue]}
       />
       <p className="text-center text-muted-foreground text-xs">

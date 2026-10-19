@@ -1,3 +1,4 @@
+// title: With Icons And Line Variant
 import { Badge } from "@/registry/default/ui/badge";
 
 import { Card, CardContent } from "@/registry/default/ui/card";

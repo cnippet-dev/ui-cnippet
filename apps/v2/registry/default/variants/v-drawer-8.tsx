@@ -1,3 +1,4 @@
+// title: Notification Center
 import { BellIcon } from "lucide-react";
 import {
   Avatar,

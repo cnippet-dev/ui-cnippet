@@ -1,3 +1,4 @@
+// title: Semantic color variants
 import { Spinner } from "@/registry/default/ui/spinner";
 
 export function Pattern() {

@@ -1,3 +1,4 @@
+// title: Subscriptions table with plan badges and billing info
 import { SettingsIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 

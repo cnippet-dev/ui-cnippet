@@ -1,3 +1,4 @@
+// title: Habit tracker with completion indicators and monthly streak counter
 "use client";
 
 import { CheckIcon } from "lucide-react";
@@ -34,7 +35,7 @@ function HabitDayButton({
       className={[
         props.className,
         done && !modifiers.selected
-          ? "relative bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400"
+          ? "relative bg-success/8 text-success-foreground dark:bg-success/16"
           : "",
       ]
         .filter(Boolean)
@@ -42,7 +43,7 @@ function HabitDayButton({
     >
       {children}
       {done && !isFuture && (
-        <CheckIcon className="absolute right-0.5 bottom-0.5 size-2.5 text-emerald-500" />
+        <CheckIcon className="absolute right-0.5 bottom-0.5 size-2.5 text-success-foreground" />
       )}
     </button>
   );

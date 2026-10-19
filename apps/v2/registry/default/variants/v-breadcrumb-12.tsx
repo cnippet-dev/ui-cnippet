@@ -1,3 +1,4 @@
+// title: Checkout step progress breadcrumb with numbered circles and navigation buttons
 "use client";
 
 import { CheckIcon } from "lucide-react";
@@ -50,7 +51,7 @@ export function Pattern() {
                       <span
                         className={`flex size-5 items-center justify-center rounded-full font-bold text-[10px] ${
                           done
-                            ? "bg-emerald-500 text-white"
+                            ? "bg-success text-white"
                             : "border text-muted-foreground/50"
                         }`}
                       >

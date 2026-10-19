@@ -1,3 +1,4 @@
+// title: Accent Color Picker
 "use client";
 
 import { CheckIcon } from "lucide-react";

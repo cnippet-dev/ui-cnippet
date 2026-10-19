@@ -1,3 +1,4 @@
+// title: Product Showcase
 "use client";
 
 import {

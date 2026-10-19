@@ -1,3 +1,4 @@
+// title: Edit Profile with Avatar
 import { EllipsisIcon } from "lucide-react";
 import {
   Avatar,

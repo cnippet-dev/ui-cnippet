@@ -14,7 +14,7 @@ export interface VariantEntry {
 
 // Categories whose variants need the full row; two columns would leave each
 // one too narrow and force horizontal scrolling.
-const WIDE_CATEGORIES = new Set(["data table"]);
+const WIDE_CATEGORIES = new Set(["data table", "sidebar"]);
 
 const SECTIONS = [
   { id: "core", label: "Core" },
@@ -183,7 +183,6 @@ export function ExploreShowcase({
         {filtered.length > 0 ? (
           filtered.map((variant) => (
             <VariantCard
-              category={variant.category}
               description={variant.description}
               key={variant.name}
               name={variant.name}

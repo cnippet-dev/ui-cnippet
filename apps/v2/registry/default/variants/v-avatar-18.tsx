@@ -1,3 +1,4 @@
+// title: Pull request comment thread
 import { HeartIcon, MessageCircleIcon } from "lucide-react";
 import {
   Avatar,

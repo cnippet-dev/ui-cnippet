@@ -1,3 +1,4 @@
+// title: Collapsible card with bottom trigger
 import { ChevronDownIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

@@ -1,3 +1,4 @@
+// title: Tech stack picker grouped by category
 "use client";
 
 import { Fragment } from "react";

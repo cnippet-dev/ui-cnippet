@@ -1,0 +1,143 @@
+---
+title: Sortable
+description: Drag-and-drop reordering for lists, rows, grids and Kanban boards, with keyboard support, built on dnd-kit. Copy-paste ready.
+
+links:
+  doc: https://docs.dndkit.com/presets/sortable
+---
+
+<ComponentPreview name="v-sortable-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/sortable
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sortable" title="components/ui/sortable.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Sortable,
+  SortableItem,
+  SortableItemHandle,
+} from "@/components/ui/sortable"
+```
+
+```tsx
+const [tasks, setTasks] = useState(initialTasks)
+
+<Sortable value={tasks} onValueChange={setTasks} getItemValue={(t) => t.id}>
+  {tasks.map((task) => (
+    <SortableItem key={task.id} value={task.id} className="flex items-center gap-2">
+      <SortableItemHandle />
+      {task.title}
+    </SortableItem>
+  ))}
+</Sortable>
+```
+
+## Anatomy
+
+```tsx
+<Sortable>                    {/* drag context; calls onValueChange with the reordered array */}
+  <SortableItem value={id}>   {/* one draggable item; data-dragging while it moves */}
+    <SortableItemHandle />    {/* the grip that starts a drag; leave it out and use asHandle instead */}
+  </SortableItem>
+</Sortable>
+```
+
+## Good to know
+
+- `Sortable` doesn't render any element, so wrap the items in your own list, row or grid and match `orientation` to it: `"vertical"`, `"horizontal"` or `"grid"`.
+- `getItemValue` must return a unique, stable id. Don't use the array index; it changes as items move.
+- Keyboard users focus a handle (or an `asHandle` item), press Space to pick it up, move it with the arrow keys, and press Space again to drop it or Escape to cancel. dnd-kit announces each step to screen readers.
+- A drag only starts after the pointer moves 4px, so clicks on buttons and checkboxes inside an item still work.
+- `SortableItem` and `SortableItemHandle` work under any dnd-kit `SortableContext`. For drags between lists, like the Kanban example, use your own `DndContext` with `useSortableSensors()` and one `SortableContext` per list.
+
+## API Reference
+
+### Sortable
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `T[]` | — | The items, in order |
+| `onValueChange` | `(value: T[]) => void` | — | Called with the reordered items after a drop |
+| `getItemValue` | `(item: T) => UniqueIdentifier` | — | A unique id for each item |
+| `orientation` | `"vertical" \| "horizontal" \| "grid"` | `"vertical"` | How the items are laid out |
+
+### SortableItem
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `UniqueIdentifier` | — | This item's id, matching `getItemValue` |
+| `asHandle` | `boolean` | `false` | Make the whole item draggable |
+| `disabled` | `boolean` | `false` | Keep this item in place |
+
+Renders a `<div>`; other props go on it.
+
+### SortableItemHandle
+
+A `<button>` that starts the drag, with a grip icon unless you pass children. Its label is "Drag to reorder".
+
+### Helpers
+
+`useSortableSensors()` returns the pointer and keyboard sensors `Sortable` uses, for your own `DndContext`. `arrayMove` is re-exported from dnd-kit.
+
+## Examples
+
+### Ranking
+
+The whole row is the handle, and the rank numbers update as items move.
+
+<ComponentPreview name="v-sortable-2" />
+
+### Horizontal
+
+Reorder shortcut tabs in a row.
+
+<ComponentPreview name="v-sortable-3" />
+
+### Grid
+
+Rearrange dashboard cards in a responsive grid by their handles.
+
+<ComponentPreview name="v-sortable-4" />
+
+### Kanban
+
+Move cards within and between columns, including into an empty one.
+
+<ComponentPreview name="v-sortable-5" />

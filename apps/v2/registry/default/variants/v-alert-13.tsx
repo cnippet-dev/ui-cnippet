@@ -1,3 +1,4 @@
+// title: Storage limit warning with usage progress bar
 import { HardDriveIcon } from "lucide-react";
 import {
   Alert,
@@ -21,7 +22,7 @@ export function Pattern() {
             className="rounded-none border-0 shadow-none"
             variant="warning"
           >
-            <HardDriveIcon className="text-yellow-500" />
+            <HardDriveIcon className="text-warning-foreground" />
             <AlertTitle>Storage almost full</AlertTitle>
             <AlertAction>
               <Button size="xs">Upgrade</Button>
@@ -34,9 +35,9 @@ export function Pattern() {
                 </strong>{" "}
                 ({pct}%).
               </span>
-              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-yellow-100 dark:bg-yellow-900/40">
+              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-warning/8 dark:bg-warning/16">
                 <div
-                  className="h-full rounded-full bg-yellow-500 transition-all"
+                  className="h-full rounded-full bg-warning transition-all"
                   style={{ width: `${pct}%` }}
                 />
               </div>

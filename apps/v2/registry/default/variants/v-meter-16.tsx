@@ -1,3 +1,4 @@
+// title: Showcase: percentage, formatted value and custom range
 "use client";
 
 import {

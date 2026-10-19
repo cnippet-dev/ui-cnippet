@@ -1,3 +1,4 @@
+// title: Numbered Pagination In Card
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {

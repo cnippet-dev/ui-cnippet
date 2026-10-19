@@ -1,3 +1,4 @@
+// title: Empty state with search input
 import { CircleDashedIcon } from "lucide-react";
 import {
   Empty,

@@ -1,3 +1,4 @@
+// title: Code editor with keyboard shortcuts
 import {
   ContextMenu,
   ContextMenuContent,

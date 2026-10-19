@@ -1,3 +1,4 @@
+// title: With Keyboard Shortcut
 import {
   InputGroup,
   InputGroupAddon,

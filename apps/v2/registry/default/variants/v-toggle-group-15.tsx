@@ -1,3 +1,4 @@
+// title: Zoom level control with live scale preview
 "use client";
 
 import { useState } from "react";

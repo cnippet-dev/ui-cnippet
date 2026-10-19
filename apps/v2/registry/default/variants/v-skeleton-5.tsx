@@ -1,3 +1,4 @@
+// title: List with actions
 import { Separator } from "@/registry/default/ui/separator";
 import { Skeleton } from "@/registry/default/ui/skeleton";
 

@@ -1,3 +1,4 @@
+// title: Clear All Data with checkbox consent gate
 "use client";
 
 import { Trash2Icon } from "lucide-react";

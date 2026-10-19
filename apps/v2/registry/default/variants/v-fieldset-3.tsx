@@ -1,3 +1,4 @@
+// title: Shipping address fieldset
 import { Field, FieldError, FieldLabel } from "@/registry/default/ui/field";
 import { Fieldset, FieldsetLegend } from "@/registry/default/ui/fieldset";
 import { Input } from "@/registry/default/ui/input";
@@ -39,11 +40,10 @@ export default function Particle() {
         </Field>
         <Field>
           <FieldLabel>
-            ZIP / Postal code{" "}
-            <span className="text-destructive-foreground">*</span>
+            Postal code <span className="text-destructive-foreground">*</span>
           </FieldLabel>
           <Input placeholder="94103" required type="text" />
-          <FieldError>ZIP code is required.</FieldError>
+          <FieldError>Postal code is required.</FieldError>
         </Field>
       </div>
       <Field>

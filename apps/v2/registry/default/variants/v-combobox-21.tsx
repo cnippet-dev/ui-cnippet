@@ -1,3 +1,4 @@
+// title: Timezone picker with UTC offset badge in trigger and region info below
 "use client";
 
 import { ChevronsUpDownIcon, XIcon } from "lucide-react";

@@ -1,3 +1,4 @@
+// title: Subscription plan tiers with pricing
 import { Badge } from "@/registry/default/ui/badge";
 import { Frame, FramePanel } from "@/registry/default/ui/frame";
 

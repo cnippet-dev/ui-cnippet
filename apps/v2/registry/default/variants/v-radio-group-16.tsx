@@ -1,3 +1,4 @@
+// title: Showcase: simple, disabled and with descriptions
 import { Label } from "@/registry/default/ui/label";
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group";
 

@@ -1,3 +1,4 @@
+// title: No recent activity empty state
 import { ActivityIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

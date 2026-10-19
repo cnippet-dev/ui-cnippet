@@ -1,3 +1,4 @@
+// title: Rich text editor toolbar with formatting and alignment controls
 "use client";
 
 import {

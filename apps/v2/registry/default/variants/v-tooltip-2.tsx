@@ -1,3 +1,4 @@
+// title: Grouped Tooltips
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 import {
   ToggleGroup,

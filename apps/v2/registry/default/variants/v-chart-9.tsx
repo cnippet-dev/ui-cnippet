@@ -1,3 +1,4 @@
+// title: Scatter plot of scores
 "use client";
 
 import { CartesianGrid, Scatter, ScatterChart, XAxis, YAxis } from "recharts";

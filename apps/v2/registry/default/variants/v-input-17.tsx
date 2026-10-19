@@ -1,3 +1,4 @@
+// title: With Optional Badge
 import { Badge } from "@/registry/default/ui/badge";
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";

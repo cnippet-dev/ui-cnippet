@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-banner-1",
+  "description": "Dismissible promo and maintenance banners above a page",
+  "registryDependencies": [
+    "@cnippet/banner",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-banner-1.tsx",
+      "content": "// title: Dismissible promo and maintenance banners above a page\n\"use client\";\n\nimport { ArrowRightIcon, SparklesIcon, WrenchIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  Banner,\n  BannerAction,\n  BannerClose,\n  BannerContent,\n  BannerDescription,\n  BannerTitle,\n} from \"@/registry/default/ui/banner\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function Particle() {\n  const [promo, setPromo] = useState(true);\n  const [maintenance, setMaintenance] = useState(true);\n\n  return (\n    <div className=\"w-full max-w-2xl overflow-hidden rounded-xl border\">\n      {promo && (\n        <Banner variant=\"primary\">\n          <SparklesIcon aria-hidden=\"true\" />\n          <BannerContent>\n            <BannerTitle>Launch week: 30% off annual plans</BannerTitle>\n            <BannerDescription className=\"max-sm:hidden\">\n              Ends Friday, Oct 23.\n            </BannerDescription>\n          </BannerContent>\n          <BannerAction>\n            <Button\n              className=\"border-primary-foreground/24 bg-primary-foreground/12 text-primary-foreground hover:bg-primary-foreground/20\"\n              size=\"sm\"\n              variant=\"outline\"\n            >\n              Upgrade <ArrowRightIcon aria-hidden=\"true\" />\n            </Button>\n          </BannerAction>\n          <BannerClose onClick={() => setPromo(false)} />\n        </Banner>\n      )}\n      {maintenance && (\n        <Banner variant=\"warning\">\n          <WrenchIcon aria-hidden=\"true\" />\n          <BannerContent>\n            <BannerTitle>Scheduled maintenance</BannerTitle>\n            <BannerDescription>\n              Sun, Oct 25 · 02:00–03:00 UTC. Deploys will be paused.\n            </BannerDescription>\n          </BannerContent>\n          <BannerClose onClick={() => setMaintenance(false)} />\n        </Banner>\n      )}\n      <div className=\"flex min-h-40 flex-col items-center justify-center gap-3 p-6 text-center\">\n        <p className=\"font-medium text-sm\">Dashboard</p>\n        <p className=\"text-muted-foreground text-sm\">\n          {promo || maintenance\n            ? \"Banners sit above the page and close for this visit.\"\n            : \"All banners dismissed.\"}\n        </p>\n        {!(promo && maintenance) && (\n          <Button\n            onClick={() => {\n              setPromo(true);\n              setMaintenance(true);\n            }}\n            size=\"sm\"\n            variant=\"outline\"\n          >\n            Show banners again\n          </Button>\n        )}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "banner"
+  ],
+  "type": "registry:block"
+}

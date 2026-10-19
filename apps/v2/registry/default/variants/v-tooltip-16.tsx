@@ -1,3 +1,4 @@
+// title: Permissions matrix with role access details per cell
 import { CheckIcon, MinusIcon } from "lucide-react";
 import {
   Tooltip,
@@ -52,9 +53,9 @@ const roles = ["admin", "editor", "viewer"] as const;
 function AccessCell({ access, detail }: { access: Access; detail: string }) {
   const icon =
     access === "full" ? (
-      <CheckIcon className="size-3.5 text-emerald-500" />
+      <CheckIcon className="size-3.5 text-success-foreground" />
     ) : access === "read" ? (
-      <CheckIcon className="size-3.5 text-amber-500" />
+      <CheckIcon className="size-3.5 text-warning-foreground" />
     ) : (
       <MinusIcon className="size-3.5 text-muted-foreground" />
     );

@@ -1,3 +1,4 @@
+// title: Default
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";
 import { Toggle } from "@/registry/default/ui/toggle";
 

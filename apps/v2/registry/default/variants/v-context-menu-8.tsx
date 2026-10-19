@@ -1,3 +1,4 @@
+// title: Inbox rows with destructive delete
 "use client";
 
 import {

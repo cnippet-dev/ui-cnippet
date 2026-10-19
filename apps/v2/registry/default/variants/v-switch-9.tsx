@@ -1,3 +1,4 @@
+// title: Cookie Preferences Manager
 "use client";
 
 import { ShieldCheckIcon } from "lucide-react";

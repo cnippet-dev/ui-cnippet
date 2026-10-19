@@ -1,3 +1,4 @@
+// title: Customer directory with search and pagination
 "use client";
 
 import {

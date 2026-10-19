@@ -1,3 +1,4 @@
+// title: Showcase: single, multiple, outline and vertical
 import {
   AlignCenterIcon,
   AlignLeftIcon,
@@ -61,7 +62,7 @@ export default function Particle() {
           <ToggleGroupItem value="week">Week</ToggleGroupItem>
           <ToggleGroupItem value="month">Month</ToggleGroupItem>
         </ToggleGroup>
-        <ToggleGroup defaultValue={["week"]} variant="outline">
+        <ToggleGroup defaultValue={["week"]} size="lg" variant="outline">
           <ToggleGroupItem value="day">Day</ToggleGroupItem>
           <ToggleGroupItem value="week">Week</ToggleGroupItem>
           <ToggleGroupItem value="month">Month</ToggleGroupItem>

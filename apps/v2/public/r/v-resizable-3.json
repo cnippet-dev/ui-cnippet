@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-resizable-3",
+  "description": "Vertical panels with grip handle",
+  "registryDependencies": [
+    "@cnippet/resizable"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-resizable-3.tsx",
+      "content": "// title: Vertical panels with grip handle\nimport {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/registry/default/ui/resizable\";\n\nexport default function Particle() {\n  return (\n    <ResizablePanelGroup\n      className=\"h-64 w-full max-w-md rounded-xl border\"\n      orientation=\"vertical\"\n    >\n      <ResizablePanel defaultSize=\"35%\" minSize=\"20%\">\n        <div className=\"flex h-full items-center justify-center text-muted-foreground text-sm\">\n          Header\n        </div>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel minSize=\"20%\">\n        <div className=\"flex h-full items-center justify-center text-muted-foreground text-sm\">\n          Content\n        </div>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "resizable"
+  ],
+  "type": "registry:block"
+}

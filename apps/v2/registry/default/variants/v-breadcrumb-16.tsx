@@ -1,3 +1,4 @@
+// title: Showcase: separators, home icon and ellipsis
 import { HouseIcon } from "lucide-react";
 import {
   Breadcrumb,

@@ -1,3 +1,4 @@
+// title: Release notes editor with title input and publish action
 "use client";
 
 import { useState } from "react";
@@ -52,7 +53,9 @@ export function Pattern() {
         <div className="flex items-center justify-between text-muted-foreground text-xs">
           <span>Markdown supported</span>
           <span
-            className={notes.length > MAX_CHARS * 0.9 ? "text-amber-500" : ""}
+            className={
+              notes.length > MAX_CHARS * 0.9 ? "text-warning-foreground" : ""
+            }
           >
             {notes.length} / {MAX_CHARS}
           </span>

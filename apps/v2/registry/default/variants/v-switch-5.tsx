@@ -1,3 +1,4 @@
+// title: Switch list in card with icons
 import { Field, FieldLabel } from "@/registry/default/ui/field";
 import { Switch } from "@/registry/default/ui/switch";
 

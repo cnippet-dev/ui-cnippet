@@ -1,3 +1,4 @@
+// title: API Key Generation and Reveal
 "use client";
 
 import {

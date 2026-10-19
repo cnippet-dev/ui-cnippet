@@ -1,3 +1,4 @@
+// title: Showcase: numbered, icon-only and page info
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   Pagination,

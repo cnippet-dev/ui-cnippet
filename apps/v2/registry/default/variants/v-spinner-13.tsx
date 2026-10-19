@@ -1,3 +1,4 @@
+// title: Table Row Loading State
 "use client";
 
 import { RefreshCwIcon } from "lucide-react";

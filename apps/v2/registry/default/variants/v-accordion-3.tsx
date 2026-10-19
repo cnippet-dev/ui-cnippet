@@ -1,3 +1,4 @@
+// title: Multiple Accordion
 import {
   Accordion,
   AccordionItem,

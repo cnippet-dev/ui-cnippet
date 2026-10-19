@@ -1,3 +1,4 @@
+// title: Changelog / Release Notes with versioned entries
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import {

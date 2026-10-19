@@ -1,3 +1,4 @@
+// title: Shortcuts in menu items
 import { CopyIcon, DownloadIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";

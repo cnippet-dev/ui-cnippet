@@ -1,3 +1,4 @@
+// title: Avatar Group
 import {
   Avatar,
   AvatarFallback,

@@ -1,3 +1,4 @@
+// title: Dismissible announcement banner with CTA
 "use client";
 
 import { ArrowRightIcon, MegaphoneIcon, XIcon } from "lucide-react";

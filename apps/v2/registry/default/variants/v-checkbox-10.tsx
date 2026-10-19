@@ -1,3 +1,4 @@
+// title: Multi-Consent Registration Gate
 "use client";
 
 import { useId, useState } from "react";

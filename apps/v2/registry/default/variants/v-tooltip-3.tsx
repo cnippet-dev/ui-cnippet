@@ -1,3 +1,4 @@
+// title: Animated Tooltips
 "use client";
 
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react";

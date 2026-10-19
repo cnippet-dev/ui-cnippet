@@ -1,3 +1,4 @@
+// title: Data table toolbar with search input, filter controls, and add row
 "use client";
 
 import {

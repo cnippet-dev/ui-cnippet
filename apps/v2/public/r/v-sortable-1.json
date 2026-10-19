@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-sortable-1",
+  "description": "Task list with drag handles",
+  "registryDependencies": [
+    "@cnippet/sortable",
+    "@cnippet/avatar",
+    "@cnippet/badge",
+    "@cnippet/checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-sortable-1.tsx",
+      "content": "// title: Task list with drag handles\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport {\n  Sortable,\n  SortableItem,\n  SortableItemHandle,\n} from \"@/registry/default/ui/sortable\";\n\ntype Task = {\n  id: string;\n  title: string;\n  done: boolean;\n  label: \"Bug\" | \"Feature\" | \"Docs\";\n};\n\nconst LABELS = {\n  Bug: \"error\",\n  Docs: \"secondary\",\n  Feature: \"info\",\n} as const;\n\nconst initial: Task[] = [\n  { done: false, id: \"t1\", label: \"Bug\", title: \"Fix focus ring on Select\" },\n  { done: true, id: \"t2\", label: \"Feature\", title: \"Add Stepper component\" },\n  { done: false, id: \"t3\", label: \"Docs\", title: \"Document Tag Input props\" },\n  { done: false, id: \"t4\", label: \"Feature\", title: \"Ship File Upload\" },\n  { done: false, id: \"t5\", label: \"Bug\", title: \"Toast stacks off-screen\" },\n];\n\nexport default function Particle() {\n  const [tasks, setTasks] = useState(initial);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <div className=\"mb-2 flex items-baseline justify-between\">\n        <p className=\"font-medium text-sm\">Sprint backlog</p>\n        <p className=\"text-muted-foreground text-xs\">\n          Drag the handle, or focus it and use Space + arrow keys\n        </p>\n      </div>\n      <Sortable\n        getItemValue={(t) => t.id}\n        onValueChange={setTasks}\n        value={tasks}\n      >\n        <div className=\"flex flex-col gap-1.5\">\n          {tasks.map((task) => (\n            <SortableItem\n              className=\"flex items-center gap-3 rounded-lg border bg-background px-2 py-2\"\n              key={task.id}\n              value={task.id}\n            >\n              <SortableItemHandle className=\"size-6\" />\n              <Checkbox\n                aria-label={task.title}\n                checked={task.done}\n                onCheckedChange={(done) =>\n                  setTasks((all) =>\n                    all.map((t) =>\n                      t.id === task.id ? { ...t, done: !!done } : t,\n                    ),\n                  )\n                }\n              />\n              <span\n                className={\n                  task.done\n                    ? \"flex-1 truncate text-muted-foreground text-sm line-through\"\n                    : \"flex-1 truncate text-sm\"\n                }\n              >\n                {task.title}\n              </span>\n              <Badge variant={LABELS[task.label]}>{task.label}</Badge>\n            </SortableItem>\n          ))}\n        </div>\n      </Sortable>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": "",
+    "role": "showcase"
+  },
+  "categories": [
+    "sortable"
+  ],
+  "type": "registry:block"
+}

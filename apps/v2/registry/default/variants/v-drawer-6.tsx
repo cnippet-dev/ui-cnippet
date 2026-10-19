@@ -1,3 +1,4 @@
+// title: Filter & Sort Panel
 import { SlidersHorizontalIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

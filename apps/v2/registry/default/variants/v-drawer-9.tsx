@@ -1,3 +1,4 @@
+// title: Delete account confirmation with undo
 "use client";
 
 import { TrashIcon } from "lucide-react";

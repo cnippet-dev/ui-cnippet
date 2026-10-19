@@ -1,3 +1,4 @@
+// title: Field with slider
 import {
   Field,
   FieldDescription,
@@ -8,9 +9,9 @@ import { Slider } from "@/registry/default/ui/slider";
 export default function Particle() {
   return (
     <Field className="items-stretch gap-3">
-      <FieldLabel>Country</FieldLabel>
+      <FieldLabel>Volume</FieldLabel>
       <Slider defaultValue={50} />
-      <FieldDescription>This is an optional field</FieldDescription>
+      <FieldDescription>Applies to all notification sounds.</FieldDescription>
     </Field>
   );
 }

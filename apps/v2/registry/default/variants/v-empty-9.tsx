@@ -1,3 +1,4 @@
+// title: No events empty state with calendar illustration
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,

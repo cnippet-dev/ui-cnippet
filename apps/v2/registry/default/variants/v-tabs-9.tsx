@@ -1,3 +1,4 @@
+// title: With Icons
 import { BarChart3Icon, LayoutDashboardIcon, SettingsIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 import {

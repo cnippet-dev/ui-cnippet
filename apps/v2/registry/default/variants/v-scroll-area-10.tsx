@@ -1,3 +1,4 @@
+// title: Code viewer
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 const code = `import { useState, useEffect, useCallback } from "react";

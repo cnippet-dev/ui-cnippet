@@ -1,3 +1,4 @@
+// title: Card Style
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { Label } from "@/registry/default/ui/label";
 

@@ -1,3 +1,4 @@
+// title: Social feed with upvote/downvote controls and a report submenu per post
 "use client";
 
 import {

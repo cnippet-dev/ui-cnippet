@@ -1,3 +1,4 @@
+// title: In a tooltip
 import { SaveIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import { Kbd } from "@/registry/default/ui/kbd";

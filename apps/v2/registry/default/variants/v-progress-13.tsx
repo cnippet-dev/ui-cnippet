@@ -1,3 +1,4 @@
+// title: Fundraiser goal tracker
 import { HeartIcon } from "lucide-react";
 import {
   Progress,

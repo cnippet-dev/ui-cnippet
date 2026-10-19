@@ -1,3 +1,4 @@
+// title: Alert with actions integrated within a Frame
 import { ShieldCheckIcon } from "lucide-react";
 import {
   Alert,
@@ -14,7 +15,7 @@ export function Pattern() {
       <Frame>
         <FramePanel className="overflow-hidden p-0!">
           <Alert className="border-0 shadow-none">
-            <ShieldCheckIcon className="text-emerald-500" />
+            <ShieldCheckIcon className="text-success-foreground" />
             <AlertTitle>Security Update</AlertTitle>
             <AlertAction>
               <Button size="xs" variant="outline">

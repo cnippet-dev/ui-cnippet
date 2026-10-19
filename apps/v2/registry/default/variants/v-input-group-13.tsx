@@ -1,3 +1,4 @@
+// title: Disabled
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {

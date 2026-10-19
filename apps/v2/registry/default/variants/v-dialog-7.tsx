@@ -1,3 +1,4 @@
+// title: Cookie Preferences
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,

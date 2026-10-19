@@ -1,3 +1,4 @@
+// title: Showcase: variants, sizes, icons and counts
 import { CheckIcon, ClockIcon } from "lucide-react";
 import { Badge } from "@/registry/default/ui/badge";
 

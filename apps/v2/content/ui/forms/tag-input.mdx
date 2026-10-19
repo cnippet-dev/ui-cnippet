@@ -1,0 +1,106 @@
+---
+title: Tag Input
+description: A text field that turns entries into removable tags, for emails, skills, topics and filters, with validation, limits and paste support. Copy-paste ready.
+---
+
+<ComponentPreview name="v-tag-input-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/tag-input
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="tag-input" title="components/ui/tag-input.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TagInput } from "@/components/ui/tag-input"
+```
+
+```tsx
+const [tags, setTags] = useState<string[]>([])
+
+<TagInput value={tags} onValueChange={setTags} placeholder="Add a tag" />
+```
+
+## Good to know
+
+- Enter or a comma adds what's typed. By default the text is also added when the field loses focus; turn that off with `addOnBlur={false}`.
+- Pasting a list separated by commas or new lines adds every entry at once.
+- Backspace in an empty field removes the last tag.
+- Tags are trimmed, empty ones are ignored, and duplicates are rejected (case-insensitive) unless you set `allowDuplicates`.
+- A tag that fails `validate` stays in the field so the user can fix it. Every rejected tag calls `onTagReject(tag, reason)` with `"duplicate"`, `"invalid"` or `"max"`.
+- Use it with [Field](/ui/forms/field): pass `id` to match the label, and `aria-invalid` to show the error state.
+- For picking from a fixed list instead of free text, use [Combobox](/ui/pickers/combobox) with `multiple`.
+
+## API Reference
+
+### TagInput
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string[]` | — | Controlled tags |
+| `defaultValue` | `string[]` | `[]` | Initial tags when uncontrolled |
+| `onValueChange` | `(tags: string[]) => void` | — | Called when tags are added or removed |
+| `validate` | `(tag: string) => boolean` | — | Return `false` to reject a tag |
+| `onTagReject` | `(tag: string, reason: "duplicate" \| "invalid" \| "max") => void` | — | Called for each rejected tag |
+| `max` | `number` | — | Most tags allowed |
+| `allowDuplicates` | `boolean` | `false` | Allow the same tag more than once |
+| `addOnBlur` | `boolean` | `true` | Add the typed text when the field loses focus |
+| `size` | `"sm" \| "default"` | `"default"` | Field height |
+| `startAddon` | `ReactNode` | — | Icon or text before the tags |
+| `containerClassName` | `string` | — | Classes for the outer box |
+
+Other props, including `className`, go on the inner `<input>`.
+
+## Examples
+
+### Suggestions
+
+Buttons under the field add common skills in one click and disappear once added.
+
+<ComponentPreview name="v-tag-input-2" />
+
+### Limit
+
+At most five topics, normalized to lowercase with hyphens, with a counter and a message at the limit.
+
+<ComponentPreview name="v-tag-input-3" />
+
+### Filter
+
+A small field with a leading icon that filters a list to posts having every tag.
+
+<ComponentPreview name="v-tag-input-4" />

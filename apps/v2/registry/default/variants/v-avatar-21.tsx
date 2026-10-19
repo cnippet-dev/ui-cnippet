@@ -1,3 +1,4 @@
+// title: Profile card with stats and action buttons
 import { LinkIcon, MapPinIcon } from "lucide-react";
 import {
   Avatar,

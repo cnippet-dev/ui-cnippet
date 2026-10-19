@@ -1,3 +1,4 @@
+// title: Email verification card
 import { MailIcon } from "lucide-react";
 import {
   Field,

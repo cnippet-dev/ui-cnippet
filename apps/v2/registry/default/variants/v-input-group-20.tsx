@@ -1,3 +1,4 @@
+// title: Chat input with async send
 "use client";
 
 import { SendIcon } from "lucide-react";

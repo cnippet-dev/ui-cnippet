@@ -1,3 +1,4 @@
+// title: Arrow key navigation display
 import { Kbd } from "@/registry/default/ui/kbd";
 
 const arrowKeys = [

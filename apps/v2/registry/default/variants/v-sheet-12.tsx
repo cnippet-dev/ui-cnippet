@@ -1,3 +1,4 @@
+// title: User Profile Viewer
 import { BoxIcon, CircuitBoardIcon, GlobeIcon, LinkIcon } from "lucide-react";
 import {
   Avatar,

@@ -1,3 +1,4 @@
+// title: Rich-text formatting toolbar with markdown preview
 "use client";
 
 import { CodeIcon, LinkIcon, QuoteIcon, StrikethroughIcon } from "lucide-react";

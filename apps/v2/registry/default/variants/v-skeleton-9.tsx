@@ -1,3 +1,4 @@
+// title: Chat Thread
 //biome-ignore-all lint/suspicious/noArrayIndexKey: <>
 
 import { Skeleton } from "@/registry/default/ui/skeleton";

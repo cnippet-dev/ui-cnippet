@@ -1,3 +1,4 @@
+// title: With Icon and Action Buttons
 import { InfoIcon } from "lucide-react";
 import {
   Alert,

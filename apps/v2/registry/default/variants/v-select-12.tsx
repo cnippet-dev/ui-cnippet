@@ -1,3 +1,4 @@
+// title: Region select with groups
 import {
   Select,
   SelectGroup,

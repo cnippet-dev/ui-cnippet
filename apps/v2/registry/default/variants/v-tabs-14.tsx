@@ -1,3 +1,4 @@
+// title: Code file viewer with per-file tabs and copy button
 "use client";
 
 import { CheckIcon, CopyIcon } from "lucide-react";
@@ -72,7 +73,7 @@ export function Pattern() {
             variant="ghost"
           >
             {copied ? (
-              <CheckIcon className="size-3 text-emerald-500" />
+              <CheckIcon className="size-3 text-success-foreground" />
             ) : (
               <CopyIcon className="size-3" />
             )}

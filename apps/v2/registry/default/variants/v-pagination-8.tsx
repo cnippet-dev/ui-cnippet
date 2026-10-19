@@ -1,3 +1,4 @@
+// title: With Page Info On Center
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   Pagination,

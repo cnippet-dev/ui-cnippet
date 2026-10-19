@@ -1,3 +1,4 @@
+// title: Showcase: variants, sizes, icons and states
 import { BoldIcon, BookmarkIcon, ItalicIcon, StarIcon } from "lucide-react";
 import { Toggle } from "@/registry/default/ui/toggle";
 

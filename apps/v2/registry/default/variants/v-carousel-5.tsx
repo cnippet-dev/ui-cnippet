@@ -1,3 +1,4 @@
+// title: Autoplay with Indicators
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 
 "use client";

@@ -1,3 +1,4 @@
+// title: Showcase: search, filters, selection, sorting and pagination
 "use client";
 
 import {

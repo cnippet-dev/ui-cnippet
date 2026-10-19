@@ -1,3 +1,4 @@
+// title: Notification preferences with descriptions
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { CheckboxGroup } from "@/registry/default/ui/checkbox-group";
 

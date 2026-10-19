@@ -1,3 +1,4 @@
+// title: System status dots revealing service name, uptime, and latency
 import {
   Tooltip,
   TooltipContent,
@@ -49,9 +50,9 @@ const services: Service[] = [
 ];
 
 const dotClass: Record<ServiceStatus, string> = {
-  degraded: "bg-amber-400",
-  down: "bg-red-500",
-  operational: "bg-emerald-500",
+  degraded: "bg-warning",
+  down: "bg-destructive",
+  operational: "bg-success",
 };
 
 const statusLabel: Record<ServiceStatus, string> = {

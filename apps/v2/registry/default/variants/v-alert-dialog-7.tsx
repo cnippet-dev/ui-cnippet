@@ -1,3 +1,4 @@
+// title: Confirmation For Successful e-ticket Registration
 import { CheckIcon } from "lucide-react";
 import {
   AlertDialog,

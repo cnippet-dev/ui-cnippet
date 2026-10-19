@@ -1,0 +1,161 @@
+---
+title: File Upload
+description: A drag-and-drop dropzone and file picker with type, size and count limits, image previews and per-file progress. Copy-paste ready.
+---
+
+<ComponentPreview name="v-file-upload-3" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/file-upload
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the dependencies.</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Add the components it builds on: [Button](/ui/actions/button) and [Progress](/ui/feedback/progress).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="file-upload" title="components/ui/file-upload.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  FileUpload,
+  FileUploadDropzone,
+  FileUploadList,
+} from "@/components/ui/file-upload"
+```
+
+```tsx
+<FileUpload accept="image/*" maxSize={2 * 1024 * 1024} multiple>
+  <FileUploadDropzone />
+  <FileUploadList />
+</FileUpload>
+```
+
+## Anatomy
+
+```tsx
+<FileUpload>                          {/* state, validation and the hidden <input type="file"> */}
+  <FileUploadDropzone />              {/* drop target; click or Enter/Space opens the picker */}
+  <FileUploadTrigger />               {/* a Button that opens the picker */}
+  <FileUploadList>                    {/* renders nothing until a file is added */}
+    {(file) => (
+      <FileUploadItem file={file}>
+        <FileUploadItemPreview file={file} />   {/* image thumbnail or file icon */}
+        <FileUploadItemMetadata file={file} />  {/* name and size, or an error */}
+        <FileUploadItemDelete file={file} />    {/* remove button */}
+      </FileUploadItem>
+    )}
+  </FileUploadList>
+</FileUpload>
+```
+
+## Good to know
+
+- `FileUpload` only collects files. Uploading them is up to you: read the list from `onValueChange`, or submit the hidden input with a form by passing `name`.
+- Files that fail `accept`, `maxSize` or `maxFiles` are never added. Each one calls `onFileReject(file, reason)` with `"type"`, `"size"` or `"count"`, so you can show your own message.
+- Without `multiple`, a new file replaces the current one.
+- `accept` uses the native format: MIME types (`image/png`), wildcards (`image/*`) and extensions (`.pdf`). It's checked for dropped files too, since the browser only filters the picker.
+- `useFileUpload()` gives any child the `files`, `addFiles`, `removeFile`, `clearFiles` and `openFilePicker` helpers, for custom layouts like an avatar or a gallery.
+- Don't put a `FileUploadTrigger` inside a `FileUploadDropzone`. Both open the picker, so a click would open it twice.
+
+## API Reference
+
+### FileUpload
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `File[]` | — | Controlled files |
+| `defaultValue` | `File[]` | `[]` | Initial files when uncontrolled |
+| `onValueChange` | `(files: File[]) => void` | — | Called when files are added or removed |
+| `onFileReject` | `(file: File, reason: "type" \| "size" \| "count") => void` | — | Called for each file that fails validation |
+| `accept` | `string` | — | Allowed types, as for `<input accept>` |
+| `maxSize` | `number` | — | Largest allowed file, in bytes |
+| `maxFiles` | `number` | — | Most files allowed when `multiple` |
+| `multiple` | `boolean` | `false` | Allow more than one file |
+| `disabled` | `boolean` | `false` | Disables the dropzone, trigger and input |
+| `name` | `string` | — | Name for the hidden input, for form submission |
+
+### FileUploadDropzone
+
+A focusable drop target. Gets `data-dragging` while files are over it and `data-disabled` when disabled. Renders an upload icon and "Drop files here or browse" when it has no children.
+
+### FileUploadTrigger
+
+A [Button](/ui/actions/button) (`variant="outline"` by default) that opens the file picker. Takes all Button props.
+
+### FileUploadList
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `children` | `(file: File) => ReactNode` | Renders each file. Defaults to `<FileUploadItem file={file} />` |
+
+### FileUploadItem
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `file` | `File` | The file to show |
+| `progress` | `number` | 0–100. Shows a progress bar while set |
+| `error` | `string` | Shown instead of the size; sets `data-invalid` |
+
+Renders a preview, name, size and remove button unless you pass your own children.
+
+### Helpers
+
+`isFileAccepted(file, accept)` and `formatFileSize(bytes)` are exported too.
+
+## Examples
+
+### Limits and errors
+
+Images and PDFs only, up to four files of 2 MB each. A rejected file shows why in an alert.
+
+<ComponentPreview name="v-file-upload-1" />
+
+### Avatar
+
+A single image with a round preview, built with `FileUploadTrigger` and `useFileUpload`.
+
+<ComponentPreview name="v-file-upload-2" />
+
+### Message attachments
+
+A paperclip trigger in a composer, with attached files shown as removable chips.
+
+<ComponentPreview name="v-file-upload-4" />
+
+### Photo gallery
+
+A grid of image previews with an add tile that disappears at the limit.
+
+<ComponentPreview name="v-file-upload-5" />

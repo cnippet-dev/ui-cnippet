@@ -1,3 +1,4 @@
+// title: Side Sheets
 import { Button } from "@/registry/default/ui/button";
 import {
   Sheet,

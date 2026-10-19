@@ -1,3 +1,4 @@
+// title: In buttons
 import { Button } from "@/registry/default/ui/button";
 import { Spinner } from "@/registry/default/ui/spinner";
 export function Pattern() {

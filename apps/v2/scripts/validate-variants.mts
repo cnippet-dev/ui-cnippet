@@ -3,58 +3,17 @@ import path from "node:path";
 import { variants } from "../registry/registry-variants.ts";
 
 // Checks that every core variant file has exactly one registry entry with a
-// real, unique title. Titles live in a parallel `description: [...][i]` array
-// per category, so a missing or extra entry silently shifts every title after
-// it — this script catches that before it reaches Explore.
+// real, unique title. Titles come from each file's `// title: …` first line
+// (importing registry-variants.ts already throws on a missing one or a gap).
 
 const variantsDir = path.join(process.cwd(), "registry/default/variants");
-const registryFile = path.join(process.cwd(), "registry/registry-variants.ts");
 
 // Matches stub files that render nothing but a word, e.g. `<div>Combobox</div>`
 const STUB_PATTERN =
-  /^export default function \w+\(\) \{\s*return <div>[^<{]*<\/div>;?\s*\}\s*$/;
-
-type Block = { category: string; length: number; titles: number | null };
-
-// Pull `Array.from({ length: N }, …)` blocks out of the registry source and
-// count the entries (strings or `undefined`) in each `description: [ … ]` list.
-function parseBlocks(source: string): Block[] {
-  const blocks: Block[] = [];
-  const starts = [
-    ...source.matchAll(/Array\.from\(\{\s*length:\s*(\d+)\s*\}/g),
-  ];
-
-  for (const [index, match] of starts.entries()) {
-    const end = starts[index + 1]?.index ?? source.length;
-    const body = source.slice(match.index, end);
-    const category = body.match(/category:\s*"([^"]+)"/)?.[1] ?? "?";
-    const list = body.match(/description:\s*\[([\s\S]*?)\]\s*\[i\]/);
-    const titles = list
-      ? (
-          list[1].match(
-            /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`[^`]*`|\bundefined\b/g,
-          ) ?? []
-        ).length
-      : null;
-    blocks.push({ category, length: Number(match[1]), titles });
-  }
-
-  return blocks;
-}
+  /^(?:\/\/ title: .*\n)?export default function \w+\(\) \{\s*return <div>[^<{]*<\/div>;?\s*\}\s*$/;
 
 async function main() {
   const errors: string[] = [];
-  const source = await fs.readFile(registryFile, "utf-8");
-
-  for (const block of parseBlocks(source)) {
-    if (block.titles === null) {
-      errors.push(`[${block.category}] has no description list`);
-    } else if (block.titles !== block.length) {
-      errors.push(
-        `[${block.category}] ${block.length} variants but ${block.titles} titles`,
-      );
-    }
-  }
 
   const files = (await fs.readdir(variantsDir))
     .filter((file) => file.endsWith(".tsx"))
@@ -76,7 +35,7 @@ async function main() {
     }
 
     const title = variant.description ?? "";
-    if (!title || title === `Basic ${category}`) {
+    if (!title || title === "TODO" || title === `Basic ${category}`) {
       errors.push(`[${category}] ${variant.name} has no title`);
       continue;
     }

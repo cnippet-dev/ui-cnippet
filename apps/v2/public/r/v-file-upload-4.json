@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v-file-upload-4",
+  "description": "Message composer with attachments",
+  "registryDependencies": [
+    "@cnippet/file-upload",
+    "@cnippet/alert",
+    "@cnippet/button",
+    "@cnippet/input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/variants/v-file-upload-4.tsx",
+      "content": "// title: Message composer with attachments\n\"use client\";\n\nimport { ArrowUpIcon, PaperclipIcon, XIcon } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  FileUpload,\n  FileUploadTrigger,\n  useFileUpload,\n} from \"@/registry/default/ui/file-upload\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupTextarea,\n} from \"@/registry/default/ui/input-group\";\n\nfunction Attachments() {\n  const { files, removeFile } = useFileUpload();\n  if (files.length === 0) return null;\n  return (\n    <InputGroupAddon align=\"block-start\" className=\"flex-wrap gap-1.5\">\n      {files.map((file) => (\n        <span\n          className=\"flex max-w-48 items-center gap-1 rounded-md border bg-muted/50 py-0.5 ps-2 pe-0.5 text-foreground text-xs\"\n          key={`${file.name}-${file.lastModified}`}\n        >\n          <span className=\"truncate\">{file.name}</span>\n          <Button\n            aria-label={`Remove ${file.name}`}\n            onClick={() => removeFile(file)}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <XIcon aria-hidden=\"true\" />\n          </Button>\n        </span>\n      ))}\n    </InputGroupAddon>\n  );\n}\n\nexport default function Particle() {\n  return (\n    <FileUpload className=\"max-w-md\" maxFiles={5} multiple>\n      <InputGroup>\n        <Attachments />\n        <InputGroupTextarea aria-label=\"Message\" placeholder=\"Write a reply…\" />\n        <InputGroupAddon align=\"block-end\">\n          <FileUploadTrigger\n            aria-label=\"Attach files\"\n            className=\"rounded-full\"\n            size=\"icon-sm\"\n            variant=\"ghost\"\n          >\n            <PaperclipIcon aria-hidden=\"true\" />\n          </FileUploadTrigger>\n          <Button\n            aria-label=\"Send\"\n            className=\"ml-auto rounded-full\"\n            size=\"icon-sm\"\n          >\n            <ArrowUpIcon aria-hidden=\"true\" />\n          </Button>\n        </InputGroupAddon>\n      </InputGroup>\n    </FileUpload>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "file upload"
+  ],
+  "type": "registry:block"
+}

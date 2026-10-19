@@ -1,3 +1,4 @@
+// title: Task Success Confirmation
 import { CheckIcon } from "lucide-react";
 import {
   AlertDialog,
@@ -20,7 +21,7 @@ export function Pattern() {
       />
       <AlertDialogContent>
         <div className="flex items-center gap-3 p-4">
-          <div className="flex size-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 dark:bg-emerald-950 dark:text-emerald-300">
+          <div className="flex size-10 items-center justify-center rounded-full bg-success/8 text-success-foreground dark:bg-success/16">
             <CheckIcon className="size-5" />
           </div>
           <div className="flex flex-col justify-center gap-1">

@@ -1,3 +1,4 @@
+// title: Team directory with status dots, role labels, and per-team collapsible sections
 "use client";
 
 import { ChevronDownIcon, UserIcon } from "lucide-react";
@@ -44,8 +45,8 @@ const TEAMS: { id: string; label: string; members: Member[] }[] = [
 ];
 
 const statusDot: Record<string, string> = {
-  active: "bg-emerald-500",
-  away: "bg-amber-500",
+  active: "bg-success",
+  away: "bg-warning",
   offline: "bg-muted-foreground/40",
 };
 

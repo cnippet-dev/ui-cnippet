@@ -1,3 +1,4 @@
+// title: No automations empty state with toggle illustration
 import { Button } from "@/registry/default/ui/button";
 import {
   Empty,

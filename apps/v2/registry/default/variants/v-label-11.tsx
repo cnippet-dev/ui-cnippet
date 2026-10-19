@@ -1,3 +1,4 @@
+// title: With keyboard shortcut
 import { useId } from "react";
 import { Field } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";

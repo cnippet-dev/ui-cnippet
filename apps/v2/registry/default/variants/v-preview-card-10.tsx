@@ -1,3 +1,4 @@
+// title: Reference links with URL previews
 import { ExternalLinkIcon, LinkIcon } from "lucide-react";
 import {
   PreviewCard,

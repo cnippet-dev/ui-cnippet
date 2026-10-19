@@ -1,3 +1,4 @@
+// title: Payment method card checkbox
 "use client";
 
 import type { SVGProps } from "react";

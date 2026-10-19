@@ -1,3 +1,4 @@
+// title: Weekly availability grid with checkboxes per day and time slot
 "use client";
 
 import { useId, useState } from "react";

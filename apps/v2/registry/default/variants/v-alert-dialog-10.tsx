@@ -1,3 +1,4 @@
+// title: Logout Confirmation Dialog
 import { ShieldQuestionMarkIcon } from "lucide-react";
 import {
   AlertDialog,

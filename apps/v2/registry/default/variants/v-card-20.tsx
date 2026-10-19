@@ -1,3 +1,4 @@
+// title: Stats dashboard grid with four metric tiles and trend indicators
 import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 
@@ -19,8 +20,8 @@ export function Pattern() {
             <span
               className={`flex items-center gap-1 font-medium text-xs ${
                 stat.trend === "up"
-                  ? "text-emerald-600 dark:text-emerald-400"
-                  : "text-red-500 dark:text-red-400"
+                  ? "text-success-foreground"
+                  : "text-destructive-foreground"
               }`}
             >
               {stat.trend === "up" ? (

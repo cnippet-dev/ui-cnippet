@@ -1,3 +1,4 @@
+// title: Showcase: markers, hints, links and errors
 "use client";
 
 import { InfoIcon } from "lucide-react";

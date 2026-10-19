@@ -1,3 +1,4 @@
+// title: Horizontal
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export default function Particle() {

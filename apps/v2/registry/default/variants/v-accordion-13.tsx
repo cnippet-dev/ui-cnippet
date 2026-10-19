@@ -1,3 +1,4 @@
+// title: Job board listings with requirements and apply action
 import { BriefcaseIcon, MapPinIcon } from "lucide-react";
 import {
   Accordion,

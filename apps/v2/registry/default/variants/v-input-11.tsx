@@ -1,3 +1,4 @@
+// title: File picker with clear button
 "use client";
 
 import { PaperclipIcon, XIcon } from "lucide-react";

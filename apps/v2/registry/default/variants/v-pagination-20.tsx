@@ -1,3 +1,4 @@
+// title: Loading/disabled state
 import { Loader2Icon } from "lucide-react";
 import {
   Pagination,

@@ -1,3 +1,4 @@
+// title: Invoice history with status badges and outstanding total
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import {

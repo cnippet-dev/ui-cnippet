@@ -1,3 +1,4 @@
+// title: Vertical Orientation
 //biome-ignore-all lint/suspicious/noArrayIndexKey:<>
 
 import { Card, CardContent } from "@/registry/default/ui/card";

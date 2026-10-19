@@ -1,3 +1,4 @@
+// title: Typography settings
 import {
   NumberField,
   NumberFieldDecrement,

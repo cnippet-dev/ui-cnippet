@@ -1,3 +1,4 @@
+// title: Profile card
 import { Separator } from "@/registry/default/ui/separator";
 
 export function Pattern() {

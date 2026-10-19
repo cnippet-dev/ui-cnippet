@@ -1,3 +1,4 @@
+// title: Donut chart with center label showing team headcount by department
 "use client";
 
 import { Cell, Pie, PieChart } from "recharts";

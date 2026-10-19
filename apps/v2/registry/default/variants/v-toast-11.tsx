@@ -1,3 +1,4 @@
+// title: Anchored clipboard copy with tooltip-style toast
 "use client";
 
 import { CopyIcon } from "lucide-react";

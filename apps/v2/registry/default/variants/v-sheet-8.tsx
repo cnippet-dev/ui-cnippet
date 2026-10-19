@@ -1,3 +1,4 @@
+// title: Activity Log
 import { ActivityIcon } from "lucide-react";
 import {
   Avatar,

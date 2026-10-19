@@ -1,3 +1,4 @@
+// title: Field with date picker
 "use client";
 
 import { format } from "date-fns";

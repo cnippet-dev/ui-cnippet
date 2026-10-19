@@ -1,3 +1,4 @@
+// title: Plan add-on selector with dynamic price total as features are toggled
 "use client";
 
 import { useId, useState } from "react";

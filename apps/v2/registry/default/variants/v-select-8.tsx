@@ -1,3 +1,4 @@
+// title: Plan select with separator
 import {
   Select,
   SelectItem,

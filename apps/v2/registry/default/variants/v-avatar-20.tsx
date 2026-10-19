@@ -1,3 +1,4 @@
+// title: Contributor leaderboard with rank and commit count
 import { GitCommitHorizontalIcon, TrophyIcon } from "lucide-react";
 import {
   Avatar,

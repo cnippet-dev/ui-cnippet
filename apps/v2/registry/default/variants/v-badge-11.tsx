@@ -1,3 +1,4 @@
+// title: With Link
 import Link from "next/link";
 import { Badge } from "@/registry/default/ui/badge";
 

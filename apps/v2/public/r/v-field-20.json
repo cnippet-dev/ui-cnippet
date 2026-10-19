@@ -8,12 +8,13 @@
   "files": [
     {
       "path": "registry/default/variants/v-field-20.tsx",
-      "content": "import {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport {\n  OTPField,\n  OTPFieldInput,\n  OTPFieldSeparator,\n} from \"@/registry/default/ui/otp-field\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField length={6}>\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldSeparator />\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldInput />\n      </OTPField>\n      <FieldDescription>\n        Enter the 6-digit code sent to your phone.\n      </FieldDescription>\n      <FieldError>Invalid verification code. Please try again.</FieldError>\n    </Field>\n  );\n}\n",
+      "content": "// title: Field with OTP verification input\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/registry/default/ui/field\";\nimport {\n  OTPField,\n  OTPFieldInput,\n  OTPFieldSeparator,\n} from \"@/registry/default/ui/otp-field\";\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField length={6}>\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldSeparator />\n        <OTPFieldInput />\n        <OTPFieldInput />\n        <OTPFieldInput />\n      </OTPField>\n      <FieldDescription>\n        Enter the 6-digit code sent to your phone.\n      </FieldDescription>\n      <FieldError>Invalid verification code. Please try again.</FieldError>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "className": ""
+    "className": "",
+    "role": "demo"
   },
   "categories": [
     "field"

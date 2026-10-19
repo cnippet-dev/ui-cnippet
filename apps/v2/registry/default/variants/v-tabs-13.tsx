@@ -1,3 +1,4 @@
+// title: Settings navigation with vertical underline tabs and profile form
 import { BellIcon, GlobeIcon, LockIcon, UserIcon } from "lucide-react";
 import { Separator } from "@/registry/default/ui/separator";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
@@ -87,7 +88,7 @@ export function Pattern() {
                   <span className="text-muted-foreground text-sm">
                     Authenticator app
                   </span>
-                  <span className="font-medium text-emerald-500 text-xs">
+                  <span className="font-medium text-success-foreground text-xs">
                     Enabled
                   </span>
                 </div>
@@ -146,7 +147,7 @@ export function Pattern() {
                 >
                   <span className="text-sm">{i.name}</span>
                   <span
-                    className={`text-xs ${i.connected ? "text-emerald-500" : "text-muted-foreground"}`}
+                    className={`text-xs ${i.connected ? "text-success-foreground" : "text-muted-foreground"}`}
                   >
                     {i.connected ? "Connected" : "Not connected"}
                   </span>

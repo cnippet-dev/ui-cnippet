@@ -1,3 +1,4 @@
+// title: Privacy policy card with accordion sections and single-panel-open behavior
 "use client";
 
 import { ChevronDownIcon } from "lucide-react";

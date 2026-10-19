@@ -1,4 +1,12 @@
-import { MinusIcon, PlusIcon, ShoppingCartIcon } from "lucide-react";
+// title: Shopping Cart
+import {
+  HeadphonesIcon,
+  KeyboardIcon,
+  MinusIcon,
+  PlusIcon,
+  ShoppingCartIcon,
+  UsbIcon,
+} from "lucide-react";
 import { Button } from "@/registry/default/ui/button";
 import {
   Drawer,
@@ -12,9 +20,21 @@ import {
 } from "@/registry/default/ui/drawer";
 
 const cartItems = [
-  { id: 1, name: "Wireless Headphones", price: 79.99, qty: 1 },
-  { id: 2, name: "Mechanical Keyboard", price: 129.0, qty: 1 },
-  { id: 3, name: "USB-C Hub", price: 49.99, qty: 2 },
+  {
+    icon: HeadphonesIcon,
+    id: 1,
+    name: "Wireless Headphones",
+    price: 79.99,
+    qty: 1,
+  },
+  {
+    icon: KeyboardIcon,
+    id: 2,
+    name: "Mechanical Keyboard",
+    price: 129.0,
+    qty: 1,
+  },
+  { icon: UsbIcon, id: 3, name: "USB-C Hub", price: 49.99, qty: 2 },
 ];
 
 export default function Component() {
@@ -37,7 +57,9 @@ export default function Component() {
           <ul className="divide-y divide-border">
             {cartItems.map((item) => (
               <li className="flex items-center gap-3 py-3" key={item.id}>
-                <div className="size-12 shrink-0 rounded-lg bg-muted" />
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                  <item.icon aria-hidden="true" className="size-5" />
+                </div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium text-sm">{item.name}</p>
                   <p className="text-muted-foreground text-sm">

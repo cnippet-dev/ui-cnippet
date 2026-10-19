@@ -1,3 +1,4 @@
+// title: Deployment pipeline steps with status and detail per stage
 import {
   CheckCircle2Icon,
   CircleIcon,
@@ -54,10 +55,10 @@ const steps: PipelineStep[] = [
 ];
 
 const statusIcon: Record<StepStatus, React.ReactElement> = {
-  done: <CheckCircle2Icon className="size-5 text-emerald-500" />,
-  failed: <XCircleIcon className="size-5 text-red-500" />,
+  done: <CheckCircle2Icon className="size-5 text-success-foreground" />,
+  failed: <XCircleIcon className="size-5 text-destructive-foreground" />,
   pending: <CircleIcon className="size-5 text-muted-foreground" />,
-  running: <LoaderIcon className="size-5 animate-spin text-blue-500" />,
+  running: <LoaderIcon className="size-5 animate-spin text-info-foreground" />,
 };
 
 const statusLabel: Record<StepStatus, string> = {
@@ -76,7 +77,7 @@ export function Pattern() {
             {index > 0 && (
               <div
                 className={`h-px w-8 ${
-                  status === "done" ? "bg-emerald-500" : "bg-border"
+                  status === "done" ? "bg-success" : "bg-border"
                 }`}
               />
             )}

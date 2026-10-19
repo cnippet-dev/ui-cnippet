@@ -1,3 +1,4 @@
+// title: Success state on completion
 "use client";
 
 import { CheckCircle2Icon } from "lucide-react";
@@ -28,7 +29,7 @@ export function Pattern() {
     <Field className="items-center">
       <FieldLabel>Verification code</FieldLabel>
       {isValid ? (
-        <div className="flex items-center gap-2 py-1 text-green-600 text-sm">
+        <div className="flex items-center gap-2 py-1 text-sm text-success-foreground">
           <CheckCircle2Icon aria-hidden="true" className="size-4" />
           Identity verified
         </div>

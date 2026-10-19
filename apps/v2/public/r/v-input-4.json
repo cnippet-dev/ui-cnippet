@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/variants/v-input-4.tsx",
-      "content": "import { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nexport default function FieldWithErrorDemo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" type=\"email\" />\n      <FieldError>Please enter a valid email address.</FieldError>\n    </Field>\n  );\n}\n",
+      "content": "// title: With Error Message\nimport { Field, FieldError, FieldLabel } from \"@/registry/default/ui/field\";\nimport { Input } from \"@/registry/default/ui/input\";\nexport default function FieldWithErrorDemo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" type=\"email\" />\n      <FieldError>Please enter a valid email address.</FieldError>\n    </Field>\n  );\n}\n",
       "type": "registry:block"
     }
   ],

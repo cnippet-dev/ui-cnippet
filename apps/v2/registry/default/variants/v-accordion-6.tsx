@@ -1,3 +1,4 @@
+// title: With borders and rounded corners
 import {
   Accordion,
   AccordionContent,

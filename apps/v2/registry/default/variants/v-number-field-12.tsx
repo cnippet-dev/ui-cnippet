@@ -1,3 +1,4 @@
+// title: Shopping cart quantity row
 import {
   NumberField,
   NumberFieldDecrement,

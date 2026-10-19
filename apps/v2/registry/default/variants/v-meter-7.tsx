@@ -1,3 +1,4 @@
+// title: Password strength meter
 "use client";
 
 import { useState } from "react";

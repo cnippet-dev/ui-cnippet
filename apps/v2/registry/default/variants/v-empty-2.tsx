@@ -1,3 +1,4 @@
+// title: Search empty state
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/registry/default/ui/button";

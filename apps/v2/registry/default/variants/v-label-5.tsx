@@ -1,3 +1,4 @@
+// title: With optional indicator
 import { Field } from "@/registry/default/ui/field";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";

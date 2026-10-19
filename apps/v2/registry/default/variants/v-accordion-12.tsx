@@ -1,3 +1,4 @@
+// title: Settings sidebar navigation with icon sections
 import { BellIcon, CreditCardIcon, ShieldIcon, UserIcon } from "lucide-react";
 import {
   Accordion,

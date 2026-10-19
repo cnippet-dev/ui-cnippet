@@ -1,3 +1,4 @@
+// title: Showcase: outline, small, primary and with input
 import {
   ChevronDownIcon,
   FilesIcon,

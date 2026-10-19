@@ -1,3 +1,4 @@
+// title: Separated panels
 import {
   Frame,
   FrameDescription,

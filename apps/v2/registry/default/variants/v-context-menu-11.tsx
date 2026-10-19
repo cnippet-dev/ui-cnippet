@@ -1,3 +1,4 @@
+// title: Bookmark list with per-item star toggle, open, copy, share, and delete actions
 "use client";
 
 import {

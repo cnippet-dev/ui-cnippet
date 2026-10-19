@@ -1,3 +1,4 @@
+// title: Toggle buttons in different sizes
 import { Toggle } from "@/registry/default/ui/toggle";
 
 export function Pattern() {

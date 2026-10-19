@@ -1,3 +1,4 @@
+// title: Showcase: states, sizes and descriptions
 import { Label } from "@/registry/default/ui/label";
 import { Switch } from "@/registry/default/ui/switch";
 

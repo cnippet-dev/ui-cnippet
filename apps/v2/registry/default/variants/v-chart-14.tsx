@@ -1,3 +1,4 @@
+// title: Multi-series line chart comparing API response percentiles (p50/p90/p99)
 "use client";
 
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";

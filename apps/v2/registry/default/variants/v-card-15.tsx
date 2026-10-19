@@ -1,3 +1,4 @@
+// title: With Header Label and Link
 import { BookOpenIcon, LinkIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 

@@ -1,3 +1,4 @@
+// title: User Preferences & Theme Settings
 "use client";
 
 import {

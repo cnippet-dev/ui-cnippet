@@ -1,3 +1,4 @@
+// title: With Icon, Title and Link
 import { ChevronRightIcon, ShoppingBagIcon } from "lucide-react";
 import { Card, CardContent } from "@/registry/default/ui/card";
 

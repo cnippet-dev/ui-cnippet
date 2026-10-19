@@ -1,3 +1,4 @@
+// title: Keys grouped together
 import { Kbd, KbdGroup } from "@/registry/default/ui/kbd";
 
 export function Pattern() {

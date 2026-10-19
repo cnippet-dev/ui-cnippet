@@ -1,3 +1,4 @@
+// title: Timestamp Detail
 "use client";
 
 import { format, formatDistanceToNow } from "date-fns";

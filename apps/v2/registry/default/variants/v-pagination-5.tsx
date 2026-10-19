@@ -1,3 +1,4 @@
+// title: With Go-To-Page Input
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { Input } from "@/registry/default/ui/input";
 import {

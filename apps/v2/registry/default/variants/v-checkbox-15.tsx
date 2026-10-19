@@ -1,3 +1,4 @@
+// title: Sprint task checklist with priority badges and completion celebration
 "use client";
 
 import { useId, useState } from "react";
@@ -66,7 +67,7 @@ export function Pattern() {
         ))}
       </div>
       {remaining === 0 && (
-        <div className="rounded-lg bg-emerald-50 px-4 py-2.5 text-center font-medium text-emerald-700 text-sm dark:bg-emerald-950/40 dark:text-emerald-400">
+        <div className="rounded-lg bg-success/8 px-4 py-2.5 text-center font-medium text-sm text-success-foreground dark:bg-success/16">
           All tasks complete! 🎉
         </div>
       )}

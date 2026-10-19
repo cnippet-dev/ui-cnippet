@@ -1,3 +1,4 @@
+// title: Issue Detail
 "use client";
 
 import {

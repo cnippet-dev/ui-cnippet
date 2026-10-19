@@ -1,3 +1,4 @@
+// title: With Disabled Item
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { CheckboxGroup } from "@/registry/default/ui/checkbox-group";
 import { Label } from "@/registry/default/ui/label";

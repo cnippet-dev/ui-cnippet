@@ -1,3 +1,4 @@
+// title: Onboarding checklist
 import { Separator } from "@/registry/default/ui/separator";
 
 const steps = [
