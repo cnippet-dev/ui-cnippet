@@ -44,7 +44,11 @@ export function Pattern() {
         </PaginationItem>
         <PaginationItem>
           <Select defaultValue={10} items={perPage}>
-            <SelectTrigger aria-label="Rows per page" className="w-28" size="sm">
+            <SelectTrigger
+              aria-label="Rows per page"
+              className="w-28"
+              size="sm"
+            >
               <SelectValue />
             </SelectTrigger>
             <SelectPopup>

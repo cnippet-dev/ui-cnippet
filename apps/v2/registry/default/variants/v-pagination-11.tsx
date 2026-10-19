@@ -19,7 +19,10 @@ import {
   SelectValue,
 } from "@/registry/default/ui/select";
 
-const rows = [10, 25, 50, 100].map((value) => ({ label: String(value), value }));
+const rows = [10, 25, 50, 100].map((value) => ({
+  label: String(value),
+  value,
+}));
 
 export function Pattern() {
   return (
@@ -30,7 +33,11 @@ export function Pattern() {
             Rows per page
           </span>
           <Select defaultValue={25} items={rows}>
-            <SelectTrigger aria-label="Rows per page" className="w-20" size="sm">
+            <SelectTrigger
+              aria-label="Rows per page"
+              className="w-20"
+              size="sm"
+            >
               <SelectValue />
             </SelectTrigger>
             <SelectPopup>
