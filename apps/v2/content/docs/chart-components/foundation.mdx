@@ -46,6 +46,7 @@ The data-driven charts ([Area](/charts/cartesian/area-chart), [Bar](/charts/cart
 | `className` | `string` | — | Sizing classes, e.g. `"h-64"` |
 | `aria-label` | `string` | built from the props | Accessible name of the chart |
 | `children` | `ReactNode` | — | Extra Recharts elements, e.g. `<ReferenceLine />` |
+| `syncId` | `string` | — | Charts with the same id share a cursor and tooltip position |
 
 `data`, `index` and `categories` are type-checked against each other: a typo in a field name is a type error. The type is `BaseChartProps` in [Chart Utils](/charts/foundation/chart-utils).
 

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-annotated-chart-2",
+  "description": "Campaign periods — shaded launch and webinar weeks",
+  "registryDependencies": [
+    "@cnippet/annotated-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-annotated-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { AnnotatedChart } from \"@/registry/default/charts/annotated-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// Daily signups with two campaigns shaded.\nconst data = Array.from({ length: 45 }, (_, i) => {\n  const date = new Date(Date.UTC(2026, 8, 11 + i)).toISOString().slice(0, 10);\n  const launch = i >= 8 && i <= 14 ? 160 : 0;\n  const webinar = i >= 28 && i <= 31 ? 90 : 0;\n  return {\n    date,\n    signups: Math.round(\n      140 + 1.2 * i + 22 * Math.sin(i / 2) + launch + webinar,\n    ),\n  };\n});\n\nconst day = (i: number) => data[i]?.date ?? \"\";\n\nexport default function CampaignPeriods() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Daily signups, with campaign periods shaded\"\n      title=\"Signups\"\n    >\n      <AnnotatedChart\n        categories={[\"signups\"]}\n        chartType=\"area\"\n        className=\"h-56\"\n        data={data}\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n        ranges={[\n          { from: day(8), label: \"Launch week\", to: day(14) },\n          { from: day(28), label: \"Webinar\", to: day(31) },\n        ]}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "annotated chart"
+  ],
+  "type": "registry:block"
+}

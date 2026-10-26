@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-realtime-chart-2",
+  "description": "Room temperature — two sensors, fixed axis",
+  "registryDependencies": [
+    "@cnippet/realtime-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-realtime-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RealtimeChart } from \"@/registry/default/charts/realtime-chart\";\n\n// Two rooms drifting slowly with sensor noise; fixed axis so small moves stay small.\nfunction readSensors() {\n  const t = Date.now() / 20000;\n  const noise = () => (Math.random() - 0.5) * 0.3;\n  return {\n    lab: Math.round((22.4 + 0.8 * Math.sin(t) + noise()) * 10) / 10,\n    office: Math.round((21.1 + 0.5 * Math.cos(t / 2) + noise()) * 10) / 10,\n  };\n}\n\nexport default function LiveTemperature() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Room temperature\">\n      <RealtimeChart\n        categories={[\"office\", \"lab\"]}\n        className=\"h-48\"\n        interval={1500}\n        onTick={readSensors}\n        valueFormatter={(value) => `${value.toFixed(1)} °C`}\n        windowSize={30}\n        yAxisWidth={56}\n        yDomain={[19, 25]}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "realtime chart"
+  ],
+  "type": "registry:block"
+}

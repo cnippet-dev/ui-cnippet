@@ -321,4 +321,90 @@ export const chartVariants: ChartVariantItem[] = [
       ["polar-area-chart", "chart-card"],
     ],
   ]),
+  ...createChartVariants("time range chart", "time-range-chart", [
+    [
+      "Visitors — 7d / 30d / 90d with totals per device",
+      ["time-range-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Revenue — 3m / 6m / 12m monthly bars",
+      ["time-range-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "API calls — stacked successful and failed calls",
+      ["time-range-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("brush chart", "brush-chart", [
+    [
+      "Two years of revenue — starts zoomed to 90 days",
+      ["brush-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Sensor log — three days of 10-minute readings",
+      ["brush-chart", "chart-card"],
+    ],
+    [
+      "Stock history — a year of closes, last 60 sessions shown",
+      ["brush-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("series toggle chart", "series-toggle-chart", [
+    [
+      "Visitors — desktop and mobile tabs with totals",
+      ["series-toggle-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Metric switcher — users, sessions and revenue",
+      ["series-toggle-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Rates — funnel rates as lines, tabs without totals",
+      ["series-toggle-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("synced charts", "synced-charts", [
+    ["Server metrics — CPU, memory and network", ["synced-charts"]],
+    ["Sales — revenue, orders and AOV", ["synced-charts", "chart-utils"]],
+    [
+      "Traffic vs conversion — sessions and rate by hour",
+      ["synced-charts", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("realtime chart", "realtime-chart", [
+    ["Requests per second — live stream", ["realtime-chart", "chart-card"]],
+    [
+      "Room temperature — two sensors, fixed axis",
+      ["realtime-chart", "chart-card"],
+    ],
+    ["Price feed — a random walk", ["realtime-chart", "chart-card"]],
+  ]),
+  ...createChartVariants("drilldown chart", "drilldown-chart", [
+    [
+      "Revenue — year → quarter → month",
+      ["drilldown-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Active users — region → country → city",
+      ["drilldown-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Sales by product — horizontal bars, category → product",
+      ["drilldown-chart", "chart-card"],
+    ],
+  ]),
+  ...createChartVariants("annotated chart", "annotated-chart", [
+    [
+      "Deploy markers — error rate with deploy, rollback and SLO",
+      ["annotated-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Campaign periods — shaded launch and webinar weeks",
+      ["annotated-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Incident — latency with an incident window and SLA",
+      ["annotated-chart", "chart-card"],
+    ],
+  ]),
 ];

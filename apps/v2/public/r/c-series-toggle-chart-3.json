@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-series-toggle-chart-3",
+  "description": "Rates — funnel rates as lines, tabs without totals",
+  "registryDependencies": [
+    "@cnippet/series-toggle-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-series-toggle-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SeriesToggleChart } from \"@/registry/default/charts/series-toggle-chart\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\n// Weekly funnel rates; each tab's \"total\" is not meaningful for a rate, so tabs show the label only.\nconst data = [\n  { activation: 0.34, churn: 0.031, trialToPaid: 0.18, week: \"W35\" },\n  { activation: 0.36, churn: 0.029, trialToPaid: 0.19, week: \"W36\" },\n  { activation: 0.35, churn: 0.03, trialToPaid: 0.21, week: \"W37\" },\n  { activation: 0.38, churn: 0.027, trialToPaid: 0.2, week: \"W38\" },\n  { activation: 0.41, churn: 0.025, trialToPaid: 0.23, week: \"W39\" },\n  { activation: 0.43, churn: 0.024, trialToPaid: 0.24, week: \"W40\" },\n  { activation: 0.42, churn: 0.022, trialToPaid: 0.25, week: \"W41\" },\n  { activation: 0.45, churn: 0.021, trialToPaid: 0.27, week: \"W42\" },\n];\n\nconst percent = (value: number) => formatPercent(value);\n\nexport default function RatesSwitcher() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Funnel rates, weekly\">\n      <SeriesToggleChart\n        categories={[\"activation\", \"trialToPaid\", \"churn\"]}\n        chartType=\"line\"\n        className=\"h-44\"\n        config={{ trialToPaid: { label: \"Trial → paid\" } }}\n        data={data}\n        index=\"week\"\n        showTotals={false}\n        valueFormatter={percent}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "series toggle chart"
+  ],
+  "type": "registry:block"
+}

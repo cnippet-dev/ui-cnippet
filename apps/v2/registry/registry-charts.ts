@@ -244,4 +244,74 @@ export const charts: ChartItem[] = [
       "use-media-query",
     ],
   }),
+  // Interactive
+  createChart({
+    categories: ["time range chart"],
+    dependencies: [],
+    description:
+      "Area or bar chart with a 7d / 30d / 90d range toggle and totals for the range",
+    name: "time-range-chart",
+    registryDependencies: [
+      "area-chart",
+      "bar-chart",
+      "toggle-group",
+      "chart-utils",
+    ],
+  }),
+  createChart({
+    categories: ["brush chart"],
+    description:
+      "Area or line chart with a brush underneath to zoom and pan a long series",
+    name: "brush-chart",
+    registryDependencies: ["area-chart", "line-chart", "chart-utils"],
+  }),
+  createChart({
+    categories: ["series toggle chart"],
+    dependencies: [],
+    description:
+      "Metric tabs with totals above a chart; each tab switches the series shown",
+    name: "series-toggle-chart",
+    registryDependencies: [
+      "area-chart",
+      "bar-chart",
+      "line-chart",
+      "chart-utils",
+    ],
+  }),
+  createChart({
+    categories: ["synced charts"],
+    dependencies: [],
+    description:
+      "Stacked chart panels on one x-axis that share a cursor and tooltip",
+    name: "synced-charts",
+    registryDependencies: ["area-chart", "bar-chart", "line-chart"],
+  }),
+  createChart({
+    categories: ["realtime chart"],
+    dependencies: ["recharts", "lucide-react"],
+    description:
+      "Streaming line chart with a sliding window, live values and a pause button",
+    name: "realtime-chart",
+    registryDependencies: [
+      "chart",
+      "chart-utils",
+      "chart-tooltip-presets",
+      "button",
+    ],
+  }),
+  createChart({
+    categories: ["drilldown chart"],
+    dependencies: ["recharts", "lucide-react"],
+    description:
+      "Bar chart that drills into a bar's breakdown on click or Enter, with breadcrumbs back",
+    name: "drilldown-chart",
+    registryDependencies: ["bar-chart", "chart-utils"],
+  }),
+  createChart({
+    categories: ["annotated chart"],
+    description:
+      "Time series with event markers, target lines and shaded periods",
+    name: "annotated-chart",
+    registryDependencies: ["area-chart", "line-chart", "chart-utils"],
+  }),
 ];

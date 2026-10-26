@@ -53,6 +53,7 @@ export function LineChart<T extends Record<string, unknown>>({
   emptyState,
   className,
   children,
+  syncId,
   "aria-label": ariaLabel,
   curve = "monotone",
   showDots = false,
@@ -81,6 +82,7 @@ export function LineChart<T extends Record<string, unknown>>({
         accessibilityLayer
         data={data}
         margin={{ left: showYAxis ? 0 : 12, right: 12, top: 8 }}
+        syncId={syncId}
       >
         {showGrid ? <CartesianGrid vertical={false} /> : null}
         <XAxis

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-realtime-chart-1",
+  "description": "Requests per second — live stream",
+  "registryDependencies": [
+    "@cnippet/realtime-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-realtime-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RealtimeChart } from \"@/registry/default/charts/realtime-chart\";\n\n// Stand-in for a websocket: requests per second with noise and the odd burst.\nfunction nextRps() {\n  const base = 420 + 60 * Math.sin(Date.now() / 8000);\n  const burst = Math.random() < 0.08 ? 180 : 0;\n  return { rps: Math.round(base + (Math.random() - 0.5) * 70 + burst) };\n}\n\nexport default function LiveRequests() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Requests per second\">\n      <RealtimeChart\n        categories={[\"rps\"]}\n        className=\"h-48\"\n        config={{ rps: { color: \"var(--chart-1)\", label: \"req/s\" } }}\n        onTick={nextRps}\n        windowSize={40}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "realtime chart"
+  ],
+  "type": "registry:block"
+}

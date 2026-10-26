@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-range-chart",
+  "description": "Area or bar chart with a 7d / 30d / 90d range toggle and totals for the range",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/bar-chart",
+    "@cnippet/toggle-group",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/time-range-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport {\n  type BaseChartProps,\n  buildChartConfig,\n  formatCompact,\n  sumBy,\n} from \"@/registry/default/lib/chart-utils\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\nexport type TimeRange = {\n  label: string;\n  /** Number of trailing rows to show. Omit to show every row. */\n  size?: number;\n};\n\nexport type TimeRangeChartProps<T extends Record<string, unknown>> =\n  BaseChartProps<T> & {\n    ranges?: TimeRange[];\n    /** Label of the range selected at first. Default: the second range. */\n    defaultRange?: string;\n    /** Called with the new range label, e.g. to fetch more data. */\n    onRangeChange?: (label: string) => void;\n    chartType?: \"area\" | \"bar\";\n    /** Stack the series. */\n    stacked?: boolean;\n    /** Show the sum of each series over the range above the chart. */\n    showTotals?: boolean;\n  };\n\nconst DEFAULT_RANGES: TimeRange[] = [\n  { label: \"7d\", size: 7 },\n  { label: \"30d\", size: 30 },\n  { label: \"90d\", size: 90 },\n];\n\nexport function TimeRangeChart<T extends Record<string, unknown>>({\n  ranges = DEFAULT_RANGES,\n  defaultRange,\n  onRangeChange,\n  chartType = \"area\",\n  stacked = false,\n  showTotals = true,\n  ...chartProps\n}: TimeRangeChartProps<T>) {\n  const [range, setRange] = React.useState(\n    defaultRange ?? ranges[1]?.label ?? ranges[0]?.label ?? \"\",\n  );\n  const {\n    data,\n    categories,\n    config,\n    valueFormatter = formatCompact,\n  } = chartProps;\n  const size = ranges.find((r) => r.label === range)?.size;\n  const rows = size === undefined ? data : data.slice(-size);\n  const resolvedConfig = buildChartConfig(categories, config);\n  const type = stacked ? \"stacked\" : \"default\";\n\n  return (\n    <div className=\"grid w-full gap-4\" data-slot=\"time-range-chart\">\n      <div className=\"flex flex-wrap items-end justify-between gap-4\">\n        {showTotals ? (\n          <dl className=\"flex flex-wrap gap-x-6 gap-y-2\">\n            {categories.map((key) => (\n              <div key={key}>\n                <dt className=\"flex items-center gap-1.5 text-muted-foreground text-xs\">\n                  <span\n                    aria-hidden=\"true\"\n                    className=\"size-2 rounded-xs\"\n                    style={{ backgroundColor: resolvedConfig[key]?.color }}\n                  />\n                  {resolvedConfig[key]?.label}\n                </dt>\n                <dd className=\"font-semibold text-xl tabular-nums\">\n                  {valueFormatter(sumBy(rows, [key]))}\n                </dd>\n              </div>\n            ))}\n          </dl>\n        ) : (\n          <span />\n        )}\n        <ToggleGroup\n          aria-label=\"Time range\"\n          onValueChange={(value) => {\n            const next = value[0];\n            if (!next) return;\n            setRange(next);\n            onRangeChange?.(next);\n          }}\n          size=\"sm\"\n          value={[range]}\n          variant=\"outline\"\n        >\n          {ranges.map((r) => (\n            <ToggleGroupItem key={r.label} value={r.label}>\n              {r.label}\n            </ToggleGroupItem>\n          ))}\n        </ToggleGroup>\n      </div>\n      {chartType === \"bar\" ? (\n        <BarChart\n          {...chartProps}\n          config={resolvedConfig}\n          data={rows}\n          // The totals header already names and colours each series.\n          showLegend={chartProps.showLegend ?? !showTotals}\n          type={type}\n        />\n      ) : (\n        <AreaChart\n          {...chartProps}\n          config={resolvedConfig}\n          data={rows}\n          // The totals header already names and colours each series.\n          showLegend={chartProps.showLegend ?? !showTotals}\n          type={type}\n        />\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/time-range-chart.tsx"
+    }
+  ],
+  "categories": [
+    "time range chart"
+  ],
+  "type": "registry:ui"
+}

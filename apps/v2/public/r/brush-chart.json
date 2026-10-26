@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "brush-chart",
+  "description": "Area or line chart with a brush underneath to zoom and pan a long series",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/line-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/brush-chart.tsx",
+      "content": "\"use client\";\n\nimport { Area, Brush, AreaChart as RechartsAreaChart } from \"recharts\";\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\nimport type { BaseChartProps } from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type BrushChartProps<T extends Record<string, unknown>> =\n  BaseChartProps<T> & {\n    chartType?: \"area\" | \"line\";\n    /** Rows visible at first, counted from the end. Default: all rows. */\n    defaultWindow?: number;\n    /** Called when the brush moves, with the first and last visible row index. */\n    onRangeChange?: (range: { startIndex: number; endIndex: number }) => void;\n  };\n\nexport function BrushChart<T extends Record<string, unknown>>({\n  chartType = \"area\",\n  defaultWindow,\n  onRangeChange,\n  className,\n  children,\n  ...chartProps\n}: BrushChartProps<T>) {\n  const { data, index, categories, indexFormatter } = chartProps;\n  const [first] = categories;\n  const startIndex =\n    defaultWindow === undefined ? 0 : Math.max(data.length - defaultWindow, 0);\n\n  const brush = (\n    <Brush\n      dataKey={index as string}\n      endIndex={Math.max(data.length - 1, 0)}\n      fill=\"var(--background)\"\n      height={40}\n      onChange={(range) => {\n        if (range.startIndex !== undefined && range.endIndex !== undefined) {\n          onRangeChange?.({\n            endIndex: range.endIndex,\n            startIndex: range.startIndex,\n          });\n        }\n      }}\n      startIndex={startIndex}\n      stroke=\"var(--border)\"\n      tickFormatter={(value) =>\n        indexFormatter ? indexFormatter(String(value)) : String(value)\n      }\n      travellerWidth={8}\n    >\n      {/* The overview inside the brush: the first series, muted. */}\n      <RechartsAreaChart data={data}>\n        {first ? (\n          <Area\n            dataKey={first as string}\n            fill=\"var(--muted-foreground)\"\n            fillOpacity={0.15}\n            isAnimationActive={false}\n            stroke=\"var(--muted-foreground)\"\n            strokeOpacity={0.4}\n            type=\"monotone\"\n          />\n        ) : null}\n      </RechartsAreaChart>\n    </Brush>\n  );\n  // Brush texts and travellers default to fixed greys; map them to theme tokens.\n  const brushClasses = cn(\n    \"[&_.recharts-brush-texts_text]:fill-muted-foreground [&_.recharts-brush-traveller_rect]:fill-muted-foreground\",\n    className,\n  );\n\n  return chartType === \"line\" ? (\n    <LineChart {...chartProps} className={brushClasses}>\n      {brush}\n      {children}\n    </LineChart>\n  ) : (\n    <AreaChart {...chartProps} className={brushClasses}>\n      {brush}\n      {children}\n    </AreaChart>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/brush-chart.tsx"
+    }
+  ],
+  "categories": [
+    "brush chart"
+  ],
+  "type": "registry:ui"
+}

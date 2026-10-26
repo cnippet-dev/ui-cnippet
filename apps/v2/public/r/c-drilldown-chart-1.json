@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-drilldown-chart-1",
+  "description": "Revenue — year → quarter → month",
+  "registryDependencies": [
+    "@cnippet/drilldown-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-drilldown-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport {\n  DrilldownChart,\n  type DrilldownNode,\n} from \"@/registry/default/charts/drilldown-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst quarter = (name: string, months: [string, number][]): DrilldownNode => ({\n  children: months.map(([m, value]) => ({ name: m, value })),\n  name,\n  value: months.reduce((sum, [, v]) => sum + v, 0),\n});\n\n// Year → quarter → month.\nconst data: DrilldownNode[] = [\n  {\n    children: [\n      quarter(\"Q1\", [\n        [\"Jan\", 31200],\n        [\"Feb\", 33850],\n        [\"Mar\", 36400],\n      ]),\n      quarter(\"Q2\", [\n        [\"Apr\", 38900],\n        [\"May\", 42900],\n        [\"Jun\", 41700],\n      ]),\n      quarter(\"Q3\", [\n        [\"Jul\", 44100],\n        [\"Aug\", 46800],\n        [\"Sep\", 48200],\n      ]),\n      quarter(\"Q4\", [\n        [\"Oct\", 51300],\n        [\"Nov\", 54900],\n        [\"Dec\", 58100],\n      ]),\n    ],\n    name: \"2025\",\n    value: 0,\n  },\n  {\n    children: [\n      quarter(\"Q1\", [\n        [\"Jan\", 55200],\n        [\"Feb\", 57400],\n        [\"Mar\", 60100],\n      ]),\n      quarter(\"Q2\", [\n        [\"Apr\", 62800],\n        [\"May\", 64300],\n        [\"Jun\", 66900],\n      ]),\n      quarter(\"Q3\", [\n        [\"Jul\", 69400],\n        [\"Aug\", 71200],\n        [\"Sep\", 73800],\n      ]),\n    ],\n    name: \"2026\",\n    value: 0,\n  },\n];\nfor (const year of data) {\n  year.value = year.children?.reduce((sum, q) => sum + q.value, 0) ?? 0;\n}\n\nexport default function RevenueDrilldown() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Click a bar to see its breakdown\"\n      title=\"Revenue\"\n    >\n      <DrilldownChart\n        className=\"h-52\"\n        data={data}\n        rootLabel=\"All years\"\n        valueFormatter={formatCurrency}\n        valueLabel=\"Revenue\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drilldown chart"
+  ],
+  "type": "registry:block"
+}

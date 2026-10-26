@@ -173,6 +173,13 @@ export const registryCategories = [
   "gauge chart",
   "sunburst chart",
   "polar area chart",
+  "time range chart",
+  "brush chart",
+  "series toggle chart",
+  "synced charts",
+  "realtime chart",
+  "drilldown chart",
+  "annotated chart",
   // Features and states
   "async",
   "copy",

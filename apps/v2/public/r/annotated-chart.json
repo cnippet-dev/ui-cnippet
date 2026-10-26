@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "annotated-chart",
+  "description": "Time series with event markers, target lines and shaded periods",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/line-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/annotated-chart.tsx",
+      "content": "\"use client\";\n\nimport { ReferenceArea, ReferenceLine } from \"recharts\";\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\nimport type { BaseChartProps } from \"@/registry/default/lib/chart-utils\";\n\nexport type ChartEvent = {\n  /** `index` value the event happened at, e.g. \"Oct 12\". */\n  x: string;\n  label: string;\n};\n\nexport type ChartTarget = {\n  y: number;\n  label: string;\n};\n\nexport type ChartRange = {\n  /** First and last `index` values of the period. */\n  from: string;\n  to: string;\n  label?: string;\n};\n\nexport type AnnotatedChartProps<T extends Record<string, unknown>> =\n  BaseChartProps<T> & {\n    chartType?: \"area\" | \"line\";\n    /** Vertical markers, e.g. deploys or launches. */\n    events?: ChartEvent[];\n    /** Horizontal lines, e.g. a target or SLA. */\n    targets?: ChartTarget[];\n    /** Shaded periods, e.g. a campaign or an incident. */\n    ranges?: ChartRange[];\n  };\n\nconst labelClass = \"fill-muted-foreground text-[0.625rem]\";\n\nexport function AnnotatedChart<T extends Record<string, unknown>>({\n  chartType = \"line\",\n  events = [],\n  targets = [],\n  ranges = [],\n  children,\n  ...chartProps\n}: AnnotatedChartProps<T>) {\n  const annotations = (\n    <>\n      {ranges.map((r) => (\n        <ReferenceArea\n          fill=\"var(--muted-foreground)\"\n          fillOpacity={0.08}\n          key={`${r.from}-${r.to}`}\n          label={\n            r.label\n              ? {\n                  className: labelClass,\n                  position: \"insideBottom\",\n                  value: r.label,\n                }\n              : undefined\n          }\n          x1={r.from}\n          x2={r.to}\n        />\n      ))}\n      {targets.map((t) => (\n        <ReferenceLine\n          key={`y-${t.y}`}\n          label={{\n            className: labelClass,\n            position: \"insideBottomRight\",\n            value: t.label,\n          }}\n          stroke=\"var(--muted-foreground)\"\n          strokeDasharray=\"4 4\"\n          y={t.y}\n        />\n      ))}\n      {events.map((e, i) => (\n        <ReferenceLine\n          key={`x-${e.x}-${e.label}`}\n          label={{\n            className: labelClass,\n            // Alternate rows so labels of nearby events don't overlap.\n            offset: i % 2 ? 20 : 6,\n            position: \"insideTopLeft\",\n            value: e.label,\n          }}\n          stroke=\"var(--foreground)\"\n          strokeOpacity={0.4}\n          x={e.x}\n        />\n      ))}\n      {children}\n    </>\n  );\n  const all = [\n    ...ranges.map((r) => `${r.label ?? \"Period\"}: ${r.from} to ${r.to}`),\n    ...targets.map((t) => `${t.label}: ${t.y}`),\n    ...events.map((e) => `${e.label} at ${e.x}`),\n  ];\n\n  return (\n    <div className=\"w-full\" data-slot=\"annotated-chart\">\n      {chartType === \"area\" ? (\n        <AreaChart {...chartProps}>{annotations}</AreaChart>\n      ) : (\n        <LineChart {...chartProps}>{annotations}</LineChart>\n      )}\n      {/* Annotations are drawn, not written; list them for screen readers. */}\n      {all.length ? (\n        <ul className=\"sr-only\">\n          {all.map((text) => (\n            <li key={text}>{text}</li>\n          ))}\n        </ul>\n      ) : null}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/annotated-chart.tsx"
+    }
+  ],
+  "categories": [
+    "annotated chart"
+  ],
+  "type": "registry:ui"
+}

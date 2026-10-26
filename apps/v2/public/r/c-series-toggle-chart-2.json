@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-series-toggle-chart-2",
+  "description": "Metric switcher — users, sessions and revenue",
+  "registryDependencies": [
+    "@cnippet/series-toggle-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-series-toggle-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SeriesToggleChart } from \"@/registry/default/charts/series-toggle-chart\";\nimport {\n  formatCompact,\n  formatCurrency,\n} from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { month: \"May\", revenue: 47200, sessions: 182000, users: 41200 },\n  { month: \"Jun\", revenue: 46100, sessions: 176000, users: 40100 },\n  { month: \"Jul\", revenue: 50800, sessions: 198000, users: 44800 },\n  { month: \"Aug\", revenue: 53400, sessions: 211000, users: 47300 },\n  { month: \"Sep\", revenue: 55900, sessions: 224000, users: 50900 },\n  { month: \"Oct\", revenue: 58700, sessions: 239000, users: 53600 },\n];\n\nexport default function MetricSwitcher() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Growth, last 6 months\">\n      <SeriesToggleChart\n        categories={[\"users\", \"sessions\", \"revenue\"]}\n        chartType=\"area\"\n        className=\"h-40\"\n        data={data}\n        formatters={{ revenue: formatCurrency }}\n        index=\"month\"\n        valueFormatter={formatCompact}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "series toggle chart"
+  ],
+  "type": "registry:block"
+}

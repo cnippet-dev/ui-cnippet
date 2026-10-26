@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-annotated-chart-3",
+  "description": "Incident — latency with an incident window and SLA",
+  "registryDependencies": [
+    "@cnippet/annotated-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-annotated-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { AnnotatedChart } from \"@/registry/default/charts/annotated-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// p95 latency (ms) over a day, with an incident window, the SLA and the failover.\nconst data = Array.from({ length: 48 }, (_, i) => {\n  const time = `${String(Math.floor(i / 2)).padStart(2, \"0\")}:${i % 2 ? \"30\" : \"00\"}`;\n  const incident = i >= 20 && i <= 25 ? 260 : 0;\n  return {\n    p95: Math.round(\n      180 + 40 * Math.sin(i / 6) + 12 * Math.cos(i / 1.7) + incident,\n    ),\n    time,\n  };\n});\n\nexport default function LatencyIncident() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Checkout API p95, today\"\n      title=\"Latency\"\n    >\n      <AnnotatedChart\n        categories={[\"p95\"]}\n        className=\"h-56\"\n        config={{ p95: { color: \"var(--chart-1)\", label: \"p95\" } }}\n        data={data}\n        events={[{ label: \"DB failover\", x: \"12:00\" }]}\n        index=\"time\"\n        ranges={[{ from: \"10:00\", label: \"Incident\", to: \"12:30\" }]}\n        targets={[{ label: \"SLA 300 ms\", y: 300 }]}\n        valueFormatter={(value) => `${value} ms`}\n        yAxisWidth={60}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "annotated chart"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,94 @@
+---
+title: Brush Chart
+description: An area or line chart with a brush underneath to zoom and pan a long series.
+---
+
+<ComponentPreview name="c-brush-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/brush-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Area Chart](/charts/cartesian/area-chart) and [Line Chart](/charts/cartesian/line-chart) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="brush-chart" title="components/charts/brush-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BrushChart } from "@/components/charts/brush-chart";
+```
+
+```tsx
+<BrushChart
+  data={dailyRevenue}
+  index="date"
+  categories={["revenue"]}
+  defaultWindow={90}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- The brush under the chart shows the whole series in miniature. Drag its handles to zoom, or drag the window to pan.
+- `defaultWindow` sets how many of the latest rows are visible at first. Without it, the whole series shows.
+- The brush takes 40px of the chart's height, so give it a bit more room than a plain chart, e.g. `h-60`.
+- `onRangeChange` gets the first and last visible row index, e.g. to load detail for that window.
+- Use it for hundreds or thousands of rows. For a few weeks of data, a [Time Range Chart](/charts/interactive/time-range-chart) is simpler.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `chartType` | `"area" \| "line"` | `"area"` | Chart to draw |
+| `defaultWindow` | `number` | all rows | Latest rows visible at first |
+| `onRangeChange` | `({ startIndex, endIndex }) => void` | — | Called when the brush moves |
+
+## Examples
+
+### Two years of revenue
+
+730 daily points, opening on the last 90 days.
+
+<ComponentPreview name="c-brush-chart-1" />
+
+### Sensor log
+
+Three days of 10-minute readings; zoom in to find the dip.
+
+<ComponentPreview name="c-brush-chart-2" />
+
+### Stock history
+
+A year of closes as a line, opening on the last 60 sessions.
+
+<ComponentPreview name="c-brush-chart-3" />

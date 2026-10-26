@@ -58,6 +58,7 @@ export function AreaChart<T extends Record<string, unknown>>({
   emptyState,
   className,
   children,
+  syncId,
   "aria-label": ariaLabel,
   type = "default",
   curve = "monotone",
@@ -86,6 +87,7 @@ export function AreaChart<T extends Record<string, unknown>>({
         data={data}
         margin={{ left: showYAxis ? 0 : 12, right: 12, top: 8 }}
         stackOffset={type === "percent" ? "expand" : undefined}
+        syncId={syncId}
       >
         {fill === "gradient" ? (
           <defs>

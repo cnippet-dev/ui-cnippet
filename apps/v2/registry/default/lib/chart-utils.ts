@@ -33,6 +33,8 @@ export type BaseChartProps<T extends Record<string, unknown>> = {
   "aria-label"?: string;
   /** Extra Recharts elements drawn inside the chart, e.g. <ReferenceLine />. */
   children?: React.ReactNode;
+  /** Charts with the same syncId share one cursor and tooltip position. */
+  syncId?: string;
 };
 
 /** Default accessible name: "Area chart of desktop and mobile by month". */

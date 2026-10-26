@@ -67,6 +67,7 @@ export function BarChart<T extends Record<string, unknown>>({
   emptyState,
   className,
   children,
+  syncId,
   "aria-label": ariaLabel,
   layout = "horizontal",
   type = "default",
@@ -129,6 +130,7 @@ export function BarChart<T extends Record<string, unknown>>({
           top: showValues && !vertical ? 20 : 8,
         }}
         stackOffset={type === "percent" ? "expand" : undefined}
+        syncId={syncId}
       >
         {showGrid ? (
           <CartesianGrid horizontal={!vertical} vertical={vertical} />

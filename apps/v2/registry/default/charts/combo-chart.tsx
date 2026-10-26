@@ -63,6 +63,7 @@ export function ComboChart<T extends Record<string, unknown>>({
   emptyState,
   className,
   children,
+  syncId,
   "aria-label": ariaLabel,
   dualAxis = false,
   stacked = false,
@@ -97,6 +98,7 @@ export function ComboChart<T extends Record<string, unknown>>({
           right: showYAxis && dualAxis ? 0 : 12,
           top: 8,
         }}
+        syncId={syncId}
       >
         {showGrid ? <CartesianGrid vertical={false} /> : null}
         <XAxis

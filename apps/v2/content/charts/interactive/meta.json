@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "time-range-chart",
+    "brush-chart",
+    "series-toggle-chart",
+    "synced-charts",
+    "realtime-chart",
+    "drilldown-chart",
+    "annotated-chart"
+  ],
+  "title": "Interactive & Real-time"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-time-range-chart-1",
+  "description": "Visitors — 7d / 30d / 90d with totals per device",
+  "registryDependencies": [
+    "@cnippet/time-range-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-time-range-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { TimeRangeChart } from \"@/registry/default/charts/time-range-chart\";\nimport { formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// 90 days of visitors ending Oct 25 2026, quieter at weekends.\nconst data = Array.from({ length: 90 }, (_, i) => {\n  const date = new Date(Date.UTC(2026, 6, 28 + i));\n  const weekend = date.getUTCDay() % 6 === 0;\n  return {\n    date: date.toISOString().slice(0, 10),\n    desktop: Math.round(\n      2100 + 14 * i + 380 * Math.sin(i / 5) - (weekend ? 900 : 0),\n    ),\n    mobile: Math.round(\n      1500 + 11 * i + 260 * Math.cos(i / 6) + (weekend ? 300 : 0),\n    ),\n  };\n});\n\nexport default function VisitorsByRange() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Visitors\">\n      <TimeRangeChart\n        categories={[\"desktop\", \"mobile\"]}\n        className=\"h-40\"\n        data={data}\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "time range chart"
+  ],
+  "type": "registry:block"
+}

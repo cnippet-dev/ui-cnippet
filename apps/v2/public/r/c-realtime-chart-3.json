@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-realtime-chart-3",
+  "description": "Price feed — a random walk",
+  "registryDependencies": [
+    "@cnippet/realtime-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-realtime-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RealtimeChart } from \"@/registry/default/charts/realtime-chart\";\n\nexport default function LivePrice() {\n  // A random walk standing in for a price feed.\n  const price = useRef(64250);\n\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"BTC / USD\">\n      <RealtimeChart\n        categories={[\"price\"]}\n        className=\"h-48\"\n        config={{ price: { color: \"var(--chart-4)\", label: \"Price\" } }}\n        interval={800}\n        onTick={() => {\n          price.current *= 1 + (Math.random() - 0.495) * 0.002;\n          return { price: Math.round(price.current) };\n        }}\n        valueFormatter={(value) =>\n          `$${value.toLocaleString(\"en-US\", { maximumFractionDigits: 0 })}`\n        }\n        windowSize={50}\n        yAxisWidth={64}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "realtime chart"
+  ],
+  "type": "registry:block"
+}

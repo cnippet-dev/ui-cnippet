@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-synced-charts-3",
+  "description": "Traffic vs conversion — sessions and rate by hour",
+  "registryDependencies": [
+    "@cnippet/synced-charts",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-synced-charts-3.tsx",
+      "content": "\"use client\";\n\nimport { SyncedCharts } from \"@/registry/default/charts/synced-charts\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\n// Traffic vs conversion by hour: the evening peak brings visitors, not buyers.\nconst data = Array.from({ length: 24 }, (_, h) => ({\n  conversion:\n    Math.round(\n      (0.031 + 0.009 * Math.sin(((h - 9) / 24) * 2 * Math.PI)) * 1000,\n    ) / 1000,\n  hour: `${String(h).padStart(2, \"0\")}:00`,\n  sessions: Math.round(\n    900 +\n      2600 * Math.max(0, Math.sin(((h - 6) / 24) * 2 * Math.PI)) +\n      (h >= 19 && h <= 22 ? 1400 : 0),\n  ),\n}));\n\nexport default function TrafficAndConversion() {\n  return (\n    <div className=\"w-full max-w-2xl rounded-lg border bg-card p-5\">\n      <div className=\"mb-3 font-medium text-sm\">Today by hour</div>\n      <SyncedCharts\n        data={data}\n        index=\"hour\"\n        panelClassName=\"h-28\"\n        panels={[\n          { categories: [\"sessions\"], title: \"Sessions\" },\n          {\n            categories: [\"conversion\"],\n            config: {\n              conversion: { color: \"var(--chart-2)\", label: \"Conversion\" },\n            },\n            title: \"Conversion rate\",\n            type: \"line\",\n            valueFormatter: (value) => formatPercent(value),\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "synced charts"
+  ],
+  "type": "registry:block"
+}

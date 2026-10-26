@@ -25751,6 +25751,162 @@
     },
     {
       "categories": [
+        "time range chart"
+      ],
+      "description": "Area or bar chart with a 7d / 30d / 90d range toggle and totals for the range",
+      "files": [
+        {
+          "path": "registry/default/charts/time-range-chart.tsx",
+          "target": "components/charts/time-range-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "time-range-chart",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/bar-chart",
+        "@cnippet/toggle-group",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "brush chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Area or line chart with a brush underneath to zoom and pan a long series",
+      "files": [
+        {
+          "path": "registry/default/charts/brush-chart.tsx",
+          "target": "components/charts/brush-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "brush-chart",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/line-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "series toggle chart"
+      ],
+      "description": "Metric tabs with totals above a chart; each tab switches the series shown",
+      "files": [
+        {
+          "path": "registry/default/charts/series-toggle-chart.tsx",
+          "target": "components/charts/series-toggle-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "series-toggle-chart",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/bar-chart",
+        "@cnippet/line-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "synced charts"
+      ],
+      "description": "Stacked chart panels on one x-axis that share a cursor and tooltip",
+      "files": [
+        {
+          "path": "registry/default/charts/synced-charts.tsx",
+          "target": "components/charts/synced-charts.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "synced-charts",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/bar-chart",
+        "@cnippet/line-chart"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "realtime chart"
+      ],
+      "dependencies": [
+        "recharts",
+        "lucide-react"
+      ],
+      "description": "Streaming line chart with a sliding window, live values and a pause button",
+      "files": [
+        {
+          "path": "registry/default/charts/realtime-chart.tsx",
+          "target": "components/charts/realtime-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "realtime-chart",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/button"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "drilldown chart"
+      ],
+      "dependencies": [
+        "recharts",
+        "lucide-react"
+      ],
+      "description": "Bar chart that drills into a bar's breakdown on click or Enter, with breadcrumbs back",
+      "files": [
+        {
+          "path": "registry/default/charts/drilldown-chart.tsx",
+          "target": "components/charts/drilldown-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "drilldown-chart",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "annotated chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Time series with event markers, target lines and shaded periods",
+      "files": [
+        {
+          "path": "registry/default/charts/annotated-chart.tsx",
+          "target": "components/charts/annotated-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "annotated-chart",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/line-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
         "chart card"
       ],
       "description": "Revenue card — headline value, growth badge and area trend",
@@ -27501,6 +27657,458 @@
       "name": "c-polar-area-chart-3",
       "registryDependencies": [
         "@cnippet/polar-area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time range chart"
+      ],
+      "description": "Visitors — 7d / 30d / 90d with totals per device",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-time-range-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-time-range-chart-1",
+      "registryDependencies": [
+        "@cnippet/time-range-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time range chart"
+      ],
+      "description": "Revenue — 3m / 6m / 12m monthly bars",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-time-range-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-time-range-chart-2",
+      "registryDependencies": [
+        "@cnippet/time-range-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "time range chart"
+      ],
+      "description": "API calls — stacked successful and failed calls",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-time-range-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-time-range-chart-3",
+      "registryDependencies": [
+        "@cnippet/time-range-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "brush chart"
+      ],
+      "description": "Two years of revenue — starts zoomed to 90 days",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-brush-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-brush-chart-1",
+      "registryDependencies": [
+        "@cnippet/brush-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "brush chart"
+      ],
+      "description": "Sensor log — three days of 10-minute readings",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-brush-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-brush-chart-2",
+      "registryDependencies": [
+        "@cnippet/brush-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "brush chart"
+      ],
+      "description": "Stock history — a year of closes, last 60 sessions shown",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-brush-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-brush-chart-3",
+      "registryDependencies": [
+        "@cnippet/brush-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "series toggle chart"
+      ],
+      "description": "Visitors — desktop and mobile tabs with totals",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-series-toggle-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-series-toggle-chart-1",
+      "registryDependencies": [
+        "@cnippet/series-toggle-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "series toggle chart"
+      ],
+      "description": "Metric switcher — users, sessions and revenue",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-series-toggle-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-series-toggle-chart-2",
+      "registryDependencies": [
+        "@cnippet/series-toggle-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "series toggle chart"
+      ],
+      "description": "Rates — funnel rates as lines, tabs without totals",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-series-toggle-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-series-toggle-chart-3",
+      "registryDependencies": [
+        "@cnippet/series-toggle-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "synced charts"
+      ],
+      "description": "Server metrics — CPU, memory and network",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-synced-charts-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-synced-charts-1",
+      "registryDependencies": [
+        "@cnippet/synced-charts"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "synced charts"
+      ],
+      "description": "Sales — revenue, orders and AOV",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-synced-charts-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-synced-charts-2",
+      "registryDependencies": [
+        "@cnippet/synced-charts",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "synced charts"
+      ],
+      "description": "Traffic vs conversion — sessions and rate by hour",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-synced-charts-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-synced-charts-3",
+      "registryDependencies": [
+        "@cnippet/synced-charts",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "realtime chart"
+      ],
+      "description": "Requests per second — live stream",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-realtime-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-realtime-chart-1",
+      "registryDependencies": [
+        "@cnippet/realtime-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "realtime chart"
+      ],
+      "description": "Room temperature — two sensors, fixed axis",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-realtime-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-realtime-chart-2",
+      "registryDependencies": [
+        "@cnippet/realtime-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "realtime chart"
+      ],
+      "description": "Price feed — a random walk",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-realtime-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-realtime-chart-3",
+      "registryDependencies": [
+        "@cnippet/realtime-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drilldown chart"
+      ],
+      "description": "Revenue — year → quarter → month",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-drilldown-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-drilldown-chart-1",
+      "registryDependencies": [
+        "@cnippet/drilldown-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drilldown chart"
+      ],
+      "description": "Active users — region → country → city",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-drilldown-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-drilldown-chart-2",
+      "registryDependencies": [
+        "@cnippet/drilldown-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "drilldown chart"
+      ],
+      "description": "Sales by product — horizontal bars, category → product",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-drilldown-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-drilldown-chart-3",
+      "registryDependencies": [
+        "@cnippet/drilldown-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "annotated chart"
+      ],
+      "description": "Deploy markers — error rate with deploy, rollback and SLO",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-annotated-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-annotated-chart-1",
+      "registryDependencies": [
+        "@cnippet/annotated-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "annotated chart"
+      ],
+      "description": "Campaign periods — shaded launch and webinar weeks",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-annotated-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-annotated-chart-2",
+      "registryDependencies": [
+        "@cnippet/annotated-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "annotated chart"
+      ],
+      "description": "Incident — latency with an incident window and SLA",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-annotated-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-annotated-chart-3",
+      "registryDependencies": [
+        "@cnippet/annotated-chart",
         "@cnippet/chart-card"
       ],
       "type": "registry:block"

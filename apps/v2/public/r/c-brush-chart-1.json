@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-brush-chart-1",
+  "description": "Two years of revenue — starts zoomed to 90 days",
+  "registryDependencies": [
+    "@cnippet/brush-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-brush-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { BrushChart } from \"@/registry/default/charts/brush-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency, formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// Two years of daily revenue with growth, seasonality and a weekly rhythm.\nconst data = Array.from({ length: 730 }, (_, i) => {\n  const date = new Date(Date.UTC(2024, 9, 26 + i));\n  return {\n    date: date.toISOString().slice(0, 10),\n    revenue: Math.round(\n      1800 +\n        2.4 * i +\n        420 * Math.sin((i / 365) * 2 * Math.PI - 1.2) +\n        160 * Math.sin((i / 7) * 2 * Math.PI),\n    ),\n  };\n});\n\nexport default function TwoYearsOfRevenue() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Drag the handles below to zoom; starts on the last 90 days\"\n      title=\"Daily revenue\"\n    >\n      <BrushChart\n        categories={[\"revenue\"]}\n        className=\"h-60\"\n        data={data}\n        defaultWindow={90}\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "brush chart"
+  ],
+  "type": "registry:block"
+}

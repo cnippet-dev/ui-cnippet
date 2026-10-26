@@ -1,0 +1,97 @@
+---
+title: Synced Charts
+description: Stacked chart panels on one x-axis that share a cursor and tooltip position.
+---
+
+<ComponentPreview name="c-synced-charts-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/synced-charts
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Area Chart](/charts/cartesian/area-chart), [Bar Chart](/charts/cartesian/bar-chart) and [Line Chart](/charts/cartesian/line-chart) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="synced-charts" title="components/charts/synced-charts.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SyncedCharts } from "@/components/charts/synced-charts";
+```
+
+```tsx
+<SyncedCharts
+  data={metrics}
+  index="time"
+  panels={[
+    { title: "CPU", categories: ["cpu"], valueFormatter: (v) => `${v}%` },
+    { title: "Memory", categories: ["memory"], type: "line" },
+  ]}
+/>
+```
+
+## Good to know
+
+- Every panel reads the same `data` and `index`; each picks its own `categories`, chart `type`, `config` and `valueFormatter`.
+- Hovering one panel moves the cursor and tooltip in all of them, so you can see that a CPU spike and a network spike happened together.
+- Only the bottom panel shows the x-axis. Set every panel's height with `panelClassName`.
+- Keep `yAxisWidth` the same across panels (the default does) so the plots line up.
+- To sync charts you lay out yourself, pass the same `syncId` to any [Area](/charts/cartesian/area-chart), [Bar](/charts/cartesian/bar-chart), [Line](/charts/cartesian/line-chart) or [Combo](/charts/cartesian/combo-chart) chart.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | Rows shared by every panel |
+| `index` | `keyof T` | — | Shared x-axis field |
+| `panels` | `{ title, categories, type?, config?, valueFormatter?, showYAxis? }[]` | — | One entry per chart, top to bottom |
+| `indexFormatter` | `(value: string) => string` | — | Formats the x-axis and tooltip heading |
+| `panelClassName` | `string` | `"h-28"` | Height of each panel |
+| `yAxisWidth` | `number` | `56` | Width of every y-axis |
+| `className` | `string` | — | Classes for the wrapper |
+
+## Examples
+
+### Server metrics
+
+CPU, memory and network for one host; the batch job spikes all three.
+
+<ComponentPreview name="c-synced-charts-1" />
+
+### Sales
+
+Revenue, orders and AOV; the discount week lifts orders and drops AOV.
+
+<ComponentPreview name="c-synced-charts-2" />
+
+### Traffic vs conversion
+
+The evening peak brings sessions but not a higher conversion rate.
+
+<ComponentPreview name="c-synced-charts-3" />

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drilldown-chart",
+  "description": "Bar chart that drills into a bar's breakdown on click or Enter, with breadcrumbs back",
+  "dependencies": [
+    "recharts",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/drilldown-chart.tsx",
+      "content": "\"use client\";\n\nimport { ChevronRightIcon } from \"lucide-react\";\nimport * as React from \"react\";\nimport { useActiveTooltipLabel } from \"recharts\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type DrilldownNode = {\n  name: string;\n  value: number;\n  children?: DrilldownNode[];\n};\n\nexport type DrilldownChartProps = {\n  data: DrilldownNode[];\n  /** First breadcrumb, e.g. \"All regions\". */\n  rootLabel?: string;\n  /** Name of the measure, used in the tooltip, e.g. \"Revenue\". */\n  valueLabel?: string;\n  valueFormatter?: (value: number) => string;\n  /** CSS colour of the bars. */\n  color?: string;\n  /** Called with the path of names after each drill or step back. */\n  onPathChange?: (path: string[]) => void;\n  layout?: \"horizontal\" | \"vertical\";\n  yAxisWidth?: number;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\n// Reports the bar under the mouse or keyboard focus, so Enter can drill into it.\nfunction ActiveLabel({ onChange }: { onChange: (label?: string) => void }) {\n  const label = useActiveTooltipLabel();\n  React.useEffect(() => {\n    onChange(label === undefined ? undefined : String(label));\n  }, [label, onChange]);\n  return null;\n}\n\nexport function DrilldownChart({\n  data,\n  rootLabel = \"All\",\n  valueLabel = \"Value\",\n  valueFormatter = formatCompact,\n  color = \"var(--chart-1)\",\n  onPathChange,\n  layout = \"horizontal\",\n  yAxisWidth,\n  className,\n  \"aria-label\": ariaLabel,\n}: DrilldownChartProps) {\n  const [path, setPath] = React.useState<string[]>([]);\n  const active = React.useRef<string | undefined>(undefined);\n  const setActive = React.useCallback((label?: string) => {\n    active.current = label;\n  }, []);\n\n  // Walk the path; stop early if the data changed under it.\n  let level = data;\n  for (const name of path) {\n    const next = level.find((n) => n.name === name)?.children;\n    if (!next) break;\n    level = next;\n  }\n\n  const go = (next: string[]) => {\n    setPath(next);\n    onPathChange?.(next);\n  };\n  const drill = (name?: string) => {\n    if (name && level.find((n) => n.name === name)?.children?.length) {\n      go([...path, name]);\n    }\n  };\n  const crumbs = [rootLabel, ...path];\n\n  return (\n    <div className=\"grid w-full gap-3\" data-slot=\"drilldown-chart\">\n      <nav aria-label=\"Drill-down level\">\n        <ol className=\"flex flex-wrap items-center gap-1 text-sm\">\n          {crumbs.map((crumb, i) => (\n            <li className=\"flex items-center gap-1\" key={`${i}-${crumb}`}>\n              {i > 0 ? (\n                <ChevronRightIcon\n                  aria-hidden=\"true\"\n                  className=\"size-3.5 text-muted-foreground\"\n                />\n              ) : null}\n              {i === crumbs.length - 1 ? (\n                <span aria-current=\"page\" className=\"font-medium\">\n                  {crumb}\n                </span>\n              ) : (\n                <button\n                  className=\"rounded-sm text-muted-foreground outline-none hover:text-foreground hover:underline focus-visible:ring-2 focus-visible:ring-ring\"\n                  onClick={() => go(path.slice(0, i))}\n                  type=\"button\"\n                >\n                  {crumb}\n                </button>\n              )}\n            </li>\n          ))}\n        </ol>\n      </nav>\n      <div\n        onKeyDown={(event) => {\n          if (event.key === \"Enter\") drill(active.current);\n        }}\n      >\n        <BarChart\n          aria-label={\n            ariaLabel ??\n            `${valueLabel} by ${crumbs.at(-1)}. Click a bar, or focus the chart, use the arrow keys and press Enter, to drill down.`\n          }\n          categories={[\"value\"]}\n          className={cn(className)}\n          config={{ value: { color, label: valueLabel } }}\n          data={level.map(({ name, value }) => ({ name, value }))}\n          index=\"name\"\n          layout={layout}\n          onValueClick={({ index }) => drill(index)}\n          valueFormatter={valueFormatter}\n          yAxisWidth={yAxisWidth}\n        >\n          <ActiveLabel onChange={setActive} />\n        </BarChart>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/drilldown-chart.tsx"
+    }
+  ],
+  "categories": [
+    "drilldown chart"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-drilldown-chart-3",
+  "description": "Sales by product — horizontal bars, category → product",
+  "registryDependencies": [
+    "@cnippet/drilldown-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-drilldown-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport {\n  DrilldownChart,\n  type DrilldownNode,\n} from \"@/registry/default/charts/drilldown-chart\";\n\nconst leaf = (name: string, value: number): DrilldownNode => ({ name, value });\nconst node = (name: string, children: DrilldownNode[]): DrilldownNode => ({\n  children,\n  name,\n  value: children.reduce((sum, c) => sum + c.value, 0),\n});\n\n// Units sold in Q3: category → product, as horizontal bars for long names.\nconst data = [\n  node(\"Audio\", [\n    leaf(\"Studio Air\", 4120),\n    leaf(\"Pulse Buds\", 3380),\n    leaf(\"Room One\", 1960),\n  ]),\n  node(\"Keyboards\", [\n    leaf(\"Type Pro\", 2870),\n    leaf(\"Type S\", 2110),\n    leaf(\"Type Low\", 940),\n  ]),\n  node(\"Accessories\", [\n    leaf(\"USB-C hub\", 5240),\n    leaf(\"Laptop stand\", 3010),\n    leaf(\"Cable kit\", 2480),\n  ]),\n];\n\nexport default function UnitsByProduct() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Units sold in Q3\"\n      title=\"Sales by product\"\n    >\n      <DrilldownChart\n        className=\"h-48\"\n        color=\"var(--chart-5)\"\n        data={data}\n        layout=\"vertical\"\n        rootLabel=\"All categories\"\n        valueFormatter={(value) => value.toLocaleString(\"en-US\")}\n        valueLabel=\"Units\"\n        yAxisWidth={96}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drilldown chart"
+  ],
+  "type": "registry:block"
+}
