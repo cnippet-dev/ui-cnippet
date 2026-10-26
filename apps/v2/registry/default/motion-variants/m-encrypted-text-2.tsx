@@ -7,9 +7,9 @@ export default function EncryptedTextTerminal() {
   const [step, setStep] = useState(0);
 
   const commands = [
-    "npx cnippet@latest add text-reveal",
-    "npx cnippet@latest add scroll-reveal",
-    "npx cnippet@latest add spinning-text",
+    "npx shadcn@latest add @cnippet/text-reveal",
+    "npx shadcn@latest add @cnippet/scroll-reveal",
+    "npx shadcn@latest add @cnippet/spinning-text",
   ];
 
   return (

@@ -53,7 +53,7 @@ export function PlaygroundShell() {
   const isPlaceholder =
     !!inspectSource && inspectSource.includes("return <div>Component</div>");
   const codePanelLabel = variant ? `${variant}.tsx` : "";
-  const cliCommand = variant ? `npx cnippet add ${variant}` : "";
+  const cliCommand = variant ? `npx shadcn@latest add @cnippet/${variant}` : "";
 
   return (
     <div className="flex h-full flex-col">

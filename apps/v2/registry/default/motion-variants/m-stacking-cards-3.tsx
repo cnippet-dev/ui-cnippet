@@ -13,7 +13,7 @@ const steps = [
     title: "Browse",
   },
   {
-    description: "Run npx cnippet@latest add <component> to add it.",
+    description: "Run npx shadcn@latest add @cnippet/<component> to add it.",
     step: "02",
     title: "Install",
   },

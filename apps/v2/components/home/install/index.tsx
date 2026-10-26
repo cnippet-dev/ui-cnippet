@@ -117,9 +117,9 @@ export const Install = () => (
           your codebase and you own completely.
         </p>
         <div className="mt-6 flex flex-col gap-2 lg:w-5/6">
-          <InstallCommand command="npx cnippet@latest init" />
-          <InstallCommand command="npx cnippet@latest add button" />
-          <InstallCommand command="npx cnippet@latest add data-table" />
+          <InstallCommand command="npx shadcn@latest init" />
+          <InstallCommand command="npx shadcn@latest add @cnippet/button" />
+          <InstallCommand command="npx shadcn@latest add @cnippet/data-table" />
         </div>
         <div className="mt-6 flex w-full flex-row gap-3 md:max-w-[75%] md:gap-6 lg:max-w-full lg:items-center">
           <Link
