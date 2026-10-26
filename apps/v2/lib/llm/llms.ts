@@ -1,5 +1,5 @@
 import type { Node, Root } from "fumadocs-core/page-tree";
-import { docSource, motionSource, source } from "@/lib/source";
+import { chartSource, docSource, motionSource, source } from "@/lib/source";
 import { type LlmPage, pageToMarkdown, SITE_URL } from "./page-to-markdown";
 
 type LlmSource = {
@@ -24,6 +24,11 @@ const llmSources: LlmSource[] = [
     pageTree: motionSource.pageTree,
     title: "Motion",
   },
+  {
+    getPages: () => chartSource.getPages(),
+    pageTree: chartSource.pageTree,
+    title: "Charts",
+  },
 ];
 
 export type LlmSection = { title: string; pages: LlmPage[] };
@@ -35,7 +40,7 @@ const INTRO = `# cnippet ui
 Notes for AI assistants:
 
 - Built on Base UI (\`@base-ui/react\`), not Radix. Compose with the \`render\` prop, e.g. \`<Button render={<a href="/docs" />} />\`. There is no \`asChild\`.
-- Install with \`npx shadcn@latest add @cnippet/<name>\`. UI components are written to \`components/ui/<name>.tsx\` and imported from \`@/components/ui/<name>\`. Motion components go to \`components/motion/<name>.tsx\`.
+- Install with \`npx shadcn@latest add @cnippet/<name>\`. UI components are written to \`components/ui/<name>.tsx\` and imported from \`@/components/ui/<name>\`. Motion components go to \`components/motion/<name>.tsx\`. Chart components go to \`components/charts/<name>.tsx\` and the shared chart helpers to \`lib/chart-utils.ts\`.
 - Always use the \`@cnippet/\` prefix. A bare name such as \`dialog\` installs the Radix-based shadcn/ui component instead.
 - Styling uses Tailwind CSS v4 and shadcn/ui-compatible CSS variables. Every part has a \`data-slot\` attribute for targeting styles.
 - Every docs page is available as markdown by adding \`.md\` to its URL.

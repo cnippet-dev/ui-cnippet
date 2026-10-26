@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-empty",
+  "description": "Empty state sized for a chart, with icon, message and action",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@cnippet/empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/chart-empty.tsx",
+      "content": "\"use client\";\n\nimport { ChartNoAxesColumnIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/registry/default/ui/empty\";\n\nexport type ChartEmptyProps = {\n  title?: React.ReactNode;\n  description?: React.ReactNode;\n  /** Defaults to a bar-chart icon. */\n  icon?: React.ReactNode;\n  /** e.g. a \"Clear filters\" or \"Change range\" button. */\n  action?: React.ReactNode;\n  className?: string;\n};\n\nexport function ChartEmpty({\n  title = \"No data\",\n  description = \"There's nothing to show for this range yet.\",\n  icon = <ChartNoAxesColumnIcon />,\n  action,\n  className,\n}: ChartEmptyProps) {\n  return (\n    <Empty\n      className={cn(\"aspect-video w-full gap-4 py-6 md:py-6\", className)}\n      data-slot=\"chart-empty\"\n    >\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">{icon}</EmptyMedia>\n        <EmptyTitle>{title}</EmptyTitle>\n        {description ? (\n          <EmptyDescription>{description}</EmptyDescription>\n        ) : null}\n      </EmptyHeader>\n      {action ? <EmptyContent>{action}</EmptyContent> : null}\n    </Empty>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/chart-empty.tsx"
+    }
+  ],
+  "categories": [
+    "chart empty"
+  ],
+  "type": "registry:ui"
+}

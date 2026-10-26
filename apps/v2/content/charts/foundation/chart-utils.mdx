@@ -1,0 +1,75 @@
+---
+title: Chart Utils
+description: Number and date formatters plus a ChartConfig builder, shared by every chart component.
+---
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/chart-utils
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Chart](/charts/foundation/chart) primitive (the helpers use its `ChartConfig` type).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chart-utils" title="lib/chart-utils.ts" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  buildChartConfig,
+  formatCurrency,
+} from "@/lib/chart-utils";
+```
+
+```tsx
+const config = buildChartConfig(["starter", "pro", "enterprise"]);
+// { starter: { color: "var(--chart-1)", label: "Starter" }, pro: {…}, enterprise: {…} }
+
+formatCurrency(48200); // "$48.2K"
+```
+
+## Helpers
+
+| Helper | Example | Result |
+|------|---------|--------|
+| `formatCompact(value)` | `formatCompact(1250000)` | `"1.3M"` |
+| `formatCurrency(value, currency?, { compact? })` | `formatCurrency(12400)` | `"$12.4K"` |
+| | `formatCurrency(12400, "USD", { compact: false })` | `"$12,400.00"` |
+| `formatPercent(value, { digits?, signed? })` | `formatPercent(0.384)` | `"38.4%"` |
+| | `formatPercent(0.124, { signed: true })` | `"+12.4%"` |
+| `formatDate(date, options?)` | `formatDate("2026-03-14")` | `"Mar 14"` |
+| `buildChartConfig(categories, overrides?)` | `buildChartConfig(["desktop", "mobile"])` | `desktop` → `var(--chart-1)`, `mobile` → `var(--chart-2)` |
+| `sumBy(rows, keys)` | `sumBy(data, ["desktop", "mobile"])` | Sum of both columns across every row |
+
+## Good to know
+
+- `formatPercent` takes a **fraction**: pass `0.25` for 25%. Chart components and `ChartCard`'s `delta` use the same convention.
+- `buildChartConfig` assigns `var(--chart-1)` to `var(--chart-5)` in order and starts again from `--chart-1` after five series. Labels are title-cased from the key (`newSignups` → "New Signups"). Pass `overrides` to set a label, icon or colour for a key.
+- `formatDate` formats date-only strings (`"2026-03-14"`) in UTC, so they never shift by a day in time zones west of UTC.
+- `sumBy` skips `null`, `undefined` and non-numeric values instead of returning `NaN`.
+- All formatters use the `en-US` locale. Change it in the file if your app uses another one.

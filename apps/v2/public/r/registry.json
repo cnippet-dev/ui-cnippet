@@ -25178,6 +25178,452 @@
       "type": "registry:block"
     },
     {
+      "categories": [
+        "chart card"
+      ],
+      "description": "Card frame for a chart with title, headline value, delta badge, actions and footer",
+      "files": [
+        {
+          "path": "registry/default/charts/chart-card.tsx",
+          "target": "components/charts/chart-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "chart-card",
+      "registryDependencies": [
+        "@cnippet/card",
+        "@cnippet/badge",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "chart tooltip presets"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Tooltip layouts for the chart primitive: totals, sorted list and previous-period comparison",
+      "files": [
+        {
+          "path": "registry/default/charts/chart-tooltip-presets.tsx",
+          "target": "components/charts/chart-tooltip-presets.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "chart-tooltip-presets",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "interactive legend"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Chart legend whose items toggle series on and off and highlight them on hover",
+      "files": [
+        {
+          "path": "registry/default/charts/interactive-legend.tsx",
+          "target": "components/charts/interactive-legend.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "interactive-legend",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "chart skeleton"
+      ],
+      "description": "Loading placeholder shaped like a bar, line, area or donut chart",
+      "files": [
+        {
+          "path": "registry/default/charts/chart-skeleton.tsx",
+          "target": "components/charts/chart-skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "chart-skeleton",
+      "registryDependencies": [
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "chart empty"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "description": "Empty state sized for a chart, with icon, message and action",
+      "files": [
+        {
+          "path": "registry/default/charts/chart-empty.tsx",
+          "target": "components/charts/chart-empty.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "chart-empty",
+      "registryDependencies": [
+        "@cnippet/empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "chart card"
+      ],
+      "description": "Revenue card — headline value, growth badge and area trend",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-card-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-card-1",
+      "registryDependencies": [
+        "@cnippet/chart-card",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart card"
+      ],
+      "description": "Range select — card actions switch the chart between 7, 30 and 90 days",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-card-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-card-2",
+      "registryDependencies": [
+        "@cnippet/chart-card",
+        "@cnippet/toggle-group",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart card"
+      ],
+      "description": "Churn card — inverted delta where a drop is good, with a footer insight",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-card-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-card-3",
+      "registryDependencies": [
+        "@cnippet/chart-card",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart tooltip presets"
+      ],
+      "description": "Period comparison — revenue against last year with % change",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-tooltip-presets-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-tooltip-presets-1",
+      "registryDependencies": [
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart tooltip presets"
+      ],
+      "description": "Stacked total — MRR by plan with a total row",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-tooltip-presets-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-tooltip-presets-2",
+      "registryDependencies": [
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart tooltip presets"
+      ],
+      "description": "Sorted list — page load by region, slowest first",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-tooltip-presets-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-tooltip-presets-3",
+      "registryDependencies": [
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "interactive legend"
+      ],
+      "description": "Toggle series — show or hide latency percentiles on a line chart",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-interactive-legend-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-interactive-legend-1",
+      "registryDependencies": [
+        "@cnippet/interactive-legend",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "interactive legend"
+      ],
+      "description": "Hover highlight — dim the other channels on a stacked bar chart",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-interactive-legend-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-interactive-legend-2",
+      "registryDependencies": [
+        "@cnippet/interactive-legend",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "interactive legend"
+      ],
+      "description": "Top legend — sessions by device with icons, legend above the chart",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-interactive-legend-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-interactive-legend-3",
+      "registryDependencies": [
+        "@cnippet/interactive-legend",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart skeleton"
+      ],
+      "description": "Bar placeholder — swaps to the real chart once data loads",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-skeleton-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-skeleton-1",
+      "registryDependencies": [
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-card",
+        "@cnippet/chart",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart skeleton"
+      ],
+      "description": "Line and area placeholders — side by side in chart cards",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-skeleton-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-skeleton-2",
+      "registryDependencies": [
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart skeleton"
+      ],
+      "description": "Donut placeholder — loading state for a part-to-whole card",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-skeleton-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-skeleton-3",
+      "registryDependencies": [
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-card",
+        "@cnippet/skeleton"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart empty"
+      ],
+      "description": "No data in range — prompt to widen the date range",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-empty-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-empty-1",
+      "registryDependencies": [
+        "@cnippet/chart-empty",
+        "@cnippet/chart-card",
+        "@cnippet/button",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart empty"
+      ],
+      "description": "No events yet — first-run state before any data arrives",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-empty-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-empty-2",
+      "registryDependencies": [
+        "@cnippet/chart-empty",
+        "@cnippet/chart-card",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "chart empty"
+      ],
+      "description": "Filtered to nothing — clear filters to bring the chart back",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-chart-empty-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-chart-empty-3",
+      "registryDependencies": [
+        "@cnippet/chart-empty",
+        "@cnippet/chart-card",
+        "@cnippet/button",
+        "@cnippet/toggle-group",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
       "css": {
         "@layer base": {
           "*": {
@@ -25427,6 +25873,20 @@
         }
       ],
       "name": "utils",
+      "type": "registry:lib"
+    },
+    {
+      "description": "Number and date formatters plus buildChartConfig, shared by chart components",
+      "files": [
+        {
+          "path": "registry/default/lib/chart-utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "name": "chart-utils",
+      "registryDependencies": [
+        "@cnippet/chart"
+      ],
       "type": "registry:lib"
     },
     {

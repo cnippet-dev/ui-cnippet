@@ -134,7 +134,7 @@ export const catalogue: CategoryDef[] = [
         ],
       },
       {
-        href: "/ui/data/chart",
+        href: "/charts/foundation/chart",
         name: "Chart",
         variants: [
           { key: "v-chart-1", label: "Default" },

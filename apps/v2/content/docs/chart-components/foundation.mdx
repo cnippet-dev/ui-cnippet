@@ -1,0 +1,29 @@
+---
+title: Foundation
+description: The chart primitive and the shared pieces every chart component is built on.
+---
+
+Foundation covers the Recharts primitive, the shared helpers and states every chart component builds on, and the colour tokens that keep charts in step with your theme.
+
+- **[Chart](/charts/foundation/chart)** — Themeable charts built on Recharts, mapped to your CSS variables automatically.
+- **[Chart Utils](/charts/foundation/chart-utils)** — Number and date formatters plus a ChartConfig builder.
+- **[Chart Card](/charts/foundation/chart-card)** — Card frame with title, headline value, delta badge, actions and footer.
+- **[Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets)** — Tooltip layouts for totals, sorted lists and period comparisons.
+- **[Interactive Legend](/charts/foundation/interactive-legend)** — Legend that toggles series and highlights them on hover.
+- **[Chart Skeleton](/charts/foundation/chart-skeleton)** — Loading placeholder shaped like a bar, line, area or donut chart.
+- **[Chart Empty](/charts/foundation/chart-empty)** — Empty state sized for a chart, with a message and action.
+
+## Colours & theming
+
+Chart colours come from the `--chart-1` … `--chart-5` CSS variables, with separate light and dark values. Point a series at a token through `ChartConfig`, then reference it as `var(--color-<key>)`.
+
+```tsx
+const chartConfig = {
+  desktop: { color: "var(--chart-1)", label: "Desktop" },
+  mobile: { color: "var(--chart-2)", label: "Mobile" },
+} satisfies ChartConfig;
+```
+
+[`buildChartConfig`](/charts/foundation/chart-utils) builds the same object from a list of keys, assigning the tokens in order.
+
+The tokens are OKLCH values, so use them as `var(--chart-1)`. Wrapping them as `hsl(var(--chart-1))` produces an invalid colour and the series renders blank.

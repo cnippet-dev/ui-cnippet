@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-card-1",
+  "description": "Revenue card — headline value, growth badge and area trend",
+  "registryDependencies": [
+    "@cnippet/chart-card",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-card-1.tsx",
+      "content": "\"use client\";\n\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\nconst data = [\n  { month: \"Jan\", revenue: 31200 },\n  { month: \"Feb\", revenue: 33850 },\n  { month: \"Mar\", revenue: 36400 },\n  { month: \"Apr\", revenue: 38900 },\n  { month: \"May\", revenue: 42900 },\n  { month: \"Jun\", revenue: 48200 },\n];\n\nconst config = {\n  revenue: { color: \"var(--chart-1)\", label: \"Revenue\" },\n} satisfies ChartConfig;\n\nexport default function RevenueCard() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      delta={0.124}\n      description=\"Monthly recurring revenue, Jan – Jun 2026\"\n      title=\"Revenue\"\n      value={formatCurrency(48200)}\n    >\n      <ChartContainer className=\"h-40 w-full\" config={config}>\n        <AreaChart\n          accessibilityLayer\n          data={data}\n          margin={{ left: 0, right: 0 }}\n        >\n          <defs>\n            <linearGradient id=\"fill-revenue\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\">\n              <stop\n                offset=\"5%\"\n                stopColor=\"var(--color-revenue)\"\n                stopOpacity={0.4}\n              />\n              <stop\n                offset=\"95%\"\n                stopColor=\"var(--color-revenue)\"\n                stopOpacity={0}\n              />\n            </linearGradient>\n          </defs>\n          <CartesianGrid vertical={false} />\n          <XAxis\n            axisLine={false}\n            dataKey=\"month\"\n            tickLine={false}\n            tickMargin={8}\n          />\n          <ChartTooltip\n            content={\n              <ChartTooltipList\n                config={config}\n                valueFormatter={formatCurrency}\n              />\n            }\n            cursor={false}\n          />\n          <Area\n            dataKey=\"revenue\"\n            fill=\"url(#fill-revenue)\"\n            stroke=\"var(--color-revenue)\"\n            strokeWidth={2}\n            type=\"monotone\"\n          />\n        </AreaChart>\n      </ChartContainer>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart card"
+  ],
+  "type": "registry:block"
+}

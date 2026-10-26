@@ -1,0 +1,110 @@
+---
+title: Chart Card
+description: A card frame for a chart with a title, headline value, delta badge, actions slot and footer.
+---
+
+<ComponentPreview name="c-chart-card-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/chart-card
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Card](/ui/layout/card), [Badge](/ui/feedback/badge) and [Chart Utils](/charts/foundation/chart-utils) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chart-card" title="components/charts/chart-card.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ChartCard } from "@/components/charts/chart-card";
+```
+
+```tsx
+<ChartCard title="Revenue" value="$48.2K" delta={0.124}>
+  <ChartContainer config={config} className="h-40 w-full">
+    {/* any Recharts chart */}
+  </ChartContainer>
+</ChartCard>
+```
+
+## Anatomy
+
+```tsx
+<ChartCard            {/* Card */}
+  title               {/* CardTitle */}
+  description         {/* CardDescription */}
+  actions             {/* CardAction, top right */}
+  value delta         {/* headline number + Badge */}
+  footer              {/* CardFooter */}
+>
+  {children}          {/* CardPanel: the chart */}
+</ChartCard>
+```
+
+## Good to know
+
+- `delta` is a fraction: `0.124` renders "+12.4%". It's green when it goes up and red when it goes down.
+- Set `invertDelta` when a drop is good news, such as churn, latency or cost. A negative delta then turns green.
+- `value` is a `ReactNode`, so format it yourself (`formatCurrency(48200)`) or pass a `Skeleton` while it loads.
+- The card has no fixed size. Size the chart inside it with a height class such as `h-40` on `ChartContainer`.
+- It has no chart logic, so it works for any content: charts, tables or a [Chart Skeleton](/charts/foundation/chart-skeleton).
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `ReactNode` | — | Card title |
+| `description` | `ReactNode` | — | Line under the title |
+| `value` | `ReactNode` | — | Headline number, already formatted |
+| `delta` | `number` | — | Change as a fraction, shown as a badge |
+| `invertDelta` | `boolean` | `false` | Treat a negative delta as good |
+| `actions` | `ReactNode` | — | Top-right slot, e.g. a range toggle |
+| `footer` | `ReactNode` | — | Footer note under the chart |
+| `children` | `ReactNode` | — | The chart |
+| `className` | `string` | — | Classes for the card |
+
+## Examples
+
+### Revenue
+
+Headline value with a growth badge over a gradient area trend.
+
+<ComponentPreview name="c-chart-card-1" />
+
+### Range select
+
+A `ToggleGroup` in `actions` switches between 7, 30 and 90 days. The headline total follows the range.
+
+<ComponentPreview name="c-chart-card-2" />
+
+### Churn
+
+`invertDelta` turns the falling churn rate green, and the footer adds the insight behind the number.
+
+<ComponentPreview name="c-chart-card-3" />

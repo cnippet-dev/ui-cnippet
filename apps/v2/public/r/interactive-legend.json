@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-legend",
+  "description": "Chart legend whose items toggle series on and off and highlight them on hover",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/interactive-legend.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport type { ChartConfig } from \"@/registry/default/ui/chart\";\n\n// The props Recharts injects into a `<ChartLegend content={…} />` element.\n// Hidden series (`hide` on Area/Bar/Line) stay in the payload as `inactive`.\ntype LegendItem = {\n  color?: string;\n  dataKey?: unknown;\n  inactive?: boolean;\n  type?: string;\n  value?: string;\n};\n\nexport type InteractiveLegendProps = {\n  payload?: LegendItem[];\n  verticalAlign?: \"top\" | \"middle\" | \"bottom\";\n  /** Same config as the chart's ChartContainer; used for labels and icons. */\n  config?: ChartConfig;\n  /** Called with the series key when an item is clicked. */\n  onToggle?: (key: string) => void;\n  /** Called with the hovered/focused series key, and `null` on leave. */\n  onHighlight?: (key: string | null) => void;\n  className?: string;\n};\n\nexport function InteractiveLegend({\n  payload,\n  verticalAlign = \"bottom\",\n  config = {},\n  onToggle,\n  onHighlight,\n  className,\n}: InteractiveLegendProps) {\n  if (!payload?.length) return null;\n\n  return (\n    <div\n      className={cn(\n        \"flex flex-wrap items-center justify-center gap-1\",\n        verticalAlign === \"top\" ? \"pb-3\" : \"pt-3\",\n        className,\n      )}\n      data-slot=\"interactive-legend\"\n      onMouseLeave={() => onHighlight?.(null)}\n    >\n      {payload\n        .filter((item) => item.type !== \"none\")\n        .map((item) => {\n          const key = String(item.dataKey ?? item.value ?? \"\");\n          const itemConfig = config[key];\n          const Icon = itemConfig?.icon;\n\n          return (\n            <button\n              aria-pressed={!item.inactive}\n              className=\"flex items-center gap-1.5 rounded-md px-2 py-1 text-xs outline-none transition-[opacity,background-color] hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring aria-[pressed=false]:opacity-48 [&>svg]:size-3 [&>svg]:text-muted-foreground\"\n              key={key}\n              onBlur={() => onHighlight?.(null)}\n              onClick={() => onToggle?.(key)}\n              onFocus={() => onHighlight?.(key)}\n              onMouseEnter={() => onHighlight?.(key)}\n              type=\"button\"\n            >\n              {Icon ? (\n                <Icon />\n              ) : (\n                <span\n                  aria-hidden=\"true\"\n                  className=\"size-2 shrink-0 rounded-xs\"\n                  style={{ backgroundColor: item.color }}\n                />\n              )}\n              <span className={cn(item.inactive && \"line-through\")}>\n                {itemConfig?.label ?? item.value ?? key}\n              </span>\n            </button>\n          );\n        })}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/interactive-legend.tsx"
+    }
+  ],
+  "categories": [
+    "interactive legend"
+  ],
+  "type": "registry:ui"
+}

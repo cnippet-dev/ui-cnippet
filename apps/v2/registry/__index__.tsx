@@ -22597,6 +22597,366 @@ export const Index: Record<string, any> = {
     categories: ["scroll snap sections"],
     meta: {"className":""},
   },
+  "chart-card": {
+    name: "chart-card",
+    description: "Card frame for a chart with title, headline value, delta badge, actions and footer",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/card","@cnippet/badge","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/charts/chart-card.tsx",
+      type: "registry:ui",
+      target: "components/charts/chart-card.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/chart-card.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart card"],
+    meta: undefined,
+  },
+  "chart-tooltip-presets": {
+    name: "chart-tooltip-presets",
+    description: "Tooltip layouts for the chart primitive: totals, sorted list and previous-period comparison",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/charts/chart-tooltip-presets.tsx",
+      type: "registry:ui",
+      target: "components/charts/chart-tooltip-presets.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/chart-tooltip-presets.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart tooltip presets"],
+    meta: undefined,
+  },
+  "interactive-legend": {
+    name: "interactive-legend",
+    description: "Chart legend whose items toggle series on and off and highlight them on hover",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/chart"],
+    files: [{
+      path: "registry/default/charts/interactive-legend.tsx",
+      type: "registry:ui",
+      target: "components/charts/interactive-legend.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/interactive-legend.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["interactive legend"],
+    meta: undefined,
+  },
+  "chart-skeleton": {
+    name: "chart-skeleton",
+    description: "Loading placeholder shaped like a bar, line, area or donut chart",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/skeleton"],
+    files: [{
+      path: "registry/default/charts/chart-skeleton.tsx",
+      type: "registry:ui",
+      target: "components/charts/chart-skeleton.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/chart-skeleton.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart skeleton"],
+    meta: undefined,
+  },
+  "chart-empty": {
+    name: "chart-empty",
+    description: "Empty state sized for a chart, with icon, message and action",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/empty"],
+    files: [{
+      path: "registry/default/charts/chart-empty.tsx",
+      type: "registry:ui",
+      target: "components/charts/chart-empty.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/chart-empty.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart empty"],
+    meta: undefined,
+  },
+  "c-chart-card-1": {
+    name: "c-chart-card-1",
+    description: "Revenue card — headline value, growth badge and area trend",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-card","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-card-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-card-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart card"],
+    meta: {"className":""},
+  },
+  "c-chart-card-2": {
+    name: "c-chart-card-2",
+    description: "Range select — card actions switch the chart between 7, 30 and 90 days",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-card","@cnippet/toggle-group","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-card-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-card-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart card"],
+    meta: {"className":""},
+  },
+  "c-chart-card-3": {
+    name: "c-chart-card-3",
+    description: "Churn card — inverted delta where a drop is good, with a footer insight",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-card","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-card-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-card-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart card"],
+    meta: {"className":""},
+  },
+  "c-chart-tooltip-presets-1": {
+    name: "c-chart-tooltip-presets-1",
+    description: "Period comparison — revenue against last year with % change",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-tooltip-presets-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-tooltip-presets-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart tooltip presets"],
+    meta: {"className":""},
+  },
+  "c-chart-tooltip-presets-2": {
+    name: "c-chart-tooltip-presets-2",
+    description: "Stacked total — MRR by plan with a total row",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-tooltip-presets-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-tooltip-presets-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart tooltip presets"],
+    meta: {"className":""},
+  },
+  "c-chart-tooltip-presets-3": {
+    name: "c-chart-tooltip-presets-3",
+    description: "Sorted list — page load by region, slowest first",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-tooltip-presets-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-tooltip-presets-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart tooltip presets"],
+    meta: {"className":""},
+  },
+  "c-interactive-legend-1": {
+    name: "c-interactive-legend-1",
+    description: "Toggle series — show or hide latency percentiles on a line chart",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/interactive-legend","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-interactive-legend-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-interactive-legend-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["interactive legend"],
+    meta: {"className":""},
+  },
+  "c-interactive-legend-2": {
+    name: "c-interactive-legend-2",
+    description: "Hover highlight — dim the other channels on a stacked bar chart",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/interactive-legend","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-interactive-legend-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-interactive-legend-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["interactive legend"],
+    meta: {"className":""},
+  },
+  "c-interactive-legend-3": {
+    name: "c-interactive-legend-3",
+    description: "Top legend — sessions by device with icons, legend above the chart",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/interactive-legend","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-interactive-legend-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-interactive-legend-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["interactive legend"],
+    meta: {"className":""},
+  },
+  "c-chart-skeleton-1": {
+    name: "c-chart-skeleton-1",
+    description: "Bar placeholder — swaps to the real chart once data loads",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-skeleton","@cnippet/chart-card","@cnippet/chart","@cnippet/button"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-skeleton-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-skeleton-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart skeleton"],
+    meta: {"className":""},
+  },
+  "c-chart-skeleton-2": {
+    name: "c-chart-skeleton-2",
+    description: "Line and area placeholders — side by side in chart cards",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-skeleton","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-skeleton-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-skeleton-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart skeleton"],
+    meta: {"className":""},
+  },
+  "c-chart-skeleton-3": {
+    name: "c-chart-skeleton-3",
+    description: "Donut placeholder — loading state for a part-to-whole card",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-skeleton","@cnippet/chart-card","@cnippet/skeleton"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-skeleton-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-skeleton-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart skeleton"],
+    meta: {"className":""},
+  },
+  "c-chart-empty-1": {
+    name: "c-chart-empty-1",
+    description: "No data in range — prompt to widen the date range",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-empty","@cnippet/chart-card","@cnippet/button","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-empty-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-empty-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart empty"],
+    meta: {"className":""},
+  },
+  "c-chart-empty-2": {
+    name: "c-chart-empty-2",
+    description: "No events yet — first-run state before any data arrives",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-empty","@cnippet/chart-card","@cnippet/button"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-empty-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-empty-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart empty"],
+    meta: {"className":""},
+  },
+  "c-chart-empty-3": {
+    name: "c-chart-empty-3",
+    description: "Filtered to nothing — clear filters to bring the chart back",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/chart-empty","@cnippet/chart-card","@cnippet/button","@cnippet/toggle-group","@cnippet/chart-tooltip-presets","@cnippet/chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-chart-empty-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-chart-empty-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["chart empty"],
+    meta: {"className":""},
+  },
   "fonts": {
     name: "fonts",
     description: "",
@@ -22619,6 +22979,24 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/lib/utils.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "chart-utils": {
+    name: "chart-utils",
+    description: "Number and date formatters plus buildChartConfig, shared by chart components",
+    type: "registry:lib",
+    registryDependencies: ["@cnippet/chart"],
+    files: [{
+      path: "registry/default/lib/chart-utils.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/lib/chart-utils.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

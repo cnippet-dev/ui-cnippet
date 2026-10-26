@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-empty-2",
+  "description": "No events yet — first-run state before any data arrives",
+  "registryDependencies": [
+    "@cnippet/chart-empty",
+    "@cnippet/chart-card",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-empty-2.tsx",
+      "content": "\"use client\";\n\nimport { SendIcon, WebhookIcon } from \"lucide-react\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function NoEventsYet() {\n  return (\n    <ChartCard\n      className=\"max-w-lg\"\n      description=\"Delivered vs failed, per hour\"\n      title=\"Webhook deliveries\"\n    >\n      <ChartEmpty\n        action={\n          <Button size=\"sm\">\n            <SendIcon />\n            Send test event\n          </Button>\n        }\n        className=\"aspect-auto h-56\"\n        description=\"Deliveries show up here once your endpoint receives its first event.\"\n        icon={<WebhookIcon />}\n        title=\"No events yet\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart empty"
+  ],
+  "type": "registry:block"
+}

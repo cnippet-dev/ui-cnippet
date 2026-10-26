@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-tooltip-presets-3",
+  "description": "Sorted list — page load by region, slowest first",
+  "registryDependencies": [
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-tooltip-presets-3.tsx",
+      "content": "\"use client\";\n\nimport { CartesianGrid, Line, LineChart, XAxis, YAxis } from \"recharts\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { buildChartConfig } from \"@/registry/default/lib/chart-utils\";\nimport { ChartContainer, ChartTooltip } from \"@/registry/default/ui/chart\";\n\n// Median page load (ms) per region, by hour (UTC).\nconst data = [\n  { apac: 412, eu: 238, hour: \"00:00\", latam: 356, us: 198 },\n  { apac: 398, eu: 245, hour: \"04:00\", latam: 341, us: 205 },\n  { apac: 455, eu: 262, hour: \"08:00\", latam: 372, us: 214 },\n  { apac: 431, eu: 301, hour: \"12:00\", latam: 389, us: 236 },\n  { apac: 402, eu: 284, hour: \"16:00\", latam: 412, us: 271 },\n  { apac: 388, eu: 256, hour: \"20:00\", latam: 395, us: 248 },\n];\n\nconst categories = [\"us\", \"eu\", \"latam\", \"apac\"];\nconst config = buildChartConfig(categories, {\n  apac: { label: \"Asia Pacific\" },\n  eu: { label: \"Europe\" },\n  latam: { label: \"Latin America\" },\n  us: { label: \"North America\" },\n});\n\nexport default function PageLoadByRegion() {\n  return (\n    <ChartContainer className=\"h-64 w-full\" config={config}>\n      <LineChart accessibilityLayer data={data}>\n        <CartesianGrid vertical={false} />\n        <XAxis\n          axisLine={false}\n          dataKey=\"hour\"\n          tickLine={false}\n          tickMargin={8}\n        />\n        <YAxis\n          axisLine={false}\n          tickFormatter={(value) => `${value} ms`}\n          tickLine={false}\n          width={64}\n        />\n        <ChartTooltip\n          content={\n            <ChartTooltipList\n              config={config}\n              valueFormatter={(value) => `${value} ms`}\n            />\n          }\n        />\n        {categories.map((key) => (\n          <Line\n            dataKey={key}\n            dot={false}\n            key={key}\n            stroke={`var(--color-${key})`}\n            strokeWidth={2}\n            type=\"monotone\"\n          />\n        ))}\n      </LineChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart tooltip presets"
+  ],
+  "type": "registry:block"
+}

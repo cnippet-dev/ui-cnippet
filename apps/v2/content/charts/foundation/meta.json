@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "chart",
+    "chart-utils",
+    "chart-card",
+    "chart-tooltip-presets",
+    "interactive-legend",
+    "chart-skeleton",
+    "chart-empty"
+  ],
+  "title": "Foundation"
+}

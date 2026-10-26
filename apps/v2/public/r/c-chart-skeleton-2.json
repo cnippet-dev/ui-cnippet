@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-skeleton-2",
+  "description": "Line and area placeholders — side by side in chart cards",
+  "registryDependencies": [
+    "@cnippet/chart-skeleton",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-skeleton-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartSkeleton } from \"@/registry/default/charts/chart-skeleton\";\n\nexport default function LineAndAreaLoading() {\n  return (\n    <div className=\"grid w-full gap-4 md:grid-cols-2\">\n      <ChartCard description=\"p95, last 24 hours\" title=\"API latency\">\n        <ChartSkeleton className=\"aspect-auto h-40\" variant=\"line\" />\n      </ChartCard>\n      <ChartCard description=\"Last 30 days\" title=\"Active users\">\n        <ChartSkeleton className=\"aspect-auto h-40\" variant=\"area\" />\n      </ChartCard>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart skeleton"
+  ],
+  "type": "registry:block"
+}

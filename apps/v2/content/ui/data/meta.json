@@ -1,7 +1,6 @@
 {
   "pages": [
     "accordion",
-    "chart",
     "collapsible",
     "data-table",
     "empty",

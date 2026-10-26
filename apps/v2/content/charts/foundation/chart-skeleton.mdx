@@ -1,0 +1,89 @@
+---
+title: Chart Skeleton
+description: A loading placeholder shaped like a bar, line, area or donut chart.
+---
+
+<ComponentPreview name="c-chart-skeleton-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/chart-skeleton
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Skeleton](/ui/feedback/skeleton) component.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chart-skeleton" title="components/charts/chart-skeleton.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ChartSkeleton } from "@/components/charts/chart-skeleton";
+```
+
+```tsx
+{loading ? (
+  <ChartSkeleton variant="area" className="aspect-auto h-48" />
+) : (
+  <ChartContainer config={config} className="h-48 w-full">…</ChartContainer>
+)}
+```
+
+## Good to know
+
+- Give it the same height as the chart it stands in for, so nothing jumps when the data arrives. It's `aspect-video` by default; add `aspect-auto` with a height class to override.
+- `variant` is `"bar"`, `"line"`, `"area"` or `"donut"`. Pick the shape of the chart that will replace it.
+- It has `role="status"` and announces "Loading chart" to screen readers.
+- The shimmer stops when the user has turned on reduced motion.
+- The bar heights are fixed, so the server and client render the same thing.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"bar" \| "line" \| "area" \| "donut"` | `"bar"` | Shape of the placeholder |
+| `className` | `string` | — | Sizing classes |
+
+## Examples
+
+### Bar
+
+Shows while the data loads, then swaps to the real chart. Click Reload to see it again.
+
+<ComponentPreview name="c-chart-skeleton-1" />
+
+### Line and area
+
+Two loading cards side by side.
+
+<ComponentPreview name="c-chart-skeleton-2" />
+
+### Donut
+
+A part-to-whole card loading, with a `Skeleton` standing in for the headline value.
+
+<ComponentPreview name="c-chart-skeleton-3" />

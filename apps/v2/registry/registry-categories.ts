@@ -146,6 +146,12 @@ export const registryCategories = [
   "filter effect",
   "button animation",
   "block animation",
+  // Chart components
+  "chart card",
+  "chart tooltip presets",
+  "interactive legend",
+  "chart skeleton",
+  "chart empty",
   // Features and states
   "async",
   "copy",

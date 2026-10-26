@@ -1,0 +1,108 @@
+---
+title: Interactive Legend
+description: A chart legend whose items toggle series on and off and highlight them on hover.
+---
+
+<ComponentPreview name="c-interactive-legend-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/interactive-legend
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Chart](/charts/foundation/chart) component.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="interactive-legend" title="components/charts/interactive-legend.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { InteractiveLegend } from "@/components/charts/interactive-legend";
+```
+
+```tsx
+const [hidden, setHidden] = useState<string[]>([]);
+const toggle = (key: string) =>
+  setHidden((h) => (h.includes(key) ? h.filter((k) => k !== key) : [...h, key]));
+
+<ChartLegend content={<InteractiveLegend config={config} onToggle={toggle} />} />
+<Line dataKey="desktop" hide={hidden.includes("desktop")} />
+```
+
+## Anatomy
+
+```tsx
+<ChartLegend
+  content={
+    <InteractiveLegend   {/* row of toggle buttons */}
+      config             {/* labels + icons */}
+      onToggle           {/* click → show/hide */}
+      onHighlight        {/* hover/focus → emphasise */}
+    />
+  }
+/>
+```
+
+## Good to know
+
+- You own the state. Keep the hidden keys in `useState` and pass `hide={hidden.includes(key)}` to each `Area`, `Bar` or `Line`.
+- Hidden series stay in the legend, shown faded and struck through, so they can be turned back on. Recharts marks them `inactive`, and the legend reads that.
+- `onHighlight` gets the hovered or focused key and `null` on leave. Use it to lower `fillOpacity` or `strokeOpacity` on the other series.
+- Each item is a `<button>` with `aria-pressed`, so it works with the keyboard and screen readers announce whether the series is on.
+- Pass the chart's `config` for labels and icons. Without it, items show the series key.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `config` | `ChartConfig` | — | Series labels and icons; pass the chart's config |
+| `onToggle` | `(key: string) => void` | — | Called when an item is clicked |
+| `onHighlight` | `(key: string \| null) => void` | — | Called on hover/focus, `null` on leave |
+| `className` | `string` | — | Classes for the legend row |
+
+`payload` and `verticalAlign` are filled in by Recharts. Set the position with `verticalAlign` on `ChartLegend`.
+
+## Examples
+
+### Toggle series
+
+p99 latency dwarfs the others, so it starts hidden. Click it to bring it back.
+
+<ComponentPreview name="c-interactive-legend-1" />
+
+### Hover highlight
+
+Hovering a channel dims the other bars in the stack.
+
+<ComponentPreview name="c-interactive-legend-2" />
+
+### Top legend with icons
+
+`verticalAlign="top"` on `ChartLegend` moves the legend above the chart. Icons come from `config`.
+
+<ComponentPreview name="c-interactive-legend-3" />

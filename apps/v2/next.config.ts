@@ -27,10 +27,21 @@ const nextConfig: NextConfig = {
       permanent: false,
       source: "/motion",
     },
+    {
+      destination: "/charts/foundation/chart",
+      permanent: false,
+      source: "/charts",
+    },
+    // The chart primitive's docs moved from core to the charts section.
+    {
+      destination: "/charts/foundation/chart",
+      permanent: true,
+      source: "/ui/data/chart",
+    },
   ],
   // `/ui/data/accordion.md` → markdown version of the page for LLMs.
   rewrites: async () =>
-    ["ui", "docs", "motion"].map((section) => ({
+    ["ui", "docs", "motion", "charts"].map((section) => ({
       destination: `/llms.mdx/${section}/:path*`,
       source: `/${section}/:path*.md`,
     })),

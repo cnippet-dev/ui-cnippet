@@ -1,0 +1,111 @@
+---
+title: Chart Empty
+description: An empty state sized for a chart, with an icon, message and action.
+---
+
+<ComponentPreview name="c-chart-empty-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/chart-empty
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Install the [Empty](/ui/data/empty) component.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chart-empty" title="components/charts/chart-empty.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ChartEmpty } from "@/components/charts/chart-empty";
+```
+
+```tsx
+{data.length === 0 ? (
+  <ChartEmpty
+    title="No payouts in this range"
+    action={<Button onClick={widenRange}>Show last 90 days</Button>}
+    className="aspect-auto h-48"
+  />
+) : (
+  <ChartContainer config={config} className="h-48 w-full">…</ChartContainer>
+)}
+```
+
+## Anatomy
+
+```tsx
+<ChartEmpty      {/* Empty */}
+  icon           {/* EmptyMedia */}
+  title          {/* EmptyTitle */}
+  description    {/* EmptyDescription */}
+  action         {/* EmptyContent */}
+/>
+```
+
+## Good to know
+
+- Match the chart's height so the card doesn't resize between states. It's `aspect-video` by default; add `aspect-auto` with a height class to override.
+- Say why it's empty and what to do next: widen the range, clear a filter or send a test event.
+- `icon` defaults to a bar-chart icon. Pass any icon to fit the context.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `ReactNode` | `"No data"` | Main message |
+| `description` | `ReactNode` | `"There's nothing to show for this range yet."` | Supporting text |
+| `icon` | `ReactNode` | bar-chart icon | Icon above the title |
+| `action` | `ReactNode` | — | A button or link below the text |
+| `className` | `string` | — | Sizing classes |
+
+## Examples
+
+### No data in range
+
+Payouts are monthly, so the last 7 days are empty. The action widens the range and the chart appears.
+
+<ComponentPreview name="c-chart-empty-1" />
+
+### No events yet
+
+First-run state before any data exists, with a custom icon and a call to action.
+
+<ComponentPreview name="c-chart-empty-2" />
+
+### Filtered to nothing
+
+The APAC filter matches no reps. Clear filters brings the chart back.
+
+<ComponentPreview name="c-chart-empty-3" />
