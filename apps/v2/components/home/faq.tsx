@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     answer:
-      "Run `npx cnippet@latest init` to wire up your config and install the CSS tokens. Then `npx cnippet add button` to drop your first component in. The whole thing takes under 2 minutes.",
+      "Run `npx shadcn@latest init` to wire up your config and install the CSS tokens. Then `npx shadcn@latest add @cnippet/button` to drop your first component in. The whole thing takes under 2 minutes.",
     question: "How do I get started with Cnippet UI?",
   },
   {

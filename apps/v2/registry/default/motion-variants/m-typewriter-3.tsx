@@ -20,7 +20,7 @@ export default function TypewriterTerminal() {
               initialDelay={400}
               loop={false}
               speed={45}
-              text="npx cnippet@latest add text-reveal"
+              text="npx shadcn@latest add @cnippet/text-reveal"
             />
           </div>
         </div>
