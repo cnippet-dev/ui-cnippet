@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-gauge-chart-3",
+  "description": "NPS — a -100 to 100 scale with four bands",
+  "registryDependencies": [
+    "@cnippet/gauge-chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-gauge-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { GaugeChart } from \"@/registry/default/charts/gauge-chart\";\n\n// Net Promoter Score runs from -100 to 100.\nconst bands = [\n  { color: \"var(--destructive)\", label: \"Needs work\", to: 0 },\n  { color: \"var(--warning)\", label: \"Good\", to: 30 },\n  { color: \"var(--success)\", label: \"Great\", to: 70 },\n  { color: \"var(--info)\", label: \"Excellent\", to: 100 },\n];\n\nexport default function NpsGauge() {\n  return (\n    <div className=\"w-full max-w-xs rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">Net Promoter Score</div>\n      <div className=\"text-muted-foreground text-xs\">Q3, 1,284 responses</div>\n      <GaugeChart\n        aria-label=\"Net Promoter Score\"\n        bands={bands}\n        className=\"mt-4\"\n        max={100}\n        min={-100}\n        value={47}\n        valueFormatter={(value) => (value > 0 ? `+${value}` : String(value))}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "gauge chart"
+  ],
+  "type": "registry:block"
+}

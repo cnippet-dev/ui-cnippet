@@ -54,6 +54,7 @@ export default function SignupsHighlight() {
               onToggle={toggle}
             />
           }
+          itemSorter={null}
         />
         {categories.map((key, i) => (
           <Bar

@@ -1,0 +1,101 @@
+---
+title: Polar Area Chart
+description: A rose chart — equal-angle slices whose length shows the value.
+---
+
+<ComponentPreview name="c-polar-area-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/polar-area-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="polar-area-chart" title="components/charts/polar-area-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { PolarAreaChart } from "@/components/charts/polar-area-chart";
+```
+
+```tsx
+<PolarAreaChart data={data} index="day" category="workouts" color="var(--chart-1)" className="h-64" />
+```
+
+## Good to know
+
+- Every slice gets the same angle, so it suits cyclic data: weekdays, hours, compass directions.
+- A slice's **area** grows with its value (its length grows with the square root), so a value twice as big looks twice as big.
+- Pass `color` for one colour across all slices; the legend then hides by default since the labels are in the tooltip. Without `color`, each slice gets its own colour and a legend.
+- The first slice is centred on 12 o'clock and the rest follow clockwise in data order, so a compass rose starting with "N" points the right way.
+- Each slice's name is printed at its outer edge, so the chart reads without a legend.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per slice |
+| `index` | `keyof T` | — | Field that names each slice |
+| `category` | `keyof T` | — | Numeric field for the slice size |
+| `config` | `ChartConfig` | built from slice names | Labels or colours per slice |
+| `color` | `string` | — | One colour for every slice |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats tooltip values |
+| `showLegend` | `boolean` | `true` without `color` | Toggle the legend |
+| `showTooltip` | `boolean` | `true` | Toggle the tooltip |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing classes |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### Weekdays
+
+Workouts by day in a single colour.
+
+<ComponentPreview name="c-polar-area-chart-1" />
+
+### Wind rose
+
+Hours of wind from each of eight directions.
+
+<ComponentPreview name="c-polar-area-chart-2" />
+
+### A colour per slice
+
+Support tickets by topic with a legend.
+
+<ComponentPreview name="c-polar-area-chart-3" />

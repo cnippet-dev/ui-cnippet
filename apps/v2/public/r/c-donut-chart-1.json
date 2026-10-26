@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-donut-chart-1",
+  "description": "Traffic sources — channel share with the total in the centre",
+  "registryDependencies": [
+    "@cnippet/donut-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-donut-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { DonutChart } from \"@/registry/default/charts/donut-chart\";\nimport { formatCompact, sumBy } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { channel: \"Organic\", visitors: 18420 },\n  { channel: \"Direct\", visitors: 9310 },\n  { channel: \"Referral\", visitors: 6280 },\n  { channel: \"Social\", visitors: 4170 },\n  { channel: \"Email\", visitors: 2960 },\n];\n\nexport default function TrafficSources() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Visitors by channel, last 30 days\"\n      title=\"Traffic sources\"\n    >\n      <DonutChart\n        category=\"visitors\"\n        centerLabel=\"Visitors\"\n        centerValue={formatCompact(sumBy(data, [\"visitors\"]))}\n        className=\"h-60\"\n        data={data}\n        index=\"channel\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "donut chart"
+  ],
+  "type": "registry:block"
+}

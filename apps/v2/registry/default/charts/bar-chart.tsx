@@ -173,6 +173,7 @@ export function BarChart<T extends Record<string, unknown>>({
         {showLegend ? (
           <ChartLegend
             content={<ChartLegendContent />}
+            itemSorter={null}
             verticalAlign={legendPosition}
           />
         ) : null}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-gauge-chart-2",
+  "description": "CPU load — value arcs coloured by threshold",
+  "registryDependencies": [
+    "@cnippet/gauge-chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-gauge-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { GaugeChart } from \"@/registry/default/charts/gauge-chart\";\n\nconst hosts = [\n  { cpu: 38, name: \"web-1\" },\n  { cpu: 71, name: \"web-2\" },\n  { cpu: 93, name: \"worker-1\" },\n];\n\n// Same thresholds as the alerting rules: amber from 70%, red from 90%.\nfunction loadColor(cpu: number) {\n  if (cpu >= 90) return \"var(--destructive)\";\n  if (cpu >= 70) return \"var(--warning)\";\n  return \"var(--success)\";\n}\n\nexport default function CpuLoad() {\n  return (\n    <div className=\"grid w-full max-w-lg grid-cols-3 gap-3\">\n      {hosts.map((h) => (\n        <div className=\"rounded-lg border bg-card p-4\" key={h.name}>\n          <GaugeChart\n            aria-label={`${h.name} CPU load`}\n            color={loadColor(h.cpu)}\n            label={h.name}\n            value={h.cpu}\n            valueFormatter={(value) => `${value}%`}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "gauge chart"
+  ],
+  "type": "registry:block"
+}

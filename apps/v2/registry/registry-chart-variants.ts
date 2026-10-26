@@ -252,4 +252,73 @@ export const chartVariants: ChartVariantItem[] = [
       ["bullet-chart", "chart-utils"],
     ],
   ]),
+  ...createChartVariants("donut chart", "donut-chart", [
+    [
+      "Traffic sources — channel share with the total in the centre",
+      ["donut-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Storage used — side legend with free space muted",
+      ["donut-chart", "chart-card"],
+    ],
+    [
+      "Headcount — percentage labels on each slice",
+      ["donut-chart", "chart-card"],
+    ],
+    [
+      "Budget split — side legend with a currency total",
+      ["donut-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("pie chart", "pie-chart", [
+    [
+      "Browser share — pie with a bottom legend",
+      ["pie-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Survey answers — percentage labels and a side legend",
+      ["pie-chart", "chart-card"],
+    ],
+    [
+      "Expenses — spending by category with currency values",
+      ["pie-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("radar chart", "radar-chart", [
+    [
+      "Product comparison — two laptops across six aspects",
+      ["radar-chart", "chart-card"],
+    ],
+    ["Skill profile — circle grid with dots", ["radar-chart", "chart-card"]],
+    ["Plan scorecard — three outlined plans", ["radar-chart", "chart-card"]],
+  ]),
+  ...createChartVariants("radial chart", "radial-chart", [
+    ["Activity rings — three daily goals", ["radial-chart", "chart-card"]],
+    [
+      "Seats used — half ring with an upgrade action",
+      ["radial-chart", "chart-card", "button"],
+    ],
+    ["Site scores — four Lighthouse rings", ["radial-chart", "chart-card"]],
+  ]),
+  ...createChartVariants("gauge chart", "gauge-chart", [
+    ["Web Vitals LCP — good / needs work / poor bands", ["gauge-chart"]],
+    ["CPU load — value arcs coloured by threshold", ["gauge-chart"]],
+    ["NPS — a -100 to 100 scale with four bands", ["gauge-chart"]],
+  ]),
+  ...createChartVariants("sunburst chart", "sunburst-chart", [
+    [
+      "Revenue by region — region then country",
+      ["sunburst-chart", "chart-card", "chart-utils"],
+    ],
+    ["Disk usage — folders and subfolders", ["sunburst-chart", "chart-card"]],
+    ["Org structure — departments and teams", ["sunburst-chart", "chart-card"]],
+  ]),
+  ...createChartVariants("polar area chart", "polar-area-chart", [
+    ["Activity by weekday — one colour", ["polar-area-chart", "chart-card"]],
+    ["Wind rose — hours by direction", ["polar-area-chart", "chart-card"]],
+    [
+      "Tickets by topic — a colour per slice",
+      ["polar-area-chart", "chart-card"],
+    ],
+  ]),
 ];

@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "donut-chart",
+    "pie-chart",
+    "radar-chart",
+    "radial-chart",
+    "gauge-chart",
+    "sunburst-chart",
+    "polar-area-chart"
+  ],
+  "title": "Circular & Polar"
+}

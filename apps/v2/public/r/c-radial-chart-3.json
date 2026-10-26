@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radial-chart-3",
+  "description": "Site scores — four Lighthouse rings",
+  "registryDependencies": [
+    "@cnippet/radial-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radial-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadialChart } from \"@/registry/default/charts/radial-chart\";\n\n// Lighthouse scores for the marketing site.\nconst data = [\n  { category: \"SEO\", score: 100 },\n  { category: \"Best practices\", score: 96 },\n  { category: \"Accessibility\", score: 91 },\n  { category: \"Performance\", score: 78 },\n];\n\nexport default function LighthouseScores() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Lighthouse, mobile, last run\"\n      title=\"Site scores\"\n    >\n      <RadialChart\n        category=\"score\"\n        className=\"h-64\"\n        data={data}\n        index=\"category\"\n        max={100}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radial chart"
+  ],
+  "type": "registry:block"
+}

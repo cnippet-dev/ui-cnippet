@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radar-chart-2",
+  "description": "Skill profile — circle grid with dots",
+  "registryDependencies": [
+    "@cnippet/radar-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radar-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadarChart } from \"@/registry/default/charts/radar-chart\";\n\n// Self-assessed skill levels, 1–5.\nconst data = [\n  { level: 5, skill: \"React\" },\n  { level: 4, skill: \"TypeScript\" },\n  { level: 3, skill: \"Testing\" },\n  { level: 4, skill: \"CSS\" },\n  { level: 2, skill: \"DevOps\" },\n  { level: 3, skill: \"Design\" },\n];\n\nexport default function SkillProfile() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Self-assessment, 1–5\"\n      title=\"Skill profile\"\n    >\n      <RadarChart\n        categories={[\"level\"]}\n        className=\"h-64\"\n        config={{ level: { color: \"var(--chart-2)\", label: \"Level\" } }}\n        data={data}\n        gridType=\"circle\"\n        index=\"skill\"\n        showDots\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radar chart"
+  ],
+  "type": "registry:block"
+}

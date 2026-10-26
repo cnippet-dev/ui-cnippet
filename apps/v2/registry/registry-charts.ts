@@ -189,4 +189,59 @@ export const charts: ChartItem[] = [
     name: "bullet-chart",
     registryDependencies: ["chart-utils"],
   }),
+  // Polar
+  createChart({
+    categories: ["donut chart"],
+    description:
+      "Part-to-whole ring with a centre value, slice labels and a bottom or side legend",
+    name: "donut-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["pie chart"],
+    description:
+      "Part-to-whole pie with slice labels; a donut chart with no hole",
+    name: "pie-chart",
+    registryDependencies: ["donut-chart"],
+  }),
+  createChart({
+    categories: ["radar chart"],
+    description:
+      "Multi-axis comparison with polygon or circle grid, filled or outlined",
+    name: "radar-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["radial chart"],
+    description: "Concentric progress rings with a track and centre label",
+    name: "radial-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["gauge chart"],
+    dependencies: [],
+    description:
+      "Half-circle gauge with coloured threshold bands, a needle or a value arc",
+    name: "gauge-chart",
+    registryDependencies: ["chart-utils"],
+  }),
+  createChart({
+    categories: ["sunburst chart"],
+    description:
+      "Two-level nested rings: category in the middle, breakdown outside",
+    name: "sunburst-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["polar area chart"],
+    description: "Rose chart: equal-angle slices whose length shows the value",
+    name: "polar-area-chart",
+    registryDependencies: [
+      "chart",
+      "chart-utils",
+      "chart-skeleton",
+      "chart-empty",
+      "use-media-query",
+    ],
+  }),
 ];

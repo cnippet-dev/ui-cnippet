@@ -1,0 +1,108 @@
+---
+title: Sunburst Chart
+description: Two nested rings — categories in the middle, their breakdown around the outside.
+---
+
+<ComponentPreview name="c-sunburst-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/sunburst-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sunburst-chart" title="components/charts/sunburst-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SunburstChart } from "@/components/charts/sunburst-chart";
+```
+
+```tsx
+<SunburstChart
+  data={[
+    {
+      name: "Americas",
+      children: [
+        { name: "United States", value: 412000 },
+        { name: "Canada", value: 68000 },
+      ],
+    },
+    { name: "Other", value: 52000 },
+  ]}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- Data is a tree two levels deep. A node with `children` gets the sum of its children; a node without them needs its own `value`.
+- Children take their parent's colour, alternating between two tints so neighbours stay apart.
+- The legend lists the top level only; the tooltip names any slice you hover.
+- For more than two levels or many small slices, a bar chart is easier to read.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `{ name, value?, children? }[]` | — | Top-level nodes with optional children |
+| `config` | `ChartConfig` | built from top-level names | Labels or colours per top-level node |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats tooltip values |
+| `showLegend` / `showTooltip` | `boolean` | `true` | Toggle legend and tooltip |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing classes, e.g. `"h-64"` |
+| `aria-label` | `string` | built from the names | Accessible name |
+
+## Examples
+
+### Revenue by region
+
+Regions in the middle, countries around them.
+
+<ComponentPreview name="c-sunburst-chart-1" />
+
+### Disk usage
+
+Folders and their largest subfolders; "System" has no children.
+
+<ComponentPreview name="c-sunburst-chart-2" />
+
+### Org structure
+
+Departments and the teams inside them.
+
+<ComponentPreview name="c-sunburst-chart-3" />

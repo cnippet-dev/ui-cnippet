@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-polar-area-chart-2",
+  "description": "Wind rose — hours by direction",
+  "registryDependencies": [
+    "@cnippet/polar-area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-polar-area-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PolarAreaChart } from \"@/registry/default/charts/polar-area-chart\";\n\n// Hours of wind from each direction in October; prevailing south-westerly.\nconst data = [\n  { direction: \"N\", hours: 42 },\n  { direction: \"NE\", hours: 28 },\n  { direction: \"E\", hours: 35 },\n  { direction: \"SE\", hours: 61 },\n  { direction: \"S\", hours: 104 },\n  { direction: \"SW\", hours: 186 },\n  { direction: \"W\", hours: 152 },\n  { direction: \"NW\", hours: 76 },\n];\n\nexport default function WindRose() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Hours of wind by direction, October\"\n      title=\"Wind rose\"\n    >\n      <PolarAreaChart\n        category=\"hours\"\n        className=\"h-64\"\n        color=\"var(--chart-2)\"\n        data={data}\n        index=\"direction\"\n        valueFormatter={(value) => `${value} h`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "polar area chart"
+  ],
+  "type": "registry:block"
+}

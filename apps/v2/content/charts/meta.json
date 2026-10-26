@@ -1,4 +1,4 @@
 {
-  "pages": ["foundation", "cartesian", "micro"],
+  "pages": ["foundation", "cartesian", "micro", "polar"],
   "title": "Charts"
 }

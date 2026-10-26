@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sunburst-chart-3",
+  "description": "Org structure — departments and teams",
+  "registryDependencies": [
+    "@cnippet/sunburst-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sunburst-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SunburstChart } from \"@/registry/default/charts/sunburst-chart\";\n\n// Headcount by department and team.\nconst data = [\n  {\n    children: [\n      { name: \"Platform\", value: 18 },\n      { name: \"Product\", value: 26 },\n      { name: \"Mobile\", value: 12 },\n      { name: \"Data\", value: 8 },\n    ],\n    name: \"Engineering\",\n  },\n  {\n    children: [\n      { name: \"Account execs\", value: 17 },\n      { name: \"SDRs\", value: 14 },\n    ],\n    name: \"Sales\",\n  },\n  {\n    children: [\n      { name: \"Support\", value: 15 },\n      { name: \"Onboarding\", value: 7 },\n    ],\n    name: \"Customer success\",\n  },\n  {\n    children: [\n      { name: \"Brand\", value: 6 },\n      { name: \"Growth\", value: 8 },\n    ],\n    name: \"Marketing\",\n  },\n];\n\nexport default function OrgStructure() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"131 people, department → team\"\n      title=\"Org structure\"\n    >\n      <SunburstChart\n        className=\"h-64\"\n        data={data}\n        valueFormatter={(value) => `${value} people`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sunburst chart"
+  ],
+  "type": "registry:block"
+}

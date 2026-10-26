@@ -64,6 +64,7 @@ export default function LatencyToggle() {
         />
         <ChartLegend
           content={<InteractiveLegend config={config} onToggle={toggle} />}
+          itemSorter={null}
         />
         {categories.map((key) => (
           <Line

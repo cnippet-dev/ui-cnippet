@@ -1,0 +1,112 @@
+---
+title: Radial Chart
+description: Concentric progress rings with a track and an optional centre label.
+---
+
+<ComponentPreview name="c-radial-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/radial-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="radial-chart" title="components/charts/radial-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RadialChart } from "@/components/charts/radial-chart";
+```
+
+```tsx
+<RadialChart
+  data={[
+    { goal: "Move", progress: 81 },
+    { goal: "Exercise", progress: 64 },
+  ]}
+  index="goal"
+  category="progress"
+  max={100}
+  className="h-60"
+/>
+```
+
+## Good to know
+
+- Each row is one ring: `index` names it and `category` fills it. The first row is the innermost ring.
+- Set `max` to the value of a full ring (e.g. `100` for percentages). Without it, the largest value fills a full ring.
+- Rings start at 12 o'clock and run clockwise. For a half ring, use `startAngle={180}` and `endAngle={0}`.
+- Ring colours are keyed by ring name in `config`, like the [Donut Chart](/charts/polar/donut-chart).
+- For a single progress value outside a chart card, [Progress Circle](/charts/micro/progress-circle) is lighter.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per ring |
+| `index` | `keyof T` | — | Field that names each ring |
+| `category` | `keyof T` | — | Numeric field that fills each ring |
+| `max` | `number` | largest value | Value of a full ring |
+| `config` | `ChartConfig` | built from ring names | Labels or colours per ring |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats tooltip values |
+| `startAngle` / `endAngle` | `number` | `90` / `-270` | Arc in degrees |
+| `showBackground` | `boolean` | `true` | Show the empty track |
+| `centerValue` / `centerLabel` | `string` | — | Centre text |
+| `showLegend` / `showTooltip` | `boolean` | `true` | Toggle legend and tooltip |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing classes |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### Activity rings
+
+Three daily goals with the average in the centre.
+
+<ComponentPreview name="c-radial-chart-1" />
+
+### Half ring
+
+Seats used out of the plan, with an upgrade action in the footer.
+
+<ComponentPreview name="c-radial-chart-2" />
+
+### Scores
+
+Four Lighthouse scores, each out of 100.
+
+<ComponentPreview name="c-radial-chart-3" />

@@ -166,6 +166,13 @@ export const registryCategories = [
   "delta bar",
   "tracker",
   "bullet chart",
+  "donut chart",
+  "pie chart",
+  "radar chart",
+  "radial chart",
+  "gauge chart",
+  "sunburst chart",
+  "polar area chart",
   // Features and states
   "async",
   "copy",

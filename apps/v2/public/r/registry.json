@@ -25583,6 +25583,174 @@
     },
     {
       "categories": [
+        "donut chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Part-to-whole ring with a centre value, slice labels and a bottom or side legend",
+      "files": [
+        {
+          "path": "registry/default/charts/donut-chart.tsx",
+          "target": "components/charts/donut-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "donut-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "pie chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Part-to-whole pie with slice labels; a donut chart with no hole",
+      "files": [
+        {
+          "path": "registry/default/charts/pie-chart.tsx",
+          "target": "components/charts/pie-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "pie-chart",
+      "registryDependencies": [
+        "@cnippet/donut-chart"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "radar chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Multi-axis comparison with polygon or circle grid, filled or outlined",
+      "files": [
+        {
+          "path": "registry/default/charts/radar-chart.tsx",
+          "target": "components/charts/radar-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "radar-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "radial chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Concentric progress rings with a track and centre label",
+      "files": [
+        {
+          "path": "registry/default/charts/radial-chart.tsx",
+          "target": "components/charts/radial-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "radial-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "gauge chart"
+      ],
+      "description": "Half-circle gauge with coloured threshold bands, a needle or a value arc",
+      "files": [
+        {
+          "path": "registry/default/charts/gauge-chart.tsx",
+          "target": "components/charts/gauge-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "gauge-chart",
+      "registryDependencies": [
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "sunburst chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Two-level nested rings: category in the middle, breakdown outside",
+      "files": [
+        {
+          "path": "registry/default/charts/sunburst-chart.tsx",
+          "target": "components/charts/sunburst-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sunburst-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "polar area chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Rose chart: equal-angle slices whose length shows the value",
+      "files": [
+        {
+          "path": "registry/default/charts/polar-area-chart.tsx",
+          "target": "components/charts/polar-area-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "polar-area-chart",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty",
+        "@cnippet/use-media-query"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
         "chart card"
       ],
       "description": "Revenue card — headline value, growth badge and area trend",
@@ -26869,6 +27037,471 @@
       "registryDependencies": [
         "@cnippet/bullet-chart",
         "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "donut chart"
+      ],
+      "description": "Traffic sources — channel share with the total in the centre",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-donut-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-donut-chart-1",
+      "registryDependencies": [
+        "@cnippet/donut-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "donut chart"
+      ],
+      "description": "Storage used — side legend with free space muted",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-donut-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-donut-chart-2",
+      "registryDependencies": [
+        "@cnippet/donut-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "donut chart"
+      ],
+      "description": "Headcount — percentage labels on each slice",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-donut-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-donut-chart-3",
+      "registryDependencies": [
+        "@cnippet/donut-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "donut chart"
+      ],
+      "description": "Budget split — side legend with a currency total",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-donut-chart-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-donut-chart-4",
+      "registryDependencies": [
+        "@cnippet/donut-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pie chart"
+      ],
+      "description": "Browser share — pie with a bottom legend",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-pie-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-pie-chart-1",
+      "registryDependencies": [
+        "@cnippet/pie-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pie chart"
+      ],
+      "description": "Survey answers — percentage labels and a side legend",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-pie-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-pie-chart-2",
+      "registryDependencies": [
+        "@cnippet/pie-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "pie chart"
+      ],
+      "description": "Expenses — spending by category with currency values",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-pie-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-pie-chart-3",
+      "registryDependencies": [
+        "@cnippet/pie-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radar chart"
+      ],
+      "description": "Product comparison — two laptops across six aspects",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radar-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radar-chart-1",
+      "registryDependencies": [
+        "@cnippet/radar-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radar chart"
+      ],
+      "description": "Skill profile — circle grid with dots",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radar-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radar-chart-2",
+      "registryDependencies": [
+        "@cnippet/radar-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radar chart"
+      ],
+      "description": "Plan scorecard — three outlined plans",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radar-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radar-chart-3",
+      "registryDependencies": [
+        "@cnippet/radar-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radial chart"
+      ],
+      "description": "Activity rings — three daily goals",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radial-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radial-chart-1",
+      "registryDependencies": [
+        "@cnippet/radial-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radial chart"
+      ],
+      "description": "Seats used — half ring with an upgrade action",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radial-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radial-chart-2",
+      "registryDependencies": [
+        "@cnippet/radial-chart",
+        "@cnippet/chart-card",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "radial chart"
+      ],
+      "description": "Site scores — four Lighthouse rings",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-radial-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-radial-chart-3",
+      "registryDependencies": [
+        "@cnippet/radial-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "gauge chart"
+      ],
+      "description": "Web Vitals LCP — good / needs work / poor bands",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-gauge-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-gauge-chart-1",
+      "registryDependencies": [
+        "@cnippet/gauge-chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "gauge chart"
+      ],
+      "description": "CPU load — value arcs coloured by threshold",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-gauge-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-gauge-chart-2",
+      "registryDependencies": [
+        "@cnippet/gauge-chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "gauge chart"
+      ],
+      "description": "NPS — a -100 to 100 scale with four bands",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-gauge-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-gauge-chart-3",
+      "registryDependencies": [
+        "@cnippet/gauge-chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sunburst chart"
+      ],
+      "description": "Revenue by region — region then country",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sunburst-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sunburst-chart-1",
+      "registryDependencies": [
+        "@cnippet/sunburst-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sunburst chart"
+      ],
+      "description": "Disk usage — folders and subfolders",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sunburst-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sunburst-chart-2",
+      "registryDependencies": [
+        "@cnippet/sunburst-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sunburst chart"
+      ],
+      "description": "Org structure — departments and teams",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sunburst-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sunburst-chart-3",
+      "registryDependencies": [
+        "@cnippet/sunburst-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "polar area chart"
+      ],
+      "description": "Activity by weekday — one colour",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-polar-area-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-polar-area-chart-1",
+      "registryDependencies": [
+        "@cnippet/polar-area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "polar area chart"
+      ],
+      "description": "Wind rose — hours by direction",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-polar-area-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-polar-area-chart-2",
+      "registryDependencies": [
+        "@cnippet/polar-area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "polar area chart"
+      ],
+      "description": "Tickets by topic — a colour per slice",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-polar-area-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-polar-area-chart-3",
+      "registryDependencies": [
+        "@cnippet/polar-area-chart",
+        "@cnippet/chart-card"
       ],
       "type": "registry:block"
     },

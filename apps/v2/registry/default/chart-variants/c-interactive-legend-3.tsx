@@ -47,6 +47,7 @@ export default function SessionsByDevice() {
         />
         <ChartLegend
           content={<InteractiveLegend config={config} onToggle={toggle} />}
+          itemSorter={null}
           verticalAlign="top"
         />
         {categories.map((key) => (

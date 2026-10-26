@@ -30,6 +30,8 @@ export type ChartTooltipPresetProps = InjectedProps & {
   valueFormatter?: (value: number) => string;
   /** Per-series formatters that override `valueFormatter`, e.g. `{ growth: formatPercent }`. */
   formatters?: Record<string, (value: number) => string>;
+  /** Row field that names each item, for pie-style charts where every slice shares one dataKey. */
+  nameKey?: string;
   labelFormatter?: (label: string | number) => React.ReactNode;
   hideLabel?: boolean;
   className?: string;
@@ -42,13 +44,25 @@ type Row = {
   value: number;
 };
 
-function toRows(payload: TooltipItem[] = [], config: ChartConfig = {}): Row[] {
+function toRows(
+  payload: TooltipItem[] = [],
+  config: ChartConfig = {},
+  nameKey?: string,
+): Row[] {
   return payload
     .filter((item) => item.type !== "none" && typeof item.value === "number")
     .map((item) => {
-      const key = String(item.dataKey ?? item.name ?? "value");
+      const key = String(
+        (nameKey ? item.payload?.[nameKey] : undefined) ??
+          item.dataKey ??
+          item.name ??
+          "value",
+      );
       return {
-        color: item.color || item.payload?.fill,
+        // Pie sectors carry their colour on the row; series carry it on the item.
+        color: nameKey
+          ? item.payload?.fill || item.color
+          : item.color || item.payload?.fill,
         key,
         label: config[key]?.label ?? item.name ?? key,
         value: item.value as number,
@@ -117,10 +131,11 @@ export function ChartTooltipTotal({
   config,
   valueFormatter = formatCompact,
   formatters,
+  nameKey,
   totalLabel = "Total",
   ...shell
 }: ChartTooltipPresetProps & { totalLabel?: React.ReactNode }) {
-  const rows = toRows(payload, config);
+  const rows = toRows(payload, config, nameKey);
   if (!active || !rows.length) return null;
   const total = rows.reduce((sum, row) => sum + row.value, 0);
 
@@ -150,6 +165,7 @@ export function ChartTooltipList({
   config,
   valueFormatter = formatCompact,
   formatters,
+  nameKey,
   limit,
   sort = true,
   ...shell
@@ -158,7 +174,7 @@ export function ChartTooltipList({
   /** Set `false` to keep the chart's series order. */
   sort?: boolean;
 }) {
-  const rows = toRows(payload, config);
+  const rows = toRows(payload, config, nameKey);
   if (sort) rows.sort((a, b) => b.value - a.value);
   const shown = rows.slice(0, limit);
   if (!active || !shown.length) return null;
@@ -187,6 +203,7 @@ export function ChartTooltipComparison({
   config,
   valueFormatter = formatCompact,
   formatters,
+  nameKey,
   previous,
   invertDelta = false,
   ...shell
@@ -195,7 +212,9 @@ export function ChartTooltipComparison({
   /** Set when a drop is good news (latency, cost). */
   invertDelta?: boolean;
 }) {
-  const rows = toRows(payload, config).filter((row) => row.key in previous);
+  const rows = toRows(payload, config, nameKey).filter(
+    (row) => row.key in previous,
+  );
   if (!active || !rows.length) return null;
 
   return (

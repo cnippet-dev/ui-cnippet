@@ -81,6 +81,7 @@ All three presets take these props.
 | `config` | `ChartConfig` | — | Series labels; pass the chart's config |
 | `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats each value |
 | `formatters` | `Record<string, (value: number) => string>` | — | Per-series formatters that override `valueFormatter` |
+| `nameKey` | `string` | — | Row field that names each item, for pie-style charts where every slice shares one `dataKey` |
 | `labelFormatter` | `(label: string \| number) => ReactNode` | — | Formats the heading (the x value) |
 | `hideLabel` | `boolean` | `false` | Hide the heading |
 | `className` | `string` | — | Classes for the tooltip box |

@@ -15,6 +15,7 @@ import { useMediaQuery } from "@/registry/default/hooks/use-media-query";
 import {
   buildChartConfig,
   formatCompact,
+  toConfigKey,
 } from "@/registry/default/lib/chart-utils";
 import { cn } from "@/registry/default/lib/utils";
 import {
@@ -60,9 +61,6 @@ export type ScatterChartProps<T extends Record<string, unknown>> = {
   children?: React.ReactNode;
 };
 
-// Group values become CSS variable names (--color-<key>), so strip anything unsafe.
-const toKey = (value: string) => value.replace(/[^a-zA-Z0-9_-]/g, "-");
-
 export function ScatterChart<T extends Record<string, unknown>>({
   data,
   x,
@@ -94,7 +92,7 @@ export function ScatterChart<T extends Record<string, unknown>>({
   const groups = new Map<string, { name: string; rows: T[] }>();
   for (const row of data) {
     const name = groupBy ? String(row[groupBy]) : y;
-    const key = toKey(name);
+    const key = toConfigKey(name);
     const group = groups.get(key) ?? { name, rows: [] };
     group.rows.push(row);
     groups.set(key, group);
@@ -157,7 +155,7 @@ export function ScatterChart<T extends Record<string, unknown>>({
             content={({ active, payload }) => {
               const row = payload?.[0]?.payload as T | undefined;
               if (!active || !row) return null;
-              const group = toKey(groupBy ? String(row[groupBy]) : y);
+              const group = toConfigKey(groupBy ? String(row[groupBy]) : y);
               const lines: [string, string][] = [
                 [xLabel, xValueFormatter(Number(row[x]))],
                 [yLabel, yValueFormatter(Number(row[y]))],
@@ -192,6 +190,7 @@ export function ScatterChart<T extends Record<string, unknown>>({
         {(showLegend ?? keys.length > 1) ? (
           <ChartLegend
             content={<ChartLegendContent nameKey="value" />}
+            itemSorter={null}
             verticalAlign={legendPosition}
           />
         ) : null}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radial-chart-2",
+  "description": "Seats used — half ring with an upgrade action",
+  "registryDependencies": [
+    "@cnippet/radial-chart",
+    "@cnippet/chart-card",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radial-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadialChart } from \"@/registry/default/charts/radial-chart\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nconst SEATS = 50;\nconst data = [{ metric: \"Seats\", used: 42 }];\n\nexport default function PlanUsage() {\n  return (\n    <ChartCard\n      className=\"max-w-xs\"\n      description=\"Team plan\"\n      footer={\n        <div className=\"flex w-full items-center justify-between gap-3\">\n          <span>8 seats left</span>\n          <Button size=\"sm\" variant=\"outline\">\n            Add seats\n          </Button>\n        </div>\n      }\n      title=\"Seats used\"\n    >\n      <RadialChart\n        category=\"used\"\n        centerLabel={`of ${SEATS} seats`}\n        centerValue=\"42\"\n        className=\"h-44\"\n        data={data}\n        endAngle={-180}\n        index=\"metric\"\n        max={SEATS}\n        showLegend={false}\n        startAngle={180}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radial chart"
+  ],
+  "type": "registry:block"
+}

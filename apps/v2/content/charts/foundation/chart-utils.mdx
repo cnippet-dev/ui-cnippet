@@ -67,6 +67,7 @@ formatCurrency(48200); // "$48.2K"
 | `sumBy(rows, keys)` | `sumBy(data, ["desktop", "mobile"])` | Sum of both columns across every row |
 | `describeChart(kind, categories, index)` | `describeChart("Area chart", ["desktop"], "month")` | `"Area chart of desktop by month"` |
 | `trendColor(values, invert?)` | `trendColor([3, 5, 8])` | `"var(--success)"` (rising), `"var(--destructive)"` (falling) |
+| `toConfigKey(value)` | `toConfigKey("Mid market")` | `"Mid-market"`, safe as a config key and CSS variable |
 | `BaseChartProps<T>` | type | The [common chart props](/docs/chart-components/foundation#common-props) |
 
 ## Good to know

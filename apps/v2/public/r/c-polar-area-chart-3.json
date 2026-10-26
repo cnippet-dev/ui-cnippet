@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-polar-area-chart-3",
+  "description": "Tickets by topic — a colour per slice",
+  "registryDependencies": [
+    "@cnippet/polar-area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-polar-area-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PolarAreaChart } from \"@/registry/default/charts/polar-area-chart\";\n\n// Support tickets by topic this week.\nconst data = [\n  { tickets: 184, topic: \"Billing\" },\n  { tickets: 126, topic: \"Login\" },\n  { tickets: 92, topic: \"Integrations\" },\n  { tickets: 61, topic: \"Exports\" },\n  { tickets: 38, topic: \"Mobile\" },\n];\n\nexport default function TicketsByTopic() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Support tickets by topic, this week\"\n      title=\"Ticket volume\"\n    >\n      <PolarAreaChart\n        category=\"tickets\"\n        className=\"h-64\"\n        data={data}\n        index=\"topic\"\n        valueFormatter={(value) => `${value} tickets`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "polar area chart"
+  ],
+  "type": "registry:block"
+}

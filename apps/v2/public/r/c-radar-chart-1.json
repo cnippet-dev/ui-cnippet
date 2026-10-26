@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radar-chart-1",
+  "description": "Product comparison — two laptops across six aspects",
+  "registryDependencies": [
+    "@cnippet/radar-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radar-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadarChart } from \"@/registry/default/charts/radar-chart\";\n\n// Review scores out of 10 for two laptops.\nconst data = [\n  { air: 9.1, aspect: \"Battery\", pro: 7.8 },\n  { air: 7.6, aspect: \"Display\", pro: 9.4 },\n  { air: 7.2, aspect: \"Speed\", pro: 9.5 },\n  { air: 9.4, aspect: \"Weight\", pro: 6.9 },\n  { air: 5.8, aspect: \"Ports\", pro: 8.7 },\n  { air: 8.8, aspect: \"Price\", pro: 6.1 },\n];\n\nexport default function ProductComparison() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Review scores out of 10\"\n      title=\"Air vs Pro\"\n    >\n      <RadarChart\n        categories={[\"air\", \"pro\"]}\n        className=\"h-64\"\n        config={{ air: { label: \"Air 13\" }, pro: { label: \"Pro 14\" } }}\n        data={data}\n        index=\"aspect\"\n        valueFormatter={(value) => value.toFixed(1)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radar chart"
+  ],
+  "type": "registry:block"
+}

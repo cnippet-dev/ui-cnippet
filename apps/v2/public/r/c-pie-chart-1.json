@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-pie-chart-1",
+  "description": "Browser share — pie with a bottom legend",
+  "registryDependencies": [
+    "@cnippet/pie-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-pie-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PieChart } from \"@/registry/default/charts/pie-chart\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { browser: \"Chrome\", share: 0.64 },\n  { browser: \"Safari\", share: 0.19 },\n  { browser: \"Edge\", share: 0.08 },\n  { browser: \"Firefox\", share: 0.05 },\n  { browser: \"Other\", share: 0.04 },\n];\n\nexport default function BrowserShare() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Sessions by browser, October\"\n      title=\"Browsers\"\n    >\n      <PieChart\n        category=\"share\"\n        className=\"h-60\"\n        data={data}\n        index=\"browser\"\n        valueFormatter={(value) => formatPercent(value, { digits: 0 })}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pie chart"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-pie-chart-3",
+  "description": "Expenses — spending by category with currency values",
+  "registryDependencies": [
+    "@cnippet/pie-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-pie-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PieChart } from \"@/registry/default/charts/pie-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { amount: 1840, category: \"Rent\" },\n  { amount: 620, category: \"Groceries\" },\n  { amount: 310, category: \"Transport\" },\n  { amount: 260, category: \"Dining out\" },\n  { amount: 190, category: \"Subscriptions\" },\n];\n\nexport default function Expenses() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Spending by category, September\"\n      title=\"Expenses\"\n      value={formatCurrency(3220, \"USD\", { compact: false })}\n    >\n      <PieChart\n        category=\"amount\"\n        className=\"h-48\"\n        data={data}\n        index=\"category\"\n        legendLayout=\"side\"\n        valueFormatter={(value) =>\n          formatCurrency(value, \"USD\", { compact: false })\n        }\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pie chart"
+  ],
+  "type": "registry:block"
+}

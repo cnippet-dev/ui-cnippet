@@ -119,6 +119,14 @@ export function buildChartConfig(
 }
 
 /**
+ * Makes a data value safe as a config key / CSS variable name (`--color-<key>`):
+ * "Mid market" → "Mid-market".
+ */
+export function toConfigKey(value: string): string {
+  return value.replace(/[^a-zA-Z0-9_-]/g, "-");
+}
+
+/**
  * `var(--success)` when the series ends higher than it starts, `var(--destructive)`
  * when lower (swapped with `invert`), undefined when flat or empty.
  */

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sunburst-chart",
+  "description": "Two-level nested rings: category in the middle, breakdown outside",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/use-media-query",
+    "@cnippet/chart",
+    "@cnippet/chart-utils",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart-skeleton",
+    "@cnippet/chart-empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/sunburst-chart.tsx",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { Pie, PieChart } from \"recharts\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport { ChartSkeleton } from \"@/registry/default/charts/chart-skeleton\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { useMediaQuery } from \"@/registry/default/hooks/use-media-query\";\nimport {\n  buildChartConfig,\n  formatCompact,\n  toConfigKey,\n} from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\nexport type SunburstNode = {\n  name: string;\n  /** Needed on leaves; a parent's value is the sum of its children. */\n  value?: number;\n  children?: { name: string; value: number }[];\n};\n\nexport type SunburstChartProps = {\n  data: SunburstNode[];\n  /** Labels or colours per top-level node, keyed by name (see toConfigKey). */\n  config?: ChartConfig;\n  valueFormatter?: (value: number) => string;\n  showLegend?: boolean;\n  showTooltip?: boolean;\n  loading?: boolean;\n  emptyState?: React.ReactNode;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function SunburstChart({\n  data,\n  config,\n  valueFormatter = formatCompact,\n  showLegend = true,\n  showTooltip = true,\n  loading = false,\n  emptyState,\n  className,\n  \"aria-label\": ariaLabel,\n}: SunburstChartProps) {\n  const reduceMotion = useMediaQuery(\"(prefers-reduced-motion: reduce)\");\n\n  if (loading) return <ChartSkeleton className={className} variant=\"donut\" />;\n  if (data.length === 0) {\n    return emptyState ?? <ChartEmpty className={className} />;\n  }\n\n  const parents = data.map((node) => {\n    const key = toConfigKey(node.name);\n    const value =\n      node.children?.reduce((sum, c) => sum + c.value, 0) ?? node.value ?? 0;\n    return { fill: `var(--color-${key})`, key, name: node.name, value };\n  });\n  // Children sit in the outer ring in their parent's colour, alternating tint.\n  const children = data.flatMap((node, p) =>\n    (node.children ?? []).map((child, i) => ({\n      fill: `color-mix(in oklch, var(--color-${parents[p]?.key}) ${i % 2 ? 55 : 80}%, var(--background))`,\n      name: child.name,\n      value: child.value,\n    })),\n  );\n  const resolvedConfig = buildChartConfig(\n    parents.map((p) => p.key),\n    {\n      ...Object.fromEntries(parents.map((p) => [p.key, { label: p.name }])),\n      ...config,\n    },\n  );\n\n  return (\n    <div className={cn(\"flex w-full flex-col\", className)}>\n      <ChartContainer\n        aria-label={\n          ariaLabel ??\n          `Sunburst chart of ${parents.map((p) => p.name).join(\", \")}`\n        }\n        className=\"aspect-auto min-h-0 w-full flex-1\"\n        config={resolvedConfig}\n        role=\"figure\"\n      >\n        <PieChart accessibilityLayer>\n          {showTooltip ? (\n            <ChartTooltip\n              content={\n                <ChartTooltipList\n                  hideLabel\n                  nameKey=\"name\"\n                  valueFormatter={valueFormatter}\n                />\n              }\n            />\n          ) : null}\n          <Pie\n            data={parents}\n            dataKey=\"value\"\n            innerRadius=\"22%\"\n            isAnimationActive={!reduceMotion}\n            nameKey=\"name\"\n            outerRadius=\"54%\"\n            stroke=\"var(--background)\"\n            strokeWidth={2}\n          />\n          <Pie\n            data={children}\n            dataKey=\"value\"\n            innerRadius=\"56%\"\n            isAnimationActive={!reduceMotion}\n            nameKey=\"name\"\n            outerRadius=\"88%\"\n            stroke=\"var(--background)\"\n            strokeWidth={2}\n          />\n        </PieChart>\n      </ChartContainer>\n      {showLegend ? (\n        <ul className=\"flex flex-wrap justify-center gap-x-4 gap-y-1 pt-3 text-xs\">\n          {parents.map((p) => (\n            <li className=\"flex items-center gap-1.5\" key={p.key}>\n              <span\n                aria-hidden=\"true\"\n                className=\"size-2 rounded-xs\"\n                style={{ backgroundColor: resolvedConfig[p.key]?.color }}\n              />\n              {resolvedConfig[p.key]?.label}\n            </li>\n          ))}\n        </ul>\n      ) : null}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/sunburst-chart.tsx"
+    }
+  ],
+  "categories": [
+    "sunburst chart"
+  ],
+  "type": "registry:ui"
+}
