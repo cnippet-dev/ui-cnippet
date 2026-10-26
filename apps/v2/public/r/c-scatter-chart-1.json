@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-scatter-chart-1",
+  "description": "Price vs rating — products coloured by category",
+  "registryDependencies": [
+    "@cnippet/scatter-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-scatter-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ScatterChart } from \"@/registry/default/charts/scatter-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { category: \"Headphones\", price: 79, product: \"Pulse Buds\", rating: 4.1 },\n  { category: \"Headphones\", price: 149, product: \"Studio Air\", rating: 4.5 },\n  { category: \"Headphones\", price: 249, product: \"Studio Pro\", rating: 4.7 },\n  { category: \"Headphones\", price: 349, product: \"Studio Max\", rating: 4.6 },\n  { category: \"Speakers\", price: 59, product: \"Go Mini\", rating: 3.9 },\n  { category: \"Speakers\", price: 129, product: \"Go\", rating: 4.3 },\n  { category: \"Speakers\", price: 199, product: \"Room One\", rating: 4.4 },\n  { category: \"Speakers\", price: 399, product: \"Room Five\", rating: 4.8 },\n  { category: \"Keyboards\", price: 89, product: \"Type S\", rating: 4.0 },\n  { category: \"Keyboards\", price: 139, product: \"Type Pro\", rating: 4.6 },\n  { category: \"Keyboards\", price: 219, product: \"Type Low\", rating: 4.2 },\n];\n\nexport default function PriceVsRating() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Each dot is a product; higher price mostly buys a better rating\"\n      title=\"Price vs rating\"\n    >\n      <ScatterChart\n        className=\"h-52\"\n        data={data}\n        groupBy=\"category\"\n        label=\"product\"\n        x=\"price\"\n        xLabel=\"Price\"\n        xValueFormatter={(value) => formatCurrency(value, \"USD\")}\n        y=\"rating\"\n        yLabel=\"Rating\"\n        yValueFormatter={(value) => value.toFixed(1)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scatter chart"
+  ],
+  "type": "registry:block"
+}

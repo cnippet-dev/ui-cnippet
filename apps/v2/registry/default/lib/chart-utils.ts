@@ -1,6 +1,53 @@
+import type * as React from "react";
 import type { ChartConfig } from "@/registry/default/ui/chart";
 
 const CHART_COLORS = 5;
+
+/** Props shared by every data-driven chart (area, bar, line, …). */
+export type BaseChartProps<T extends Record<string, unknown>> = {
+  data: T[];
+  /** Key of the x-axis / category field, e.g. "month". */
+  index: keyof T & string;
+  /** Keys of the numeric series to plot, e.g. ["desktop", "mobile"]. */
+  categories: (keyof T & string)[];
+  /** Labels, icons or colours per series; built from `categories` when omitted. */
+  config?: ChartConfig;
+  /** Formats values on the y-axis and in the tooltip. Default: formatCompact. */
+  valueFormatter?: (value: number) => string;
+  /** Formats `index` values on the x-axis and in the tooltip heading. */
+  indexFormatter?: (value: string) => string;
+  showXAxis?: boolean;
+  showYAxis?: boolean;
+  showGrid?: boolean;
+  /** Default: true when there is more than one series. */
+  showLegend?: boolean;
+  showTooltip?: boolean;
+  legendPosition?: "top" | "bottom";
+  yAxisWidth?: number;
+  /** Renders a ChartSkeleton instead of the chart. */
+  loading?: boolean;
+  /** Shown when `data` is empty. Default: <ChartEmpty />. */
+  emptyState?: React.ReactNode;
+  /** Sizing lives here, e.g. "h-72". */
+  className?: string;
+  "aria-label"?: string;
+  /** Extra Recharts elements drawn inside the chart, e.g. <ReferenceLine />. */
+  children?: React.ReactNode;
+};
+
+/** Default accessible name: "Area chart of desktop and mobile by month". */
+export function describeChart(
+  kind: string,
+  categories: string[],
+  index: string,
+): string {
+  const names = categories.map((c) => titleCase(c).toLowerCase());
+  const list =
+    names.length > 1
+      ? `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`
+      : (names[0] ?? "values");
+  return `${kind} of ${list} by ${titleCase(index).toLowerCase()}`;
+}
 
 /** 1234 → "1.2K", 1_250_000 → "1.3M" */
 export function formatCompact(value: number): string {
@@ -69,6 +116,23 @@ export function buildChartConfig(
       },
     ]),
   ) as ChartConfig;
+}
+
+/**
+ * `var(--success)` when the series ends higher than it starts, `var(--destructive)`
+ * when lower (swapped with `invert`), undefined when flat or empty.
+ */
+export function trendColor(
+  values: unknown[],
+  invert = false,
+): string | undefined {
+  const nums = values.filter(
+    (v): v is number => typeof v === "number" && Number.isFinite(v),
+  );
+  const first = nums[0];
+  const last = nums.at(-1);
+  if (first === undefined || last === undefined || first === last) return;
+  return last > first !== invert ? "var(--success)" : "var(--destructive)";
 }
 
 /** Sums `keys` across rows, skipping null and non-numeric values. */

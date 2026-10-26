@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-list-3",
+  "description": "Clickable referrers — rows filter the dashboard",
+  "registryDependencies": [
+    "@cnippet/bar-list",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-list-3.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { BarList } from \"@/registry/default/charts/bar-list\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\nconst referrers = [\n  { name: \"google.com\", value: 18420 },\n  { name: \"github.com\", value: 9310 },\n  { name: \"news.ycombinator.com\", value: 6280 },\n  { name: \"x.com\", value: 4170 },\n  { name: \"reddit.com\", value: 2960 },\n];\n\nexport default function ClickableReferrers() {\n  const [selected, setSelected] = useState<string | null>(null);\n\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Click a referrer to filter the dashboard\"\n      footer={\n        selected ? (\n          <span>\n            Filtered to{\" \"}\n            <span className=\"font-medium text-foreground\">{selected}</span>\n          </span>\n        ) : (\n          \"No filter applied\"\n        )\n      }\n      title=\"Referrers\"\n    >\n      <BarList\n        aria-label=\"Visitors by referrer\"\n        data={referrers}\n        onValueClick={(item) => setSelected(item.name)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar list"
+  ],
+  "type": "registry:block"
+}

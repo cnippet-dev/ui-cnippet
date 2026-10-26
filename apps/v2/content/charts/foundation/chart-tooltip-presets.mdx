@@ -80,6 +80,7 @@ All three presets take these props.
 |------|------|---------|-------------|
 | `config` | `ChartConfig` | — | Series labels; pass the chart's config |
 | `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats each value |
+| `formatters` | `Record<string, (value: number) => string>` | — | Per-series formatters that override `valueFormatter` |
 | `labelFormatter` | `(label: string \| number) => ReactNode` | — | Formats the heading (the x value) |
 | `hideLabel` | `boolean` | `false` | Hide the heading |
 | `className` | `string` | — | Classes for the tooltip box |
@@ -90,6 +91,7 @@ Preset-specific props:
 |------|------|------|---------|-------------|
 | `ChartTooltipTotal` | `totalLabel` | `ReactNode` | `"Total"` | Label of the total row |
 | `ChartTooltipList` | `limit` | `number` | — | Show only the top N series |
+| `ChartTooltipList` | `sort` | `boolean` | `true` | Set `false` to keep the chart's series order |
 | `ChartTooltipComparison` | `previous` | `Record<string, string>` | — | Series key → previous-value field |
 | `ChartTooltipComparison` | `invertDelta` | `boolean` | `false` | Treat a negative change as good |
 

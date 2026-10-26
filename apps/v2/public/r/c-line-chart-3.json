@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-line-chart-3",
+  "description": "Conversion rate — dots and a target line",
+  "registryDependencies": [
+    "@cnippet/line-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-line-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ReferenceLine } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst TARGET = 0.04;\n\n// Trial-to-paid conversion by week.\nconst data = [\n  { conversion: 0.031, week: \"W35\" },\n  { conversion: 0.034, week: \"W36\" },\n  { conversion: 0.033, week: \"W37\" },\n  { conversion: 0.037, week: \"W38\" },\n  { conversion: 0.039, week: \"W39\" },\n  { conversion: 0.042, week: \"W40\" },\n  { conversion: 0.041, week: \"W41\" },\n  { conversion: 0.045, week: \"W42\" },\n];\n\nconst percent = (value: number) => formatPercent(value);\n\nexport default function ConversionVsTarget() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.098}\n      description=\"Trial-to-paid conversion, weekly — target 4%\"\n      title=\"Conversion rate\"\n      value={percent(0.045)}\n    >\n      <LineChart\n        categories={[\"conversion\"]}\n        className=\"h-48\"\n        config={{\n          conversion: { color: \"var(--chart-2)\", label: \"Conversion\" },\n        }}\n        data={data}\n        index=\"week\"\n        showDots\n        valueFormatter={percent}\n      >\n        <ReferenceLine\n          label={{\n            className: \"fill-muted-foreground text-xs\",\n            position: \"insideBottomRight\",\n            value: \"Target\",\n          }}\n          stroke=\"var(--muted-foreground)\"\n          strokeDasharray=\"4 4\"\n          y={TARGET}\n        />\n      </LineChart>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "line chart"
+  ],
+  "type": "registry:block"
+}

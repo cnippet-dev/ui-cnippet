@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-progress-circle-2",
+  "description": "Quota used — colours by threshold",
+  "registryDependencies": [
+    "@cnippet/progress-circle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-progress-circle-2.tsx",
+      "content": "\"use client\";\n\nimport { ProgressCircle } from \"@/registry/default/charts/progress-circle\";\n\nconst quotas = [\n  { limit: 100, name: \"Seats\", used: 42 },\n  { limit: 1000, name: \"API calls (K)\", used: 812 },\n  { limit: 50, name: \"Storage (GB)\", used: 48 },\n];\n\n// Green below 75%, amber up to 90%, red above.\nfunction thresholdColor(ratio: number) {\n  if (ratio >= 0.9) return \"var(--destructive)\";\n  if (ratio >= 0.75) return \"var(--warning)\";\n  return \"var(--success)\";\n}\n\nexport default function QuotaThresholds() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-3 gap-3\">\n      {quotas.map((q) => {\n        const ratio = q.used / q.limit;\n        return (\n          <div\n            className=\"flex flex-col items-center gap-3 rounded-lg border bg-card p-4\"\n            key={q.name}\n          >\n            <ProgressCircle\n              aria-label={`${q.name}: ${q.used} of ${q.limit}`}\n              color={thresholdColor(ratio)}\n              max={q.limit}\n              value={q.used}\n            >\n              {Math.round(ratio * 100)}%\n            </ProgressCircle>\n            <div className=\"text-center\">\n              <div className=\"font-medium text-sm\">{q.name}</div>\n              <div className=\"text-muted-foreground text-xs tabular-nums\">\n                {q.used} / {q.limit}\n              </div>\n            </div>\n          </div>\n        );\n      })}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress circle"
+  ],
+  "type": "registry:block"
+}

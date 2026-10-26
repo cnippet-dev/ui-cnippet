@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-chart-5",
+  "description": "Sales vs quota — reference line for the target",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-chart-5.tsx",
+      "content": "\"use client\";\n\nimport { ReferenceLine } from \"recharts\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst TARGET = 120000;\n\nconst data = [\n  { closed: 98400, rep: \"Ana\" },\n  { closed: 131200, rep: \"Marcus\" },\n  { closed: 112700, rep: \"Priya\" },\n  { closed: 87500, rep: \"Jonah\" },\n  { closed: 124900, rep: \"Lena\" },\n  { closed: 140300, rep: \"Tomás\" },\n];\n\nexport default function SalesVsTarget() {\n  const hit = data.filter((row) => row.closed >= TARGET).length;\n\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Q3 closed-won by rep, against the $120K quota\"\n      footer={`${hit} of ${data.length} reps hit quota this quarter.`}\n      title=\"Sales vs quota\"\n    >\n      <BarChart\n        categories={[\"closed\"]}\n        className=\"h-48\"\n        config={{ closed: { color: \"var(--chart-1)\", label: \"Closed-won\" } }}\n        data={data}\n        index=\"rep\"\n        valueFormatter={formatCurrency}\n      >\n        <ReferenceLine\n          label={{\n            className: \"fill-muted-foreground text-xs\",\n            position: \"insideTopRight\",\n            value: \"Quota\",\n          }}\n          stroke=\"var(--muted-foreground)\"\n          strokeDasharray=\"4 4\"\n          y={TARGET}\n        />\n      </BarChart>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar chart"
+  ],
+  "type": "registry:block"
+}

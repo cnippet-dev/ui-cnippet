@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-chart-4",
+  "description": "Profit & loss — negative values below a zero line",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-chart-4.tsx",
+      "content": "\"use client\";\n\nimport { ReferenceLine } from \"recharts\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Monthly net income: two loss-making months after a hiring push.\nconst data = [\n  { month: \"Jan\", net: 18400 },\n  { month: \"Feb\", net: 12900 },\n  { month: \"Mar\", net: -6200 },\n  { month: \"Apr\", net: -11800 },\n  { month: \"May\", net: 4300 },\n  { month: \"Jun\", net: 15600 },\n  { month: \"Jul\", net: 21200 },\n  { month: \"Aug\", net: 24800 },\n];\n\nexport default function NetIncome() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Net income per month, after payroll and infrastructure\"\n      title=\"Profit & loss\"\n      value={formatCurrency(78900)}\n    >\n      <BarChart\n        categories={[\"net\"]}\n        className=\"h-48\"\n        config={{ net: { color: \"var(--chart-2)\", label: \"Net income\" } }}\n        data={data}\n        index=\"month\"\n        radius={2}\n        valueFormatter={formatCurrency}\n      >\n        <ReferenceLine stroke=\"var(--border)\" y={0} />\n      </BarChart>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar chart"
+  ],
+  "type": "registry:block"
+}

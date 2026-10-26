@@ -28,6 +28,8 @@ export type ChartTooltipPresetProps = InjectedProps & {
   /** Same config as the chart's ChartContainer; used for series labels. */
   config?: ChartConfig;
   valueFormatter?: (value: number) => string;
+  /** Per-series formatters that override `valueFormatter`, e.g. `{ growth: formatPercent }`. */
+  formatters?: Record<string, (value: number) => string>;
   labelFormatter?: (label: string | number) => React.ReactNode;
   hideLabel?: boolean;
   className?: string;
@@ -114,6 +116,7 @@ export function ChartTooltipTotal({
   payload,
   config,
   valueFormatter = formatCompact,
+  formatters,
   totalLabel = "Total",
   ...shell
 }: ChartTooltipPresetProps & { totalLabel?: React.ReactNode }) {
@@ -125,7 +128,7 @@ export function ChartTooltipTotal({
     <Shell {...shell}>
       {rows.map((row) => (
         <RowView
-          formatted={valueFormatter(row.value)}
+          formatted={(formatters?.[row.key] ?? valueFormatter)(row.value)}
           key={row.key}
           row={row}
         />
@@ -146,19 +149,25 @@ export function ChartTooltipList({
   payload,
   config,
   valueFormatter = formatCompact,
+  formatters,
   limit,
+  sort = true,
   ...shell
-}: ChartTooltipPresetProps & { limit?: number }) {
-  const rows = toRows(payload, config)
-    .sort((a, b) => b.value - a.value)
-    .slice(0, limit);
-  if (!active || !rows.length) return null;
+}: ChartTooltipPresetProps & {
+  limit?: number;
+  /** Set `false` to keep the chart's series order. */
+  sort?: boolean;
+}) {
+  const rows = toRows(payload, config);
+  if (sort) rows.sort((a, b) => b.value - a.value);
+  const shown = rows.slice(0, limit);
+  if (!active || !shown.length) return null;
 
   return (
     <Shell {...shell}>
-      {rows.map((row) => (
+      {shown.map((row) => (
         <RowView
-          formatted={valueFormatter(row.value)}
+          formatted={(formatters?.[row.key] ?? valueFormatter)(row.value)}
           key={row.key}
           row={row}
         />
@@ -177,6 +186,7 @@ export function ChartTooltipComparison({
   payload,
   config,
   valueFormatter = formatCompact,
+  formatters,
   previous,
   invertDelta = false,
   ...shell
@@ -191,6 +201,7 @@ export function ChartTooltipComparison({
   return (
     <Shell {...shell}>
       {rows.map((row) => {
+        const format = formatters?.[row.key] ?? valueFormatter;
         const item = payload?.find((p) => String(p.dataKey) === row.key);
         const prev = item?.payload?.[previous[row.key] as string];
         const delta =
@@ -219,15 +230,13 @@ export function ChartTooltipComparison({
                   </span>
                 ) : null
               }
-              formatted={valueFormatter(row.value)}
+              formatted={format(row.value)}
               row={row}
             />
             {typeof prev === "number" ? (
               <div className="flex justify-between gap-3 ps-4.5 text-muted-foreground">
                 <span>Previous</span>
-                <span className="font-mono tabular-nums">
-                  {valueFormatter(prev)}
-                </span>
+                <span className="font-mono tabular-nums">{format(prev)}</span>
               </div>
             ) : null}
           </div>

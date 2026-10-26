@@ -32,6 +32,16 @@ function createChart(options: {
   };
 }
 
+// What every data-driven chart (area, bar, line, combo) imports.
+const dataChartDeps = [
+  "use-media-query",
+  "chart",
+  "chart-utils",
+  "chart-tooltip-presets",
+  "chart-skeleton",
+  "chart-empty",
+];
+
 export const charts: ChartItem[] = [
   // Foundation
   createChart({
@@ -69,5 +79,114 @@ export const charts: ChartItem[] = [
     description: "Empty state sized for a chart, with icon, message and action",
     name: "chart-empty",
     registryDependencies: ["empty"],
+  }),
+  // Cartesian
+  createChart({
+    categories: ["area chart"],
+    description:
+      "Data-driven area chart: default, stacked or percent, with gradient, solid or no fill",
+    name: "area-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["bar chart"],
+    description:
+      "Data-driven bar chart: columns or horizontal bars, grouped, stacked or percent, with value labels",
+    name: "bar-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["line chart"],
+    description:
+      "Data-driven line chart with dots, dashed forecast series and gap handling",
+    name: "line-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["combo chart"],
+    description:
+      "Bars and lines on one plot, with an optional second y-axis for the lines",
+    name: "combo-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["scatter chart"],
+    description: "X/Y scatter plot with optional bubble size and colour groups",
+    name: "scatter-chart",
+    registryDependencies: [
+      "chart",
+      "chart-utils",
+      "chart-skeleton",
+      "chart-empty",
+      "use-media-query",
+    ],
+  }),
+  // Micro
+  ...(
+    [
+      [
+        "spark-area",
+        "Tiny area trend with no axes, optionally coloured by trend",
+      ],
+      [
+        "spark-line",
+        "Tiny line trend with an optional last-point dot, coloured by trend",
+      ],
+      ["spark-bar", "Tiny bars for daily volume or win/loss, coloured by sign"],
+    ] as const
+  ).map(([name, description]) =>
+    createChart({
+      categories: [name.replace("-", " ") as RegistryCategory],
+      description,
+      name,
+      registryDependencies: ["chart", "chart-utils", "use-media-query"],
+    }),
+  ),
+  createChart({
+    categories: ["bar list"],
+    dependencies: [],
+    description:
+      "Ranked horizontal bars with a name and value per row; rows can be links or buttons",
+    name: "bar-list",
+    registryDependencies: ["chart-utils"],
+  }),
+  createChart({
+    categories: ["category bar"],
+    dependencies: [],
+    description:
+      "One bar split into coloured ranges, with boundary labels and an optional marker",
+    name: "category-bar",
+    registryDependencies: [],
+  }),
+  createChart({
+    categories: ["progress circle"],
+    dependencies: [],
+    description: "Ring showing progress toward a maximum, with centre content",
+    name: "progress-circle",
+    registryDependencies: [],
+  }),
+  createChart({
+    categories: ["delta bar"],
+    dependencies: [],
+    description:
+      "Bar growing left or right from the centre to show a +/− change",
+    name: "delta-bar",
+    registryDependencies: ["chart-utils"],
+  }),
+  createChart({
+    categories: ["tracker"],
+    dependencies: [],
+    description:
+      "Row of status blocks with tooltips, e.g. daily uptime or build history",
+    name: "tracker",
+    registryDependencies: ["tooltip"],
+  }),
+  createChart({
+    categories: ["bullet chart"],
+    dependencies: [],
+    description:
+      "Compact bar comparing a value with a target over qualitative ranges",
+    name: "bullet-chart",
+    registryDependencies: ["chart-utils"],
   }),
 ];

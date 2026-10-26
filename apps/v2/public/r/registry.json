@@ -25281,6 +25281,308 @@
     },
     {
       "categories": [
+        "area chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Data-driven area chart: default, stacked or percent, with gradient, solid or no fill",
+      "files": [
+        {
+          "path": "registry/default/charts/area-chart.tsx",
+          "target": "components/charts/area-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "area-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Data-driven bar chart: columns or horizontal bars, grouped, stacked or percent, with value labels",
+      "files": [
+        {
+          "path": "registry/default/charts/bar-chart.tsx",
+          "target": "components/charts/bar-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "bar-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "line chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Data-driven line chart with dots, dashed forecast series and gap handling",
+      "files": [
+        {
+          "path": "registry/default/charts/line-chart.tsx",
+          "target": "components/charts/line-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "line-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "combo chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Bars and lines on one plot, with an optional second y-axis for the lines",
+      "files": [
+        {
+          "path": "registry/default/charts/combo-chart.tsx",
+          "target": "components/charts/combo-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "combo-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scatter chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "X/Y scatter plot with optional bubble size and colour groups",
+      "files": [
+        {
+          "path": "registry/default/charts/scatter-chart.tsx",
+          "target": "components/charts/scatter-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scatter-chart",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty",
+        "@cnippet/use-media-query"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "spark area"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Tiny area trend with no axes, optionally coloured by trend",
+      "files": [
+        {
+          "path": "registry/default/charts/spark-area.tsx",
+          "target": "components/charts/spark-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "spark-area",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/use-media-query"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "spark line"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Tiny line trend with an optional last-point dot, coloured by trend",
+      "files": [
+        {
+          "path": "registry/default/charts/spark-line.tsx",
+          "target": "components/charts/spark-line.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "spark-line",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/use-media-query"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "spark bar"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Tiny bars for daily volume or win/loss, coloured by sign",
+      "files": [
+        {
+          "path": "registry/default/charts/spark-bar.tsx",
+          "target": "components/charts/spark-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "spark-bar",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/use-media-query"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "bar list"
+      ],
+      "description": "Ranked horizontal bars with a name and value per row; rows can be links or buttons",
+      "files": [
+        {
+          "path": "registry/default/charts/bar-list.tsx",
+          "target": "components/charts/bar-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "bar-list",
+      "registryDependencies": [
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "category bar"
+      ],
+      "description": "One bar split into coloured ranges, with boundary labels and an optional marker",
+      "files": [
+        {
+          "path": "registry/default/charts/category-bar.tsx",
+          "target": "components/charts/category-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "category-bar",
+      "registryDependencies": [],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "progress circle"
+      ],
+      "description": "Ring showing progress toward a maximum, with centre content",
+      "files": [
+        {
+          "path": "registry/default/charts/progress-circle.tsx",
+          "target": "components/charts/progress-circle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "progress-circle",
+      "registryDependencies": [],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "delta bar"
+      ],
+      "description": "Bar growing left or right from the centre to show a +/− change",
+      "files": [
+        {
+          "path": "registry/default/charts/delta-bar.tsx",
+          "target": "components/charts/delta-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "delta-bar",
+      "registryDependencies": [
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "tracker"
+      ],
+      "description": "Row of status blocks with tooltips, e.g. daily uptime or build history",
+      "files": [
+        {
+          "path": "registry/default/charts/tracker.tsx",
+          "target": "components/charts/tracker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "tracker",
+      "registryDependencies": [
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "bullet chart"
+      ],
+      "description": "Compact bar comparing a value with a target over qualitative ranges",
+      "files": [
+        {
+          "path": "registry/default/charts/bullet-chart.tsx",
+          "target": "components/charts/bullet-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "bullet-chart",
+      "registryDependencies": [
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
         "chart card"
       ],
       "description": "Revenue card — headline value, growth badge and area trend",
@@ -25619,6 +25921,953 @@
         "@cnippet/toggle-group",
         "@cnippet/chart-tooltip-presets",
         "@cnippet/chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "area chart"
+      ],
+      "description": "Visitors — desktop vs mobile with gradient fill",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-area-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-area-chart-1",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "area chart"
+      ],
+      "description": "MRR by plan — stacked areas with a total tooltip",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-area-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-area-chart-2",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "area chart"
+      ],
+      "description": "Traffic mix — percent-stacked share of sessions by channel",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-area-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-area-chart-3",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "area chart"
+      ],
+      "description": "Provisioned storage — step curve for values that jump",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-area-chart-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-area-chart-4",
+      "registryDependencies": [
+        "@cnippet/area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "description": "Monthly revenue — single series in a chart card",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-chart-1",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "description": "Signups by channel — stacked columns",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-chart-2",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "description": "Top pages — horizontal bars with value labels",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-chart-3",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "description": "Profit & loss — negative values below a zero line",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-chart-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-chart-4",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar chart"
+      ],
+      "description": "Sales vs quota — reference line for the target",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-chart-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-chart-5",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "line chart"
+      ],
+      "description": "API latency — p50, p90 and p99 over a day",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-line-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-line-chart-1",
+      "registryDependencies": [
+        "@cnippet/line-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "line chart"
+      ],
+      "description": "Revenue forecast — dashed forecast continuing the actuals",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-line-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-line-chart-2",
+      "registryDependencies": [
+        "@cnippet/line-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "line chart"
+      ],
+      "description": "Conversion rate — dots and a target line",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-line-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-line-chart-3",
+      "registryDependencies": [
+        "@cnippet/line-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combo chart"
+      ],
+      "description": "Revenue & growth — bars in $ with a % line on a second axis",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-combo-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-combo-chart-1",
+      "registryDependencies": [
+        "@cnippet/combo-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combo chart"
+      ],
+      "description": "Orders & AOV — order volume against average order value",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-combo-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-combo-chart-2",
+      "registryDependencies": [
+        "@cnippet/combo-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "combo chart"
+      ],
+      "description": "Trials & conversion — stacked bars by plan with a conversion line",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-combo-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-combo-chart-3",
+      "registryDependencies": [
+        "@cnippet/combo-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scatter chart"
+      ],
+      "description": "Price vs rating — products coloured by category",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-scatter-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-scatter-chart-1",
+      "registryDependencies": [
+        "@cnippet/scatter-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scatter chart"
+      ],
+      "description": "Deal size vs sales cycle — bubbles sized by seats",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-scatter-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-scatter-chart-2",
+      "registryDependencies": [
+        "@cnippet/scatter-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scatter chart"
+      ],
+      "description": "Response time vs payload — single-series correlation",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-scatter-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-scatter-chart-3",
+      "registryDependencies": [
+        "@cnippet/scatter-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark area"
+      ],
+      "description": "KPI card — revenue with a 7-day spark area",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-area-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-area-1",
+      "registryDependencies": [
+        "@cnippet/spark-area",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark area"
+      ],
+      "description": "Table cell — weekly users trend per workspace",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-area-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-area-2",
+      "registryDependencies": [
+        "@cnippet/spark-area",
+        "@cnippet/table",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark area"
+      ],
+      "description": "Trend colours — green or red by direction, inverted for errors and CPU",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-area-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-area-3",
+      "registryDependencies": [
+        "@cnippet/spark-area"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark line"
+      ],
+      "description": "Stock ticker — 10-day price lines with change",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-line-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-line-1",
+      "registryDependencies": [
+        "@cnippet/spark-line",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark line"
+      ],
+      "description": "Status list — service latency with a status badge",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-line-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-line-2",
+      "registryDependencies": [
+        "@cnippet/spark-line",
+        "@cnippet/badge"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark line"
+      ],
+      "description": "Up vs down — the same line coloured by what rising means",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-line-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-line-3",
+      "registryDependencies": [
+        "@cnippet/spark-line"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark bar"
+      ],
+      "description": "Daily commits — 28 days of activity",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-bar-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-bar-1",
+      "registryDependencies": [
+        "@cnippet/spark-bar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark bar"
+      ],
+      "description": "Win/loss — last 15 games per team",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-bar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-bar-2",
+      "registryDependencies": [
+        "@cnippet/spark-bar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "spark bar"
+      ],
+      "description": "Weekly volume — stacked web and app orders in a card",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-spark-bar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-spark-bar-3",
+      "registryDependencies": [
+        "@cnippet/spark-bar",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar list"
+      ],
+      "description": "Top pages — page views, last 30 days",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-list-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-list-1",
+      "registryDependencies": [
+        "@cnippet/bar-list",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar list"
+      ],
+      "description": "Top countries — flags and % share",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-list-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-list-2",
+      "registryDependencies": [
+        "@cnippet/bar-list",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bar list"
+      ],
+      "description": "Clickable referrers — rows filter the dashboard",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bar-list-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bar-list-3",
+      "registryDependencies": [
+        "@cnippet/bar-list",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "category bar"
+      ],
+      "description": "Credit score — bands with a marker",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-category-bar-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-category-bar-1",
+      "registryDependencies": [
+        "@cnippet/category-bar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "category bar"
+      ],
+      "description": "Storage breakdown — usage by type with free space",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-category-bar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-category-bar-2",
+      "registryDependencies": [
+        "@cnippet/category-bar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "category bar"
+      ],
+      "description": "Budget allocation — spend so far as a marker",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-category-bar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-category-bar-3",
+      "registryDependencies": [
+        "@cnippet/category-bar",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress circle"
+      ],
+      "description": "Profile completion — ring with a checklist",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-progress-circle-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-progress-circle-1",
+      "registryDependencies": [
+        "@cnippet/progress-circle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress circle"
+      ],
+      "description": "Quota used — colours by threshold",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-progress-circle-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-progress-circle-2",
+      "registryDependencies": [
+        "@cnippet/progress-circle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "progress circle"
+      ],
+      "description": "Sizes — from 32px to 96px",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-progress-circle-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-progress-circle-3",
+      "registryDependencies": [
+        "@cnippet/progress-circle"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "delta bar"
+      ],
+      "description": "NPS change — points gained or lost per area",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-delta-bar-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-delta-bar-1",
+      "registryDependencies": [
+        "@cnippet/delta-bar"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "delta bar"
+      ],
+      "description": "Budget variance — over budget shown as bad",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-delta-bar-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-delta-bar-2",
+      "registryDependencies": [
+        "@cnippet/delta-bar",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "delta bar"
+      ],
+      "description": "Week over week — change under each metric",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-delta-bar-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-delta-bar-3",
+      "registryDependencies": [
+        "@cnippet/delta-bar",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tracker"
+      ],
+      "description": "90-day uptime — daily status with incidents",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-tracker-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-tracker-1",
+      "registryDependencies": [
+        "@cnippet/tracker",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tracker"
+      ],
+      "description": "Build history — last 30 CI runs",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-tracker-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-tracker-2",
+      "registryDependencies": [
+        "@cnippet/tracker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "tracker"
+      ],
+      "description": "Habit tracker — four weeks per habit",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-tracker-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-tracker-3",
+      "registryDependencies": [
+        "@cnippet/tracker"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bullet chart"
+      ],
+      "description": "Sales vs quota — per rep with performance bands",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bullet-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bullet-chart-1",
+      "registryDependencies": [
+        "@cnippet/bullet-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bullet chart"
+      ],
+      "description": "SLA vs target — response time per support tier",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bullet-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bullet-chart-2",
+      "registryDependencies": [
+        "@cnippet/bullet-chart"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "bullet chart"
+      ],
+      "description": "Budget usage — spend with a month-end forecast marker",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-bullet-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-bullet-chart-3",
+      "registryDependencies": [
+        "@cnippet/bullet-chart",
         "@cnippet/chart-utils"
       ],
       "type": "registry:block"

@@ -1,0 +1,86 @@
+---
+title: Delta Bar
+description: A bar growing left or right from the centre to show a positive or negative change.
+---
+
+<ComponentPreview name="c-delta-bar-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/delta-bar
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="delta-bar" title="components/charts/delta-bar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { DeltaBar } from "@/components/charts/delta-bar";
+```
+
+```tsx
+<DeltaBar value={0.124} />
+```
+
+## Good to know
+
+- `value` is a fraction from `-1` to `1`, like `delta` on [Chart Card](/charts/foundation/chart-card): `0.124` fills 12.4% of the right half. Larger values are clamped.
+- Growth is green and decline is red. Set `invertDelta` when a drop is good news, such as cost or tickets.
+- The default accessible name is the signed percentage. Pass `aria-label` to add context ("Billing NPS up 7 points").
+- Show the number next to the bar as text too; the bar alone is hard to read precisely.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Change as a fraction, `-1` to `1` |
+| `invertDelta` | `boolean` | `false` | Treat a negative change as good |
+| `className` | `string` | — | Classes for the track |
+| `aria-label` | `string` | signed percentage | Accessible name |
+
+## Examples
+
+### NPS change
+
+Points gained or lost per product area.
+
+<ComponentPreview name="c-delta-bar-1" />
+
+### Budget variance
+
+`invertDelta`: going over budget is red, coming in under is green.
+
+<ComponentPreview name="c-delta-bar-2" />
+
+### Week over week
+
+A delta bar under each metric in a stat row.
+
+<ComponentPreview name="c-delta-bar-3" />

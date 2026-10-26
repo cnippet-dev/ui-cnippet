@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-line-2",
+  "description": "Status list — service latency with a status badge",
+  "registryDependencies": [
+    "@cnippet/spark-line",
+    "@cnippet/badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-line-2.tsx",
+      "content": "\"use client\";\n\nimport { SparkLine } from \"@/registry/default/charts/spark-line\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\n// p95 latency (ms) per service, last 12 checks.\nconst services = [\n  {\n    latency: [118, 122, 119, 125, 121, 117, 120, 123, 119, 116, 121, 118],\n    name: \"api-gateway\",\n    status: \"Operational\",\n  },\n  {\n    latency: [86, 88, 91, 87, 95, 132, 187, 214, 196, 171, 158, 149],\n    name: \"search\",\n    status: \"Degraded\",\n  },\n  {\n    latency: [42, 41, 44, 43, 40, 42, 45, 41, 43, 42, 40, 41],\n    name: \"auth\",\n    status: \"Operational\",\n  },\n  {\n    latency: [204, 198, 211, 207, 202, 199, 205, 210, 203, 201, 206, 200],\n    name: \"billing\",\n    status: \"Operational\",\n  },\n];\n\nexport default function ServiceStatusList() {\n  return (\n    <ul className=\"w-full max-w-md divide-y rounded-lg border bg-card\">\n      {services.map((s) => (\n        <li className=\"flex items-center gap-4 px-4 py-3\" key={s.name}>\n          <span className=\"flex-1 font-mono text-sm\">{s.name}</span>\n          <SparkLine\n            aria-label={`${s.name} p95 latency, last 12 checks`}\n            categories={[\"ms\"]}\n            className=\"h-7 w-24\"\n            config={{\n              ms: {\n                color:\n                  s.status === \"Degraded\" ? \"var(--warning)\" : \"var(--chart-2)\",\n              },\n            }}\n            data={s.latency.map((ms, check) => ({ check, ms }))}\n            index=\"check\"\n          />\n          <span className=\"w-14 text-end text-muted-foreground text-xs tabular-nums\">\n            {s.latency.at(-1)} ms\n          </span>\n          <Badge variant={s.status === \"Degraded\" ? \"warning\" : \"success\"}>\n            {s.status}\n          </Badge>\n        </li>\n      ))}\n    </ul>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark line"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,116 @@
+---
+title: Bar Chart
+description: A data-driven bar chart — columns or horizontal bars, grouped, stacked or percent, with value labels and click handling.
+---
+
+<ComponentPreview name="c-bar-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/bar-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="bar-chart" title="components/charts/bar-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BarChart } from "@/components/charts/bar-chart";
+```
+
+```tsx
+<BarChart
+  data={data}
+  index="month"
+  categories={["revenue"]}
+  valueFormatter={formatCurrency}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- `layout="horizontal"` (default) draws columns. `layout="vertical"` draws bars that grow to the right, which fits long labels such as page paths. Widen the label column with `yAxisWidth`.
+- With more than one category, bars sit side by side. `type="stacked"` stacks them and `type="percent"` stacks them to 100%.
+- `showValues` prints each value at the end of its bar. It's ignored for stacked types, where the tooltip shows the values.
+- Only the outer end of a bar is rounded; in a stack, only the top segment.
+- `onValueClick` receives `{ index, category, value }` for the clicked bar, e.g. to filter a table or drill down.
+- Negative values grow below zero. Add `<ReferenceLine y={0} />` as a child to mark the axis.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `layout` | `"horizontal" \| "vertical"` | `"horizontal"` | Columns, or bars growing right |
+| `type` | `"default" \| "stacked" \| "percent"` | `"default"` | How series combine |
+| `showValues` | `boolean` | `false` | Label each bar with its value |
+| `radius` | `number` | `4` | Corner radius of the bar end, in px |
+| `barCategoryGap` | `string \| number` | — | Gap between groups, e.g. `"20%"` |
+| `onValueClick` | `(payload: { index, category, value }) => void` | — | Called when a bar is clicked |
+
+## Examples
+
+### Single series
+
+Monthly revenue in a [Chart Card](/charts/foundation/chart-card).
+
+<ComponentPreview name="c-bar-chart-1" />
+
+### Stacked
+
+Signups stacked by channel; the tooltip adds a total.
+
+<ComponentPreview name="c-bar-chart-2" />
+
+### Horizontal with values
+
+`layout="vertical"` and `showValues` for a ranked list with long labels.
+
+<ComponentPreview name="c-bar-chart-3" />
+
+### Negative values
+
+Profit and loss, with a zero line passed as a child.
+
+<ComponentPreview name="c-bar-chart-4" />
+
+### Target line
+
+A dashed `ReferenceLine` marks the quota.
+
+<ComponentPreview name="c-bar-chart-5" />

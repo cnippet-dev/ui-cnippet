@@ -1,0 +1,99 @@
+---
+title: Spark Area
+description: A tiny area trend with no axes — for KPI cards, table cells and lists.
+---
+
+<ComponentPreview name="c-spark-area-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/spark-area
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="spark-area" title="components/charts/spark-area.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SparkArea } from "@/components/charts/spark-area";
+```
+
+```tsx
+<SparkArea data={data} index="day" categories={["revenue"]} />
+```
+
+## Good to know
+
+- It's `h-10 w-32` by default. Pass `className` to resize, e.g. `"h-14 w-full"` inside a card.
+- The y-axis fits the data's min and max, so small changes still show as a shape.
+- `colorByTrend` colours a single series green when it ends higher than it starts and red when lower. Add `invertTrend` for metrics where up is bad, such as errors or cost.
+- There's no tooltip or axes; put the current value next to the sparkline as text.
+- It has `role="img"` and an accessible name built from the props. In a list or table, pass `aria-label` per row (e.g. "Acme weekly users trend").
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | Rows to plot |
+| `index` | `keyof T` | — | Field for the x position |
+| `categories` | `(keyof T)[]` | — | Numeric fields to plot |
+| `config` | `ChartConfig` | built from `categories` | Labels or colours per series |
+| `colorByTrend` | `boolean` | `false` | Green when rising, red when falling |
+| `invertTrend` | `boolean` | `false` | Flip the trend colours |
+| `type` | `"default" \| "stacked"` | `"default"` | Stack multiple series |
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line shape |
+| `className` | `string` | — | Sizing classes |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### KPI card
+
+A spark area under a headline value in a [Chart Card](/charts/foundation/chart-card).
+
+<ComponentPreview name="c-spark-area-1" />
+
+### Table cell
+
+One sparkline per row, coloured by trend.
+
+<ComponentPreview name="c-spark-area-2" />
+
+### Trend colours
+
+`invertTrend` makes a falling error rate green and rising CPU red.
+
+<ComponentPreview name="c-spark-area-3" />

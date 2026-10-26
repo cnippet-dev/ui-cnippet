@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-area-chart-2",
+  "description": "MRR by plan — stacked areas with a total tooltip",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-area-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { enterprise: 14200, month: \"Jan\", pro: 21800, starter: 6400 },\n  { enterprise: 15100, month: \"Feb\", pro: 23100, starter: 6900 },\n  { enterprise: 16800, month: \"Mar\", pro: 24400, starter: 7300 },\n  { enterprise: 17200, month: \"Apr\", pro: 26900, starter: 7100 },\n  { enterprise: 19500, month: \"May\", pro: 28300, starter: 7800 },\n  { enterprise: 21400, month: \"Jun\", pro: 30200, starter: 8200 },\n];\n\nexport default function MrrByPlanStacked() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.073}\n      description=\"Monthly recurring revenue by plan\"\n      title=\"MRR\"\n      value={formatCurrency(59800)}\n    >\n      <AreaChart\n        categories={[\"starter\", \"pro\", \"enterprise\"]}\n        className=\"h-48\"\n        data={data}\n        fill=\"solid\"\n        index=\"month\"\n        type=\"stacked\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "area chart"
+  ],
+  "type": "registry:block"
+}

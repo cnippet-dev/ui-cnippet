@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-progress-circle-3",
+  "description": "Sizes — from 32px to 96px",
+  "registryDependencies": [
+    "@cnippet/progress-circle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-progress-circle-3.tsx",
+      "content": "\"use client\";\n\nimport { ProgressCircle } from \"@/registry/default/charts/progress-circle\";\n\nconst sizes = [\n  { size: 32, strokeWidth: 3 },\n  { size: 48, strokeWidth: 4 },\n  { size: 64, strokeWidth: 6 },\n  { size: 96, strokeWidth: 8 },\n];\n\nexport default function Sizes() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6\">\n      {sizes.map(({ size, strokeWidth }) => (\n        <ProgressCircle\n          aria-label={`Upload progress, ${size}px`}\n          key={size}\n          size={size}\n          strokeWidth={strokeWidth}\n          value={64}\n        >\n          {size >= 48 ? (\n            <span className={size >= 96 ? \"text-lg\" : \"text-xs\"}>64%</span>\n          ) : null}\n        </ProgressCircle>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress circle"
+  ],
+  "type": "registry:block"
+}

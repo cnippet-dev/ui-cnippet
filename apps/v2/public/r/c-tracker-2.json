@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-tracker-2",
+  "description": "Build history — last 30 CI runs",
+  "registryDependencies": [
+    "@cnippet/tracker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-tracker-2.tsx",
+      "content": "\"use client\";\n\nimport { Tracker } from \"@/registry/default/charts/tracker\";\n\n// Last 30 CI runs on main, oldest first.\nconst runs = \"pppppfpppppppcpppfppppppppppppp\"\n  .slice(0, 30)\n  .split(\"\")\n  .map((r, i) => {\n    const build = 1842 + i;\n    const status = r === \"f\" ? \"Failed\" : r === \"c\" ? \"Cancelled\" : \"Passed\";\n    return {\n      color:\n        status === \"Failed\"\n          ? \"var(--destructive)\"\n          : status === \"Cancelled\"\n            ? \"var(--muted-foreground)\"\n            : \"var(--success)\",\n      key: String(build),\n      tooltip: `#${build} — ${status}`,\n    };\n  });\n\nexport default function BuildHistory() {\n  const passed = runs.filter((r) => r.tooltip.endsWith(\"Passed\")).length;\n\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"flex items-baseline justify-between\">\n        <span className=\"font-mono text-sm\">main</span>\n        <span className=\"text-muted-foreground text-sm tabular-nums\">\n          {passed}/{runs.length} passed\n        </span>\n      </div>\n      <Tracker\n        aria-label=\"Last 30 CI builds on main\"\n        className=\"mt-3 h-6\"\n        data={runs}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tracker"
+  ],
+  "type": "registry:block"
+}

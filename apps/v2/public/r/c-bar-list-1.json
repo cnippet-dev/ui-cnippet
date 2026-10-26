@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-list-1",
+  "description": "Top pages — page views, last 30 days",
+  "registryDependencies": [
+    "@cnippet/bar-list",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-list-1.tsx",
+      "content": "\"use client\";\n\nimport { BarList } from \"@/registry/default/charts/bar-list\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\nconst pages = [\n  { name: \"/pricing\", value: 48210 },\n  { name: \"/docs/install\", value: 39870 },\n  { name: \"/blog/v2-launch\", value: 31540 },\n  { name: \"/changelog\", value: 22960 },\n  { name: \"/docs/theming\", value: 18430 },\n];\n\nexport default function TopPages() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Page views, last 30 days\"\n      title=\"Top pages\"\n    >\n      <BarList aria-label=\"Top pages by views\" data={pages} />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar list"
+  ],
+  "type": "registry:block"
+}

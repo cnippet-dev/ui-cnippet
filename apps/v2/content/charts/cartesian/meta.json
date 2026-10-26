@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "area-chart",
+    "bar-chart",
+    "line-chart",
+    "combo-chart",
+    "scatter-chart"
+  ],
+  "title": "Cartesian"
+}

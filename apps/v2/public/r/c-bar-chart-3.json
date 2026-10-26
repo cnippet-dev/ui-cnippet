@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-chart-3",
+  "description": "Top pages — horizontal bars with value labels",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\nconst data = [\n  { page: \"/pricing\", views: 48210 },\n  { page: \"/docs/install\", views: 39870 },\n  { page: \"/blog/v2-launch\", views: 31540 },\n  { page: \"/changelog\", views: 22960 },\n  { page: \"/docs/theming\", views: 18430 },\n  { page: \"/careers\", views: 9120 },\n];\n\nexport default function TopPages() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Page views, last 30 days\"\n      title=\"Top pages\"\n    >\n      <BarChart\n        categories={[\"views\"]}\n        className=\"h-52\"\n        config={{ views: { color: \"var(--chart-2)\", label: \"Views\" } }}\n        data={data}\n        index=\"page\"\n        layout=\"vertical\"\n        showGrid={false}\n        showValues\n        showXAxis={false}\n        yAxisWidth={112}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar chart"
+  ],
+  "type": "registry:block"
+}

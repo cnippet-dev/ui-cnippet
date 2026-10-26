@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-combo-chart-1",
+  "description": "Revenue & growth — bars in $ with a % line on a second axis",
+  "registryDependencies": [
+    "@cnippet/combo-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-combo-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ComboChart } from \"@/registry/default/charts/combo-chart\";\nimport {\n  formatCurrency,\n  formatPercent,\n} from \"@/registry/default/lib/chart-utils\";\n\n// Growth is month-over-month change in revenue.\nconst data = [\n  { growth: 0.021, month: \"Jan\", revenue: 41200 },\n  { growth: -0.056, month: \"Feb\", revenue: 38900 },\n  { growth: 0.172, month: \"Mar\", revenue: 45600 },\n  { growth: 0.033, month: \"Apr\", revenue: 47100 },\n  { growth: 0.11, month: \"May\", revenue: 52300 },\n  { growth: -0.048, month: \"Jun\", revenue: 49800 },\n  { growth: 0.112, month: \"Jul\", revenue: 55400 },\n  { growth: 0.063, month: \"Aug\", revenue: 58900 },\n];\n\nexport default function RevenueAndGrowth() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Monthly revenue with month-over-month growth\"\n      title=\"Revenue & growth\"\n    >\n      <ComboChart\n        barCategories={[\"revenue\"]}\n        className=\"h-48\"\n        config={{ growth: { label: \"MoM growth\" } }}\n        data={data}\n        dualAxis\n        index=\"month\"\n        lineCategories={[\"growth\"]}\n        lineValueFormatter={(value) => formatPercent(value, { digits: 0 })}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combo chart"
+  ],
+  "type": "registry:block"
+}

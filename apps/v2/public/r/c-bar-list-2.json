@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-list-2",
+  "description": "Top countries — flags and % share",
+  "registryDependencies": [
+    "@cnippet/bar-list",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-list-2.tsx",
+      "content": "\"use client\";\n\nimport { BarList } from \"@/registry/default/charts/bar-list\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst countries = [\n  {\n    icon: <span aria-hidden=\"true\">🇺🇸</span>,\n    name: \"United States\",\n    value: 0.382,\n  },\n  { icon: <span aria-hidden=\"true\">🇩🇪</span>, name: \"Germany\", value: 0.124 },\n  { icon: <span aria-hidden=\"true\">🇮🇳</span>, name: \"India\", value: 0.117 },\n  {\n    icon: <span aria-hidden=\"true\">🇬🇧</span>,\n    name: \"United Kingdom\",\n    value: 0.089,\n  },\n  { icon: <span aria-hidden=\"true\">🇧🇷</span>, name: \"Brazil\", value: 0.061 },\n];\n\nexport default function TopCountries() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Share of visitors, last 30 days\"\n      title=\"Top countries\"\n    >\n      <BarList\n        aria-label=\"Visitors by country\"\n        data={countries}\n        valueFormatter={(value) => formatPercent(value)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar list"
+  ],
+  "type": "registry:block"
+}

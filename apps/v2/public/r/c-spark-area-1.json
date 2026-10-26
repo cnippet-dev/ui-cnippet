@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-area-1",
+  "description": "KPI card — revenue with a 7-day spark area",
+  "registryDependencies": [
+    "@cnippet/spark-area",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-area-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SparkArea } from \"@/registry/default/charts/spark-area\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { day: \"Mon\", revenue: 6120 },\n  { day: \"Tue\", revenue: 6840 },\n  { day: \"Wed\", revenue: 6510 },\n  { day: \"Thu\", revenue: 7290 },\n  { day: \"Fri\", revenue: 7980 },\n  { day: \"Sat\", revenue: 7410 },\n  { day: \"Sun\", revenue: 8360 },\n];\n\nexport default function RevenueKpi() {\n  return (\n    <ChartCard\n      className=\"max-w-xs\"\n      delta={0.091}\n      description=\"Last 7 days\"\n      title=\"Revenue\"\n      value={formatCurrency(50510)}\n    >\n      <SparkArea\n        categories={[\"revenue\"]}\n        className=\"h-14 w-full\"\n        data={data}\n        index=\"day\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark area"
+  ],
+  "type": "registry:block"
+}

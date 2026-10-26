@@ -65,6 +65,9 @@ formatCurrency(48200); // "$48.2K"
 | `formatDate(date, options?)` | `formatDate("2026-03-14")` | `"Mar 14"` |
 | `buildChartConfig(categories, overrides?)` | `buildChartConfig(["desktop", "mobile"])` | `desktop` → `var(--chart-1)`, `mobile` → `var(--chart-2)` |
 | `sumBy(rows, keys)` | `sumBy(data, ["desktop", "mobile"])` | Sum of both columns across every row |
+| `describeChart(kind, categories, index)` | `describeChart("Area chart", ["desktop"], "month")` | `"Area chart of desktop by month"` |
+| `trendColor(values, invert?)` | `trendColor([3, 5, 8])` | `"var(--success)"` (rising), `"var(--destructive)"` (falling) |
+| `BaseChartProps<T>` | type | The [common chart props](/docs/chart-components/foundation#common-props) |
 
 ## Good to know
 

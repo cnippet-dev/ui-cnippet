@@ -1,0 +1,95 @@
+---
+title: Bar List
+description: Ranked horizontal bars with a name and value per row — top pages, countries or referrers.
+---
+
+<ComponentPreview name="c-bar-list-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/bar-list
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="bar-list" title="components/charts/bar-list.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BarList } from "@/components/charts/bar-list";
+```
+
+```tsx
+<BarList
+  data={[
+    { name: "/pricing", value: 48210 },
+    { name: "/docs/install", value: 39870 },
+  ]}
+/>
+```
+
+## Good to know
+
+- Plain HTML and CSS: no chart library, so it's light enough for any page.
+- Rows sort highest first. Use `sortOrder="ascending"` or `"none"` to change it.
+- Bar widths are relative to the largest value, so the top row always fills the width.
+- Give a row an `href` to make it a link, or pass `onValueClick` to make every row a button.
+- `icon` sits before the name, e.g. a flag or favicon. Mark decorative icons `aria-hidden`.
+- The bar colour is `--chart-1` at 20% opacity; change the `bg-chart-1/20` class to restyle it.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `{ name, value, href?, icon?, key? }[]` | — | Rows |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the values |
+| `sortOrder` | `"descending" \| "ascending" \| "none"` | `"descending"` | Row order |
+| `onValueClick` | `(item) => void` | — | Makes rows buttons |
+| `className` | `string` | — | Classes for the list |
+| `aria-label` | `string` | — | Name of the list |
+
+## Examples
+
+### Top pages
+
+Page views over the last 30 days.
+
+<ComponentPreview name="c-bar-list-1" />
+
+### Countries with flags
+
+`icon` for flags and a percent formatter.
+
+<ComponentPreview name="c-bar-list-2" />
+
+### Clickable rows
+
+`onValueClick` turns each row into a button that filters the dashboard.
+
+<ComponentPreview name="c-bar-list-3" />

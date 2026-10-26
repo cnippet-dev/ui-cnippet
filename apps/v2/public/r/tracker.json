@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tracker",
+  "description": "Row of status blocks with tooltips, e.g. daily uptime or build history",
+  "registryDependencies": [
+    "@cnippet/tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/tracker.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport {\n  Tooltip,\n  TooltipPopup,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport type TrackerBlock = {\n  /** CSS colour, e.g. \"var(--success)\". Default: var(--muted). */\n  color?: string;\n  /** Shown on hover/focus and read by screen readers, e.g. \"Oct 12 — Operational\". */\n  tooltip: string;\n  key?: string;\n};\n\nexport type TrackerProps = {\n  data: TrackerBlock[];\n  /** Describes the whole row, e.g. \"API uptime, last 90 days\". */\n  \"aria-label\": string;\n  className?: string;\n};\n\nexport function Tracker({\n  data,\n  \"aria-label\": ariaLabel,\n  className,\n}: TrackerProps) {\n  // Roving focus: the row is one tab stop, arrow keys move between blocks.\n  const [activeIndex, setActive] = React.useState(Math.max(data.length - 1, 0));\n  const active = Math.min(activeIndex, data.length - 1);\n  const refs = React.useRef<(HTMLButtonElement | null)[]>([]);\n\n  const move = (event: React.KeyboardEvent, i: number) => {\n    const next =\n      event.key === \"ArrowRight\"\n        ? i + 1\n        : event.key === \"ArrowLeft\"\n          ? i - 1\n          : event.key === \"Home\"\n            ? 0\n            : event.key === \"End\"\n              ? data.length - 1\n              : undefined;\n    if (next === undefined || next < 0 || next >= data.length) return;\n    event.preventDefault();\n    setActive(next);\n    refs.current[next]?.focus();\n  };\n\n  return (\n    <TooltipProvider delay={0}>\n      <div\n        aria-label={ariaLabel}\n        className={cn(\"flex h-8 w-full gap-px sm:gap-0.5\", className)}\n        data-slot=\"tracker\"\n        role=\"group\"\n      >\n        {data.map((block, i) => (\n          <Tooltip key={block.key ?? i}>\n            <TooltipTrigger\n              render={\n                <button\n                  aria-label={block.tooltip}\n                  className=\"h-full min-w-0 flex-1 rounded-[1px] outline-none first:rounded-s-sm last:rounded-e-sm hover:opacity-72 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background\"\n                  onFocus={() => setActive(i)}\n                  onKeyDown={(event) => move(event, i)}\n                  ref={(el) => {\n                    refs.current[i] = el;\n                  }}\n                  style={{ backgroundColor: block.color ?? \"var(--muted)\" }}\n                  tabIndex={i === active ? 0 : -1}\n                  type=\"button\"\n                />\n              }\n            />\n            <TooltipPopup>{block.tooltip}</TooltipPopup>\n          </Tooltip>\n        ))}\n      </div>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/tracker.tsx"
+    }
+  ],
+  "categories": [
+    "tracker"
+  ],
+  "type": "registry:ui"
+}

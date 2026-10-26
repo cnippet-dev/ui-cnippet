@@ -1,4 +1,4 @@
 {
-  "pages": ["foundation"],
+  "pages": ["foundation", "cartesian", "micro"],
   "title": "Chart Components"
 }

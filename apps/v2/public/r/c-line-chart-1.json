@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-line-chart-1",
+  "description": "API latency — p50, p90 and p99 over a day",
+  "registryDependencies": [
+    "@cnippet/line-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-line-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\n\n// API latency percentiles (ms) over a day.\nconst data = [\n  { p50: 82, p90: 164, p99: 412, time: \"00:00\" },\n  { p50: 78, p90: 151, p99: 388, time: \"03:00\" },\n  { p50: 91, p90: 182, p99: 455, time: \"06:00\" },\n  { p50: 118, p90: 236, p99: 618, time: \"09:00\" },\n  { p50: 126, p90: 252, p99: 702, time: \"12:00\" },\n  { p50: 121, p90: 241, p99: 664, time: \"15:00\" },\n  { p50: 104, p90: 208, p99: 531, time: \"18:00\" },\n  { p50: 88, p90: 176, p99: 449, time: \"21:00\" },\n];\n\nconst ms = (value: number) => `${value} ms`;\n\nexport default function ApiLatency() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.041}\n      description=\"Response time percentiles, last 24 hours\"\n      invertDelta\n      title=\"API latency\"\n      value={ms(104)}\n    >\n      <LineChart\n        categories={[\"p50\", \"p90\", \"p99\"]}\n        className=\"h-48\"\n        config={{\n          p50: { label: \"p50\" },\n          p90: { label: \"p90\" },\n          p99: { label: \"p99\" },\n        }}\n        data={data}\n        index=\"time\"\n        valueFormatter={ms}\n        yAxisWidth={64}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "line chart"
+  ],
+  "type": "registry:block"
+}

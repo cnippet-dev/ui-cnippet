@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-area-2",
+  "description": "Table cell — weekly users trend per workspace",
+  "registryDependencies": [
+    "@cnippet/spark-area",
+    "@cnippet/table",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-area-2.tsx",
+      "content": "\"use client\";\n\nimport { SparkArea } from \"@/registry/default/charts/spark-area\";\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/default/ui/table\";\n\n// Weekly active users per workspace, last 8 weeks.\nconst workspaces = [\n  { name: \"Acme Corp\", users: [412, 438, 451, 497, 523, 548, 571, 602] },\n  { name: \"Globex\", users: [288, 301, 296, 310, 305, 322, 318, 331] },\n  { name: \"Initech\", users: [196, 188, 175, 169, 160, 152, 149, 141] },\n  { name: \"Umbrella\", users: [120, 134, 151, 168, 182, 205, 231, 254] },\n];\n\nexport default function ActiveUsersTable() {\n  return (\n    <Table className=\"max-w-lg\">\n      <TableHeader>\n        <TableRow>\n          <TableHead>Workspace</TableHead>\n          <TableHead>Last 8 weeks</TableHead>\n          <TableHead className=\"text-end\">Weekly users</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {workspaces.map((ws) => (\n          <TableRow key={ws.name}>\n            <TableCell className=\"font-medium\">{ws.name}</TableCell>\n            <TableCell>\n              <SparkArea\n                aria-label={`${ws.name} weekly users trend`}\n                categories={[\"users\"]}\n                className=\"h-8 w-28\"\n                colorByTrend\n                data={ws.users.map((users, week) => ({ users, week }))}\n                index=\"week\"\n              />\n            </TableCell>\n            <TableCell className=\"text-end tabular-nums\">\n              {formatCompact(ws.users.at(-1) ?? 0)}\n            </TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark area"
+  ],
+  "type": "registry:block"
+}

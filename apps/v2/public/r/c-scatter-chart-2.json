@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-scatter-chart-2",
+  "description": "Deal size vs sales cycle — bubbles sized by seats",
+  "registryDependencies": [
+    "@cnippet/scatter-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-scatter-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ScatterChart } from \"@/registry/default/charts/scatter-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Closed deals: bigger contracts take longer to close. Dot size is seats.\nconst data = [\n  { account: \"Northwind\", cycle: 14, deal: 6400, seats: 12, segment: \"SMB\" },\n  { account: \"Brightline\", cycle: 21, deal: 9800, seats: 20, segment: \"SMB\" },\n  { account: \"Kestrel\", cycle: 18, deal: 7200, seats: 15, segment: \"SMB\" },\n  { account: \"Fable & Co\", cycle: 27, deal: 12400, seats: 25, segment: \"SMB\" },\n  {\n    account: \"Atlas Freight\",\n    cycle: 41,\n    deal: 38500,\n    seats: 80,\n    segment: \"Mid-market\",\n  },\n  {\n    account: \"Lumen Health\",\n    cycle: 52,\n    deal: 46200,\n    seats: 110,\n    segment: \"Mid-market\",\n  },\n  {\n    account: \"Orbital\",\n    cycle: 38,\n    deal: 31000,\n    seats: 65,\n    segment: \"Mid-market\",\n  },\n  {\n    account: \"Vantage Bank\",\n    cycle: 96,\n    deal: 182000,\n    seats: 420,\n    segment: \"Enterprise\",\n  },\n  {\n    account: \"Helix Energy\",\n    cycle: 124,\n    deal: 240000,\n    seats: 650,\n    segment: \"Enterprise\",\n  },\n  {\n    account: \"Meridian\",\n    cycle: 88,\n    deal: 156000,\n    seats: 380,\n    segment: \"Enterprise\",\n  },\n];\n\nexport default function DealSizeVsCycle() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Closed-won deals in 2026 by segment; dot size is seats\"\n      title=\"Deal size vs sales cycle\"\n    >\n      <ScatterChart\n        className=\"h-52\"\n        data={data}\n        groupBy=\"segment\"\n        label=\"account\"\n        size=\"seats\"\n        sizeLabel=\"Seats\"\n        x=\"cycle\"\n        xLabel=\"Days to close\"\n        xValueFormatter={(value) => `${value}d`}\n        y=\"deal\"\n        yLabel=\"Deal size\"\n        yValueFormatter={(value) => formatCurrency(value)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scatter chart"
+  ],
+  "type": "registry:block"
+}

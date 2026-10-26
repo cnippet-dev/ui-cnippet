@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-chart-1",
+  "description": "Monthly revenue — single series in a chart card",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { month: \"Jan\", revenue: 41200 },\n  { month: \"Feb\", revenue: 38900 },\n  { month: \"Mar\", revenue: 45600 },\n  { month: \"Apr\", revenue: 47100 },\n  { month: \"May\", revenue: 52300 },\n  { month: \"Jun\", revenue: 49800 },\n  { month: \"Jul\", revenue: 55400 },\n  { month: \"Aug\", revenue: 58900 },\n];\n\nexport default function MonthlyRevenue() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.064}\n      description=\"Net revenue per month, 2026\"\n      title=\"Revenue\"\n      value={formatCurrency(58900)}\n    >\n      <BarChart\n        categories={[\"revenue\"]}\n        className=\"h-48\"\n        data={data}\n        index=\"month\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar chart"
+  ],
+  "type": "registry:block"
+}

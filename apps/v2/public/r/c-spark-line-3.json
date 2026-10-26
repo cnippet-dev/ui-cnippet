@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-line-3",
+  "description": "Up vs down — the same line coloured by what rising means",
+  "registryDependencies": [
+    "@cnippet/spark-line"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-line-3.tsx",
+      "content": "\"use client\";\n\nimport { SparkLine } from \"@/registry/default/charts/spark-line\";\n\n// Same shape, opposite meaning: rising signups are good, rising costs are not.\nconst rising = [12, 14, 13, 17, 19, 18, 22, 25, 24, 28];\n\nconst cards = [\n  { invert: false, name: \"Signups\", note: \"Up is good\" },\n  { invert: true, name: \"Cloud cost\", note: \"Up is bad (invertTrend)\" },\n];\n\nexport default function UpVsDownColour() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-2 gap-3\">\n      {cards.map((c) => (\n        <div className=\"rounded-lg border bg-card p-4\" key={c.name}>\n          <div className=\"font-medium text-sm\">{c.name}</div>\n          <div className=\"text-muted-foreground text-xs\">{c.note}</div>\n          <SparkLine\n            aria-label={`${c.name} trend`}\n            categories={[\"v\"]}\n            className=\"mt-3 h-12 w-full\"\n            colorByTrend\n            data={rising.map((v, i) => ({ i, v }))}\n            index=\"i\"\n            invertTrend={c.invert}\n            showLastDot\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark line"
+  ],
+  "type": "registry:block"
+}

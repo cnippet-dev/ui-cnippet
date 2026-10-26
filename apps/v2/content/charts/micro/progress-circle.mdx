@@ -1,0 +1,92 @@
+---
+title: Progress Circle
+description: A ring showing progress toward a maximum, with content in the centre.
+---
+
+<ComponentPreview name="c-progress-circle-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/progress-circle
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="progress-circle" title="components/charts/progress-circle.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ProgressCircle } from "@/components/charts/progress-circle";
+```
+
+```tsx
+<ProgressCircle value={72} aria-label="Profile completion">
+  72%
+</ProgressCircle>
+```
+
+## Good to know
+
+- `value` runs from 0 to `max` (default 100) and is clamped to that range.
+- It has `role="progressbar"` with `aria-valuenow`, `aria-valuemin` and `aria-valuemax`. Always pass `aria-label`.
+- `children` render in the centre; keep them short, like a percentage or an icon.
+- `color` takes any CSS colour. Pick it from the value for thresholds (see the quota example).
+- `size` is the diameter in px; scale `strokeWidth` with it.
+- The arc animates when `value` changes, unless the user has reduced motion on.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Current progress |
+| `max` | `number` | `100` | Value for a full ring |
+| `size` | `number` | `64` | Diameter in px |
+| `strokeWidth` | `number` | `6` | Ring thickness in px |
+| `color` | `string` | `var(--chart-1)` | CSS colour of the arc |
+| `children` | `ReactNode` | — | Centre content |
+| `className` | `string` | — | Classes for the wrapper |
+| `aria-label` | `string` | — | Accessible name |
+
+## Examples
+
+### Profile completion
+
+A ring next to the checklist it summarises.
+
+<ComponentPreview name="c-progress-circle-1" />
+
+### Quota thresholds
+
+Green under 75%, amber to 90%, red above.
+
+<ComponentPreview name="c-progress-circle-2" />
+
+### Sizes
+
+From 32px to 96px, with the label hidden at the smallest size.
+
+<ComponentPreview name="c-progress-circle-3" />

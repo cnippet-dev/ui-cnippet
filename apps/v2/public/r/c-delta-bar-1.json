@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-delta-bar-1",
+  "description": "NPS change — points gained or lost per area",
+  "registryDependencies": [
+    "@cnippet/delta-bar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-delta-bar-1.tsx",
+      "content": "\"use client\";\n\nimport { DeltaBar } from \"@/registry/default/charts/delta-bar\";\n\n// NPS this quarter vs last, per product area. Delta is the change in points / 100.\nconst areas = [\n  { delta: 0.18, name: \"Onboarding\", nps: 52 },\n  { delta: 0.07, name: \"Billing\", nps: 31 },\n  { delta: -0.11, name: \"Mobile app\", nps: 24 },\n  { delta: -0.03, name: \"Support\", nps: 46 },\n];\n\nexport default function NpsChange() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">NPS change vs last quarter</div>\n      <ul className=\"mt-4 grid gap-4\">\n        {areas.map((a) => (\n          <li\n            className=\"grid grid-cols-[7rem_1fr_3.5rem] items-center gap-3\"\n            key={a.name}\n          >\n            <span className=\"truncate text-sm\">{a.name}</span>\n            <DeltaBar\n              aria-label={`${a.name}: NPS ${a.nps}, ${a.delta > 0 ? \"up\" : \"down\"} ${Math.abs(Math.round(a.delta * 100))} points`}\n              value={a.delta}\n            />\n            <span className=\"text-end text-sm tabular-nums\">\n              {a.delta > 0 ? \"+\" : \"−\"}\n              {Math.abs(Math.round(a.delta * 100))}\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "delta bar"
+  ],
+  "type": "registry:block"
+}
