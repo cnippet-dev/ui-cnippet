@@ -3,6 +3,7 @@
 import {
   motion,
   type SpringOptions,
+  useReducedMotion,
   useSpring,
   useTransform,
 } from "motion/react";
@@ -23,14 +24,16 @@ export function AnimatedNumber({
   as = "span",
 }: AnimatedNumberProps) {
   const MotionComponent = motion.create(as as keyof JSX.IntrinsicElements);
+  const reduceMotion = useReducedMotion();
   const spring = useSpring(value, springOptions);
   const display = useTransform(spring, (current) =>
     Math.round(current).toLocaleString(),
   );
 
   useEffect(() => {
-    spring.set(value);
-  }, [spring, value]);
+    if (reduceMotion) spring.jump(value);
+    else spring.set(value);
+  }, [spring, value, reduceMotion]);
 
   return (
     <MotionComponent className={cn("tabular-nums", className)}>

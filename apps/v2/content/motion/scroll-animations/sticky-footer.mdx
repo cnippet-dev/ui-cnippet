@@ -1,0 +1,92 @@
+---
+title: Sticky Footer
+description: A footer that waits underneath the page and is uncovered as you reach the end of the scroll.
+---
+
+<ComponentPreview name="m-sticky-footer-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add sticky-footer
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sticky-footer" title="components/motion/sticky-footer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { StickyFooter } from "@/components/motion/sticky-footer";
+```
+
+```tsx
+<StickyFooter height={320}>
+  <div className="size-full bg-foreground text-background">…</div>
+</StickyFooter>
+```
+
+## Anatomy
+
+```tsx
+<StickyFooter height={…}>{/* footer content */}</StickyFooter> {/* clipped <footer> > sticky content */}
+```
+
+## Good to know
+
+- Put it last on the page. It needs a fixed `height`: a number in px, or any CSS length.
+- It is pure CSS (`position: sticky` and `clip-path`), so it needs no scroll listeners or extra packages, and it works inside any scroll container.
+- Give the footer content its own background.
+- Reduced motion makes no difference because nothing animates: the page simply scrolls off the footer.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Footer content |
+| `height` | `number \| string` | `320` | Footer height; numbers are px |
+| `contentClassName` | `string` | — | Classes for the sticky content |
+| `...props` | `ComponentProps<"footer">` | — | Passed to the `<footer>` |
+
+## Examples
+
+### Brand Footer
+
+An oversized wordmark uncovered at the end of the page.
+
+<ComponentPreview name="m-sticky-footer-1" />
+
+### CTA Footer
+
+A sign-up prompt revealed under an FAQ.
+
+<ComponentPreview name="m-sticky-footer-2" />
+
+### Newsletter Footer
+
+An email form revealed under a list of posts.
+
+<ComponentPreview name="m-sticky-footer-3" />

@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import { type UseScrollOptions, useScroll, useTransform } from "motion/react";
+import {
+  type UseScrollOptions,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { type RefObject, useEffect, useRef } from "react";
 
 type PreserveAspectRatioAlign =
@@ -67,6 +72,7 @@ export function TextAlongPath({
   scrollOffset = ["start end", "end end"],
   scrollTransformValues = [0, 100],
 }: TextAlongPathProps) {
+  const reduceMotion = useReducedMotion();
   const textPathRefs = useRef<SVGTextPathElement[]>([]);
   const id = pathId ?? `text-path-${Math.random().toString(36).substring(7)}`;
 
@@ -91,17 +97,18 @@ export function TextAlongPath({
     };
   }, [scrollYProgress, t, animationType]);
 
-  const animationProps =
-    animationType === "auto"
-      ? {
-          begin: "0s",
-          dur: `${duration}s`,
-          from: "0%",
-          repeatCount,
-          to: "100%",
-          ...easingFunction,
-        }
-      : null;
+  // Reduced motion: the auto loop is dropped and the text stays at its start.
+  const isLooping = animationType === "auto" && !reduceMotion;
+  const animationProps = isLooping
+    ? {
+        begin: "0s",
+        dur: `${duration}s`,
+        from: "0%",
+        repeatCount,
+        to: "100%",
+        ...easingFunction,
+      }
+    : null;
 
   return (
     <svg
@@ -128,13 +135,13 @@ export function TextAlongPath({
           }}
           startOffset="0%"
         >
-          {animationType === "auto" && (
+          {isLooping && (
             <animate attributeName="startOffset" {...animationProps} />
           )}
           {text}
         </textPath>
       </text>
-      {animationType === "auto" && (
+      {isLooping && (
         <text fill="currentColor" textAnchor={textAnchor}>
           <textPath
             className={textClassName}

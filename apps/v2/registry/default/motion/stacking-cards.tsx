@@ -4,6 +4,7 @@ import {
   type MotionValue,
   motion,
   type UseScrollOptions,
+  useReducedMotion,
   useScroll,
   useTransform,
 } from "motion/react";
@@ -86,6 +87,7 @@ export function StackingCardItem({
     scaleMultiplier,
     totalCards = 0,
   } = useStackingCardsContext();
+  const reduceMotion = useReducedMotion();
   const scaleTo = 1 - (totalCards - index) * (scaleMultiplier ?? 0.03);
   const rangeScale = [index * (1 / totalCards), 1];
   const scale = useTransform(progress, rangeScale, [1, scaleTo]);
@@ -93,7 +95,10 @@ export function StackingCardItem({
 
   return (
     <div className={cn("sticky top-0 h-full", className)} {...props}>
-      <motion.div className="relative h-full origin-top" style={{ scale, top }}>
+      <motion.div
+        className="relative h-full origin-top"
+        style={{ scale: reduceMotion ? 1 : scale, top }}
+      >
         {children}
       </motion.div>
     </div>

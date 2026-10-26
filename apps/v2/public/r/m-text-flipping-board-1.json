@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-flipping-board-1",
+  "description": "Departures board — four rows that flip to the next set of flights",
+  "registryDependencies": [
+    "@cnippet/text-flipping-board"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-flipping-board-1.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { TextFlippingBoard } from \"@/registry/default/motion/text-flipping-board\";\n\nconst BOARDS = [\n  [\n    \"FLT  DEST     TIME\",\n    \"BA12 LONDON   0915\",\n    \"LH44 BERLIN   0940\",\n    \"AF31 PARIS    1005\",\n  ],\n  [\n    \"FLT  DEST     TIME\",\n    \"EK07 DUBAI    1030\",\n    \"SQ21 SINGAPORE\",\n    \"NH10 TOKYO    1120\",\n  ],\n];\n\nexport default function TextFlippingBoardDepartures() {\n  const [board, setBoard] = useState(0);\n\n  useEffect(() => {\n    const id = setInterval(\n      () => setBoard((b) => (b + 1) % BOARDS.length),\n      7000,\n    );\n    return () => clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex min-h-80 items-center justify-center p-6\">\n      <div className=\"rounded-xl border bg-card p-3 shadow-sm sm:p-4\">\n        <p className=\"mb-2 font-medium text-muted-foreground text-xs uppercase tracking-widest\">\n          Departures\n        </p>\n        <TextFlippingBoard\n          className=\"text-xs sm:text-base\"\n          cols={18}\n          rows={4}\n          text={BOARDS[board] ?? []}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text flipping board"
+  ],
+  "type": "registry:block"
+}

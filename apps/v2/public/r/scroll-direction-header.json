@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-direction-header",
+  "description": "Header that hides while scrolling one way and returns when scrolling back",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/scroll-direction-header.tsx",
+      "content": "\"use client\";\n\nimport {\n  type HTMLMotionProps,\n  motion,\n  useMotionValueEvent,\n  useReducedMotion,\n  useScroll,\n} from \"motion/react\";\nimport { type RefObject, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type ScrollDirectionHeaderProps = {\n  /** Px scrolled in one direction before it toggles. */\n  threshold?: number;\n  /** Scroll direction that hides it. */\n  hideOn?: \"down\" | \"up\";\n  /** Edge it slides out of. */\n  side?: \"top\" | \"bottom\";\n  /** Scrollable ancestor to track instead of the window. */\n  containerRef?: RefObject<HTMLElement | null>;\n} & HTMLMotionProps<\"header\">;\n\nexport function ScrollDirectionHeader({\n  children,\n  threshold = 12,\n  hideOn = \"down\",\n  side = \"top\",\n  containerRef,\n  className,\n  onFocus,\n  ...props\n}: ScrollDirectionHeaderProps) {\n  const reduceMotion = useReducedMotion();\n  const [hidden, setHidden] = useState(false);\n  const anchor = useRef(0);\n  const { scrollY } = useScroll({ container: containerRef });\n\n  useMotionValueEvent(scrollY, \"change\", (y) => {\n    // Always show near the top of the page.\n    if (y <= threshold) {\n      anchor.current = y;\n      setHidden(false);\n      return;\n    }\n    const delta = y - anchor.current;\n    if (Math.abs(delta) < threshold) return;\n    anchor.current = y;\n    setHidden((delta > 0 ? \"down\" : \"up\") === hideOn);\n  });\n\n  return (\n    <motion.header\n      animate={{ y: hidden ? (side === \"top\" ? \"-110%\" : \"110%\") : \"0%\" }}\n      className={cn(\n        \"sticky z-40\",\n        side === \"top\" ? \"top-0\" : \"bottom-0\",\n        className,\n      )}\n      initial={false}\n      // Keyboard users tabbing into a hidden header bring it back.\n      onFocus={(e) => {\n        setHidden(false);\n        onFocus?.(e);\n      }}\n      transition={\n        reduceMotion\n          ? { duration: 0 }\n          : { damping: 30, stiffness: 300, type: \"spring\" }\n      }\n      {...props}\n    >\n      {children}\n    </motion.header>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/scroll-direction-header.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

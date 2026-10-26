@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   type Transition,
+  useReducedMotion,
   type Variants,
 } from "motion/react";
 import { useId, useMemo } from "react";
@@ -39,6 +40,7 @@ export function TextMorph({
   variants,
   transition,
 }: TextMorphProps) {
+  const reduceMotion = useReducedMotion();
   const uniqueId = useId();
 
   const characters = useMemo(() => {
@@ -65,7 +67,9 @@ export function TextMorph({
             initial="initial"
             key={character.id}
             layoutId={character.id}
-            transition={transition ?? defaultTransition}
+            transition={
+              reduceMotion ? { duration: 0 } : (transition ?? defaultTransition)
+            }
             variants={variants ?? defaultVariants}
           >
             {character.label}

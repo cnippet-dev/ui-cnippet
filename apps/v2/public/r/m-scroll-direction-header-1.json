@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-direction-header-1",
+  "description": "Site header — hides while reading down, returns on scroll up",
+  "registryDependencies": [
+    "@cnippet/scroll-direction-header"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-direction-header-1.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ScrollDirectionHeader } from \"@/registry/default/motion/scroll-direction-header\";\n\nconst paragraphs = Array.from({ length: 8 }, (_, i) => i);\n\nexport default function ScrollDirectionHeaderSite() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative h-96 w-full overflow-y-auto\" ref={containerRef}>\n      <ScrollDirectionHeader\n        className=\"border-b bg-background/80 backdrop-blur\"\n        containerRef={containerRef}\n      >\n        <nav className=\"mx-auto flex h-14 max-w-2xl items-center justify-between px-6\">\n          <a className=\"font-semibold text-foreground\" href=\"#top\">\n            Northwind\n          </a>\n          <div className=\"flex gap-5 text-muted-foreground text-sm\">\n            <a href=\"#product\">Product</a>\n            <a href=\"#pricing\">Pricing</a>\n            <a href=\"#blog\">Blog</a>\n          </div>\n        </nav>\n      </ScrollDirectionHeader>\n      <article className=\"mx-auto max-w-2xl space-y-4 px-6 py-10\">\n        <h3 className=\"font-bold text-2xl text-foreground\">\n          Scroll down to hide the header, up to bring it back\n        </h3>\n        {paragraphs.map((i) => (\n          <p className=\"text-muted-foreground\" key={i}>\n            The header gets out of the way while you read and comes back the\n            moment you scroll up, so navigation is always one flick away.\n          </p>\n        ))}\n      </article>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll direction header"
+  ],
+  "type": "registry:block"
+}

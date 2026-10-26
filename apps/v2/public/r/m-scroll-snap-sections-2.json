@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-snap-sections-2",
+  "description": "Onboarding slides — horizontal slides in a phone-sized frame",
+  "registryDependencies": [
+    "@cnippet/scroll-snap-sections"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-snap-sections-2.tsx",
+      "content": "\"use client\";\n\nimport { BellIcon, FolderIcon, UsersIcon } from \"lucide-react\";\nimport { ScrollSnapSections } from \"@/registry/default/motion/scroll-snap-sections\";\n\nconst slides = [\n  {\n    icon: FolderIcon,\n    id: \"onb-projects\",\n    text: \"Keep every file and task in one place.\",\n    title: \"Projects\",\n  },\n  {\n    icon: UsersIcon,\n    id: \"onb-team\",\n    text: \"Invite your team and assign work in a click.\",\n    title: \"Teamwork\",\n  },\n  {\n    icon: BellIcon,\n    id: \"onb-alerts\",\n    text: \"Only get notified about what matters to you.\",\n    title: \"Focus\",\n  },\n];\n\nexport default function ScrollSnapSectionsOnboarding() {\n  return (\n    <div className=\"flex justify-center py-4\">\n      <ScrollSnapSections\n        className=\"h-96 w-72 overflow-hidden rounded-3xl border\"\n        direction=\"horizontal\"\n        sections={slides.map(({ icon: Icon, ...s }) => ({\n          content: (\n            <div className=\"flex flex-col items-center px-8 text-center\">\n              <span className=\"flex size-16 items-center justify-center rounded-2xl bg-muted\">\n                <Icon className=\"size-7 text-foreground\" />\n              </span>\n              <h3 className=\"mt-6 font-semibold text-foreground text-xl\">\n                {s.title}\n              </h3>\n              <p className=\"mt-2 text-muted-foreground text-sm\">{s.text}</p>\n            </div>\n          ),\n          id: s.id,\n          label: s.title,\n        }))}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll snap sections"
+  ],
+  "type": "registry:block"
+}

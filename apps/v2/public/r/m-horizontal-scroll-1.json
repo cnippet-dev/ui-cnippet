@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-horizontal-scroll-1",
+  "description": "Case studies — cards with results scroll sideways while pinned",
+  "registryDependencies": [
+    "@cnippet/horizontal-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-horizontal-scroll-1.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { HorizontalScroll } from \"@/registry/default/motion/horizontal-scroll\";\n\nconst photo = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=576&h=320&fit=crop&dpr=2&q=80`;\n\nconst cases = [\n  {\n    client: \"Alpine Huts\",\n    id: \"1506905925346-21bda4d32df4\",\n    result: \"+38% bookings\",\n  },\n  {\n    client: \"Tidewater\",\n    id: \"1505142468610-359e7d316be0\",\n    result: \"2× faster checkout\",\n  },\n  { client: \"Grove\", id: \"1441974231531-c6227db76b6e\", result: \"-24% churn\" },\n  {\n    client: \"Nightline\",\n    id: \"1477959858617-67f85cf4f1df\",\n    result: \"1M monthly riders\",\n  },\n  {\n    client: \"Dunewalk\",\n    id: \"1509316785289-025f5b846b35\",\n    result: \"4.9★ app rating\",\n  },\n];\n\nexport default function HorizontalScrollCaseStudies() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative h-80 w-full overflow-y-auto\" ref={containerRef}>\n      <HorizontalScroll containerRef={containerRef} panelClassName=\"h-80\">\n        {cases.map((c) => (\n          <article\n            className=\"w-64 shrink-0 overflow-hidden rounded-2xl border bg-card\"\n            key={c.client}\n          >\n            <img\n              alt=\"\"\n              className=\"h-36 w-full object-cover\"\n              src={photo(c.id)}\n            />\n            <div className=\"p-4\">\n              <h3 className=\"font-semibold text-foreground\">{c.client}</h3>\n              <p className=\"text-muted-foreground text-sm\">{c.result}</p>\n            </div>\n          </article>\n        ))}\n      </HorizontalScroll>\n      <p className=\"py-10 text-center text-muted-foreground text-sm\">\n        See all case studies →\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "horizontal scroll"
+  ],
+  "type": "registry:block"
+}

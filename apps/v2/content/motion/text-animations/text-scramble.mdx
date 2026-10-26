@@ -65,6 +65,7 @@ import { TextScramble } from "@/components/motion/text-scramble";
 - It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to replay or delay it.
 - `duration` and `speed` are in seconds. `onScrambleComplete` fires when the text settles.
 - Screen readers may read the scrambled characters. Add an `aria-label` with the final text if that matters.
+- When the user has turned on reduced motion, the text shows straight away with no scramble; `onScrambleComplete` still fires.
 
 ## Props
 

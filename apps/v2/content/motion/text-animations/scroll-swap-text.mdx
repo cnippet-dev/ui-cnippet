@@ -72,7 +72,7 @@ const containerRef = useRef<HTMLDivElement>(null);
 - `containerRef` is required. Pass a ref to the element that scrolls, not to the page.
 - `children` should be plain text.
 - `offset` sets which part of the scroll range drives the swap (Motion `useScroll` offsets).
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the swap follows the scroll position directly, without the spring.
 
 ## Props
 

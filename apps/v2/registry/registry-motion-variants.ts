@@ -537,7 +537,7 @@ export const motionVariants: MotionVariantItem[] = [
   ),
 
   // --- scroll-velocity-text ---
-  ...Array.from({ length: 3 }, (_, i) =>
+  ...Array.from({ length: 4 }, (_, i) =>
     createMotionVariant({
       category: "scroll velocity text",
       dependencies: ["scroll-velocity-text"],
@@ -545,6 +545,7 @@ export const motionVariants: MotionVariantItem[] = [
         "Word marquee — continuous horizontal scroll of tech-stack words, speeds up on scroll",
         "Opposing rows — two rows scrolling in opposite directions, velocity-reactive",
         "Pill marquee — badge-style items scrolling continuously at a fixed speed",
+        "Logo row — a customer logo strip that speeds up with scrolling",
       ][i],
       name: `m-scroll-velocity-text-${i + 1}`,
     }),
@@ -589,6 +590,164 @@ export const motionVariants: MotionVariantItem[] = [
         "Nav overflow — horizontal nav bar with right-edge blur for overflow indication",
       ][i],
       name: `m-progressive-blur-${i + 1}`,
+    }),
+  ),
+
+  // --- canvas-text ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "canvas text",
+      dependencies: ["canvas-text"],
+      description: [
+        "Landing hero — one word of the headline filled with flowing token-colored lines",
+        "Pricing card — the price drawn in custom brand colors",
+        "Section label — a small animated eyebrow above a feature heading",
+      ][i],
+      name: `m-canvas-text-${i + 1}`,
+    }),
+  ),
+
+  // --- text-flipping-board ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "text flipping board",
+      dependencies: ["text-flipping-board"],
+      description: [
+        "Departures board — four rows that flip to the next set of flights",
+        "Announcement bar — a single row cycling through promo messages",
+        "Countdown — a launch timer where each second is one flip",
+      ][i],
+      name: `m-text-flipping-board-${i + 1}`,
+    }),
+  ),
+
+  // --- sticky-scroll-reveal ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "sticky scroll reveal",
+      dependencies: ["sticky-scroll-reveal"],
+      description: [
+        "Feature walkthrough — four features with a sticky illustration panel",
+        "Onboarding steps — numbered setup steps with a sticky form preview",
+        "Changelog — release highlights with a sticky notes panel",
+      ][i],
+      name: `m-sticky-scroll-reveal-${i + 1}`,
+    }),
+  ),
+
+  // --- container-scroll ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "container scroll",
+      dependencies: ["container-scroll"],
+      description: [
+        "Dashboard reveal — an analytics screen tilts flat under a headline",
+        "Mobile app — a phone-shaped card with a chat screen",
+        "Video frame — a keynote poster with a play button tilts into view",
+      ][i],
+      name: `m-container-scroll-${i + 1}`,
+    }),
+  ),
+
+  // --- hero-parallax ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "hero parallax",
+      dependencies: ["hero-parallax"],
+      description: [
+        "Portfolio wall — three rows of project shots under a studio intro",
+        "Template gallery — two rows of site templates",
+        "Multi-depth — rows moving at different speeds for a layered hero",
+      ][i],
+      name: `m-hero-parallax-${i + 1}`,
+    }),
+  ),
+
+  // --- scroll-image-reveal ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll image reveal",
+      dependencies: ["scroll-image-reveal"],
+      description: [
+        "Case study cover — the cover image wipes up as you reach it",
+        "Circle hero — a full-width photo expands from a circle",
+        "Reveal grid — three tiles wiping in from different edges",
+      ][i],
+      name: `m-scroll-image-reveal-${i + 1}`,
+    }),
+  ),
+
+  // --- macbook-scroll ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "macbook scroll",
+      dependencies: ["macbook-scroll"],
+      description: [
+        "Product launch — the lid opens onto a wallpaper with a NEW badge",
+        "App screen — custom UI rendered on the laptop screen",
+        "Demo video — a video poster with player controls on screen",
+      ][i],
+      name: `m-macbook-scroll-${i + 1}`,
+    }),
+  ),
+
+  // --- horizontal-scroll ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "horizontal scroll",
+      dependencies: ["horizontal-scroll"],
+      description: [
+        "Case studies — cards with results scroll sideways while pinned",
+        "Company timeline — milestones by year on a horizontal track",
+        "Photo gallery — tall images in a fast horizontal strip",
+      ][i],
+      name: `m-horizontal-scroll-${i + 1}`,
+    }),
+  ),
+
+  // --- scroll-direction-header ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll direction header",
+      dependencies: ["scroll-direction-header"],
+      description: [
+        "Site header — hides while reading down, returns on scroll up",
+        "Mobile tab bar — a bottom bar that slides away while browsing",
+        "Docs toolbar — stays while reading, slides away on scroll up",
+      ][i],
+      name: `m-scroll-direction-header-${i + 1}`,
+    }),
+  ),
+
+  // --- sticky-footer ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "sticky footer",
+      dependencies: [
+        ["sticky-footer"],
+        ["sticky-footer", "button"],
+        ["sticky-footer", "button", "input"],
+      ][i],
+      description: [
+        "Brand footer — oversized wordmark uncovered at the end of the page",
+        "CTA footer — a sign-up prompt revealed under an FAQ",
+        "Newsletter footer — an email form revealed under a post list",
+      ][i],
+      name: `m-sticky-footer-${i + 1}`,
+    }),
+  ),
+
+  // --- scroll-snap-sections ---
+  ...Array.from({ length: 3 }, (_, i) =>
+    createMotionVariant({
+      category: "scroll snap sections",
+      dependencies: ["scroll-snap-sections"],
+      description: [
+        "Product story — four full-height chapters with dot navigation",
+        "Onboarding slides — horizontal slides in a phone-sized frame",
+        "Testimonials — one quote per snapped section",
+      ][i],
+      name: `m-scroll-snap-sections-${i + 1}`,
     }),
   ),
 ];

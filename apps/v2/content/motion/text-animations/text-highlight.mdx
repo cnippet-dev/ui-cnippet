@@ -50,7 +50,7 @@ import { TextHighlight } from "@/components/motion/text-highlight";
 ```
 
 ```tsx
-<TextHighlight triggerType="inView" highlightColor="hsl(262, 80%, 85%)">
+<TextHighlight triggerType="inView" highlightColor="hsl(262 80% 65% / 0.4)">
   production-ready
 </TextHighlight>
 ```
@@ -58,7 +58,7 @@ import { TextHighlight } from "@/components/motion/text-highlight";
 ## Anatomy
 
 ```tsx
-<TextHighlight triggerType="inView" highlightColor="hsl(262 80% 85%)"> {/* <span> with an animated background */}
+<TextHighlight triggerType="inView" highlightColor="hsl(262 80% 65% / 0.4)"> {/* <span> with an animated background */}
   production-ready
 </TextHighlight>
 ```
@@ -66,9 +66,10 @@ import { TextHighlight } from "@/components/motion/text-highlight";
 ## Good to know
 
 - `triggerType` decides when the highlight draws: `"inView"` (default), `"auto"` (on mount), `"hover"` or `"ref"`.
-- With `triggerType="ref"`, call `ref.current.animate()` and `ref.current.reset()` yourself.
+- With `triggerType="ref"`, call `ref.current.animate()` and `ref.current.reset()` yourself. `reset()` clears instantly, so you can replay right after it.
 - `direction` is `"ltr"`, `"rtl"`, `"ttb"` or `"btt"`.
-- Pick a `highlightColor` with enough contrast against the text color.
+- Pick a `highlightColor` with enough contrast against the text color in both themes. A translucent colour (alpha around 0.4) works on light and dark backgrounds.
+- When the user has turned on reduced motion, the highlight appears at full size straight away instead of sweeping in.
 
 ## Props
 
@@ -76,7 +77,7 @@ import { TextHighlight } from "@/components/motion/text-highlight";
 |------|------|---------|-------------|
 | `children` | `ReactNode` | — | Text or content to highlight |
 | `triggerType` | `"inView" \| "hover" \| "ref" \| "auto"` | `"inView"` | What triggers the highlight animation |
-| `highlightColor` | `string` | `"hsl(25, 90%, 80%)"` | CSS colour value for the highlight fill |
+| `highlightColor` | `string` | `"hsl(25 90% 60% / 0.4)"` | CSS colour value for the highlight fill |
 | `direction` | `"ltr" \| "rtl" \| "ttb" \| "btt"` | `"ltr"` | Direction the highlight sweeps in from |
 | `transition` | `Transition` | spring | Motion transition for the sweep |
 | `useInViewOptions` | `UseInViewOptions` | `{ once: true, amount: 0.1 }` | Options passed to `useInView` when `triggerType="inView"` |

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-macbook-scroll-1",
+  "description": "Product launch — the lid opens onto a wallpaper with a NEW badge",
+  "registryDependencies": [
+    "@cnippet/macbook-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-macbook-scroll-1.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { MacbookScroll } from \"@/registry/default/motion/macbook-scroll\";\n\nexport default function MacbookScrollLaunch() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-[28rem] w-full overflow-y-auto\"\n      ref={containerRef}\n    >\n      <div className=\"h-40\" />\n      <MacbookScroll\n        alt=\"Desktop wallpaper of a mountain range at dusk\"\n        badge={\n          <span className=\"rounded-full bg-foreground px-2 py-0.5 font-semibold text-[10px] text-background\">\n            NEW\n          </span>\n        }\n        containerRef={containerRef}\n        showGradient\n        src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1280&h=800&fit=crop&dpr=2&q=80\"\n        title={\n          <h3 className=\"font-bold text-3xl text-foreground tracking-tight\">\n            Meet Horizon OS\n            <span className=\"block font-normal text-base text-muted-foreground\">\n              Scroll to open\n            </span>\n          </h3>\n        }\n      />\n      <div className=\"h-40\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "macbook scroll"
+  ],
+  "type": "registry:block"
+}

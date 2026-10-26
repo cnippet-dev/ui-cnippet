@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-snap-sections-1",
+  "description": "Product story — four full-height chapters with dot navigation",
+  "registryDependencies": [
+    "@cnippet/scroll-snap-sections"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-snap-sections-1.tsx",
+      "content": "\"use client\";\n\nimport { ScrollSnapSections } from \"@/registry/default/motion/scroll-snap-sections\";\n\nconst chapters = [\n  {\n    body: \"Scroll to begin.\",\n    id: \"story-intro\",\n    tint: \"bg-sky-500/10\",\n    title: \"Meet Aero\",\n  },\n  {\n    body: \"980 grams, all day battery.\",\n    id: \"story-light\",\n    tint: \"bg-amber-500/10\",\n    title: \"Impossibly light\",\n  },\n  {\n    body: \"A 14″ panel that stays readable in sunlight.\",\n    id: \"story-screen\",\n    tint: \"bg-violet-500/10\",\n    title: \"Brighter screen\",\n  },\n  {\n    body: \"From $1,299. Ships next week.\",\n    id: \"story-price\",\n    tint: \"bg-emerald-500/10\",\n    title: \"Yours today\",\n  },\n];\n\nexport default function ScrollSnapSectionsStory() {\n  return (\n    <ScrollSnapSections\n      className=\"h-96 w-full\"\n      sections={chapters.map((c) => ({\n        className: c.tint,\n        content: (\n          <div className=\"px-6 text-center\">\n            <h3 className=\"font-bold text-4xl text-foreground tracking-tight\">\n              {c.title}\n            </h3>\n            <p className=\"mt-2 text-muted-foreground\">{c.body}</p>\n          </div>\n        ),\n        id: c.id,\n        label: c.title,\n      }))}\n    />\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll snap sections"
+  ],
+  "type": "registry:block"
+}

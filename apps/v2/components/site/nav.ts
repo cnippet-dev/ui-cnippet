@@ -12,13 +12,13 @@ export const NAV_ITEMS: NavItem[] = [
   {
     items: [
       {
-        description: "97 copy-paste component variants",
+        description: "900+ copy-paste component variants",
         href: "/explore?section=core",
         label: "Components",
       },
       {
-        description: "40+ text and scroll animations",
-        href: "/explore?section=text+animations",
+        description: "51 text and scroll animations",
+        href: "/explore?section=text-animations",
         label: "Motion",
       },
     ],

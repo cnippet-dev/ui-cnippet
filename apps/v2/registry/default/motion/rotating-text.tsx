@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import { AnimatePresence, motion, type Transition } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  type Transition,
+  useReducedMotion,
+} from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +24,7 @@ export function RotatingText({
   transition = { damping: 20, stiffness: 150, type: "spring" },
   direction = "up",
 }: RotatingTextProps) {
+  const reduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -44,7 +50,7 @@ export function RotatingText({
           exit={{ opacity: 0, y: exitTo }}
           initial={{ opacity: 0, y: enterFrom }}
           key={index}
-          transition={transition}
+          transition={reduceMotion ? { duration: 0 } : transition}
         >
           {words[index]}
         </motion.span>

@@ -19,7 +19,7 @@ const COLUMNS = [
   {
     links: [
       { href: "/explore", label: "Components" },
-      { href: "/explore?section=text+animations", label: "Motion" },
+      { href: "/explore?section=text-animations", label: "Motion" },
       { href: "/themes", label: "Themes" },
       { href: "/playground", label: "Playground" },
     ],

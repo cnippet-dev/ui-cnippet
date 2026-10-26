@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-velocity-text-4",
+  "description": "Logo row — a customer logo strip that speeds up with scrolling",
+  "registryDependencies": [
+    "@cnippet/scroll-velocity-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-velocity-text-4.tsx",
+      "content": "\"use client\";\n\nimport {\n  BoxIcon,\n  CloudIcon,\n  CpuIcon,\n  DatabaseIcon,\n  GlobeIcon,\n  HexagonIcon,\n  LayersIcon,\n  ZapIcon,\n} from \"lucide-react\";\nimport {\n  ScrollVelocityContainer,\n  ScrollVelocityRow,\n} from \"@/registry/default/motion/scroll-velocity-text\";\n\nconst logos = [\n  { icon: HexagonIcon, name: \"Hexa\" },\n  { icon: CloudIcon, name: \"Nimbus\" },\n  { icon: ZapIcon, name: \"Voltage\" },\n  { icon: LayersIcon, name: \"Stacked\" },\n  { icon: DatabaseIcon, name: \"Ledger\" },\n  { icon: GlobeIcon, name: \"Orbital\" },\n  { icon: CpuIcon, name: \"Corelab\" },\n  { icon: BoxIcon, name: \"Parcel\" },\n];\n\nexport default function ScrollVelocityLogos() {\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-6 overflow-hidden py-8\">\n      <p className=\"text-muted-foreground text-sm\">\n        Trusted by 4,000+ product teams\n      </p>\n      <ScrollVelocityContainer className=\"w-full\">\n        <ScrollVelocityRow baseVelocity={2}>\n          {logos.map(({ icon: Icon, name }) => (\n            <span\n              className=\"mx-8 inline-flex items-center gap-2 font-semibold text-foreground/60 text-xl\"\n              key={name}\n            >\n              <Icon aria-hidden=\"true\" className=\"size-6\" />\n              {name}\n            </span>\n          ))}\n        </ScrollVelocityRow>\n      </ScrollVelocityContainer>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll velocity text"
+  ],
+  "type": "registry:block"
+}

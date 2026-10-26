@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sticky-footer",
+  "description": "Footer that stays put underneath the page and is uncovered at the end of the scroll",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/sticky-footer.tsx",
+      "content": "\"use client\";\n\nimport type { ComponentProps, CSSProperties } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type StickyFooterProps = {\n  /** Footer height. Numbers are px. */\n  height?: number | string;\n  contentClassName?: string;\n} & ComponentProps<\"footer\">;\n\n// The content sticks to the bottom of the scrollport while the clipped\n// wrapper scrolls into view, so the page appears to lift off the footer.\nexport function StickyFooter({\n  children,\n  height = 320,\n  className,\n  contentClassName,\n  style,\n  ...props\n}: StickyFooterProps) {\n  return (\n    <footer\n      className={cn(\"relative\", className)}\n      style={\n        {\n          \"--footer-h\": typeof height === \"number\" ? `${height}px` : height,\n          clipPath: \"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)\",\n          height: \"var(--footer-h)\",\n          ...style,\n        } as CSSProperties\n      }\n      {...props}\n    >\n      <div className=\"absolute inset-x-0 bottom-0 flex h-[calc(var(--footer-h)+100vh)] flex-col justify-end\">\n        <div className={cn(\"sticky bottom-0 h-(--footer-h)\", contentClassName)}>\n          {children}\n        </div>\n      </div>\n    </footer>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/sticky-footer.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

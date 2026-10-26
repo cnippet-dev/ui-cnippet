@@ -76,6 +76,7 @@ import { ProgressiveBlur } from "@/components/motion/progressive-blur";
 - `direction` is the side where the blur is strongest: `"bottom"` (default), `"top"`, `"left"` or `"right"`.
 - More `blurLayers` give a smoother fade but cost more to render. `blurIntensity` sets the strength.
 - It has `pointer-events-none`, so the content underneath stays clickable.
+- It does not animate by itself, so reduced motion makes no difference. If you pass Motion props such as `animate`, check `useReducedMotion()` from `motion/react` yourself.
 
 ## Props
 

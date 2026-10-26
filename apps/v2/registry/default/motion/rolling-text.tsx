@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, type Transition } from "motion/react";
+import { motion, type Transition, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export type RollingTextProps = {
@@ -24,6 +24,7 @@ export function RollingText({
   transition = { ease: [0.215, 0.61, 0.355, 1] },
   staggerDuration = 0.04,
 }: RollingTextProps) {
+  const reduceMotion = useReducedMotion();
   const letters = children.split("");
   const yOffset = direction === "up" ? "100%" : "-100%";
   const rotateX = direction === "up" ? -60 : 60;
@@ -41,11 +42,15 @@ export function RollingText({
           className="inline-block"
           initial={{ opacity: 0, rotateX, y: yOffset }}
           key={i}
-          transition={{
-            ...transition,
-            delay: delay + i * staggerDuration,
-            duration,
-          }}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : {
+                  ...transition,
+                  delay: delay + i * staggerDuration,
+                  duration,
+                }
+          }
         >
           {letter === " " ? " " : letter}
         </motion.span>

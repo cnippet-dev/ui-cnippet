@@ -65,7 +65,7 @@ import { TextRoll } from "@/components/motion/text-roll";
 - It plays once when it mounts. `getEnterDelay` and `getExitDelay` set each letter's delay from its index.
 - `onAnimationComplete` fires when the last letter finishes.
 - Screen readers read the full text once; the individual letters are hidden from them.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the roll finishes instantly; `onAnimationComplete` still fires.
 
 ## Props
 

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-canvas-text-3",
+  "description": "Section label — a small animated eyebrow above a feature heading",
+  "registryDependencies": [
+    "@cnippet/canvas-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-canvas-text-3.tsx",
+      "content": "\"use client\";\n\nimport { CanvasText } from \"@/registry/default/motion/canvas-text\";\n\nexport default function CanvasTextLabel() {\n  return (\n    <div className=\"flex min-h-50 items-center justify-center px-6\">\n      <section className=\"max-w-md\">\n        <CanvasText\n          className=\"font-bold text-xs uppercase tracking-[0.2em]\"\n          lineCount={6}\n          speed={1.5}\n          text=\"New in v2.4\"\n        />\n        <h3 className=\"mt-2 font-semibold text-2xl text-foreground\">\n          Realtime cursors for every board\n        </h3>\n        <p className=\"mt-1 text-muted-foreground text-sm\">\n          See who is editing what, live, with presence that never gets in the\n          way.\n        </p>\n      </section>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "canvas text"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-image-reveal-3",
+  "description": "Reveal grid — three tiles wiping in from different edges",
+  "registryDependencies": [
+    "@cnippet/scroll-image-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-image-reveal-3.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ScrollImageReveal } from \"@/registry/default/motion/scroll-image-reveal\";\n\nconst photo = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=600&h=800&fit=crop&dpr=2&q=80`;\n\nconst tiles = [\n  { alt: \"Forest path\", direction: \"left\", id: \"1441974231531-c6227db76b6e\" },\n  { alt: \"Ocean waves\", direction: \"up\", id: \"1505142468610-359e7d316be0\" },\n  {\n    alt: \"Desert valley\",\n    direction: \"right\",\n    id: \"1509316785289-025f5b846b35\",\n  },\n] as const;\n\nexport default function ScrollImageRevealGrid() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <div className=\"mx-auto max-w-2xl py-16\">\n        <h3 className=\"font-bold text-2xl text-foreground tracking-tight\">\n          Three ways to spend a weekend\n        </h3>\n        <div className=\"h-48\" />\n        <div className=\"grid grid-cols-3 gap-3\">\n          {tiles.map((tile) => (\n            <ScrollImageReveal\n              alt={tile.alt}\n              className=\"aspect-3/4 rounded-xl\"\n              containerRef={containerRef}\n              direction={tile.direction}\n              key={tile.id}\n              src={photo(tile.id)}\n            />\n          ))}\n        </div>\n        <div className=\"h-48\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll image reveal"
+  ],
+  "type": "registry:block"
+}

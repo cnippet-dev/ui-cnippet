@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, type Variants } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { type ElementType, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -50,6 +50,7 @@ export function Typewriter({
   },
   ...props
 }: TypewriterProps) {
+  const reduceMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -70,15 +71,21 @@ export function Typewriter({
           setCurrentIndex(0);
         } else {
           timeout = setTimeout(
-            () => setDisplayText((prev) => prev.slice(0, -1)),
+            // Reduced motion: clear and type whole strings, not letter by letter.
+            () =>
+              setDisplayText((prev) => (reduceMotion ? "" : prev.slice(0, -1))),
             deleteSpeed,
           );
         }
       } else {
         if (currentIndex < currentText.length) {
           timeout = setTimeout(() => {
-            setDisplayText((prev) => prev + currentText[currentIndex]);
-            setCurrentIndex((prev) => prev + 1);
+            setDisplayText((prev) =>
+              reduceMotion ? currentText : prev + currentText[currentIndex],
+            );
+            setCurrentIndex((prev) =>
+              reduceMotion ? currentText.length : prev + 1,
+            );
           }, speed);
         } else if (texts.length > 1) {
           timeout = setTimeout(() => setIsDeleting(true), waitTime);
@@ -104,6 +111,7 @@ export function Typewriter({
     currentTextIndex,
     loop,
     initialDelay,
+    reduceMotion,
   ]);
 
   const isTyping =
@@ -117,7 +125,11 @@ export function Typewriter({
       <span>{displayText}</span>
       {showCursor && (
         <motion.span
-          animate="animate"
+          animate={
+            reduceMotion
+              ? { opacity: 1, transition: { duration: 0 } }
+              : "animate"
+          }
           className={cn(
             cursorClassName,
             hideCursorOnType && isTyping ? "hidden" : "",

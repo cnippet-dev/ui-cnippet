@@ -70,7 +70,7 @@ import { TextAlongPath } from "@/components/motion/text-along-path";
 - `path` is an SVG path (`d` attribute) in the coordinates of `viewBox`. Set `showPath` while designing to see it.
 - `animationType="auto"` moves the text along the path on a loop (`duration` in seconds). `"scroll"` moves it as the page scrolls; pass `scrollContainer` to use another scrolling element.
 - The text is real SVG text, so screen readers can read it.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the `auto` loop is turned off and the text stays at the start of the path. The `scroll` mode still follows the scroll position, because the user drives it.
 
 ## Props
 

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-image-reveal",
+  "description": "An image is revealed with a clip-path wipe or circle as it scrolls into view",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/scroll-image-reveal.tsx",
+      "content": "\"use client\";\n\nimport {\n  motion,\n  type UseScrollOptions,\n  useReducedMotion,\n  useScroll,\n  useTransform,\n} from \"motion/react\";\nimport { type RefObject, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type ScrollImageRevealProps = {\n  src: string;\n  alt: string;\n  /** Edge the image is wiped in from (`inset` only). */\n  direction?: \"up\" | \"down\" | \"left\" | \"right\";\n  shape?: \"inset\" | \"circle\";\n  /** Scroll range the reveal runs over. */\n  offset?: UseScrollOptions[\"offset\"];\n  /** Scrollable ancestor to track instead of the window. */\n  containerRef?: RefObject<HTMLElement | null>;\n  className?: string;\n  imageClassName?: string;\n};\n\nconst HIDDEN_INSET = {\n  down: \"inset(0% 0% 100% 0%)\",\n  left: \"inset(0% 0% 0% 100%)\",\n  right: \"inset(0% 100% 0% 0%)\",\n  up: \"inset(100% 0% 0% 0%)\",\n};\n\nexport function ScrollImageReveal({\n  src,\n  alt,\n  direction = \"up\",\n  shape = \"inset\",\n  offset = [\"start end\", \"center center\"],\n  containerRef,\n  className,\n  imageClassName,\n}: ScrollImageRevealProps) {\n  const reduceMotion = useReducedMotion();\n  const ref = useRef<HTMLDivElement>(null);\n  const { scrollYProgress } = useScroll({\n    container: containerRef,\n    offset,\n    target: ref,\n  });\n\n  const clipPath = useTransform(\n    scrollYProgress,\n    [0, 1],\n    shape === \"circle\"\n      ? [\"circle(0% at 50% 50%)\", \"circle(75% at 50% 50%)\"]\n      : [HIDDEN_INSET[direction], \"inset(0% 0% 0% 0%)\"],\n  );\n  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);\n\n  return (\n    <div className={cn(\"relative overflow-hidden\", className)} ref={ref}>\n      <motion.div\n        className=\"size-full\"\n        style={reduceMotion ? undefined : { clipPath }}\n      >\n        <motion.img\n          alt={alt}\n          className={cn(\"size-full object-cover\", imageClassName)}\n          loading=\"lazy\"\n          src={src}\n          style={reduceMotion ? undefined : { scale }}\n        />\n      </motion.div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/scroll-image-reveal.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

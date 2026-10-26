@@ -1,12 +1,13 @@
 ﻿"use client";
 
+import { useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const morphTime = 1.5;
 const cooldownTime = 0.5;
 
-function useMorphingTexts(texts: string[]) {
+function useMorphingTexts(texts: string[], reduceMotion: boolean | null) {
   const textIndexRef = useRef(0);
   const morphRef = useRef(0);
   const cooldownRef = useRef(0);
@@ -53,6 +54,17 @@ function useMorphingTexts(texts: string[]) {
   }, []);
 
   useEffect(() => {
+    // Reduced motion: show the first text, no morph loop.
+    if (reduceMotion) {
+      const [t1, t2] = [text1Ref.current, text2Ref.current];
+      if (t1 && t2) {
+        t1.textContent = texts[0] ?? "";
+        t1.style.filter = "none";
+        t1.style.opacity = "100%";
+        t2.textContent = "";
+      }
+      return;
+    }
     let raf: number;
     const animate = () => {
       raf = requestAnimationFrame(animate);
@@ -65,7 +77,7 @@ function useMorphingTexts(texts: string[]) {
     };
     animate();
     return () => cancelAnimationFrame(raf);
-  }, [doMorph, doCooldown]);
+  }, [doMorph, doCooldown, reduceMotion, texts]);
 
   return { text1Ref, text2Ref };
 }
@@ -76,7 +88,8 @@ export type MorphingTextProps = {
 };
 
 export function MorphingText({ texts, className }: MorphingTextProps) {
-  const { text1Ref, text2Ref } = useMorphingTexts(texts);
+  const reduceMotion = useReducedMotion();
+  const { text1Ref, text2Ref } = useMorphingTexts(texts, reduceMotion);
 
   return (
     <div

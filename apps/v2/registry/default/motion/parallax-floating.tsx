@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimationFrame } from "motion/react";
+import { useAnimationFrame, useReducedMotion } from "motion/react";
 import {
   createContext,
   type ReactNode,
@@ -64,6 +64,7 @@ export function ParallaxFloating({
   sensitivity = 1,
   easingFactor = 0.05,
 }: ParallaxFloatingProps) {
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const elementsMap = useRef(
     new Map<
@@ -93,7 +94,7 @@ export function ParallaxFloating({
   }, []);
 
   useAnimationFrame(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || reduceMotion) return;
 
     elementsMap.current.forEach((data) => {
       const strength = (data.depth * sensitivity) / 20;

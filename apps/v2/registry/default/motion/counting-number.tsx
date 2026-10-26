@@ -5,6 +5,7 @@ import {
   animate,
   motion,
   useMotionValue,
+  useReducedMotion,
   useTransform,
   type ValueAnimationTransition,
 } from "motion/react";
@@ -48,6 +49,7 @@ export const CountingNumber = forwardRef<
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const count = useMotionValue(from);
     const rounded = useTransform(count, (latest) =>
       Math.round(latest).toLocaleString(),
@@ -57,12 +59,17 @@ export const CountingNumber = forwardRef<
     const startAnimation = useCallback(() => {
       controlsRef.current?.stop();
       onStart?.();
+      if (reduceMotion) {
+        count.set(target);
+        onComplete?.();
+        return;
+      }
       count.set(from);
       controlsRef.current = animate(count, target, {
         ...transition,
         onComplete: () => onComplete?.(),
       });
-    }, [from, target, transition, onStart, onComplete, count]);
+    }, [from, target, transition, onStart, onComplete, count, reduceMotion]);
 
     useImperativeHandle(ref, () => ({ startAnimation }));
 

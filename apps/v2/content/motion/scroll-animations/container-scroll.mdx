@@ -1,0 +1,102 @@
+---
+title: Container Scroll
+description: A card that starts tilted back and settles flat as it scrolls to the middle of the screen.
+---
+
+<ComponentPreview name="m-container-scroll-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add container-scroll
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="container-scroll" title="components/motion/container-scroll.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ContainerScroll } from "@/components/motion/container-scroll";
+```
+
+```tsx
+<ContainerScroll header={<h2>Your metrics, at a glance</h2>}>
+  <img src="/dashboard.png" alt="Dashboard" />
+</ContainerScroll>
+```
+
+## Anatomy
+
+```tsx
+<ContainerScroll header={…}>{/* card content */}</ContainerScroll>
+```
+
+## Good to know
+
+- The animation runs from when the component enters the bottom of the screen until it is centred.
+- `rotate` and `scale` are `[start, end]` pairs; the end values are the resting state.
+- Change the card shape with `cardClassName`, for example a narrow, rounded card for a phone.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- When the user has turned on reduced motion, the card sits at its end rotation and scale and the header does not move.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Card content |
+| `header` | `ReactNode` | — | Content above the card |
+| `rotate` | `[number, number]` | `[20, 0]` | rotateX in degrees, start to end |
+| `scale` | `[number, number]` | `[1.05, 1]` | Card scale, start to end |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `className` | `string` | — | Classes for the wrapper |
+| `cardClassName` | `string` | — | Classes for the card |
+
+## Examples
+
+### Dashboard Reveal
+
+An analytics screen tilts flat under a headline.
+
+<ComponentPreview name="m-container-scroll-1" />
+
+### Mobile App
+
+A phone-shaped card (`cardClassName`) with a steeper `rotate`.
+
+<ComponentPreview name="m-container-scroll-2" />
+
+### Video Frame
+
+A keynote poster with a play button tilts into view.
+
+<ComponentPreview name="m-container-scroll-3" />

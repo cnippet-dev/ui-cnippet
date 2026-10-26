@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { type AnimationOptions, motion } from "motion/react";
+import { type AnimationOptions, motion, useReducedMotion } from "motion/react";
 import {
   forwardRef,
   useCallback,
@@ -69,6 +69,7 @@ export const VerticalCutReveal = forwardRef<
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const containerRef = useRef<HTMLSpanElement>(null);
     const text =
       typeof children === "string" ? children : children?.toString() || "";
@@ -132,14 +133,17 @@ export const VerticalCutReveal = forwardRef<
       () => ({
         hidden: { y: reverse ? "-100%" : "100%" },
         visible: (i: number) => ({
-          transition: {
-            ...transition,
-            delay: ((transition?.delay as number) || 0) + getStaggerDelay(i),
-          },
+          transition: reduceMotion
+            ? { duration: 0 }
+            : {
+                ...transition,
+                delay:
+                  ((transition?.delay as number) || 0) + getStaggerDelay(i),
+              },
           y: 0,
         }),
       }),
-      [reverse, transition, getStaggerDelay],
+      [reverse, transition, getStaggerDelay, reduceMotion],
     );
 
     return (

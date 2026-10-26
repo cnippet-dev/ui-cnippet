@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sticky-scroll-reveal-3",
+  "description": "Changelog — release highlights with a sticky notes panel",
+  "registryDependencies": [
+    "@cnippet/sticky-scroll-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sticky-scroll-reveal-3.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { StickyScrollReveal } from \"@/registry/default/motion/sticky-scroll-reveal\";\n\nfunction Release({ version, notes }: { version: string; notes: string[] }) {\n  return (\n    <div className=\"flex size-full flex-col justify-center gap-4 p-8\">\n      <span className=\"w-fit rounded-full border px-2.5 py-0.5 font-mono text-muted-foreground text-xs\">\n        {version}\n      </span>\n      <ul className=\"space-y-2\">\n        {notes.map((note) => (\n          <li\n            className=\"flex items-center gap-2 text-foreground text-sm\"\n            key={note}\n          >\n            <span className=\"size-1.5 rounded-full bg-foreground/60\" />\n            {note}\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n\nconst releases = [\n  {\n    content: (\n      <Release\n        notes={[\"Command palette\", \"Faster search\", \"Dark mode polish\"]}\n        version=\"v3.0\"\n      />\n    ),\n    description:\n      \"Our biggest release yet, rebuilt around keyboard-first navigation.\",\n    title: \"March — v3.0\",\n  },\n  {\n    content: <Release notes={[\"Shared views\", \"CSV export\"]} version=\"v2.8\" />,\n    description: \"Share filtered views with anyone on your team.\",\n    title: \"February — v2.8\",\n  },\n  {\n    content: (\n      <Release notes={[\"Webhooks\", \"API rate limits raised\"]} version=\"v2.7\" />\n    ),\n    description: \"Automate anything with the new webhook events.\",\n    title: \"January — v2.7\",\n  },\n];\n\nexport default function StickyScrollRevealChangelog() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <StickyScrollReveal\n        className=\"mx-auto max-w-3xl py-24\"\n        containerRef={containerRef}\n        items={releases}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sticky scroll reveal"
+  ],
+  "type": "registry:block"
+}

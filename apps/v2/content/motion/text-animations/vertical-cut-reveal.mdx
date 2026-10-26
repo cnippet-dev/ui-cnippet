@@ -69,7 +69,7 @@ import { VerticalCutReveal } from "@/components/motion/vertical-cut-reveal";
 - It plays as soon as it mounts. Set `autoStart={false}` and call `ref.current.startAnimation()` to start it yourself; `reset()` puts it back.
 - `reverse` slides the pieces down instead of up.
 - Screen readers read the full text once; the pieces are hidden from them.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the text shows in its final state straight away, with no stagger or movement.
 
 ## Props
 

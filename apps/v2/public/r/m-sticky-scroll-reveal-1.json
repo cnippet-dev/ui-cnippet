@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sticky-scroll-reveal-1",
+  "description": "Feature walkthrough — four features with a sticky illustration panel",
+  "registryDependencies": [
+    "@cnippet/sticky-scroll-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sticky-scroll-reveal-1.tsx",
+      "content": "\"use client\";\n\nimport {\n  BarChart3Icon,\n  BellIcon,\n  ShieldCheckIcon,\n  ZapIcon,\n} from \"lucide-react\";\nimport { useRef } from \"react\";\nimport { StickyScrollReveal } from \"@/registry/default/motion/sticky-scroll-reveal\";\n\nfunction Visual({ icon: Icon, tint }: { icon: typeof ZapIcon; tint: string }) {\n  return (\n    <div className={`flex size-full items-center justify-center ${tint}`}>\n      <Icon className=\"size-16 text-foreground/70\" strokeWidth={1.25} />\n    </div>\n  );\n}\n\nconst items = [\n  {\n    content: <Visual icon={ZapIcon} tint=\"bg-amber-500/10\" />,\n    description:\n      \"Deploys finish in seconds, with previews for every pull request.\",\n    title: \"Instant deploys\",\n  },\n  {\n    content: <Visual icon={BarChart3Icon} tint=\"bg-sky-500/10\" />,\n    description:\n      \"Track latency, errors and traffic without wiring up a dashboard.\",\n    title: \"Built-in analytics\",\n  },\n  {\n    content: <Visual icon={BellIcon} tint=\"bg-violet-500/10\" />,\n    description: \"Get pinged in Slack the moment a check fails in production.\",\n    title: \"Smart alerts\",\n  },\n  {\n    content: <Visual icon={ShieldCheckIcon} tint=\"bg-emerald-500/10\" />,\n    description: \"SSO, audit logs and role-based access on every plan.\",\n    title: \"Secure by default\",\n  },\n];\n\nexport default function StickyScrollRevealFeatures() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <StickyScrollReveal\n        className=\"mx-auto max-w-3xl py-24\"\n        containerRef={containerRef}\n        items={items}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sticky scroll reveal"
+  ],
+  "type": "registry:block"
+}

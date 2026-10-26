@@ -48,10 +48,15 @@ export function BreathingText({
       data-text={children}
       {...props}
     >
+      <style>
+        {
+          "@keyframes breathing{0%,100%{font-variation-settings:var(--fvs-from)}50%{font-variation-settings:var(--fvs-to)}}"
+        }
+      </style>
       {letters.map((letter, i) => (
         <span
           aria-hidden="true"
-          className="inline-block whitespace-pre"
+          className="inline-block whitespace-pre motion-reduce:[animation:none]!"
           key={i}
           style={
             {

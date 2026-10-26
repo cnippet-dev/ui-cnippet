@@ -1,0 +1,103 @@
+---
+title: Sticky Scroll Reveal
+description: Text steps scroll past a sticky panel that crossfades to each step's content.
+---
+
+<ComponentPreview name="m-sticky-scroll-reveal-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add sticky-scroll-reveal
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sticky-scroll-reveal" title="components/motion/sticky-scroll-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { StickyScrollReveal } from "@/components/motion/sticky-scroll-reveal";
+```
+
+```tsx
+<StickyScrollReveal
+  items={[
+    { title: "Instant deploys", description: "…", content: <img src="…" alt="" /> },
+    { title: "Analytics", description: "…", content: <Chart /> },
+  ]}
+/>
+```
+
+## Anatomy
+
+```tsx
+<StickyScrollReveal items={items} /> {/* text column + sticky content panel */}
+```
+
+## Good to know
+
+- The step crossing the middle of the screen is active. Its text is fully opaque and its `content` shows in the sticky panel.
+- On screens narrower than `md` there is no sticky panel; each step shows its content under its text instead.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- The active step gets `aria-current="step"`.
+- When the user has turned on reduced motion, the opacity and content changes happen instantly.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `items` | `{ title, description, content }[]` | — | Steps; `content` is any React node |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `className` | `string` | — | Classes for the grid |
+| `itemClassName` | `string` | — | Classes for each text step |
+| `contentClassName` | `string` | — | Classes for the content panel |
+
+## Examples
+
+### Feature Walkthrough
+
+Four product features with an illustration that swaps in the sticky panel.
+
+<ComponentPreview name="m-sticky-scroll-reveal-1" />
+
+### Onboarding Steps
+
+Numbered setup steps with a preview of each form.
+
+<ComponentPreview name="m-sticky-scroll-reveal-2" />
+
+### Changelog Highlights
+
+Releases on the left, release notes in the sticky panel.
+
+<ComponentPreview name="m-sticky-scroll-reveal-3" />

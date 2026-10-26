@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, type Transition } from "motion/react";
+import { motion, type Transition, useReducedMotion } from "motion/react";
 import type { JSX } from "react";
 import { cn } from "@/lib/utils";
 
@@ -31,6 +31,7 @@ export function TextShimmerWave({
   rotateYDistance = 10,
   transition,
 }: TextShimmerWaveProps) {
+  const reduceMotion = useReducedMotion();
   const MotionComponent = motion.create(
     Component as keyof JSX.IntrinsicElements,
   );
@@ -69,14 +70,18 @@ export function TextShimmerWave({
               translateZ: 0,
             }}
             key={i}
-            transition={{
-              delay,
-              duration,
-              ease: "easeInOut",
-              repeat: Number.POSITIVE_INFINITY,
-              repeatDelay: (children.length * 0.05) / spread,
-              ...transition,
-            }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : {
+                    delay,
+                    duration,
+                    ease: "easeInOut",
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatDelay: (children.length * 0.05) / spread,
+                    ...transition,
+                  }
+            }
           >
             {char}
           </motion.span>

@@ -4,6 +4,7 @@ import {
   type MotionValue,
   motion,
   motionValue,
+  useReducedMotion,
   useSpring,
   useTransform,
 } from "motion/react";
@@ -45,13 +46,15 @@ function NumberDigit({
 }
 
 function Digit({ value, place }: { value: number; place: number }) {
+  const reduceMotion = useReducedMotion();
   const valueRoundedToPlace = Math.floor(value / place) % 10;
   const initial = motionValue(valueRoundedToPlace);
   const animatedValue = useSpring(initial, TRANSITION);
 
   useEffect(() => {
-    animatedValue.set(valueRoundedToPlace);
-  }, [animatedValue, valueRoundedToPlace]);
+    if (reduceMotion) animatedValue.jump(valueRoundedToPlace);
+    else animatedValue.set(valueRoundedToPlace);
+  }, [animatedValue, valueRoundedToPlace, reduceMotion]);
 
   return (
     <div

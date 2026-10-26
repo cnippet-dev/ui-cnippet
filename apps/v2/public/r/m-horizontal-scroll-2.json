@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-horizontal-scroll-2",
+  "description": "Company timeline — milestones by year on a horizontal track",
+  "registryDependencies": [
+    "@cnippet/horizontal-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-horizontal-scroll-2.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { HorizontalScroll } from \"@/registry/default/motion/horizontal-scroll\";\n\nconst milestones = [\n  { text: \"Two founders, one garage, zero customers.\", year: \"2018\" },\n  { text: \"First 100 teams sign up in a weekend.\", year: \"2019\" },\n  { text: \"Series A and our first office in Lisbon.\", year: \"2020\" },\n  { text: \"Launched the API and hit 10k teams.\", year: \"2022\" },\n  { text: \"Profitable, remote-first, 80 people.\", year: \"2024\" },\n];\n\nexport default function HorizontalScrollTimeline() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative h-72 w-full overflow-y-auto\" ref={containerRef}>\n      <HorizontalScroll\n        containerRef={containerRef}\n        panelClassName=\"h-72\"\n        speed={0.8}\n        trackClassName=\"gap-0\"\n      >\n        {milestones.map((m) => (\n          <div className=\"w-60 shrink-0\" key={m.year}>\n            <p className=\"font-bold text-4xl text-foreground tracking-tight\">\n              {m.year}\n            </p>\n            <div className=\"relative my-4 h-px bg-border\">\n              <span className=\"absolute -top-1 left-0 size-2 rounded-full bg-foreground\" />\n            </div>\n            <p className=\"pr-8 text-muted-foreground text-sm\">{m.text}</p>\n          </div>\n        ))}\n      </HorizontalScroll>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "horizontal scroll"
+  ],
+  "type": "registry:block"
+}

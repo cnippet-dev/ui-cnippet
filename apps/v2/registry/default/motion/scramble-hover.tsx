@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +51,7 @@ export function ScrambleHover({
   onHoverStart,
   onHoverEnd,
 }: ScrambleHoverProps) {
+  const reduceMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState(children);
   const [_isHovered, setIsHovered] = useState(false);
   const iterationRef = useRef(0);
@@ -77,6 +78,7 @@ export function ScrambleHover({
     iterationRef.current = 0;
     setIsHovered(true);
     onHoverStart?.();
+    if (reduceMotion) return;
 
     intervalRef.current = setInterval(() => {
       const iter = iterationRef.current;
@@ -117,6 +119,7 @@ export function ScrambleHover({
     useOriginalCharsOnly,
     originalChars,
     onHoverStart,
+    reduceMotion,
   ]);
 
   const stopScramble = useCallback(() => {

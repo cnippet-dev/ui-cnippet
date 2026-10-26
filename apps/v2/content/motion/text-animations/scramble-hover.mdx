@@ -65,6 +65,7 @@ import { ScrambleHover } from "@/components/motion/scramble-hover";
 - The effect plays on hover, so there's nothing to see on touch screens.
 - Set `useOriginalCharsOnly` to scramble with the text's own letters instead of `characterSet`.
 - Screen readers get the text through `aria-label`; the scrambled characters are hidden from them.
+- When the user has turned on reduced motion, hovering does not scramble the text; `onHoverStart` and `onHoverEnd` still fire.
 
 ## Props
 

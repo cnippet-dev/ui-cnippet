@@ -21898,6 +21898,204 @@
     },
     {
       "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text filled with flowing colored lines drawn on a canvas",
+      "files": [
+        {
+          "path": "registry/default/motion/canvas-text.tsx",
+          "target": "components/motion/canvas-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "canvas-text",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "text animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Split-flap board that flips each character through a charset to the new text",
+      "files": [
+        {
+          "path": "registry/default/motion/text-flipping-board.tsx",
+          "target": "components/motion/text-flipping-board.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "text-flipping-board",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Text steps scroll past a sticky panel that swaps to each step's content",
+      "files": [
+        {
+          "path": "registry/default/motion/sticky-scroll-reveal.tsx",
+          "target": "components/motion/sticky-scroll-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sticky-scroll-reveal",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "A card tilts back flat and settles as it scrolls into view",
+      "files": [
+        {
+          "path": "registry/default/motion/container-scroll.tsx",
+          "target": "components/motion/container-scroll.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "container-scroll",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Rows of product cards slide sideways in opposite directions as the hero scrolls",
+      "files": [
+        {
+          "path": "registry/default/motion/hero-parallax.tsx",
+          "target": "components/motion/hero-parallax.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "hero-parallax",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "An image is revealed with a clip-path wipe or circle as it scrolls into view",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-image-reveal.tsx",
+          "target": "components/motion/scroll-image-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-image-reveal",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "A laptop lid opens on scroll to reveal an image or custom screen content",
+      "files": [
+        {
+          "path": "registry/default/motion/macbook-scroll.tsx",
+          "target": "components/motion/macbook-scroll.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "macbook-scroll",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Pins a section and turns vertical scrolling into horizontal movement",
+      "files": [
+        {
+          "path": "registry/default/motion/horizontal-scroll.tsx",
+          "target": "components/motion/horizontal-scroll.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "horizontal-scroll",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Header that hides while scrolling one way and returns when scrolling back",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-direction-header.tsx",
+          "target": "components/motion/scroll-direction-header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-direction-header",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Footer that stays put underneath the page and is uncovered at the end of the scroll",
+      "files": [
+        {
+          "path": "registry/default/motion/sticky-footer.tsx",
+          "target": "components/motion/sticky-footer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sticky-footer",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "scroll animation"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "description": "Full-height sections that snap into place, with dot navigation and entrance animation",
+      "files": [
+        {
+          "path": "registry/default/motion/scroll-snap-sections.tsx",
+          "target": "components/motion/scroll-snap-sections.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "scroll-snap-sections",
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
         "text reveal"
       ],
       "description": "Hero headline — word-by-word fade-in-blur reveal",
@@ -24118,6 +24316,26 @@
     },
     {
       "categories": [
+        "scroll velocity text"
+      ],
+      "description": "Logo row — a customer logo strip that speeds up with scrolling",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-velocity-text-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-velocity-text-4",
+      "registryDependencies": [
+        "@cnippet/scroll-velocity-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
         "parallax floating"
       ],
       "description": "Floating shapes — geometric shapes at different depths follow the cursor",
@@ -24293,6 +24511,669 @@
       "name": "m-progressive-blur-3",
       "registryDependencies": [
         "@cnippet/progressive-blur"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "canvas text"
+      ],
+      "description": "Landing hero — one word of the headline filled with flowing token-colored lines",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-canvas-text-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-canvas-text-1",
+      "registryDependencies": [
+        "@cnippet/canvas-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "canvas text"
+      ],
+      "description": "Pricing card — the price drawn in custom brand colors",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-canvas-text-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-canvas-text-2",
+      "registryDependencies": [
+        "@cnippet/canvas-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "canvas text"
+      ],
+      "description": "Section label — a small animated eyebrow above a feature heading",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-canvas-text-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-canvas-text-3",
+      "registryDependencies": [
+        "@cnippet/canvas-text"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text flipping board"
+      ],
+      "description": "Departures board — four rows that flip to the next set of flights",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-flipping-board-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-flipping-board-1",
+      "registryDependencies": [
+        "@cnippet/text-flipping-board"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text flipping board"
+      ],
+      "description": "Announcement bar — a single row cycling through promo messages",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-flipping-board-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-flipping-board-2",
+      "registryDependencies": [
+        "@cnippet/text-flipping-board"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "text flipping board"
+      ],
+      "description": "Countdown — a launch timer where each second is one flip",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-text-flipping-board-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-text-flipping-board-3",
+      "registryDependencies": [
+        "@cnippet/text-flipping-board"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky scroll reveal"
+      ],
+      "description": "Feature walkthrough — four features with a sticky illustration panel",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-scroll-reveal-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-scroll-reveal-1",
+      "registryDependencies": [
+        "@cnippet/sticky-scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky scroll reveal"
+      ],
+      "description": "Onboarding steps — numbered setup steps with a sticky form preview",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-scroll-reveal-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-scroll-reveal-2",
+      "registryDependencies": [
+        "@cnippet/sticky-scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky scroll reveal"
+      ],
+      "description": "Changelog — release highlights with a sticky notes panel",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-scroll-reveal-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-scroll-reveal-3",
+      "registryDependencies": [
+        "@cnippet/sticky-scroll-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "container scroll"
+      ],
+      "description": "Dashboard reveal — an analytics screen tilts flat under a headline",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-container-scroll-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-container-scroll-1",
+      "registryDependencies": [
+        "@cnippet/container-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "container scroll"
+      ],
+      "description": "Mobile app — a phone-shaped card with a chat screen",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-container-scroll-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-container-scroll-2",
+      "registryDependencies": [
+        "@cnippet/container-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "container scroll"
+      ],
+      "description": "Video frame — a keynote poster with a play button tilts into view",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-container-scroll-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-container-scroll-3",
+      "registryDependencies": [
+        "@cnippet/container-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "hero parallax"
+      ],
+      "description": "Portfolio wall — three rows of project shots under a studio intro",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-hero-parallax-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-hero-parallax-1",
+      "registryDependencies": [
+        "@cnippet/hero-parallax"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "hero parallax"
+      ],
+      "description": "Template gallery — two rows of site templates",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-hero-parallax-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-hero-parallax-2",
+      "registryDependencies": [
+        "@cnippet/hero-parallax"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "hero parallax"
+      ],
+      "description": "Multi-depth — rows moving at different speeds for a layered hero",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-hero-parallax-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-hero-parallax-3",
+      "registryDependencies": [
+        "@cnippet/hero-parallax"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll image reveal"
+      ],
+      "description": "Case study cover — the cover image wipes up as you reach it",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-image-reveal-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-image-reveal-1",
+      "registryDependencies": [
+        "@cnippet/scroll-image-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll image reveal"
+      ],
+      "description": "Circle hero — a full-width photo expands from a circle",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-image-reveal-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-image-reveal-2",
+      "registryDependencies": [
+        "@cnippet/scroll-image-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll image reveal"
+      ],
+      "description": "Reveal grid — three tiles wiping in from different edges",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-image-reveal-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-image-reveal-3",
+      "registryDependencies": [
+        "@cnippet/scroll-image-reveal"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "macbook scroll"
+      ],
+      "description": "Product launch — the lid opens onto a wallpaper with a NEW badge",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-macbook-scroll-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-macbook-scroll-1",
+      "registryDependencies": [
+        "@cnippet/macbook-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "macbook scroll"
+      ],
+      "description": "App screen — custom UI rendered on the laptop screen",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-macbook-scroll-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-macbook-scroll-2",
+      "registryDependencies": [
+        "@cnippet/macbook-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "macbook scroll"
+      ],
+      "description": "Demo video — a video poster with player controls on screen",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-macbook-scroll-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-macbook-scroll-3",
+      "registryDependencies": [
+        "@cnippet/macbook-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "horizontal scroll"
+      ],
+      "description": "Case studies — cards with results scroll sideways while pinned",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-horizontal-scroll-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-horizontal-scroll-1",
+      "registryDependencies": [
+        "@cnippet/horizontal-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "horizontal scroll"
+      ],
+      "description": "Company timeline — milestones by year on a horizontal track",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-horizontal-scroll-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-horizontal-scroll-2",
+      "registryDependencies": [
+        "@cnippet/horizontal-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "horizontal scroll"
+      ],
+      "description": "Photo gallery — tall images in a fast horizontal strip",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-horizontal-scroll-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-horizontal-scroll-3",
+      "registryDependencies": [
+        "@cnippet/horizontal-scroll"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll direction header"
+      ],
+      "description": "Site header — hides while reading down, returns on scroll up",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-direction-header-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-direction-header-1",
+      "registryDependencies": [
+        "@cnippet/scroll-direction-header"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll direction header"
+      ],
+      "description": "Mobile tab bar — a bottom bar that slides away while browsing",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-direction-header-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-direction-header-2",
+      "registryDependencies": [
+        "@cnippet/scroll-direction-header"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll direction header"
+      ],
+      "description": "Docs toolbar — stays while reading, slides away on scroll up",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-direction-header-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-direction-header-3",
+      "registryDependencies": [
+        "@cnippet/scroll-direction-header"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky footer"
+      ],
+      "description": "Brand footer — oversized wordmark uncovered at the end of the page",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-footer-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-footer-1",
+      "registryDependencies": [
+        "@cnippet/sticky-footer"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky footer"
+      ],
+      "description": "CTA footer — a sign-up prompt revealed under an FAQ",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-footer-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-footer-2",
+      "registryDependencies": [
+        "@cnippet/sticky-footer",
+        "@cnippet/button"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sticky footer"
+      ],
+      "description": "Newsletter footer — an email form revealed under a post list",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-sticky-footer-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-sticky-footer-3",
+      "registryDependencies": [
+        "@cnippet/sticky-footer",
+        "@cnippet/button",
+        "@cnippet/input"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll snap sections"
+      ],
+      "description": "Product story — four full-height chapters with dot navigation",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-snap-sections-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-snap-sections-1",
+      "registryDependencies": [
+        "@cnippet/scroll-snap-sections"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll snap sections"
+      ],
+      "description": "Onboarding slides — horizontal slides in a phone-sized frame",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-snap-sections-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-snap-sections-2",
+      "registryDependencies": [
+        "@cnippet/scroll-snap-sections"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "scroll snap sections"
+      ],
+      "description": "Testimonials — one quote per snapped section",
+      "files": [
+        {
+          "path": "registry/default/motion-variants/m-scroll-snap-sections-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "m-scroll-snap-sections-3",
+      "registryDependencies": [
+        "@cnippet/scroll-snap-sections"
       ],
       "type": "registry:block"
     },

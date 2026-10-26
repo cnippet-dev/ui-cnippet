@@ -15,8 +15,8 @@ import {
 const UI_ITEMS = [{ href: "/explore?section=core", label: "Components" }];
 
 const MOTION_ITEMS = [
-  { href: "/explore?section=text+animations", label: "Text Animations" },
-  { href: "/explore?section=scroll+animations", label: "Scroll Animations" },
+  { href: "/explore?section=text-animations", label: "Text Animations" },
+  { href: "/explore?section=scroll-animations", label: "Scroll Animations" },
 ];
 
 export function ExploreNav() {

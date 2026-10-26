@@ -6,6 +6,7 @@ import {
   type MotionProps,
   motion,
   type Transition,
+  useReducedMotion,
 } from "motion/react";
 import {
   type ElementType,
@@ -84,6 +85,7 @@ export const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
     const elements = useMemo(() => {
@@ -191,7 +193,7 @@ export const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       <MotionComponent
         className={cn("flex flex-wrap whitespace-pre-wrap", mainClassName)}
         layout
-        transition={transition}
+        transition={reduceMotion ? { duration: 0 } : transition}
         {...props}
       >
         <span className="sr-only">{texts[currentTextIndex]}</span>
@@ -236,16 +238,20 @@ export const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
                           {...animProps}
                           className="inline-block"
                           key={charIndex}
-                          transition={{
-                            ...transition,
-                            delay: getStaggerDelay(
-                              prevCount + charIndex,
-                              array.reduce(
-                                (sum, w) => sum + w.characters.length,
-                                0,
-                              ),
-                            ),
-                          }}
+                          transition={
+                            reduceMotion
+                              ? { duration: 0 }
+                              : {
+                                  ...transition,
+                                  delay: getStaggerDelay(
+                                    prevCount + charIndex,
+                                    array.reduce(
+                                      (sum, w) => sum + w.characters.length,
+                                      0,
+                                    ),
+                                  ),
+                                }
+                          }
                         >
                           {char}
                         </motion.span>

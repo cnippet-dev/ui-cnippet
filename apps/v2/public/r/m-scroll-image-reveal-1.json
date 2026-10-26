@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-image-reveal-1",
+  "description": "Case study cover — the cover image wipes up as you reach it",
+  "registryDependencies": [
+    "@cnippet/scroll-image-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-image-reveal-1.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ScrollImageReveal } from \"@/registry/default/motion/scroll-image-reveal\";\n\nexport default function ScrollImageRevealCaseStudy() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-6\"\n      ref={containerRef}\n    >\n      <div className=\"mx-auto max-w-2xl py-16\">\n        <p className=\"font-medium text-muted-foreground text-sm\">Case study</p>\n        <h3 className=\"mt-1 font-bold text-3xl text-foreground tracking-tight\">\n          Rebuilding booking for Alpine Huts\n        </h3>\n        <p className=\"mt-3 text-muted-foreground\">\n          Scroll to reveal the cover. Bookings went up 38% in the first season\n          after the redesign.\n        </p>\n        <div className=\"h-40\" />\n        <ScrollImageReveal\n          alt=\"Mountain range at sunset\"\n          className=\"aspect-video rounded-2xl\"\n          containerRef={containerRef}\n          src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=675&fit=crop&dpr=2&q=80\"\n        />\n        <div className=\"h-48\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll image reveal"
+  ],
+  "type": "registry:block"
+}

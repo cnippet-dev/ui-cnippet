@@ -5,6 +5,7 @@ import {
   motion,
   stagger,
   useAnimate,
+  useReducedMotion,
 } from "motion/react";
 import { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -31,15 +32,16 @@ export function VariableFontHover({
   onClick,
   ...props
 }: VariableFontHoverProps) {
+  const reduceMotion = useReducedMotion();
   const [scope, animate] = useAnimate();
   const [isHovered, setIsHovered] = useState(false);
 
   const mergeTransition = useCallback(
-    (base: AnimationOptions): AnimationOptions => ({
-      ...base,
-      delay: stagger(staggerDuration, { from: staggerFrom }),
-    }),
-    [staggerDuration, staggerFrom],
+    (base: AnimationOptions): AnimationOptions =>
+      reduceMotion
+        ? { duration: 0 }
+        : { ...base, delay: stagger(staggerDuration, { from: staggerFrom }) },
+    [staggerDuration, staggerFrom, reduceMotion],
   );
 
   const hoverStart = useCallback(() => {

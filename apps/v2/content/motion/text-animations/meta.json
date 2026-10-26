@@ -33,7 +33,9 @@
     "variable-font-hover",
     "variable-font-cursor-proximity",
     "text-cursor-proximity",
-    "text-along-path"
+    "text-along-path",
+    "canvas-text",
+    "text-flipping-board"
   ],
   "title": "Text Animations"
 }

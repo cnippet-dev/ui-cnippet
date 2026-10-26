@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   type Transition,
+  useReducedMotion,
   type Variants,
 } from "motion/react";
 import { type ElementType, useMemo } from "react";
@@ -63,6 +64,7 @@ export function SplittingText({
   className,
   segmentClassName,
 }: SplittingTextProps) {
+  const reduceMotion = useReducedMotion();
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
   const itemVariants = presets[preset] ?? presets.fade;
 
@@ -72,18 +74,21 @@ export function SplittingText({
     return children.split(" ");
   }, [children, splitBy]);
 
+  const stagger = reduceMotion ? 0 : staggerDuration;
+  const instant = reduceMotion ? { duration: 0 } : {};
   const containerVariants: Variants = {
     exit: {
       opacity: 0,
       transition: {
-        staggerChildren: staggerDuration / 2,
+        ...instant,
+        staggerChildren: stagger / 2,
         staggerDirection: -1,
       },
     },
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: staggerDuration },
+      transition: { ...instant, staggerChildren: stagger },
     },
   };
 
@@ -106,7 +111,7 @@ export function SplittingText({
                 segmentClassName,
               )}
               key={`${i}-${segment}`}
-              transition={transition}
+              transition={reduceMotion ? { duration: 0 } : transition}
               variants={itemVariants}
             >
               {segment}

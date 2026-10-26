@@ -1,0 +1,102 @@
+---
+title: Scroll Direction Header
+description: A header that slides away while you scroll one way and comes back as soon as you scroll the other.
+---
+
+<ComponentPreview name="m-scroll-direction-header-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-direction-header
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-direction-header" title="components/motion/scroll-direction-header.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollDirectionHeader } from "@/components/motion/scroll-direction-header";
+```
+
+```tsx
+<ScrollDirectionHeader className="border-b bg-background">
+  <nav>…</nav>
+</ScrollDirectionHeader>
+```
+
+## Anatomy
+
+```tsx
+<ScrollDirectionHeader>{/* nav */}</ScrollDirectionHeader> {/* sticky <header> */}
+```
+
+## Good to know
+
+- It renders a sticky `<header>`, so place it at the top of the scrolling area, or at the bottom with `side="bottom"`.
+- `threshold` is how many px you must scroll in one direction before it toggles. It is always shown near the top.
+- `hideOn="up"` flips the behaviour, which suits toolbars that should stay while reading.
+- Tabbing into it brings it back, so keyboard users never lose it.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- When the user has turned on reduced motion, it still hides and shows, but instantly, without sliding.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Header content |
+| `threshold` | `number` | `12` | Px scrolled before it toggles |
+| `hideOn` | `"down" \| "up"` | `"down"` | Scroll direction that hides it |
+| `side` | `"top" \| "bottom"` | `"top"` | Edge it sticks to and slides out of |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `...props` | `HTMLMotionProps<"header">` | — | Passed to the `<header>` |
+
+## Examples
+
+### Site Header
+
+Hides while reading down and returns on scroll up.
+
+<ComponentPreview name="m-scroll-direction-header-1" />
+
+### Mobile Tab Bar
+
+A bottom bar (`side="bottom"`) that slides away while browsing.
+
+<ComponentPreview name="m-scroll-direction-header-2" />
+
+### Docs Toolbar
+
+Stays while reading and slides away on scroll up (`hideOn="up"`).
+
+<ComponentPreview name="m-scroll-direction-header-3" />

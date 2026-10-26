@@ -8,7 +8,7 @@ export default function TextHighlightInView() {
       <h2 className="max-w-xl text-center font-bold text-3xl text-foreground tracking-tight sm:text-4xl">
         Ship{" "}
         <TextHighlight
-          highlightColor="hsl(262, 80%, 85%)"
+          highlightColor="hsl(262 80% 65% / 0.4)"
           transition={{ bounce: 0, duration: 0.9, type: "spring" }}
           triggerType="inView"
         >

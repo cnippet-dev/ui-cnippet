@@ -4,6 +4,7 @@
 import {
   type AnimationOptions,
   useAnimate,
+  useReducedMotion,
   type ValueAnimationTransition,
 } from "motion/react";
 import type React from "react";
@@ -109,6 +110,7 @@ export function Letter3DSwap({
   rotateDirection = "right",
   ...props
 }: Letter3DSwapProps) {
+  const reduceMotion = useReducedMotion();
   const [isAnimating, setIsAnimating] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [scope, animate] = useAnimate();
@@ -155,7 +157,7 @@ export function Letter3DSwap({
   );
 
   const handleHoverStart = useCallback(async () => {
-    if (isAnimating || isHovering) return;
+    if (isAnimating || isHovering || reduceMotion) return;
     setIsHovering(true);
     setIsAnimating(true);
 
@@ -184,6 +186,7 @@ export function Letter3DSwap({
   }, [
     isAnimating,
     isHovering,
+    reduceMotion,
     characters,
     transition,
     getStaggerDelay,

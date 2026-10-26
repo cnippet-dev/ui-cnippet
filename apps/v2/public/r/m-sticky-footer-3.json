@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sticky-footer-3",
+  "description": "Newsletter footer — an email form revealed under a post list",
+  "registryDependencies": [
+    "@cnippet/sticky-footer",
+    "@cnippet/button",
+    "@cnippet/input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sticky-footer-3.tsx",
+      "content": "\"use client\";\n\nimport { StickyFooter } from \"@/registry/default/motion/sticky-footer\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Input } from \"@/registry/default/ui/input\";\n\nexport default function StickyFooterNewsletter() {\n  return (\n    <div className=\"h-96 w-full overflow-y-auto\">\n      <main className=\"space-y-6 bg-background px-6 py-12\">\n        <h3 className=\"font-bold text-2xl text-foreground\">Latest posts</h3>\n        {[\n          \"Designing for reduced motion\",\n          \"Our 2024 infrastructure bill\",\n          \"How we ship on Fridays\",\n        ].map((title) => (\n          <article className=\"border-b pb-4\" key={title}>\n            <p className=\"font-medium text-foreground\">{title}</p>\n            <p className=\"text-muted-foreground text-sm\">6 min read</p>\n          </article>\n        ))}\n      </main>\n      <StickyFooter height={220}>\n        <form\n          className=\"flex size-full flex-col justify-center gap-3 border-t bg-card px-6\"\n          onSubmit={(e) => e.preventDefault()}\n        >\n          <p className=\"font-semibold text-foreground text-lg\">\n            One email a month. No fluff.\n          </p>\n          <div className=\"flex max-w-sm gap-2\">\n            <Input\n              aria-label=\"Email address\"\n              placeholder=\"you@company.com\"\n              type=\"email\"\n            />\n            <Button type=\"submit\">Subscribe</Button>\n          </div>\n        </form>\n      </StickyFooter>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sticky footer"
+  ],
+  "type": "registry:block"
+}

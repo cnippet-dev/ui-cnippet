@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-snap-sections-3",
+  "description": "Testimonials — one quote per snapped section",
+  "registryDependencies": [
+    "@cnippet/scroll-snap-sections"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-snap-sections-3.tsx",
+      "content": "\"use client\";\n\nimport { ScrollSnapSections } from \"@/registry/default/motion/scroll-snap-sections\";\n\nconst quotes = [\n  {\n    author: \"Maya Chen, CTO at Tidewater\",\n    id: \"q-maya\",\n    quote: \"We cut our release cycle from two weeks to two days.\",\n  },\n  {\n    author: \"Leo Park, founder of Grove\",\n    id: \"q-leo\",\n    quote: \"The only tool our designers and engineers both love.\",\n  },\n  {\n    author: \"Ana Ruiz, PM at Nightline\",\n    id: \"q-ana\",\n    quote: \"Onboarding a new hire now takes an afternoon.\",\n  },\n];\n\nexport default function ScrollSnapSectionsTestimonials() {\n  return (\n    <ScrollSnapSections\n      className=\"h-80 w-full\"\n      sections={quotes.map((q) => ({\n        content: (\n          <figure className=\"mx-auto max-w-lg px-8 text-center\">\n            <blockquote className=\"font-medium text-2xl text-foreground tracking-tight\">\n              “{q.quote}”\n            </blockquote>\n            <figcaption className=\"mt-4 text-muted-foreground text-sm\">\n              {q.author}\n            </figcaption>\n          </figure>\n        ),\n        id: q.id,\n        label: q.author,\n      }))}\n    />\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll snap sections"
+  ],
+  "type": "registry:block"
+}

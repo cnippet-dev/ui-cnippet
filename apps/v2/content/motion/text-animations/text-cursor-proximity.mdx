@@ -79,6 +79,7 @@ const containerRef = useRef<HTMLDivElement>(null);
 - Letters closer to the cursor move further toward the `to` values. `radius` sets the reach and `falloff` the curve.
 - It follows the mouse, so there's no effect on touch screens.
 - Screen readers read the full text once; the individual letters are hidden from them.
+- When the user has turned on reduced motion, the letters do not react to the cursor and keep their `from` styles.
 
 ## Props
 

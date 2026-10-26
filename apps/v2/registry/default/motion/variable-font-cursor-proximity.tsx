@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, useAnimationFrame } from "motion/react";
+import { motion, useAnimationFrame, useReducedMotion } from "motion/react";
 import React, { type ElementType, forwardRef, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -54,6 +54,7 @@ export const VariableFontCursorProximity = forwardRef<
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
     const interpolatedRef = useRef<string[]>([]);
     const mousePositionRef = useMousePositionRef(containerRef);
@@ -88,7 +89,7 @@ export const VariableFontCursorProximity = forwardRef<
     };
 
     useAnimationFrame(() => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || reduceMotion) return;
       const containerRect = containerRef.current.getBoundingClientRect();
 
       letterRefs.current.forEach((letterRef, index) => {

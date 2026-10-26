@@ -1,0 +1,101 @@
+---
+title: Scroll Image Reveal
+description: An image revealed with a clip-path wipe or an expanding circle as it scrolls into view.
+---
+
+<ComponentPreview name="m-scroll-image-reveal-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-image-reveal
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-image-reveal" title="components/motion/scroll-image-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollImageReveal } from "@/components/motion/scroll-image-reveal";
+```
+
+```tsx
+<ScrollImageReveal src="/cover.jpg" alt="Project cover" className="aspect-video rounded-2xl" />
+```
+
+## Anatomy
+
+```tsx
+<ScrollImageReveal src="…" alt="…" /> {/* clipped wrapper + image that scales from 1.2 to 1 */}
+```
+
+## Good to know
+
+- `shape="inset"` wipes in from the edge set by `direction`; `shape="circle"` grows from the centre.
+- By default the reveal finishes when the image reaches the middle of the screen. Change it with `offset`.
+- Give it a size with `className` (for example `aspect-video`); the image covers that box.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- When the user has turned on reduced motion, the image is shown in full with no clipping or scaling.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | — | Image URL |
+| `alt` | `string` | — | Image alt text |
+| `direction` | `"up" \| "down" \| "left" \| "right"` | `"up"` | Edge the wipe starts from (inset only) |
+| `shape` | `"inset" \| "circle"` | `"inset"` | Clip shape |
+| `offset` | `UseScrollOptions["offset"]` | `["start end", "center center"]` | Scroll range of the reveal |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `className` | `string` | — | Classes for the wrapper |
+| `imageClassName` | `string` | — | Classes for the image |
+
+## Examples
+
+### Case Study Cover
+
+A cover image wipes up under the case-study intro.
+
+<ComponentPreview name="m-scroll-image-reveal-1" />
+
+### Circle Hero
+
+A full-width photo grows from a circle (`shape="circle"`).
+
+<ComponentPreview name="m-scroll-image-reveal-2" />
+
+### Reveal Grid
+
+Three tiles, each wiping in from a different `direction`.
+
+<ComponentPreview name="m-scroll-image-reveal-3" />
