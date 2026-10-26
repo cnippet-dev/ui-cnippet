@@ -1,0 +1,102 @@
+---
+title: Canvas Text
+description: Text filled with flowing, colored lines drawn on a canvas and clipped to the letter shapes.
+---
+
+<ComponentPreview name="m-canvas-text-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add canvas-text
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="canvas-text" title="components/motion/canvas-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CanvasText } from "@/components/motion/canvas-text";
+```
+
+```tsx
+<CanvasText text="faster" className="font-bold text-6xl" />
+```
+
+## Anatomy
+
+```tsx
+<CanvasText text="faster" /> {/* <span> with an sr-only copy, an invisible sizing copy and a <canvas> on top */}
+```
+
+## Good to know
+
+- `text` is drawn on one line, so keep it short: a word or a short phrase.
+- It reads the font, size, weight and letter spacing from the surrounding text, so style it with normal Tailwind classes.
+- `colors` accepts any CSS color, including `var(--token)` values, which are read from the page. The default is `var(--chart-1)` to `var(--chart-5)`, so it follows your theme.
+- Screen readers read the text once; the canvas is hidden from them.
+- The drawing loop pauses when the text is off screen or the tab is hidden, and the canvas resolution is capped at 2× device pixel ratio.
+- When the user has turned on reduced motion, it draws one still frame.
+- It is SSR-safe: nothing touches `window` until it mounts.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `text` | `string` | — | Text to draw |
+| `as` | `React.ElementType` | `"span"` | Element rendered as the wrapper |
+| `colors` | `string[]` | `chart tokens` | Line colors; CSS variables are resolved |
+| `lineCount` | `number` | `12` | Number of flowing lines |
+| `lineWidth` | `number` | — | Line thickness in px; by default slightly more than each line's band, so the text reads solid |
+| `speed` | `number` | `1` | Animation speed multiplier |
+| `className` | `string` | — | Classes for the wrapper, e.g. font size |
+
+## Examples
+
+### Landing Hero
+
+One word of a hero headline is filled with flowing lines in the theme colors.
+
+<ComponentPreview name="m-canvas-text-1" />
+
+### Pricing Headline
+
+The price uses custom brand `colors` and a slower `speed`.
+
+<ComponentPreview name="m-canvas-text-2" />
+
+### Section Label
+
+A small eyebrow label with fewer, faster lines (`lineCount={6}`, `speed={1.5}`).
+
+<ComponentPreview name="m-canvas-text-3" />

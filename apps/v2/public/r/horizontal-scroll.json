@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "horizontal-scroll",
+  "description": "Pins a section and turns vertical scrolling into horizontal movement",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/horizontal-scroll.tsx",
+      "content": "\"use client\";\n\nimport {\n  motion,\n  useMotionValue,\n  useReducedMotion,\n  useScroll,\n  useTransform,\n} from \"motion/react\";\nimport {\n  type ReactNode,\n  type RefObject,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type HorizontalScrollProps = {\n  children: ReactNode;\n  /** Horizontal px moved per px scrolled. Higher is faster and shorter. */\n  speed?: number;\n  /** Scrollable ancestor to track instead of the window. */\n  containerRef?: RefObject<HTMLElement | null>;\n  className?: string;\n  /** Sizes the pinned panel; defaults to the full viewport height. */\n  panelClassName?: string;\n  trackClassName?: string;\n};\n\nexport function HorizontalScroll({\n  children,\n  speed = 1,\n  containerRef,\n  className,\n  panelClassName,\n  trackClassName,\n}: HorizontalScrollProps) {\n  const reduceMotion = useReducedMotion();\n  const sectionRef = useRef<HTMLDivElement>(null);\n  const panelRef = useRef<HTMLDivElement>(null);\n  const trackRef = useRef<HTMLDivElement>(null);\n  const [size, setSize] = useState({ distance: 0, panelHeight: 0 });\n\n  useEffect(() => {\n    const panel = panelRef.current;\n    const track = trackRef.current;\n    if (reduceMotion || !panel || !track) return;\n    const measure = () =>\n      setSize({\n        distance: Math.max(0, track.scrollWidth - panel.clientWidth),\n        panelHeight: panel.clientHeight,\n      });\n    measure();\n    const ro = new ResizeObserver(measure);\n    ro.observe(panel);\n    ro.observe(track);\n    return () => ro.disconnect();\n  }, [reduceMotion]);\n\n  const { scrollYProgress } = useScroll({\n    container: containerRef,\n    offset: [\"start start\", \"end end\"],\n    target: sectionRef,\n  });\n  // A motion value, so the transform follows re-measurements, not just scroll.\n  const distance = useMotionValue(0);\n  useEffect(() => distance.set(size.distance), [distance, size.distance]);\n  const x = useTransform(\n    [scrollYProgress, distance],\n    ([p, d]: number[]) => -(p ?? 0) * (d ?? 0),\n  );\n\n  // Reduced motion: no scroll hijack, just a normal horizontal scroller.\n  if (reduceMotion) {\n    return (\n      <div className={cn(\"overflow-x-auto\", className)} ref={sectionRef}>\n        <div className={cn(\"flex w-max gap-6 p-6\", trackClassName)}>\n          {children}\n        </div>\n      </div>\n    );\n  }\n\n  return (\n    <div\n      className={cn(\"relative\", className)}\n      ref={sectionRef}\n      style={{\n        height: size.panelHeight\n          ? size.panelHeight + size.distance / speed\n          : undefined,\n      }}\n    >\n      <div\n        className={cn(\n          \"sticky top-0 flex h-svh items-center overflow-hidden\",\n          panelClassName,\n        )}\n        ref={panelRef}\n      >\n        <motion.div\n          className={cn(\"flex w-max gap-6 px-6\", trackClassName)}\n          ref={trackRef}\n          style={{ x }}\n        >\n          {children}\n        </motion.div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/horizontal-scroll.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

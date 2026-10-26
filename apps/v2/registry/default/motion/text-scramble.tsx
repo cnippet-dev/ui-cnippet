@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { type MotionProps, motion } from "motion/react";
+import { type MotionProps, motion, useReducedMotion } from "motion/react";
 import { type JSX, useEffect, useRef, useState } from "react";
 
 const DEFAULT_CHARS =
@@ -31,12 +31,17 @@ export function TextScramble({
   const MotionComponent = motion.create(
     Component as keyof JSX.IntrinsicElements,
   );
+  const reduceMotion = useReducedMotion();
   const [scrambledText, setScrambledText] = useState<string | null>(null);
   const onScrambleCompleteRef = useRef(onScrambleComplete);
   onScrambleCompleteRef.current = onScrambleComplete;
 
   useEffect(() => {
     if (!trigger) return;
+    if (reduceMotion) {
+      onScrambleCompleteRef.current?.();
+      return;
+    }
 
     const steps = Math.ceil(duration / speed);
     let step = 0;
@@ -70,7 +75,7 @@ export function TextScramble({
     }, speed * 1000);
 
     return () => clearInterval(interval);
-  }, [trigger, children, duration, speed, characterSet]);
+  }, [trigger, children, duration, speed, characterSet, reduceMotion]);
 
   return (
     <MotionComponent className={className} {...props}>

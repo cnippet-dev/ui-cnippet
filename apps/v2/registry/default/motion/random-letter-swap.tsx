@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import { type AnimationOptions, motion, useAnimate } from "motion/react";
+import {
+  type AnimationOptions,
+  motion,
+  useAnimate,
+  useReducedMotion,
+} from "motion/react";
 import { useCallback, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +27,7 @@ export function RandomLetterSwap({
   onClick,
   ...props
 }: RandomLetterSwapProps) {
+  const reduceMotion = useReducedMotion();
   const [scope, animate] = useAnimate();
   const [blocked, setBlocked] = useState(false);
   const shuffledRef = useRef<number[]>(
@@ -31,7 +37,7 @@ export function RandomLetterSwap({
   );
 
   const hoverStart = useCallback(() => {
-    if (blocked) return;
+    if (blocked || reduceMotion) return;
     setBlocked(true);
 
     const shuffled = shuffledRef.current;
@@ -63,7 +69,15 @@ export function RandomLetterSwap({
           if (i === label.length - 1) setBlocked(false);
         });
     }
-  }, [blocked, label, animate, transition, staggerDuration, reverse]);
+  }, [
+    blocked,
+    reduceMotion,
+    label,
+    animate,
+    transition,
+    staggerDuration,
+    reverse,
+  ]);
 
   return (
     <motion.span

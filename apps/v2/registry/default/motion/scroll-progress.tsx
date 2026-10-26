@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, type SpringOptions, useScroll, useSpring } from "motion/react";
+import {
+  motion,
+  type SpringOptions,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+} from "motion/react";
 import type { RefObject } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +27,7 @@ export function ScrollProgress({
   springOptions,
   containerRef,
 }: ScrollProgressProps) {
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     container: containerRef,
   });
@@ -33,7 +40,7 @@ export function ScrollProgress({
   return (
     <motion.div
       className={cn("inset-x-0 top-0 h-1 origin-left", className)}
-      style={{ scaleX }}
+      style={{ scaleX: reduceMotion ? scrollYProgress : scaleX }}
     />
   );
 }

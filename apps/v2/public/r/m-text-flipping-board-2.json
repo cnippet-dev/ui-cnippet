@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-flipping-board-2",
+  "description": "Announcement bar — a single row cycling through promo messages",
+  "registryDependencies": [
+    "@cnippet/text-flipping-board"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-flipping-board-2.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { TextFlippingBoard } from \"@/registry/default/motion/text-flipping-board\";\n\nconst MESSAGES = [\n  \"SUMMER SALE 30% OFF\",\n  \"FREE SHIPPING OVER $50\",\n  \"NEW DROP FRIDAY\",\n];\n\nexport default function TextFlippingBoardAnnouncement() {\n  const [index, setIndex] = useState(0);\n\n  useEffect(() => {\n    const id = setInterval(\n      () => setIndex((i) => (i + 1) % MESSAGES.length),\n      5000,\n    );\n    return () => clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex min-h-50 items-center justify-center p-6\">\n      <div className=\"flex w-full max-w-xl items-center justify-center overflow-hidden rounded-lg border bg-card px-3 py-2\">\n        <TextFlippingBoard\n          className=\"text-[10px] sm:text-sm\"\n          cols={22}\n          flipDuration={0.05}\n          text={MESSAGES[index] ?? \"\"}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text flipping board"
+  ],
+  "type": "registry:block"
+}

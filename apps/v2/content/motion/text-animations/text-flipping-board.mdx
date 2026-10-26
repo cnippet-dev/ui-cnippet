@@ -1,0 +1,102 @@
+---
+title: Text Flipping Board
+description: A split-flap display where every character flips through a charset until it reaches the new text.
+---
+
+<ComponentPreview name="m-text-flipping-board-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add text-flipping-board
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-flipping-board" title="components/motion/text-flipping-board.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextFlippingBoard } from "@/components/motion/text-flipping-board";
+```
+
+```tsx
+<TextFlippingBoard text="NOW BOARDING" cols={12} />
+```
+
+## Anatomy
+
+```tsx
+<TextFlippingBoard text={["ROW ONE", "ROW TWO"]} rows={2} cols={10} /> {/* grid of flap cells, one per character */}
+```
+
+## Good to know
+
+- Pass a string to wrap it word by word into `cols`, or an array to set each row yourself. Text is upper-cased and padded with spaces.
+- Change `text` to flip to a new message. Each cell steps through `charset` in order, so a longer distance means more flips. Put characters in the order they usually change; for a countdown use `"9876543210:"`.
+- Characters that are not in `charset` are shown directly without flipping.
+- Size it with a font-size class: cells are sized in `em`.
+- Screen readers read the full text once; the grid is hidden from them.
+- When the user has turned on reduced motion, every cell shows the new character straight away.
+- On the server every cell renders blank, so the board flips in on load.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `text` | `string \| string[]` | — | Text to show; an array sets one row per item |
+| `rows` | `number` | `1` | Number of rows |
+| `cols` | `number` | `12` | Characters per row |
+| `flipDuration` | `number` | `0.08` | Seconds per flip |
+| `charset` | `string` | `DEFAULT_CHARSET` | Order the flaps cycle through (space, A–Z, 0–9, `:.-/!?`) |
+| `className` | `string` | — | Classes for the wrapper, e.g. font size |
+| `cellClassName` | `string` | — | Classes for each cell |
+
+## Examples
+
+### Departures Board
+
+Four rows that flip to the next set of flights every few seconds.
+
+<ComponentPreview name="m-text-flipping-board-1" />
+
+### Announcement Bar
+
+A single row that cycles through promo messages with a faster `flipDuration`.
+
+<ComponentPreview name="m-text-flipping-board-2" />
+
+### Countdown
+
+A launch timer. The charset is in descending order, so each second is one flip.
+
+<ComponentPreview name="m-text-flipping-board-3" />

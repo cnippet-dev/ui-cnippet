@@ -65,7 +65,7 @@ import { TextGenerateEffect } from "@/components/motion/text-generate-effect";
 - `filter` (default `true`) adds a blur to the fade.
 - It plays as soon as it mounts. Set `trigger={false}` and switch it to `true` to start it later, for example with `useInView`.
 - Screen readers read the full text once; the individual words are hidden from them.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the text shows in its final state straight away, with no stagger or movement.
 
 ## Props
 

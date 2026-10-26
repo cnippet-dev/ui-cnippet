@@ -65,6 +65,7 @@ import { Typewriter } from "@/components/motion/typewriter";
 - `speed` and `deleteSpeed` are milliseconds per character. `waitTime` is the pause before deleting.
 - `loop` (default `true`) repeats forever. Set `loop={false}` to stop after the last text.
 - Screen readers may read the text while it's half typed. Add an `aria-label` with the full text on a wrapper if that matters.
+- When the user has turned on reduced motion, each string appears whole instead of letter by letter, and the cursor does not blink. Multiple strings still cycle after `waitTime`.
 
 ## Props
 

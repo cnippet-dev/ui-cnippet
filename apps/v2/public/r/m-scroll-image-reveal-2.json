@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-image-reveal-2",
+  "description": "Circle hero — a full-width photo expands from a circle",
+  "registryDependencies": [
+    "@cnippet/scroll-image-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-image-reveal-2.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ScrollImageReveal } from \"@/registry/default/motion/scroll-image-reveal\";\n\nexport default function ScrollImageRevealCircle() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative h-96 w-full overflow-y-auto\" ref={containerRef}>\n      <div className=\"flex h-64 items-end justify-center pb-8 text-center\">\n        <h3 className=\"font-bold text-4xl text-foreground tracking-tight\">\n          Chase the light\n        </h3>\n      </div>\n      <ScrollImageReveal\n        alt=\"Northern lights over a snowy landscape\"\n        className=\"h-96 w-full\"\n        containerRef={containerRef}\n        offset={[\"start end\", \"end end\"]}\n        shape=\"circle\"\n        src=\"https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1400&h=800&fit=crop&dpr=2&q=80\"\n      />\n      <p className=\"py-16 text-center text-muted-foreground\">\n        Arctic photo tours · Winter 2025\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll image reveal"
+  ],
+  "type": "registry:block"
+}

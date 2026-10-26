@@ -5,6 +5,7 @@ import {
   type Transition,
   type UseInViewOptions,
   useInView,
+  useReducedMotion,
   type Variant,
 } from "motion/react";
 import { type ReactNode, useRef, useState } from "react";
@@ -34,6 +35,7 @@ export function ScrollReveal({
   as = "div",
   once,
 }: ScrollRevealProps) {
+  const reduceMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, viewOptions);
   const [isViewed, setIsViewed] = useState(false);
@@ -50,7 +52,7 @@ export function ScrollReveal({
         if (once) setIsViewed(true);
       }}
       ref={ref}
-      transition={transition}
+      transition={reduceMotion ? { duration: 0 } : transition}
       variants={variants}
     >
       {children}

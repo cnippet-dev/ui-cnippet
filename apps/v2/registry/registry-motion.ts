@@ -10,6 +10,7 @@ function createMotion(options: {
   description: string;
   categories: RegistryCategory[];
   dependencies?: string[];
+  registryDependencies?: string[];
 }): MotionItem {
   return {
     categories: options.categories,
@@ -23,6 +24,11 @@ function createMotion(options: {
       },
     ],
     name: options.name,
+    ...(options.registryDependencies && {
+      registryDependencies: options.registryDependencies.map(
+        (d) => `@cnippet/${d}`,
+      ),
+    }),
     type: "registry:ui",
   };
 }
@@ -246,5 +252,71 @@ export const motionComponents: MotionItem[] = [
     categories: ["text animation", "hover animation"],
     description: "Characters scale and transform based on cursor distance",
     name: "text-cursor-proximity",
+  }),
+  // Text Animation (canvas + split-flap)
+  createMotion({
+    categories: ["text animation"],
+    description: "Text filled with flowing colored lines drawn on a canvas",
+    name: "canvas-text",
+  }),
+  createMotion({
+    categories: ["text animation"],
+    description:
+      "Split-flap board that flips each character through a charset to the new text",
+    name: "text-flipping-board",
+  }),
+  // Scroll Animation (pinned + reveal)
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Text steps scroll past a sticky panel that swaps to each step's content",
+    name: "sticky-scroll-reveal",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description: "A card tilts back flat and settles as it scrolls into view",
+    name: "container-scroll",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Rows of product cards slide sideways in opposite directions as the hero scrolls",
+    name: "hero-parallax",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "An image is revealed with a clip-path wipe or circle as it scrolls into view",
+    name: "scroll-image-reveal",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "A laptop lid opens on scroll to reveal an image or custom screen content",
+    name: "macbook-scroll",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Pins a section and turns vertical scrolling into horizontal movement",
+    name: "horizontal-scroll",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Header that hides while scrolling one way and returns when scrolling back",
+    name: "scroll-direction-header",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Footer that stays put underneath the page and is uncovered at the end of the scroll",
+    name: "sticky-footer",
+  }),
+  createMotion({
+    categories: ["scroll animation"],
+    description:
+      "Full-height sections that snap into place, with dot navigation and entrance animation",
+    name: "scroll-snap-sections",
   }),
 ];

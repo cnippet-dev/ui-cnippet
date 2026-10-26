@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-macbook-scroll-2",
+  "description": "App screen — custom UI rendered on the laptop screen",
+  "registryDependencies": [
+    "@cnippet/macbook-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-macbook-scroll-2.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { MacbookScroll } from \"@/registry/default/motion/macbook-scroll\";\n\nfunction AppScreen() {\n  return (\n    <div className=\"flex size-full text-[8px] sm:text-[10px]\">\n      <aside className=\"w-1/4 space-y-1 border-r bg-muted/50 p-2\">\n        {[\"Inbox\", \"Projects\", \"Calendar\", \"Reports\"].map((item, i) => (\n          <div\n            className={\n              i === 1\n                ? \"rounded bg-foreground px-1.5 py-1 text-background\"\n                : \"px-1.5 py-1 text-muted-foreground\"\n            }\n            key={item}\n          >\n            {item}\n          </div>\n        ))}\n      </aside>\n      <main className=\"flex-1 space-y-2 p-2\">\n        <p className=\"font-semibold text-foreground\">Projects</p>\n        <div className=\"grid grid-cols-3 gap-1.5\">\n          {[\"Website\", \"Mobile app\", \"Brand\", \"Docs\", \"API\", \"Billing\"].map(\n            (p) => (\n              <div className=\"rounded border p-1.5\" key={p}>\n                <p className=\"text-foreground\">{p}</p>\n                <div className=\"mt-1 h-1 rounded bg-foreground/15\">\n                  <div className=\"h-full w-2/3 rounded bg-foreground/60\" />\n                </div>\n              </div>\n            ),\n          )}\n        </div>\n      </main>\n    </div>\n  );\n}\n\nexport default function MacbookScrollApp() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-[28rem] w-full overflow-y-auto\"\n      ref={containerRef}\n    >\n      <div className=\"h-40\" />\n      <MacbookScroll\n        containerRef={containerRef}\n        title={\n          <h3 className=\"font-bold text-3xl text-foreground tracking-tight\">\n            Every project, one screen\n          </h3>\n        }\n      >\n        <AppScreen />\n      </MacbookScroll>\n      <div className=\"h-40\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "macbook scroll"
+  ],
+  "type": "registry:block"
+}

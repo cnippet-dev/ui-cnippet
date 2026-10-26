@@ -5,6 +5,7 @@ import {
   type AnimatePresenceProps,
   motion,
   type Transition,
+  useReducedMotion,
   type Variants,
 } from "motion/react";
 import { Children, useEffect, useState } from "react";
@@ -37,6 +38,7 @@ export function TextLoop({
   trigger = true,
   mode = "popLayout",
 }: TextLoopProps) {
+  const reduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = Children.toArray(children);
 
@@ -60,7 +62,7 @@ export function TextLoop({
           exit="exit"
           initial="initial"
           key={currentIndex}
-          transition={transition}
+          transition={reduceMotion ? { duration: 0 } : transition}
           variants={variants ?? defaultVariants}
         >
           {items[currentIndex]}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sticky-scroll-reveal",
+  "description": "Text steps scroll past a sticky panel that swaps to each step's content",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/sticky-scroll-reveal.tsx",
+      "content": "\"use client\";\n\nimport {\n  AnimatePresence,\n  motion,\n  useMotionValueEvent,\n  useReducedMotion,\n  useScroll,\n} from \"motion/react\";\nimport { type ReactNode, type RefObject, useRef, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type StickyScrollRevealItem = {\n  title: ReactNode;\n  description: ReactNode;\n  content: ReactNode;\n};\n\nexport type StickyScrollRevealProps = {\n  items: StickyScrollRevealItem[];\n  /** Scrollable ancestor to track instead of the window. */\n  containerRef?: RefObject<HTMLElement | null>;\n  className?: string;\n  itemClassName?: string;\n  contentClassName?: string;\n};\n\nexport function StickyScrollReveal({\n  items,\n  containerRef,\n  className,\n  itemClassName,\n  contentClassName,\n}: StickyScrollRevealProps) {\n  const reduceMotion = useReducedMotion();\n  const listRef = useRef<HTMLDivElement>(null);\n  const [active, setActive] = useState(0);\n\n  const { scrollYProgress } = useScroll({\n    container: containerRef,\n    offset: [\"start center\", \"end center\"],\n    target: listRef,\n  });\n\n  useMotionValueEvent(scrollYProgress, \"change\", (p) => {\n    setActive(\n      Math.min(items.length - 1, Math.max(0, Math.floor(p * items.length))),\n    );\n  });\n\n  const transition = reduceMotion ? { duration: 0 } : { duration: 0.35 };\n\n  return (\n    <div className={cn(\"relative grid gap-10 md:grid-cols-2\", className)}>\n      <div ref={listRef}>\n        {items.map((item, i) => (\n          <motion.div\n            animate={{ opacity: active === i ? 1 : 0.35 }}\n            aria-current={active === i ? \"step\" : undefined}\n            className={cn(\"py-10 md:py-20\", itemClassName)}\n            initial={false}\n            key={i}\n            transition={transition}\n          >\n            <h3 className=\"font-semibold text-foreground text-xl\">\n              {item.title}\n            </h3>\n            <div className=\"mt-2 text-muted-foreground\">{item.description}</div>\n            {/* Phones have no sticky column, so the visual sits under its text. */}\n            <div\n              className={cn(\n                \"mt-6 aspect-4/3 overflow-hidden rounded-2xl border bg-card md:hidden\",\n                contentClassName,\n              )}\n            >\n              {item.content}\n            </div>\n          </motion.div>\n        ))}\n      </div>\n      <div className=\"hidden md:block\">\n        <div\n          className={cn(\n            \"sticky top-[15%] aspect-4/3 overflow-hidden rounded-2xl border bg-card\",\n            contentClassName,\n          )}\n        >\n          <AnimatePresence initial={false} mode=\"popLayout\">\n            <motion.div\n              animate={{ opacity: 1, y: 0 }}\n              className=\"size-full\"\n              exit={{ opacity: 0, y: -12 }}\n              initial={{ opacity: 0, y: 12 }}\n              key={active}\n              transition={transition}\n            >\n              {items[active]?.content}\n            </motion.div>\n          </AnimatePresence>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/sticky-scroll-reveal.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

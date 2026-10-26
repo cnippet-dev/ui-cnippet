@@ -5,6 +5,7 @@ import {
   motion,
   stagger,
   useAnimate,
+  useReducedMotion,
 } from "motion/react";
 import { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,7 @@ export function LetterSwapHover({
   onClick,
   ...props
 }: LetterSwapHoverProps) {
+  const reduceMotion = useReducedMotion();
   const [scope, animate] = useAnimate();
   const [blocked, setBlocked] = useState(false);
 
@@ -41,7 +43,7 @@ export function LetterSwapHover({
   );
 
   const hoverStart = useCallback(() => {
-    if (blocked) return;
+    if (blocked || reduceMotion) return;
     setBlocked(true);
 
     animate(
@@ -65,7 +67,7 @@ export function LetterSwapHover({
         { duration: 0 },
       );
     });
-  }, [blocked, animate, transition, reverse, mergeTransition]);
+  }, [blocked, reduceMotion, animate, transition, reverse, mergeTransition]);
 
   return (
     <span

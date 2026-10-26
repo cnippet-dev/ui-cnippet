@@ -5,6 +5,7 @@ import {
   type Target,
   type TargetAndTransition,
   type Transition,
+  useReducedMotion,
   type VariantLabels,
 } from "motion/react";
 
@@ -49,6 +50,7 @@ export function TextRoll({
   variants,
   onAnimationComplete,
 }: TextRollProps) {
+  const reduceMotion = useReducedMotion();
   const letters = children.split("");
 
   return (
@@ -63,7 +65,11 @@ export function TextRoll({
             animate={variants?.enter?.animate ?? defaultVariants.enter.animate}
             className="backface-hidden absolute inline-block origin-[50%_25%]"
             initial={variants?.enter?.initial ?? defaultVariants.enter.initial}
-            transition={{ ...transition, delay: getEnterDelay(i), duration }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { ...transition, delay: getEnterDelay(i), duration }
+            }
           >
             {letter === " " ? " " : letter}
           </motion.span>
@@ -74,7 +80,11 @@ export function TextRoll({
             onAnimationComplete={
               letters.length === i + 1 ? onAnimationComplete : undefined
             }
-            transition={{ ...transition, delay: getExitDelay(i), duration }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { ...transition, delay: getExitDelay(i), duration }
+            }
           >
             {letter === " " ? " " : letter}
           </motion.span>

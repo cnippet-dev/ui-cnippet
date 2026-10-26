@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-scroll-direction-header-3",
+  "description": "Docs toolbar — stays while reading, slides away on scroll up",
+  "registryDependencies": [
+    "@cnippet/scroll-direction-header"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-scroll-direction-header-3.tsx",
+      "content": "\"use client\";\n\nimport { CopyIcon, PencilIcon } from \"lucide-react\";\nimport { useRef } from \"react\";\nimport { ScrollDirectionHeader } from \"@/registry/default/motion/scroll-direction-header\";\n\nexport default function ScrollDirectionHeaderDocsToolbar() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div className=\"relative h-96 w-full overflow-y-auto\" ref={containerRef}>\n      {/* Stays while reading down; slides away when scrolling back up. */}\n      <ScrollDirectionHeader\n        className=\"border-b bg-background/90 backdrop-blur\"\n        containerRef={containerRef}\n        hideOn=\"up\"\n      >\n        <div className=\"mx-auto flex h-11 max-w-2xl items-center justify-between px-6 text-sm\">\n          <span className=\"text-muted-foreground\">\n            Docs / Guides / <span className=\"text-foreground\">Deploying</span>\n          </span>\n          <div className=\"flex gap-1\">\n            <button\n              aria-label=\"Copy page link\"\n              className=\"flex size-8 items-center justify-center rounded-md text-muted-foreground outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring\"\n              type=\"button\"\n            >\n              <CopyIcon className=\"size-4\" />\n            </button>\n            <button\n              aria-label=\"Edit this page\"\n              className=\"flex size-8 items-center justify-center rounded-md text-muted-foreground outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring\"\n              type=\"button\"\n            >\n              <PencilIcon className=\"size-4\" />\n            </button>\n          </div>\n        </div>\n      </ScrollDirectionHeader>\n      <article className=\"mx-auto max-w-2xl space-y-4 px-6 py-8\">\n        <h3 className=\"font-bold text-2xl text-foreground\">Deploying</h3>\n        {Array.from({ length: 8 }, (_, i) => (\n          <p className=\"text-muted-foreground\" key={i}>\n            Push to your main branch and every commit builds a preview. Promote\n            a preview to production when the checks pass.\n          </p>\n        ))}\n      </article>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scroll direction header"
+  ],
+  "type": "registry:block"
+}

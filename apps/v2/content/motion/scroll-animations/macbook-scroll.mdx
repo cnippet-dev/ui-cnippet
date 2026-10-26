@@ -1,0 +1,101 @@
+---
+title: Macbook Scroll
+description: A laptop whose lid opens as you scroll, revealing an image or your own screen content.
+---
+
+<ComponentPreview name="m-macbook-scroll-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add macbook-scroll
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="macbook-scroll" title="components/motion/macbook-scroll.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { MacbookScroll } from "@/components/motion/macbook-scroll";
+```
+
+```tsx
+<MacbookScroll src="/screenshot.png" alt="App screenshot" title={<h2>Meet Horizon</h2>} />
+```
+
+## Anatomy
+
+```tsx
+<MacbookScroll title={…} badge={…}>{/* optional custom screen */}</MacbookScroll>
+```
+
+## Good to know
+
+- Pass `src` for an image, or `children` for any screen content, such as a UI mock or a `<video>` you host yourself. `children` wins when both are set.
+- The lid opens over the first part of the scroll range, then the screen zooms in slightly.
+- The laptop is drawn with theme tokens (`foreground`, `muted`, `background`), so it adapts to light and dark mode.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- When the user has turned on reduced motion, the lid is open from the start and the title does not fade.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | — | Screen image URL |
+| `alt` | `string` | `""` | Screen image alt text |
+| `children` | `ReactNode` | — | Custom screen content |
+| `title` | `ReactNode` | — | Content above the laptop; fades out as it opens |
+| `badge` | `ReactNode` | — | Element in the bottom-left corner of the deck |
+| `showGradient` | `boolean` | `false` | Fades the deck into the page background |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `className` | `string` | — | Classes for the wrapper |
+
+## Examples
+
+### Product Launch
+
+The lid opens onto a wallpaper, with a NEW `badge` and `showGradient`.
+
+<ComponentPreview name="m-macbook-scroll-1" />
+
+### App Screen
+
+A custom app UI passed as `children`.
+
+<ComponentPreview name="m-macbook-scroll-2" />
+
+### Demo Video
+
+A video poster with player controls; swap in your own `<video>`.
+
+<ComponentPreview name="m-macbook-scroll-3" />

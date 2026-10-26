@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "container-scroll",
+  "description": "A card tilts back flat and settles as it scrolls into view",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion/container-scroll.tsx",
+      "content": "\"use client\";\n\nimport {\n  motion,\n  useReducedMotion,\n  useScroll,\n  useTransform,\n} from \"motion/react\";\nimport { type ReactNode, type RefObject, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type ContainerScrollProps = {\n  header?: ReactNode;\n  children: ReactNode;\n  /** rotateX in degrees, from entering the viewport to centred. */\n  rotate?: [number, number];\n  scale?: [number, number];\n  /** Scrollable ancestor to track instead of the window. */\n  containerRef?: RefObject<HTMLElement | null>;\n  className?: string;\n  cardClassName?: string;\n};\n\nexport function ContainerScroll({\n  header,\n  children,\n  rotate = [20, 0],\n  scale = [1.05, 1],\n  containerRef,\n  className,\n  cardClassName,\n}: ContainerScrollProps) {\n  const reduceMotion = useReducedMotion();\n  const ref = useRef<HTMLDivElement>(null);\n  const { scrollYProgress } = useScroll({\n    container: containerRef,\n    offset: [\"start end\", \"center center\"],\n    target: ref,\n  });\n\n  const rotateX = useTransform(scrollYProgress, [0, 1], rotate);\n  const cardScale = useTransform(scrollYProgress, [0, 1], scale);\n  const headerY = useTransform(scrollYProgress, [0, 1], [40, 0]);\n\n  return (\n    <div\n      className={cn(\n        \"perspective-[1000px] flex flex-col items-center\",\n        className,\n      )}\n      ref={ref}\n    >\n      {header ? (\n        <motion.div\n          className=\"mb-8 text-center\"\n          style={{ y: reduceMotion ? 0 : headerY }}\n        >\n          {header}\n        </motion.div>\n      ) : null}\n      <motion.div\n        className={cn(\n          \"w-full max-w-4xl overflow-hidden rounded-3xl border-4 border-border bg-card p-2 shadow-2xl md:p-4\",\n          cardClassName,\n        )}\n        style={{\n          rotateX: reduceMotion ? rotate[1] : rotateX,\n          scale: reduceMotion ? scale[1] : cardScale,\n          transformOrigin: \"50% 0%\",\n        }}\n      >\n        <div className=\"size-full overflow-hidden rounded-2xl bg-background\">\n          {children}\n        </div>\n      </motion.div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/motion/container-scroll.tsx"
+    }
+  ],
+  "categories": [
+    "scroll animation"
+  ],
+  "type": "registry:ui"
+}

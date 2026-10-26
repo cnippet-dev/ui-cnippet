@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-text-flipping-board-3",
+  "description": "Countdown — a launch timer where each second is one flip",
+  "registryDependencies": [
+    "@cnippet/text-flipping-board"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-text-flipping-board-3.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { TextFlippingBoard } from \"@/registry/default/motion/text-flipping-board\";\n\nconst pad = (n: number) => String(n).padStart(2, \"0\");\n\nexport default function TextFlippingBoardCountdown() {\n  const [seconds, setSeconds] = useState(2 * 3600 + 15 * 60);\n\n  useEffect(() => {\n    const id = setInterval(() => setSeconds((s) => Math.max(0, s - 1)), 1000);\n    return () => clearInterval(id);\n  }, []);\n\n  const time = `${pad(Math.floor(seconds / 3600))}:${pad(Math.floor((seconds % 3600) / 60))}:${pad(seconds % 60)}`;\n\n  return (\n    <div className=\"flex min-h-50 flex-col items-center justify-center gap-3 p-6\">\n      <p className=\"font-medium text-muted-foreground text-sm\">Launch in</p>\n      <TextFlippingBoard\n        // Descending order: each tick is a single flip.\n        charset=\"9876543210:\"\n        className=\"text-3xl sm:text-5xl\"\n        cols={8}\n        flipDuration={0.12}\n        text={time}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "text flipping board"
+  ],
+  "type": "registry:block"
+}

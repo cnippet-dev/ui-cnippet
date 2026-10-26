@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-container-scroll-3",
+  "description": "Video frame — a keynote poster with a play button tilts into view",
+  "registryDependencies": [
+    "@cnippet/container-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-container-scroll-3.tsx",
+      "content": "\"use client\";\n\nimport { PlayIcon } from \"lucide-react\";\nimport { useRef } from \"react\";\nimport { ContainerScroll } from \"@/registry/default/motion/container-scroll\";\n\nexport default function ContainerScrollVideo() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-4\"\n      ref={containerRef}\n    >\n      <div className=\"h-48\" />\n      <ContainerScroll\n        containerRef={containerRef}\n        header={\n          <>\n            <p className=\"text-muted-foreground text-sm\">Keynote · 12 min</p>\n            <h3 className=\"font-bold text-3xl text-foreground tracking-tight\">\n              Watch the launch\n            </h3>\n          </>\n        }\n        rotate={[25, 0]}\n      >\n        <div className=\"relative aspect-video\">\n          <img\n            alt=\"Stage with mountains projected on the screen\"\n            className=\"size-full object-cover\"\n            src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=960&h=540&fit=crop&dpr=2&q=80\"\n          />\n          <button\n            aria-label=\"Play keynote\"\n            className=\"absolute inset-0 m-auto flex size-16 items-center justify-center rounded-full bg-background/90 text-foreground shadow-lg outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n            type=\"button\"\n          >\n            <PlayIcon className=\"ml-1 size-6\" />\n          </button>\n        </div>\n      </ContainerScroll>\n      <div className=\"h-48\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "container scroll"
+  ],
+  "type": "registry:block"
+}

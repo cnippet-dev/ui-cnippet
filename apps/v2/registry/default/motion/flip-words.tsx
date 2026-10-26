@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import { AnimatePresence, motion, type Transition } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  type Transition,
+  useReducedMotion,
+} from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +26,7 @@ export function FlipWords({
     type: "spring",
   },
 }: FlipWordsProps) {
+  const reduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -49,7 +55,7 @@ export function FlipWords({
               perspective: "500px",
               transformOrigin: "50% 50%",
             }}
-            transition={transition}
+            transition={reduceMotion ? { duration: 0 } : transition}
           >
             {words[currentIndex]}
           </motion.span>

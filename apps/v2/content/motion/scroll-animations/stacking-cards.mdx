@@ -80,7 +80,7 @@ import {
 - The container needs enough height to scroll through, e.g. `h-[300vh]` for three cards.
 - Give each card a slightly larger `topPosition` so the stacked edges stay visible.
 - Cards stick with `position: sticky`, so no parent between them and the scrolling element may use `overflow: hidden`.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, cards still stack as you scroll but do not scale down.
 
 ## Props
 

@@ -1,0 +1,101 @@
+---
+title: Scroll Snap Sections
+description: Full-size sections that snap into place, with dot navigation and a short entrance animation for each.
+---
+
+<ComponentPreview name="m-scroll-snap-sections-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add scroll-snap-sections
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-snap-sections" title="components/motion/scroll-snap-sections.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScrollSnapSections } from "@/components/motion/scroll-snap-sections";
+```
+
+```tsx
+<ScrollSnapSections
+  sections={[
+    { id: "intro", label: "Intro", content: <Intro /> },
+    { id: "pricing", label: "Pricing", content: <Pricing /> },
+  ]}
+/>
+```
+
+## Anatomy
+
+```tsx
+<ScrollSnapSections sections={…} /> {/* scroll container of <section>s + dot <nav> */}
+```
+
+## Good to know
+
+- It is its own scroll container and fills the viewport height by default; set the size with `className`.
+- Each section is a labelled `<section>`. The dots are buttons named after each section's `label`, and the current one has `aria-current`.
+- Use `direction="horizontal"` for slides.
+- When the user has turned on reduced motion, sections appear without the entrance animation and the dots jump instead of smooth-scrolling.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `sections` | `{ id, label, content, className? }[]` | — | Sections to render |
+| `direction` | `"vertical" \| "horizontal"` | `"vertical"` | Scroll and snap direction |
+| `showDots` | `boolean` | `true` | Shows the dot navigation |
+| `className` | `string` | — | Classes for the outer box, e.g. its height |
+
+## Examples
+
+### Product Story
+
+Four full-height chapters with dot navigation.
+
+<ComponentPreview name="m-scroll-snap-sections-1" />
+
+### Onboarding Slides
+
+Horizontal slides in a phone-sized frame.
+
+<ComponentPreview name="m-scroll-snap-sections-2" />
+
+### Testimonials
+
+One customer quote per section.
+
+<ComponentPreview name="m-scroll-snap-sections-3" />

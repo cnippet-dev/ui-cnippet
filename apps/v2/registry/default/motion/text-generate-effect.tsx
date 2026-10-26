@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, type Transition } from "motion/react";
+import { motion, type Transition, useReducedMotion } from "motion/react";
 import { type ElementType, useMemo } from "react";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +25,7 @@ export function TextGenerateEffect({
   transition = { duration: 0.5 },
   filter = true,
 }: TextGenerateEffectProps) {
+  const reduceMotion = useReducedMotion();
   const words = useMemo(() => children.split(" "), [children]);
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
 
@@ -42,7 +43,11 @@ export function TextGenerateEffect({
           className={cn("inline-block whitespace-pre opacity-0", wordClassName)}
           initial={{ filter: filter ? "blur(4px)" : undefined, opacity: 0 }}
           key={`${i}-${word}`}
-          transition={{ ...transition, delay: i * staggerDuration }}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : { ...transition, delay: i * staggerDuration }
+          }
         >
           {word}{" "}
         </motion.span>

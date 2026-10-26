@@ -14,31 +14,42 @@ export interface VariantEntry {
 
 // Categories whose variants need the full row; two columns would leave each
 // one too narrow and force horizontal scrolling.
-const WIDE_CATEGORIES = new Set(["data table", "sidebar"]);
+const WIDE_CATEGORIES = new Set([
+  "data table",
+  "sidebar",
+  // Motion: page-section layouts (sticky panels, scroll boxes, devices)
+  "sticky scroll reveal",
+  "container scroll",
+  "hero parallax",
+  "scroll image reveal",
+  "macbook scroll",
+  "horizontal scroll",
+  "scroll direction header",
+  "sticky footer",
+  "scroll snap sections",
+  "stacking cards",
+  "text flipping board",
+]);
 
-const SECTIONS = [
-  { id: "core", label: "Core" },
-  { id: "text animations", label: "Text Animations" },
-  { id: "scroll animations", label: "Scroll Animations" },
-] as const;
+export interface ShowcaseGroup {
+  id: string;
+  label: string;
+  variants: VariantEntry[];
+  categories: string[];
+}
 
 interface ExploreShowcaseProps {
   variants: VariantEntry[];
   categories: string[];
-  textAnimVariants: VariantEntry[];
-  textAnimCategories: string[];
-  scrollAnimVariants: VariantEntry[];
-  scrollAnimCategories: string[];
+  groups: ShowcaseGroup[];
 }
 
 export function ExploreShowcase({
   variants,
   categories,
-  textAnimVariants,
-  textAnimCategories,
-  scrollAnimVariants,
-  scrollAnimCategories,
+  groups,
 }: ExploreShowcaseProps) {
+  const sections = [{ id: "core", label: "Core" }, ...groups];
   const [section, setSection] = useQueryState(
     "section",
     parseAsString.withDefault("core"),
@@ -51,19 +62,9 @@ export function ExploreShowcase({
   const [debouncedQuery, setDebouncedQuery] = React.useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const activeVariants =
-    section === "text animations"
-      ? textAnimVariants
-      : section === "scroll animations"
-        ? scrollAnimVariants
-        : variants;
-
-  const activeCategories =
-    section === "text animations"
-      ? textAnimCategories
-      : section === "scroll animations"
-        ? scrollAnimCategories
-        : categories;
+  const activeGroup = groups.find((g) => g.id === section);
+  const activeVariants = activeGroup?.variants ?? variants;
+  const activeCategories = activeGroup?.categories ?? categories;
 
   const handleSectionChange = (next: string) => {
     setSection(next);
@@ -104,7 +105,7 @@ export function ExploreShowcase({
       <div className="relative z-20 -mx-2 mb-6 rounded-2xl border bg-frame/90 p-1 backdrop-blur-xl md:sticky md:top-[calc(var(--header-height)+0.75rem+1px)]">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
           <div className="no-scrollbar -my-1 -ms-1 flex gap-0.5 overflow-x-auto py-1 ps-1">
-            {SECTIONS.map((s) => (
+            {sections.map((s) => (
               <button
                 aria-pressed={section === s.id}
                 className={cn(
@@ -186,7 +187,7 @@ export function ExploreShowcase({
               description={variant.description}
               key={variant.name}
               name={variant.name}
-              reloadable={section !== "core"}
+              reloadable={!!activeGroup}
             />
           ))
         ) : (

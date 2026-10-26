@@ -11,6 +11,7 @@ import {
   isPlaceholderMotionVariant,
   isPlaceholderVariant,
 } from "@/lib/variants";
+import { motionGroupOf, motionGroups } from "@/registry/motion-groups";
 import { motionVariants } from "@/registry/registry-motion-variants";
 import { variants } from "@/registry/registry-variants";
 
@@ -54,41 +55,36 @@ export default function ExplorePage() {
     )
     .map(({ showcase: _, ...entry }) => entry);
 
-  const SCROLL_ANIM_CATEGORIES = new Set([
-    "scroll reveal",
-    "scroll progress",
-    "scroll velocity text",
-    "parallax floating",
-    "stacking cards",
-    "progressive blur",
-  ]);
-
-  const allMotionEntries = motionVariants
+  // A motion variant's group is its parent component's group.
+  const motionEntries = motionVariants
     .filter((v) => !isPlaceholderMotionVariant(v.name))
     .map((v) => ({
       category: v.categories?.[0] ?? "other",
       description: v.description ?? v.name,
+      groupId: motionGroupOf(
+        v.registryDependencies?.[0]?.replace("@cnippet/", "") ?? "",
+      )?.id,
       name: v.name,
     }));
 
-  const textAnimEntries = allMotionEntries.filter(
-    (v) => !SCROLL_ANIM_CATEGORIES.has(v.category),
-  );
-  const scrollAnimEntries = allMotionEntries.filter((v) =>
-    SCROLL_ANIM_CATEGORIES.has(v.category),
-  );
+  const groups = motionGroups
+    .map((g) => {
+      const entries = motionEntries
+        .filter((v) => v.groupId === g.id)
+        .map(({ groupId: _, ...entry }) => entry);
+      return {
+        categories: Array.from(new Set(entries.map((v) => v.category))),
+        id: g.id,
+        label: g.label,
+        variants: entries,
+      };
+    })
+    .filter((g) => g.variants.length > 0);
 
-  const textAnimCategories = Array.from(
-    new Set(textAnimEntries.map((v) => v.category)),
-  );
-  const scrollAnimCategories = Array.from(
-    new Set(scrollAnimEntries.map((v) => v.category)),
-  );
-
-  const total =
-    variantEntries.length + textAnimEntries.length + scrollAnimEntries.length;
+  const motionCount = groups.reduce((n, g) => n + g.variants.length, 0);
+  const total = variantEntries.length + motionCount;
   const componentCount =
-    categories.length + textAnimCategories.length + scrollAnimCategories.length;
+    categories.length + groups.reduce((n, g) => n + g.categories.length, 0);
 
   return (
     <SiteShell>
@@ -99,7 +95,7 @@ export default function ExplorePage() {
           { label: "core variants", value: variantEntries.length },
           {
             label: "motion variants",
-            value: textAnimEntries.length + scrollAnimEntries.length,
+            value: motionCount,
           },
           { label: "components", value: componentCount },
           { label: "total variants", value: total },
@@ -118,10 +114,7 @@ export default function ExplorePage() {
             <Suspense>
               <ExploreShowcase
                 categories={categories}
-                scrollAnimCategories={scrollAnimCategories}
-                scrollAnimVariants={scrollAnimEntries}
-                textAnimCategories={textAnimCategories}
-                textAnimVariants={textAnimEntries}
+                groups={groups}
                 variants={variantEntries}
               />
             </Suspense>

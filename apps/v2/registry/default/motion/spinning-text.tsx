@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import { motion, type Transition, type Variants } from "motion/react";
+import {
+  motion,
+  type Transition,
+  useReducedMotion,
+  type Variants,
+} from "motion/react";
 import type React from "react";
 import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
@@ -37,6 +42,7 @@ export function SpinningText({
   transition,
   variants,
 }: SpinningTextProps) {
+  const reduceMotion = useReducedMotion();
   const letters = children.split("");
   const totalLetters = letters.length;
 
@@ -59,7 +65,7 @@ export function SpinningText({
       className={cn("relative", className)}
       initial="hidden"
       style={style}
-      transition={finalTransition}
+      transition={reduceMotion ? { duration: 0 } : finalTransition}
       variants={containerVariants}
     >
       {letters.map((letter, index) => (

@@ -4,6 +4,7 @@ import {
   motion,
   useAnimationFrame,
   useMotionValue,
+  useReducedMotion,
   useTransform,
 } from "motion/react";
 import React, {
@@ -70,6 +71,7 @@ export const TextCursorProximity = forwardRef<
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const MotionComponent = useMemo(() => motion.create(as ?? "span"), [as]);
     const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
     const mousePositionRef = useMousePositionRef(containerRef);
@@ -93,7 +95,7 @@ export const TextCursorProximity = forwardRef<
     };
 
     useAnimationFrame(() => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || reduceMotion) return;
       const containerRect = containerRef.current.getBoundingClientRect();
 
       letterRefs.current.forEach((letterRef, index) => {

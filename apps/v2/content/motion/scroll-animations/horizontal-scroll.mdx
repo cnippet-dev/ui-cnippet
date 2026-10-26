@@ -1,0 +1,101 @@
+---
+title: Horizontal Scroll
+description: Pins a section and turns vertical scrolling into horizontal movement of its content.
+---
+
+<ComponentPreview name="m-horizontal-scroll-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx cnippet@latest add horizontal-scroll
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="horizontal-scroll" title="components/motion/horizontal-scroll.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { HorizontalScroll } from "@/components/motion/horizontal-scroll";
+```
+
+```tsx
+<HorizontalScroll>
+  {cards.map((card) => <Card key={card.id} {...card} />)}
+</HorizontalScroll>
+```
+
+## Anatomy
+
+```tsx
+<HorizontalScroll>{/* items in a row */}</HorizontalScroll> {/* tall section > sticky panel > moving row */}
+```
+
+## Good to know
+
+- The section is made tall enough to scroll the whole row past; it is measured again when the row or panel resizes.
+- The pinned panel is the full viewport height by default. Set `panelClassName` (for example `h-80`) to change it.
+- `speed` is how far the row moves per pixel scrolled: higher is faster and makes the section shorter.
+- `containerRef`: pass a ref to a scrollable element when the section scrolls inside its own box instead of the window, as the previews here do. That element must be positioned (for example the `relative` class), or the scroll progress is measured against the wrong ancestor.
+- When the user has turned on reduced motion, there is no pinning; the row becomes a normal horizontal scroller.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Items in the row |
+| `speed` | `number` | `1` | Horizontal px per vertical px scrolled |
+| `containerRef` | `RefObject<HTMLElement \| null>` | — | Scrollable ancestor to track instead of the window |
+| `className` | `string` | — | Classes for the section |
+| `panelClassName` | `string` | — | Classes for the pinned panel |
+| `trackClassName` | `string` | — | Classes for the row |
+
+## Examples
+
+### Case Studies
+
+Result cards scroll sideways while the section is pinned.
+
+<ComponentPreview name="m-horizontal-scroll-1" />
+
+### Company Timeline
+
+Milestones by year on a slower row (`speed={0.8}`).
+
+<ComponentPreview name="m-horizontal-scroll-2" />
+
+### Photo Gallery
+
+Tall images on a fast strip (`speed={1.5}`).
+
+<ComponentPreview name="m-horizontal-scroll-3" />

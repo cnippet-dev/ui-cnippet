@@ -1,7 +1,7 @@
 //biome-ignore-all lint/style/noNonNullAssertion: array index always in bounds
 "use client";
 
-import { motion, type Transition } from "motion/react";
+import { motion, type Transition, useReducedMotion } from "motion/react";
 import { type ElementType, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -49,6 +49,7 @@ export function ColorfulText({
   transition = { damping: 20, stiffness: 300, type: "spring" },
   className,
 }: ColorfulTextProps) {
+  const reduceMotion = useReducedMotion();
   const chars = useMemo(() => splitIntoChars(children), [children]);
   const charColors = useRef<string[]>(chars.map(() => getRandomColor(colors)));
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
@@ -68,7 +69,11 @@ export function ColorfulText({
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           key={i}
           style={{ color: charColors.current[i] }}
-          transition={{ ...transition, delay: i * staggerDuration }}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : { ...transition, delay: i * staggerDuration }
+          }
         >
           {char}
         </motion.span>

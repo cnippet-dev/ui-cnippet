@@ -5,6 +5,7 @@ import {
   type Transition,
   type UseInViewOptions,
   useInView,
+  useReducedMotion,
 } from "motion/react";
 import {
   type ElementType,
@@ -65,12 +66,14 @@ export const TextHighlight = forwardRef<TextHighlightRef, TextHighlightProps>(
       transition = { bounce: 0, delay: 0, duration: 1, type: "spring" },
       useInViewOptions = { amount: 0.1, initial: false, once: true },
       className,
-      highlightColor = "hsl(25, 90%, 80%)",
+      // Translucent so the text stays readable on light and dark backgrounds.
+      highlightColor = "hsl(25 90% 60% / 0.4)",
       direction = "ltr",
       ...props
     },
     ref,
   ) => {
+    const reduceMotion = useReducedMotion();
     const componentRef = useRef<HTMLDivElement>(null);
     const [isAnimating, setIsAnimating] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -130,11 +133,15 @@ export const TextHighlight = forwardRef<TextHighlightRef, TextHighlightProps>(
             backgroundImage: `linear-gradient(${highlightColor}, ${highlightColor})`,
             backgroundPosition: bgPosition,
             backgroundRepeat: "no-repeat",
-            backgroundSize: animatedSize,
             boxDecorationBreak: "clone",
             WebkitBoxDecorationBreak: "clone",
           }}
-          transition={transition}
+          // In ref mode, reset() clears instantly so animate() can replay right away.
+          transition={
+            reduceMotion || (triggerType === "ref" && !shouldAnimate)
+              ? { duration: 0 }
+              : transition
+          }
         >
           {children}
         </motion.span>

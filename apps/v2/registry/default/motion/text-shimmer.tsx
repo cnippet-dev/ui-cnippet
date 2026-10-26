@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import React, { type JSX, useMemo } from "react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +22,7 @@ export const TextShimmer = React.memo(function TextShimmer({
   const MotionComponent = motion.create(
     Component as keyof JSX.IntrinsicElements,
   );
+  const reduceMotion = useReducedMotion();
   const dynamicSpread = useMemo(
     () => children.length * spread,
     [children, spread],
@@ -45,11 +46,11 @@ export const TextShimmer = React.memo(function TextShimmer({
             "var(--bg), linear-gradient(var(--base-color), var(--base-color))",
         } as React.CSSProperties
       }
-      transition={{
-        duration,
-        ease: "linear",
-        repeat: Number.POSITIVE_INFINITY,
-      }}
+      transition={
+        reduceMotion
+          ? { duration: 0 }
+          : { duration, ease: "linear", repeat: Number.POSITIVE_INFINITY }
+      }
     >
       {children}
     </MotionComponent>

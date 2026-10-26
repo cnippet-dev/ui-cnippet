@@ -5,7 +5,16 @@
     "scroll-velocity-text",
     "parallax-floating",
     "stacking-cards",
-    "progressive-blur"
+    "progressive-blur",
+    "sticky-scroll-reveal",
+    "container-scroll",
+    "hero-parallax",
+    "scroll-image-reveal",
+    "macbook-scroll",
+    "horizontal-scroll",
+    "scroll-direction-header",
+    "sticky-footer",
+    "scroll-snap-sections"
   ],
   "title": "Scroll Animations"
 }

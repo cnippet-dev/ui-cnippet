@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-sticky-footer-1",
+  "description": "Brand footer — oversized wordmark uncovered at the end of the page",
+  "registryDependencies": [
+    "@cnippet/sticky-footer"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-sticky-footer-1.tsx",
+      "content": "\"use client\";\n\nimport { StickyFooter } from \"@/registry/default/motion/sticky-footer\";\n\nexport default function StickyFooterBrand() {\n  return (\n    <div className=\"h-96 w-full overflow-y-auto\">\n      <main className=\"space-y-4 bg-background px-6 py-12\">\n        <h3 className=\"font-bold text-2xl text-foreground\">\n          Scroll to the end of the page\n        </h3>\n        {Array.from({ length: 5 }, (_, i) => (\n          <p className=\"text-muted-foreground\" key={i}>\n            The footer waits underneath the page and is uncovered as you reach\n            the bottom.\n          </p>\n        ))}\n      </main>\n      <StickyFooter height={240}>\n        <div className=\"flex size-full flex-col justify-between bg-foreground p-6 text-background\">\n          <div className=\"flex gap-6 text-sm opacity-70\">\n            <a href=\"#about\">About</a>\n            <a href=\"#careers\">Careers</a>\n            <a href=\"#contact\">Contact</a>\n          </div>\n          <p className=\"font-black text-7xl leading-none tracking-tighter sm:text-8xl\">\n            northwind\n          </p>\n        </div>\n      </StickyFooter>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sticky footer"
+  ],
+  "type": "registry:block"
+}

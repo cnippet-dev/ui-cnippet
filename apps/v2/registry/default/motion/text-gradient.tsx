@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion, type Transition } from "motion/react";
+import { motion, type Transition, useReducedMotion } from "motion/react";
 import type { JSX } from "react";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +26,7 @@ export function TextGradient({
   const MotionComponent = motion.create(
     Component as keyof JSX.IntrinsicElements,
   );
+  const reduceMotion = useReducedMotion();
   const gradientSize = colors.length * 100;
 
   return (
@@ -36,12 +37,16 @@ export function TextGradient({
         backgroundImage: `linear-gradient(${angle}deg, ${[...colors, ...colors].join(", ")})`,
         backgroundSize: `${gradientSize}% 100%`,
       }}
-      transition={{
-        duration,
-        ease: "linear",
-        repeat: Number.POSITIVE_INFINITY,
-        ...transition,
-      }}
+      transition={
+        reduceMotion
+          ? { duration: 0 }
+          : {
+              duration,
+              ease: "linear",
+              repeat: Number.POSITIVE_INFINITY,
+              ...transition,
+            }
+      }
     >
       {children}
     </MotionComponent>

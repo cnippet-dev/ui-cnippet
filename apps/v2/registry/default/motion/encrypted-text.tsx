@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import { useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -25,10 +26,11 @@ export function EncryptedText({
   trigger = true,
   onComplete,
 }: EncryptedTextProps) {
+  const reduceMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState(children);
-  const [isRunning, setIsRunning] = useState(false);
-  const iterRef = useRef(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // A ref, so an inline onComplete doesn't restart the effect every render.
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   const getRevealIndices = useCallback(
     (iter: number, length: number): Set<number> => {
@@ -58,13 +60,16 @@ export function EncryptedText({
     [maxIterations, revealDirection],
   );
 
-  const start = useCallback(() => {
-    if (isRunning) return;
-    iterRef.current = 0;
-    setIsRunning(true);
+  useEffect(() => {
+    if (!trigger) return;
+    if (reduceMotion) {
+      setDisplayText(children);
+      onCompleteRef.current?.();
+      return;
+    }
 
-    intervalRef.current = setInterval(() => {
-      const iter = iterRef.current;
+    let iter = 0;
+    const interval = setInterval(() => {
       const revealed = getRevealIndices(iter, children.length);
 
       setDisplayText(
@@ -80,22 +85,15 @@ export function EncryptedText({
           .join(""),
       );
 
-      iterRef.current++;
       if (iter >= maxIterations) {
-        if (intervalRef.current) clearInterval(intervalRef.current);
+        clearInterval(interval);
         setDisplayText(children);
-        setIsRunning(false);
-        onComplete?.();
+        onCompleteRef.current?.();
       }
+      iter++;
     }, speed);
-  }, [children, isRunning, maxIterations, speed, getRevealIndices, onComplete]);
-
-  useEffect(() => {
-    if (trigger) start();
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [trigger, start]);
+    return () => clearInterval(interval);
+  }, [trigger, children, reduceMotion, maxIterations, speed, getRevealIndices]);
 
   return (
     <span aria-label={children} className={cn("font-mono", className)}>

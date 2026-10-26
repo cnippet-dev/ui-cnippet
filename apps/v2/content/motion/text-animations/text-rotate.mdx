@@ -65,7 +65,7 @@ import { TextRotate } from "@/components/motion/text-rotate";
 - Set `auto={false}` to control it yourself with `ref.current.next()`, `previous()`, `jumpTo(index)` and `reset()`.
 - `loop={false}` stops on the last text.
 - Screen readers read the current text once; the animated letters are hidden from them.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, texts still change on the interval but swap instantly, with no stagger or movement.
 
 ## Props
 

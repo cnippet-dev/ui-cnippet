@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   type Transition,
+  useReducedMotion,
   type Variants,
 } from "motion/react";
 import type React from "react";
@@ -180,6 +181,7 @@ export function TextReveal({
   segmentTransition,
   style,
 }: TextRevealProps) {
+  const reduceMotion = useReducedMotion();
   const segments = splitText(children, per);
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
 
@@ -193,11 +195,13 @@ export function TextReveal({
     ...base.container,
     visible: {
       ...base.container.visible,
-      transition: {
-        delayChildren: delay,
-        staggerChildren: stagger,
-        ...containerTransition,
-      },
+      transition: reduceMotion
+        ? { duration: 0 }
+        : {
+            delayChildren: delay,
+            staggerChildren: stagger,
+            ...containerTransition,
+          },
     },
   };
 
@@ -205,7 +209,9 @@ export function TextReveal({
     ...base.item,
     visible: {
       ...(base.item.visible as object),
-      transition: { duration: baseDuration, ...segmentTransition },
+      transition: reduceMotion
+        ? { duration: 0 }
+        : { duration: baseDuration, ...segmentTransition },
     },
   };
 

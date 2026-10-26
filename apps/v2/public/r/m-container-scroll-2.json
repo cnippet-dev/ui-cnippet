@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-container-scroll-2",
+  "description": "Mobile app — a phone-shaped card with a chat screen",
+  "registryDependencies": [
+    "@cnippet/container-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-container-scroll-2.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { ContainerScroll } from \"@/registry/default/motion/container-scroll\";\n\nconst messages = [\n  { from: \"them\", text: \"Is the 8:30 table still free?\" },\n  { from: \"me\", text: \"Yes! Booked for two.\" },\n  { from: \"them\", text: \"Perfect, see you there 🎉\" },\n];\n\nexport default function ContainerScrollMobileApp() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-96 w-full overflow-y-auto px-4\"\n      ref={containerRef}\n    >\n      <div className=\"h-48\" />\n      <ContainerScroll\n        cardClassName=\"max-w-[260px] rounded-[2.5rem] p-2\"\n        containerRef={containerRef}\n        header={\n          <h3 className=\"font-bold text-2xl text-foreground tracking-tight\">\n            Bookings, right in your pocket\n          </h3>\n        }\n        rotate={[35, 0]}\n        scale={[0.9, 1]}\n      >\n        <div className=\"flex h-[420px] flex-col gap-2 rounded-[2rem] p-4 pt-10\">\n          {messages.map((m) => (\n            <p\n              className={\n                m.from === \"me\"\n                  ? \"ml-auto max-w-[80%] rounded-2xl rounded-br-sm bg-foreground px-3 py-2 text-background text-sm\"\n                  : \"max-w-[80%] rounded-2xl rounded-bl-sm bg-muted px-3 py-2 text-foreground text-sm\"\n              }\n              key={m.text}\n            >\n              {m.text}\n            </p>\n          ))}\n        </div>\n      </ContainerScroll>\n      <div className=\"h-48\" />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "container scroll"
+  ],
+  "type": "registry:block"
+}

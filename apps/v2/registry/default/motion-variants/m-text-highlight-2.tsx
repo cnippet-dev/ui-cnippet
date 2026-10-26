@@ -10,7 +10,7 @@ export default function TextHighlightHover() {
         Design systems that feel{" "}
         <TextHighlight
           className="rounded px-0.5"
-          highlightColor="hsl(45, 95%, 75%)"
+          highlightColor="hsl(45 95% 55% / 0.45)"
           transition={{ bounce: 0, duration: 0.5, type: "spring" }}
           triggerType="hover"
         >

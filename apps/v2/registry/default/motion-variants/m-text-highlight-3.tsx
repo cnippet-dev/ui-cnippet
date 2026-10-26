@@ -17,7 +17,7 @@ export default function TextHighlightDirections() {
       <p className="font-bold text-2xl text-foreground">
         <TextHighlight
           direction={dir}
-          highlightColor="hsl(155, 70%, 75%)"
+          highlightColor="hsl(155 70% 50% / 0.4)"
           ref={ref}
           transition={{ bounce: 0, duration: 0.7, type: "spring" }}
           triggerType="ref"

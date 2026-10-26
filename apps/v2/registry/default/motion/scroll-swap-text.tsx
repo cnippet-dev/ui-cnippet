@@ -1,7 +1,13 @@
 //biome-ignore-all lint/suspicious/noExplicitAny: motion offset type requires any cast
 "use client";
 
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "motion/react";
 import React, { type ElementType, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +41,7 @@ export function ScrollSwapText({
   springConfig = { damping: 30, stiffness: 200 },
   ...props
 }: ScrollSwapTextProps) {
+  const reduceMotion = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
 
   const text = useMemo(() => {
@@ -52,8 +59,10 @@ export function ScrollSwapText({
   });
 
   const springProgress = useSpring(scrollYProgress, springConfig);
-  const top = useTransform(springProgress, [0, 1], ["0%", "-100%"]);
-  const bottom = useTransform(springProgress, [0, 1], ["100%", "0%"]);
+  // Reduced motion: track scroll directly, without the spring's overshoot.
+  const progress = reduceMotion ? scrollYProgress : springProgress;
+  const top = useTransform(progress, [0, 1], ["0%", "-100%"]);
+  const bottom = useTransform(progress, [0, 1], ["100%", "0%"]);
 
   const ElementTag = as;
 

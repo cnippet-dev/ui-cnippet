@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-hero-parallax-3",
+  "description": "Multi-depth — rows moving at different speeds for a layered hero",
+  "registryDependencies": [
+    "@cnippet/hero-parallax"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-hero-parallax-3.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { HeroParallax } from \"@/registry/default/motion/hero-parallax\";\n\nconst photo = (id: string) =>\n  `https://images.unsplash.com/photo-${id}?w=640&h=448&fit=crop&dpr=2&q=80`;\n\nconst shots = [\n  [\"Northern lights\", \"1531366936337-7c912a4589a7\"],\n  [\"Peak\", \"1506905925346-21bda4d32df4\"],\n  [\"Coast\", \"1505142468610-359e7d316be0\"],\n  [\"Forest\", \"1441974231531-c6227db76b6e\"],\n  [\"Valley\", \"1501785888041-af3ef285b470\"],\n  [\"Lake\", \"1470071459604-3b5ec3a7fe05\"],\n  [\"Dunes\", \"1509316785289-025f5b846b35\"],\n  [\"Meadow\", \"1500530855697-b586d89ba3ee\"],\n  [\"Night city\", \"1477959858617-67f85cf4f1df\"],\n].map(([title, id]) => ({\n  link: \"#\",\n  thumbnail: photo(id ?? \"\"),\n  title: title ?? \"\",\n}));\n\nexport default function HeroParallaxDepth() {\n  const containerRef = useRef<HTMLDivElement>(null);\n\n  return (\n    <div\n      className=\"relative h-[28rem] w-full overflow-y-auto\"\n      ref={containerRef}\n    >\n      {/* Rows move at different speeds, so they read as separate depths. */}\n      <HeroParallax\n        containerRef={containerRef}\n        distance={300}\n        products={shots}\n        rowSpeeds={[0.5, 1, 1.6]}\n      >\n        <h3 className=\"font-bold text-4xl text-foreground tracking-tight\">\n          Field notes, 2024\n        </h3>\n        <p className=\"mt-2 text-muted-foreground\">\n          A year of landscapes from six continents.\n        </p>\n      </HeroParallax>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "hero parallax"
+  ],
+  "type": "registry:block"
+}

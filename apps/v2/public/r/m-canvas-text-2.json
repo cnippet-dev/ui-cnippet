@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "m-canvas-text-2",
+  "description": "Pricing card — the price drawn in custom brand colors",
+  "registryDependencies": [
+    "@cnippet/canvas-text"
+  ],
+  "files": [
+    {
+      "path": "registry/default/motion-variants/m-canvas-text-2.tsx",
+      "content": "\"use client\";\n\nimport { CanvasText } from \"@/registry/default/motion/canvas-text\";\n\nconst BRAND = [\"#f97316\", \"#f43f5e\", \"#a855f7\"];\n\nexport default function CanvasTextPricing() {\n  return (\n    <div className=\"flex min-h-80 items-center justify-center px-6\">\n      <div className=\"w-full max-w-sm rounded-2xl border bg-card p-6 text-center shadow-xs\">\n        <p className=\"font-medium text-muted-foreground text-sm\">Pro plan</p>\n        <p className=\"mt-2 font-black text-6xl tracking-tight\">\n          <CanvasText colors={BRAND} lineCount={16} speed={0.6} text=\"$29\" />\n        </p>\n        <p className=\"mt-1 text-muted-foreground text-sm\">\n          per seat / month, billed yearly\n        </p>\n        <ul className=\"mt-5 space-y-1.5 text-left text-foreground text-sm\">\n          <li>Unlimited projects</li>\n          <li>Priority support</li>\n          <li>Advanced analytics</li>\n        </ul>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "canvas text"
+  ],
+  "type": "registry:block"
+}

@@ -65,7 +65,7 @@ import { CountingNumber } from "@/components/motion/counting-number";
 - Set `autoStart={false}` and call `ref.current.startAnimation()` to start it yourself, for example when it scrolls into view.
 - `onStart` and `onComplete` fire at the beginning and end of the count.
 - For a number that changes over time, use `AnimatedNumber` or `SlidingNumber`.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, it shows `target` straight away; `onStart` and `onComplete` still fire.
 
 ## Props
 

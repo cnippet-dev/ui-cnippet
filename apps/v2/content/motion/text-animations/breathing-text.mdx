@@ -74,7 +74,7 @@ import { BreathingText } from "@/components/motion/breathing-text";
 - `children` must be plain text. It's split into letters.
 - This uses a CSS animation, not Motion, so it works without the `motion` package.
 - Screen readers read the full text once; the individual letters are hidden from them.
-- It keeps animating when the user has turned on reduced motion in their system settings.
+- When the user has turned on reduced motion, the letters stay still at `fromFontVariationSettings`.
 
 ## Props
 
