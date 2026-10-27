@@ -26,7 +26,7 @@ export function PageHero({
   return (
     <section className="relative isolate overflow-hidden md:rounded-t-canvas">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-dot-field" />
-      
+
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 mx-auto h-72 max-w-2xl rounded-full bg-signal-soft blur-3xl"
