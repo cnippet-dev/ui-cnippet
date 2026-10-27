@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-synced-charts-2",
+  "description": "Sales — revenue, orders and AOV",
+  "registryDependencies": [
+    "@cnippet/synced-charts",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-synced-charts-2.tsx",
+      "content": "\"use client\";\n\nimport { SyncedCharts } from \"@/registry/default/charts/synced-charts\";\nimport { formatCurrency, formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// 30 days of sales: orders and AOV move apart during a discount week.\nconst data = Array.from({ length: 30 }, (_, i) => {\n  const date = new Date(Date.UTC(2026, 8, 26 + i));\n  const sale = i >= 18 && i < 25;\n  const orders = Math.round(\n    310 + 4 * i + 40 * Math.sin(i / 3) + (sale ? 190 : 0),\n  );\n  const aov =\n    Math.round((84 + 3 * Math.cos(i / 4) - (sale ? 12 : 0)) * 100) / 100;\n  return {\n    aov,\n    date: date.toISOString().slice(0, 10),\n    orders,\n    revenue: Math.round(orders * aov),\n  };\n});\n\nexport default function SalesPanels() {\n  return (\n    <div className=\"w-full max-w-2xl rounded-lg border bg-card p-5\">\n      <div className=\"mb-3 font-medium text-sm\">Store · last 30 days</div>\n      <SyncedCharts\n        data={data}\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n        panelClassName=\"h-20\"\n        panels={[\n          {\n            categories: [\"revenue\"],\n            title: \"Revenue\",\n            valueFormatter: formatCurrency,\n          },\n          {\n            categories: [\"orders\"],\n            config: { orders: { color: \"var(--chart-2)\", label: \"Orders\" } },\n            title: \"Orders\",\n            type: \"bar\",\n          },\n          {\n            categories: [\"aov\"],\n            config: { aov: { color: \"var(--chart-4)\", label: \"AOV\" } },\n            title: \"Average order value\",\n            type: \"line\",\n            valueFormatter: (value) => `$${value.toFixed(0)}`,\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "synced charts"
+  ],
+  "type": "registry:block"
+}

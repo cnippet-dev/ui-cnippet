@@ -1,0 +1,89 @@
+---
+title: Category Bar
+description: One bar split into coloured ranges, with boundary labels and an optional marker — credit scores, storage, budgets.
+---
+
+<ComponentPreview name="c-category-bar-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/category-bar
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="category-bar" title="components/charts/category-bar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CategoryBar } from "@/components/charts/category-bar";
+```
+
+```tsx
+<CategoryBar values={[40, 30, 20, 10]} marker={57} />
+```
+
+## Good to know
+
+- `values` are segment sizes, not positions: `[280, 90, 70, 110]` makes four segments. The labels under the bar are the running totals.
+- `marker` sits on the same scale as the running totals. To show a score of 712 on a 300–850 scale, start the values at 0 and pass `marker={712 - 300}` with `valueFormatter={(v) => String(v + 300)}`.
+- Colours default to `--chart-1` … `--chart-5`. Pass `colors` for meaning, e.g. `var(--destructive)` to `var(--success)`.
+- Pass `labels` (one per segment) so screen readers hear each range; the bar has `role="img"` with that description.
+- `showLabels={false}` hides the numbers when a legend below explains the segments.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `values` | `number[]` | — | Size of each segment, left to right |
+| `colors` | `string[]` | `--chart-1` … `--chart-5` | CSS colour per segment |
+| `labels` | `string[]` | — | Name per segment, for screen readers |
+| `marker` | `number` | — | Position of the marker |
+| `showLabels` | `boolean` | `true` | Show boundary numbers |
+| `valueFormatter` | `(value: number) => string` | `String` | Formats boundaries and the marker |
+| `className` | `string` | — | Classes for the wrapper |
+| `aria-label` | `string` | built from `labels` | Accessible description |
+
+## Examples
+
+### Credit score
+
+Four bands from poor to excellent with the score as a marker.
+
+<ComponentPreview name="c-category-bar-1" />
+
+### Storage breakdown
+
+Usage by type plus free space, with a legend instead of boundary labels.
+
+<ComponentPreview name="c-category-bar-2" />
+
+### Budget allocation
+
+Budget split by channel, with spend so far as the marker.
+
+<ComponentPreview name="c-category-bar-3" />

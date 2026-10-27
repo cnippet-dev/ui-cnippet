@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-empty-3",
+  "description": "Filtered to nothing — clear filters to bring the chart back",
+  "registryDependencies": [
+    "@cnippet/chart-empty",
+    "@cnippet/chart-card",
+    "@cnippet/button",
+    "@cnippet/toggle-group",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-empty-3.tsx",
+      "content": "\"use client\";\n\nimport { SearchXIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\n// Q3 sales by rep; nobody sells in APAC yet.\nconst sales = [\n  { region: \"eu\", rep: \"Ana\", sales: 84200 },\n  { region: \"us\", rep: \"Marcus\", sales: 121400 },\n  { region: \"eu\", rep: \"Priya\", sales: 96800 },\n  { region: \"us\", rep: \"Jonah\", sales: 73500 },\n  { region: \"us\", rep: \"Lena\", sales: 109900 },\n];\n\nconst regions = { all: \"All\", apac: \"APAC\", eu: \"EU\", us: \"US\" } as const;\ntype Region = keyof typeof regions;\n\nconst config = {\n  sales: { color: \"var(--chart-2)\", label: \"Sales\" },\n} satisfies ChartConfig;\n\nexport default function FilteredToNothing() {\n  const [region, setRegion] = useState<Region>(\"apac\");\n  const data =\n    region === \"all\" ? sales : sales.filter((row) => row.region === region);\n\n  return (\n    <ChartCard\n      actions={\n        <ToggleGroup\n          onValueChange={(value) => value[0] && setRegion(value[0] as Region)}\n          size=\"sm\"\n          value={[region]}\n          variant=\"outline\"\n        >\n          {Object.entries(regions).map(([key, label]) => (\n            <ToggleGroupItem key={key} value={key}>\n              {label}\n            </ToggleGroupItem>\n          ))}\n        </ToggleGroup>\n      }\n      className=\"max-w-xl\"\n      description=\"Q3 closed-won by rep\"\n      title=\"Sales\"\n    >\n      {data.length === 0 ? (\n        <ChartEmpty\n          action={\n            <Button\n              onClick={() => setRegion(\"all\")}\n              size=\"sm\"\n              variant=\"outline\"\n            >\n              Clear filters\n            </Button>\n          }\n          className=\"aspect-auto h-52\"\n          description={`No reps closed deals in ${regions[region]} this quarter.`}\n          icon={<SearchXIcon />}\n          title=\"Nothing matches this filter\"\n        />\n      ) : (\n        <ChartContainer className=\"h-52 w-full\" config={config}>\n          <BarChart accessibilityLayer data={data}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              axisLine={false}\n              dataKey=\"rep\"\n              tickLine={false}\n              tickMargin={8}\n            />\n            <ChartTooltip\n              content={\n                <ChartTooltipList\n                  config={config}\n                  valueFormatter={formatCurrency}\n                />\n              }\n              cursor={false}\n            />\n            <Bar dataKey=\"sales\" fill=\"var(--color-sales)\" radius={4} />\n          </BarChart>\n        </ChartContainer>\n      )}\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart empty"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radial-chart-1",
+  "description": "Activity rings — three daily goals",
+  "registryDependencies": [
+    "@cnippet/radial-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radial-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadialChart } from \"@/registry/default/charts/radial-chart\";\n\n// Today's progress toward each daily goal, in %.\nconst data = [\n  { goal: \"Stand\", progress: 92 },\n  { goal: \"Exercise\", progress: 64 },\n  { goal: \"Move\", progress: 81 },\n];\n\nexport default function ActivityRings() {\n  return (\n    <ChartCard\n      className=\"max-w-xs\"\n      description=\"Progress toward today's goals\"\n      title=\"Activity\"\n    >\n      <RadialChart\n        category=\"progress\"\n        centerLabel=\"average\"\n        centerValue=\"79%\"\n        className=\"h-60\"\n        config={{\n          Exercise: { color: \"var(--chart-2)\" },\n          Move: { color: \"var(--chart-5)\" },\n          Stand: { color: \"var(--chart-1)\" },\n        }}\n        data={data}\n        index=\"goal\"\n        max={100}\n        valueFormatter={(value) => `${value}%`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radial chart"
+  ],
+  "type": "registry:block"
+}

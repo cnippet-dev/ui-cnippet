@@ -56,6 +56,20 @@ export const docs = defineDocs({
   },
 });
 
+export const charts = defineDocs({
+  dir: "content/charts",
+  docs: {
+    schema: frontmatterSchema.extend({
+      links: z
+        .object({
+          api: z.string().optional(),
+          doc: z.string().optional(),
+        })
+        .optional(),
+    }),
+  },
+});
+
 export const motion = defineDocs({
   dir: "content/motion",
   docs: {

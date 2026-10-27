@@ -1,0 +1,14 @@
+---
+title: Matrix
+description: Grids of shaded cells for patterns across two dimensions, calendars and cohorts.
+---
+
+Matrix charts answer "when?" and "where?" across two dimensions at once: hours and weekdays, days of the year, or cohorts and the periods since they started. Each cell is shaded by its value, and every cell can be reached with the keyboard and named by its tooltip.
+
+- **[Heatmap](/charts/matrix/heatmap)** — Any two dimensions, shaded by value, with optional values printed in cells.
+- **[Calendar Heatmap](/charts/matrix/calendar-heatmap)** — Days in week columns, like a contribution graph.
+- **[Cohort Retention](/charts/matrix/cohort-retention)** — Retention by cohort and period, as a triangle of % cells.
+
+## Colour scale
+
+Matrix charts take one `color` (default `var(--chart-1)`) and shade lower values as tints of it, mixed toward `var(--muted)` with `color-mix`. That works with any theme and needs no extra CSS tokens. When values are printed in cells (`showValues`), the darkest tint is capped so the foreground text stays readable in light and dark mode.

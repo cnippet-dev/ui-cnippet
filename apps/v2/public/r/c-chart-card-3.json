@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-card-3",
+  "description": "Churn card — inverted delta where a drop is good, with a footer insight",
+  "registryDependencies": [
+    "@cnippet/chart-card",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-card-3.tsx",
+      "content": "\"use client\";\n\nimport { TrendingDownIcon } from \"lucide-react\";\nimport { CartesianGrid, Line, LineChart, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\nconst data = [\n  { churn: 0.034, month: \"Nov\" },\n  { churn: 0.031, month: \"Dec\" },\n  { churn: 0.029, month: \"Jan\" },\n  { churn: 0.03, month: \"Feb\" },\n  { churn: 0.026, month: \"Mar\" },\n  { churn: 0.025, month: \"Apr\" },\n  { churn: 0.023, month: \"May\" },\n  { churn: 0.021, month: \"Jun\" },\n];\n\nconst config = {\n  churn: { color: \"var(--chart-5)\", label: \"Churn\" },\n} satisfies ChartConfig;\n\nexport default function ChurnCard() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      delta={-0.087}\n      description=\"Monthly logo churn, last 8 months\"\n      footer={\n        <span className=\"flex items-center gap-1.5\">\n          <TrendingDownIcon className=\"size-4\" />\n          Lowest churn since launch — annual plans are 64% of new signups.\n        </span>\n      }\n      invertDelta\n      title=\"Churn rate\"\n      value={formatPercent(0.021)}\n    >\n      <ChartContainer className=\"h-40 w-full\" config={config}>\n        <LineChart accessibilityLayer data={data}>\n          <CartesianGrid vertical={false} />\n          <XAxis\n            axisLine={false}\n            dataKey=\"month\"\n            tickLine={false}\n            tickMargin={8}\n          />\n          <ChartTooltip\n            content={\n              <ChartTooltipList\n                config={config}\n                valueFormatter={(value) => formatPercent(value)}\n              />\n            }\n            cursor={false}\n          />\n          <Line\n            dataKey=\"churn\"\n            dot={false}\n            stroke=\"var(--color-churn)\"\n            strokeWidth={2}\n            type=\"monotone\"\n          />\n        </LineChart>\n      </ChartContainer>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart card"
+  ],
+  "type": "registry:block"
+}

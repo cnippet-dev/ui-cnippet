@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-time-range-chart-2",
+  "description": "Revenue — 3m / 6m / 12m monthly bars",
+  "registryDependencies": [
+    "@cnippet/time-range-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-time-range-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { TimeRangeChart } from \"@/registry/default/charts/time-range-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst months = [\n  \"Nov\",\n  \"Dec\",\n  \"Jan\",\n  \"Feb\",\n  \"Mar\",\n  \"Apr\",\n  \"May\",\n  \"Jun\",\n  \"Jul\",\n  \"Aug\",\n  \"Sep\",\n  \"Oct\",\n];\nconst revenue = [\n  38200, 44100, 36900, 38400, 41700, 43900, 47200, 46100, 50800, 53400, 55900,\n  58700,\n];\nconst data = months.map((month, i) => ({ month, revenue: revenue[i] ?? 0 }));\n\nexport default function RevenueByMonths() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"Revenue\">\n      <TimeRangeChart\n        categories={[\"revenue\"]}\n        chartType=\"bar\"\n        className=\"h-40\"\n        data={data}\n        defaultRange=\"12m\"\n        index=\"month\"\n        ranges={[\n          { label: \"3m\", size: 3 },\n          { label: \"6m\", size: 6 },\n          { label: \"12m\" },\n        ]}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "time range chart"
+  ],
+  "type": "registry:block"
+}

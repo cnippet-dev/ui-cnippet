@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-waterfall-chart-1",
+  "description": "MRR movement — new, expansion, contraction and churn",
+  "registryDependencies": [
+    "@cnippet/waterfall-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-waterfall-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { WaterfallChart } from \"@/registry/default/charts/waterfall-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { amount: 184000, step: \"Sep MRR\" },\n  { amount: 21400, step: \"New\" },\n  { amount: 8600, step: \"Expansion\" },\n  { amount: -5200, step: \"Contraction\" },\n  { amount: -9800, step: \"Churn\" },\n  { amount: null, step: \"Oct MRR\" },\n];\n\nexport default function MrrMovement() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.078}\n      description=\"How monthly recurring revenue moved in October\"\n      title=\"MRR movement\"\n      value={formatCurrency(199000)}\n    >\n      <WaterfallChart\n        category=\"amount\"\n        className=\"h-52\"\n        data={data}\n        index=\"step\"\n        totals={[\"Sep MRR\", \"Oct MRR\"]}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "waterfall chart"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bar-list",
+  "description": "Ranked horizontal bars with a name and value per row; rows can be links or buttons",
+  "registryDependencies": [
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/bar-list.tsx",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type BarListItem = {\n  name: string;\n  value: number;\n  /** Makes the row a link. */\n  href?: string;\n  /** Shown before the name, e.g. a flag or favicon. */\n  icon?: React.ReactNode;\n  key?: string;\n};\n\nexport type BarListProps<T extends BarListItem> = {\n  data: T[];\n  valueFormatter?: (value: number) => string;\n  sortOrder?: \"descending\" | \"ascending\" | \"none\";\n  /** Makes rows buttons; called with the clicked item. */\n  onValueClick?: (item: T) => void;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function BarList<T extends BarListItem>({\n  data,\n  valueFormatter = formatCompact,\n  sortOrder = \"descending\",\n  onValueClick,\n  className,\n  \"aria-label\": ariaLabel,\n}: BarListProps<T>) {\n  const rows =\n    sortOrder === \"none\"\n      ? data\n      : [...data].sort((a, b) =>\n          sortOrder === \"descending\" ? b.value - a.value : a.value - b.value,\n        );\n  const max = Math.max(...rows.map((row) => row.value), 0);\n\n  return (\n    <ul\n      aria-label={ariaLabel}\n      className={cn(\"grid gap-1.5\", className)}\n      data-slot=\"bar-list\"\n    >\n      {rows.map((row) => {\n        const width = max > 0 ? Math.max((row.value / max) * 100, 1) : 0;\n        const label = (\n          <>\n            <span\n              aria-hidden=\"true\"\n              className=\"absolute inset-y-0 start-0 rounded-md bg-chart-1/20 transition-[width] duration-500 motion-reduce:transition-none\"\n              style={{ width: `${width}%` }}\n            />\n            <span className=\"relative flex min-w-0 items-center gap-2 [&_svg]:size-4 [&_svg]:shrink-0\">\n              {row.icon}\n              <span className=\"truncate\">{row.name}</span>\n            </span>\n          </>\n        );\n        const rowClass =\n          \"relative flex h-8 min-w-0 flex-1 items-center rounded-md px-2.5 text-sm\";\n\n        return (\n          <li className=\"flex items-center gap-4\" key={row.key ?? row.name}>\n            {row.href ? (\n              <a\n                className={cn(\n                  rowClass,\n                  \"outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring\",\n                )}\n                href={row.href}\n              >\n                {label}\n              </a>\n            ) : onValueClick ? (\n              <button\n                className={cn(\n                  rowClass,\n                  \"text-start outline-none hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring\",\n                )}\n                onClick={() => onValueClick(row)}\n                type=\"button\"\n              >\n                {label}\n              </button>\n            ) : (\n              <div className={rowClass}>{label}</div>\n            )}\n            <span className=\"shrink-0 font-medium text-sm tabular-nums\">\n              {valueFormatter(row.value)}\n            </span>\n          </li>\n        );\n      })}\n    </ul>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/bar-list.tsx"
+    }
+  ],
+  "categories": [
+    "bar list"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spark-area",
+  "description": "Tiny area trend with no axes, optionally coloured by trend",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/chart",
+    "@cnippet/chart-utils",
+    "@cnippet/use-media-query"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/spark-area.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Area, AreaChart, YAxis } from \"recharts\";\nimport { useMediaQuery } from \"@/registry/default/hooks/use-media-query\";\nimport {\n  buildChartConfig,\n  describeChart,\n  trendColor,\n} from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { type ChartConfig, ChartContainer } from \"@/registry/default/ui/chart\";\n\nexport type SparkAreaProps<T extends Record<string, unknown>> = {\n  data: T[];\n  index: keyof T & string;\n  categories: (keyof T & string)[];\n  config?: ChartConfig;\n  /** Colour a single series green when it ends higher than it starts, red when lower. */\n  colorByTrend?: boolean;\n  /** Set when a drop is good news (latency, cost): flips the trend colours. */\n  invertTrend?: boolean;\n  type?: \"default\" | \"stacked\";\n  curve?: \"linear\" | \"monotone\" | \"step\";\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function SparkArea<T extends Record<string, unknown>>({\n  data,\n  index,\n  categories,\n  config,\n  colorByTrend = false,\n  invertTrend = false,\n  type = \"default\",\n  curve = \"monotone\",\n  className,\n  \"aria-label\": ariaLabel,\n}: SparkAreaProps<T>) {\n  const reduceMotion = useMediaQuery(\"(prefers-reduced-motion: reduce)\");\n  const id = React.useId().replace(/[^a-zA-Z0-9]/g, \"\");\n  const [first] = categories;\n  const trend =\n    colorByTrend && first\n      ? trendColor(\n          data.map((row) => row[first]),\n          invertTrend,\n        )\n      : undefined;\n  const resolvedConfig = buildChartConfig(categories, {\n    ...config,\n    ...(trend && first\n      ? {\n          [first]: {\n            color: trend,\n            icon: config?.[first]?.icon,\n            label: config?.[first]?.label,\n          },\n        }\n      : {}),\n  });\n\n  return (\n    <ChartContainer\n      aria-label={ariaLabel ?? describeChart(\"Trend\", categories, index)}\n      className={cn(\"aspect-auto h-10 w-32\", className)}\n      config={resolvedConfig}\n      role=\"img\"\n    >\n      <AreaChart data={data} margin={{ bottom: 1, left: 1, right: 1, top: 1 }}>\n        <defs>\n          {categories.map((key) => (\n            <linearGradient\n              id={`${id}-${key}`}\n              key={key}\n              x1=\"0\"\n              x2=\"0\"\n              y1=\"0\"\n              y2=\"1\"\n            >\n              <stop\n                offset=\"5%\"\n                stopColor={`var(--color-${key})`}\n                stopOpacity={0.4}\n              />\n              <stop\n                offset=\"95%\"\n                stopColor={`var(--color-${key})`}\n                stopOpacity={0}\n              />\n            </linearGradient>\n          ))}\n        </defs>\n        <YAxis domain={[\"dataMin\", \"dataMax\"]} hide />\n        {categories.map((key) => (\n          <Area\n            dataKey={key as string}\n            dot={false}\n            fill={`url(#${id}-${key})`}\n            isAnimationActive={!reduceMotion}\n            key={key}\n            stackId={type === \"stacked\" ? \"stack\" : undefined}\n            stroke={`var(--color-${key})`}\n            strokeWidth={1.5}\n            type={curve}\n          />\n        ))}\n      </AreaChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/spark-area.tsx"
+    }
+  ],
+  "categories": [
+    "spark area"
+  ],
+  "type": "registry:ui"
+}

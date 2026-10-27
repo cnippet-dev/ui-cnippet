@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-cohort-retention-2",
+  "description": "Net revenue retention — monthly cohorts above 100%",
+  "registryDependencies": [
+    "@cnippet/cohort-retention",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-cohort-retention-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { CohortRetention } from \"@/registry/default/charts/cohort-retention\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst months = [\"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\"];\nconst mrr = [42000, 51000, 47500, 58200, 61800];\n\n// Deterministic net revenue retention: expansion pushes later months past 100%.\nconst data = months.map((cohort, c) => ({\n  cohort,\n  size: mrr[c] ?? 0,\n  values: Array.from({ length: months.length - c }, (_, m) =>\n    m === 0 ? 1 : +(0.94 + m * 0.035 + c * 0.01).toFixed(3),\n  ),\n}));\n\nexport default function RevenueRetention() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Monthly recurring revenue kept from each cohort, including expansion\"\n      footer=\"Values over 100% mean upgrades outweighed churn.\"\n      title=\"Net revenue retention\"\n    >\n      <CohortRetention\n        color=\"var(--chart-2)\"\n        data={data}\n        periodLabel={(m) => `M${m}`}\n        sizeFormatter={(v) => `${formatCurrency(v)} MRR`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "cohort retention"
+  ],
+  "type": "registry:block"
+}

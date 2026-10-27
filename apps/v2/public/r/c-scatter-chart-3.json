@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-scatter-chart-3",
+  "description": "Response time vs payload — single-series correlation",
+  "registryDependencies": [
+    "@cnippet/scatter-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-scatter-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ScatterChart } from \"@/registry/default/charts/scatter-chart\";\n\n// Sampled API requests: response time grows with payload size.\nconst payloads = [\n  4, 9, 12, 18, 24, 31, 38, 46, 55, 64, 78, 92, 110, 128, 150, 176, 204, 240,\n];\nconst data = payloads.map((kb, i) => ({\n  kb,\n  // Fixed jitter so server and client render the same dots.\n  ms: Math.round(38 + kb * 1.6 + ((i * 37) % 23) - 11),\n}));\n\nexport default function ResponseTimeVsPayload() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Sampled requests to /api/search, last hour\"\n      title=\"Response time vs payload\"\n    >\n      <ScatterChart\n        className=\"h-48\"\n        config={{ ms: { color: \"var(--chart-4)\", label: \"Requests\" } }}\n        data={data}\n        x=\"kb\"\n        xLabel=\"Payload\"\n        xValueFormatter={(value) => `${value} KB`}\n        y=\"ms\"\n        yAxisWidth={64}\n        yLabel=\"Response time\"\n        yValueFormatter={(value) => `${value} ms`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "scatter chart"
+  ],
+  "type": "registry:block"
+}

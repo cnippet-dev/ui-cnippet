@@ -1,0 +1,80 @@
+---
+title: Pie Chart
+description: A part-to-whole pie with optional slice labels — a donut chart with no hole.
+---
+
+<ComponentPreview name="c-pie-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/pie-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Donut Chart](/charts/polar/donut-chart) and its dependencies.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="pie-chart" title="components/charts/pie-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { PieChart } from "@/components/charts/pie-chart";
+```
+
+```tsx
+<PieChart data={data} index="browser" category="share" className="h-60" />
+```
+
+## Good to know
+
+- `PieChart` is `DonutChart` with `variant="pie"`, so it takes the same props except the centre text. Installing it also installs Donut Chart.
+- Everything on the [Donut Chart](/charts/polar/donut-chart) page applies: slice colours keyed by name, `showLabels`, side legend and keyboard navigation.
+- A donut with a total in the centre usually reads better. Use a pie when the shares themselves are the story.
+
+## Props
+
+All [Donut Chart props](/charts/polar/donut-chart#props) except `variant`, `centerValue` and `centerLabel`.
+
+## Examples
+
+### Bottom legend
+
+Browser share with a legend underneath.
+
+<ComponentPreview name="c-pie-chart-1" />
+
+### Labels
+
+Percentages next to each slice, with a side legend.
+
+<ComponentPreview name="c-pie-chart-2" />
+
+### Currency
+
+Spending by category with exact amounts in the tooltip.
+
+<ComponentPreview name="c-pie-chart-3" />

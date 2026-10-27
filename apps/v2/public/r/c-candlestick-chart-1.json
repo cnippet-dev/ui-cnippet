@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-candlestick-chart-1",
+  "description": "Stock price — daily candles for a month",
+  "registryDependencies": [
+    "@cnippet/candlestick-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-candlestick-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { CandlestickChart } from \"@/registry/default/charts/candlestick-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// 30 trading days of deterministic OHLC data.\nlet price = 182;\nconst data = Array.from({ length: 30 }, (_, i) => {\n  const open = price;\n  const close = +(open + Math.sin(i * 1.7) * 4 + 0.6).toFixed(2);\n  price = close;\n  return {\n    close,\n    date: `Oct ${i + 1}`,\n    high: +(Math.max(open, close) + 1.5 + (i % 3)).toFixed(2),\n    low: +(Math.min(open, close) - 1.2 - (i % 4) * 0.6).toFixed(2),\n    open,\n  };\n});\n\nexport default function StockPrice() {\n  const last = data.at(-1)?.close ?? 0;\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={(last - 182) / 182}\n      description=\"ACME, daily candles, October\"\n      title=\"ACME\"\n      value={formatCurrency(last, \"USD\", { compact: false })}\n    >\n      <CandlestickChart\n        className=\"h-48\"\n        data={data}\n        index=\"date\"\n        valueFormatter={(v) => formatCurrency(v, \"USD\", { compact: false })}\n        yAxisWidth={64}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "candlestick chart"
+  ],
+  "type": "registry:block"
+}

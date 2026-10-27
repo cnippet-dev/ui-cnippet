@@ -1,0 +1,4 @@
+{
+  "pages": ["funnel-chart", "treemap", "sankey"],
+  "title": "Hierarchy & Flow"
+}

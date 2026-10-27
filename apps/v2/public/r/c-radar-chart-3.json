@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-radar-chart-3",
+  "description": "Plan scorecard — three outlined plans",
+  "registryDependencies": [
+    "@cnippet/radar-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-radar-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RadarChart } from \"@/registry/default/charts/radar-chart\";\n\n// How well each plan covers each area, 0–100.\nconst data = [\n  { area: \"Analytics\", business: 80, enterprise: 100, starter: 40 },\n  { area: \"Security\", business: 70, enterprise: 100, starter: 30 },\n  { area: \"Integrations\", business: 85, enterprise: 95, starter: 45 },\n  { area: \"Support\", business: 60, enterprise: 100, starter: 25 },\n  { area: \"Automation\", business: 75, enterprise: 90, starter: 35 },\n];\n\nexport default function PlanScorecard() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Feature coverage by plan\"\n      title=\"Plan scorecard\"\n    >\n      <RadarChart\n        categories={[\"starter\", \"business\", \"enterprise\"]}\n        className=\"h-64\"\n        data={data}\n        filled={false}\n        index=\"area\"\n        valueFormatter={(value) => `${value}%`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "radar chart"
+  ],
+  "type": "registry:block"
+}

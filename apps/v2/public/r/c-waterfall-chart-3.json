@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-waterfall-chart-3",
+  "description": "Headcount change — hires and departures by team",
+  "registryDependencies": [
+    "@cnippet/waterfall-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-waterfall-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { WaterfallChart } from \"@/registry/default/charts/waterfall-chart\";\n\nconst data = [\n  { change: 142, team: \"Jan 1\" },\n  { change: 6, team: \"Eng\" },\n  { change: 3, team: \"Sales\" },\n  { change: -2, team: \"Support\" },\n  { change: 2, team: \"Design\" },\n  { change: -4, team: \"Ops\" },\n  { change: null, team: \"Jun 30\" },\n];\n\nexport default function HeadcountChange() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Net hires and departures by team, H1 2026\"\n      footer=\"Engineering grew most; operations shrank after the vendor move.\"\n      title=\"Headcount change\"\n      value=\"147\"\n    >\n      <WaterfallChart\n        category=\"change\"\n        className=\"h-52\"\n        config={{\n          decrease: { label: \"Net departures\" },\n          increase: { label: \"Net hires\" },\n          total: { color: \"var(--chart-3)\", label: \"Headcount\" },\n        }}\n        data={data}\n        index=\"team\"\n        totals={[\"Jan 1\", \"Jun 30\"]}\n        valueFormatter={(v) => String(v)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "waterfall chart"
+  ],
+  "type": "registry:block"
+}

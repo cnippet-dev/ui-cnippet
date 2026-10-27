@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-empty-1",
+  "description": "No data in range — prompt to widen the date range",
+  "registryDependencies": [
+    "@cnippet/chart-empty",
+    "@cnippet/chart-card",
+    "@cnippet/button",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-empty-1.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\n// Payouts are monthly, so the last 7 days have none.\nconst payouts = [\n  { amount: 18400, month: \"Jul\" },\n  { amount: 21250, month: \"Aug\" },\n  { amount: 19800, month: \"Sep\" },\n];\n\nconst config = {\n  amount: { color: \"var(--chart-3)\", label: \"Payout\" },\n} satisfies ChartConfig;\n\nexport default function NoDataInRange() {\n  const [range, setRange] = useState<\"7d\" | \"90d\">(\"7d\");\n  const data = range === \"7d\" ? [] : payouts;\n\n  return (\n    <ChartCard\n      className=\"max-w-lg\"\n      description={range === \"7d\" ? \"Last 7 days\" : \"Last 90 days\"}\n      title=\"Payouts\"\n    >\n      {data.length === 0 ? (\n        <ChartEmpty\n          action={\n            <Button onClick={() => setRange(\"90d\")} size=\"sm\" variant=\"outline\">\n              Show last 90 days\n            </Button>\n          }\n          className=\"aspect-auto h-48\"\n          description=\"Payouts land on the 1st of each month.\"\n          title=\"No payouts in this range\"\n        />\n      ) : (\n        <ChartContainer className=\"h-48 w-full\" config={config}>\n          <BarChart accessibilityLayer data={data}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              axisLine={false}\n              dataKey=\"month\"\n              tickLine={false}\n              tickMargin={8}\n            />\n            <ChartTooltip\n              content={\n                <ChartTooltipList\n                  config={config}\n                  valueFormatter={(value) =>\n                    formatCurrency(value, \"USD\", { compact: false })\n                  }\n                />\n              }\n              cursor={false}\n            />\n            <Bar dataKey=\"amount\" fill=\"var(--color-amount)\" radius={4} />\n          </BarChart>\n        </ChartContainer>\n      )}\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart empty"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-tracker-1",
+  "description": "90-day uptime — daily status with incidents",
+  "registryDependencies": [
+    "@cnippet/tracker",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-tracker-1.tsx",
+      "content": "\"use client\";\n\nimport { Tracker } from \"@/registry/default/charts/tracker\";\nimport { formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// 90 days ending Oct 25 2026, with a few incidents.\nconst incidents: Record<number, \"Degraded\" | \"Outage\"> = {\n  17: \"Degraded\",\n  41: \"Outage\",\n  42: \"Degraded\",\n  73: \"Degraded\",\n};\n\nconst days = Array.from({ length: 90 }, (_, i) => {\n  const date = formatDate(Date.UTC(2026, 6, 28 + i), {\n    day: \"numeric\",\n    month: \"short\",\n    timeZone: \"UTC\",\n  });\n  const status = incidents[i] ?? \"Operational\";\n  return {\n    color:\n      status === \"Outage\"\n        ? \"var(--destructive)\"\n        : status === \"Degraded\"\n          ? \"var(--warning)\"\n          : \"var(--success)\",\n    key: date,\n    tooltip: `${date} — ${status}`,\n  };\n});\n\nexport default function UptimeTracker() {\n  return (\n    <div className=\"w-full max-w-xl rounded-lg border bg-card p-5\">\n      <div className=\"flex items-baseline justify-between\">\n        <span className=\"font-medium text-sm\">api.example.com</span>\n        <span className=\"text-muted-foreground text-sm tabular-nums\">\n          99.94% uptime\n        </span>\n      </div>\n      <Tracker\n        aria-label=\"API status per day, last 90 days\"\n        className=\"mt-3\"\n        data={days}\n      />\n      <div className=\"mt-2 flex justify-between text-muted-foreground text-xs\">\n        <span>90 days ago</span>\n        <span>Today</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "tracker"
+  ],
+  "type": "registry:block"
+}

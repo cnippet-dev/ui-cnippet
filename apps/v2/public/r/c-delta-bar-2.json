@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-delta-bar-2",
+  "description": "Budget variance — over budget shown as bad",
+  "registryDependencies": [
+    "@cnippet/delta-bar",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-delta-bar-2.tsx",
+      "content": "\"use client\";\n\nimport { DeltaBar } from \"@/registry/default/charts/delta-bar\";\nimport {\n  formatCurrency,\n  formatPercent,\n} from \"@/registry/default/lib/chart-utils\";\n\n// Actual spend vs budget per team. Over budget is bad, so invertDelta.\nconst teams = [\n  { actual: 128400, budget: 120000, name: \"Engineering\" },\n  { actual: 41200, budget: 48000, name: \"Marketing\" },\n  { actual: 22900, budget: 22000, name: \"Sales\" },\n  { actual: 9800, budget: 14000, name: \"Design\" },\n];\n\nexport default function BudgetVariance() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">Budget variance, Q3</div>\n      <ul className=\"mt-4 grid gap-4\">\n        {teams.map((t) => {\n          const variance = (t.actual - t.budget) / t.budget;\n          return (\n            <li className=\"grid gap-1.5\" key={t.name}>\n              <div className=\"flex justify-between text-sm\">\n                <span>{t.name}</span>\n                <span className=\"text-muted-foreground tabular-nums\">\n                  {formatCurrency(t.actual)} / {formatCurrency(t.budget)}\n                </span>\n              </div>\n              <DeltaBar\n                aria-label={`${t.name}: ${formatPercent(variance, { signed: true })} vs budget`}\n                invertDelta\n                value={variance}\n              />\n            </li>\n          );\n        })}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "delta bar"
+  ],
+  "type": "registry:block"
+}

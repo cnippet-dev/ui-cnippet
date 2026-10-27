@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-candlestick-chart-2",
+  "description": "Crypto — hourly candles with volume bars",
+  "registryDependencies": [
+    "@cnippet/candlestick-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-candlestick-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { CandlestickChart } from \"@/registry/default/charts/candlestick-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport {\n  formatCompact,\n  formatCurrency,\n} from \"@/registry/default/lib/chart-utils\";\n\n// 24 hourly candles with volume, deterministic.\nlet price = 64200;\nconst data = Array.from({ length: 24 }, (_, i) => {\n  const open = price;\n  const close = Math.round(\n    open + Math.sin(i * 0.9) * 420 + Math.cos(i * 2.3) * 180,\n  );\n  price = close;\n  return {\n    close,\n    high: Math.max(open, close) + 120 + (i % 5) * 40,\n    hour: `${String(i).padStart(2, \"0\")}:00`,\n    low: Math.min(open, close) - 90 - (i % 3) * 60,\n    open,\n    volume: Math.round(1800 + Math.abs(close - open) * 6 + (i % 7) * 140),\n  };\n});\n\nexport default function CryptoVolume() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"BTC/USD, hourly candles with traded volume, last 24 hours\"\n      title=\"BTC/USD\"\n      value={formatCurrency(data.at(-1)?.close ?? 0, \"USD\", { compact: false })}\n    >\n      <CandlestickChart\n        className=\"h-48\"\n        data={data}\n        index=\"hour\"\n        valueFormatter={formatCurrency}\n        volume=\"volume\"\n        volumeFormatter={(v) => `${formatCompact(v)} BTC`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "candlestick chart"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-category-bar-2",
+  "description": "Storage breakdown — usage by type with free space",
+  "registryDependencies": [
+    "@cnippet/category-bar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-category-bar-2.tsx",
+      "content": "\"use client\";\n\nimport { CategoryBar } from \"@/registry/default/charts/category-bar\";\n\n// Storage used, in GB, out of a 256 GB plan.\nconst usage = [\n  { name: \"Photos\", value: 94 },\n  { name: \"Video\", value: 61 },\n  { name: \"Documents\", value: 23 },\n  { name: \"Backups\", value: 38 },\n];\nconst PLAN = 256;\nconst used = usage.reduce((sum, u) => sum + u.value, 0);\n\nexport default function StorageBreakdown() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"flex items-baseline justify-between\">\n        <span className=\"font-medium text-sm\">Storage</span>\n        <span className=\"text-muted-foreground text-sm tabular-nums\">\n          {used} GB of {PLAN} GB\n        </span>\n      </div>\n      <CategoryBar\n        className=\"mt-3\"\n        colors={[\n          \"var(--chart-1)\",\n          \"var(--chart-2)\",\n          \"var(--chart-3)\",\n          \"var(--chart-4)\",\n          \"var(--muted)\",\n        ]}\n        labels={[...usage.map((u) => u.name), \"Free\"]}\n        showLabels={false}\n        valueFormatter={(value) => `${value} GB`}\n        values={[...usage.map((u) => u.value), PLAN - used]}\n      />\n      <ul className=\"mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm\">\n        {usage.map((u, i) => (\n          <li className=\"flex items-center gap-2\" key={u.name}>\n            <span\n              aria-hidden=\"true\"\n              className=\"size-2 rounded-xs\"\n              style={{ backgroundColor: `var(--chart-${i + 1})` }}\n            />\n            <span className=\"flex-1\">{u.name}</span>\n            <span className=\"text-muted-foreground tabular-nums\">\n              {u.value} GB\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "category bar"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-category-bar-1",
+  "description": "Credit score — bands with a marker",
+  "registryDependencies": [
+    "@cnippet/category-bar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-category-bar-1.tsx",
+      "content": "\"use client\";\n\nimport { CategoryBar } from \"@/registry/default/charts/category-bar\";\n\nconst SCORE = 712;\n\nexport default function CreditScore() {\n  return (\n    <div className=\"w-full max-w-sm rounded-lg border bg-card p-5\">\n      <div className=\"text-muted-foreground text-sm\">Credit score</div>\n      <div className=\"mt-1 flex items-baseline gap-2\">\n        <span className=\"font-semibold text-3xl tabular-nums\">{SCORE}</span>\n        <span className=\"text-sm text-success-foreground\">Good</span>\n      </div>\n      {/* Bands start at 300: poor 300–580, fair –670, good –740, excellent –850. */}\n      <CategoryBar\n        className=\"mt-5\"\n        colors={[\n          \"var(--destructive)\",\n          \"var(--warning)\",\n          \"var(--success)\",\n          \"var(--info)\",\n        ]}\n        labels={[\"Poor\", \"Fair\", \"Good\", \"Excellent\"]}\n        marker={SCORE - 300}\n        valueFormatter={(value) => String(value + 300)}\n        values={[280, 90, 70, 110]}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "category bar"
+  ],
+  "type": "registry:block"
+}

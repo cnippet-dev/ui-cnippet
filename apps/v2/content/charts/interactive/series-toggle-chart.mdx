@@ -1,0 +1,95 @@
+---
+title: Series Toggle Chart
+description: Metric tabs with totals above a chart; each tab switches which series the chart shows.
+---
+
+<ComponentPreview name="c-series-toggle-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/series-toggle-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Area Chart](/charts/cartesian/area-chart), [Bar Chart](/charts/cartesian/bar-chart) and [Line Chart](/charts/cartesian/line-chart) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="series-toggle-chart" title="components/charts/series-toggle-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SeriesToggleChart } from "@/components/charts/series-toggle-chart";
+```
+
+```tsx
+<SeriesToggleChart
+  data={data}
+  index="date"
+  categories={["desktop", "mobile"]}
+  className="h-48"
+/>
+```
+
+## Good to know
+
+- One series shows at a time, so series with very different scales (users vs revenue) each get a full y-axis.
+- Each tab shows the series' total over all rows. For rates and averages, turn totals off with `showTotals={false}`.
+- `formatters` sets a formatter per series, used on its tab and on the chart when it's selected, e.g. `{ revenue: formatCurrency }`.
+- Tabs are buttons with `aria-pressed`, in a group labelled "Metric".
+- To show or hide several series at once instead, use the [Interactive Legend](/charts/foundation/interactive-legend).
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `chartType` | `"area" \| "bar" \| "line"` | `"bar"` | Chart to draw |
+| `defaultCategory` | `keyof T` | first category | Series shown at first |
+| `onCategoryChange` | `(category) => void` | — | Called when a tab is chosen |
+| `showTotals` | `boolean` | `true` | Show totals on the tabs |
+| `formatters` | `Record<category, (value: number) => string>` | — | Per-series formatters |
+
+## Examples
+
+### Visitors
+
+Desktop and mobile tabs with 30-day totals.
+
+<ComponentPreview name="c-series-toggle-chart-1" />
+
+### Metric switcher
+
+Users, sessions and revenue; revenue gets a currency formatter.
+
+<ComponentPreview name="c-series-toggle-chart-2" />
+
+### Rates
+
+Funnel rates as lines; tabs without totals.
+
+<ComponentPreview name="c-series-toggle-chart-3" />

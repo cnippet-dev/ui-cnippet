@@ -1,0 +1,94 @@
+---
+title: Radar Chart
+description: Compare several series across many axes, with a polygon or circle grid.
+---
+
+<ComponentPreview name="c-radar-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/radar-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="radar-chart" title="components/charts/radar-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RadarChart } from "@/components/charts/radar-chart";
+```
+
+```tsx
+<RadarChart data={data} index="aspect" categories={["air", "pro"]} className="h-64" />
+```
+
+## Good to know
+
+- Each row is one axis (`index`) and each category is one shape.
+- Uses the [common chart props](/docs/chart-components/foundation#common-props), except the x/y-axis ones.
+- `filled={false}` draws outlines only, which reads better with three or more series.
+- `gridType="circle"` swaps the polygon grid for circles; `showDots` marks each value.
+- Keep axes on the same scale (e.g. all out of 10) so the shape is meaningful.
+
+## Props
+
+Takes the [common chart props](/docs/chart-components/foundation#common-props) except `showXAxis`, `showYAxis` and `yAxisWidth`, plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `gridType` | `"polygon" \| "circle"` | `"polygon"` | Shape of the grid |
+| `filled` | `boolean` | `true` | Fill each shape |
+| `showDots` | `boolean` | `false` | Dot on each value |
+
+## Examples
+
+### Product comparison
+
+Two laptops across six review scores.
+
+<ComponentPreview name="c-radar-chart-1" />
+
+### Skill profile
+
+A single series on a circle grid with dots.
+
+<ComponentPreview name="c-radar-chart-2" />
+
+### Outlined scorecard
+
+Three plans as outlines so they don't hide each other.
+
+<ComponentPreview name="c-radar-chart-3" />

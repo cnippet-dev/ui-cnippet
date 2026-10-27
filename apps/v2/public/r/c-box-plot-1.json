@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-box-plot-1",
+  "description": "Salary by role — precomputed quartiles",
+  "registryDependencies": [
+    "@cnippet/box-plot",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-box-plot-1.tsx",
+      "content": "\"use client\";\n\nimport { BoxPlot } from \"@/registry/default/charts/box-plot\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Precomputed salary quartiles per role.\nconst data = [\n  {\n    max: 142000,\n    median: 108000,\n    min: 78000,\n    q1: 94000,\n    q3: 121000,\n    role: \"Frontend\",\n  },\n  {\n    max: 168000,\n    median: 124000,\n    min: 86000,\n    q1: 109000,\n    q3: 139000,\n    role: \"Backend\",\n  },\n  {\n    max: 175000,\n    median: 131000,\n    min: 92000,\n    q1: 115000,\n    q3: 148000,\n    role: \"Platform\",\n  },\n  {\n    max: 132000,\n    median: 101000,\n    min: 72000,\n    q1: 88000,\n    q3: 114000,\n    role: \"Design\",\n  },\n  {\n    max: 188000,\n    median: 142000,\n    min: 98000,\n    q1: 124000,\n    q3: 160000,\n    role: \"Data\",\n  },\n];\n\nexport default function SalaryByRole() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Base salary ranges by role, US offices, 2026\"\n      title=\"Salary by role\"\n    >\n      <BoxPlot\n        className=\"h-48\"\n        data={data}\n        index=\"role\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "box plot"
+  ],
+  "type": "registry:block"
+}

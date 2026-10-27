@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-box-plot-3",
+  "description": "CI run time — per runner against a time budget",
+  "registryDependencies": [
+    "@cnippet/box-plot",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-box-plot-3.tsx",
+      "content": "\"use client\";\n\nimport { ReferenceLine } from \"recharts\";\nimport { BoxPlot } from \"@/registry/default/charts/box-plot\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// Deterministic test-suite run times (seconds) per CI runner.\nconst runners = [\"linux-x64\", \"linux-arm\", \"macos-14\", \"windows\"] as const;\nconst data = runners.map((runner, r) => ({\n  runner,\n  seconds: Array.from(\n    { length: 60 },\n    (_, i) => 180 + r * 45 + ((i * 11) % 37) * (1 + r * 0.4),\n  ),\n}));\n\nexport default function CiRunTimes() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Test suite duration per runner, last 60 runs. Dashed line is the 5-minute budget.\"\n      title=\"CI run time\"\n    >\n      <BoxPlot\n        className=\"h-48\"\n        color=\"var(--chart-3)\"\n        data={data}\n        index=\"runner\"\n        valueFormatter={(v) => `${Math.floor(v / 60)}m ${Math.round(v % 60)}s`}\n        values=\"seconds\"\n        yAxisWidth={60}\n      >\n        <ReferenceLine\n          stroke=\"var(--muted-foreground)\"\n          strokeDasharray=\"4 4\"\n          y={300}\n        />\n      </BoxPlot>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "box plot"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-treemap-1",
+  "description": "Revenue mix — two levels: business line and product",
+  "registryDependencies": [
+    "@cnippet/treemap",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-treemap-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Treemap } from \"@/registry/default/charts/treemap\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  {\n    children: [\n      { name: \"Pro monthly\", value: 412000 },\n      { name: \"Pro annual\", value: 286000 },\n      { name: \"Team\", value: 198000 },\n    ],\n    name: \"Subscriptions\",\n  },\n  {\n    children: [\n      { name: \"Onboarding\", value: 96000 },\n      { name: \"Support plans\", value: 74000 },\n    ],\n    name: \"Services\",\n  },\n  {\n    children: [\n      { name: \"API overage\", value: 118000 },\n      { name: \"Storage\", value: 52000 },\n    ],\n    name: \"Usage\",\n  },\n  {\n    children: [{ name: \"Partners\", value: 64000 }],\n    name: \"Marketplace\",\n  },\n];\n\nexport default function RevenueByProduct() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Revenue by line of business and product, FY2026\"\n      title=\"Revenue mix\"\n      value={formatCurrency(1300000)}\n    >\n      <Treemap className=\"h-48\" data={data} valueFormatter={formatCurrency} />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "treemap"
+  ],
+  "type": "registry:block"
+}

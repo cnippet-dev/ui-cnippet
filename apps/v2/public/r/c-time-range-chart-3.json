@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-time-range-chart-3",
+  "description": "API calls — stacked successful and failed calls",
+  "registryDependencies": [
+    "@cnippet/time-range-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-time-range-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { TimeRangeChart } from \"@/registry/default/charts/time-range-chart\";\nimport { formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// API calls per day for 30 days, split into successful and failed.\nconst data = Array.from({ length: 30 }, (_, i) => {\n  const date = new Date(Date.UTC(2026, 8, 26 + i));\n  const success = Math.round(182000 + 2600 * i + 21000 * Math.sin(i / 3));\n  return {\n    date: date.toISOString().slice(0, 10),\n    failed: Math.round(success * (0.012 + 0.008 * Math.abs(Math.sin(i / 4)))),\n    success,\n  };\n});\n\nexport default function ApiCalls() {\n  return (\n    <ChartCard className=\"max-w-2xl\" title=\"API calls\">\n      <TimeRangeChart\n        categories={[\"success\", \"failed\"]}\n        chartType=\"bar\"\n        className=\"h-40\"\n        config={{\n          failed: { color: \"var(--destructive)\", label: \"Failed\" },\n          success: { color: \"var(--chart-2)\", label: \"Successful\" },\n        }}\n        data={data}\n        defaultRange=\"14d\"\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n        ranges={[\n          { label: \"7d\", size: 7 },\n          { label: \"14d\", size: 14 },\n          { label: \"30d\", size: 30 },\n        ]}\n        stacked\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "time range chart"
+  ],
+  "type": "registry:block"
+}

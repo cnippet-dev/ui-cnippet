@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-drilldown-chart-2",
+  "description": "Active users — region → country → city",
+  "registryDependencies": [
+    "@cnippet/drilldown-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-drilldown-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport {\n  DrilldownChart,\n  type DrilldownNode,\n} from \"@/registry/default/charts/drilldown-chart\";\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\n\nconst leaf = (name: string, value: number): DrilldownNode => ({ name, value });\nconst node = (name: string, children: DrilldownNode[]): DrilldownNode => ({\n  children,\n  name,\n  value: children.reduce((sum, c) => sum + c.value, 0),\n});\n\n// Active users: region → country → city.\nconst data = [\n  node(\"Americas\", [\n    node(\"United States\", [\n      leaf(\"New York\", 18400),\n      leaf(\"San Francisco\", 14200),\n      leaf(\"Austin\", 6100),\n    ]),\n    node(\"Brazil\", [leaf(\"São Paulo\", 7800), leaf(\"Rio de Janeiro\", 3900)]),\n    node(\"Canada\", [leaf(\"Toronto\", 5200), leaf(\"Vancouver\", 2900)]),\n  ]),\n  node(\"Europe\", [\n    node(\"Germany\", [leaf(\"Berlin\", 9100), leaf(\"Munich\", 4700)]),\n    node(\"United Kingdom\", [leaf(\"London\", 12800), leaf(\"Manchester\", 3100)]),\n    node(\"France\", [leaf(\"Paris\", 7600), leaf(\"Lyon\", 2200)]),\n  ]),\n  node(\"Asia Pacific\", [\n    node(\"India\", [leaf(\"Bengaluru\", 11200), leaf(\"Mumbai\", 6800)]),\n    node(\"Japan\", [leaf(\"Tokyo\", 8900), leaf(\"Osaka\", 3400)]),\n  ]),\n];\n\nexport default function UsersByLocation() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Region → country → city\"\n      title=\"Active users\"\n    >\n      <DrilldownChart\n        className=\"h-52\"\n        color=\"var(--chart-2)\"\n        data={data}\n        rootLabel=\"World\"\n        valueFormatter={formatCompact}\n        valueLabel=\"Active users\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "drilldown chart"
+  ],
+  "type": "registry:block"
+}

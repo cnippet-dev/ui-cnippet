@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-synced-charts-1",
+  "description": "Server metrics — CPU, memory and network",
+  "registryDependencies": [
+    "@cnippet/synced-charts"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-synced-charts-1.tsx",
+      "content": "\"use client\";\n\nimport { SyncedCharts } from \"@/registry/default/charts/synced-charts\";\n\n// One host, last 60 minutes: a batch job at :35 spikes CPU, memory and network together.\nconst data = Array.from({ length: 60 }, (_, i) => {\n  const job = i >= 35 && i < 44 ? 1 : 0;\n  return {\n    cpu: Math.round(28 + 6 * Math.sin(i / 4) + job * 48),\n    memory: Math.round((5.2 + 0.02 * i + job * 2.1) * 10) / 10,\n    network: Math.round(12 + 4 * Math.cos(i / 5) + job * 36),\n    time: `14:${String(i).padStart(2, \"0\")}`,\n  };\n});\n\nexport default function ServerMetrics() {\n  return (\n    <div className=\"w-full max-w-2xl rounded-lg border bg-card p-5\">\n      <div className=\"mb-3 font-medium text-sm\">web-2 · last hour</div>\n      <SyncedCharts\n        data={data}\n        index=\"time\"\n        panelClassName=\"h-20\"\n        panels={[\n          {\n            categories: [\"cpu\"],\n            config: { cpu: { color: \"var(--chart-1)\", label: \"CPU\" } },\n            title: \"CPU\",\n            valueFormatter: (value) => `${value}%`,\n          },\n          {\n            categories: [\"memory\"],\n            config: { memory: { color: \"var(--chart-2)\", label: \"Memory\" } },\n            title: \"Memory\",\n            type: \"line\",\n            valueFormatter: (value) => `${value} GB`,\n          },\n          {\n            categories: [\"network\"],\n            config: { network: { color: \"var(--chart-5)\", label: \"Network\" } },\n            title: \"Network\",\n            valueFormatter: (value) => `${value} MB/s`,\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "synced charts"
+  ],
+  "type": "registry:block"
+}

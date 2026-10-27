@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "synced-charts",
+  "description": "Stacked chart panels on one x-axis that share a cursor and tooltip",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/bar-chart",
+    "@cnippet/line-chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/synced-charts.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport type { ChartConfig } from \"@/registry/default/ui/chart\";\n\nexport type SyncedChartPanel<T extends Record<string, unknown>> = {\n  title: string;\n  categories: (keyof T & string)[];\n  type?: \"area\" | \"line\" | \"bar\";\n  config?: ChartConfig;\n  valueFormatter?: (value: number) => string;\n  /** Show the panel's y-axis. Default: true. */\n  showYAxis?: boolean;\n};\n\nexport type SyncedChartsProps<T extends Record<string, unknown>> = {\n  data: T[];\n  /** Shared x-axis field, e.g. \"time\". */\n  index: keyof T & string;\n  panels: SyncedChartPanel<T>[];\n  indexFormatter?: (value: string) => string;\n  /** Height of each panel's chart. */\n  panelClassName?: string;\n  yAxisWidth?: number;\n  className?: string;\n};\n\nexport function SyncedCharts<T extends Record<string, unknown>>({\n  data,\n  index,\n  panels,\n  indexFormatter,\n  panelClassName = \"h-28\",\n  yAxisWidth = 56,\n  className,\n}: SyncedChartsProps<T>) {\n  const syncId = React.useId();\n\n  return (\n    <div\n      className={cn(\"grid w-full gap-4\", className)}\n      data-slot=\"synced-charts\"\n    >\n      {panels.map((panel, i) => {\n        const Chart =\n          panel.type === \"bar\"\n            ? BarChart\n            : panel.type === \"line\"\n              ? LineChart\n              : AreaChart;\n        return (\n          <div key={panel.title}>\n            <div className=\"mb-1 font-medium text-muted-foreground text-xs\">\n              {panel.title}\n            </div>\n            <Chart\n              aria-label={`${panel.title} by ${index}`}\n              categories={panel.categories}\n              className={panelClassName}\n              config={panel.config}\n              data={data}\n              index={index}\n              indexFormatter={indexFormatter}\n              showLegend={panel.categories.length > 1}\n              // Only the bottom panel shows the shared x-axis.\n              showXAxis={i === panels.length - 1}\n              showYAxis={panel.showYAxis ?? true}\n              syncId={syncId}\n              valueFormatter={panel.valueFormatter}\n              yAxisWidth={yAxisWidth}\n            />\n          </div>\n        );\n      })}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/synced-charts.tsx"
+    }
+  ],
+  "categories": [
+    "synced charts"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "spark-area",
+    "spark-line",
+    "spark-bar",
+    "bar-list",
+    "category-bar",
+    "progress-circle",
+    "delta-bar",
+    "tracker",
+    "bullet-chart"
+  ],
+  "title": "Sparklines & Micro"
+}

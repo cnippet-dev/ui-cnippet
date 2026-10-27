@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-line-1",
+  "description": "Stock ticker — 10-day price lines with change",
+  "registryDependencies": [
+    "@cnippet/spark-line",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-line-1.tsx",
+      "content": "\"use client\";\n\nimport { SparkLine } from \"@/registry/default/charts/spark-line\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\n// Closing prices, last 10 trading days.\nconst tickers = [\n  {\n    prices: [\n      182.1, 184.4, 183.2, 186.9, 188.3, 187.5, 190.2, 191.8, 190.9, 193.4,\n    ],\n    symbol: \"AAPL\",\n  },\n  {\n    prices: [\n      415.2, 412.8, 409.6, 411.3, 406.9, 404.1, 401.7, 403.2, 399.8, 397.5,\n    ],\n    symbol: \"MSFT\",\n  },\n  {\n    prices: [\n      171.4, 173.9, 176.2, 175.1, 178.8, 181.3, 180.6, 184.2, 186.7, 188.1,\n    ],\n    symbol: \"GOOGL\",\n  },\n  {\n    prices: [\n      242.6, 238.1, 241.9, 236.4, 231.8, 229.5, 233.2, 227.9, 224.6, 221.3,\n    ],\n    symbol: \"TSLA\",\n  },\n];\n\nexport default function StockTicker() {\n  return (\n    <ul className=\"w-full max-w-md divide-y rounded-lg border bg-card\">\n      {tickers.map((t) => {\n        const first = t.prices[0] ?? 0;\n        const last = t.prices.at(-1) ?? 0;\n        const change = (last - first) / first;\n        return (\n          <li className=\"flex items-center gap-4 px-4 py-3\" key={t.symbol}>\n            <span className=\"w-16 font-medium font-mono text-sm\">\n              {t.symbol}\n            </span>\n            <SparkLine\n              aria-label={`${t.symbol}, last 10 days`}\n              categories={[\"price\"]}\n              className=\"h-8 flex-1\"\n              colorByTrend\n              data={t.prices.map((price, day) => ({ day, price }))}\n              index=\"day\"\n              showLastDot\n            />\n            <span className=\"w-20 text-end text-sm tabular-nums\">\n              ${last.toFixed(2)}\n            </span>\n            <span\n              className={\n                change >= 0\n                  ? \"w-16 text-end text-sm text-success-foreground tabular-nums\"\n                  : \"w-16 text-end text-destructive-foreground text-sm tabular-nums\"\n              }\n            >\n              {formatPercent(change, { signed: true })}\n            </span>\n          </li>\n        );\n      })}\n    </ul>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark line"
+  ],
+  "type": "registry:block"
+}

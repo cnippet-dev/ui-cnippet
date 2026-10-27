@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-chart",
+  "description": "Data-driven line chart with dots, dashed forecast series and gap handling",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/use-media-query",
+    "@cnippet/chart",
+    "@cnippet/chart-utils",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart-skeleton",
+    "@cnippet/chart-empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/line-chart.tsx",
+      "content": "\"use client\";\n\nimport {\n  CartesianGrid,\n  Line,\n  LineChart as RechartsLineChart,\n  XAxis,\n  YAxis,\n} from \"recharts\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport { ChartSkeleton } from \"@/registry/default/charts/chart-skeleton\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { useMediaQuery } from \"@/registry/default/hooks/use-media-query\";\nimport {\n  type BaseChartProps,\n  buildChartConfig,\n  describeChart,\n  formatCompact,\n} from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport {\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\nexport type LineChartProps<T extends Record<string, unknown>> =\n  BaseChartProps<T> & {\n    curve?: \"linear\" | \"monotone\" | \"step\";\n    showDots?: boolean;\n    /** Series drawn dashed, e.g. forecasts or targets. */\n    dashedCategories?: (keyof T & string)[];\n    /** Draw a line across missing (null) values instead of leaving a gap. */\n    connectNulls?: boolean;\n  };\n\nexport function LineChart<T extends Record<string, unknown>>({\n  data,\n  index,\n  categories,\n  config,\n  valueFormatter = formatCompact,\n  indexFormatter,\n  showXAxis = true,\n  showYAxis = true,\n  showGrid = true,\n  showLegend = categories.length > 1,\n  showTooltip = true,\n  legendPosition = \"bottom\",\n  yAxisWidth = 48,\n  loading = false,\n  emptyState,\n  className,\n  children,\n  syncId,\n  \"aria-label\": ariaLabel,\n  curve = \"monotone\",\n  showDots = false,\n  dashedCategories = [],\n  connectNulls = false,\n}: LineChartProps<T>) {\n  const reduceMotion = useMediaQuery(\"(prefers-reduced-motion: reduce)\");\n  const resolvedConfig = buildChartConfig(categories, config);\n\n  if (loading) return <ChartSkeleton className={className} variant=\"line\" />;\n  if (data.length === 0) {\n    return emptyState ?? <ChartEmpty className={className} />;\n  }\n\n  const formatIndex = (value: unknown) =>\n    indexFormatter ? indexFormatter(String(value)) : String(value);\n\n  return (\n    <ChartContainer\n      aria-label={ariaLabel ?? describeChart(\"Line chart\", categories, index)}\n      className={cn(\"w-full\", className)}\n      config={resolvedConfig}\n      role=\"figure\"\n    >\n      <RechartsLineChart\n        accessibilityLayer\n        data={data}\n        margin={{ left: showYAxis ? 0 : 12, right: 12, top: 8 }}\n        syncId={syncId}\n      >\n        {showGrid ? <CartesianGrid vertical={false} /> : null}\n        <XAxis\n          axisLine={false}\n          dataKey={index as string}\n          hide={!showXAxis}\n          interval=\"preserveStartEnd\"\n          minTickGap={24}\n          tickFormatter={formatIndex}\n          tickLine={false}\n          tickMargin={8}\n        />\n        <YAxis\n          axisLine={false}\n          hide={!showYAxis}\n          tickFormatter={(value: number) => valueFormatter(value)}\n          tickLine={false}\n          width={yAxisWidth}\n        />\n        {showTooltip ? (\n          <ChartTooltip\n            content={\n              <ChartTooltipList\n                config={resolvedConfig}\n                labelFormatter={indexFormatter && formatIndex}\n                sort={false}\n                valueFormatter={valueFormatter}\n              />\n            }\n          />\n        ) : null}\n        {showLegend ? (\n          <ChartLegend\n            content={<ChartLegendContent />}\n            itemSorter={null}\n            verticalAlign={legendPosition}\n          />\n        ) : null}\n        {categories.map((key) => (\n          <Line\n            activeDot={{ r: 4 }}\n            connectNulls={connectNulls}\n            dataKey={key as string}\n            dot={showDots ? { r: 3 } : false}\n            isAnimationActive={!reduceMotion}\n            key={key}\n            stroke={`var(--color-${key})`}\n            strokeDasharray={dashedCategories.includes(key) ? \"4 4\" : undefined}\n            strokeWidth={2}\n            type={curve}\n          />\n        ))}\n        {children}\n      </RechartsLineChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/line-chart.tsx"
+    }
+  ],
+  "categories": [
+    "line chart"
+  ],
+  "type": "registry:ui"
+}

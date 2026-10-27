@@ -1,0 +1,100 @@
+---
+title: Histogram
+description: Shows how raw values are distributed by counting them into equal-width buckets.
+---
+
+<ComponentPreview name="c-histogram-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/histogram
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Bar Chart](/charts/cartesian/bar-chart) and [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="histogram" title="components/charts/histogram.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Histogram } from "@/components/charts/histogram";
+```
+
+```tsx
+<Histogram
+  values={latencies}
+  bins={12}
+  label="Requests"
+  valueFormatter={(v) => `${Math.round(v)} ms`}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- Pass raw measurements in `values`, not counts. The chart buckets them with `binValues` from [Chart Utils](/charts/foundation/chart-utils): `bins` equal-width buckets from the smallest value to the largest.
+- `valueFormatter` formats the bucket edges, so the x-axis and tooltip read "120 ms–160 ms". The bar heights are counts and always use `formatCompact`.
+- It's a [Bar Chart](/charts/cartesian/bar-chart) underneath, so `children` (e.g. `<ReferenceLine />`), `loading`, `emptyState` and the axis toggles work the same way.
+- With many buckets the x-axis skips labels to avoid overlap; every bucket's range is still in its tooltip.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `values` | `number[]` | — | Raw measurements to bucket |
+| `bins` | `number` | `10` | Number of equal-width buckets |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats bucket edges |
+| `label` | `string` | `"Count"` | Name of the count in the tooltip |
+| `color` | `string` | `"var(--chart-1)"` | Bar colour |
+| `showXAxis` / `showYAxis` / `showGrid` / `showTooltip` | `boolean` | `true` | Toggle chart parts |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `values` is empty |
+| `className` | `string` | — | Sizing, e.g. `"h-64"` |
+| `aria-label` | `string` | `"Histogram of <label>"` | Accessible name |
+| `children` | `ReactNode` | — | Extra Recharts elements |
+
+## Examples
+
+### Response times
+
+A right-skewed distribution: most requests are fast, with a long tail.
+
+<ComponentPreview name="c-histogram-1" />
+
+### Order values
+
+Two clusters of basket sizes, in a second chart colour.
+
+<ComponentPreview name="c-histogram-2" />
+
+### Narrow bands
+
+20 buckets with the grid turned off.
+
+<ComponentPreview name="c-histogram-3" />

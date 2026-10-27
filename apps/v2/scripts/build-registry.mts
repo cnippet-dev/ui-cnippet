@@ -133,6 +133,42 @@ async function buildRegistry() {
   });
 }
 
+const OUTPUT_DIR = path.join(process.cwd(), "public/r");
+
+async function readOutput() {
+  const files = new Map<string, string>();
+  for (const name of await fs.readdir(OUTPUT_DIR).catch(() => [])) {
+    if (!name.endsWith(".json")) continue;
+    files.set(name, await fs.readFile(path.join(OUTPUT_DIR, name), "utf8"));
+  }
+  return files;
+}
+
+// On Windows, `shadcn build` copies the sources' CRLF line endings into every
+// file's `content`, and rewrites all ~1000 files even when nothing changed.
+// Strip the CRs, and put back byte-for-byte any file whose content is the same
+// as before the build, so git only sees real changes.
+async function normalizeOutput(before: Map<string, string>) {
+  let changed = 0;
+  for (const [name, raw] of await readOutput()) {
+    const json = JSON.parse(raw);
+    for (const file of json.files ?? []) {
+      if (typeof file.content === "string") {
+        file.content = file.content.replace(/\r\n/g, "\n");
+      }
+    }
+    const normalized = JSON.stringify(json, null, 2);
+    const previous = before.get(name);
+    const next =
+      previous !== undefined && previous.replace(/\r\n/g, "\n") === normalized
+        ? previous
+        : normalized;
+    if (next !== raw) await fs.writeFile(path.join(OUTPUT_DIR, name), next);
+    if (next !== previous) changed++;
+  }
+  console.log(`📝 ${changed} registry files changed`);
+}
+
 // Variant counts come from the files of each registered prefix, so a file
 // with an unregistered prefix would silently drop out of the registry.
 async function checkVariantsRegistered() {
@@ -162,7 +198,9 @@ try {
   await buildRegistryJsonFile();
 
   console.log("🏗️ Building registry...");
+  const before = await readOutput();
   await buildRegistry();
+  await normalizeOutput(before);
 
   console.log("✅ Registry build completed successfully!");
 } catch (error) {

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "histogram",
+  "description": "Distribution of raw values in equal-width buckets, drawn as touching bars",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/histogram.tsx",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { binValues, formatCompact } from \"@/registry/default/lib/chart-utils\";\n\nexport type HistogramProps = {\n  /** Raw measurements, e.g. response times in ms. */\n  values: number[];\n  /** Number of equal-width buckets. */\n  bins?: number;\n  /** Formats bucket edges on the x-axis and in the tooltip, e.g. (v) => `${v} ms`. */\n  valueFormatter?: (value: number) => string;\n  /** Name of the count in the tooltip, e.g. \"Requests\". */\n  label?: string;\n  /** CSS colour of the bars. */\n  color?: string;\n  showXAxis?: boolean;\n  showYAxis?: boolean;\n  showGrid?: boolean;\n  showTooltip?: boolean;\n  yAxisWidth?: number;\n  loading?: boolean;\n  emptyState?: React.ReactNode;\n  className?: string;\n  \"aria-label\"?: string;\n  /** Extra Recharts elements, e.g. <ReferenceLine x=\"…\" /> on a bucket. */\n  children?: React.ReactNode;\n};\n\nexport function Histogram({\n  values,\n  bins = 10,\n  valueFormatter = formatCompact,\n  label = \"Count\",\n  color = \"var(--chart-1)\",\n  \"aria-label\": ariaLabel,\n  ...props\n}: HistogramProps) {\n  const data = binValues(values, bins).map((bin) => ({\n    count: bin.count,\n    range: `${valueFormatter(bin.start)}–${valueFormatter(bin.end)}`,\n  }));\n\n  return (\n    <BarChart\n      aria-label={ariaLabel ?? `Histogram of ${label.toLowerCase()}`}\n      barCategoryGap={1}\n      categories={[\"count\"]}\n      config={{ count: { color, label } }}\n      data={data}\n      index=\"range\"\n      radius={2}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/histogram.tsx"
+    }
+  ],
+  "categories": [
+    "histogram"
+  ],
+  "type": "registry:ui"
+}

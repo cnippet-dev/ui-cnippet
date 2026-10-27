@@ -12,6 +12,7 @@ import {
   isPlaceholderVariant,
 } from "@/lib/variants";
 import { motionGroupOf, motionGroups } from "@/registry/motion-groups";
+import { chartVariants } from "@/registry/registry-chart-variants";
 import { motionVariants } from "@/registry/registry-motion-variants";
 import { variants } from "@/registry/registry-variants";
 
@@ -82,9 +83,24 @@ export default function ExplorePage() {
     .filter((g) => g.variants.length > 0);
 
   const motionCount = groups.reduce((n, g) => n + g.variants.length, 0);
-  const total = variantEntries.length + motionCount;
-  const componentCount =
-    categories.length + groups.reduce((n, g) => n + g.categories.length, 0);
+
+  // All chart variants share one section; each component is a sub-filter.
+  const chartEntries = chartVariants.map((v) => ({
+    category: v.categories?.[0] ?? "other",
+    description: v.description ?? v.name,
+    name: v.name,
+  }));
+  const sections = [
+    ...groups,
+    {
+      categories: Array.from(new Set(chartEntries.map((v) => v.category))),
+      id: "charts",
+      label: "Charts",
+      variants: chartEntries,
+    },
+  ];
+
+  const total = variantEntries.length + motionCount + chartEntries.length;
 
   return (
     <SiteShell>
@@ -97,7 +113,7 @@ export default function ExplorePage() {
             label: "motion variants",
             value: motionCount,
           },
-          { label: "components", value: componentCount },
+          { label: "chart variants", value: chartEntries.length },
           { label: "total variants", value: total },
         ]}
         title={
@@ -114,7 +130,7 @@ export default function ExplorePage() {
             <Suspense>
               <ExploreShowcase
                 categories={categories}
-                groups={groups}
+                groups={sections}
                 variants={variantEntries}
               />
             </Suspense>

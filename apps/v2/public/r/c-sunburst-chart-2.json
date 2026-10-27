@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sunburst-chart-2",
+  "description": "Disk usage — folders and subfolders",
+  "registryDependencies": [
+    "@cnippet/sunburst-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sunburst-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SunburstChart } from \"@/registry/default/charts/sunburst-chart\";\n\n// GB per folder and its largest subfolders.\nconst data = [\n  {\n    children: [\n      { name: \"node_modules\", value: 38.2 },\n      { name: \"builds\", value: 12.6 },\n      { name: \"src\", value: 1.4 },\n    ],\n    name: \"Projects\",\n  },\n  {\n    children: [\n      { name: \"Photos\", value: 64.1 },\n      { name: \"Videos\", value: 41.8 },\n    ],\n    name: \"Media\",\n  },\n  {\n    children: [\n      { name: \"Docker images\", value: 22.4 },\n      { name: \"VMs\", value: 30.2 },\n    ],\n    name: \"Containers\",\n  },\n  { name: \"System\", value: 18.9 },\n];\n\nexport default function DiskUsage() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"229.6 GB used, by folder\"\n      title=\"Disk usage\"\n    >\n      <SunburstChart\n        className=\"h-64\"\n        data={data}\n        valueFormatter={(value) => `${value.toFixed(1)} GB`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sunburst chart"
+  ],
+  "type": "registry:block"
+}

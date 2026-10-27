@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bar-chart-2",
+  "description": "Signups by channel — stacked columns",
+  "registryDependencies": [
+    "@cnippet/bar-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bar-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { BarChart } from \"@/registry/default/charts/bar-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// Weekly signups by acquisition channel.\nconst data = [\n  { organic: 412, paid: 268, referral: 96, week: \"W36\" },\n  { organic: 438, paid: 301, referral: 104, week: \"W37\" },\n  { organic: 451, paid: 244, referral: 131, week: \"W38\" },\n  { organic: 497, paid: 322, referral: 118, week: \"W39\" },\n  { organic: 523, paid: 356, referral: 142, week: \"W40\" },\n  { organic: 548, paid: 331, referral: 167, week: \"W41\" },\n];\n\nexport default function SignupsByChannel() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Weekly signups, stacked by channel\"\n      title=\"Signups\"\n      value=\"1,046\"\n    >\n      <BarChart\n        categories={[\"organic\", \"paid\", \"referral\"]}\n        className=\"h-48\"\n        data={data}\n        index=\"week\"\n        type=\"stacked\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bar chart"
+  ],
+  "type": "registry:block"
+}

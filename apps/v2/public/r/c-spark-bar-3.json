@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-bar-3",
+  "description": "Weekly volume — stacked web and app orders in a card",
+  "registryDependencies": [
+    "@cnippet/spark-bar",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-bar-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SparkBar } from \"@/registry/default/charts/spark-bar\";\n\n// Weekly orders by channel, last 12 weeks.\nconst data = [\n  { app: 410, web: 820, week: 1 },\n  { app: 455, web: 870, week: 2 },\n  { app: 498, web: 905, week: 3 },\n  { app: 521, web: 940, week: 4 },\n  { app: 566, web: 980, week: 5 },\n  { app: 602, web: 1015, week: 6 },\n  { app: 640, web: 990, week: 7 },\n  { app: 688, web: 1042, week: 8 },\n  { app: 712, web: 1070, week: 9 },\n  { app: 761, web: 1098, week: 10 },\n  { app: 805, web: 1121, week: 11 },\n  { app: 849, web: 1150, week: 12 },\n];\n\nexport default function WeeklyVolume() {\n  return (\n    <ChartCard\n      className=\"max-w-xs\"\n      delta={0.047}\n      description=\"Weekly orders, web and app stacked\"\n      title=\"Orders\"\n      value=\"1,999\"\n    >\n      <SparkBar\n        categories={[\"web\", \"app\"]}\n        className=\"h-16 w-full\"\n        data={data}\n        index=\"week\"\n        type=\"stacked\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark bar"
+  ],
+  "type": "registry:block"
+}

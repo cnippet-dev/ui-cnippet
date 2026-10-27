@@ -1,0 +1,109 @@
+---
+title: Realtime Chart
+description: A streaming line chart with a sliding window, live values and a pause button.
+---
+
+<ComponentPreview name="c-realtime-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/realtime-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts lucide-react
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets) and [Button](/ui/actions/button).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="realtime-chart" title="components/charts/realtime-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RealtimeChart } from "@/components/charts/realtime-chart";
+```
+
+```tsx
+<RealtimeChart
+  categories={["rps"]}
+  onTick={() => ({ rps: latestFromSocket.current })}
+  interval={1000}
+  windowSize={60}
+  className="h-48"
+/>
+```
+
+## Good to know
+
+- Every `interval` ms the chart calls `onTick` and appends the values it returns. Read the latest value from a ref your websocket or poller updates.
+- `windowSize` points stay on screen; older ones scroll off the left.
+- The chart starts empty and begins ticking after it mounts, so the server render never differs from the client.
+- Lines never animate: a stream redraws every tick, and tweening each update only adds jitter. This also covers reduced motion.
+- The pause button stops the interval (points stop arriving); resume continues from now. Start paused with `defaultPaused`.
+- Set `yDomain` (e.g. `[0, 100]`) when small moves shouldn't rescale the axis.
+- The live values in the header are plain text for screen readers. They aren't announced on every tick, which would be noisy.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `categories` | `string[]` | — | Series keys returned by `onTick` |
+| `onTick` | `() => Record<string, number>` | — | Returns the next value per series |
+| `interval` | `number` | `1000` | Milliseconds between points |
+| `windowSize` | `number` | `60` | Points kept on screen |
+| `config` | `ChartConfig` | built from `categories` | Labels or colours per series |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `yDomain` | `[number, number]` | fits the data | Fixed y-axis range |
+| `showControls` | `boolean` | `true` | Live indicator, values and pause button |
+| `defaultPaused` | `boolean` | `false` | Start paused |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis |
+| `className` | `string` | — | Sizing classes for the chart |
+| `aria-label` | `string` | built from `categories` | Accessible name |
+
+## Examples
+
+### Requests per second
+
+A single stream with the occasional burst.
+
+<ComponentPreview name="c-realtime-chart-1" />
+
+### Two sensors
+
+Two series on a fixed axis so small drifts stay small.
+
+<ComponentPreview name="c-realtime-chart-2" />
+
+### Price feed
+
+A random walk standing in for a price feed.
+
+<ComponentPreview name="c-realtime-chart-3" />

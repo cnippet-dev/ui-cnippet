@@ -1,0 +1,117 @@
+---
+title: Chart Tooltip Presets
+description: Ready-made tooltip layouts for the chart primitive — totals, a sorted list and a previous-period comparison.
+---
+
+<ComponentPreview name="c-chart-tooltip-presets-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/chart-tooltip-presets
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Chart](/charts/foundation/chart) and [Chart Utils](/charts/foundation/chart-utils) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="chart-tooltip-presets" title="components/charts/chart-tooltip-presets.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  ChartTooltipComparison,
+  ChartTooltipList,
+  ChartTooltipTotal,
+} from "@/components/charts/chart-tooltip-presets";
+```
+
+```tsx
+<ChartTooltip
+  content={<ChartTooltipTotal config={config} valueFormatter={formatCurrency} />}
+/>
+```
+
+## Anatomy
+
+```tsx
+<ChartTooltip content={<ChartTooltipTotal />} />      {/* every series + a "Total" row */}
+<ChartTooltip content={<ChartTooltipList />} />       {/* series sorted highest first */}
+<ChartTooltip content={<ChartTooltipComparison />} /> {/* value, previous value and % change */}
+```
+
+## Good to know
+
+- Pass them to `ChartTooltip`'s `content`, like `ChartTooltipContent`. Recharts fills in `active`, `payload` and `label`.
+- Pass the same `config` you give `ChartContainer` so rows show your series labels. Without it, rows fall back to the series key.
+- `valueFormatter` defaults to `formatCompact` ("1.2K"). Use `formatCurrency`, `formatPercent` or your own function for units.
+- `ChartTooltipComparison` needs `previous`, which maps each series to the data field holding last period's value, e.g. `{ revenue: "lastYear" }`. Series not in `previous` are left out of the tooltip.
+- Set `invertDelta` on the comparison when a drop is good news, such as latency or cost.
+- Non-numeric and `null` values are skipped, so gaps in your data don't break the tooltip.
+
+## Props
+
+All three presets take these props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `config` | `ChartConfig` | — | Series labels; pass the chart's config |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats each value |
+| `formatters` | `Record<string, (value: number) => string>` | — | Per-series formatters that override `valueFormatter` |
+| `nameKey` | `string` | — | Row field that names each item, for pie-style charts where every slice shares one `dataKey` |
+| `labelFormatter` | `(label: string \| number) => ReactNode` | — | Formats the heading (the x value) |
+| `hideLabel` | `boolean` | `false` | Hide the heading |
+| `className` | `string` | — | Classes for the tooltip box |
+
+Preset-specific props:
+
+| Preset | Prop | Type | Default | Description |
+|------|------|------|---------|-------------|
+| `ChartTooltipTotal` | `totalLabel` | `ReactNode` | `"Total"` | Label of the total row |
+| `ChartTooltipList` | `limit` | `number` | — | Show only the top N series |
+| `ChartTooltipList` | `sort` | `boolean` | `true` | Set `false` to keep the chart's series order |
+| `ChartTooltipComparison` | `previous` | `Record<string, string>` | — | Series key → previous-value field |
+| `ChartTooltipComparison` | `invertDelta` | `boolean` | `false` | Treat a negative change as good |
+
+## Examples
+
+### Period comparison
+
+Revenue against the same month last year, with the % change in each tooltip.
+
+<ComponentPreview name="c-chart-tooltip-presets-1" />
+
+### Stacked total
+
+MRR split by plan, with a total row so the stack's height has a number.
+
+<ComponentPreview name="c-chart-tooltip-presets-2" />
+
+### Sorted list
+
+Page load per region, slowest first, so the region that needs attention is always on top.
+
+<ComponentPreview name="c-chart-tooltip-presets-3" />

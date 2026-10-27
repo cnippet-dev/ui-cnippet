@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-histogram-2",
+  "description": "Order values — two clusters of basket sizes",
+  "registryDependencies": [
+    "@cnippet/histogram",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-histogram-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Histogram } from \"@/registry/default/charts/histogram\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Deterministic order values clustered around $45 and $120.\nconst orders = Array.from({ length: 400 }, (_, i) => {\n  const wobble = ((i * 37) % 41) - 20;\n  return i % 3 === 0 ? 120 + wobble * 1.8 : 45 + wobble;\n});\n\nexport default function OrderValues() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Value of 400 orders placed in October\"\n      title=\"Order value\"\n      value={`${formatCurrency(66.4, \"USD\", { compact: false })} avg`}\n    >\n      <Histogram\n        bins={10}\n        className=\"h-48\"\n        color=\"var(--chart-2)\"\n        label=\"Orders\"\n        valueFormatter={(v) => `$${Math.round(v)}`}\n        values={orders}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "histogram"
+  ],
+  "type": "registry:block"
+}

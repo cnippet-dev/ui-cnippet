@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-delta-bar-3",
+  "description": "Week over week — change under each metric",
+  "registryDependencies": [
+    "@cnippet/delta-bar",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-delta-bar-3.tsx",
+      "content": "\"use client\";\n\nimport { DeltaBar } from \"@/registry/default/charts/delta-bar\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst metrics = [\n  { change: 0.124, invert: false, name: \"Signups\", value: \"1,046\" },\n  { change: -0.062, invert: false, name: \"Activation\", value: \"38%\" },\n  { change: -0.21, invert: true, name: \"Support tickets\", value: \"182\" },\n];\n\nexport default function WeekOverWeek() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-3 gap-3\">\n      {metrics.map((m) => (\n        <div className=\"rounded-lg border bg-card p-4\" key={m.name}>\n          <div className=\"text-muted-foreground text-xs\">{m.name}</div>\n          <div className=\"mt-1 font-semibold text-xl tabular-nums\">\n            {m.value}\n          </div>\n          <DeltaBar\n            aria-label={`${m.name} ${formatPercent(m.change, { signed: true })} week over week`}\n            className=\"mt-3\"\n            invertDelta={m.invert}\n            value={m.change}\n          />\n          <div className=\"mt-1.5 text-muted-foreground text-xs tabular-nums\">\n            {formatPercent(m.change, { signed: true })} WoW\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "delta bar"
+  ],
+  "type": "registry:block"
+}

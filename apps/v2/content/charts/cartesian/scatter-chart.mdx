@@ -1,0 +1,116 @@
+---
+title: Scatter Chart
+description: An X/Y scatter plot for correlations, with optional bubble sizing and colour groups.
+---
+
+<ComponentPreview name="c-scatter-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/scatter-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scatter-chart" title="components/charts/scatter-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ScatterChart } from "@/components/charts/scatter-chart";
+```
+
+```tsx
+<ScatterChart
+  data={products}
+  x="price"
+  y="rating"
+  groupBy="category"
+  label="product"
+  xLabel="Price"
+  yLabel="Rating"
+  className="h-72"
+/>
+```
+
+## Good to know
+
+- A scatter chart compares two numbers per row, so it takes `x` and `y` instead of `index` and `categories`.
+- `groupBy` splits dots into coloured series, one per distinct value, with a legend. Without it, every dot is one series keyed by `y`.
+- To set a group's colour in `config`, key it by the group value with anything other than letters, digits, `-` and `_` replaced by `-` (e.g. `"Mid market"` → `"Mid-market"`).
+- `size` turns dots into bubbles; `sizeRange` sets the smallest and largest dot area.
+- `label` names each dot in the tooltip, e.g. the product or account.
+- Each axis has its own formatter: `xValueFormatter`, `yValueFormatter` and `sizeValueFormatter`.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | Rows to plot |
+| `x` | `keyof T` | — | Numeric field on the x-axis |
+| `y` | `keyof T` | — | Numeric field on the y-axis |
+| `size` | `keyof T` | — | Numeric field for dot size |
+| `groupBy` | `keyof T` | — | Field that splits dots into coloured series |
+| `label` | `keyof T` | — | Field that names each dot in the tooltip |
+| `xLabel` / `yLabel` / `sizeLabel` | `string` | field name | Axis and tooltip titles |
+| `xValueFormatter` / `yValueFormatter` / `sizeValueFormatter` | `(value: number) => string` | `formatCompact` | Value formatting per axis |
+| `sizeRange` | `[number, number]` | `[40, 400]` | Smallest and largest dot area, px² |
+| `config` | `ChartConfig` | — | Labels or colours per group |
+| `showGrid` / `showTooltip` | `boolean` | `true` | Toggle grid and tooltip |
+| `showLegend` | `boolean` | more than one group | Toggle the legend |
+| `legendPosition` | `"top" \| "bottom"` | `"bottom"` | Legend placement |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis labels |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing classes, e.g. `"h-72"` |
+
+## Examples
+
+### Grouped
+
+Products coloured by category, named in the tooltip.
+
+<ComponentPreview name="c-scatter-chart-1" />
+
+### Bubbles
+
+Deal size against days to close, with dot size showing seats.
+
+<ComponentPreview name="c-scatter-chart-2" />
+
+### Single series
+
+Response time against payload size for sampled requests.
+
+<ComponentPreview name="c-scatter-chart-3" />

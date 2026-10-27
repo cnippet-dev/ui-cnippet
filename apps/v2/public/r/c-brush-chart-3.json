@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-brush-chart-3",
+  "description": "Stock history — a year of closes, last 60 sessions shown",
+  "registryDependencies": [
+    "@cnippet/brush-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-brush-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { BrushChart } from \"@/registry/default/charts/brush-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatDate } from \"@/registry/default/lib/chart-utils\";\n\n// 250 trading days of closing prices: a deterministic wobble on an uptrend.\nconst data = Array.from({ length: 250 }, (_, i) => {\n  const date = new Date(Date.UTC(2025, 10, 3 + Math.floor(i * 1.4)));\n  return {\n    close:\n      Math.round(\n        (142 +\n          0.16 * i +\n          9 * Math.sin(i / 17) +\n          4 * Math.sin(i / 5.3) +\n          2 * Math.cos(i / 2.1)) *\n          100,\n      ) / 100,\n    date: date.toISOString().slice(0, 10),\n  };\n});\n\nexport default function StockHistory() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Daily close, last 12 months; starts on the last 60 sessions\"\n      title=\"ACME\"\n      value={`$${data.at(-1)?.close.toFixed(2)}`}\n    >\n      <BrushChart\n        categories={[\"close\"]}\n        chartType=\"line\"\n        className=\"h-52\"\n        config={{ close: { color: \"var(--chart-2)\", label: \"Close\" } }}\n        data={data}\n        defaultWindow={60}\n        index=\"date\"\n        indexFormatter={(value) => formatDate(value)}\n        valueFormatter={(value) => `$${value.toFixed(0)}`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "brush chart"
+  ],
+  "type": "registry:block"
+}

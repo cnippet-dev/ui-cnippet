@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pie-chart",
+  "description": "Part-to-whole pie with slice labels; a donut chart with no hole",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/donut-chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/pie-chart.tsx",
+      "content": "\"use client\";\n\nimport {\n  DonutChart,\n  type DonutChartProps,\n} from \"@/registry/default/charts/donut-chart\";\n\nexport type PieChartProps<T extends Record<string, unknown>> = Omit<\n  DonutChartProps<T>,\n  \"variant\" | \"centerValue\" | \"centerLabel\"\n>;\n\n/** A donut chart with no hole. Shares DonutChart's props and behaviour. */\nexport function PieChart<T extends Record<string, unknown>>(\n  props: PieChartProps<T>,\n) {\n  return <DonutChart {...props} variant=\"pie\" />;\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/pie-chart.tsx"
+    }
+  ],
+  "categories": [
+    "pie chart"
+  ],
+  "type": "registry:ui"
+}

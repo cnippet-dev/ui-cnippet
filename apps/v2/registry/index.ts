@@ -1,5 +1,7 @@
 import type { Registry } from "shadcn/schema";
 import { baseUi } from "@/registry/registry-base-ui";
+import { chartVariants } from "@/registry/registry-chart-variants";
+import { charts } from "@/registry/registry-charts";
 import { fonts } from "@/registry/registry-fonts";
 import { hooks } from "@/registry/registry-hooks";
 import { lib } from "@/registry/registry-lib";
@@ -16,6 +18,8 @@ export const registry = {
     ...(variants as Registry["items"]),
     ...(motionComponents as Registry["items"]),
     ...(motionVariants as Registry["items"]),
+    ...(charts as Registry["items"]),
+    ...(chartVariants as Registry["items"]),
     ...styles,
     ...fonts,
     ...lib,

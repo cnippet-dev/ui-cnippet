@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sunburst-chart-1",
+  "description": "Revenue by region — region then country",
+  "registryDependencies": [
+    "@cnippet/sunburst-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sunburst-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { SunburstChart } from \"@/registry/default/charts/sunburst-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  {\n    children: [\n      { name: \"United States\", value: 412000 },\n      { name: \"Canada\", value: 68000 },\n      { name: \"Mexico\", value: 31000 },\n    ],\n    name: \"Americas\",\n  },\n  {\n    children: [\n      { name: \"Germany\", value: 142000 },\n      { name: \"United Kingdom\", value: 118000 },\n      { name: \"France\", value: 74000 },\n    ],\n    name: \"EMEA\",\n  },\n  {\n    children: [\n      { name: \"Japan\", value: 96000 },\n      { name: \"Australia\", value: 58000 },\n      { name: \"India\", value: 41000 },\n    ],\n    name: \"APAC\",\n  },\n];\n\nexport default function RevenueByRegion() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Q3 revenue, region → country\"\n      title=\"Revenue by region\"\n    >\n      <SunburstChart\n        className=\"h-64\"\n        data={data}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sunburst chart"
+  ],
+  "type": "registry:block"
+}

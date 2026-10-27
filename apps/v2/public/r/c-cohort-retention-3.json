@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-cohort-retention-3",
+  "description": "Feature adoption — share using a feature by month",
+  "registryDependencies": [
+    "@cnippet/cohort-retention",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-cohort-retention-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { CohortRetention } from \"@/registry/default/charts/cohort-retention\";\n\nconst cohorts = [\"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\"];\nconst sizes = [860, 910, 1040, 1185, 1230];\n\n// Deterministic adoption of the new automations feature, by signup month.\n// The feature launched in August, so older cohorts start low.\nconst data = cohorts.map((cohort, c) => ({\n  cohort,\n  size: sizes[c] ?? 0,\n  values: Array.from(\n    { length: cohorts.length - c },\n    (_, m) => +Math.min(0.12 + c * 0.06 + m * 0.07, 0.9).toFixed(3),\n  ),\n}));\n\nexport default function FeatureAdoption() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Share of each signup cohort that has created an automation, by month since signup\"\n      title=\"Automations adoption\"\n    >\n      <CohortRetention\n        color=\"var(--chart-3)\"\n        data={data}\n        periodLabel={(m) => `Month ${m}`}\n        showLegend\n        sizeFormatter={(v) => `${v} users`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "cohort retention"
+  ],
+  "type": "registry:block"
+}

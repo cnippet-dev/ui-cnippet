@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-progress-circle-1",
+  "description": "Profile completion — ring with a checklist",
+  "registryDependencies": [
+    "@cnippet/progress-circle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-progress-circle-1.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport { ProgressCircle } from \"@/registry/default/charts/progress-circle\";\n\nconst steps = [\n  { done: true, name: \"Add a profile photo\" },\n  { done: true, name: \"Verify your email\" },\n  { done: true, name: \"Connect a calendar\" },\n  { done: false, name: \"Invite a teammate\" },\n];\n\nexport default function ProfileCompletion() {\n  const done = steps.filter((s) => s.done).length;\n  const percent = Math.round((done / steps.length) * 100);\n\n  return (\n    <div className=\"flex w-full max-w-sm items-start gap-5 rounded-lg border bg-card p-5\">\n      <ProgressCircle aria-label=\"Profile completion\" size={72} value={percent}>\n        {percent}%\n      </ProgressCircle>\n      <div className=\"flex-1\">\n        <div className=\"font-medium text-sm\">Finish setting up</div>\n        <ul className=\"mt-2 grid gap-1.5 text-sm\">\n          {steps.map((s) => (\n            <li\n              className={\n                s.done\n                  ? \"flex items-center gap-2 text-muted-foreground line-through\"\n                  : \"flex items-center gap-2\"\n              }\n              key={s.name}\n            >\n              <CheckIcon\n                aria-hidden=\"true\"\n                className={\n                  s.done ? \"size-3.5 text-success\" : \"size-3.5 opacity-0\"\n                }\n              />\n              {s.name}\n            </li>\n          ))}\n        </ul>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "progress circle"
+  ],
+  "type": "registry:block"
+}

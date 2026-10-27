@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-combo-chart-3",
+  "description": "Trials & conversion — stacked bars by plan with a conversion line",
+  "registryDependencies": [
+    "@cnippet/combo-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-combo-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ComboChart } from \"@/registry/default/charts/combo-chart\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\n// New trials by plan (stacked) with the share that converted to paid.\nconst data = [\n  { conversion: 0.18, month: \"Mar\", pro: 410, starter: 820, team: 140 },\n  { conversion: 0.19, month: \"Apr\", pro: 455, starter: 870, team: 162 },\n  { conversion: 0.21, month: \"May\", pro: 498, starter: 905, team: 181 },\n  { conversion: 0.2, month: \"Jun\", pro: 521, starter: 940, team: 176 },\n  { conversion: 0.23, month: \"Jul\", pro: 566, starter: 980, team: 204 },\n  { conversion: 0.24, month: \"Aug\", pro: 602, starter: 1015, team: 229 },\n];\n\nexport default function TrialsAndConversion() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"New trials by plan, with the share that converted to paid\"\n      title=\"Trials & conversion\"\n    >\n      <ComboChart\n        barCategories={[\"starter\", \"pro\", \"team\"]}\n        className=\"h-48\"\n        config={{ conversion: { color: \"var(--chart-5)\" } }}\n        data={data}\n        dualAxis\n        index=\"month\"\n        lineCategories={[\"conversion\"]}\n        lineValueFormatter={(value) => formatPercent(value, { digits: 0 })}\n        stacked\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combo chart"
+  ],
+  "type": "registry:block"
+}

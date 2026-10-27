@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-area-3",
+  "description": "Trend colours — green or red by direction, inverted for errors and CPU",
+  "registryDependencies": [
+    "@cnippet/spark-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-area-3.tsx",
+      "content": "\"use client\";\n\nimport { SparkArea } from \"@/registry/default/charts/spark-area\";\n\n// Hourly values for the last 12 hours. Error rate falling is good news.\nconst metrics = [\n  {\n    data: [42, 44, 41, 47, 52, 55, 53, 58, 61, 64, 62, 68],\n    invert: false,\n    name: \"Requests / s\",\n    value: \"68\",\n  },\n  {\n    data: [2.1, 2.4, 2.2, 1.9, 1.7, 1.8, 1.4, 1.2, 1.1, 0.9, 0.8, 0.7],\n    invert: true,\n    name: \"Error rate\",\n    value: \"0.7%\",\n  },\n  {\n    data: [61, 58, 60, 63, 66, 70, 72, 71, 75, 78, 81, 84],\n    invert: true,\n    name: \"CPU\",\n    value: \"84%\",\n  },\n];\n\nexport default function TrendColouredMetrics() {\n  return (\n    <div className=\"grid w-full max-w-md gap-3\">\n      {metrics.map((m) => (\n        <div\n          className=\"flex items-center justify-between gap-4 rounded-lg border bg-card px-4 py-3\"\n          key={m.name}\n        >\n          <div>\n            <div className=\"text-muted-foreground text-xs\">{m.name}</div>\n            <div className=\"font-semibold text-lg tabular-nums\">{m.value}</div>\n          </div>\n          <SparkArea\n            aria-label={`${m.name} trend, last 12 hours`}\n            categories={[\"v\"]}\n            className=\"h-10 w-32\"\n            colorByTrend\n            data={m.data.map((v, hour) => ({ hour, v }))}\n            index=\"hour\"\n            invertTrend={m.invert}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark area"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-interactive-legend-1",
+  "description": "Toggle series — show or hide latency percentiles on a line chart",
+  "registryDependencies": [
+    "@cnippet/interactive-legend",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-interactive-legend-1.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CartesianGrid, Line, LineChart, XAxis, YAxis } from \"recharts\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { InteractiveLegend } from \"@/registry/default/charts/interactive-legend\";\nimport { buildChartConfig } from \"@/registry/default/lib/chart-utils\";\nimport {\n  ChartContainer,\n  ChartLegend,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\n// API latency percentiles (ms) over a day.\nconst data = [\n  { p50: 82, p90: 164, p99: 412, time: \"00:00\" },\n  { p50: 78, p90: 151, p99: 388, time: \"03:00\" },\n  { p50: 91, p90: 182, p99: 455, time: \"06:00\" },\n  { p50: 118, p90: 236, p99: 618, time: \"09:00\" },\n  { p50: 126, p90: 252, p99: 702, time: \"12:00\" },\n  { p50: 121, p90: 241, p99: 664, time: \"15:00\" },\n  { p50: 104, p90: 208, p99: 531, time: \"18:00\" },\n  { p50: 88, p90: 176, p99: 449, time: \"21:00\" },\n];\n\nconst categories = [\"p50\", \"p90\", \"p99\"];\nconst config = buildChartConfig(categories, {\n  p50: { label: \"p50\" },\n  p90: { label: \"p90\" },\n  p99: { label: \"p99\" },\n});\n\nexport default function LatencyToggle() {\n  // p99 dwarfs the others, so start with it hidden.\n  const [hidden, setHidden] = useState<string[]>([\"p99\"]);\n  const toggle = (key: string) =>\n    setHidden((h) =>\n      h.includes(key) ? h.filter((k) => k !== key) : [...h, key],\n    );\n\n  return (\n    <ChartContainer className=\"h-64 w-full\" config={config}>\n      <LineChart accessibilityLayer data={data}>\n        <CartesianGrid vertical={false} />\n        <XAxis\n          axisLine={false}\n          dataKey=\"time\"\n          tickLine={false}\n          tickMargin={8}\n        />\n        <YAxis\n          axisLine={false}\n          tickFormatter={(value) => `${value} ms`}\n          tickLine={false}\n          width={64}\n        />\n        <ChartTooltip\n          content={\n            <ChartTooltipList\n              config={config}\n              valueFormatter={(value) => `${value} ms`}\n            />\n          }\n        />\n        <ChartLegend\n          content={<InteractiveLegend config={config} onToggle={toggle} />}\n          itemSorter={null}\n        />\n        {categories.map((key) => (\n          <Line\n            dataKey={key}\n            dot={false}\n            hide={hidden.includes(key)}\n            key={key}\n            stroke={`var(--color-${key})`}\n            strokeWidth={2}\n            type=\"monotone\"\n          />\n        ))}\n      </LineChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "interactive legend"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,99 @@
+---
+title: Cohort Retention
+description: A triangle of percentage cells showing how much of each cohort is retained in each period after it started.
+---
+
+<ComponentPreview name="c-cohort-retention-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/cohort-retention
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Heatmap](/charts/matrix/heatmap) and [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="cohort-retention" title="components/charts/cohort-retention.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CohortRetention } from "@/components/charts/cohort-retention";
+```
+
+```tsx
+const data = [
+  { cohort: "Sep 1", size: 1204, values: [1, 0.58, 0.51, 0.45] },
+  { cohort: "Sep 8", size: 1131, values: [1, 0.59, 0.52] },
+  { cohort: "Sep 15", size: 1342, values: [1, 0.61] },
+];
+
+<CohortRetention data={data} periodLabel={(w) => `W${w}`} />
+```
+
+## Good to know
+
+- `values` are fractions (`0.42` = 42%) for period 0, 1, 2… Newer cohorts have shorter arrays, which gives the triangle. `null` also leaves a cell blank.
+- The colour scale is fixed from 0% to 100%. Values above 100% (net revenue retention with expansion) show at full colour, and the printed value is still exact.
+- Each row shows the cohort name and its size, formatted with `sizeFormatter`.
+- It's a [Heatmap](/charts/matrix/heatmap) underneath: arrow keys move between cells, and each tooltip reads e.g. "Sep 1, W2: 51% of 1.2K".
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `{ cohort, size, values }[]` | — | One row per cohort |
+| `periodLabel` | `(period: number) => string` | `"0"`, `"1"`… | Column headers |
+| `sizeFormatter` | `(size: number) => string` | `formatCompact` | Formats cohort size |
+| `valueFormatter` | `(value: number) => string` | whole percent | Formats cells |
+| `color` | `string` | `"var(--chart-1)"` | Colour of 100% |
+| `showLegend` | `boolean` | `false` | Show the colour scale |
+| `minCellSize` | `number` | `40` | Smallest column width in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when there are no values |
+| `className` | `string` | — | Extra classes |
+| `aria-label` | `string` | `"Cohort retention"` | Accessible name |
+
+## Examples
+
+### Weekly retention
+
+Signup cohorts by week since signup.
+
+<ComponentPreview name="c-cohort-retention-1" />
+
+### Net revenue retention
+
+Monthly revenue cohorts, where expansion pushes later months above 100%.
+
+<ComponentPreview name="c-cohort-retention-2" />
+
+### Feature adoption
+
+Share of each cohort using a feature, with the colour scale shown.
+
+<ComponentPreview name="c-cohort-retention-3" />

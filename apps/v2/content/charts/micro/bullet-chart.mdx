@@ -1,0 +1,101 @@
+---
+title: Bullet Chart
+description: A compact bar comparing a value with a target over qualitative ranges.
+---
+
+<ComponentPreview name="c-bullet-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/bullet-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="bullet-chart" title="components/charts/bullet-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BulletChart } from "@/components/charts/bullet-chart";
+```
+
+```tsx
+<BulletChart value={98400} target={120000} ranges={[84000, 120000, 150000]} />
+```
+
+## Anatomy
+
+```tsx
+<BulletChart
+  ranges   {/* grey bands behind, darkest first */}
+  value    {/* the coloured bar */}
+  target   {/* the vertical marker */}
+/>
+```
+
+## Good to know
+
+- `ranges` are the upper bounds of the bands, ascending, e.g. poor / ok / good. The first band is darkest.
+- `max` sets the end of the scale. Without it, the scale ends at the largest of `value`, `target` and `ranges`.
+- `color` sets the bar colour. Use it for status, e.g. red when an SLA is breached.
+- The default accessible name reads "98.4K of 150K, target 120K" using `valueFormatter`. Pass `aria-label` for more context.
+- Pair it with the numbers as text: the bar shows how close, the text shows exactly.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Current value, drawn as the bar |
+| `target` | `number` | — | Goal, drawn as a marker |
+| `max` | `number` | largest input | End of the scale |
+| `ranges` | `number[]` | `[]` | Upper bounds of the background bands |
+| `color` | `string` | `var(--chart-1)` | CSS colour of the bar |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the accessible name |
+| `className` | `string` | — | Classes for the wrapper |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### Sales vs quota
+
+Closed-won per rep with bands at 70%, 100% and 125% of quota.
+
+<ComponentPreview name="c-bullet-chart-1" />
+
+### SLA vs target
+
+Response time per support tier; the bar turns red when it passes the SLA.
+
+<ComponentPreview name="c-bullet-chart-2" />
+
+### Budget usage
+
+Spend so far, with the month-end forecast as the target marker.
+
+<ComponentPreview name="c-bullet-chart-3" />

@@ -1,0 +1,97 @@
+---
+title: Time Range Chart
+description: An area or bar chart with a 7d / 30d / 90d range toggle and totals for the selected range.
+---
+
+<ComponentPreview name="c-time-range-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/time-range-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Area Chart](/charts/cartesian/area-chart), [Bar Chart](/charts/cartesian/bar-chart) and [Toggle Group](/ui/actions/toggle-group) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="time-range-chart" title="components/charts/time-range-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TimeRangeChart } from "@/components/charts/time-range-chart";
+```
+
+```tsx
+<TimeRangeChart
+  data={dailyVisitors}
+  index="date"
+  categories={["desktop", "mobile"]}
+  indexFormatter={(value) => formatDate(value)}
+  className="h-56"
+/>
+```
+
+## Good to know
+
+- Pass one row per period, oldest first. A range with `size: 30` shows the last 30 rows; a range without `size` shows them all.
+- `ranges` defaults to `7d`, `30d` and `90d`, starting on the second one. Use your own for months or hours, e.g. `[{ label: "3m", size: 3 }, { label: "12m" }]`.
+- The totals above the chart are each series' sum over the range. Turn them off with `showTotals={false}` for rates or averages, where a sum means nothing.
+- For data you fetch per range, pass `onRangeChange` and swap `data` when it fires.
+- Every [common chart prop](/docs/chart-components/foundation#common-props) is passed through to the chart; `className` sizes the chart, not the header.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `ranges` | `{ label, size? }[]` | `7d`, `30d`, `90d` | Range options |
+| `defaultRange` | `string` | second range | Range selected at first |
+| `onRangeChange` | `(label: string) => void` | — | Called when the range changes |
+| `chartType` | `"area" \| "bar"` | `"area"` | Chart to draw |
+| `stacked` | `boolean` | `false` | Stack the series |
+| `showTotals` | `boolean` | `true` | Show each series' total for the range |
+
+## Examples
+
+### Visitors
+
+Daily visitors by device with 7, 30 and 90-day ranges.
+
+<ComponentPreview name="c-time-range-chart-1" />
+
+### Monthly revenue
+
+Custom 3m / 6m / 12m ranges on monthly bars.
+
+<ComponentPreview name="c-time-range-chart-2" />
+
+### Stacked API calls
+
+Successful and failed calls stacked, with custom colours.
+
+<ComponentPreview name="c-time-range-chart-3" />

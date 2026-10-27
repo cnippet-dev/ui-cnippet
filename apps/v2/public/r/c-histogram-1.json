@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-histogram-1",
+  "description": "Response times — right-skewed latency distribution",
+  "registryDependencies": [
+    "@cnippet/histogram",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-histogram-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Histogram } from \"@/registry/default/charts/histogram\";\n\n// Deterministic, right-skewed latencies: most fast, a long slow tail.\nconst latencies = Array.from({ length: 600 }, (_, i) => {\n  const u = ((i * 7919) % 600) / 600;\n  return Math.round(80 + 40 * Math.sin(i) + 260 * u ** 3);\n});\n\nexport default function ResponseTimes() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"API response times, last hour (600 requests)\"\n      footer=\"Most requests finish under 200 ms; the tail comes from cold caches.\"\n      title=\"Response time distribution\"\n    >\n      <Histogram\n        bins={12}\n        className=\"h-48\"\n        label=\"Requests\"\n        valueFormatter={(v) => `${Math.round(v)} ms`}\n        values={latencies}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "histogram"
+  ],
+  "type": "registry:block"
+}

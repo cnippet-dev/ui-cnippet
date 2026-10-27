@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-pie-chart-2",
+  "description": "Survey answers — percentage labels and a side legend",
+  "registryDependencies": [
+    "@cnippet/pie-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-pie-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PieChart } from \"@/registry/default/charts/pie-chart\";\n\n// \"How did you hear about us?\" — 412 responses.\nconst data = [\n  { answer: \"Search\", responses: 148 },\n  { answer: \"A friend\", responses: 102 },\n  { answer: \"Social media\", responses: 79 },\n  { answer: \"Newsletter\", responses: 51 },\n  { answer: \"Other\", responses: 32 },\n];\n\nexport default function SurveyAnswers() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"How did you hear about us? 412 responses\"\n      title=\"Survey\"\n    >\n      <PieChart\n        category=\"responses\"\n        className=\"h-60\"\n        data={data}\n        index=\"answer\"\n        legendLayout=\"side\"\n        showLabels\n        valueFormatter={(value) => `${value} responses`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "pie chart"
+  ],
+  "type": "registry:block"
+}

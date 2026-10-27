@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-spark-bar-2",
+  "description": "Win/loss — last 15 games per team",
+  "registryDependencies": [
+    "@cnippet/spark-bar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-spark-bar-2.tsx",
+      "content": "\"use client\";\n\nimport { SparkBar } from \"@/registry/default/charts/spark-bar\";\n\n// Last 15 games per team: 1 = win, -1 = loss.\nconst teams = [\n  {\n    name: \"Falcons\",\n    results: [1, 1, -1, 1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, -1],\n  },\n  {\n    name: \"Rovers\",\n    results: [-1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1],\n  },\n  {\n    name: \"Comets\",\n    results: [1, -1, 1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1],\n  },\n];\n\nexport default function WinLoss() {\n  return (\n    <ul className=\"w-full max-w-sm divide-y rounded-lg border bg-card\">\n      {teams.map((t) => {\n        const wins = t.results.filter((r) => r > 0).length;\n        return (\n          <li className=\"flex items-center gap-4 px-4 py-3\" key={t.name}>\n            <span className=\"flex-1 font-medium text-sm\">{t.name}</span>\n            <SparkBar\n              aria-label={`${t.name}: ${wins} wins, ${t.results.length - wins} losses in the last 15 games`}\n              categories={[\"result\"]}\n              className=\"h-8 w-36\"\n              colorBySign\n              data={t.results.map((result, game) => ({ game, result }))}\n              index=\"game\"\n            />\n            <span className=\"w-10 text-end text-muted-foreground text-xs tabular-nums\">\n              {wins}–{t.results.length - wins}\n            </span>\n          </li>\n        );\n      })}\n    </ul>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "spark bar"
+  ],
+  "type": "registry:block"
+}

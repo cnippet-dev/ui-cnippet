@@ -12,4 +12,17 @@ export const lib: Registry["items"] = [
     name: "utils",
     type: "registry:lib",
   },
+  {
+    description:
+      "Number and date formatters plus buildChartConfig, shared by chart components",
+    files: [
+      {
+        path: "lib/chart-utils.ts",
+        type: "registry:lib",
+      },
+    ],
+    name: "chart-utils",
+    registryDependencies: ["@cnippet/chart"],
+    type: "registry:lib",
+  },
 ];

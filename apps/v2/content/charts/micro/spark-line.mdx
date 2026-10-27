@@ -1,0 +1,99 @@
+---
+title: Spark Line
+description: A tiny line trend with an optional last-point dot, coloured by direction.
+---
+
+<ComponentPreview name="c-spark-line-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/spark-line
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="spark-line" title="components/charts/spark-line.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { SparkLine } from "@/components/charts/spark-line";
+```
+
+```tsx
+<SparkLine data={prices} index="day" categories={["price"]} colorByTrend showLastDot />
+```
+
+## Good to know
+
+- `showLastDot` marks the latest value, which helps in tickers and status lists.
+- `colorByTrend` and `invertTrend` work as in [Spark Area](/charts/micro/spark-area): green when it ends higher, red when lower, flipped with `invertTrend`.
+- For a fixed colour (e.g. amber for a degraded service), set it in `config` instead.
+- It's `h-10 w-32` by default; `className="h-8 flex-1"` lets it fill a row.
+- Pass `aria-label` per row so each line has a meaningful name.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | Rows to plot |
+| `index` | `keyof T` | — | Field for the x position |
+| `categories` | `(keyof T)[]` | — | Numeric fields to plot |
+| `config` | `ChartConfig` | built from `categories` | Labels or colours per series |
+| `colorByTrend` | `boolean` | `false` | Green when rising, red when falling |
+| `invertTrend` | `boolean` | `false` | Flip the trend colours |
+| `showLastDot` | `boolean` | `false` | Dot on the last point |
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line shape |
+| `className` | `string` | — | Sizing classes |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### Stock ticker
+
+Ten-day price lines with the latest price and change.
+
+<ComponentPreview name="c-spark-line-1" />
+
+### Status list
+
+Service latency next to a status badge; the degraded service uses a fixed amber colour.
+
+<ComponentPreview name="c-spark-line-2" />
+
+### Up vs down
+
+The same rising line, green for signups and red for cost.
+
+<ComponentPreview name="c-spark-line-3" />

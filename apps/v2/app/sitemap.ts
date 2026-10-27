@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { docSource, motionSource, source } from "@/lib/source";
+import { chartSource, docSource, motionSource, source } from "@/lib/source";
 
 const BASE_URL = "https://ui.cnippet.dev";
 
@@ -54,5 +54,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}${page.url}`,
     }));
 
-  return [...staticRoutes, ...uiPages, ...docPages, ...motionPages];
+  const chartPages: MetadataRoute.Sitemap = chartSource
+    .getPages()
+    .map((page) => ({
+      changeFrequency: "weekly",
+      lastModified: new Date(),
+      priority: 0.8,
+      url: `${BASE_URL}${page.url}`,
+    }));
+
+  return [
+    ...staticRoutes,
+    ...uiPages,
+    ...docPages,
+    ...motionPages,
+    ...chartPages,
+  ];
 }

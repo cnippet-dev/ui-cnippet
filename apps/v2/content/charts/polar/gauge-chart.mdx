@@ -1,0 +1,104 @@
+---
+title: Gauge Chart
+description: A half-circle gauge with coloured threshold bands and a needle, or a single value arc.
+---
+
+<ComponentPreview name="c-gauge-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/gauge-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="gauge-chart" title="components/charts/gauge-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { GaugeChart } from "@/components/charts/gauge-chart";
+```
+
+```tsx
+<GaugeChart
+  value={2.1}
+  max={6}
+  bands={[
+    { to: 2.5, color: "var(--success)", label: "Good" },
+    { to: 4, color: "var(--warning)", label: "Needs improvement" },
+    { to: 6, color: "var(--destructive)", label: "Poor" },
+  ]}
+  valueFormatter={(value) => `${value} s`}
+  aria-label="Largest Contentful Paint"
+/>
+```
+
+## Good to know
+
+- Plain SVG: no chart library, so it's cheap to repeat in a grid.
+- With `bands`, the arc is split into coloured ranges and a needle points at the value. Each band runs from the previous band's `to` (or `min`) to its own `to`.
+- The value's band `label` prints under the number and is read by screen readers, e.g. "2.1 s, Good".
+- Without `bands`, it draws a single arc filled to the value in `color`. Pick the colour from the value for thresholds.
+- `min` can be negative, e.g. `-100` for NPS.
+- It has `role="meter"` with the min, max and value. Pass `aria-label`; it falls back to `label`.
+- The needle and arc animate to new values unless the user has reduced motion on.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | — | Current value |
+| `min` / `max` | `number` | `0` / `100` | Ends of the scale |
+| `bands` | `{ to, color, label? }[]` | — | Coloured ranges, ascending |
+| `color` | `string` | `var(--chart-1)` | Value arc colour (no bands) |
+| `showNeedle` | `boolean` | `true` with bands | Show the needle |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the value |
+| `label` | `ReactNode` | — | Text under the value |
+| `className` | `string` | — | Classes for the wrapper |
+| `aria-label` | `string` | `label` | Accessible name |
+
+## Examples
+
+### Web Vitals
+
+LCP against Google's good / needs improvement / poor thresholds.
+
+<ComponentPreview name="c-gauge-chart-1" />
+
+### CPU load
+
+Value arcs coloured by the same thresholds as the alerts.
+
+<ComponentPreview name="c-gauge-chart-2" />
+
+### NPS
+
+A scale from -100 to 100 with four bands.
+
+<ComponentPreview name="c-gauge-chart-3" />

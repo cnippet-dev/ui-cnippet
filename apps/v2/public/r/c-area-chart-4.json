@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-area-chart-4",
+  "description": "Provisioned storage — step curve for values that jump",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-area-chart-4.tsx",
+      "content": "\"use client\";\n\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// Storage only grows when a new tier is provisioned, so it moves in steps.\nconst data = [\n  { day: \"Oct 1\", storage: 120 },\n  { day: \"Oct 4\", storage: 120 },\n  { day: \"Oct 7\", storage: 160 },\n  { day: \"Oct 10\", storage: 160 },\n  { day: \"Oct 13\", storage: 160 },\n  { day: \"Oct 16\", storage: 240 },\n  { day: \"Oct 19\", storage: 240 },\n  { day: \"Oct 22\", storage: 320 },\n  { day: \"Oct 25\", storage: 320 },\n];\n\nconst gigabytes = (value: number) => `${value} GB`;\n\nexport default function ProvisionedStorage() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Provisioned database storage, October\"\n      title=\"Storage\"\n      value={gigabytes(320)}\n    >\n      <AreaChart\n        categories={[\"storage\"]}\n        className=\"h-48\"\n        config={{ storage: { color: \"var(--chart-3)\", label: \"Provisioned\" } }}\n        curve=\"step\"\n        data={data}\n        fill=\"solid\"\n        index=\"day\"\n        valueFormatter={gigabytes}\n        yAxisWidth={56}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "area chart"
+  ],
+  "type": "registry:block"
+}

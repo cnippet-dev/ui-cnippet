@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-range-area-chart-1",
+  "description": "Latency band — p5–p99 with the median line",
+  "registryDependencies": [
+    "@cnippet/range-area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-range-area-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RangeAreaChart } from \"@/registry/default/charts/range-area-chart\";\n\nconst data = Array.from({ length: 24 }, (_, hour) => {\n  const load = Math.sin(((hour - 6) / 24) * Math.PI * 2) * 0.5 + 0.5;\n  const p50 = Math.round(90 + 50 * load);\n  return {\n    hour: `${String(hour).padStart(2, \"0\")}:00`,\n    p5: Math.round(p50 * 0.55),\n    p50,\n    p99: Math.round(p50 * (2.2 + load)),\n  };\n});\n\nexport default function LatencyBand() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Checkout API, today. The band is p5–p99, the line is the median.\"\n      title=\"Latency\"\n      value=\"128 ms\"\n    >\n      <RangeAreaChart\n        className=\"h-44\"\n        data={data}\n        index=\"hour\"\n        label=\"p5–p99\"\n        maxKey=\"p99\"\n        midKey=\"p50\"\n        midLabel=\"Median\"\n        minKey=\"p5\"\n        valueFormatter={(v) => `${v} ms`}\n        yAxisWidth={56}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "range area chart"
+  ],
+  "type": "registry:block"
+}

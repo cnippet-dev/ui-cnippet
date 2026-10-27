@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-heatmap-2",
+  "description": "Feature usage by plan — values printed in cells",
+  "registryDependencies": [
+    "@cnippet/heatmap",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-heatmap-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Heatmap } from \"@/registry/default/charts/heatmap\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst plans = [\"Free\", \"Starter\", \"Pro\", \"Enterprise\"];\nconst usage: Record<string, number[]> = {\n  \"API access\": [0.04, 0.22, 0.61, 0.88],\n  Dashboards: [0.38, 0.57, 0.74, 0.81],\n  Exports: [0.12, 0.35, 0.52, 0.69],\n  Integrations: [0.09, 0.31, 0.66, 0.92],\n  SSO: [0, 0.02, 0.18, 0.97],\n};\n\nconst data = Object.entries(usage).flatMap(([feature, shares]) =>\n  plans.map((plan, i) => ({ feature, plan, share: shares[i] ?? 0 })),\n);\n\nexport default function FeatureUsageByPlan() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Share of active accounts that used each feature in October\"\n      title=\"Feature usage by plan\"\n    >\n      <Heatmap\n        color=\"var(--chart-2)\"\n        data={data}\n        max={1}\n        min={0}\n        showLegend={false}\n        showValues\n        value=\"share\"\n        valueFormatter={(v) => formatPercent(v, { digits: 0 })}\n        x=\"plan\"\n        y=\"feature\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "heatmap"
+  ],
+  "type": "registry:block"
+}

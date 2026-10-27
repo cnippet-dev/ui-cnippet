@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "area-chart",
+    "bar-chart",
+    "line-chart",
+    "combo-chart",
+    "scatter-chart",
+    "histogram",
+    "waterfall-chart",
+    "range-area-chart",
+    "candlestick-chart",
+    "box-plot"
+  ],
+  "title": "Cartesian"
+}

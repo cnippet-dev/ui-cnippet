@@ -1,0 +1,114 @@
+---
+title: Drill-down Chart
+description: A bar chart that opens a bar's breakdown on click or Enter, with breadcrumbs back up.
+---
+
+<ComponentPreview name="c-drilldown-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/drilldown-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts lucide-react
+```
+
+<Step>Install the [Bar Chart](/charts/cartesian/bar-chart) component.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="drilldown-chart" title="components/charts/drilldown-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { DrilldownChart } from "@/components/charts/drilldown-chart";
+```
+
+```tsx
+<DrilldownChart
+  data={[
+    {
+      name: "2026",
+      value: 581100,
+      children: [
+        { name: "Q1", value: 172700 },
+        { name: "Q2", value: 194000 },
+      ],
+    },
+  ]}
+  rootLabel="All years"
+  valueLabel="Revenue"
+  className="h-52"
+/>
+```
+
+## Good to know
+
+- Data is a tree of `{ name, value, children? }`. Bars with `children` open their breakdown; bars without them don't.
+- Each node's `value` is shown as is. Sum the children yourself (see the examples) so a parent's bar matches its breakdown.
+- Click a bar to drill in. With the keyboard, focus the chart, move between bars with the arrow keys and press Enter.
+- The breadcrumbs go back up: every level above the current one is a button.
+- `onPathChange` gets the list of names after each step, e.g. to sync the URL or load details.
+- For long names, use `layout="vertical"` with a wider `yAxisWidth`.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `{ name, value, children? }[]` | — | Top level of the tree |
+| `rootLabel` | `string` | `"All"` | First breadcrumb |
+| `valueLabel` | `string` | `"Value"` | Name of the measure in the tooltip |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `color` | `string` | `var(--chart-1)` | Bar colour |
+| `onPathChange` | `(path: string[]) => void` | — | Called after each drill or step back |
+| `layout` | `"horizontal" \| "vertical"` | `"horizontal"` | Columns, or bars growing right |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis labels |
+| `className` | `string` | — | Sizing classes for the chart |
+| `aria-label` | `string` | built from the level | Accessible name |
+
+## Examples
+
+### Year → quarter → month
+
+Revenue three levels deep.
+
+<ComponentPreview name="c-drilldown-chart-1" />
+
+### Region → country → city
+
+Active users by location.
+
+<ComponentPreview name="c-drilldown-chart-2" />
+
+### Horizontal
+
+Units by category, then by product, as horizontal bars.
+
+<ComponentPreview name="c-drilldown-chart-3" />

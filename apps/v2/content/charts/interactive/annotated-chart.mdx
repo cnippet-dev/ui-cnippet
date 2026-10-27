@@ -1,0 +1,97 @@
+---
+title: Annotated Chart
+description: A time series with event markers, target lines and shaded periods.
+---
+
+<ComponentPreview name="c-annotated-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/annotated-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the [Area Chart](/charts/cartesian/area-chart) and [Line Chart](/charts/cartesian/line-chart) components.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="annotated-chart" title="components/charts/annotated-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { AnnotatedChart } from "@/components/charts/annotated-chart";
+```
+
+```tsx
+<AnnotatedChart
+  data={errorRate}
+  index="hour"
+  categories={["errors"]}
+  events={[{ x: "13:00", label: "Deploy v2.14" }]}
+  targets={[{ y: 0.01, label: "SLO 1%" }]}
+  ranges={[{ from: "10:00", to: "12:30", label: "Incident" }]}
+  className="h-56"
+/>
+```
+
+## Good to know
+
+- `events` draw a vertical line at an `index` value, e.g. a deploy or a launch. `x` must match a value in your data exactly.
+- `targets` draw a dashed horizontal line at a value, e.g. an SLO or a goal.
+- `ranges` shade a period between two `index` values, e.g. a campaign or an incident.
+- Annotations are also listed as text for screen readers, since the lines themselves have no accessible name.
+- For anything else, pass Recharts elements such as `<ReferenceDot />` as children.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `chartType` | `"area" \| "line"` | `"line"` | Chart to draw |
+| `events` | `{ x, label }[]` | `[]` | Vertical markers |
+| `targets` | `{ y, label }[]` | `[]` | Horizontal target lines |
+| `ranges` | `{ from, to, label? }[]` | `[]` | Shaded periods |
+
+## Examples
+
+### Deploy markers
+
+A deploy that spiked errors past the SLO, and the rollback that fixed it.
+
+<ComponentPreview name="c-annotated-chart-1" />
+
+### Campaign periods
+
+Signups with the launch week and a webinar shaded.
+
+<ComponentPreview name="c-annotated-chart-2" />
+
+### Incident
+
+Latency with the incident window, the SLA and the failover that ended it.
+
+<ComponentPreview name="c-annotated-chart-3" />

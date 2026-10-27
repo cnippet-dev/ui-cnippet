@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-interactive-legend-3",
+  "description": "Top legend — sessions by device with icons, legend above the chart",
+  "registryDependencies": [
+    "@cnippet/interactive-legend",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-interactive-legend-3.tsx",
+      "content": "\"use client\";\n\nimport { MonitorIcon, SmartphoneIcon, TabletIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartTooltipTotal } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport { InteractiveLegend } from \"@/registry/default/charts/interactive-legend\";\nimport { buildChartConfig } from \"@/registry/default/lib/chart-utils\";\nimport {\n  ChartContainer,\n  ChartLegend,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\n\n// Daily sessions by device, one week.\nconst data = [\n  { day: \"Mon\", desktop: 4820, mobile: 3910, tablet: 640 },\n  { day: \"Tue\", desktop: 5140, mobile: 4020, tablet: 610 },\n  { day: \"Wed\", desktop: 5310, mobile: 4180, tablet: 690 },\n  { day: \"Thu\", desktop: 5090, mobile: 4260, tablet: 720 },\n  { day: \"Fri\", desktop: 4610, mobile: 4540, tablet: 780 },\n  { day: \"Sat\", desktop: 2870, mobile: 5120, tablet: 940 },\n  { day: \"Sun\", desktop: 2640, mobile: 4980, tablet: 910 },\n];\n\nconst categories = [\"desktop\", \"mobile\", \"tablet\"];\nconst config = buildChartConfig(categories, {\n  desktop: { icon: MonitorIcon },\n  mobile: { icon: SmartphoneIcon },\n  tablet: { icon: TabletIcon },\n});\n\nexport default function SessionsByDevice() {\n  const [hidden, setHidden] = useState<string[]>([]);\n  const toggle = (key: string) =>\n    setHidden((h) =>\n      h.includes(key) ? h.filter((k) => k !== key) : [...h, key],\n    );\n\n  return (\n    <ChartContainer className=\"h-64 w-full\" config={config}>\n      <AreaChart accessibilityLayer data={data}>\n        <CartesianGrid vertical={false} />\n        <XAxis axisLine={false} dataKey=\"day\" tickLine={false} tickMargin={8} />\n        <ChartTooltip\n          content={<ChartTooltipTotal config={config} totalLabel=\"Sessions\" />}\n        />\n        <ChartLegend\n          content={<InteractiveLegend config={config} onToggle={toggle} />}\n          itemSorter={null}\n          verticalAlign=\"top\"\n        />\n        {categories.map((key) => (\n          <Area\n            dataKey={key}\n            fill={`var(--color-${key})`}\n            fillOpacity={0.3}\n            hide={hidden.includes(key)}\n            key={key}\n            stackId=\"sessions\"\n            stroke={`var(--color-${key})`}\n            type=\"monotone\"\n          />\n        ))}\n      </AreaChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "interactive legend"
+  ],
+  "type": "registry:block"
+}

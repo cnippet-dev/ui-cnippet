@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-area-chart-3",
+  "description": "Traffic mix — percent-stacked share of sessions by channel",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-area-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// Weekly sessions by acquisition channel.\nconst data = [\n  { direct: 3120, organic: 8240, paid: 4410, referral: 1260, week: \"W35\" },\n  { direct: 3290, organic: 8610, paid: 4880, referral: 1310, week: \"W36\" },\n  { direct: 3180, organic: 9020, paid: 5120, referral: 1420, week: \"W37\" },\n  { direct: 3410, organic: 9480, paid: 4670, referral: 1580, week: \"W38\" },\n  { direct: 3520, organic: 9930, paid: 4210, referral: 1690, week: \"W39\" },\n  { direct: 3610, organic: 10450, paid: 3980, referral: 1840, week: \"W40\" },\n  { direct: 3740, organic: 10870, paid: 3720, referral: 2010, week: \"W41\" },\n  { direct: 3820, organic: 11320, paid: 3540, referral: 2160, week: \"W42\" },\n];\n\nexport default function ShareOfTraffic() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Share of weekly sessions by channel — organic keeps growing as paid winds down\"\n      title=\"Traffic mix\"\n    >\n      <AreaChart\n        categories={[\"organic\", \"paid\", \"direct\", \"referral\"]}\n        className=\"h-48\"\n        data={data}\n        fill=\"solid\"\n        index=\"week\"\n        type=\"percent\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "area chart"
+  ],
+  "type": "registry:block"
+}

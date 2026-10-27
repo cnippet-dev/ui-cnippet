@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bullet-chart-1",
+  "description": "Sales vs quota — per rep with performance bands",
+  "registryDependencies": [
+    "@cnippet/bullet-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bullet-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { BulletChart } from \"@/registry/default/charts/bullet-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Q3 closed-won per rep against a $120K quota. Bands: under 70%, 70–100%, over 100%.\nconst reps = [\n  { closed: 98400, name: \"Ana\" },\n  { closed: 131200, name: \"Marcus\" },\n  { closed: 112700, name: \"Priya\" },\n  { closed: 87500, name: \"Jonah\" },\n];\nconst QUOTA = 120000;\n\nexport default function SalesVsQuota() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">Sales vs quota, Q3</div>\n      <ul className=\"mt-4 grid gap-4\">\n        {reps.map((r) => (\n          <li\n            className=\"grid grid-cols-[4.5rem_1fr_4rem] items-center gap-3\"\n            key={r.name}\n          >\n            <span className=\"text-sm\">{r.name}</span>\n            <BulletChart\n              aria-label={`${r.name}: ${formatCurrency(r.closed)} of ${formatCurrency(QUOTA)} quota`}\n              max={150000}\n              ranges={[84000, 120000, 150000]}\n              target={QUOTA}\n              value={r.closed}\n              valueFormatter={formatCurrency}\n            />\n            <span className=\"text-end text-sm tabular-nums\">\n              {formatCurrency(r.closed)}\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bullet chart"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spark-bar",
+  "description": "Tiny bars for daily volume or win/loss, coloured by sign",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "@cnippet/chart",
+    "@cnippet/chart-utils",
+    "@cnippet/use-media-query"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/spark-bar.tsx",
+      "content": "\"use client\";\n\nimport { Bar, BarChart, Cell } from \"recharts\";\nimport { useMediaQuery } from \"@/registry/default/hooks/use-media-query\";\nimport {\n  buildChartConfig,\n  describeChart,\n} from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { type ChartConfig, ChartContainer } from \"@/registry/default/ui/chart\";\n\nexport type SparkBarProps<T extends Record<string, unknown>> = {\n  data: T[];\n  index: keyof T & string;\n  categories: (keyof T & string)[];\n  config?: ChartConfig;\n  /** Colour positive bars green and negative bars red, e.g. for win/loss. */\n  colorBySign?: boolean;\n  type?: \"default\" | \"stacked\";\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function SparkBar<T extends Record<string, unknown>>({\n  data,\n  index,\n  categories,\n  config,\n  colorBySign = false,\n  type = \"default\",\n  className,\n  \"aria-label\": ariaLabel,\n}: SparkBarProps<T>) {\n  const reduceMotion = useMediaQuery(\"(prefers-reduced-motion: reduce)\");\n  const resolvedConfig = buildChartConfig(categories, config);\n\n  return (\n    <ChartContainer\n      aria-label={ariaLabel ?? describeChart(\"Bars\", categories, index)}\n      className={cn(\"aspect-auto h-10 w-32\", className)}\n      config={resolvedConfig}\n      role=\"img\"\n    >\n      <BarChart\n        barCategoryGap=\"15%\"\n        data={data}\n        margin={{ bottom: 0, left: 0, right: 0, top: 0 }}\n      >\n        {categories.map((key) => (\n          <Bar\n            dataKey={key as string}\n            fill={`var(--color-${key})`}\n            isAnimationActive={!reduceMotion}\n            key={key}\n            radius={1}\n            stackId={type === \"stacked\" ? \"stack\" : undefined}\n          >\n            {colorBySign\n              ? data.map((row, i) => (\n                  <Cell\n                    fill={\n                      Number(row[key]) < 0\n                        ? \"var(--destructive)\"\n                        : \"var(--success)\"\n                    }\n                    key={i}\n                  />\n                ))\n              : null}\n          </Bar>\n        ))}\n      </BarChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/spark-bar.tsx"
+    }
+  ],
+  "categories": [
+    "spark bar"
+  ],
+  "type": "registry:ui"
+}

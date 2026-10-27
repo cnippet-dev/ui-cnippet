@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-line-chart-2",
+  "description": "Revenue forecast — dashed forecast continuing the actuals",
+  "registryDependencies": [
+    "@cnippet/line-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-line-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { LineChart } from \"@/registry/default/charts/line-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Actuals stop at September; the forecast starts there so the lines join.\nconst data = [\n  { actual: 41200, forecast: null, month: \"Apr\" },\n  { actual: 47100, forecast: null, month: \"May\" },\n  { actual: 49800, forecast: null, month: \"Jun\" },\n  { actual: 55400, forecast: null, month: \"Jul\" },\n  { actual: 58900, forecast: null, month: \"Aug\" },\n  { actual: 61300, forecast: 61300, month: \"Sep\" },\n  { actual: null, forecast: 65200, month: \"Oct\" },\n  { actual: null, forecast: 68900, month: \"Nov\" },\n  { actual: null, forecast: 74100, month: \"Dec\" },\n];\n\nexport default function RevenueForecast() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Monthly revenue with the Q4 forecast\"\n      title=\"Revenue forecast\"\n      value={formatCurrency(208200)}\n    >\n      <LineChart\n        categories={[\"actual\", \"forecast\"]}\n        className=\"h-48\"\n        config={{\n          actual: { color: \"var(--chart-1)\", label: \"Actual\" },\n          forecast: { color: \"var(--chart-1)\", label: \"Forecast\" },\n        }}\n        dashedCategories={[\"forecast\"]}\n        data={data}\n        index=\"month\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "line chart"
+  ],
+  "type": "registry:block"
+}

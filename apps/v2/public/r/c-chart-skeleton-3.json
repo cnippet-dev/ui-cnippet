@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-skeleton-3",
+  "description": "Donut placeholder — loading state for a part-to-whole card",
+  "registryDependencies": [
+    "@cnippet/chart-skeleton",
+    "@cnippet/chart-card",
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-skeleton-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartSkeleton } from \"@/registry/default/charts/chart-skeleton\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport default function TrafficSourcesLoading() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Share of sessions by channel\"\n      title=\"Traffic sources\"\n      value={<Skeleton className=\"h-8 w-24\" />}\n    >\n      <ChartSkeleton className=\"aspect-auto h-44\" variant=\"donut\" />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart skeleton"
+  ],
+  "type": "registry:block"
+}

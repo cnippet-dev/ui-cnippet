@@ -1,0 +1,123 @@
+---
+title: Donut Chart
+description: A part-to-whole ring with a centre value, optional slice labels and a bottom or side legend.
+---
+
+<ComponentPreview name="c-donut-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/donut-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="donut-chart" title="components/charts/donut-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { DonutChart } from "@/components/charts/donut-chart";
+```
+
+```tsx
+<DonutChart
+  data={[
+    { channel: "Organic", visitors: 18420 },
+    { channel: "Direct", visitors: 9310 },
+  ]}
+  index="channel"
+  category="visitors"
+  centerValue="27.7K"
+  centerLabel="Visitors"
+  className="h-60"
+/>
+```
+
+## Good to know
+
+- `index` names each slice and `category` sizes it. Each row is one slice.
+- Slices get `--chart-1` … `--chart-5` in order. To recolour one, key `config` by the slice name, e.g. `{ Free: { color: "var(--muted)" } }`. Names with spaces or symbols become dashes (`"Customer success"` → `"Customer-success"`).
+- `centerValue` and `centerLabel` print in the hole. Pass the total yourself, e.g. `formatCompact(sumBy(data, ["visitors"]))`.
+- `showLabels` prints each slice's share next to it, which helps when there's no legend.
+- `legendLayout="side"` lists the legend beside the chart; use it in wider cards.
+- The hovered slice grows a little. Keyboard users can move between slices with the arrow keys.
+- Keep it to about six slices. Beyond that, group the smallest into "Other".
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per slice |
+| `index` | `keyof T` | — | Field that names each slice |
+| `category` | `keyof T` | — | Numeric field that sizes each slice |
+| `config` | `ChartConfig` | built from slice names | Labels or colours per slice |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats tooltip values |
+| `variant` | `"donut" \| "pie"` | `"donut"` | With or without a hole |
+| `centerValue` | `string` | — | Big text in the hole |
+| `centerLabel` | `string` | — | Small text under the value |
+| `showLabels` | `boolean` | `false` | Print each slice's share |
+| `showLegend` | `boolean` | `true` | Toggle the legend |
+| `legendLayout` | `"bottom" \| "side"` | `"bottom"` | Legend placement |
+| `showTooltip` | `boolean` | `true` | Toggle the tooltip |
+| `loading` | `boolean` | `false` | Show a donut skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing classes, e.g. `"h-60"` |
+| `aria-label` | `string` | built from the props | Accessible name |
+
+## Examples
+
+### Total in the centre
+
+Traffic by channel with the total visitors in the hole.
+
+<ComponentPreview name="c-donut-chart-1" />
+
+### Side legend
+
+Storage by type, with free space set to `--muted` in `config`.
+
+<ComponentPreview name="c-donut-chart-2" />
+
+### Slice labels
+
+Each slice's share printed next to it; the legend names the slices.
+
+<ComponentPreview name="c-donut-chart-3" />
+
+### Budget
+
+A side legend and a currency total.
+
+<ComponentPreview name="c-donut-chart-4" />

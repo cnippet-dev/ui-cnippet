@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-calendar-heatmap-1",
+  "description": "Contributions — a year of daily activity",
+  "registryDependencies": [
+    "@cnippet/calendar-heatmap",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-calendar-heatmap-1.tsx",
+      "content": "\"use client\";\n\nimport { CalendarHeatmap } from \"@/registry/default/charts/calendar-heatmap\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\nconst START = Date.UTC(2025, 9, 27);\n\n// A year of deterministic contributions: more on weekdays, some quiet weeks.\nconst data = Array.from({ length: 365 }, (_, i) => {\n  const date = new Date(START + i * 86_400_000);\n  const weekend = date.getUTCDay() === 0 || date.getUTCDay() === 6;\n  const quietWeek = Math.floor(i / 7) % 9 === 4;\n  const base = ((i * 37) % 13) - 4;\n  return {\n    date: date.toISOString().slice(0, 10),\n    value: quietWeek ? 0 : Math.max(0, weekend ? base - 3 : base),\n  };\n});\nconst total = data.reduce((sum, d) => sum + d.value, 0);\n\nexport default function Contributions() {\n  return (\n    <ChartCard\n      className=\"max-w-3xl\"\n      description=\"Commits, reviews and issues, last 12 months\"\n      title={`${total.toLocaleString(\"en-US\")} contributions`}\n    >\n      <CalendarHeatmap\n        cellLabel={(day) => `${day.date}: ${day.value} contributions`}\n        data={data}\n        minCellSize={7}\n        valueFormatter={(v) => String(v)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar heatmap"
+  ],
+  "type": "registry:block"
+}

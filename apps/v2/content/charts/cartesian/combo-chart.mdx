@@ -1,0 +1,106 @@
+---
+title: Combo Chart
+description: Bars and lines on one plot, with an optional second y-axis — e.g. revenue in dollars next to growth in percent.
+---
+
+<ComponentPreview name="c-combo-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/combo-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="combo-chart" title="components/charts/combo-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ComboChart } from "@/components/charts/combo-chart";
+```
+
+```tsx
+<ComboChart
+  data={data}
+  index="month"
+  barCategories={["revenue"]}
+  lineCategories={["growth"]}
+  dualAxis
+  valueFormatter={formatCurrency}
+  lineValueFormatter={(value) => formatPercent(value)}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- Use `barCategories` and `lineCategories` instead of `categories`. Colours are assigned across both lists in order.
+- Without `dualAxis`, bars and lines share the left axis, so use it only when both are in the same unit.
+- With `dualAxis`, lines get their own right-hand axis. `lineValueFormatter` formats that axis and the line values in the tooltip.
+- `stacked` stacks the bar series; lines are never stacked.
+- Children such as `<ReferenceLine />` attach to the left axis by default.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props) except `categories`, plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `barCategories` | `string[]` | — | Series drawn as bars |
+| `lineCategories` | `string[]` | — | Series drawn as lines |
+| `dualAxis` | `boolean` | `false` | Put the lines on a right-hand axis |
+| `lineValueFormatter` | `(value: number) => string` | `valueFormatter` | Formats line values and the right axis |
+| `stacked` | `boolean` | `false` | Stack the bar series |
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line shape between points |
+
+## Examples
+
+### Revenue and growth
+
+Dollars on the left, month-over-month growth on the right.
+
+<ComponentPreview name="c-combo-chart-1" />
+
+### Orders and AOV
+
+Order volume against average order value through the holidays.
+
+<ComponentPreview name="c-combo-chart-2" />
+
+### Stacked bars with a rate
+
+Trials stacked by plan, with the conversion rate as a line.
+
+<ComponentPreview name="c-combo-chart-3" />

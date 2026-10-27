@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-annotated-chart-1",
+  "description": "Deploy markers — error rate with deploy, rollback and SLO",
+  "registryDependencies": [
+    "@cnippet/annotated-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-annotated-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { AnnotatedChart } from \"@/registry/default/charts/annotated-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\n// Error rate by hour; the 13:00 deploy caused a spike, the 15:00 rollback fixed it.\nconst data = Array.from({ length: 24 }, (_, h) => {\n  const bad = h >= 13 && h < 15;\n  return {\n    errors:\n      Math.round(\n        (0.0042 + 0.0011 * Math.sin(h / 2) + (bad ? 0.018 : 0)) * 10000,\n      ) / 10000,\n    hour: `${String(h).padStart(2, \"0\")}:00`,\n  };\n});\n\nexport default function DeployMarkers() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"5xx responses as a share of requests, today\"\n      title=\"Error rate\"\n    >\n      <AnnotatedChart\n        categories={[\"errors\"]}\n        className=\"h-56\"\n        config={{\n          errors: { color: \"var(--destructive)\", label: \"Error rate\" },\n        }}\n        data={data}\n        events={[\n          { label: \"Deploy v2.14\", x: \"13:00\" },\n          { label: \"Rollback\", x: \"15:00\" },\n        ]}\n        index=\"hour\"\n        targets={[{ label: \"SLO 1%\", y: 0.01 }]}\n        valueFormatter={(value) => formatPercent(value)}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "annotated chart"
+  ],
+  "type": "registry:block"
+}

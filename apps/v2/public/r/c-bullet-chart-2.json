@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bullet-chart-2",
+  "description": "SLA vs target — response time per support tier",
+  "registryDependencies": [
+    "@cnippet/bullet-chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bullet-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { BulletChart } from \"@/registry/default/charts/bullet-chart\";\n\n// First-response time (hours) per support tier, against its SLA.\n// Lower is better, so the bar turns red when it passes the target.\nconst tiers = [\n  { actual: 0.6, name: \"Enterprise\", sla: 1 },\n  { actual: 3.4, name: \"Business\", sla: 4 },\n  { actual: 27, name: \"Starter\", sla: 24 },\n];\n\nexport default function SlaVsTarget() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">First response vs SLA</div>\n      <ul className=\"mt-4 grid gap-5\">\n        {tiers.map((t) => {\n          const breached = t.actual > t.sla;\n          return (\n            <li className=\"grid gap-1.5\" key={t.name}>\n              <div className=\"flex justify-between text-sm\">\n                <span>{t.name}</span>\n                <span\n                  className={\n                    breached\n                      ? \"text-destructive-foreground tabular-nums\"\n                      : \"text-muted-foreground tabular-nums\"\n                  }\n                >\n                  {t.actual}h / {t.sla}h SLA\n                </span>\n              </div>\n              <BulletChart\n                aria-label={`${t.name}: ${t.actual} hours, SLA ${t.sla} hours${breached ? \", breached\" : \"\"}`}\n                color={breached ? \"var(--destructive)\" : \"var(--success)\"}\n                max={t.sla * 1.5}\n                ranges={[t.sla, t.sla * 1.5]}\n                target={t.sla}\n                value={t.actual}\n              />\n            </li>\n          );\n        })}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bullet chart"
+  ],
+  "type": "registry:block"
+}

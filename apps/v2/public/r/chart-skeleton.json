@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-skeleton",
+  "description": "Loading placeholder shaped like a bar, line, area or donut chart",
+  "registryDependencies": [
+    "@cnippet/skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/chart-skeleton.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { Skeleton } from \"@/registry/default/ui/skeleton\";\n\nexport type ChartSkeletonProps = {\n  variant?: \"bar\" | \"line\" | \"area\" | \"donut\";\n  className?: string;\n};\n\n// Fixed heights (%) so server and client render the same bars.\nconst BARS = [46, 72, 58, 88, 64, 80, 52, 94, 70, 60, 84, 76];\nconst LINE =\n  \"M0 70 L9 58 L18 64 L27 44 L36 50 L45 32 L55 40 L64 26 L73 34 L82 18 L91 24 L100 12\";\n\nexport function ChartSkeleton({\n  variant = \"bar\",\n  className,\n}: ChartSkeletonProps) {\n  return (\n    <div\n      aria-busy=\"true\"\n      className={cn(\"relative flex aspect-video w-full\", className)}\n      data-slot=\"chart-skeleton\"\n      role=\"status\"\n    >\n      <span className=\"sr-only\">Loading chart</span>\n      {variant === \"bar\" ? (\n        <div className=\"flex size-full items-end gap-[3%]\">\n          {BARS.map((h) => (\n            <Skeleton\n              className=\"flex-1 rounded-b-none motion-reduce:animate-none\"\n              key={h}\n              style={{ height: `${h}%` }}\n            />\n          ))}\n        </div>\n      ) : null}\n      {variant === \"line\" || variant === \"area\" ? (\n        <svg\n          aria-hidden=\"true\"\n          className=\"size-full animate-pulse overflow-visible motion-reduce:animate-none\"\n          preserveAspectRatio=\"none\"\n          viewBox=\"0 0 100 80\"\n        >\n          {variant === \"area\" ? (\n            <path className=\"fill-muted\" d={`${LINE} L100 80 L0 80 Z`} />\n          ) : null}\n          <path\n            className=\"fill-none stroke-muted-foreground/24\"\n            d={LINE}\n            strokeLinejoin=\"round\"\n            strokeWidth={2}\n            vectorEffect=\"non-scaling-stroke\"\n          />\n        </svg>\n      ) : null}\n      {variant === \"donut\" ? (\n        <Skeleton className=\"m-auto aspect-square h-full max-h-full rounded-full [mask:radial-gradient(circle,transparent_56%,#000_57%)] motion-reduce:animate-none\" />\n      ) : null}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/chart-skeleton.tsx"
+    }
+  ],
+  "categories": [
+    "chart skeleton"
+  ],
+  "type": "registry:ui"
+}

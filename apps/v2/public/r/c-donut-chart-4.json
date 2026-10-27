@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-donut-chart-4",
+  "description": "Budget split — side legend with a currency total",
+  "registryDependencies": [
+    "@cnippet/donut-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-donut-chart-4.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { DonutChart } from \"@/registry/default/charts/donut-chart\";\nimport { formatCurrency, sumBy } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { amount: 186000, line: \"Payroll\" },\n  { amount: 54000, line: \"Infrastructure\" },\n  { amount: 38000, line: \"Marketing\" },\n  { amount: 21000, line: \"Tools\" },\n  { amount: 12000, line: \"Travel\" },\n];\n\nexport default function BudgetSplit() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"Q4 operating budget by line\"\n      title=\"Budget\"\n    >\n      <DonutChart\n        category=\"amount\"\n        centerLabel=\"Q4 total\"\n        centerValue={formatCurrency(sumBy(data, [\"amount\"]))}\n        className=\"h-52\"\n        data={data}\n        index=\"line\"\n        legendLayout=\"side\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "donut chart"
+  ],
+  "type": "registry:block"
+}

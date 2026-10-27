@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-bullet-chart-3",
+  "description": "Budget usage — spend with a month-end forecast marker",
+  "registryDependencies": [
+    "@cnippet/bullet-chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-bullet-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { BulletChart } from \"@/registry/default/charts/bullet-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Monthly cloud spend: bands at 50% / 80% / 100% of budget, target = forecast.\nconst lines = [\n  { budget: 18000, forecast: 16500, name: \"Compute\", spent: 11200 },\n  { budget: 6000, forecast: 6800, name: \"Storage\", spent: 4900 },\n  { budget: 4000, forecast: 2600, name: \"Networking\", spent: 1700 },\n];\n\nexport default function BudgetUsage() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card p-5\">\n      <div className=\"font-medium text-sm\">October cloud spend</div>\n      <div className=\"text-muted-foreground text-xs\">\n        Bar = spent so far · marker = month-end forecast\n      </div>\n      <ul className=\"mt-4 grid gap-5\">\n        {lines.map((l) => (\n          <li className=\"grid gap-1.5\" key={l.name}>\n            <div className=\"flex justify-between text-sm\">\n              <span>{l.name}</span>\n              <span className=\"text-muted-foreground tabular-nums\">\n                {formatCurrency(l.spent)} of {formatCurrency(l.budget)}\n              </span>\n            </div>\n            <BulletChart\n              color={\n                l.forecast > l.budget ? \"var(--warning)\" : \"var(--chart-1)\"\n              }\n              max={Math.max(l.budget, l.forecast) * 1.05}\n              ranges={[l.budget * 0.5, l.budget * 0.8, l.budget]}\n              target={l.forecast}\n              value={l.spent}\n              valueFormatter={formatCurrency}\n            />\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "bullet chart"
+  ],
+  "type": "registry:block"
+}

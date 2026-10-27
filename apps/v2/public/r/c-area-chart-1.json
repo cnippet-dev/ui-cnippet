@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-area-chart-1",
+  "description": "Visitors — desktop vs mobile with gradient fill",
+  "registryDependencies": [
+    "@cnippet/area-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-area-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { AreaChart } from \"@/registry/default/charts/area-chart\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { desktop: 18640, mobile: 12210, month: \"Jan\" },\n  { desktop: 21300, mobile: 14880, month: \"Feb\" },\n  { desktop: 19870, mobile: 16020, month: \"Mar\" },\n  { desktop: 23410, mobile: 17950, month: \"Apr\" },\n  { desktop: 25120, mobile: 21330, month: \"May\" },\n  { desktop: 24680, mobile: 23790, month: \"Jun\" },\n];\n\nexport default function VisitorsByDevice() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      delta={0.182}\n      description=\"Monthly visitors, Jan – Jun 2026\"\n      title=\"Visitors\"\n      value={formatCompact(48470)}\n    >\n      <AreaChart\n        categories={[\"desktop\", \"mobile\"]}\n        className=\"h-48\"\n        data={data}\n        index=\"month\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "area chart"
+  ],
+  "type": "registry:block"
+}

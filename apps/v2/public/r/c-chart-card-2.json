@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-card-2",
+  "description": "Range select — card actions switch the chart between 7, 30 and 90 days",
+  "registryDependencies": [
+    "@cnippet/chart-card",
+    "@cnippet/toggle-group",
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-card-2.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartTooltipList } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport {\n  formatCompact,\n  formatDate,\n  sumBy,\n} from \"@/registry/default/lib/chart-utils\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n} from \"@/registry/default/ui/chart\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\";\n\n// 90 days of visitors: steady growth, a weekly rhythm and quieter weekends.\nconst data = Array.from({ length: 90 }, (_, i) => {\n  const date = new Date(Date.UTC(2026, 6, 28 + i));\n  const weekend = date.getUTCDay() === 0 || date.getUTCDay() === 6;\n  return {\n    date: date.toISOString().slice(0, 10),\n    visitors: Math.round(\n      2400 + 18 * i + 420 * Math.sin(i / 4) - (weekend ? 650 : 0),\n    ),\n  };\n});\n\nconst config = {\n  visitors: { color: \"var(--chart-2)\", label: \"Visitors\" },\n} satisfies ChartConfig;\n\nconst ranges = { \"7d\": 7, \"30d\": 30, \"90d\": 90 } as const;\ntype Range = keyof typeof ranges;\n\nexport default function VisitorsRangeCard() {\n  const [range, setRange] = useState<Range>(\"30d\");\n  const rows = data.slice(-ranges[range]);\n\n  return (\n    <ChartCard\n      actions={\n        <ToggleGroup\n          onValueChange={(value) => value[0] && setRange(value[0] as Range)}\n          size=\"sm\"\n          value={[range]}\n          variant=\"outline\"\n        >\n          {Object.keys(ranges).map((key) => (\n            <ToggleGroupItem key={key} value={key}>\n              {key}\n            </ToggleGroupItem>\n          ))}\n        </ToggleGroup>\n      }\n      className=\"max-w-2xl\"\n      description={`Unique visitors, last ${ranges[range]} days`}\n      title=\"Visitors\"\n      value={formatCompact(sumBy(rows, [\"visitors\"]))}\n    >\n      <ChartContainer className=\"h-52 w-full\" config={config}>\n        <BarChart accessibilityLayer data={rows}>\n          <CartesianGrid vertical={false} />\n          <XAxis\n            axisLine={false}\n            dataKey=\"date\"\n            interval=\"preserveStartEnd\"\n            minTickGap={24}\n            tickFormatter={(value) => formatDate(value)}\n            tickLine={false}\n            tickMargin={8}\n          />\n          <ChartTooltip\n            content={\n              <ChartTooltipList\n                config={config}\n                labelFormatter={(label) => formatDate(String(label))}\n              />\n            }\n            cursor={false}\n          />\n          <Bar dataKey=\"visitors\" fill=\"var(--color-visitors)\" radius={2} />\n        </BarChart>\n      </ChartContainer>\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart card"
+  ],
+  "type": "registry:block"
+}

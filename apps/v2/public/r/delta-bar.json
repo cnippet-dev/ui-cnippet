@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "delta-bar",
+  "description": "Bar growing left or right from the centre to show a +/− change",
+  "registryDependencies": [
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/delta-bar.tsx",
+      "content": "\"use client\";\n\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type DeltaBarProps = {\n  /** Change as a fraction from -1 to 1: 0.124 fills 12.4% of the right half. */\n  value: number;\n  /** Set when a drop is good news (cost, latency): flips the colours. */\n  invertDelta?: boolean;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function DeltaBar({\n  value,\n  invertDelta = false,\n  className,\n  \"aria-label\": ariaLabel,\n}: DeltaBarProps) {\n  const clamped = Math.min(Math.max(value, -1), 1);\n  const good = invertDelta ? clamped < 0 : clamped > 0;\n  const width = `${Math.abs(clamped) * 50}%`;\n\n  return (\n    <div\n      aria-label={ariaLabel ?? formatPercent(value, { signed: true })}\n      className={cn(\"relative h-2 w-full rounded-full bg-muted\", className)}\n      data-slot=\"delta-bar\"\n      role=\"img\"\n    >\n      <div\n        className={cn(\n          \"absolute inset-y-0 transition-[width] duration-500 motion-reduce:transition-none\",\n          clamped >= 0 ? \"start-1/2 rounded-e-full\" : \"end-1/2 rounded-s-full\",\n          good ? \"bg-success\" : clamped === 0 ? \"\" : \"bg-destructive\",\n        )}\n        style={{ width }}\n      />\n      <div\n        aria-hidden=\"true\"\n        className=\"absolute -inset-y-1 start-1/2 w-0.5 -translate-x-1/2 rounded-full bg-foreground/48\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/delta-bar.tsx"
+    }
+  ],
+  "categories": [
+    "delta bar"
+  ],
+  "type": "registry:ui"
+}

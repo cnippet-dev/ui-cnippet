@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-combo-chart-2",
+  "description": "Orders & AOV — order volume against average order value",
+  "registryDependencies": [
+    "@cnippet/combo-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-combo-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ComboChart } from \"@/registry/default/charts/combo-chart\";\nimport {\n  formatCompact,\n  formatCurrency,\n} from \"@/registry/default/lib/chart-utils\";\n\n// Orders rise into the holidays while average order value dips with discounts.\nconst data = [\n  { aov: 84.2, orders: 3120, week: \"Nov 3\" },\n  { aov: 82.9, orders: 3480, week: \"Nov 10\" },\n  { aov: 81.4, orders: 3910, week: \"Nov 17\" },\n  { aov: 72.6, orders: 6840, week: \"Nov 24\" },\n  { aov: 76.1, orders: 5210, week: \"Dec 1\" },\n  { aov: 78.8, orders: 4870, week: \"Dec 8\" },\n  { aov: 80.5, orders: 4420, week: \"Dec 15\" },\n];\n\nexport default function OrdersAndAov() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Weekly orders and average order value through the holidays\"\n      title=\"Orders & AOV\"\n    >\n      <ComboChart\n        barCategories={[\"orders\"]}\n        className=\"h-48\"\n        config={{\n          aov: { color: \"var(--chart-1)\", label: \"Avg. order value\" },\n          orders: { color: \"var(--chart-2)\", label: \"Orders\" },\n        }}\n        data={data}\n        dualAxis\n        index=\"week\"\n        lineCategories={[\"aov\"]}\n        lineValueFormatter={(value) =>\n          formatCurrency(value, \"USD\", { compact: false })\n        }\n        valueFormatter={formatCompact}\n        yAxisWidth={64}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "combo chart"
+  ],
+  "type": "registry:block"
+}

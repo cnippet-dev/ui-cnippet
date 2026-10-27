@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-polar-area-chart-1",
+  "description": "Activity by weekday — one colour",
+  "registryDependencies": [
+    "@cnippet/polar-area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-polar-area-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { PolarAreaChart } from \"@/registry/default/charts/polar-area-chart\";\n\nconst data = [\n  { day: \"Mon\", workouts: 412 },\n  { day: \"Tue\", workouts: 386 },\n  { day: \"Wed\", workouts: 441 },\n  { day: \"Thu\", workouts: 398 },\n  { day: \"Fri\", workouts: 287 },\n  { day: \"Sat\", workouts: 512 },\n  { day: \"Sun\", workouts: 468 },\n];\n\nexport default function ActivityByWeekday() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Workouts logged by weekday, last 4 weeks\"\n      title=\"Activity by day\"\n    >\n      <PolarAreaChart\n        category=\"workouts\"\n        className=\"h-64\"\n        color=\"var(--chart-1)\"\n        data={data}\n        index=\"day\"\n        valueFormatter={(value) => `${value} workouts`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "polar area chart"
+  ],
+  "type": "registry:block"
+}

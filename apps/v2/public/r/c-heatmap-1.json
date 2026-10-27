@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-heatmap-1",
+  "description": "Activity — sessions by weekday and hour",
+  "registryDependencies": [
+    "@cnippet/heatmap",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-heatmap-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Heatmap } from \"@/registry/default/charts/heatmap\";\n\nconst days = [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\", \"Sun\"];\nconst hours = Array.from({ length: 24 }, (_, h) => String(h));\n\n// Deterministic sessions: busy on weekday working hours, quiet at night and on weekends.\nconst data = days.flatMap((day, d) =>\n  hours.map((hour, h) => {\n    const work = h >= 9 && h <= 17 ? 1 : h >= 7 && h <= 21 ? 0.45 : 0.08;\n    const weekend = d >= 5 ? 0.35 : 1;\n    const wobble = ((d * 31 + h * 17) % 11) / 20;\n    return {\n      day,\n      hour,\n      sessions: Math.round(1200 * work * weekend * (0.8 + wobble)),\n    };\n  }),\n);\n\nexport default function ActivityByHour() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Sessions by weekday and hour (UTC), last 4 weeks\"\n      title=\"When people use the app\"\n    >\n      <Heatmap\n        data={data}\n        value=\"sessions\"\n        x=\"hour\"\n        xFormatter={(hour) => (Number(hour) % 3 === 0 ? hour : \"\")}\n        y=\"day\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "heatmap"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,113 @@
+---
+title: Area Chart
+description: A data-driven area chart for trends over time — default, stacked or percent, with gradient, solid or no fill.
+---
+
+<ComponentPreview name="c-area-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/area-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="area-chart" title="components/charts/area-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { AreaChart } from "@/components/charts/area-chart";
+```
+
+```tsx
+const data = [
+  { month: "Jan", desktop: 18640, mobile: 12210 },
+  { month: "Feb", desktop: 21300, mobile: 14880 },
+];
+
+<AreaChart
+  data={data}
+  index="month"
+  categories={["desktop", "mobile"]}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- `index` is the field on the x-axis; `categories` are the fields to plot. Both are type-checked against `data`.
+- Colours and labels come from `categories` automatically (`--chart-1`, `--chart-2`, …). Pass `config` to rename a series or pick its colour.
+- `type="stacked"` piles series on top of each other and the tooltip adds a total. `type="percent"` stacks them to 100% and the y-axis shows percentages, while the tooltip keeps the real values.
+- Size it with a height class such as `h-64`. It fills the width of its parent.
+- `loading` shows an area-shaped skeleton; empty `data` shows a [Chart Empty](/charts/foundation/chart-empty) state, or your own `emptyState`.
+- Pass Recharts elements such as `<ReferenceLine />` as children to draw on top of the chart.
+- Animations turn off when the user has reduced motion on.
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `"default" \| "stacked" \| "percent"` | `"default"` | How series combine |
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line shape between points |
+| `fill` | `"gradient" \| "solid" \| "none"` | `"gradient"` | Area fill under each line |
+| `connectNulls` | `boolean` | `false` | Bridge `null` values instead of leaving a gap |
+
+## Examples
+
+### Gradient
+
+Two series with the default gradient fill, inside a [Chart Card](/charts/foundation/chart-card).
+
+<ComponentPreview name="c-area-chart-1" />
+
+### Stacked
+
+MRR by plan. The stack's height is the total, and the tooltip adds a total row.
+
+<ComponentPreview name="c-area-chart-2" />
+
+### Percent
+
+Each week stacks to 100%, so the chart shows the mix rather than the volume.
+
+<ComponentPreview name="c-area-chart-3" />
+
+### Step
+
+`curve="step"` for values that jump rather than drift, like provisioned capacity.
+
+<ComponentPreview name="c-area-chart-4" />

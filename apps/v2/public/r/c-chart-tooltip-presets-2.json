@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-tooltip-presets-2",
+  "description": "Stacked total — MRR by plan with a total row",
+  "registryDependencies": [
+    "@cnippet/chart-tooltip-presets",
+    "@cnippet/chart",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-tooltip-presets-2.tsx",
+      "content": "\"use client\";\n\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartTooltipTotal } from \"@/registry/default/charts/chart-tooltip-presets\";\nimport {\n  buildChartConfig,\n  formatCurrency,\n} from \"@/registry/default/lib/chart-utils\";\nimport { ChartContainer, ChartTooltip } from \"@/registry/default/ui/chart\";\n\nconst data = [\n  { enterprise: 14200, month: \"Jan\", pro: 21800, starter: 6400 },\n  { enterprise: 15100, month: \"Feb\", pro: 23100, starter: 6900 },\n  { enterprise: 16800, month: \"Mar\", pro: 24400, starter: 7300 },\n  { enterprise: 17200, month: \"Apr\", pro: 26900, starter: 7100 },\n  { enterprise: 19500, month: \"May\", pro: 28300, starter: 7800 },\n  { enterprise: 21400, month: \"Jun\", pro: 30200, starter: 8200 },\n];\n\nconst categories = [\"starter\", \"pro\", \"enterprise\"];\nconst config = buildChartConfig(categories);\n\nexport default function MrrByPlan() {\n  return (\n    <ChartContainer className=\"h-64 w-full\" config={config}>\n      <BarChart accessibilityLayer data={data}>\n        <CartesianGrid vertical={false} />\n        <XAxis\n          axisLine={false}\n          dataKey=\"month\"\n          tickLine={false}\n          tickMargin={8}\n        />\n        <ChartTooltip\n          content={\n            <ChartTooltipTotal\n              config={config}\n              totalLabel=\"Total MRR\"\n              valueFormatter={formatCurrency}\n            />\n          }\n          cursor={false}\n        />\n        {categories.map((key, i) => (\n          <Bar\n            dataKey={key}\n            fill={`var(--color-${key})`}\n            key={key}\n            radius={i === categories.length - 1 ? [4, 4, 0, 0] : 0}\n            stackId=\"mrr\"\n          />\n        ))}\n      </BarChart>\n    </ChartContainer>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart tooltip presets"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,101 @@
+---
+title: Line Chart
+description: A data-driven line chart with optional dots, dashed forecast series and gap handling.
+---
+
+<ComponentPreview name="c-line-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/line-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="line-chart" title="components/charts/line-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { LineChart } from "@/components/charts/line-chart";
+```
+
+```tsx
+<LineChart
+  data={data}
+  index="time"
+  categories={["p50", "p90", "p99"]}
+  valueFormatter={(value) => `${value} ms`}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- `dashedCategories` draws those series dashed. Use it for forecasts, targets or last period.
+- For a forecast that continues the actuals, repeat the last actual value in the forecast field on the same row so the two lines join (see the forecast example).
+- `null` values leave a gap. Set `connectNulls` to draw straight across them.
+- `showDots` marks every point; without it, a dot appears only on hover.
+- Give `yAxisWidth` more room when tick labels carry units, e.g. `64` for "700 ms".
+
+## Props
+
+Takes all the [common chart props](/docs/chart-components/foundation#common-props), plus:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line shape between points |
+| `showDots` | `boolean` | `false` | Show a dot on every point |
+| `dashedCategories` | `string[]` | `[]` | Series drawn dashed |
+| `connectNulls` | `boolean` | `false` | Bridge `null` values instead of leaving a gap |
+
+## Examples
+
+### Percentiles
+
+API latency at p50, p90 and p99 with a unit formatter.
+
+<ComponentPreview name="c-line-chart-1" />
+
+### Forecast
+
+The dashed forecast picks up where the actuals stop.
+
+<ComponentPreview name="c-line-chart-2" />
+
+### Target line
+
+Dots on each week and a dashed `ReferenceLine` for the target.
+
+<ComponentPreview name="c-line-chart-3" />

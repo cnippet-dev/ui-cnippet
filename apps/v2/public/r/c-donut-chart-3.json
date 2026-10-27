@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-donut-chart-3",
+  "description": "Headcount — percentage labels on each slice",
+  "registryDependencies": [
+    "@cnippet/donut-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-donut-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { DonutChart } from \"@/registry/default/charts/donut-chart\";\n\nconst data = [\n  { department: \"Engineering\", people: 64 },\n  { department: \"Sales\", people: 31 },\n  { department: \"Customer success\", people: 22 },\n  { department: \"Marketing\", people: 14 },\n  { department: \"Operations\", people: 11 },\n];\n\nexport default function TeamByDepartment() {\n  return (\n    <ChartCard\n      className=\"max-w-md\"\n      description=\"142 people across five departments\"\n      title=\"Headcount\"\n    >\n      <DonutChart\n        category=\"people\"\n        className=\"h-60\"\n        data={data}\n        index=\"department\"\n        showLabels\n        valueFormatter={(value) => `${value} people`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "donut chart"
+  ],
+  "type": "registry:block"
+}

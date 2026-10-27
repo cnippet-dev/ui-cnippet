@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bullet-chart",
+  "description": "Compact bar comparing a value with a target over qualitative ranges",
+  "registryDependencies": [
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/bullet-chart.tsx",
+      "content": "\"use client\";\n\nimport { formatCompact } from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type BulletChartProps = {\n  value: number;\n  /** Goal, drawn as a vertical marker. */\n  target?: number;\n  /** End of the scale. Default: the largest of value, target and ranges. */\n  max?: number;\n  /**\n   * Upper bounds of the qualitative bands, ascending, e.g. [60, 80, 100] for\n   * poor / ok / good. Drawn darkest first.\n   */\n  ranges?: number[];\n  /** CSS colour of the value bar. */\n  color?: string;\n  valueFormatter?: (value: number) => string;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function BulletChart({\n  value,\n  target,\n  max,\n  ranges = [],\n  color = \"var(--chart-1)\",\n  valueFormatter = formatCompact,\n  className,\n  \"aria-label\": ariaLabel,\n}: BulletChartProps) {\n  const scale = max ?? Math.max(value, target ?? 0, ...ranges, 0);\n  const percent = (v: number) =>\n    scale > 0 ? Math.min(Math.max((v / scale) * 100, 0), 100) : 0;\n\n  return (\n    <div\n      aria-label={\n        ariaLabel ??\n        `${valueFormatter(value)} of ${valueFormatter(scale)}${\n          target === undefined ? \"\" : `, target ${valueFormatter(target)}`\n        }`\n      }\n      className={cn(\"relative h-4 w-full\", className)}\n      data-slot=\"bullet-chart\"\n      role=\"img\"\n    >\n      <div className=\"absolute inset-0 overflow-hidden rounded-sm bg-muted\">\n        {/* Widest band first so narrower (darker) bands paint on top. */}\n        {[...ranges]\n          .map((bound, i) => ({ bound, i }))\n          .reverse()\n          .map(({ bound, i }) => (\n            <div\n              className=\"absolute inset-y-0 start-0 bg-foreground\"\n              key={bound}\n              style={{\n                opacity: 0.06 + 0.06 * (ranges.length - 1 - i),\n                width: `${percent(bound)}%`,\n              }}\n            />\n          ))}\n      </div>\n      <div\n        className=\"absolute inset-y-1 start-0 rounded-xs transition-[width] duration-500 motion-reduce:transition-none\"\n        style={{ backgroundColor: color, width: `${percent(value)}%` }}\n      />\n      {target !== undefined ? (\n        <div\n          className=\"absolute -inset-y-0.5 w-0.5 -translate-x-1/2 rounded-full bg-foreground\"\n          style={{ left: `${percent(target)}%` }}\n        />\n      ) : null}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/bullet-chart.tsx"
+    }
+  ],
+  "categories": [
+    "bullet chart"
+  ],
+  "type": "registry:ui"
+}

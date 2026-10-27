@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "foundation",
+    "cartesian",
+    "micro",
+    "polar",
+    "interactive",
+    "hierarchy",
+    "matrix"
+  ],
+  "title": "Chart Components"
+}

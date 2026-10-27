@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-chart-skeleton-1",
+  "description": "Bar placeholder — swaps to the real chart once data loads",
+  "registryDependencies": [
+    "@cnippet/chart-skeleton",
+    "@cnippet/chart-card",
+    "@cnippet/chart",
+    "@cnippet/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-chart-skeleton-1.tsx",
+      "content": "\"use client\";\n\nimport { RefreshCwIcon } from \"lucide-react\";\nimport { useEffect, useState } from \"react\";\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { ChartSkeleton } from \"@/registry/default/charts/chart-skeleton\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/registry/default/ui/chart\";\n\nconst data = [\n  { day: \"Mon\", deploys: 14 },\n  { day: \"Tue\", deploys: 22 },\n  { day: \"Wed\", deploys: 19 },\n  { day: \"Thu\", deploys: 27 },\n  { day: \"Fri\", deploys: 11 },\n  { day: \"Sat\", deploys: 3 },\n  { day: \"Sun\", deploys: 2 },\n];\n\nconst config = {\n  deploys: { color: \"var(--chart-1)\", label: \"Deploys\" },\n} satisfies ChartConfig;\n\nexport default function DeploysLoading() {\n  const [loading, setLoading] = useState(true);\n\n  // Stand-in for a fetch: show the skeleton for a moment, then the data.\n  useEffect(() => {\n    if (!loading) return;\n    const timer = setTimeout(() => setLoading(false), 1500);\n    return () => clearTimeout(timer);\n  }, [loading]);\n\n  return (\n    <ChartCard\n      actions={\n        <Button\n          disabled={loading}\n          onClick={() => setLoading(true)}\n          size=\"sm\"\n          variant=\"outline\"\n        >\n          <RefreshCwIcon />\n          Reload\n        </Button>\n      }\n      className=\"max-w-lg\"\n      description=\"Production deploys this week\"\n      title=\"Deploys\"\n    >\n      {loading ? (\n        <ChartSkeleton className=\"aspect-auto h-48\" variant=\"bar\" />\n      ) : (\n        <ChartContainer className=\"h-48 w-full\" config={config}>\n          <BarChart accessibilityLayer data={data}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              axisLine={false}\n              dataKey=\"day\"\n              tickLine={false}\n              tickMargin={8}\n            />\n            <ChartTooltip content={<ChartTooltipContent />} cursor={false} />\n            <Bar dataKey=\"deploys\" fill=\"var(--color-deploys)\" radius={4} />\n          </BarChart>\n        </ChartContainer>\n      )}\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "chart skeleton"
+  ],
+  "type": "registry:block"
+}

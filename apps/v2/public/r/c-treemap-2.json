@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-treemap-2",
+  "description": "Bundle size — flat list of packages",
+  "registryDependencies": [
+    "@cnippet/treemap",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-treemap-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Treemap } from \"@/registry/default/charts/treemap\";\n\nconst kb = (value: number) =>\n  value >= 1000 ? `${(value / 1000).toFixed(1)} MB` : `${value} KB`;\n\nconst data = [\n  { name: \"react-dom\", value: 132 },\n  { name: \"recharts\", value: 98 },\n  { name: \"app code\", value: 86 },\n  { name: \"motion\", value: 54 },\n  { name: \"date-fns\", value: 23 },\n  { name: \"zod\", value: 14 },\n  { name: \"lucide\", value: 11 },\n];\n\nexport default function BundleSize() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Gzipped size of the main client bundle, by package\"\n      title=\"Bundle size\"\n      value={kb(418)}\n    >\n      <Treemap className=\"h-48\" data={data} valueFormatter={kb} />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "treemap"
+  ],
+  "type": "registry:block"
+}

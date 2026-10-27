@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sankey-3",
+  "description": "Energy flow — source to use, with losses",
+  "registryDependencies": [
+    "@cnippet/sankey",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sankey-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Sankey } from \"@/registry/default/charts/sankey\";\n\nconst twh = (value: number) => `${value} TWh`;\n\nconst data = [\n  { source: \"Solar\", target: \"Grid\", value: 62 },\n  { source: \"Wind\", target: \"Grid\", value: 139 },\n  { source: \"Gas\", target: \"Grid\", value: 76 },\n  { source: \"Gas\", target: \"Heat\", value: 48 },\n  { source: \"Grid\", target: \"Homes\", value: 128 },\n  { source: \"Grid\", target: \"Industry\", value: 104 },\n  { source: \"Grid\", target: \"Losses\", value: 45 },\n  { source: \"Heat\", target: \"Homes\", value: 31 },\n  { source: \"Heat\", target: \"Industry\", value: 17 },\n];\n\nexport default function EnergyFlow() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Annual energy flow from source to use, simplified\"\n      footer=\"Losses are the share of generation that never reaches a consumer.\"\n      title=\"Energy flow\"\n    >\n      <Sankey\n        className=\"h-48\"\n        data={data}\n        nodePadding={16}\n        nodeWidth={8}\n        valueFormatter={twh}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sankey"
+  ],
+  "type": "registry:block"
+}
