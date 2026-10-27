@@ -1,0 +1,3 @@
+# Store and check out text files with LF so Biome (which writes LF) does not rewrite
+# every file on Windows, where Git defaults to core.autocrlf=true.
+* text=auto eol=lf

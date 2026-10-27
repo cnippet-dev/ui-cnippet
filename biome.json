@@ -37,7 +37,8 @@
       "!**/apps/v2/public/",
       "!**/apps/v2/registry/__index__.tsx",
       "!**/apps/v2/registry.json",
-      "!**/apps/v2/public/r"
+      "!**/apps/v2/public/r",
+      "!**/signal-kit"
     ]
   },
   "formatter": {
