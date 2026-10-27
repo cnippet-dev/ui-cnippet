@@ -407,4 +407,143 @@ export const chartVariants: ChartVariantItem[] = [
       ["annotated-chart", "chart-card"],
     ],
   ]),
+  ...createChartVariants("histogram", "histogram", [
+    [
+      "Response times — right-skewed latency distribution",
+      ["histogram", "chart-card"],
+    ],
+    [
+      "Order values — two clusters of basket sizes",
+      ["histogram", "chart-card", "chart-utils"],
+    ],
+    [
+      "Test scores — 20 narrow bands without a grid",
+      ["histogram", "chart-card"],
+    ],
+  ]),
+  ...createChartVariants("waterfall chart", "waterfall-chart", [
+    [
+      "MRR movement — new, expansion, contraction and churn",
+      ["waterfall-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "P&L bridge — revenue to net profit with subtotals",
+      ["waterfall-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Headcount change — hires and departures by team",
+      ["waterfall-chart", "chart-card"],
+    ],
+  ]),
+  ...createChartVariants("range area chart", "range-area-chart", [
+    [
+      "Latency band — p5–p99 with the median line",
+      ["range-area-chart", "chart-card"],
+    ],
+    [
+      "Revenue forecast — actuals then a widening forecast band",
+      ["range-area-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Temperature range — monthly low and high",
+      ["range-area-chart", "chart-card"],
+    ],
+  ]),
+  ...createChartVariants("candlestick chart", "candlestick-chart", [
+    [
+      "Stock price — daily candles for a month",
+      ["candlestick-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Crypto — hourly candles with volume bars",
+      ["candlestick-chart", "chart-card", "chart-utils"],
+    ],
+    [
+      "Moving average — candles with a 7-day average line",
+      ["candlestick-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("box plot", "box-plot", [
+    [
+      "Salary by role — precomputed quartiles",
+      ["box-plot", "chart-card", "chart-utils"],
+    ],
+    [
+      "Latency by region — quartiles computed from raw samples",
+      ["box-plot", "chart-card"],
+    ],
+    [
+      "CI run time — per runner against a time budget",
+      ["box-plot", "chart-card"],
+    ],
+  ]),
+  ...createChartVariants("funnel chart", "funnel-chart", [
+    [
+      "Signup funnel — share reaching each step with drop-off",
+      ["funnel-chart", "chart-card", "chart-utils"],
+    ],
+    ["Checkout — left-aligned bars", ["funnel-chart", "chart-card"]],
+    [
+      "Sales pipeline — currency values without drop-off",
+      ["funnel-chart", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("treemap", "treemap", [
+    [
+      "Revenue mix — two levels: business line and product",
+      ["treemap", "chart-card", "chart-utils"],
+    ],
+    ["Bundle size — flat list of packages", ["treemap", "chart-card"]],
+    ["Disk usage — click a cell to select it", ["treemap", "chart-card"]],
+  ]),
+  ...createChartVariants("sankey", "sankey", [
+    [
+      "Traffic flow — source to landing page to outcome",
+      ["sankey", "chart-card"],
+    ],
+    [
+      "Budget allocation — department then spend type",
+      ["sankey", "chart-card", "chart-utils"],
+    ],
+    ["Energy flow — source to use, with losses", ["sankey", "chart-card"]],
+  ]),
+  ...createChartVariants("heatmap", "heatmap", [
+    ["Activity — sessions by weekday and hour", ["heatmap", "chart-card"]],
+    [
+      "Feature usage by plan — values printed in cells",
+      ["heatmap", "chart-card", "chart-utils"],
+    ],
+    [
+      "Error rate — services by day with an incident",
+      ["heatmap", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("calendar heatmap", "calendar-heatmap", [
+    [
+      "Contributions — a year of daily activity",
+      ["calendar-heatmap", "chart-card"],
+    ],
+    [
+      "Habit streak — three months, weeks start Monday",
+      ["calendar-heatmap", "chart-card"],
+    ],
+    [
+      "Daily sales — six months of revenue",
+      ["calendar-heatmap", "chart-card", "chart-utils"],
+    ],
+  ]),
+  ...createChartVariants("cohort retention", "cohort-retention", [
+    [
+      "Weekly retention — signup cohorts by week",
+      ["cohort-retention", "chart-card"],
+    ],
+    [
+      "Net revenue retention — monthly cohorts above 100%",
+      ["cohort-retention", "chart-card", "chart-utils"],
+    ],
+    [
+      "Feature adoption — share using a feature by month",
+      ["cohort-retention", "chart-card"],
+    ],
+  ]),
 ];

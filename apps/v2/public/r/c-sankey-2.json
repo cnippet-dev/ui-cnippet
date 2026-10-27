@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sankey-2",
+  "description": "Budget allocation — department then spend type",
+  "registryDependencies": [
+    "@cnippet/sankey",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sankey-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Sankey } from \"@/registry/default/charts/sankey\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { source: \"Budget\", target: \"Engineering\", value: 4800000 },\n  { source: \"Budget\", target: \"Go-to-market\", value: 3100000 },\n  { source: \"Budget\", target: \"G&A\", value: 1400000 },\n  { source: \"Engineering\", target: \"Salaries\", value: 3900000 },\n  { source: \"Engineering\", target: \"Cloud\", value: 900000 },\n  { source: \"Go-to-market\", target: \"Salaries\", value: 1900000 },\n  { source: \"Go-to-market\", target: \"Ads\", value: 1200000 },\n  { source: \"G&A\", target: \"Salaries\", value: 800000 },\n  { source: \"G&A\", target: \"Office\", value: 600000 },\n];\n\nexport default function BudgetFlow() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"FY2027 budget by department, then by type of spend\"\n      title=\"Budget allocation\"\n      value={formatCurrency(9300000)}\n    >\n      <Sankey\n        className=\"h-48\"\n        config={{ Budget: { color: \"var(--muted-foreground)\" } }}\n        data={data}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sankey"
+  ],
+  "type": "registry:block"
+}

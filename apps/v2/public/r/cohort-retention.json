@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cohort-retention",
+  "description": "Triangle table of retention by cohort and period, with shaded % cells",
+  "registryDependencies": [
+    "@cnippet/heatmap",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/cohort-retention.tsx",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { Heatmap } from \"@/registry/default/charts/heatmap\";\nimport {\n  formatCompact,\n  formatPercent,\n} from \"@/registry/default/lib/chart-utils\";\n\nexport type CohortRow = {\n  /** Cohort name, e.g. \"Jan 6\" or \"2026-01\". */\n  cohort: string;\n  /** Users (or revenue) at the start of the cohort. */\n  size: number;\n  /** Share still retained in period 0, 1, 2… as fractions (0.42 = 42%). `null` = not reached yet. */\n  values: (number | null)[];\n};\n\nexport type CohortRetentionProps = {\n  data: CohortRow[];\n  /** Column header for period i. Default: \"0\", \"1\", \"2\"… */\n  periodLabel?: (period: number) => string;\n  /** Formats the cohort size next to its name. */\n  sizeFormatter?: (size: number) => string;\n  /** Formats retention values. Default: whole percent. */\n  valueFormatter?: (value: number) => string;\n  /** CSS colour of 100% retention. */\n  color?: string;\n  showLegend?: boolean;\n  /** Smallest column width in px; the table scrolls sideways below it. */\n  minCellSize?: number;\n  loading?: boolean;\n  emptyState?: React.ReactNode;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\ntype Cell = {\n  cohort: string;\n  period: string;\n  value: number;\n  size: number;\n  label: string;\n};\n\nexport function CohortRetention({\n  data,\n  periodLabel = (period) => String(period),\n  sizeFormatter = formatCompact,\n  valueFormatter = (value) => formatPercent(value, { digits: 0 }),\n  color,\n  showLegend = false,\n  minCellSize = 40,\n  loading,\n  emptyState,\n  className,\n  \"aria-label\": ariaLabel,\n}: CohortRetentionProps) {\n  const periods = Math.max(0, ...data.map((row) => row.values.length));\n  const columns = Array.from({ length: periods }, (_, i) => periodLabel(i));\n  const sizes = new Map(data.map((row) => [row.cohort, row.size]));\n  const cells: Cell[] = data.flatMap((row) =>\n    row.values.flatMap((value, i) =>\n      value === null || value === undefined\n        ? []\n        : [\n            {\n              cohort: row.cohort,\n              label: `${row.cohort}, ${columns[i]}: ${valueFormatter(value)} of ${sizeFormatter(row.size)}`,\n              period: columns[i] ?? String(i),\n              size: row.size,\n              value,\n            },\n          ],\n    ),\n  );\n\n  return (\n    <Heatmap\n      aria-label={ariaLabel ?? \"Cohort retention\"}\n      cellLabel={(cell) => cell.label}\n      className={className}\n      color={color}\n      data={cells}\n      emptyState={emptyState}\n      loading={loading}\n      max={1}\n      min={0}\n      minCellSize={minCellSize}\n      showLegend={showLegend}\n      showValues\n      value=\"value\"\n      valueFormatter={valueFormatter}\n      x=\"period\"\n      xLabels={columns}\n      y=\"cohort\"\n      yFormatter={(cohort) => (\n        <span className=\"flex flex-col leading-tight\">\n          <span className=\"text-foreground\">{cohort}</span>\n          <span className=\"tabular-nums\">\n            {sizeFormatter(sizes.get(cohort) ?? 0)}\n          </span>\n        </span>\n      )}\n      yLabels={data.map((row) => row.cohort)}\n    />\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/cohort-retention.tsx"
+    }
+  ],
+  "categories": [
+    "cohort retention"
+  ],
+  "type": "registry:ui"
+}

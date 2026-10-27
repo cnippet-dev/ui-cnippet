@@ -1,0 +1,105 @@
+---
+title: Box Plot
+description: Compares the spread of values across groups with quartile boxes, medians and min–max whiskers.
+---
+
+<ComponentPreview name="c-box-plot-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/box-plot
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="box-plot" title="components/charts/box-plot.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BoxPlot } from "@/components/charts/box-plot";
+```
+
+```tsx
+// Raw samples: quartiles are computed for you
+<BoxPlot data={data} index="region" values="latencies" className="h-64" />
+
+// Precomputed: rows with min, q1, median, q3 and max
+<BoxPlot data={stats} index="role" className="h-64" />
+```
+
+## Good to know
+
+- With `values`, each row holds a `number[]` and the chart computes quartiles with linear interpolation. The exported `boxStats(values)` helper does the same if you need the numbers elsewhere.
+- Without `values`, each row must have `min`, `q1`, `median`, `q3` and `max` fields, e.g. from your database.
+- Whiskers span the full min–max range. Outliers aren't drawn as separate points.
+- The y-axis is fitted to the data with round ticks, not started at zero. Add a target as a child `<ReferenceLine y={…} />`.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per group |
+| `index` | `keyof T` | — | Group name |
+| `values` | `keyof T` | — | Field holding raw `number[]` samples |
+| `color` | `string` | `"var(--chart-1)"` | Box and whisker colour |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the y-axis and tooltip |
+| `indexFormatter` | `(value: string) => string` | — | Formats group names |
+| `showXAxis` / `showYAxis` / `showGrid` / `showTooltip` | `boolean` | `true` | Toggle chart parts |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when there are no groups |
+| `className` | `string` | — | Sizing, e.g. `"h-64"` |
+| `aria-label` | `string` | — | Accessible name |
+| `children` | `ReactNode` | — | Extra Recharts elements |
+
+## Examples
+
+### Precomputed
+
+Salary quartiles that already come from the database.
+
+<ComponentPreview name="c-box-plot-1" />
+
+### From raw samples
+
+200 latency samples per region; the chart computes the quartiles.
+
+<ComponentPreview name="c-box-plot-2" />
+
+### Against a budget
+
+Run times per CI runner with a dashed time budget.
+
+<ComponentPreview name="c-box-plot-3" />

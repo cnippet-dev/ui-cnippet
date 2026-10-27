@@ -1,0 +1,96 @@
+---
+title: Calendar Heatmap
+description: Days laid out in week columns and shaded by value, like a contribution graph.
+---
+
+<ComponentPreview name="c-calendar-heatmap-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/calendar-heatmap
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Heatmap](/charts/matrix/heatmap) and [Chart Utils](/charts/foundation/chart-utils).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar-heatmap" title="components/charts/calendar-heatmap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CalendarHeatmap } from "@/components/charts/calendar-heatmap";
+```
+
+```tsx
+// data: [{ date: "2026-03-14", value: 4 }, …]
+<CalendarHeatmap data={data} />
+```
+
+## Good to know
+
+- Dates are `"YYYY-MM-DD"` strings and are handled in UTC, so a day never shifts in time zones west of UTC.
+- The range runs from `startDate` to `endDate` (default: the earliest and latest dates in `data`). Days in the range with no entry count as 0 and show as empty.
+- `weekStart={1}` starts weeks on Monday. Every other weekday is labelled, and months are labelled above the week they start in.
+- It's a [Heatmap](/charts/matrix/heatmap) underneath: arrow keys move between days, and each day's tooltip is its accessible name. Change the text with `cellLabel`.
+- A full year is 53 columns. Below `minCellSize` (default 10 px) the calendar scrolls sideways inside its own box.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `{ date, value }[]` | — | One entry per day with a value |
+| `startDate` / `endDate` | `string` | data range | First and last day shown |
+| `weekStart` | `0 \| 1` | `0` | Sunday or Monday first |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `cellLabel` | `(day) => string` | `"Mar 14, 2026: 4"` | Tooltip and accessible name |
+| `color` | `string` | `"var(--chart-1)"` | Colour of the busiest day |
+| `showLegend` | `boolean` | `true` | Show the colour scale |
+| `minCellSize` | `number` | `10` | Smallest day size in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when there are no values |
+| `className` | `string` | — | Extra classes |
+| `aria-label` | `string` | `"Calendar heatmap"` | Accessible name |
+
+## Examples
+
+### Contributions
+
+A year of daily activity.
+
+<ComponentPreview name="c-calendar-heatmap-1" />
+
+### Habit streak
+
+Three months, weeks starting Monday, done or missed.
+
+<ComponentPreview name="c-calendar-heatmap-2" />
+
+### Daily sales
+
+Six months of revenue with currency values.
+
+<ComponentPreview name="c-calendar-heatmap-3" />

@@ -1,0 +1,117 @@
+---
+title: Waterfall Chart
+description: Shows how a starting value becomes an ending value through increases, decreases and subtotals.
+---
+
+<ComponentPreview name="c-waterfall-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/waterfall-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="waterfall-chart" title="components/charts/waterfall-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { WaterfallChart } from "@/components/charts/waterfall-chart";
+```
+
+```tsx
+const data = [
+  { step: "Sep MRR", amount: 184000 },
+  { step: "New", amount: 21400 },
+  { step: "Churn", amount: -9800 },
+  { step: "Oct MRR", amount: null },
+];
+
+<WaterfallChart
+  data={data}
+  index="step"
+  category="amount"
+  totals={["Sep MRR", "Oct MRR"]}
+  valueFormatter={formatCurrency}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- Each row is a **change**. The chart keeps a running total and floats each bar from the previous total to the new one.
+- Rows named in `totals` are drawn from zero. A total row **with** a number sets the running total, which is how you start from a balance. A total row **without** one (`null`) shows the running total so far, which is how you add subtotals and the end value.
+- Bars are coloured as increase (`var(--success)`), decrease (`var(--destructive)`) or total (`var(--chart-1)`). Override the label or colour of any of the three with `config`, e.g. `config={{ total: { label: "Subtotal" } }}`.
+- The tooltip shows the change, the running total and the change as a percentage of the previous total. The legend names all three bar types, so colour isn't the only signal.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per step |
+| `index` | `keyof T` | — | Step name |
+| `category` | `keyof T` | — | Change for the step (or the value of a total) |
+| `totals` | `string[]` | `[]` | `index` values drawn as totals from zero |
+| `config` | `ChartConfig` | — | Labels/colours for `increase`, `decrease`, `total` |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the y-axis and tooltip |
+| `indexFormatter` | `(value: string) => string` | — | Formats step names |
+| `showXAxis` / `showYAxis` / `showGrid` / `showLegend` / `showTooltip` | `boolean` | `true` | Toggle chart parts |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis in px |
+| `radius` | `number` | `4` | Bar corner radius in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing, e.g. `"h-64"` |
+| `aria-label` | `string` | — | Accessible name |
+| `children` | `ReactNode` | — | Extra Recharts elements |
+
+## Examples
+
+### MRR movement
+
+A starting balance, four movements and a computed ending balance.
+
+<ComponentPreview name="c-waterfall-chart-1" />
+
+### P&L bridge
+
+Several subtotals along the way, with total bars relabelled "Subtotal".
+
+<ComponentPreview name="c-waterfall-chart-2" />
+
+### Headcount change
+
+Custom labels for all three bar types and a different total colour.
+
+<ComponentPreview name="c-waterfall-chart-3" />

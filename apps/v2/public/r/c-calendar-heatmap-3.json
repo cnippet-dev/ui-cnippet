@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-calendar-heatmap-3",
+  "description": "Daily sales — six months of revenue",
+  "registryDependencies": [
+    "@cnippet/calendar-heatmap",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-calendar-heatmap-3.tsx",
+      "content": "\"use client\";\n\nimport { CalendarHeatmap } from \"@/registry/default/charts/calendar-heatmap\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst START = Date.UTC(2026, 4, 1);\n\n// Six months of deterministic daily sales; Saturdays sell most.\nconst data = Array.from({ length: 184 }, (_, i) => {\n  const date = new Date(START + i * 86_400_000);\n  const day = date.getUTCDay();\n  const weekday = [0.6, 0.8, 0.85, 0.9, 1, 1.25, 1.6][day] ?? 1;\n  return {\n    date: date.toISOString().slice(0, 10),\n    value: Math.round((2400 + ((i * 53) % 900) + i * 6) * weekday),\n  };\n});\n\nexport default function DailySales() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Store revenue per day, May to October\"\n      title=\"Daily sales\"\n      value={formatCurrency(data.reduce((sum, d) => sum + d.value, 0))}\n    >\n      <CalendarHeatmap\n        color=\"var(--chart-2)\"\n        data={data}\n        minCellSize={12}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar heatmap"
+  ],
+  "type": "registry:block"
+}

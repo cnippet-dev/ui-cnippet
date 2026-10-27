@@ -1,0 +1,102 @@
+---
+title: Heatmap
+description: A grid of cells shaded by value, for patterns across two dimensions such as weekday × hour.
+---
+
+<ComponentPreview name="c-heatmap-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/heatmap
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `tooltip` component (`npx shadcn@latest add @cnippet/tooltip`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="heatmap" title="components/charts/heatmap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Heatmap } from "@/components/charts/heatmap";
+```
+
+```tsx
+// data: [{ day: "Mon", hour: "9", sessions: 1180 }, …]
+<Heatmap data={data} x="hour" y="day" value="sessions" />
+```
+
+## Good to know
+
+- Pass one row per cell. Columns and rows appear in the order they first occur in `data`; set `xLabels` / `yLabels` to fix the order or include columns with no data. Cells with no row are left blank.
+- Shading runs from the smallest value (`min`) to the largest (`max`). Set both for a fixed scale, e.g. `min={0} max={1}` for shares.
+- `xFormatter` and `yFormatter` return the header content. Return `""` to hide some labels, e.g. show every third hour.
+- `showValues` prints each value in its cell and switches cells from squares to short bars.
+- Keyboard: the grid is a single tab stop. Arrow keys move between cells (skipping blanks), Home and End jump to the ends of a row. Each cell's tooltip text is also its accessible name, so colour is never the only signal. Change the text with `cellLabel`.
+- Wide grids scroll sideways inside their own box when cells would be narrower than `minCellSize`.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per cell |
+| `x` | `keyof T` | — | Column field |
+| `y` | `keyof T` | — | Row field |
+| `value` | `keyof T` | — | Numeric value field |
+| `xLabels` / `yLabels` | `string[]` | order in `data` | Column and row order |
+| `xFormatter` / `yFormatter` | `(label: string) => ReactNode` | — | Header content |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `cellLabel` | `(row: T) => string` | `"<y>, <x>: <value>"` | Tooltip and accessible name |
+| `color` | `string` | `"var(--chart-1)"` | Colour of the highest value |
+| `min` / `max` | `number` | data min / max | Ends of the colour scale |
+| `showValues` | `boolean` | `false` | Print values in cells |
+| `showLegend` | `boolean` | `true` | Show the colour scale |
+| `minCellSize` | `number` | `0` | Smallest cell width in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when there are no values |
+| `className` | `string` | — | Extra classes |
+| `aria-label` | `string` | — | Accessible name of the grid |
+
+## Examples
+
+### Weekday × hour
+
+Sessions by weekday and hour, labelling every third hour.
+
+<ComponentPreview name="c-heatmap-1" />
+
+### Values in cells
+
+Feature usage by plan with `showValues` and a fixed 0–100% scale.
+
+<ComponentPreview name="c-heatmap-2" />
+
+### Error rate
+
+Services by day in `var(--destructive)`, with a custom cell label.
+
+<ComponentPreview name="c-heatmap-3" />

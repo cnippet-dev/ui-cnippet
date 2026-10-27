@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-range-area-chart-3",
+  "description": "Temperature range — monthly low and high",
+  "registryDependencies": [
+    "@cnippet/range-area-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-range-area-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RangeAreaChart } from \"@/registry/default/charts/range-area-chart\";\n\nconst data = [\n  { high: 3, low: -3, month: \"Jan\" },\n  { high: 5, low: -2, month: \"Feb\" },\n  { high: 9, low: 1, month: \"Mar\" },\n  { high: 15, low: 4, month: \"Apr\" },\n  { high: 20, low: 9, month: \"May\" },\n  { high: 23, low: 12, month: \"Jun\" },\n  { high: 25, low: 14, month: \"Jul\" },\n  { high: 25, low: 14, month: \"Aug\" },\n  { high: 20, low: 10, month: \"Sep\" },\n  { high: 14, low: 6, month: \"Oct\" },\n  { high: 8, low: 2, month: \"Nov\" },\n  { high: 4, low: -1, month: \"Dec\" },\n];\n\nexport default function TemperatureRange() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Average daily low and high by month, Berlin\"\n      title=\"Temperature range\"\n    >\n      <RangeAreaChart\n        className=\"h-48\"\n        color=\"var(--chart-4)\"\n        curve=\"linear\"\n        data={data}\n        index=\"month\"\n        label=\"Low – high\"\n        maxKey=\"high\"\n        minKey=\"low\"\n        valueFormatter={(v) => `${v}°C`}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "range area chart"
+  ],
+  "type": "registry:block"
+}

@@ -160,6 +160,61 @@ export function sumBy<T extends Record<string, unknown>>(
   return total;
 }
 
+/**
+ * Y-axis `domain` and round `ticks` that fit [min, max], for charts that
+ * shouldn't start at zero. Spread onto the axis: `<YAxis {...getYAxisDomain(181, 206)} />`
+ * → domain [180, 210], ticks [180, 190, 200, 210].
+ */
+export function getYAxisDomain(
+  min: number,
+  max: number,
+  tickCount = 5,
+): { domain: [number, number]; ticks: number[] } {
+  if (!Number.isFinite(min) || !Number.isFinite(max)) {
+    return { domain: [0, 1], ticks: [0, 1] };
+  }
+  const span = max - min || Math.abs(max) || 1;
+  const raw = span / Math.max(tickCount - 1, 1);
+  const magnitude = 10 ** Math.floor(Math.log10(raw));
+  const step =
+    [1, 2, 2.5, 5, 10].map((m) => m * magnitude).find((s) => s >= raw) ??
+    10 * magnitude;
+  const lo = Math.floor(min / step) * step;
+  const hi = Math.max(Math.ceil(max / step) * step, lo + step);
+  const ticks: number[] = [];
+  // Rounding keeps float steps (0.1 + 0.2) from drifting off the grid.
+  for (let t = lo; t <= hi + step / 2; t += step) {
+    ticks.push(Number(t.toPrecision(12)));
+  }
+  return { domain: [lo, hi], ticks };
+}
+
+/**
+ * Splits values into `bins` equal-width buckets from min to max:
+ * [{ start, end, count }]. The last bucket includes max. Non-finite values are skipped.
+ */
+export function binValues(
+  values: number[],
+  bins = 10,
+): { start: number; end: number; count: number }[] {
+  const nums = values.filter(Number.isFinite);
+  if (nums.length === 0) return [];
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
+  const count = max === min ? 1 : Math.max(1, Math.floor(bins));
+  const width = (max - min) / count || 1;
+  const result = Array.from({ length: count }, (_, i) => ({
+    count: 0,
+    end: i === count - 1 ? Math.max(max, min + width) : min + (i + 1) * width,
+    start: min + i * width,
+  }));
+  for (const v of nums) {
+    const bin = result[Math.min(Math.floor((v - min) / width), count - 1)];
+    if (bin) bin.count++;
+  }
+  return result;
+}
+
 /** "desktop" → "Desktop", "newSignups" → "New Signups", "api_calls" → "Api Calls" */
 function titleCase(key: string): string {
   return key

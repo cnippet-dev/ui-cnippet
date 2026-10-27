@@ -1,0 +1,111 @@
+---
+title: Candlestick Chart
+description: Open, high, low and close candles for prices over time, with optional volume bars.
+---
+
+<ComponentPreview name="c-candlestick-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/candlestick-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="candlestick-chart" title="components/charts/candlestick-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CandlestickChart } from "@/components/charts/candlestick-chart";
+```
+
+```tsx
+<CandlestickChart
+  data={data} // [{ date, open, high, low, close }]
+  index="date"
+  valueFormatter={formatCurrency}
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- Fields default to `open`, `high`, `low` and `close`. Pass the `open` / `high` / `low` / `close` props if your data uses other names.
+- A candle is `upColor` (`var(--success)`) when it closes at or above its open, otherwise `downColor` (`var(--destructive)`). The tooltip lists all four prices, so colour isn't the only signal.
+- `volume` adds muted bars along the bottom quarter of the plot on their own hidden scale.
+- The y-axis is fitted to the lowest low and highest high with round ticks, not started at zero.
+- Add indicators as children: a moving average is a plain `<Line dataKey="ma7" />` on the price axis.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per period |
+| `index` | `keyof T` | — | Date / period field |
+| `open` / `high` / `low` / `close` | `keyof T` | `"open"` … | Price fields |
+| `volume` | `keyof T` | — | Adds volume bars |
+| `upColor` | `string` | `"var(--success)"` | Rising candle colour |
+| `downColor` | `string` | `"var(--destructive)"` | Falling candle colour |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats prices |
+| `volumeFormatter` | `(value: number) => string` | `formatCompact` | Formats volume in the tooltip |
+| `indexFormatter` | `(value: string) => string` | — | Formats x values |
+| `showXAxis` / `showYAxis` / `showGrid` / `showTooltip` | `boolean` | `true` | Toggle chart parts |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing, e.g. `"h-64"` |
+| `aria-label` | `string` | — | Accessible name |
+| `children` | `ReactNode` | — | Extra Recharts elements, e.g. a `<Line>` |
+| `syncId` | `string` | — | Share a cursor with other charts |
+
+## Examples
+
+### Daily candles
+
+A month of daily candles in a [Chart Card](/charts/foundation/chart-card).
+
+<ComponentPreview name="c-candlestick-chart-1" />
+
+### With volume
+
+Hourly candles with traded volume along the bottom.
+
+<ComponentPreview name="c-candlestick-chart-2" />
+
+### Moving average
+
+A 7-day average passed as a child `<Line>`.
+
+<ComponentPreview name="c-candlestick-chart-3" />

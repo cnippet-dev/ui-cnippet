@@ -264,3 +264,39 @@ export function ChartTooltipComparison({
     </Shell>
   );
 }
+
+/**
+ * A heading and fixed label/value rows, for charts whose tooltip shows one
+ * point's fields (candlestick, box plot, waterfall, treemap…). Render it from
+ * `<ChartTooltip content={({ active, payload }) => …} />`.
+ */
+export function ChartTooltipRows({
+  title,
+  color,
+  rows,
+  className,
+}: {
+  title: React.ReactNode;
+  /** Swatch shown next to the title. */
+  color?: string;
+  rows: [label: React.ReactNode, value: string][];
+  className?: string;
+}) {
+  return (
+    <Shell className={className} hideLabel>
+      <div className="flex items-center gap-2 font-medium">
+        {color ? (
+          <span
+            aria-hidden="true"
+            className="size-2.5 shrink-0 rounded-xs"
+            style={{ backgroundColor: color }}
+          />
+        ) : null}
+        {title}
+      </div>
+      {rows.map(([label, value], i) => (
+        <RowView formatted={value} key={i} row={{ label }} />
+      ))}
+    </Shell>
+  );
+}

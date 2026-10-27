@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-treemap-3",
+  "description": "Disk usage — click a cell to select it",
+  "registryDependencies": [
+    "@cnippet/treemap",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-treemap-3.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Treemap } from \"@/registry/default/charts/treemap\";\n\nconst gb = (value: number) => `${value} GB`;\n\nconst data = [\n  {\n    children: [\n      { name: \"Raw footage\", value: 182 },\n      { name: \"Exports\", value: 64 },\n    ],\n    name: \"Video\",\n  },\n  {\n    children: [\n      { name: \"RAW\", value: 88 },\n      { name: \"JPEG\", value: 31 },\n    ],\n    name: \"Photos\",\n  },\n  {\n    children: [\n      { name: \"node_modules\", value: 42 },\n      { name: \"Docker\", value: 58 },\n    ],\n    name: \"Dev\",\n  },\n  { children: [{ name: \"Mail & docs\", value: 19 }], name: \"Documents\" },\n];\n\nexport default function DiskUsage() {\n  const [selected, setSelected] = useState(\"Click a folder\");\n\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Disk usage by folder on a 512 GB drive\"\n      footer={selected}\n      title=\"Disk usage\"\n      value=\"484 GB used\"\n    >\n      <Treemap\n        className=\"h-48\"\n        data={data}\n        onValueClick={(item) =>\n          setSelected(`${item.group} / ${item.name}: ${gb(item.value)}`)\n        }\n        valueFormatter={gb}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "treemap"
+  ],
+  "type": "registry:block"
+}

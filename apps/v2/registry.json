@@ -25907,6 +25907,258 @@
     },
     {
       "categories": [
+        "histogram"
+      ],
+      "description": "Distribution of raw values in equal-width buckets, drawn as touching bars",
+      "files": [
+        {
+          "path": "registry/default/charts/histogram.tsx",
+          "target": "components/charts/histogram.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "histogram",
+      "registryDependencies": [
+        "@cnippet/bar-chart",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "waterfall chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Running total built from increases, decreases and subtotal bars",
+      "files": [
+        {
+          "path": "registry/default/charts/waterfall-chart.tsx",
+          "target": "components/charts/waterfall-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "waterfall-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "range area chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Shaded band between a low and high value, with an optional line inside",
+      "files": [
+        {
+          "path": "registry/default/charts/range-area-chart.tsx",
+          "target": "components/charts/range-area-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "range-area-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "candlestick chart"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Open, high, low and close candles with optional volume bars",
+      "files": [
+        {
+          "path": "registry/default/charts/candlestick-chart.tsx",
+          "target": "components/charts/candlestick-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "candlestick-chart",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "box plot"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Quartiles and range per group, from raw values or precomputed stats",
+      "files": [
+        {
+          "path": "registry/default/charts/box-plot.tsx",
+          "target": "components/charts/box-plot.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "box-plot",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "funnel chart"
+      ],
+      "description": "Steps of a process with the share reaching each step and the drop-off between them",
+      "files": [
+        {
+          "path": "registry/default/charts/funnel-chart.tsx",
+          "target": "components/charts/funnel-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "funnel-chart",
+      "registryDependencies": [
+        "@cnippet/chart-utils",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "treemap"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Nested rectangles sized by value, coloured by top-level group",
+      "files": [
+        {
+          "path": "registry/default/charts/treemap.tsx",
+          "target": "components/charts/treemap.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "treemap",
+      "registryDependencies": [
+        "@cnippet/use-media-query",
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "sankey"
+      ],
+      "dependencies": [
+        "recharts"
+      ],
+      "description": "Flows between named stages, with link widths proportional to value",
+      "files": [
+        {
+          "path": "registry/default/charts/sankey.tsx",
+          "target": "components/charts/sankey.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "sankey",
+      "registryDependencies": [
+        "@cnippet/chart",
+        "@cnippet/chart-utils",
+        "@cnippet/chart-tooltip-presets",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "heatmap"
+      ],
+      "description": "Grid of cells shaded by value, with keyboard navigation and a tooltip per cell",
+      "files": [
+        {
+          "path": "registry/default/charts/heatmap.tsx",
+          "target": "components/charts/heatmap.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "heatmap",
+      "registryDependencies": [
+        "@cnippet/chart-utils",
+        "@cnippet/chart-skeleton",
+        "@cnippet/chart-empty",
+        "@cnippet/tooltip"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "calendar heatmap"
+      ],
+      "description": "Days laid out in week columns and shaded by value, like a contribution graph",
+      "files": [
+        {
+          "path": "registry/default/charts/calendar-heatmap.tsx",
+          "target": "components/charts/calendar-heatmap.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "calendar-heatmap",
+      "registryDependencies": [
+        "@cnippet/heatmap",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
+        "cohort retention"
+      ],
+      "description": "Triangle table of retention by cohort and period, with shaded % cells",
+      "files": [
+        {
+          "path": "registry/default/charts/cohort-retention.tsx",
+          "target": "components/charts/cohort-retention.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "cohort-retention",
+      "registryDependencies": [
+        "@cnippet/heatmap",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "categories": [
         "chart card"
       ],
       "description": "Revenue card — headline value, growth badge and area trend",
@@ -28109,6 +28361,715 @@
       "name": "c-annotated-chart-3",
       "registryDependencies": [
         "@cnippet/annotated-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "histogram"
+      ],
+      "description": "Response times — right-skewed latency distribution",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-histogram-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-histogram-1",
+      "registryDependencies": [
+        "@cnippet/histogram",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "histogram"
+      ],
+      "description": "Order values — two clusters of basket sizes",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-histogram-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-histogram-2",
+      "registryDependencies": [
+        "@cnippet/histogram",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "histogram"
+      ],
+      "description": "Test scores — 20 narrow bands without a grid",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-histogram-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-histogram-3",
+      "registryDependencies": [
+        "@cnippet/histogram",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "waterfall chart"
+      ],
+      "description": "MRR movement — new, expansion, contraction and churn",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-waterfall-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-waterfall-chart-1",
+      "registryDependencies": [
+        "@cnippet/waterfall-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "waterfall chart"
+      ],
+      "description": "P&L bridge — revenue to net profit with subtotals",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-waterfall-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-waterfall-chart-2",
+      "registryDependencies": [
+        "@cnippet/waterfall-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "waterfall chart"
+      ],
+      "description": "Headcount change — hires and departures by team",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-waterfall-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-waterfall-chart-3",
+      "registryDependencies": [
+        "@cnippet/waterfall-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "range area chart"
+      ],
+      "description": "Latency band — p5–p99 with the median line",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-range-area-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-range-area-chart-1",
+      "registryDependencies": [
+        "@cnippet/range-area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "range area chart"
+      ],
+      "description": "Revenue forecast — actuals then a widening forecast band",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-range-area-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-range-area-chart-2",
+      "registryDependencies": [
+        "@cnippet/range-area-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "range area chart"
+      ],
+      "description": "Temperature range — monthly low and high",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-range-area-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-range-area-chart-3",
+      "registryDependencies": [
+        "@cnippet/range-area-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "candlestick chart"
+      ],
+      "description": "Stock price — daily candles for a month",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-candlestick-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-candlestick-chart-1",
+      "registryDependencies": [
+        "@cnippet/candlestick-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "candlestick chart"
+      ],
+      "description": "Crypto — hourly candles with volume bars",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-candlestick-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-candlestick-chart-2",
+      "registryDependencies": [
+        "@cnippet/candlestick-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "candlestick chart"
+      ],
+      "description": "Moving average — candles with a 7-day average line",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-candlestick-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-candlestick-chart-3",
+      "registryDependencies": [
+        "@cnippet/candlestick-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "box plot"
+      ],
+      "description": "Salary by role — precomputed quartiles",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-box-plot-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-box-plot-1",
+      "registryDependencies": [
+        "@cnippet/box-plot",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "box plot"
+      ],
+      "description": "Latency by region — quartiles computed from raw samples",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-box-plot-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-box-plot-2",
+      "registryDependencies": [
+        "@cnippet/box-plot",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "box plot"
+      ],
+      "description": "CI run time — per runner against a time budget",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-box-plot-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-box-plot-3",
+      "registryDependencies": [
+        "@cnippet/box-plot",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "funnel chart"
+      ],
+      "description": "Signup funnel — share reaching each step with drop-off",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-funnel-chart-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-funnel-chart-1",
+      "registryDependencies": [
+        "@cnippet/funnel-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "funnel chart"
+      ],
+      "description": "Checkout — left-aligned bars",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-funnel-chart-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-funnel-chart-2",
+      "registryDependencies": [
+        "@cnippet/funnel-chart",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "funnel chart"
+      ],
+      "description": "Sales pipeline — currency values without drop-off",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-funnel-chart-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-funnel-chart-3",
+      "registryDependencies": [
+        "@cnippet/funnel-chart",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "treemap"
+      ],
+      "description": "Revenue mix — two levels: business line and product",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-treemap-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-treemap-1",
+      "registryDependencies": [
+        "@cnippet/treemap",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "treemap"
+      ],
+      "description": "Bundle size — flat list of packages",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-treemap-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-treemap-2",
+      "registryDependencies": [
+        "@cnippet/treemap",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "treemap"
+      ],
+      "description": "Disk usage — click a cell to select it",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-treemap-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-treemap-3",
+      "registryDependencies": [
+        "@cnippet/treemap",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sankey"
+      ],
+      "description": "Traffic flow — source to landing page to outcome",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sankey-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sankey-1",
+      "registryDependencies": [
+        "@cnippet/sankey",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sankey"
+      ],
+      "description": "Budget allocation — department then spend type",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sankey-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sankey-2",
+      "registryDependencies": [
+        "@cnippet/sankey",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "sankey"
+      ],
+      "description": "Energy flow — source to use, with losses",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-sankey-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-sankey-3",
+      "registryDependencies": [
+        "@cnippet/sankey",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "heatmap"
+      ],
+      "description": "Activity — sessions by weekday and hour",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-heatmap-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-heatmap-1",
+      "registryDependencies": [
+        "@cnippet/heatmap",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "heatmap"
+      ],
+      "description": "Feature usage by plan — values printed in cells",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-heatmap-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-heatmap-2",
+      "registryDependencies": [
+        "@cnippet/heatmap",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "heatmap"
+      ],
+      "description": "Error rate — services by day with an incident",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-heatmap-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-heatmap-3",
+      "registryDependencies": [
+        "@cnippet/heatmap",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar heatmap"
+      ],
+      "description": "Contributions — a year of daily activity",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-calendar-heatmap-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-calendar-heatmap-1",
+      "registryDependencies": [
+        "@cnippet/calendar-heatmap",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar heatmap"
+      ],
+      "description": "Habit streak — three months, weeks start Monday",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-calendar-heatmap-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-calendar-heatmap-2",
+      "registryDependencies": [
+        "@cnippet/calendar-heatmap",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "calendar heatmap"
+      ],
+      "description": "Daily sales — six months of revenue",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-calendar-heatmap-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-calendar-heatmap-3",
+      "registryDependencies": [
+        "@cnippet/calendar-heatmap",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "cohort retention"
+      ],
+      "description": "Weekly retention — signup cohorts by week",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-cohort-retention-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-cohort-retention-1",
+      "registryDependencies": [
+        "@cnippet/cohort-retention",
+        "@cnippet/chart-card"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "cohort retention"
+      ],
+      "description": "Net revenue retention — monthly cohorts above 100%",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-cohort-retention-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-cohort-retention-2",
+      "registryDependencies": [
+        "@cnippet/cohort-retention",
+        "@cnippet/chart-card",
+        "@cnippet/chart-utils"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "categories": [
+        "cohort retention"
+      ],
+      "description": "Feature adoption — share using a feature by month",
+      "files": [
+        {
+          "path": "registry/default/chart-variants/c-cohort-retention-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "className": ""
+      },
+      "name": "c-cohort-retention-3",
+      "registryDependencies": [
+        "@cnippet/cohort-retention",
         "@cnippet/chart-card"
       ],
       "type": "registry:block"

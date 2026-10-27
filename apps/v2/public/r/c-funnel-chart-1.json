@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-funnel-chart-1",
+  "description": "Signup funnel — share reaching each step with drop-off",
+  "registryDependencies": [
+    "@cnippet/funnel-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-funnel-chart-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { FunnelChart } from \"@/registry/default/charts/funnel-chart\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { step: \"Visited signup\", users: 18420 },\n  { step: \"Started form\", users: 9860 },\n  { step: \"Verified email\", users: 6215 },\n  { step: \"Created workspace\", users: 4890 },\n  { step: \"Invited a teammate\", users: 2130 },\n];\n\nexport default function SignupFunnel() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"New visitors in October, from landing to first invite\"\n      title=\"Signup funnel\"\n      value={formatPercent(2130 / 18420)}\n    >\n      <FunnelChart category=\"users\" data={data} index=\"step\" />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "funnel chart"
+  ],
+  "type": "registry:block"
+}

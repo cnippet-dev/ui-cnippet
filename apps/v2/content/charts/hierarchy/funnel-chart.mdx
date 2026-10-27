@@ -1,0 +1,92 @@
+---
+title: Funnel Chart
+description: Steps of a process with how many reach each step, the share of the first step and the drop-off in between.
+---
+
+<ComponentPreview name="c-funnel-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/funnel-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install [Chart Utils](/charts/foundation/chart-utils) and [Chart Empty](/charts/foundation/chart-empty).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="funnel-chart" title="components/charts/funnel-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { FunnelChart } from "@/components/charts/funnel-chart";
+```
+
+```tsx
+<FunnelChart data={data} index="step" category="users" />
+```
+
+## Good to know
+
+- Each bar's width is its value as a share of the **first** step. The percentage next to the value is the same share; the "↓" figure next to a step's name is the share lost since the **previous** step.
+- It's built from HTML and CSS, not SVG, so labels wrap and the layout works at any width, including phones. There's no separate mobile layout to configure.
+- Steps are an ordered list, and every number is plain text, so screen readers read the funnel without extra work.
+- `align="start"` left-aligns the bars, which makes small differences between later steps easier to compare.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per step, in order |
+| `index` | `keyof T` | — | Step name |
+| `category` | `keyof T` | — | Number reaching the step |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `color` | `string` | `"var(--chart-1)"` | Bar colour |
+| `showDropOff` | `boolean` | `true` | Show the % lost between steps |
+| `align` | `"center" \| "start"` | `"center"` | Funnel shape or left-aligned bars |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Extra classes for the list |
+| `aria-label` | `string` | — | Accessible name |
+
+## Examples
+
+### Signup funnel
+
+Five steps from landing to inviting a teammate.
+
+<ComponentPreview name="c-funnel-chart-1" />
+
+### Left-aligned
+
+`align="start"` for an easier step-to-step comparison.
+
+<ComponentPreview name="c-funnel-chart-2" />
+
+### Pipeline value
+
+Currency values with the drop-off lines turned off.
+
+<ComponentPreview name="c-funnel-chart-3" />

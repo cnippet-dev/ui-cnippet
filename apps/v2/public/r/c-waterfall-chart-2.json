@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-waterfall-chart-2",
+  "description": "P&L bridge — revenue to net profit with subtotals",
+  "registryDependencies": [
+    "@cnippet/waterfall-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-waterfall-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { WaterfallChart } from \"@/registry/default/charts/waterfall-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { amount: 2400000, line: \"Revenue\" },\n  { amount: -960000, line: \"COGS\" },\n  { amount: null, line: \"Gross profit\" },\n  { amount: -540000, line: \"Payroll\" },\n  { amount: -210000, line: \"Marketing\" },\n  { amount: -120000, line: \"Tooling\" },\n  { amount: null, line: \"Operating profit\" },\n  { amount: -142000, line: \"Tax\" },\n  { amount: null, line: \"Net profit\" },\n];\n\nexport default function ProfitBridge() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"FY2026 profit and loss, from revenue to net profit\"\n      title=\"P&L bridge\"\n    >\n      <WaterfallChart\n        category=\"amount\"\n        className=\"h-52\"\n        config={{ total: { label: \"Subtotal\" } }}\n        data={data}\n        index=\"line\"\n        indexFormatter={(v) => v.replace(\" profit\", \"\")}\n        totals={[\"Revenue\", \"Gross profit\", \"Operating profit\", \"Net profit\"]}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "waterfall chart"
+  ],
+  "type": "registry:block"
+}

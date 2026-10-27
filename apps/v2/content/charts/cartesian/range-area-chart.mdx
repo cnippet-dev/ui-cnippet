@@ -1,0 +1,117 @@
+---
+title: Range Area Chart
+description: A shaded band between a low and a high value, with an optional line inside it, for percentile bands and forecast intervals.
+---
+
+<ComponentPreview name="c-range-area-chart-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/range-area-chart
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="range-area-chart" title="components/charts/range-area-chart.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { RangeAreaChart } from "@/components/charts/range-area-chart";
+```
+
+```tsx
+<RangeAreaChart
+  data={data}
+  index="hour"
+  minKey="p5"
+  maxKey="p99"
+  midKey="p50"
+  label="p5–p99"
+  midLabel="Median"
+  className="h-64"
+/>
+```
+
+## Good to know
+
+- `minKey` and `maxKey` are the edges of the band. A row where either is `null` leaves a gap in the band.
+- `midKey` draws a line in the same colour, e.g. a median or the actuals before a forecast. The legend is on by default when there's a mid line.
+- For a forecast, put `null` in the band fields for past rows and in the mid field for future rows. Repeat the last actual as the band's low and high so the band starts where the line ends.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `T[]` | — | One row per x value |
+| `index` | `keyof T` | — | X-axis field |
+| `minKey` | `keyof T` | — | Lower edge of the band |
+| `maxKey` | `keyof T` | — | Upper edge of the band |
+| `midKey` | `keyof T` | — | Optional line inside the band |
+| `label` | `string` | `"Range"` | Band name in the tooltip and legend |
+| `midLabel` | `string` | `midKey` | Line name |
+| `color` | `string` | `"var(--chart-1)"` | Band and line colour |
+| `curve` | `"linear" \| "monotone" \| "step"` | `"monotone"` | Line interpolation |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats the y-axis and tooltip |
+| `indexFormatter` | `(value: string) => string` | — | Formats x values |
+| `showXAxis` / `showYAxis` / `showGrid` / `showTooltip` | `boolean` | `true` | Toggle chart parts |
+| `showLegend` | `boolean` | `true` with `midKey` | Show the legend |
+| `legendPosition` | `"top" \| "bottom"` | `"bottom"` | Legend position |
+| `yAxisWidth` | `number` | `48` | Width of the y-axis in px |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when `data` is empty |
+| `className` | `string` | — | Sizing, e.g. `"h-64"` |
+| `aria-label` | `string` | — | Accessible name |
+| `children` | `ReactNode` | — | Extra Recharts elements |
+| `syncId` | `string` | — | Share a cursor with other charts |
+
+## Examples
+
+### Latency band
+
+The p5–p99 band with the median as a line.
+
+<ComponentPreview name="c-range-area-chart-1" />
+
+### Forecast interval
+
+Actuals as the line, then a forecast band that widens with distance.
+
+<ComponentPreview name="c-range-area-chart-2" />
+
+### Low and high
+
+Just the band, with straight segments.
+
+<ComponentPreview name="c-range-area-chart-3" />

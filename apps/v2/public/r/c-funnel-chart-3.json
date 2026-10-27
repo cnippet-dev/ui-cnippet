@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-funnel-chart-3",
+  "description": "Sales pipeline — currency values without drop-off",
+  "registryDependencies": [
+    "@cnippet/funnel-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-funnel-chart-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { FunnelChart } from \"@/registry/default/charts/funnel-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\nconst data = [\n  { stage: \"Leads\", value: 4200000 },\n  { stage: \"Qualified\", value: 2650000 },\n  { stage: \"Proposal\", value: 1480000 },\n  { stage: \"Negotiation\", value: 910000 },\n  { stage: \"Closed won\", value: 620000 },\n];\n\nexport default function SalesPipeline() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Open pipeline value by stage, Q4\"\n      title=\"Sales pipeline\"\n      value={formatCurrency(4200000)}\n    >\n      <FunnelChart\n        category=\"value\"\n        color=\"var(--chart-3)\"\n        data={data}\n        index=\"stage\"\n        showDropOff={false}\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "funnel chart"
+  ],
+  "type": "registry:block"
+}

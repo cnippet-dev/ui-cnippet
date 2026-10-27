@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-cohort-retention-1",
+  "description": "Weekly retention — signup cohorts by week",
+  "registryDependencies": [
+    "@cnippet/cohort-retention",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-cohort-retention-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { CohortRetention } from \"@/registry/default/charts/cohort-retention\";\n\nconst cohorts = [\"Sep 1\", \"Sep 8\", \"Sep 15\", \"Sep 22\", \"Sep 29\", \"Oct 6\"];\nconst sizes = [1204, 1131, 1342, 1288, 1410, 1376];\n\n// Deterministic weekly retention: steep drop in week 1, then a slow decline.\n// Newer cohorts haven't reached the later weeks yet.\nconst data = cohorts.map((cohort, c) => ({\n  cohort,\n  size: sizes[c] ?? 0,\n  values: Array.from({ length: cohorts.length - c }, (_, w) =>\n    w === 0 ? 1 : +(0.58 * 0.88 ** (w - 1) + c * 0.012).toFixed(3),\n  ),\n}));\n\nexport default function WeeklyRetention() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Share of each weekly signup cohort still active, by week since signup\"\n      title=\"Weekly retention\"\n    >\n      <CohortRetention data={data} periodLabel={(w) => `W${w}`} />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "cohort retention"
+  ],
+  "type": "registry:block"
+}

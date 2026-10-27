@@ -314,4 +314,99 @@ export const charts: ChartItem[] = [
     name: "annotated-chart",
     registryDependencies: ["area-chart", "line-chart", "chart-utils"],
   }),
+  // Advanced cartesian
+  createChart({
+    categories: ["histogram"],
+    dependencies: [],
+    description:
+      "Distribution of raw values in equal-width buckets, drawn as touching bars",
+    name: "histogram",
+    registryDependencies: ["bar-chart", "chart-utils"],
+  }),
+  createChart({
+    categories: ["waterfall chart"],
+    description:
+      "Running total built from increases, decreases and subtotal bars",
+    name: "waterfall-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["range area chart"],
+    description:
+      "Shaded band between a low and high value, with an optional line inside",
+    name: "range-area-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["candlestick chart"],
+    description: "Open, high, low and close candles with optional volume bars",
+    name: "candlestick-chart",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["box plot"],
+    description:
+      "Quartiles and range per group, from raw values or precomputed stats",
+    name: "box-plot",
+    registryDependencies: dataChartDeps,
+  }),
+  // Hierarchy & flow
+  createChart({
+    categories: ["funnel chart"],
+    dependencies: [],
+    description:
+      "Steps of a process with the share reaching each step and the drop-off between them",
+    name: "funnel-chart",
+    registryDependencies: ["chart-utils", "chart-empty"],
+  }),
+  createChart({
+    categories: ["treemap"],
+    description:
+      "Nested rectangles sized by value, coloured by top-level group",
+    name: "treemap",
+    registryDependencies: dataChartDeps,
+  }),
+  createChart({
+    categories: ["sankey"],
+    description:
+      "Flows between named stages, with link widths proportional to value",
+    name: "sankey",
+    registryDependencies: [
+      "chart",
+      "chart-utils",
+      "chart-tooltip-presets",
+      "chart-skeleton",
+      "chart-empty",
+    ],
+  }),
+  // Matrix
+  createChart({
+    categories: ["heatmap"],
+    dependencies: [],
+    description:
+      "Grid of cells shaded by value, with keyboard navigation and a tooltip per cell",
+    name: "heatmap",
+    registryDependencies: [
+      "chart-utils",
+      "chart-skeleton",
+      "chart-empty",
+      "tooltip",
+    ],
+  }),
+  createChart({
+    categories: ["calendar heatmap"],
+    dependencies: [],
+    description:
+      "Days laid out in week columns and shaded by value, like a contribution graph",
+    name: "calendar-heatmap",
+    registryDependencies: ["heatmap", "chart-utils"],
+  }),
+  createChart({
+    categories: ["cohort retention"],
+    dependencies: [],
+    description:
+      "Triangle table of retention by cohort and period, with shaded % cells",
+    name: "cohort-retention",
+    registryDependencies: ["heatmap", "chart-utils"],
+  }),
 ];

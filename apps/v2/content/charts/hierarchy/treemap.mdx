@@ -1,0 +1,110 @@
+---
+title: Treemap
+description: Nested rectangles sized by value, for showing how a total breaks down into parts and sub-parts.
+---
+
+<ComponentPreview name="c-treemap-1" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList defaultValue="cli">
+  <TabsTab value="cli">CLI</TabsTab>
+  <TabsTab value="manual">Manual</TabsTab>
+</TabsList>
+<TabsPanel value="cli">
+
+```bash
+npx shadcn@latest add @cnippet/treemap
+```
+
+</TabsPanel>
+
+<TabsPanel value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install recharts
+```
+
+<Step>Install [Chart](/charts/foundation/chart), [Chart Utils](/charts/foundation/chart-utils), [Chart Tooltip Presets](/charts/foundation/chart-tooltip-presets), [Chart Skeleton](/charts/foundation/chart-skeleton), [Chart Empty](/charts/foundation/chart-empty) and the `use-media-query` hook (`npx shadcn@latest add @cnippet/use-media-query`).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="treemap" title="components/charts/treemap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsPanel>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Treemap } from "@/components/charts/treemap";
+```
+
+```tsx
+const data = [
+  {
+    name: "Subscriptions",
+    children: [
+      { name: "Pro", value: 412000 },
+      { name: "Team", value: 198000 },
+    ],
+  },
+  { name: "Services", children: [{ name: "Onboarding", value: 96000 }] },
+];
+
+<Treemap data={data} valueFormatter={formatCurrency} className="h-72" />
+```
+
+## Good to know
+
+- Pass a flat list of `{ name, value }` for one level, or give top-level items `children` for two levels. A parent's size is the sum of its children.
+- Colours come from the **top-level** items: every product inside "Subscriptions" shares its colour. Override them with `config`, keyed by the top-level name.
+- Cells use a tint of the colour so the label text stays readable in light and dark mode. Labels show when a cell is at least 56 × 36 px; smaller cells show their name and value in the tooltip.
+- The tooltip shows the value, its group and its share of the grand total.
+- Treemaps can't be navigated with the keyboard, so the component renders a visually hidden list of every item and value for screen readers.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `TreemapItem[]` | — | `{ name, value?, children? }` items |
+| `config` | `ChartConfig` | — | Colours/labels per top-level name |
+| `valueFormatter` | `(value: number) => string` | `formatCompact` | Formats values |
+| `showTooltip` | `boolean` | `true` | Show the tooltip |
+| `showLegend` | `boolean` | `true` when nested | Show the top-level legend |
+| `onValueClick` | `(item: { name, value, group }) => void` | — | Called when a cell is clicked |
+| `loading` | `boolean` | `false` | Show a skeleton |
+| `emptyState` | `ReactNode` | `<ChartEmpty />` | Shown when the total is zero |
+| `className` | `string` | — | Sizing, e.g. `"h-72"` |
+| `aria-label` | `string` | `"Treemap"` | Accessible name |
+
+## Examples
+
+### Two levels
+
+Revenue by business line, then by product.
+
+<ComponentPreview name="c-treemap-1" />
+
+### Flat
+
+One level: bundle size by package.
+
+<ComponentPreview name="c-treemap-2" />
+
+### Click to select
+
+`onValueClick` shows the clicked folder in the card footer.
+
+<ComponentPreview name="c-treemap-3" />

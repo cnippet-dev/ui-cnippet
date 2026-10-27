@@ -23191,6 +23191,204 @@ export const Index: Record<string, any> = {
     categories: ["annotated chart"],
     meta: undefined,
   },
+  "histogram": {
+    name: "histogram",
+    description: "Distribution of raw values in equal-width buckets, drawn as touching bars",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/bar-chart","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/charts/histogram.tsx",
+      type: "registry:ui",
+      target: "components/charts/histogram.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/histogram.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["histogram"],
+    meta: undefined,
+  },
+  "waterfall-chart": {
+    name: "waterfall-chart",
+    description: "Running total built from increases, decreases and subtotal bars",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/use-media-query","@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/waterfall-chart.tsx",
+      type: "registry:ui",
+      target: "components/charts/waterfall-chart.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/waterfall-chart.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["waterfall chart"],
+    meta: undefined,
+  },
+  "range-area-chart": {
+    name: "range-area-chart",
+    description: "Shaded band between a low and high value, with an optional line inside",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/use-media-query","@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/range-area-chart.tsx",
+      type: "registry:ui",
+      target: "components/charts/range-area-chart.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/range-area-chart.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["range area chart"],
+    meta: undefined,
+  },
+  "candlestick-chart": {
+    name: "candlestick-chart",
+    description: "Open, high, low and close candles with optional volume bars",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/use-media-query","@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/candlestick-chart.tsx",
+      type: "registry:ui",
+      target: "components/charts/candlestick-chart.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/candlestick-chart.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["candlestick chart"],
+    meta: undefined,
+  },
+  "box-plot": {
+    name: "box-plot",
+    description: "Quartiles and range per group, from raw values or precomputed stats",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/use-media-query","@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/box-plot.tsx",
+      type: "registry:ui",
+      target: "components/charts/box-plot.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/box-plot.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["box plot"],
+    meta: undefined,
+  },
+  "funnel-chart": {
+    name: "funnel-chart",
+    description: "Steps of a process with the share reaching each step and the drop-off between them",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/chart-utils","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/funnel-chart.tsx",
+      type: "registry:ui",
+      target: "components/charts/funnel-chart.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/funnel-chart.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["funnel chart"],
+    meta: undefined,
+  },
+  "treemap": {
+    name: "treemap",
+    description: "Nested rectangles sized by value, coloured by top-level group",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/use-media-query","@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/treemap.tsx",
+      type: "registry:ui",
+      target: "components/charts/treemap.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/treemap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["treemap"],
+    meta: undefined,
+  },
+  "sankey": {
+    name: "sankey",
+    description: "Flows between named stages, with link widths proportional to value",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/chart","@cnippet/chart-utils","@cnippet/chart-tooltip-presets","@cnippet/chart-skeleton","@cnippet/chart-empty"],
+    files: [{
+      path: "registry/default/charts/sankey.tsx",
+      type: "registry:ui",
+      target: "components/charts/sankey.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/sankey.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["sankey"],
+    meta: undefined,
+  },
+  "heatmap": {
+    name: "heatmap",
+    description: "Grid of cells shaded by value, with keyboard navigation and a tooltip per cell",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/chart-utils","@cnippet/chart-skeleton","@cnippet/chart-empty","@cnippet/tooltip"],
+    files: [{
+      path: "registry/default/charts/heatmap.tsx",
+      type: "registry:ui",
+      target: "components/charts/heatmap.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/heatmap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["heatmap"],
+    meta: undefined,
+  },
+  "calendar-heatmap": {
+    name: "calendar-heatmap",
+    description: "Days laid out in week columns and shaded by value, like a contribution graph",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/heatmap","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/charts/calendar-heatmap.tsx",
+      type: "registry:ui",
+      target: "components/charts/calendar-heatmap.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/calendar-heatmap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar heatmap"],
+    meta: undefined,
+  },
+  "cohort-retention": {
+    name: "cohort-retention",
+    description: "Triangle table of retention by cohort and period, with shaded % cells",
+    type: "registry:ui",
+    registryDependencies: ["@cnippet/heatmap","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/charts/cohort-retention.tsx",
+      type: "registry:ui",
+      target: "components/charts/cohort-retention.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/charts/cohort-retention.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["cohort retention"],
+    meta: undefined,
+  },
   "c-chart-card-1": {
     name: "c-chart-card-1",
     description: "Revenue card — headline value, growth badge and area trend",
@@ -25043,6 +25241,600 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["annotated chart"],
+    meta: {"className":""},
+  },
+  "c-histogram-1": {
+    name: "c-histogram-1",
+    description: "Response times — right-skewed latency distribution",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/histogram","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-histogram-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-histogram-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["histogram"],
+    meta: {"className":""},
+  },
+  "c-histogram-2": {
+    name: "c-histogram-2",
+    description: "Order values — two clusters of basket sizes",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/histogram","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-histogram-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-histogram-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["histogram"],
+    meta: {"className":""},
+  },
+  "c-histogram-3": {
+    name: "c-histogram-3",
+    description: "Test scores — 20 narrow bands without a grid",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/histogram","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-histogram-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-histogram-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["histogram"],
+    meta: {"className":""},
+  },
+  "c-waterfall-chart-1": {
+    name: "c-waterfall-chart-1",
+    description: "MRR movement — new, expansion, contraction and churn",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/waterfall-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-waterfall-chart-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-waterfall-chart-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["waterfall chart"],
+    meta: {"className":""},
+  },
+  "c-waterfall-chart-2": {
+    name: "c-waterfall-chart-2",
+    description: "P&L bridge — revenue to net profit with subtotals",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/waterfall-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-waterfall-chart-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-waterfall-chart-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["waterfall chart"],
+    meta: {"className":""},
+  },
+  "c-waterfall-chart-3": {
+    name: "c-waterfall-chart-3",
+    description: "Headcount change — hires and departures by team",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/waterfall-chart","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-waterfall-chart-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-waterfall-chart-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["waterfall chart"],
+    meta: {"className":""},
+  },
+  "c-range-area-chart-1": {
+    name: "c-range-area-chart-1",
+    description: "Latency band — p5–p99 with the median line",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/range-area-chart","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-range-area-chart-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-range-area-chart-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["range area chart"],
+    meta: {"className":""},
+  },
+  "c-range-area-chart-2": {
+    name: "c-range-area-chart-2",
+    description: "Revenue forecast — actuals then a widening forecast band",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/range-area-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-range-area-chart-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-range-area-chart-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["range area chart"],
+    meta: {"className":""},
+  },
+  "c-range-area-chart-3": {
+    name: "c-range-area-chart-3",
+    description: "Temperature range — monthly low and high",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/range-area-chart","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-range-area-chart-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-range-area-chart-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["range area chart"],
+    meta: {"className":""},
+  },
+  "c-candlestick-chart-1": {
+    name: "c-candlestick-chart-1",
+    description: "Stock price — daily candles for a month",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/candlestick-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-candlestick-chart-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-candlestick-chart-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["candlestick chart"],
+    meta: {"className":""},
+  },
+  "c-candlestick-chart-2": {
+    name: "c-candlestick-chart-2",
+    description: "Crypto — hourly candles with volume bars",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/candlestick-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-candlestick-chart-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-candlestick-chart-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["candlestick chart"],
+    meta: {"className":""},
+  },
+  "c-candlestick-chart-3": {
+    name: "c-candlestick-chart-3",
+    description: "Moving average — candles with a 7-day average line",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/candlestick-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-candlestick-chart-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-candlestick-chart-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["candlestick chart"],
+    meta: {"className":""},
+  },
+  "c-box-plot-1": {
+    name: "c-box-plot-1",
+    description: "Salary by role — precomputed quartiles",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/box-plot","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-box-plot-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-box-plot-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["box plot"],
+    meta: {"className":""},
+  },
+  "c-box-plot-2": {
+    name: "c-box-plot-2",
+    description: "Latency by region — quartiles computed from raw samples",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/box-plot","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-box-plot-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-box-plot-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["box plot"],
+    meta: {"className":""},
+  },
+  "c-box-plot-3": {
+    name: "c-box-plot-3",
+    description: "CI run time — per runner against a time budget",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/box-plot","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-box-plot-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-box-plot-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["box plot"],
+    meta: {"className":""},
+  },
+  "c-funnel-chart-1": {
+    name: "c-funnel-chart-1",
+    description: "Signup funnel — share reaching each step with drop-off",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/funnel-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-funnel-chart-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-funnel-chart-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["funnel chart"],
+    meta: {"className":""},
+  },
+  "c-funnel-chart-2": {
+    name: "c-funnel-chart-2",
+    description: "Checkout — left-aligned bars",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/funnel-chart","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-funnel-chart-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-funnel-chart-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["funnel chart"],
+    meta: {"className":""},
+  },
+  "c-funnel-chart-3": {
+    name: "c-funnel-chart-3",
+    description: "Sales pipeline — currency values without drop-off",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/funnel-chart","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-funnel-chart-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-funnel-chart-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["funnel chart"],
+    meta: {"className":""},
+  },
+  "c-treemap-1": {
+    name: "c-treemap-1",
+    description: "Revenue mix — two levels: business line and product",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/treemap","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-treemap-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-treemap-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["treemap"],
+    meta: {"className":""},
+  },
+  "c-treemap-2": {
+    name: "c-treemap-2",
+    description: "Bundle size — flat list of packages",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/treemap","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-treemap-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-treemap-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["treemap"],
+    meta: {"className":""},
+  },
+  "c-treemap-3": {
+    name: "c-treemap-3",
+    description: "Disk usage — click a cell to select it",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/treemap","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-treemap-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-treemap-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["treemap"],
+    meta: {"className":""},
+  },
+  "c-sankey-1": {
+    name: "c-sankey-1",
+    description: "Traffic flow — source to landing page to outcome",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/sankey","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-sankey-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-sankey-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["sankey"],
+    meta: {"className":""},
+  },
+  "c-sankey-2": {
+    name: "c-sankey-2",
+    description: "Budget allocation — department then spend type",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/sankey","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-sankey-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-sankey-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["sankey"],
+    meta: {"className":""},
+  },
+  "c-sankey-3": {
+    name: "c-sankey-3",
+    description: "Energy flow — source to use, with losses",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/sankey","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-sankey-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-sankey-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["sankey"],
+    meta: {"className":""},
+  },
+  "c-heatmap-1": {
+    name: "c-heatmap-1",
+    description: "Activity — sessions by weekday and hour",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/heatmap","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-heatmap-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-heatmap-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["heatmap"],
+    meta: {"className":""},
+  },
+  "c-heatmap-2": {
+    name: "c-heatmap-2",
+    description: "Feature usage by plan — values printed in cells",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/heatmap","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-heatmap-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-heatmap-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["heatmap"],
+    meta: {"className":""},
+  },
+  "c-heatmap-3": {
+    name: "c-heatmap-3",
+    description: "Error rate — services by day with an incident",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/heatmap","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-heatmap-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-heatmap-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["heatmap"],
+    meta: {"className":""},
+  },
+  "c-calendar-heatmap-1": {
+    name: "c-calendar-heatmap-1",
+    description: "Contributions — a year of daily activity",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar-heatmap","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-calendar-heatmap-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-calendar-heatmap-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar heatmap"],
+    meta: {"className":""},
+  },
+  "c-calendar-heatmap-2": {
+    name: "c-calendar-heatmap-2",
+    description: "Habit streak — three months, weeks start Monday",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar-heatmap","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-calendar-heatmap-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-calendar-heatmap-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar heatmap"],
+    meta: {"className":""},
+  },
+  "c-calendar-heatmap-3": {
+    name: "c-calendar-heatmap-3",
+    description: "Daily sales — six months of revenue",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/calendar-heatmap","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-calendar-heatmap-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-calendar-heatmap-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["calendar heatmap"],
+    meta: {"className":""},
+  },
+  "c-cohort-retention-1": {
+    name: "c-cohort-retention-1",
+    description: "Weekly retention — signup cohorts by week",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/cohort-retention","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-cohort-retention-1.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-cohort-retention-1.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["cohort retention"],
+    meta: {"className":""},
+  },
+  "c-cohort-retention-2": {
+    name: "c-cohort-retention-2",
+    description: "Net revenue retention — monthly cohorts above 100%",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/cohort-retention","@cnippet/chart-card","@cnippet/chart-utils"],
+    files: [{
+      path: "registry/default/chart-variants/c-cohort-retention-2.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-cohort-retention-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["cohort retention"],
+    meta: {"className":""},
+  },
+  "c-cohort-retention-3": {
+    name: "c-cohort-retention-3",
+    description: "Feature adoption — share using a feature by month",
+    type: "registry:block",
+    registryDependencies: ["@cnippet/cohort-retention","@cnippet/chart-card"],
+    files: [{
+      path: "registry/default/chart-variants/c-cohort-retention-3.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/chart-variants/c-cohort-retention-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["cohort retention"],
     meta: {"className":""},
   },
   "fonts": {

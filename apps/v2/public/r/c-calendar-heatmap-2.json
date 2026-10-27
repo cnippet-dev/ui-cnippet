@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-calendar-heatmap-2",
+  "description": "Habit streak — three months, weeks start Monday",
+  "registryDependencies": [
+    "@cnippet/calendar-heatmap",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-calendar-heatmap-2.tsx",
+      "content": "\"use client\";\n\nimport { CalendarHeatmap } from \"@/registry/default/charts/calendar-heatmap\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\nconst START = Date.UTC(2026, 7, 1);\nconst DAYS = 92;\n\n// Deterministic habit log: 1 = done, 0 = missed. A streak builds up over time.\nconst data = Array.from({ length: DAYS }, (_, i) => ({\n  date: new Date(START + i * 86_400_000).toISOString().slice(0, 10),\n  value: i > 60 || (i * 7) % 5 !== 0 ? 1 : 0,\n}));\nconst done = data.filter((d) => d.value === 1).length;\n\nexport default function HabitStreak() {\n  return (\n    <ChartCard\n      className=\"max-w-sm\"\n      description=\"Daily 20-minute run, August to October. Weeks start on Monday.\"\n      footer={`${done} of ${DAYS} days done; current streak 31 days.`}\n      title=\"Running habit\"\n    >\n      <CalendarHeatmap\n        cellLabel={(day) => `${day.date}: ${day.value ? \"done\" : \"missed\"}`}\n        color=\"var(--success)\"\n        data={data}\n        endDate=\"2026-10-31\"\n        minCellSize={14}\n        showLegend={false}\n        weekStart={1}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "calendar heatmap"
+  ],
+  "type": "registry:block"
+}

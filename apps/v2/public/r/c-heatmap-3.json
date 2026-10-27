@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-heatmap-3",
+  "description": "Error rate — services by day with an incident",
+  "registryDependencies": [
+    "@cnippet/heatmap",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-heatmap-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Heatmap } from \"@/registry/default/charts/heatmap\";\nimport { formatPercent } from \"@/registry/default/lib/chart-utils\";\n\nconst services = [\"api\", \"auth\", \"billing\", \"search\", \"webhooks\"];\nconst days = [\n  \"Oct 20\",\n  \"Oct 21\",\n  \"Oct 22\",\n  \"Oct 23\",\n  \"Oct 24\",\n  \"Oct 25\",\n  \"Oct 26\",\n];\n\n// Deterministic error rates, with a billing incident on Oct 23.\nconst data = services.flatMap((service, s) =>\n  days.map((day, d) => ({\n    day,\n    rate:\n      service === \"billing\" && d === 3\n        ? 0.084\n        : (0.002 + ((s * 7 + d * 3) % 9) * 0.0011) *\n          (service === \"search\" ? 2.2 : 1),\n    service,\n  })),\n);\n\nexport default function ErrorRateByService() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"5xx responses as a share of requests, per service and day\"\n      footer=\"Billing spiked to 8.4% on Oct 23 during the payment-provider outage.\"\n      title=\"Error rate\"\n    >\n      <Heatmap\n        cellLabel={(row) =>\n          `${row.service}, ${row.day}: ${formatPercent(row.rate, { digits: 2 })} errors`\n        }\n        color=\"var(--destructive)\"\n        data={data}\n        value=\"rate\"\n        valueFormatter={(v) => formatPercent(v, { digits: 1 })}\n        x=\"day\"\n        xFormatter={(day) => day.replace(\"Oct \", \"\")}\n        y=\"service\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "heatmap"
+  ],
+  "type": "registry:block"
+}

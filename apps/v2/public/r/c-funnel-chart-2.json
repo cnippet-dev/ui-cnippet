@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-funnel-chart-2",
+  "description": "Checkout — left-aligned bars",
+  "registryDependencies": [
+    "@cnippet/funnel-chart",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-funnel-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { FunnelChart } from \"@/registry/default/charts/funnel-chart\";\n\nconst data = [\n  { sessions: 52400, step: \"Viewed product\" },\n  { sessions: 14800, step: \"Added to cart\" },\n  { sessions: 8350, step: \"Started checkout\" },\n  { sessions: 6120, step: \"Entered payment\" },\n  { sessions: 5480, step: \"Purchased\" },\n];\n\nexport default function CheckoutFunnel() {\n  return (\n    <ChartCard\n      className=\"max-w-xl\"\n      description=\"Store sessions, last 30 days. Bars aligned left for easier comparison.\"\n      footer=\"The biggest drop is between viewing a product and adding it to the cart.\"\n      title=\"Checkout\"\n    >\n      <FunnelChart\n        align=\"start\"\n        category=\"sessions\"\n        color=\"var(--chart-2)\"\n        data={data}\n        index=\"step\"\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "funnel chart"
+  ],
+  "type": "registry:block"
+}

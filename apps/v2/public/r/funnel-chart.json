@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "funnel-chart",
+  "description": "Steps of a process with the share reaching each step and the drop-off between them",
+  "registryDependencies": [
+    "@cnippet/chart-utils",
+    "@cnippet/chart-empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/charts/funnel-chart.tsx",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { ChartEmpty } from \"@/registry/default/charts/chart-empty\";\nimport {\n  formatCompact,\n  formatPercent,\n} from \"@/registry/default/lib/chart-utils\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nexport type FunnelChartProps<T extends Record<string, unknown>> = {\n  data: T[];\n  /** Key of the step name, e.g. \"step\". */\n  index: keyof T & string;\n  /** Key of the number reaching each step, e.g. \"users\". */\n  category: keyof T & string;\n  valueFormatter?: (value: number) => string;\n  /** CSS colour of the bars. */\n  color?: string;\n  /** Show the % lost between steps. */\n  showDropOff?: boolean;\n  /** Centre the bars (funnel shape) or align them left. */\n  align?: \"center\" | \"start\";\n  emptyState?: React.ReactNode;\n  className?: string;\n  \"aria-label\"?: string;\n};\n\nexport function FunnelChart<T extends Record<string, unknown>>({\n  data,\n  index,\n  category,\n  valueFormatter = formatCompact,\n  color = \"var(--chart-1)\",\n  showDropOff = true,\n  align = \"center\",\n  emptyState,\n  className,\n  \"aria-label\": ariaLabel,\n}: FunnelChartProps<T>) {\n  if (data.length === 0) {\n    return emptyState ?? <ChartEmpty className={className} />;\n  }\n\n  const values = data.map((row) => Math.max(Number(row[category]) || 0, 0));\n  const first = values[0] || 1;\n\n  return (\n    <ol\n      aria-label={ariaLabel ?? `Funnel of ${category} by ${index}`}\n      className={cn(\"grid w-full gap-1 text-sm\", className)}\n      data-slot=\"funnel-chart\"\n    >\n      {data.map((row, i) => {\n        const value = values[i] ?? 0;\n        const previous = values[i - 1];\n        const dropOff =\n          previous !== undefined && previous > 0 ? 1 - value / previous : null;\n        return (\n          <li className=\"grid gap-1\" key={String(row[index])}>\n            <div className=\"flex items-baseline justify-between gap-3\">\n              <span className=\"flex min-w-0 items-baseline gap-2\">\n                <span className=\"truncate font-medium\">\n                  {String(row[index])}\n                </span>\n                {showDropOff && dropOff !== null ? (\n                  <span className=\"shrink-0 text-muted-foreground text-xs tabular-nums\">\n                    ↓ {formatPercent(dropOff, { digits: 1 })}\n                    <span className=\"sr-only\"> drop-off</span>\n                  </span>\n                ) : null}\n              </span>\n              <span className=\"shrink-0 text-muted-foreground tabular-nums\">\n                <span className=\"font-medium text-foreground\">\n                  {valueFormatter(value)}\n                </span>{\" \"}\n                · {formatPercent(value / first, { digits: 1 })}\n              </span>\n            </div>\n            <div\n              aria-hidden=\"true\"\n              className={cn(\n                \"flex h-5 rounded-md bg-muted\",\n                align === \"center\" && \"justify-center\",\n              )}\n            >\n              <div\n                className=\"h-full rounded-md transition-[width] motion-reduce:transition-none\"\n                style={{\n                  backgroundColor: color,\n                  width: `${Math.max((value / first) * 100, value > 0 ? 1 : 0)}%`,\n                }}\n              />\n            </div>\n          </li>\n        );\n      })}\n    </ol>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/charts/funnel-chart.tsx"
+    }
+  ],
+  "categories": [
+    "funnel chart"
+  ],
+  "type": "registry:ui"
+}

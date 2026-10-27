@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-range-area-chart-2",
+  "description": "Revenue forecast — actuals then a widening forecast band",
+  "registryDependencies": [
+    "@cnippet/range-area-chart",
+    "@cnippet/chart-card",
+    "@cnippet/chart-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-range-area-chart-2.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { RangeAreaChart } from \"@/registry/default/charts/range-area-chart\";\nimport { formatCurrency } from \"@/registry/default/lib/chart-utils\";\n\n// Seven months of actuals, then a forecast band that widens with distance.\n// The band starts at the last actual so the two join up.\nconst data = [\n  { actual: 182000, high: null, low: null, month: \"Apr\" },\n  { actual: 191000, high: null, low: null, month: \"May\" },\n  { actual: 188000, high: null, low: null, month: \"Jun\" },\n  { actual: 204000, high: null, low: null, month: \"Jul\" },\n  { actual: 213000, high: null, low: null, month: \"Aug\" },\n  { actual: 221000, high: null, low: null, month: \"Sep\" },\n  { actual: 229000, high: 229000, low: 229000, month: \"Oct\" },\n  { actual: null, high: 247000, low: 231000, month: \"Nov\" },\n  { actual: null, high: 265000, low: 233000, month: \"Dec\" },\n  { actual: null, high: 283000, low: 235000, month: \"Jan\" },\n  { actual: null, high: 301000, low: 237000, month: \"Feb\" },\n  { actual: null, high: 319000, low: 239000, month: \"Mar\" },\n];\n\nexport default function RevenueForecast() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Monthly revenue, with an 80% forecast interval to March\"\n      title=\"Revenue forecast\"\n      value={formatCurrency(229000)}\n    >\n      <RangeAreaChart\n        className=\"h-44\"\n        color=\"var(--chart-2)\"\n        data={data}\n        index=\"month\"\n        label=\"Forecast range\"\n        maxKey=\"high\"\n        midKey=\"actual\"\n        midLabel=\"Actual\"\n        minKey=\"low\"\n        valueFormatter={formatCurrency}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "range area chart"
+  ],
+  "type": "registry:block"
+}

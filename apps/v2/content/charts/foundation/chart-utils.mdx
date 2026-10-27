@@ -65,6 +65,7 @@ formatCurrency(48200); // "$48.2K"
 | `formatDate(date, options?)` | `formatDate("2026-03-14")` | `"Mar 14"` |
 | `buildChartConfig(categories, overrides?)` | `buildChartConfig(["desktop", "mobile"])` | `desktop` → `var(--chart-1)`, `mobile` → `var(--chart-2)` |
 | `sumBy(rows, keys)` | `sumBy(data, ["desktop", "mobile"])` | Sum of both columns across every row |
+| `binValues(values, bins?)` | `binValues([120, 180, 240, 410], 3)` | `[{ start: 120, end: 216.7, count: 2 }, …]`, equal-width buckets |
 | `describeChart(kind, categories, index)` | `describeChart("Area chart", ["desktop"], "month")` | `"Area chart of desktop by month"` |
 | `trendColor(values, invert?)` | `trendColor([3, 5, 8])` | `"var(--success)"` (rising), `"var(--destructive)"` (falling) |
 | `toConfigKey(value)` | `toConfigKey("Mid market")` | `"Mid-market"`, safe as a config key and CSS variable |

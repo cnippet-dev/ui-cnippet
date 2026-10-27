@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-box-plot-2",
+  "description": "Latency by region — quartiles computed from raw samples",
+  "registryDependencies": [
+    "@cnippet/box-plot",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-box-plot-2.tsx",
+      "content": "\"use client\";\n\nimport { BoxPlot } from \"@/registry/default/charts/box-plot\";\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\n\n// Raw request latencies per region (deterministic); the chart computes quartiles.\nconst regions = [\n  [\"us-east\", 42],\n  [\"us-west\", 58],\n  [\"eu-west\", 71],\n  [\"ap-south\", 128],\n  [\"sa-east\", 154],\n] as const;\n\nconst data = regions.map(([region, base], r) => ({\n  latencies: Array.from(\n    { length: 200 },\n    (_, i) => base + ((i * (7 + r)) % 50) * (0.6 + r * 0.25),\n  ),\n  region,\n}));\n\nexport default function LatencyByRegion() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Round-trip time to the API from each region, 200 samples each\"\n      footer=\"Quartiles are computed from the raw samples by the chart.\"\n      title=\"Latency by region\"\n    >\n      <BoxPlot\n        className=\"h-40\"\n        color=\"var(--chart-2)\"\n        data={data}\n        index=\"region\"\n        valueFormatter={(v) => `${Math.round(v)} ms`}\n        values=\"latencies\"\n        yAxisWidth={56}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "box plot"
+  ],
+  "type": "registry:block"
+}

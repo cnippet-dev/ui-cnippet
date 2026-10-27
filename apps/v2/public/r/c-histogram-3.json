@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-histogram-3",
+  "description": "Test scores — 20 narrow bands without a grid",
+  "registryDependencies": [
+    "@cnippet/histogram",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-histogram-3.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Histogram } from \"@/registry/default/charts/histogram\";\n\n// Deterministic exam scores, roughly bell-shaped around 72.\nconst scores = Array.from({ length: 240 }, (_, i) => {\n  const a = ((i * 13) % 17) / 17;\n  const b = ((i * 29) % 23) / 23;\n  return Math.round(45 + 27 * (a + b));\n});\n\nconst passed = scores.filter((s) => s >= 60).length;\n\nexport default function TestScores() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Final exam, 240 students, 20 score bands\"\n      footer={`${passed} of ${scores.length} students scored 60 or more.`}\n      title=\"Test scores\"\n    >\n      <Histogram\n        bins={20}\n        className=\"h-48\"\n        color=\"var(--chart-3)\"\n        label=\"Students\"\n        showGrid={false}\n        valueFormatter={(v) => String(Math.round(v))}\n        values={scores}\n      />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "histogram"
+  ],
+  "type": "registry:block"
+}

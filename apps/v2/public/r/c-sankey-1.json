@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "c-sankey-1",
+  "description": "Traffic flow — source to landing page to outcome",
+  "registryDependencies": [
+    "@cnippet/sankey",
+    "@cnippet/chart-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/chart-variants/c-sankey-1.tsx",
+      "content": "\"use client\";\n\nimport { ChartCard } from \"@/registry/default/charts/chart-card\";\nimport { Sankey } from \"@/registry/default/charts/sankey\";\n\nconst data = [\n  { source: \"Search\", target: \"Pricing\", value: 4200 },\n  { source: \"Search\", target: \"Docs\", value: 6100 },\n  { source: \"Social\", target: \"Pricing\", value: 1800 },\n  { source: \"Social\", target: \"Blog\", value: 3400 },\n  { source: \"Referral\", target: \"Pricing\", value: 2300 },\n  { source: \"Referral\", target: \"Docs\", value: 900 },\n  { source: \"Pricing\", target: \"Signed up\", value: 3100 },\n  { source: \"Pricing\", target: \"Left\", value: 5200 },\n  { source: \"Docs\", target: \"Signed up\", value: 2400 },\n  { source: \"Docs\", target: \"Left\", value: 4600 },\n  { source: \"Blog\", target: \"Signed up\", value: 600 },\n  { source: \"Blog\", target: \"Left\", value: 2800 },\n];\n\nexport default function TrafficFlow() {\n  return (\n    <ChartCard\n      className=\"max-w-2xl\"\n      description=\"Visitors from each source, the page they landed on, and the outcome\"\n      title=\"Traffic flow\"\n    >\n      <Sankey className=\"h-48\" data={data} />\n    </ChartCard>\n  );\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "className": ""
+  },
+  "categories": [
+    "sankey"
+  ],
+  "type": "registry:block"
+}
