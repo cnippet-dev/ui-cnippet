@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPage } from "@/components/docs-page";
+import { twitterBase } from "@/lib/config";
 import { docSource } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
 
@@ -34,6 +35,7 @@ export async function generateMetadata(props: {
     },
     title: page.data.title,
     twitter: {
+      ...twitterBase,
       description: page.data.description,
       title: `${page.data.title} — Cnippet UI`,
     },

@@ -1,7 +1,13 @@
 "use client";
 
 import { useCopyToClipboard } from "@cnippet/ui/hooks/use-copy-to-clipboard";
-import { CheckIcon, CopyIcon, RotateCcwIcon } from "lucide-react";
+import {
+  ArrowUpRightIcon,
+  CheckIcon,
+  CopyIcon,
+  RotateCcwIcon,
+} from "lucide-react";
+import Link from "next/link";
 import * as React from "react";
 import { getVariantSource } from "@/lib/get-variant-source";
 import { cn } from "@/lib/utils";
@@ -15,10 +21,15 @@ import {
   SheetTitle,
 } from "@/registry/default/ui/sheet";
 
+export type VariantKind = "core" | "motion" | "chart";
+
 interface VariantCardProps {
   name: string;
   description: string;
-  reloadable?: boolean;
+  kind: VariantKind;
+  docsUrl?: string;
+  // Tag the card with its kind, for result lists that mix them.
+  showKind?: boolean;
 }
 
 type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
@@ -135,8 +146,12 @@ function Skeleton() {
 export function VariantCard({
   name,
   description,
-  reloadable,
+  kind,
+  docsUrl,
+  showKind,
 }: VariantCardProps) {
+  // Motion and chart previews animate on mount; a remount replays them.
+  const reloadable = kind !== "core";
   const [visible, setVisible] = React.useState(false);
   const [reloadKey, setReloadKey] = React.useState(0);
   const [sheetOpen, setSheetOpen] = React.useState(false);
@@ -239,8 +254,15 @@ export function VariantCard({
 
         {/* Bottom bar */}
         <div className="flex items-center justify-between gap-2 ps-3 pe-0.5 pt-1">
-          <span className="truncate font-medium text-[13px] text-foreground capitalize">
-            {description || name.replace("v-", "")}
+          <span className="flex min-w-0 items-center gap-2">
+            {showKind ? (
+              <span className="shrink-0 rounded-md border px-1.5 font-mono text-[11px] text-faint leading-5">
+                {kind}
+              </span>
+            ) : null}
+            <span className="truncate font-medium text-[13px] text-foreground capitalize">
+              {description || name.replace("v-", "")}
+            </span>
           </span>
           <div className="flex items-center gap-1">
             {reloadable && (
@@ -281,7 +303,22 @@ export function VariantCard({
       <Sheet onOpenChange={setSheetOpen} open={sheetOpen}>
         <SheetContent className="w-full max-w-2xl" side="right">
           <SheetHeader>
+            <p className="font-mono text-[11px] text-faint lowercase">
+              {`// ${kind}`}
+            </p>
             <SheetTitle className="font-mono text-base">{name}</SheetTitle>
+            <p className="text-[13px] text-muted-foreground">{description}</p>
+            {docsUrl ? (
+              <Button
+                className="mt-1 w-fit"
+                render={<Link href={docsUrl} rel="noopener" target="_blank" />}
+                size="sm"
+                variant="outline"
+              >
+                View docs
+                <ArrowUpRightIcon className="size-3.5" />
+              </Button>
+            ) : null}
           </SheetHeader>
           <SheetPanel>
             {loadingCode && code === null ? (

@@ -6,6 +6,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { SpotlightTracker } from "@/components/signal/spotlight-tracker";
 import { Analytics } from "@/components/site/analytics";
 import { ToastProviders } from "@/components/site/toast-providers";
+import { twitterBase } from "@/lib/config";
 
 const geistSans = Geist({
   display: "swap",
@@ -48,9 +49,8 @@ export const metadata: Metadata = {
     template: "%s | Cnippet UI",
   },
   twitter: {
-    card: "summary_large_image",
+    ...twitterBase,
     description,
-    images: ["/twitter-image.png"],
     title: "Cnippet UI",
   },
 };

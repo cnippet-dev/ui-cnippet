@@ -7,6 +7,7 @@ import { Rule } from "@/components/signal/rule";
 import { CONTAINER } from "@/components/signal/section";
 import { SiteShell } from "@/components/site/site-shell";
 import { ThemesShowcase } from "@/components/themes/themes-showcase";
+import { twitterBase } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 const themesDescription =
@@ -32,6 +33,7 @@ const RADIUS_PREVIEW = [
 ];
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/themes" },
   description: themesDescription,
   openGraph: {
     description: themesDescription,
@@ -40,6 +42,7 @@ export const metadata: Metadata = {
   },
   title: "Themes",
   twitter: {
+    ...twitterBase,
     description: themesDescription,
     title: "Themes",
   },
