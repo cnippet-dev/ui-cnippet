@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPage } from "@/components/docs-page";
+import { twitterBase } from "@/lib/config";
 import { hasRegistryItem } from "@/lib/llm/page-to-markdown";
 import { source } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
@@ -44,6 +45,7 @@ export async function generateMetadata(props: {
     },
     title: { absolute: fullTitle },
     twitter: {
+      ...twitterBase,
       description: doc.description,
       title: fullTitle,
     },

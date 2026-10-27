@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
   // Dev-only: streamed responses through Next's gzip trigger a
   // MaxListenersExceededWarning. Production keeps compression.
   compress: process.env.NODE_ENV === "production",
+  // Registry JSON and markdown copies stay crawlable (shadcn CLI, LLMs) but out of the index.
+  headers: async () =>
+    [
+      "/r/:path*",
+      "/llms.mdx/:path*",
+      "/:section(ui|docs|motion|charts)/:path*.md",
+    ].map((source) => ({
+      headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      source,
+    })),
   images: {
     remotePatterns: [
       {
@@ -22,6 +32,17 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   redirects: async () => [
+    // Old URLs Search Console reports as 404 (some are crawled from demo hrefs).
+    { destination: "/docs/introduction", permanent: true, source: "/docs" },
+    { destination: "/docs/theming", permanent: true, source: "/docs/styling" },
+    {
+      destination:
+        "https://github.com/cnippet-dev/ui-cnippet/blob/main/LICENSE",
+      permanent: true,
+      source: "/license",
+    },
+    { destination: "/motion", permanent: true, source: "/mo" },
+    { destination: "/", permanent: true, source: "/forgot-password" },
     {
       destination: "/motion/text-animations/text-reveal",
       permanent: false,

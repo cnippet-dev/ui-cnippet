@@ -6,7 +6,8 @@ import { PageHero } from "@/components/signal/page-hero";
 import { Rule } from "@/components/signal/rule";
 import { CONTAINER } from "@/components/signal/section";
 import { SiteShell } from "@/components/site/site-shell";
-import { cn } from "@/lib/utils";
+import { twitterBase } from "@/lib/config";
+import { chartSource, motionSource, source } from "@/lib/source";
 import {
   isPlaceholderMotionVariant,
   isPlaceholderVariant,
@@ -20,6 +21,7 @@ const exploreDescription =
   "Explore all Cnippet UI component variants with live previews. Copy source code or view it inline.";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/explore" },
   description: exploreDescription,
   openGraph: {
     description: exploreDescription,
@@ -28,12 +30,27 @@ export const metadata: Metadata = {
   },
   title: "Explore Components",
   twitter: {
+    ...twitterBase,
     description: exploreDescription,
     title: "Explore Components",
   },
 };
 
+// Docs URL per component slug (a page's last segment): "button" → "/ui/actions/button".
+function docsIndex(src: typeof source) {
+  return new Map(src.getPages().map((p) => [p.slugs.at(-1) ?? "", p.url]));
+}
+
+// A variant's component is its first registry dependency.
+function componentOf(v: { registryDependencies?: string[] }) {
+  return v.registryDependencies?.[0]?.replace("@cnippet/", "") ?? "";
+}
+
 export default function ExplorePage() {
+  const uiDocs = docsIndex(source);
+  const motionDocs = docsIndex(motionSource);
+  const chartDocs = docsIndex(chartSource);
+
   // API demos stay in the docs; each component's showcase replaces them here.
   const visibleVariants = variants.filter(
     (v) => v.meta?.role !== "demo" && !isPlaceholderVariant(v.name),
@@ -46,6 +63,7 @@ export default function ExplorePage() {
     .map((v) => ({
       category: v.categories?.[0] ?? "other",
       description: v.description ?? v.name,
+      docsUrl: uiDocs.get(componentOf(v)),
       name: v.name,
       showcase: v.meta?.role === "showcase",
     }))
@@ -62,9 +80,8 @@ export default function ExplorePage() {
     .map((v) => ({
       category: v.categories?.[0] ?? "other",
       description: v.description ?? v.name,
-      groupId: motionGroupOf(
-        v.registryDependencies?.[0]?.replace("@cnippet/", "") ?? "",
-      )?.id,
+      docsUrl: motionDocs.get(componentOf(v)),
+      groupId: motionGroupOf(componentOf(v))?.id,
       name: v.name,
     }));
 
@@ -88,6 +105,7 @@ export default function ExplorePage() {
   const chartEntries = chartVariants.map((v) => ({
     category: v.categories?.[0] ?? "other",
     description: v.description ?? v.name,
+    docsUrl: chartDocs.get(componentOf(v)),
     name: v.name,
   }));
   const sections = [
@@ -123,9 +141,14 @@ export default function ExplorePage() {
         }
       />
 
-      <section className="scroll-mt-(--header-height)" id="browse">
+      {/* Widens --container for the whole page, as the blocks gallery does. */}
+      <section
+        className="scroll-mt-(--header-height)"
+        data-container="wide"
+        id="browse"
+      >
         <Rule />
-        <div className={cn(CONTAINER, "pt-10 pb-16 md:pb-24")}>
+        <div className={CONTAINER}>
           <NuqsAdapter>
             <Suspense>
               <ExploreShowcase

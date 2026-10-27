@@ -23,3 +23,10 @@ export const appConfig = {
   ogImage: "https://ui.cnippet.dev/opengraph-image.png",
   url: "https://ui.cnippet.dev/",
 };
+
+// Spread into every page's `twitter` metadata: a page's object replaces the layout's.
+export const twitterBase = {
+  card: "summary_large_image" as const,
+  creator: "@cnippet_dev",
+  images: ["/twitter-image.png"],
+};

@@ -154,6 +154,11 @@
   --spotlight: oklch(0 0 0 / 3%);
 }
 
+/* Galleries opt into a wider container; header, rules and edge lines follow. */
+:root:has([data-container="wide"]) {
+  --container: 90rem;
+}
+
 .dark {
   --chrome: oklch(0.118 0.004 286);
   --background: oklch(0.158 0.004 286);
