@@ -10,6 +10,6 @@
 
 Please do **NOT** open a public GitHub issue for security vulnerabilities.
 
-Report vulnerabilities by emailing the maintainer directly (see GitHub profile for contact).
+Report vulnerabilities privately through GitHub: [open a security advisory](https://github.com/cnippet-dev/ui-cnippet/security/advisories/new).
 
 We will respond within 48 hours and publish a fix within 7 days for critical issues.
